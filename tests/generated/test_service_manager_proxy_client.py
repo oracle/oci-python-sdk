@@ -55,6 +55,7 @@ def test_get_service_environment(testing_service_client):
             response = client.get_service_environment(
                 service_environment_id=request.pop(util.camelize('serviceEnvironmentId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_list_service_environments(testing_service_client):
             client = oci.service_manager_proxy.ServiceManagerProxyClient(config, service_endpoint=service_endpoint)
             response = client.list_service_environments(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -105,6 +107,7 @@ def test_list_service_environments(testing_service_client):
                 next_response = client.list_service_environments(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -115,6 +118,7 @@ def test_list_service_environments(testing_service_client):
                     prev_response = client.list_service_environments(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)

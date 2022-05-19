@@ -55,6 +55,7 @@ def test_approve_organization_tenancy_for_transfer(testing_service_client):
             response = client.approve_organization_tenancy_for_transfer(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 organization_tenancy_id=request.pop(util.camelize('organizationTenancyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_create_child_tenancy(testing_service_client):
             client = oci.tenant_manager_control_plane.OrganizationClient(config, service_endpoint=service_endpoint)
             response = client.create_child_tenancy(
                 create_child_tenancy_details=request.pop(util.camelize('CreateChildTenancyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -135,6 +137,7 @@ def test_delete_organization_tenancy(testing_service_client):
             client = oci.tenant_manager_control_plane.OrganizationClient(config, service_endpoint=service_endpoint)
             response = client.delete_organization_tenancy(
                 organization_tenancy_id=request.pop(util.camelize('organizationTenancyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -175,6 +178,7 @@ def test_get_organization(testing_service_client):
             client = oci.tenant_manager_control_plane.OrganizationClient(config, service_endpoint=service_endpoint)
             response = client.get_organization(
                 organization_id=request.pop(util.camelize('organizationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -216,6 +220,7 @@ def test_get_organization_tenancy(testing_service_client):
             response = client.get_organization_tenancy(
                 organization_id=request.pop(util.camelize('organizationId')),
                 tenancy_id=request.pop(util.camelize('tenancyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -257,6 +262,7 @@ def test_list_organization_tenancies(testing_service_client):
             client = oci.tenant_manager_control_plane.OrganizationClient(config, service_endpoint=service_endpoint)
             response = client.list_organization_tenancies(
                 organization_id=request.pop(util.camelize('organizationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -266,6 +272,7 @@ def test_list_organization_tenancies(testing_service_client):
                 next_response = client.list_organization_tenancies(
                     organization_id=request.pop(util.camelize('organizationId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -276,6 +283,7 @@ def test_list_organization_tenancies(testing_service_client):
                     prev_response = client.list_organization_tenancies(
                         organization_id=request.pop(util.camelize('organizationId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -317,6 +325,7 @@ def test_list_organizations(testing_service_client):
             client = oci.tenant_manager_control_plane.OrganizationClient(config, service_endpoint=service_endpoint)
             response = client.list_organizations(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -326,6 +335,7 @@ def test_list_organizations(testing_service_client):
                 next_response = client.list_organizations(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -336,6 +346,7 @@ def test_list_organizations(testing_service_client):
                     prev_response = client.list_organizations(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -376,6 +387,7 @@ def test_restore_organization_tenancy(testing_service_client):
             client = oci.tenant_manager_control_plane.OrganizationClient(config, service_endpoint=service_endpoint)
             response = client.restore_organization_tenancy(
                 organization_tenancy_id=request.pop(util.camelize('organizationTenancyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -417,6 +429,7 @@ def test_unapprove_organization_tenancy_for_transfer(testing_service_client):
             response = client.unapprove_organization_tenancy_for_transfer(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 organization_tenancy_id=request.pop(util.camelize('organizationTenancyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -458,6 +471,7 @@ def test_update_organization(testing_service_client):
             response = client.update_organization(
                 organization_id=request.pop(util.camelize('organizationId')),
                 update_organization_details=request.pop(util.camelize('UpdateOrganizationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

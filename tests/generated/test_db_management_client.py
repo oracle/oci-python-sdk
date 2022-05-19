@@ -56,6 +56,7 @@ def test_add_data_files(testing_service_client):
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 tablespace_name=request.pop(util.camelize('tablespaceName')),
                 add_data_files_details=request.pop(util.camelize('AddDataFilesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -97,6 +98,7 @@ def test_add_managed_database_to_managed_database_group(testing_service_client):
             response = client.add_managed_database_to_managed_database_group(
                 managed_database_group_id=request.pop(util.camelize('managedDatabaseGroupId')),
                 add_managed_database_to_managed_database_group_details=request.pop(util.camelize('AddManagedDatabaseToManagedDatabaseGroupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -138,6 +140,7 @@ def test_change_database_parameters(testing_service_client):
             response = client.change_database_parameters(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 change_database_parameters_details=request.pop(util.camelize('ChangeDatabaseParametersDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -179,6 +182,7 @@ def test_change_db_management_private_endpoint_compartment(testing_service_clien
             response = client.change_db_management_private_endpoint_compartment(
                 db_management_private_endpoint_id=request.pop(util.camelize('dbManagementPrivateEndpointId')),
                 change_db_management_private_endpoint_compartment_details=request.pop(util.camelize('ChangeDbManagementPrivateEndpointCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -220,6 +224,7 @@ def test_change_job_compartment(testing_service_client):
             response = client.change_job_compartment(
                 job_id=request.pop(util.camelize('jobId')),
                 change_job_compartment_details=request.pop(util.camelize('ChangeJobCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -261,6 +266,7 @@ def test_change_managed_database_group_compartment(testing_service_client):
             response = client.change_managed_database_group_compartment(
                 managed_database_group_id=request.pop(util.camelize('managedDatabaseGroupId')),
                 change_managed_database_group_compartment_details=request.pop(util.camelize('ChangeManagedDatabaseGroupCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -301,6 +307,7 @@ def test_create_db_management_private_endpoint(testing_service_client):
             client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
             response = client.create_db_management_private_endpoint(
                 create_db_management_private_endpoint_details=request.pop(util.camelize('CreateDbManagementPrivateEndpointDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -341,6 +348,7 @@ def test_create_job(testing_service_client):
             client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
             response = client.create_job(
                 create_job_details=request.pop(util.camelize('CreateJobDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -381,6 +389,7 @@ def test_create_managed_database_group(testing_service_client):
             client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
             response = client.create_managed_database_group(
                 create_managed_database_group_details=request.pop(util.camelize('CreateManagedDatabaseGroupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -422,6 +431,7 @@ def test_create_tablespace(testing_service_client):
             response = client.create_tablespace(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 create_tablespace_details=request.pop(util.camelize('CreateTablespaceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -462,6 +472,7 @@ def test_delete_db_management_private_endpoint(testing_service_client):
             client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
             response = client.delete_db_management_private_endpoint(
                 db_management_private_endpoint_id=request.pop(util.camelize('dbManagementPrivateEndpointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -502,6 +513,7 @@ def test_delete_job(testing_service_client):
             client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
             response = client.delete_job(
                 job_id=request.pop(util.camelize('jobId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -542,6 +554,7 @@ def test_delete_managed_database_group(testing_service_client):
             client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
             response = client.delete_managed_database_group(
                 managed_database_group_id=request.pop(util.camelize('managedDatabaseGroupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -584,6 +597,7 @@ def test_drop_tablespace(testing_service_client):
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 tablespace_name=request.pop(util.camelize('tablespaceName')),
                 drop_tablespace_details=request.pop(util.camelize('DropTablespaceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -625,6 +639,7 @@ def test_get_awr_db_report(testing_service_client):
             response = client.get_awr_db_report(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 awr_db_id=request.pop(util.camelize('awrDbId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -667,6 +682,7 @@ def test_get_awr_db_sql_report(testing_service_client):
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 awr_db_id=request.pop(util.camelize('awrDbId')),
                 sql_id=request.pop(util.camelize('sqlId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -709,6 +725,7 @@ def test_get_cluster_cache_metric(testing_service_client):
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 start_time=request.pop(util.camelize('startTime')),
                 end_time=request.pop(util.camelize('endTime')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -750,6 +767,7 @@ def test_get_database_fleet_health_metrics(testing_service_client):
             response = client.get_database_fleet_health_metrics(
                 compare_baseline_time=request.pop(util.camelize('compareBaselineTime')),
                 compare_target_time=request.pop(util.camelize('compareTargetTime')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -792,6 +810,7 @@ def test_get_database_home_metrics(testing_service_client):
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 start_time=request.pop(util.camelize('startTime')),
                 end_time=request.pop(util.camelize('endTime')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -832,6 +851,7 @@ def test_get_db_management_private_endpoint(testing_service_client):
             client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_db_management_private_endpoint(
                 db_management_private_endpoint_id=request.pop(util.camelize('dbManagementPrivateEndpointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -872,6 +892,7 @@ def test_get_job(testing_service_client):
             client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_job(
                 job_id=request.pop(util.camelize('jobId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -912,6 +933,7 @@ def test_get_job_execution(testing_service_client):
             client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_job_execution(
                 job_execution_id=request.pop(util.camelize('jobExecutionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -952,6 +974,7 @@ def test_get_job_run(testing_service_client):
             client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_job_run(
                 job_run_id=request.pop(util.camelize('jobRunId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -992,6 +1015,7 @@ def test_get_managed_database(testing_service_client):
             client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_managed_database(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1032,6 +1056,7 @@ def test_get_managed_database_group(testing_service_client):
             client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_managed_database_group(
                 managed_database_group_id=request.pop(util.camelize('managedDatabaseGroupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1074,6 +1099,7 @@ def test_get_pdb_metrics(testing_service_client):
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 start_time=request.pop(util.camelize('startTime')),
                 end_time=request.pop(util.camelize('endTime')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1115,6 +1141,7 @@ def test_get_tablespace(testing_service_client):
             response = client.get_tablespace(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 tablespace_name=request.pop(util.camelize('tablespaceName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1156,6 +1183,7 @@ def test_get_user(testing_service_client):
             response = client.get_user(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 user_name=request.pop(util.camelize('userName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1196,6 +1224,7 @@ def test_get_work_request(testing_service_client):
             client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1237,6 +1266,7 @@ def test_list_asm_properties(testing_service_client):
             client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_asm_properties(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1246,6 +1276,7 @@ def test_list_asm_properties(testing_service_client):
                 next_response = client.list_asm_properties(
                     managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1256,6 +1287,7 @@ def test_list_asm_properties(testing_service_client):
                     prev_response = client.list_asm_properties(
                         managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1298,6 +1330,7 @@ def test_list_associated_databases(testing_service_client):
             response = client.list_associated_databases(
                 db_management_private_endpoint_id=request.pop(util.camelize('dbManagementPrivateEndpointId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1308,6 +1341,7 @@ def test_list_associated_databases(testing_service_client):
                     db_management_private_endpoint_id=request.pop(util.camelize('dbManagementPrivateEndpointId')),
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1319,6 +1353,7 @@ def test_list_associated_databases(testing_service_client):
                         db_management_private_endpoint_id=request.pop(util.camelize('dbManagementPrivateEndpointId')),
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1361,6 +1396,7 @@ def test_list_awr_db_snapshots(testing_service_client):
             response = client.list_awr_db_snapshots(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 awr_db_id=request.pop(util.camelize('awrDbId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1371,6 +1407,7 @@ def test_list_awr_db_snapshots(testing_service_client):
                     managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                     awr_db_id=request.pop(util.camelize('awrDbId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1382,6 +1419,7 @@ def test_list_awr_db_snapshots(testing_service_client):
                         managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                         awr_db_id=request.pop(util.camelize('awrDbId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1423,6 +1461,7 @@ def test_list_awr_dbs(testing_service_client):
             client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_awr_dbs(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1432,6 +1471,7 @@ def test_list_awr_dbs(testing_service_client):
                 next_response = client.list_awr_dbs(
                     managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1442,6 +1482,7 @@ def test_list_awr_dbs(testing_service_client):
                     prev_response = client.list_awr_dbs(
                         managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1484,6 +1525,7 @@ def test_list_consumer_group_privileges(testing_service_client):
             response = client.list_consumer_group_privileges(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 user_name=request.pop(util.camelize('userName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1494,6 +1536,7 @@ def test_list_consumer_group_privileges(testing_service_client):
                     managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                     user_name=request.pop(util.camelize('userName')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1505,6 +1548,7 @@ def test_list_consumer_group_privileges(testing_service_client):
                         managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                         user_name=request.pop(util.camelize('userName')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1547,6 +1591,7 @@ def test_list_data_access_containers(testing_service_client):
             response = client.list_data_access_containers(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 user_name=request.pop(util.camelize('userName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1557,6 +1602,7 @@ def test_list_data_access_containers(testing_service_client):
                     managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                     user_name=request.pop(util.camelize('userName')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1568,6 +1614,7 @@ def test_list_data_access_containers(testing_service_client):
                         managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                         user_name=request.pop(util.camelize('userName')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1608,6 +1655,7 @@ def test_list_database_parameters(testing_service_client):
             client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_database_parameters(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1649,6 +1697,7 @@ def test_list_db_management_private_endpoints(testing_service_client):
             client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_db_management_private_endpoints(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1658,6 +1707,7 @@ def test_list_db_management_private_endpoints(testing_service_client):
                 next_response = client.list_db_management_private_endpoints(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1668,6 +1718,7 @@ def test_list_db_management_private_endpoints(testing_service_client):
                     prev_response = client.list_db_management_private_endpoints(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1709,6 +1760,7 @@ def test_list_job_executions(testing_service_client):
             client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_job_executions(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1718,6 +1770,7 @@ def test_list_job_executions(testing_service_client):
                 next_response = client.list_job_executions(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1728,6 +1781,7 @@ def test_list_job_executions(testing_service_client):
                     prev_response = client.list_job_executions(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1769,6 +1823,7 @@ def test_list_job_runs(testing_service_client):
             client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_job_runs(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1778,6 +1833,7 @@ def test_list_job_runs(testing_service_client):
                 next_response = client.list_job_runs(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1788,6 +1844,7 @@ def test_list_job_runs(testing_service_client):
                     prev_response = client.list_job_runs(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1829,6 +1886,7 @@ def test_list_jobs(testing_service_client):
             client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_jobs(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1838,6 +1896,7 @@ def test_list_jobs(testing_service_client):
                 next_response = client.list_jobs(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1848,6 +1907,7 @@ def test_list_jobs(testing_service_client):
                     prev_response = client.list_jobs(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1889,6 +1949,7 @@ def test_list_managed_database_groups(testing_service_client):
             client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_managed_database_groups(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1898,6 +1959,7 @@ def test_list_managed_database_groups(testing_service_client):
                 next_response = client.list_managed_database_groups(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1908,6 +1970,7 @@ def test_list_managed_database_groups(testing_service_client):
                     prev_response = client.list_managed_database_groups(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1949,6 +2012,7 @@ def test_list_managed_databases(testing_service_client):
             client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_managed_databases(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1958,6 +2022,7 @@ def test_list_managed_databases(testing_service_client):
                 next_response = client.list_managed_databases(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1968,6 +2033,7 @@ def test_list_managed_databases(testing_service_client):
                     prev_response = client.list_managed_databases(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2010,6 +2076,7 @@ def test_list_object_privileges(testing_service_client):
             response = client.list_object_privileges(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 user_name=request.pop(util.camelize('userName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2020,6 +2087,7 @@ def test_list_object_privileges(testing_service_client):
                     managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                     user_name=request.pop(util.camelize('userName')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2031,6 +2099,7 @@ def test_list_object_privileges(testing_service_client):
                         managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                         user_name=request.pop(util.camelize('userName')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2073,6 +2142,7 @@ def test_list_proxied_for_users(testing_service_client):
             response = client.list_proxied_for_users(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 user_name=request.pop(util.camelize('userName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2083,6 +2153,7 @@ def test_list_proxied_for_users(testing_service_client):
                     managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                     user_name=request.pop(util.camelize('userName')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2094,6 +2165,7 @@ def test_list_proxied_for_users(testing_service_client):
                         managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                         user_name=request.pop(util.camelize('userName')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2136,6 +2208,7 @@ def test_list_proxy_users(testing_service_client):
             response = client.list_proxy_users(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 user_name=request.pop(util.camelize('userName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2146,6 +2219,7 @@ def test_list_proxy_users(testing_service_client):
                     managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                     user_name=request.pop(util.camelize('userName')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2157,6 +2231,7 @@ def test_list_proxy_users(testing_service_client):
                         managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                         user_name=request.pop(util.camelize('userName')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2199,6 +2274,7 @@ def test_list_roles(testing_service_client):
             response = client.list_roles(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 user_name=request.pop(util.camelize('userName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2209,6 +2285,7 @@ def test_list_roles(testing_service_client):
                     managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                     user_name=request.pop(util.camelize('userName')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2220,6 +2297,7 @@ def test_list_roles(testing_service_client):
                         managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                         user_name=request.pop(util.camelize('userName')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2262,6 +2340,7 @@ def test_list_system_privileges(testing_service_client):
             response = client.list_system_privileges(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 user_name=request.pop(util.camelize('userName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2272,6 +2351,7 @@ def test_list_system_privileges(testing_service_client):
                     managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                     user_name=request.pop(util.camelize('userName')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2283,6 +2363,7 @@ def test_list_system_privileges(testing_service_client):
                         managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                         user_name=request.pop(util.camelize('userName')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2324,6 +2405,7 @@ def test_list_tablespaces(testing_service_client):
             client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_tablespaces(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2333,6 +2415,7 @@ def test_list_tablespaces(testing_service_client):
                 next_response = client.list_tablespaces(
                     managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2343,6 +2426,7 @@ def test_list_tablespaces(testing_service_client):
                     prev_response = client.list_tablespaces(
                         managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2384,6 +2468,7 @@ def test_list_users(testing_service_client):
             client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_users(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2393,6 +2478,7 @@ def test_list_users(testing_service_client):
                 next_response = client.list_users(
                     managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2403,6 +2489,7 @@ def test_list_users(testing_service_client):
                     prev_response = client.list_users(
                         managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2444,6 +2531,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2453,6 +2541,7 @@ def test_list_work_request_errors(testing_service_client):
                 next_response = client.list_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2463,6 +2552,7 @@ def test_list_work_request_errors(testing_service_client):
                     prev_response = client.list_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2504,6 +2594,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2513,6 +2604,7 @@ def test_list_work_request_logs(testing_service_client):
                 next_response = client.list_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2523,6 +2615,7 @@ def test_list_work_request_logs(testing_service_client):
                     prev_response = client.list_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2564,6 +2657,7 @@ def test_list_work_requests(testing_service_client):
             client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2573,6 +2667,7 @@ def test_list_work_requests(testing_service_client):
                 next_response = client.list_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2583,6 +2678,7 @@ def test_list_work_requests(testing_service_client):
                     prev_response = client.list_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2625,6 +2721,7 @@ def test_remove_data_file(testing_service_client):
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 tablespace_name=request.pop(util.camelize('tablespaceName')),
                 remove_data_file_details=request.pop(util.camelize('RemoveDataFileDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2666,6 +2763,7 @@ def test_remove_managed_database_from_managed_database_group(testing_service_cli
             response = client.remove_managed_database_from_managed_database_group(
                 managed_database_group_id=request.pop(util.camelize('managedDatabaseGroupId')),
                 remove_managed_database_from_managed_database_group_details=request.pop(util.camelize('RemoveManagedDatabaseFromManagedDatabaseGroupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2707,6 +2805,7 @@ def test_reset_database_parameters(testing_service_client):
             response = client.reset_database_parameters(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 reset_database_parameters_details=request.pop(util.camelize('ResetDatabaseParametersDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2749,6 +2848,7 @@ def test_resize_data_file(testing_service_client):
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 tablespace_name=request.pop(util.camelize('tablespaceName')),
                 resize_data_file_details=request.pop(util.camelize('ResizeDataFileDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2791,6 +2891,7 @@ def test_summarize_awr_db_cpu_usages(testing_service_client):
             response = client.summarize_awr_db_cpu_usages(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 awr_db_id=request.pop(util.camelize('awrDbId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2801,6 +2902,7 @@ def test_summarize_awr_db_cpu_usages(testing_service_client):
                     managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                     awr_db_id=request.pop(util.camelize('awrDbId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2812,6 +2914,7 @@ def test_summarize_awr_db_cpu_usages(testing_service_client):
                         managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                         awr_db_id=request.pop(util.camelize('awrDbId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2855,6 +2958,7 @@ def test_summarize_awr_db_metrics(testing_service_client):
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 awr_db_id=request.pop(util.camelize('awrDbId')),
                 name=request.pop(util.camelize('name')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2866,6 +2970,7 @@ def test_summarize_awr_db_metrics(testing_service_client):
                     awr_db_id=request.pop(util.camelize('awrDbId')),
                     name=request.pop(util.camelize('name')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2878,6 +2983,7 @@ def test_summarize_awr_db_metrics(testing_service_client):
                         awr_db_id=request.pop(util.camelize('awrDbId')),
                         name=request.pop(util.camelize('name')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2921,6 +3027,7 @@ def test_summarize_awr_db_parameter_changes(testing_service_client):
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 awr_db_id=request.pop(util.camelize('awrDbId')),
                 name=request.pop(util.camelize('name')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2932,6 +3039,7 @@ def test_summarize_awr_db_parameter_changes(testing_service_client):
                     awr_db_id=request.pop(util.camelize('awrDbId')),
                     name=request.pop(util.camelize('name')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2944,6 +3052,7 @@ def test_summarize_awr_db_parameter_changes(testing_service_client):
                         awr_db_id=request.pop(util.camelize('awrDbId')),
                         name=request.pop(util.camelize('name')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2986,6 +3095,7 @@ def test_summarize_awr_db_parameters(testing_service_client):
             response = client.summarize_awr_db_parameters(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 awr_db_id=request.pop(util.camelize('awrDbId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2996,6 +3106,7 @@ def test_summarize_awr_db_parameters(testing_service_client):
                     managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                     awr_db_id=request.pop(util.camelize('awrDbId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3007,6 +3118,7 @@ def test_summarize_awr_db_parameters(testing_service_client):
                         managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                         awr_db_id=request.pop(util.camelize('awrDbId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3048,6 +3160,7 @@ def test_summarize_awr_db_snapshot_ranges(testing_service_client):
             client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
             response = client.summarize_awr_db_snapshot_ranges(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3057,6 +3170,7 @@ def test_summarize_awr_db_snapshot_ranges(testing_service_client):
                 next_response = client.summarize_awr_db_snapshot_ranges(
                     managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3067,6 +3181,7 @@ def test_summarize_awr_db_snapshot_ranges(testing_service_client):
                     prev_response = client.summarize_awr_db_snapshot_ranges(
                         managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3110,6 +3225,7 @@ def test_summarize_awr_db_sysstats(testing_service_client):
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 awr_db_id=request.pop(util.camelize('awrDbId')),
                 name=request.pop(util.camelize('name')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3121,6 +3237,7 @@ def test_summarize_awr_db_sysstats(testing_service_client):
                     awr_db_id=request.pop(util.camelize('awrDbId')),
                     name=request.pop(util.camelize('name')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3133,6 +3250,7 @@ def test_summarize_awr_db_sysstats(testing_service_client):
                         awr_db_id=request.pop(util.camelize('awrDbId')),
                         name=request.pop(util.camelize('name')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3174,6 +3292,7 @@ def test_summarize_awr_db_top_wait_events(testing_service_client):
             response = client.summarize_awr_db_top_wait_events(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 awr_db_id=request.pop(util.camelize('awrDbId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3217,6 +3336,7 @@ def test_summarize_awr_db_wait_event_buckets(testing_service_client):
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 awr_db_id=request.pop(util.camelize('awrDbId')),
                 name=request.pop(util.camelize('name')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3228,6 +3348,7 @@ def test_summarize_awr_db_wait_event_buckets(testing_service_client):
                     awr_db_id=request.pop(util.camelize('awrDbId')),
                     name=request.pop(util.camelize('name')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3240,6 +3361,7 @@ def test_summarize_awr_db_wait_event_buckets(testing_service_client):
                         awr_db_id=request.pop(util.camelize('awrDbId')),
                         name=request.pop(util.camelize('name')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3282,6 +3404,7 @@ def test_summarize_awr_db_wait_events(testing_service_client):
             response = client.summarize_awr_db_wait_events(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 awr_db_id=request.pop(util.camelize('awrDbId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3292,6 +3415,7 @@ def test_summarize_awr_db_wait_events(testing_service_client):
                     managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                     awr_db_id=request.pop(util.camelize('awrDbId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3303,6 +3427,7 @@ def test_summarize_awr_db_wait_events(testing_service_client):
                         managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                         awr_db_id=request.pop(util.camelize('awrDbId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3345,6 +3470,7 @@ def test_summarize_job_executions_statuses(testing_service_client):
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 start_time=request.pop(util.camelize('startTime')),
                 end_time=request.pop(util.camelize('endTime')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3386,6 +3512,7 @@ def test_update_db_management_private_endpoint(testing_service_client):
             response = client.update_db_management_private_endpoint(
                 db_management_private_endpoint_id=request.pop(util.camelize('dbManagementPrivateEndpointId')),
                 update_db_management_private_endpoint_details=request.pop(util.camelize('UpdateDbManagementPrivateEndpointDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3427,6 +3554,7 @@ def test_update_job(testing_service_client):
             response = client.update_job(
                 job_id=request.pop(util.camelize('jobId')),
                 update_job_details=request.pop(util.camelize('UpdateJobDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3468,6 +3596,7 @@ def test_update_managed_database_group(testing_service_client):
             response = client.update_managed_database_group(
                 managed_database_group_id=request.pop(util.camelize('managedDatabaseGroupId')),
                 update_managed_database_group_details=request.pop(util.camelize('UpdateManagedDatabaseGroupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3510,6 +3639,7 @@ def test_update_tablespace(testing_service_client):
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 tablespace_name=request.pop(util.camelize('tablespaceName')),
                 update_tablespace_details=request.pop(util.camelize('UpdateTablespaceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

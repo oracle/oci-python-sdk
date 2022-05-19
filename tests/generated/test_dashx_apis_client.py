@@ -55,6 +55,7 @@ def test_change_management_dashboards_compartment(testing_service_client):
             response = client.change_management_dashboards_compartment(
                 management_dashboard_id=request.pop(util.camelize('managementDashboardId')),
                 change_management_dashboards_compartment_details=request.pop(util.camelize('ChangeManagementDashboardsCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_change_management_saved_searches_compartment(testing_service_client):
             response = client.change_management_saved_searches_compartment(
                 management_saved_search_id=request.pop(util.camelize('managementSavedSearchId')),
                 change_management_saved_searches_compartment_details=request.pop(util.camelize('ChangeManagementSavedSearchesCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -136,6 +138,7 @@ def test_create_management_dashboard(testing_service_client):
             client = oci.management_dashboard.DashxApisClient(config, service_endpoint=service_endpoint)
             response = client.create_management_dashboard(
                 create_management_dashboard_details=request.pop(util.camelize('CreateManagementDashboardDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -176,6 +179,7 @@ def test_create_management_saved_search(testing_service_client):
             client = oci.management_dashboard.DashxApisClient(config, service_endpoint=service_endpoint)
             response = client.create_management_saved_search(
                 create_management_saved_search_details=request.pop(util.camelize('CreateManagementSavedSearchDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -216,6 +220,7 @@ def test_delete_management_dashboard(testing_service_client):
             client = oci.management_dashboard.DashxApisClient(config, service_endpoint=service_endpoint)
             response = client.delete_management_dashboard(
                 management_dashboard_id=request.pop(util.camelize('managementDashboardId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -256,6 +261,7 @@ def test_delete_management_saved_search(testing_service_client):
             client = oci.management_dashboard.DashxApisClient(config, service_endpoint=service_endpoint)
             response = client.delete_management_saved_search(
                 management_saved_search_id=request.pop(util.camelize('managementSavedSearchId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -296,6 +302,7 @@ def test_export_dashboard(testing_service_client):
             client = oci.management_dashboard.DashxApisClient(config, service_endpoint=service_endpoint)
             response = client.export_dashboard(
                 export_dashboard_id=request.pop(util.camelize('exportDashboardId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -336,6 +343,7 @@ def test_get_management_dashboard(testing_service_client):
             client = oci.management_dashboard.DashxApisClient(config, service_endpoint=service_endpoint)
             response = client.get_management_dashboard(
                 management_dashboard_id=request.pop(util.camelize('managementDashboardId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -376,6 +384,7 @@ def test_get_management_saved_search(testing_service_client):
             client = oci.management_dashboard.DashxApisClient(config, service_endpoint=service_endpoint)
             response = client.get_management_saved_search(
                 management_saved_search_id=request.pop(util.camelize('managementSavedSearchId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -416,6 +425,7 @@ def test_import_dashboard(testing_service_client):
             client = oci.management_dashboard.DashxApisClient(config, service_endpoint=service_endpoint)
             response = client.import_dashboard(
                 management_dashboard_import_details=request.pop(util.camelize('ManagementDashboardImportDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -457,6 +467,7 @@ def test_list_management_dashboards(testing_service_client):
             client = oci.management_dashboard.DashxApisClient(config, service_endpoint=service_endpoint)
             response = client.list_management_dashboards(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -466,6 +477,7 @@ def test_list_management_dashboards(testing_service_client):
                 next_response = client.list_management_dashboards(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -476,6 +488,7 @@ def test_list_management_dashboards(testing_service_client):
                     prev_response = client.list_management_dashboards(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -517,6 +530,7 @@ def test_list_management_saved_searches(testing_service_client):
             client = oci.management_dashboard.DashxApisClient(config, service_endpoint=service_endpoint)
             response = client.list_management_saved_searches(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -526,6 +540,7 @@ def test_list_management_saved_searches(testing_service_client):
                 next_response = client.list_management_saved_searches(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -536,6 +551,7 @@ def test_list_management_saved_searches(testing_service_client):
                     prev_response = client.list_management_saved_searches(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -577,6 +593,7 @@ def test_update_management_dashboard(testing_service_client):
             response = client.update_management_dashboard(
                 management_dashboard_id=request.pop(util.camelize('managementDashboardId')),
                 update_management_dashboard_details=request.pop(util.camelize('UpdateManagementDashboardDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -618,6 +635,7 @@ def test_update_management_saved_search(testing_service_client):
             response = client.update_management_saved_search(
                 management_saved_search_id=request.pop(util.camelize('managementSavedSearchId')),
                 update_management_saved_search_details=request.pop(util.camelize('UpdateManagementSavedSearchDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

@@ -56,6 +56,7 @@ def test_list_rate_cards(testing_service_client):
             response = client.list_rate_cards(
                 subscription_id=request.pop(util.camelize('subscriptionId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -66,6 +67,7 @@ def test_list_rate_cards(testing_service_client):
                     subscription_id=request.pop(util.camelize('subscriptionId')),
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -77,6 +79,7 @@ def test_list_rate_cards(testing_service_client):
                         subscription_id=request.pop(util.camelize('subscriptionId')),
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)

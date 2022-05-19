@@ -54,6 +54,7 @@ def test_create_quota(testing_service_client):
             client = oci.limits.QuotasClient(config, service_endpoint=service_endpoint)
             response = client.create_quota(
                 create_quota_details=request.pop(util.camelize('CreateQuotaDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -94,6 +95,7 @@ def test_delete_quota(testing_service_client):
             client = oci.limits.QuotasClient(config, service_endpoint=service_endpoint)
             response = client.delete_quota(
                 quota_id=request.pop(util.camelize('quotaId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -134,6 +136,7 @@ def test_get_quota(testing_service_client):
             client = oci.limits.QuotasClient(config, service_endpoint=service_endpoint)
             response = client.get_quota(
                 quota_id=request.pop(util.camelize('quotaId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -175,6 +178,7 @@ def test_list_quotas(testing_service_client):
             client = oci.limits.QuotasClient(config, service_endpoint=service_endpoint)
             response = client.list_quotas(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -184,6 +188,7 @@ def test_list_quotas(testing_service_client):
                 next_response = client.list_quotas(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -194,6 +199,7 @@ def test_list_quotas(testing_service_client):
                     prev_response = client.list_quotas(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -235,6 +241,7 @@ def test_update_quota(testing_service_client):
             response = client.update_quota(
                 quota_id=request.pop(util.camelize('quotaId')),
                 update_quota_details=request.pop(util.camelize('UpdateQuotaDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

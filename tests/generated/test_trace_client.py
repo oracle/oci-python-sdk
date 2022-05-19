@@ -55,6 +55,7 @@ def test_get_aggregated_snapshot(testing_service_client):
             response = client.get_aggregated_snapshot(
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
                 trace_key=request.pop(util.camelize('traceKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -97,6 +98,7 @@ def test_get_span(testing_service_client):
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
                 span_key=request.pop(util.camelize('spanKey')),
                 trace_key=request.pop(util.camelize('traceKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -138,6 +140,7 @@ def test_get_trace(testing_service_client):
             response = client.get_trace(
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
                 trace_key=request.pop(util.camelize('traceKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -179,6 +182,7 @@ def test_get_trace_snapshot(testing_service_client):
             response = client.get_trace_snapshot(
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
                 trace_key=request.pop(util.camelize('traceKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

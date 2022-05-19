@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.pic.oda.cp</groupId>
         <artifactId>digital-assistant-spec</artifactId>
-        <version>0.0.8</version>
+        <version>0.0.9</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

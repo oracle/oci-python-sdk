@@ -55,6 +55,7 @@ def test_create_config(testing_service_client):
             response = client.create_config(
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
                 create_config_details=request.pop(util.camelize('CreateConfigDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_delete_config(testing_service_client):
             response = client.delete_config(
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
                 config_id=request.pop(util.camelize('configId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -137,6 +139,7 @@ def test_get_config(testing_service_client):
             response = client.get_config(
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
                 config_id=request.pop(util.camelize('configId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -178,6 +181,7 @@ def test_list_configs(testing_service_client):
             client = oci.apm_config.ConfigClient(config, service_endpoint=service_endpoint)
             response = client.list_configs(
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -187,6 +191,7 @@ def test_list_configs(testing_service_client):
                 next_response = client.list_configs(
                     apm_domain_id=request.pop(util.camelize('apmDomainId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -197,6 +202,7 @@ def test_list_configs(testing_service_client):
                     prev_response = client.list_configs(
                         apm_domain_id=request.pop(util.camelize('apmDomainId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -239,6 +245,7 @@ def test_update_config(testing_service_client):
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
                 config_id=request.pop(util.camelize('configId')),
                 update_config_details=request.pop(util.camelize('UpdateConfigDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

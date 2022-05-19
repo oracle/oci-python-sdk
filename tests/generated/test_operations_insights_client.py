@@ -55,6 +55,7 @@ def test_add_exadata_insight_members(testing_service_client):
             response = client.add_exadata_insight_members(
                 add_exadata_insight_members_details=request.pop(util.camelize('AddExadataInsightMembersDetails')),
                 exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_change_database_insight_compartment(testing_service_client):
             response = client.change_database_insight_compartment(
                 database_insight_id=request.pop(util.camelize('databaseInsightId')),
                 change_database_insight_compartment_details=request.pop(util.camelize('ChangeDatabaseInsightCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -137,6 +139,7 @@ def test_change_enterprise_manager_bridge_compartment(testing_service_client):
             response = client.change_enterprise_manager_bridge_compartment(
                 enterprise_manager_bridge_id=request.pop(util.camelize('enterpriseManagerBridgeId')),
                 change_enterprise_manager_bridge_compartment_details=request.pop(util.camelize('ChangeEnterpriseManagerBridgeCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -178,6 +181,7 @@ def test_change_exadata_insight_compartment(testing_service_client):
             response = client.change_exadata_insight_compartment(
                 exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
                 change_exadata_insight_compartment_details=request.pop(util.camelize('ChangeExadataInsightCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -219,6 +223,7 @@ def test_change_host_insight_compartment(testing_service_client):
             response = client.change_host_insight_compartment(
                 host_insight_id=request.pop(util.camelize('hostInsightId')),
                 change_host_insight_compartment_details=request.pop(util.camelize('ChangeHostInsightCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -260,6 +265,7 @@ def test_change_operations_insights_private_endpoint_compartment(testing_service
             response = client.change_operations_insights_private_endpoint_compartment(
                 operations_insights_private_endpoint_id=request.pop(util.camelize('operationsInsightsPrivateEndpointId')),
                 change_operations_insights_private_endpoint_compartment_details=request.pop(util.camelize('ChangeOperationsInsightsPrivateEndpointCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -301,6 +307,7 @@ def test_change_pe_comanaged_database_insight(testing_service_client):
             response = client.change_pe_comanaged_database_insight(
                 database_insight_id=request.pop(util.camelize('databaseInsightId')),
                 change_pe_comanaged_database_insight_details=request.pop(util.camelize('ChangePeComanagedDatabaseInsightDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -341,6 +348,7 @@ def test_create_awr_hub(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.create_awr_hub(
                 create_awr_hub_details=request.pop(util.camelize('CreateAwrHubDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -381,6 +389,7 @@ def test_create_database_insight(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.create_database_insight(
                 create_database_insight_details=request.pop(util.camelize('CreateDatabaseInsightDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -421,6 +430,7 @@ def test_create_enterprise_manager_bridge(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.create_enterprise_manager_bridge(
                 create_enterprise_manager_bridge_details=request.pop(util.camelize('CreateEnterpriseManagerBridgeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -461,6 +471,7 @@ def test_create_exadata_insight(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.create_exadata_insight(
                 create_exadata_insight_details=request.pop(util.camelize('CreateExadataInsightDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -501,6 +512,7 @@ def test_create_host_insight(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.create_host_insight(
                 create_host_insight_details=request.pop(util.camelize('CreateHostInsightDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -541,6 +553,7 @@ def test_create_operations_insights_private_endpoint(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.create_operations_insights_private_endpoint(
                 create_operations_insights_private_endpoint_details=request.pop(util.camelize('CreateOperationsInsightsPrivateEndpointDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -581,6 +594,7 @@ def test_create_operations_insights_warehouse(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.create_operations_insights_warehouse(
                 create_operations_insights_warehouse_details=request.pop(util.camelize('CreateOperationsInsightsWarehouseDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -621,6 +635,7 @@ def test_create_operations_insights_warehouse_user(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.create_operations_insights_warehouse_user(
                 create_operations_insights_warehouse_user_details=request.pop(util.camelize('CreateOperationsInsightsWarehouseUserDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -661,6 +676,7 @@ def test_delete_awr_hub(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.delete_awr_hub(
                 awr_hub_id=request.pop(util.camelize('awrHubId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -701,6 +717,7 @@ def test_delete_database_insight(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.delete_database_insight(
                 database_insight_id=request.pop(util.camelize('databaseInsightId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -741,6 +758,7 @@ def test_delete_enterprise_manager_bridge(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.delete_enterprise_manager_bridge(
                 enterprise_manager_bridge_id=request.pop(util.camelize('enterpriseManagerBridgeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -781,6 +799,7 @@ def test_delete_exadata_insight(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.delete_exadata_insight(
                 exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -821,6 +840,7 @@ def test_delete_host_insight(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.delete_host_insight(
                 host_insight_id=request.pop(util.camelize('hostInsightId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -861,6 +881,7 @@ def test_delete_operations_insights_private_endpoint(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.delete_operations_insights_private_endpoint(
                 operations_insights_private_endpoint_id=request.pop(util.camelize('operationsInsightsPrivateEndpointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -901,6 +922,7 @@ def test_delete_operations_insights_warehouse(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.delete_operations_insights_warehouse(
                 operations_insights_warehouse_id=request.pop(util.camelize('operationsInsightsWarehouseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -941,6 +963,7 @@ def test_delete_operations_insights_warehouse_user(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.delete_operations_insights_warehouse_user(
                 operations_insights_warehouse_user_id=request.pop(util.camelize('operationsInsightsWarehouseUserId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -981,6 +1004,7 @@ def test_disable_database_insight(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.disable_database_insight(
                 database_insight_id=request.pop(util.camelize('databaseInsightId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1021,6 +1045,7 @@ def test_disable_exadata_insight(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.disable_exadata_insight(
                 exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1061,6 +1086,7 @@ def test_disable_host_insight(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.disable_host_insight(
                 host_insight_id=request.pop(util.camelize('hostInsightId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1102,6 +1128,7 @@ def test_download_operations_insights_warehouse_wallet(testing_service_client):
             response = client.download_operations_insights_warehouse_wallet(
                 operations_insights_warehouse_id=request.pop(util.camelize('operationsInsightsWarehouseId')),
                 download_operations_insights_warehouse_wallet_details=request.pop(util.camelize('DownloadOperationsInsightsWarehouseWalletDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1143,6 +1170,7 @@ def test_enable_database_insight(testing_service_client):
             response = client.enable_database_insight(
                 enable_database_insight_details=request.pop(util.camelize('EnableDatabaseInsightDetails')),
                 database_insight_id=request.pop(util.camelize('databaseInsightId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1184,6 +1212,7 @@ def test_enable_exadata_insight(testing_service_client):
             response = client.enable_exadata_insight(
                 enable_exadata_insight_details=request.pop(util.camelize('EnableExadataInsightDetails')),
                 exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1225,6 +1254,7 @@ def test_enable_host_insight(testing_service_client):
             response = client.enable_host_insight(
                 enable_host_insight_details=request.pop(util.camelize('EnableHostInsightDetails')),
                 host_insight_id=request.pop(util.camelize('hostInsightId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1265,6 +1295,7 @@ def test_get_awr_hub(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.get_awr_hub(
                 awr_hub_id=request.pop(util.camelize('awrHubId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1306,6 +1337,7 @@ def test_get_awr_report(testing_service_client):
             response = client.get_awr_report(
                 awr_hub_id=request.pop(util.camelize('awrHubId')),
                 awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1346,6 +1378,7 @@ def test_get_database_insight(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.get_database_insight(
                 database_insight_id=request.pop(util.camelize('databaseInsightId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1386,6 +1419,7 @@ def test_get_enterprise_manager_bridge(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.get_enterprise_manager_bridge(
                 enterprise_manager_bridge_id=request.pop(util.camelize('enterpriseManagerBridgeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1426,6 +1460,7 @@ def test_get_exadata_insight(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.get_exadata_insight(
                 exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1466,6 +1501,7 @@ def test_get_host_insight(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.get_host_insight(
                 host_insight_id=request.pop(util.camelize('hostInsightId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1506,6 +1542,7 @@ def test_get_operations_insights_private_endpoint(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.get_operations_insights_private_endpoint(
                 operations_insights_private_endpoint_id=request.pop(util.camelize('operationsInsightsPrivateEndpointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1546,6 +1583,7 @@ def test_get_operations_insights_warehouse(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.get_operations_insights_warehouse(
                 operations_insights_warehouse_id=request.pop(util.camelize('operationsInsightsWarehouseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1586,6 +1624,7 @@ def test_get_operations_insights_warehouse_user(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.get_operations_insights_warehouse_user(
                 operations_insights_warehouse_user_id=request.pop(util.camelize('operationsInsightsWarehouseUserId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1626,6 +1665,7 @@ def test_get_work_request(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1666,6 +1706,7 @@ def test_ingest_database_configuration(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.ingest_database_configuration(
                 ingest_database_configuration_details=request.pop(util.camelize('IngestDatabaseConfigurationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1707,6 +1748,7 @@ def test_ingest_host_configuration(testing_service_client):
             response = client.ingest_host_configuration(
                 id=request.pop(util.camelize('id')),
                 ingest_host_configuration_details=request.pop(util.camelize('IngestHostConfigurationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1748,6 +1790,7 @@ def test_ingest_host_metrics(testing_service_client):
             response = client.ingest_host_metrics(
                 id=request.pop(util.camelize('id')),
                 ingest_host_metrics_details=request.pop(util.camelize('IngestHostMetricsDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1788,6 +1831,7 @@ def test_ingest_sql_bucket(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.ingest_sql_bucket(
                 ingest_sql_bucket_details=request.pop(util.camelize('IngestSqlBucketDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1828,6 +1872,7 @@ def test_ingest_sql_plan_lines(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.ingest_sql_plan_lines(
                 ingest_sql_plan_lines_details=request.pop(util.camelize('IngestSqlPlanLinesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1868,6 +1913,7 @@ def test_ingest_sql_stats(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.ingest_sql_stats(
                 ingest_sql_stats_details=request.pop(util.camelize('IngestSqlStatsDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1908,6 +1954,7 @@ def test_ingest_sql_text(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.ingest_sql_text(
                 ingest_sql_text_details=request.pop(util.camelize('IngestSqlTextDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1949,6 +1996,7 @@ def test_list_awr_hubs(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.list_awr_hubs(
                 operations_insights_warehouse_id=request.pop(util.camelize('operationsInsightsWarehouseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1958,6 +2006,7 @@ def test_list_awr_hubs(testing_service_client):
                 next_response = client.list_awr_hubs(
                     operations_insights_warehouse_id=request.pop(util.camelize('operationsInsightsWarehouseId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1968,6 +2017,7 @@ def test_list_awr_hubs(testing_service_client):
                     prev_response = client.list_awr_hubs(
                         operations_insights_warehouse_id=request.pop(util.camelize('operationsInsightsWarehouseId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2010,6 +2060,7 @@ def test_list_awr_snapshots(testing_service_client):
             response = client.list_awr_snapshots(
                 awr_hub_id=request.pop(util.camelize('awrHubId')),
                 awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2020,6 +2071,7 @@ def test_list_awr_snapshots(testing_service_client):
                     awr_hub_id=request.pop(util.camelize('awrHubId')),
                     awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2031,6 +2083,7 @@ def test_list_awr_snapshots(testing_service_client):
                         awr_hub_id=request.pop(util.camelize('awrHubId')),
                         awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2071,6 +2124,7 @@ def test_list_database_configurations(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.list_database_configurations(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2079,6 +2133,7 @@ def test_list_database_configurations(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_database_configurations(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2088,6 +2143,7 @@ def test_list_database_configurations(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_database_configurations(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2128,6 +2184,7 @@ def test_list_database_insights(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.list_database_insights(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2136,6 +2193,7 @@ def test_list_database_insights(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_database_insights(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2145,6 +2203,7 @@ def test_list_database_insights(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_database_insights(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2185,6 +2244,7 @@ def test_list_enterprise_manager_bridges(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.list_enterprise_manager_bridges(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2193,6 +2253,7 @@ def test_list_enterprise_manager_bridges(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_enterprise_manager_bridges(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2202,6 +2263,7 @@ def test_list_enterprise_manager_bridges(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_enterprise_manager_bridges(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2242,6 +2304,7 @@ def test_list_exadata_configurations(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.list_exadata_configurations(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2250,6 +2313,7 @@ def test_list_exadata_configurations(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_exadata_configurations(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2259,6 +2323,7 @@ def test_list_exadata_configurations(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_exadata_configurations(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2299,6 +2364,7 @@ def test_list_exadata_insights(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.list_exadata_insights(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2307,6 +2373,7 @@ def test_list_exadata_insights(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_exadata_insights(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2316,6 +2383,7 @@ def test_list_exadata_insights(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_exadata_insights(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2356,6 +2424,7 @@ def test_list_host_configurations(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.list_host_configurations(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2364,6 +2433,7 @@ def test_list_host_configurations(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_host_configurations(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2373,6 +2443,7 @@ def test_list_host_configurations(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_host_configurations(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2413,6 +2484,7 @@ def test_list_host_insights(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.list_host_insights(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2421,6 +2493,7 @@ def test_list_host_insights(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_host_insights(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2430,6 +2503,7 @@ def test_list_host_insights(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_host_insights(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2472,6 +2546,7 @@ def test_list_hosted_entities(testing_service_client):
             response = client.list_hosted_entities(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 id=request.pop(util.camelize('id')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2482,6 +2557,7 @@ def test_list_hosted_entities(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     id=request.pop(util.camelize('id')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2493,6 +2569,7 @@ def test_list_hosted_entities(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         id=request.pop(util.camelize('id')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2534,6 +2611,7 @@ def test_list_importable_agent_entities(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.list_importable_agent_entities(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2543,6 +2621,7 @@ def test_list_importable_agent_entities(testing_service_client):
                 next_response = client.list_importable_agent_entities(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2553,6 +2632,7 @@ def test_list_importable_agent_entities(testing_service_client):
                     prev_response = client.list_importable_agent_entities(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2594,6 +2674,7 @@ def test_list_importable_enterprise_manager_entities(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.list_importable_enterprise_manager_entities(
                 enterprise_manager_bridge_id=request.pop(util.camelize('enterpriseManagerBridgeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2603,6 +2684,7 @@ def test_list_importable_enterprise_manager_entities(testing_service_client):
                 next_response = client.list_importable_enterprise_manager_entities(
                     enterprise_manager_bridge_id=request.pop(util.camelize('enterpriseManagerBridgeId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2613,6 +2695,7 @@ def test_list_importable_enterprise_manager_entities(testing_service_client):
                     prev_response = client.list_importable_enterprise_manager_entities(
                         enterprise_manager_bridge_id=request.pop(util.camelize('enterpriseManagerBridgeId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2653,6 +2736,7 @@ def test_list_operations_insights_private_endpoints(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.list_operations_insights_private_endpoints(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2661,6 +2745,7 @@ def test_list_operations_insights_private_endpoints(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_operations_insights_private_endpoints(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2670,6 +2755,7 @@ def test_list_operations_insights_private_endpoints(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_operations_insights_private_endpoints(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2711,6 +2797,7 @@ def test_list_operations_insights_warehouse_users(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.list_operations_insights_warehouse_users(
                 operations_insights_warehouse_id=request.pop(util.camelize('operationsInsightsWarehouseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2720,6 +2807,7 @@ def test_list_operations_insights_warehouse_users(testing_service_client):
                 next_response = client.list_operations_insights_warehouse_users(
                     operations_insights_warehouse_id=request.pop(util.camelize('operationsInsightsWarehouseId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2730,6 +2818,7 @@ def test_list_operations_insights_warehouse_users(testing_service_client):
                     prev_response = client.list_operations_insights_warehouse_users(
                         operations_insights_warehouse_id=request.pop(util.camelize('operationsInsightsWarehouseId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2770,6 +2859,7 @@ def test_list_operations_insights_warehouses(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.list_operations_insights_warehouses(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2778,6 +2868,7 @@ def test_list_operations_insights_warehouses(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_operations_insights_warehouses(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2787,6 +2878,7 @@ def test_list_operations_insights_warehouses(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_operations_insights_warehouses(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2830,6 +2922,7 @@ def test_list_sql_plans(testing_service_client):
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 sql_identifier=request.pop(util.camelize('sqlIdentifier')),
                 plan_hash=request.pop(util.camelize('planHash')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2841,6 +2934,7 @@ def test_list_sql_plans(testing_service_client):
                     sql_identifier=request.pop(util.camelize('sqlIdentifier')),
                     plan_hash=request.pop(util.camelize('planHash')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2853,6 +2947,7 @@ def test_list_sql_plans(testing_service_client):
                         sql_identifier=request.pop(util.camelize('sqlIdentifier')),
                         plan_hash=request.pop(util.camelize('planHash')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2895,6 +2990,7 @@ def test_list_sql_searches(testing_service_client):
             response = client.list_sql_searches(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 sql_identifier=request.pop(util.camelize('sqlIdentifier')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2905,6 +3001,7 @@ def test_list_sql_searches(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     sql_identifier=request.pop(util.camelize('sqlIdentifier')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2916,6 +3013,7 @@ def test_list_sql_searches(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         sql_identifier=request.pop(util.camelize('sqlIdentifier')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2958,6 +3056,7 @@ def test_list_sql_texts(testing_service_client):
             response = client.list_sql_texts(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 sql_identifier=request.pop(util.camelize('sqlIdentifier')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2968,6 +3067,7 @@ def test_list_sql_texts(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     sql_identifier=request.pop(util.camelize('sqlIdentifier')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2979,6 +3079,7 @@ def test_list_sql_texts(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         sql_identifier=request.pop(util.camelize('sqlIdentifier')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3020,6 +3121,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3029,6 +3131,7 @@ def test_list_work_request_errors(testing_service_client):
                 next_response = client.list_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3039,6 +3142,7 @@ def test_list_work_request_errors(testing_service_client):
                     prev_response = client.list_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3080,6 +3184,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3089,6 +3194,7 @@ def test_list_work_request_logs(testing_service_client):
                 next_response = client.list_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3099,6 +3205,7 @@ def test_list_work_request_logs(testing_service_client):
                     prev_response = client.list_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3139,6 +3246,7 @@ def test_list_work_requests(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3147,6 +3255,7 @@ def test_list_work_requests(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_work_requests(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3156,6 +3265,7 @@ def test_list_work_requests(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_work_requests(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3196,6 +3306,7 @@ def test_rotate_operations_insights_warehouse_wallet(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.rotate_operations_insights_warehouse_wallet(
                 operations_insights_warehouse_id=request.pop(util.camelize('operationsInsightsWarehouseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3237,6 +3348,7 @@ def test_summarize_awr_sources_summaries(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.summarize_awr_sources_summaries(
                 awr_hub_id=request.pop(util.camelize('awrHubId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3246,6 +3358,7 @@ def test_summarize_awr_sources_summaries(testing_service_client):
                 next_response = client.summarize_awr_sources_summaries(
                     awr_hub_id=request.pop(util.camelize('awrHubId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3256,6 +3369,7 @@ def test_summarize_awr_sources_summaries(testing_service_client):
                     prev_response = client.summarize_awr_sources_summaries(
                         awr_hub_id=request.pop(util.camelize('awrHubId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3298,6 +3412,7 @@ def test_summarize_database_insight_resource_capacity_trend(testing_service_clie
             response = client.summarize_database_insight_resource_capacity_trend(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 resource_metric=request.pop(util.camelize('resourceMetric')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3308,6 +3423,7 @@ def test_summarize_database_insight_resource_capacity_trend(testing_service_clie
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     resource_metric=request.pop(util.camelize('resourceMetric')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3319,6 +3435,7 @@ def test_summarize_database_insight_resource_capacity_trend(testing_service_clie
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         resource_metric=request.pop(util.camelize('resourceMetric')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3361,6 +3478,7 @@ def test_summarize_database_insight_resource_forecast_trend(testing_service_clie
             response = client.summarize_database_insight_resource_forecast_trend(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 resource_metric=request.pop(util.camelize('resourceMetric')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3371,6 +3489,7 @@ def test_summarize_database_insight_resource_forecast_trend(testing_service_clie
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     resource_metric=request.pop(util.camelize('resourceMetric')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3382,6 +3501,7 @@ def test_summarize_database_insight_resource_forecast_trend(testing_service_clie
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         resource_metric=request.pop(util.camelize('resourceMetric')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3424,6 +3544,7 @@ def test_summarize_database_insight_resource_statistics(testing_service_client):
             response = client.summarize_database_insight_resource_statistics(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 resource_metric=request.pop(util.camelize('resourceMetric')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3434,6 +3555,7 @@ def test_summarize_database_insight_resource_statistics(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     resource_metric=request.pop(util.camelize('resourceMetric')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3445,6 +3567,7 @@ def test_summarize_database_insight_resource_statistics(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         resource_metric=request.pop(util.camelize('resourceMetric')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3487,6 +3610,7 @@ def test_summarize_database_insight_resource_usage(testing_service_client):
             response = client.summarize_database_insight_resource_usage(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 resource_metric=request.pop(util.camelize('resourceMetric')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3497,6 +3621,7 @@ def test_summarize_database_insight_resource_usage(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     resource_metric=request.pop(util.camelize('resourceMetric')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3508,6 +3633,7 @@ def test_summarize_database_insight_resource_usage(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         resource_metric=request.pop(util.camelize('resourceMetric')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3550,6 +3676,7 @@ def test_summarize_database_insight_resource_usage_trend(testing_service_client)
             response = client.summarize_database_insight_resource_usage_trend(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 resource_metric=request.pop(util.camelize('resourceMetric')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3560,6 +3687,7 @@ def test_summarize_database_insight_resource_usage_trend(testing_service_client)
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     resource_metric=request.pop(util.camelize('resourceMetric')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3571,6 +3699,7 @@ def test_summarize_database_insight_resource_usage_trend(testing_service_client)
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         resource_metric=request.pop(util.camelize('resourceMetric')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3613,6 +3742,7 @@ def test_summarize_database_insight_resource_utilization_insight(testing_service
             response = client.summarize_database_insight_resource_utilization_insight(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 resource_metric=request.pop(util.camelize('resourceMetric')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3623,6 +3753,7 @@ def test_summarize_database_insight_resource_utilization_insight(testing_service
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     resource_metric=request.pop(util.camelize('resourceMetric')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3634,6 +3765,7 @@ def test_summarize_database_insight_resource_utilization_insight(testing_service
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         resource_metric=request.pop(util.camelize('resourceMetric')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3675,6 +3807,7 @@ def test_summarize_database_insight_tablespace_usage_trend(testing_service_clien
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.summarize_database_insight_tablespace_usage_trend(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3684,6 +3817,7 @@ def test_summarize_database_insight_tablespace_usage_trend(testing_service_clien
                 next_response = client.summarize_database_insight_tablespace_usage_trend(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3694,6 +3828,7 @@ def test_summarize_database_insight_tablespace_usage_trend(testing_service_clien
                     prev_response = client.summarize_database_insight_tablespace_usage_trend(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3737,6 +3872,7 @@ def test_summarize_exadata_insight_resource_capacity_trend(testing_service_clien
                 resource_type=request.pop(util.camelize('resourceType')),
                 resource_metric=request.pop(util.camelize('resourceMetric')),
                 exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3748,6 +3884,7 @@ def test_summarize_exadata_insight_resource_capacity_trend(testing_service_clien
                     resource_metric=request.pop(util.camelize('resourceMetric')),
                     exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3760,6 +3897,7 @@ def test_summarize_exadata_insight_resource_capacity_trend(testing_service_clien
                         resource_metric=request.pop(util.camelize('resourceMetric')),
                         exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3802,6 +3940,7 @@ def test_summarize_exadata_insight_resource_capacity_trend_aggregated(testing_se
             response = client.summarize_exadata_insight_resource_capacity_trend_aggregated(
                 resource_type=request.pop(util.camelize('resourceType')),
                 resource_metric=request.pop(util.camelize('resourceMetric')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3812,6 +3951,7 @@ def test_summarize_exadata_insight_resource_capacity_trend_aggregated(testing_se
                     resource_type=request.pop(util.camelize('resourceType')),
                     resource_metric=request.pop(util.camelize('resourceMetric')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3823,6 +3963,7 @@ def test_summarize_exadata_insight_resource_capacity_trend_aggregated(testing_se
                         resource_type=request.pop(util.camelize('resourceType')),
                         resource_metric=request.pop(util.camelize('resourceMetric')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3866,6 +4007,7 @@ def test_summarize_exadata_insight_resource_forecast_trend(testing_service_clien
                 resource_type=request.pop(util.camelize('resourceType')),
                 resource_metric=request.pop(util.camelize('resourceMetric')),
                 exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3877,6 +4019,7 @@ def test_summarize_exadata_insight_resource_forecast_trend(testing_service_clien
                     resource_metric=request.pop(util.camelize('resourceMetric')),
                     exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3889,6 +4032,7 @@ def test_summarize_exadata_insight_resource_forecast_trend(testing_service_clien
                         resource_metric=request.pop(util.camelize('resourceMetric')),
                         exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3931,6 +4075,7 @@ def test_summarize_exadata_insight_resource_forecast_trend_aggregated(testing_se
             response = client.summarize_exadata_insight_resource_forecast_trend_aggregated(
                 resource_type=request.pop(util.camelize('resourceType')),
                 resource_metric=request.pop(util.camelize('resourceMetric')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3941,6 +4086,7 @@ def test_summarize_exadata_insight_resource_forecast_trend_aggregated(testing_se
                     resource_type=request.pop(util.camelize('resourceType')),
                     resource_metric=request.pop(util.camelize('resourceMetric')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3952,6 +4098,7 @@ def test_summarize_exadata_insight_resource_forecast_trend_aggregated(testing_se
                         resource_type=request.pop(util.camelize('resourceType')),
                         resource_metric=request.pop(util.camelize('resourceMetric')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3995,6 +4142,7 @@ def test_summarize_exadata_insight_resource_statistics(testing_service_client):
                 exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
                 resource_type=request.pop(util.camelize('resourceType')),
                 resource_metric=request.pop(util.camelize('resourceMetric')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4006,6 +4154,7 @@ def test_summarize_exadata_insight_resource_statistics(testing_service_client):
                     resource_type=request.pop(util.camelize('resourceType')),
                     resource_metric=request.pop(util.camelize('resourceMetric')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4018,6 +4167,7 @@ def test_summarize_exadata_insight_resource_statistics(testing_service_client):
                         resource_type=request.pop(util.camelize('resourceType')),
                         resource_metric=request.pop(util.camelize('resourceMetric')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4061,6 +4211,7 @@ def test_summarize_exadata_insight_resource_usage(testing_service_client):
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 resource_type=request.pop(util.camelize('resourceType')),
                 resource_metric=request.pop(util.camelize('resourceMetric')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4072,6 +4223,7 @@ def test_summarize_exadata_insight_resource_usage(testing_service_client):
                     resource_type=request.pop(util.camelize('resourceType')),
                     resource_metric=request.pop(util.camelize('resourceMetric')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4084,6 +4236,7 @@ def test_summarize_exadata_insight_resource_usage(testing_service_client):
                         resource_type=request.pop(util.camelize('resourceType')),
                         resource_metric=request.pop(util.camelize('resourceMetric')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4127,6 +4280,7 @@ def test_summarize_exadata_insight_resource_usage_aggregated(testing_service_cli
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 resource_type=request.pop(util.camelize('resourceType')),
                 resource_metric=request.pop(util.camelize('resourceMetric')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4138,6 +4292,7 @@ def test_summarize_exadata_insight_resource_usage_aggregated(testing_service_cli
                     resource_type=request.pop(util.camelize('resourceType')),
                     resource_metric=request.pop(util.camelize('resourceMetric')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4150,6 +4305,7 @@ def test_summarize_exadata_insight_resource_usage_aggregated(testing_service_cli
                         resource_type=request.pop(util.camelize('resourceType')),
                         resource_metric=request.pop(util.camelize('resourceMetric')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4193,6 +4349,7 @@ def test_summarize_exadata_insight_resource_utilization_insight(testing_service_
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 resource_type=request.pop(util.camelize('resourceType')),
                 resource_metric=request.pop(util.camelize('resourceMetric')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4204,6 +4361,7 @@ def test_summarize_exadata_insight_resource_utilization_insight(testing_service_
                     resource_type=request.pop(util.camelize('resourceType')),
                     resource_metric=request.pop(util.camelize('resourceMetric')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4216,6 +4374,7 @@ def test_summarize_exadata_insight_resource_utilization_insight(testing_service_
                         resource_type=request.pop(util.camelize('resourceType')),
                         resource_metric=request.pop(util.camelize('resourceMetric')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4257,6 +4416,7 @@ def test_summarize_exadata_members(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.summarize_exadata_members(
                 exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4266,6 +4426,7 @@ def test_summarize_exadata_members(testing_service_client):
                 next_response = client.summarize_exadata_members(
                     exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4276,6 +4437,7 @@ def test_summarize_exadata_members(testing_service_client):
                     prev_response = client.summarize_exadata_members(
                         exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4318,6 +4480,7 @@ def test_summarize_host_insight_resource_capacity_trend(testing_service_client):
             response = client.summarize_host_insight_resource_capacity_trend(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 resource_metric=request.pop(util.camelize('resourceMetric')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4328,6 +4491,7 @@ def test_summarize_host_insight_resource_capacity_trend(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     resource_metric=request.pop(util.camelize('resourceMetric')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4339,6 +4503,7 @@ def test_summarize_host_insight_resource_capacity_trend(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         resource_metric=request.pop(util.camelize('resourceMetric')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4381,6 +4546,7 @@ def test_summarize_host_insight_resource_forecast_trend(testing_service_client):
             response = client.summarize_host_insight_resource_forecast_trend(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 resource_metric=request.pop(util.camelize('resourceMetric')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4391,6 +4557,7 @@ def test_summarize_host_insight_resource_forecast_trend(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     resource_metric=request.pop(util.camelize('resourceMetric')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4402,6 +4569,7 @@ def test_summarize_host_insight_resource_forecast_trend(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         resource_metric=request.pop(util.camelize('resourceMetric')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4444,6 +4612,7 @@ def test_summarize_host_insight_resource_statistics(testing_service_client):
             response = client.summarize_host_insight_resource_statistics(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 resource_metric=request.pop(util.camelize('resourceMetric')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4454,6 +4623,7 @@ def test_summarize_host_insight_resource_statistics(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     resource_metric=request.pop(util.camelize('resourceMetric')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4465,6 +4635,7 @@ def test_summarize_host_insight_resource_statistics(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         resource_metric=request.pop(util.camelize('resourceMetric')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4507,6 +4678,7 @@ def test_summarize_host_insight_resource_usage(testing_service_client):
             response = client.summarize_host_insight_resource_usage(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 resource_metric=request.pop(util.camelize('resourceMetric')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4517,6 +4689,7 @@ def test_summarize_host_insight_resource_usage(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     resource_metric=request.pop(util.camelize('resourceMetric')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4528,6 +4701,7 @@ def test_summarize_host_insight_resource_usage(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         resource_metric=request.pop(util.camelize('resourceMetric')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4570,6 +4744,7 @@ def test_summarize_host_insight_resource_usage_trend(testing_service_client):
             response = client.summarize_host_insight_resource_usage_trend(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 resource_metric=request.pop(util.camelize('resourceMetric')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4580,6 +4755,7 @@ def test_summarize_host_insight_resource_usage_trend(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     resource_metric=request.pop(util.camelize('resourceMetric')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4591,6 +4767,7 @@ def test_summarize_host_insight_resource_usage_trend(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         resource_metric=request.pop(util.camelize('resourceMetric')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4633,6 +4810,7 @@ def test_summarize_host_insight_resource_utilization_insight(testing_service_cli
             response = client.summarize_host_insight_resource_utilization_insight(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 resource_metric=request.pop(util.camelize('resourceMetric')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4643,6 +4821,7 @@ def test_summarize_host_insight_resource_utilization_insight(testing_service_cli
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     resource_metric=request.pop(util.camelize('resourceMetric')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4654,6 +4833,7 @@ def test_summarize_host_insight_resource_utilization_insight(testing_service_cli
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         resource_metric=request.pop(util.camelize('resourceMetric')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4697,6 +4877,7 @@ def test_summarize_host_insight_top_processes_usage_trend(testing_service_client
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 id=request.pop(util.camelize('id')),
                 resource_metric=request.pop(util.camelize('resourceMetric')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4708,6 +4889,7 @@ def test_summarize_host_insight_top_processes_usage_trend(testing_service_client
                     id=request.pop(util.camelize('id')),
                     resource_metric=request.pop(util.camelize('resourceMetric')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4720,6 +4902,7 @@ def test_summarize_host_insight_top_processes_usage_trend(testing_service_client
                         id=request.pop(util.camelize('id')),
                         resource_metric=request.pop(util.camelize('resourceMetric')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4760,6 +4943,7 @@ def test_summarize_operations_insights_warehouse_resource_usage(testing_service_
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.summarize_operations_insights_warehouse_resource_usage(
                 operations_insights_warehouse_id=request.pop(util.camelize('operationsInsightsWarehouseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4801,6 +4985,7 @@ def test_summarize_sql_insights(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.summarize_sql_insights(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4810,6 +4995,7 @@ def test_summarize_sql_insights(testing_service_client):
                 next_response = client.summarize_sql_insights(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4820,6 +5006,7 @@ def test_summarize_sql_insights(testing_service_client):
                     prev_response = client.summarize_sql_insights(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4862,6 +5049,7 @@ def test_summarize_sql_plan_insights(testing_service_client):
             response = client.summarize_sql_plan_insights(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 sql_identifier=request.pop(util.camelize('sqlIdentifier')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4872,6 +5060,7 @@ def test_summarize_sql_plan_insights(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     sql_identifier=request.pop(util.camelize('sqlIdentifier')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4883,6 +5072,7 @@ def test_summarize_sql_plan_insights(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         sql_identifier=request.pop(util.camelize('sqlIdentifier')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4925,6 +5115,7 @@ def test_summarize_sql_response_time_distributions(testing_service_client):
             response = client.summarize_sql_response_time_distributions(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 sql_identifier=request.pop(util.camelize('sqlIdentifier')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4935,6 +5126,7 @@ def test_summarize_sql_response_time_distributions(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     sql_identifier=request.pop(util.camelize('sqlIdentifier')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4946,6 +5138,7 @@ def test_summarize_sql_response_time_distributions(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         sql_identifier=request.pop(util.camelize('sqlIdentifier')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4987,6 +5180,7 @@ def test_summarize_sql_statistics(testing_service_client):
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.summarize_sql_statistics(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4996,6 +5190,7 @@ def test_summarize_sql_statistics(testing_service_client):
                 next_response = client.summarize_sql_statistics(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5006,6 +5201,7 @@ def test_summarize_sql_statistics(testing_service_client):
                     prev_response = client.summarize_sql_statistics(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5048,6 +5244,7 @@ def test_summarize_sql_statistics_time_series(testing_service_client):
             response = client.summarize_sql_statistics_time_series(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 sql_identifier=request.pop(util.camelize('sqlIdentifier')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5058,6 +5255,7 @@ def test_summarize_sql_statistics_time_series(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     sql_identifier=request.pop(util.camelize('sqlIdentifier')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5069,6 +5267,7 @@ def test_summarize_sql_statistics_time_series(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         sql_identifier=request.pop(util.camelize('sqlIdentifier')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5111,6 +5310,7 @@ def test_summarize_sql_statistics_time_series_by_plan(testing_service_client):
             response = client.summarize_sql_statistics_time_series_by_plan(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 sql_identifier=request.pop(util.camelize('sqlIdentifier')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5121,6 +5321,7 @@ def test_summarize_sql_statistics_time_series_by_plan(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     sql_identifier=request.pop(util.camelize('sqlIdentifier')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5132,6 +5333,7 @@ def test_summarize_sql_statistics_time_series_by_plan(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         sql_identifier=request.pop(util.camelize('sqlIdentifier')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5173,6 +5375,7 @@ def test_update_awr_hub(testing_service_client):
             response = client.update_awr_hub(
                 awr_hub_id=request.pop(util.camelize('awrHubId')),
                 update_awr_hub_details=request.pop(util.camelize('UpdateAwrHubDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5214,6 +5417,7 @@ def test_update_database_insight(testing_service_client):
             response = client.update_database_insight(
                 database_insight_id=request.pop(util.camelize('databaseInsightId')),
                 update_database_insight_details=request.pop(util.camelize('UpdateDatabaseInsightDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5255,6 +5459,7 @@ def test_update_enterprise_manager_bridge(testing_service_client):
             response = client.update_enterprise_manager_bridge(
                 enterprise_manager_bridge_id=request.pop(util.camelize('enterpriseManagerBridgeId')),
                 update_enterprise_manager_bridge_details=request.pop(util.camelize('UpdateEnterpriseManagerBridgeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5296,6 +5501,7 @@ def test_update_exadata_insight(testing_service_client):
             response = client.update_exadata_insight(
                 exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
                 update_exadata_insight_details=request.pop(util.camelize('UpdateExadataInsightDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5337,6 +5543,7 @@ def test_update_host_insight(testing_service_client):
             response = client.update_host_insight(
                 host_insight_id=request.pop(util.camelize('hostInsightId')),
                 update_host_insight_details=request.pop(util.camelize('UpdateHostInsightDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5378,6 +5585,7 @@ def test_update_operations_insights_private_endpoint(testing_service_client):
             response = client.update_operations_insights_private_endpoint(
                 operations_insights_private_endpoint_id=request.pop(util.camelize('operationsInsightsPrivateEndpointId')),
                 update_operations_insights_private_endpoint_details=request.pop(util.camelize('UpdateOperationsInsightsPrivateEndpointDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5419,6 +5627,7 @@ def test_update_operations_insights_warehouse(testing_service_client):
             response = client.update_operations_insights_warehouse(
                 operations_insights_warehouse_id=request.pop(util.camelize('operationsInsightsWarehouseId')),
                 update_operations_insights_warehouse_details=request.pop(util.camelize('UpdateOperationsInsightsWarehouseDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5460,6 +5669,7 @@ def test_update_operations_insights_warehouse_user(testing_service_client):
             response = client.update_operations_insights_warehouse_user(
                 operations_insights_warehouse_user_id=request.pop(util.camelize('operationsInsightsWarehouseUserId')),
                 update_operations_insights_warehouse_user_details=request.pop(util.camelize('UpdateOperationsInsightsWarehouseUserDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

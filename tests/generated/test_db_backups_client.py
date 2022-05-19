@@ -55,6 +55,7 @@ def test_change_backup_compartment(testing_service_client):
             response = client.change_backup_compartment(
                 backup_id=request.pop(util.camelize('backupId')),
                 change_backup_compartment_details=request.pop(util.camelize('ChangeBackupCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_create_backup(testing_service_client):
             client = oci.mysql.DbBackupsClient(config, service_endpoint=service_endpoint)
             response = client.create_backup(
                 create_backup_details=request.pop(util.camelize('CreateBackupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -135,6 +137,7 @@ def test_delete_backup(testing_service_client):
             client = oci.mysql.DbBackupsClient(config, service_endpoint=service_endpoint)
             response = client.delete_backup(
                 backup_id=request.pop(util.camelize('backupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -175,6 +178,7 @@ def test_get_backup(testing_service_client):
             client = oci.mysql.DbBackupsClient(config, service_endpoint=service_endpoint)
             response = client.get_backup(
                 backup_id=request.pop(util.camelize('backupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -216,6 +220,7 @@ def test_list_backups(testing_service_client):
             client = oci.mysql.DbBackupsClient(config, service_endpoint=service_endpoint)
             response = client.list_backups(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -225,6 +230,7 @@ def test_list_backups(testing_service_client):
                 next_response = client.list_backups(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -235,6 +241,7 @@ def test_list_backups(testing_service_client):
                     prev_response = client.list_backups(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -276,6 +283,7 @@ def test_update_backup(testing_service_client):
             response = client.update_backup(
                 backup_id=request.pop(util.camelize('backupId')),
                 update_backup_details=request.pop(util.camelize('UpdateBackupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

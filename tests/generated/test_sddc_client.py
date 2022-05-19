@@ -54,6 +54,7 @@ def test_cancel_downgrade_hcx(testing_service_client):
             client = oci.ocvp.SddcClient(config, service_endpoint=service_endpoint)
             response = client.cancel_downgrade_hcx(
                 sddc_id=request.pop(util.camelize('sddcId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_change_sddc_compartment(testing_service_client):
             response = client.change_sddc_compartment(
                 sddc_id=request.pop(util.camelize('sddcId')),
                 change_sddc_compartment_details=request.pop(util.camelize('ChangeSddcCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -135,6 +137,7 @@ def test_create_sddc(testing_service_client):
             client = oci.ocvp.SddcClient(config, service_endpoint=service_endpoint)
             response = client.create_sddc(
                 create_sddc_details=request.pop(util.camelize('CreateSddcDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -175,6 +178,7 @@ def test_delete_sddc(testing_service_client):
             client = oci.ocvp.SddcClient(config, service_endpoint=service_endpoint)
             response = client.delete_sddc(
                 sddc_id=request.pop(util.camelize('sddcId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -216,6 +220,7 @@ def test_downgrade_hcx(testing_service_client):
             response = client.downgrade_hcx(
                 downgrade_hcx_details=request.pop(util.camelize('DowngradeHcxDetails')),
                 sddc_id=request.pop(util.camelize('sddcId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -256,6 +261,7 @@ def test_get_sddc(testing_service_client):
             client = oci.ocvp.SddcClient(config, service_endpoint=service_endpoint)
             response = client.get_sddc(
                 sddc_id=request.pop(util.camelize('sddcId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -297,6 +303,7 @@ def test_list_sddcs(testing_service_client):
             client = oci.ocvp.SddcClient(config, service_endpoint=service_endpoint)
             response = client.list_sddcs(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -306,6 +313,7 @@ def test_list_sddcs(testing_service_client):
                 next_response = client.list_sddcs(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -316,6 +324,7 @@ def test_list_sddcs(testing_service_client):
                     prev_response = client.list_sddcs(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -357,6 +366,7 @@ def test_list_supported_host_shapes(testing_service_client):
             client = oci.ocvp.SddcClient(config, service_endpoint=service_endpoint)
             response = client.list_supported_host_shapes(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -366,6 +376,7 @@ def test_list_supported_host_shapes(testing_service_client):
                 next_response = client.list_supported_host_shapes(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -376,6 +387,7 @@ def test_list_supported_host_shapes(testing_service_client):
                     prev_response = client.list_supported_host_shapes(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -417,6 +429,7 @@ def test_list_supported_skus(testing_service_client):
             client = oci.ocvp.SddcClient(config, service_endpoint=service_endpoint)
             response = client.list_supported_skus(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -426,6 +439,7 @@ def test_list_supported_skus(testing_service_client):
                 next_response = client.list_supported_skus(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -436,6 +450,7 @@ def test_list_supported_skus(testing_service_client):
                     prev_response = client.list_supported_skus(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -477,6 +492,7 @@ def test_list_supported_vmware_software_versions(testing_service_client):
             client = oci.ocvp.SddcClient(config, service_endpoint=service_endpoint)
             response = client.list_supported_vmware_software_versions(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -486,6 +502,7 @@ def test_list_supported_vmware_software_versions(testing_service_client):
                 next_response = client.list_supported_vmware_software_versions(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -496,6 +513,7 @@ def test_list_supported_vmware_software_versions(testing_service_client):
                     prev_response = client.list_supported_vmware_software_versions(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -536,6 +554,7 @@ def test_refresh_hcx_license_status(testing_service_client):
             client = oci.ocvp.SddcClient(config, service_endpoint=service_endpoint)
             response = client.refresh_hcx_license_status(
                 sddc_id=request.pop(util.camelize('sddcId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -577,6 +596,7 @@ def test_update_sddc(testing_service_client):
             response = client.update_sddc(
                 sddc_id=request.pop(util.camelize('sddcId')),
                 update_sddc_details=request.pop(util.camelize('UpdateSddcDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -617,6 +637,7 @@ def test_upgrade_hcx(testing_service_client):
             client = oci.ocvp.SddcClient(config, service_endpoint=service_endpoint)
             response = client.upgrade_hcx(
                 sddc_id=request.pop(util.camelize('sddcId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

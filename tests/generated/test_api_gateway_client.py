@@ -55,6 +55,7 @@ def test_change_api_compartment(testing_service_client):
             response = client.change_api_compartment(
                 api_id=request.pop(util.camelize('apiId')),
                 change_api_compartment_details=request.pop(util.camelize('ChangeApiCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_change_certificate_compartment(testing_service_client):
             response = client.change_certificate_compartment(
                 certificate_id=request.pop(util.camelize('certificateId')),
                 change_certificate_compartment_details=request.pop(util.camelize('ChangeCertificateCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -136,6 +138,7 @@ def test_create_api(testing_service_client):
             client = oci.apigateway.ApiGatewayClient(config, service_endpoint=service_endpoint)
             response = client.create_api(
                 create_api_details=request.pop(util.camelize('CreateApiDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -176,6 +179,7 @@ def test_create_certificate(testing_service_client):
             client = oci.apigateway.ApiGatewayClient(config, service_endpoint=service_endpoint)
             response = client.create_certificate(
                 create_certificate_details=request.pop(util.camelize('CreateCertificateDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -216,6 +220,7 @@ def test_create_sdk(testing_service_client):
             client = oci.apigateway.ApiGatewayClient(config, service_endpoint=service_endpoint)
             response = client.create_sdk(
                 create_sdk_details=request.pop(util.camelize('CreateSdkDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -256,6 +261,7 @@ def test_delete_api(testing_service_client):
             client = oci.apigateway.ApiGatewayClient(config, service_endpoint=service_endpoint)
             response = client.delete_api(
                 api_id=request.pop(util.camelize('apiId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -296,6 +302,7 @@ def test_delete_certificate(testing_service_client):
             client = oci.apigateway.ApiGatewayClient(config, service_endpoint=service_endpoint)
             response = client.delete_certificate(
                 certificate_id=request.pop(util.camelize('certificateId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -336,6 +343,7 @@ def test_delete_sdk(testing_service_client):
             client = oci.apigateway.ApiGatewayClient(config, service_endpoint=service_endpoint)
             response = client.delete_sdk(
                 sdk_id=request.pop(util.camelize('sdkId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -376,6 +384,7 @@ def test_get_api(testing_service_client):
             client = oci.apigateway.ApiGatewayClient(config, service_endpoint=service_endpoint)
             response = client.get_api(
                 api_id=request.pop(util.camelize('apiId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -416,6 +425,7 @@ def test_get_api_content(testing_service_client):
             client = oci.apigateway.ApiGatewayClient(config, service_endpoint=service_endpoint)
             response = client.get_api_content(
                 api_id=request.pop(util.camelize('apiId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -456,6 +466,7 @@ def test_get_api_deployment_specification(testing_service_client):
             client = oci.apigateway.ApiGatewayClient(config, service_endpoint=service_endpoint)
             response = client.get_api_deployment_specification(
                 api_id=request.pop(util.camelize('apiId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -496,6 +507,7 @@ def test_get_api_validations(testing_service_client):
             client = oci.apigateway.ApiGatewayClient(config, service_endpoint=service_endpoint)
             response = client.get_api_validations(
                 api_id=request.pop(util.camelize('apiId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -536,6 +548,7 @@ def test_get_certificate(testing_service_client):
             client = oci.apigateway.ApiGatewayClient(config, service_endpoint=service_endpoint)
             response = client.get_certificate(
                 certificate_id=request.pop(util.camelize('certificateId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -576,6 +589,7 @@ def test_get_sdk(testing_service_client):
             client = oci.apigateway.ApiGatewayClient(config, service_endpoint=service_endpoint)
             response = client.get_sdk(
                 sdk_id=request.pop(util.camelize('sdkId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -617,6 +631,7 @@ def test_list_apis(testing_service_client):
             client = oci.apigateway.ApiGatewayClient(config, service_endpoint=service_endpoint)
             response = client.list_apis(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -626,6 +641,7 @@ def test_list_apis(testing_service_client):
                 next_response = client.list_apis(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -636,6 +652,7 @@ def test_list_apis(testing_service_client):
                     prev_response = client.list_apis(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -677,6 +694,7 @@ def test_list_certificates(testing_service_client):
             client = oci.apigateway.ApiGatewayClient(config, service_endpoint=service_endpoint)
             response = client.list_certificates(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -686,6 +704,7 @@ def test_list_certificates(testing_service_client):
                 next_response = client.list_certificates(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -696,6 +715,7 @@ def test_list_certificates(testing_service_client):
                     prev_response = client.list_certificates(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -737,6 +757,7 @@ def test_list_sdk_language_types(testing_service_client):
             client = oci.apigateway.ApiGatewayClient(config, service_endpoint=service_endpoint)
             response = client.list_sdk_language_types(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -746,6 +767,7 @@ def test_list_sdk_language_types(testing_service_client):
                 next_response = client.list_sdk_language_types(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -756,6 +778,7 @@ def test_list_sdk_language_types(testing_service_client):
                     prev_response = client.list_sdk_language_types(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -796,6 +819,7 @@ def test_list_sdks(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.apigateway.ApiGatewayClient(config, service_endpoint=service_endpoint)
             response = client.list_sdks(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -804,6 +828,7 @@ def test_list_sdks(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_sdks(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -813,6 +838,7 @@ def test_list_sdks(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_sdks(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -854,6 +880,7 @@ def test_update_api(testing_service_client):
             response = client.update_api(
                 api_id=request.pop(util.camelize('apiId')),
                 update_api_details=request.pop(util.camelize('UpdateApiDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -895,6 +922,7 @@ def test_update_certificate(testing_service_client):
             response = client.update_certificate(
                 certificate_id=request.pop(util.camelize('certificateId')),
                 update_certificate_details=request.pop(util.camelize('UpdateCertificateDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -936,6 +964,7 @@ def test_update_sdk(testing_service_client):
             response = client.update_sdk(
                 sdk_id=request.pop(util.camelize('sdkId')),
                 update_sdk_details=request.pop(util.camelize('UpdateSdkDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

@@ -54,6 +54,7 @@ def test_get_secret_bundle(testing_service_client):
             client = oci.secrets.SecretsClient(config, service_endpoint=service_endpoint)
             response = client.get_secret_bundle(
                 secret_id=request.pop(util.camelize('secretId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_get_secret_bundle_by_name(testing_service_client):
             response = client.get_secret_bundle_by_name(
                 secret_name=request.pop(util.camelize('secretName')),
                 vault_id=request.pop(util.camelize('vaultId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -136,6 +138,7 @@ def test_list_secret_bundle_versions(testing_service_client):
             client = oci.secrets.SecretsClient(config, service_endpoint=service_endpoint)
             response = client.list_secret_bundle_versions(
                 secret_id=request.pop(util.camelize('secretId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -145,6 +148,7 @@ def test_list_secret_bundle_versions(testing_service_client):
                 next_response = client.list_secret_bundle_versions(
                     secret_id=request.pop(util.camelize('secretId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -155,6 +159,7 @@ def test_list_secret_bundle_versions(testing_service_client):
                     prev_response = client.list_secret_bundle_versions(
                         secret_id=request.pop(util.camelize('secretId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)

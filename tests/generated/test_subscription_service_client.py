@@ -57,6 +57,7 @@ def test_authorize_subscription_payment(testing_service_client):
                 subscription_id=request.pop(util.camelize('subscriptionId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 authorize_subscription_payment_details=request.pop(util.camelize('AuthorizeSubscriptionPaymentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -99,6 +100,7 @@ def test_get_subscription(testing_service_client):
                 subscription_id=request.pop(util.camelize('subscriptionId')),
                 osp_home_region=request.pop(util.camelize('ospHomeRegion')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -141,6 +143,7 @@ def test_list_subscriptions(testing_service_client):
             response = client.list_subscriptions(
                 osp_home_region=request.pop(util.camelize('ospHomeRegion')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -151,6 +154,7 @@ def test_list_subscriptions(testing_service_client):
                     osp_home_region=request.pop(util.camelize('ospHomeRegion')),
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -162,6 +166,7 @@ def test_list_subscriptions(testing_service_client):
                         osp_home_region=request.pop(util.camelize('ospHomeRegion')),
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -205,6 +210,7 @@ def test_pay_subscription(testing_service_client):
                 subscription_id=request.pop(util.camelize('subscriptionId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 pay_subscription_details=request.pop(util.camelize('PaySubscriptionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -248,6 +254,7 @@ def test_update_subscription(testing_service_client):
                 osp_home_region=request.pop(util.camelize('ospHomeRegion')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 update_subscription_details=request.pop(util.camelize('UpdateSubscriptionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

@@ -54,6 +54,7 @@ def test_cancel_transcription_job(testing_service_client):
             client = oci.ai_speech.AIServiceSpeechClient(config, service_endpoint=service_endpoint)
             response = client.cancel_transcription_job(
                 transcription_job_id=request.pop(util.camelize('transcriptionJobId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_cancel_transcription_task(testing_service_client):
             response = client.cancel_transcription_task(
                 transcription_job_id=request.pop(util.camelize('transcriptionJobId')),
                 transcription_task_id=request.pop(util.camelize('transcriptionTaskId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -136,6 +138,7 @@ def test_change_transcription_job_compartment(testing_service_client):
             response = client.change_transcription_job_compartment(
                 transcription_job_id=request.pop(util.camelize('transcriptionJobId')),
                 change_transcription_job_compartment_details=request.pop(util.camelize('ChangeTranscriptionJobCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -176,6 +179,7 @@ def test_create_transcription_job(testing_service_client):
             client = oci.ai_speech.AIServiceSpeechClient(config, service_endpoint=service_endpoint)
             response = client.create_transcription_job(
                 create_transcription_job_details=request.pop(util.camelize('CreateTranscriptionJobDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -216,6 +220,7 @@ def test_get_transcription_job(testing_service_client):
             client = oci.ai_speech.AIServiceSpeechClient(config, service_endpoint=service_endpoint)
             response = client.get_transcription_job(
                 transcription_job_id=request.pop(util.camelize('transcriptionJobId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -257,6 +262,7 @@ def test_get_transcription_task(testing_service_client):
             response = client.get_transcription_task(
                 transcription_job_id=request.pop(util.camelize('transcriptionJobId')),
                 transcription_task_id=request.pop(util.camelize('transcriptionTaskId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -297,6 +303,7 @@ def test_list_transcription_jobs(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.ai_speech.AIServiceSpeechClient(config, service_endpoint=service_endpoint)
             response = client.list_transcription_jobs(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -305,6 +312,7 @@ def test_list_transcription_jobs(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_transcription_jobs(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -314,6 +322,7 @@ def test_list_transcription_jobs(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_transcription_jobs(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -355,6 +364,7 @@ def test_list_transcription_tasks(testing_service_client):
             client = oci.ai_speech.AIServiceSpeechClient(config, service_endpoint=service_endpoint)
             response = client.list_transcription_tasks(
                 transcription_job_id=request.pop(util.camelize('transcriptionJobId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -364,6 +374,7 @@ def test_list_transcription_tasks(testing_service_client):
                 next_response = client.list_transcription_tasks(
                     transcription_job_id=request.pop(util.camelize('transcriptionJobId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -374,6 +385,7 @@ def test_list_transcription_tasks(testing_service_client):
                     prev_response = client.list_transcription_tasks(
                         transcription_job_id=request.pop(util.camelize('transcriptionJobId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -415,6 +427,7 @@ def test_update_transcription_job(testing_service_client):
             response = client.update_transcription_job(
                 transcription_job_id=request.pop(util.camelize('transcriptionJobId')),
                 update_transcription_job_details=request.pop(util.camelize('UpdateTranscriptionJobDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

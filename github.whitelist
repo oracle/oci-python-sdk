@@ -148,3 +148,4 @@
 ^src/oci/stack_monitoring/.*\.py$
 ^src/oci/service_mesh/.*\.py$
 ^src/oci/adm/.*\.py$
+^src/oci/license_manager/.*\.py$

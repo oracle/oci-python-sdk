@@ -54,6 +54,7 @@ def test_create_domain_governance(testing_service_client):
             client = oci.tenant_manager_control_plane.DomainGovernanceClient(config, service_endpoint=service_endpoint)
             response = client.create_domain_governance(
                 create_domain_governance_details=request.pop(util.camelize('CreateDomainGovernanceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -94,6 +95,7 @@ def test_delete_domain_governance(testing_service_client):
             client = oci.tenant_manager_control_plane.DomainGovernanceClient(config, service_endpoint=service_endpoint)
             response = client.delete_domain_governance(
                 domain_governance_id=request.pop(util.camelize('domainGovernanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -134,6 +136,7 @@ def test_get_domain_governance(testing_service_client):
             client = oci.tenant_manager_control_plane.DomainGovernanceClient(config, service_endpoint=service_endpoint)
             response = client.get_domain_governance(
                 domain_governance_id=request.pop(util.camelize('domainGovernanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -175,6 +178,7 @@ def test_list_domain_governances(testing_service_client):
             client = oci.tenant_manager_control_plane.DomainGovernanceClient(config, service_endpoint=service_endpoint)
             response = client.list_domain_governances(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -184,6 +188,7 @@ def test_list_domain_governances(testing_service_client):
                 next_response = client.list_domain_governances(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -194,6 +199,7 @@ def test_list_domain_governances(testing_service_client):
                     prev_response = client.list_domain_governances(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -235,6 +241,7 @@ def test_update_domain_governance(testing_service_client):
             response = client.update_domain_governance(
                 domain_governance_id=request.pop(util.camelize('domainGovernanceId')),
                 update_domain_governance_details=request.pop(util.camelize('UpdateDomainGovernanceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

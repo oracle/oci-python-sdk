@@ -55,6 +55,7 @@ def test_change_blockchain_platform_compartment(testing_service_client):
             response = client.change_blockchain_platform_compartment(
                 blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
                 change_blockchain_platform_compartment_details=request.pop(util.camelize('ChangeBlockchainPlatformCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_create_blockchain_platform(testing_service_client):
             client = oci.blockchain.BlockchainPlatformClient(config, service_endpoint=service_endpoint)
             response = client.create_blockchain_platform(
                 create_blockchain_platform_details=request.pop(util.camelize('CreateBlockchainPlatformDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -136,6 +138,7 @@ def test_create_osn(testing_service_client):
             response = client.create_osn(
                 blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
                 create_osn_details=request.pop(util.camelize('CreateOsnDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -177,6 +180,7 @@ def test_create_peer(testing_service_client):
             response = client.create_peer(
                 blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
                 create_peer_details=request.pop(util.camelize('CreatePeerDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -217,6 +221,7 @@ def test_delete_blockchain_platform(testing_service_client):
             client = oci.blockchain.BlockchainPlatformClient(config, service_endpoint=service_endpoint)
             response = client.delete_blockchain_platform(
                 blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -258,6 +263,7 @@ def test_delete_osn(testing_service_client):
             response = client.delete_osn(
                 blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
                 osn_id=request.pop(util.camelize('osnId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -299,6 +305,7 @@ def test_delete_peer(testing_service_client):
             response = client.delete_peer(
                 blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
                 peer_id=request.pop(util.camelize('peerId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -339,6 +346,7 @@ def test_delete_work_request(testing_service_client):
             client = oci.blockchain.BlockchainPlatformClient(config, service_endpoint=service_endpoint)
             response = client.delete_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -379,6 +387,7 @@ def test_get_blockchain_platform(testing_service_client):
             client = oci.blockchain.BlockchainPlatformClient(config, service_endpoint=service_endpoint)
             response = client.get_blockchain_platform(
                 blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -420,6 +429,7 @@ def test_get_osn(testing_service_client):
             response = client.get_osn(
                 blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
                 osn_id=request.pop(util.camelize('osnId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -461,6 +471,7 @@ def test_get_peer(testing_service_client):
             response = client.get_peer(
                 blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
                 peer_id=request.pop(util.camelize('peerId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -501,6 +512,7 @@ def test_get_work_request(testing_service_client):
             client = oci.blockchain.BlockchainPlatformClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -542,6 +554,7 @@ def test_list_blockchain_platform_patches(testing_service_client):
             client = oci.blockchain.BlockchainPlatformClient(config, service_endpoint=service_endpoint)
             response = client.list_blockchain_platform_patches(
                 blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -551,6 +564,7 @@ def test_list_blockchain_platform_patches(testing_service_client):
                 next_response = client.list_blockchain_platform_patches(
                     blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -561,6 +575,7 @@ def test_list_blockchain_platform_patches(testing_service_client):
                     prev_response = client.list_blockchain_platform_patches(
                         blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -602,6 +617,7 @@ def test_list_blockchain_platforms(testing_service_client):
             client = oci.blockchain.BlockchainPlatformClient(config, service_endpoint=service_endpoint)
             response = client.list_blockchain_platforms(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -611,6 +627,7 @@ def test_list_blockchain_platforms(testing_service_client):
                 next_response = client.list_blockchain_platforms(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -621,6 +638,7 @@ def test_list_blockchain_platforms(testing_service_client):
                     prev_response = client.list_blockchain_platforms(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -662,6 +680,7 @@ def test_list_osns(testing_service_client):
             client = oci.blockchain.BlockchainPlatformClient(config, service_endpoint=service_endpoint)
             response = client.list_osns(
                 blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -671,6 +690,7 @@ def test_list_osns(testing_service_client):
                 next_response = client.list_osns(
                     blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -681,6 +701,7 @@ def test_list_osns(testing_service_client):
                     prev_response = client.list_osns(
                         blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -722,6 +743,7 @@ def test_list_peers(testing_service_client):
             client = oci.blockchain.BlockchainPlatformClient(config, service_endpoint=service_endpoint)
             response = client.list_peers(
                 blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -731,6 +753,7 @@ def test_list_peers(testing_service_client):
                 next_response = client.list_peers(
                     blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -741,6 +764,7 @@ def test_list_peers(testing_service_client):
                     prev_response = client.list_peers(
                         blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -782,6 +806,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.blockchain.BlockchainPlatformClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -791,6 +816,7 @@ def test_list_work_request_errors(testing_service_client):
                 next_response = client.list_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -801,6 +827,7 @@ def test_list_work_request_errors(testing_service_client):
                     prev_response = client.list_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -842,6 +869,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.blockchain.BlockchainPlatformClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -851,6 +879,7 @@ def test_list_work_request_logs(testing_service_client):
                 next_response = client.list_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -861,6 +890,7 @@ def test_list_work_request_logs(testing_service_client):
                     prev_response = client.list_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -903,6 +933,7 @@ def test_list_work_requests(testing_service_client):
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -913,6 +944,7 @@ def test_list_work_requests(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -924,6 +956,7 @@ def test_list_work_requests(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -965,6 +998,7 @@ def test_preview_scale_blockchain_platform(testing_service_client):
             response = client.preview_scale_blockchain_platform(
                 blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
                 scale_blockchain_platform_details=request.pop(util.camelize('ScaleBlockchainPlatformDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1006,6 +1040,7 @@ def test_scale_blockchain_platform(testing_service_client):
             response = client.scale_blockchain_platform(
                 blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
                 scale_blockchain_platform_details=request.pop(util.camelize('ScaleBlockchainPlatformDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1046,6 +1081,7 @@ def test_start_blockchain_platform(testing_service_client):
             client = oci.blockchain.BlockchainPlatformClient(config, service_endpoint=service_endpoint)
             response = client.start_blockchain_platform(
                 blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1086,6 +1122,7 @@ def test_stop_blockchain_platform(testing_service_client):
             client = oci.blockchain.BlockchainPlatformClient(config, service_endpoint=service_endpoint)
             response = client.stop_blockchain_platform(
                 blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1127,6 +1164,7 @@ def test_update_blockchain_platform(testing_service_client):
             response = client.update_blockchain_platform(
                 update_blockchain_platform_details=request.pop(util.camelize('UpdateBlockchainPlatformDetails')),
                 blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1169,6 +1207,7 @@ def test_update_osn(testing_service_client):
                 blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
                 osn_id=request.pop(util.camelize('osnId')),
                 update_osn_details=request.pop(util.camelize('UpdateOsnDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1211,6 +1250,7 @@ def test_update_peer(testing_service_client):
                 blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
                 peer_id=request.pop(util.camelize('peerId')),
                 update_peer_details=request.pop(util.camelize('UpdatePeerDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1252,6 +1292,7 @@ def test_upgrade_blockchain_platform(testing_service_client):
             response = client.upgrade_blockchain_platform(
                 upgrade_blockchain_platform_details=request.pop(util.camelize('UpgradeBlockchainPlatformDetails')),
                 blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

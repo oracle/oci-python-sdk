@@ -34,25 +34,32 @@ class ApiSpecificationRequestPolicies(object):
             The value to assign to the mutual_tls property of this ApiSpecificationRequestPolicies.
         :type mutual_tls: oci.apigateway.models.MutualTlsDetails
 
+        :param usage_plans:
+            The value to assign to the usage_plans property of this ApiSpecificationRequestPolicies.
+        :type usage_plans: oci.apigateway.models.UsagePlansPolicy
+
         """
         self.swagger_types = {
             'authentication': 'AuthenticationPolicy',
             'rate_limiting': 'RateLimitingPolicy',
             'cors': 'CorsPolicy',
-            'mutual_tls': 'MutualTlsDetails'
+            'mutual_tls': 'MutualTlsDetails',
+            'usage_plans': 'UsagePlansPolicy'
         }
 
         self.attribute_map = {
             'authentication': 'authentication',
             'rate_limiting': 'rateLimiting',
             'cors': 'cors',
-            'mutual_tls': 'mutualTls'
+            'mutual_tls': 'mutualTls',
+            'usage_plans': 'usagePlans'
         }
 
         self._authentication = None
         self._rate_limiting = None
         self._cors = None
         self._mutual_tls = None
+        self._usage_plans = None
 
     @property
     def authentication(self):
@@ -133,6 +140,26 @@ class ApiSpecificationRequestPolicies(object):
         :type: oci.apigateway.models.MutualTlsDetails
         """
         self._mutual_tls = mutual_tls
+
+    @property
+    def usage_plans(self):
+        """
+        Gets the usage_plans of this ApiSpecificationRequestPolicies.
+
+        :return: The usage_plans of this ApiSpecificationRequestPolicies.
+        :rtype: oci.apigateway.models.UsagePlansPolicy
+        """
+        return self._usage_plans
+
+    @usage_plans.setter
+    def usage_plans(self, usage_plans):
+        """
+        Sets the usage_plans of this ApiSpecificationRequestPolicies.
+
+        :param usage_plans: The usage_plans of this ApiSpecificationRequestPolicies.
+        :type: oci.apigateway.models.UsagePlansPolicy
+        """
+        self._usage_plans = usage_plans
 
     def __repr__(self):
         return formatted_flat_dict(self)

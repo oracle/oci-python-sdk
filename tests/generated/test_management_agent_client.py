@@ -54,6 +54,7 @@ def test_create_management_agent_install_key(testing_service_client):
             client = oci.management_agent.ManagementAgentClient(config, service_endpoint=service_endpoint)
             response = client.create_management_agent_install_key(
                 create_management_agent_install_key_details=request.pop(util.camelize('CreateManagementAgentInstallKeyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -94,6 +95,7 @@ def test_delete_management_agent(testing_service_client):
             client = oci.management_agent.ManagementAgentClient(config, service_endpoint=service_endpoint)
             response = client.delete_management_agent(
                 management_agent_id=request.pop(util.camelize('managementAgentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -134,6 +136,7 @@ def test_delete_management_agent_install_key(testing_service_client):
             client = oci.management_agent.ManagementAgentClient(config, service_endpoint=service_endpoint)
             response = client.delete_management_agent_install_key(
                 management_agent_install_key_id=request.pop(util.camelize('managementAgentInstallKeyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -174,6 +177,7 @@ def test_delete_work_request(testing_service_client):
             client = oci.management_agent.ManagementAgentClient(config, service_endpoint=service_endpoint)
             response = client.delete_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -214,6 +218,7 @@ def test_deploy_plugins(testing_service_client):
             client = oci.management_agent.ManagementAgentClient(config, service_endpoint=service_endpoint)
             response = client.deploy_plugins(
                 deploy_plugins_details=request.pop(util.camelize('DeployPluginsDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -254,6 +259,7 @@ def test_get_auto_upgradable_config(testing_service_client):
             client = oci.management_agent.ManagementAgentClient(config, service_endpoint=service_endpoint)
             response = client.get_auto_upgradable_config(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -294,6 +300,7 @@ def test_get_management_agent(testing_service_client):
             client = oci.management_agent.ManagementAgentClient(config, service_endpoint=service_endpoint)
             response = client.get_management_agent(
                 management_agent_id=request.pop(util.camelize('managementAgentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -334,6 +341,7 @@ def test_get_management_agent_install_key(testing_service_client):
             client = oci.management_agent.ManagementAgentClient(config, service_endpoint=service_endpoint)
             response = client.get_management_agent_install_key(
                 management_agent_install_key_id=request.pop(util.camelize('managementAgentInstallKeyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -374,6 +382,7 @@ def test_get_management_agent_install_key_content(testing_service_client):
             client = oci.management_agent.ManagementAgentClient(config, service_endpoint=service_endpoint)
             response = client.get_management_agent_install_key_content(
                 management_agent_install_key_id=request.pop(util.camelize('managementAgentInstallKeyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -414,6 +423,7 @@ def test_get_work_request(testing_service_client):
             client = oci.management_agent.ManagementAgentClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -455,6 +465,7 @@ def test_list_availability_histories(testing_service_client):
             client = oci.management_agent.ManagementAgentClient(config, service_endpoint=service_endpoint)
             response = client.list_availability_histories(
                 management_agent_id=request.pop(util.camelize('managementAgentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -464,6 +475,7 @@ def test_list_availability_histories(testing_service_client):
                 next_response = client.list_availability_histories(
                     management_agent_id=request.pop(util.camelize('managementAgentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -474,6 +486,7 @@ def test_list_availability_histories(testing_service_client):
                     prev_response = client.list_availability_histories(
                         management_agent_id=request.pop(util.camelize('managementAgentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -515,6 +528,7 @@ def test_list_management_agent_images(testing_service_client):
             client = oci.management_agent.ManagementAgentClient(config, service_endpoint=service_endpoint)
             response = client.list_management_agent_images(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -524,6 +538,7 @@ def test_list_management_agent_images(testing_service_client):
                 next_response = client.list_management_agent_images(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -534,6 +549,7 @@ def test_list_management_agent_images(testing_service_client):
                     prev_response = client.list_management_agent_images(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -575,6 +591,7 @@ def test_list_management_agent_install_keys(testing_service_client):
             client = oci.management_agent.ManagementAgentClient(config, service_endpoint=service_endpoint)
             response = client.list_management_agent_install_keys(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -584,6 +601,7 @@ def test_list_management_agent_install_keys(testing_service_client):
                 next_response = client.list_management_agent_install_keys(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -594,6 +612,7 @@ def test_list_management_agent_install_keys(testing_service_client):
                     prev_response = client.list_management_agent_install_keys(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -635,6 +654,7 @@ def test_list_management_agent_plugins(testing_service_client):
             client = oci.management_agent.ManagementAgentClient(config, service_endpoint=service_endpoint)
             response = client.list_management_agent_plugins(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -644,6 +664,7 @@ def test_list_management_agent_plugins(testing_service_client):
                 next_response = client.list_management_agent_plugins(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -654,6 +675,7 @@ def test_list_management_agent_plugins(testing_service_client):
                     prev_response = client.list_management_agent_plugins(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -695,6 +717,7 @@ def test_list_management_agents(testing_service_client):
             client = oci.management_agent.ManagementAgentClient(config, service_endpoint=service_endpoint)
             response = client.list_management_agents(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -704,6 +727,7 @@ def test_list_management_agents(testing_service_client):
                 next_response = client.list_management_agents(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -714,6 +738,7 @@ def test_list_management_agents(testing_service_client):
                     prev_response = client.list_management_agents(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -755,6 +780,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.management_agent.ManagementAgentClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -764,6 +790,7 @@ def test_list_work_request_errors(testing_service_client):
                 next_response = client.list_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -774,6 +801,7 @@ def test_list_work_request_errors(testing_service_client):
                     prev_response = client.list_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -815,6 +843,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.management_agent.ManagementAgentClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -824,6 +853,7 @@ def test_list_work_request_logs(testing_service_client):
                 next_response = client.list_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -834,6 +864,7 @@ def test_list_work_request_logs(testing_service_client):
                     prev_response = client.list_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -875,6 +906,7 @@ def test_list_work_requests(testing_service_client):
             client = oci.management_agent.ManagementAgentClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -884,6 +916,7 @@ def test_list_work_requests(testing_service_client):
                 next_response = client.list_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -894,6 +927,7 @@ def test_list_work_requests(testing_service_client):
                     prev_response = client.list_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -934,6 +968,7 @@ def test_set_auto_upgradable_config(testing_service_client):
             client = oci.management_agent.ManagementAgentClient(config, service_endpoint=service_endpoint)
             response = client.set_auto_upgradable_config(
                 set_auto_upgradable_config_details=request.pop(util.camelize('SetAutoUpgradableConfigDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -976,6 +1011,7 @@ def test_summarize_management_agent_counts(testing_service_client):
             response = client.summarize_management_agent_counts(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 group_by=request.pop(util.camelize('groupBy')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -986,6 +1022,7 @@ def test_summarize_management_agent_counts(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     group_by=request.pop(util.camelize('groupBy')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -997,6 +1034,7 @@ def test_summarize_management_agent_counts(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         group_by=request.pop(util.camelize('groupBy')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1039,6 +1077,7 @@ def test_summarize_management_agent_plugin_counts(testing_service_client):
             response = client.summarize_management_agent_plugin_counts(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 group_by=request.pop(util.camelize('groupBy')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1049,6 +1088,7 @@ def test_summarize_management_agent_plugin_counts(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     group_by=request.pop(util.camelize('groupBy')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1060,6 +1100,7 @@ def test_summarize_management_agent_plugin_counts(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         group_by=request.pop(util.camelize('groupBy')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1101,6 +1142,7 @@ def test_update_management_agent(testing_service_client):
             response = client.update_management_agent(
                 management_agent_id=request.pop(util.camelize('managementAgentId')),
                 update_management_agent_details=request.pop(util.camelize('UpdateManagementAgentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1142,6 +1184,7 @@ def test_update_management_agent_install_key(testing_service_client):
             response = client.update_management_agent_install_key(
                 management_agent_install_key_id=request.pop(util.camelize('managementAgentInstallKeyId')),
                 update_management_agent_install_key_details=request.pop(util.camelize('UpdateManagementAgentInstallKeyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

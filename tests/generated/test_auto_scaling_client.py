@@ -55,6 +55,7 @@ def test_change_auto_scaling_configuration_compartment(testing_service_client):
             response = client.change_auto_scaling_configuration_compartment(
                 auto_scaling_configuration_id=request.pop(util.camelize('autoScalingConfigurationId')),
                 change_compartment_details=request.pop(util.camelize('ChangeCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_create_auto_scaling_configuration(testing_service_client):
             client = oci.autoscaling.AutoScalingClient(config, service_endpoint=service_endpoint)
             response = client.create_auto_scaling_configuration(
                 create_auto_scaling_configuration_details=request.pop(util.camelize('CreateAutoScalingConfigurationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -136,6 +138,7 @@ def test_create_auto_scaling_policy(testing_service_client):
             response = client.create_auto_scaling_policy(
                 auto_scaling_configuration_id=request.pop(util.camelize('autoScalingConfigurationId')),
                 create_auto_scaling_policy_details=request.pop(util.camelize('CreateAutoScalingPolicyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -176,6 +179,7 @@ def test_delete_auto_scaling_configuration(testing_service_client):
             client = oci.autoscaling.AutoScalingClient(config, service_endpoint=service_endpoint)
             response = client.delete_auto_scaling_configuration(
                 auto_scaling_configuration_id=request.pop(util.camelize('autoScalingConfigurationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -217,6 +221,7 @@ def test_delete_auto_scaling_policy(testing_service_client):
             response = client.delete_auto_scaling_policy(
                 auto_scaling_configuration_id=request.pop(util.camelize('autoScalingConfigurationId')),
                 auto_scaling_policy_id=request.pop(util.camelize('autoScalingPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -257,6 +262,7 @@ def test_get_auto_scaling_configuration(testing_service_client):
             client = oci.autoscaling.AutoScalingClient(config, service_endpoint=service_endpoint)
             response = client.get_auto_scaling_configuration(
                 auto_scaling_configuration_id=request.pop(util.camelize('autoScalingConfigurationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -298,6 +304,7 @@ def test_get_auto_scaling_policy(testing_service_client):
             response = client.get_auto_scaling_policy(
                 auto_scaling_configuration_id=request.pop(util.camelize('autoScalingConfigurationId')),
                 auto_scaling_policy_id=request.pop(util.camelize('autoScalingPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -339,6 +346,7 @@ def test_list_auto_scaling_configurations(testing_service_client):
             client = oci.autoscaling.AutoScalingClient(config, service_endpoint=service_endpoint)
             response = client.list_auto_scaling_configurations(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -348,6 +356,7 @@ def test_list_auto_scaling_configurations(testing_service_client):
                 next_response = client.list_auto_scaling_configurations(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -358,6 +367,7 @@ def test_list_auto_scaling_configurations(testing_service_client):
                     prev_response = client.list_auto_scaling_configurations(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -399,6 +409,7 @@ def test_list_auto_scaling_policies(testing_service_client):
             client = oci.autoscaling.AutoScalingClient(config, service_endpoint=service_endpoint)
             response = client.list_auto_scaling_policies(
                 auto_scaling_configuration_id=request.pop(util.camelize('autoScalingConfigurationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -408,6 +419,7 @@ def test_list_auto_scaling_policies(testing_service_client):
                 next_response = client.list_auto_scaling_policies(
                     auto_scaling_configuration_id=request.pop(util.camelize('autoScalingConfigurationId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -418,6 +430,7 @@ def test_list_auto_scaling_policies(testing_service_client):
                     prev_response = client.list_auto_scaling_policies(
                         auto_scaling_configuration_id=request.pop(util.camelize('autoScalingConfigurationId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -459,6 +472,7 @@ def test_update_auto_scaling_configuration(testing_service_client):
             response = client.update_auto_scaling_configuration(
                 auto_scaling_configuration_id=request.pop(util.camelize('autoScalingConfigurationId')),
                 update_auto_scaling_configuration_details=request.pop(util.camelize('UpdateAutoScalingConfigurationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -501,6 +515,7 @@ def test_update_auto_scaling_policy(testing_service_client):
                 auto_scaling_configuration_id=request.pop(util.camelize('autoScalingConfigurationId')),
                 auto_scaling_policy_id=request.pop(util.camelize('autoScalingPolicyId')),
                 update_auto_scaling_policy_details=request.pop(util.camelize('UpdateAutoScalingPolicyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

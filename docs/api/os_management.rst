@@ -51,10 +51,19 @@ Os Management
     oci.os_management.models.KernelCrashEvent
     oci.os_management.models.KernelOopsEvent
     oci.os_management.models.KernelVmCoreInformation
+    oci.os_management.models.ManageModuleStreamsOnManagedInstanceDetails
     oci.os_management.models.ManagedInstance
     oci.os_management.models.ManagedInstanceGroup
     oci.os_management.models.ManagedInstanceGroupSummary
     oci.os_management.models.ManagedInstanceSummary
+    oci.os_management.models.ModuleStream
+    oci.os_management.models.ModuleStreamDetails
+    oci.os_management.models.ModuleStreamOnManagedInstanceSummary
+    oci.os_management.models.ModuleStreamProfile
+    oci.os_management.models.ModuleStreamProfileDetails
+    oci.os_management.models.ModuleStreamProfileOnManagedInstanceSummary
+    oci.os_management.models.ModuleStreamProfileSummary
+    oci.os_management.models.ModuleStreamSummary
     oci.os_management.models.PackageName
     oci.os_management.models.Recurrence
     oci.os_management.models.RelatedEventCollection
@@ -73,6 +82,10 @@ Os Management
     oci.os_management.models.UpdateEventDetails
     oci.os_management.models.UpdateManagedInstanceDetails
     oci.os_management.models.UpdateManagedInstanceGroupDetails
+    oci.os_management.models.UpdateModuleDetails
+    oci.os_management.models.UpdateModuleStreamDetails
+    oci.os_management.models.UpdateModuleStreamProfileDetails
+    oci.os_management.models.UpdateModuleStreamStateDetails
     oci.os_management.models.UpdateScheduledJobDetails
     oci.os_management.models.UpdateSoftwareSourceDetails
     oci.os_management.models.WindowsUpdate

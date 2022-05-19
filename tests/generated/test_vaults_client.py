@@ -54,6 +54,7 @@ def test_cancel_secret_deletion(testing_service_client):
             client = oci.vault.VaultsClient(config, service_endpoint=service_endpoint)
             response = client.cancel_secret_deletion(
                 secret_id=request.pop(util.camelize('secretId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_cancel_secret_version_deletion(testing_service_client):
             response = client.cancel_secret_version_deletion(
                 secret_id=request.pop(util.camelize('secretId')),
                 secret_version_number=request.pop(util.camelize('secretVersionNumber')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -136,6 +138,7 @@ def test_change_secret_compartment(testing_service_client):
             response = client.change_secret_compartment(
                 secret_id=request.pop(util.camelize('secretId')),
                 change_secret_compartment_details=request.pop(util.camelize('ChangeSecretCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -176,6 +179,7 @@ def test_create_secret(testing_service_client):
             client = oci.vault.VaultsClient(config, service_endpoint=service_endpoint)
             response = client.create_secret(
                 create_secret_details=request.pop(util.camelize('CreateSecretDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -216,6 +220,7 @@ def test_get_secret(testing_service_client):
             client = oci.vault.VaultsClient(config, service_endpoint=service_endpoint)
             response = client.get_secret(
                 secret_id=request.pop(util.camelize('secretId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -257,6 +262,7 @@ def test_get_secret_version(testing_service_client):
             response = client.get_secret_version(
                 secret_id=request.pop(util.camelize('secretId')),
                 secret_version_number=request.pop(util.camelize('secretVersionNumber')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -298,6 +304,7 @@ def test_list_secret_versions(testing_service_client):
             client = oci.vault.VaultsClient(config, service_endpoint=service_endpoint)
             response = client.list_secret_versions(
                 secret_id=request.pop(util.camelize('secretId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -307,6 +314,7 @@ def test_list_secret_versions(testing_service_client):
                 next_response = client.list_secret_versions(
                     secret_id=request.pop(util.camelize('secretId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -317,6 +325,7 @@ def test_list_secret_versions(testing_service_client):
                     prev_response = client.list_secret_versions(
                         secret_id=request.pop(util.camelize('secretId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -358,6 +367,7 @@ def test_list_secrets(testing_service_client):
             client = oci.vault.VaultsClient(config, service_endpoint=service_endpoint)
             response = client.list_secrets(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -367,6 +377,7 @@ def test_list_secrets(testing_service_client):
                 next_response = client.list_secrets(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -377,6 +388,7 @@ def test_list_secrets(testing_service_client):
                     prev_response = client.list_secrets(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -418,6 +430,7 @@ def test_schedule_secret_deletion(testing_service_client):
             response = client.schedule_secret_deletion(
                 secret_id=request.pop(util.camelize('secretId')),
                 schedule_secret_deletion_details=request.pop(util.camelize('ScheduleSecretDeletionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -460,6 +473,7 @@ def test_schedule_secret_version_deletion(testing_service_client):
                 secret_id=request.pop(util.camelize('secretId')),
                 secret_version_number=request.pop(util.camelize('secretVersionNumber')),
                 schedule_secret_version_deletion_details=request.pop(util.camelize('ScheduleSecretVersionDeletionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -501,6 +515,7 @@ def test_update_secret(testing_service_client):
             response = client.update_secret(
                 secret_id=request.pop(util.camelize('secretId')),
                 update_secret_details=request.pop(util.camelize('UpdateSecretDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

@@ -54,6 +54,7 @@ def test_associate_monitored_resources(testing_service_client):
             client = oci.stack_monitoring.StackMonitoringClient(config, service_endpoint=service_endpoint)
             response = client.associate_monitored_resources(
                 associate_monitored_resources_details=request.pop(util.camelize('AssociateMonitoredResourcesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_change_monitored_resource_compartment(testing_service_client):
             response = client.change_monitored_resource_compartment(
                 monitored_resource_id=request.pop(util.camelize('monitoredResourceId')),
                 change_monitored_resource_compartment_details=request.pop(util.camelize('ChangeMonitoredResourceCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -135,6 +137,7 @@ def test_create_discovery_job(testing_service_client):
             client = oci.stack_monitoring.StackMonitoringClient(config, service_endpoint=service_endpoint)
             response = client.create_discovery_job(
                 create_discovery_job_details=request.pop(util.camelize('CreateDiscoveryJobDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -175,6 +178,7 @@ def test_create_monitored_resource(testing_service_client):
             client = oci.stack_monitoring.StackMonitoringClient(config, service_endpoint=service_endpoint)
             response = client.create_monitored_resource(
                 create_monitored_resource_details=request.pop(util.camelize('CreateMonitoredResourceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -215,6 +219,7 @@ def test_delete_discovery_job(testing_service_client):
             client = oci.stack_monitoring.StackMonitoringClient(config, service_endpoint=service_endpoint)
             response = client.delete_discovery_job(
                 discovery_job_id=request.pop(util.camelize('discoveryJobId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -255,6 +260,7 @@ def test_delete_monitored_resource(testing_service_client):
             client = oci.stack_monitoring.StackMonitoringClient(config, service_endpoint=service_endpoint)
             response = client.delete_monitored_resource(
                 monitored_resource_id=request.pop(util.camelize('monitoredResourceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -295,6 +301,7 @@ def test_disable_external_database(testing_service_client):
             client = oci.stack_monitoring.StackMonitoringClient(config, service_endpoint=service_endpoint)
             response = client.disable_external_database(
                 monitored_resource_id=request.pop(util.camelize('monitoredResourceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -335,6 +342,7 @@ def test_disassociate_monitored_resources(testing_service_client):
             client = oci.stack_monitoring.StackMonitoringClient(config, service_endpoint=service_endpoint)
             response = client.disassociate_monitored_resources(
                 disassociate_monitored_resources_details=request.pop(util.camelize('DisassociateMonitoredResourcesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -375,6 +383,7 @@ def test_get_discovery_job(testing_service_client):
             client = oci.stack_monitoring.StackMonitoringClient(config, service_endpoint=service_endpoint)
             response = client.get_discovery_job(
                 discovery_job_id=request.pop(util.camelize('discoveryJobId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -415,6 +424,7 @@ def test_get_monitored_resource(testing_service_client):
             client = oci.stack_monitoring.StackMonitoringClient(config, service_endpoint=service_endpoint)
             response = client.get_monitored_resource(
                 monitored_resource_id=request.pop(util.camelize('monitoredResourceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -455,6 +465,7 @@ def test_get_work_request(testing_service_client):
             client = oci.stack_monitoring.StackMonitoringClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -496,6 +507,7 @@ def test_list_discovery_job_logs(testing_service_client):
             client = oci.stack_monitoring.StackMonitoringClient(config, service_endpoint=service_endpoint)
             response = client.list_discovery_job_logs(
                 discovery_job_id=request.pop(util.camelize('discoveryJobId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -505,6 +517,7 @@ def test_list_discovery_job_logs(testing_service_client):
                 next_response = client.list_discovery_job_logs(
                     discovery_job_id=request.pop(util.camelize('discoveryJobId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -515,6 +528,7 @@ def test_list_discovery_job_logs(testing_service_client):
                     prev_response = client.list_discovery_job_logs(
                         discovery_job_id=request.pop(util.camelize('discoveryJobId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -556,6 +570,7 @@ def test_list_discovery_jobs(testing_service_client):
             client = oci.stack_monitoring.StackMonitoringClient(config, service_endpoint=service_endpoint)
             response = client.list_discovery_jobs(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -565,6 +580,7 @@ def test_list_discovery_jobs(testing_service_client):
                 next_response = client.list_discovery_jobs(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -575,6 +591,7 @@ def test_list_discovery_jobs(testing_service_client):
                     prev_response = client.list_discovery_jobs(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -616,6 +633,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.stack_monitoring.StackMonitoringClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -625,6 +643,7 @@ def test_list_work_request_errors(testing_service_client):
                 next_response = client.list_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -635,6 +654,7 @@ def test_list_work_request_errors(testing_service_client):
                     prev_response = client.list_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -676,6 +696,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.stack_monitoring.StackMonitoringClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -685,6 +706,7 @@ def test_list_work_request_logs(testing_service_client):
                 next_response = client.list_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -695,6 +717,7 @@ def test_list_work_request_logs(testing_service_client):
                     prev_response = client.list_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -736,6 +759,7 @@ def test_list_work_requests(testing_service_client):
             client = oci.stack_monitoring.StackMonitoringClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -745,6 +769,7 @@ def test_list_work_requests(testing_service_client):
                 next_response = client.list_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -755,6 +780,7 @@ def test_list_work_requests(testing_service_client):
                     prev_response = client.list_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -796,6 +822,7 @@ def test_search_monitored_resource_associations(testing_service_client):
             client = oci.stack_monitoring.StackMonitoringClient(config, service_endpoint=service_endpoint)
             response = client.search_monitored_resource_associations(
                 search_monitored_resource_associations_details=request.pop(util.camelize('SearchMonitoredResourceAssociationsDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -805,6 +832,7 @@ def test_search_monitored_resource_associations(testing_service_client):
                 next_response = client.search_monitored_resource_associations(
                     search_monitored_resource_associations_details=request.pop(util.camelize('SearchMonitoredResourceAssociationsDetails')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -815,6 +843,7 @@ def test_search_monitored_resource_associations(testing_service_client):
                     prev_response = client.search_monitored_resource_associations(
                         search_monitored_resource_associations_details=request.pop(util.camelize('SearchMonitoredResourceAssociationsDetails')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -857,6 +886,7 @@ def test_search_monitored_resource_members(testing_service_client):
             response = client.search_monitored_resource_members(
                 monitored_resource_id=request.pop(util.camelize('monitoredResourceId')),
                 search_monitored_resource_members_details=request.pop(util.camelize('SearchMonitoredResourceMembersDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -867,6 +897,7 @@ def test_search_monitored_resource_members(testing_service_client):
                     monitored_resource_id=request.pop(util.camelize('monitoredResourceId')),
                     search_monitored_resource_members_details=request.pop(util.camelize('SearchMonitoredResourceMembersDetails')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -878,6 +909,7 @@ def test_search_monitored_resource_members(testing_service_client):
                         monitored_resource_id=request.pop(util.camelize('monitoredResourceId')),
                         search_monitored_resource_members_details=request.pop(util.camelize('SearchMonitoredResourceMembersDetails')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -919,6 +951,7 @@ def test_search_monitored_resources(testing_service_client):
             client = oci.stack_monitoring.StackMonitoringClient(config, service_endpoint=service_endpoint)
             response = client.search_monitored_resources(
                 search_monitored_resources_details=request.pop(util.camelize('SearchMonitoredResourcesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -928,6 +961,7 @@ def test_search_monitored_resources(testing_service_client):
                 next_response = client.search_monitored_resources(
                     search_monitored_resources_details=request.pop(util.camelize('SearchMonitoredResourcesDetails')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -938,6 +972,7 @@ def test_search_monitored_resources(testing_service_client):
                     prev_response = client.search_monitored_resources(
                         search_monitored_resources_details=request.pop(util.camelize('SearchMonitoredResourcesDetails')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -979,6 +1014,7 @@ def test_update_monitored_resource(testing_service_client):
             response = client.update_monitored_resource(
                 monitored_resource_id=request.pop(util.camelize('monitoredResourceId')),
                 update_monitored_resource_details=request.pop(util.camelize('UpdateMonitoredResourceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

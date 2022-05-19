@@ -54,6 +54,7 @@ def test_create_esxi_host(testing_service_client):
             client = oci.ocvp.EsxiHostClient(config, service_endpoint=service_endpoint)
             response = client.create_esxi_host(
                 create_esxi_host_details=request.pop(util.camelize('CreateEsxiHostDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -94,6 +95,7 @@ def test_delete_esxi_host(testing_service_client):
             client = oci.ocvp.EsxiHostClient(config, service_endpoint=service_endpoint)
             response = client.delete_esxi_host(
                 esxi_host_id=request.pop(util.camelize('esxiHostId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -134,6 +136,7 @@ def test_get_esxi_host(testing_service_client):
             client = oci.ocvp.EsxiHostClient(config, service_endpoint=service_endpoint)
             response = client.get_esxi_host(
                 esxi_host_id=request.pop(util.camelize('esxiHostId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -174,6 +177,7 @@ def test_list_esxi_hosts(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.ocvp.EsxiHostClient(config, service_endpoint=service_endpoint)
             response = client.list_esxi_hosts(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -182,6 +186,7 @@ def test_list_esxi_hosts(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_esxi_hosts(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -191,6 +196,7 @@ def test_list_esxi_hosts(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_esxi_hosts(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -232,6 +238,7 @@ def test_update_esxi_host(testing_service_client):
             response = client.update_esxi_host(
                 esxi_host_id=request.pop(util.camelize('esxiHostId')),
                 update_esxi_host_details=request.pop(util.camelize('UpdateEsxiHostDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

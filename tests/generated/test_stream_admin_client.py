@@ -55,6 +55,7 @@ def test_change_connect_harness_compartment(testing_service_client):
             response = client.change_connect_harness_compartment(
                 connect_harness_id=request.pop(util.camelize('connectHarnessId')),
                 change_connect_harness_compartment_details=request.pop(util.camelize('ChangeConnectHarnessCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_change_stream_compartment(testing_service_client):
             response = client.change_stream_compartment(
                 stream_id=request.pop(util.camelize('streamId')),
                 change_stream_compartment_details=request.pop(util.camelize('ChangeStreamCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -137,6 +139,7 @@ def test_change_stream_pool_compartment(testing_service_client):
             response = client.change_stream_pool_compartment(
                 stream_pool_id=request.pop(util.camelize('streamPoolId')),
                 change_stream_pool_compartment_details=request.pop(util.camelize('ChangeStreamPoolCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -177,6 +180,7 @@ def test_create_connect_harness(testing_service_client):
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.create_connect_harness(
                 create_connect_harness_details=request.pop(util.camelize('CreateConnectHarnessDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -217,6 +221,7 @@ def test_create_stream(testing_service_client):
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.create_stream(
                 create_stream_details=request.pop(util.camelize('CreateStreamDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -257,6 +262,7 @@ def test_create_stream_pool(testing_service_client):
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.create_stream_pool(
                 create_stream_pool_details=request.pop(util.camelize('CreateStreamPoolDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -297,6 +303,7 @@ def test_delete_connect_harness(testing_service_client):
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.delete_connect_harness(
                 connect_harness_id=request.pop(util.camelize('connectHarnessId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -337,6 +344,7 @@ def test_delete_stream(testing_service_client):
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.delete_stream(
                 stream_id=request.pop(util.camelize('streamId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -377,6 +385,7 @@ def test_delete_stream_pool(testing_service_client):
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.delete_stream_pool(
                 stream_pool_id=request.pop(util.camelize('streamPoolId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -417,6 +426,7 @@ def test_get_connect_harness(testing_service_client):
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.get_connect_harness(
                 connect_harness_id=request.pop(util.camelize('connectHarnessId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -457,6 +467,7 @@ def test_get_stream(testing_service_client):
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.get_stream(
                 stream_id=request.pop(util.camelize('streamId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -497,6 +508,7 @@ def test_get_stream_pool(testing_service_client):
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.get_stream_pool(
                 stream_pool_id=request.pop(util.camelize('streamPoolId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -538,6 +550,7 @@ def test_list_connect_harnesses(testing_service_client):
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.list_connect_harnesses(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -547,6 +560,7 @@ def test_list_connect_harnesses(testing_service_client):
                 next_response = client.list_connect_harnesses(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -557,6 +571,7 @@ def test_list_connect_harnesses(testing_service_client):
                     prev_response = client.list_connect_harnesses(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -598,6 +613,7 @@ def test_list_stream_pools(testing_service_client):
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.list_stream_pools(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -607,6 +623,7 @@ def test_list_stream_pools(testing_service_client):
                 next_response = client.list_stream_pools(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -617,6 +634,7 @@ def test_list_stream_pools(testing_service_client):
                     prev_response = client.list_stream_pools(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -657,6 +675,7 @@ def test_list_streams(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.list_streams(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -665,6 +684,7 @@ def test_list_streams(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_streams(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -674,6 +694,7 @@ def test_list_streams(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_streams(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -715,6 +736,7 @@ def test_update_connect_harness(testing_service_client):
             response = client.update_connect_harness(
                 connect_harness_id=request.pop(util.camelize('connectHarnessId')),
                 update_connect_harness_details=request.pop(util.camelize('UpdateConnectHarnessDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -756,6 +778,7 @@ def test_update_stream(testing_service_client):
             response = client.update_stream(
                 stream_id=request.pop(util.camelize('streamId')),
                 update_stream_details=request.pop(util.camelize('UpdateStreamDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -797,6 +820,7 @@ def test_update_stream_pool(testing_service_client):
             response = client.update_stream_pool(
                 stream_pool_id=request.pop(util.camelize('streamPoolId')),
                 update_stream_pool_details=request.pop(util.camelize('UpdateStreamPoolDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

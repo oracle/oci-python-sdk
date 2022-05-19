@@ -55,6 +55,7 @@ def test_create_user(testing_service_client):
             response = client.create_user(
                 create_user_details=request.pop(util.camelize('CreateUserDetails')),
                 ocid=request.pop(util.camelize('ocid')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

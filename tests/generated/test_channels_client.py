@@ -54,6 +54,7 @@ def test_create_channel(testing_service_client):
             client = oci.mysql.ChannelsClient(config, service_endpoint=service_endpoint)
             response = client.create_channel(
                 create_channel_details=request.pop(util.camelize('CreateChannelDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -94,6 +95,7 @@ def test_delete_channel(testing_service_client):
             client = oci.mysql.ChannelsClient(config, service_endpoint=service_endpoint)
             response = client.delete_channel(
                 channel_id=request.pop(util.camelize('channelId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -134,6 +136,7 @@ def test_get_channel(testing_service_client):
             client = oci.mysql.ChannelsClient(config, service_endpoint=service_endpoint)
             response = client.get_channel(
                 channel_id=request.pop(util.camelize('channelId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -175,6 +178,7 @@ def test_list_channels(testing_service_client):
             client = oci.mysql.ChannelsClient(config, service_endpoint=service_endpoint)
             response = client.list_channels(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -184,6 +188,7 @@ def test_list_channels(testing_service_client):
                 next_response = client.list_channels(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -194,6 +199,7 @@ def test_list_channels(testing_service_client):
                     prev_response = client.list_channels(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -234,6 +240,7 @@ def test_reset_channel(testing_service_client):
             client = oci.mysql.ChannelsClient(config, service_endpoint=service_endpoint)
             response = client.reset_channel(
                 channel_id=request.pop(util.camelize('channelId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -274,6 +281,7 @@ def test_resume_channel(testing_service_client):
             client = oci.mysql.ChannelsClient(config, service_endpoint=service_endpoint)
             response = client.resume_channel(
                 channel_id=request.pop(util.camelize('channelId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -315,6 +323,7 @@ def test_update_channel(testing_service_client):
             response = client.update_channel(
                 channel_id=request.pop(util.camelize('channelId')),
                 update_channel_details=request.pop(util.camelize('UpdateChannelDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

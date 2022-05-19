@@ -55,6 +55,7 @@ def test_change_resolver_compartment(testing_service_client):
             response = client.change_resolver_compartment(
                 resolver_id=request.pop(util.camelize('resolverId')),
                 change_resolver_compartment_details=request.pop(util.camelize('ChangeResolverCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_change_steering_policy_compartment(testing_service_client):
             response = client.change_steering_policy_compartment(
                 steering_policy_id=request.pop(util.camelize('steeringPolicyId')),
                 change_steering_policy_compartment_details=request.pop(util.camelize('ChangeSteeringPolicyCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -137,6 +139,7 @@ def test_change_tsig_key_compartment(testing_service_client):
             response = client.change_tsig_key_compartment(
                 tsig_key_id=request.pop(util.camelize('tsigKeyId')),
                 change_tsig_key_compartment_details=request.pop(util.camelize('ChangeTsigKeyCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -178,6 +181,7 @@ def test_change_view_compartment(testing_service_client):
             response = client.change_view_compartment(
                 view_id=request.pop(util.camelize('viewId')),
                 change_view_compartment_details=request.pop(util.camelize('ChangeViewCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -219,6 +223,7 @@ def test_change_zone_compartment(testing_service_client):
             response = client.change_zone_compartment(
                 zone_id=request.pop(util.camelize('zoneId')),
                 change_zone_compartment_details=request.pop(util.camelize('ChangeZoneCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -260,6 +265,7 @@ def test_create_resolver_endpoint(testing_service_client):
             response = client.create_resolver_endpoint(
                 resolver_id=request.pop(util.camelize('resolverId')),
                 create_resolver_endpoint_details=request.pop(util.camelize('CreateResolverEndpointDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -300,6 +306,7 @@ def test_create_steering_policy(testing_service_client):
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.create_steering_policy(
                 create_steering_policy_details=request.pop(util.camelize('CreateSteeringPolicyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -340,6 +347,7 @@ def test_create_steering_policy_attachment(testing_service_client):
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.create_steering_policy_attachment(
                 create_steering_policy_attachment_details=request.pop(util.camelize('CreateSteeringPolicyAttachmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -380,6 +388,7 @@ def test_create_tsig_key(testing_service_client):
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.create_tsig_key(
                 create_tsig_key_details=request.pop(util.camelize('CreateTsigKeyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -420,6 +429,7 @@ def test_create_view(testing_service_client):
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.create_view(
                 create_view_details=request.pop(util.camelize('CreateViewDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -460,6 +470,7 @@ def test_create_zone(testing_service_client):
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.create_zone(
                 create_zone_details=request.pop(util.camelize('CreateZoneDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -501,6 +512,7 @@ def test_delete_domain_records(testing_service_client):
             response = client.delete_domain_records(
                 zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
                 domain=request.pop(util.camelize('domain')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -542,6 +554,7 @@ def test_delete_resolver_endpoint(testing_service_client):
             response = client.delete_resolver_endpoint(
                 resolver_id=request.pop(util.camelize('resolverId')),
                 resolver_endpoint_name=request.pop(util.camelize('resolverEndpointName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -584,6 +597,7 @@ def test_delete_rr_set(testing_service_client):
                 zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
                 domain=request.pop(util.camelize('domain')),
                 rtype=request.pop(util.camelize('rtype')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -624,6 +638,7 @@ def test_delete_steering_policy(testing_service_client):
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.delete_steering_policy(
                 steering_policy_id=request.pop(util.camelize('steeringPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -664,6 +679,7 @@ def test_delete_steering_policy_attachment(testing_service_client):
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.delete_steering_policy_attachment(
                 steering_policy_attachment_id=request.pop(util.camelize('steeringPolicyAttachmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -704,6 +720,7 @@ def test_delete_tsig_key(testing_service_client):
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.delete_tsig_key(
                 tsig_key_id=request.pop(util.camelize('tsigKeyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -744,6 +761,7 @@ def test_delete_view(testing_service_client):
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.delete_view(
                 view_id=request.pop(util.camelize('viewId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -784,6 +802,7 @@ def test_delete_zone(testing_service_client):
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.delete_zone(
                 zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -826,6 +845,7 @@ def test_get_domain_records(testing_service_client):
             response = client.get_domain_records(
                 zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
                 domain=request.pop(util.camelize('domain')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -836,6 +856,7 @@ def test_get_domain_records(testing_service_client):
                     zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
                     domain=request.pop(util.camelize('domain')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -847,6 +868,7 @@ def test_get_domain_records(testing_service_client):
                         zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
                         domain=request.pop(util.camelize('domain')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -887,6 +909,7 @@ def test_get_resolver(testing_service_client):
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.get_resolver(
                 resolver_id=request.pop(util.camelize('resolverId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -928,6 +951,7 @@ def test_get_resolver_endpoint(testing_service_client):
             response = client.get_resolver_endpoint(
                 resolver_id=request.pop(util.camelize('resolverId')),
                 resolver_endpoint_name=request.pop(util.camelize('resolverEndpointName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -971,6 +995,7 @@ def test_get_rr_set(testing_service_client):
                 zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
                 domain=request.pop(util.camelize('domain')),
                 rtype=request.pop(util.camelize('rtype')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -982,6 +1007,7 @@ def test_get_rr_set(testing_service_client):
                     domain=request.pop(util.camelize('domain')),
                     rtype=request.pop(util.camelize('rtype')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -994,6 +1020,7 @@ def test_get_rr_set(testing_service_client):
                         domain=request.pop(util.camelize('domain')),
                         rtype=request.pop(util.camelize('rtype')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1034,6 +1061,7 @@ def test_get_steering_policy(testing_service_client):
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.get_steering_policy(
                 steering_policy_id=request.pop(util.camelize('steeringPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1074,6 +1102,7 @@ def test_get_steering_policy_attachment(testing_service_client):
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.get_steering_policy_attachment(
                 steering_policy_attachment_id=request.pop(util.camelize('steeringPolicyAttachmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1114,6 +1143,7 @@ def test_get_tsig_key(testing_service_client):
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.get_tsig_key(
                 tsig_key_id=request.pop(util.camelize('tsigKeyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1154,6 +1184,7 @@ def test_get_view(testing_service_client):
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.get_view(
                 view_id=request.pop(util.camelize('viewId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1194,6 +1225,7 @@ def test_get_zone(testing_service_client):
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.get_zone(
                 zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1234,6 +1266,7 @@ def test_get_zone_content(testing_service_client):
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.get_zone_content(
                 zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1275,6 +1308,7 @@ def test_get_zone_records(testing_service_client):
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.get_zone_records(
                 zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1284,6 +1318,7 @@ def test_get_zone_records(testing_service_client):
                 next_response = client.get_zone_records(
                     zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1294,6 +1329,7 @@ def test_get_zone_records(testing_service_client):
                     prev_response = client.get_zone_records(
                         zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1335,6 +1371,7 @@ def test_list_resolver_endpoints(testing_service_client):
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.list_resolver_endpoints(
                 resolver_id=request.pop(util.camelize('resolverId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1344,6 +1381,7 @@ def test_list_resolver_endpoints(testing_service_client):
                 next_response = client.list_resolver_endpoints(
                     resolver_id=request.pop(util.camelize('resolverId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1354,6 +1392,7 @@ def test_list_resolver_endpoints(testing_service_client):
                     prev_response = client.list_resolver_endpoints(
                         resolver_id=request.pop(util.camelize('resolverId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1395,6 +1434,7 @@ def test_list_resolvers(testing_service_client):
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.list_resolvers(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1404,6 +1444,7 @@ def test_list_resolvers(testing_service_client):
                 next_response = client.list_resolvers(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1414,6 +1455,7 @@ def test_list_resolvers(testing_service_client):
                     prev_response = client.list_resolvers(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1455,6 +1497,7 @@ def test_list_steering_policies(testing_service_client):
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.list_steering_policies(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1464,6 +1507,7 @@ def test_list_steering_policies(testing_service_client):
                 next_response = client.list_steering_policies(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1474,6 +1518,7 @@ def test_list_steering_policies(testing_service_client):
                     prev_response = client.list_steering_policies(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1515,6 +1560,7 @@ def test_list_steering_policy_attachments(testing_service_client):
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.list_steering_policy_attachments(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1524,6 +1570,7 @@ def test_list_steering_policy_attachments(testing_service_client):
                 next_response = client.list_steering_policy_attachments(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1534,6 +1581,7 @@ def test_list_steering_policy_attachments(testing_service_client):
                     prev_response = client.list_steering_policy_attachments(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1575,6 +1623,7 @@ def test_list_tsig_keys(testing_service_client):
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.list_tsig_keys(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1584,6 +1633,7 @@ def test_list_tsig_keys(testing_service_client):
                 next_response = client.list_tsig_keys(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1594,6 +1644,7 @@ def test_list_tsig_keys(testing_service_client):
                     prev_response = client.list_tsig_keys(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1635,6 +1686,7 @@ def test_list_views(testing_service_client):
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.list_views(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1644,6 +1696,7 @@ def test_list_views(testing_service_client):
                 next_response = client.list_views(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1654,6 +1707,7 @@ def test_list_views(testing_service_client):
                     prev_response = client.list_views(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1695,6 +1749,7 @@ def test_list_zone_transfer_servers(testing_service_client):
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.list_zone_transfer_servers(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1704,6 +1759,7 @@ def test_list_zone_transfer_servers(testing_service_client):
                 next_response = client.list_zone_transfer_servers(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1714,6 +1770,7 @@ def test_list_zone_transfer_servers(testing_service_client):
                     prev_response = client.list_zone_transfer_servers(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1755,6 +1812,7 @@ def test_list_zones(testing_service_client):
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.list_zones(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1764,6 +1822,7 @@ def test_list_zones(testing_service_client):
                 next_response = client.list_zones(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1774,6 +1833,7 @@ def test_list_zones(testing_service_client):
                     prev_response = client.list_zones(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1816,6 +1876,7 @@ def test_patch_domain_records(testing_service_client):
                 zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
                 domain=request.pop(util.camelize('domain')),
                 patch_domain_records_details=request.pop(util.camelize('PatchDomainRecordsDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1859,6 +1920,7 @@ def test_patch_rr_set(testing_service_client):
                 domain=request.pop(util.camelize('domain')),
                 rtype=request.pop(util.camelize('rtype')),
                 patch_rr_set_details=request.pop(util.camelize('PatchRRSetDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1900,6 +1962,7 @@ def test_patch_zone_records(testing_service_client):
             response = client.patch_zone_records(
                 zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
                 patch_zone_records_details=request.pop(util.camelize('PatchZoneRecordsDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1942,6 +2005,7 @@ def test_update_domain_records(testing_service_client):
                 zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
                 domain=request.pop(util.camelize('domain')),
                 update_domain_records_details=request.pop(util.camelize('UpdateDomainRecordsDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1983,6 +2047,7 @@ def test_update_resolver(testing_service_client):
             response = client.update_resolver(
                 resolver_id=request.pop(util.camelize('resolverId')),
                 update_resolver_details=request.pop(util.camelize('UpdateResolverDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2025,6 +2090,7 @@ def test_update_resolver_endpoint(testing_service_client):
                 resolver_id=request.pop(util.camelize('resolverId')),
                 resolver_endpoint_name=request.pop(util.camelize('resolverEndpointName')),
                 update_resolver_endpoint_details=request.pop(util.camelize('UpdateResolverEndpointDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2068,6 +2134,7 @@ def test_update_rr_set(testing_service_client):
                 domain=request.pop(util.camelize('domain')),
                 rtype=request.pop(util.camelize('rtype')),
                 update_rr_set_details=request.pop(util.camelize('UpdateRRSetDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2109,6 +2176,7 @@ def test_update_steering_policy(testing_service_client):
             response = client.update_steering_policy(
                 steering_policy_id=request.pop(util.camelize('steeringPolicyId')),
                 update_steering_policy_details=request.pop(util.camelize('UpdateSteeringPolicyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2150,6 +2218,7 @@ def test_update_steering_policy_attachment(testing_service_client):
             response = client.update_steering_policy_attachment(
                 steering_policy_attachment_id=request.pop(util.camelize('steeringPolicyAttachmentId')),
                 update_steering_policy_attachment_details=request.pop(util.camelize('UpdateSteeringPolicyAttachmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2191,6 +2260,7 @@ def test_update_tsig_key(testing_service_client):
             response = client.update_tsig_key(
                 tsig_key_id=request.pop(util.camelize('tsigKeyId')),
                 update_tsig_key_details=request.pop(util.camelize('UpdateTsigKeyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2232,6 +2302,7 @@ def test_update_view(testing_service_client):
             response = client.update_view(
                 view_id=request.pop(util.camelize('viewId')),
                 update_view_details=request.pop(util.camelize('UpdateViewDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2273,6 +2344,7 @@ def test_update_zone(testing_service_client):
             response = client.update_zone(
                 zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
                 update_zone_details=request.pop(util.camelize('UpdateZoneDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2314,6 +2386,7 @@ def test_update_zone_records(testing_service_client):
             response = client.update_zone_records(
                 zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
                 update_zone_records_details=request.pop(util.camelize('UpdateZoneRecordsDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

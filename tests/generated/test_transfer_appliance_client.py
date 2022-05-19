@@ -54,6 +54,7 @@ def test_create_transfer_appliance(testing_service_client):
             client = oci.dts.TransferApplianceClient(config, service_endpoint=service_endpoint)
             response = client.create_transfer_appliance(
                 id=request.pop(util.camelize('id')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_create_transfer_appliance_admin_credentials(testing_service_client):
                 id=request.pop(util.camelize('id')),
                 transfer_appliance_label=request.pop(util.camelize('transferApplianceLabel')),
                 admin_public_key=request.pop(util.camelize('adminPublicKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -137,6 +139,7 @@ def test_delete_transfer_appliance(testing_service_client):
             response = client.delete_transfer_appliance(
                 id=request.pop(util.camelize('id')),
                 transfer_appliance_label=request.pop(util.camelize('transferApplianceLabel')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -178,6 +181,7 @@ def test_get_transfer_appliance(testing_service_client):
             response = client.get_transfer_appliance(
                 id=request.pop(util.camelize('id')),
                 transfer_appliance_label=request.pop(util.camelize('transferApplianceLabel')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -219,6 +223,7 @@ def test_get_transfer_appliance_certificate_authority_certificate(testing_servic
             response = client.get_transfer_appliance_certificate_authority_certificate(
                 id=request.pop(util.camelize('id')),
                 transfer_appliance_label=request.pop(util.camelize('transferApplianceLabel')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -260,6 +265,7 @@ def test_get_transfer_appliance_encryption_passphrase(testing_service_client):
             response = client.get_transfer_appliance_encryption_passphrase(
                 id=request.pop(util.camelize('id')),
                 transfer_appliance_label=request.pop(util.camelize('transferApplianceLabel')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -300,6 +306,7 @@ def test_list_transfer_appliances(testing_service_client):
             client = oci.dts.TransferApplianceClient(config, service_endpoint=service_endpoint)
             response = client.list_transfer_appliances(
                 id=request.pop(util.camelize('id')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -342,6 +349,7 @@ def test_update_transfer_appliance(testing_service_client):
                 id=request.pop(util.camelize('id')),
                 transfer_appliance_label=request.pop(util.camelize('transferApplianceLabel')),
                 update_transfer_appliance_details=request.pop(util.camelize('UpdateTransferApplianceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

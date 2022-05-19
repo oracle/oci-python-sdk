@@ -55,6 +55,7 @@ def test_change_file_system_compartment(testing_service_client):
             response = client.change_file_system_compartment(
                 file_system_id=request.pop(util.camelize('fileSystemId')),
                 change_file_system_compartment_details=request.pop(util.camelize('ChangeFileSystemCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_change_mount_target_compartment(testing_service_client):
             response = client.change_mount_target_compartment(
                 mount_target_id=request.pop(util.camelize('mountTargetId')),
                 change_mount_target_compartment_details=request.pop(util.camelize('ChangeMountTargetCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -136,6 +138,7 @@ def test_create_export(testing_service_client):
             client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.create_export(
                 create_export_details=request.pop(util.camelize('CreateExportDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -176,6 +179,7 @@ def test_create_file_system(testing_service_client):
             client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.create_file_system(
                 create_file_system_details=request.pop(util.camelize('CreateFileSystemDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -216,6 +220,7 @@ def test_create_mount_target(testing_service_client):
             client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.create_mount_target(
                 create_mount_target_details=request.pop(util.camelize('CreateMountTargetDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -256,6 +261,7 @@ def test_create_snapshot(testing_service_client):
             client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.create_snapshot(
                 create_snapshot_details=request.pop(util.camelize('CreateSnapshotDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -296,6 +302,7 @@ def test_delete_export(testing_service_client):
             client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_export(
                 export_id=request.pop(util.camelize('exportId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -336,6 +343,7 @@ def test_delete_file_system(testing_service_client):
             client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_file_system(
                 file_system_id=request.pop(util.camelize('fileSystemId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -376,6 +384,7 @@ def test_delete_mount_target(testing_service_client):
             client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_mount_target(
                 mount_target_id=request.pop(util.camelize('mountTargetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -416,6 +425,7 @@ def test_delete_snapshot(testing_service_client):
             client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_snapshot(
                 snapshot_id=request.pop(util.camelize('snapshotId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -456,6 +466,7 @@ def test_get_export(testing_service_client):
             client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.get_export(
                 export_id=request.pop(util.camelize('exportId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -496,6 +507,7 @@ def test_get_export_set(testing_service_client):
             client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.get_export_set(
                 export_set_id=request.pop(util.camelize('exportSetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -536,6 +548,7 @@ def test_get_file_system(testing_service_client):
             client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.get_file_system(
                 file_system_id=request.pop(util.camelize('fileSystemId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -576,6 +589,7 @@ def test_get_mount_target(testing_service_client):
             client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.get_mount_target(
                 mount_target_id=request.pop(util.camelize('mountTargetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -616,6 +630,7 @@ def test_get_snapshot(testing_service_client):
             client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.get_snapshot(
                 snapshot_id=request.pop(util.camelize('snapshotId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -658,6 +673,7 @@ def test_list_export_sets(testing_service_client):
             response = client.list_export_sets(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 availability_domain=request.pop(util.camelize('availabilityDomain')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -668,6 +684,7 @@ def test_list_export_sets(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     availability_domain=request.pop(util.camelize('availabilityDomain')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -679,6 +696,7 @@ def test_list_export_sets(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         availability_domain=request.pop(util.camelize('availabilityDomain')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -719,6 +737,7 @@ def test_list_exports(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.list_exports(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -727,6 +746,7 @@ def test_list_exports(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_exports(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -736,6 +756,7 @@ def test_list_exports(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_exports(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -778,6 +799,7 @@ def test_list_file_systems(testing_service_client):
             response = client.list_file_systems(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 availability_domain=request.pop(util.camelize('availabilityDomain')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -788,6 +810,7 @@ def test_list_file_systems(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     availability_domain=request.pop(util.camelize('availabilityDomain')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -799,6 +822,7 @@ def test_list_file_systems(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         availability_domain=request.pop(util.camelize('availabilityDomain')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -841,6 +865,7 @@ def test_list_mount_targets(testing_service_client):
             response = client.list_mount_targets(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 availability_domain=request.pop(util.camelize('availabilityDomain')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -851,6 +876,7 @@ def test_list_mount_targets(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     availability_domain=request.pop(util.camelize('availabilityDomain')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -862,6 +888,7 @@ def test_list_mount_targets(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         availability_domain=request.pop(util.camelize('availabilityDomain')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -903,6 +930,7 @@ def test_list_snapshots(testing_service_client):
             client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.list_snapshots(
                 file_system_id=request.pop(util.camelize('fileSystemId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -912,6 +940,7 @@ def test_list_snapshots(testing_service_client):
                 next_response = client.list_snapshots(
                     file_system_id=request.pop(util.camelize('fileSystemId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -922,6 +951,7 @@ def test_list_snapshots(testing_service_client):
                     prev_response = client.list_snapshots(
                         file_system_id=request.pop(util.camelize('fileSystemId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -963,6 +993,7 @@ def test_update_export(testing_service_client):
             response = client.update_export(
                 export_id=request.pop(util.camelize('exportId')),
                 update_export_details=request.pop(util.camelize('UpdateExportDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1004,6 +1035,7 @@ def test_update_export_set(testing_service_client):
             response = client.update_export_set(
                 export_set_id=request.pop(util.camelize('exportSetId')),
                 update_export_set_details=request.pop(util.camelize('UpdateExportSetDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1045,6 +1077,7 @@ def test_update_file_system(testing_service_client):
             response = client.update_file_system(
                 file_system_id=request.pop(util.camelize('fileSystemId')),
                 update_file_system_details=request.pop(util.camelize('UpdateFileSystemDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1086,6 +1119,7 @@ def test_update_mount_target(testing_service_client):
             response = client.update_mount_target(
                 mount_target_id=request.pop(util.camelize('mountTargetId')),
                 update_mount_target_details=request.pop(util.camelize('UpdateMountTargetDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1127,6 +1161,7 @@ def test_update_snapshot(testing_service_client):
             response = client.update_snapshot(
                 snapshot_id=request.pop(util.camelize('snapshotId')),
                 update_snapshot_details=request.pop(util.camelize('UpdateSnapshotDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

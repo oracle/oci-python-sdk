@@ -55,6 +55,7 @@ def test_add_drg_route_distribution_statements(testing_service_client):
             response = client.add_drg_route_distribution_statements(
                 drg_route_distribution_id=request.pop(util.camelize('drgRouteDistributionId')),
                 add_drg_route_distribution_statements_details=request.pop(util.camelize('AddDrgRouteDistributionStatementsDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_add_drg_route_rules(testing_service_client):
             response = client.add_drg_route_rules(
                 drg_route_table_id=request.pop(util.camelize('drgRouteTableId')),
                 add_drg_route_rules_details=request.pop(util.camelize('AddDrgRouteRulesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -137,6 +139,7 @@ def test_add_ipv6_subnet_cidr(testing_service_client):
             response = client.add_ipv6_subnet_cidr(
                 subnet_id=request.pop(util.camelize('subnetId')),
                 add_subnet_ipv6_cidr_details=request.pop(util.camelize('AddSubnetIpv6CidrDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -177,6 +180,7 @@ def test_add_ipv6_vcn_cidr(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.add_ipv6_vcn_cidr(
                 vcn_id=request.pop(util.camelize('vcnId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -218,6 +222,7 @@ def test_add_network_security_group_security_rules(testing_service_client):
             response = client.add_network_security_group_security_rules(
                 network_security_group_id=request.pop(util.camelize('networkSecurityGroupId')),
                 add_network_security_group_security_rules_details=request.pop(util.camelize('AddNetworkSecurityGroupSecurityRulesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -259,6 +264,7 @@ def test_add_public_ip_pool_capacity(testing_service_client):
             response = client.add_public_ip_pool_capacity(
                 public_ip_pool_id=request.pop(util.camelize('publicIpPoolId')),
                 add_public_ip_pool_capacity_details=request.pop(util.camelize('AddPublicIpPoolCapacityDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -300,6 +306,7 @@ def test_add_vcn_cidr(testing_service_client):
             response = client.add_vcn_cidr(
                 vcn_id=request.pop(util.camelize('vcnId')),
                 add_vcn_cidr_details=request.pop(util.camelize('AddVcnCidrDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -340,6 +347,7 @@ def test_advertise_byoip_range(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.advertise_byoip_range(
                 byoip_range_id=request.pop(util.camelize('byoipRangeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -381,6 +389,7 @@ def test_attach_service_id(testing_service_client):
             response = client.attach_service_id(
                 service_gateway_id=request.pop(util.camelize('serviceGatewayId')),
                 attach_service_details=request.pop(util.camelize('AttachServiceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -422,6 +431,7 @@ def test_bulk_add_virtual_circuit_public_prefixes(testing_service_client):
             response = client.bulk_add_virtual_circuit_public_prefixes(
                 virtual_circuit_id=request.pop(util.camelize('virtualCircuitId')),
                 bulk_add_virtual_circuit_public_prefixes_details=request.pop(util.camelize('BulkAddVirtualCircuitPublicPrefixesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -463,6 +473,7 @@ def test_bulk_delete_virtual_circuit_public_prefixes(testing_service_client):
             response = client.bulk_delete_virtual_circuit_public_prefixes(
                 virtual_circuit_id=request.pop(util.camelize('virtualCircuitId')),
                 bulk_delete_virtual_circuit_public_prefixes_details=request.pop(util.camelize('BulkDeleteVirtualCircuitPublicPrefixesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -504,6 +515,7 @@ def test_change_byoip_range_compartment(testing_service_client):
             response = client.change_byoip_range_compartment(
                 byoip_range_id=request.pop(util.camelize('byoipRangeId')),
                 change_byoip_range_compartment_details=request.pop(util.camelize('ChangeByoipRangeCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -545,6 +557,7 @@ def test_change_capture_filter_compartment(testing_service_client):
             response = client.change_capture_filter_compartment(
                 capture_filter_id=request.pop(util.camelize('captureFilterId')),
                 change_capture_filter_compartment_details=request.pop(util.camelize('ChangeCaptureFilterCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -586,6 +599,7 @@ def test_change_cpe_compartment(testing_service_client):
             response = client.change_cpe_compartment(
                 cpe_id=request.pop(util.camelize('cpeId')),
                 change_cpe_compartment_details=request.pop(util.camelize('ChangeCpeCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -627,6 +641,7 @@ def test_change_cross_connect_compartment(testing_service_client):
             response = client.change_cross_connect_compartment(
                 cross_connect_id=request.pop(util.camelize('crossConnectId')),
                 change_cross_connect_compartment_details=request.pop(util.camelize('ChangeCrossConnectCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -668,6 +683,7 @@ def test_change_cross_connect_group_compartment(testing_service_client):
             response = client.change_cross_connect_group_compartment(
                 cross_connect_group_id=request.pop(util.camelize('crossConnectGroupId')),
                 change_cross_connect_group_compartment_details=request.pop(util.camelize('ChangeCrossConnectGroupCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -709,6 +725,7 @@ def test_change_dhcp_options_compartment(testing_service_client):
             response = client.change_dhcp_options_compartment(
                 dhcp_id=request.pop(util.camelize('dhcpId')),
                 change_dhcp_options_compartment_details=request.pop(util.camelize('ChangeDhcpOptionsCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -750,6 +767,7 @@ def test_change_drg_compartment(testing_service_client):
             response = client.change_drg_compartment(
                 drg_id=request.pop(util.camelize('drgId')),
                 change_drg_compartment_details=request.pop(util.camelize('ChangeDrgCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -791,6 +809,7 @@ def test_change_internet_gateway_compartment(testing_service_client):
             response = client.change_internet_gateway_compartment(
                 ig_id=request.pop(util.camelize('igId')),
                 change_internet_gateway_compartment_details=request.pop(util.camelize('ChangeInternetGatewayCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -832,6 +851,7 @@ def test_change_ip_sec_connection_compartment(testing_service_client):
             response = client.change_ip_sec_connection_compartment(
                 ipsc_id=request.pop(util.camelize('ipscId')),
                 change_ip_sec_connection_compartment_details=request.pop(util.camelize('ChangeIPSecConnectionCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -873,6 +893,7 @@ def test_change_local_peering_gateway_compartment(testing_service_client):
             response = client.change_local_peering_gateway_compartment(
                 local_peering_gateway_id=request.pop(util.camelize('localPeeringGatewayId')),
                 change_local_peering_gateway_compartment_details=request.pop(util.camelize('ChangeLocalPeeringGatewayCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -914,6 +935,7 @@ def test_change_nat_gateway_compartment(testing_service_client):
             response = client.change_nat_gateway_compartment(
                 nat_gateway_id=request.pop(util.camelize('natGatewayId')),
                 change_nat_gateway_compartment_details=request.pop(util.camelize('ChangeNatGatewayCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -955,6 +977,7 @@ def test_change_network_security_group_compartment(testing_service_client):
             response = client.change_network_security_group_compartment(
                 network_security_group_id=request.pop(util.camelize('networkSecurityGroupId')),
                 change_network_security_group_compartment_details=request.pop(util.camelize('ChangeNetworkSecurityGroupCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -996,6 +1019,7 @@ def test_change_public_ip_compartment(testing_service_client):
             response = client.change_public_ip_compartment(
                 public_ip_id=request.pop(util.camelize('publicIpId')),
                 change_public_ip_compartment_details=request.pop(util.camelize('ChangePublicIpCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1037,6 +1061,7 @@ def test_change_public_ip_pool_compartment(testing_service_client):
             response = client.change_public_ip_pool_compartment(
                 public_ip_pool_id=request.pop(util.camelize('publicIpPoolId')),
                 change_public_ip_pool_compartment_details=request.pop(util.camelize('ChangePublicIpPoolCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1078,6 +1103,7 @@ def test_change_remote_peering_connection_compartment(testing_service_client):
             response = client.change_remote_peering_connection_compartment(
                 remote_peering_connection_id=request.pop(util.camelize('remotePeeringConnectionId')),
                 change_remote_peering_connection_compartment_details=request.pop(util.camelize('ChangeRemotePeeringConnectionCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1119,6 +1145,7 @@ def test_change_route_table_compartment(testing_service_client):
             response = client.change_route_table_compartment(
                 rt_id=request.pop(util.camelize('rtId')),
                 change_route_table_compartment_details=request.pop(util.camelize('ChangeRouteTableCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1160,6 +1187,7 @@ def test_change_security_list_compartment(testing_service_client):
             response = client.change_security_list_compartment(
                 security_list_id=request.pop(util.camelize('securityListId')),
                 change_security_list_compartment_details=request.pop(util.camelize('ChangeSecurityListCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1201,6 +1229,7 @@ def test_change_service_gateway_compartment(testing_service_client):
             response = client.change_service_gateway_compartment(
                 service_gateway_id=request.pop(util.camelize('serviceGatewayId')),
                 change_service_gateway_compartment_details=request.pop(util.camelize('ChangeServiceGatewayCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1242,6 +1271,7 @@ def test_change_subnet_compartment(testing_service_client):
             response = client.change_subnet_compartment(
                 subnet_id=request.pop(util.camelize('subnetId')),
                 change_subnet_compartment_details=request.pop(util.camelize('ChangeSubnetCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1283,6 +1313,7 @@ def test_change_vcn_compartment(testing_service_client):
             response = client.change_vcn_compartment(
                 vcn_id=request.pop(util.camelize('vcnId')),
                 change_vcn_compartment_details=request.pop(util.camelize('ChangeVcnCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1324,6 +1355,7 @@ def test_change_virtual_circuit_compartment(testing_service_client):
             response = client.change_virtual_circuit_compartment(
                 virtual_circuit_id=request.pop(util.camelize('virtualCircuitId')),
                 change_virtual_circuit_compartment_details=request.pop(util.camelize('ChangeVirtualCircuitCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1365,6 +1397,7 @@ def test_change_vlan_compartment(testing_service_client):
             response = client.change_vlan_compartment(
                 vlan_id=request.pop(util.camelize('vlanId')),
                 change_vlan_compartment_details=request.pop(util.camelize('ChangeVlanCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1406,6 +1439,7 @@ def test_change_vtap_compartment(testing_service_client):
             response = client.change_vtap_compartment(
                 vtap_id=request.pop(util.camelize('vtapId')),
                 change_vtap_compartment_details=request.pop(util.camelize('ChangeVtapCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1447,6 +1481,7 @@ def test_connect_local_peering_gateways(testing_service_client):
             response = client.connect_local_peering_gateways(
                 local_peering_gateway_id=request.pop(util.camelize('localPeeringGatewayId')),
                 connect_local_peering_gateways_details=request.pop(util.camelize('ConnectLocalPeeringGatewaysDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1488,6 +1523,7 @@ def test_connect_remote_peering_connections(testing_service_client):
             response = client.connect_remote_peering_connections(
                 remote_peering_connection_id=request.pop(util.camelize('remotePeeringConnectionId')),
                 connect_remote_peering_connections_details=request.pop(util.camelize('ConnectRemotePeeringConnectionsDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1528,6 +1564,7 @@ def test_create_byoip_range(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_byoip_range(
                 create_byoip_range_details=request.pop(util.camelize('CreateByoipRangeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1568,6 +1605,7 @@ def test_create_capture_filter(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_capture_filter(
                 create_capture_filter_details=request.pop(util.camelize('CreateCaptureFilterDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1608,6 +1646,7 @@ def test_create_cpe(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_cpe(
                 create_cpe_details=request.pop(util.camelize('CreateCpeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1648,6 +1687,7 @@ def test_create_cross_connect(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_cross_connect(
                 create_cross_connect_details=request.pop(util.camelize('CreateCrossConnectDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1688,6 +1728,7 @@ def test_create_cross_connect_group(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_cross_connect_group(
                 create_cross_connect_group_details=request.pop(util.camelize('CreateCrossConnectGroupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1728,6 +1769,7 @@ def test_create_dhcp_options(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_dhcp_options(
                 create_dhcp_details=request.pop(util.camelize('CreateDhcpDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1768,6 +1810,7 @@ def test_create_drg(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_drg(
                 create_drg_details=request.pop(util.camelize('CreateDrgDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1808,6 +1851,7 @@ def test_create_drg_attachment(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_drg_attachment(
                 create_drg_attachment_details=request.pop(util.camelize('CreateDrgAttachmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1848,6 +1892,7 @@ def test_create_drg_route_distribution(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_drg_route_distribution(
                 create_drg_route_distribution_details=request.pop(util.camelize('CreateDrgRouteDistributionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1888,6 +1933,7 @@ def test_create_drg_route_table(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_drg_route_table(
                 create_drg_route_table_details=request.pop(util.camelize('CreateDrgRouteTableDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1928,6 +1974,7 @@ def test_create_internet_gateway(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_internet_gateway(
                 create_internet_gateway_details=request.pop(util.camelize('CreateInternetGatewayDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1968,6 +2015,7 @@ def test_create_ip_sec_connection(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_ip_sec_connection(
                 create_ip_sec_connection_details=request.pop(util.camelize('CreateIPSecConnectionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2008,6 +2056,7 @@ def test_create_ipv6(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_ipv6(
                 create_ipv6_details=request.pop(util.camelize('CreateIpv6Details')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2048,6 +2097,7 @@ def test_create_local_peering_gateway(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_local_peering_gateway(
                 create_local_peering_gateway_details=request.pop(util.camelize('CreateLocalPeeringGatewayDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2088,6 +2138,7 @@ def test_create_nat_gateway(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_nat_gateway(
                 create_nat_gateway_details=request.pop(util.camelize('CreateNatGatewayDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2128,6 +2179,7 @@ def test_create_network_security_group(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_network_security_group(
                 create_network_security_group_details=request.pop(util.camelize('CreateNetworkSecurityGroupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2168,6 +2220,7 @@ def test_create_private_ip(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_private_ip(
                 create_private_ip_details=request.pop(util.camelize('CreatePrivateIpDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2208,6 +2261,7 @@ def test_create_public_ip(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_public_ip(
                 create_public_ip_details=request.pop(util.camelize('CreatePublicIpDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2248,6 +2302,7 @@ def test_create_public_ip_pool(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_public_ip_pool(
                 create_public_ip_pool_details=request.pop(util.camelize('CreatePublicIpPoolDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2288,6 +2343,7 @@ def test_create_remote_peering_connection(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_remote_peering_connection(
                 create_remote_peering_connection_details=request.pop(util.camelize('CreateRemotePeeringConnectionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2328,6 +2384,7 @@ def test_create_route_table(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_route_table(
                 create_route_table_details=request.pop(util.camelize('CreateRouteTableDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2368,6 +2425,7 @@ def test_create_security_list(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_security_list(
                 create_security_list_details=request.pop(util.camelize('CreateSecurityListDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2408,6 +2466,7 @@ def test_create_service_gateway(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_service_gateway(
                 create_service_gateway_details=request.pop(util.camelize('CreateServiceGatewayDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2448,6 +2507,7 @@ def test_create_subnet(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_subnet(
                 create_subnet_details=request.pop(util.camelize('CreateSubnetDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2488,6 +2548,7 @@ def test_create_vcn(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_vcn(
                 create_vcn_details=request.pop(util.camelize('CreateVcnDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2528,6 +2589,7 @@ def test_create_virtual_circuit(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_virtual_circuit(
                 create_virtual_circuit_details=request.pop(util.camelize('CreateVirtualCircuitDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2568,6 +2630,7 @@ def test_create_vlan(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_vlan(
                 create_vlan_details=request.pop(util.camelize('CreateVlanDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2608,6 +2671,7 @@ def test_create_vtap(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_vtap(
                 create_vtap_details=request.pop(util.camelize('CreateVtapDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2648,6 +2712,7 @@ def test_delete_byoip_range(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_byoip_range(
                 byoip_range_id=request.pop(util.camelize('byoipRangeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2688,6 +2753,7 @@ def test_delete_capture_filter(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_capture_filter(
                 capture_filter_id=request.pop(util.camelize('captureFilterId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2728,6 +2794,7 @@ def test_delete_cpe(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_cpe(
                 cpe_id=request.pop(util.camelize('cpeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2768,6 +2835,7 @@ def test_delete_cross_connect(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_cross_connect(
                 cross_connect_id=request.pop(util.camelize('crossConnectId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2808,6 +2876,7 @@ def test_delete_cross_connect_group(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_cross_connect_group(
                 cross_connect_group_id=request.pop(util.camelize('crossConnectGroupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2848,6 +2917,7 @@ def test_delete_dhcp_options(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_dhcp_options(
                 dhcp_id=request.pop(util.camelize('dhcpId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2888,6 +2958,7 @@ def test_delete_drg(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_drg(
                 drg_id=request.pop(util.camelize('drgId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2928,6 +2999,7 @@ def test_delete_drg_attachment(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_drg_attachment(
                 drg_attachment_id=request.pop(util.camelize('drgAttachmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2968,6 +3040,7 @@ def test_delete_drg_route_distribution(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_drg_route_distribution(
                 drg_route_distribution_id=request.pop(util.camelize('drgRouteDistributionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3008,6 +3081,7 @@ def test_delete_drg_route_table(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_drg_route_table(
                 drg_route_table_id=request.pop(util.camelize('drgRouteTableId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3048,6 +3122,7 @@ def test_delete_internet_gateway(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_internet_gateway(
                 ig_id=request.pop(util.camelize('igId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3088,6 +3163,7 @@ def test_delete_ip_sec_connection(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_ip_sec_connection(
                 ipsc_id=request.pop(util.camelize('ipscId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3128,6 +3204,7 @@ def test_delete_ipv6(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_ipv6(
                 ipv6_id=request.pop(util.camelize('ipv6Id')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3168,6 +3245,7 @@ def test_delete_local_peering_gateway(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_local_peering_gateway(
                 local_peering_gateway_id=request.pop(util.camelize('localPeeringGatewayId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3208,6 +3286,7 @@ def test_delete_nat_gateway(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_nat_gateway(
                 nat_gateway_id=request.pop(util.camelize('natGatewayId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3248,6 +3327,7 @@ def test_delete_network_security_group(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_network_security_group(
                 network_security_group_id=request.pop(util.camelize('networkSecurityGroupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3288,6 +3368,7 @@ def test_delete_private_ip(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_private_ip(
                 private_ip_id=request.pop(util.camelize('privateIpId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3328,6 +3409,7 @@ def test_delete_public_ip(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_public_ip(
                 public_ip_id=request.pop(util.camelize('publicIpId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3368,6 +3450,7 @@ def test_delete_public_ip_pool(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_public_ip_pool(
                 public_ip_pool_id=request.pop(util.camelize('publicIpPoolId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3408,6 +3491,7 @@ def test_delete_remote_peering_connection(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_remote_peering_connection(
                 remote_peering_connection_id=request.pop(util.camelize('remotePeeringConnectionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3448,6 +3532,7 @@ def test_delete_route_table(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_route_table(
                 rt_id=request.pop(util.camelize('rtId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3488,6 +3573,7 @@ def test_delete_security_list(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_security_list(
                 security_list_id=request.pop(util.camelize('securityListId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3528,6 +3614,7 @@ def test_delete_service_gateway(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_service_gateway(
                 service_gateway_id=request.pop(util.camelize('serviceGatewayId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3568,6 +3655,7 @@ def test_delete_subnet(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_subnet(
                 subnet_id=request.pop(util.camelize('subnetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3608,6 +3696,7 @@ def test_delete_vcn(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_vcn(
                 vcn_id=request.pop(util.camelize('vcnId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3648,6 +3737,7 @@ def test_delete_virtual_circuit(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_virtual_circuit(
                 virtual_circuit_id=request.pop(util.camelize('virtualCircuitId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3688,6 +3778,7 @@ def test_delete_vlan(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_vlan(
                 vlan_id=request.pop(util.camelize('vlanId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3728,6 +3819,7 @@ def test_delete_vtap(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_vtap(
                 vtap_id=request.pop(util.camelize('vtapId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3769,6 +3861,7 @@ def test_detach_service_id(testing_service_client):
             response = client.detach_service_id(
                 service_gateway_id=request.pop(util.camelize('serviceGatewayId')),
                 detach_service_details=request.pop(util.camelize('DetachServiceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3810,6 +3903,7 @@ def test_get_all_drg_attachments(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_all_drg_attachments(
                 drg_id=request.pop(util.camelize('drgId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3819,6 +3913,7 @@ def test_get_all_drg_attachments(testing_service_client):
                 next_response = client.get_all_drg_attachments(
                     drg_id=request.pop(util.camelize('drgId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3829,6 +3924,7 @@ def test_get_all_drg_attachments(testing_service_client):
                     prev_response = client.get_all_drg_attachments(
                         drg_id=request.pop(util.camelize('drgId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3868,6 +3964,7 @@ def test_get_allowed_ike_ip_sec_parameters(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_allowed_ike_ip_sec_parameters(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3908,6 +4005,7 @@ def test_get_byoip_range(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_byoip_range(
                 byoip_range_id=request.pop(util.camelize('byoipRangeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3948,6 +4046,7 @@ def test_get_capture_filter(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_capture_filter(
                 capture_filter_id=request.pop(util.camelize('captureFilterId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3988,6 +4087,7 @@ def test_get_cpe(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_cpe(
                 cpe_id=request.pop(util.camelize('cpeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4028,6 +4128,7 @@ def test_get_cpe_device_config_content(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_cpe_device_config_content(
                 cpe_id=request.pop(util.camelize('cpeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4068,6 +4169,7 @@ def test_get_cpe_device_shape(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_cpe_device_shape(
                 cpe_device_shape_id=request.pop(util.camelize('cpeDeviceShapeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4108,6 +4210,7 @@ def test_get_cross_connect(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_cross_connect(
                 cross_connect_id=request.pop(util.camelize('crossConnectId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4148,6 +4251,7 @@ def test_get_cross_connect_group(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_cross_connect_group(
                 cross_connect_group_id=request.pop(util.camelize('crossConnectGroupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4188,6 +4292,7 @@ def test_get_cross_connect_letter_of_authority(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_cross_connect_letter_of_authority(
                 cross_connect_id=request.pop(util.camelize('crossConnectId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4228,6 +4333,7 @@ def test_get_cross_connect_status(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_cross_connect_status(
                 cross_connect_id=request.pop(util.camelize('crossConnectId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4268,6 +4374,7 @@ def test_get_dhcp_options(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_dhcp_options(
                 dhcp_id=request.pop(util.camelize('dhcpId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4308,6 +4415,7 @@ def test_get_drg(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_drg(
                 drg_id=request.pop(util.camelize('drgId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4348,6 +4456,7 @@ def test_get_drg_attachment(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_drg_attachment(
                 drg_attachment_id=request.pop(util.camelize('drgAttachmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4388,6 +4497,7 @@ def test_get_drg_redundancy_status(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_drg_redundancy_status(
                 drg_id=request.pop(util.camelize('drgId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4428,6 +4538,7 @@ def test_get_drg_route_distribution(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_drg_route_distribution(
                 drg_route_distribution_id=request.pop(util.camelize('drgRouteDistributionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4468,6 +4579,7 @@ def test_get_drg_route_table(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_drg_route_table(
                 drg_route_table_id=request.pop(util.camelize('drgRouteTableId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4508,6 +4620,7 @@ def test_get_fast_connect_provider_service(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_fast_connect_provider_service(
                 provider_service_id=request.pop(util.camelize('providerServiceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4549,6 +4662,7 @@ def test_get_fast_connect_provider_service_key(testing_service_client):
             response = client.get_fast_connect_provider_service_key(
                 provider_service_id=request.pop(util.camelize('providerServiceId')),
                 provider_service_key_name=request.pop(util.camelize('providerServiceKeyName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4589,6 +4703,7 @@ def test_get_internet_gateway(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_internet_gateway(
                 ig_id=request.pop(util.camelize('igId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4629,6 +4744,7 @@ def test_get_ip_sec_connection(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_ip_sec_connection(
                 ipsc_id=request.pop(util.camelize('ipscId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4669,6 +4785,7 @@ def test_get_ip_sec_connection_device_config(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_ip_sec_connection_device_config(
                 ipsc_id=request.pop(util.camelize('ipscId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4709,6 +4826,7 @@ def test_get_ip_sec_connection_device_status(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_ip_sec_connection_device_status(
                 ipsc_id=request.pop(util.camelize('ipscId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4750,6 +4868,7 @@ def test_get_ip_sec_connection_tunnel(testing_service_client):
             response = client.get_ip_sec_connection_tunnel(
                 ipsc_id=request.pop(util.camelize('ipscId')),
                 tunnel_id=request.pop(util.camelize('tunnelId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4791,6 +4910,7 @@ def test_get_ip_sec_connection_tunnel_error(testing_service_client):
             response = client.get_ip_sec_connection_tunnel_error(
                 ipsc_id=request.pop(util.camelize('ipscId')),
                 tunnel_id=request.pop(util.camelize('tunnelId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4832,6 +4952,7 @@ def test_get_ip_sec_connection_tunnel_shared_secret(testing_service_client):
             response = client.get_ip_sec_connection_tunnel_shared_secret(
                 ipsc_id=request.pop(util.camelize('ipscId')),
                 tunnel_id=request.pop(util.camelize('tunnelId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4872,6 +4993,7 @@ def test_get_ipsec_cpe_device_config_content(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_ipsec_cpe_device_config_content(
                 ipsc_id=request.pop(util.camelize('ipscId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4912,6 +5034,7 @@ def test_get_ipv6(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_ipv6(
                 ipv6_id=request.pop(util.camelize('ipv6Id')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4952,6 +5075,7 @@ def test_get_local_peering_gateway(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_local_peering_gateway(
                 local_peering_gateway_id=request.pop(util.camelize('localPeeringGatewayId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4992,6 +5116,7 @@ def test_get_nat_gateway(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_nat_gateway(
                 nat_gateway_id=request.pop(util.camelize('natGatewayId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5032,6 +5157,7 @@ def test_get_network_security_group(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_network_security_group(
                 network_security_group_id=request.pop(util.camelize('networkSecurityGroupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5072,6 +5198,7 @@ def test_get_networking_topology(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_networking_topology(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5112,6 +5239,7 @@ def test_get_private_ip(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_private_ip(
                 private_ip_id=request.pop(util.camelize('privateIpId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5152,6 +5280,7 @@ def test_get_public_ip(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_public_ip(
                 public_ip_id=request.pop(util.camelize('publicIpId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5192,6 +5321,7 @@ def test_get_public_ip_by_ip_address(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_public_ip_by_ip_address(
                 get_public_ip_by_ip_address_details=request.pop(util.camelize('GetPublicIpByIpAddressDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5232,6 +5362,7 @@ def test_get_public_ip_by_private_ip_id(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_public_ip_by_private_ip_id(
                 get_public_ip_by_private_ip_id_details=request.pop(util.camelize('GetPublicIpByPrivateIpIdDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5272,6 +5403,7 @@ def test_get_public_ip_pool(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_public_ip_pool(
                 public_ip_pool_id=request.pop(util.camelize('publicIpPoolId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5312,6 +5444,7 @@ def test_get_remote_peering_connection(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_remote_peering_connection(
                 remote_peering_connection_id=request.pop(util.camelize('remotePeeringConnectionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5352,6 +5485,7 @@ def test_get_route_table(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_route_table(
                 rt_id=request.pop(util.camelize('rtId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5392,6 +5526,7 @@ def test_get_security_list(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_security_list(
                 security_list_id=request.pop(util.camelize('securityListId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5432,6 +5567,7 @@ def test_get_service(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_service(
                 service_id=request.pop(util.camelize('serviceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5472,6 +5608,7 @@ def test_get_service_gateway(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_service_gateway(
                 service_gateway_id=request.pop(util.camelize('serviceGatewayId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5512,6 +5649,7 @@ def test_get_subnet(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_subnet(
                 subnet_id=request.pop(util.camelize('subnetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5553,6 +5691,7 @@ def test_get_subnet_topology(testing_service_client):
             response = client.get_subnet_topology(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 subnet_id=request.pop(util.camelize('subnetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5594,6 +5733,7 @@ def test_get_tunnel_cpe_device_config(testing_service_client):
             response = client.get_tunnel_cpe_device_config(
                 ipsc_id=request.pop(util.camelize('ipscId')),
                 tunnel_id=request.pop(util.camelize('tunnelId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5635,6 +5775,7 @@ def test_get_tunnel_cpe_device_config_content(testing_service_client):
             response = client.get_tunnel_cpe_device_config_content(
                 ipsc_id=request.pop(util.camelize('ipscId')),
                 tunnel_id=request.pop(util.camelize('tunnelId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5675,6 +5816,7 @@ def test_get_upgrade_status(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_upgrade_status(
                 drg_id=request.pop(util.camelize('drgId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5715,6 +5857,7 @@ def test_get_vcn(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_vcn(
                 vcn_id=request.pop(util.camelize('vcnId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5755,6 +5898,7 @@ def test_get_vcn_dns_resolver_association(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_vcn_dns_resolver_association(
                 vcn_id=request.pop(util.camelize('vcnId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5796,6 +5940,7 @@ def test_get_vcn_topology(testing_service_client):
             response = client.get_vcn_topology(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 vcn_id=request.pop(util.camelize('vcnId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5836,6 +5981,7 @@ def test_get_virtual_circuit(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_virtual_circuit(
                 virtual_circuit_id=request.pop(util.camelize('virtualCircuitId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5876,6 +6022,7 @@ def test_get_vlan(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_vlan(
                 vlan_id=request.pop(util.camelize('vlanId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5916,6 +6063,7 @@ def test_get_vnic(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_vnic(
                 vnic_id=request.pop(util.camelize('vnicId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5956,6 +6104,7 @@ def test_get_vtap(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_vtap(
                 vtap_id=request.pop(util.camelize('vtapId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5995,6 +6144,7 @@ def test_list_allowed_peer_regions_for_remote_peering(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_allowed_peer_regions_for_remote_peering(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6036,6 +6186,7 @@ def test_list_byoip_allocated_ranges(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_byoip_allocated_ranges(
                 byoip_range_id=request.pop(util.camelize('byoipRangeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6045,6 +6196,7 @@ def test_list_byoip_allocated_ranges(testing_service_client):
                 next_response = client.list_byoip_allocated_ranges(
                     byoip_range_id=request.pop(util.camelize('byoipRangeId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6055,6 +6207,7 @@ def test_list_byoip_allocated_ranges(testing_service_client):
                     prev_response = client.list_byoip_allocated_ranges(
                         byoip_range_id=request.pop(util.camelize('byoipRangeId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6096,6 +6249,7 @@ def test_list_byoip_ranges(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_byoip_ranges(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6105,6 +6259,7 @@ def test_list_byoip_ranges(testing_service_client):
                 next_response = client.list_byoip_ranges(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6115,6 +6270,7 @@ def test_list_byoip_ranges(testing_service_client):
                     prev_response = client.list_byoip_ranges(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6156,6 +6312,7 @@ def test_list_capture_filters(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_capture_filters(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6165,6 +6322,7 @@ def test_list_capture_filters(testing_service_client):
                 next_response = client.list_capture_filters(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6175,6 +6333,7 @@ def test_list_capture_filters(testing_service_client):
                     prev_response = client.list_capture_filters(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6215,6 +6374,7 @@ def test_list_cpe_device_shapes(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_cpe_device_shapes(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6223,6 +6383,7 @@ def test_list_cpe_device_shapes(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_cpe_device_shapes(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6232,6 +6393,7 @@ def test_list_cpe_device_shapes(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_cpe_device_shapes(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6273,6 +6435,7 @@ def test_list_cpes(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_cpes(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6282,6 +6445,7 @@ def test_list_cpes(testing_service_client):
                 next_response = client.list_cpes(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6292,6 +6456,7 @@ def test_list_cpes(testing_service_client):
                     prev_response = client.list_cpes(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6333,6 +6498,7 @@ def test_list_cross_connect_groups(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_cross_connect_groups(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6342,6 +6508,7 @@ def test_list_cross_connect_groups(testing_service_client):
                 next_response = client.list_cross_connect_groups(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6352,6 +6519,7 @@ def test_list_cross_connect_groups(testing_service_client):
                     prev_response = client.list_cross_connect_groups(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6393,6 +6561,7 @@ def test_list_cross_connect_locations(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_cross_connect_locations(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6402,6 +6571,7 @@ def test_list_cross_connect_locations(testing_service_client):
                 next_response = client.list_cross_connect_locations(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6412,6 +6582,7 @@ def test_list_cross_connect_locations(testing_service_client):
                     prev_response = client.list_cross_connect_locations(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6452,6 +6623,7 @@ def test_list_cross_connect_mappings(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_cross_connect_mappings(
                 virtual_circuit_id=request.pop(util.camelize('virtualCircuitId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6493,6 +6665,7 @@ def test_list_cross_connects(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_cross_connects(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6502,6 +6675,7 @@ def test_list_cross_connects(testing_service_client):
                 next_response = client.list_cross_connects(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6512,6 +6686,7 @@ def test_list_cross_connects(testing_service_client):
                     prev_response = client.list_cross_connects(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6553,6 +6728,7 @@ def test_list_crossconnect_port_speed_shapes(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_crossconnect_port_speed_shapes(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6562,6 +6738,7 @@ def test_list_crossconnect_port_speed_shapes(testing_service_client):
                 next_response = client.list_crossconnect_port_speed_shapes(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6572,6 +6749,7 @@ def test_list_crossconnect_port_speed_shapes(testing_service_client):
                     prev_response = client.list_crossconnect_port_speed_shapes(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6613,6 +6791,7 @@ def test_list_dhcp_options(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_dhcp_options(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6622,6 +6801,7 @@ def test_list_dhcp_options(testing_service_client):
                 next_response = client.list_dhcp_options(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6632,6 +6812,7 @@ def test_list_dhcp_options(testing_service_client):
                     prev_response = client.list_dhcp_options(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6673,6 +6854,7 @@ def test_list_drg_attachments(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_drg_attachments(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6682,6 +6864,7 @@ def test_list_drg_attachments(testing_service_client):
                 next_response = client.list_drg_attachments(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6692,6 +6875,7 @@ def test_list_drg_attachments(testing_service_client):
                     prev_response = client.list_drg_attachments(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6733,6 +6917,7 @@ def test_list_drg_route_distribution_statements(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_drg_route_distribution_statements(
                 drg_route_distribution_id=request.pop(util.camelize('drgRouteDistributionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6742,6 +6927,7 @@ def test_list_drg_route_distribution_statements(testing_service_client):
                 next_response = client.list_drg_route_distribution_statements(
                     drg_route_distribution_id=request.pop(util.camelize('drgRouteDistributionId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6752,6 +6938,7 @@ def test_list_drg_route_distribution_statements(testing_service_client):
                     prev_response = client.list_drg_route_distribution_statements(
                         drg_route_distribution_id=request.pop(util.camelize('drgRouteDistributionId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6793,6 +6980,7 @@ def test_list_drg_route_distributions(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_drg_route_distributions(
                 drg_id=request.pop(util.camelize('drgId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6802,6 +6990,7 @@ def test_list_drg_route_distributions(testing_service_client):
                 next_response = client.list_drg_route_distributions(
                     drg_id=request.pop(util.camelize('drgId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6812,6 +7001,7 @@ def test_list_drg_route_distributions(testing_service_client):
                     prev_response = client.list_drg_route_distributions(
                         drg_id=request.pop(util.camelize('drgId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6853,6 +7043,7 @@ def test_list_drg_route_rules(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_drg_route_rules(
                 drg_route_table_id=request.pop(util.camelize('drgRouteTableId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6862,6 +7053,7 @@ def test_list_drg_route_rules(testing_service_client):
                 next_response = client.list_drg_route_rules(
                     drg_route_table_id=request.pop(util.camelize('drgRouteTableId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6872,6 +7064,7 @@ def test_list_drg_route_rules(testing_service_client):
                     prev_response = client.list_drg_route_rules(
                         drg_route_table_id=request.pop(util.camelize('drgRouteTableId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6913,6 +7106,7 @@ def test_list_drg_route_tables(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_drg_route_tables(
                 drg_id=request.pop(util.camelize('drgId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6922,6 +7116,7 @@ def test_list_drg_route_tables(testing_service_client):
                 next_response = client.list_drg_route_tables(
                     drg_id=request.pop(util.camelize('drgId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6932,6 +7127,7 @@ def test_list_drg_route_tables(testing_service_client):
                     prev_response = client.list_drg_route_tables(
                         drg_id=request.pop(util.camelize('drgId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6973,6 +7169,7 @@ def test_list_drgs(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_drgs(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6982,6 +7179,7 @@ def test_list_drgs(testing_service_client):
                 next_response = client.list_drgs(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6992,6 +7190,7 @@ def test_list_drgs(testing_service_client):
                     prev_response = client.list_drgs(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -7033,6 +7232,7 @@ def test_list_fast_connect_provider_services(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_fast_connect_provider_services(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7042,6 +7242,7 @@ def test_list_fast_connect_provider_services(testing_service_client):
                 next_response = client.list_fast_connect_provider_services(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -7052,6 +7253,7 @@ def test_list_fast_connect_provider_services(testing_service_client):
                     prev_response = client.list_fast_connect_provider_services(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -7093,6 +7295,7 @@ def test_list_fast_connect_provider_virtual_circuit_bandwidth_shapes(testing_ser
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_fast_connect_provider_virtual_circuit_bandwidth_shapes(
                 provider_service_id=request.pop(util.camelize('providerServiceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7102,6 +7305,7 @@ def test_list_fast_connect_provider_virtual_circuit_bandwidth_shapes(testing_ser
                 next_response = client.list_fast_connect_provider_virtual_circuit_bandwidth_shapes(
                     provider_service_id=request.pop(util.camelize('providerServiceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -7112,6 +7316,7 @@ def test_list_fast_connect_provider_virtual_circuit_bandwidth_shapes(testing_ser
                     prev_response = client.list_fast_connect_provider_virtual_circuit_bandwidth_shapes(
                         provider_service_id=request.pop(util.camelize('providerServiceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -7153,6 +7358,7 @@ def test_list_internet_gateways(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_internet_gateways(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7162,6 +7368,7 @@ def test_list_internet_gateways(testing_service_client):
                 next_response = client.list_internet_gateways(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -7172,6 +7379,7 @@ def test_list_internet_gateways(testing_service_client):
                     prev_response = client.list_internet_gateways(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -7214,6 +7422,7 @@ def test_list_ip_sec_connection_tunnel_routes(testing_service_client):
             response = client.list_ip_sec_connection_tunnel_routes(
                 ipsc_id=request.pop(util.camelize('ipscId')),
                 tunnel_id=request.pop(util.camelize('tunnelId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7224,6 +7433,7 @@ def test_list_ip_sec_connection_tunnel_routes(testing_service_client):
                     ipsc_id=request.pop(util.camelize('ipscId')),
                     tunnel_id=request.pop(util.camelize('tunnelId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -7235,6 +7445,7 @@ def test_list_ip_sec_connection_tunnel_routes(testing_service_client):
                         ipsc_id=request.pop(util.camelize('ipscId')),
                         tunnel_id=request.pop(util.camelize('tunnelId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -7277,6 +7488,7 @@ def test_list_ip_sec_connection_tunnel_security_associations(testing_service_cli
             response = client.list_ip_sec_connection_tunnel_security_associations(
                 ipsc_id=request.pop(util.camelize('ipscId')),
                 tunnel_id=request.pop(util.camelize('tunnelId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7287,6 +7499,7 @@ def test_list_ip_sec_connection_tunnel_security_associations(testing_service_cli
                     ipsc_id=request.pop(util.camelize('ipscId')),
                     tunnel_id=request.pop(util.camelize('tunnelId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -7298,6 +7511,7 @@ def test_list_ip_sec_connection_tunnel_security_associations(testing_service_cli
                         ipsc_id=request.pop(util.camelize('ipscId')),
                         tunnel_id=request.pop(util.camelize('tunnelId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -7339,6 +7553,7 @@ def test_list_ip_sec_connection_tunnels(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_ip_sec_connection_tunnels(
                 ipsc_id=request.pop(util.camelize('ipscId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7348,6 +7563,7 @@ def test_list_ip_sec_connection_tunnels(testing_service_client):
                 next_response = client.list_ip_sec_connection_tunnels(
                     ipsc_id=request.pop(util.camelize('ipscId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -7358,6 +7574,7 @@ def test_list_ip_sec_connection_tunnels(testing_service_client):
                     prev_response = client.list_ip_sec_connection_tunnels(
                         ipsc_id=request.pop(util.camelize('ipscId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -7399,6 +7616,7 @@ def test_list_ip_sec_connections(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_ip_sec_connections(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7408,6 +7626,7 @@ def test_list_ip_sec_connections(testing_service_client):
                 next_response = client.list_ip_sec_connections(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -7418,6 +7637,7 @@ def test_list_ip_sec_connections(testing_service_client):
                     prev_response = client.list_ip_sec_connections(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -7458,6 +7678,7 @@ def test_list_ipv6s(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_ipv6s(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7466,6 +7687,7 @@ def test_list_ipv6s(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_ipv6s(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -7475,6 +7697,7 @@ def test_list_ipv6s(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_ipv6s(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -7516,6 +7739,7 @@ def test_list_local_peering_gateways(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_local_peering_gateways(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7525,6 +7749,7 @@ def test_list_local_peering_gateways(testing_service_client):
                 next_response = client.list_local_peering_gateways(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -7535,6 +7760,7 @@ def test_list_local_peering_gateways(testing_service_client):
                     prev_response = client.list_local_peering_gateways(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -7576,6 +7802,7 @@ def test_list_nat_gateways(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_nat_gateways(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7585,6 +7812,7 @@ def test_list_nat_gateways(testing_service_client):
                 next_response = client.list_nat_gateways(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -7595,6 +7823,7 @@ def test_list_nat_gateways(testing_service_client):
                     prev_response = client.list_nat_gateways(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -7636,6 +7865,7 @@ def test_list_network_security_group_security_rules(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_network_security_group_security_rules(
                 network_security_group_id=request.pop(util.camelize('networkSecurityGroupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7645,6 +7875,7 @@ def test_list_network_security_group_security_rules(testing_service_client):
                 next_response = client.list_network_security_group_security_rules(
                     network_security_group_id=request.pop(util.camelize('networkSecurityGroupId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -7655,6 +7886,7 @@ def test_list_network_security_group_security_rules(testing_service_client):
                     prev_response = client.list_network_security_group_security_rules(
                         network_security_group_id=request.pop(util.camelize('networkSecurityGroupId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -7696,6 +7928,7 @@ def test_list_network_security_group_vnics(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_network_security_group_vnics(
                 network_security_group_id=request.pop(util.camelize('networkSecurityGroupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7705,6 +7938,7 @@ def test_list_network_security_group_vnics(testing_service_client):
                 next_response = client.list_network_security_group_vnics(
                     network_security_group_id=request.pop(util.camelize('networkSecurityGroupId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -7715,6 +7949,7 @@ def test_list_network_security_group_vnics(testing_service_client):
                     prev_response = client.list_network_security_group_vnics(
                         network_security_group_id=request.pop(util.camelize('networkSecurityGroupId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -7755,6 +7990,7 @@ def test_list_network_security_groups(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_network_security_groups(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7763,6 +7999,7 @@ def test_list_network_security_groups(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_network_security_groups(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -7772,6 +8009,7 @@ def test_list_network_security_groups(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_network_security_groups(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -7812,6 +8050,7 @@ def test_list_private_ips(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_private_ips(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7820,6 +8059,7 @@ def test_list_private_ips(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_private_ips(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -7829,6 +8069,7 @@ def test_list_private_ips(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_private_ips(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -7870,6 +8111,7 @@ def test_list_public_ip_pools(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_public_ip_pools(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7879,6 +8121,7 @@ def test_list_public_ip_pools(testing_service_client):
                 next_response = client.list_public_ip_pools(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -7889,6 +8132,7 @@ def test_list_public_ip_pools(testing_service_client):
                     prev_response = client.list_public_ip_pools(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -7931,6 +8175,7 @@ def test_list_public_ips(testing_service_client):
             response = client.list_public_ips(
                 scope=request.pop(util.camelize('scope')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7941,6 +8186,7 @@ def test_list_public_ips(testing_service_client):
                     scope=request.pop(util.camelize('scope')),
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -7952,6 +8198,7 @@ def test_list_public_ips(testing_service_client):
                         scope=request.pop(util.camelize('scope')),
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -7993,6 +8240,7 @@ def test_list_remote_peering_connections(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_remote_peering_connections(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8002,6 +8250,7 @@ def test_list_remote_peering_connections(testing_service_client):
                 next_response = client.list_remote_peering_connections(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -8012,6 +8261,7 @@ def test_list_remote_peering_connections(testing_service_client):
                     prev_response = client.list_remote_peering_connections(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -8053,6 +8303,7 @@ def test_list_route_tables(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_route_tables(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8062,6 +8313,7 @@ def test_list_route_tables(testing_service_client):
                 next_response = client.list_route_tables(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -8072,6 +8324,7 @@ def test_list_route_tables(testing_service_client):
                     prev_response = client.list_route_tables(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -8113,6 +8366,7 @@ def test_list_security_lists(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_security_lists(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8122,6 +8376,7 @@ def test_list_security_lists(testing_service_client):
                 next_response = client.list_security_lists(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -8132,6 +8387,7 @@ def test_list_security_lists(testing_service_client):
                     prev_response = client.list_security_lists(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -8173,6 +8429,7 @@ def test_list_service_gateways(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_service_gateways(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8182,6 +8439,7 @@ def test_list_service_gateways(testing_service_client):
                 next_response = client.list_service_gateways(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -8192,6 +8450,7 @@ def test_list_service_gateways(testing_service_client):
                     prev_response = client.list_service_gateways(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -8232,6 +8491,7 @@ def test_list_services(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_services(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8240,6 +8500,7 @@ def test_list_services(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_services(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -8249,6 +8510,7 @@ def test_list_services(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_services(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -8290,6 +8552,7 @@ def test_list_subnets(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_subnets(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8299,6 +8562,7 @@ def test_list_subnets(testing_service_client):
                 next_response = client.list_subnets(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -8309,6 +8573,7 @@ def test_list_subnets(testing_service_client):
                     prev_response = client.list_subnets(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -8350,6 +8615,7 @@ def test_list_vcns(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_vcns(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8359,6 +8625,7 @@ def test_list_vcns(testing_service_client):
                 next_response = client.list_vcns(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -8369,6 +8636,7 @@ def test_list_vcns(testing_service_client):
                     prev_response = client.list_vcns(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -8410,6 +8678,7 @@ def test_list_virtual_circuit_bandwidth_shapes(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_virtual_circuit_bandwidth_shapes(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8419,6 +8688,7 @@ def test_list_virtual_circuit_bandwidth_shapes(testing_service_client):
                 next_response = client.list_virtual_circuit_bandwidth_shapes(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -8429,6 +8699,7 @@ def test_list_virtual_circuit_bandwidth_shapes(testing_service_client):
                     prev_response = client.list_virtual_circuit_bandwidth_shapes(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -8469,6 +8740,7 @@ def test_list_virtual_circuit_public_prefixes(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_virtual_circuit_public_prefixes(
                 virtual_circuit_id=request.pop(util.camelize('virtualCircuitId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8510,6 +8782,7 @@ def test_list_virtual_circuits(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_virtual_circuits(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8519,6 +8792,7 @@ def test_list_virtual_circuits(testing_service_client):
                 next_response = client.list_virtual_circuits(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -8529,6 +8803,7 @@ def test_list_virtual_circuits(testing_service_client):
                     prev_response = client.list_virtual_circuits(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -8570,6 +8845,7 @@ def test_list_vlans(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_vlans(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8579,6 +8855,7 @@ def test_list_vlans(testing_service_client):
                 next_response = client.list_vlans(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -8589,6 +8866,7 @@ def test_list_vlans(testing_service_client):
                     prev_response = client.list_vlans(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -8630,6 +8908,7 @@ def test_list_vtaps(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_vtaps(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8639,6 +8918,7 @@ def test_list_vtaps(testing_service_client):
                 next_response = client.list_vtaps(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -8649,6 +8929,7 @@ def test_list_vtaps(testing_service_client):
                     prev_response = client.list_vtaps(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -8690,6 +8971,7 @@ def test_modify_vcn_cidr(testing_service_client):
             response = client.modify_vcn_cidr(
                 vcn_id=request.pop(util.camelize('vcnId')),
                 modify_vcn_cidr_details=request.pop(util.camelize('ModifyVcnCidrDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8731,6 +9013,7 @@ def test_remove_drg_route_distribution_statements(testing_service_client):
             response = client.remove_drg_route_distribution_statements(
                 drg_route_distribution_id=request.pop(util.camelize('drgRouteDistributionId')),
                 remove_drg_route_distribution_statements_details=request.pop(util.camelize('RemoveDrgRouteDistributionStatementsDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8772,6 +9055,7 @@ def test_remove_drg_route_rules(testing_service_client):
             response = client.remove_drg_route_rules(
                 drg_route_table_id=request.pop(util.camelize('drgRouteTableId')),
                 remove_drg_route_rules_details=request.pop(util.camelize('RemoveDrgRouteRulesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8812,6 +9096,7 @@ def test_remove_export_drg_route_distribution(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.remove_export_drg_route_distribution(
                 drg_attachment_id=request.pop(util.camelize('drgAttachmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8852,6 +9137,7 @@ def test_remove_import_drg_route_distribution(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.remove_import_drg_route_distribution(
                 drg_route_table_id=request.pop(util.camelize('drgRouteTableId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8893,6 +9179,7 @@ def test_remove_ipv6_subnet_cidr(testing_service_client):
             response = client.remove_ipv6_subnet_cidr(
                 subnet_id=request.pop(util.camelize('subnetId')),
                 remove_subnet_ipv6_cidr_details=request.pop(util.camelize('RemoveSubnetIpv6CidrDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8933,6 +9220,7 @@ def test_remove_ipv6_vcn_cidr(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.remove_ipv6_vcn_cidr(
                 vcn_id=request.pop(util.camelize('vcnId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8974,6 +9262,7 @@ def test_remove_network_security_group_security_rules(testing_service_client):
             response = client.remove_network_security_group_security_rules(
                 network_security_group_id=request.pop(util.camelize('networkSecurityGroupId')),
                 remove_network_security_group_security_rules_details=request.pop(util.camelize('RemoveNetworkSecurityGroupSecurityRulesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -9015,6 +9304,7 @@ def test_remove_public_ip_pool_capacity(testing_service_client):
             response = client.remove_public_ip_pool_capacity(
                 public_ip_pool_id=request.pop(util.camelize('publicIpPoolId')),
                 remove_public_ip_pool_capacity_details=request.pop(util.camelize('RemovePublicIpPoolCapacityDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -9056,6 +9346,7 @@ def test_remove_vcn_cidr(testing_service_client):
             response = client.remove_vcn_cidr(
                 vcn_id=request.pop(util.camelize('vcnId')),
                 remove_vcn_cidr_details=request.pop(util.camelize('RemoveVcnCidrDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -9097,6 +9388,7 @@ def test_update_byoip_range(testing_service_client):
             response = client.update_byoip_range(
                 byoip_range_id=request.pop(util.camelize('byoipRangeId')),
                 update_byoip_range_details=request.pop(util.camelize('UpdateByoipRangeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -9138,6 +9430,7 @@ def test_update_capture_filter(testing_service_client):
             response = client.update_capture_filter(
                 capture_filter_id=request.pop(util.camelize('captureFilterId')),
                 update_capture_filter_details=request.pop(util.camelize('UpdateCaptureFilterDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -9179,6 +9472,7 @@ def test_update_cpe(testing_service_client):
             response = client.update_cpe(
                 cpe_id=request.pop(util.camelize('cpeId')),
                 update_cpe_details=request.pop(util.camelize('UpdateCpeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -9220,6 +9514,7 @@ def test_update_cross_connect(testing_service_client):
             response = client.update_cross_connect(
                 cross_connect_id=request.pop(util.camelize('crossConnectId')),
                 update_cross_connect_details=request.pop(util.camelize('UpdateCrossConnectDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -9261,6 +9556,7 @@ def test_update_cross_connect_group(testing_service_client):
             response = client.update_cross_connect_group(
                 cross_connect_group_id=request.pop(util.camelize('crossConnectGroupId')),
                 update_cross_connect_group_details=request.pop(util.camelize('UpdateCrossConnectGroupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -9302,6 +9598,7 @@ def test_update_dhcp_options(testing_service_client):
             response = client.update_dhcp_options(
                 dhcp_id=request.pop(util.camelize('dhcpId')),
                 update_dhcp_details=request.pop(util.camelize('UpdateDhcpDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -9343,6 +9640,7 @@ def test_update_drg(testing_service_client):
             response = client.update_drg(
                 drg_id=request.pop(util.camelize('drgId')),
                 update_drg_details=request.pop(util.camelize('UpdateDrgDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -9384,6 +9682,7 @@ def test_update_drg_attachment(testing_service_client):
             response = client.update_drg_attachment(
                 drg_attachment_id=request.pop(util.camelize('drgAttachmentId')),
                 update_drg_attachment_details=request.pop(util.camelize('UpdateDrgAttachmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -9425,6 +9724,7 @@ def test_update_drg_route_distribution(testing_service_client):
             response = client.update_drg_route_distribution(
                 drg_route_distribution_id=request.pop(util.camelize('drgRouteDistributionId')),
                 update_drg_route_distribution_details=request.pop(util.camelize('UpdateDrgRouteDistributionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -9466,6 +9766,7 @@ def test_update_drg_route_distribution_statements(testing_service_client):
             response = client.update_drg_route_distribution_statements(
                 drg_route_distribution_id=request.pop(util.camelize('drgRouteDistributionId')),
                 update_drg_route_distribution_statements_details=request.pop(util.camelize('UpdateDrgRouteDistributionStatementsDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -9507,6 +9808,7 @@ def test_update_drg_route_rules(testing_service_client):
             response = client.update_drg_route_rules(
                 drg_route_table_id=request.pop(util.camelize('drgRouteTableId')),
                 update_drg_route_rules_details=request.pop(util.camelize('UpdateDrgRouteRulesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -9548,6 +9850,7 @@ def test_update_drg_route_table(testing_service_client):
             response = client.update_drg_route_table(
                 drg_route_table_id=request.pop(util.camelize('drgRouteTableId')),
                 update_drg_route_table_details=request.pop(util.camelize('UpdateDrgRouteTableDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -9589,6 +9892,7 @@ def test_update_internet_gateway(testing_service_client):
             response = client.update_internet_gateway(
                 ig_id=request.pop(util.camelize('igId')),
                 update_internet_gateway_details=request.pop(util.camelize('UpdateInternetGatewayDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -9630,6 +9934,7 @@ def test_update_ip_sec_connection(testing_service_client):
             response = client.update_ip_sec_connection(
                 ipsc_id=request.pop(util.camelize('ipscId')),
                 update_ip_sec_connection_details=request.pop(util.camelize('UpdateIPSecConnectionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -9672,6 +9977,7 @@ def test_update_ip_sec_connection_tunnel(testing_service_client):
                 ipsc_id=request.pop(util.camelize('ipscId')),
                 tunnel_id=request.pop(util.camelize('tunnelId')),
                 update_ip_sec_connection_tunnel_details=request.pop(util.camelize('UpdateIPSecConnectionTunnelDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -9714,6 +10020,7 @@ def test_update_ip_sec_connection_tunnel_shared_secret(testing_service_client):
                 ipsc_id=request.pop(util.camelize('ipscId')),
                 tunnel_id=request.pop(util.camelize('tunnelId')),
                 update_ip_sec_connection_tunnel_shared_secret_details=request.pop(util.camelize('UpdateIPSecConnectionTunnelSharedSecretDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -9755,6 +10062,7 @@ def test_update_ipv6(testing_service_client):
             response = client.update_ipv6(
                 ipv6_id=request.pop(util.camelize('ipv6Id')),
                 update_ipv6_details=request.pop(util.camelize('UpdateIpv6Details')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -9796,6 +10104,7 @@ def test_update_local_peering_gateway(testing_service_client):
             response = client.update_local_peering_gateway(
                 local_peering_gateway_id=request.pop(util.camelize('localPeeringGatewayId')),
                 update_local_peering_gateway_details=request.pop(util.camelize('UpdateLocalPeeringGatewayDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -9837,6 +10146,7 @@ def test_update_nat_gateway(testing_service_client):
             response = client.update_nat_gateway(
                 nat_gateway_id=request.pop(util.camelize('natGatewayId')),
                 update_nat_gateway_details=request.pop(util.camelize('UpdateNatGatewayDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -9878,6 +10188,7 @@ def test_update_network_security_group(testing_service_client):
             response = client.update_network_security_group(
                 network_security_group_id=request.pop(util.camelize('networkSecurityGroupId')),
                 update_network_security_group_details=request.pop(util.camelize('UpdateNetworkSecurityGroupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -9919,6 +10230,7 @@ def test_update_network_security_group_security_rules(testing_service_client):
             response = client.update_network_security_group_security_rules(
                 network_security_group_id=request.pop(util.camelize('networkSecurityGroupId')),
                 update_network_security_group_security_rules_details=request.pop(util.camelize('UpdateNetworkSecurityGroupSecurityRulesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -9960,6 +10272,7 @@ def test_update_private_ip(testing_service_client):
             response = client.update_private_ip(
                 private_ip_id=request.pop(util.camelize('privateIpId')),
                 update_private_ip_details=request.pop(util.camelize('UpdatePrivateIpDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -10001,6 +10314,7 @@ def test_update_public_ip(testing_service_client):
             response = client.update_public_ip(
                 public_ip_id=request.pop(util.camelize('publicIpId')),
                 update_public_ip_details=request.pop(util.camelize('UpdatePublicIpDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -10042,6 +10356,7 @@ def test_update_public_ip_pool(testing_service_client):
             response = client.update_public_ip_pool(
                 public_ip_pool_id=request.pop(util.camelize('publicIpPoolId')),
                 update_public_ip_pool_details=request.pop(util.camelize('UpdatePublicIpPoolDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -10083,6 +10398,7 @@ def test_update_remote_peering_connection(testing_service_client):
             response = client.update_remote_peering_connection(
                 remote_peering_connection_id=request.pop(util.camelize('remotePeeringConnectionId')),
                 update_remote_peering_connection_details=request.pop(util.camelize('UpdateRemotePeeringConnectionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -10124,6 +10440,7 @@ def test_update_route_table(testing_service_client):
             response = client.update_route_table(
                 rt_id=request.pop(util.camelize('rtId')),
                 update_route_table_details=request.pop(util.camelize('UpdateRouteTableDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -10165,6 +10482,7 @@ def test_update_security_list(testing_service_client):
             response = client.update_security_list(
                 security_list_id=request.pop(util.camelize('securityListId')),
                 update_security_list_details=request.pop(util.camelize('UpdateSecurityListDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -10206,6 +10524,7 @@ def test_update_service_gateway(testing_service_client):
             response = client.update_service_gateway(
                 service_gateway_id=request.pop(util.camelize('serviceGatewayId')),
                 update_service_gateway_details=request.pop(util.camelize('UpdateServiceGatewayDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -10247,6 +10566,7 @@ def test_update_subnet(testing_service_client):
             response = client.update_subnet(
                 subnet_id=request.pop(util.camelize('subnetId')),
                 update_subnet_details=request.pop(util.camelize('UpdateSubnetDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -10289,6 +10609,7 @@ def test_update_tunnel_cpe_device_config(testing_service_client):
                 ipsc_id=request.pop(util.camelize('ipscId')),
                 tunnel_id=request.pop(util.camelize('tunnelId')),
                 update_tunnel_cpe_device_config_details=request.pop(util.camelize('UpdateTunnelCpeDeviceConfigDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -10330,6 +10651,7 @@ def test_update_vcn(testing_service_client):
             response = client.update_vcn(
                 vcn_id=request.pop(util.camelize('vcnId')),
                 update_vcn_details=request.pop(util.camelize('UpdateVcnDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -10371,6 +10693,7 @@ def test_update_virtual_circuit(testing_service_client):
             response = client.update_virtual_circuit(
                 virtual_circuit_id=request.pop(util.camelize('virtualCircuitId')),
                 update_virtual_circuit_details=request.pop(util.camelize('UpdateVirtualCircuitDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -10412,6 +10735,7 @@ def test_update_vlan(testing_service_client):
             response = client.update_vlan(
                 vlan_id=request.pop(util.camelize('vlanId')),
                 update_vlan_details=request.pop(util.camelize('UpdateVlanDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -10453,6 +10777,7 @@ def test_update_vnic(testing_service_client):
             response = client.update_vnic(
                 vnic_id=request.pop(util.camelize('vnicId')),
                 update_vnic_details=request.pop(util.camelize('UpdateVnicDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -10494,6 +10819,7 @@ def test_update_vtap(testing_service_client):
             response = client.update_vtap(
                 vtap_id=request.pop(util.camelize('vtapId')),
                 update_vtap_details=request.pop(util.camelize('UpdateVtapDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -10534,6 +10860,7 @@ def test_upgrade_drg(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.upgrade_drg(
                 drg_id=request.pop(util.camelize('drgId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -10574,6 +10901,7 @@ def test_validate_byoip_range(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.validate_byoip_range(
                 byoip_range_id=request.pop(util.camelize('byoipRangeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -10614,6 +10942,7 @@ def test_withdraw_byoip_range(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.withdraw_byoip_range(
                 byoip_range_id=request.pop(util.camelize('byoipRangeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

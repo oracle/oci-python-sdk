@@ -55,6 +55,7 @@ def test_change_access_policy_compartment(testing_service_client):
             response = client.change_access_policy_compartment(
                 access_policy_id=request.pop(util.camelize('accessPolicyId')),
                 change_access_policy_compartment_details=request.pop(util.camelize('ChangeAccessPolicyCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_change_ingress_gateway_compartment(testing_service_client):
             response = client.change_ingress_gateway_compartment(
                 ingress_gateway_id=request.pop(util.camelize('ingressGatewayId')),
                 change_ingress_gateway_compartment_details=request.pop(util.camelize('ChangeIngressGatewayCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -137,6 +139,7 @@ def test_change_ingress_gateway_route_table_compartment(testing_service_client):
             response = client.change_ingress_gateway_route_table_compartment(
                 ingress_gateway_route_table_id=request.pop(util.camelize('ingressGatewayRouteTableId')),
                 change_ingress_gateway_route_table_compartment_details=request.pop(util.camelize('ChangeIngressGatewayRouteTableCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -178,6 +181,7 @@ def test_change_mesh_compartment(testing_service_client):
             response = client.change_mesh_compartment(
                 mesh_id=request.pop(util.camelize('meshId')),
                 change_mesh_compartment_details=request.pop(util.camelize('ChangeMeshCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -219,6 +223,7 @@ def test_change_virtual_deployment_compartment(testing_service_client):
             response = client.change_virtual_deployment_compartment(
                 virtual_deployment_id=request.pop(util.camelize('virtualDeploymentId')),
                 change_virtual_deployment_compartment_details=request.pop(util.camelize('ChangeVirtualDeploymentCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -260,6 +265,7 @@ def test_change_virtual_service_compartment(testing_service_client):
             response = client.change_virtual_service_compartment(
                 virtual_service_id=request.pop(util.camelize('virtualServiceId')),
                 change_virtual_service_compartment_details=request.pop(util.camelize('ChangeVirtualServiceCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -301,6 +307,7 @@ def test_change_virtual_service_route_table_compartment(testing_service_client):
             response = client.change_virtual_service_route_table_compartment(
                 virtual_service_route_table_id=request.pop(util.camelize('virtualServiceRouteTableId')),
                 change_virtual_service_route_table_compartment_details=request.pop(util.camelize('ChangeVirtualServiceRouteTableCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -341,6 +348,7 @@ def test_create_access_policy(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.create_access_policy(
                 create_access_policy_details=request.pop(util.camelize('CreateAccessPolicyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -381,6 +389,7 @@ def test_create_ingress_gateway(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.create_ingress_gateway(
                 create_ingress_gateway_details=request.pop(util.camelize('CreateIngressGatewayDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -421,6 +430,7 @@ def test_create_ingress_gateway_route_table(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.create_ingress_gateway_route_table(
                 create_ingress_gateway_route_table_details=request.pop(util.camelize('CreateIngressGatewayRouteTableDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -461,6 +471,7 @@ def test_create_mesh(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.create_mesh(
                 create_mesh_details=request.pop(util.camelize('CreateMeshDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -501,6 +512,7 @@ def test_create_virtual_deployment(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.create_virtual_deployment(
                 create_virtual_deployment_details=request.pop(util.camelize('CreateVirtualDeploymentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -541,6 +553,7 @@ def test_create_virtual_service(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.create_virtual_service(
                 create_virtual_service_details=request.pop(util.camelize('CreateVirtualServiceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -581,6 +594,7 @@ def test_create_virtual_service_route_table(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.create_virtual_service_route_table(
                 create_virtual_service_route_table_details=request.pop(util.camelize('CreateVirtualServiceRouteTableDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -621,6 +635,7 @@ def test_delete_access_policy(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.delete_access_policy(
                 access_policy_id=request.pop(util.camelize('accessPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -661,6 +676,7 @@ def test_delete_ingress_gateway(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.delete_ingress_gateway(
                 ingress_gateway_id=request.pop(util.camelize('ingressGatewayId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -701,6 +717,7 @@ def test_delete_ingress_gateway_route_table(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.delete_ingress_gateway_route_table(
                 ingress_gateway_route_table_id=request.pop(util.camelize('ingressGatewayRouteTableId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -741,6 +758,7 @@ def test_delete_mesh(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.delete_mesh(
                 mesh_id=request.pop(util.camelize('meshId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -781,6 +799,7 @@ def test_delete_virtual_deployment(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.delete_virtual_deployment(
                 virtual_deployment_id=request.pop(util.camelize('virtualDeploymentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -821,6 +840,7 @@ def test_delete_virtual_service(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.delete_virtual_service(
                 virtual_service_id=request.pop(util.camelize('virtualServiceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -861,6 +881,7 @@ def test_delete_virtual_service_route_table(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.delete_virtual_service_route_table(
                 virtual_service_route_table_id=request.pop(util.camelize('virtualServiceRouteTableId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -901,6 +922,7 @@ def test_get_access_policy(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.get_access_policy(
                 access_policy_id=request.pop(util.camelize('accessPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -941,6 +963,7 @@ def test_get_ingress_gateway(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.get_ingress_gateway(
                 ingress_gateway_id=request.pop(util.camelize('ingressGatewayId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -981,6 +1004,7 @@ def test_get_ingress_gateway_route_table(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.get_ingress_gateway_route_table(
                 ingress_gateway_route_table_id=request.pop(util.camelize('ingressGatewayRouteTableId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1021,6 +1045,7 @@ def test_get_mesh(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.get_mesh(
                 mesh_id=request.pop(util.camelize('meshId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1060,6 +1085,7 @@ def test_get_proxy_details(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.get_proxy_details(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1100,6 +1126,7 @@ def test_get_virtual_deployment(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.get_virtual_deployment(
                 virtual_deployment_id=request.pop(util.camelize('virtualDeploymentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1140,6 +1167,7 @@ def test_get_virtual_service(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.get_virtual_service(
                 virtual_service_id=request.pop(util.camelize('virtualServiceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1180,6 +1208,7 @@ def test_get_virtual_service_route_table(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.get_virtual_service_route_table(
                 virtual_service_route_table_id=request.pop(util.camelize('virtualServiceRouteTableId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1220,6 +1249,7 @@ def test_get_work_request(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1261,6 +1291,7 @@ def test_list_access_policies(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.list_access_policies(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1270,6 +1301,7 @@ def test_list_access_policies(testing_service_client):
                 next_response = client.list_access_policies(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1280,6 +1312,7 @@ def test_list_access_policies(testing_service_client):
                     prev_response = client.list_access_policies(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1321,6 +1354,7 @@ def test_list_ingress_gateway_route_tables(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.list_ingress_gateway_route_tables(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1330,6 +1364,7 @@ def test_list_ingress_gateway_route_tables(testing_service_client):
                 next_response = client.list_ingress_gateway_route_tables(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1340,6 +1375,7 @@ def test_list_ingress_gateway_route_tables(testing_service_client):
                     prev_response = client.list_ingress_gateway_route_tables(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1381,6 +1417,7 @@ def test_list_ingress_gateways(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.list_ingress_gateways(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1390,6 +1427,7 @@ def test_list_ingress_gateways(testing_service_client):
                 next_response = client.list_ingress_gateways(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1400,6 +1438,7 @@ def test_list_ingress_gateways(testing_service_client):
                     prev_response = client.list_ingress_gateways(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1441,6 +1480,7 @@ def test_list_meshes(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.list_meshes(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1450,6 +1490,7 @@ def test_list_meshes(testing_service_client):
                 next_response = client.list_meshes(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1460,6 +1501,7 @@ def test_list_meshes(testing_service_client):
                     prev_response = client.list_meshes(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1501,6 +1543,7 @@ def test_list_virtual_deployments(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.list_virtual_deployments(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1510,6 +1553,7 @@ def test_list_virtual_deployments(testing_service_client):
                 next_response = client.list_virtual_deployments(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1520,6 +1564,7 @@ def test_list_virtual_deployments(testing_service_client):
                     prev_response = client.list_virtual_deployments(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1561,6 +1606,7 @@ def test_list_virtual_service_route_tables(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.list_virtual_service_route_tables(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1570,6 +1616,7 @@ def test_list_virtual_service_route_tables(testing_service_client):
                 next_response = client.list_virtual_service_route_tables(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1580,6 +1627,7 @@ def test_list_virtual_service_route_tables(testing_service_client):
                     prev_response = client.list_virtual_service_route_tables(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1621,6 +1669,7 @@ def test_list_virtual_services(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.list_virtual_services(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1630,6 +1679,7 @@ def test_list_virtual_services(testing_service_client):
                 next_response = client.list_virtual_services(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1640,6 +1690,7 @@ def test_list_virtual_services(testing_service_client):
                     prev_response = client.list_virtual_services(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1681,6 +1732,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1690,6 +1742,7 @@ def test_list_work_request_errors(testing_service_client):
                 next_response = client.list_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1700,6 +1753,7 @@ def test_list_work_request_errors(testing_service_client):
                     prev_response = client.list_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1741,6 +1795,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1750,6 +1805,7 @@ def test_list_work_request_logs(testing_service_client):
                 next_response = client.list_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1760,6 +1816,7 @@ def test_list_work_request_logs(testing_service_client):
                     prev_response = client.list_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1801,6 +1858,7 @@ def test_list_work_requests(testing_service_client):
             client = oci.service_mesh.ServiceMeshClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1810,6 +1868,7 @@ def test_list_work_requests(testing_service_client):
                 next_response = client.list_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1820,6 +1879,7 @@ def test_list_work_requests(testing_service_client):
                     prev_response = client.list_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1861,6 +1921,7 @@ def test_update_access_policy(testing_service_client):
             response = client.update_access_policy(
                 access_policy_id=request.pop(util.camelize('accessPolicyId')),
                 update_access_policy_details=request.pop(util.camelize('UpdateAccessPolicyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1902,6 +1963,7 @@ def test_update_ingress_gateway(testing_service_client):
             response = client.update_ingress_gateway(
                 ingress_gateway_id=request.pop(util.camelize('ingressGatewayId')),
                 update_ingress_gateway_details=request.pop(util.camelize('UpdateIngressGatewayDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1943,6 +2005,7 @@ def test_update_ingress_gateway_route_table(testing_service_client):
             response = client.update_ingress_gateway_route_table(
                 ingress_gateway_route_table_id=request.pop(util.camelize('ingressGatewayRouteTableId')),
                 update_ingress_gateway_route_table_details=request.pop(util.camelize('UpdateIngressGatewayRouteTableDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1984,6 +2047,7 @@ def test_update_mesh(testing_service_client):
             response = client.update_mesh(
                 mesh_id=request.pop(util.camelize('meshId')),
                 update_mesh_details=request.pop(util.camelize('UpdateMeshDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2025,6 +2089,7 @@ def test_update_virtual_deployment(testing_service_client):
             response = client.update_virtual_deployment(
                 virtual_deployment_id=request.pop(util.camelize('virtualDeploymentId')),
                 update_virtual_deployment_details=request.pop(util.camelize('UpdateVirtualDeploymentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2066,6 +2131,7 @@ def test_update_virtual_service(testing_service_client):
             response = client.update_virtual_service(
                 virtual_service_id=request.pop(util.camelize('virtualServiceId')),
                 update_virtual_service_details=request.pop(util.camelize('UpdateVirtualServiceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2107,6 +2173,7 @@ def test_update_virtual_service_route_table(testing_service_client):
             response = client.update_virtual_service_route_table(
                 virtual_service_route_table_id=request.pop(util.camelize('virtualServiceRouteTableId')),
                 update_virtual_service_route_table_details=request.pop(util.camelize('UpdateVirtualServiceRouteTableDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

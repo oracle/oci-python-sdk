@@ -55,6 +55,7 @@ def test_change_http_redirect_compartment(testing_service_client):
             response = client.change_http_redirect_compartment(
                 http_redirect_id=request.pop(util.camelize('httpRedirectId')),
                 change_http_redirect_compartment_details=request.pop(util.camelize('ChangeHttpRedirectCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_create_http_redirect(testing_service_client):
             client = oci.waas.RedirectClient(config, service_endpoint=service_endpoint)
             response = client.create_http_redirect(
                 create_http_redirect_details=request.pop(util.camelize('CreateHttpRedirectDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -135,6 +137,7 @@ def test_delete_http_redirect(testing_service_client):
             client = oci.waas.RedirectClient(config, service_endpoint=service_endpoint)
             response = client.delete_http_redirect(
                 http_redirect_id=request.pop(util.camelize('httpRedirectId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -175,6 +178,7 @@ def test_get_http_redirect(testing_service_client):
             client = oci.waas.RedirectClient(config, service_endpoint=service_endpoint)
             response = client.get_http_redirect(
                 http_redirect_id=request.pop(util.camelize('httpRedirectId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -216,6 +220,7 @@ def test_list_http_redirects(testing_service_client):
             client = oci.waas.RedirectClient(config, service_endpoint=service_endpoint)
             response = client.list_http_redirects(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -225,6 +230,7 @@ def test_list_http_redirects(testing_service_client):
                 next_response = client.list_http_redirects(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -235,6 +241,7 @@ def test_list_http_redirects(testing_service_client):
                     prev_response = client.list_http_redirects(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -276,6 +283,7 @@ def test_update_http_redirect(testing_service_client):
             response = client.update_http_redirect(
                 http_redirect_id=request.pop(util.camelize('httpRedirectId')),
                 update_http_redirect_details=request.pop(util.camelize('UpdateHttpRedirectDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

@@ -55,6 +55,7 @@ def test_change_http_monitor_compartment(testing_service_client):
             response = client.change_http_monitor_compartment(
                 monitor_id=request.pop(util.camelize('monitorId')),
                 change_http_monitor_compartment_details=request.pop(util.camelize('ChangeHttpMonitorCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_change_ping_monitor_compartment(testing_service_client):
             response = client.change_ping_monitor_compartment(
                 monitor_id=request.pop(util.camelize('monitorId')),
                 change_ping_monitor_compartment_details=request.pop(util.camelize('ChangePingMonitorCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -136,6 +138,7 @@ def test_create_http_monitor(testing_service_client):
             client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.create_http_monitor(
                 create_http_monitor_details=request.pop(util.camelize('CreateHttpMonitorDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -176,6 +179,7 @@ def test_create_on_demand_http_probe(testing_service_client):
             client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.create_on_demand_http_probe(
                 create_on_demand_http_probe_details=request.pop(util.camelize('CreateOnDemandHttpProbeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -216,6 +220,7 @@ def test_create_on_demand_ping_probe(testing_service_client):
             client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.create_on_demand_ping_probe(
                 create_on_demand_ping_probe_details=request.pop(util.camelize('CreateOnDemandPingProbeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -256,6 +261,7 @@ def test_create_ping_monitor(testing_service_client):
             client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.create_ping_monitor(
                 create_ping_monitor_details=request.pop(util.camelize('CreatePingMonitorDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -296,6 +302,7 @@ def test_delete_http_monitor(testing_service_client):
             client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.delete_http_monitor(
                 monitor_id=request.pop(util.camelize('monitorId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -336,6 +343,7 @@ def test_delete_ping_monitor(testing_service_client):
             client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.delete_ping_monitor(
                 monitor_id=request.pop(util.camelize('monitorId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -376,6 +384,7 @@ def test_get_http_monitor(testing_service_client):
             client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.get_http_monitor(
                 monitor_id=request.pop(util.camelize('monitorId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -416,6 +425,7 @@ def test_get_ping_monitor(testing_service_client):
             client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.get_ping_monitor(
                 monitor_id=request.pop(util.camelize('monitorId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -456,6 +466,7 @@ def test_list_health_checks_vantage_points(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.list_health_checks_vantage_points(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -464,6 +475,7 @@ def test_list_health_checks_vantage_points(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_health_checks_vantage_points(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -473,6 +485,7 @@ def test_list_health_checks_vantage_points(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_health_checks_vantage_points(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -514,6 +527,7 @@ def test_list_http_monitors(testing_service_client):
             client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.list_http_monitors(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -523,6 +537,7 @@ def test_list_http_monitors(testing_service_client):
                 next_response = client.list_http_monitors(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -533,6 +548,7 @@ def test_list_http_monitors(testing_service_client):
                     prev_response = client.list_http_monitors(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -574,6 +590,7 @@ def test_list_http_probe_results(testing_service_client):
             client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.list_http_probe_results(
                 probe_configuration_id=request.pop(util.camelize('probeConfigurationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -583,6 +600,7 @@ def test_list_http_probe_results(testing_service_client):
                 next_response = client.list_http_probe_results(
                     probe_configuration_id=request.pop(util.camelize('probeConfigurationId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -593,6 +611,7 @@ def test_list_http_probe_results(testing_service_client):
                     prev_response = client.list_http_probe_results(
                         probe_configuration_id=request.pop(util.camelize('probeConfigurationId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -634,6 +653,7 @@ def test_list_ping_monitors(testing_service_client):
             client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.list_ping_monitors(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -643,6 +663,7 @@ def test_list_ping_monitors(testing_service_client):
                 next_response = client.list_ping_monitors(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -653,6 +674,7 @@ def test_list_ping_monitors(testing_service_client):
                     prev_response = client.list_ping_monitors(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -694,6 +716,7 @@ def test_list_ping_probe_results(testing_service_client):
             client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.list_ping_probe_results(
                 probe_configuration_id=request.pop(util.camelize('probeConfigurationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -703,6 +726,7 @@ def test_list_ping_probe_results(testing_service_client):
                 next_response = client.list_ping_probe_results(
                     probe_configuration_id=request.pop(util.camelize('probeConfigurationId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -713,6 +737,7 @@ def test_list_ping_probe_results(testing_service_client):
                     prev_response = client.list_ping_probe_results(
                         probe_configuration_id=request.pop(util.camelize('probeConfigurationId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -754,6 +779,7 @@ def test_update_http_monitor(testing_service_client):
             response = client.update_http_monitor(
                 monitor_id=request.pop(util.camelize('monitorId')),
                 update_http_monitor_details=request.pop(util.camelize('UpdateHttpMonitorDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -795,6 +821,7 @@ def test_update_ping_monitor(testing_service_client):
             response = client.update_ping_monitor(
                 monitor_id=request.pop(util.camelize('monitorId')),
                 update_ping_monitor_details=request.pop(util.camelize('UpdatePingMonitorDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

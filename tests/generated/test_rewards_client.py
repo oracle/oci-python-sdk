@@ -56,6 +56,7 @@ def test_create_redeemable_user(testing_service_client):
                 create_redeemable_user_details=request.pop(util.camelize('CreateRedeemableUserDetails')),
                 tenancy_id=request.pop(util.camelize('tenancyId')),
                 subscription_id=request.pop(util.camelize('subscriptionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -98,6 +99,7 @@ def test_delete_redeemable_user(testing_service_client):
                 email_id=request.pop(util.camelize('emailId')),
                 tenancy_id=request.pop(util.camelize('tenancyId')),
                 subscription_id=request.pop(util.camelize('subscriptionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -141,6 +143,7 @@ def test_list_products(testing_service_client):
                 tenancy_id=request.pop(util.camelize('tenancyId')),
                 subscription_id=request.pop(util.camelize('subscriptionId')),
                 usage_period_key=request.pop(util.camelize('usagePeriodKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -152,6 +155,7 @@ def test_list_products(testing_service_client):
                     subscription_id=request.pop(util.camelize('subscriptionId')),
                     usage_period_key=request.pop(util.camelize('usagePeriodKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -164,6 +168,7 @@ def test_list_products(testing_service_client):
                         subscription_id=request.pop(util.camelize('subscriptionId')),
                         usage_period_key=request.pop(util.camelize('usagePeriodKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -206,6 +211,7 @@ def test_list_redeemable_users(testing_service_client):
             response = client.list_redeemable_users(
                 tenancy_id=request.pop(util.camelize('tenancyId')),
                 subscription_id=request.pop(util.camelize('subscriptionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -216,6 +222,7 @@ def test_list_redeemable_users(testing_service_client):
                     tenancy_id=request.pop(util.camelize('tenancyId')),
                     subscription_id=request.pop(util.camelize('subscriptionId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -227,6 +234,7 @@ def test_list_redeemable_users(testing_service_client):
                         tenancy_id=request.pop(util.camelize('tenancyId')),
                         subscription_id=request.pop(util.camelize('subscriptionId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -268,6 +276,7 @@ def test_list_rewards(testing_service_client):
             response = client.list_rewards(
                 tenancy_id=request.pop(util.camelize('tenancyId')),
                 subscription_id=request.pop(util.camelize('subscriptionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

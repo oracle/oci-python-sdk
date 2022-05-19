@@ -55,6 +55,7 @@ def test_add_analytics_cluster(testing_service_client):
             response = client.add_analytics_cluster(
                 db_system_id=request.pop(util.camelize('dbSystemId')),
                 add_analytics_cluster_details=request.pop(util.camelize('AddAnalyticsClusterDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_add_heat_wave_cluster(testing_service_client):
             response = client.add_heat_wave_cluster(
                 db_system_id=request.pop(util.camelize('dbSystemId')),
                 add_heat_wave_cluster_details=request.pop(util.camelize('AddHeatWaveClusterDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -136,6 +138,7 @@ def test_create_db_system(testing_service_client):
             client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
             response = client.create_db_system(
                 create_db_system_details=request.pop(util.camelize('CreateDbSystemDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -176,6 +179,7 @@ def test_delete_analytics_cluster(testing_service_client):
             client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
             response = client.delete_analytics_cluster(
                 db_system_id=request.pop(util.camelize('dbSystemId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -216,6 +220,7 @@ def test_delete_db_system(testing_service_client):
             client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
             response = client.delete_db_system(
                 db_system_id=request.pop(util.camelize('dbSystemId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -256,6 +261,7 @@ def test_delete_heat_wave_cluster(testing_service_client):
             client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
             response = client.delete_heat_wave_cluster(
                 db_system_id=request.pop(util.camelize('dbSystemId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -296,6 +302,7 @@ def test_generate_analytics_cluster_memory_estimate(testing_service_client):
             client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
             response = client.generate_analytics_cluster_memory_estimate(
                 db_system_id=request.pop(util.camelize('dbSystemId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -336,6 +343,7 @@ def test_generate_heat_wave_cluster_memory_estimate(testing_service_client):
             client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
             response = client.generate_heat_wave_cluster_memory_estimate(
                 db_system_id=request.pop(util.camelize('dbSystemId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -376,6 +384,7 @@ def test_get_analytics_cluster(testing_service_client):
             client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
             response = client.get_analytics_cluster(
                 db_system_id=request.pop(util.camelize('dbSystemId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -416,6 +425,7 @@ def test_get_analytics_cluster_memory_estimate(testing_service_client):
             client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
             response = client.get_analytics_cluster_memory_estimate(
                 db_system_id=request.pop(util.camelize('dbSystemId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -456,6 +466,7 @@ def test_get_db_system(testing_service_client):
             client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
             response = client.get_db_system(
                 db_system_id=request.pop(util.camelize('dbSystemId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -496,6 +507,7 @@ def test_get_heat_wave_cluster(testing_service_client):
             client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
             response = client.get_heat_wave_cluster(
                 db_system_id=request.pop(util.camelize('dbSystemId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -536,6 +548,7 @@ def test_get_heat_wave_cluster_memory_estimate(testing_service_client):
             client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
             response = client.get_heat_wave_cluster_memory_estimate(
                 db_system_id=request.pop(util.camelize('dbSystemId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -577,6 +590,7 @@ def test_list_db_systems(testing_service_client):
             client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
             response = client.list_db_systems(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -586,6 +600,7 @@ def test_list_db_systems(testing_service_client):
                 next_response = client.list_db_systems(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -596,6 +611,7 @@ def test_list_db_systems(testing_service_client):
                     prev_response = client.list_db_systems(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -636,6 +652,7 @@ def test_restart_analytics_cluster(testing_service_client):
             client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
             response = client.restart_analytics_cluster(
                 db_system_id=request.pop(util.camelize('dbSystemId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -677,6 +694,7 @@ def test_restart_db_system(testing_service_client):
             response = client.restart_db_system(
                 db_system_id=request.pop(util.camelize('dbSystemId')),
                 restart_db_system_details=request.pop(util.camelize('RestartDbSystemDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -717,6 +735,7 @@ def test_restart_heat_wave_cluster(testing_service_client):
             client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
             response = client.restart_heat_wave_cluster(
                 db_system_id=request.pop(util.camelize('dbSystemId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -757,6 +776,7 @@ def test_start_analytics_cluster(testing_service_client):
             client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
             response = client.start_analytics_cluster(
                 db_system_id=request.pop(util.camelize('dbSystemId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -797,6 +817,7 @@ def test_start_db_system(testing_service_client):
             client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
             response = client.start_db_system(
                 db_system_id=request.pop(util.camelize('dbSystemId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -837,6 +858,7 @@ def test_start_heat_wave_cluster(testing_service_client):
             client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
             response = client.start_heat_wave_cluster(
                 db_system_id=request.pop(util.camelize('dbSystemId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -877,6 +899,7 @@ def test_stop_analytics_cluster(testing_service_client):
             client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
             response = client.stop_analytics_cluster(
                 db_system_id=request.pop(util.camelize('dbSystemId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -918,6 +941,7 @@ def test_stop_db_system(testing_service_client):
             response = client.stop_db_system(
                 db_system_id=request.pop(util.camelize('dbSystemId')),
                 stop_db_system_details=request.pop(util.camelize('StopDbSystemDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -958,6 +982,7 @@ def test_stop_heat_wave_cluster(testing_service_client):
             client = oci.mysql.DbSystemClient(config, service_endpoint=service_endpoint)
             response = client.stop_heat_wave_cluster(
                 db_system_id=request.pop(util.camelize('dbSystemId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -999,6 +1024,7 @@ def test_update_analytics_cluster(testing_service_client):
             response = client.update_analytics_cluster(
                 db_system_id=request.pop(util.camelize('dbSystemId')),
                 update_analytics_cluster_details=request.pop(util.camelize('UpdateAnalyticsClusterDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1040,6 +1066,7 @@ def test_update_db_system(testing_service_client):
             response = client.update_db_system(
                 db_system_id=request.pop(util.camelize('dbSystemId')),
                 update_db_system_details=request.pop(util.camelize('UpdateDbSystemDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1081,6 +1108,7 @@ def test_update_heat_wave_cluster(testing_service_client):
             response = client.update_heat_wave_cluster(
                 db_system_id=request.pop(util.camelize('dbSystemId')),
                 update_heat_wave_cluster_details=request.pop(util.camelize('UpdateHeatWaveClusterDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

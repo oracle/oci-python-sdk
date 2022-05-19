@@ -56,6 +56,7 @@ def test_attach_devices_to_transfer_package(testing_service_client):
                 id=request.pop(util.camelize('id')),
                 transfer_package_label=request.pop(util.camelize('transferPackageLabel')),
                 attach_devices_details=request.pop(util.camelize('AttachDevicesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_create_transfer_package(testing_service_client):
             client = oci.dts.TransferPackageClient(config, service_endpoint=service_endpoint)
             response = client.create_transfer_package(
                 id=request.pop(util.camelize('id')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -137,6 +139,7 @@ def test_delete_transfer_package(testing_service_client):
             response = client.delete_transfer_package(
                 id=request.pop(util.camelize('id')),
                 transfer_package_label=request.pop(util.camelize('transferPackageLabel')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -179,6 +182,7 @@ def test_detach_devices_from_transfer_package(testing_service_client):
                 id=request.pop(util.camelize('id')),
                 transfer_package_label=request.pop(util.camelize('transferPackageLabel')),
                 detach_devices_details=request.pop(util.camelize('DetachDevicesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -220,6 +224,7 @@ def test_get_transfer_package(testing_service_client):
             response = client.get_transfer_package(
                 id=request.pop(util.camelize('id')),
                 transfer_package_label=request.pop(util.camelize('transferPackageLabel')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -260,6 +265,7 @@ def test_list_transfer_packages(testing_service_client):
             client = oci.dts.TransferPackageClient(config, service_endpoint=service_endpoint)
             response = client.list_transfer_packages(
                 id=request.pop(util.camelize('id')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -302,6 +308,7 @@ def test_update_transfer_package(testing_service_client):
                 id=request.pop(util.camelize('id')),
                 transfer_package_label=request.pop(util.camelize('transferPackageLabel')),
                 update_transfer_package_details=request.pop(util.camelize('UpdateTransferPackageDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

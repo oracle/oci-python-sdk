@@ -54,6 +54,7 @@ def test_delete_link(testing_service_client):
             client = oci.tenant_manager_control_plane.LinkClient(config, service_endpoint=service_endpoint)
             response = client.delete_link(
                 link_id=request.pop(util.camelize('linkId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -94,6 +95,7 @@ def test_get_link(testing_service_client):
             client = oci.tenant_manager_control_plane.LinkClient(config, service_endpoint=service_endpoint)
             response = client.get_link(
                 link_id=request.pop(util.camelize('linkId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -134,6 +136,7 @@ def test_list_links(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.tenant_manager_control_plane.LinkClient(config, service_endpoint=service_endpoint)
             response = client.list_links(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -142,6 +145,7 @@ def test_list_links(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_links(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -151,6 +155,7 @@ def test_list_links(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_links(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)

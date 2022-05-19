@@ -54,6 +54,7 @@ def test_backup_vault(testing_service_client):
             client = oci.key_management.KmsVaultClient(config, service_endpoint=service_endpoint)
             response = client.backup_vault(
                 vault_id=request.pop(util.camelize('vaultId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -94,6 +95,7 @@ def test_cancel_vault_deletion(testing_service_client):
             client = oci.key_management.KmsVaultClient(config, service_endpoint=service_endpoint)
             response = client.cancel_vault_deletion(
                 vault_id=request.pop(util.camelize('vaultId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -135,6 +137,7 @@ def test_change_vault_compartment(testing_service_client):
             response = client.change_vault_compartment(
                 vault_id=request.pop(util.camelize('vaultId')),
                 change_vault_compartment_details=request.pop(util.camelize('ChangeVaultCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -175,6 +178,7 @@ def test_create_vault(testing_service_client):
             client = oci.key_management.KmsVaultClient(config, service_endpoint=service_endpoint)
             response = client.create_vault(
                 create_vault_details=request.pop(util.camelize('CreateVaultDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -216,6 +220,7 @@ def test_create_vault_replica(testing_service_client):
             response = client.create_vault_replica(
                 vault_id=request.pop(util.camelize('vaultId')),
                 create_vault_replica_details=request.pop(util.camelize('CreateVaultReplicaDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -257,6 +262,7 @@ def test_delete_vault_replica(testing_service_client):
             response = client.delete_vault_replica(
                 vault_id=request.pop(util.camelize('vaultId')),
                 delete_vault_replica_details=request.pop(util.camelize('DeleteVaultReplicaDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -297,6 +303,7 @@ def test_get_vault(testing_service_client):
             client = oci.key_management.KmsVaultClient(config, service_endpoint=service_endpoint)
             response = client.get_vault(
                 vault_id=request.pop(util.camelize('vaultId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -337,6 +344,7 @@ def test_get_vault_usage(testing_service_client):
             client = oci.key_management.KmsVaultClient(config, service_endpoint=service_endpoint)
             response = client.get_vault_usage(
                 vault_id=request.pop(util.camelize('vaultId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -378,6 +386,7 @@ def test_list_vault_replicas(testing_service_client):
             client = oci.key_management.KmsVaultClient(config, service_endpoint=service_endpoint)
             response = client.list_vault_replicas(
                 vault_id=request.pop(util.camelize('vaultId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -387,6 +396,7 @@ def test_list_vault_replicas(testing_service_client):
                 next_response = client.list_vault_replicas(
                     vault_id=request.pop(util.camelize('vaultId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -397,6 +407,7 @@ def test_list_vault_replicas(testing_service_client):
                     prev_response = client.list_vault_replicas(
                         vault_id=request.pop(util.camelize('vaultId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -438,6 +449,7 @@ def test_list_vaults(testing_service_client):
             client = oci.key_management.KmsVaultClient(config, service_endpoint=service_endpoint)
             response = client.list_vaults(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -447,6 +459,7 @@ def test_list_vaults(testing_service_client):
                 next_response = client.list_vaults(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -457,6 +470,7 @@ def test_list_vaults(testing_service_client):
                     prev_response = client.list_vaults(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -498,6 +512,7 @@ def test_restore_vault_from_file(testing_service_client):
             response = client.restore_vault_from_file(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 restore_vault_from_file_details=request.pop(util.camelize('RestoreVaultFromFileDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -538,6 +553,7 @@ def test_restore_vault_from_object_store(testing_service_client):
             client = oci.key_management.KmsVaultClient(config, service_endpoint=service_endpoint)
             response = client.restore_vault_from_object_store(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -579,6 +595,7 @@ def test_schedule_vault_deletion(testing_service_client):
             response = client.schedule_vault_deletion(
                 vault_id=request.pop(util.camelize('vaultId')),
                 schedule_vault_deletion_details=request.pop(util.camelize('ScheduleVaultDeletionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -620,6 +637,7 @@ def test_update_vault(testing_service_client):
             response = client.update_vault(
                 vault_id=request.pop(util.camelize('vaultId')),
                 update_vault_details=request.pop(util.camelize('UpdateVaultDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

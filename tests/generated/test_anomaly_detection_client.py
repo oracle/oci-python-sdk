@@ -54,6 +54,7 @@ def test_cancel_work_request(testing_service_client):
             client = oci.ai_anomaly_detection.AnomalyDetectionClient(config, service_endpoint=service_endpoint)
             response = client.cancel_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_change_ai_private_endpoint_compartment(testing_service_client):
             response = client.change_ai_private_endpoint_compartment(
                 ai_private_endpoint_id=request.pop(util.camelize('aiPrivateEndpointId')),
                 change_ai_private_endpoint_compartment_details=request.pop(util.camelize('ChangeAiPrivateEndpointCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -136,6 +138,7 @@ def test_change_data_asset_compartment(testing_service_client):
             response = client.change_data_asset_compartment(
                 data_asset_id=request.pop(util.camelize('dataAssetId')),
                 change_data_asset_compartment_details=request.pop(util.camelize('ChangeDataAssetCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -177,6 +180,7 @@ def test_change_model_compartment(testing_service_client):
             response = client.change_model_compartment(
                 model_id=request.pop(util.camelize('modelId')),
                 change_model_compartment_details=request.pop(util.camelize('ChangeModelCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -218,6 +222,7 @@ def test_change_project_compartment(testing_service_client):
             response = client.change_project_compartment(
                 project_id=request.pop(util.camelize('projectId')),
                 change_project_compartment_details=request.pop(util.camelize('ChangeProjectCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -258,6 +263,7 @@ def test_create_ai_private_endpoint(testing_service_client):
             client = oci.ai_anomaly_detection.AnomalyDetectionClient(config, service_endpoint=service_endpoint)
             response = client.create_ai_private_endpoint(
                 create_ai_private_endpoint_details=request.pop(util.camelize('CreateAiPrivateEndpointDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -298,6 +304,7 @@ def test_create_data_asset(testing_service_client):
             client = oci.ai_anomaly_detection.AnomalyDetectionClient(config, service_endpoint=service_endpoint)
             response = client.create_data_asset(
                 create_data_asset_details=request.pop(util.camelize('CreateDataAssetDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -338,6 +345,7 @@ def test_create_model(testing_service_client):
             client = oci.ai_anomaly_detection.AnomalyDetectionClient(config, service_endpoint=service_endpoint)
             response = client.create_model(
                 create_model_details=request.pop(util.camelize('CreateModelDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -378,6 +386,7 @@ def test_create_project(testing_service_client):
             client = oci.ai_anomaly_detection.AnomalyDetectionClient(config, service_endpoint=service_endpoint)
             response = client.create_project(
                 create_project_details=request.pop(util.camelize('CreateProjectDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -418,6 +427,7 @@ def test_delete_ai_private_endpoint(testing_service_client):
             client = oci.ai_anomaly_detection.AnomalyDetectionClient(config, service_endpoint=service_endpoint)
             response = client.delete_ai_private_endpoint(
                 ai_private_endpoint_id=request.pop(util.camelize('aiPrivateEndpointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -458,6 +468,7 @@ def test_delete_data_asset(testing_service_client):
             client = oci.ai_anomaly_detection.AnomalyDetectionClient(config, service_endpoint=service_endpoint)
             response = client.delete_data_asset(
                 data_asset_id=request.pop(util.camelize('dataAssetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -498,6 +509,7 @@ def test_delete_model(testing_service_client):
             client = oci.ai_anomaly_detection.AnomalyDetectionClient(config, service_endpoint=service_endpoint)
             response = client.delete_model(
                 model_id=request.pop(util.camelize('modelId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -538,6 +550,7 @@ def test_delete_project(testing_service_client):
             client = oci.ai_anomaly_detection.AnomalyDetectionClient(config, service_endpoint=service_endpoint)
             response = client.delete_project(
                 project_id=request.pop(util.camelize('projectId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -578,6 +591,7 @@ def test_detect_anomalies(testing_service_client):
             client = oci.ai_anomaly_detection.AnomalyDetectionClient(config, service_endpoint=service_endpoint)
             response = client.detect_anomalies(
                 detect_anomalies_details=request.pop(util.camelize('DetectAnomaliesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -618,6 +632,7 @@ def test_get_ai_private_endpoint(testing_service_client):
             client = oci.ai_anomaly_detection.AnomalyDetectionClient(config, service_endpoint=service_endpoint)
             response = client.get_ai_private_endpoint(
                 ai_private_endpoint_id=request.pop(util.camelize('aiPrivateEndpointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -658,6 +673,7 @@ def test_get_data_asset(testing_service_client):
             client = oci.ai_anomaly_detection.AnomalyDetectionClient(config, service_endpoint=service_endpoint)
             response = client.get_data_asset(
                 data_asset_id=request.pop(util.camelize('dataAssetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -698,6 +714,7 @@ def test_get_model(testing_service_client):
             client = oci.ai_anomaly_detection.AnomalyDetectionClient(config, service_endpoint=service_endpoint)
             response = client.get_model(
                 model_id=request.pop(util.camelize('modelId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -738,6 +755,7 @@ def test_get_project(testing_service_client):
             client = oci.ai_anomaly_detection.AnomalyDetectionClient(config, service_endpoint=service_endpoint)
             response = client.get_project(
                 project_id=request.pop(util.camelize('projectId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -778,6 +796,7 @@ def test_get_work_request(testing_service_client):
             client = oci.ai_anomaly_detection.AnomalyDetectionClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -819,6 +838,7 @@ def test_list_ai_private_endpoints(testing_service_client):
             client = oci.ai_anomaly_detection.AnomalyDetectionClient(config, service_endpoint=service_endpoint)
             response = client.list_ai_private_endpoints(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -828,6 +848,7 @@ def test_list_ai_private_endpoints(testing_service_client):
                 next_response = client.list_ai_private_endpoints(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -838,6 +859,7 @@ def test_list_ai_private_endpoints(testing_service_client):
                     prev_response = client.list_ai_private_endpoints(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -879,6 +901,7 @@ def test_list_data_assets(testing_service_client):
             client = oci.ai_anomaly_detection.AnomalyDetectionClient(config, service_endpoint=service_endpoint)
             response = client.list_data_assets(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -888,6 +911,7 @@ def test_list_data_assets(testing_service_client):
                 next_response = client.list_data_assets(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -898,6 +922,7 @@ def test_list_data_assets(testing_service_client):
                     prev_response = client.list_data_assets(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -939,6 +964,7 @@ def test_list_models(testing_service_client):
             client = oci.ai_anomaly_detection.AnomalyDetectionClient(config, service_endpoint=service_endpoint)
             response = client.list_models(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -948,6 +974,7 @@ def test_list_models(testing_service_client):
                 next_response = client.list_models(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -958,6 +985,7 @@ def test_list_models(testing_service_client):
                     prev_response = client.list_models(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -999,6 +1027,7 @@ def test_list_projects(testing_service_client):
             client = oci.ai_anomaly_detection.AnomalyDetectionClient(config, service_endpoint=service_endpoint)
             response = client.list_projects(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1008,6 +1037,7 @@ def test_list_projects(testing_service_client):
                 next_response = client.list_projects(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1018,6 +1048,7 @@ def test_list_projects(testing_service_client):
                     prev_response = client.list_projects(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1059,6 +1090,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.ai_anomaly_detection.AnomalyDetectionClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1068,6 +1100,7 @@ def test_list_work_request_errors(testing_service_client):
                 next_response = client.list_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1078,6 +1111,7 @@ def test_list_work_request_errors(testing_service_client):
                     prev_response = client.list_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1119,6 +1153,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.ai_anomaly_detection.AnomalyDetectionClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1128,6 +1163,7 @@ def test_list_work_request_logs(testing_service_client):
                 next_response = client.list_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1138,6 +1174,7 @@ def test_list_work_request_logs(testing_service_client):
                     prev_response = client.list_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1179,6 +1216,7 @@ def test_list_work_requests(testing_service_client):
             client = oci.ai_anomaly_detection.AnomalyDetectionClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1188,6 +1226,7 @@ def test_list_work_requests(testing_service_client):
                 next_response = client.list_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1198,6 +1237,7 @@ def test_list_work_requests(testing_service_client):
                     prev_response = client.list_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1239,6 +1279,7 @@ def test_update_ai_private_endpoint(testing_service_client):
             response = client.update_ai_private_endpoint(
                 ai_private_endpoint_id=request.pop(util.camelize('aiPrivateEndpointId')),
                 update_ai_private_endpoint_details=request.pop(util.camelize('UpdateAiPrivateEndpointDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1280,6 +1321,7 @@ def test_update_data_asset(testing_service_client):
             response = client.update_data_asset(
                 data_asset_id=request.pop(util.camelize('dataAssetId')),
                 update_data_asset_details=request.pop(util.camelize('UpdateDataAssetDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1321,6 +1363,7 @@ def test_update_model(testing_service_client):
             response = client.update_model(
                 model_id=request.pop(util.camelize('modelId')),
                 update_model_details=request.pop(util.camelize('UpdateModelDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1362,6 +1405,7 @@ def test_update_project(testing_service_client):
             response = client.update_project(
                 project_id=request.pop(util.camelize('projectId')),
                 update_project_details=request.pop(util.camelize('UpdateProjectDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

@@ -54,6 +54,7 @@ def test_generate_scoped_access_token(testing_service_client):
             client = oci.identity_data_plane.DataplaneClient(config, service_endpoint=service_endpoint)
             response = client.generate_scoped_access_token(
                 generate_scoped_access_token_details=request.pop(util.camelize('GenerateScopedAccessTokenDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

@@ -55,6 +55,7 @@ def test_change_application_compartment(testing_service_client):
             response = client.change_application_compartment(
                 application_id=request.pop(util.camelize('applicationId')),
                 change_application_compartment_details=request.pop(util.camelize('ChangeApplicationCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_change_private_endpoint_compartment(testing_service_client):
             response = client.change_private_endpoint_compartment(
                 private_endpoint_id=request.pop(util.camelize('privateEndpointId')),
                 change_private_endpoint_compartment_details=request.pop(util.camelize('ChangePrivateEndpointCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -137,6 +139,7 @@ def test_change_run_compartment(testing_service_client):
             response = client.change_run_compartment(
                 run_id=request.pop(util.camelize('runId')),
                 change_run_compartment_details=request.pop(util.camelize('ChangeRunCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -177,6 +180,7 @@ def test_create_application(testing_service_client):
             client = oci.data_flow.DataFlowClient(config, service_endpoint=service_endpoint)
             response = client.create_application(
                 create_application_details=request.pop(util.camelize('CreateApplicationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -217,6 +221,7 @@ def test_create_private_endpoint(testing_service_client):
             client = oci.data_flow.DataFlowClient(config, service_endpoint=service_endpoint)
             response = client.create_private_endpoint(
                 create_private_endpoint_details=request.pop(util.camelize('CreatePrivateEndpointDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -257,6 +262,7 @@ def test_create_run(testing_service_client):
             client = oci.data_flow.DataFlowClient(config, service_endpoint=service_endpoint)
             response = client.create_run(
                 create_run_details=request.pop(util.camelize('CreateRunDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -297,6 +303,7 @@ def test_delete_application(testing_service_client):
             client = oci.data_flow.DataFlowClient(config, service_endpoint=service_endpoint)
             response = client.delete_application(
                 application_id=request.pop(util.camelize('applicationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -337,6 +344,7 @@ def test_delete_private_endpoint(testing_service_client):
             client = oci.data_flow.DataFlowClient(config, service_endpoint=service_endpoint)
             response = client.delete_private_endpoint(
                 private_endpoint_id=request.pop(util.camelize('privateEndpointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -377,6 +385,7 @@ def test_delete_run(testing_service_client):
             client = oci.data_flow.DataFlowClient(config, service_endpoint=service_endpoint)
             response = client.delete_run(
                 run_id=request.pop(util.camelize('runId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -417,6 +426,7 @@ def test_get_application(testing_service_client):
             client = oci.data_flow.DataFlowClient(config, service_endpoint=service_endpoint)
             response = client.get_application(
                 application_id=request.pop(util.camelize('applicationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -457,6 +467,7 @@ def test_get_private_endpoint(testing_service_client):
             client = oci.data_flow.DataFlowClient(config, service_endpoint=service_endpoint)
             response = client.get_private_endpoint(
                 private_endpoint_id=request.pop(util.camelize('privateEndpointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -497,6 +508,7 @@ def test_get_run(testing_service_client):
             client = oci.data_flow.DataFlowClient(config, service_endpoint=service_endpoint)
             response = client.get_run(
                 run_id=request.pop(util.camelize('runId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -538,6 +550,7 @@ def test_get_run_log(testing_service_client):
             response = client.get_run_log(
                 run_id=request.pop(util.camelize('runId')),
                 name=request.pop(util.camelize('name')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -578,6 +591,7 @@ def test_get_work_request(testing_service_client):
             client = oci.data_flow.DataFlowClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -619,6 +633,7 @@ def test_list_applications(testing_service_client):
             client = oci.data_flow.DataFlowClient(config, service_endpoint=service_endpoint)
             response = client.list_applications(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -628,6 +643,7 @@ def test_list_applications(testing_service_client):
                 next_response = client.list_applications(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -638,6 +654,7 @@ def test_list_applications(testing_service_client):
                     prev_response = client.list_applications(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -679,6 +696,7 @@ def test_list_private_endpoints(testing_service_client):
             client = oci.data_flow.DataFlowClient(config, service_endpoint=service_endpoint)
             response = client.list_private_endpoints(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -688,6 +706,7 @@ def test_list_private_endpoints(testing_service_client):
                 next_response = client.list_private_endpoints(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -698,6 +717,7 @@ def test_list_private_endpoints(testing_service_client):
                     prev_response = client.list_private_endpoints(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -739,6 +759,7 @@ def test_list_run_logs(testing_service_client):
             client = oci.data_flow.DataFlowClient(config, service_endpoint=service_endpoint)
             response = client.list_run_logs(
                 run_id=request.pop(util.camelize('runId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -748,6 +769,7 @@ def test_list_run_logs(testing_service_client):
                 next_response = client.list_run_logs(
                     run_id=request.pop(util.camelize('runId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -758,6 +780,7 @@ def test_list_run_logs(testing_service_client):
                     prev_response = client.list_run_logs(
                         run_id=request.pop(util.camelize('runId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -799,6 +822,7 @@ def test_list_runs(testing_service_client):
             client = oci.data_flow.DataFlowClient(config, service_endpoint=service_endpoint)
             response = client.list_runs(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -808,6 +832,7 @@ def test_list_runs(testing_service_client):
                 next_response = client.list_runs(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -818,6 +843,7 @@ def test_list_runs(testing_service_client):
                     prev_response = client.list_runs(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -859,6 +885,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.data_flow.DataFlowClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -868,6 +895,7 @@ def test_list_work_request_errors(testing_service_client):
                 next_response = client.list_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -878,6 +906,7 @@ def test_list_work_request_errors(testing_service_client):
                     prev_response = client.list_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -919,6 +948,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.data_flow.DataFlowClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -928,6 +958,7 @@ def test_list_work_request_logs(testing_service_client):
                 next_response = client.list_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -938,6 +969,7 @@ def test_list_work_request_logs(testing_service_client):
                     prev_response = client.list_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -979,6 +1011,7 @@ def test_list_work_requests(testing_service_client):
             client = oci.data_flow.DataFlowClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -988,6 +1021,7 @@ def test_list_work_requests(testing_service_client):
                 next_response = client.list_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -998,6 +1032,7 @@ def test_list_work_requests(testing_service_client):
                     prev_response = client.list_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1039,6 +1074,7 @@ def test_update_application(testing_service_client):
             response = client.update_application(
                 update_application_details=request.pop(util.camelize('UpdateApplicationDetails')),
                 application_id=request.pop(util.camelize('applicationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1080,6 +1116,7 @@ def test_update_private_endpoint(testing_service_client):
             response = client.update_private_endpoint(
                 update_private_endpoint_details=request.pop(util.camelize('UpdatePrivateEndpointDetails')),
                 private_endpoint_id=request.pop(util.camelize('privateEndpointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1121,6 +1158,7 @@ def test_update_run(testing_service_client):
             response = client.update_run(
                 update_run_details=request.pop(util.camelize('UpdateRunDetails')),
                 run_id=request.pop(util.camelize('runId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

@@ -56,6 +56,7 @@ def test_activate_bds_metastore_configuration(testing_service_client):
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                 metastore_config_id=request.pop(util.camelize('metastoreConfigId')),
                 activate_bds_metastore_configuration_details=request.pop(util.camelize('ActivateBdsMetastoreConfigurationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -97,6 +98,7 @@ def test_add_auto_scaling_configuration(testing_service_client):
             response = client.add_auto_scaling_configuration(
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                 add_auto_scaling_configuration_details=request.pop(util.camelize('AddAutoScalingConfigurationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -138,6 +140,7 @@ def test_add_block_storage(testing_service_client):
             response = client.add_block_storage(
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                 add_block_storage_details=request.pop(util.camelize('AddBlockStorageDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -179,6 +182,7 @@ def test_add_cloud_sql(testing_service_client):
             response = client.add_cloud_sql(
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                 add_cloud_sql_details=request.pop(util.camelize('AddCloudSqlDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -220,6 +224,7 @@ def test_add_worker_nodes(testing_service_client):
             response = client.add_worker_nodes(
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                 add_worker_nodes_details=request.pop(util.camelize('AddWorkerNodesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -261,6 +266,7 @@ def test_change_bds_instance_compartment(testing_service_client):
             response = client.change_bds_instance_compartment(
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                 change_bds_instance_compartment_details=request.pop(util.camelize('ChangeBdsInstanceCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -302,6 +308,7 @@ def test_change_shape(testing_service_client):
             response = client.change_shape(
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                 change_shape_details=request.pop(util.camelize('ChangeShapeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -343,6 +350,7 @@ def test_create_bds_api_key(testing_service_client):
             response = client.create_bds_api_key(
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                 create_bds_api_key_details=request.pop(util.camelize('CreateBdsApiKeyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -383,6 +391,7 @@ def test_create_bds_instance(testing_service_client):
             client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
             response = client.create_bds_instance(
                 create_bds_instance_details=request.pop(util.camelize('CreateBdsInstanceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -424,6 +433,7 @@ def test_create_bds_metastore_configuration(testing_service_client):
             response = client.create_bds_metastore_configuration(
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                 create_bds_metastore_configuration_details=request.pop(util.camelize('CreateBdsMetastoreConfigurationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -465,6 +475,7 @@ def test_delete_bds_api_key(testing_service_client):
             response = client.delete_bds_api_key(
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                 api_key_id=request.pop(util.camelize('apiKeyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -505,6 +516,7 @@ def test_delete_bds_instance(testing_service_client):
             client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
             response = client.delete_bds_instance(
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -546,6 +558,7 @@ def test_delete_bds_metastore_configuration(testing_service_client):
             response = client.delete_bds_metastore_configuration(
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                 metastore_config_id=request.pop(util.camelize('metastoreConfigId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -587,6 +600,7 @@ def test_get_auto_scaling_configuration(testing_service_client):
             response = client.get_auto_scaling_configuration(
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                 auto_scaling_configuration_id=request.pop(util.camelize('autoScalingConfigurationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -628,6 +642,7 @@ def test_get_bds_api_key(testing_service_client):
             response = client.get_bds_api_key(
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                 api_key_id=request.pop(util.camelize('apiKeyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -668,6 +683,7 @@ def test_get_bds_instance(testing_service_client):
             client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
             response = client.get_bds_instance(
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -709,6 +725,7 @@ def test_get_bds_metastore_configuration(testing_service_client):
             response = client.get_bds_metastore_configuration(
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                 metastore_config_id=request.pop(util.camelize('metastoreConfigId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -749,6 +766,7 @@ def test_get_work_request(testing_service_client):
             client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -790,6 +808,7 @@ def test_install_patch(testing_service_client):
             response = client.install_patch(
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                 install_patch_details=request.pop(util.camelize('InstallPatchDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -832,6 +851,7 @@ def test_list_auto_scaling_configurations(testing_service_client):
             response = client.list_auto_scaling_configurations(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -842,6 +862,7 @@ def test_list_auto_scaling_configurations(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -853,6 +874,7 @@ def test_list_auto_scaling_configurations(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -894,6 +916,7 @@ def test_list_bds_api_keys(testing_service_client):
             client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
             response = client.list_bds_api_keys(
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -903,6 +926,7 @@ def test_list_bds_api_keys(testing_service_client):
                 next_response = client.list_bds_api_keys(
                     bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -913,6 +937,7 @@ def test_list_bds_api_keys(testing_service_client):
                     prev_response = client.list_bds_api_keys(
                         bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -954,6 +979,7 @@ def test_list_bds_instances(testing_service_client):
             client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
             response = client.list_bds_instances(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -963,6 +989,7 @@ def test_list_bds_instances(testing_service_client):
                 next_response = client.list_bds_instances(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -973,6 +1000,7 @@ def test_list_bds_instances(testing_service_client):
                     prev_response = client.list_bds_instances(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1014,6 +1042,7 @@ def test_list_bds_metastore_configurations(testing_service_client):
             client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
             response = client.list_bds_metastore_configurations(
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1023,6 +1052,7 @@ def test_list_bds_metastore_configurations(testing_service_client):
                 next_response = client.list_bds_metastore_configurations(
                     bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1033,6 +1063,7 @@ def test_list_bds_metastore_configurations(testing_service_client):
                     prev_response = client.list_bds_metastore_configurations(
                         bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1074,6 +1105,7 @@ def test_list_patch_histories(testing_service_client):
             client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
             response = client.list_patch_histories(
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1083,6 +1115,7 @@ def test_list_patch_histories(testing_service_client):
                 next_response = client.list_patch_histories(
                     bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1093,6 +1126,7 @@ def test_list_patch_histories(testing_service_client):
                     prev_response = client.list_patch_histories(
                         bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1134,6 +1168,7 @@ def test_list_patches(testing_service_client):
             client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
             response = client.list_patches(
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1143,6 +1178,7 @@ def test_list_patches(testing_service_client):
                 next_response = client.list_patches(
                     bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1153,6 +1189,7 @@ def test_list_patches(testing_service_client):
                     prev_response = client.list_patches(
                         bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1194,6 +1231,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1203,6 +1241,7 @@ def test_list_work_request_errors(testing_service_client):
                 next_response = client.list_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1213,6 +1252,7 @@ def test_list_work_request_errors(testing_service_client):
                     prev_response = client.list_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1254,6 +1294,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1263,6 +1304,7 @@ def test_list_work_request_logs(testing_service_client):
                 next_response = client.list_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1273,6 +1315,7 @@ def test_list_work_request_logs(testing_service_client):
                     prev_response = client.list_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1314,6 +1357,7 @@ def test_list_work_requests(testing_service_client):
             client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1323,6 +1367,7 @@ def test_list_work_requests(testing_service_client):
                 next_response = client.list_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1333,6 +1378,7 @@ def test_list_work_requests(testing_service_client):
                     prev_response = client.list_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1375,6 +1421,7 @@ def test_remove_auto_scaling_configuration(testing_service_client):
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                 auto_scaling_configuration_id=request.pop(util.camelize('autoScalingConfigurationId')),
                 remove_auto_scaling_configuration_details=request.pop(util.camelize('RemoveAutoScalingConfigurationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1416,6 +1463,7 @@ def test_remove_cloud_sql(testing_service_client):
             response = client.remove_cloud_sql(
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                 remove_cloud_sql_details=request.pop(util.camelize('RemoveCloudSqlDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1457,6 +1505,7 @@ def test_remove_node(testing_service_client):
             response = client.remove_node(
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                 remove_node_details=request.pop(util.camelize('RemoveNodeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1498,6 +1547,7 @@ def test_restart_node(testing_service_client):
             response = client.restart_node(
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                 restart_node_details=request.pop(util.camelize('RestartNodeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1540,6 +1590,7 @@ def test_test_bds_metastore_configuration(testing_service_client):
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                 metastore_config_id=request.pop(util.camelize('metastoreConfigId')),
                 test_bds_metastore_configuration_details=request.pop(util.camelize('TestBdsMetastoreConfigurationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1582,6 +1633,7 @@ def test_test_bds_object_storage_connection(testing_service_client):
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                 api_key_id=request.pop(util.camelize('apiKeyId')),
                 test_bds_object_storage_connection_details=request.pop(util.camelize('TestBdsObjectStorageConnectionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1624,6 +1676,7 @@ def test_update_auto_scaling_configuration(testing_service_client):
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                 auto_scaling_configuration_id=request.pop(util.camelize('autoScalingConfigurationId')),
                 update_auto_scaling_configuration_details=request.pop(util.camelize('UpdateAutoScalingConfigurationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1665,6 +1718,7 @@ def test_update_bds_instance(testing_service_client):
             response = client.update_bds_instance(
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                 update_bds_instance_details=request.pop(util.camelize('UpdateBdsInstanceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1707,6 +1761,7 @@ def test_update_bds_metastore_configuration(testing_service_client):
                 bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
                 metastore_config_id=request.pop(util.camelize('metastoreConfigId')),
                 update_bds_metastore_configuration_details=request.pop(util.camelize('UpdateBdsMetastoreConfigurationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

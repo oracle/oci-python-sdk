@@ -55,6 +55,7 @@ def test_change_network_address_list_compartment(testing_service_client):
             response = client.change_network_address_list_compartment(
                 network_address_list_id=request.pop(util.camelize('networkAddressListId')),
                 change_network_address_list_compartment_details=request.pop(util.camelize('ChangeNetworkAddressListCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_change_web_app_firewall_compartment(testing_service_client):
             response = client.change_web_app_firewall_compartment(
                 web_app_firewall_id=request.pop(util.camelize('webAppFirewallId')),
                 change_web_app_firewall_compartment_details=request.pop(util.camelize('ChangeWebAppFirewallCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -137,6 +139,7 @@ def test_change_web_app_firewall_policy_compartment(testing_service_client):
             response = client.change_web_app_firewall_policy_compartment(
                 web_app_firewall_policy_id=request.pop(util.camelize('webAppFirewallPolicyId')),
                 change_web_app_firewall_policy_compartment_details=request.pop(util.camelize('ChangeWebAppFirewallPolicyCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -177,6 +180,7 @@ def test_create_network_address_list(testing_service_client):
             client = oci.waf.WafClient(config, service_endpoint=service_endpoint)
             response = client.create_network_address_list(
                 create_network_address_list_details=request.pop(util.camelize('CreateNetworkAddressListDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -217,6 +221,7 @@ def test_create_web_app_firewall(testing_service_client):
             client = oci.waf.WafClient(config, service_endpoint=service_endpoint)
             response = client.create_web_app_firewall(
                 create_web_app_firewall_details=request.pop(util.camelize('CreateWebAppFirewallDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -257,6 +262,7 @@ def test_create_web_app_firewall_policy(testing_service_client):
             client = oci.waf.WafClient(config, service_endpoint=service_endpoint)
             response = client.create_web_app_firewall_policy(
                 create_web_app_firewall_policy_details=request.pop(util.camelize('CreateWebAppFirewallPolicyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -297,6 +303,7 @@ def test_delete_network_address_list(testing_service_client):
             client = oci.waf.WafClient(config, service_endpoint=service_endpoint)
             response = client.delete_network_address_list(
                 network_address_list_id=request.pop(util.camelize('networkAddressListId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -337,6 +344,7 @@ def test_delete_web_app_firewall(testing_service_client):
             client = oci.waf.WafClient(config, service_endpoint=service_endpoint)
             response = client.delete_web_app_firewall(
                 web_app_firewall_id=request.pop(util.camelize('webAppFirewallId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -377,6 +385,7 @@ def test_delete_web_app_firewall_policy(testing_service_client):
             client = oci.waf.WafClient(config, service_endpoint=service_endpoint)
             response = client.delete_web_app_firewall_policy(
                 web_app_firewall_policy_id=request.pop(util.camelize('webAppFirewallPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -417,6 +426,7 @@ def test_get_network_address_list(testing_service_client):
             client = oci.waf.WafClient(config, service_endpoint=service_endpoint)
             response = client.get_network_address_list(
                 network_address_list_id=request.pop(util.camelize('networkAddressListId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -457,6 +467,7 @@ def test_get_web_app_firewall(testing_service_client):
             client = oci.waf.WafClient(config, service_endpoint=service_endpoint)
             response = client.get_web_app_firewall(
                 web_app_firewall_id=request.pop(util.camelize('webAppFirewallId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -497,6 +508,7 @@ def test_get_web_app_firewall_policy(testing_service_client):
             client = oci.waf.WafClient(config, service_endpoint=service_endpoint)
             response = client.get_web_app_firewall_policy(
                 web_app_firewall_policy_id=request.pop(util.camelize('webAppFirewallPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -537,6 +549,7 @@ def test_get_work_request(testing_service_client):
             client = oci.waf.WafClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -578,6 +591,7 @@ def test_list_network_address_lists(testing_service_client):
             client = oci.waf.WafClient(config, service_endpoint=service_endpoint)
             response = client.list_network_address_lists(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -587,6 +601,7 @@ def test_list_network_address_lists(testing_service_client):
                 next_response = client.list_network_address_lists(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -597,6 +612,7 @@ def test_list_network_address_lists(testing_service_client):
                     prev_response = client.list_network_address_lists(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -638,6 +654,7 @@ def test_list_protection_capabilities(testing_service_client):
             client = oci.waf.WafClient(config, service_endpoint=service_endpoint)
             response = client.list_protection_capabilities(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -647,6 +664,7 @@ def test_list_protection_capabilities(testing_service_client):
                 next_response = client.list_protection_capabilities(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -657,6 +675,7 @@ def test_list_protection_capabilities(testing_service_client):
                     prev_response = client.list_protection_capabilities(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -698,6 +717,7 @@ def test_list_protection_capability_group_tags(testing_service_client):
             client = oci.waf.WafClient(config, service_endpoint=service_endpoint)
             response = client.list_protection_capability_group_tags(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -707,6 +727,7 @@ def test_list_protection_capability_group_tags(testing_service_client):
                 next_response = client.list_protection_capability_group_tags(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -717,6 +738,7 @@ def test_list_protection_capability_group_tags(testing_service_client):
                     prev_response = client.list_protection_capability_group_tags(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -758,6 +780,7 @@ def test_list_web_app_firewall_policies(testing_service_client):
             client = oci.waf.WafClient(config, service_endpoint=service_endpoint)
             response = client.list_web_app_firewall_policies(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -767,6 +790,7 @@ def test_list_web_app_firewall_policies(testing_service_client):
                 next_response = client.list_web_app_firewall_policies(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -777,6 +801,7 @@ def test_list_web_app_firewall_policies(testing_service_client):
                     prev_response = client.list_web_app_firewall_policies(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -818,6 +843,7 @@ def test_list_web_app_firewalls(testing_service_client):
             client = oci.waf.WafClient(config, service_endpoint=service_endpoint)
             response = client.list_web_app_firewalls(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -827,6 +853,7 @@ def test_list_web_app_firewalls(testing_service_client):
                 next_response = client.list_web_app_firewalls(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -837,6 +864,7 @@ def test_list_web_app_firewalls(testing_service_client):
                     prev_response = client.list_web_app_firewalls(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -878,6 +906,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.waf.WafClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -887,6 +916,7 @@ def test_list_work_request_errors(testing_service_client):
                 next_response = client.list_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -897,6 +927,7 @@ def test_list_work_request_errors(testing_service_client):
                     prev_response = client.list_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -938,6 +969,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.waf.WafClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -947,6 +979,7 @@ def test_list_work_request_logs(testing_service_client):
                 next_response = client.list_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -957,6 +990,7 @@ def test_list_work_request_logs(testing_service_client):
                     prev_response = client.list_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -998,6 +1032,7 @@ def test_list_work_requests(testing_service_client):
             client = oci.waf.WafClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1007,6 +1042,7 @@ def test_list_work_requests(testing_service_client):
                 next_response = client.list_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1017,6 +1053,7 @@ def test_list_work_requests(testing_service_client):
                     prev_response = client.list_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1058,6 +1095,7 @@ def test_update_network_address_list(testing_service_client):
             response = client.update_network_address_list(
                 network_address_list_id=request.pop(util.camelize('networkAddressListId')),
                 update_network_address_list_details=request.pop(util.camelize('UpdateNetworkAddressListDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1099,6 +1137,7 @@ def test_update_web_app_firewall(testing_service_client):
             response = client.update_web_app_firewall(
                 web_app_firewall_id=request.pop(util.camelize('webAppFirewallId')),
                 update_web_app_firewall_details=request.pop(util.camelize('UpdateWebAppFirewallDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1140,6 +1179,7 @@ def test_update_web_app_firewall_policy(testing_service_client):
             response = client.update_web_app_firewall_policy(
                 web_app_firewall_policy_id=request.pop(util.camelize('webAppFirewallPolicyId')),
                 update_web_app_firewall_policy_details=request.pop(util.camelize('UpdateWebAppFirewallPolicyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

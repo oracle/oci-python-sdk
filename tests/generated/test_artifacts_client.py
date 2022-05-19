@@ -55,6 +55,7 @@ def test_change_container_repository_compartment(testing_service_client):
             response = client.change_container_repository_compartment(
                 repository_id=request.pop(util.camelize('repositoryId')),
                 change_container_repository_compartment_details=request.pop(util.camelize('ChangeContainerRepositoryCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_change_repository_compartment(testing_service_client):
             response = client.change_repository_compartment(
                 repository_id=request.pop(util.camelize('repositoryId')),
                 change_repository_compartment_details=request.pop(util.camelize('ChangeRepositoryCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -136,6 +138,7 @@ def test_create_container_image_signature(testing_service_client):
             client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
             response = client.create_container_image_signature(
                 create_container_image_signature_details=request.pop(util.camelize('CreateContainerImageSignatureDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -176,6 +179,7 @@ def test_create_container_repository(testing_service_client):
             client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
             response = client.create_container_repository(
                 create_container_repository_details=request.pop(util.camelize('CreateContainerRepositoryDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -216,6 +220,7 @@ def test_create_repository(testing_service_client):
             client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
             response = client.create_repository(
                 create_repository_details=request.pop(util.camelize('CreateRepositoryDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -256,6 +261,7 @@ def test_delete_container_image(testing_service_client):
             client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
             response = client.delete_container_image(
                 image_id=request.pop(util.camelize('imageId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -296,6 +302,7 @@ def test_delete_container_image_signature(testing_service_client):
             client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
             response = client.delete_container_image_signature(
                 image_signature_id=request.pop(util.camelize('imageSignatureId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -336,6 +343,7 @@ def test_delete_container_repository(testing_service_client):
             client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
             response = client.delete_container_repository(
                 repository_id=request.pop(util.camelize('repositoryId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -376,6 +384,7 @@ def test_delete_generic_artifact(testing_service_client):
             client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
             response = client.delete_generic_artifact(
                 artifact_id=request.pop(util.camelize('artifactId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -418,6 +427,7 @@ def test_delete_generic_artifact_by_path(testing_service_client):
                 repository_id=request.pop(util.camelize('repositoryId')),
                 artifact_path=request.pop(util.camelize('artifactPath')),
                 version=request.pop(util.camelize('version')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -458,6 +468,7 @@ def test_delete_repository(testing_service_client):
             client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
             response = client.delete_repository(
                 repository_id=request.pop(util.camelize('repositoryId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -498,6 +509,7 @@ def test_get_container_configuration(testing_service_client):
             client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
             response = client.get_container_configuration(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -538,6 +550,7 @@ def test_get_container_image(testing_service_client):
             client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
             response = client.get_container_image(
                 image_id=request.pop(util.camelize('imageId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -578,6 +591,7 @@ def test_get_container_image_signature(testing_service_client):
             client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
             response = client.get_container_image_signature(
                 image_signature_id=request.pop(util.camelize('imageSignatureId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -618,6 +632,7 @@ def test_get_container_repository(testing_service_client):
             client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
             response = client.get_container_repository(
                 repository_id=request.pop(util.camelize('repositoryId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -658,6 +673,7 @@ def test_get_generic_artifact(testing_service_client):
             client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
             response = client.get_generic_artifact(
                 artifact_id=request.pop(util.camelize('artifactId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -700,6 +716,7 @@ def test_get_generic_artifact_by_path(testing_service_client):
                 repository_id=request.pop(util.camelize('repositoryId')),
                 artifact_path=request.pop(util.camelize('artifactPath')),
                 version=request.pop(util.camelize('version')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -740,6 +757,7 @@ def test_get_repository(testing_service_client):
             client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
             response = client.get_repository(
                 repository_id=request.pop(util.camelize('repositoryId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -781,6 +799,7 @@ def test_list_container_image_signatures(testing_service_client):
             client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
             response = client.list_container_image_signatures(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -790,6 +809,7 @@ def test_list_container_image_signatures(testing_service_client):
                 next_response = client.list_container_image_signatures(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -800,6 +820,7 @@ def test_list_container_image_signatures(testing_service_client):
                     prev_response = client.list_container_image_signatures(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -841,6 +862,7 @@ def test_list_container_images(testing_service_client):
             client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
             response = client.list_container_images(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -850,6 +872,7 @@ def test_list_container_images(testing_service_client):
                 next_response = client.list_container_images(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -860,6 +883,7 @@ def test_list_container_images(testing_service_client):
                     prev_response = client.list_container_images(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -901,6 +925,7 @@ def test_list_container_repositories(testing_service_client):
             client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
             response = client.list_container_repositories(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -910,6 +935,7 @@ def test_list_container_repositories(testing_service_client):
                 next_response = client.list_container_repositories(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -920,6 +946,7 @@ def test_list_container_repositories(testing_service_client):
                     prev_response = client.list_container_repositories(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -962,6 +989,7 @@ def test_list_generic_artifacts(testing_service_client):
             response = client.list_generic_artifacts(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 repository_id=request.pop(util.camelize('repositoryId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -972,6 +1000,7 @@ def test_list_generic_artifacts(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     repository_id=request.pop(util.camelize('repositoryId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -983,6 +1012,7 @@ def test_list_generic_artifacts(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         repository_id=request.pop(util.camelize('repositoryId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1024,6 +1054,7 @@ def test_list_repositories(testing_service_client):
             client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
             response = client.list_repositories(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1033,6 +1064,7 @@ def test_list_repositories(testing_service_client):
                 next_response = client.list_repositories(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1043,6 +1075,7 @@ def test_list_repositories(testing_service_client):
                     prev_response = client.list_repositories(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1084,6 +1117,7 @@ def test_remove_container_version(testing_service_client):
             response = client.remove_container_version(
                 image_id=request.pop(util.camelize('imageId')),
                 remove_container_version_details=request.pop(util.camelize('RemoveContainerVersionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1125,6 +1159,7 @@ def test_restore_container_image(testing_service_client):
             response = client.restore_container_image(
                 image_id=request.pop(util.camelize('imageId')),
                 restore_container_image_details=request.pop(util.camelize('RestoreContainerImageDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1166,6 +1201,7 @@ def test_update_container_configuration(testing_service_client):
             response = client.update_container_configuration(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 update_container_configuration_details=request.pop(util.camelize('UpdateContainerConfigurationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1207,6 +1243,7 @@ def test_update_container_repository(testing_service_client):
             response = client.update_container_repository(
                 repository_id=request.pop(util.camelize('repositoryId')),
                 update_container_repository_details=request.pop(util.camelize('UpdateContainerRepositoryDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1248,6 +1285,7 @@ def test_update_generic_artifact(testing_service_client):
             response = client.update_generic_artifact(
                 artifact_id=request.pop(util.camelize('artifactId')),
                 update_generic_artifact_details=request.pop(util.camelize('UpdateGenericArtifactDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1291,6 +1329,7 @@ def test_update_generic_artifact_by_path(testing_service_client):
                 artifact_path=request.pop(util.camelize('artifactPath')),
                 version=request.pop(util.camelize('version')),
                 update_generic_artifact_by_path_details=request.pop(util.camelize('UpdateGenericArtifactByPathDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1332,6 +1371,7 @@ def test_update_repository(testing_service_client):
             response = client.update_repository(
                 repository_id=request.pop(util.camelize('repositoryId')),
                 update_repository_details=request.pop(util.camelize('UpdateRepositoryDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

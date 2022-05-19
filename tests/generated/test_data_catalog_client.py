@@ -56,6 +56,7 @@ def test_add_data_selector_patterns(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 data_selector_pattern_details=request.pop(util.camelize('DataSelectorPatternDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -98,6 +99,7 @@ def test_associate_custom_property(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 type_key=request.pop(util.camelize('typeKey')),
                 associate_custom_property_details=request.pop(util.camelize('AssociateCustomPropertyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -139,6 +141,7 @@ def test_attach_catalog_private_endpoint(testing_service_client):
             response = client.attach_catalog_private_endpoint(
                 attach_catalog_private_endpoint_details=request.pop(util.camelize('AttachCatalogPrivateEndpointDetails')),
                 catalog_id=request.pop(util.camelize('catalogId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -180,6 +183,7 @@ def test_change_catalog_compartment(testing_service_client):
             response = client.change_catalog_compartment(
                 change_catalog_compartment_details=request.pop(util.camelize('ChangeCatalogCompartmentDetails')),
                 catalog_id=request.pop(util.camelize('catalogId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -221,6 +225,7 @@ def test_change_catalog_private_endpoint_compartment(testing_service_client):
             response = client.change_catalog_private_endpoint_compartment(
                 change_catalog_private_endpoint_compartment_details=request.pop(util.camelize('ChangeCatalogPrivateEndpointCompartmentDetails')),
                 catalog_private_endpoint_id=request.pop(util.camelize('catalogPrivateEndpointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -262,6 +267,7 @@ def test_change_metastore_compartment(testing_service_client):
             response = client.change_metastore_compartment(
                 change_metastore_compartment_details=request.pop(util.camelize('ChangeMetastoreCompartmentDetails')),
                 metastore_id=request.pop(util.camelize('metastoreId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -305,6 +311,7 @@ def test_create_attribute(testing_service_client):
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 entity_key=request.pop(util.camelize('entityKey')),
                 create_attribute_details=request.pop(util.camelize('CreateAttributeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -349,6 +356,7 @@ def test_create_attribute_tag(testing_service_client):
                 entity_key=request.pop(util.camelize('entityKey')),
                 attribute_key=request.pop(util.camelize('attributeKey')),
                 create_attribute_tag_details=request.pop(util.camelize('CreateAttributeTagDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -389,6 +397,7 @@ def test_create_catalog(testing_service_client):
             client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
             response = client.create_catalog(
                 create_catalog_details=request.pop(util.camelize('CreateCatalogDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -429,6 +438,7 @@ def test_create_catalog_private_endpoint(testing_service_client):
             client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
             response = client.create_catalog_private_endpoint(
                 create_catalog_private_endpoint_details=request.pop(util.camelize('CreateCatalogPrivateEndpointDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -471,6 +481,7 @@ def test_create_connection(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 create_connection_details=request.pop(util.camelize('CreateConnectionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -513,6 +524,7 @@ def test_create_custom_property(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 namespace_id=request.pop(util.camelize('namespaceId')),
                 create_custom_property_details=request.pop(util.camelize('CreateCustomPropertyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -554,6 +566,7 @@ def test_create_data_asset(testing_service_client):
             response = client.create_data_asset(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 create_data_asset_details=request.pop(util.camelize('CreateDataAssetDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -596,6 +609,7 @@ def test_create_data_asset_tag(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 create_data_asset_tag_details=request.pop(util.camelize('CreateDataAssetTagDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -638,6 +652,7 @@ def test_create_entity(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 create_entity_details=request.pop(util.camelize('CreateEntityDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -681,6 +696,7 @@ def test_create_entity_tag(testing_service_client):
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 entity_key=request.pop(util.camelize('entityKey')),
                 create_entity_tag_details=request.pop(util.camelize('CreateEntityTagDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -723,6 +739,7 @@ def test_create_folder(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 create_folder_details=request.pop(util.camelize('CreateFolderDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -766,6 +783,7 @@ def test_create_folder_tag(testing_service_client):
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 folder_key=request.pop(util.camelize('folderKey')),
                 create_folder_tag_details=request.pop(util.camelize('CreateFolderTagDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -807,6 +825,7 @@ def test_create_glossary(testing_service_client):
             response = client.create_glossary(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 create_glossary_details=request.pop(util.camelize('CreateGlossaryDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -848,6 +867,7 @@ def test_create_job(testing_service_client):
             response = client.create_job(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 create_job_details=request.pop(util.camelize('CreateJobDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -889,6 +909,7 @@ def test_create_job_definition(testing_service_client):
             response = client.create_job_definition(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 create_job_definition_details=request.pop(util.camelize('CreateJobDefinitionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -931,6 +952,7 @@ def test_create_job_execution(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 job_key=request.pop(util.camelize('jobKey')),
                 create_job_execution_details=request.pop(util.camelize('CreateJobExecutionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -971,6 +993,7 @@ def test_create_metastore(testing_service_client):
             client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
             response = client.create_metastore(
                 create_metastore_details=request.pop(util.camelize('CreateMetastoreDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1012,6 +1035,7 @@ def test_create_namespace(testing_service_client):
             response = client.create_namespace(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 create_namespace_details=request.pop(util.camelize('CreateNamespaceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1053,6 +1077,7 @@ def test_create_pattern(testing_service_client):
             response = client.create_pattern(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 create_pattern_details=request.pop(util.camelize('CreatePatternDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1095,6 +1120,7 @@ def test_create_term(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 glossary_key=request.pop(util.camelize('glossaryKey')),
                 create_term_details=request.pop(util.camelize('CreateTermDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1138,6 +1164,7 @@ def test_create_term_relationship(testing_service_client):
                 glossary_key=request.pop(util.camelize('glossaryKey')),
                 term_key=request.pop(util.camelize('termKey')),
                 create_term_relationship_details=request.pop(util.camelize('CreateTermRelationshipDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1181,6 +1208,7 @@ def test_delete_attribute(testing_service_client):
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 entity_key=request.pop(util.camelize('entityKey')),
                 attribute_key=request.pop(util.camelize('attributeKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1225,6 +1253,7 @@ def test_delete_attribute_tag(testing_service_client):
                 entity_key=request.pop(util.camelize('entityKey')),
                 attribute_key=request.pop(util.camelize('attributeKey')),
                 tag_key=request.pop(util.camelize('tagKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1265,6 +1294,7 @@ def test_delete_catalog(testing_service_client):
             client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
             response = client.delete_catalog(
                 catalog_id=request.pop(util.camelize('catalogId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1305,6 +1335,7 @@ def test_delete_catalog_private_endpoint(testing_service_client):
             client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
             response = client.delete_catalog_private_endpoint(
                 catalog_private_endpoint_id=request.pop(util.camelize('catalogPrivateEndpointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1347,6 +1378,7 @@ def test_delete_connection(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 connection_key=request.pop(util.camelize('connectionKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1389,6 +1421,7 @@ def test_delete_custom_property(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 namespace_id=request.pop(util.camelize('namespaceId')),
                 custom_property_key=request.pop(util.camelize('customPropertyKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1430,6 +1463,7 @@ def test_delete_data_asset(testing_service_client):
             response = client.delete_data_asset(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1472,6 +1506,7 @@ def test_delete_data_asset_tag(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 tag_key=request.pop(util.camelize('tagKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1514,6 +1549,7 @@ def test_delete_entity(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 entity_key=request.pop(util.camelize('entityKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1557,6 +1593,7 @@ def test_delete_entity_tag(testing_service_client):
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 entity_key=request.pop(util.camelize('entityKey')),
                 tag_key=request.pop(util.camelize('tagKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1599,6 +1636,7 @@ def test_delete_folder(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 folder_key=request.pop(util.camelize('folderKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1642,6 +1680,7 @@ def test_delete_folder_tag(testing_service_client):
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 folder_key=request.pop(util.camelize('folderKey')),
                 tag_key=request.pop(util.camelize('tagKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1683,6 +1722,7 @@ def test_delete_glossary(testing_service_client):
             response = client.delete_glossary(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 glossary_key=request.pop(util.camelize('glossaryKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1724,6 +1764,7 @@ def test_delete_job(testing_service_client):
             response = client.delete_job(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 job_key=request.pop(util.camelize('jobKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1765,6 +1806,7 @@ def test_delete_job_definition(testing_service_client):
             response = client.delete_job_definition(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 job_definition_key=request.pop(util.camelize('jobDefinitionKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1805,6 +1847,7 @@ def test_delete_metastore(testing_service_client):
             client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
             response = client.delete_metastore(
                 metastore_id=request.pop(util.camelize('metastoreId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1846,6 +1889,7 @@ def test_delete_namespace(testing_service_client):
             response = client.delete_namespace(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 namespace_id=request.pop(util.camelize('namespaceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1887,6 +1931,7 @@ def test_delete_pattern(testing_service_client):
             response = client.delete_pattern(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 pattern_key=request.pop(util.camelize('patternKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1929,6 +1974,7 @@ def test_delete_term(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 glossary_key=request.pop(util.camelize('glossaryKey')),
                 term_key=request.pop(util.camelize('termKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1972,6 +2018,7 @@ def test_delete_term_relationship(testing_service_client):
                 glossary_key=request.pop(util.camelize('glossaryKey')),
                 term_key=request.pop(util.camelize('termKey')),
                 term_relationship_key=request.pop(util.camelize('termRelationshipKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2013,6 +2060,7 @@ def test_detach_catalog_private_endpoint(testing_service_client):
             response = client.detach_catalog_private_endpoint(
                 detach_catalog_private_endpoint_details=request.pop(util.camelize('DetachCatalogPrivateEndpointDetails')),
                 catalog_id=request.pop(util.camelize('catalogId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2055,6 +2103,7 @@ def test_disassociate_custom_property(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 type_key=request.pop(util.camelize('typeKey')),
                 disassociate_custom_property_details=request.pop(util.camelize('DisassociateCustomPropertyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2096,6 +2145,7 @@ def test_expand_tree_for_glossary(testing_service_client):
             response = client.expand_tree_for_glossary(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 glossary_key=request.pop(util.camelize('glossaryKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2137,6 +2187,7 @@ def test_export_glossary(testing_service_client):
             response = client.export_glossary(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 glossary_key=request.pop(util.camelize('glossaryKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2180,6 +2231,7 @@ def test_get_attribute(testing_service_client):
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 entity_key=request.pop(util.camelize('entityKey')),
                 attribute_key=request.pop(util.camelize('attributeKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2224,6 +2276,7 @@ def test_get_attribute_tag(testing_service_client):
                 entity_key=request.pop(util.camelize('entityKey')),
                 attribute_key=request.pop(util.camelize('attributeKey')),
                 tag_key=request.pop(util.camelize('tagKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2264,6 +2317,7 @@ def test_get_catalog(testing_service_client):
             client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
             response = client.get_catalog(
                 catalog_id=request.pop(util.camelize('catalogId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2304,6 +2358,7 @@ def test_get_catalog_private_endpoint(testing_service_client):
             client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
             response = client.get_catalog_private_endpoint(
                 catalog_private_endpoint_id=request.pop(util.camelize('catalogPrivateEndpointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2346,6 +2401,7 @@ def test_get_connection(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 connection_key=request.pop(util.camelize('connectionKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2388,6 +2444,7 @@ def test_get_custom_property(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 namespace_id=request.pop(util.camelize('namespaceId')),
                 custom_property_key=request.pop(util.camelize('customPropertyKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2429,6 +2486,7 @@ def test_get_data_asset(testing_service_client):
             response = client.get_data_asset(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2471,6 +2529,7 @@ def test_get_data_asset_tag(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 tag_key=request.pop(util.camelize('tagKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2513,6 +2572,7 @@ def test_get_entity(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 entity_key=request.pop(util.camelize('entityKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2556,6 +2616,7 @@ def test_get_entity_tag(testing_service_client):
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 entity_key=request.pop(util.camelize('entityKey')),
                 tag_key=request.pop(util.camelize('tagKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2598,6 +2659,7 @@ def test_get_folder(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 folder_key=request.pop(util.camelize('folderKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2641,6 +2703,7 @@ def test_get_folder_tag(testing_service_client):
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 folder_key=request.pop(util.camelize('folderKey')),
                 tag_key=request.pop(util.camelize('tagKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2682,6 +2745,7 @@ def test_get_glossary(testing_service_client):
             response = client.get_glossary(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 glossary_key=request.pop(util.camelize('glossaryKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2723,6 +2787,7 @@ def test_get_job(testing_service_client):
             response = client.get_job(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 job_key=request.pop(util.camelize('jobKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2764,6 +2829,7 @@ def test_get_job_definition(testing_service_client):
             response = client.get_job_definition(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 job_definition_key=request.pop(util.camelize('jobDefinitionKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2806,6 +2872,7 @@ def test_get_job_execution(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 job_key=request.pop(util.camelize('jobKey')),
                 job_execution_key=request.pop(util.camelize('jobExecutionKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2849,6 +2916,7 @@ def test_get_job_log(testing_service_client):
                 job_key=request.pop(util.camelize('jobKey')),
                 job_execution_key=request.pop(util.camelize('jobExecutionKey')),
                 job_log_key=request.pop(util.camelize('jobLogKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2892,6 +2960,7 @@ def test_get_job_metrics(testing_service_client):
                 job_key=request.pop(util.camelize('jobKey')),
                 job_execution_key=request.pop(util.camelize('jobExecutionKey')),
                 job_metrics_key=request.pop(util.camelize('jobMetricsKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2932,6 +3001,7 @@ def test_get_metastore(testing_service_client):
             client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
             response = client.get_metastore(
                 metastore_id=request.pop(util.camelize('metastoreId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2973,6 +3043,7 @@ def test_get_namespace(testing_service_client):
             response = client.get_namespace(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 namespace_id=request.pop(util.camelize('namespaceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3014,6 +3085,7 @@ def test_get_pattern(testing_service_client):
             response = client.get_pattern(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 pattern_key=request.pop(util.camelize('patternKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3056,6 +3128,7 @@ def test_get_term(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 glossary_key=request.pop(util.camelize('glossaryKey')),
                 term_key=request.pop(util.camelize('termKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3099,6 +3172,7 @@ def test_get_term_relationship(testing_service_client):
                 glossary_key=request.pop(util.camelize('glossaryKey')),
                 term_key=request.pop(util.camelize('termKey')),
                 term_relationship_key=request.pop(util.camelize('termRelationshipKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3140,6 +3214,7 @@ def test_get_type(testing_service_client):
             response = client.get_type(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 type_key=request.pop(util.camelize('typeKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3180,6 +3255,7 @@ def test_get_work_request(testing_service_client):
             client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3222,6 +3298,7 @@ def test_import_connection(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 import_connection_details=request.pop(util.camelize('ImportConnectionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3265,6 +3342,7 @@ def test_import_data_asset(testing_service_client):
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 import_data_asset_details=request.pop(util.camelize('ImportDataAssetDetails')),
                 import_type=request.pop(util.camelize('importType')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3307,6 +3385,7 @@ def test_import_glossary(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 glossary_key=request.pop(util.camelize('glossaryKey')),
                 import_glossary_details=request.pop(util.camelize('ImportGlossaryDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3350,6 +3429,7 @@ def test_list_aggregated_physical_entities(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 entity_key=request.pop(util.camelize('entityKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3361,6 +3441,7 @@ def test_list_aggregated_physical_entities(testing_service_client):
                     data_asset_key=request.pop(util.camelize('dataAssetKey')),
                     entity_key=request.pop(util.camelize('entityKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3373,6 +3454,7 @@ def test_list_aggregated_physical_entities(testing_service_client):
                         data_asset_key=request.pop(util.camelize('dataAssetKey')),
                         entity_key=request.pop(util.camelize('entityKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3417,6 +3499,7 @@ def test_list_attribute_tags(testing_service_client):
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 entity_key=request.pop(util.camelize('entityKey')),
                 attribute_key=request.pop(util.camelize('attributeKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3429,6 +3512,7 @@ def test_list_attribute_tags(testing_service_client):
                     entity_key=request.pop(util.camelize('entityKey')),
                     attribute_key=request.pop(util.camelize('attributeKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3442,6 +3526,7 @@ def test_list_attribute_tags(testing_service_client):
                         entity_key=request.pop(util.camelize('entityKey')),
                         attribute_key=request.pop(util.camelize('attributeKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3485,6 +3570,7 @@ def test_list_attributes(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 entity_key=request.pop(util.camelize('entityKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3496,6 +3582,7 @@ def test_list_attributes(testing_service_client):
                     data_asset_key=request.pop(util.camelize('dataAssetKey')),
                     entity_key=request.pop(util.camelize('entityKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3508,6 +3595,7 @@ def test_list_attributes(testing_service_client):
                         data_asset_key=request.pop(util.camelize('dataAssetKey')),
                         entity_key=request.pop(util.camelize('entityKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3549,6 +3637,7 @@ def test_list_catalog_private_endpoints(testing_service_client):
             client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
             response = client.list_catalog_private_endpoints(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3558,6 +3647,7 @@ def test_list_catalog_private_endpoints(testing_service_client):
                 next_response = client.list_catalog_private_endpoints(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3568,6 +3658,7 @@ def test_list_catalog_private_endpoints(testing_service_client):
                     prev_response = client.list_catalog_private_endpoints(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3609,6 +3700,7 @@ def test_list_catalogs(testing_service_client):
             client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
             response = client.list_catalogs(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3618,6 +3710,7 @@ def test_list_catalogs(testing_service_client):
                 next_response = client.list_catalogs(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3628,6 +3721,7 @@ def test_list_catalogs(testing_service_client):
                     prev_response = client.list_catalogs(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3670,6 +3764,7 @@ def test_list_connections(testing_service_client):
             response = client.list_connections(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3680,6 +3775,7 @@ def test_list_connections(testing_service_client):
                     catalog_id=request.pop(util.camelize('catalogId')),
                     data_asset_key=request.pop(util.camelize('dataAssetKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3691,6 +3787,7 @@ def test_list_connections(testing_service_client):
                         catalog_id=request.pop(util.camelize('catalogId')),
                         data_asset_key=request.pop(util.camelize('dataAssetKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3733,6 +3830,7 @@ def test_list_custom_properties(testing_service_client):
             response = client.list_custom_properties(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 namespace_id=request.pop(util.camelize('namespaceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3743,6 +3841,7 @@ def test_list_custom_properties(testing_service_client):
                     catalog_id=request.pop(util.camelize('catalogId')),
                     namespace_id=request.pop(util.camelize('namespaceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3754,6 +3853,7 @@ def test_list_custom_properties(testing_service_client):
                         catalog_id=request.pop(util.camelize('catalogId')),
                         namespace_id=request.pop(util.camelize('namespaceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3796,6 +3896,7 @@ def test_list_data_asset_tags(testing_service_client):
             response = client.list_data_asset_tags(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3806,6 +3907,7 @@ def test_list_data_asset_tags(testing_service_client):
                     catalog_id=request.pop(util.camelize('catalogId')),
                     data_asset_key=request.pop(util.camelize('dataAssetKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3817,6 +3919,7 @@ def test_list_data_asset_tags(testing_service_client):
                         catalog_id=request.pop(util.camelize('catalogId')),
                         data_asset_key=request.pop(util.camelize('dataAssetKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3858,6 +3961,7 @@ def test_list_data_assets(testing_service_client):
             client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
             response = client.list_data_assets(
                 catalog_id=request.pop(util.camelize('catalogId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3867,6 +3971,7 @@ def test_list_data_assets(testing_service_client):
                 next_response = client.list_data_assets(
                     catalog_id=request.pop(util.camelize('catalogId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3877,6 +3982,7 @@ def test_list_data_assets(testing_service_client):
                     prev_response = client.list_data_assets(
                         catalog_id=request.pop(util.camelize('catalogId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3919,6 +4025,7 @@ def test_list_derived_logical_entities(testing_service_client):
             response = client.list_derived_logical_entities(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 pattern_key=request.pop(util.camelize('patternKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3929,6 +4036,7 @@ def test_list_derived_logical_entities(testing_service_client):
                     catalog_id=request.pop(util.camelize('catalogId')),
                     pattern_key=request.pop(util.camelize('patternKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3940,6 +4048,7 @@ def test_list_derived_logical_entities(testing_service_client):
                         catalog_id=request.pop(util.camelize('catalogId')),
                         pattern_key=request.pop(util.camelize('patternKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3982,6 +4091,7 @@ def test_list_entities(testing_service_client):
             response = client.list_entities(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3992,6 +4102,7 @@ def test_list_entities(testing_service_client):
                     catalog_id=request.pop(util.camelize('catalogId')),
                     data_asset_key=request.pop(util.camelize('dataAssetKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4003,6 +4114,7 @@ def test_list_entities(testing_service_client):
                         catalog_id=request.pop(util.camelize('catalogId')),
                         data_asset_key=request.pop(util.camelize('dataAssetKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4046,6 +4158,7 @@ def test_list_entity_tags(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 entity_key=request.pop(util.camelize('entityKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4057,6 +4170,7 @@ def test_list_entity_tags(testing_service_client):
                     data_asset_key=request.pop(util.camelize('dataAssetKey')),
                     entity_key=request.pop(util.camelize('entityKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4069,6 +4183,7 @@ def test_list_entity_tags(testing_service_client):
                         data_asset_key=request.pop(util.camelize('dataAssetKey')),
                         entity_key=request.pop(util.camelize('entityKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4112,6 +4227,7 @@ def test_list_folder_tags(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 folder_key=request.pop(util.camelize('folderKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4123,6 +4239,7 @@ def test_list_folder_tags(testing_service_client):
                     data_asset_key=request.pop(util.camelize('dataAssetKey')),
                     folder_key=request.pop(util.camelize('folderKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4135,6 +4252,7 @@ def test_list_folder_tags(testing_service_client):
                         data_asset_key=request.pop(util.camelize('dataAssetKey')),
                         folder_key=request.pop(util.camelize('folderKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4177,6 +4295,7 @@ def test_list_folders(testing_service_client):
             response = client.list_folders(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4187,6 +4306,7 @@ def test_list_folders(testing_service_client):
                     catalog_id=request.pop(util.camelize('catalogId')),
                     data_asset_key=request.pop(util.camelize('dataAssetKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4198,6 +4318,7 @@ def test_list_folders(testing_service_client):
                         catalog_id=request.pop(util.camelize('catalogId')),
                         data_asset_key=request.pop(util.camelize('dataAssetKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4239,6 +4360,7 @@ def test_list_glossaries(testing_service_client):
             client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
             response = client.list_glossaries(
                 catalog_id=request.pop(util.camelize('catalogId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4248,6 +4370,7 @@ def test_list_glossaries(testing_service_client):
                 next_response = client.list_glossaries(
                     catalog_id=request.pop(util.camelize('catalogId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4258,6 +4381,7 @@ def test_list_glossaries(testing_service_client):
                     prev_response = client.list_glossaries(
                         catalog_id=request.pop(util.camelize('catalogId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4299,6 +4423,7 @@ def test_list_job_definitions(testing_service_client):
             client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
             response = client.list_job_definitions(
                 catalog_id=request.pop(util.camelize('catalogId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4308,6 +4433,7 @@ def test_list_job_definitions(testing_service_client):
                 next_response = client.list_job_definitions(
                     catalog_id=request.pop(util.camelize('catalogId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4318,6 +4444,7 @@ def test_list_job_definitions(testing_service_client):
                     prev_response = client.list_job_definitions(
                         catalog_id=request.pop(util.camelize('catalogId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4360,6 +4487,7 @@ def test_list_job_executions(testing_service_client):
             response = client.list_job_executions(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 job_key=request.pop(util.camelize('jobKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4370,6 +4498,7 @@ def test_list_job_executions(testing_service_client):
                     catalog_id=request.pop(util.camelize('catalogId')),
                     job_key=request.pop(util.camelize('jobKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4381,6 +4510,7 @@ def test_list_job_executions(testing_service_client):
                         catalog_id=request.pop(util.camelize('catalogId')),
                         job_key=request.pop(util.camelize('jobKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4424,6 +4554,7 @@ def test_list_job_logs(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 job_key=request.pop(util.camelize('jobKey')),
                 job_execution_key=request.pop(util.camelize('jobExecutionKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4435,6 +4566,7 @@ def test_list_job_logs(testing_service_client):
                     job_key=request.pop(util.camelize('jobKey')),
                     job_execution_key=request.pop(util.camelize('jobExecutionKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4447,6 +4579,7 @@ def test_list_job_logs(testing_service_client):
                         job_key=request.pop(util.camelize('jobKey')),
                         job_execution_key=request.pop(util.camelize('jobExecutionKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4490,6 +4623,7 @@ def test_list_job_metrics(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 job_key=request.pop(util.camelize('jobKey')),
                 job_execution_key=request.pop(util.camelize('jobExecutionKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4501,6 +4635,7 @@ def test_list_job_metrics(testing_service_client):
                     job_key=request.pop(util.camelize('jobKey')),
                     job_execution_key=request.pop(util.camelize('jobExecutionKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4513,6 +4648,7 @@ def test_list_job_metrics(testing_service_client):
                         job_key=request.pop(util.camelize('jobKey')),
                         job_execution_key=request.pop(util.camelize('jobExecutionKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4554,6 +4690,7 @@ def test_list_jobs(testing_service_client):
             client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
             response = client.list_jobs(
                 catalog_id=request.pop(util.camelize('catalogId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4563,6 +4700,7 @@ def test_list_jobs(testing_service_client):
                 next_response = client.list_jobs(
                     catalog_id=request.pop(util.camelize('catalogId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4573,6 +4711,7 @@ def test_list_jobs(testing_service_client):
                     prev_response = client.list_jobs(
                         catalog_id=request.pop(util.camelize('catalogId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4614,6 +4753,7 @@ def test_list_metastores(testing_service_client):
             client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
             response = client.list_metastores(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4623,6 +4763,7 @@ def test_list_metastores(testing_service_client):
                 next_response = client.list_metastores(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4633,6 +4774,7 @@ def test_list_metastores(testing_service_client):
                     prev_response = client.list_metastores(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4674,6 +4816,7 @@ def test_list_namespaces(testing_service_client):
             client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
             response = client.list_namespaces(
                 catalog_id=request.pop(util.camelize('catalogId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4683,6 +4826,7 @@ def test_list_namespaces(testing_service_client):
                 next_response = client.list_namespaces(
                     catalog_id=request.pop(util.camelize('catalogId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4693,6 +4837,7 @@ def test_list_namespaces(testing_service_client):
                     prev_response = client.list_namespaces(
                         catalog_id=request.pop(util.camelize('catalogId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4734,6 +4879,7 @@ def test_list_patterns(testing_service_client):
             client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
             response = client.list_patterns(
                 catalog_id=request.pop(util.camelize('catalogId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4743,6 +4889,7 @@ def test_list_patterns(testing_service_client):
                 next_response = client.list_patterns(
                     catalog_id=request.pop(util.camelize('catalogId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4753,6 +4900,7 @@ def test_list_patterns(testing_service_client):
                     prev_response = client.list_patterns(
                         catalog_id=request.pop(util.camelize('catalogId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4796,6 +4944,7 @@ def test_list_rules(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 entity_key=request.pop(util.camelize('entityKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4807,6 +4956,7 @@ def test_list_rules(testing_service_client):
                     data_asset_key=request.pop(util.camelize('dataAssetKey')),
                     entity_key=request.pop(util.camelize('entityKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4819,6 +4969,7 @@ def test_list_rules(testing_service_client):
                         data_asset_key=request.pop(util.camelize('dataAssetKey')),
                         entity_key=request.pop(util.camelize('entityKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4860,6 +5011,7 @@ def test_list_tags(testing_service_client):
             client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
             response = client.list_tags(
                 catalog_id=request.pop(util.camelize('catalogId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4869,6 +5021,7 @@ def test_list_tags(testing_service_client):
                 next_response = client.list_tags(
                     catalog_id=request.pop(util.camelize('catalogId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4879,6 +5032,7 @@ def test_list_tags(testing_service_client):
                     prev_response = client.list_tags(
                         catalog_id=request.pop(util.camelize('catalogId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4922,6 +5076,7 @@ def test_list_term_relationships(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 glossary_key=request.pop(util.camelize('glossaryKey')),
                 term_key=request.pop(util.camelize('termKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4933,6 +5088,7 @@ def test_list_term_relationships(testing_service_client):
                     glossary_key=request.pop(util.camelize('glossaryKey')),
                     term_key=request.pop(util.camelize('termKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4945,6 +5101,7 @@ def test_list_term_relationships(testing_service_client):
                         glossary_key=request.pop(util.camelize('glossaryKey')),
                         term_key=request.pop(util.camelize('termKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4987,6 +5144,7 @@ def test_list_terms(testing_service_client):
             response = client.list_terms(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 glossary_key=request.pop(util.camelize('glossaryKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4997,6 +5155,7 @@ def test_list_terms(testing_service_client):
                     catalog_id=request.pop(util.camelize('catalogId')),
                     glossary_key=request.pop(util.camelize('glossaryKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5008,6 +5167,7 @@ def test_list_terms(testing_service_client):
                         catalog_id=request.pop(util.camelize('catalogId')),
                         glossary_key=request.pop(util.camelize('glossaryKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5049,6 +5209,7 @@ def test_list_types(testing_service_client):
             client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
             response = client.list_types(
                 catalog_id=request.pop(util.camelize('catalogId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5058,6 +5219,7 @@ def test_list_types(testing_service_client):
                 next_response = client.list_types(
                     catalog_id=request.pop(util.camelize('catalogId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5068,6 +5230,7 @@ def test_list_types(testing_service_client):
                     prev_response = client.list_types(
                         catalog_id=request.pop(util.camelize('catalogId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5109,6 +5272,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5118,6 +5282,7 @@ def test_list_work_request_errors(testing_service_client):
                 next_response = client.list_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5128,6 +5293,7 @@ def test_list_work_request_errors(testing_service_client):
                     prev_response = client.list_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5169,6 +5335,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5178,6 +5345,7 @@ def test_list_work_request_logs(testing_service_client):
                 next_response = client.list_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5188,6 +5356,7 @@ def test_list_work_request_logs(testing_service_client):
                     prev_response = client.list_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5229,6 +5398,7 @@ def test_list_work_requests(testing_service_client):
             client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5238,6 +5408,7 @@ def test_list_work_requests(testing_service_client):
                 next_response = client.list_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5248,6 +5419,7 @@ def test_list_work_requests(testing_service_client):
                     prev_response = client.list_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5289,6 +5461,7 @@ def test_object_stats(testing_service_client):
             client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
             response = client.object_stats(
                 catalog_id=request.pop(util.camelize('catalogId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5298,6 +5471,7 @@ def test_object_stats(testing_service_client):
                 next_response = client.object_stats(
                     catalog_id=request.pop(util.camelize('catalogId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5308,6 +5482,7 @@ def test_object_stats(testing_service_client):
                     prev_response = client.object_stats(
                         catalog_id=request.pop(util.camelize('catalogId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5350,6 +5525,7 @@ def test_parse_connection(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 parse_connection_details=request.pop(util.camelize('ParseConnectionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5391,6 +5567,7 @@ def test_process_recommendation(testing_service_client):
             response = client.process_recommendation(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 process_recommendation_details=request.pop(util.camelize('ProcessRecommendationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5434,6 +5611,7 @@ def test_recommendations(testing_service_client):
                 recommendation_type=request.pop(util.camelize('recommendationType')),
                 source_object_key=request.pop(util.camelize('sourceObjectKey')),
                 source_object_type=request.pop(util.camelize('sourceObjectType')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5476,6 +5654,7 @@ def test_remove_data_selector_patterns(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 data_selector_pattern_details=request.pop(util.camelize('DataSelectorPatternDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5517,6 +5696,7 @@ def test_search_criteria(testing_service_client):
             client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
             response = client.search_criteria(
                 catalog_id=request.pop(util.camelize('catalogId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5526,6 +5706,7 @@ def test_search_criteria(testing_service_client):
                 next_response = client.search_criteria(
                     catalog_id=request.pop(util.camelize('catalogId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5536,6 +5717,7 @@ def test_search_criteria(testing_service_client):
                     prev_response = client.search_criteria(
                         catalog_id=request.pop(util.camelize('catalogId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5577,6 +5759,7 @@ def test_suggest_matches(testing_service_client):
             response = client.suggest_matches(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 input_text=request.pop(util.camelize('inputText')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5620,6 +5803,7 @@ def test_synchronous_export_data_asset(testing_service_client):
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 synchronous_export_data_asset_details=request.pop(util.camelize('SynchronousExportDataAssetDetails')),
                 export_type=request.pop(util.camelize('exportType')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5662,6 +5846,7 @@ def test_test_connection(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 connection_key=request.pop(util.camelize('connectionKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5706,6 +5891,7 @@ def test_update_attribute(testing_service_client):
                 entity_key=request.pop(util.camelize('entityKey')),
                 attribute_key=request.pop(util.camelize('attributeKey')),
                 update_attribute_details=request.pop(util.camelize('UpdateAttributeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5747,6 +5933,7 @@ def test_update_catalog(testing_service_client):
             response = client.update_catalog(
                 catalog_id=request.pop(util.camelize('catalogId')),
                 update_catalog_details=request.pop(util.camelize('UpdateCatalogDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5788,6 +5975,7 @@ def test_update_catalog_private_endpoint(testing_service_client):
             response = client.update_catalog_private_endpoint(
                 catalog_private_endpoint_id=request.pop(util.camelize('catalogPrivateEndpointId')),
                 update_catalog_private_endpoint_details=request.pop(util.camelize('UpdateCatalogPrivateEndpointDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5831,6 +6019,7 @@ def test_update_connection(testing_service_client):
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 connection_key=request.pop(util.camelize('connectionKey')),
                 update_connection_details=request.pop(util.camelize('UpdateConnectionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5874,6 +6063,7 @@ def test_update_custom_property(testing_service_client):
                 namespace_id=request.pop(util.camelize('namespaceId')),
                 custom_property_key=request.pop(util.camelize('customPropertyKey')),
                 update_custom_property_details=request.pop(util.camelize('UpdateCustomPropertyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5916,6 +6106,7 @@ def test_update_data_asset(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 update_data_asset_details=request.pop(util.camelize('UpdateDataAssetDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5959,6 +6150,7 @@ def test_update_entity(testing_service_client):
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 entity_key=request.pop(util.camelize('entityKey')),
                 update_entity_details=request.pop(util.camelize('UpdateEntityDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6002,6 +6194,7 @@ def test_update_folder(testing_service_client):
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 folder_key=request.pop(util.camelize('folderKey')),
                 update_folder_details=request.pop(util.camelize('UpdateFolderDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6044,6 +6237,7 @@ def test_update_glossary(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 glossary_key=request.pop(util.camelize('glossaryKey')),
                 update_glossary_details=request.pop(util.camelize('UpdateGlossaryDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6086,6 +6280,7 @@ def test_update_job(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 job_key=request.pop(util.camelize('jobKey')),
                 update_job_details=request.pop(util.camelize('UpdateJobDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6128,6 +6323,7 @@ def test_update_job_definition(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 job_definition_key=request.pop(util.camelize('jobDefinitionKey')),
                 update_job_definition_details=request.pop(util.camelize('UpdateJobDefinitionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6169,6 +6365,7 @@ def test_update_metastore(testing_service_client):
             response = client.update_metastore(
                 metastore_id=request.pop(util.camelize('metastoreId')),
                 update_metastore_details=request.pop(util.camelize('UpdateMetastoreDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6211,6 +6408,7 @@ def test_update_namespace(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 namespace_id=request.pop(util.camelize('namespaceId')),
                 update_namespace_details=request.pop(util.camelize('UpdateNamespaceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6253,6 +6451,7 @@ def test_update_pattern(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 pattern_key=request.pop(util.camelize('patternKey')),
                 update_pattern_details=request.pop(util.camelize('UpdatePatternDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6296,6 +6495,7 @@ def test_update_term(testing_service_client):
                 glossary_key=request.pop(util.camelize('glossaryKey')),
                 term_key=request.pop(util.camelize('termKey')),
                 update_term_details=request.pop(util.camelize('UpdateTermDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6340,6 +6540,7 @@ def test_update_term_relationship(testing_service_client):
                 term_key=request.pop(util.camelize('termKey')),
                 term_relationship_key=request.pop(util.camelize('termRelationshipKey')),
                 update_term_relationship_details=request.pop(util.camelize('UpdateTermRelationshipDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6383,6 +6584,7 @@ def test_upload_credentials(testing_service_client):
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 connection_key=request.pop(util.camelize('connectionKey')),
                 upload_credentials_details=request.pop(util.camelize('UploadCredentialsDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6424,6 +6626,7 @@ def test_users(testing_service_client):
             client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
             response = client.users(
                 catalog_id=request.pop(util.camelize('catalogId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6433,6 +6636,7 @@ def test_users(testing_service_client):
                 next_response = client.users(
                     catalog_id=request.pop(util.camelize('catalogId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6443,6 +6647,7 @@ def test_users(testing_service_client):
                     prev_response = client.users(
                         catalog_id=request.pop(util.camelize('catalogId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6485,6 +6690,7 @@ def test_validate_connection(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 validate_connection_details=request.pop(util.camelize('ValidateConnectionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6527,6 +6733,7 @@ def test_validate_pattern(testing_service_client):
                 catalog_id=request.pop(util.camelize('catalogId')),
                 pattern_key=request.pop(util.camelize('patternKey')),
                 validate_pattern_details=request.pop(util.camelize('ValidatePatternDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

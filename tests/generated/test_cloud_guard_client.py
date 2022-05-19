@@ -55,6 +55,7 @@ def test_add_compartment(testing_service_client):
             response = client.add_compartment(
                 security_zone_id=request.pop(util.camelize('securityZoneId')),
                 add_compartment_details=request.pop(util.camelize('AddCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_change_detector_recipe_compartment(testing_service_client):
             response = client.change_detector_recipe_compartment(
                 detector_recipe_id=request.pop(util.camelize('detectorRecipeId')),
                 change_detector_recipe_compartment_details=request.pop(util.camelize('ChangeDetectorRecipeCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -137,6 +139,7 @@ def test_change_managed_list_compartment(testing_service_client):
             response = client.change_managed_list_compartment(
                 managed_list_id=request.pop(util.camelize('managedListId')),
                 change_managed_list_compartment_details=request.pop(util.camelize('ChangeManagedListCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -178,6 +181,7 @@ def test_change_responder_recipe_compartment(testing_service_client):
             response = client.change_responder_recipe_compartment(
                 responder_recipe_id=request.pop(util.camelize('responderRecipeId')),
                 change_responder_recipe_compartment_details=request.pop(util.camelize('ChangeResponderRecipeCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -219,6 +223,7 @@ def test_change_security_recipe_compartment(testing_service_client):
             response = client.change_security_recipe_compartment(
                 security_recipe_id=request.pop(util.camelize('securityRecipeId')),
                 change_security_recipe_compartment_details=request.pop(util.camelize('ChangeSecurityRecipeCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -260,6 +265,7 @@ def test_change_security_zone_compartment(testing_service_client):
             response = client.change_security_zone_compartment(
                 security_zone_id=request.pop(util.camelize('securityZoneId')),
                 change_security_zone_compartment_details=request.pop(util.camelize('ChangeSecurityZoneCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -300,6 +306,7 @@ def test_create_data_mask_rule(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.create_data_mask_rule(
                 create_data_mask_rule_details=request.pop(util.camelize('CreateDataMaskRuleDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -340,6 +347,7 @@ def test_create_detector_recipe(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.create_detector_recipe(
                 create_detector_recipe_details=request.pop(util.camelize('CreateDetectorRecipeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -380,6 +388,7 @@ def test_create_managed_list(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.create_managed_list(
                 create_managed_list_details=request.pop(util.camelize('CreateManagedListDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -420,6 +429,7 @@ def test_create_responder_recipe(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.create_responder_recipe(
                 create_responder_recipe_details=request.pop(util.camelize('CreateResponderRecipeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -460,6 +470,7 @@ def test_create_security_recipe(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.create_security_recipe(
                 create_security_recipe_details=request.pop(util.camelize('CreateSecurityRecipeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -500,6 +511,7 @@ def test_create_security_zone(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.create_security_zone(
                 create_security_zone_details=request.pop(util.camelize('CreateSecurityZoneDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -540,6 +552,7 @@ def test_create_target(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.create_target(
                 create_target_details=request.pop(util.camelize('CreateTargetDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -581,6 +594,7 @@ def test_create_target_detector_recipe(testing_service_client):
             response = client.create_target_detector_recipe(
                 target_id=request.pop(util.camelize('targetId')),
                 attach_target_detector_recipe_details=request.pop(util.camelize('AttachTargetDetectorRecipeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -622,6 +636,7 @@ def test_create_target_responder_recipe(testing_service_client):
             response = client.create_target_responder_recipe(
                 target_id=request.pop(util.camelize('targetId')),
                 attach_target_responder_recipe_details=request.pop(util.camelize('AttachTargetResponderRecipeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -662,6 +677,7 @@ def test_delete_data_mask_rule(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.delete_data_mask_rule(
                 data_mask_rule_id=request.pop(util.camelize('dataMaskRuleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -702,6 +718,7 @@ def test_delete_detector_recipe(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.delete_detector_recipe(
                 detector_recipe_id=request.pop(util.camelize('detectorRecipeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -742,6 +759,7 @@ def test_delete_managed_list(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.delete_managed_list(
                 managed_list_id=request.pop(util.camelize('managedListId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -782,6 +800,7 @@ def test_delete_responder_recipe(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.delete_responder_recipe(
                 responder_recipe_id=request.pop(util.camelize('responderRecipeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -822,6 +841,7 @@ def test_delete_security_recipe(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.delete_security_recipe(
                 security_recipe_id=request.pop(util.camelize('securityRecipeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -862,6 +882,7 @@ def test_delete_security_zone(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.delete_security_zone(
                 security_zone_id=request.pop(util.camelize('securityZoneId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -902,6 +923,7 @@ def test_delete_target(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.delete_target(
                 target_id=request.pop(util.camelize('targetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -943,6 +965,7 @@ def test_delete_target_detector_recipe(testing_service_client):
             response = client.delete_target_detector_recipe(
                 target_id=request.pop(util.camelize('targetId')),
                 target_detector_recipe_id=request.pop(util.camelize('targetDetectorRecipeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -984,6 +1007,7 @@ def test_delete_target_responder_recipe(testing_service_client):
             response = client.delete_target_responder_recipe(
                 target_id=request.pop(util.camelize('targetId')),
                 target_responder_recipe_id=request.pop(util.camelize('targetResponderRecipeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1025,6 +1049,7 @@ def test_execute_responder_execution(testing_service_client):
             response = client.execute_responder_execution(
                 responder_execution_id=request.pop(util.camelize('responderExecutionId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1065,6 +1090,7 @@ def test_get_condition_metadata_type(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.get_condition_metadata_type(
                 condition_metadata_type_id=request.pop(util.camelize('conditionMetadataTypeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1105,6 +1131,7 @@ def test_get_configuration(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.get_configuration(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1145,6 +1172,7 @@ def test_get_data_mask_rule(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.get_data_mask_rule(
                 data_mask_rule_id=request.pop(util.camelize('dataMaskRuleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1185,6 +1213,7 @@ def test_get_detector(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.get_detector(
                 detector_id=request.pop(util.camelize('detectorId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1225,6 +1254,7 @@ def test_get_detector_recipe(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.get_detector_recipe(
                 detector_recipe_id=request.pop(util.camelize('detectorRecipeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1266,6 +1296,7 @@ def test_get_detector_recipe_detector_rule(testing_service_client):
             response = client.get_detector_recipe_detector_rule(
                 detector_recipe_id=request.pop(util.camelize('detectorRecipeId')),
                 detector_rule_id=request.pop(util.camelize('detectorRuleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1307,6 +1338,7 @@ def test_get_detector_rule(testing_service_client):
             response = client.get_detector_rule(
                 detector_id=request.pop(util.camelize('detectorId')),
                 detector_rule_id=request.pop(util.camelize('detectorRuleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1347,6 +1379,7 @@ def test_get_managed_list(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.get_managed_list(
                 managed_list_id=request.pop(util.camelize('managedListId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1387,6 +1420,7 @@ def test_get_problem(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.get_problem(
                 problem_id=request.pop(util.camelize('problemId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1427,6 +1461,7 @@ def test_get_resource_profile(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.get_resource_profile(
                 resource_profile_id=request.pop(util.camelize('resourceProfileId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1467,6 +1502,7 @@ def test_get_responder_execution(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.get_responder_execution(
                 responder_execution_id=request.pop(util.camelize('responderExecutionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1507,6 +1543,7 @@ def test_get_responder_recipe(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.get_responder_recipe(
                 responder_recipe_id=request.pop(util.camelize('responderRecipeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1548,6 +1585,7 @@ def test_get_responder_recipe_responder_rule(testing_service_client):
             response = client.get_responder_recipe_responder_rule(
                 responder_recipe_id=request.pop(util.camelize('responderRecipeId')),
                 responder_rule_id=request.pop(util.camelize('responderRuleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1588,6 +1626,7 @@ def test_get_responder_rule(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.get_responder_rule(
                 responder_rule_id=request.pop(util.camelize('responderRuleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1628,6 +1667,7 @@ def test_get_security_policy(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.get_security_policy(
                 security_policy_id=request.pop(util.camelize('securityPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1668,6 +1708,7 @@ def test_get_security_recipe(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.get_security_recipe(
                 security_recipe_id=request.pop(util.camelize('securityRecipeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1708,6 +1749,7 @@ def test_get_security_zone(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.get_security_zone(
                 security_zone_id=request.pop(util.camelize('securityZoneId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1748,6 +1790,7 @@ def test_get_sighting(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.get_sighting(
                 sighting_id=request.pop(util.camelize('sightingId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1788,6 +1831,7 @@ def test_get_target(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.get_target(
                 target_id=request.pop(util.camelize('targetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1829,6 +1873,7 @@ def test_get_target_detector_recipe(testing_service_client):
             response = client.get_target_detector_recipe(
                 target_id=request.pop(util.camelize('targetId')),
                 target_detector_recipe_id=request.pop(util.camelize('targetDetectorRecipeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1871,6 +1916,7 @@ def test_get_target_detector_recipe_detector_rule(testing_service_client):
                 target_id=request.pop(util.camelize('targetId')),
                 target_detector_recipe_id=request.pop(util.camelize('targetDetectorRecipeId')),
                 detector_rule_id=request.pop(util.camelize('detectorRuleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1912,6 +1958,7 @@ def test_get_target_responder_recipe(testing_service_client):
             response = client.get_target_responder_recipe(
                 target_id=request.pop(util.camelize('targetId')),
                 target_responder_recipe_id=request.pop(util.camelize('targetResponderRecipeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1954,6 +2001,7 @@ def test_get_target_responder_recipe_responder_rule(testing_service_client):
                 target_id=request.pop(util.camelize('targetId')),
                 target_responder_recipe_id=request.pop(util.camelize('targetResponderRecipeId')),
                 responder_rule_id=request.pop(util.camelize('responderRuleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1995,6 +2043,7 @@ def test_list_condition_metadata_types(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.list_condition_metadata_types(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2004,6 +2053,7 @@ def test_list_condition_metadata_types(testing_service_client):
                 next_response = client.list_condition_metadata_types(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2014,6 +2064,7 @@ def test_list_condition_metadata_types(testing_service_client):
                     prev_response = client.list_condition_metadata_types(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2055,6 +2106,7 @@ def test_list_data_mask_rules(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.list_data_mask_rules(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2064,6 +2116,7 @@ def test_list_data_mask_rules(testing_service_client):
                 next_response = client.list_data_mask_rules(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2074,6 +2127,7 @@ def test_list_data_mask_rules(testing_service_client):
                     prev_response = client.list_data_mask_rules(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2116,6 +2170,7 @@ def test_list_detector_recipe_detector_rules(testing_service_client):
             response = client.list_detector_recipe_detector_rules(
                 detector_recipe_id=request.pop(util.camelize('detectorRecipeId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2126,6 +2181,7 @@ def test_list_detector_recipe_detector_rules(testing_service_client):
                     detector_recipe_id=request.pop(util.camelize('detectorRecipeId')),
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2137,6 +2193,7 @@ def test_list_detector_recipe_detector_rules(testing_service_client):
                         detector_recipe_id=request.pop(util.camelize('detectorRecipeId')),
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2178,6 +2235,7 @@ def test_list_detector_recipes(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.list_detector_recipes(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2187,6 +2245,7 @@ def test_list_detector_recipes(testing_service_client):
                 next_response = client.list_detector_recipes(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2197,6 +2256,7 @@ def test_list_detector_recipes(testing_service_client):
                     prev_response = client.list_detector_recipes(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2239,6 +2299,7 @@ def test_list_detector_rules(testing_service_client):
             response = client.list_detector_rules(
                 detector_id=request.pop(util.camelize('detectorId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2249,6 +2310,7 @@ def test_list_detector_rules(testing_service_client):
                     detector_id=request.pop(util.camelize('detectorId')),
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2260,6 +2322,7 @@ def test_list_detector_rules(testing_service_client):
                         detector_id=request.pop(util.camelize('detectorId')),
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2301,6 +2364,7 @@ def test_list_detectors(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.list_detectors(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2310,6 +2374,7 @@ def test_list_detectors(testing_service_client):
                 next_response = client.list_detectors(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2320,6 +2385,7 @@ def test_list_detectors(testing_service_client):
                     prev_response = client.list_detectors(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2361,6 +2427,7 @@ def test_list_impacted_resources(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.list_impacted_resources(
                 problem_id=request.pop(util.camelize('problemId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2370,6 +2437,7 @@ def test_list_impacted_resources(testing_service_client):
                 next_response = client.list_impacted_resources(
                     problem_id=request.pop(util.camelize('problemId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2380,6 +2448,7 @@ def test_list_impacted_resources(testing_service_client):
                     prev_response = client.list_impacted_resources(
                         problem_id=request.pop(util.camelize('problemId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2421,6 +2490,7 @@ def test_list_managed_list_types(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.list_managed_list_types(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2430,6 +2500,7 @@ def test_list_managed_list_types(testing_service_client):
                 next_response = client.list_managed_list_types(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2440,6 +2511,7 @@ def test_list_managed_list_types(testing_service_client):
                     prev_response = client.list_managed_list_types(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2481,6 +2553,7 @@ def test_list_managed_lists(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.list_managed_lists(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2490,6 +2563,7 @@ def test_list_managed_lists(testing_service_client):
                 next_response = client.list_managed_lists(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2500,6 +2574,7 @@ def test_list_managed_lists(testing_service_client):
                     prev_response = client.list_managed_lists(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2541,6 +2616,7 @@ def test_list_policies(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.list_policies(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2550,6 +2626,7 @@ def test_list_policies(testing_service_client):
                 next_response = client.list_policies(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2560,6 +2637,7 @@ def test_list_policies(testing_service_client):
                     prev_response = client.list_policies(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2601,6 +2679,7 @@ def test_list_problem_endpoints(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.list_problem_endpoints(
                 problem_id=request.pop(util.camelize('problemId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2610,6 +2689,7 @@ def test_list_problem_endpoints(testing_service_client):
                 next_response = client.list_problem_endpoints(
                     problem_id=request.pop(util.camelize('problemId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2620,6 +2700,7 @@ def test_list_problem_endpoints(testing_service_client):
                     prev_response = client.list_problem_endpoints(
                         problem_id=request.pop(util.camelize('problemId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2662,6 +2743,7 @@ def test_list_problem_histories(testing_service_client):
             response = client.list_problem_histories(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 problem_id=request.pop(util.camelize('problemId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2672,6 +2754,7 @@ def test_list_problem_histories(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     problem_id=request.pop(util.camelize('problemId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2683,6 +2766,7 @@ def test_list_problem_histories(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         problem_id=request.pop(util.camelize('problemId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2724,6 +2808,7 @@ def test_list_problems(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.list_problems(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2733,6 +2818,7 @@ def test_list_problems(testing_service_client):
                 next_response = client.list_problems(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2743,6 +2829,7 @@ def test_list_problems(testing_service_client):
                     prev_response = client.list_problems(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2784,6 +2871,7 @@ def test_list_recommendations(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.list_recommendations(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2793,6 +2881,7 @@ def test_list_recommendations(testing_service_client):
                 next_response = client.list_recommendations(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2803,6 +2892,7 @@ def test_list_recommendations(testing_service_client):
                     prev_response = client.list_recommendations(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2844,6 +2934,7 @@ def test_list_resource_profile_endpoints(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.list_resource_profile_endpoints(
                 resource_profile_id=request.pop(util.camelize('resourceProfileId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2853,6 +2944,7 @@ def test_list_resource_profile_endpoints(testing_service_client):
                 next_response = client.list_resource_profile_endpoints(
                     resource_profile_id=request.pop(util.camelize('resourceProfileId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2863,6 +2955,7 @@ def test_list_resource_profile_endpoints(testing_service_client):
                     prev_response = client.list_resource_profile_endpoints(
                         resource_profile_id=request.pop(util.camelize('resourceProfileId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2904,6 +2997,7 @@ def test_list_resource_profile_impacted_resources(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.list_resource_profile_impacted_resources(
                 resource_profile_id=request.pop(util.camelize('resourceProfileId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2913,6 +3007,7 @@ def test_list_resource_profile_impacted_resources(testing_service_client):
                 next_response = client.list_resource_profile_impacted_resources(
                     resource_profile_id=request.pop(util.camelize('resourceProfileId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2923,6 +3018,7 @@ def test_list_resource_profile_impacted_resources(testing_service_client):
                     prev_response = client.list_resource_profile_impacted_resources(
                         resource_profile_id=request.pop(util.camelize('resourceProfileId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2964,6 +3060,7 @@ def test_list_resource_profiles(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.list_resource_profiles(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2973,6 +3070,7 @@ def test_list_resource_profiles(testing_service_client):
                 next_response = client.list_resource_profiles(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2983,6 +3081,7 @@ def test_list_resource_profiles(testing_service_client):
                     prev_response = client.list_resource_profiles(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3024,6 +3123,7 @@ def test_list_resource_types(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.list_resource_types(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3033,6 +3133,7 @@ def test_list_resource_types(testing_service_client):
                 next_response = client.list_resource_types(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3043,6 +3144,7 @@ def test_list_resource_types(testing_service_client):
                     prev_response = client.list_resource_types(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3084,6 +3186,7 @@ def test_list_responder_activities(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.list_responder_activities(
                 problem_id=request.pop(util.camelize('problemId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3093,6 +3196,7 @@ def test_list_responder_activities(testing_service_client):
                 next_response = client.list_responder_activities(
                     problem_id=request.pop(util.camelize('problemId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3103,6 +3207,7 @@ def test_list_responder_activities(testing_service_client):
                     prev_response = client.list_responder_activities(
                         problem_id=request.pop(util.camelize('problemId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3144,6 +3249,7 @@ def test_list_responder_executions(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.list_responder_executions(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3153,6 +3259,7 @@ def test_list_responder_executions(testing_service_client):
                 next_response = client.list_responder_executions(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3163,6 +3270,7 @@ def test_list_responder_executions(testing_service_client):
                     prev_response = client.list_responder_executions(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3205,6 +3313,7 @@ def test_list_responder_recipe_responder_rules(testing_service_client):
             response = client.list_responder_recipe_responder_rules(
                 responder_recipe_id=request.pop(util.camelize('responderRecipeId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3215,6 +3324,7 @@ def test_list_responder_recipe_responder_rules(testing_service_client):
                     responder_recipe_id=request.pop(util.camelize('responderRecipeId')),
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3226,6 +3336,7 @@ def test_list_responder_recipe_responder_rules(testing_service_client):
                         responder_recipe_id=request.pop(util.camelize('responderRecipeId')),
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3267,6 +3378,7 @@ def test_list_responder_recipes(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.list_responder_recipes(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3276,6 +3388,7 @@ def test_list_responder_recipes(testing_service_client):
                 next_response = client.list_responder_recipes(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3286,6 +3399,7 @@ def test_list_responder_recipes(testing_service_client):
                     prev_response = client.list_responder_recipes(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3327,6 +3441,7 @@ def test_list_responder_rules(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.list_responder_rules(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3336,6 +3451,7 @@ def test_list_responder_rules(testing_service_client):
                 next_response = client.list_responder_rules(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3346,6 +3462,7 @@ def test_list_responder_rules(testing_service_client):
                     prev_response = client.list_responder_rules(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3387,6 +3504,7 @@ def test_list_security_policies(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.list_security_policies(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3396,6 +3514,7 @@ def test_list_security_policies(testing_service_client):
                 next_response = client.list_security_policies(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3406,6 +3525,7 @@ def test_list_security_policies(testing_service_client):
                     prev_response = client.list_security_policies(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3447,6 +3567,7 @@ def test_list_security_recipes(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.list_security_recipes(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3456,6 +3577,7 @@ def test_list_security_recipes(testing_service_client):
                 next_response = client.list_security_recipes(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3466,6 +3588,7 @@ def test_list_security_recipes(testing_service_client):
                     prev_response = client.list_security_recipes(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3507,6 +3630,7 @@ def test_list_security_zones(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.list_security_zones(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3516,6 +3640,7 @@ def test_list_security_zones(testing_service_client):
                 next_response = client.list_security_zones(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3526,6 +3651,7 @@ def test_list_security_zones(testing_service_client):
                     prev_response = client.list_security_zones(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3567,6 +3693,7 @@ def test_list_sighting_endpoints(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.list_sighting_endpoints(
                 sighting_id=request.pop(util.camelize('sightingId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3576,6 +3703,7 @@ def test_list_sighting_endpoints(testing_service_client):
                 next_response = client.list_sighting_endpoints(
                     sighting_id=request.pop(util.camelize('sightingId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3586,6 +3714,7 @@ def test_list_sighting_endpoints(testing_service_client):
                     prev_response = client.list_sighting_endpoints(
                         sighting_id=request.pop(util.camelize('sightingId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3627,6 +3756,7 @@ def test_list_sighting_impacted_resources(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.list_sighting_impacted_resources(
                 sighting_id=request.pop(util.camelize('sightingId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3636,6 +3766,7 @@ def test_list_sighting_impacted_resources(testing_service_client):
                 next_response = client.list_sighting_impacted_resources(
                     sighting_id=request.pop(util.camelize('sightingId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3646,6 +3777,7 @@ def test_list_sighting_impacted_resources(testing_service_client):
                     prev_response = client.list_sighting_impacted_resources(
                         sighting_id=request.pop(util.camelize('sightingId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3687,6 +3819,7 @@ def test_list_sightings(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.list_sightings(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3696,6 +3829,7 @@ def test_list_sightings(testing_service_client):
                 next_response = client.list_sightings(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3706,6 +3840,7 @@ def test_list_sightings(testing_service_client):
                     prev_response = client.list_sightings(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3747,6 +3882,7 @@ def test_list_tactics(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.list_tactics(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3756,6 +3892,7 @@ def test_list_tactics(testing_service_client):
                 next_response = client.list_tactics(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3766,6 +3903,7 @@ def test_list_tactics(testing_service_client):
                     prev_response = client.list_tactics(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3809,6 +3947,7 @@ def test_list_target_detector_recipe_detector_rules(testing_service_client):
                 target_id=request.pop(util.camelize('targetId')),
                 target_detector_recipe_id=request.pop(util.camelize('targetDetectorRecipeId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3820,6 +3959,7 @@ def test_list_target_detector_recipe_detector_rules(testing_service_client):
                     target_detector_recipe_id=request.pop(util.camelize('targetDetectorRecipeId')),
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3832,6 +3972,7 @@ def test_list_target_detector_recipe_detector_rules(testing_service_client):
                         target_detector_recipe_id=request.pop(util.camelize('targetDetectorRecipeId')),
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3874,6 +4015,7 @@ def test_list_target_detector_recipes(testing_service_client):
             response = client.list_target_detector_recipes(
                 target_id=request.pop(util.camelize('targetId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3884,6 +4026,7 @@ def test_list_target_detector_recipes(testing_service_client):
                     target_id=request.pop(util.camelize('targetId')),
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3895,6 +4038,7 @@ def test_list_target_detector_recipes(testing_service_client):
                         target_id=request.pop(util.camelize('targetId')),
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3938,6 +4082,7 @@ def test_list_target_responder_recipe_responder_rules(testing_service_client):
                 target_id=request.pop(util.camelize('targetId')),
                 target_responder_recipe_id=request.pop(util.camelize('targetResponderRecipeId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3949,6 +4094,7 @@ def test_list_target_responder_recipe_responder_rules(testing_service_client):
                     target_responder_recipe_id=request.pop(util.camelize('targetResponderRecipeId')),
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3961,6 +4107,7 @@ def test_list_target_responder_recipe_responder_rules(testing_service_client):
                         target_responder_recipe_id=request.pop(util.camelize('targetResponderRecipeId')),
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4003,6 +4150,7 @@ def test_list_target_responder_recipes(testing_service_client):
             response = client.list_target_responder_recipes(
                 target_id=request.pop(util.camelize('targetId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4013,6 +4161,7 @@ def test_list_target_responder_recipes(testing_service_client):
                     target_id=request.pop(util.camelize('targetId')),
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4024,6 +4173,7 @@ def test_list_target_responder_recipes(testing_service_client):
                         target_id=request.pop(util.camelize('targetId')),
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4065,6 +4215,7 @@ def test_list_targets(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.list_targets(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4074,6 +4225,7 @@ def test_list_targets(testing_service_client):
                 next_response = client.list_targets(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4084,6 +4236,7 @@ def test_list_targets(testing_service_client):
                     prev_response = client.list_targets(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4125,6 +4278,7 @@ def test_list_techniques(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.list_techniques(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4134,6 +4288,7 @@ def test_list_techniques(testing_service_client):
                 next_response = client.list_techniques(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4144,6 +4299,7 @@ def test_list_techniques(testing_service_client):
                     prev_response = client.list_techniques(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4185,6 +4341,7 @@ def test_remove_compartment(testing_service_client):
             response = client.remove_compartment(
                 security_zone_id=request.pop(util.camelize('securityZoneId')),
                 remove_compartment_details=request.pop(util.camelize('RemoveCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4226,6 +4383,7 @@ def test_request_risk_scores(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.request_risk_scores(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4235,6 +4393,7 @@ def test_request_risk_scores(testing_service_client):
                 next_response = client.request_risk_scores(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4245,6 +4404,7 @@ def test_request_risk_scores(testing_service_client):
                     prev_response = client.request_risk_scores(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4286,6 +4446,7 @@ def test_request_security_score_summarized_trend(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.request_security_score_summarized_trend(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4295,6 +4456,7 @@ def test_request_security_score_summarized_trend(testing_service_client):
                 next_response = client.request_security_score_summarized_trend(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4305,6 +4467,7 @@ def test_request_security_score_summarized_trend(testing_service_client):
                     prev_response = client.request_security_score_summarized_trend(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4346,6 +4509,7 @@ def test_request_security_scores(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.request_security_scores(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4355,6 +4519,7 @@ def test_request_security_scores(testing_service_client):
                 next_response = client.request_security_scores(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4365,6 +4530,7 @@ def test_request_security_scores(testing_service_client):
                     prev_response = client.request_security_scores(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4406,6 +4572,7 @@ def test_request_summarized_activity_problems(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.request_summarized_activity_problems(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4415,6 +4582,7 @@ def test_request_summarized_activity_problems(testing_service_client):
                 next_response = client.request_summarized_activity_problems(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4425,6 +4593,7 @@ def test_request_summarized_activity_problems(testing_service_client):
                     prev_response = client.request_summarized_activity_problems(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4467,6 +4636,7 @@ def test_request_summarized_problems(testing_service_client):
             response = client.request_summarized_problems(
                 list_dimensions=request.pop(util.camelize('listDimensions')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4477,6 +4647,7 @@ def test_request_summarized_problems(testing_service_client):
                     list_dimensions=request.pop(util.camelize('listDimensions')),
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4488,6 +4659,7 @@ def test_request_summarized_problems(testing_service_client):
                         list_dimensions=request.pop(util.camelize('listDimensions')),
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4530,6 +4702,7 @@ def test_request_summarized_responder_executions(testing_service_client):
             response = client.request_summarized_responder_executions(
                 responder_executions_dimensions=request.pop(util.camelize('responderExecutionsDimensions')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4540,6 +4713,7 @@ def test_request_summarized_responder_executions(testing_service_client):
                     responder_executions_dimensions=request.pop(util.camelize('responderExecutionsDimensions')),
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4551,6 +4725,7 @@ def test_request_summarized_responder_executions(testing_service_client):
                         responder_executions_dimensions=request.pop(util.camelize('responderExecutionsDimensions')),
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4592,6 +4767,7 @@ def test_request_summarized_risk_scores(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.request_summarized_risk_scores(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4601,6 +4777,7 @@ def test_request_summarized_risk_scores(testing_service_client):
                 next_response = client.request_summarized_risk_scores(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4611,6 +4788,7 @@ def test_request_summarized_risk_scores(testing_service_client):
                     prev_response = client.request_summarized_risk_scores(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4652,6 +4830,7 @@ def test_request_summarized_security_scores(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.request_summarized_security_scores(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4661,6 +4840,7 @@ def test_request_summarized_security_scores(testing_service_client):
                 next_response = client.request_summarized_security_scores(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4671,6 +4851,7 @@ def test_request_summarized_security_scores(testing_service_client):
                     prev_response = client.request_summarized_security_scores(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4712,6 +4893,7 @@ def test_request_summarized_top_trend_resource_profile_risk_scores(testing_servi
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.request_summarized_top_trend_resource_profile_risk_scores(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4721,6 +4903,7 @@ def test_request_summarized_top_trend_resource_profile_risk_scores(testing_servi
                 next_response = client.request_summarized_top_trend_resource_profile_risk_scores(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4731,6 +4914,7 @@ def test_request_summarized_top_trend_resource_profile_risk_scores(testing_servi
                     prev_response = client.request_summarized_top_trend_resource_profile_risk_scores(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4772,6 +4956,7 @@ def test_request_summarized_trend_problems(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.request_summarized_trend_problems(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4781,6 +4966,7 @@ def test_request_summarized_trend_problems(testing_service_client):
                 next_response = client.request_summarized_trend_problems(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4791,6 +4977,7 @@ def test_request_summarized_trend_problems(testing_service_client):
                     prev_response = client.request_summarized_trend_problems(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4833,6 +5020,7 @@ def test_request_summarized_trend_resource_risk_scores(testing_service_client):
             response = client.request_summarized_trend_resource_risk_scores(
                 request_summarized_trend_resource_risk_scores_details=request.pop(util.camelize('RequestSummarizedTrendResourceRiskScoresDetails')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4843,6 +5031,7 @@ def test_request_summarized_trend_resource_risk_scores(testing_service_client):
                     request_summarized_trend_resource_risk_scores_details=request.pop(util.camelize('RequestSummarizedTrendResourceRiskScoresDetails')),
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4854,6 +5043,7 @@ def test_request_summarized_trend_resource_risk_scores(testing_service_client):
                         request_summarized_trend_resource_risk_scores_details=request.pop(util.camelize('RequestSummarizedTrendResourceRiskScoresDetails')),
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4895,6 +5085,7 @@ def test_request_summarized_trend_responder_executions(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.request_summarized_trend_responder_executions(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4904,6 +5095,7 @@ def test_request_summarized_trend_responder_executions(testing_service_client):
                 next_response = client.request_summarized_trend_responder_executions(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4914,6 +5106,7 @@ def test_request_summarized_trend_responder_executions(testing_service_client):
                     prev_response = client.request_summarized_trend_responder_executions(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4955,6 +5148,7 @@ def test_request_summarized_trend_security_scores(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.request_summarized_trend_security_scores(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4964,6 +5158,7 @@ def test_request_summarized_trend_security_scores(testing_service_client):
                 next_response = client.request_summarized_trend_security_scores(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4974,6 +5169,7 @@ def test_request_summarized_trend_security_scores(testing_service_client):
                     prev_response = client.request_summarized_trend_security_scores(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5014,6 +5210,7 @@ def test_skip_bulk_responder_execution(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.skip_bulk_responder_execution(
                 skip_bulk_responder_execution_details=request.pop(util.camelize('SkipBulkResponderExecutionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5055,6 +5252,7 @@ def test_skip_responder_execution(testing_service_client):
             response = client.skip_responder_execution(
                 responder_execution_id=request.pop(util.camelize('responderExecutionId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5096,6 +5294,7 @@ def test_trigger_responder(testing_service_client):
             response = client.trigger_responder(
                 problem_id=request.pop(util.camelize('problemId')),
                 trigger_responder_details=request.pop(util.camelize('TriggerResponderDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5136,6 +5335,7 @@ def test_update_bulk_problem_status(testing_service_client):
             client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
             response = client.update_bulk_problem_status(
                 update_bulk_problem_status_details=request.pop(util.camelize('UpdateBulkProblemStatusDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5177,6 +5377,7 @@ def test_update_configuration(testing_service_client):
             response = client.update_configuration(
                 update_configuration_details=request.pop(util.camelize('UpdateConfigurationDetails')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5218,6 +5419,7 @@ def test_update_data_mask_rule(testing_service_client):
             response = client.update_data_mask_rule(
                 data_mask_rule_id=request.pop(util.camelize('dataMaskRuleId')),
                 update_data_mask_rule_details=request.pop(util.camelize('UpdateDataMaskRuleDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5259,6 +5461,7 @@ def test_update_detector_recipe(testing_service_client):
             response = client.update_detector_recipe(
                 detector_recipe_id=request.pop(util.camelize('detectorRecipeId')),
                 update_detector_recipe_details=request.pop(util.camelize('UpdateDetectorRecipeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5301,6 +5504,7 @@ def test_update_detector_recipe_detector_rule(testing_service_client):
                 detector_recipe_id=request.pop(util.camelize('detectorRecipeId')),
                 detector_rule_id=request.pop(util.camelize('detectorRuleId')),
                 update_detector_recipe_detector_rule_details=request.pop(util.camelize('UpdateDetectorRecipeDetectorRuleDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5342,6 +5546,7 @@ def test_update_managed_list(testing_service_client):
             response = client.update_managed_list(
                 managed_list_id=request.pop(util.camelize('managedListId')),
                 update_managed_list_details=request.pop(util.camelize('UpdateManagedListDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5383,6 +5588,7 @@ def test_update_problem_status(testing_service_client):
             response = client.update_problem_status(
                 problem_id=request.pop(util.camelize('problemId')),
                 update_problem_status_details=request.pop(util.camelize('UpdateProblemStatusDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5424,6 +5630,7 @@ def test_update_responder_recipe(testing_service_client):
             response = client.update_responder_recipe(
                 responder_recipe_id=request.pop(util.camelize('responderRecipeId')),
                 update_responder_recipe_details=request.pop(util.camelize('UpdateResponderRecipeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5466,6 +5673,7 @@ def test_update_responder_recipe_responder_rule(testing_service_client):
                 responder_recipe_id=request.pop(util.camelize('responderRecipeId')),
                 responder_rule_id=request.pop(util.camelize('responderRuleId')),
                 update_responder_recipe_responder_rule_details=request.pop(util.camelize('UpdateResponderRecipeResponderRuleDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5507,6 +5715,7 @@ def test_update_security_recipe(testing_service_client):
             response = client.update_security_recipe(
                 security_recipe_id=request.pop(util.camelize('securityRecipeId')),
                 update_security_recipe_details=request.pop(util.camelize('UpdateSecurityRecipeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5548,6 +5757,7 @@ def test_update_security_zone(testing_service_client):
             response = client.update_security_zone(
                 security_zone_id=request.pop(util.camelize('securityZoneId')),
                 update_security_zone_details=request.pop(util.camelize('UpdateSecurityZoneDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5589,6 +5799,7 @@ def test_update_target(testing_service_client):
             response = client.update_target(
                 target_id=request.pop(util.camelize('targetId')),
                 update_target_details=request.pop(util.camelize('UpdateTargetDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5631,6 +5842,7 @@ def test_update_target_detector_recipe(testing_service_client):
                 target_id=request.pop(util.camelize('targetId')),
                 target_detector_recipe_id=request.pop(util.camelize('targetDetectorRecipeId')),
                 update_target_detector_recipe_details=request.pop(util.camelize('UpdateTargetDetectorRecipeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5674,6 +5886,7 @@ def test_update_target_detector_recipe_detector_rule(testing_service_client):
                 target_detector_recipe_id=request.pop(util.camelize('targetDetectorRecipeId')),
                 detector_rule_id=request.pop(util.camelize('detectorRuleId')),
                 update_target_detector_recipe_detector_rule_details=request.pop(util.camelize('UpdateTargetDetectorRecipeDetectorRuleDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5716,6 +5929,7 @@ def test_update_target_responder_recipe(testing_service_client):
                 target_id=request.pop(util.camelize('targetId')),
                 target_responder_recipe_id=request.pop(util.camelize('targetResponderRecipeId')),
                 update_target_responder_recipe_details=request.pop(util.camelize('UpdateTargetResponderRecipeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5759,6 +5973,7 @@ def test_update_target_responder_recipe_responder_rule(testing_service_client):
                 target_responder_recipe_id=request.pop(util.camelize('targetResponderRecipeId')),
                 responder_rule_id=request.pop(util.camelize('responderRuleId')),
                 update_target_responder_recipe_responder_rule_details=request.pop(util.camelize('UpdateTargetResponderRecipeResponderRuleDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

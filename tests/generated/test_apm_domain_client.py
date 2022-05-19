@@ -55,6 +55,7 @@ def test_change_apm_domain_compartment(testing_service_client):
             response = client.change_apm_domain_compartment(
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
                 change_apm_domain_compartment_details=request.pop(util.camelize('ChangeApmDomainCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_create_apm_domain(testing_service_client):
             client = oci.apm_control_plane.ApmDomainClient(config, service_endpoint=service_endpoint)
             response = client.create_apm_domain(
                 create_apm_domain_details=request.pop(util.camelize('CreateApmDomainDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -135,6 +137,7 @@ def test_delete_apm_domain(testing_service_client):
             client = oci.apm_control_plane.ApmDomainClient(config, service_endpoint=service_endpoint)
             response = client.delete_apm_domain(
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -176,6 +179,7 @@ def test_generate_data_keys(testing_service_client):
             response = client.generate_data_keys(
                 generate_data_keys_list_details=request.pop(util.camelize('GenerateDataKeysListDetails')),
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -216,6 +220,7 @@ def test_get_apm_domain(testing_service_client):
             client = oci.apm_control_plane.ApmDomainClient(config, service_endpoint=service_endpoint)
             response = client.get_apm_domain(
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -256,6 +261,7 @@ def test_get_work_request(testing_service_client):
             client = oci.apm_control_plane.ApmDomainClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -297,6 +303,7 @@ def test_list_apm_domain_work_requests(testing_service_client):
             client = oci.apm_control_plane.ApmDomainClient(config, service_endpoint=service_endpoint)
             response = client.list_apm_domain_work_requests(
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -306,6 +313,7 @@ def test_list_apm_domain_work_requests(testing_service_client):
                 next_response = client.list_apm_domain_work_requests(
                     apm_domain_id=request.pop(util.camelize('apmDomainId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -316,6 +324,7 @@ def test_list_apm_domain_work_requests(testing_service_client):
                     prev_response = client.list_apm_domain_work_requests(
                         apm_domain_id=request.pop(util.camelize('apmDomainId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -357,6 +366,7 @@ def test_list_apm_domains(testing_service_client):
             client = oci.apm_control_plane.ApmDomainClient(config, service_endpoint=service_endpoint)
             response = client.list_apm_domains(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -366,6 +376,7 @@ def test_list_apm_domains(testing_service_client):
                 next_response = client.list_apm_domains(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -376,6 +387,7 @@ def test_list_apm_domains(testing_service_client):
                     prev_response = client.list_apm_domains(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -416,6 +428,7 @@ def test_list_data_keys(testing_service_client):
             client = oci.apm_control_plane.ApmDomainClient(config, service_endpoint=service_endpoint)
             response = client.list_data_keys(
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -457,6 +470,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.apm_control_plane.ApmDomainClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -466,6 +480,7 @@ def test_list_work_request_errors(testing_service_client):
                 next_response = client.list_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -476,6 +491,7 @@ def test_list_work_request_errors(testing_service_client):
                     prev_response = client.list_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -517,6 +533,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.apm_control_plane.ApmDomainClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -526,6 +543,7 @@ def test_list_work_request_logs(testing_service_client):
                 next_response = client.list_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -536,6 +554,7 @@ def test_list_work_request_logs(testing_service_client):
                     prev_response = client.list_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -577,6 +596,7 @@ def test_list_work_requests(testing_service_client):
             client = oci.apm_control_plane.ApmDomainClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -586,6 +606,7 @@ def test_list_work_requests(testing_service_client):
                 next_response = client.list_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -596,6 +617,7 @@ def test_list_work_requests(testing_service_client):
                     prev_response = client.list_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -637,6 +659,7 @@ def test_remove_data_keys(testing_service_client):
             response = client.remove_data_keys(
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
                 remove_data_keys_list_details=request.pop(util.camelize('RemoveDataKeysListDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -678,6 +701,7 @@ def test_update_apm_domain(testing_service_client):
             response = client.update_apm_domain(
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
                 update_apm_domain_details=request.pop(util.camelize('UpdateApmDomainDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

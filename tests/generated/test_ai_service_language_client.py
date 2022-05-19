@@ -54,6 +54,7 @@ def test_batch_detect_dominant_language(testing_service_client):
             client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
             response = client.batch_detect_dominant_language(
                 batch_detect_dominant_language_details=request.pop(util.camelize('BatchDetectDominantLanguageDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -94,6 +95,7 @@ def test_batch_detect_language_entities(testing_service_client):
             client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
             response = client.batch_detect_language_entities(
                 batch_detect_language_entities_details=request.pop(util.camelize('BatchDetectLanguageEntitiesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -134,6 +136,7 @@ def test_batch_detect_language_key_phrases(testing_service_client):
             client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
             response = client.batch_detect_language_key_phrases(
                 batch_detect_language_key_phrases_details=request.pop(util.camelize('BatchDetectLanguageKeyPhrasesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -174,6 +177,7 @@ def test_batch_detect_language_sentiments(testing_service_client):
             client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
             response = client.batch_detect_language_sentiments(
                 batch_detect_language_sentiments_details=request.pop(util.camelize('BatchDetectLanguageSentimentsDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -214,6 +218,7 @@ def test_batch_detect_language_text_classification(testing_service_client):
             client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
             response = client.batch_detect_language_text_classification(
                 batch_detect_language_text_classification_details=request.pop(util.camelize('BatchDetectLanguageTextClassificationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -254,6 +259,7 @@ def test_detect_dominant_language(testing_service_client):
             client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
             response = client.detect_dominant_language(
                 detect_dominant_language_details=request.pop(util.camelize('DetectDominantLanguageDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -294,6 +300,7 @@ def test_detect_language_entities(testing_service_client):
             client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
             response = client.detect_language_entities(
                 detect_language_entities_details=request.pop(util.camelize('DetectLanguageEntitiesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -334,6 +341,7 @@ def test_detect_language_key_phrases(testing_service_client):
             client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
             response = client.detect_language_key_phrases(
                 detect_language_key_phrases_details=request.pop(util.camelize('DetectLanguageKeyPhrasesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -374,6 +382,7 @@ def test_detect_language_sentiments(testing_service_client):
             client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
             response = client.detect_language_sentiments(
                 detect_language_sentiments_details=request.pop(util.camelize('DetectLanguageSentimentsDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -414,6 +423,7 @@ def test_detect_language_text_classification(testing_service_client):
             client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
             response = client.detect_language_text_classification(
                 detect_language_text_classification_details=request.pop(util.camelize('DetectLanguageTextClassificationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

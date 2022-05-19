@@ -55,6 +55,7 @@ def test_change_log_group_compartment(testing_service_client):
             response = client.change_log_group_compartment(
                 log_group_id=request.pop(util.camelize('logGroupId')),
                 change_log_group_compartment_details=request.pop(util.camelize('ChangeLogGroupCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -97,6 +98,7 @@ def test_change_log_log_group(testing_service_client):
                 log_group_id=request.pop(util.camelize('logGroupId')),
                 log_id=request.pop(util.camelize('logId')),
                 change_log_log_group_details=request.pop(util.camelize('ChangeLogLogGroupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -138,6 +140,7 @@ def test_change_log_saved_search_compartment(testing_service_client):
             response = client.change_log_saved_search_compartment(
                 log_saved_search_id=request.pop(util.camelize('logSavedSearchId')),
                 change_log_saved_search_compartment_details=request.pop(util.camelize('ChangeLogSavedSearchCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -179,6 +182,7 @@ def test_change_unified_agent_configuration_compartment(testing_service_client):
             response = client.change_unified_agent_configuration_compartment(
                 unified_agent_configuration_id=request.pop(util.camelize('unifiedAgentConfigurationId')),
                 change_unified_agent_configuration_compartment_details=request.pop(util.camelize('ChangeUnifiedAgentConfigurationCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -220,6 +224,7 @@ def test_create_log(testing_service_client):
             response = client.create_log(
                 log_group_id=request.pop(util.camelize('logGroupId')),
                 create_log_details=request.pop(util.camelize('CreateLogDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -260,6 +265,7 @@ def test_create_log_group(testing_service_client):
             client = oci.logging.LoggingManagementClient(config, service_endpoint=service_endpoint)
             response = client.create_log_group(
                 create_log_group_details=request.pop(util.camelize('CreateLogGroupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -300,6 +306,7 @@ def test_create_log_saved_search(testing_service_client):
             client = oci.logging.LoggingManagementClient(config, service_endpoint=service_endpoint)
             response = client.create_log_saved_search(
                 create_log_saved_search_details=request.pop(util.camelize('CreateLogSavedSearchDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -340,6 +347,7 @@ def test_create_unified_agent_configuration(testing_service_client):
             client = oci.logging.LoggingManagementClient(config, service_endpoint=service_endpoint)
             response = client.create_unified_agent_configuration(
                 create_unified_agent_configuration_details=request.pop(util.camelize('CreateUnifiedAgentConfigurationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -381,6 +389,7 @@ def test_delete_log(testing_service_client):
             response = client.delete_log(
                 log_group_id=request.pop(util.camelize('logGroupId')),
                 log_id=request.pop(util.camelize('logId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -421,6 +430,7 @@ def test_delete_log_group(testing_service_client):
             client = oci.logging.LoggingManagementClient(config, service_endpoint=service_endpoint)
             response = client.delete_log_group(
                 log_group_id=request.pop(util.camelize('logGroupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -461,6 +471,7 @@ def test_delete_log_saved_search(testing_service_client):
             client = oci.logging.LoggingManagementClient(config, service_endpoint=service_endpoint)
             response = client.delete_log_saved_search(
                 log_saved_search_id=request.pop(util.camelize('logSavedSearchId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -501,6 +512,7 @@ def test_delete_unified_agent_configuration(testing_service_client):
             client = oci.logging.LoggingManagementClient(config, service_endpoint=service_endpoint)
             response = client.delete_unified_agent_configuration(
                 unified_agent_configuration_id=request.pop(util.camelize('unifiedAgentConfigurationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -541,6 +553,7 @@ def test_delete_work_request(testing_service_client):
             client = oci.logging.LoggingManagementClient(config, service_endpoint=service_endpoint)
             response = client.delete_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -582,6 +595,7 @@ def test_get_log(testing_service_client):
             response = client.get_log(
                 log_group_id=request.pop(util.camelize('logGroupId')),
                 log_id=request.pop(util.camelize('logId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -622,6 +636,7 @@ def test_get_log_group(testing_service_client):
             client = oci.logging.LoggingManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_log_group(
                 log_group_id=request.pop(util.camelize('logGroupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -663,6 +678,7 @@ def test_get_log_included_search(testing_service_client):
             response = client.get_log_included_search(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 log_included_search_id=request.pop(util.camelize('logIncludedSearchId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -703,6 +719,7 @@ def test_get_log_saved_search(testing_service_client):
             client = oci.logging.LoggingManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_log_saved_search(
                 log_saved_search_id=request.pop(util.camelize('logSavedSearchId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -743,6 +760,7 @@ def test_get_unified_agent_configuration(testing_service_client):
             client = oci.logging.LoggingManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_unified_agent_configuration(
                 unified_agent_configuration_id=request.pop(util.camelize('unifiedAgentConfigurationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -783,6 +801,7 @@ def test_get_work_request(testing_service_client):
             client = oci.logging.LoggingManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -824,6 +843,7 @@ def test_list_log_groups(testing_service_client):
             client = oci.logging.LoggingManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_log_groups(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -833,6 +853,7 @@ def test_list_log_groups(testing_service_client):
                 next_response = client.list_log_groups(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -843,6 +864,7 @@ def test_list_log_groups(testing_service_client):
                     prev_response = client.list_log_groups(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -884,6 +906,7 @@ def test_list_log_included_searches(testing_service_client):
             client = oci.logging.LoggingManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_log_included_searches(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -893,6 +916,7 @@ def test_list_log_included_searches(testing_service_client):
                 next_response = client.list_log_included_searches(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -903,6 +927,7 @@ def test_list_log_included_searches(testing_service_client):
                     prev_response = client.list_log_included_searches(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -944,6 +969,7 @@ def test_list_log_saved_searches(testing_service_client):
             client = oci.logging.LoggingManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_log_saved_searches(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -953,6 +979,7 @@ def test_list_log_saved_searches(testing_service_client):
                 next_response = client.list_log_saved_searches(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -963,6 +990,7 @@ def test_list_log_saved_searches(testing_service_client):
                     prev_response = client.list_log_saved_searches(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1004,6 +1032,7 @@ def test_list_logs(testing_service_client):
             client = oci.logging.LoggingManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_logs(
                 log_group_id=request.pop(util.camelize('logGroupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1013,6 +1042,7 @@ def test_list_logs(testing_service_client):
                 next_response = client.list_logs(
                     log_group_id=request.pop(util.camelize('logGroupId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1023,6 +1053,7 @@ def test_list_logs(testing_service_client):
                     prev_response = client.list_logs(
                         log_group_id=request.pop(util.camelize('logGroupId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1062,6 +1093,7 @@ def test_list_services(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.logging.LoggingManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_services(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1103,6 +1135,7 @@ def test_list_unified_agent_configurations(testing_service_client):
             client = oci.logging.LoggingManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_unified_agent_configurations(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1112,6 +1145,7 @@ def test_list_unified_agent_configurations(testing_service_client):
                 next_response = client.list_unified_agent_configurations(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1122,6 +1156,7 @@ def test_list_unified_agent_configurations(testing_service_client):
                     prev_response = client.list_unified_agent_configurations(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1163,6 +1198,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.logging.LoggingManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1172,6 +1208,7 @@ def test_list_work_request_errors(testing_service_client):
                 next_response = client.list_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1182,6 +1219,7 @@ def test_list_work_request_errors(testing_service_client):
                     prev_response = client.list_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1223,6 +1261,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.logging.LoggingManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1232,6 +1271,7 @@ def test_list_work_request_logs(testing_service_client):
                 next_response = client.list_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1242,6 +1282,7 @@ def test_list_work_request_logs(testing_service_client):
                     prev_response = client.list_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1283,6 +1324,7 @@ def test_list_work_requests(testing_service_client):
             client = oci.logging.LoggingManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1292,6 +1334,7 @@ def test_list_work_requests(testing_service_client):
                 next_response = client.list_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1302,6 +1345,7 @@ def test_list_work_requests(testing_service_client):
                     prev_response = client.list_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1344,6 +1388,7 @@ def test_update_log(testing_service_client):
                 log_group_id=request.pop(util.camelize('logGroupId')),
                 log_id=request.pop(util.camelize('logId')),
                 update_log_details=request.pop(util.camelize('UpdateLogDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1385,6 +1430,7 @@ def test_update_log_group(testing_service_client):
             response = client.update_log_group(
                 log_group_id=request.pop(util.camelize('logGroupId')),
                 update_log_group_details=request.pop(util.camelize('UpdateLogGroupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1426,6 +1472,7 @@ def test_update_log_saved_search(testing_service_client):
             response = client.update_log_saved_search(
                 log_saved_search_id=request.pop(util.camelize('logSavedSearchId')),
                 update_log_saved_search_details=request.pop(util.camelize('UpdateLogSavedSearchDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1467,6 +1514,7 @@ def test_update_unified_agent_configuration(testing_service_client):
             response = client.update_unified_agent_configuration(
                 unified_agent_configuration_id=request.pop(util.camelize('unifiedAgentConfigurationId')),
                 update_unified_agent_configuration_details=request.pop(util.camelize('UpdateUnifiedAgentConfigurationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

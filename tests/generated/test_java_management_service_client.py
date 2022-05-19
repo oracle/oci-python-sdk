@@ -54,6 +54,7 @@ def test_cancel_work_request(testing_service_client):
             client = oci.jms.JavaManagementServiceClient(config, service_endpoint=service_endpoint)
             response = client.cancel_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_change_fleet_compartment(testing_service_client):
             response = client.change_fleet_compartment(
                 fleet_id=request.pop(util.camelize('fleetId')),
                 change_fleet_compartment_details=request.pop(util.camelize('ChangeFleetCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -136,6 +138,7 @@ def test_create_blocklist(testing_service_client):
             response = client.create_blocklist(
                 fleet_id=request.pop(util.camelize('fleetId')),
                 create_blocklist_details=request.pop(util.camelize('CreateBlocklistDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -176,6 +179,7 @@ def test_create_fleet(testing_service_client):
             client = oci.jms.JavaManagementServiceClient(config, service_endpoint=service_endpoint)
             response = client.create_fleet(
                 create_fleet_details=request.pop(util.camelize('CreateFleetDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -217,6 +221,7 @@ def test_delete_blocklist(testing_service_client):
             response = client.delete_blocklist(
                 fleet_id=request.pop(util.camelize('fleetId')),
                 blocklist_key=request.pop(util.camelize('blocklistKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -257,6 +262,7 @@ def test_delete_fleet(testing_service_client):
             client = oci.jms.JavaManagementServiceClient(config, service_endpoint=service_endpoint)
             response = client.delete_fleet(
                 fleet_id=request.pop(util.camelize('fleetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -297,6 +303,7 @@ def test_get_fleet(testing_service_client):
             client = oci.jms.JavaManagementServiceClient(config, service_endpoint=service_endpoint)
             response = client.get_fleet(
                 fleet_id=request.pop(util.camelize('fleetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -337,6 +344,7 @@ def test_get_fleet_agent_configuration(testing_service_client):
             client = oci.jms.JavaManagementServiceClient(config, service_endpoint=service_endpoint)
             response = client.get_fleet_agent_configuration(
                 fleet_id=request.pop(util.camelize('fleetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -377,6 +385,7 @@ def test_get_work_request(testing_service_client):
             client = oci.jms.JavaManagementServiceClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -418,6 +427,7 @@ def test_list_blocklists(testing_service_client):
             client = oci.jms.JavaManagementServiceClient(config, service_endpoint=service_endpoint)
             response = client.list_blocklists(
                 fleet_id=request.pop(util.camelize('fleetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -427,6 +437,7 @@ def test_list_blocklists(testing_service_client):
                 next_response = client.list_blocklists(
                     fleet_id=request.pop(util.camelize('fleetId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -437,6 +448,7 @@ def test_list_blocklists(testing_service_client):
                     prev_response = client.list_blocklists(
                         fleet_id=request.pop(util.camelize('fleetId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -477,6 +489,7 @@ def test_list_fleets(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.jms.JavaManagementServiceClient(config, service_endpoint=service_endpoint)
             response = client.list_fleets(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -485,6 +498,7 @@ def test_list_fleets(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_fleets(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -494,6 +508,7 @@ def test_list_fleets(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_fleets(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -535,6 +550,7 @@ def test_list_installation_sites(testing_service_client):
             client = oci.jms.JavaManagementServiceClient(config, service_endpoint=service_endpoint)
             response = client.list_installation_sites(
                 fleet_id=request.pop(util.camelize('fleetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -544,6 +560,7 @@ def test_list_installation_sites(testing_service_client):
                 next_response = client.list_installation_sites(
                     fleet_id=request.pop(util.camelize('fleetId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -554,6 +571,7 @@ def test_list_installation_sites(testing_service_client):
                     prev_response = client.list_installation_sites(
                         fleet_id=request.pop(util.camelize('fleetId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -594,6 +612,7 @@ def test_list_jre_usage(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.jms.JavaManagementServiceClient(config, service_endpoint=service_endpoint)
             response = client.list_jre_usage(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -602,6 +621,7 @@ def test_list_jre_usage(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_jre_usage(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -611,6 +631,7 @@ def test_list_jre_usage(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_jre_usage(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -652,6 +673,7 @@ def test_list_work_items(testing_service_client):
             client = oci.jms.JavaManagementServiceClient(config, service_endpoint=service_endpoint)
             response = client.list_work_items(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -661,6 +683,7 @@ def test_list_work_items(testing_service_client):
                 next_response = client.list_work_items(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -671,6 +694,7 @@ def test_list_work_items(testing_service_client):
                     prev_response = client.list_work_items(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -712,6 +736,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.jms.JavaManagementServiceClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -721,6 +746,7 @@ def test_list_work_request_errors(testing_service_client):
                 next_response = client.list_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -731,6 +757,7 @@ def test_list_work_request_errors(testing_service_client):
                     prev_response = client.list_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -772,6 +799,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.jms.JavaManagementServiceClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -781,6 +809,7 @@ def test_list_work_request_logs(testing_service_client):
                 next_response = client.list_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -791,6 +820,7 @@ def test_list_work_request_logs(testing_service_client):
                     prev_response = client.list_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -831,6 +861,7 @@ def test_list_work_requests(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.jms.JavaManagementServiceClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -839,6 +870,7 @@ def test_list_work_requests(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_work_requests(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -848,6 +880,7 @@ def test_list_work_requests(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_work_requests(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -889,6 +922,7 @@ def test_remove_fleet_installation_sites(testing_service_client):
             response = client.remove_fleet_installation_sites(
                 fleet_id=request.pop(util.camelize('fleetId')),
                 remove_fleet_installation_sites_details=request.pop(util.camelize('RemoveFleetInstallationSitesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -930,6 +964,7 @@ def test_summarize_application_usage(testing_service_client):
             client = oci.jms.JavaManagementServiceClient(config, service_endpoint=service_endpoint)
             response = client.summarize_application_usage(
                 fleet_id=request.pop(util.camelize('fleetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -939,6 +974,7 @@ def test_summarize_application_usage(testing_service_client):
                 next_response = client.summarize_application_usage(
                     fleet_id=request.pop(util.camelize('fleetId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -949,6 +985,7 @@ def test_summarize_application_usage(testing_service_client):
                     prev_response = client.summarize_application_usage(
                         fleet_id=request.pop(util.camelize('fleetId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -990,6 +1027,7 @@ def test_summarize_installation_usage(testing_service_client):
             client = oci.jms.JavaManagementServiceClient(config, service_endpoint=service_endpoint)
             response = client.summarize_installation_usage(
                 fleet_id=request.pop(util.camelize('fleetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -999,6 +1037,7 @@ def test_summarize_installation_usage(testing_service_client):
                 next_response = client.summarize_installation_usage(
                     fleet_id=request.pop(util.camelize('fleetId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1009,6 +1048,7 @@ def test_summarize_installation_usage(testing_service_client):
                     prev_response = client.summarize_installation_usage(
                         fleet_id=request.pop(util.camelize('fleetId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1050,6 +1090,7 @@ def test_summarize_jre_usage(testing_service_client):
             client = oci.jms.JavaManagementServiceClient(config, service_endpoint=service_endpoint)
             response = client.summarize_jre_usage(
                 fleet_id=request.pop(util.camelize('fleetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1059,6 +1100,7 @@ def test_summarize_jre_usage(testing_service_client):
                 next_response = client.summarize_jre_usage(
                     fleet_id=request.pop(util.camelize('fleetId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1069,6 +1111,7 @@ def test_summarize_jre_usage(testing_service_client):
                     prev_response = client.summarize_jre_usage(
                         fleet_id=request.pop(util.camelize('fleetId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1110,6 +1153,7 @@ def test_summarize_managed_instance_usage(testing_service_client):
             client = oci.jms.JavaManagementServiceClient(config, service_endpoint=service_endpoint)
             response = client.summarize_managed_instance_usage(
                 fleet_id=request.pop(util.camelize('fleetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1119,6 +1163,7 @@ def test_summarize_managed_instance_usage(testing_service_client):
                 next_response = client.summarize_managed_instance_usage(
                     fleet_id=request.pop(util.camelize('fleetId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1129,6 +1174,7 @@ def test_summarize_managed_instance_usage(testing_service_client):
                     prev_response = client.summarize_managed_instance_usage(
                         fleet_id=request.pop(util.camelize('fleetId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1168,6 +1214,7 @@ def test_summarize_resource_inventory(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.jms.JavaManagementServiceClient(config, service_endpoint=service_endpoint)
             response = client.summarize_resource_inventory(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1209,6 +1256,7 @@ def test_update_fleet(testing_service_client):
             response = client.update_fleet(
                 fleet_id=request.pop(util.camelize('fleetId')),
                 update_fleet_details=request.pop(util.camelize('UpdateFleetDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1250,6 +1298,7 @@ def test_update_fleet_agent_configuration(testing_service_client):
             response = client.update_fleet_agent_configuration(
                 fleet_id=request.pop(util.camelize('fleetId')),
                 update_fleet_agent_configuration_details=request.pop(util.camelize('UpdateFleetAgentConfigurationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

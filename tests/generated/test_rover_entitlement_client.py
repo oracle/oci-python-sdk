@@ -55,6 +55,7 @@ def test_change_rover_entitlement_compartment(testing_service_client):
             response = client.change_rover_entitlement_compartment(
                 rover_entitlement_id=request.pop(util.camelize('roverEntitlementId')),
                 change_rover_entitlement_compartment_details=request.pop(util.camelize('ChangeRoverEntitlementCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_create_rover_entitlement(testing_service_client):
             client = oci.rover.RoverEntitlementClient(config, service_endpoint=service_endpoint)
             response = client.create_rover_entitlement(
                 create_rover_entitlement_details=request.pop(util.camelize('CreateRoverEntitlementDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -135,6 +137,7 @@ def test_delete_rover_entitlement(testing_service_client):
             client = oci.rover.RoverEntitlementClient(config, service_endpoint=service_endpoint)
             response = client.delete_rover_entitlement(
                 rover_entitlement_id=request.pop(util.camelize('roverEntitlementId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -176,6 +179,7 @@ def test_get_rover_entitlement(testing_service_client):
             response = client.get_rover_entitlement(
                 rover_entitlement_id=request.pop(util.camelize('roverEntitlementId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -217,6 +221,7 @@ def test_list_rover_entitlements(testing_service_client):
             client = oci.rover.RoverEntitlementClient(config, service_endpoint=service_endpoint)
             response = client.list_rover_entitlements(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -226,6 +231,7 @@ def test_list_rover_entitlements(testing_service_client):
                 next_response = client.list_rover_entitlements(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -236,6 +242,7 @@ def test_list_rover_entitlements(testing_service_client):
                     prev_response = client.list_rover_entitlements(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -277,6 +284,7 @@ def test_update_rover_entitlement(testing_service_client):
             response = client.update_rover_entitlement(
                 rover_entitlement_id=request.pop(util.camelize('roverEntitlementId')),
                 update_rover_entitlement_details=request.pop(util.camelize('UpdateRoverEntitlementDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

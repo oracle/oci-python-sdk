@@ -54,6 +54,7 @@ def test_cancel_work_request(testing_service_client):
             client = oci.adm.ApplicationDependencyManagementClient(config, service_endpoint=service_endpoint)
             response = client.cancel_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_change_knowledge_base_compartment(testing_service_client):
             response = client.change_knowledge_base_compartment(
                 knowledge_base_id=request.pop(util.camelize('knowledgeBaseId')),
                 change_knowledge_base_compartment_details=request.pop(util.camelize('ChangeKnowledgeBaseCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -136,6 +138,7 @@ def test_change_vulnerability_audit_compartment(testing_service_client):
             response = client.change_vulnerability_audit_compartment(
                 vulnerability_audit_id=request.pop(util.camelize('vulnerabilityAuditId')),
                 change_vulnerability_audit_compartment_details=request.pop(util.camelize('ChangeVulnerabilityAuditCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -176,6 +179,7 @@ def test_create_knowledge_base(testing_service_client):
             client = oci.adm.ApplicationDependencyManagementClient(config, service_endpoint=service_endpoint)
             response = client.create_knowledge_base(
                 create_knowledge_base_details=request.pop(util.camelize('CreateKnowledgeBaseDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -216,6 +220,7 @@ def test_create_vulnerability_audit(testing_service_client):
             client = oci.adm.ApplicationDependencyManagementClient(config, service_endpoint=service_endpoint)
             response = client.create_vulnerability_audit(
                 create_vulnerability_audit_details=request.pop(util.camelize('CreateVulnerabilityAuditDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -256,6 +261,7 @@ def test_delete_knowledge_base(testing_service_client):
             client = oci.adm.ApplicationDependencyManagementClient(config, service_endpoint=service_endpoint)
             response = client.delete_knowledge_base(
                 knowledge_base_id=request.pop(util.camelize('knowledgeBaseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -296,6 +302,7 @@ def test_delete_vulnerability_audit(testing_service_client):
             client = oci.adm.ApplicationDependencyManagementClient(config, service_endpoint=service_endpoint)
             response = client.delete_vulnerability_audit(
                 vulnerability_audit_id=request.pop(util.camelize('vulnerabilityAuditId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -336,6 +343,7 @@ def test_get_knowledge_base(testing_service_client):
             client = oci.adm.ApplicationDependencyManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_knowledge_base(
                 knowledge_base_id=request.pop(util.camelize('knowledgeBaseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -376,6 +384,7 @@ def test_get_vulnerability_audit(testing_service_client):
             client = oci.adm.ApplicationDependencyManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_vulnerability_audit(
                 vulnerability_audit_id=request.pop(util.camelize('vulnerabilityAuditId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -416,6 +425,7 @@ def test_get_work_request(testing_service_client):
             client = oci.adm.ApplicationDependencyManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -457,6 +467,7 @@ def test_list_application_dependency_vulnerabilities(testing_service_client):
             client = oci.adm.ApplicationDependencyManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_application_dependency_vulnerabilities(
                 vulnerability_audit_id=request.pop(util.camelize('vulnerabilityAuditId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -466,6 +477,7 @@ def test_list_application_dependency_vulnerabilities(testing_service_client):
                 next_response = client.list_application_dependency_vulnerabilities(
                     vulnerability_audit_id=request.pop(util.camelize('vulnerabilityAuditId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -476,6 +488,7 @@ def test_list_application_dependency_vulnerabilities(testing_service_client):
                     prev_response = client.list_application_dependency_vulnerabilities(
                         vulnerability_audit_id=request.pop(util.camelize('vulnerabilityAuditId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -516,6 +529,7 @@ def test_list_knowledge_bases(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.adm.ApplicationDependencyManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_knowledge_bases(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -524,6 +538,7 @@ def test_list_knowledge_bases(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_knowledge_bases(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -533,6 +548,7 @@ def test_list_knowledge_bases(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_knowledge_bases(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -573,6 +589,7 @@ def test_list_vulnerability_audits(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.adm.ApplicationDependencyManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_vulnerability_audits(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -581,6 +598,7 @@ def test_list_vulnerability_audits(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_vulnerability_audits(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -590,6 +608,7 @@ def test_list_vulnerability_audits(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_vulnerability_audits(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -631,6 +650,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.adm.ApplicationDependencyManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -640,6 +660,7 @@ def test_list_work_request_errors(testing_service_client):
                 next_response = client.list_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -650,6 +671,7 @@ def test_list_work_request_errors(testing_service_client):
                     prev_response = client.list_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -691,6 +713,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.adm.ApplicationDependencyManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -700,6 +723,7 @@ def test_list_work_request_logs(testing_service_client):
                 next_response = client.list_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -710,6 +734,7 @@ def test_list_work_request_logs(testing_service_client):
                     prev_response = client.list_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -750,6 +775,7 @@ def test_list_work_requests(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.adm.ApplicationDependencyManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -758,6 +784,7 @@ def test_list_work_requests(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_work_requests(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -767,6 +794,7 @@ def test_list_work_requests(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_work_requests(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -808,6 +836,7 @@ def test_update_knowledge_base(testing_service_client):
             response = client.update_knowledge_base(
                 knowledge_base_id=request.pop(util.camelize('knowledgeBaseId')),
                 update_knowledge_base_details=request.pop(util.camelize('UpdateKnowledgeBaseDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -849,6 +878,7 @@ def test_update_vulnerability_audit(testing_service_client):
             response = client.update_vulnerability_audit(
                 vulnerability_audit_id=request.pop(util.camelize('vulnerabilityAuditId')),
                 update_vulnerability_audit_details=request.pop(util.camelize('UpdateVulnerabilityAuditDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

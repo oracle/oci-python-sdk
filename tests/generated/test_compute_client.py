@@ -54,6 +54,7 @@ def test_accept_shielded_integrity_policy(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.accept_shielded_integrity_policy(
                 instance_id=request.pop(util.camelize('instanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_add_image_shape_compatibility_entry(testing_service_client):
             response = client.add_image_shape_compatibility_entry(
                 image_id=request.pop(util.camelize('imageId')),
                 shape_name=request.pop(util.camelize('shapeName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -135,6 +137,7 @@ def test_attach_boot_volume(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.attach_boot_volume(
                 attach_boot_volume_details=request.pop(util.camelize('AttachBootVolumeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -175,6 +178,7 @@ def test_attach_vnic(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.attach_vnic(
                 attach_vnic_details=request.pop(util.camelize('AttachVnicDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -215,6 +219,7 @@ def test_attach_volume(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.attach_volume(
                 attach_volume_details=request.pop(util.camelize('AttachVolumeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -255,6 +260,7 @@ def test_capture_console_history(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.capture_console_history(
                 capture_console_history_details=request.pop(util.camelize('CaptureConsoleHistoryDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -296,6 +302,7 @@ def test_change_compute_capacity_reservation_compartment(testing_service_client)
             response = client.change_compute_capacity_reservation_compartment(
                 capacity_reservation_id=request.pop(util.camelize('capacityReservationId')),
                 change_compute_capacity_reservation_compartment_details=request.pop(util.camelize('ChangeComputeCapacityReservationCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -337,6 +344,7 @@ def test_change_compute_image_capability_schema_compartment(testing_service_clie
             response = client.change_compute_image_capability_schema_compartment(
                 compute_image_capability_schema_id=request.pop(util.camelize('computeImageCapabilitySchemaId')),
                 change_compute_image_capability_schema_compartment_details=request.pop(util.camelize('ChangeComputeImageCapabilitySchemaCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -378,6 +386,7 @@ def test_change_dedicated_vm_host_compartment(testing_service_client):
             response = client.change_dedicated_vm_host_compartment(
                 dedicated_vm_host_id=request.pop(util.camelize('dedicatedVmHostId')),
                 change_dedicated_vm_host_compartment_details=request.pop(util.camelize('ChangeDedicatedVmHostCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -419,6 +428,7 @@ def test_change_image_compartment(testing_service_client):
             response = client.change_image_compartment(
                 image_id=request.pop(util.camelize('imageId')),
                 change_image_compartment_details=request.pop(util.camelize('ChangeImageCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -460,6 +470,7 @@ def test_change_instance_compartment(testing_service_client):
             response = client.change_instance_compartment(
                 instance_id=request.pop(util.camelize('instanceId')),
                 change_instance_compartment_details=request.pop(util.camelize('ChangeInstanceCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -500,6 +511,7 @@ def test_create_app_catalog_subscription(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.create_app_catalog_subscription(
                 create_app_catalog_subscription_details=request.pop(util.camelize('CreateAppCatalogSubscriptionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -540,6 +552,7 @@ def test_create_compute_capacity_reservation(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.create_compute_capacity_reservation(
                 create_compute_capacity_reservation_details=request.pop(util.camelize('CreateComputeCapacityReservationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -580,6 +593,7 @@ def test_create_compute_image_capability_schema(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.create_compute_image_capability_schema(
                 create_compute_image_capability_schema_details=request.pop(util.camelize('CreateComputeImageCapabilitySchemaDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -620,6 +634,7 @@ def test_create_dedicated_vm_host(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.create_dedicated_vm_host(
                 create_dedicated_vm_host_details=request.pop(util.camelize('CreateDedicatedVmHostDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -660,6 +675,7 @@ def test_create_image(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.create_image(
                 create_image_details=request.pop(util.camelize('CreateImageDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -700,6 +716,7 @@ def test_create_instance_console_connection(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.create_instance_console_connection(
                 create_instance_console_connection_details=request.pop(util.camelize('CreateInstanceConsoleConnectionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -742,6 +759,7 @@ def test_delete_app_catalog_subscription(testing_service_client):
                 listing_id=request.pop(util.camelize('listingId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 resource_version=request.pop(util.camelize('resourceVersion')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -782,6 +800,7 @@ def test_delete_compute_capacity_reservation(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.delete_compute_capacity_reservation(
                 capacity_reservation_id=request.pop(util.camelize('capacityReservationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -822,6 +841,7 @@ def test_delete_compute_image_capability_schema(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.delete_compute_image_capability_schema(
                 compute_image_capability_schema_id=request.pop(util.camelize('computeImageCapabilitySchemaId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -862,6 +882,7 @@ def test_delete_console_history(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.delete_console_history(
                 instance_console_history_id=request.pop(util.camelize('instanceConsoleHistoryId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -902,6 +923,7 @@ def test_delete_dedicated_vm_host(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.delete_dedicated_vm_host(
                 dedicated_vm_host_id=request.pop(util.camelize('dedicatedVmHostId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -942,6 +964,7 @@ def test_delete_image(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.delete_image(
                 image_id=request.pop(util.camelize('imageId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -982,6 +1005,7 @@ def test_delete_instance_console_connection(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.delete_instance_console_connection(
                 instance_console_connection_id=request.pop(util.camelize('instanceConsoleConnectionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1022,6 +1046,7 @@ def test_detach_boot_volume(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.detach_boot_volume(
                 boot_volume_attachment_id=request.pop(util.camelize('bootVolumeAttachmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1062,6 +1087,7 @@ def test_detach_vnic(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.detach_vnic(
                 vnic_attachment_id=request.pop(util.camelize('vnicAttachmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1102,6 +1128,7 @@ def test_detach_volume(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.detach_volume(
                 volume_attachment_id=request.pop(util.camelize('volumeAttachmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1143,6 +1170,7 @@ def test_export_image(testing_service_client):
             response = client.export_image(
                 image_id=request.pop(util.camelize('imageId')),
                 export_image_details=request.pop(util.camelize('ExportImageDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1183,6 +1211,7 @@ def test_get_app_catalog_listing(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.get_app_catalog_listing(
                 listing_id=request.pop(util.camelize('listingId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1224,6 +1253,7 @@ def test_get_app_catalog_listing_agreements(testing_service_client):
             response = client.get_app_catalog_listing_agreements(
                 listing_id=request.pop(util.camelize('listingId')),
                 resource_version=request.pop(util.camelize('resourceVersion')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1265,6 +1295,7 @@ def test_get_app_catalog_listing_resource_version(testing_service_client):
             response = client.get_app_catalog_listing_resource_version(
                 listing_id=request.pop(util.camelize('listingId')),
                 resource_version=request.pop(util.camelize('resourceVersion')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1305,6 +1336,7 @@ def test_get_boot_volume_attachment(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.get_boot_volume_attachment(
                 boot_volume_attachment_id=request.pop(util.camelize('bootVolumeAttachmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1345,6 +1377,7 @@ def test_get_compute_capacity_reservation(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.get_compute_capacity_reservation(
                 capacity_reservation_id=request.pop(util.camelize('capacityReservationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1385,6 +1418,7 @@ def test_get_compute_global_image_capability_schema(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.get_compute_global_image_capability_schema(
                 compute_global_image_capability_schema_id=request.pop(util.camelize('computeGlobalImageCapabilitySchemaId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1426,6 +1460,7 @@ def test_get_compute_global_image_capability_schema_version(testing_service_clie
             response = client.get_compute_global_image_capability_schema_version(
                 compute_global_image_capability_schema_id=request.pop(util.camelize('computeGlobalImageCapabilitySchemaId')),
                 compute_global_image_capability_schema_version_name=request.pop(util.camelize('computeGlobalImageCapabilitySchemaVersionName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1466,6 +1501,7 @@ def test_get_compute_image_capability_schema(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.get_compute_image_capability_schema(
                 compute_image_capability_schema_id=request.pop(util.camelize('computeImageCapabilitySchemaId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1506,6 +1542,7 @@ def test_get_console_history(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.get_console_history(
                 instance_console_history_id=request.pop(util.camelize('instanceConsoleHistoryId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1546,6 +1583,7 @@ def test_get_console_history_content(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.get_console_history_content(
                 instance_console_history_id=request.pop(util.camelize('instanceConsoleHistoryId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1586,6 +1624,7 @@ def test_get_dedicated_vm_host(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.get_dedicated_vm_host(
                 dedicated_vm_host_id=request.pop(util.camelize('dedicatedVmHostId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1626,6 +1665,7 @@ def test_get_image(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.get_image(
                 image_id=request.pop(util.camelize('imageId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1667,6 +1707,7 @@ def test_get_image_shape_compatibility_entry(testing_service_client):
             response = client.get_image_shape_compatibility_entry(
                 image_id=request.pop(util.camelize('imageId')),
                 shape_name=request.pop(util.camelize('shapeName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1707,6 +1748,7 @@ def test_get_instance(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.get_instance(
                 instance_id=request.pop(util.camelize('instanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1747,6 +1789,7 @@ def test_get_instance_console_connection(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.get_instance_console_connection(
                 instance_console_connection_id=request.pop(util.camelize('instanceConsoleConnectionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1787,6 +1830,7 @@ def test_get_measured_boot_report(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.get_measured_boot_report(
                 instance_id=request.pop(util.camelize('instanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1827,6 +1871,7 @@ def test_get_vnic_attachment(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.get_vnic_attachment(
                 vnic_attachment_id=request.pop(util.camelize('vnicAttachmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1867,6 +1912,7 @@ def test_get_volume_attachment(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.get_volume_attachment(
                 volume_attachment_id=request.pop(util.camelize('volumeAttachmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1907,6 +1953,7 @@ def test_get_windows_instance_initial_credentials(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.get_windows_instance_initial_credentials(
                 instance_id=request.pop(util.camelize('instanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1948,6 +1995,7 @@ def test_instance_action(testing_service_client):
             response = client.instance_action(
                 instance_id=request.pop(util.camelize('instanceId')),
                 action=request.pop(util.camelize('action')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1988,6 +2036,7 @@ def test_launch_instance(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.launch_instance(
                 launch_instance_details=request.pop(util.camelize('LaunchInstanceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2029,6 +2078,7 @@ def test_list_app_catalog_listing_resource_versions(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_app_catalog_listing_resource_versions(
                 listing_id=request.pop(util.camelize('listingId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2038,6 +2088,7 @@ def test_list_app_catalog_listing_resource_versions(testing_service_client):
                 next_response = client.list_app_catalog_listing_resource_versions(
                     listing_id=request.pop(util.camelize('listingId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2048,6 +2099,7 @@ def test_list_app_catalog_listing_resource_versions(testing_service_client):
                     prev_response = client.list_app_catalog_listing_resource_versions(
                         listing_id=request.pop(util.camelize('listingId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2088,6 +2140,7 @@ def test_list_app_catalog_listings(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_app_catalog_listings(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2096,6 +2149,7 @@ def test_list_app_catalog_listings(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_app_catalog_listings(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2105,6 +2159,7 @@ def test_list_app_catalog_listings(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_app_catalog_listings(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2146,6 +2201,7 @@ def test_list_app_catalog_subscriptions(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_app_catalog_subscriptions(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2155,6 +2211,7 @@ def test_list_app_catalog_subscriptions(testing_service_client):
                 next_response = client.list_app_catalog_subscriptions(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2165,6 +2222,7 @@ def test_list_app_catalog_subscriptions(testing_service_client):
                     prev_response = client.list_app_catalog_subscriptions(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2207,6 +2265,7 @@ def test_list_boot_volume_attachments(testing_service_client):
             response = client.list_boot_volume_attachments(
                 availability_domain=request.pop(util.camelize('availabilityDomain')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2217,6 +2276,7 @@ def test_list_boot_volume_attachments(testing_service_client):
                     availability_domain=request.pop(util.camelize('availabilityDomain')),
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2228,6 +2288,7 @@ def test_list_boot_volume_attachments(testing_service_client):
                         availability_domain=request.pop(util.camelize('availabilityDomain')),
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2269,6 +2330,7 @@ def test_list_compute_capacity_reservation_instance_shapes(testing_service_clien
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_compute_capacity_reservation_instance_shapes(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2278,6 +2340,7 @@ def test_list_compute_capacity_reservation_instance_shapes(testing_service_clien
                 next_response = client.list_compute_capacity_reservation_instance_shapes(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2288,6 +2351,7 @@ def test_list_compute_capacity_reservation_instance_shapes(testing_service_clien
                     prev_response = client.list_compute_capacity_reservation_instance_shapes(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2329,6 +2393,7 @@ def test_list_compute_capacity_reservation_instances(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_compute_capacity_reservation_instances(
                 capacity_reservation_id=request.pop(util.camelize('capacityReservationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2338,6 +2403,7 @@ def test_list_compute_capacity_reservation_instances(testing_service_client):
                 next_response = client.list_compute_capacity_reservation_instances(
                     capacity_reservation_id=request.pop(util.camelize('capacityReservationId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2348,6 +2414,7 @@ def test_list_compute_capacity_reservation_instances(testing_service_client):
                     prev_response = client.list_compute_capacity_reservation_instances(
                         capacity_reservation_id=request.pop(util.camelize('capacityReservationId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2389,6 +2456,7 @@ def test_list_compute_capacity_reservations(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_compute_capacity_reservations(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2398,6 +2466,7 @@ def test_list_compute_capacity_reservations(testing_service_client):
                 next_response = client.list_compute_capacity_reservations(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2408,6 +2477,7 @@ def test_list_compute_capacity_reservations(testing_service_client):
                     prev_response = client.list_compute_capacity_reservations(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2449,6 +2519,7 @@ def test_list_compute_global_image_capability_schema_versions(testing_service_cl
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_compute_global_image_capability_schema_versions(
                 compute_global_image_capability_schema_id=request.pop(util.camelize('computeGlobalImageCapabilitySchemaId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2458,6 +2529,7 @@ def test_list_compute_global_image_capability_schema_versions(testing_service_cl
                 next_response = client.list_compute_global_image_capability_schema_versions(
                     compute_global_image_capability_schema_id=request.pop(util.camelize('computeGlobalImageCapabilitySchemaId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2468,6 +2540,7 @@ def test_list_compute_global_image_capability_schema_versions(testing_service_cl
                     prev_response = client.list_compute_global_image_capability_schema_versions(
                         compute_global_image_capability_schema_id=request.pop(util.camelize('computeGlobalImageCapabilitySchemaId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2508,6 +2581,7 @@ def test_list_compute_global_image_capability_schemas(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_compute_global_image_capability_schemas(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2516,6 +2590,7 @@ def test_list_compute_global_image_capability_schemas(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_compute_global_image_capability_schemas(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2525,6 +2600,7 @@ def test_list_compute_global_image_capability_schemas(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_compute_global_image_capability_schemas(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2565,6 +2641,7 @@ def test_list_compute_image_capability_schemas(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_compute_image_capability_schemas(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2573,6 +2650,7 @@ def test_list_compute_image_capability_schemas(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_compute_image_capability_schemas(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2582,6 +2660,7 @@ def test_list_compute_image_capability_schemas(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_compute_image_capability_schemas(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2623,6 +2702,7 @@ def test_list_console_histories(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_console_histories(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2632,6 +2712,7 @@ def test_list_console_histories(testing_service_client):
                 next_response = client.list_console_histories(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2642,6 +2723,7 @@ def test_list_console_histories(testing_service_client):
                     prev_response = client.list_console_histories(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2683,6 +2765,7 @@ def test_list_dedicated_vm_host_instance_shapes(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_dedicated_vm_host_instance_shapes(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2692,6 +2775,7 @@ def test_list_dedicated_vm_host_instance_shapes(testing_service_client):
                 next_response = client.list_dedicated_vm_host_instance_shapes(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2702,6 +2786,7 @@ def test_list_dedicated_vm_host_instance_shapes(testing_service_client):
                     prev_response = client.list_dedicated_vm_host_instance_shapes(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2744,6 +2829,7 @@ def test_list_dedicated_vm_host_instances(testing_service_client):
             response = client.list_dedicated_vm_host_instances(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 dedicated_vm_host_id=request.pop(util.camelize('dedicatedVmHostId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2754,6 +2840,7 @@ def test_list_dedicated_vm_host_instances(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     dedicated_vm_host_id=request.pop(util.camelize('dedicatedVmHostId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2765,6 +2852,7 @@ def test_list_dedicated_vm_host_instances(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         dedicated_vm_host_id=request.pop(util.camelize('dedicatedVmHostId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2806,6 +2894,7 @@ def test_list_dedicated_vm_host_shapes(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_dedicated_vm_host_shapes(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2815,6 +2904,7 @@ def test_list_dedicated_vm_host_shapes(testing_service_client):
                 next_response = client.list_dedicated_vm_host_shapes(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2825,6 +2915,7 @@ def test_list_dedicated_vm_host_shapes(testing_service_client):
                     prev_response = client.list_dedicated_vm_host_shapes(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2866,6 +2957,7 @@ def test_list_dedicated_vm_hosts(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_dedicated_vm_hosts(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2875,6 +2967,7 @@ def test_list_dedicated_vm_hosts(testing_service_client):
                 next_response = client.list_dedicated_vm_hosts(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2885,6 +2978,7 @@ def test_list_dedicated_vm_hosts(testing_service_client):
                     prev_response = client.list_dedicated_vm_hosts(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2926,6 +3020,7 @@ def test_list_image_shape_compatibility_entries(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_image_shape_compatibility_entries(
                 image_id=request.pop(util.camelize('imageId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2935,6 +3030,7 @@ def test_list_image_shape_compatibility_entries(testing_service_client):
                 next_response = client.list_image_shape_compatibility_entries(
                     image_id=request.pop(util.camelize('imageId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2945,6 +3041,7 @@ def test_list_image_shape_compatibility_entries(testing_service_client):
                     prev_response = client.list_image_shape_compatibility_entries(
                         image_id=request.pop(util.camelize('imageId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2986,6 +3083,7 @@ def test_list_images(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_images(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2995,6 +3093,7 @@ def test_list_images(testing_service_client):
                 next_response = client.list_images(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3005,6 +3104,7 @@ def test_list_images(testing_service_client):
                     prev_response = client.list_images(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3046,6 +3146,7 @@ def test_list_instance_console_connections(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_instance_console_connections(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3055,6 +3156,7 @@ def test_list_instance_console_connections(testing_service_client):
                 next_response = client.list_instance_console_connections(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3065,6 +3167,7 @@ def test_list_instance_console_connections(testing_service_client):
                     prev_response = client.list_instance_console_connections(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3106,6 +3209,7 @@ def test_list_instance_devices(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_instance_devices(
                 instance_id=request.pop(util.camelize('instanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3115,6 +3219,7 @@ def test_list_instance_devices(testing_service_client):
                 next_response = client.list_instance_devices(
                     instance_id=request.pop(util.camelize('instanceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3125,6 +3230,7 @@ def test_list_instance_devices(testing_service_client):
                     prev_response = client.list_instance_devices(
                         instance_id=request.pop(util.camelize('instanceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3166,6 +3272,7 @@ def test_list_instances(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_instances(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3175,6 +3282,7 @@ def test_list_instances(testing_service_client):
                 next_response = client.list_instances(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3185,6 +3293,7 @@ def test_list_instances(testing_service_client):
                     prev_response = client.list_instances(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3226,6 +3335,7 @@ def test_list_shapes(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_shapes(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3235,6 +3345,7 @@ def test_list_shapes(testing_service_client):
                 next_response = client.list_shapes(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3245,6 +3356,7 @@ def test_list_shapes(testing_service_client):
                     prev_response = client.list_shapes(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3286,6 +3398,7 @@ def test_list_vnic_attachments(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_vnic_attachments(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3295,6 +3408,7 @@ def test_list_vnic_attachments(testing_service_client):
                 next_response = client.list_vnic_attachments(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3305,6 +3419,7 @@ def test_list_vnic_attachments(testing_service_client):
                     prev_response = client.list_vnic_attachments(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3346,6 +3461,7 @@ def test_list_volume_attachments(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_volume_attachments(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3355,6 +3471,7 @@ def test_list_volume_attachments(testing_service_client):
                 next_response = client.list_volume_attachments(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3365,6 +3482,7 @@ def test_list_volume_attachments(testing_service_client):
                     prev_response = client.list_volume_attachments(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3406,6 +3524,7 @@ def test_remove_image_shape_compatibility_entry(testing_service_client):
             response = client.remove_image_shape_compatibility_entry(
                 image_id=request.pop(util.camelize('imageId')),
                 shape_name=request.pop(util.camelize('shapeName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3446,6 +3565,7 @@ def test_terminate_instance(testing_service_client):
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.terminate_instance(
                 instance_id=request.pop(util.camelize('instanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3487,6 +3607,7 @@ def test_update_compute_capacity_reservation(testing_service_client):
             response = client.update_compute_capacity_reservation(
                 capacity_reservation_id=request.pop(util.camelize('capacityReservationId')),
                 update_compute_capacity_reservation_details=request.pop(util.camelize('UpdateComputeCapacityReservationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3528,6 +3649,7 @@ def test_update_compute_image_capability_schema(testing_service_client):
             response = client.update_compute_image_capability_schema(
                 compute_image_capability_schema_id=request.pop(util.camelize('computeImageCapabilitySchemaId')),
                 update_compute_image_capability_schema_details=request.pop(util.camelize('UpdateComputeImageCapabilitySchemaDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3569,6 +3691,7 @@ def test_update_console_history(testing_service_client):
             response = client.update_console_history(
                 instance_console_history_id=request.pop(util.camelize('instanceConsoleHistoryId')),
                 update_console_history_details=request.pop(util.camelize('UpdateConsoleHistoryDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3610,6 +3733,7 @@ def test_update_dedicated_vm_host(testing_service_client):
             response = client.update_dedicated_vm_host(
                 dedicated_vm_host_id=request.pop(util.camelize('dedicatedVmHostId')),
                 update_dedicated_vm_host_details=request.pop(util.camelize('UpdateDedicatedVmHostDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3651,6 +3775,7 @@ def test_update_image(testing_service_client):
             response = client.update_image(
                 image_id=request.pop(util.camelize('imageId')),
                 update_image_details=request.pop(util.camelize('UpdateImageDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3692,6 +3817,7 @@ def test_update_instance(testing_service_client):
             response = client.update_instance(
                 instance_id=request.pop(util.camelize('instanceId')),
                 update_instance_details=request.pop(util.camelize('UpdateInstanceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3733,6 +3859,7 @@ def test_update_instance_console_connection(testing_service_client):
             response = client.update_instance_console_connection(
                 instance_console_connection_id=request.pop(util.camelize('instanceConsoleConnectionId')),
                 update_instance_console_connection_details=request.pop(util.camelize('UpdateInstanceConsoleConnectionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3774,6 +3901,7 @@ def test_update_volume_attachment(testing_service_client):
             response = client.update_volume_attachment(
                 volume_attachment_id=request.pop(util.camelize('volumeAttachmentId')),
                 update_volume_attachment_details=request.pop(util.camelize('UpdateVolumeAttachmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

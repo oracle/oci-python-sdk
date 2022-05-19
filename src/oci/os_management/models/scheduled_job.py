@@ -53,6 +53,30 @@ class ScheduledJob(object):
     #: This constant has a value of "UPDATEALL"
     OPERATION_TYPE_UPDATEALL = "UPDATEALL"
 
+    #: A constant which can be used with the operation_type property of a ScheduledJob.
+    #: This constant has a value of "ENABLEMODULESTREAM"
+    OPERATION_TYPE_ENABLEMODULESTREAM = "ENABLEMODULESTREAM"
+
+    #: A constant which can be used with the operation_type property of a ScheduledJob.
+    #: This constant has a value of "DISABLEMODULESTREAM"
+    OPERATION_TYPE_DISABLEMODULESTREAM = "DISABLEMODULESTREAM"
+
+    #: A constant which can be used with the operation_type property of a ScheduledJob.
+    #: This constant has a value of "SWITCHMODULESTREAM"
+    OPERATION_TYPE_SWITCHMODULESTREAM = "SWITCHMODULESTREAM"
+
+    #: A constant which can be used with the operation_type property of a ScheduledJob.
+    #: This constant has a value of "INSTALLMODULESTREAMPROFILE"
+    OPERATION_TYPE_INSTALLMODULESTREAMPROFILE = "INSTALLMODULESTREAMPROFILE"
+
+    #: A constant which can be used with the operation_type property of a ScheduledJob.
+    #: This constant has a value of "REMOVEMODULESTREAMPROFILE"
+    OPERATION_TYPE_REMOVEMODULESTREAMPROFILE = "REMOVEMODULESTREAMPROFILE"
+
+    #: A constant which can be used with the operation_type property of a ScheduledJob.
+    #: This constant has a value of "COMPOUND"
+    OPERATION_TYPE_COMPOUND = "COMPOUND"
+
     #: A constant which can be used with the update_type property of a ScheduledJob.
     #: This constant has a value of "SECURITY"
     UPDATE_TYPE_SECURITY = "SECURITY"
@@ -168,7 +192,7 @@ class ScheduledJob(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this ScheduledJob.
-            Allowed values for this property are: "INSTALL", "UPDATE", "REMOVE", "UPDATEALL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "INSTALL", "UPDATE", "REMOVE", "UPDATEALL", "ENABLEMODULESTREAM", "DISABLEMODULESTREAM", "SWITCHMODULESTREAM", "INSTALLMODULESTREAMPROFILE", "REMOVEMODULESTREAMPROFILE", "COMPOUND", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -567,7 +591,7 @@ class ScheduledJob(object):
         Gets the operation_type of this ScheduledJob.
         the type of operation this Scheduled Job performs
 
-        Allowed values for this property are: "INSTALL", "UPDATE", "REMOVE", "UPDATEALL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "INSTALL", "UPDATE", "REMOVE", "UPDATEALL", "ENABLEMODULESTREAM", "DISABLEMODULESTREAM", "SWITCHMODULESTREAM", "INSTALLMODULESTREAMPROFILE", "REMOVEMODULESTREAMPROFILE", "COMPOUND", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -586,7 +610,7 @@ class ScheduledJob(object):
         :param operation_type: The operation_type of this ScheduledJob.
         :type: str
         """
-        allowed_values = ["INSTALL", "UPDATE", "REMOVE", "UPDATEALL"]
+        allowed_values = ["INSTALL", "UPDATE", "REMOVE", "UPDATEALL", "ENABLEMODULESTREAM", "DISABLEMODULESTREAM", "SWITCHMODULESTREAM", "INSTALLMODULESTREAMPROFILE", "REMOVEMODULESTREAMPROFILE", "COMPOUND"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

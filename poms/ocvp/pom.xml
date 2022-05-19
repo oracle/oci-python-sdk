@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.pic.vmware.ocvp</groupId>
         <artifactId>vmware-provision-service-spec</artifactId>
-        <version>0.1.1736</version>
+        <version>0.1.1750</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

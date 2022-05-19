@@ -55,6 +55,7 @@ def test_change_subscription_compartment(testing_service_client):
             response = client.change_subscription_compartment(
                 subscription_id=request.pop(util.camelize('subscriptionId')),
                 change_subscription_compartment_details=request.pop(util.camelize('ChangeSubscriptionCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_create_subscription(testing_service_client):
             client = oci.ons.NotificationDataPlaneClient(config, service_endpoint=service_endpoint)
             response = client.create_subscription(
                 create_subscription_details=request.pop(util.camelize('CreateSubscriptionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -135,6 +137,7 @@ def test_delete_subscription(testing_service_client):
             client = oci.ons.NotificationDataPlaneClient(config, service_endpoint=service_endpoint)
             response = client.delete_subscription(
                 subscription_id=request.pop(util.camelize('subscriptionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -177,6 +180,7 @@ def test_get_confirm_subscription(testing_service_client):
                 id=request.pop(util.camelize('id')),
                 token=request.pop(util.camelize('token')),
                 protocol=request.pop(util.camelize('protocol')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -217,6 +221,7 @@ def test_get_subscription(testing_service_client):
             client = oci.ons.NotificationDataPlaneClient(config, service_endpoint=service_endpoint)
             response = client.get_subscription(
                 subscription_id=request.pop(util.camelize('subscriptionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -259,6 +264,7 @@ def test_get_unsubscription(testing_service_client):
                 id=request.pop(util.camelize('id')),
                 token=request.pop(util.camelize('token')),
                 protocol=request.pop(util.camelize('protocol')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -300,6 +306,7 @@ def test_list_subscriptions(testing_service_client):
             client = oci.ons.NotificationDataPlaneClient(config, service_endpoint=service_endpoint)
             response = client.list_subscriptions(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -309,6 +316,7 @@ def test_list_subscriptions(testing_service_client):
                 next_response = client.list_subscriptions(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -319,6 +327,7 @@ def test_list_subscriptions(testing_service_client):
                     prev_response = client.list_subscriptions(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -360,6 +369,7 @@ def test_publish_message(testing_service_client):
             response = client.publish_message(
                 topic_id=request.pop(util.camelize('topicId')),
                 message_details=request.pop(util.camelize('MessageDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -400,6 +410,7 @@ def test_resend_subscription_confirmation(testing_service_client):
             client = oci.ons.NotificationDataPlaneClient(config, service_endpoint=service_endpoint)
             response = client.resend_subscription_confirmation(
                 id=request.pop(util.camelize('id')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -441,6 +452,7 @@ def test_update_subscription(testing_service_client):
             response = client.update_subscription(
                 subscription_id=request.pop(util.camelize('subscriptionId')),
                 update_subscription_details=request.pop(util.camelize('UpdateSubscriptionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

@@ -55,6 +55,7 @@ def test_change_load_balancer_compartment(testing_service_client):
             response = client.change_load_balancer_compartment(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 change_load_balancer_compartment_details=request.pop(util.camelize('ChangeLoadBalancerCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -97,6 +98,7 @@ def test_create_backend(testing_service_client):
                 create_backend_details=request.pop(util.camelize('CreateBackendDetails')),
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 backend_set_name=request.pop(util.camelize('backendSetName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -138,6 +140,7 @@ def test_create_backend_set(testing_service_client):
             response = client.create_backend_set(
                 create_backend_set_details=request.pop(util.camelize('CreateBackendSetDetails')),
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -179,6 +182,7 @@ def test_create_certificate(testing_service_client):
             response = client.create_certificate(
                 create_certificate_details=request.pop(util.camelize('CreateCertificateDetails')),
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -220,6 +224,7 @@ def test_create_hostname(testing_service_client):
             response = client.create_hostname(
                 create_hostname_details=request.pop(util.camelize('CreateHostnameDetails')),
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -261,6 +266,7 @@ def test_create_listener(testing_service_client):
             response = client.create_listener(
                 create_listener_details=request.pop(util.camelize('CreateListenerDetails')),
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -301,6 +307,7 @@ def test_create_load_balancer(testing_service_client):
             client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.create_load_balancer(
                 create_load_balancer_details=request.pop(util.camelize('CreateLoadBalancerDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -342,6 +349,7 @@ def test_create_path_route_set(testing_service_client):
             response = client.create_path_route_set(
                 create_path_route_set_details=request.pop(util.camelize('CreatePathRouteSetDetails')),
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -383,6 +391,7 @@ def test_create_routing_policy(testing_service_client):
             response = client.create_routing_policy(
                 create_routing_policy_details=request.pop(util.camelize('CreateRoutingPolicyDetails')),
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -424,6 +433,7 @@ def test_create_rule_set(testing_service_client):
             response = client.create_rule_set(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 create_rule_set_details=request.pop(util.camelize('CreateRuleSetDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -465,6 +475,7 @@ def test_create_ssl_cipher_suite(testing_service_client):
             response = client.create_ssl_cipher_suite(
                 create_ssl_cipher_suite_details=request.pop(util.camelize('CreateSSLCipherSuiteDetails')),
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -507,6 +518,7 @@ def test_delete_backend(testing_service_client):
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 backend_set_name=request.pop(util.camelize('backendSetName')),
                 backend_name=request.pop(util.camelize('backendName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -548,6 +560,7 @@ def test_delete_backend_set(testing_service_client):
             response = client.delete_backend_set(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 backend_set_name=request.pop(util.camelize('backendSetName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -589,6 +602,7 @@ def test_delete_certificate(testing_service_client):
             response = client.delete_certificate(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 certificate_name=request.pop(util.camelize('certificateName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -630,6 +644,7 @@ def test_delete_hostname(testing_service_client):
             response = client.delete_hostname(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 name=request.pop(util.camelize('name')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -671,6 +686,7 @@ def test_delete_listener(testing_service_client):
             response = client.delete_listener(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 listener_name=request.pop(util.camelize('listenerName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -711,6 +727,7 @@ def test_delete_load_balancer(testing_service_client):
             client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.delete_load_balancer(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -752,6 +769,7 @@ def test_delete_path_route_set(testing_service_client):
             response = client.delete_path_route_set(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 path_route_set_name=request.pop(util.camelize('pathRouteSetName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -793,6 +811,7 @@ def test_delete_routing_policy(testing_service_client):
             response = client.delete_routing_policy(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 routing_policy_name=request.pop(util.camelize('routingPolicyName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -834,6 +853,7 @@ def test_delete_rule_set(testing_service_client):
             response = client.delete_rule_set(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 rule_set_name=request.pop(util.camelize('ruleSetName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -875,6 +895,7 @@ def test_delete_ssl_cipher_suite(testing_service_client):
             response = client.delete_ssl_cipher_suite(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 name=request.pop(util.camelize('name')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -917,6 +938,7 @@ def test_get_backend(testing_service_client):
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 backend_set_name=request.pop(util.camelize('backendSetName')),
                 backend_name=request.pop(util.camelize('backendName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -959,6 +981,7 @@ def test_get_backend_health(testing_service_client):
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 backend_set_name=request.pop(util.camelize('backendSetName')),
                 backend_name=request.pop(util.camelize('backendName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1000,6 +1023,7 @@ def test_get_backend_set(testing_service_client):
             response = client.get_backend_set(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 backend_set_name=request.pop(util.camelize('backendSetName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1041,6 +1065,7 @@ def test_get_backend_set_health(testing_service_client):
             response = client.get_backend_set_health(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 backend_set_name=request.pop(util.camelize('backendSetName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1082,6 +1107,7 @@ def test_get_health_checker(testing_service_client):
             response = client.get_health_checker(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 backend_set_name=request.pop(util.camelize('backendSetName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1123,6 +1149,7 @@ def test_get_hostname(testing_service_client):
             response = client.get_hostname(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 name=request.pop(util.camelize('name')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1163,6 +1190,7 @@ def test_get_load_balancer(testing_service_client):
             client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.get_load_balancer(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1203,6 +1231,7 @@ def test_get_load_balancer_health(testing_service_client):
             client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.get_load_balancer_health(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1244,6 +1273,7 @@ def test_get_path_route_set(testing_service_client):
             response = client.get_path_route_set(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 path_route_set_name=request.pop(util.camelize('pathRouteSetName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1285,6 +1315,7 @@ def test_get_routing_policy(testing_service_client):
             response = client.get_routing_policy(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 routing_policy_name=request.pop(util.camelize('routingPolicyName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1326,6 +1357,7 @@ def test_get_rule_set(testing_service_client):
             response = client.get_rule_set(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 rule_set_name=request.pop(util.camelize('ruleSetName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1367,6 +1399,7 @@ def test_get_ssl_cipher_suite(testing_service_client):
             response = client.get_ssl_cipher_suite(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 name=request.pop(util.camelize('name')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1407,6 +1440,7 @@ def test_get_work_request(testing_service_client):
             client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1447,6 +1481,7 @@ def test_list_backend_sets(testing_service_client):
             client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.list_backend_sets(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1488,6 +1523,7 @@ def test_list_backends(testing_service_client):
             response = client.list_backends(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 backend_set_name=request.pop(util.camelize('backendSetName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1528,6 +1564,7 @@ def test_list_certificates(testing_service_client):
             client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.list_certificates(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1568,6 +1605,7 @@ def test_list_hostnames(testing_service_client):
             client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.list_hostnames(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1609,6 +1647,7 @@ def test_list_listener_rules(testing_service_client):
             response = client.list_listener_rules(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 listener_name=request.pop(util.camelize('listenerName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1650,6 +1689,7 @@ def test_list_load_balancer_healths(testing_service_client):
             client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.list_load_balancer_healths(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1659,6 +1699,7 @@ def test_list_load_balancer_healths(testing_service_client):
                 next_response = client.list_load_balancer_healths(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1669,6 +1710,7 @@ def test_list_load_balancer_healths(testing_service_client):
                     prev_response = client.list_load_balancer_healths(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1710,6 +1752,7 @@ def test_list_load_balancers(testing_service_client):
             client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.list_load_balancers(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1719,6 +1762,7 @@ def test_list_load_balancers(testing_service_client):
                 next_response = client.list_load_balancers(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1729,6 +1773,7 @@ def test_list_load_balancers(testing_service_client):
                     prev_response = client.list_load_balancers(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1769,6 +1814,7 @@ def test_list_path_route_sets(testing_service_client):
             client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.list_path_route_sets(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1810,6 +1856,7 @@ def test_list_policies(testing_service_client):
             client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.list_policies(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1819,6 +1866,7 @@ def test_list_policies(testing_service_client):
                 next_response = client.list_policies(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1829,6 +1877,7 @@ def test_list_policies(testing_service_client):
                     prev_response = client.list_policies(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1870,6 +1919,7 @@ def test_list_protocols(testing_service_client):
             client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.list_protocols(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1879,6 +1929,7 @@ def test_list_protocols(testing_service_client):
                 next_response = client.list_protocols(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1889,6 +1940,7 @@ def test_list_protocols(testing_service_client):
                     prev_response = client.list_protocols(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1930,6 +1982,7 @@ def test_list_routing_policies(testing_service_client):
             client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.list_routing_policies(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1939,6 +1992,7 @@ def test_list_routing_policies(testing_service_client):
                 next_response = client.list_routing_policies(
                     load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1949,6 +2003,7 @@ def test_list_routing_policies(testing_service_client):
                     prev_response = client.list_routing_policies(
                         load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1989,6 +2044,7 @@ def test_list_rule_sets(testing_service_client):
             client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.list_rule_sets(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2030,6 +2086,7 @@ def test_list_shapes(testing_service_client):
             client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.list_shapes(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2039,6 +2096,7 @@ def test_list_shapes(testing_service_client):
                 next_response = client.list_shapes(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2049,6 +2107,7 @@ def test_list_shapes(testing_service_client):
                     prev_response = client.list_shapes(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2089,6 +2148,7 @@ def test_list_ssl_cipher_suites(testing_service_client):
             client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.list_ssl_cipher_suites(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2130,6 +2190,7 @@ def test_list_work_requests(testing_service_client):
             client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2139,6 +2200,7 @@ def test_list_work_requests(testing_service_client):
                 next_response = client.list_work_requests(
                     load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2149,6 +2211,7 @@ def test_list_work_requests(testing_service_client):
                     prev_response = client.list_work_requests(
                         load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2192,6 +2255,7 @@ def test_update_backend(testing_service_client):
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 backend_set_name=request.pop(util.camelize('backendSetName')),
                 backend_name=request.pop(util.camelize('backendName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2234,6 +2298,7 @@ def test_update_backend_set(testing_service_client):
                 update_backend_set_details=request.pop(util.camelize('UpdateBackendSetDetails')),
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 backend_set_name=request.pop(util.camelize('backendSetName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2276,6 +2341,7 @@ def test_update_health_checker(testing_service_client):
                 health_checker=request.pop(util.camelize('HealthChecker')),
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 backend_set_name=request.pop(util.camelize('backendSetName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2318,6 +2384,7 @@ def test_update_hostname(testing_service_client):
                 update_hostname_details=request.pop(util.camelize('UpdateHostnameDetails')),
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 name=request.pop(util.camelize('name')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2360,6 +2427,7 @@ def test_update_listener(testing_service_client):
                 update_listener_details=request.pop(util.camelize('UpdateListenerDetails')),
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 listener_name=request.pop(util.camelize('listenerName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2401,6 +2469,7 @@ def test_update_load_balancer(testing_service_client):
             response = client.update_load_balancer(
                 update_load_balancer_details=request.pop(util.camelize('UpdateLoadBalancerDetails')),
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2442,6 +2511,7 @@ def test_update_load_balancer_shape(testing_service_client):
             response = client.update_load_balancer_shape(
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 update_load_balancer_shape_details=request.pop(util.camelize('UpdateLoadBalancerShapeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2483,6 +2553,7 @@ def test_update_network_security_groups(testing_service_client):
             response = client.update_network_security_groups(
                 update_network_security_groups_details=request.pop(util.camelize('UpdateNetworkSecurityGroupsDetails')),
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2525,6 +2596,7 @@ def test_update_path_route_set(testing_service_client):
                 update_path_route_set_details=request.pop(util.camelize('UpdatePathRouteSetDetails')),
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 path_route_set_name=request.pop(util.camelize('pathRouteSetName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2567,6 +2639,7 @@ def test_update_routing_policy(testing_service_client):
                 update_routing_policy_details=request.pop(util.camelize('UpdateRoutingPolicyDetails')),
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 routing_policy_name=request.pop(util.camelize('routingPolicyName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2609,6 +2682,7 @@ def test_update_rule_set(testing_service_client):
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 rule_set_name=request.pop(util.camelize('ruleSetName')),
                 update_rule_set_details=request.pop(util.camelize('UpdateRuleSetDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2651,6 +2725,7 @@ def test_update_ssl_cipher_suite(testing_service_client):
                 update_ssl_cipher_suite_details=request.pop(util.camelize('UpdateSSLCipherSuiteDetails')),
                 load_balancer_id=request.pop(util.camelize('loadBalancerId')),
                 name=request.pop(util.camelize('name')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

@@ -55,6 +55,7 @@ def test_change_endpoint_compartment(testing_service_client):
             response = client.change_endpoint_compartment(
                 endpoint_id=request.pop(util.camelize('endpointId')),
                 change_endpoint_compartment_details=request.pop(util.camelize('ChangeEndpointCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_change_registry_compartment(testing_service_client):
             response = client.change_registry_compartment(
                 registry_id=request.pop(util.camelize('registryId')),
                 change_registry_compartment_details=request.pop(util.camelize('ChangeRegistryCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -138,6 +140,7 @@ def test_create_attach_data_asset(testing_service_client):
                 registry_id=request.pop(util.camelize('registryId')),
                 endpoint_id=request.pop(util.camelize('endpointId')),
                 create_attach_data_asset_details=request.pop(util.camelize('CreateAttachDataAssetDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -179,6 +182,7 @@ def test_create_connection(testing_service_client):
             response = client.create_connection(
                 registry_id=request.pop(util.camelize('registryId')),
                 create_connection_details=request.pop(util.camelize('CreateConnectionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -220,6 +224,7 @@ def test_create_connection_validation(testing_service_client):
             response = client.create_connection_validation(
                 registry_id=request.pop(util.camelize('registryId')),
                 create_connection_validation_details=request.pop(util.camelize('CreateConnectionValidationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -261,6 +266,7 @@ def test_create_connectivity_validation(testing_service_client):
             response = client.create_connectivity_validation(
                 registry_id=request.pop(util.camelize('registryId')),
                 create_connectivity_validation_details=request.pop(util.camelize('CreateConnectivityValidationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -302,6 +308,7 @@ def test_create_data_asset(testing_service_client):
             response = client.create_data_asset(
                 registry_id=request.pop(util.camelize('registryId')),
                 create_data_asset_details=request.pop(util.camelize('CreateDataAssetDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -343,6 +350,7 @@ def test_create_data_preview(testing_service_client):
             response = client.create_data_preview(
                 registry_id=request.pop(util.camelize('registryId')),
                 create_data_preview_details=request.pop(util.camelize('CreateDataPreviewDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -384,6 +392,7 @@ def test_create_data_profile(testing_service_client):
             response = client.create_data_profile(
                 registry_id=request.pop(util.camelize('registryId')),
                 create_data_profile_details=request.pop(util.camelize('CreateDataProfileDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -426,6 +435,7 @@ def test_create_de_reference_artifact(testing_service_client):
                 registry_id=request.pop(util.camelize('registryId')),
                 dcms_artifact_id=request.pop(util.camelize('dcmsArtifactId')),
                 create_de_reference_artifact_details=request.pop(util.camelize('CreateDeReferenceArtifactDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -468,6 +478,7 @@ def test_create_detach_data_asset(testing_service_client):
                 registry_id=request.pop(util.camelize('registryId')),
                 endpoint_id=request.pop(util.camelize('endpointId')),
                 create_detach_data_asset_details=request.pop(util.camelize('CreateDetachDataAssetDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -508,6 +519,7 @@ def test_create_endpoint(testing_service_client):
             client = oci.data_connectivity.DataConnectivityManagementClient(config, service_endpoint=service_endpoint)
             response = client.create_endpoint(
                 create_endpoint_details=request.pop(util.camelize('CreateEndpointDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -551,6 +563,7 @@ def test_create_entity_shape(testing_service_client):
                 connection_key=request.pop(util.camelize('connectionKey')),
                 schema_resource_name=request.pop(util.camelize('schemaResourceName')),
                 create_entity_shape_details=request.pop(util.camelize('CreateEntityShapeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -594,6 +607,7 @@ def test_create_execute_operation_job(testing_service_client):
                 connection_key=request.pop(util.camelize('connectionKey')),
                 schema_resource_name=request.pop(util.camelize('schemaResourceName')),
                 create_execute_operation_job_details=request.pop(util.camelize('CreateExecuteOperationJobDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -635,6 +649,7 @@ def test_create_folder(testing_service_client):
             response = client.create_folder(
                 registry_id=request.pop(util.camelize('registryId')),
                 create_folder_details=request.pop(util.camelize('CreateFolderDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -676,6 +691,7 @@ def test_create_full_push_down_task(testing_service_client):
             response = client.create_full_push_down_task(
                 registry_id=request.pop(util.camelize('registryId')),
                 create_full_push_down_task_details=request.pop(util.camelize('CreateFullPushDownTaskDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -718,6 +734,7 @@ def test_create_reference_artifact(testing_service_client):
                 registry_id=request.pop(util.camelize('registryId')),
                 dcms_artifact_id=request.pop(util.camelize('dcmsArtifactId')),
                 create_reference_artifact_details=request.pop(util.camelize('CreateReferenceArtifactDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -758,6 +775,7 @@ def test_create_registry(testing_service_client):
             client = oci.data_connectivity.DataConnectivityManagementClient(config, service_endpoint=service_endpoint)
             response = client.create_registry(
                 create_registry_details=request.pop(util.camelize('CreateRegistryDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -799,6 +817,7 @@ def test_create_test_network_connectivity(testing_service_client):
             response = client.create_test_network_connectivity(
                 registry_id=request.pop(util.camelize('registryId')),
                 create_test_network_connectivity_details=request.pop(util.camelize('CreateTestNetworkConnectivityDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -840,6 +859,7 @@ def test_delete_connection(testing_service_client):
             response = client.delete_connection(
                 registry_id=request.pop(util.camelize('registryId')),
                 connection_key=request.pop(util.camelize('connectionKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -881,6 +901,7 @@ def test_delete_connection_validation(testing_service_client):
             response = client.delete_connection_validation(
                 registry_id=request.pop(util.camelize('registryId')),
                 connection_validation_key=request.pop(util.camelize('connectionValidationKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -922,6 +943,7 @@ def test_delete_data_asset(testing_service_client):
             response = client.delete_data_asset(
                 registry_id=request.pop(util.camelize('registryId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -962,6 +984,7 @@ def test_delete_endpoint(testing_service_client):
             client = oci.data_connectivity.DataConnectivityManagementClient(config, service_endpoint=service_endpoint)
             response = client.delete_endpoint(
                 endpoint_id=request.pop(util.camelize('endpointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1003,6 +1026,7 @@ def test_delete_folder(testing_service_client):
             response = client.delete_folder(
                 registry_id=request.pop(util.camelize('registryId')),
                 folder_key=request.pop(util.camelize('folderKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1044,6 +1068,7 @@ def test_delete_network_connectivity_status(testing_service_client):
             response = client.delete_network_connectivity_status(
                 registry_id=request.pop(util.camelize('registryId')),
                 network_validation_status_key=request.pop(util.camelize('networkValidationStatusKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1084,6 +1109,7 @@ def test_delete_registry(testing_service_client):
             client = oci.data_connectivity.DataConnectivityManagementClient(config, service_endpoint=service_endpoint)
             response = client.delete_registry(
                 registry_id=request.pop(util.camelize('registryId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1125,6 +1151,7 @@ def test_get_connection(testing_service_client):
             response = client.get_connection(
                 registry_id=request.pop(util.camelize('registryId')),
                 connection_key=request.pop(util.camelize('connectionKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1166,6 +1193,7 @@ def test_get_connection_validation(testing_service_client):
             response = client.get_connection_validation(
                 registry_id=request.pop(util.camelize('registryId')),
                 connection_validation_key=request.pop(util.camelize('connectionValidationKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1207,6 +1235,7 @@ def test_get_data_asset(testing_service_client):
             response = client.get_data_asset(
                 registry_id=request.pop(util.camelize('registryId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1250,6 +1279,7 @@ def test_get_data_entity(testing_service_client):
                 connection_key=request.pop(util.camelize('connectionKey')),
                 schema_resource_name=request.pop(util.camelize('schemaResourceName')),
                 data_entity_key=request.pop(util.camelize('dataEntityKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1290,6 +1320,7 @@ def test_get_endpoint(testing_service_client):
             client = oci.data_connectivity.DataConnectivityManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_endpoint(
                 endpoint_id=request.pop(util.camelize('endpointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1333,6 +1364,7 @@ def test_get_execute_operation_job(testing_service_client):
                 connection_key=request.pop(util.camelize('connectionKey')),
                 schema_resource_name=request.pop(util.camelize('schemaResourceName')),
                 execute_operation_job_key=request.pop(util.camelize('executeOperationJobKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1374,6 +1406,7 @@ def test_get_folder(testing_service_client):
             response = client.get_folder(
                 registry_id=request.pop(util.camelize('registryId')),
                 folder_key=request.pop(util.camelize('folderKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1415,6 +1448,7 @@ def test_get_network_connectivity_status(testing_service_client):
             response = client.get_network_connectivity_status(
                 registry_id=request.pop(util.camelize('registryId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1458,6 +1492,7 @@ def test_get_operation(testing_service_client):
                 connection_key=request.pop(util.camelize('connectionKey')),
                 schema_resource_name=request.pop(util.camelize('schemaResourceName')),
                 operation_resource_name=request.pop(util.camelize('operationResourceName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1498,6 +1533,7 @@ def test_get_registry(testing_service_client):
             client = oci.data_connectivity.DataConnectivityManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_registry(
                 registry_id=request.pop(util.camelize('registryId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1540,6 +1576,7 @@ def test_get_schema(testing_service_client):
                 registry_id=request.pop(util.camelize('registryId')),
                 connection_key=request.pop(util.camelize('connectionKey')),
                 schema_resource_name=request.pop(util.camelize('schemaResourceName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1581,6 +1618,7 @@ def test_get_type(testing_service_client):
             response = client.get_type(
                 registry_id=request.pop(util.camelize('registryId')),
                 type_key=request.pop(util.camelize('typeKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1621,6 +1659,7 @@ def test_get_work_request(testing_service_client):
             client = oci.data_connectivity.DataConnectivityManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1662,6 +1701,7 @@ def test_list_connection_validations(testing_service_client):
             client = oci.data_connectivity.DataConnectivityManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_connection_validations(
                 registry_id=request.pop(util.camelize('registryId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1671,6 +1711,7 @@ def test_list_connection_validations(testing_service_client):
                 next_response = client.list_connection_validations(
                     registry_id=request.pop(util.camelize('registryId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1681,6 +1722,7 @@ def test_list_connection_validations(testing_service_client):
                     prev_response = client.list_connection_validations(
                         registry_id=request.pop(util.camelize('registryId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1723,6 +1765,7 @@ def test_list_connections(testing_service_client):
             response = client.list_connections(
                 registry_id=request.pop(util.camelize('registryId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1733,6 +1776,7 @@ def test_list_connections(testing_service_client):
                     registry_id=request.pop(util.camelize('registryId')),
                     data_asset_key=request.pop(util.camelize('dataAssetKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1744,6 +1788,7 @@ def test_list_connections(testing_service_client):
                         registry_id=request.pop(util.camelize('registryId')),
                         data_asset_key=request.pop(util.camelize('dataAssetKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1785,6 +1830,7 @@ def test_list_data_assets(testing_service_client):
             client = oci.data_connectivity.DataConnectivityManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_data_assets(
                 registry_id=request.pop(util.camelize('registryId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1794,6 +1840,7 @@ def test_list_data_assets(testing_service_client):
                 next_response = client.list_data_assets(
                     registry_id=request.pop(util.camelize('registryId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1804,6 +1851,7 @@ def test_list_data_assets(testing_service_client):
                     prev_response = client.list_data_assets(
                         registry_id=request.pop(util.camelize('registryId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1847,6 +1895,7 @@ def test_list_data_entities(testing_service_client):
                 registry_id=request.pop(util.camelize('registryId')),
                 connection_key=request.pop(util.camelize('connectionKey')),
                 schema_resource_name=request.pop(util.camelize('schemaResourceName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1858,6 +1907,7 @@ def test_list_data_entities(testing_service_client):
                     connection_key=request.pop(util.camelize('connectionKey')),
                     schema_resource_name=request.pop(util.camelize('schemaResourceName')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1870,6 +1920,7 @@ def test_list_data_entities(testing_service_client):
                         connection_key=request.pop(util.camelize('connectionKey')),
                         schema_resource_name=request.pop(util.camelize('schemaResourceName')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1911,6 +1962,7 @@ def test_list_endpoints(testing_service_client):
             client = oci.data_connectivity.DataConnectivityManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_endpoints(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1920,6 +1972,7 @@ def test_list_endpoints(testing_service_client):
                 next_response = client.list_endpoints(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1930,6 +1983,7 @@ def test_list_endpoints(testing_service_client):
                     prev_response = client.list_endpoints(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1971,6 +2025,7 @@ def test_list_folders(testing_service_client):
             client = oci.data_connectivity.DataConnectivityManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_folders(
                 registry_id=request.pop(util.camelize('registryId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1980,6 +2035,7 @@ def test_list_folders(testing_service_client):
                 next_response = client.list_folders(
                     registry_id=request.pop(util.camelize('registryId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1990,6 +2046,7 @@ def test_list_folders(testing_service_client):
                     prev_response = client.list_folders(
                         registry_id=request.pop(util.camelize('registryId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2033,6 +2090,7 @@ def test_list_operations(testing_service_client):
                 registry_id=request.pop(util.camelize('registryId')),
                 connection_key=request.pop(util.camelize('connectionKey')),
                 schema_resource_name=request.pop(util.camelize('schemaResourceName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2044,6 +2102,7 @@ def test_list_operations(testing_service_client):
                     connection_key=request.pop(util.camelize('connectionKey')),
                     schema_resource_name=request.pop(util.camelize('schemaResourceName')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2056,6 +2115,7 @@ def test_list_operations(testing_service_client):
                         connection_key=request.pop(util.camelize('connectionKey')),
                         schema_resource_name=request.pop(util.camelize('schemaResourceName')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2098,6 +2158,7 @@ def test_list_reference_artifacts(testing_service_client):
             response = client.list_reference_artifacts(
                 registry_id=request.pop(util.camelize('registryId')),
                 dcms_artifact_id=request.pop(util.camelize('dcmsArtifactId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2108,6 +2169,7 @@ def test_list_reference_artifacts(testing_service_client):
                     registry_id=request.pop(util.camelize('registryId')),
                     dcms_artifact_id=request.pop(util.camelize('dcmsArtifactId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2119,6 +2181,7 @@ def test_list_reference_artifacts(testing_service_client):
                         registry_id=request.pop(util.camelize('registryId')),
                         dcms_artifact_id=request.pop(util.camelize('dcmsArtifactId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2160,6 +2223,7 @@ def test_list_registries(testing_service_client):
             client = oci.data_connectivity.DataConnectivityManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_registries(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2169,6 +2233,7 @@ def test_list_registries(testing_service_client):
                 next_response = client.list_registries(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2179,6 +2244,7 @@ def test_list_registries(testing_service_client):
                     prev_response = client.list_registries(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2221,6 +2287,7 @@ def test_list_schemas(testing_service_client):
             response = client.list_schemas(
                 registry_id=request.pop(util.camelize('registryId')),
                 connection_key=request.pop(util.camelize('connectionKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2231,6 +2298,7 @@ def test_list_schemas(testing_service_client):
                     registry_id=request.pop(util.camelize('registryId')),
                     connection_key=request.pop(util.camelize('connectionKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2242,6 +2310,7 @@ def test_list_schemas(testing_service_client):
                         registry_id=request.pop(util.camelize('registryId')),
                         connection_key=request.pop(util.camelize('connectionKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2283,6 +2352,7 @@ def test_list_types(testing_service_client):
             client = oci.data_connectivity.DataConnectivityManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_types(
                 registry_id=request.pop(util.camelize('registryId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2292,6 +2362,7 @@ def test_list_types(testing_service_client):
                 next_response = client.list_types(
                     registry_id=request.pop(util.camelize('registryId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2302,6 +2373,7 @@ def test_list_types(testing_service_client):
                     prev_response = client.list_types(
                         registry_id=request.pop(util.camelize('registryId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2343,6 +2415,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.data_connectivity.DataConnectivityManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2352,6 +2425,7 @@ def test_list_work_request_errors(testing_service_client):
                 next_response = client.list_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2362,6 +2436,7 @@ def test_list_work_request_errors(testing_service_client):
                     prev_response = client.list_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2403,6 +2478,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.data_connectivity.DataConnectivityManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2412,6 +2488,7 @@ def test_list_work_request_logs(testing_service_client):
                 next_response = client.list_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2422,6 +2499,7 @@ def test_list_work_request_logs(testing_service_client):
                     prev_response = client.list_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2463,6 +2541,7 @@ def test_list_work_requests(testing_service_client):
             client = oci.data_connectivity.DataConnectivityManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2472,6 +2551,7 @@ def test_list_work_requests(testing_service_client):
                 next_response = client.list_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2482,6 +2562,7 @@ def test_list_work_requests(testing_service_client):
                     prev_response = client.list_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2524,6 +2605,7 @@ def test_update_connection(testing_service_client):
                 registry_id=request.pop(util.camelize('registryId')),
                 connection_key=request.pop(util.camelize('connectionKey')),
                 update_connection_details=request.pop(util.camelize('UpdateConnectionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2566,6 +2648,7 @@ def test_update_data_asset(testing_service_client):
                 registry_id=request.pop(util.camelize('registryId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 update_data_asset_details=request.pop(util.camelize('UpdateDataAssetDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2607,6 +2690,7 @@ def test_update_endpoint(testing_service_client):
             response = client.update_endpoint(
                 endpoint_id=request.pop(util.camelize('endpointId')),
                 update_endpoint_details=request.pop(util.camelize('UpdateEndpointDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2649,6 +2733,7 @@ def test_update_folder(testing_service_client):
                 registry_id=request.pop(util.camelize('registryId')),
                 folder_key=request.pop(util.camelize('folderKey')),
                 update_folder_details=request.pop(util.camelize('UpdateFolderDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2690,6 +2775,7 @@ def test_update_registry(testing_service_client):
             response = client.update_registry(
                 registry_id=request.pop(util.camelize('registryId')),
                 update_registry_details=request.pop(util.camelize('UpdateRegistryDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2730,6 +2816,7 @@ def test_validate_data_asset_network_reachablity(testing_service_client):
             client = oci.data_connectivity.DataConnectivityManagementClient(config, service_endpoint=service_endpoint)
             response = client.validate_data_asset_network_reachablity(
                 endpoint_id=request.pop(util.camelize('endpointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

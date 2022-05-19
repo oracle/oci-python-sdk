@@ -55,6 +55,7 @@ def test_change_topic_compartment(testing_service_client):
             response = client.change_topic_compartment(
                 topic_id=request.pop(util.camelize('topicId')),
                 change_topic_compartment_details=request.pop(util.camelize('ChangeTopicCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_create_topic(testing_service_client):
             client = oci.ons.NotificationControlPlaneClient(config, service_endpoint=service_endpoint)
             response = client.create_topic(
                 create_topic_details=request.pop(util.camelize('CreateTopicDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -135,6 +137,7 @@ def test_delete_topic(testing_service_client):
             client = oci.ons.NotificationControlPlaneClient(config, service_endpoint=service_endpoint)
             response = client.delete_topic(
                 topic_id=request.pop(util.camelize('topicId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -175,6 +178,7 @@ def test_get_topic(testing_service_client):
             client = oci.ons.NotificationControlPlaneClient(config, service_endpoint=service_endpoint)
             response = client.get_topic(
                 topic_id=request.pop(util.camelize('topicId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -216,6 +220,7 @@ def test_list_topics(testing_service_client):
             client = oci.ons.NotificationControlPlaneClient(config, service_endpoint=service_endpoint)
             response = client.list_topics(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -225,6 +230,7 @@ def test_list_topics(testing_service_client):
                 next_response = client.list_topics(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -235,6 +241,7 @@ def test_list_topics(testing_service_client):
                     prev_response = client.list_topics(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -276,6 +283,7 @@ def test_update_topic(testing_service_client):
             response = client.update_topic(
                 topic_id=request.pop(util.camelize('topicId')),
                 topic_attributes_details=request.pop(util.camelize('TopicAttributesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

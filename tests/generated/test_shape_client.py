@@ -55,6 +55,7 @@ def test_list_shapes(testing_service_client):
             client = oci.rover.ShapeClient(config, service_endpoint=service_endpoint)
             response = client.list_shapes(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -64,6 +65,7 @@ def test_list_shapes(testing_service_client):
                 next_response = client.list_shapes(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -74,6 +76,7 @@ def test_list_shapes(testing_service_client):
                     prev_response = client.list_shapes(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)

@@ -55,6 +55,7 @@ def test_change_rover_node_compartment(testing_service_client):
             response = client.change_rover_node_compartment(
                 rover_node_id=request.pop(util.camelize('roverNodeId')),
                 change_rover_node_compartment_details=request.pop(util.camelize('ChangeRoverNodeCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_create_rover_node(testing_service_client):
             client = oci.rover.RoverNodeClient(config, service_endpoint=service_endpoint)
             response = client.create_rover_node(
                 create_rover_node_details=request.pop(util.camelize('CreateRoverNodeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -135,6 +137,7 @@ def test_delete_rover_node(testing_service_client):
             client = oci.rover.RoverNodeClient(config, service_endpoint=service_endpoint)
             response = client.delete_rover_node(
                 rover_node_id=request.pop(util.camelize('roverNodeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -175,6 +178,7 @@ def test_get_rover_node(testing_service_client):
             client = oci.rover.RoverNodeClient(config, service_endpoint=service_endpoint)
             response = client.get_rover_node(
                 rover_node_id=request.pop(util.camelize('roverNodeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -215,6 +219,7 @@ def test_get_rover_node_certificate(testing_service_client):
             client = oci.rover.RoverNodeClient(config, service_endpoint=service_endpoint)
             response = client.get_rover_node_certificate(
                 rover_node_id=request.pop(util.camelize('roverNodeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -255,6 +260,7 @@ def test_get_rover_node_encryption_key(testing_service_client):
             client = oci.rover.RoverNodeClient(config, service_endpoint=service_endpoint)
             response = client.get_rover_node_encryption_key(
                 rover_node_id=request.pop(util.camelize('roverNodeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -296,6 +302,7 @@ def test_get_rover_node_get_rpt(testing_service_client):
             response = client.get_rover_node_get_rpt(
                 rover_node_id=request.pop(util.camelize('roverNodeId')),
                 jwt=request.pop(util.camelize('jwt')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -337,6 +344,7 @@ def test_list_rover_nodes(testing_service_client):
             client = oci.rover.RoverNodeClient(config, service_endpoint=service_endpoint)
             response = client.list_rover_nodes(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -346,6 +354,7 @@ def test_list_rover_nodes(testing_service_client):
                 next_response = client.list_rover_nodes(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -356,6 +365,7 @@ def test_list_rover_nodes(testing_service_client):
                     prev_response = client.list_rover_nodes(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -398,6 +408,7 @@ def test_rover_node_action_set_key(testing_service_client):
                 rover_node_id=request.pop(util.camelize('roverNodeId')),
                 jwt=request.pop(util.camelize('jwt')),
                 rover_node_action_set_key_details=request.pop(util.camelize('RoverNodeActionSetKeyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -439,6 +450,7 @@ def test_update_rover_node(testing_service_client):
             response = client.update_rover_node(
                 rover_node_id=request.pop(util.camelize('roverNodeId')),
                 update_rover_node_details=request.pop(util.camelize('UpdateRoverNodeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

@@ -55,6 +55,7 @@ def test_attach_instance_pool_instance(testing_service_client):
             response = client.attach_instance_pool_instance(
                 instance_pool_id=request.pop(util.camelize('instancePoolId')),
                 attach_instance_pool_instance_details=request.pop(util.camelize('AttachInstancePoolInstanceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_attach_load_balancer(testing_service_client):
             response = client.attach_load_balancer(
                 instance_pool_id=request.pop(util.camelize('instancePoolId')),
                 attach_load_balancer_details=request.pop(util.camelize('AttachLoadBalancerDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -137,6 +139,7 @@ def test_change_cluster_network_compartment(testing_service_client):
             response = client.change_cluster_network_compartment(
                 cluster_network_id=request.pop(util.camelize('clusterNetworkId')),
                 change_cluster_network_compartment_details=request.pop(util.camelize('ChangeClusterNetworkCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -178,6 +181,7 @@ def test_change_instance_configuration_compartment(testing_service_client):
             response = client.change_instance_configuration_compartment(
                 instance_configuration_id=request.pop(util.camelize('instanceConfigurationId')),
                 change_instance_configuration_compartment_details=request.pop(util.camelize('ChangeInstanceConfigurationCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -219,6 +223,7 @@ def test_change_instance_pool_compartment(testing_service_client):
             response = client.change_instance_pool_compartment(
                 instance_pool_id=request.pop(util.camelize('instancePoolId')),
                 change_instance_pool_compartment_details=request.pop(util.camelize('ChangeInstancePoolCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -259,6 +264,7 @@ def test_create_cluster_network(testing_service_client):
             client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.create_cluster_network(
                 create_cluster_network_details=request.pop(util.camelize('CreateClusterNetworkDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -299,6 +305,7 @@ def test_create_instance_configuration(testing_service_client):
             client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.create_instance_configuration(
                 create_instance_configuration=request.pop(util.camelize('CreateInstanceConfiguration')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -339,6 +346,7 @@ def test_create_instance_pool(testing_service_client):
             client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.create_instance_pool(
                 create_instance_pool_details=request.pop(util.camelize('CreateInstancePoolDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -379,6 +387,7 @@ def test_delete_instance_configuration(testing_service_client):
             client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.delete_instance_configuration(
                 instance_configuration_id=request.pop(util.camelize('instanceConfigurationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -420,6 +429,7 @@ def test_detach_instance_pool_instance(testing_service_client):
             response = client.detach_instance_pool_instance(
                 instance_pool_id=request.pop(util.camelize('instancePoolId')),
                 detach_instance_pool_instance_details=request.pop(util.camelize('DetachInstancePoolInstanceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -461,6 +471,7 @@ def test_detach_load_balancer(testing_service_client):
             response = client.detach_load_balancer(
                 instance_pool_id=request.pop(util.camelize('instancePoolId')),
                 detach_load_balancer_details=request.pop(util.camelize('DetachLoadBalancerDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -501,6 +512,7 @@ def test_get_cluster_network(testing_service_client):
             client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_cluster_network(
                 cluster_network_id=request.pop(util.camelize('clusterNetworkId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -541,6 +553,7 @@ def test_get_instance_configuration(testing_service_client):
             client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_instance_configuration(
                 instance_configuration_id=request.pop(util.camelize('instanceConfigurationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -581,6 +594,7 @@ def test_get_instance_pool(testing_service_client):
             client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_instance_pool(
                 instance_pool_id=request.pop(util.camelize('instancePoolId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -622,6 +636,7 @@ def test_get_instance_pool_instance(testing_service_client):
             response = client.get_instance_pool_instance(
                 instance_pool_id=request.pop(util.camelize('instancePoolId')),
                 instance_id=request.pop(util.camelize('instanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -663,6 +678,7 @@ def test_get_instance_pool_load_balancer_attachment(testing_service_client):
             response = client.get_instance_pool_load_balancer_attachment(
                 instance_pool_id=request.pop(util.camelize('instancePoolId')),
                 instance_pool_load_balancer_attachment_id=request.pop(util.camelize('instancePoolLoadBalancerAttachmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -704,6 +720,7 @@ def test_launch_instance_configuration(testing_service_client):
             response = client.launch_instance_configuration(
                 instance_configuration_id=request.pop(util.camelize('instanceConfigurationId')),
                 instance_configuration=request.pop(util.camelize('InstanceConfiguration')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -746,6 +763,7 @@ def test_list_cluster_network_instances(testing_service_client):
             response = client.list_cluster_network_instances(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 cluster_network_id=request.pop(util.camelize('clusterNetworkId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -756,6 +774,7 @@ def test_list_cluster_network_instances(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     cluster_network_id=request.pop(util.camelize('clusterNetworkId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -767,6 +786,7 @@ def test_list_cluster_network_instances(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         cluster_network_id=request.pop(util.camelize('clusterNetworkId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -808,6 +828,7 @@ def test_list_cluster_networks(testing_service_client):
             client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_cluster_networks(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -817,6 +838,7 @@ def test_list_cluster_networks(testing_service_client):
                 next_response = client.list_cluster_networks(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -827,6 +849,7 @@ def test_list_cluster_networks(testing_service_client):
                     prev_response = client.list_cluster_networks(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -868,6 +891,7 @@ def test_list_instance_configurations(testing_service_client):
             client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_instance_configurations(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -877,6 +901,7 @@ def test_list_instance_configurations(testing_service_client):
                 next_response = client.list_instance_configurations(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -887,6 +912,7 @@ def test_list_instance_configurations(testing_service_client):
                     prev_response = client.list_instance_configurations(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -929,6 +955,7 @@ def test_list_instance_pool_instances(testing_service_client):
             response = client.list_instance_pool_instances(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 instance_pool_id=request.pop(util.camelize('instancePoolId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -939,6 +966,7 @@ def test_list_instance_pool_instances(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     instance_pool_id=request.pop(util.camelize('instancePoolId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -950,6 +978,7 @@ def test_list_instance_pool_instances(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         instance_pool_id=request.pop(util.camelize('instancePoolId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -991,6 +1020,7 @@ def test_list_instance_pools(testing_service_client):
             client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_instance_pools(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1000,6 +1030,7 @@ def test_list_instance_pools(testing_service_client):
                 next_response = client.list_instance_pools(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1010,6 +1041,7 @@ def test_list_instance_pools(testing_service_client):
                     prev_response = client.list_instance_pools(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1050,6 +1082,7 @@ def test_reset_instance_pool(testing_service_client):
             client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.reset_instance_pool(
                 instance_pool_id=request.pop(util.camelize('instancePoolId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1090,6 +1123,7 @@ def test_softreset_instance_pool(testing_service_client):
             client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.softreset_instance_pool(
                 instance_pool_id=request.pop(util.camelize('instancePoolId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1130,6 +1164,7 @@ def test_start_instance_pool(testing_service_client):
             client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.start_instance_pool(
                 instance_pool_id=request.pop(util.camelize('instancePoolId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1170,6 +1205,7 @@ def test_stop_instance_pool(testing_service_client):
             client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.stop_instance_pool(
                 instance_pool_id=request.pop(util.camelize('instancePoolId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1210,6 +1246,7 @@ def test_terminate_cluster_network(testing_service_client):
             client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.terminate_cluster_network(
                 cluster_network_id=request.pop(util.camelize('clusterNetworkId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1250,6 +1287,7 @@ def test_terminate_instance_pool(testing_service_client):
             client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.terminate_instance_pool(
                 instance_pool_id=request.pop(util.camelize('instancePoolId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1291,6 +1329,7 @@ def test_update_cluster_network(testing_service_client):
             response = client.update_cluster_network(
                 cluster_network_id=request.pop(util.camelize('clusterNetworkId')),
                 update_cluster_network_details=request.pop(util.camelize('UpdateClusterNetworkDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1332,6 +1371,7 @@ def test_update_instance_configuration(testing_service_client):
             response = client.update_instance_configuration(
                 instance_configuration_id=request.pop(util.camelize('instanceConfigurationId')),
                 update_instance_configuration_details=request.pop(util.camelize('UpdateInstanceConfigurationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1373,6 +1413,7 @@ def test_update_instance_pool(testing_service_client):
             response = client.update_instance_pool(
                 instance_pool_id=request.pop(util.camelize('instancePoolId')),
                 update_instance_pool_details=request.pop(util.camelize('UpdateInstancePoolDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

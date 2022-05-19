@@ -55,6 +55,7 @@ def test_change_application_compartment(testing_service_client):
             response = client.change_application_compartment(
                 application_id=request.pop(util.camelize('applicationId')),
                 change_application_compartment_details=request.pop(util.camelize('ChangeApplicationCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_create_application(testing_service_client):
             client = oci.functions.FunctionsManagementClient(config, service_endpoint=service_endpoint)
             response = client.create_application(
                 create_application_details=request.pop(util.camelize('CreateApplicationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -135,6 +137,7 @@ def test_create_function(testing_service_client):
             client = oci.functions.FunctionsManagementClient(config, service_endpoint=service_endpoint)
             response = client.create_function(
                 create_function_details=request.pop(util.camelize('CreateFunctionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -175,6 +178,7 @@ def test_delete_application(testing_service_client):
             client = oci.functions.FunctionsManagementClient(config, service_endpoint=service_endpoint)
             response = client.delete_application(
                 application_id=request.pop(util.camelize('applicationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -215,6 +219,7 @@ def test_delete_function(testing_service_client):
             client = oci.functions.FunctionsManagementClient(config, service_endpoint=service_endpoint)
             response = client.delete_function(
                 function_id=request.pop(util.camelize('functionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -255,6 +260,7 @@ def test_get_application(testing_service_client):
             client = oci.functions.FunctionsManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_application(
                 application_id=request.pop(util.camelize('applicationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -295,6 +301,7 @@ def test_get_function(testing_service_client):
             client = oci.functions.FunctionsManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_function(
                 function_id=request.pop(util.camelize('functionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -336,6 +343,7 @@ def test_list_applications(testing_service_client):
             client = oci.functions.FunctionsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_applications(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -345,6 +353,7 @@ def test_list_applications(testing_service_client):
                 next_response = client.list_applications(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -355,6 +364,7 @@ def test_list_applications(testing_service_client):
                     prev_response = client.list_applications(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -396,6 +406,7 @@ def test_list_functions(testing_service_client):
             client = oci.functions.FunctionsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_functions(
                 application_id=request.pop(util.camelize('applicationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -405,6 +416,7 @@ def test_list_functions(testing_service_client):
                 next_response = client.list_functions(
                     application_id=request.pop(util.camelize('applicationId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -415,6 +427,7 @@ def test_list_functions(testing_service_client):
                     prev_response = client.list_functions(
                         application_id=request.pop(util.camelize('applicationId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -456,6 +469,7 @@ def test_update_application(testing_service_client):
             response = client.update_application(
                 application_id=request.pop(util.camelize('applicationId')),
                 update_application_details=request.pop(util.camelize('UpdateApplicationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -497,6 +511,7 @@ def test_update_function(testing_service_client):
             response = client.update_function(
                 function_id=request.pop(util.camelize('functionId')),
                 update_function_details=request.pop(util.camelize('UpdateFunctionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

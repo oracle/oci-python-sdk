@@ -54,6 +54,7 @@ def test_analyze_document(testing_service_client):
             client = oci.ai_vision.AIServiceVisionClient(config, service_endpoint=service_endpoint)
             response = client.analyze_document(
                 analyze_document_details=request.pop(util.camelize('AnalyzeDocumentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -94,6 +95,7 @@ def test_analyze_image(testing_service_client):
             client = oci.ai_vision.AIServiceVisionClient(config, service_endpoint=service_endpoint)
             response = client.analyze_image(
                 analyze_image_details=request.pop(util.camelize('AnalyzeImageDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -134,6 +136,7 @@ def test_cancel_document_job(testing_service_client):
             client = oci.ai_vision.AIServiceVisionClient(config, service_endpoint=service_endpoint)
             response = client.cancel_document_job(
                 document_job_id=request.pop(util.camelize('documentJobId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -174,6 +177,7 @@ def test_cancel_image_job(testing_service_client):
             client = oci.ai_vision.AIServiceVisionClient(config, service_endpoint=service_endpoint)
             response = client.cancel_image_job(
                 image_job_id=request.pop(util.camelize('imageJobId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -214,6 +218,7 @@ def test_cancel_work_request(testing_service_client):
             client = oci.ai_vision.AIServiceVisionClient(config, service_endpoint=service_endpoint)
             response = client.cancel_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -255,6 +260,7 @@ def test_change_model_compartment(testing_service_client):
             response = client.change_model_compartment(
                 model_id=request.pop(util.camelize('modelId')),
                 change_model_compartment_details=request.pop(util.camelize('ChangeModelCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -296,6 +302,7 @@ def test_change_project_compartment(testing_service_client):
             response = client.change_project_compartment(
                 project_id=request.pop(util.camelize('projectId')),
                 change_project_compartment_details=request.pop(util.camelize('ChangeProjectCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -336,6 +343,7 @@ def test_create_document_job(testing_service_client):
             client = oci.ai_vision.AIServiceVisionClient(config, service_endpoint=service_endpoint)
             response = client.create_document_job(
                 create_document_job_details=request.pop(util.camelize('CreateDocumentJobDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -376,6 +384,7 @@ def test_create_image_job(testing_service_client):
             client = oci.ai_vision.AIServiceVisionClient(config, service_endpoint=service_endpoint)
             response = client.create_image_job(
                 create_image_job_details=request.pop(util.camelize('CreateImageJobDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -416,6 +425,7 @@ def test_create_model(testing_service_client):
             client = oci.ai_vision.AIServiceVisionClient(config, service_endpoint=service_endpoint)
             response = client.create_model(
                 create_model_details=request.pop(util.camelize('CreateModelDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -456,6 +466,7 @@ def test_create_project(testing_service_client):
             client = oci.ai_vision.AIServiceVisionClient(config, service_endpoint=service_endpoint)
             response = client.create_project(
                 create_project_details=request.pop(util.camelize('CreateProjectDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -496,6 +507,7 @@ def test_delete_model(testing_service_client):
             client = oci.ai_vision.AIServiceVisionClient(config, service_endpoint=service_endpoint)
             response = client.delete_model(
                 model_id=request.pop(util.camelize('modelId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -536,6 +548,7 @@ def test_delete_project(testing_service_client):
             client = oci.ai_vision.AIServiceVisionClient(config, service_endpoint=service_endpoint)
             response = client.delete_project(
                 project_id=request.pop(util.camelize('projectId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -576,6 +589,7 @@ def test_get_document_job(testing_service_client):
             client = oci.ai_vision.AIServiceVisionClient(config, service_endpoint=service_endpoint)
             response = client.get_document_job(
                 document_job_id=request.pop(util.camelize('documentJobId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -616,6 +630,7 @@ def test_get_image_job(testing_service_client):
             client = oci.ai_vision.AIServiceVisionClient(config, service_endpoint=service_endpoint)
             response = client.get_image_job(
                 image_job_id=request.pop(util.camelize('imageJobId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -656,6 +671,7 @@ def test_get_model(testing_service_client):
             client = oci.ai_vision.AIServiceVisionClient(config, service_endpoint=service_endpoint)
             response = client.get_model(
                 model_id=request.pop(util.camelize('modelId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -696,6 +712,7 @@ def test_get_project(testing_service_client):
             client = oci.ai_vision.AIServiceVisionClient(config, service_endpoint=service_endpoint)
             response = client.get_project(
                 project_id=request.pop(util.camelize('projectId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -736,6 +753,7 @@ def test_get_work_request(testing_service_client):
             client = oci.ai_vision.AIServiceVisionClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -776,6 +794,7 @@ def test_list_models(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.ai_vision.AIServiceVisionClient(config, service_endpoint=service_endpoint)
             response = client.list_models(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -784,6 +803,7 @@ def test_list_models(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_models(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -793,6 +813,7 @@ def test_list_models(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_models(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -833,6 +854,7 @@ def test_list_projects(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.ai_vision.AIServiceVisionClient(config, service_endpoint=service_endpoint)
             response = client.list_projects(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -841,6 +863,7 @@ def test_list_projects(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_projects(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -850,6 +873,7 @@ def test_list_projects(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_projects(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -891,6 +915,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.ai_vision.AIServiceVisionClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -900,6 +925,7 @@ def test_list_work_request_errors(testing_service_client):
                 next_response = client.list_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -910,6 +936,7 @@ def test_list_work_request_errors(testing_service_client):
                     prev_response = client.list_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -951,6 +978,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.ai_vision.AIServiceVisionClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -960,6 +988,7 @@ def test_list_work_request_logs(testing_service_client):
                 next_response = client.list_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -970,6 +999,7 @@ def test_list_work_request_logs(testing_service_client):
                     prev_response = client.list_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1010,6 +1040,7 @@ def test_list_work_requests(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.ai_vision.AIServiceVisionClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1018,6 +1049,7 @@ def test_list_work_requests(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_work_requests(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1027,6 +1059,7 @@ def test_list_work_requests(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_work_requests(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1068,6 +1101,7 @@ def test_update_model(testing_service_client):
             response = client.update_model(
                 model_id=request.pop(util.camelize('modelId')),
                 update_model_details=request.pop(util.camelize('UpdateModelDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1109,6 +1143,7 @@ def test_update_project(testing_service_client):
             response = client.update_project(
                 project_id=request.pop(util.camelize('projectId')),
                 update_project_details=request.pop(util.camelize('UpdateProjectDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

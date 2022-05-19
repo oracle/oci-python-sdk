@@ -55,6 +55,7 @@ def test_add_packages_to_software_source(testing_service_client):
             response = client.add_packages_to_software_source(
                 software_source_id=request.pop(util.camelize('softwareSourceId')),
                 add_packages_to_software_source_details=request.pop(util.camelize('AddPackagesToSoftwareSourceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_attach_child_software_source_to_managed_instance(testing_service_client
             response = client.attach_child_software_source_to_managed_instance(
                 managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                 attach_child_software_source_to_managed_instance_details=request.pop(util.camelize('AttachChildSoftwareSourceToManagedInstanceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -137,6 +139,7 @@ def test_attach_managed_instance_to_managed_instance_group(testing_service_clien
             response = client.attach_managed_instance_to_managed_instance_group(
                 managed_instance_group_id=request.pop(util.camelize('managedInstanceGroupId')),
                 managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -178,6 +181,7 @@ def test_attach_parent_software_source_to_managed_instance(testing_service_clien
             response = client.attach_parent_software_source_to_managed_instance(
                 managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                 attach_parent_software_source_to_managed_instance_details=request.pop(util.camelize('AttachParentSoftwareSourceToManagedInstanceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -219,6 +223,7 @@ def test_change_managed_instance_group_compartment(testing_service_client):
             response = client.change_managed_instance_group_compartment(
                 managed_instance_group_id=request.pop(util.camelize('managedInstanceGroupId')),
                 change_managed_instance_group_compartment_details=request.pop(util.camelize('ChangeManagedInstanceGroupCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -260,6 +265,7 @@ def test_change_scheduled_job_compartment(testing_service_client):
             response = client.change_scheduled_job_compartment(
                 scheduled_job_id=request.pop(util.camelize('scheduledJobId')),
                 change_scheduled_job_compartment_details=request.pop(util.camelize('ChangeScheduledJobCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -301,6 +307,7 @@ def test_change_software_source_compartment(testing_service_client):
             response = client.change_software_source_compartment(
                 software_source_id=request.pop(util.camelize('softwareSourceId')),
                 change_software_source_compartment_details=request.pop(util.camelize('ChangeSoftwareSourceCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -341,6 +348,7 @@ def test_create_managed_instance_group(testing_service_client):
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.create_managed_instance_group(
                 create_managed_instance_group_details=request.pop(util.camelize('CreateManagedInstanceGroupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -381,6 +389,7 @@ def test_create_scheduled_job(testing_service_client):
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.create_scheduled_job(
                 create_scheduled_job_details=request.pop(util.camelize('CreateScheduledJobDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -421,6 +430,7 @@ def test_create_software_source(testing_service_client):
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.create_software_source(
                 create_software_source_details=request.pop(util.camelize('CreateSoftwareSourceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -461,6 +471,7 @@ def test_delete_managed_instance_group(testing_service_client):
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.delete_managed_instance_group(
                 managed_instance_group_id=request.pop(util.camelize('managedInstanceGroupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -501,6 +512,7 @@ def test_delete_scheduled_job(testing_service_client):
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.delete_scheduled_job(
                 scheduled_job_id=request.pop(util.camelize('scheduledJobId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -541,6 +553,7 @@ def test_delete_software_source(testing_service_client):
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.delete_software_source(
                 software_source_id=request.pop(util.camelize('softwareSourceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -582,6 +595,7 @@ def test_detach_child_software_source_from_managed_instance(testing_service_clie
             response = client.detach_child_software_source_from_managed_instance(
                 managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                 detach_child_software_source_from_managed_instance_details=request.pop(util.camelize('DetachChildSoftwareSourceFromManagedInstanceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -623,6 +637,7 @@ def test_detach_managed_instance_from_managed_instance_group(testing_service_cli
             response = client.detach_managed_instance_from_managed_instance_group(
                 managed_instance_group_id=request.pop(util.camelize('managedInstanceGroupId')),
                 managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -664,6 +679,7 @@ def test_detach_parent_software_source_from_managed_instance(testing_service_cli
             response = client.detach_parent_software_source_from_managed_instance(
                 managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                 detach_parent_software_source_from_managed_instance_details=request.pop(util.camelize('DetachParentSoftwareSourceFromManagedInstanceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -678,6 +694,90 @@ def test_detach_parent_software_source_from_managed_instance(testing_service_cli
             result,
             service_error,
             'detach_parent_software_source_from_managed_instance',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_osms_us_grp@oracle.com" jiraProject="OSMS" opsJiraProject="OSMS"
+def test_disable_module_stream_on_managed_instance(testing_service_client):
+    if not testing_service_client.is_api_enabled('os_management', 'DisableModuleStreamOnManagedInstance'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'DisableModuleStreamOnManagedInstance')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='os_management', api_name='DisableModuleStreamOnManagedInstance')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.disable_module_stream_on_managed_instance(
+                managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                module_name=request.pop(util.camelize('moduleName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'os_management',
+            'DisableModuleStreamOnManagedInstance',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'disable_module_stream_on_managed_instance',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_osms_us_grp@oracle.com" jiraProject="OSMS" opsJiraProject="OSMS"
+def test_enable_module_stream_on_managed_instance(testing_service_client):
+    if not testing_service_client.is_api_enabled('os_management', 'EnableModuleStreamOnManagedInstance'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'EnableModuleStreamOnManagedInstance')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='os_management', api_name='EnableModuleStreamOnManagedInstance')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.enable_module_stream_on_managed_instance(
+                managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                module_name=request.pop(util.camelize('moduleName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'os_management',
+            'EnableModuleStreamOnManagedInstance',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'enable_module_stream_on_managed_instance',
             False,
             False
         )
@@ -704,6 +804,7 @@ def test_get_erratum(testing_service_client):
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_erratum(
                 erratum_id=request.pop(util.camelize('erratumId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -744,6 +845,7 @@ def test_get_managed_instance(testing_service_client):
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_managed_instance(
                 managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -784,6 +886,7 @@ def test_get_managed_instance_group(testing_service_client):
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_managed_instance_group(
                 managed_instance_group_id=request.pop(util.camelize('managedInstanceGroupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -798,6 +901,93 @@ def test_get_managed_instance_group(testing_service_client):
             result,
             service_error,
             'managedInstanceGroup',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_osms_us_grp@oracle.com" jiraProject="OSMS" opsJiraProject="OSMS"
+def test_get_module_stream(testing_service_client):
+    if not testing_service_client.is_api_enabled('os_management', 'GetModuleStream'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'GetModuleStream')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='os_management', api_name='GetModuleStream')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_module_stream(
+                software_source_id=request.pop(util.camelize('softwareSourceId')),
+                module_name=request.pop(util.camelize('moduleName')),
+                stream_name=request.pop(util.camelize('streamName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'os_management',
+            'GetModuleStream',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'moduleStream',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_osms_us_grp@oracle.com" jiraProject="OSMS" opsJiraProject="OSMS"
+def test_get_module_stream_profile(testing_service_client):
+    if not testing_service_client.is_api_enabled('os_management', 'GetModuleStreamProfile'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'GetModuleStreamProfile')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='os_management', api_name='GetModuleStreamProfile')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_module_stream_profile(
+                software_source_id=request.pop(util.camelize('softwareSourceId')),
+                module_name=request.pop(util.camelize('moduleName')),
+                stream_name=request.pop(util.camelize('streamName')),
+                profile_name=request.pop(util.camelize('profileName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'os_management',
+            'GetModuleStreamProfile',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'moduleStreamProfile',
             False,
             False
         )
@@ -824,6 +1014,7 @@ def test_get_scheduled_job(testing_service_client):
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_scheduled_job(
                 scheduled_job_id=request.pop(util.camelize('scheduledJobId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -865,6 +1056,7 @@ def test_get_software_package(testing_service_client):
             response = client.get_software_package(
                 software_source_id=request.pop(util.camelize('softwareSourceId')),
                 software_package_name=request.pop(util.camelize('softwarePackageName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -905,6 +1097,7 @@ def test_get_software_source(testing_service_client):
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_software_source(
                 software_source_id=request.pop(util.camelize('softwareSourceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -945,6 +1138,7 @@ def test_get_windows_update(testing_service_client):
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_windows_update(
                 windows_update=request.pop(util.camelize('windowsUpdate')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -985,6 +1179,7 @@ def test_get_work_request(testing_service_client):
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1025,6 +1220,7 @@ def test_install_all_package_updates_on_managed_instance(testing_service_client)
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.install_all_package_updates_on_managed_instance(
                 managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1065,6 +1261,7 @@ def test_install_all_updates_on_managed_instance_group(testing_service_client):
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.install_all_updates_on_managed_instance_group(
                 managed_instance_group_id=request.pop(util.camelize('managedInstanceGroupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1105,6 +1302,7 @@ def test_install_all_windows_updates_on_managed_instance(testing_service_client)
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.install_all_windows_updates_on_managed_instance(
                 managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1119,6 +1317,48 @@ def test_install_all_windows_updates_on_managed_instance(testing_service_client)
             result,
             service_error,
             'install_all_windows_updates_on_managed_instance',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_osms_us_grp@oracle.com" jiraProject="OSMS" opsJiraProject="OSMS"
+def test_install_module_stream_profile_on_managed_instance(testing_service_client):
+    if not testing_service_client.is_api_enabled('os_management', 'InstallModuleStreamProfileOnManagedInstance'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'InstallModuleStreamProfileOnManagedInstance')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='os_management', api_name='InstallModuleStreamProfileOnManagedInstance')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.install_module_stream_profile_on_managed_instance(
+                managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                module_name=request.pop(util.camelize('moduleName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'os_management',
+            'InstallModuleStreamProfileOnManagedInstance',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'install_module_stream_profile_on_managed_instance',
             False,
             False
         )
@@ -1146,6 +1386,7 @@ def test_install_package_on_managed_instance(testing_service_client):
             response = client.install_package_on_managed_instance(
                 managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                 software_package_name=request.pop(util.camelize('softwarePackageName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1187,6 +1428,7 @@ def test_install_package_update_on_managed_instance(testing_service_client):
             response = client.install_package_update_on_managed_instance(
                 managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                 software_package_name=request.pop(util.camelize('softwarePackageName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1228,6 +1470,7 @@ def test_install_windows_update_on_managed_instance(testing_service_client):
             response = client.install_windows_update_on_managed_instance(
                 managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                 windows_update_name=request.pop(util.camelize('windowsUpdateName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1269,6 +1512,7 @@ def test_list_available_packages_for_managed_instance(testing_service_client):
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_available_packages_for_managed_instance(
                 managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1278,6 +1522,7 @@ def test_list_available_packages_for_managed_instance(testing_service_client):
                 next_response = client.list_available_packages_for_managed_instance(
                     managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1288,6 +1533,7 @@ def test_list_available_packages_for_managed_instance(testing_service_client):
                     prev_response = client.list_available_packages_for_managed_instance(
                         managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1329,6 +1575,7 @@ def test_list_available_software_sources_for_managed_instance(testing_service_cl
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_available_software_sources_for_managed_instance(
                 managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1338,6 +1585,7 @@ def test_list_available_software_sources_for_managed_instance(testing_service_cl
                 next_response = client.list_available_software_sources_for_managed_instance(
                     managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1348,6 +1596,7 @@ def test_list_available_software_sources_for_managed_instance(testing_service_cl
                     prev_response = client.list_available_software_sources_for_managed_instance(
                         managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1389,6 +1638,7 @@ def test_list_available_updates_for_managed_instance(testing_service_client):
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_available_updates_for_managed_instance(
                 managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1398,6 +1648,7 @@ def test_list_available_updates_for_managed_instance(testing_service_client):
                 next_response = client.list_available_updates_for_managed_instance(
                     managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1408,6 +1659,7 @@ def test_list_available_updates_for_managed_instance(testing_service_client):
                     prev_response = client.list_available_updates_for_managed_instance(
                         managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1449,6 +1701,7 @@ def test_list_available_windows_updates_for_managed_instance(testing_service_cli
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_available_windows_updates_for_managed_instance(
                 managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1458,6 +1711,7 @@ def test_list_available_windows_updates_for_managed_instance(testing_service_cli
                 next_response = client.list_available_windows_updates_for_managed_instance(
                     managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1468,6 +1722,7 @@ def test_list_available_windows_updates_for_managed_instance(testing_service_cli
                     prev_response = client.list_available_windows_updates_for_managed_instance(
                         managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1508,6 +1763,7 @@ def test_list_errata(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_errata(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1516,6 +1772,7 @@ def test_list_errata(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_errata(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1525,6 +1782,7 @@ def test_list_errata(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_errata(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1566,6 +1824,7 @@ def test_list_managed_instance_errata(testing_service_client):
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_managed_instance_errata(
                 managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1575,6 +1834,7 @@ def test_list_managed_instance_errata(testing_service_client):
                 next_response = client.list_managed_instance_errata(
                     managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1585,6 +1845,7 @@ def test_list_managed_instance_errata(testing_service_client):
                     prev_response = client.list_managed_instance_errata(
                         managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1626,6 +1887,7 @@ def test_list_managed_instance_groups(testing_service_client):
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_managed_instance_groups(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1635,6 +1897,7 @@ def test_list_managed_instance_groups(testing_service_client):
                 next_response = client.list_managed_instance_groups(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1645,6 +1908,7 @@ def test_list_managed_instance_groups(testing_service_client):
                     prev_response = client.list_managed_instance_groups(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1686,6 +1950,7 @@ def test_list_managed_instances(testing_service_client):
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_managed_instances(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1695,6 +1960,7 @@ def test_list_managed_instances(testing_service_client):
                 next_response = client.list_managed_instances(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1705,6 +1971,7 @@ def test_list_managed_instances(testing_service_client):
                     prev_response = client.list_managed_instances(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1719,6 +1986,258 @@ def test_list_managed_instances(testing_service_client):
             result,
             service_error,
             'managedInstanceSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_osms_us_grp@oracle.com" jiraProject="OSMS" opsJiraProject="OSMS"
+def test_list_module_stream_profiles(testing_service_client):
+    if not testing_service_client.is_api_enabled('os_management', 'ListModuleStreamProfiles'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'ListModuleStreamProfiles')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='os_management', api_name='ListModuleStreamProfiles')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_module_stream_profiles(
+                software_source_id=request.pop(util.camelize('softwareSourceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_module_stream_profiles(
+                    software_source_id=request.pop(util.camelize('softwareSourceId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_module_stream_profiles(
+                        software_source_id=request.pop(util.camelize('softwareSourceId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'os_management',
+            'ListModuleStreamProfiles',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'moduleStreamProfileSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_osms_us_grp@oracle.com" jiraProject="OSMS" opsJiraProject="OSMS"
+def test_list_module_stream_profiles_on_managed_instance(testing_service_client):
+    if not testing_service_client.is_api_enabled('os_management', 'ListModuleStreamProfilesOnManagedInstance'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'ListModuleStreamProfilesOnManagedInstance')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='os_management', api_name='ListModuleStreamProfilesOnManagedInstance')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_module_stream_profiles_on_managed_instance(
+                managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_module_stream_profiles_on_managed_instance(
+                    managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_module_stream_profiles_on_managed_instance(
+                        managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'os_management',
+            'ListModuleStreamProfilesOnManagedInstance',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'moduleStreamProfileOnManagedInstanceSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_osms_us_grp@oracle.com" jiraProject="OSMS" opsJiraProject="OSMS"
+def test_list_module_streams(testing_service_client):
+    if not testing_service_client.is_api_enabled('os_management', 'ListModuleStreams'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'ListModuleStreams')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='os_management', api_name='ListModuleStreams')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_module_streams(
+                software_source_id=request.pop(util.camelize('softwareSourceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_module_streams(
+                    software_source_id=request.pop(util.camelize('softwareSourceId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_module_streams(
+                        software_source_id=request.pop(util.camelize('softwareSourceId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'os_management',
+            'ListModuleStreams',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'moduleStreamSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_osms_us_grp@oracle.com" jiraProject="OSMS" opsJiraProject="OSMS"
+def test_list_module_streams_on_managed_instance(testing_service_client):
+    if not testing_service_client.is_api_enabled('os_management', 'ListModuleStreamsOnManagedInstance'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'ListModuleStreamsOnManagedInstance')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='os_management', api_name='ListModuleStreamsOnManagedInstance')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_module_streams_on_managed_instance(
+                managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_module_streams_on_managed_instance(
+                    managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_module_streams_on_managed_instance(
+                        managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'os_management',
+            'ListModuleStreamsOnManagedInstance',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'moduleStreamOnManagedInstanceSummary',
             False,
             True
         )
@@ -1746,6 +2265,7 @@ def test_list_packages_installed_on_managed_instance(testing_service_client):
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_packages_installed_on_managed_instance(
                 managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1755,6 +2275,7 @@ def test_list_packages_installed_on_managed_instance(testing_service_client):
                 next_response = client.list_packages_installed_on_managed_instance(
                     managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1765,6 +2286,7 @@ def test_list_packages_installed_on_managed_instance(testing_service_client):
                     prev_response = client.list_packages_installed_on_managed_instance(
                         managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1806,6 +2328,7 @@ def test_list_scheduled_jobs(testing_service_client):
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_scheduled_jobs(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1815,6 +2338,7 @@ def test_list_scheduled_jobs(testing_service_client):
                 next_response = client.list_scheduled_jobs(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1825,6 +2349,7 @@ def test_list_scheduled_jobs(testing_service_client):
                     prev_response = client.list_scheduled_jobs(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1866,6 +2391,7 @@ def test_list_software_source_packages(testing_service_client):
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_software_source_packages(
                 software_source_id=request.pop(util.camelize('softwareSourceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1875,6 +2401,7 @@ def test_list_software_source_packages(testing_service_client):
                 next_response = client.list_software_source_packages(
                     software_source_id=request.pop(util.camelize('softwareSourceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1885,6 +2412,7 @@ def test_list_software_source_packages(testing_service_client):
                     prev_response = client.list_software_source_packages(
                         software_source_id=request.pop(util.camelize('softwareSourceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1926,6 +2454,7 @@ def test_list_software_sources(testing_service_client):
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_software_sources(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1935,6 +2464,7 @@ def test_list_software_sources(testing_service_client):
                 next_response = client.list_software_sources(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1945,6 +2475,7 @@ def test_list_software_sources(testing_service_client):
                     prev_response = client.list_software_sources(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1987,6 +2518,7 @@ def test_list_upcoming_scheduled_jobs(testing_service_client):
             response = client.list_upcoming_scheduled_jobs(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 time_end=request.pop(util.camelize('timeEnd')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1997,6 +2529,7 @@ def test_list_upcoming_scheduled_jobs(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     time_end=request.pop(util.camelize('timeEnd')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2008,6 +2541,7 @@ def test_list_upcoming_scheduled_jobs(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         time_end=request.pop(util.camelize('timeEnd')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2048,6 +2582,7 @@ def test_list_windows_updates(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_windows_updates(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2056,6 +2591,7 @@ def test_list_windows_updates(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_windows_updates(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2065,6 +2601,7 @@ def test_list_windows_updates(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_windows_updates(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2106,6 +2643,7 @@ def test_list_windows_updates_installed_on_managed_instance(testing_service_clie
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_windows_updates_installed_on_managed_instance(
                 managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2115,6 +2653,7 @@ def test_list_windows_updates_installed_on_managed_instance(testing_service_clie
                 next_response = client.list_windows_updates_installed_on_managed_instance(
                     managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2125,6 +2664,7 @@ def test_list_windows_updates_installed_on_managed_instance(testing_service_clie
                     prev_response = client.list_windows_updates_installed_on_managed_instance(
                         managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2166,6 +2706,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2175,6 +2716,7 @@ def test_list_work_request_errors(testing_service_client):
                 next_response = client.list_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2185,6 +2727,7 @@ def test_list_work_request_errors(testing_service_client):
                     prev_response = client.list_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2226,6 +2769,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2235,6 +2779,7 @@ def test_list_work_request_logs(testing_service_client):
                 next_response = client.list_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2245,6 +2790,7 @@ def test_list_work_request_logs(testing_service_client):
                     prev_response = client.list_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2286,6 +2832,7 @@ def test_list_work_requests(testing_service_client):
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2295,6 +2842,7 @@ def test_list_work_requests(testing_service_client):
                 next_response = client.list_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2305,6 +2853,7 @@ def test_list_work_requests(testing_service_client):
                     prev_response = client.list_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2321,6 +2870,90 @@ def test_list_work_requests(testing_service_client):
             'workRequestSummary',
             False,
             True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_osms_us_grp@oracle.com" jiraProject="OSMS" opsJiraProject="OSMS"
+def test_manage_module_streams_on_managed_instance(testing_service_client):
+    if not testing_service_client.is_api_enabled('os_management', 'ManageModuleStreamsOnManagedInstance'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'ManageModuleStreamsOnManagedInstance')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='os_management', api_name='ManageModuleStreamsOnManagedInstance')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.manage_module_streams_on_managed_instance(
+                managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                manage_module_streams_on_managed_instance_details=request.pop(util.camelize('ManageModuleStreamsOnManagedInstanceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'os_management',
+            'ManageModuleStreamsOnManagedInstance',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'manage_module_streams_on_managed_instance',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_osms_us_grp@oracle.com" jiraProject="OSMS" opsJiraProject="OSMS"
+def test_remove_module_stream_profile_from_managed_instance(testing_service_client):
+    if not testing_service_client.is_api_enabled('os_management', 'RemoveModuleStreamProfileFromManagedInstance'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'RemoveModuleStreamProfileFromManagedInstance')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='os_management', api_name='RemoveModuleStreamProfileFromManagedInstance')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.remove_module_stream_profile_from_managed_instance(
+                managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                module_name=request.pop(util.camelize('moduleName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'os_management',
+            'RemoveModuleStreamProfileFromManagedInstance',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'remove_module_stream_profile_from_managed_instance',
+            False,
+            False
         )
 
 
@@ -2346,6 +2979,7 @@ def test_remove_package_from_managed_instance(testing_service_client):
             response = client.remove_package_from_managed_instance(
                 managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                 software_package_name=request.pop(util.camelize('softwarePackageName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2387,6 +3021,7 @@ def test_remove_packages_from_software_source(testing_service_client):
             response = client.remove_packages_from_software_source(
                 software_source_id=request.pop(util.camelize('softwareSourceId')),
                 remove_packages_from_software_source_details=request.pop(util.camelize('RemovePackagesFromSoftwareSourceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2427,6 +3062,7 @@ def test_run_scheduled_job_now(testing_service_client):
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.run_scheduled_job_now(
                 scheduled_job_id=request.pop(util.camelize('scheduledJobId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2467,6 +3103,7 @@ def test_search_software_packages(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.search_software_packages(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2475,6 +3112,7 @@ def test_search_software_packages(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.search_software_packages(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2484,6 +3122,7 @@ def test_search_software_packages(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.search_software_packages(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2524,6 +3163,7 @@ def test_skip_next_scheduled_job_execution(testing_service_client):
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.skip_next_scheduled_job_execution(
                 scheduled_job_id=request.pop(util.camelize('scheduledJobId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2538,6 +3178,48 @@ def test_skip_next_scheduled_job_execution(testing_service_client):
             result,
             service_error,
             'skip_next_scheduled_job_execution',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_osms_us_grp@oracle.com" jiraProject="OSMS" opsJiraProject="OSMS"
+def test_switch_module_stream_on_managed_instance(testing_service_client):
+    if not testing_service_client.is_api_enabled('os_management', 'SwitchModuleStreamOnManagedInstance'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'SwitchModuleStreamOnManagedInstance')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='os_management', api_name='SwitchModuleStreamOnManagedInstance')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.switch_module_stream_on_managed_instance(
+                managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                module_name=request.pop(util.camelize('moduleName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'os_management',
+            'SwitchModuleStreamOnManagedInstance',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'switch_module_stream_on_managed_instance',
             False,
             False
         )
@@ -2565,6 +3247,7 @@ def test_update_managed_instance(testing_service_client):
             response = client.update_managed_instance(
                 managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                 update_managed_instance_details=request.pop(util.camelize('UpdateManagedInstanceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2606,6 +3289,7 @@ def test_update_managed_instance_group(testing_service_client):
             response = client.update_managed_instance_group(
                 managed_instance_group_id=request.pop(util.camelize('managedInstanceGroupId')),
                 update_managed_instance_group_details=request.pop(util.camelize('UpdateManagedInstanceGroupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2647,6 +3331,7 @@ def test_update_scheduled_job(testing_service_client):
             response = client.update_scheduled_job(
                 scheduled_job_id=request.pop(util.camelize('scheduledJobId')),
                 update_scheduled_job_details=request.pop(util.camelize('UpdateScheduledJobDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2688,6 +3373,7 @@ def test_update_software_source(testing_service_client):
             response = client.update_software_source(
                 software_source_id=request.pop(util.camelize('softwareSourceId')),
                 update_software_source_details=request.pop(util.camelize('UpdateSoftwareSourceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

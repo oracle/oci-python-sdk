@@ -55,6 +55,7 @@ def test_change_publication_compartment(testing_service_client):
             response = client.change_publication_compartment(
                 publication_id=request.pop(util.camelize('publicationId')),
                 change_publication_compartment_details=request.pop(util.camelize('ChangePublicationCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_create_accepted_agreement(testing_service_client):
             client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
             response = client.create_accepted_agreement(
                 create_accepted_agreement_details=request.pop(util.camelize('CreateAcceptedAgreementDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -135,6 +137,7 @@ def test_create_publication(testing_service_client):
             client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
             response = client.create_publication(
                 create_publication_details=request.pop(util.camelize('CreatePublicationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -175,6 +178,7 @@ def test_delete_accepted_agreement(testing_service_client):
             client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
             response = client.delete_accepted_agreement(
                 accepted_agreement_id=request.pop(util.camelize('acceptedAgreementId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -215,6 +219,7 @@ def test_delete_publication(testing_service_client):
             client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
             response = client.delete_publication(
                 publication_id=request.pop(util.camelize('publicationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -255,6 +260,7 @@ def test_get_accepted_agreement(testing_service_client):
             client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
             response = client.get_accepted_agreement(
                 accepted_agreement_id=request.pop(util.camelize('acceptedAgreementId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -297,6 +303,7 @@ def test_get_agreement(testing_service_client):
                 listing_id=request.pop(util.camelize('listingId')),
                 package_version=request.pop(util.camelize('packageVersion')),
                 agreement_id=request.pop(util.camelize('agreementId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -337,6 +344,7 @@ def test_get_listing(testing_service_client):
             client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
             response = client.get_listing(
                 listing_id=request.pop(util.camelize('listingId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -378,6 +386,7 @@ def test_get_package(testing_service_client):
             response = client.get_package(
                 listing_id=request.pop(util.camelize('listingId')),
                 package_version=request.pop(util.camelize('packageVersion')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -418,6 +427,7 @@ def test_get_publication(testing_service_client):
             client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
             response = client.get_publication(
                 publication_id=request.pop(util.camelize('publicationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -459,6 +469,7 @@ def test_get_publication_package(testing_service_client):
             response = client.get_publication_package(
                 publication_id=request.pop(util.camelize('publicationId')),
                 package_version=request.pop(util.camelize('packageVersion')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -500,6 +511,7 @@ def test_list_accepted_agreements(testing_service_client):
             client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
             response = client.list_accepted_agreements(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -509,6 +521,7 @@ def test_list_accepted_agreements(testing_service_client):
                 next_response = client.list_accepted_agreements(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -519,6 +532,7 @@ def test_list_accepted_agreements(testing_service_client):
                     prev_response = client.list_accepted_agreements(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -561,6 +575,7 @@ def test_list_agreements(testing_service_client):
             response = client.list_agreements(
                 listing_id=request.pop(util.camelize('listingId')),
                 package_version=request.pop(util.camelize('packageVersion')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -571,6 +586,7 @@ def test_list_agreements(testing_service_client):
                     listing_id=request.pop(util.camelize('listingId')),
                     package_version=request.pop(util.camelize('packageVersion')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -582,6 +598,7 @@ def test_list_agreements(testing_service_client):
                         listing_id=request.pop(util.camelize('listingId')),
                         package_version=request.pop(util.camelize('packageVersion')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -622,6 +639,7 @@ def test_list_categories(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
             response = client.list_categories(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -630,6 +648,7 @@ def test_list_categories(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_categories(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -639,6 +658,7 @@ def test_list_categories(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_categories(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -679,6 +699,7 @@ def test_list_listings(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
             response = client.list_listings(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -687,6 +708,7 @@ def test_list_listings(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_listings(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -696,6 +718,7 @@ def test_list_listings(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_listings(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -737,6 +760,7 @@ def test_list_packages(testing_service_client):
             client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
             response = client.list_packages(
                 listing_id=request.pop(util.camelize('listingId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -746,6 +770,7 @@ def test_list_packages(testing_service_client):
                 next_response = client.list_packages(
                     listing_id=request.pop(util.camelize('listingId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -756,6 +781,7 @@ def test_list_packages(testing_service_client):
                     prev_response = client.list_packages(
                         listing_id=request.pop(util.camelize('listingId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -797,6 +823,7 @@ def test_list_publication_packages(testing_service_client):
             client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
             response = client.list_publication_packages(
                 publication_id=request.pop(util.camelize('publicationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -806,6 +833,7 @@ def test_list_publication_packages(testing_service_client):
                 next_response = client.list_publication_packages(
                     publication_id=request.pop(util.camelize('publicationId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -816,6 +844,7 @@ def test_list_publication_packages(testing_service_client):
                     prev_response = client.list_publication_packages(
                         publication_id=request.pop(util.camelize('publicationId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -858,6 +887,7 @@ def test_list_publications(testing_service_client):
             response = client.list_publications(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 listing_type=request.pop(util.camelize('listingType')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -868,6 +898,7 @@ def test_list_publications(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     listing_type=request.pop(util.camelize('listingType')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -879,6 +910,7 @@ def test_list_publications(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         listing_type=request.pop(util.camelize('listingType')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -919,6 +951,7 @@ def test_list_publishers(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
             response = client.list_publishers(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -927,6 +960,7 @@ def test_list_publishers(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_publishers(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -936,6 +970,7 @@ def test_list_publishers(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_publishers(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -977,6 +1012,7 @@ def test_list_report_types(testing_service_client):
             client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
             response = client.list_report_types(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -986,6 +1022,7 @@ def test_list_report_types(testing_service_client):
                 next_response = client.list_report_types(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -996,6 +1033,7 @@ def test_list_report_types(testing_service_client):
                     prev_response = client.list_report_types(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1039,6 +1077,7 @@ def test_list_reports(testing_service_client):
                 report_type=request.pop(util.camelize('reportType')),
                 date=request.pop(util.camelize('date')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1050,6 +1089,7 @@ def test_list_reports(testing_service_client):
                     date=request.pop(util.camelize('date')),
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1062,6 +1102,7 @@ def test_list_reports(testing_service_client):
                         date=request.pop(util.camelize('date')),
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1102,6 +1143,7 @@ def test_list_taxes(testing_service_client):
             client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
             response = client.list_taxes(
                 listing_id=request.pop(util.camelize('listingId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1143,6 +1185,7 @@ def test_search_listings(testing_service_client):
             client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
             response = client.search_listings(
                 search_listings_details=request.pop(util.camelize('SearchListingsDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1152,6 +1195,7 @@ def test_search_listings(testing_service_client):
                 next_response = client.search_listings(
                     search_listings_details=request.pop(util.camelize('SearchListingsDetails')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1162,6 +1206,7 @@ def test_search_listings(testing_service_client):
                     prev_response = client.search_listings(
                         search_listings_details=request.pop(util.camelize('SearchListingsDetails')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1203,6 +1248,7 @@ def test_update_accepted_agreement(testing_service_client):
             response = client.update_accepted_agreement(
                 accepted_agreement_id=request.pop(util.camelize('acceptedAgreementId')),
                 update_accepted_agreement_details=request.pop(util.camelize('UpdateAcceptedAgreementDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1244,6 +1290,7 @@ def test_update_publication(testing_service_client):
             response = client.update_publication(
                 publication_id=request.pop(util.camelize('publicationId')),
                 update_publication_details=request.pop(util.camelize('UpdatePublicationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

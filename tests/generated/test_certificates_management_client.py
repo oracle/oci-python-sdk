@@ -54,6 +54,7 @@ def test_cancel_certificate_authority_deletion(testing_service_client):
             client = oci.certificates_management.CertificatesManagementClient(config, service_endpoint=service_endpoint)
             response = client.cancel_certificate_authority_deletion(
                 certificate_authority_id=request.pop(util.camelize('certificateAuthorityId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_cancel_certificate_authority_version_deletion(testing_service_client):
             response = client.cancel_certificate_authority_version_deletion(
                 certificate_authority_id=request.pop(util.camelize('certificateAuthorityId')),
                 certificate_authority_version_number=request.pop(util.camelize('certificateAuthorityVersionNumber')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -135,6 +137,7 @@ def test_cancel_certificate_deletion(testing_service_client):
             client = oci.certificates_management.CertificatesManagementClient(config, service_endpoint=service_endpoint)
             response = client.cancel_certificate_deletion(
                 certificate_id=request.pop(util.camelize('certificateId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -176,6 +179,7 @@ def test_cancel_certificate_version_deletion(testing_service_client):
             response = client.cancel_certificate_version_deletion(
                 certificate_id=request.pop(util.camelize('certificateId')),
                 certificate_version_number=request.pop(util.camelize('certificateVersionNumber')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -217,6 +221,7 @@ def test_change_ca_bundle_compartment(testing_service_client):
             response = client.change_ca_bundle_compartment(
                 ca_bundle_id=request.pop(util.camelize('caBundleId')),
                 change_ca_bundle_compartment_details=request.pop(util.camelize('ChangeCaBundleCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -258,6 +263,7 @@ def test_change_certificate_authority_compartment(testing_service_client):
             response = client.change_certificate_authority_compartment(
                 certificate_authority_id=request.pop(util.camelize('certificateAuthorityId')),
                 change_certificate_authority_compartment_details=request.pop(util.camelize('ChangeCertificateAuthorityCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -299,6 +305,7 @@ def test_change_certificate_compartment(testing_service_client):
             response = client.change_certificate_compartment(
                 certificate_id=request.pop(util.camelize('certificateId')),
                 change_certificate_compartment_details=request.pop(util.camelize('ChangeCertificateCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -339,6 +346,7 @@ def test_create_ca_bundle(testing_service_client):
             client = oci.certificates_management.CertificatesManagementClient(config, service_endpoint=service_endpoint)
             response = client.create_ca_bundle(
                 create_ca_bundle_details=request.pop(util.camelize('CreateCaBundleDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -379,6 +387,7 @@ def test_create_certificate(testing_service_client):
             client = oci.certificates_management.CertificatesManagementClient(config, service_endpoint=service_endpoint)
             response = client.create_certificate(
                 create_certificate_details=request.pop(util.camelize('CreateCertificateDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -419,6 +428,7 @@ def test_create_certificate_authority(testing_service_client):
             client = oci.certificates_management.CertificatesManagementClient(config, service_endpoint=service_endpoint)
             response = client.create_certificate_authority(
                 create_certificate_authority_details=request.pop(util.camelize('CreateCertificateAuthorityDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -459,6 +469,7 @@ def test_delete_ca_bundle(testing_service_client):
             client = oci.certificates_management.CertificatesManagementClient(config, service_endpoint=service_endpoint)
             response = client.delete_ca_bundle(
                 ca_bundle_id=request.pop(util.camelize('caBundleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -499,6 +510,7 @@ def test_get_association(testing_service_client):
             client = oci.certificates_management.CertificatesManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_association(
                 association_id=request.pop(util.camelize('associationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -539,6 +551,7 @@ def test_get_ca_bundle(testing_service_client):
             client = oci.certificates_management.CertificatesManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_ca_bundle(
                 ca_bundle_id=request.pop(util.camelize('caBundleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -579,6 +592,7 @@ def test_get_certificate(testing_service_client):
             client = oci.certificates_management.CertificatesManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_certificate(
                 certificate_id=request.pop(util.camelize('certificateId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -619,6 +633,7 @@ def test_get_certificate_authority(testing_service_client):
             client = oci.certificates_management.CertificatesManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_certificate_authority(
                 certificate_authority_id=request.pop(util.camelize('certificateAuthorityId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -660,6 +675,7 @@ def test_get_certificate_authority_version(testing_service_client):
             response = client.get_certificate_authority_version(
                 certificate_authority_id=request.pop(util.camelize('certificateAuthorityId')),
                 certificate_authority_version_number=request.pop(util.camelize('certificateAuthorityVersionNumber')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -701,6 +717,7 @@ def test_get_certificate_version(testing_service_client):
             response = client.get_certificate_version(
                 certificate_id=request.pop(util.camelize('certificateId')),
                 certificate_version_number=request.pop(util.camelize('certificateVersionNumber')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -741,6 +758,7 @@ def test_list_associations(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.certificates_management.CertificatesManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_associations(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -749,6 +767,7 @@ def test_list_associations(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_associations(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -758,6 +777,7 @@ def test_list_associations(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_associations(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -798,6 +818,7 @@ def test_list_ca_bundles(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.certificates_management.CertificatesManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_ca_bundles(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -806,6 +827,7 @@ def test_list_ca_bundles(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_ca_bundles(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -815,6 +837,7 @@ def test_list_ca_bundles(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_ca_bundles(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -855,6 +878,7 @@ def test_list_certificate_authorities(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.certificates_management.CertificatesManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_certificate_authorities(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -863,6 +887,7 @@ def test_list_certificate_authorities(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_certificate_authorities(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -872,6 +897,7 @@ def test_list_certificate_authorities(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_certificate_authorities(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -913,6 +939,7 @@ def test_list_certificate_authority_versions(testing_service_client):
             client = oci.certificates_management.CertificatesManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_certificate_authority_versions(
                 certificate_authority_id=request.pop(util.camelize('certificateAuthorityId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -922,6 +949,7 @@ def test_list_certificate_authority_versions(testing_service_client):
                 next_response = client.list_certificate_authority_versions(
                     certificate_authority_id=request.pop(util.camelize('certificateAuthorityId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -932,6 +960,7 @@ def test_list_certificate_authority_versions(testing_service_client):
                     prev_response = client.list_certificate_authority_versions(
                         certificate_authority_id=request.pop(util.camelize('certificateAuthorityId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -973,6 +1002,7 @@ def test_list_certificate_versions(testing_service_client):
             client = oci.certificates_management.CertificatesManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_certificate_versions(
                 certificate_id=request.pop(util.camelize('certificateId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -982,6 +1012,7 @@ def test_list_certificate_versions(testing_service_client):
                 next_response = client.list_certificate_versions(
                     certificate_id=request.pop(util.camelize('certificateId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -992,6 +1023,7 @@ def test_list_certificate_versions(testing_service_client):
                     prev_response = client.list_certificate_versions(
                         certificate_id=request.pop(util.camelize('certificateId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1032,6 +1064,7 @@ def test_list_certificates(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.certificates_management.CertificatesManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_certificates(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1040,6 +1073,7 @@ def test_list_certificates(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_certificates(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1049,6 +1083,7 @@ def test_list_certificates(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_certificates(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1091,6 +1126,7 @@ def test_revoke_certificate_authority_version(testing_service_client):
                 certificate_authority_id=request.pop(util.camelize('certificateAuthorityId')),
                 certificate_authority_version_number=request.pop(util.camelize('certificateAuthorityVersionNumber')),
                 revoke_certificate_authority_version_details=request.pop(util.camelize('RevokeCertificateAuthorityVersionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1133,6 +1169,7 @@ def test_revoke_certificate_version(testing_service_client):
                 certificate_id=request.pop(util.camelize('certificateId')),
                 certificate_version_number=request.pop(util.camelize('certificateVersionNumber')),
                 revoke_certificate_version_details=request.pop(util.camelize('RevokeCertificateVersionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1174,6 +1211,7 @@ def test_schedule_certificate_authority_deletion(testing_service_client):
             response = client.schedule_certificate_authority_deletion(
                 certificate_authority_id=request.pop(util.camelize('certificateAuthorityId')),
                 schedule_certificate_authority_deletion_details=request.pop(util.camelize('ScheduleCertificateAuthorityDeletionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1216,6 +1254,7 @@ def test_schedule_certificate_authority_version_deletion(testing_service_client)
                 certificate_authority_id=request.pop(util.camelize('certificateAuthorityId')),
                 certificate_authority_version_number=request.pop(util.camelize('certificateAuthorityVersionNumber')),
                 schedule_certificate_authority_version_deletion_details=request.pop(util.camelize('ScheduleCertificateAuthorityVersionDeletionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1257,6 +1296,7 @@ def test_schedule_certificate_deletion(testing_service_client):
             response = client.schedule_certificate_deletion(
                 certificate_id=request.pop(util.camelize('certificateId')),
                 schedule_certificate_deletion_details=request.pop(util.camelize('ScheduleCertificateDeletionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1299,6 +1339,7 @@ def test_schedule_certificate_version_deletion(testing_service_client):
                 certificate_id=request.pop(util.camelize('certificateId')),
                 certificate_version_number=request.pop(util.camelize('certificateVersionNumber')),
                 schedule_certificate_version_deletion_details=request.pop(util.camelize('ScheduleCertificateVersionDeletionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1340,6 +1381,7 @@ def test_update_ca_bundle(testing_service_client):
             response = client.update_ca_bundle(
                 ca_bundle_id=request.pop(util.camelize('caBundleId')),
                 update_ca_bundle_details=request.pop(util.camelize('UpdateCaBundleDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1381,6 +1423,7 @@ def test_update_certificate(testing_service_client):
             response = client.update_certificate(
                 certificate_id=request.pop(util.camelize('certificateId')),
                 update_certificate_details=request.pop(util.camelize('UpdateCertificateDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1422,6 +1465,7 @@ def test_update_certificate_authority(testing_service_client):
             response = client.update_certificate_authority(
                 certificate_authority_id=request.pop(util.camelize('certificateAuthorityId')),
                 update_certificate_authority_details=request.pop(util.camelize('UpdateCertificateAuthorityDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

@@ -55,6 +55,7 @@ def test_create_incident(testing_service_client):
             response = client.create_incident(
                 create_incident_details=request.pop(util.camelize('CreateIncidentDetails')),
                 ocid=request.pop(util.camelize('ocid')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -97,6 +98,7 @@ def test_get_incident(testing_service_client):
                 incident_key=request.pop(util.camelize('incidentKey')),
                 csi=request.pop(util.camelize('csi')),
                 ocid=request.pop(util.camelize('ocid')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -138,6 +140,7 @@ def test_get_status(testing_service_client):
             response = client.get_status(
                 source=request.pop(util.camelize('source')),
                 ocid=request.pop(util.camelize('ocid')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -182,6 +185,7 @@ def test_list_incident_resource_types(testing_service_client):
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 csi=request.pop(util.camelize('csi')),
                 ocid=request.pop(util.camelize('ocid')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -194,6 +198,7 @@ def test_list_incident_resource_types(testing_service_client):
                     csi=request.pop(util.camelize('csi')),
                     ocid=request.pop(util.camelize('ocid')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -207,6 +212,7 @@ def test_list_incident_resource_types(testing_service_client):
                         csi=request.pop(util.camelize('csi')),
                         ocid=request.pop(util.camelize('ocid')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -250,6 +256,7 @@ def test_list_incidents(testing_service_client):
                 csi=request.pop(util.camelize('csi')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 ocid=request.pop(util.camelize('ocid')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -261,6 +268,7 @@ def test_list_incidents(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     ocid=request.pop(util.camelize('ocid')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -273,6 +281,7 @@ def test_list_incidents(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         ocid=request.pop(util.camelize('ocid')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -316,6 +325,7 @@ def test_update_incident(testing_service_client):
                 csi=request.pop(util.camelize('csi')),
                 update_incident_details=request.pop(util.camelize('UpdateIncidentDetails')),
                 ocid=request.pop(util.camelize('ocid')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -357,6 +367,7 @@ def test_validate_user(testing_service_client):
             response = client.validate_user(
                 csi=request.pop(util.camelize('csi')),
                 ocid=request.pop(util.camelize('ocid')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

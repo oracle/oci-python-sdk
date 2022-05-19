@@ -54,6 +54,7 @@ def test_activate_service_connector(testing_service_client):
             client = oci.sch.ServiceConnectorClient(config, service_endpoint=service_endpoint)
             response = client.activate_service_connector(
                 service_connector_id=request.pop(util.camelize('serviceConnectorId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_change_service_connector_compartment(testing_service_client):
             response = client.change_service_connector_compartment(
                 service_connector_id=request.pop(util.camelize('serviceConnectorId')),
                 change_service_connector_compartment_details=request.pop(util.camelize('ChangeServiceConnectorCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -135,6 +137,7 @@ def test_create_service_connector(testing_service_client):
             client = oci.sch.ServiceConnectorClient(config, service_endpoint=service_endpoint)
             response = client.create_service_connector(
                 create_service_connector_details=request.pop(util.camelize('CreateServiceConnectorDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -175,6 +178,7 @@ def test_deactivate_service_connector(testing_service_client):
             client = oci.sch.ServiceConnectorClient(config, service_endpoint=service_endpoint)
             response = client.deactivate_service_connector(
                 service_connector_id=request.pop(util.camelize('serviceConnectorId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -215,6 +219,7 @@ def test_delete_service_connector(testing_service_client):
             client = oci.sch.ServiceConnectorClient(config, service_endpoint=service_endpoint)
             response = client.delete_service_connector(
                 service_connector_id=request.pop(util.camelize('serviceConnectorId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -255,6 +260,7 @@ def test_get_service_connector(testing_service_client):
             client = oci.sch.ServiceConnectorClient(config, service_endpoint=service_endpoint)
             response = client.get_service_connector(
                 service_connector_id=request.pop(util.camelize('serviceConnectorId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -295,6 +301,7 @@ def test_get_work_request(testing_service_client):
             client = oci.sch.ServiceConnectorClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -336,6 +343,7 @@ def test_list_service_connectors(testing_service_client):
             client = oci.sch.ServiceConnectorClient(config, service_endpoint=service_endpoint)
             response = client.list_service_connectors(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -345,6 +353,7 @@ def test_list_service_connectors(testing_service_client):
                 next_response = client.list_service_connectors(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -355,6 +364,7 @@ def test_list_service_connectors(testing_service_client):
                     prev_response = client.list_service_connectors(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -396,6 +406,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.sch.ServiceConnectorClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -405,6 +416,7 @@ def test_list_work_request_errors(testing_service_client):
                 next_response = client.list_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -415,6 +427,7 @@ def test_list_work_request_errors(testing_service_client):
                     prev_response = client.list_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -456,6 +469,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.sch.ServiceConnectorClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -465,6 +479,7 @@ def test_list_work_request_logs(testing_service_client):
                 next_response = client.list_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -475,6 +490,7 @@ def test_list_work_request_logs(testing_service_client):
                     prev_response = client.list_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -516,6 +532,7 @@ def test_list_work_requests(testing_service_client):
             client = oci.sch.ServiceConnectorClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -525,6 +542,7 @@ def test_list_work_requests(testing_service_client):
                 next_response = client.list_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -535,6 +553,7 @@ def test_list_work_requests(testing_service_client):
                     prev_response = client.list_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -576,6 +595,7 @@ def test_update_service_connector(testing_service_client):
             response = client.update_service_connector(
                 service_connector_id=request.pop(util.camelize('serviceConnectorId')),
                 update_service_connector_details=request.pop(util.camelize('UpdateServiceConnectorDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

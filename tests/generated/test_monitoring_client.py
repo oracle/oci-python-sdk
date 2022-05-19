@@ -55,6 +55,7 @@ def test_change_alarm_compartment(testing_service_client):
             response = client.change_alarm_compartment(
                 alarm_id=request.pop(util.camelize('alarmId')),
                 change_alarm_compartment_details=request.pop(util.camelize('ChangeAlarmCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_create_alarm(testing_service_client):
             client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.create_alarm(
                 create_alarm_details=request.pop(util.camelize('CreateAlarmDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -135,6 +137,7 @@ def test_delete_alarm(testing_service_client):
             client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.delete_alarm(
                 alarm_id=request.pop(util.camelize('alarmId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -175,6 +178,7 @@ def test_get_alarm(testing_service_client):
             client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.get_alarm(
                 alarm_id=request.pop(util.camelize('alarmId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -216,6 +220,7 @@ def test_get_alarm_history(testing_service_client):
             client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.get_alarm_history(
                 alarm_id=request.pop(util.camelize('alarmId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -225,6 +230,7 @@ def test_get_alarm_history(testing_service_client):
                 next_response = client.get_alarm_history(
                     alarm_id=request.pop(util.camelize('alarmId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -235,6 +241,7 @@ def test_get_alarm_history(testing_service_client):
                     prev_response = client.get_alarm_history(
                         alarm_id=request.pop(util.camelize('alarmId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -276,6 +283,7 @@ def test_list_alarms(testing_service_client):
             client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.list_alarms(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -285,6 +293,7 @@ def test_list_alarms(testing_service_client):
                 next_response = client.list_alarms(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -295,6 +304,7 @@ def test_list_alarms(testing_service_client):
                     prev_response = client.list_alarms(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -336,6 +346,7 @@ def test_list_alarms_status(testing_service_client):
             client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.list_alarms_status(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -345,6 +356,7 @@ def test_list_alarms_status(testing_service_client):
                 next_response = client.list_alarms_status(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -355,6 +367,7 @@ def test_list_alarms_status(testing_service_client):
                     prev_response = client.list_alarms_status(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -397,6 +410,7 @@ def test_list_metrics(testing_service_client):
             response = client.list_metrics(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 list_metrics_details=request.pop(util.camelize('ListMetricsDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -407,6 +421,7 @@ def test_list_metrics(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     list_metrics_details=request.pop(util.camelize('ListMetricsDetails')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -418,6 +433,7 @@ def test_list_metrics(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         list_metrics_details=request.pop(util.camelize('ListMetricsDetails')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -458,6 +474,7 @@ def test_post_metric_data(testing_service_client):
             client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.post_metric_data(
                 post_metric_data_details=request.pop(util.camelize('PostMetricDataDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -498,6 +515,7 @@ def test_remove_alarm_suppression(testing_service_client):
             client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.remove_alarm_suppression(
                 alarm_id=request.pop(util.camelize('alarmId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -539,6 +557,7 @@ def test_summarize_metrics_data(testing_service_client):
             response = client.summarize_metrics_data(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 summarize_metrics_data_details=request.pop(util.camelize('SummarizeMetricsDataDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -580,6 +599,7 @@ def test_update_alarm(testing_service_client):
             response = client.update_alarm(
                 alarm_id=request.pop(util.camelize('alarmId')),
                 update_alarm_details=request.pop(util.camelize('UpdateAlarmDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

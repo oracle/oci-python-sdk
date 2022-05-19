@@ -56,6 +56,7 @@ def test_delete_event_content(testing_service_client):
                 managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                 event_id=request.pop(util.camelize('eventId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -98,6 +99,7 @@ def test_get_event(testing_service_client):
                 managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                 event_id=request.pop(util.camelize('eventId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -140,6 +142,7 @@ def test_get_event_content(testing_service_client):
                 managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                 event_id=request.pop(util.camelize('eventId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -181,6 +184,7 @@ def test_get_event_report(testing_service_client):
             response = client.get_event_report(
                 managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -223,6 +227,7 @@ def test_list_events(testing_service_client):
             response = client.list_events(
                 managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -233,6 +238,7 @@ def test_list_events(testing_service_client):
                     managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -244,6 +250,7 @@ def test_list_events(testing_service_client):
                         managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -286,6 +293,7 @@ def test_list_related_events(testing_service_client):
             response = client.list_related_events(
                 event_fingerprint=request.pop(util.camelize('eventFingerprint')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -296,6 +304,7 @@ def test_list_related_events(testing_service_client):
                     event_fingerprint=request.pop(util.camelize('eventFingerprint')),
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -307,6 +316,7 @@ def test_list_related_events(testing_service_client):
                         event_fingerprint=request.pop(util.camelize('eventFingerprint')),
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -350,6 +360,7 @@ def test_update_event(testing_service_client):
                 event_id=request.pop(util.camelize('eventId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 update_event_details=request.pop(util.camelize('UpdateEventDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -392,6 +403,7 @@ def test_upload_event_content(testing_service_client):
                 managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                 event_id=request.pop(util.camelize('eventId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

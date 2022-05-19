@@ -54,6 +54,7 @@ def test_create_configuration(testing_service_client):
             client = oci.mysql.MysqlaasClient(config, service_endpoint=service_endpoint)
             response = client.create_configuration(
                 create_configuration_details=request.pop(util.camelize('CreateConfigurationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -94,6 +95,7 @@ def test_delete_configuration(testing_service_client):
             client = oci.mysql.MysqlaasClient(config, service_endpoint=service_endpoint)
             response = client.delete_configuration(
                 configuration_id=request.pop(util.camelize('configurationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -134,6 +136,7 @@ def test_get_configuration(testing_service_client):
             client = oci.mysql.MysqlaasClient(config, service_endpoint=service_endpoint)
             response = client.get_configuration(
                 configuration_id=request.pop(util.camelize('configurationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -175,6 +178,7 @@ def test_list_configurations(testing_service_client):
             client = oci.mysql.MysqlaasClient(config, service_endpoint=service_endpoint)
             response = client.list_configurations(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -184,6 +188,7 @@ def test_list_configurations(testing_service_client):
                 next_response = client.list_configurations(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -194,6 +199,7 @@ def test_list_configurations(testing_service_client):
                     prev_response = client.list_configurations(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -234,6 +240,7 @@ def test_list_shapes(testing_service_client):
             client = oci.mysql.MysqlaasClient(config, service_endpoint=service_endpoint)
             response = client.list_shapes(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -274,6 +281,7 @@ def test_list_versions(testing_service_client):
             client = oci.mysql.MysqlaasClient(config, service_endpoint=service_endpoint)
             response = client.list_versions(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -315,6 +323,7 @@ def test_update_configuration(testing_service_client):
             response = client.update_configuration(
                 configuration_id=request.pop(util.camelize('configurationId')),
                 update_configuration_details=request.pop(util.camelize('UpdateConfigurationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

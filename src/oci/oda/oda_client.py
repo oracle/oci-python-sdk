@@ -226,7 +226,7 @@ class OdaClient(object):
         Starts an asynchronous job to create a Digital Assistant instance.
 
         To monitor the status of the job, take the `opc-work-request-id` response
-        header value and use it to call `GET /workRequests/{workRequestID}`.
+        header value and use it to call `GET /workRequests/{workRequestId}`.
 
 
         :param oci.oda.models.CreateOdaInstanceDetails create_oda_instance_details: (required)
@@ -317,10 +317,119 @@ class OdaClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
+    def create_oda_instance_attachment(self, oda_instance_id, create_oda_instance_attachment_details, **kwargs):
+        """
+        Starts an asynchronous job to create a Digital Assistant instance attachment.
+
+        To monitor the status of the job, take the `opc-work-request-id` response
+        header value and use it to call `GET /workRequests/{workRequestId}`.
+
+
+        :param str oda_instance_id: (required)
+            Unique Digital Assistant instance identifier.
+
+        :param oci.oda.models.CreateOdaInstanceAttachmentDetails create_oda_instance_attachment_details: (required)
+            Details for the new Digital Assistant instance attachment.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing. This value is included in the opc-request-id response header.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so that you can retry the request if there's
+            a timeout or server error without the risk of executing that same action again.
+
+            Retry tokens expire after 24 hours, but they can become invalid before then if there are
+            conflicting operations. For example, if an instance was deleted and purged from the system,
+            then the service might reject a retry of the original creation request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/create_oda_instance_attachment.py.html>`__ to see an example of how to use create_oda_instance_attachment API.
+        """
+        resource_path = "/odaInstances/{odaInstanceId}/attachments"
+        method = "POST"
+        operation_name = "create_oda_instance_attachment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaInstanceAttachment/CreateOdaInstanceAttachment"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_oda_instance_attachment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "odaInstanceId": oda_instance_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_oda_instance_attachment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_oda_instance_attachment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
     def delete_oda_instance(self, oda_instance_id, **kwargs):
         """
         Starts an asynchronous job to delete the specified Digital Assistant instance.
-        To monitor the status of the job, take the `opc-work-request-id` response header value and use it to call `GET /workRequests/{workRequestID}`.
+        To monitor the status of the job, take the `opc-work-request-id` response header value and use it to call `GET /workRequests/{workRequestId}`.
 
 
         :param str oda_instance_id: (required)
@@ -374,6 +483,110 @@ class OdaClient(object):
 
         path_params = {
             "odaInstanceId": oda_instance_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def delete_oda_instance_attachment(self, oda_instance_id, attachment_id, **kwargs):
+        """
+        Starts an asynchronous job to delete the specified Digital Assistant instance attachment.
+
+
+        :param str oda_instance_id: (required)
+            Unique Digital Assistant instance identifier.
+
+        :param str attachment_id: (required)
+            Unique Digital Assistant instance attachment identifier.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control in a PUT or DELETE call for
+            a Digital Assistant instance, set the `if-match` query parameter
+            to the value of the `ETAG` header from a previous GET or POST
+            response for that instance. The service updates or deletes the
+            instance only if the etag that you provide matches the instance's
+            current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing. This value is included in the opc-request-id response header.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/delete_oda_instance_attachment.py.html>`__ to see an example of how to use delete_oda_instance_attachment API.
+        """
+        resource_path = "/odaInstances/{odaInstanceId}/attachments/{attachmentId}"
+        method = "DELETE"
+        operation_name = "delete_oda_instance_attachment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaInstanceAttachment/DeleteOdaInstanceAttachment"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_oda_instance_attachment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "odaInstanceId": oda_instance_id,
+            "attachmentId": attachment_id
         }
 
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
@@ -510,6 +723,113 @@ class OdaClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
+    def get_oda_instance_attachment(self, oda_instance_id, attachment_id, **kwargs):
+        """
+        Gets an ODA instance attachment by identifier
+
+
+        :param str oda_instance_id: (required)
+            Unique Digital Assistant instance identifier.
+
+        :param str attachment_id: (required)
+            Unique Digital Assistant instance attachment identifier.
+
+        :param bool include_owner_metadata: (optional)
+            Whether to send attachment owner info during get/list call.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing. This value is included in the opc-request-id response header.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.oda.models.OdaInstanceAttachment`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/get_oda_instance_attachment.py.html>`__ to see an example of how to use get_oda_instance_attachment API.
+        """
+        resource_path = "/odaInstances/{odaInstanceId}/attachments/{attachmentId}"
+        method = "GET"
+        operation_name = "get_oda_instance_attachment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaInstanceAttachment/GetOdaInstanceAttachment"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "include_owner_metadata",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_oda_instance_attachment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "odaInstanceId": oda_instance_id,
+            "attachmentId": attachment_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "includeOwnerMetadata": kwargs.get("include_owner_metadata", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="OdaInstanceAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="OdaInstanceAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
     def get_work_request(self, work_request_id, **kwargs):
         """
         Gets information about the work request with the specified ID, including its status.
@@ -601,6 +921,167 @@ class OdaClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def list_oda_instance_attachments(self, oda_instance_id, **kwargs):
+        """
+        Returns a list of ODA instance attachments
+
+
+        :param str oda_instance_id: (required)
+            Unique Digital Assistant instance identifier.
+
+        :param bool include_owner_metadata: (optional)
+            Whether to send attachment owner info during get/list call.
+
+        :param int limit: (optional)
+            The maximum number of items to return per page.
+
+        :param str page: (optional)
+            The page at which to start retrieving results.
+
+            You get this value from the `opc-next-page` header in a previous list request.
+            To retireve the first page, omit this query parameter.
+
+            Example: `MToxMA==`
+
+        :param str lifecycle_state: (optional)
+            List only the ODA instance attachments that are in this lifecycle state.
+
+            Allowed values are: "ATTACHING", "ACTIVE", "DETACHING", "INACTIVE", "FAILED"
+
+        :param str sort_order: (optional)
+            Sort the results in this order, use either `ASC` (ascending) or `DESC` (descending).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            Sort on this field. You can specify one sort order only. The default sort field is `TIMECREATED`.
+            The default sort order for `TIMECREATED` is descending.
+
+            Allowed values are: "TIMECREATED"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing. This value is included in the opc-request-id response header.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.oda.models.OdaInstanceAttachmentCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/list_oda_instance_attachments.py.html>`__ to see an example of how to use list_oda_instance_attachments API.
+        """
+        resource_path = "/odaInstances/{odaInstanceId}/attachments"
+        method = "GET"
+        operation_name = "list_oda_instance_attachments"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaInstanceAttachmentCollection/ListOdaInstanceAttachments"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "include_owner_metadata",
+            "limit",
+            "page",
+            "lifecycle_state",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_oda_instance_attachments got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "odaInstanceId": oda_instance_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["ATTACHING", "ACTIVE", "DETACHING", "INACTIVE", "FAILED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "includeOwnerMetadata": kwargs.get("include_owner_metadata", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="OdaInstanceAttachmentCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="OdaInstanceAttachmentCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
@@ -1526,6 +2007,115 @@ class OdaClient(object):
                 header_params=header_params,
                 body=update_oda_instance_details,
                 response_type="OdaInstance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def update_oda_instance_attachment(self, oda_instance_id, attachment_id, update_oda_instance_attachment_details, **kwargs):
+        """
+        Updates the ODA instance attachment
+
+
+        :param str oda_instance_id: (required)
+            Unique Digital Assistant instance identifier.
+
+        :param str attachment_id: (required)
+            Unique Digital Assistant instance attachment identifier.
+
+        :param oci.oda.models.UpdateOdaInstanceAttachmentDetails update_oda_instance_attachment_details: (required)
+            The information to be updated.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control in a PUT or DELETE call for
+            a Digital Assistant instance, set the `if-match` query parameter
+            to the value of the `ETAG` header from a previous GET or POST
+            response for that instance. The service updates or deletes the
+            instance only if the etag that you provide matches the instance's
+            current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing. This value is included in the opc-request-id response header.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/oda/update_oda_instance_attachment.py.html>`__ to see an example of how to use update_oda_instance_attachment API.
+        """
+        resource_path = "/odaInstances/{odaInstanceId}/attachments/{attachmentId}"
+        method = "PUT"
+        operation_name = "update_oda_instance_attachment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaInstanceAttachment/UpdateOdaInstanceAttachment"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_oda_instance_attachment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "odaInstanceId": oda_instance_id,
+            "attachmentId": attachment_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_oda_instance_attachment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_oda_instance_attachment_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)

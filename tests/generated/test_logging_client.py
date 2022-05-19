@@ -55,6 +55,7 @@ def test_put_logs(testing_service_client):
             response = client.put_logs(
                 log_id=request.pop(util.camelize('logId')),
                 put_logs_details=request.pop(util.camelize('PutLogsDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

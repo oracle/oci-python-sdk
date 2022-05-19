@@ -56,6 +56,7 @@ def test_download_pdf_content(testing_service_client):
                 osp_home_region=request.pop(util.camelize('ospHomeRegion')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 internal_invoice_id=request.pop(util.camelize('internalInvoiceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -98,6 +99,7 @@ def test_get_invoice(testing_service_client):
                 osp_home_region=request.pop(util.camelize('ospHomeRegion')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 internal_invoice_id=request.pop(util.camelize('internalInvoiceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -141,6 +143,7 @@ def test_list_invoice_lines(testing_service_client):
                 osp_home_region=request.pop(util.camelize('ospHomeRegion')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 internal_invoice_id=request.pop(util.camelize('internalInvoiceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -152,6 +155,7 @@ def test_list_invoice_lines(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     internal_invoice_id=request.pop(util.camelize('internalInvoiceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -164,6 +168,7 @@ def test_list_invoice_lines(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         internal_invoice_id=request.pop(util.camelize('internalInvoiceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -206,6 +211,7 @@ def test_list_invoices(testing_service_client):
             response = client.list_invoices(
                 osp_home_region=request.pop(util.camelize('ospHomeRegion')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -216,6 +222,7 @@ def test_list_invoices(testing_service_client):
                     osp_home_region=request.pop(util.camelize('ospHomeRegion')),
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -227,6 +234,7 @@ def test_list_invoices(testing_service_client):
                         osp_home_region=request.pop(util.camelize('ospHomeRegion')),
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -270,6 +278,7 @@ def test_pay_invoice(testing_service_client):
                 internal_invoice_id=request.pop(util.camelize('internalInvoiceId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 pay_invoice_details=request.pop(util.camelize('PayInvoiceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

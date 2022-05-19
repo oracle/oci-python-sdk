@@ -54,6 +54,7 @@ def test_create_custom_table(testing_service_client):
             client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
             response = client.create_custom_table(
                 create_custom_table_details=request.pop(util.camelize('CreateCustomTableDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -94,6 +95,7 @@ def test_create_query(testing_service_client):
             client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
             response = client.create_query(
                 create_query_details=request.pop(util.camelize('CreateQueryDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -134,6 +136,7 @@ def test_create_schedule(testing_service_client):
             client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
             response = client.create_schedule(
                 create_schedule_details=request.pop(util.camelize('CreateScheduleDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -174,6 +177,7 @@ def test_delete_custom_table(testing_service_client):
             client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
             response = client.delete_custom_table(
                 custom_table_id=request.pop(util.camelize('customTableId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -214,6 +218,7 @@ def test_delete_query(testing_service_client):
             client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
             response = client.delete_query(
                 query_id=request.pop(util.camelize('queryId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -254,6 +259,7 @@ def test_delete_schedule(testing_service_client):
             client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
             response = client.delete_schedule(
                 schedule_id=request.pop(util.camelize('scheduleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -294,6 +300,7 @@ def test_get_custom_table(testing_service_client):
             client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
             response = client.get_custom_table(
                 custom_table_id=request.pop(util.camelize('customTableId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -334,6 +341,7 @@ def test_get_query(testing_service_client):
             client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
             response = client.get_query(
                 query_id=request.pop(util.camelize('queryId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -374,6 +382,7 @@ def test_get_schedule(testing_service_client):
             client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
             response = client.get_schedule(
                 schedule_id=request.pop(util.camelize('scheduleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -414,6 +423,7 @@ def test_get_scheduled_run(testing_service_client):
             client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
             response = client.get_scheduled_run(
                 scheduled_run_id=request.pop(util.camelize('scheduledRunId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -456,6 +466,7 @@ def test_list_custom_tables(testing_service_client):
             response = client.list_custom_tables(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 saved_report_id=request.pop(util.camelize('savedReportId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -466,6 +477,7 @@ def test_list_custom_tables(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     saved_report_id=request.pop(util.camelize('savedReportId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -477,6 +489,7 @@ def test_list_custom_tables(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         saved_report_id=request.pop(util.camelize('savedReportId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -518,6 +531,7 @@ def test_list_queries(testing_service_client):
             client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
             response = client.list_queries(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -527,6 +541,7 @@ def test_list_queries(testing_service_client):
                 next_response = client.list_queries(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -537,6 +552,7 @@ def test_list_queries(testing_service_client):
                     prev_response = client.list_queries(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -578,6 +594,7 @@ def test_list_scheduled_runs(testing_service_client):
             client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
             response = client.list_scheduled_runs(
                 schedule_id=request.pop(util.camelize('scheduleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -587,6 +604,7 @@ def test_list_scheduled_runs(testing_service_client):
                 next_response = client.list_scheduled_runs(
                     schedule_id=request.pop(util.camelize('scheduleId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -597,6 +615,7 @@ def test_list_scheduled_runs(testing_service_client):
                     prev_response = client.list_scheduled_runs(
                         schedule_id=request.pop(util.camelize('scheduleId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -638,6 +657,7 @@ def test_list_schedules(testing_service_client):
             client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
             response = client.list_schedules(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -647,6 +667,7 @@ def test_list_schedules(testing_service_client):
                 next_response = client.list_schedules(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -657,6 +678,7 @@ def test_list_schedules(testing_service_client):
                     prev_response = client.list_schedules(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -697,6 +719,7 @@ def test_request_summarized_configurations(testing_service_client):
             client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
             response = client.request_summarized_configurations(
                 tenant_id=request.pop(util.camelize('tenantId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -738,6 +761,7 @@ def test_request_summarized_usages(testing_service_client):
             client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
             response = client.request_summarized_usages(
                 request_summarized_usages_details=request.pop(util.camelize('RequestSummarizedUsagesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -747,6 +771,7 @@ def test_request_summarized_usages(testing_service_client):
                 next_response = client.request_summarized_usages(
                     request_summarized_usages_details=request.pop(util.camelize('RequestSummarizedUsagesDetails')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -757,6 +782,7 @@ def test_request_summarized_usages(testing_service_client):
                     prev_response = client.request_summarized_usages(
                         request_summarized_usages_details=request.pop(util.camelize('RequestSummarizedUsagesDetails')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -798,6 +824,7 @@ def test_update_custom_table(testing_service_client):
             response = client.update_custom_table(
                 update_custom_table_details=request.pop(util.camelize('UpdateCustomTableDetails')),
                 custom_table_id=request.pop(util.camelize('customTableId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -839,6 +866,7 @@ def test_update_query(testing_service_client):
             response = client.update_query(
                 update_query_details=request.pop(util.camelize('UpdateQueryDetails')),
                 query_id=request.pop(util.camelize('queryId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -880,6 +908,7 @@ def test_update_schedule(testing_service_client):
             response = client.update_schedule(
                 update_schedule_details=request.pop(util.camelize('UpdateScheduleDetails')),
                 schedule_id=request.pop(util.camelize('scheduleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

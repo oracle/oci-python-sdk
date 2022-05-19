@@ -54,6 +54,7 @@ def test_cancel_sender_invitation(testing_service_client):
             client = oci.tenant_manager_control_plane.SenderInvitationClient(config, service_endpoint=service_endpoint)
             response = client.cancel_sender_invitation(
                 sender_invitation_id=request.pop(util.camelize('senderInvitationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -94,6 +95,7 @@ def test_create_sender_invitation(testing_service_client):
             client = oci.tenant_manager_control_plane.SenderInvitationClient(config, service_endpoint=service_endpoint)
             response = client.create_sender_invitation(
                 create_sender_invitation_details=request.pop(util.camelize('CreateSenderInvitationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -134,6 +136,7 @@ def test_get_sender_invitation(testing_service_client):
             client = oci.tenant_manager_control_plane.SenderInvitationClient(config, service_endpoint=service_endpoint)
             response = client.get_sender_invitation(
                 sender_invitation_id=request.pop(util.camelize('senderInvitationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -175,6 +178,7 @@ def test_list_sender_invitations(testing_service_client):
             client = oci.tenant_manager_control_plane.SenderInvitationClient(config, service_endpoint=service_endpoint)
             response = client.list_sender_invitations(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -184,6 +188,7 @@ def test_list_sender_invitations(testing_service_client):
                 next_response = client.list_sender_invitations(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -194,6 +199,7 @@ def test_list_sender_invitations(testing_service_client):
                     prev_response = client.list_sender_invitations(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -235,6 +241,7 @@ def test_update_sender_invitation(testing_service_client):
             response = client.update_sender_invitation(
                 sender_invitation_id=request.pop(util.camelize('senderInvitationId')),
                 update_sender_invitation_details=request.pop(util.camelize('UpdateSenderInvitationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

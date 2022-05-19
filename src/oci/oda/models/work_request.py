@@ -46,6 +46,14 @@ class WorkRequest(object):
     REQUEST_ACTION_CHANGE_ODA_INSTANCE_COMPARTMENT = "CHANGE_ODA_INSTANCE_COMPARTMENT"
 
     #: A constant which can be used with the request_action property of a WorkRequest.
+    #: This constant has a value of "CHANGE_CUST_ENC_KEY"
+    REQUEST_ACTION_CHANGE_CUST_ENC_KEY = "CHANGE_CUST_ENC_KEY"
+
+    #: A constant which can be used with the request_action property of a WorkRequest.
+    #: This constant has a value of "DEACT_CUST_ENC_KEY"
+    REQUEST_ACTION_DEACT_CUST_ENC_KEY = "DEACT_CUST_ENC_KEY"
+
+    #: A constant which can be used with the request_action property of a WorkRequest.
     #: This constant has a value of "CREATE_ASSOCIATION"
     REQUEST_ACTION_CREATE_ASSOCIATION = "CREATE_ASSOCIATION"
 
@@ -54,12 +62,84 @@ class WorkRequest(object):
     REQUEST_ACTION_DELETE_ASSOCIATION = "DELETE_ASSOCIATION"
 
     #: A constant which can be used with the request_action property of a WorkRequest.
+    #: This constant has a value of "CREATE_PCS_INSTANCE"
+    REQUEST_ACTION_CREATE_PCS_INSTANCE = "CREATE_PCS_INSTANCE"
+
+    #: A constant which can be used with the request_action property of a WorkRequest.
     #: This constant has a value of "UPDATE_ENTITLEMENTS_FOR_CACCT"
     REQUEST_ACTION_UPDATE_ENTITLEMENTS_FOR_CACCT = "UPDATE_ENTITLEMENTS_FOR_CACCT"
 
     #: A constant which can be used with the request_action property of a WorkRequest.
     #: This constant has a value of "LOOKUP_ODA_INSTANCES_FOR_CACCT"
     REQUEST_ACTION_LOOKUP_ODA_INSTANCES_FOR_CACCT = "LOOKUP_ODA_INSTANCES_FOR_CACCT"
+
+    #: A constant which can be used with the request_action property of a WorkRequest.
+    #: This constant has a value of "CREATE_ODA_INSTANCE_ATTACHMENT"
+    REQUEST_ACTION_CREATE_ODA_INSTANCE_ATTACHMENT = "CREATE_ODA_INSTANCE_ATTACHMENT"
+
+    #: A constant which can be used with the request_action property of a WorkRequest.
+    #: This constant has a value of "UPDATE_ODA_INSTANCE_ATTACHMENT"
+    REQUEST_ACTION_UPDATE_ODA_INSTANCE_ATTACHMENT = "UPDATE_ODA_INSTANCE_ATTACHMENT"
+
+    #: A constant which can be used with the request_action property of a WorkRequest.
+    #: This constant has a value of "DELETE_ODA_INSTANCE_ATTACHMENT"
+    REQUEST_ACTION_DELETE_ODA_INSTANCE_ATTACHMENT = "DELETE_ODA_INSTANCE_ATTACHMENT"
+
+    #: A constant which can be used with the request_action property of a WorkRequest.
+    #: This constant has a value of "CREATE_IMPORTED_PACKAGE"
+    REQUEST_ACTION_CREATE_IMPORTED_PACKAGE = "CREATE_IMPORTED_PACKAGE"
+
+    #: A constant which can be used with the request_action property of a WorkRequest.
+    #: This constant has a value of "UPDATE_IMPORTED_PACKAGE"
+    REQUEST_ACTION_UPDATE_IMPORTED_PACKAGE = "UPDATE_IMPORTED_PACKAGE"
+
+    #: A constant which can be used with the request_action property of a WorkRequest.
+    #: This constant has a value of "DELETE_IMPORTED_PACKAGE"
+    REQUEST_ACTION_DELETE_IMPORTED_PACKAGE = "DELETE_IMPORTED_PACKAGE"
+
+    #: A constant which can be used with the request_action property of a WorkRequest.
+    #: This constant has a value of "IMPORT_BOT"
+    REQUEST_ACTION_IMPORT_BOT = "IMPORT_BOT"
+
+    #: A constant which can be used with the request_action property of a WorkRequest.
+    #: This constant has a value of "CREATE_SKILL"
+    REQUEST_ACTION_CREATE_SKILL = "CREATE_SKILL"
+
+    #: A constant which can be used with the request_action property of a WorkRequest.
+    #: This constant has a value of "CLONE_SKILL"
+    REQUEST_ACTION_CLONE_SKILL = "CLONE_SKILL"
+
+    #: A constant which can be used with the request_action property of a WorkRequest.
+    #: This constant has a value of "EXTEND_SKILL"
+    REQUEST_ACTION_EXTEND_SKILL = "EXTEND_SKILL"
+
+    #: A constant which can be used with the request_action property of a WorkRequest.
+    #: This constant has a value of "VERSION_SKILL"
+    REQUEST_ACTION_VERSION_SKILL = "VERSION_SKILL"
+
+    #: A constant which can be used with the request_action property of a WorkRequest.
+    #: This constant has a value of "EXPORT_SKILL"
+    REQUEST_ACTION_EXPORT_SKILL = "EXPORT_SKILL"
+
+    #: A constant which can be used with the request_action property of a WorkRequest.
+    #: This constant has a value of "CREATE_DIGITAL_ASSISTANT"
+    REQUEST_ACTION_CREATE_DIGITAL_ASSISTANT = "CREATE_DIGITAL_ASSISTANT"
+
+    #: A constant which can be used with the request_action property of a WorkRequest.
+    #: This constant has a value of "CLONE_DIGITAL_ASSISTANT"
+    REQUEST_ACTION_CLONE_DIGITAL_ASSISTANT = "CLONE_DIGITAL_ASSISTANT"
+
+    #: A constant which can be used with the request_action property of a WorkRequest.
+    #: This constant has a value of "EXTEND_DIGITAL_ASSISTANT"
+    REQUEST_ACTION_EXTEND_DIGITAL_ASSISTANT = "EXTEND_DIGITAL_ASSISTANT"
+
+    #: A constant which can be used with the request_action property of a WorkRequest.
+    #: This constant has a value of "VERSION_DIGITAL_ASSISTANT"
+    REQUEST_ACTION_VERSION_DIGITAL_ASSISTANT = "VERSION_DIGITAL_ASSISTANT"
+
+    #: A constant which can be used with the request_action property of a WorkRequest.
+    #: This constant has a value of "EXPORT_DIGITAL_ASSISTANT"
+    REQUEST_ACTION_EXPORT_DIGITAL_ASSISTANT = "EXPORT_DIGITAL_ASSISTANT"
 
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "ACCEPTED"
@@ -104,7 +184,7 @@ class WorkRequest(object):
 
         :param request_action:
             The value to assign to the request_action property of this WorkRequest.
-            Allowed values for this property are: "CREATE_ODA_INSTANCE", "UPGRADE_ODA_INSTANCE", "DELETE_ODA_INSTANCE", "PURGE_ODA_INSTANCE", "RECOVER_ODA_INSTANCE", "STOP_ODA_INSTANCE", "START_ODA_INSTANCE", "CHANGE_ODA_INSTANCE_COMPARTMENT", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT", "LOOKUP_ODA_INSTANCES_FOR_CACCT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_ODA_INSTANCE", "UPGRADE_ODA_INSTANCE", "DELETE_ODA_INSTANCE", "PURGE_ODA_INSTANCE", "RECOVER_ODA_INSTANCE", "STOP_ODA_INSTANCE", "START_ODA_INSTANCE", "CHANGE_ODA_INSTANCE_COMPARTMENT", "CHANGE_CUST_ENC_KEY", "DEACT_CUST_ENC_KEY", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "CREATE_PCS_INSTANCE", "UPDATE_ENTITLEMENTS_FOR_CACCT", "LOOKUP_ODA_INSTANCES_FOR_CACCT", "CREATE_ODA_INSTANCE_ATTACHMENT", "UPDATE_ODA_INSTANCE_ATTACHMENT", "DELETE_ODA_INSTANCE_ATTACHMENT", "CREATE_IMPORTED_PACKAGE", "UPDATE_IMPORTED_PACKAGE", "DELETE_IMPORTED_PACKAGE", "IMPORT_BOT", "CREATE_SKILL", "CLONE_SKILL", "EXTEND_SKILL", "VERSION_SKILL", "EXPORT_SKILL", "CREATE_DIGITAL_ASSISTANT", "CLONE_DIGITAL_ASSISTANT", "EXTEND_DIGITAL_ASSISTANT", "VERSION_DIGITAL_ASSISTANT", "EXPORT_DIGITAL_ASSISTANT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type request_action: str
 
@@ -257,7 +337,7 @@ class WorkRequest(object):
         **[Required]** Gets the request_action of this WorkRequest.
         The type of the operation that's associated with the work request.
 
-        Allowed values for this property are: "CREATE_ODA_INSTANCE", "UPGRADE_ODA_INSTANCE", "DELETE_ODA_INSTANCE", "PURGE_ODA_INSTANCE", "RECOVER_ODA_INSTANCE", "STOP_ODA_INSTANCE", "START_ODA_INSTANCE", "CHANGE_ODA_INSTANCE_COMPARTMENT", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT", "LOOKUP_ODA_INSTANCES_FOR_CACCT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_ODA_INSTANCE", "UPGRADE_ODA_INSTANCE", "DELETE_ODA_INSTANCE", "PURGE_ODA_INSTANCE", "RECOVER_ODA_INSTANCE", "STOP_ODA_INSTANCE", "START_ODA_INSTANCE", "CHANGE_ODA_INSTANCE_COMPARTMENT", "CHANGE_CUST_ENC_KEY", "DEACT_CUST_ENC_KEY", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "CREATE_PCS_INSTANCE", "UPDATE_ENTITLEMENTS_FOR_CACCT", "LOOKUP_ODA_INSTANCES_FOR_CACCT", "CREATE_ODA_INSTANCE_ATTACHMENT", "UPDATE_ODA_INSTANCE_ATTACHMENT", "DELETE_ODA_INSTANCE_ATTACHMENT", "CREATE_IMPORTED_PACKAGE", "UPDATE_IMPORTED_PACKAGE", "DELETE_IMPORTED_PACKAGE", "IMPORT_BOT", "CREATE_SKILL", "CLONE_SKILL", "EXTEND_SKILL", "VERSION_SKILL", "EXPORT_SKILL", "CREATE_DIGITAL_ASSISTANT", "CLONE_DIGITAL_ASSISTANT", "EXTEND_DIGITAL_ASSISTANT", "VERSION_DIGITAL_ASSISTANT", "EXPORT_DIGITAL_ASSISTANT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -276,7 +356,7 @@ class WorkRequest(object):
         :param request_action: The request_action of this WorkRequest.
         :type: str
         """
-        allowed_values = ["CREATE_ODA_INSTANCE", "UPGRADE_ODA_INSTANCE", "DELETE_ODA_INSTANCE", "PURGE_ODA_INSTANCE", "RECOVER_ODA_INSTANCE", "STOP_ODA_INSTANCE", "START_ODA_INSTANCE", "CHANGE_ODA_INSTANCE_COMPARTMENT", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT", "LOOKUP_ODA_INSTANCES_FOR_CACCT"]
+        allowed_values = ["CREATE_ODA_INSTANCE", "UPGRADE_ODA_INSTANCE", "DELETE_ODA_INSTANCE", "PURGE_ODA_INSTANCE", "RECOVER_ODA_INSTANCE", "STOP_ODA_INSTANCE", "START_ODA_INSTANCE", "CHANGE_ODA_INSTANCE_COMPARTMENT", "CHANGE_CUST_ENC_KEY", "DEACT_CUST_ENC_KEY", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "CREATE_PCS_INSTANCE", "UPDATE_ENTITLEMENTS_FOR_CACCT", "LOOKUP_ODA_INSTANCES_FOR_CACCT", "CREATE_ODA_INSTANCE_ATTACHMENT", "UPDATE_ODA_INSTANCE_ATTACHMENT", "DELETE_ODA_INSTANCE_ATTACHMENT", "CREATE_IMPORTED_PACKAGE", "UPDATE_IMPORTED_PACKAGE", "DELETE_IMPORTED_PACKAGE", "IMPORT_BOT", "CREATE_SKILL", "CLONE_SKILL", "EXTEND_SKILL", "VERSION_SKILL", "EXPORT_SKILL", "CREATE_DIGITAL_ASSISTANT", "CLONE_DIGITAL_ASSISTANT", "EXTEND_DIGITAL_ASSISTANT", "VERSION_DIGITAL_ASSISTANT", "EXPORT_DIGITAL_ASSISTANT"]
         if not value_allowed_none_or_none_sentinel(request_action, allowed_values):
             request_action = 'UNKNOWN_ENUM_VALUE'
         self._request_action = request_action

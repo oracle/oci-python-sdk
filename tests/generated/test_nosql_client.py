@@ -55,6 +55,7 @@ def test_change_table_compartment(testing_service_client):
             response = client.change_table_compartment(
                 table_name_or_id=request.pop(util.camelize('tableNameOrId')),
                 change_table_compartment_details=request.pop(util.camelize('ChangeTableCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_create_index(testing_service_client):
             response = client.create_index(
                 table_name_or_id=request.pop(util.camelize('tableNameOrId')),
                 create_index_details=request.pop(util.camelize('CreateIndexDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -136,6 +138,7 @@ def test_create_table(testing_service_client):
             client = oci.nosql.NosqlClient(config, service_endpoint=service_endpoint)
             response = client.create_table(
                 create_table_details=request.pop(util.camelize('CreateTableDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -177,6 +180,7 @@ def test_delete_index(testing_service_client):
             response = client.delete_index(
                 table_name_or_id=request.pop(util.camelize('tableNameOrId')),
                 index_name=request.pop(util.camelize('indexName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -218,6 +222,7 @@ def test_delete_row(testing_service_client):
             response = client.delete_row(
                 table_name_or_id=request.pop(util.camelize('tableNameOrId')),
                 key=request.pop(util.camelize('key')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -258,6 +263,7 @@ def test_delete_table(testing_service_client):
             client = oci.nosql.NosqlClient(config, service_endpoint=service_endpoint)
             response = client.delete_table(
                 table_name_or_id=request.pop(util.camelize('tableNameOrId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -298,6 +304,7 @@ def test_delete_work_request(testing_service_client):
             client = oci.nosql.NosqlClient(config, service_endpoint=service_endpoint)
             response = client.delete_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -339,6 +346,7 @@ def test_get_index(testing_service_client):
             response = client.get_index(
                 table_name_or_id=request.pop(util.camelize('tableNameOrId')),
                 index_name=request.pop(util.camelize('indexName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -380,6 +388,7 @@ def test_get_row(testing_service_client):
             response = client.get_row(
                 table_name_or_id=request.pop(util.camelize('tableNameOrId')),
                 key=request.pop(util.camelize('key')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -420,6 +429,7 @@ def test_get_table(testing_service_client):
             client = oci.nosql.NosqlClient(config, service_endpoint=service_endpoint)
             response = client.get_table(
                 table_name_or_id=request.pop(util.camelize('tableNameOrId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -460,6 +470,7 @@ def test_get_work_request(testing_service_client):
             client = oci.nosql.NosqlClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -501,6 +512,7 @@ def test_list_indexes(testing_service_client):
             client = oci.nosql.NosqlClient(config, service_endpoint=service_endpoint)
             response = client.list_indexes(
                 table_name_or_id=request.pop(util.camelize('tableNameOrId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -510,6 +522,7 @@ def test_list_indexes(testing_service_client):
                 next_response = client.list_indexes(
                     table_name_or_id=request.pop(util.camelize('tableNameOrId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -520,6 +533,7 @@ def test_list_indexes(testing_service_client):
                     prev_response = client.list_indexes(
                         table_name_or_id=request.pop(util.camelize('tableNameOrId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -561,6 +575,7 @@ def test_list_table_usage(testing_service_client):
             client = oci.nosql.NosqlClient(config, service_endpoint=service_endpoint)
             response = client.list_table_usage(
                 table_name_or_id=request.pop(util.camelize('tableNameOrId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -570,6 +585,7 @@ def test_list_table_usage(testing_service_client):
                 next_response = client.list_table_usage(
                     table_name_or_id=request.pop(util.camelize('tableNameOrId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -580,6 +596,7 @@ def test_list_table_usage(testing_service_client):
                     prev_response = client.list_table_usage(
                         table_name_or_id=request.pop(util.camelize('tableNameOrId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -621,6 +638,7 @@ def test_list_tables(testing_service_client):
             client = oci.nosql.NosqlClient(config, service_endpoint=service_endpoint)
             response = client.list_tables(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -630,6 +648,7 @@ def test_list_tables(testing_service_client):
                 next_response = client.list_tables(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -640,6 +659,7 @@ def test_list_tables(testing_service_client):
                     prev_response = client.list_tables(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -681,6 +701,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.nosql.NosqlClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -690,6 +711,7 @@ def test_list_work_request_errors(testing_service_client):
                 next_response = client.list_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -700,6 +722,7 @@ def test_list_work_request_errors(testing_service_client):
                     prev_response = client.list_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -741,6 +764,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.nosql.NosqlClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -750,6 +774,7 @@ def test_list_work_request_logs(testing_service_client):
                 next_response = client.list_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -760,6 +785,7 @@ def test_list_work_request_logs(testing_service_client):
                     prev_response = client.list_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -801,6 +827,7 @@ def test_list_work_requests(testing_service_client):
             client = oci.nosql.NosqlClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -810,6 +837,7 @@ def test_list_work_requests(testing_service_client):
                 next_response = client.list_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -820,6 +848,7 @@ def test_list_work_requests(testing_service_client):
                     prev_response = client.list_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -861,6 +890,7 @@ def test_prepare_statement(testing_service_client):
             response = client.prepare_statement(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 statement=request.pop(util.camelize('statement')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -902,6 +932,7 @@ def test_query(testing_service_client):
             client = oci.nosql.NosqlClient(config, service_endpoint=service_endpoint)
             response = client.query(
                 query_details=request.pop(util.camelize('QueryDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -911,6 +942,7 @@ def test_query(testing_service_client):
                 next_response = client.query(
                     query_details=request.pop(util.camelize('QueryDetails')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -921,6 +953,7 @@ def test_query(testing_service_client):
                     prev_response = client.query(
                         query_details=request.pop(util.camelize('QueryDetails')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -962,6 +995,7 @@ def test_summarize_statement(testing_service_client):
             response = client.summarize_statement(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 statement=request.pop(util.camelize('statement')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1003,6 +1037,7 @@ def test_update_row(testing_service_client):
             response = client.update_row(
                 table_name_or_id=request.pop(util.camelize('tableNameOrId')),
                 update_row_details=request.pop(util.camelize('UpdateRowDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1044,6 +1079,7 @@ def test_update_table(testing_service_client):
             response = client.update_table(
                 table_name_or_id=request.pop(util.camelize('tableNameOrId')),
                 update_table_details=request.pop(util.camelize('UpdateTableDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

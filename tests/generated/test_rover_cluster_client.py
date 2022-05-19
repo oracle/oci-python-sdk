@@ -55,6 +55,7 @@ def test_change_rover_cluster_compartment(testing_service_client):
             response = client.change_rover_cluster_compartment(
                 rover_cluster_id=request.pop(util.camelize('roverClusterId')),
                 change_rover_cluster_compartment_details=request.pop(util.camelize('ChangeRoverClusterCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_create_rover_cluster(testing_service_client):
             client = oci.rover.RoverClusterClient(config, service_endpoint=service_endpoint)
             response = client.create_rover_cluster(
                 create_rover_cluster_details=request.pop(util.camelize('CreateRoverClusterDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -135,6 +137,7 @@ def test_delete_rover_cluster(testing_service_client):
             client = oci.rover.RoverClusterClient(config, service_endpoint=service_endpoint)
             response = client.delete_rover_cluster(
                 rover_cluster_id=request.pop(util.camelize('roverClusterId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -175,6 +178,7 @@ def test_get_rover_cluster(testing_service_client):
             client = oci.rover.RoverClusterClient(config, service_endpoint=service_endpoint)
             response = client.get_rover_cluster(
                 rover_cluster_id=request.pop(util.camelize('roverClusterId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -215,6 +219,7 @@ def test_get_rover_cluster_certificate(testing_service_client):
             client = oci.rover.RoverClusterClient(config, service_endpoint=service_endpoint)
             response = client.get_rover_cluster_certificate(
                 rover_cluster_id=request.pop(util.camelize('roverClusterId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -256,6 +261,7 @@ def test_list_rover_clusters(testing_service_client):
             client = oci.rover.RoverClusterClient(config, service_endpoint=service_endpoint)
             response = client.list_rover_clusters(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -265,6 +271,7 @@ def test_list_rover_clusters(testing_service_client):
                 next_response = client.list_rover_clusters(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -275,6 +282,7 @@ def test_list_rover_clusters(testing_service_client):
                     prev_response = client.list_rover_clusters(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -316,6 +324,7 @@ def test_update_rover_cluster(testing_service_client):
             response = client.update_rover_cluster(
                 rover_cluster_id=request.pop(util.camelize('roverClusterId')),
                 update_rover_cluster_details=request.pop(util.camelize('UpdateRoverClusterDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

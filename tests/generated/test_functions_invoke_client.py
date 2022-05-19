@@ -54,6 +54,7 @@ def test_invoke_function(testing_service_client):
             client = oci.functions.FunctionsInvokeClient(config, service_endpoint=service_endpoint)
             response = client.invoke_function(
                 function_id=request.pop(util.camelize('functionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

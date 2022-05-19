@@ -11,8 +11,12 @@ from .deployment_client import DeploymentClient
 from .deployment_client_composite_operations import DeploymentClientCompositeOperations
 from .gateway_client import GatewayClient
 from .gateway_client_composite_operations import GatewayClientCompositeOperations
+from .subscribers_client import SubscribersClient
+from .subscribers_client_composite_operations import SubscribersClientCompositeOperations
+from .usage_plans_client import UsagePlansClient
+from .usage_plans_client_composite_operations import UsagePlansClientCompositeOperations
 from .work_requests_client import WorkRequestsClient
 from .work_requests_client_composite_operations import WorkRequestsClientCompositeOperations
 from . import models
 
-__all__ = ["ApiGatewayClient", "ApiGatewayClientCompositeOperations", "DeploymentClient", "DeploymentClientCompositeOperations", "GatewayClient", "GatewayClientCompositeOperations", "WorkRequestsClient", "WorkRequestsClientCompositeOperations", "models"]
+__all__ = ["ApiGatewayClient", "ApiGatewayClientCompositeOperations", "DeploymentClient", "DeploymentClientCompositeOperations", "GatewayClient", "GatewayClientCompositeOperations", "SubscribersClient", "SubscribersClientCompositeOperations", "UsagePlansClient", "UsagePlansClientCompositeOperations", "WorkRequestsClient", "WorkRequestsClientCompositeOperations", "models"]

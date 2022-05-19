@@ -54,6 +54,7 @@ def test_decrypt(testing_service_client):
             client = oci.key_management.KmsCryptoClient(config, service_endpoint=service_endpoint)
             response = client.decrypt(
                 decrypt_data_details=request.pop(util.camelize('DecryptDataDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -94,6 +95,7 @@ def test_encrypt(testing_service_client):
             client = oci.key_management.KmsCryptoClient(config, service_endpoint=service_endpoint)
             response = client.encrypt(
                 encrypt_data_details=request.pop(util.camelize('EncryptDataDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -134,6 +136,7 @@ def test_export_key(testing_service_client):
             client = oci.key_management.KmsCryptoClient(config, service_endpoint=service_endpoint)
             response = client.export_key(
                 export_key_details=request.pop(util.camelize('ExportKeyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -174,6 +177,7 @@ def test_generate_data_encryption_key(testing_service_client):
             client = oci.key_management.KmsCryptoClient(config, service_endpoint=service_endpoint)
             response = client.generate_data_encryption_key(
                 generate_key_details=request.pop(util.camelize('GenerateKeyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -214,6 +218,7 @@ def test_sign(testing_service_client):
             client = oci.key_management.KmsCryptoClient(config, service_endpoint=service_endpoint)
             response = client.sign(
                 sign_data_details=request.pop(util.camelize('SignDataDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -254,6 +259,7 @@ def test_verify(testing_service_client):
             client = oci.key_management.KmsCryptoClient(config, service_endpoint=service_endpoint)
             response = client.verify(
                 verify_data_details=request.pop(util.camelize('VerifyDataDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

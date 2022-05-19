@@ -55,6 +55,7 @@ def test_consumer_commit(testing_service_client):
             response = client.consumer_commit(
                 stream_id=request.pop(util.camelize('streamId')),
                 cursor=request.pop(util.camelize('cursor')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_consumer_heartbeat(testing_service_client):
             response = client.consumer_heartbeat(
                 stream_id=request.pop(util.camelize('streamId')),
                 cursor=request.pop(util.camelize('cursor')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -137,6 +139,7 @@ def test_create_cursor(testing_service_client):
             response = client.create_cursor(
                 stream_id=request.pop(util.camelize('streamId')),
                 create_cursor_details=request.pop(util.camelize('CreateCursorDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -178,6 +181,7 @@ def test_create_group_cursor(testing_service_client):
             response = client.create_group_cursor(
                 stream_id=request.pop(util.camelize('streamId')),
                 create_group_cursor_details=request.pop(util.camelize('CreateGroupCursorDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -219,6 +223,7 @@ def test_get_group(testing_service_client):
             response = client.get_group(
                 stream_id=request.pop(util.camelize('streamId')),
                 group_name=request.pop(util.camelize('groupName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -260,6 +265,7 @@ def test_get_messages(testing_service_client):
             response = client.get_messages(
                 stream_id=request.pop(util.camelize('streamId')),
                 cursor=request.pop(util.camelize('cursor')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -301,6 +307,7 @@ def test_put_messages(testing_service_client):
             response = client.put_messages(
                 stream_id=request.pop(util.camelize('streamId')),
                 put_messages_details=request.pop(util.camelize('PutMessagesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -343,6 +350,7 @@ def test_update_group(testing_service_client):
                 stream_id=request.pop(util.camelize('streamId')),
                 group_name=request.pop(util.camelize('groupName')),
                 update_group_details=request.pop(util.camelize('UpdateGroupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

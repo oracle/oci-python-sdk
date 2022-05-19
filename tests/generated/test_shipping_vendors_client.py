@@ -53,6 +53,7 @@ def test_list_shipping_vendors(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dts.ShippingVendorsClient(config, service_endpoint=service_endpoint)
             response = client.list_shipping_vendors(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

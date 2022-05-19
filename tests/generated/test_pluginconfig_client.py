@@ -57,6 +57,7 @@ def test_list_instanceagent_available_plugins(testing_service_client):
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 os_name=request.pop(util.camelize('osName')),
                 os_version=request.pop(util.camelize('osVersion')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -68,6 +69,7 @@ def test_list_instanceagent_available_plugins(testing_service_client):
                     os_name=request.pop(util.camelize('osName')),
                     os_version=request.pop(util.camelize('osVersion')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -80,6 +82,7 @@ def test_list_instanceagent_available_plugins(testing_service_client):
                         os_name=request.pop(util.camelize('osName')),
                         os_version=request.pop(util.camelize('osVersion')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)

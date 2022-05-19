@@ -54,6 +54,7 @@ def test_get_generic_artifact_content(testing_service_client):
             client = oci.generic_artifacts_content.GenericArtifactsContentClient(config, service_endpoint=service_endpoint)
             response = client.get_generic_artifact_content(
                 artifact_id=request.pop(util.camelize('artifactId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_get_generic_artifact_content_by_path(testing_service_client):
                 repository_id=request.pop(util.camelize('repositoryId')),
                 artifact_path=request.pop(util.camelize('artifactPath')),
                 version=request.pop(util.camelize('version')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -139,6 +141,7 @@ def test_put_generic_artifact_content_by_path(testing_service_client):
                 artifact_path=request.pop(util.camelize('artifactPath')),
                 version=request.pop(util.camelize('version')),
                 generic_artifact_content_body=request.pop(util.camelize('GenericArtifactContentBody')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

@@ -42,6 +42,14 @@ class WorkRequestResource(object):
     RESOURCE_ACTION_CHANGE_COMPARTMENT = "CHANGE_COMPARTMENT"
 
     #: A constant which can be used with the resource_action property of a WorkRequestResource.
+    #: This constant has a value of "CHANGE_CUST_ENC_KEY"
+    RESOURCE_ACTION_CHANGE_CUST_ENC_KEY = "CHANGE_CUST_ENC_KEY"
+
+    #: A constant which can be used with the resource_action property of a WorkRequestResource.
+    #: This constant has a value of "DEACT_CUST_ENC_KEY"
+    RESOURCE_ACTION_DEACT_CUST_ENC_KEY = "DEACT_CUST_ENC_KEY"
+
+    #: A constant which can be used with the resource_action property of a WorkRequestResource.
     #: This constant has a value of "CREATE_ASSOCIATION"
     RESOURCE_ACTION_CREATE_ASSOCIATION = "CREATE_ASSOCIATION"
 
@@ -52,6 +60,34 @@ class WorkRequestResource(object):
     #: A constant which can be used with the resource_action property of a WorkRequestResource.
     #: This constant has a value of "UPDATE_ENTITLEMENTS_FOR_CACCT"
     RESOURCE_ACTION_UPDATE_ENTITLEMENTS_FOR_CACCT = "UPDATE_ENTITLEMENTS_FOR_CACCT"
+
+    #: A constant which can be used with the resource_action property of a WorkRequestResource.
+    #: This constant has a value of "CREATE_ODA_INSTANCE_ATTACHMENT"
+    RESOURCE_ACTION_CREATE_ODA_INSTANCE_ATTACHMENT = "CREATE_ODA_INSTANCE_ATTACHMENT"
+
+    #: A constant which can be used with the resource_action property of a WorkRequestResource.
+    #: This constant has a value of "UPDATE_ODA_INSTANCE_ATTACHMENT"
+    RESOURCE_ACTION_UPDATE_ODA_INSTANCE_ATTACHMENT = "UPDATE_ODA_INSTANCE_ATTACHMENT"
+
+    #: A constant which can be used with the resource_action property of a WorkRequestResource.
+    #: This constant has a value of "DELETE_ODA_INSTANCE_ATTACHMENT"
+    RESOURCE_ACTION_DELETE_ODA_INSTANCE_ATTACHMENT = "DELETE_ODA_INSTANCE_ATTACHMENT"
+
+    #: A constant which can be used with the resource_action property of a WorkRequestResource.
+    #: This constant has a value of "CREATE_IMPORTED_PACKAGE"
+    RESOURCE_ACTION_CREATE_IMPORTED_PACKAGE = "CREATE_IMPORTED_PACKAGE"
+
+    #: A constant which can be used with the resource_action property of a WorkRequestResource.
+    #: This constant has a value of "UPDATE_IMPORTED_PACKAGE"
+    RESOURCE_ACTION_UPDATE_IMPORTED_PACKAGE = "UPDATE_IMPORTED_PACKAGE"
+
+    #: A constant which can be used with the resource_action property of a WorkRequestResource.
+    #: This constant has a value of "DELETE_IMPORTED_PACKAGE"
+    RESOURCE_ACTION_DELETE_IMPORTED_PACKAGE = "DELETE_IMPORTED_PACKAGE"
+
+    #: A constant which can be used with the resource_action property of a WorkRequestResource.
+    #: This constant has a value of "EXPORT"
+    RESOURCE_ACTION_EXPORT = "EXPORT"
 
     #: A constant which can be used with the status property of a WorkRequestResource.
     #: This constant has a value of "ACCEPTED"
@@ -84,7 +120,7 @@ class WorkRequestResource(object):
 
         :param resource_action:
             The value to assign to the resource_action property of this WorkRequestResource.
-            Allowed values for this property are: "CREATE", "DELETE", "PURGE", "RECOVER", "STOP", "START", "CHANGE_COMPARTMENT", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE", "DELETE", "PURGE", "RECOVER", "STOP", "START", "CHANGE_COMPARTMENT", "CHANGE_CUST_ENC_KEY", "DEACT_CUST_ENC_KEY", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT", "CREATE_ODA_INSTANCE_ATTACHMENT", "UPDATE_ODA_INSTANCE_ATTACHMENT", "DELETE_ODA_INSTANCE_ATTACHMENT", "CREATE_IMPORTED_PACKAGE", "UPDATE_IMPORTED_PACKAGE", "DELETE_IMPORTED_PACKAGE", "EXPORT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_action: str
 
@@ -142,7 +178,7 @@ class WorkRequestResource(object):
         **[Required]** Gets the resource_action of this WorkRequestResource.
         The action to take against the Digital Assistant instance.
 
-        Allowed values for this property are: "CREATE", "DELETE", "PURGE", "RECOVER", "STOP", "START", "CHANGE_COMPARTMENT", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE", "DELETE", "PURGE", "RECOVER", "STOP", "START", "CHANGE_COMPARTMENT", "CHANGE_CUST_ENC_KEY", "DEACT_CUST_ENC_KEY", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT", "CREATE_ODA_INSTANCE_ATTACHMENT", "UPDATE_ODA_INSTANCE_ATTACHMENT", "DELETE_ODA_INSTANCE_ATTACHMENT", "CREATE_IMPORTED_PACKAGE", "UPDATE_IMPORTED_PACKAGE", "DELETE_IMPORTED_PACKAGE", "EXPORT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -161,7 +197,7 @@ class WorkRequestResource(object):
         :param resource_action: The resource_action of this WorkRequestResource.
         :type: str
         """
-        allowed_values = ["CREATE", "DELETE", "PURGE", "RECOVER", "STOP", "START", "CHANGE_COMPARTMENT", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT"]
+        allowed_values = ["CREATE", "DELETE", "PURGE", "RECOVER", "STOP", "START", "CHANGE_COMPARTMENT", "CHANGE_CUST_ENC_KEY", "DEACT_CUST_ENC_KEY", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT", "CREATE_ODA_INSTANCE_ATTACHMENT", "UPDATE_ODA_INSTANCE_ATTACHMENT", "DELETE_ODA_INSTANCE_ATTACHMENT", "CREATE_IMPORTED_PACKAGE", "UPDATE_IMPORTED_PACKAGE", "DELETE_IMPORTED_PACKAGE", "EXPORT"]
         if not value_allowed_none_or_none_sentinel(resource_action, allowed_values):
             resource_action = 'UNKNOWN_ENUM_VALUE'
         self._resource_action = resource_action

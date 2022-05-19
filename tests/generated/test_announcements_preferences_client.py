@@ -54,6 +54,7 @@ def test_create_announcements_preference(testing_service_client):
             client = oci.announcements_service.AnnouncementsPreferencesClient(config, service_endpoint=service_endpoint)
             response = client.create_announcements_preference(
                 announcements_preference_details=request.pop(util.camelize('AnnouncementsPreferenceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -94,6 +95,7 @@ def test_get_announcements_preference(testing_service_client):
             client = oci.announcements_service.AnnouncementsPreferencesClient(config, service_endpoint=service_endpoint)
             response = client.get_announcements_preference(
                 preference_id=request.pop(util.camelize('preferenceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -135,6 +137,7 @@ def test_list_announcements_preferences(testing_service_client):
             client = oci.announcements_service.AnnouncementsPreferencesClient(config, service_endpoint=service_endpoint)
             response = client.list_announcements_preferences(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -144,6 +147,7 @@ def test_list_announcements_preferences(testing_service_client):
                 next_response = client.list_announcements_preferences(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -154,6 +158,7 @@ def test_list_announcements_preferences(testing_service_client):
                     prev_response = client.list_announcements_preferences(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -195,6 +200,7 @@ def test_update_announcements_preference(testing_service_client):
             response = client.update_announcements_preference(
                 preference_id=request.pop(util.camelize('preferenceId')),
                 announcements_preference_details=request.pop(util.camelize('AnnouncementsPreferenceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

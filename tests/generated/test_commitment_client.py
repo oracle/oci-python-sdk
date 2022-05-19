@@ -54,6 +54,7 @@ def test_get_commitment(testing_service_client):
             client = oci.osub_subscription.CommitmentClient(config, service_endpoint=service_endpoint)
             response = client.get_commitment(
                 commitment_id=request.pop(util.camelize('commitmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_list_commitments(testing_service_client):
             response = client.list_commitments(
                 subscribed_service_id=request.pop(util.camelize('subscribedServiceId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -106,6 +108,7 @@ def test_list_commitments(testing_service_client):
                     subscribed_service_id=request.pop(util.camelize('subscribedServiceId')),
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -117,6 +120,7 @@ def test_list_commitments(testing_service_client):
                         subscribed_service_id=request.pop(util.camelize('subscribedServiceId')),
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)

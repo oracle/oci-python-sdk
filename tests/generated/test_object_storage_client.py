@@ -57,6 +57,7 @@ def test_abort_multipart_upload(testing_service_client):
                 bucket_name=request.pop(util.camelize('bucketName')),
                 object_name=request.pop(util.camelize('objectName')),
                 upload_id=request.pop(util.camelize('uploadId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -97,6 +98,7 @@ def test_cancel_work_request(testing_service_client):
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.cancel_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -141,6 +143,7 @@ def test_commit_multipart_upload(testing_service_client):
                 object_name=request.pop(util.camelize('objectName')),
                 upload_id=request.pop(util.camelize('uploadId')),
                 commit_multipart_upload_details=request.pop(util.camelize('CommitMultipartUploadDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -183,6 +186,7 @@ def test_copy_object(testing_service_client):
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
                 copy_object_details=request.pop(util.camelize('CopyObjectDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -224,6 +228,7 @@ def test_create_bucket(testing_service_client):
             response = client.create_bucket(
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 create_bucket_details=request.pop(util.camelize('CreateBucketDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -266,6 +271,7 @@ def test_create_multipart_upload(testing_service_client):
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
                 create_multipart_upload_details=request.pop(util.camelize('CreateMultipartUploadDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -308,6 +314,7 @@ def test_create_preauthenticated_request(testing_service_client):
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
                 create_preauthenticated_request_details=request.pop(util.camelize('CreatePreauthenticatedRequestDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -350,6 +357,7 @@ def test_create_replication_policy(testing_service_client):
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
                 create_replication_policy_details=request.pop(util.camelize('CreateReplicationPolicyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -392,6 +400,7 @@ def test_create_retention_rule(testing_service_client):
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
                 create_retention_rule_details=request.pop(util.camelize('CreateRetentionRuleDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -433,6 +442,7 @@ def test_delete_bucket(testing_service_client):
             response = client.delete_bucket(
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -475,6 +485,7 @@ def test_delete_object(testing_service_client):
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
                 object_name=request.pop(util.camelize('objectName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -516,6 +527,7 @@ def test_delete_object_lifecycle_policy(testing_service_client):
             response = client.delete_object_lifecycle_policy(
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -558,6 +570,7 @@ def test_delete_preauthenticated_request(testing_service_client):
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
                 par_id=request.pop(util.camelize('parId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -600,6 +613,7 @@ def test_delete_replication_policy(testing_service_client):
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
                 replication_id=request.pop(util.camelize('replicationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -642,6 +656,7 @@ def test_delete_retention_rule(testing_service_client):
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
                 retention_rule_id=request.pop(util.camelize('retentionRuleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -683,6 +698,7 @@ def test_get_bucket(testing_service_client):
             response = client.get_bucket(
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -722,6 +738,7 @@ def test_get_namespace(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.get_namespace(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -762,6 +779,7 @@ def test_get_namespace_metadata(testing_service_client):
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.get_namespace_metadata(
                 namespace_name=request.pop(util.camelize('namespaceName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -804,6 +822,7 @@ def test_get_object(testing_service_client):
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
                 object_name=request.pop(util.camelize('objectName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -845,6 +864,7 @@ def test_get_object_lifecycle_policy(testing_service_client):
             response = client.get_object_lifecycle_policy(
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -887,6 +907,7 @@ def test_get_preauthenticated_request(testing_service_client):
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
                 par_id=request.pop(util.camelize('parId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -929,6 +950,7 @@ def test_get_replication_policy(testing_service_client):
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
                 replication_id=request.pop(util.camelize('replicationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -971,6 +993,7 @@ def test_get_retention_rule(testing_service_client):
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
                 retention_rule_id=request.pop(util.camelize('retentionRuleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1011,6 +1034,7 @@ def test_get_work_request(testing_service_client):
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1052,6 +1076,7 @@ def test_head_bucket(testing_service_client):
             response = client.head_bucket(
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1094,6 +1119,7 @@ def test_head_object(testing_service_client):
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
                 object_name=request.pop(util.camelize('objectName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1136,6 +1162,7 @@ def test_list_buckets(testing_service_client):
             response = client.list_buckets(
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1146,6 +1173,7 @@ def test_list_buckets(testing_service_client):
                     namespace_name=request.pop(util.camelize('namespaceName')),
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1157,6 +1185,7 @@ def test_list_buckets(testing_service_client):
                         namespace_name=request.pop(util.camelize('namespaceName')),
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1201,6 +1230,7 @@ def test_list_multipart_upload_parts(testing_service_client):
                 bucket_name=request.pop(util.camelize('bucketName')),
                 object_name=request.pop(util.camelize('objectName')),
                 upload_id=request.pop(util.camelize('uploadId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1213,6 +1243,7 @@ def test_list_multipart_upload_parts(testing_service_client):
                     object_name=request.pop(util.camelize('objectName')),
                     upload_id=request.pop(util.camelize('uploadId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1226,6 +1257,7 @@ def test_list_multipart_upload_parts(testing_service_client):
                         object_name=request.pop(util.camelize('objectName')),
                         upload_id=request.pop(util.camelize('uploadId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1268,6 +1300,7 @@ def test_list_multipart_uploads(testing_service_client):
             response = client.list_multipart_uploads(
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1278,6 +1311,7 @@ def test_list_multipart_uploads(testing_service_client):
                     namespace_name=request.pop(util.camelize('namespaceName')),
                     bucket_name=request.pop(util.camelize('bucketName')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1289,6 +1323,7 @@ def test_list_multipart_uploads(testing_service_client):
                         namespace_name=request.pop(util.camelize('namespaceName')),
                         bucket_name=request.pop(util.camelize('bucketName')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1331,6 +1366,7 @@ def test_list_object_versions(testing_service_client):
             response = client.list_object_versions(
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1341,6 +1377,7 @@ def test_list_object_versions(testing_service_client):
                     namespace_name=request.pop(util.camelize('namespaceName')),
                     bucket_name=request.pop(util.camelize('bucketName')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1352,6 +1389,7 @@ def test_list_object_versions(testing_service_client):
                         namespace_name=request.pop(util.camelize('namespaceName')),
                         bucket_name=request.pop(util.camelize('bucketName')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1393,6 +1431,7 @@ def test_list_objects(testing_service_client):
             response = client.list_objects(
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1435,6 +1474,7 @@ def test_list_preauthenticated_requests(testing_service_client):
             response = client.list_preauthenticated_requests(
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1445,6 +1485,7 @@ def test_list_preauthenticated_requests(testing_service_client):
                     namespace_name=request.pop(util.camelize('namespaceName')),
                     bucket_name=request.pop(util.camelize('bucketName')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1456,6 +1497,7 @@ def test_list_preauthenticated_requests(testing_service_client):
                         namespace_name=request.pop(util.camelize('namespaceName')),
                         bucket_name=request.pop(util.camelize('bucketName')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1498,6 +1540,7 @@ def test_list_replication_policies(testing_service_client):
             response = client.list_replication_policies(
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1508,6 +1551,7 @@ def test_list_replication_policies(testing_service_client):
                     namespace_name=request.pop(util.camelize('namespaceName')),
                     bucket_name=request.pop(util.camelize('bucketName')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1519,6 +1563,7 @@ def test_list_replication_policies(testing_service_client):
                         namespace_name=request.pop(util.camelize('namespaceName')),
                         bucket_name=request.pop(util.camelize('bucketName')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1561,6 +1606,7 @@ def test_list_replication_sources(testing_service_client):
             response = client.list_replication_sources(
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1571,6 +1617,7 @@ def test_list_replication_sources(testing_service_client):
                     namespace_name=request.pop(util.camelize('namespaceName')),
                     bucket_name=request.pop(util.camelize('bucketName')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1582,6 +1629,7 @@ def test_list_replication_sources(testing_service_client):
                         namespace_name=request.pop(util.camelize('namespaceName')),
                         bucket_name=request.pop(util.camelize('bucketName')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1624,6 +1672,7 @@ def test_list_retention_rules(testing_service_client):
             response = client.list_retention_rules(
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1634,6 +1683,7 @@ def test_list_retention_rules(testing_service_client):
                     namespace_name=request.pop(util.camelize('namespaceName')),
                     bucket_name=request.pop(util.camelize('bucketName')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1645,6 +1695,7 @@ def test_list_retention_rules(testing_service_client):
                         namespace_name=request.pop(util.camelize('namespaceName')),
                         bucket_name=request.pop(util.camelize('bucketName')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1686,6 +1737,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1695,6 +1747,7 @@ def test_list_work_request_errors(testing_service_client):
                 next_response = client.list_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1705,6 +1758,7 @@ def test_list_work_request_errors(testing_service_client):
                     prev_response = client.list_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1746,6 +1800,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1755,6 +1810,7 @@ def test_list_work_request_logs(testing_service_client):
                 next_response = client.list_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1765,6 +1821,7 @@ def test_list_work_request_logs(testing_service_client):
                     prev_response = client.list_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1806,6 +1863,7 @@ def test_list_work_requests(testing_service_client):
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1815,6 +1873,7 @@ def test_list_work_requests(testing_service_client):
                 next_response = client.list_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1825,6 +1884,7 @@ def test_list_work_requests(testing_service_client):
                     prev_response = client.list_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1866,6 +1926,7 @@ def test_make_bucket_writable(testing_service_client):
             response = client.make_bucket_writable(
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1909,6 +1970,7 @@ def test_put_object(testing_service_client):
                 bucket_name=request.pop(util.camelize('bucketName')),
                 object_name=request.pop(util.camelize('objectName')),
                 put_object_body=request.pop(util.camelize('PutObjectBody')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1951,6 +2013,7 @@ def test_put_object_lifecycle_policy(testing_service_client):
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
                 put_object_lifecycle_policy_details=request.pop(util.camelize('PutObjectLifecyclePolicyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1992,6 +2055,7 @@ def test_reencrypt_bucket(testing_service_client):
             response = client.reencrypt_bucket(
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2035,6 +2099,7 @@ def test_reencrypt_object(testing_service_client):
                 bucket_name=request.pop(util.camelize('bucketName')),
                 object_name=request.pop(util.camelize('objectName')),
                 reencrypt_object_details=request.pop(util.camelize('ReencryptObjectDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2077,6 +2142,7 @@ def test_rename_object(testing_service_client):
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
                 rename_object_details=request.pop(util.camelize('RenameObjectDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2119,6 +2185,7 @@ def test_restore_objects(testing_service_client):
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
                 restore_objects_details=request.pop(util.camelize('RestoreObjectsDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2161,6 +2228,7 @@ def test_update_bucket(testing_service_client):
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
                 update_bucket_details=request.pop(util.camelize('UpdateBucketDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2202,6 +2270,7 @@ def test_update_namespace_metadata(testing_service_client):
             response = client.update_namespace_metadata(
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 update_namespace_metadata_details=request.pop(util.camelize('UpdateNamespaceMetadataDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2244,6 +2313,7 @@ def test_update_object_storage_tier(testing_service_client):
                 namespace_name=request.pop(util.camelize('namespaceName')),
                 bucket_name=request.pop(util.camelize('bucketName')),
                 update_object_storage_tier_details=request.pop(util.camelize('UpdateObjectStorageTierDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2287,6 +2357,7 @@ def test_update_retention_rule(testing_service_client):
                 bucket_name=request.pop(util.camelize('bucketName')),
                 retention_rule_id=request.pop(util.camelize('retentionRuleId')),
                 update_retention_rule_details=request.pop(util.camelize('UpdateRetentionRuleDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2332,6 +2403,7 @@ def test_upload_part(testing_service_client):
                 upload_id=request.pop(util.camelize('uploadId')),
                 upload_part_num=request.pop(util.camelize('uploadPartNum')),
                 upload_part_body=request.pop(util.camelize('UploadPartBody')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

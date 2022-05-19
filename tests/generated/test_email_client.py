@@ -55,6 +55,7 @@ def test_change_email_domain_compartment(testing_service_client):
             response = client.change_email_domain_compartment(
                 email_domain_id=request.pop(util.camelize('emailDomainId')),
                 change_email_domain_compartment_details=request.pop(util.camelize('ChangeEmailDomainCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_change_sender_compartment(testing_service_client):
             response = client.change_sender_compartment(
                 sender_id=request.pop(util.camelize('senderId')),
                 change_sender_compartment_details=request.pop(util.camelize('ChangeSenderCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -136,6 +138,7 @@ def test_create_dkim(testing_service_client):
             client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.create_dkim(
                 create_dkim_details=request.pop(util.camelize('CreateDkimDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -176,6 +179,7 @@ def test_create_email_domain(testing_service_client):
             client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.create_email_domain(
                 create_email_domain_details=request.pop(util.camelize('CreateEmailDomainDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -216,6 +220,7 @@ def test_create_sender(testing_service_client):
             client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.create_sender(
                 create_sender_details=request.pop(util.camelize('CreateSenderDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -256,6 +261,7 @@ def test_create_suppression(testing_service_client):
             client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.create_suppression(
                 create_suppression_details=request.pop(util.camelize('CreateSuppressionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -296,6 +302,7 @@ def test_delete_dkim(testing_service_client):
             client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.delete_dkim(
                 dkim_id=request.pop(util.camelize('dkimId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -336,6 +343,7 @@ def test_delete_email_domain(testing_service_client):
             client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.delete_email_domain(
                 email_domain_id=request.pop(util.camelize('emailDomainId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -376,6 +384,7 @@ def test_delete_sender(testing_service_client):
             client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.delete_sender(
                 sender_id=request.pop(util.camelize('senderId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -416,6 +425,7 @@ def test_delete_suppression(testing_service_client):
             client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.delete_suppression(
                 suppression_id=request.pop(util.camelize('suppressionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -456,6 +466,7 @@ def test_get_dkim(testing_service_client):
             client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.get_dkim(
                 dkim_id=request.pop(util.camelize('dkimId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -496,6 +507,7 @@ def test_get_email_domain(testing_service_client):
             client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.get_email_domain(
                 email_domain_id=request.pop(util.camelize('emailDomainId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -536,6 +548,7 @@ def test_get_sender(testing_service_client):
             client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.get_sender(
                 sender_id=request.pop(util.camelize('senderId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -576,6 +589,7 @@ def test_get_suppression(testing_service_client):
             client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.get_suppression(
                 suppression_id=request.pop(util.camelize('suppressionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -616,6 +630,7 @@ def test_get_work_request(testing_service_client):
             client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -657,6 +672,7 @@ def test_list_dkims(testing_service_client):
             client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.list_dkims(
                 email_domain_id=request.pop(util.camelize('emailDomainId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -666,6 +682,7 @@ def test_list_dkims(testing_service_client):
                 next_response = client.list_dkims(
                     email_domain_id=request.pop(util.camelize('emailDomainId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -676,6 +693,7 @@ def test_list_dkims(testing_service_client):
                     prev_response = client.list_dkims(
                         email_domain_id=request.pop(util.camelize('emailDomainId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -717,6 +735,7 @@ def test_list_email_domains(testing_service_client):
             client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.list_email_domains(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -726,6 +745,7 @@ def test_list_email_domains(testing_service_client):
                 next_response = client.list_email_domains(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -736,6 +756,7 @@ def test_list_email_domains(testing_service_client):
                     prev_response = client.list_email_domains(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -777,6 +798,7 @@ def test_list_senders(testing_service_client):
             client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.list_senders(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -786,6 +808,7 @@ def test_list_senders(testing_service_client):
                 next_response = client.list_senders(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -796,6 +819,7 @@ def test_list_senders(testing_service_client):
                     prev_response = client.list_senders(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -837,6 +861,7 @@ def test_list_suppressions(testing_service_client):
             client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.list_suppressions(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -846,6 +871,7 @@ def test_list_suppressions(testing_service_client):
                 next_response = client.list_suppressions(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -856,6 +882,7 @@ def test_list_suppressions(testing_service_client):
                     prev_response = client.list_suppressions(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -897,6 +924,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -906,6 +934,7 @@ def test_list_work_request_errors(testing_service_client):
                 next_response = client.list_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -916,6 +945,7 @@ def test_list_work_request_errors(testing_service_client):
                     prev_response = client.list_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -957,6 +987,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -966,6 +997,7 @@ def test_list_work_request_logs(testing_service_client):
                 next_response = client.list_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -976,6 +1008,7 @@ def test_list_work_request_logs(testing_service_client):
                     prev_response = client.list_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1017,6 +1050,7 @@ def test_list_work_requests(testing_service_client):
             client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1026,6 +1060,7 @@ def test_list_work_requests(testing_service_client):
                 next_response = client.list_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1036,6 +1071,7 @@ def test_list_work_requests(testing_service_client):
                     prev_response = client.list_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1077,6 +1113,7 @@ def test_update_dkim(testing_service_client):
             response = client.update_dkim(
                 dkim_id=request.pop(util.camelize('dkimId')),
                 update_dkim_details=request.pop(util.camelize('UpdateDkimDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1118,6 +1155,7 @@ def test_update_email_domain(testing_service_client):
             response = client.update_email_domain(
                 email_domain_id=request.pop(util.camelize('emailDomainId')),
                 update_email_domain_details=request.pop(util.camelize('UpdateEmailDomainDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1159,6 +1197,7 @@ def test_update_sender(testing_service_client):
             response = client.update_sender(
                 sender_id=request.pop(util.camelize('senderId')),
                 update_sender_details=request.pop(util.camelize('UpdateSenderDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

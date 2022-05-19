@@ -56,6 +56,7 @@ def test_get_network_connectivity_status_collection(testing_service_client):
             response = client.get_network_connectivity_status_collection(
                 registry_id=request.pop(util.camelize('registryId')),
                 endpoint_key=request.pop(util.camelize('endpointKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -66,6 +67,7 @@ def test_get_network_connectivity_status_collection(testing_service_client):
                     registry_id=request.pop(util.camelize('registryId')),
                     endpoint_key=request.pop(util.camelize('endpointKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -77,6 +79,7 @@ def test_get_network_connectivity_status_collection(testing_service_client):
                         registry_id=request.pop(util.camelize('registryId')),
                         endpoint_key=request.pop(util.camelize('endpointKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)

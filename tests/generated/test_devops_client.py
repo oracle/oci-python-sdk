@@ -55,6 +55,7 @@ def test_approve_deployment(testing_service_client):
             response = client.approve_deployment(
                 deployment_id=request.pop(util.camelize('deploymentId')),
                 approve_deployment_details=request.pop(util.camelize('ApproveDeploymentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_cancel_build_run(testing_service_client):
             response = client.cancel_build_run(
                 cancel_build_run_details=request.pop(util.camelize('CancelBuildRunDetails')),
                 build_run_id=request.pop(util.camelize('buildRunId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -137,6 +139,7 @@ def test_cancel_deployment(testing_service_client):
             response = client.cancel_deployment(
                 deployment_id=request.pop(util.camelize('deploymentId')),
                 cancel_deployment_details=request.pop(util.camelize('CancelDeploymentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -178,6 +181,7 @@ def test_change_project_compartment(testing_service_client):
             response = client.change_project_compartment(
                 project_id=request.pop(util.camelize('projectId')),
                 change_project_compartment_details=request.pop(util.camelize('ChangeProjectCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -218,6 +222,7 @@ def test_create_build_pipeline(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.create_build_pipeline(
                 create_build_pipeline_details=request.pop(util.camelize('CreateBuildPipelineDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -258,6 +263,7 @@ def test_create_build_pipeline_stage(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.create_build_pipeline_stage(
                 create_build_pipeline_stage_details=request.pop(util.camelize('CreateBuildPipelineStageDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -298,6 +304,7 @@ def test_create_build_run(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.create_build_run(
                 create_build_run_details=request.pop(util.camelize('CreateBuildRunDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -338,6 +345,7 @@ def test_create_connection(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.create_connection(
                 create_connection_details=request.pop(util.camelize('CreateConnectionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -378,6 +386,7 @@ def test_create_deploy_artifact(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.create_deploy_artifact(
                 create_deploy_artifact_details=request.pop(util.camelize('CreateDeployArtifactDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -418,6 +427,7 @@ def test_create_deploy_environment(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.create_deploy_environment(
                 create_deploy_environment_details=request.pop(util.camelize('CreateDeployEnvironmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -458,6 +468,7 @@ def test_create_deploy_pipeline(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.create_deploy_pipeline(
                 create_deploy_pipeline_details=request.pop(util.camelize('CreateDeployPipelineDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -498,6 +509,7 @@ def test_create_deploy_stage(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.create_deploy_stage(
                 create_deploy_stage_details=request.pop(util.camelize('CreateDeployStageDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -538,6 +550,7 @@ def test_create_deployment(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.create_deployment(
                 create_deployment_details=request.pop(util.camelize('CreateDeploymentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -578,6 +591,7 @@ def test_create_project(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.create_project(
                 create_project_details=request.pop(util.camelize('CreateProjectDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -618,6 +632,7 @@ def test_create_repository(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.create_repository(
                 create_repository_details=request.pop(util.camelize('CreateRepositoryDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -658,6 +673,7 @@ def test_create_trigger(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.create_trigger(
                 create_trigger_details=request.pop(util.camelize('CreateTriggerDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -698,6 +714,7 @@ def test_delete_build_pipeline(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.delete_build_pipeline(
                 build_pipeline_id=request.pop(util.camelize('buildPipelineId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -738,6 +755,7 @@ def test_delete_build_pipeline_stage(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.delete_build_pipeline_stage(
                 build_pipeline_stage_id=request.pop(util.camelize('buildPipelineStageId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -778,6 +796,7 @@ def test_delete_connection(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.delete_connection(
                 connection_id=request.pop(util.camelize('connectionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -818,6 +837,7 @@ def test_delete_deploy_artifact(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.delete_deploy_artifact(
                 deploy_artifact_id=request.pop(util.camelize('deployArtifactId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -858,6 +878,7 @@ def test_delete_deploy_environment(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.delete_deploy_environment(
                 deploy_environment_id=request.pop(util.camelize('deployEnvironmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -898,6 +919,7 @@ def test_delete_deploy_pipeline(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.delete_deploy_pipeline(
                 deploy_pipeline_id=request.pop(util.camelize('deployPipelineId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -938,6 +960,7 @@ def test_delete_deploy_stage(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.delete_deploy_stage(
                 deploy_stage_id=request.pop(util.camelize('deployStageId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -978,6 +1001,7 @@ def test_delete_project(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.delete_project(
                 project_id=request.pop(util.camelize('projectId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1019,6 +1043,7 @@ def test_delete_ref(testing_service_client):
             response = client.delete_ref(
                 repository_id=request.pop(util.camelize('repositoryId')),
                 ref_name=request.pop(util.camelize('refName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1059,6 +1084,7 @@ def test_delete_repository(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.delete_repository(
                 repository_id=request.pop(util.camelize('repositoryId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1099,6 +1125,7 @@ def test_delete_trigger(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.delete_trigger(
                 trigger_id=request.pop(util.camelize('triggerId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1139,6 +1166,7 @@ def test_get_build_pipeline(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.get_build_pipeline(
                 build_pipeline_id=request.pop(util.camelize('buildPipelineId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1179,6 +1207,7 @@ def test_get_build_pipeline_stage(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.get_build_pipeline_stage(
                 build_pipeline_stage_id=request.pop(util.camelize('buildPipelineStageId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1219,6 +1248,7 @@ def test_get_build_run(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.get_build_run(
                 build_run_id=request.pop(util.camelize('buildRunId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1260,6 +1290,7 @@ def test_get_commit(testing_service_client):
             response = client.get_commit(
                 repository_id=request.pop(util.camelize('repositoryId')),
                 commit_id=request.pop(util.camelize('commitId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1301,6 +1332,7 @@ def test_get_commit_diff(testing_service_client):
             response = client.get_commit_diff(
                 repository_id=request.pop(util.camelize('repositoryId')),
                 target_version=request.pop(util.camelize('targetVersion')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1341,6 +1373,7 @@ def test_get_connection(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.get_connection(
                 connection_id=request.pop(util.camelize('connectionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1381,6 +1414,7 @@ def test_get_deploy_artifact(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.get_deploy_artifact(
                 deploy_artifact_id=request.pop(util.camelize('deployArtifactId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1421,6 +1455,7 @@ def test_get_deploy_environment(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.get_deploy_environment(
                 deploy_environment_id=request.pop(util.camelize('deployEnvironmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1461,6 +1496,7 @@ def test_get_deploy_pipeline(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.get_deploy_pipeline(
                 deploy_pipeline_id=request.pop(util.camelize('deployPipelineId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1501,6 +1537,7 @@ def test_get_deploy_stage(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.get_deploy_stage(
                 deploy_stage_id=request.pop(util.camelize('deployStageId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1541,6 +1578,7 @@ def test_get_deployment(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.get_deployment(
                 deployment_id=request.pop(util.camelize('deploymentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1584,6 +1622,7 @@ def test_get_file_diff(testing_service_client):
                 file_path=request.pop(util.camelize('filePath')),
                 base_version=request.pop(util.camelize('baseVersion')),
                 target_version=request.pop(util.camelize('targetVersion')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1625,6 +1664,7 @@ def test_get_mirror_record(testing_service_client):
             response = client.get_mirror_record(
                 repository_id=request.pop(util.camelize('repositoryId')),
                 mirror_record_type=request.pop(util.camelize('mirrorRecordType')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1665,6 +1705,7 @@ def test_get_object(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.get_object(
                 repository_id=request.pop(util.camelize('repositoryId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1706,6 +1747,7 @@ def test_get_object_content(testing_service_client):
             response = client.get_object_content(
                 repository_id=request.pop(util.camelize('repositoryId')),
                 sha=request.pop(util.camelize('sha')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1746,6 +1788,7 @@ def test_get_project(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.get_project(
                 project_id=request.pop(util.camelize('projectId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1787,6 +1830,7 @@ def test_get_ref(testing_service_client):
             response = client.get_ref(
                 repository_id=request.pop(util.camelize('repositoryId')),
                 ref_name=request.pop(util.camelize('refName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1829,6 +1873,7 @@ def test_get_repo_file_diff(testing_service_client):
                 repository_id=request.pop(util.camelize('repositoryId')),
                 base_version=request.pop(util.camelize('baseVersion')),
                 target_version=request.pop(util.camelize('targetVersion')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1870,6 +1915,7 @@ def test_get_repo_file_lines(testing_service_client):
             response = client.get_repo_file_lines(
                 repository_id=request.pop(util.camelize('repositoryId')),
                 revision=request.pop(util.camelize('revision')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1910,6 +1956,7 @@ def test_get_repository(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.get_repository(
                 repository_id=request.pop(util.camelize('repositoryId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1950,6 +1997,7 @@ def test_get_repository_archive_content(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.get_repository_archive_content(
                 repository_id=request.pop(util.camelize('repositoryId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1992,6 +2040,7 @@ def test_get_repository_file_lines(testing_service_client):
                 repository_id=request.pop(util.camelize('repositoryId')),
                 file_path=request.pop(util.camelize('filePath')),
                 revision=request.pop(util.camelize('revision')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2032,6 +2081,7 @@ def test_get_trigger(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.get_trigger(
                 trigger_id=request.pop(util.camelize('triggerId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2072,6 +2122,7 @@ def test_get_work_request(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2113,6 +2164,7 @@ def test_list_authors(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.list_authors(
                 repository_id=request.pop(util.camelize('repositoryId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2122,6 +2174,7 @@ def test_list_authors(testing_service_client):
                 next_response = client.list_authors(
                     repository_id=request.pop(util.camelize('repositoryId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2132,6 +2185,7 @@ def test_list_authors(testing_service_client):
                     prev_response = client.list_authors(
                         repository_id=request.pop(util.camelize('repositoryId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2172,6 +2226,7 @@ def test_list_build_pipeline_stages(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.list_build_pipeline_stages(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2180,6 +2235,7 @@ def test_list_build_pipeline_stages(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_build_pipeline_stages(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2189,6 +2245,7 @@ def test_list_build_pipeline_stages(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_build_pipeline_stages(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2229,6 +2286,7 @@ def test_list_build_pipelines(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.list_build_pipelines(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2237,6 +2295,7 @@ def test_list_build_pipelines(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_build_pipelines(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2246,6 +2305,7 @@ def test_list_build_pipelines(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_build_pipelines(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2286,6 +2346,7 @@ def test_list_build_runs(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.list_build_runs(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2294,6 +2355,7 @@ def test_list_build_runs(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_build_runs(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2303,6 +2365,7 @@ def test_list_build_runs(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_build_runs(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2346,6 +2409,7 @@ def test_list_commit_diffs(testing_service_client):
                 repository_id=request.pop(util.camelize('repositoryId')),
                 base_version=request.pop(util.camelize('baseVersion')),
                 target_version=request.pop(util.camelize('targetVersion')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2357,6 +2421,7 @@ def test_list_commit_diffs(testing_service_client):
                     base_version=request.pop(util.camelize('baseVersion')),
                     target_version=request.pop(util.camelize('targetVersion')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2369,6 +2434,7 @@ def test_list_commit_diffs(testing_service_client):
                         base_version=request.pop(util.camelize('baseVersion')),
                         target_version=request.pop(util.camelize('targetVersion')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2410,6 +2476,7 @@ def test_list_commits(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.list_commits(
                 repository_id=request.pop(util.camelize('repositoryId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2419,6 +2486,7 @@ def test_list_commits(testing_service_client):
                 next_response = client.list_commits(
                     repository_id=request.pop(util.camelize('repositoryId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2429,6 +2497,7 @@ def test_list_commits(testing_service_client):
                     prev_response = client.list_commits(
                         repository_id=request.pop(util.camelize('repositoryId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2469,6 +2538,7 @@ def test_list_connections(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.list_connections(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2477,6 +2547,7 @@ def test_list_connections(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_connections(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2486,6 +2557,7 @@ def test_list_connections(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_connections(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2526,6 +2598,7 @@ def test_list_deploy_artifacts(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.list_deploy_artifacts(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2534,6 +2607,7 @@ def test_list_deploy_artifacts(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_deploy_artifacts(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2543,6 +2617,7 @@ def test_list_deploy_artifacts(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_deploy_artifacts(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2583,6 +2658,7 @@ def test_list_deploy_environments(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.list_deploy_environments(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2591,6 +2667,7 @@ def test_list_deploy_environments(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_deploy_environments(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2600,6 +2677,7 @@ def test_list_deploy_environments(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_deploy_environments(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2640,6 +2718,7 @@ def test_list_deploy_pipelines(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.list_deploy_pipelines(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2648,6 +2727,7 @@ def test_list_deploy_pipelines(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_deploy_pipelines(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2657,6 +2737,7 @@ def test_list_deploy_pipelines(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_deploy_pipelines(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2697,6 +2778,7 @@ def test_list_deploy_stages(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.list_deploy_stages(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2705,6 +2787,7 @@ def test_list_deploy_stages(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_deploy_stages(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2714,6 +2797,7 @@ def test_list_deploy_stages(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_deploy_stages(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2754,6 +2838,7 @@ def test_list_deployments(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.list_deployments(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2762,6 +2847,7 @@ def test_list_deployments(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_deployments(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2771,6 +2857,7 @@ def test_list_deployments(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_deployments(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2812,6 +2899,7 @@ def test_list_mirror_records(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.list_mirror_records(
                 repository_id=request.pop(util.camelize('repositoryId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2821,6 +2909,7 @@ def test_list_mirror_records(testing_service_client):
                 next_response = client.list_mirror_records(
                     repository_id=request.pop(util.camelize('repositoryId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2831,6 +2920,7 @@ def test_list_mirror_records(testing_service_client):
                     prev_response = client.list_mirror_records(
                         repository_id=request.pop(util.camelize('repositoryId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2872,6 +2962,7 @@ def test_list_paths(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.list_paths(
                 repository_id=request.pop(util.camelize('repositoryId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2881,6 +2972,7 @@ def test_list_paths(testing_service_client):
                 next_response = client.list_paths(
                     repository_id=request.pop(util.camelize('repositoryId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2891,6 +2983,7 @@ def test_list_paths(testing_service_client):
                     prev_response = client.list_paths(
                         repository_id=request.pop(util.camelize('repositoryId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2932,6 +3025,7 @@ def test_list_projects(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.list_projects(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2941,6 +3035,7 @@ def test_list_projects(testing_service_client):
                 next_response = client.list_projects(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2951,6 +3046,7 @@ def test_list_projects(testing_service_client):
                     prev_response = client.list_projects(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2992,6 +3088,7 @@ def test_list_refs(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.list_refs(
                 repository_id=request.pop(util.camelize('repositoryId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3001,6 +3098,7 @@ def test_list_refs(testing_service_client):
                 next_response = client.list_refs(
                     repository_id=request.pop(util.camelize('repositoryId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3011,6 +3109,7 @@ def test_list_refs(testing_service_client):
                     prev_response = client.list_refs(
                         repository_id=request.pop(util.camelize('repositoryId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3051,6 +3150,7 @@ def test_list_repositories(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.list_repositories(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3059,6 +3159,7 @@ def test_list_repositories(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_repositories(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3068,6 +3169,7 @@ def test_list_repositories(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_repositories(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3108,6 +3210,7 @@ def test_list_triggers(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.list_triggers(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3116,6 +3219,7 @@ def test_list_triggers(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_triggers(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3125,6 +3229,7 @@ def test_list_triggers(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_triggers(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3166,6 +3271,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3175,6 +3281,7 @@ def test_list_work_request_errors(testing_service_client):
                 next_response = client.list_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3185,6 +3292,7 @@ def test_list_work_request_errors(testing_service_client):
                     prev_response = client.list_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3226,6 +3334,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3235,6 +3344,7 @@ def test_list_work_request_logs(testing_service_client):
                 next_response = client.list_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3245,6 +3355,7 @@ def test_list_work_request_logs(testing_service_client):
                     prev_response = client.list_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3286,6 +3397,7 @@ def test_list_work_requests(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3295,6 +3407,7 @@ def test_list_work_requests(testing_service_client):
                 next_response = client.list_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3305,6 +3418,7 @@ def test_list_work_requests(testing_service_client):
                     prev_response = client.list_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3345,6 +3459,7 @@ def test_mirror_repository(testing_service_client):
             client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
             response = client.mirror_repository(
                 repository_id=request.pop(util.camelize('repositoryId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3387,6 +3502,7 @@ def test_put_repository_ref(testing_service_client):
                 repository_id=request.pop(util.camelize('repositoryId')),
                 ref_name=request.pop(util.camelize('refName')),
                 put_repository_ref_details=request.pop(util.camelize('PutRepositoryRefDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3428,6 +3544,7 @@ def test_update_build_pipeline(testing_service_client):
             response = client.update_build_pipeline(
                 build_pipeline_id=request.pop(util.camelize('buildPipelineId')),
                 update_build_pipeline_details=request.pop(util.camelize('UpdateBuildPipelineDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3469,6 +3586,7 @@ def test_update_build_pipeline_stage(testing_service_client):
             response = client.update_build_pipeline_stage(
                 build_pipeline_stage_id=request.pop(util.camelize('buildPipelineStageId')),
                 update_build_pipeline_stage_details=request.pop(util.camelize('UpdateBuildPipelineStageDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3510,6 +3628,7 @@ def test_update_build_run(testing_service_client):
             response = client.update_build_run(
                 build_run_id=request.pop(util.camelize('buildRunId')),
                 update_build_run_details=request.pop(util.camelize('UpdateBuildRunDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3551,6 +3670,7 @@ def test_update_connection(testing_service_client):
             response = client.update_connection(
                 connection_id=request.pop(util.camelize('connectionId')),
                 update_connection_details=request.pop(util.camelize('UpdateConnectionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3592,6 +3712,7 @@ def test_update_deploy_artifact(testing_service_client):
             response = client.update_deploy_artifact(
                 deploy_artifact_id=request.pop(util.camelize('deployArtifactId')),
                 update_deploy_artifact_details=request.pop(util.camelize('UpdateDeployArtifactDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3633,6 +3754,7 @@ def test_update_deploy_environment(testing_service_client):
             response = client.update_deploy_environment(
                 deploy_environment_id=request.pop(util.camelize('deployEnvironmentId')),
                 update_deploy_environment_details=request.pop(util.camelize('UpdateDeployEnvironmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3674,6 +3796,7 @@ def test_update_deploy_pipeline(testing_service_client):
             response = client.update_deploy_pipeline(
                 deploy_pipeline_id=request.pop(util.camelize('deployPipelineId')),
                 update_deploy_pipeline_details=request.pop(util.camelize('UpdateDeployPipelineDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3715,6 +3838,7 @@ def test_update_deploy_stage(testing_service_client):
             response = client.update_deploy_stage(
                 deploy_stage_id=request.pop(util.camelize('deployStageId')),
                 update_deploy_stage_details=request.pop(util.camelize('UpdateDeployStageDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3756,6 +3880,7 @@ def test_update_deployment(testing_service_client):
             response = client.update_deployment(
                 deployment_id=request.pop(util.camelize('deploymentId')),
                 update_deployment_details=request.pop(util.camelize('UpdateDeploymentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3797,6 +3922,7 @@ def test_update_project(testing_service_client):
             response = client.update_project(
                 project_id=request.pop(util.camelize('projectId')),
                 update_project_details=request.pop(util.camelize('UpdateProjectDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3838,6 +3964,7 @@ def test_update_repository(testing_service_client):
             response = client.update_repository(
                 repository_id=request.pop(util.camelize('repositoryId')),
                 update_repository_details=request.pop(util.camelize('UpdateRepositoryDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3879,6 +4006,7 @@ def test_update_trigger(testing_service_client):
             response = client.update_trigger(
                 trigger_id=request.pop(util.camelize('triggerId')),
                 update_trigger_details=request.pop(util.camelize('UpdateTriggerDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

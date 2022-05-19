@@ -135,6 +135,10 @@ class CreateSddcDetails(object):
             The value to assign to the is_shielded_instance_enabled property of this CreateSddcDetails.
         :type is_shielded_instance_enabled: bool
 
+        :param capacity_reservation_id:
+            The value to assign to the capacity_reservation_id property of this CreateSddcDetails.
+        :type capacity_reservation_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateSddcDetails.
         :type freeform_tags: dict(str, str)
@@ -170,6 +174,7 @@ class CreateSddcDetails(object):
             'initial_host_shape_name': 'str',
             'initial_host_ocpu_count': 'float',
             'is_shielded_instance_enabled': 'bool',
+            'capacity_reservation_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -200,6 +205,7 @@ class CreateSddcDetails(object):
             'initial_host_shape_name': 'initialHostShapeName',
             'initial_host_ocpu_count': 'initialHostOcpuCount',
             'is_shielded_instance_enabled': 'isShieldedInstanceEnabled',
+            'capacity_reservation_id': 'capacityReservationId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -229,6 +235,7 @@ class CreateSddcDetails(object):
         self._initial_host_shape_name = None
         self._initial_host_ocpu_count = None
         self._is_shielded_instance_enabled = None
+        self._capacity_reservation_id = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -951,6 +958,34 @@ class CreateSddcDetails(object):
         :type: bool
         """
         self._is_shielded_instance_enabled = is_shielded_instance_enabled
+
+    @property
+    def capacity_reservation_id(self):
+        """
+        Gets the capacity_reservation_id of this CreateSddcDetails.
+        The `OCID`__ of the Capacity Reservation.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The capacity_reservation_id of this CreateSddcDetails.
+        :rtype: str
+        """
+        return self._capacity_reservation_id
+
+    @capacity_reservation_id.setter
+    def capacity_reservation_id(self, capacity_reservation_id):
+        """
+        Sets the capacity_reservation_id of this CreateSddcDetails.
+        The `OCID`__ of the Capacity Reservation.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param capacity_reservation_id: The capacity_reservation_id of this CreateSddcDetails.
+        :type: str
+        """
+        self._capacity_reservation_id = capacity_reservation_id
 
     @property
     def freeform_tags(self):

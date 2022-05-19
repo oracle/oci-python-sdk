@@ -54,6 +54,7 @@ def test_get_announcement(testing_service_client):
             client = oci.announcements_service.AnnouncementClient(config, service_endpoint=service_endpoint)
             response = client.get_announcement(
                 announcement_id=request.pop(util.camelize('announcementId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -94,6 +95,7 @@ def test_get_announcement_user_status(testing_service_client):
             client = oci.announcements_service.AnnouncementClient(config, service_endpoint=service_endpoint)
             response = client.get_announcement_user_status(
                 announcement_id=request.pop(util.camelize('announcementId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -135,6 +137,7 @@ def test_list_announcements(testing_service_client):
             client = oci.announcements_service.AnnouncementClient(config, service_endpoint=service_endpoint)
             response = client.list_announcements(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -144,6 +147,7 @@ def test_list_announcements(testing_service_client):
                 next_response = client.list_announcements(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -154,6 +158,7 @@ def test_list_announcements(testing_service_client):
                     prev_response = client.list_announcements(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -195,6 +200,7 @@ def test_update_announcement_user_status(testing_service_client):
             response = client.update_announcement_user_status(
                 announcement_id=request.pop(util.camelize('announcementId')),
                 status_details=request.pop(util.camelize('StatusDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

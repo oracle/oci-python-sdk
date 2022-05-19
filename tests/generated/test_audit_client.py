@@ -54,6 +54,7 @@ def test_get_configuration(testing_service_client):
             client = oci.audit.AuditClient(config, service_endpoint=service_endpoint)
             response = client.get_configuration(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -97,6 +98,7 @@ def test_list_events(testing_service_client):
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 start_time=request.pop(util.camelize('startTime')),
                 end_time=request.pop(util.camelize('endTime')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -108,6 +110,7 @@ def test_list_events(testing_service_client):
                     start_time=request.pop(util.camelize('startTime')),
                     end_time=request.pop(util.camelize('endTime')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -120,6 +123,7 @@ def test_list_events(testing_service_client):
                         start_time=request.pop(util.camelize('startTime')),
                         end_time=request.pop(util.camelize('endTime')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -161,6 +165,7 @@ def test_update_configuration(testing_service_client):
             response = client.update_configuration(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 update_configuration_details=request.pop(util.camelize('UpdateConfigurationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

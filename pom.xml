@@ -63,6 +63,7 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/license_manager/pom.xml</module>
     <module>poms/adm/pom.xml</module>
     <module>poms/service_mesh/pom.xml</module>
     <module>poms/stack_monitoring/pom.xml</module>

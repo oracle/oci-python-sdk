@@ -55,6 +55,7 @@ def test_change_database_tools_connection_compartment(testing_service_client):
             response = client.change_database_tools_connection_compartment(
                 database_tools_connection_id=request.pop(util.camelize('databaseToolsConnectionId')),
                 change_database_tools_connection_compartment_details=request.pop(util.camelize('ChangeDatabaseToolsConnectionCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_change_database_tools_private_endpoint_compartment(testing_service_clie
             response = client.change_database_tools_private_endpoint_compartment(
                 database_tools_private_endpoint_id=request.pop(util.camelize('databaseToolsPrivateEndpointId')),
                 change_database_tools_private_endpoint_compartment_details=request.pop(util.camelize('ChangeDatabaseToolsPrivateEndpointCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -136,6 +138,7 @@ def test_create_database_tools_connection(testing_service_client):
             client = oci.database_tools.DatabaseToolsClient(config, service_endpoint=service_endpoint)
             response = client.create_database_tools_connection(
                 create_database_tools_connection_details=request.pop(util.camelize('CreateDatabaseToolsConnectionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -176,6 +179,7 @@ def test_create_database_tools_private_endpoint(testing_service_client):
             client = oci.database_tools.DatabaseToolsClient(config, service_endpoint=service_endpoint)
             response = client.create_database_tools_private_endpoint(
                 create_database_tools_private_endpoint_details=request.pop(util.camelize('CreateDatabaseToolsPrivateEndpointDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -216,6 +220,7 @@ def test_delete_database_tools_connection(testing_service_client):
             client = oci.database_tools.DatabaseToolsClient(config, service_endpoint=service_endpoint)
             response = client.delete_database_tools_connection(
                 database_tools_connection_id=request.pop(util.camelize('databaseToolsConnectionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -256,6 +261,7 @@ def test_delete_database_tools_private_endpoint(testing_service_client):
             client = oci.database_tools.DatabaseToolsClient(config, service_endpoint=service_endpoint)
             response = client.delete_database_tools_private_endpoint(
                 database_tools_private_endpoint_id=request.pop(util.camelize('databaseToolsPrivateEndpointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -296,6 +302,7 @@ def test_get_database_tools_connection(testing_service_client):
             client = oci.database_tools.DatabaseToolsClient(config, service_endpoint=service_endpoint)
             response = client.get_database_tools_connection(
                 database_tools_connection_id=request.pop(util.camelize('databaseToolsConnectionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -336,6 +343,7 @@ def test_get_database_tools_endpoint_service(testing_service_client):
             client = oci.database_tools.DatabaseToolsClient(config, service_endpoint=service_endpoint)
             response = client.get_database_tools_endpoint_service(
                 database_tools_endpoint_service_id=request.pop(util.camelize('databaseToolsEndpointServiceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -376,6 +384,7 @@ def test_get_database_tools_private_endpoint(testing_service_client):
             client = oci.database_tools.DatabaseToolsClient(config, service_endpoint=service_endpoint)
             response = client.get_database_tools_private_endpoint(
                 database_tools_private_endpoint_id=request.pop(util.camelize('databaseToolsPrivateEndpointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -416,6 +425,7 @@ def test_get_work_request(testing_service_client):
             client = oci.database_tools.DatabaseToolsClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -457,6 +467,7 @@ def test_list_database_tools_connections(testing_service_client):
             client = oci.database_tools.DatabaseToolsClient(config, service_endpoint=service_endpoint)
             response = client.list_database_tools_connections(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -466,6 +477,7 @@ def test_list_database_tools_connections(testing_service_client):
                 next_response = client.list_database_tools_connections(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -476,6 +488,7 @@ def test_list_database_tools_connections(testing_service_client):
                     prev_response = client.list_database_tools_connections(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -517,6 +530,7 @@ def test_list_database_tools_endpoint_services(testing_service_client):
             client = oci.database_tools.DatabaseToolsClient(config, service_endpoint=service_endpoint)
             response = client.list_database_tools_endpoint_services(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -526,6 +540,7 @@ def test_list_database_tools_endpoint_services(testing_service_client):
                 next_response = client.list_database_tools_endpoint_services(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -536,6 +551,7 @@ def test_list_database_tools_endpoint_services(testing_service_client):
                     prev_response = client.list_database_tools_endpoint_services(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -577,6 +593,7 @@ def test_list_database_tools_private_endpoints(testing_service_client):
             client = oci.database_tools.DatabaseToolsClient(config, service_endpoint=service_endpoint)
             response = client.list_database_tools_private_endpoints(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -586,6 +603,7 @@ def test_list_database_tools_private_endpoints(testing_service_client):
                 next_response = client.list_database_tools_private_endpoints(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -596,6 +614,7 @@ def test_list_database_tools_private_endpoints(testing_service_client):
                     prev_response = client.list_database_tools_private_endpoints(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -637,6 +656,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.database_tools.DatabaseToolsClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -646,6 +666,7 @@ def test_list_work_request_errors(testing_service_client):
                 next_response = client.list_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -656,6 +677,7 @@ def test_list_work_request_errors(testing_service_client):
                     prev_response = client.list_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -697,6 +719,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.database_tools.DatabaseToolsClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -706,6 +729,7 @@ def test_list_work_request_logs(testing_service_client):
                 next_response = client.list_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -716,6 +740,7 @@ def test_list_work_request_logs(testing_service_client):
                     prev_response = client.list_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -757,6 +782,7 @@ def test_list_work_requests(testing_service_client):
             client = oci.database_tools.DatabaseToolsClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -766,6 +792,7 @@ def test_list_work_requests(testing_service_client):
                 next_response = client.list_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -776,6 +803,7 @@ def test_list_work_requests(testing_service_client):
                     prev_response = client.list_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -817,6 +845,7 @@ def test_update_database_tools_connection(testing_service_client):
             response = client.update_database_tools_connection(
                 database_tools_connection_id=request.pop(util.camelize('databaseToolsConnectionId')),
                 update_database_tools_connection_details=request.pop(util.camelize('UpdateDatabaseToolsConnectionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -858,6 +887,7 @@ def test_update_database_tools_private_endpoint(testing_service_client):
             response = client.update_database_tools_private_endpoint(
                 database_tools_private_endpoint_id=request.pop(util.camelize('databaseToolsPrivateEndpointId')),
                 update_database_tools_private_endpoint_details=request.pop(util.camelize('UpdateDatabaseToolsPrivateEndpointDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -899,6 +929,7 @@ def test_validate_database_tools_connection(testing_service_client):
             response = client.validate_database_tools_connection(
                 database_tools_connection_id=request.pop(util.camelize('databaseToolsConnectionId')),
                 validate_database_tools_connection_details=request.pop(util.camelize('ValidateDatabaseToolsConnectionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

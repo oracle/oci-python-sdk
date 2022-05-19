@@ -55,6 +55,7 @@ def test_create_dedicated_vantage_point(testing_service_client):
             response = client.create_dedicated_vantage_point(
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
                 create_dedicated_vantage_point_details=request.pop(util.camelize('CreateDedicatedVantagePointDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_create_monitor(testing_service_client):
             response = client.create_monitor(
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
                 create_monitor_details=request.pop(util.camelize('CreateMonitorDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -137,6 +139,7 @@ def test_create_script(testing_service_client):
             response = client.create_script(
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
                 create_script_details=request.pop(util.camelize('CreateScriptDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -178,6 +181,7 @@ def test_delete_dedicated_vantage_point(testing_service_client):
             response = client.delete_dedicated_vantage_point(
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
                 dedicated_vantage_point_id=request.pop(util.camelize('dedicatedVantagePointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -219,6 +223,7 @@ def test_delete_monitor(testing_service_client):
             response = client.delete_monitor(
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
                 monitor_id=request.pop(util.camelize('monitorId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -260,6 +265,7 @@ def test_delete_script(testing_service_client):
             response = client.delete_script(
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
                 script_id=request.pop(util.camelize('scriptId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -301,6 +307,7 @@ def test_get_dedicated_vantage_point(testing_service_client):
             response = client.get_dedicated_vantage_point(
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
                 dedicated_vantage_point_id=request.pop(util.camelize('dedicatedVantagePointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -342,6 +349,7 @@ def test_get_monitor(testing_service_client):
             response = client.get_monitor(
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
                 monitor_id=request.pop(util.camelize('monitorId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -387,6 +395,7 @@ def test_get_monitor_result(testing_service_client):
                 result_type=request.pop(util.camelize('resultType')),
                 result_content_type=request.pop(util.camelize('resultContentType')),
                 execution_time=request.pop(util.camelize('executionTime')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -428,6 +437,7 @@ def test_get_script(testing_service_client):
             response = client.get_script(
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
                 script_id=request.pop(util.camelize('scriptId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -469,6 +479,7 @@ def test_list_dedicated_vantage_points(testing_service_client):
             client = oci.apm_synthetics.ApmSyntheticClient(config, service_endpoint=service_endpoint)
             response = client.list_dedicated_vantage_points(
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -478,6 +489,7 @@ def test_list_dedicated_vantage_points(testing_service_client):
                 next_response = client.list_dedicated_vantage_points(
                     apm_domain_id=request.pop(util.camelize('apmDomainId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -488,6 +500,7 @@ def test_list_dedicated_vantage_points(testing_service_client):
                     prev_response = client.list_dedicated_vantage_points(
                         apm_domain_id=request.pop(util.camelize('apmDomainId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -529,6 +542,7 @@ def test_list_monitors(testing_service_client):
             client = oci.apm_synthetics.ApmSyntheticClient(config, service_endpoint=service_endpoint)
             response = client.list_monitors(
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -538,6 +552,7 @@ def test_list_monitors(testing_service_client):
                 next_response = client.list_monitors(
                     apm_domain_id=request.pop(util.camelize('apmDomainId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -548,6 +563,7 @@ def test_list_monitors(testing_service_client):
                     prev_response = client.list_monitors(
                         apm_domain_id=request.pop(util.camelize('apmDomainId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -589,6 +605,7 @@ def test_list_public_vantage_points(testing_service_client):
             client = oci.apm_synthetics.ApmSyntheticClient(config, service_endpoint=service_endpoint)
             response = client.list_public_vantage_points(
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -598,6 +615,7 @@ def test_list_public_vantage_points(testing_service_client):
                 next_response = client.list_public_vantage_points(
                     apm_domain_id=request.pop(util.camelize('apmDomainId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -608,6 +626,7 @@ def test_list_public_vantage_points(testing_service_client):
                     prev_response = client.list_public_vantage_points(
                         apm_domain_id=request.pop(util.camelize('apmDomainId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -649,6 +668,7 @@ def test_list_scripts(testing_service_client):
             client = oci.apm_synthetics.ApmSyntheticClient(config, service_endpoint=service_endpoint)
             response = client.list_scripts(
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -658,6 +678,7 @@ def test_list_scripts(testing_service_client):
                 next_response = client.list_scripts(
                     apm_domain_id=request.pop(util.camelize('apmDomainId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -668,6 +689,7 @@ def test_list_scripts(testing_service_client):
                     prev_response = client.list_scripts(
                         apm_domain_id=request.pop(util.camelize('apmDomainId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -710,6 +732,7 @@ def test_update_dedicated_vantage_point(testing_service_client):
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
                 dedicated_vantage_point_id=request.pop(util.camelize('dedicatedVantagePointId')),
                 update_dedicated_vantage_point_details=request.pop(util.camelize('UpdateDedicatedVantagePointDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -752,6 +775,7 @@ def test_update_monitor(testing_service_client):
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
                 monitor_id=request.pop(util.camelize('monitorId')),
                 update_monitor_details=request.pop(util.camelize('UpdateMonitorDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -794,6 +818,7 @@ def test_update_script(testing_service_client):
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
                 script_id=request.pop(util.camelize('scriptId')),
                 update_script_details=request.pop(util.camelize('UpdateScriptDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

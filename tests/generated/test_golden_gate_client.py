@@ -55,6 +55,7 @@ def test_cancel_deployment_backup(testing_service_client):
             response = client.cancel_deployment_backup(
                 deployment_backup_id=request.pop(util.camelize('deploymentBackupId')),
                 cancel_deployment_backup_details=request.pop(util.camelize('CancelDeploymentBackupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_change_database_registration_compartment(testing_service_client):
             response = client.change_database_registration_compartment(
                 database_registration_id=request.pop(util.camelize('databaseRegistrationId')),
                 change_database_registration_compartment_details=request.pop(util.camelize('ChangeDatabaseRegistrationCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -137,6 +139,7 @@ def test_change_deployment_backup_compartment(testing_service_client):
             response = client.change_deployment_backup_compartment(
                 deployment_backup_id=request.pop(util.camelize('deploymentBackupId')),
                 change_deployment_backup_compartment_details=request.pop(util.camelize('ChangeDeploymentBackupCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -178,6 +181,7 @@ def test_change_deployment_compartment(testing_service_client):
             response = client.change_deployment_compartment(
                 deployment_id=request.pop(util.camelize('deploymentId')),
                 change_deployment_compartment_details=request.pop(util.camelize('ChangeDeploymentCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -218,6 +222,7 @@ def test_create_database_registration(testing_service_client):
             client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
             response = client.create_database_registration(
                 create_database_registration_details=request.pop(util.camelize('CreateDatabaseRegistrationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -258,6 +263,7 @@ def test_create_deployment(testing_service_client):
             client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
             response = client.create_deployment(
                 create_deployment_details=request.pop(util.camelize('CreateDeploymentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -298,6 +304,7 @@ def test_create_deployment_backup(testing_service_client):
             client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
             response = client.create_deployment_backup(
                 create_deployment_backup_details=request.pop(util.camelize('CreateDeploymentBackupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -338,6 +345,7 @@ def test_delete_database_registration(testing_service_client):
             client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
             response = client.delete_database_registration(
                 database_registration_id=request.pop(util.camelize('databaseRegistrationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -378,6 +386,7 @@ def test_delete_deployment(testing_service_client):
             client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
             response = client.delete_deployment(
                 deployment_id=request.pop(util.camelize('deploymentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -418,6 +427,7 @@ def test_delete_deployment_backup(testing_service_client):
             client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
             response = client.delete_deployment_backup(
                 deployment_backup_id=request.pop(util.camelize('deploymentBackupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -458,6 +468,7 @@ def test_get_database_registration(testing_service_client):
             client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
             response = client.get_database_registration(
                 database_registration_id=request.pop(util.camelize('databaseRegistrationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -498,6 +509,7 @@ def test_get_deployment(testing_service_client):
             client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
             response = client.get_deployment(
                 deployment_id=request.pop(util.camelize('deploymentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -538,6 +550,7 @@ def test_get_deployment_backup(testing_service_client):
             client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
             response = client.get_deployment_backup(
                 deployment_backup_id=request.pop(util.camelize('deploymentBackupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -578,6 +591,7 @@ def test_get_deployment_upgrade(testing_service_client):
             client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
             response = client.get_deployment_upgrade(
                 deployment_upgrade_id=request.pop(util.camelize('deploymentUpgradeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -618,6 +632,7 @@ def test_get_work_request(testing_service_client):
             client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -659,6 +674,7 @@ def test_list_database_registrations(testing_service_client):
             client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
             response = client.list_database_registrations(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -668,6 +684,7 @@ def test_list_database_registrations(testing_service_client):
                 next_response = client.list_database_registrations(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -678,6 +695,7 @@ def test_list_database_registrations(testing_service_client):
                     prev_response = client.list_database_registrations(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -719,6 +737,7 @@ def test_list_deployment_backups(testing_service_client):
             client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
             response = client.list_deployment_backups(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -728,6 +747,7 @@ def test_list_deployment_backups(testing_service_client):
                 next_response = client.list_deployment_backups(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -738,6 +758,7 @@ def test_list_deployment_backups(testing_service_client):
                     prev_response = client.list_deployment_backups(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -779,6 +800,7 @@ def test_list_deployment_upgrades(testing_service_client):
             client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
             response = client.list_deployment_upgrades(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -788,6 +810,7 @@ def test_list_deployment_upgrades(testing_service_client):
                 next_response = client.list_deployment_upgrades(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -798,6 +821,7 @@ def test_list_deployment_upgrades(testing_service_client):
                     prev_response = client.list_deployment_upgrades(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -839,6 +863,7 @@ def test_list_deployments(testing_service_client):
             client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
             response = client.list_deployments(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -848,6 +873,7 @@ def test_list_deployments(testing_service_client):
                 next_response = client.list_deployments(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -858,6 +884,7 @@ def test_list_deployments(testing_service_client):
                     prev_response = client.list_deployments(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -899,6 +926,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -908,6 +936,7 @@ def test_list_work_request_errors(testing_service_client):
                 next_response = client.list_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -918,6 +947,7 @@ def test_list_work_request_errors(testing_service_client):
                     prev_response = client.list_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -959,6 +989,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -968,6 +999,7 @@ def test_list_work_request_logs(testing_service_client):
                 next_response = client.list_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -978,6 +1010,7 @@ def test_list_work_request_logs(testing_service_client):
                     prev_response = client.list_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1019,6 +1052,7 @@ def test_list_work_requests(testing_service_client):
             client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1028,6 +1062,7 @@ def test_list_work_requests(testing_service_client):
                 next_response = client.list_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1038,6 +1073,7 @@ def test_list_work_requests(testing_service_client):
                     prev_response = client.list_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1079,6 +1115,7 @@ def test_restore_deployment(testing_service_client):
             response = client.restore_deployment(
                 deployment_backup_id=request.pop(util.camelize('deploymentBackupId')),
                 restore_deployment_details=request.pop(util.camelize('RestoreDeploymentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1120,6 +1157,7 @@ def test_start_deployment(testing_service_client):
             response = client.start_deployment(
                 deployment_id=request.pop(util.camelize('deploymentId')),
                 start_deployment_details=request.pop(util.camelize('StartDeploymentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1161,6 +1199,7 @@ def test_stop_deployment(testing_service_client):
             response = client.stop_deployment(
                 deployment_id=request.pop(util.camelize('deploymentId')),
                 stop_deployment_details=request.pop(util.camelize('StopDeploymentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1202,6 +1241,7 @@ def test_update_database_registration(testing_service_client):
             response = client.update_database_registration(
                 database_registration_id=request.pop(util.camelize('databaseRegistrationId')),
                 update_database_registration_details=request.pop(util.camelize('UpdateDatabaseRegistrationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1243,6 +1283,7 @@ def test_update_deployment(testing_service_client):
             response = client.update_deployment(
                 deployment_id=request.pop(util.camelize('deploymentId')),
                 update_deployment_details=request.pop(util.camelize('UpdateDeploymentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1284,6 +1325,7 @@ def test_update_deployment_backup(testing_service_client):
             response = client.update_deployment_backup(
                 deployment_backup_id=request.pop(util.camelize('deploymentBackupId')),
                 update_deployment_backup_details=request.pop(util.camelize('UpdateDeploymentBackupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1325,6 +1367,7 @@ def test_upgrade_deployment(testing_service_client):
             response = client.upgrade_deployment(
                 deployment_id=request.pop(util.camelize('deploymentId')),
                 upgrade_deployment_details=request.pop(util.camelize('UpgradeDeploymentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

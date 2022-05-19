@@ -55,6 +55,7 @@ def test_create_alert_rule(testing_service_client):
             response = client.create_alert_rule(
                 budget_id=request.pop(util.camelize('budgetId')),
                 create_alert_rule_details=request.pop(util.camelize('CreateAlertRuleDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_create_budget(testing_service_client):
             client = oci.budget.BudgetClient(config, service_endpoint=service_endpoint)
             response = client.create_budget(
                 create_budget_details=request.pop(util.camelize('CreateBudgetDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -136,6 +138,7 @@ def test_delete_alert_rule(testing_service_client):
             response = client.delete_alert_rule(
                 budget_id=request.pop(util.camelize('budgetId')),
                 alert_rule_id=request.pop(util.camelize('alertRuleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -176,6 +179,7 @@ def test_delete_budget(testing_service_client):
             client = oci.budget.BudgetClient(config, service_endpoint=service_endpoint)
             response = client.delete_budget(
                 budget_id=request.pop(util.camelize('budgetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -217,6 +221,7 @@ def test_get_alert_rule(testing_service_client):
             response = client.get_alert_rule(
                 budget_id=request.pop(util.camelize('budgetId')),
                 alert_rule_id=request.pop(util.camelize('alertRuleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -257,6 +262,7 @@ def test_get_budget(testing_service_client):
             client = oci.budget.BudgetClient(config, service_endpoint=service_endpoint)
             response = client.get_budget(
                 budget_id=request.pop(util.camelize('budgetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -298,6 +304,7 @@ def test_list_alert_rules(testing_service_client):
             client = oci.budget.BudgetClient(config, service_endpoint=service_endpoint)
             response = client.list_alert_rules(
                 budget_id=request.pop(util.camelize('budgetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -307,6 +314,7 @@ def test_list_alert_rules(testing_service_client):
                 next_response = client.list_alert_rules(
                     budget_id=request.pop(util.camelize('budgetId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -317,6 +325,7 @@ def test_list_alert_rules(testing_service_client):
                     prev_response = client.list_alert_rules(
                         budget_id=request.pop(util.camelize('budgetId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -358,6 +367,7 @@ def test_list_budgets(testing_service_client):
             client = oci.budget.BudgetClient(config, service_endpoint=service_endpoint)
             response = client.list_budgets(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -367,6 +377,7 @@ def test_list_budgets(testing_service_client):
                 next_response = client.list_budgets(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -377,6 +388,7 @@ def test_list_budgets(testing_service_client):
                     prev_response = client.list_budgets(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -419,6 +431,7 @@ def test_update_alert_rule(testing_service_client):
                 budget_id=request.pop(util.camelize('budgetId')),
                 alert_rule_id=request.pop(util.camelize('alertRuleId')),
                 update_alert_rule_details=request.pop(util.camelize('UpdateAlertRuleDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -460,6 +473,7 @@ def test_update_budget(testing_service_client):
             response = client.update_budget(
                 budget_id=request.pop(util.camelize('budgetId')),
                 update_budget_details=request.pop(util.camelize('UpdateBudgetDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

@@ -54,6 +54,7 @@ def test_get_ca_bundle(testing_service_client):
             client = oci.certificates.CertificatesClient(config, service_endpoint=service_endpoint)
             response = client.get_ca_bundle(
                 ca_bundle_id=request.pop(util.camelize('caBundleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -94,6 +95,7 @@ def test_get_certificate_authority_bundle(testing_service_client):
             client = oci.certificates.CertificatesClient(config, service_endpoint=service_endpoint)
             response = client.get_certificate_authority_bundle(
                 certificate_authority_id=request.pop(util.camelize('certificateAuthorityId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -134,6 +136,7 @@ def test_get_certificate_bundle(testing_service_client):
             client = oci.certificates.CertificatesClient(config, service_endpoint=service_endpoint)
             response = client.get_certificate_bundle(
                 certificate_id=request.pop(util.camelize('certificateId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -174,6 +177,7 @@ def test_list_certificate_authority_bundle_versions(testing_service_client):
             client = oci.certificates.CertificatesClient(config, service_endpoint=service_endpoint)
             response = client.list_certificate_authority_bundle_versions(
                 certificate_authority_id=request.pop(util.camelize('certificateAuthorityId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -214,6 +218,7 @@ def test_list_certificate_bundle_versions(testing_service_client):
             client = oci.certificates.CertificatesClient(config, service_endpoint=service_endpoint)
             response = client.list_certificate_bundle_versions(
                 certificate_id=request.pop(util.camelize('certificateId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

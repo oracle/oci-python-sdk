@@ -54,6 +54,7 @@ def test_cancel_instance_agent_command(testing_service_client):
             client = oci.compute_instance_agent.ComputeInstanceAgentClient(config, service_endpoint=service_endpoint)
             response = client.cancel_instance_agent_command(
                 instance_agent_command_id=request.pop(util.camelize('instanceAgentCommandId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -94,6 +95,7 @@ def test_create_instance_agent_command(testing_service_client):
             client = oci.compute_instance_agent.ComputeInstanceAgentClient(config, service_endpoint=service_endpoint)
             response = client.create_instance_agent_command(
                 create_instance_agent_command_details=request.pop(util.camelize('CreateInstanceAgentCommandDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -134,6 +136,7 @@ def test_get_instance_agent_command(testing_service_client):
             client = oci.compute_instance_agent.ComputeInstanceAgentClient(config, service_endpoint=service_endpoint)
             response = client.get_instance_agent_command(
                 instance_agent_command_id=request.pop(util.camelize('instanceAgentCommandId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -175,6 +178,7 @@ def test_get_instance_agent_command_execution(testing_service_client):
             response = client.get_instance_agent_command_execution(
                 instance_agent_command_id=request.pop(util.camelize('instanceAgentCommandId')),
                 instance_id=request.pop(util.camelize('instanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -217,6 +221,7 @@ def test_list_instance_agent_command_executions(testing_service_client):
             response = client.list_instance_agent_command_executions(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 instance_id=request.pop(util.camelize('instanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -227,6 +232,7 @@ def test_list_instance_agent_command_executions(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     instance_id=request.pop(util.camelize('instanceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -238,6 +244,7 @@ def test_list_instance_agent_command_executions(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         instance_id=request.pop(util.camelize('instanceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -279,6 +286,7 @@ def test_list_instance_agent_commands(testing_service_client):
             client = oci.compute_instance_agent.ComputeInstanceAgentClient(config, service_endpoint=service_endpoint)
             response = client.list_instance_agent_commands(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -288,6 +296,7 @@ def test_list_instance_agent_commands(testing_service_client):
                 next_response = client.list_instance_agent_commands(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -298,6 +307,7 @@ def test_list_instance_agent_commands(testing_service_client):
                     prev_response = client.list_instance_agent_commands(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)

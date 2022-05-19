@@ -54,6 +54,7 @@ def test_create_subscription_mapping(testing_service_client):
             client = oci.tenant_manager_control_plane.SubscriptionClient(config, service_endpoint=service_endpoint)
             response = client.create_subscription_mapping(
                 create_subscription_mapping_details=request.pop(util.camelize('CreateSubscriptionMappingDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -94,6 +95,7 @@ def test_delete_subscription_mapping(testing_service_client):
             client = oci.tenant_manager_control_plane.SubscriptionClient(config, service_endpoint=service_endpoint)
             response = client.delete_subscription_mapping(
                 subscription_mapping_id=request.pop(util.camelize('subscriptionMappingId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -134,6 +136,7 @@ def test_get_assigned_subscription(testing_service_client):
             client = oci.tenant_manager_control_plane.SubscriptionClient(config, service_endpoint=service_endpoint)
             response = client.get_assigned_subscription(
                 assigned_subscription_id=request.pop(util.camelize('assignedSubscriptionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -174,6 +177,7 @@ def test_get_subscription(testing_service_client):
             client = oci.tenant_manager_control_plane.SubscriptionClient(config, service_endpoint=service_endpoint)
             response = client.get_subscription(
                 subscription_id=request.pop(util.camelize('subscriptionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -214,6 +218,7 @@ def test_get_subscription_mapping(testing_service_client):
             client = oci.tenant_manager_control_plane.SubscriptionClient(config, service_endpoint=service_endpoint)
             response = client.get_subscription_mapping(
                 subscription_mapping_id=request.pop(util.camelize('subscriptionMappingId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -255,6 +260,7 @@ def test_list_assigned_subscriptions(testing_service_client):
             client = oci.tenant_manager_control_plane.SubscriptionClient(config, service_endpoint=service_endpoint)
             response = client.list_assigned_subscriptions(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -264,6 +270,7 @@ def test_list_assigned_subscriptions(testing_service_client):
                 next_response = client.list_assigned_subscriptions(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -274,6 +281,7 @@ def test_list_assigned_subscriptions(testing_service_client):
                     prev_response = client.list_assigned_subscriptions(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -315,6 +323,7 @@ def test_list_available_regions(testing_service_client):
             client = oci.tenant_manager_control_plane.SubscriptionClient(config, service_endpoint=service_endpoint)
             response = client.list_available_regions(
                 subscription_id=request.pop(util.camelize('subscriptionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -324,6 +333,7 @@ def test_list_available_regions(testing_service_client):
                 next_response = client.list_available_regions(
                     subscription_id=request.pop(util.camelize('subscriptionId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -334,6 +344,7 @@ def test_list_available_regions(testing_service_client):
                     prev_response = client.list_available_regions(
                         subscription_id=request.pop(util.camelize('subscriptionId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -375,6 +386,7 @@ def test_list_subscription_mappings(testing_service_client):
             client = oci.tenant_manager_control_plane.SubscriptionClient(config, service_endpoint=service_endpoint)
             response = client.list_subscription_mappings(
                 subscription_id=request.pop(util.camelize('subscriptionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -384,6 +396,7 @@ def test_list_subscription_mappings(testing_service_client):
                 next_response = client.list_subscription_mappings(
                     subscription_id=request.pop(util.camelize('subscriptionId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -394,6 +407,7 @@ def test_list_subscription_mappings(testing_service_client):
                     prev_response = client.list_subscription_mappings(
                         subscription_id=request.pop(util.camelize('subscriptionId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -434,6 +448,7 @@ def test_list_subscriptions(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.tenant_manager_control_plane.SubscriptionClient(config, service_endpoint=service_endpoint)
             response = client.list_subscriptions(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -442,6 +457,7 @@ def test_list_subscriptions(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_subscriptions(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -451,6 +467,7 @@ def test_list_subscriptions(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_subscriptions(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)

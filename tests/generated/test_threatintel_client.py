@@ -55,6 +55,7 @@ def test_get_indicator(testing_service_client):
             response = client.get_indicator(
                 indicator_id=request.pop(util.camelize('indicatorId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_list_indicator_counts(testing_service_client):
             client = oci.threat_intelligence.ThreatintelClient(config, service_endpoint=service_endpoint)
             response = client.list_indicator_counts(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -136,6 +138,7 @@ def test_list_indicators(testing_service_client):
             client = oci.threat_intelligence.ThreatintelClient(config, service_endpoint=service_endpoint)
             response = client.list_indicators(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -145,6 +148,7 @@ def test_list_indicators(testing_service_client):
                 next_response = client.list_indicators(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -155,6 +159,7 @@ def test_list_indicators(testing_service_client):
                     prev_response = client.list_indicators(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -196,6 +201,7 @@ def test_list_threat_types(testing_service_client):
             client = oci.threat_intelligence.ThreatintelClient(config, service_endpoint=service_endpoint)
             response = client.list_threat_types(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -205,6 +211,7 @@ def test_list_threat_types(testing_service_client):
                 next_response = client.list_threat_types(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -215,6 +222,7 @@ def test_list_threat_types(testing_service_client):
                     prev_response = client.list_threat_types(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)

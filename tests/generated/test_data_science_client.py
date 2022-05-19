@@ -54,6 +54,7 @@ def test_activate_model(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.activate_model(
                 model_id=request.pop(util.camelize('modelId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -94,6 +95,7 @@ def test_activate_model_deployment(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.activate_model_deployment(
                 model_deployment_id=request.pop(util.camelize('modelDeploymentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -134,6 +136,7 @@ def test_activate_notebook_session(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.activate_notebook_session(
                 notebook_session_id=request.pop(util.camelize('notebookSessionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -174,6 +177,7 @@ def test_cancel_job_run(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.cancel_job_run(
                 job_run_id=request.pop(util.camelize('jobRunId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -214,6 +218,7 @@ def test_cancel_work_request(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.cancel_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -255,6 +260,7 @@ def test_change_job_compartment(testing_service_client):
             response = client.change_job_compartment(
                 job_id=request.pop(util.camelize('jobId')),
                 change_job_compartment_details=request.pop(util.camelize('ChangeJobCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -296,6 +302,7 @@ def test_change_job_run_compartment(testing_service_client):
             response = client.change_job_run_compartment(
                 job_run_id=request.pop(util.camelize('jobRunId')),
                 change_job_run_compartment_details=request.pop(util.camelize('ChangeJobRunCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -337,6 +344,7 @@ def test_change_model_compartment(testing_service_client):
             response = client.change_model_compartment(
                 model_id=request.pop(util.camelize('modelId')),
                 change_model_compartment_details=request.pop(util.camelize('ChangeModelCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -378,6 +386,7 @@ def test_change_model_deployment_compartment(testing_service_client):
             response = client.change_model_deployment_compartment(
                 model_deployment_id=request.pop(util.camelize('modelDeploymentId')),
                 change_model_deployment_compartment_details=request.pop(util.camelize('ChangeModelDeploymentCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -419,6 +428,7 @@ def test_change_notebook_session_compartment(testing_service_client):
             response = client.change_notebook_session_compartment(
                 notebook_session_id=request.pop(util.camelize('notebookSessionId')),
                 change_notebook_session_compartment_details=request.pop(util.camelize('ChangeNotebookSessionCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -460,6 +470,7 @@ def test_change_project_compartment(testing_service_client):
             response = client.change_project_compartment(
                 project_id=request.pop(util.camelize('projectId')),
                 change_project_compartment_details=request.pop(util.camelize('ChangeProjectCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -500,6 +511,7 @@ def test_create_job(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.create_job(
                 create_job_details=request.pop(util.camelize('CreateJobDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -541,6 +553,7 @@ def test_create_job_artifact(testing_service_client):
             response = client.create_job_artifact(
                 job_id=request.pop(util.camelize('jobId')),
                 job_artifact=request.pop(util.camelize('JobArtifact')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -581,6 +594,7 @@ def test_create_job_run(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.create_job_run(
                 create_job_run_details=request.pop(util.camelize('CreateJobRunDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -621,6 +635,7 @@ def test_create_model(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.create_model(
                 create_model_details=request.pop(util.camelize('CreateModelDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -662,6 +677,7 @@ def test_create_model_artifact(testing_service_client):
             response = client.create_model_artifact(
                 model_id=request.pop(util.camelize('modelId')),
                 model_artifact=request.pop(util.camelize('ModelArtifact')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -702,6 +718,7 @@ def test_create_model_deployment(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.create_model_deployment(
                 create_model_deployment_details=request.pop(util.camelize('CreateModelDeploymentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -743,6 +760,7 @@ def test_create_model_provenance(testing_service_client):
             response = client.create_model_provenance(
                 model_id=request.pop(util.camelize('modelId')),
                 create_model_provenance_details=request.pop(util.camelize('CreateModelProvenanceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -783,6 +801,7 @@ def test_create_notebook_session(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.create_notebook_session(
                 create_notebook_session_details=request.pop(util.camelize('CreateNotebookSessionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -823,6 +842,7 @@ def test_create_project(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.create_project(
                 create_project_details=request.pop(util.camelize('CreateProjectDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -863,6 +883,7 @@ def test_deactivate_model(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.deactivate_model(
                 model_id=request.pop(util.camelize('modelId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -903,6 +924,7 @@ def test_deactivate_model_deployment(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.deactivate_model_deployment(
                 model_deployment_id=request.pop(util.camelize('modelDeploymentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -943,6 +965,7 @@ def test_deactivate_notebook_session(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.deactivate_notebook_session(
                 notebook_session_id=request.pop(util.camelize('notebookSessionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -983,6 +1006,7 @@ def test_delete_job(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.delete_job(
                 job_id=request.pop(util.camelize('jobId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1023,6 +1047,7 @@ def test_delete_job_run(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.delete_job_run(
                 job_run_id=request.pop(util.camelize('jobRunId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1063,6 +1088,7 @@ def test_delete_model(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.delete_model(
                 model_id=request.pop(util.camelize('modelId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1103,6 +1129,7 @@ def test_delete_model_deployment(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.delete_model_deployment(
                 model_deployment_id=request.pop(util.camelize('modelDeploymentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1143,6 +1170,7 @@ def test_delete_notebook_session(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.delete_notebook_session(
                 notebook_session_id=request.pop(util.camelize('notebookSessionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1183,6 +1211,7 @@ def test_delete_project(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.delete_project(
                 project_id=request.pop(util.camelize('projectId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1223,6 +1252,7 @@ def test_get_job(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.get_job(
                 job_id=request.pop(util.camelize('jobId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1263,6 +1293,7 @@ def test_get_job_artifact_content(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.get_job_artifact_content(
                 job_id=request.pop(util.camelize('jobId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1303,6 +1334,7 @@ def test_get_job_run(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.get_job_run(
                 job_run_id=request.pop(util.camelize('jobRunId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1343,6 +1375,7 @@ def test_get_model(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.get_model(
                 model_id=request.pop(util.camelize('modelId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1383,6 +1416,7 @@ def test_get_model_artifact_content(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.get_model_artifact_content(
                 model_id=request.pop(util.camelize('modelId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1423,6 +1457,7 @@ def test_get_model_deployment(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.get_model_deployment(
                 model_deployment_id=request.pop(util.camelize('modelDeploymentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1463,6 +1498,7 @@ def test_get_model_provenance(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.get_model_provenance(
                 model_id=request.pop(util.camelize('modelId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1503,6 +1539,7 @@ def test_get_notebook_session(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.get_notebook_session(
                 notebook_session_id=request.pop(util.camelize('notebookSessionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1543,6 +1580,7 @@ def test_get_project(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.get_project(
                 project_id=request.pop(util.camelize('projectId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1583,6 +1621,7 @@ def test_get_work_request(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1623,6 +1662,7 @@ def test_head_job_artifact(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.head_job_artifact(
                 job_id=request.pop(util.camelize('jobId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1663,6 +1703,7 @@ def test_head_model_artifact(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.head_model_artifact(
                 model_id=request.pop(util.camelize('modelId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1704,6 +1745,7 @@ def test_list_fast_launch_job_configs(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.list_fast_launch_job_configs(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1713,6 +1755,7 @@ def test_list_fast_launch_job_configs(testing_service_client):
                 next_response = client.list_fast_launch_job_configs(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1723,6 +1766,7 @@ def test_list_fast_launch_job_configs(testing_service_client):
                     prev_response = client.list_fast_launch_job_configs(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1764,6 +1808,7 @@ def test_list_job_runs(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.list_job_runs(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1773,6 +1818,7 @@ def test_list_job_runs(testing_service_client):
                 next_response = client.list_job_runs(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1783,6 +1829,7 @@ def test_list_job_runs(testing_service_client):
                     prev_response = client.list_job_runs(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1824,6 +1871,7 @@ def test_list_job_shapes(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.list_job_shapes(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1833,6 +1881,7 @@ def test_list_job_shapes(testing_service_client):
                 next_response = client.list_job_shapes(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1843,6 +1892,7 @@ def test_list_job_shapes(testing_service_client):
                     prev_response = client.list_job_shapes(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1884,6 +1934,7 @@ def test_list_jobs(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.list_jobs(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1893,6 +1944,7 @@ def test_list_jobs(testing_service_client):
                 next_response = client.list_jobs(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1903,6 +1955,7 @@ def test_list_jobs(testing_service_client):
                     prev_response = client.list_jobs(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1944,6 +1997,7 @@ def test_list_model_deployment_shapes(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.list_model_deployment_shapes(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1953,6 +2007,7 @@ def test_list_model_deployment_shapes(testing_service_client):
                 next_response = client.list_model_deployment_shapes(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1963,6 +2018,7 @@ def test_list_model_deployment_shapes(testing_service_client):
                     prev_response = client.list_model_deployment_shapes(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2004,6 +2060,7 @@ def test_list_model_deployments(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.list_model_deployments(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2013,6 +2070,7 @@ def test_list_model_deployments(testing_service_client):
                 next_response = client.list_model_deployments(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2023,6 +2081,7 @@ def test_list_model_deployments(testing_service_client):
                     prev_response = client.list_model_deployments(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2064,6 +2123,7 @@ def test_list_models(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.list_models(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2073,6 +2133,7 @@ def test_list_models(testing_service_client):
                 next_response = client.list_models(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2083,6 +2144,7 @@ def test_list_models(testing_service_client):
                     prev_response = client.list_models(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2124,6 +2186,7 @@ def test_list_notebook_session_shapes(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.list_notebook_session_shapes(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2133,6 +2196,7 @@ def test_list_notebook_session_shapes(testing_service_client):
                 next_response = client.list_notebook_session_shapes(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2143,6 +2207,7 @@ def test_list_notebook_session_shapes(testing_service_client):
                     prev_response = client.list_notebook_session_shapes(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2184,6 +2249,7 @@ def test_list_notebook_sessions(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.list_notebook_sessions(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2193,6 +2259,7 @@ def test_list_notebook_sessions(testing_service_client):
                 next_response = client.list_notebook_sessions(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2203,6 +2270,7 @@ def test_list_notebook_sessions(testing_service_client):
                     prev_response = client.list_notebook_sessions(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2244,6 +2312,7 @@ def test_list_projects(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.list_projects(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2253,6 +2322,7 @@ def test_list_projects(testing_service_client):
                 next_response = client.list_projects(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2263,6 +2333,7 @@ def test_list_projects(testing_service_client):
                     prev_response = client.list_projects(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2303,6 +2374,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2343,6 +2415,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2384,6 +2457,7 @@ def test_list_work_requests(testing_service_client):
             client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2393,6 +2467,7 @@ def test_list_work_requests(testing_service_client):
                 next_response = client.list_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2403,6 +2478,7 @@ def test_list_work_requests(testing_service_client):
                     prev_response = client.list_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2444,6 +2520,7 @@ def test_update_job(testing_service_client):
             response = client.update_job(
                 job_id=request.pop(util.camelize('jobId')),
                 update_job_details=request.pop(util.camelize('UpdateJobDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2485,6 +2562,7 @@ def test_update_job_run(testing_service_client):
             response = client.update_job_run(
                 job_run_id=request.pop(util.camelize('jobRunId')),
                 update_job_run_details=request.pop(util.camelize('UpdateJobRunDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2526,6 +2604,7 @@ def test_update_model(testing_service_client):
             response = client.update_model(
                 model_id=request.pop(util.camelize('modelId')),
                 update_model_details=request.pop(util.camelize('UpdateModelDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2567,6 +2646,7 @@ def test_update_model_deployment(testing_service_client):
             response = client.update_model_deployment(
                 model_deployment_id=request.pop(util.camelize('modelDeploymentId')),
                 update_model_deployment_details=request.pop(util.camelize('UpdateModelDeploymentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2608,6 +2688,7 @@ def test_update_model_provenance(testing_service_client):
             response = client.update_model_provenance(
                 model_id=request.pop(util.camelize('modelId')),
                 update_model_provenance_details=request.pop(util.camelize('UpdateModelProvenanceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2649,6 +2730,7 @@ def test_update_notebook_session(testing_service_client):
             response = client.update_notebook_session(
                 notebook_session_id=request.pop(util.camelize('notebookSessionId')),
                 update_notebook_session_details=request.pop(util.camelize('UpdateNotebookSessionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2690,6 +2772,7 @@ def test_update_project(testing_service_client):
             response = client.update_project(
                 project_id=request.pop(util.camelize('projectId')),
                 update_project_details=request.pop(util.camelize('UpdateProjectDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

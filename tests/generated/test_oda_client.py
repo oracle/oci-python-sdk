@@ -55,6 +55,7 @@ def test_change_oda_instance_compartment(testing_service_client):
             response = client.change_oda_instance_compartment(
                 oda_instance_id=request.pop(util.camelize('odaInstanceId')),
                 change_oda_instance_compartment_details=request.pop(util.camelize('ChangeOdaInstanceCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_create_oda_instance(testing_service_client):
             client = oci.oda.OdaClient(config, service_endpoint=service_endpoint)
             response = client.create_oda_instance(
                 create_oda_instance_details=request.pop(util.camelize('CreateOdaInstanceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -109,6 +111,48 @@ def test_create_oda_instance(testing_service_client):
             result,
             service_error,
             'odaInstance',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omce_devops_hybrid_us_grp@oracle.com" jiraProject="ODA" opsJiraProject="ODA"
+def test_create_oda_instance_attachment(testing_service_client):
+    if not testing_service_client.is_api_enabled('oda', 'CreateOdaInstanceAttachment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('oda', util.camelize('oda'), 'CreateOdaInstanceAttachment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='oda', api_name='CreateOdaInstanceAttachment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.oda.OdaClient(config, service_endpoint=service_endpoint)
+            response = client.create_oda_instance_attachment(
+                oda_instance_id=request.pop(util.camelize('odaInstanceId')),
+                create_oda_instance_attachment_details=request.pop(util.camelize('CreateOdaInstanceAttachmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'oda',
+            'CreateOdaInstanceAttachment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'create_oda_instance_attachment',
             False,
             False
         )
@@ -135,6 +179,7 @@ def test_delete_oda_instance(testing_service_client):
             client = oci.oda.OdaClient(config, service_endpoint=service_endpoint)
             response = client.delete_oda_instance(
                 oda_instance_id=request.pop(util.camelize('odaInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -149,6 +194,48 @@ def test_delete_oda_instance(testing_service_client):
             result,
             service_error,
             'delete_oda_instance',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omce_devops_hybrid_us_grp@oracle.com" jiraProject="ODA" opsJiraProject="ODA"
+def test_delete_oda_instance_attachment(testing_service_client):
+    if not testing_service_client.is_api_enabled('oda', 'DeleteOdaInstanceAttachment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('oda', util.camelize('oda'), 'DeleteOdaInstanceAttachment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='oda', api_name='DeleteOdaInstanceAttachment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.oda.OdaClient(config, service_endpoint=service_endpoint)
+            response = client.delete_oda_instance_attachment(
+                oda_instance_id=request.pop(util.camelize('odaInstanceId')),
+                attachment_id=request.pop(util.camelize('attachmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'oda',
+            'DeleteOdaInstanceAttachment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_oda_instance_attachment',
             True,
             False
         )
@@ -175,6 +262,7 @@ def test_get_oda_instance(testing_service_client):
             client = oci.oda.OdaClient(config, service_endpoint=service_endpoint)
             response = client.get_oda_instance(
                 oda_instance_id=request.pop(util.camelize('odaInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -189,6 +277,48 @@ def test_get_oda_instance(testing_service_client):
             result,
             service_error,
             'odaInstance',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omce_devops_hybrid_us_grp@oracle.com" jiraProject="ODA" opsJiraProject="ODA"
+def test_get_oda_instance_attachment(testing_service_client):
+    if not testing_service_client.is_api_enabled('oda', 'GetOdaInstanceAttachment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('oda', util.camelize('oda'), 'GetOdaInstanceAttachment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='oda', api_name='GetOdaInstanceAttachment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.oda.OdaClient(config, service_endpoint=service_endpoint)
+            response = client.get_oda_instance_attachment(
+                oda_instance_id=request.pop(util.camelize('odaInstanceId')),
+                attachment_id=request.pop(util.camelize('attachmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'oda',
+            'GetOdaInstanceAttachment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'odaInstanceAttachment',
             False,
             False
         )
@@ -215,6 +345,7 @@ def test_get_work_request(testing_service_client):
             client = oci.oda.OdaClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -231,6 +362,69 @@ def test_get_work_request(testing_service_client):
             'workRequest',
             False,
             False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omce_devops_hybrid_us_grp@oracle.com" jiraProject="ODA" opsJiraProject="ODA"
+def test_list_oda_instance_attachments(testing_service_client):
+    if not testing_service_client.is_api_enabled('oda', 'ListOdaInstanceAttachments'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('oda', util.camelize('oda'), 'ListOdaInstanceAttachments')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='oda', api_name='ListOdaInstanceAttachments')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.oda.OdaClient(config, service_endpoint=service_endpoint)
+            response = client.list_oda_instance_attachments(
+                oda_instance_id=request.pop(util.camelize('odaInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_oda_instance_attachments(
+                    oda_instance_id=request.pop(util.camelize('odaInstanceId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_oda_instance_attachments(
+                        oda_instance_id=request.pop(util.camelize('odaInstanceId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'oda',
+            'ListOdaInstanceAttachments',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'odaInstanceAttachmentCollection',
+            False,
+            True
         )
 
 
@@ -256,6 +450,7 @@ def test_list_oda_instances(testing_service_client):
             client = oci.oda.OdaClient(config, service_endpoint=service_endpoint)
             response = client.list_oda_instances(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -265,6 +460,7 @@ def test_list_oda_instances(testing_service_client):
                 next_response = client.list_oda_instances(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -275,6 +471,7 @@ def test_list_oda_instances(testing_service_client):
                     prev_response = client.list_oda_instances(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -316,6 +513,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.oda.OdaClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -325,6 +523,7 @@ def test_list_work_request_errors(testing_service_client):
                 next_response = client.list_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -335,6 +534,7 @@ def test_list_work_request_errors(testing_service_client):
                     prev_response = client.list_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -376,6 +576,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.oda.OdaClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -385,6 +586,7 @@ def test_list_work_request_logs(testing_service_client):
                 next_response = client.list_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -395,6 +597,7 @@ def test_list_work_request_logs(testing_service_client):
                     prev_response = client.list_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -436,6 +639,7 @@ def test_list_work_requests(testing_service_client):
             client = oci.oda.OdaClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -445,6 +649,7 @@ def test_list_work_requests(testing_service_client):
                 next_response = client.list_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -455,6 +660,7 @@ def test_list_work_requests(testing_service_client):
                     prev_response = client.list_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -495,6 +701,7 @@ def test_start_oda_instance(testing_service_client):
             client = oci.oda.OdaClient(config, service_endpoint=service_endpoint)
             response = client.start_oda_instance(
                 oda_instance_id=request.pop(util.camelize('odaInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -535,6 +742,7 @@ def test_stop_oda_instance(testing_service_client):
             client = oci.oda.OdaClient(config, service_endpoint=service_endpoint)
             response = client.stop_oda_instance(
                 oda_instance_id=request.pop(util.camelize('odaInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -576,6 +784,7 @@ def test_update_oda_instance(testing_service_client):
             response = client.update_oda_instance(
                 oda_instance_id=request.pop(util.camelize('odaInstanceId')),
                 update_oda_instance_details=request.pop(util.camelize('UpdateOdaInstanceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -590,6 +799,49 @@ def test_update_oda_instance(testing_service_client):
             result,
             service_error,
             'odaInstance',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omce_devops_hybrid_us_grp@oracle.com" jiraProject="ODA" opsJiraProject="ODA"
+def test_update_oda_instance_attachment(testing_service_client):
+    if not testing_service_client.is_api_enabled('oda', 'UpdateOdaInstanceAttachment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('oda', util.camelize('oda'), 'UpdateOdaInstanceAttachment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='oda', api_name='UpdateOdaInstanceAttachment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.oda.OdaClient(config, service_endpoint=service_endpoint)
+            response = client.update_oda_instance_attachment(
+                oda_instance_id=request.pop(util.camelize('odaInstanceId')),
+                attachment_id=request.pop(util.camelize('attachmentId')),
+                update_oda_instance_attachment_details=request.pop(util.camelize('UpdateOdaInstanceAttachmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'oda',
+            'UpdateOdaInstanceAttachment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_oda_instance_attachment',
             False,
             False
         )

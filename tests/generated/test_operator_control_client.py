@@ -55,6 +55,7 @@ def test_change_operator_control_compartment(testing_service_client):
             response = client.change_operator_control_compartment(
                 operator_control_id=request.pop(util.camelize('operatorControlId')),
                 change_operator_control_compartment_details=request.pop(util.camelize('ChangeOperatorControlCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_create_operator_control(testing_service_client):
             client = oci.operator_access_control.OperatorControlClient(config, service_endpoint=service_endpoint)
             response = client.create_operator_control(
                 create_operator_control_details=request.pop(util.camelize('CreateOperatorControlDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -135,6 +137,7 @@ def test_delete_operator_control(testing_service_client):
             client = oci.operator_access_control.OperatorControlClient(config, service_endpoint=service_endpoint)
             response = client.delete_operator_control(
                 operator_control_id=request.pop(util.camelize('operatorControlId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -175,6 +178,7 @@ def test_get_operator_control(testing_service_client):
             client = oci.operator_access_control.OperatorControlClient(config, service_endpoint=service_endpoint)
             response = client.get_operator_control(
                 operator_control_id=request.pop(util.camelize('operatorControlId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -216,6 +220,7 @@ def test_list_operator_controls(testing_service_client):
             client = oci.operator_access_control.OperatorControlClient(config, service_endpoint=service_endpoint)
             response = client.list_operator_controls(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -225,6 +230,7 @@ def test_list_operator_controls(testing_service_client):
                 next_response = client.list_operator_controls(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -235,6 +241,7 @@ def test_list_operator_controls(testing_service_client):
                     prev_response = client.list_operator_controls(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -276,6 +283,7 @@ def test_update_operator_control(testing_service_client):
             response = client.update_operator_control(
                 operator_control_id=request.pop(util.camelize('operatorControlId')),
                 update_operator_control_details=request.pop(util.camelize('UpdateOperatorControlDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

@@ -55,6 +55,7 @@ def test_change_rule_compartment(testing_service_client):
             response = client.change_rule_compartment(
                 rule_id=request.pop(util.camelize('ruleId')),
                 change_rule_compartment_details=request.pop(util.camelize('ChangeRuleCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_create_rule(testing_service_client):
             client = oci.events.EventsClient(config, service_endpoint=service_endpoint)
             response = client.create_rule(
                 create_rule_details=request.pop(util.camelize('CreateRuleDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -135,6 +137,7 @@ def test_delete_rule(testing_service_client):
             client = oci.events.EventsClient(config, service_endpoint=service_endpoint)
             response = client.delete_rule(
                 rule_id=request.pop(util.camelize('ruleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -175,6 +178,7 @@ def test_get_rule(testing_service_client):
             client = oci.events.EventsClient(config, service_endpoint=service_endpoint)
             response = client.get_rule(
                 rule_id=request.pop(util.camelize('ruleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -216,6 +220,7 @@ def test_list_rules(testing_service_client):
             client = oci.events.EventsClient(config, service_endpoint=service_endpoint)
             response = client.list_rules(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -225,6 +230,7 @@ def test_list_rules(testing_service_client):
                 next_response = client.list_rules(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -235,6 +241,7 @@ def test_list_rules(testing_service_client):
                     prev_response = client.list_rules(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -276,6 +283,7 @@ def test_update_rule(testing_service_client):
             response = client.update_rule(
                 rule_id=request.pop(util.camelize('ruleId')),
                 update_rule_details=request.pop(util.camelize('UpdateRuleDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

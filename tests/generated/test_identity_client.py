@@ -54,6 +54,7 @@ def test_activate_domain(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.activate_domain(
                 domain_id=request.pop(util.camelize('domainId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_activate_mfa_totp_device(testing_service_client):
                 user_id=request.pop(util.camelize('userId')),
                 mfa_totp_device_id=request.pop(util.camelize('mfaTotpDeviceId')),
                 mfa_totp_token=request.pop(util.camelize('MfaTotpToken')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -136,6 +138,7 @@ def test_add_user_to_group(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.add_user_to_group(
                 add_user_to_group_details=request.pop(util.camelize('addUserToGroupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -176,6 +179,7 @@ def test_assemble_effective_tag_set(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.assemble_effective_tag_set(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -217,6 +221,7 @@ def test_bulk_delete_resources(testing_service_client):
             response = client.bulk_delete_resources(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 bulk_delete_resources_details=request.pop(util.camelize('BulkDeleteResourcesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -257,6 +262,7 @@ def test_bulk_delete_tags(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.bulk_delete_tags(
                 bulk_delete_tags_details=request.pop(util.camelize('BulkDeleteTagsDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -296,6 +302,7 @@ def test_bulk_edit_tags(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.bulk_edit_tags(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -337,6 +344,7 @@ def test_bulk_move_resources(testing_service_client):
             response = client.bulk_move_resources(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 bulk_move_resources_details=request.pop(util.camelize('BulkMoveResourcesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -377,6 +385,7 @@ def test_cascade_delete_tag_namespace(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.cascade_delete_tag_namespace(
                 tag_namespace_id=request.pop(util.camelize('tagNamespaceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -418,6 +427,7 @@ def test_change_domain_compartment(testing_service_client):
             response = client.change_domain_compartment(
                 domain_id=request.pop(util.camelize('domainId')),
                 change_domain_compartment_details=request.pop(util.camelize('ChangeDomainCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -459,6 +469,7 @@ def test_change_domain_license_type(testing_service_client):
             response = client.change_domain_license_type(
                 domain_id=request.pop(util.camelize('domainId')),
                 change_domain_license_type_details=request.pop(util.camelize('ChangeDomainLicenseTypeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -500,6 +511,7 @@ def test_change_tag_namespace_compartment(testing_service_client):
             response = client.change_tag_namespace_compartment(
                 tag_namespace_id=request.pop(util.camelize('tagNamespaceId')),
                 change_tag_namespace_compartment_detail=request.pop(util.camelize('ChangeTagNamespaceCompartmentDetail')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -541,6 +553,7 @@ def test_create_auth_token(testing_service_client):
             response = client.create_auth_token(
                 create_auth_token_details=request.pop(util.camelize('createAuthTokenDetails')),
                 user_id=request.pop(util.camelize('userId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -581,6 +594,7 @@ def test_create_compartment(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.create_compartment(
                 create_compartment_details=request.pop(util.camelize('createCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -622,6 +636,7 @@ def test_create_customer_secret_key(testing_service_client):
             response = client.create_customer_secret_key(
                 create_customer_secret_key_details=request.pop(util.camelize('createCustomerSecretKeyDetails')),
                 user_id=request.pop(util.camelize('userId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -663,6 +678,7 @@ def test_create_db_credential(testing_service_client):
             response = client.create_db_credential(
                 create_db_credential_details=request.pop(util.camelize('CreateDbCredentialDetails')),
                 user_id=request.pop(util.camelize('userId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -703,6 +719,7 @@ def test_create_domain(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.create_domain(
                 create_domain_details=request.pop(util.camelize('CreateDomainDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -743,6 +760,7 @@ def test_create_dynamic_group(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.create_dynamic_group(
                 create_dynamic_group_details=request.pop(util.camelize('CreateDynamicGroupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -783,6 +801,7 @@ def test_create_group(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.create_group(
                 create_group_details=request.pop(util.camelize('createGroupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -823,6 +842,7 @@ def test_create_identity_provider(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.create_identity_provider(
                 create_identity_provider_details=request.pop(util.camelize('createIdentityProviderDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -864,6 +884,7 @@ def test_create_idp_group_mapping(testing_service_client):
             response = client.create_idp_group_mapping(
                 create_idp_group_mapping_details=request.pop(util.camelize('createIdpGroupMappingDetails')),
                 identity_provider_id=request.pop(util.camelize('identityProviderId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -904,6 +925,7 @@ def test_create_mfa_totp_device(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.create_mfa_totp_device(
                 user_id=request.pop(util.camelize('userId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -944,6 +966,7 @@ def test_create_network_source(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.create_network_source(
                 create_network_source_details=request.pop(util.camelize('CreateNetworkSourceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -985,6 +1008,7 @@ def test_create_o_auth_client_credential(testing_service_client):
             response = client.create_o_auth_client_credential(
                 user_id=request.pop(util.camelize('userId')),
                 create_o_auth2_client_credential_details=request.pop(util.camelize('CreateOAuth2ClientCredentialDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1025,6 +1049,7 @@ def test_create_or_reset_ui_password(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.create_or_reset_ui_password(
                 user_id=request.pop(util.camelize('userId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1065,6 +1090,7 @@ def test_create_policy(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.create_policy(
                 create_policy_details=request.pop(util.camelize('createPolicyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1106,6 +1132,7 @@ def test_create_region_subscription(testing_service_client):
             response = client.create_region_subscription(
                 create_region_subscription_details=request.pop(util.camelize('CreateRegionSubscriptionDetails')),
                 tenancy_id=request.pop(util.camelize('tenancyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1147,6 +1174,7 @@ def test_create_smtp_credential(testing_service_client):
             response = client.create_smtp_credential(
                 create_smtp_credential_details=request.pop(util.camelize('createSmtpCredentialDetails')),
                 user_id=request.pop(util.camelize('userId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1188,6 +1216,7 @@ def test_create_swift_password(testing_service_client):
             response = client.create_swift_password(
                 create_swift_password_details=request.pop(util.camelize('createSwiftPasswordDetails')),
                 user_id=request.pop(util.camelize('userId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1229,6 +1258,7 @@ def test_create_tag(testing_service_client):
             response = client.create_tag(
                 tag_namespace_id=request.pop(util.camelize('tagNamespaceId')),
                 create_tag_details=request.pop(util.camelize('CreateTagDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1269,6 +1299,7 @@ def test_create_tag_default(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.create_tag_default(
                 create_tag_default_details=request.pop(util.camelize('CreateTagDefaultDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1309,6 +1340,7 @@ def test_create_tag_namespace(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.create_tag_namespace(
                 create_tag_namespace_details=request.pop(util.camelize('CreateTagNamespaceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1349,6 +1381,7 @@ def test_create_user(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.create_user(
                 create_user_details=request.pop(util.camelize('createUserDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1389,6 +1422,7 @@ def test_deactivate_domain(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.deactivate_domain(
                 domain_id=request.pop(util.camelize('domainId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1430,6 +1464,7 @@ def test_delete_api_key(testing_service_client):
             response = client.delete_api_key(
                 user_id=request.pop(util.camelize('userId')),
                 fingerprint=request.pop(util.camelize('fingerprint')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1471,6 +1506,7 @@ def test_delete_auth_token(testing_service_client):
             response = client.delete_auth_token(
                 user_id=request.pop(util.camelize('userId')),
                 auth_token_id=request.pop(util.camelize('authTokenId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1511,6 +1547,7 @@ def test_delete_compartment(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.delete_compartment(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1552,6 +1589,7 @@ def test_delete_customer_secret_key(testing_service_client):
             response = client.delete_customer_secret_key(
                 user_id=request.pop(util.camelize('userId')),
                 customer_secret_key_id=request.pop(util.camelize('customerSecretKeyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1593,6 +1631,7 @@ def test_delete_db_credential(testing_service_client):
             response = client.delete_db_credential(
                 user_id=request.pop(util.camelize('userId')),
                 db_credential_id=request.pop(util.camelize('dbCredentialId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1633,6 +1672,7 @@ def test_delete_domain(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.delete_domain(
                 domain_id=request.pop(util.camelize('domainId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1673,6 +1713,7 @@ def test_delete_dynamic_group(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.delete_dynamic_group(
                 dynamic_group_id=request.pop(util.camelize('dynamicGroupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1713,6 +1754,7 @@ def test_delete_group(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.delete_group(
                 group_id=request.pop(util.camelize('groupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1753,6 +1795,7 @@ def test_delete_identity_provider(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.delete_identity_provider(
                 identity_provider_id=request.pop(util.camelize('identityProviderId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1794,6 +1837,7 @@ def test_delete_idp_group_mapping(testing_service_client):
             response = client.delete_idp_group_mapping(
                 identity_provider_id=request.pop(util.camelize('identityProviderId')),
                 mapping_id=request.pop(util.camelize('mappingId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1835,6 +1879,7 @@ def test_delete_mfa_totp_device(testing_service_client):
             response = client.delete_mfa_totp_device(
                 user_id=request.pop(util.camelize('userId')),
                 mfa_totp_device_id=request.pop(util.camelize('mfaTotpDeviceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1875,6 +1920,7 @@ def test_delete_network_source(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.delete_network_source(
                 network_source_id=request.pop(util.camelize('networkSourceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1916,6 +1962,7 @@ def test_delete_o_auth_client_credential(testing_service_client):
             response = client.delete_o_auth_client_credential(
                 user_id=request.pop(util.camelize('userId')),
                 oauth2_client_credential_id=request.pop(util.camelize('oauth2ClientCredentialId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1956,6 +2003,7 @@ def test_delete_policy(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.delete_policy(
                 policy_id=request.pop(util.camelize('policyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1997,6 +2045,7 @@ def test_delete_smtp_credential(testing_service_client):
             response = client.delete_smtp_credential(
                 user_id=request.pop(util.camelize('userId')),
                 smtp_credential_id=request.pop(util.camelize('smtpCredentialId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2038,6 +2087,7 @@ def test_delete_swift_password(testing_service_client):
             response = client.delete_swift_password(
                 user_id=request.pop(util.camelize('userId')),
                 swift_password_id=request.pop(util.camelize('swiftPasswordId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2079,6 +2129,7 @@ def test_delete_tag(testing_service_client):
             response = client.delete_tag(
                 tag_namespace_id=request.pop(util.camelize('tagNamespaceId')),
                 tag_name=request.pop(util.camelize('tagName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2119,6 +2170,7 @@ def test_delete_tag_default(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.delete_tag_default(
                 tag_default_id=request.pop(util.camelize('tagDefaultId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2159,6 +2211,7 @@ def test_delete_tag_namespace(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.delete_tag_namespace(
                 tag_namespace_id=request.pop(util.camelize('tagNamespaceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2199,6 +2252,7 @@ def test_delete_user(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.delete_user(
                 user_id=request.pop(util.camelize('userId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2240,6 +2294,7 @@ def test_enable_replication_to_region(testing_service_client):
             response = client.enable_replication_to_region(
                 domain_id=request.pop(util.camelize('domainId')),
                 enable_replication_to_region_details=request.pop(util.camelize('EnableReplicationToRegionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2281,6 +2336,7 @@ def test_generate_totp_seed(testing_service_client):
             response = client.generate_totp_seed(
                 user_id=request.pop(util.camelize('userId')),
                 mfa_totp_device_id=request.pop(util.camelize('mfaTotpDeviceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2321,6 +2377,7 @@ def test_get_authentication_policy(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_authentication_policy(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2361,6 +2418,7 @@ def test_get_compartment(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_compartment(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2401,6 +2459,7 @@ def test_get_domain(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_domain(
                 domain_id=request.pop(util.camelize('domainId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2441,6 +2500,7 @@ def test_get_dynamic_group(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_dynamic_group(
                 dynamic_group_id=request.pop(util.camelize('dynamicGroupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2481,6 +2541,7 @@ def test_get_group(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_group(
                 group_id=request.pop(util.camelize('groupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2521,6 +2582,7 @@ def test_get_iam_work_request(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_iam_work_request(
                 iam_work_request_id=request.pop(util.camelize('iamWorkRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2561,6 +2623,7 @@ def test_get_identity_provider(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_identity_provider(
                 identity_provider_id=request.pop(util.camelize('identityProviderId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2602,6 +2665,7 @@ def test_get_idp_group_mapping(testing_service_client):
             response = client.get_idp_group_mapping(
                 identity_provider_id=request.pop(util.camelize('identityProviderId')),
                 mapping_id=request.pop(util.camelize('mappingId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2643,6 +2707,7 @@ def test_get_mfa_totp_device(testing_service_client):
             response = client.get_mfa_totp_device(
                 user_id=request.pop(util.camelize('userId')),
                 mfa_totp_device_id=request.pop(util.camelize('mfaTotpDeviceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2683,6 +2748,7 @@ def test_get_network_source(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_network_source(
                 network_source_id=request.pop(util.camelize('networkSourceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2723,6 +2789,7 @@ def test_get_policy(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_policy(
                 policy_id=request.pop(util.camelize('policyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2764,6 +2831,7 @@ def test_get_standard_tag_template(testing_service_client):
             response = client.get_standard_tag_template(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 standard_tag_namespace_name=request.pop(util.camelize('standardTagNamespaceName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2805,6 +2873,7 @@ def test_get_tag(testing_service_client):
             response = client.get_tag(
                 tag_namespace_id=request.pop(util.camelize('tagNamespaceId')),
                 tag_name=request.pop(util.camelize('tagName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2845,6 +2914,7 @@ def test_get_tag_default(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_tag_default(
                 tag_default_id=request.pop(util.camelize('tagDefaultId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2885,6 +2955,7 @@ def test_get_tag_namespace(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_tag_namespace(
                 tag_namespace_id=request.pop(util.camelize('tagNamespaceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2925,6 +2996,7 @@ def test_get_tagging_work_request(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_tagging_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2965,6 +3037,7 @@ def test_get_tenancy(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_tenancy(
                 tenancy_id=request.pop(util.camelize('tenancyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3005,6 +3078,7 @@ def test_get_user(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_user(
                 user_id=request.pop(util.camelize('userId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3045,6 +3119,7 @@ def test_get_user_group_membership(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_user_group_membership(
                 user_group_membership_id=request.pop(util.camelize('userGroupMembershipId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3085,6 +3160,7 @@ def test_get_user_ui_password_information(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_user_ui_password_information(
                 user_id=request.pop(util.camelize('userId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3125,6 +3201,7 @@ def test_get_work_request(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3164,6 +3241,7 @@ def test_import_standard_tags(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.import_standard_tags(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3203,6 +3281,7 @@ def test_list_allowed_domain_license_types(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_allowed_domain_license_types(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3243,6 +3322,7 @@ def test_list_api_keys(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_api_keys(
                 user_id=request.pop(util.camelize('userId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3283,6 +3363,7 @@ def test_list_auth_tokens(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_auth_tokens(
                 user_id=request.pop(util.camelize('userId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3323,6 +3404,7 @@ def test_list_availability_domains(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_availability_domains(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3364,6 +3446,7 @@ def test_list_bulk_action_resource_types(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_bulk_action_resource_types(
                 bulk_action_type=request.pop(util.camelize('bulkActionType')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3373,6 +3456,7 @@ def test_list_bulk_action_resource_types(testing_service_client):
                 next_response = client.list_bulk_action_resource_types(
                     bulk_action_type=request.pop(util.camelize('bulkActionType')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3383,6 +3467,7 @@ def test_list_bulk_action_resource_types(testing_service_client):
                     prev_response = client.list_bulk_action_resource_types(
                         bulk_action_type=request.pop(util.camelize('bulkActionType')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3423,6 +3508,7 @@ def test_list_bulk_edit_tags_resource_types(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_bulk_edit_tags_resource_types(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3431,6 +3517,7 @@ def test_list_bulk_edit_tags_resource_types(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_bulk_edit_tags_resource_types(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3440,6 +3527,7 @@ def test_list_bulk_edit_tags_resource_types(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_bulk_edit_tags_resource_types(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3481,6 +3569,7 @@ def test_list_compartments(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_compartments(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3490,6 +3579,7 @@ def test_list_compartments(testing_service_client):
                 next_response = client.list_compartments(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3500,6 +3590,7 @@ def test_list_compartments(testing_service_client):
                     prev_response = client.list_compartments(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3541,6 +3632,7 @@ def test_list_cost_tracking_tags(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_cost_tracking_tags(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3550,6 +3642,7 @@ def test_list_cost_tracking_tags(testing_service_client):
                 next_response = client.list_cost_tracking_tags(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3560,6 +3653,7 @@ def test_list_cost_tracking_tags(testing_service_client):
                     prev_response = client.list_cost_tracking_tags(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3600,6 +3694,7 @@ def test_list_customer_secret_keys(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_customer_secret_keys(
                 user_id=request.pop(util.camelize('userId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3641,6 +3736,7 @@ def test_list_db_credentials(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_db_credentials(
                 user_id=request.pop(util.camelize('userId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3650,6 +3746,7 @@ def test_list_db_credentials(testing_service_client):
                 next_response = client.list_db_credentials(
                     user_id=request.pop(util.camelize('userId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3660,6 +3757,7 @@ def test_list_db_credentials(testing_service_client):
                     prev_response = client.list_db_credentials(
                         user_id=request.pop(util.camelize('userId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3701,6 +3799,7 @@ def test_list_domains(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_domains(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3710,6 +3809,7 @@ def test_list_domains(testing_service_client):
                 next_response = client.list_domains(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3720,6 +3820,7 @@ def test_list_domains(testing_service_client):
                     prev_response = client.list_domains(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3761,6 +3862,7 @@ def test_list_dynamic_groups(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_dynamic_groups(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3770,6 +3872,7 @@ def test_list_dynamic_groups(testing_service_client):
                 next_response = client.list_dynamic_groups(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3780,6 +3883,7 @@ def test_list_dynamic_groups(testing_service_client):
                     prev_response = client.list_dynamic_groups(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3821,6 +3925,7 @@ def test_list_fault_domains(testing_service_client):
             response = client.list_fault_domains(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 availability_domain=request.pop(util.camelize('availabilityDomain')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3862,6 +3967,7 @@ def test_list_groups(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_groups(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3871,6 +3977,7 @@ def test_list_groups(testing_service_client):
                 next_response = client.list_groups(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3881,6 +3988,7 @@ def test_list_groups(testing_service_client):
                     prev_response = client.list_groups(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3922,6 +4030,7 @@ def test_list_iam_work_request_errors(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_iam_work_request_errors(
                 iam_work_request_id=request.pop(util.camelize('iamWorkRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3931,6 +4040,7 @@ def test_list_iam_work_request_errors(testing_service_client):
                 next_response = client.list_iam_work_request_errors(
                     iam_work_request_id=request.pop(util.camelize('iamWorkRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3941,6 +4051,7 @@ def test_list_iam_work_request_errors(testing_service_client):
                     prev_response = client.list_iam_work_request_errors(
                         iam_work_request_id=request.pop(util.camelize('iamWorkRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3982,6 +4093,7 @@ def test_list_iam_work_request_logs(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_iam_work_request_logs(
                 iam_work_request_id=request.pop(util.camelize('iamWorkRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3991,6 +4103,7 @@ def test_list_iam_work_request_logs(testing_service_client):
                 next_response = client.list_iam_work_request_logs(
                     iam_work_request_id=request.pop(util.camelize('iamWorkRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4001,6 +4114,7 @@ def test_list_iam_work_request_logs(testing_service_client):
                     prev_response = client.list_iam_work_request_logs(
                         iam_work_request_id=request.pop(util.camelize('iamWorkRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4042,6 +4156,7 @@ def test_list_iam_work_requests(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_iam_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4051,6 +4166,7 @@ def test_list_iam_work_requests(testing_service_client):
                 next_response = client.list_iam_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4061,6 +4177,7 @@ def test_list_iam_work_requests(testing_service_client):
                     prev_response = client.list_iam_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4102,6 +4219,7 @@ def test_list_identity_provider_groups(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_identity_provider_groups(
                 identity_provider_id=request.pop(util.camelize('identityProviderId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4111,6 +4229,7 @@ def test_list_identity_provider_groups(testing_service_client):
                 next_response = client.list_identity_provider_groups(
                     identity_provider_id=request.pop(util.camelize('identityProviderId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4121,6 +4240,7 @@ def test_list_identity_provider_groups(testing_service_client):
                     prev_response = client.list_identity_provider_groups(
                         identity_provider_id=request.pop(util.camelize('identityProviderId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4163,6 +4283,7 @@ def test_list_identity_providers(testing_service_client):
             response = client.list_identity_providers(
                 protocol=request.pop(util.camelize('protocol')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4173,6 +4294,7 @@ def test_list_identity_providers(testing_service_client):
                     protocol=request.pop(util.camelize('protocol')),
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4184,6 +4306,7 @@ def test_list_identity_providers(testing_service_client):
                         protocol=request.pop(util.camelize('protocol')),
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4225,6 +4348,7 @@ def test_list_idp_group_mappings(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_idp_group_mappings(
                 identity_provider_id=request.pop(util.camelize('identityProviderId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4234,6 +4358,7 @@ def test_list_idp_group_mappings(testing_service_client):
                 next_response = client.list_idp_group_mappings(
                     identity_provider_id=request.pop(util.camelize('identityProviderId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4244,6 +4369,7 @@ def test_list_idp_group_mappings(testing_service_client):
                     prev_response = client.list_idp_group_mappings(
                         identity_provider_id=request.pop(util.camelize('identityProviderId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4285,6 +4411,7 @@ def test_list_mfa_totp_devices(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_mfa_totp_devices(
                 user_id=request.pop(util.camelize('userId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4294,6 +4421,7 @@ def test_list_mfa_totp_devices(testing_service_client):
                 next_response = client.list_mfa_totp_devices(
                     user_id=request.pop(util.camelize('userId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4304,6 +4432,7 @@ def test_list_mfa_totp_devices(testing_service_client):
                     prev_response = client.list_mfa_totp_devices(
                         user_id=request.pop(util.camelize('userId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4345,6 +4474,7 @@ def test_list_network_sources(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_network_sources(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4354,6 +4484,7 @@ def test_list_network_sources(testing_service_client):
                 next_response = client.list_network_sources(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4364,6 +4495,7 @@ def test_list_network_sources(testing_service_client):
                     prev_response = client.list_network_sources(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4405,6 +4537,7 @@ def test_list_o_auth_client_credentials(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_o_auth_client_credentials(
                 user_id=request.pop(util.camelize('userId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4414,6 +4547,7 @@ def test_list_o_auth_client_credentials(testing_service_client):
                 next_response = client.list_o_auth_client_credentials(
                     user_id=request.pop(util.camelize('userId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4424,6 +4558,7 @@ def test_list_o_auth_client_credentials(testing_service_client):
                     prev_response = client.list_o_auth_client_credentials(
                         user_id=request.pop(util.camelize('userId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4465,6 +4600,7 @@ def test_list_policies(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_policies(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4474,6 +4610,7 @@ def test_list_policies(testing_service_client):
                 next_response = client.list_policies(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4484,6 +4621,7 @@ def test_list_policies(testing_service_client):
                     prev_response = client.list_policies(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4524,6 +4662,7 @@ def test_list_region_subscriptions(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_region_subscriptions(
                 tenancy_id=request.pop(util.camelize('tenancyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4563,6 +4702,7 @@ def test_list_regions(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_regions(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4603,6 +4743,7 @@ def test_list_smtp_credentials(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_smtp_credentials(
                 user_id=request.pop(util.camelize('userId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4644,6 +4785,7 @@ def test_list_standard_tag_namespaces(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_standard_tag_namespaces(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4653,6 +4795,7 @@ def test_list_standard_tag_namespaces(testing_service_client):
                 next_response = client.list_standard_tag_namespaces(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4663,6 +4806,7 @@ def test_list_standard_tag_namespaces(testing_service_client):
                     prev_response = client.list_standard_tag_namespaces(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4703,6 +4847,7 @@ def test_list_swift_passwords(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_swift_passwords(
                 user_id=request.pop(util.camelize('userId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4743,6 +4888,7 @@ def test_list_tag_defaults(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_tag_defaults(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4751,6 +4897,7 @@ def test_list_tag_defaults(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_tag_defaults(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4760,6 +4907,7 @@ def test_list_tag_defaults(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_tag_defaults(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4801,6 +4949,7 @@ def test_list_tag_namespaces(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_tag_namespaces(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4810,6 +4959,7 @@ def test_list_tag_namespaces(testing_service_client):
                 next_response = client.list_tag_namespaces(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4820,6 +4970,7 @@ def test_list_tag_namespaces(testing_service_client):
                     prev_response = client.list_tag_namespaces(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4861,6 +5012,7 @@ def test_list_tagging_work_request_errors(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_tagging_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4870,6 +5022,7 @@ def test_list_tagging_work_request_errors(testing_service_client):
                 next_response = client.list_tagging_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4880,6 +5033,7 @@ def test_list_tagging_work_request_errors(testing_service_client):
                     prev_response = client.list_tagging_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4921,6 +5075,7 @@ def test_list_tagging_work_request_logs(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_tagging_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4930,6 +5085,7 @@ def test_list_tagging_work_request_logs(testing_service_client):
                 next_response = client.list_tagging_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4940,6 +5096,7 @@ def test_list_tagging_work_request_logs(testing_service_client):
                     prev_response = client.list_tagging_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4981,6 +5138,7 @@ def test_list_tagging_work_requests(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_tagging_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4990,6 +5148,7 @@ def test_list_tagging_work_requests(testing_service_client):
                 next_response = client.list_tagging_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5000,6 +5159,7 @@ def test_list_tagging_work_requests(testing_service_client):
                     prev_response = client.list_tagging_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5041,6 +5201,7 @@ def test_list_tags(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_tags(
                 tag_namespace_id=request.pop(util.camelize('tagNamespaceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5050,6 +5211,7 @@ def test_list_tags(testing_service_client):
                 next_response = client.list_tags(
                     tag_namespace_id=request.pop(util.camelize('tagNamespaceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5060,6 +5222,7 @@ def test_list_tags(testing_service_client):
                     prev_response = client.list_tags(
                         tag_namespace_id=request.pop(util.camelize('tagNamespaceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5101,6 +5264,7 @@ def test_list_user_group_memberships(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_user_group_memberships(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5110,6 +5274,7 @@ def test_list_user_group_memberships(testing_service_client):
                 next_response = client.list_user_group_memberships(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5120,6 +5285,7 @@ def test_list_user_group_memberships(testing_service_client):
                     prev_response = client.list_user_group_memberships(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5161,6 +5327,7 @@ def test_list_users(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_users(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5170,6 +5337,7 @@ def test_list_users(testing_service_client):
                 next_response = client.list_users(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5180,6 +5348,7 @@ def test_list_users(testing_service_client):
                     prev_response = client.list_users(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5221,6 +5390,7 @@ def test_list_work_requests(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5230,6 +5400,7 @@ def test_list_work_requests(testing_service_client):
                 next_response = client.list_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5240,6 +5411,7 @@ def test_list_work_requests(testing_service_client):
                     prev_response = client.list_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5281,6 +5453,7 @@ def test_move_compartment(testing_service_client):
             response = client.move_compartment(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 move_compartment_details=request.pop(util.camelize('MoveCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5321,6 +5494,7 @@ def test_recover_compartment(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.recover_compartment(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5361,6 +5535,7 @@ def test_remove_user_from_group(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.remove_user_from_group(
                 user_group_membership_id=request.pop(util.camelize('userGroupMembershipId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5401,6 +5576,7 @@ def test_reset_idp_scim_client(testing_service_client):
             client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.reset_idp_scim_client(
                 identity_provider_id=request.pop(util.camelize('identityProviderId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5443,6 +5619,7 @@ def test_update_auth_token(testing_service_client):
                 user_id=request.pop(util.camelize('userId')),
                 auth_token_id=request.pop(util.camelize('authTokenId')),
                 update_auth_token_details=request.pop(util.camelize('updateAuthTokenDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5484,6 +5661,7 @@ def test_update_authentication_policy(testing_service_client):
             response = client.update_authentication_policy(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 update_authentication_policy_details=request.pop(util.camelize('UpdateAuthenticationPolicyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5525,6 +5703,7 @@ def test_update_compartment(testing_service_client):
             response = client.update_compartment(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 update_compartment_details=request.pop(util.camelize('updateCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5567,6 +5746,7 @@ def test_update_customer_secret_key(testing_service_client):
                 user_id=request.pop(util.camelize('userId')),
                 customer_secret_key_id=request.pop(util.camelize('customerSecretKeyId')),
                 update_customer_secret_key_details=request.pop(util.camelize('updateCustomerSecretKeyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5608,6 +5788,7 @@ def test_update_domain(testing_service_client):
             response = client.update_domain(
                 domain_id=request.pop(util.camelize('domainId')),
                 update_domain_details=request.pop(util.camelize('UpdateDomainDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5649,6 +5830,7 @@ def test_update_dynamic_group(testing_service_client):
             response = client.update_dynamic_group(
                 dynamic_group_id=request.pop(util.camelize('dynamicGroupId')),
                 update_dynamic_group_details=request.pop(util.camelize('UpdateDynamicGroupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5690,6 +5872,7 @@ def test_update_group(testing_service_client):
             response = client.update_group(
                 group_id=request.pop(util.camelize('groupId')),
                 update_group_details=request.pop(util.camelize('updateGroupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5731,6 +5914,7 @@ def test_update_identity_provider(testing_service_client):
             response = client.update_identity_provider(
                 identity_provider_id=request.pop(util.camelize('identityProviderId')),
                 update_identity_provider_details=request.pop(util.camelize('updateIdentityProviderDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5773,6 +5957,7 @@ def test_update_idp_group_mapping(testing_service_client):
                 identity_provider_id=request.pop(util.camelize('identityProviderId')),
                 mapping_id=request.pop(util.camelize('mappingId')),
                 update_idp_group_mapping_details=request.pop(util.camelize('updateIdpGroupMappingDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5814,6 +5999,7 @@ def test_update_network_source(testing_service_client):
             response = client.update_network_source(
                 network_source_id=request.pop(util.camelize('networkSourceId')),
                 update_network_source_details=request.pop(util.camelize('UpdateNetworkSourceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5856,6 +6042,7 @@ def test_update_o_auth_client_credential(testing_service_client):
                 user_id=request.pop(util.camelize('userId')),
                 oauth2_client_credential_id=request.pop(util.camelize('oauth2ClientCredentialId')),
                 update_o_auth2_client_credential_details=request.pop(util.camelize('UpdateOAuth2ClientCredentialDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5897,6 +6084,7 @@ def test_update_policy(testing_service_client):
             response = client.update_policy(
                 policy_id=request.pop(util.camelize('policyId')),
                 update_policy_details=request.pop(util.camelize('updatePolicyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5939,6 +6127,7 @@ def test_update_smtp_credential(testing_service_client):
                 user_id=request.pop(util.camelize('userId')),
                 smtp_credential_id=request.pop(util.camelize('smtpCredentialId')),
                 update_smtp_credential_details=request.pop(util.camelize('updateSmtpCredentialDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5981,6 +6170,7 @@ def test_update_swift_password(testing_service_client):
                 user_id=request.pop(util.camelize('userId')),
                 swift_password_id=request.pop(util.camelize('swiftPasswordId')),
                 update_swift_password_details=request.pop(util.camelize('updateSwiftPasswordDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6023,6 +6213,7 @@ def test_update_tag(testing_service_client):
                 tag_namespace_id=request.pop(util.camelize('tagNamespaceId')),
                 tag_name=request.pop(util.camelize('tagName')),
                 update_tag_details=request.pop(util.camelize('UpdateTagDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6064,6 +6255,7 @@ def test_update_tag_default(testing_service_client):
             response = client.update_tag_default(
                 tag_default_id=request.pop(util.camelize('tagDefaultId')),
                 update_tag_default_details=request.pop(util.camelize('UpdateTagDefaultDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6105,6 +6297,7 @@ def test_update_tag_namespace(testing_service_client):
             response = client.update_tag_namespace(
                 tag_namespace_id=request.pop(util.camelize('tagNamespaceId')),
                 update_tag_namespace_details=request.pop(util.camelize('UpdateTagNamespaceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6146,6 +6339,7 @@ def test_update_user(testing_service_client):
             response = client.update_user(
                 user_id=request.pop(util.camelize('userId')),
                 update_user_details=request.pop(util.camelize('updateUserDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6187,6 +6381,7 @@ def test_update_user_capabilities(testing_service_client):
             response = client.update_user_capabilities(
                 user_id=request.pop(util.camelize('userId')),
                 update_user_capabilities_details=request.pop(util.camelize('UpdateUserCapabilitiesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6228,6 +6423,7 @@ def test_update_user_state(testing_service_client):
             response = client.update_user_state(
                 user_id=request.pop(util.camelize('userId')),
                 update_state_details=request.pop(util.camelize('updateStateDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6269,6 +6465,7 @@ def test_upload_api_key(testing_service_client):
             response = client.upload_api_key(
                 user_id=request.pop(util.camelize('userId')),
                 create_api_key_details=request.pop(util.camelize('createApiKeyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

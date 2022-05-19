@@ -55,6 +55,7 @@ def test_get_computed_usage(testing_service_client):
             response = client.get_computed_usage(
                 computed_usage_id=request.pop(util.camelize('computedUsageId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -99,6 +100,7 @@ def test_list_computed_usage_aggregateds(testing_service_client):
                 subscription_id=request.pop(util.camelize('subscriptionId')),
                 time_from=request.pop(util.camelize('timeFrom')),
                 time_to=request.pop(util.camelize('timeTo')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -111,6 +113,7 @@ def test_list_computed_usage_aggregateds(testing_service_client):
                     time_from=request.pop(util.camelize('timeFrom')),
                     time_to=request.pop(util.camelize('timeTo')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -124,6 +127,7 @@ def test_list_computed_usage_aggregateds(testing_service_client):
                         time_from=request.pop(util.camelize('timeFrom')),
                         time_to=request.pop(util.camelize('timeTo')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -168,6 +172,7 @@ def test_list_computed_usages(testing_service_client):
                 subscription_id=request.pop(util.camelize('subscriptionId')),
                 time_from=request.pop(util.camelize('timeFrom')),
                 time_to=request.pop(util.camelize('timeTo')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -180,6 +185,7 @@ def test_list_computed_usages(testing_service_client):
                     time_from=request.pop(util.camelize('timeFrom')),
                     time_to=request.pop(util.camelize('timeTo')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -193,6 +199,7 @@ def test_list_computed_usages(testing_service_client):
                         time_from=request.pop(util.camelize('timeFrom')),
                         time_to=request.pop(util.camelize('timeTo')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)

@@ -55,6 +55,7 @@ def test_change_gateway_compartment(testing_service_client):
             response = client.change_gateway_compartment(
                 gateway_id=request.pop(util.camelize('gatewayId')),
                 change_gateway_compartment_details=request.pop(util.camelize('ChangeGatewayCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_create_gateway(testing_service_client):
             client = oci.apigateway.GatewayClient(config, service_endpoint=service_endpoint)
             response = client.create_gateway(
                 create_gateway_details=request.pop(util.camelize('CreateGatewayDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -135,6 +137,7 @@ def test_delete_gateway(testing_service_client):
             client = oci.apigateway.GatewayClient(config, service_endpoint=service_endpoint)
             response = client.delete_gateway(
                 gateway_id=request.pop(util.camelize('gatewayId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -175,6 +178,7 @@ def test_get_gateway(testing_service_client):
             client = oci.apigateway.GatewayClient(config, service_endpoint=service_endpoint)
             response = client.get_gateway(
                 gateway_id=request.pop(util.camelize('gatewayId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -216,6 +220,7 @@ def test_list_gateways(testing_service_client):
             client = oci.apigateway.GatewayClient(config, service_endpoint=service_endpoint)
             response = client.list_gateways(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -225,6 +230,7 @@ def test_list_gateways(testing_service_client):
                 next_response = client.list_gateways(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -235,6 +241,7 @@ def test_list_gateways(testing_service_client):
                     prev_response = client.list_gateways(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -276,6 +283,7 @@ def test_update_gateway(testing_service_client):
             response = client.update_gateway(
                 gateway_id=request.pop(util.camelize('gatewayId')),
                 update_gateway_details=request.pop(util.camelize('UpdateGatewayDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

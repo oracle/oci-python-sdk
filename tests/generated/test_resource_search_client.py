@@ -54,6 +54,7 @@ def test_get_resource_type(testing_service_client):
             client = oci.resource_search.ResourceSearchClient(config, service_endpoint=service_endpoint)
             response = client.get_resource_type(
                 name=request.pop(util.camelize('name')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -94,6 +95,7 @@ def test_list_resource_types(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.resource_search.ResourceSearchClient(config, service_endpoint=service_endpoint)
             response = client.list_resource_types(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -102,6 +104,7 @@ def test_list_resource_types(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_resource_types(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -111,6 +114,7 @@ def test_list_resource_types(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_resource_types(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -152,6 +156,7 @@ def test_search_resources(testing_service_client):
             client = oci.resource_search.ResourceSearchClient(config, service_endpoint=service_endpoint)
             response = client.search_resources(
                 search_details=request.pop(util.camelize('SearchDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -161,6 +166,7 @@ def test_search_resources(testing_service_client):
                 next_response = client.search_resources(
                     search_details=request.pop(util.camelize('SearchDetails')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -171,6 +177,7 @@ def test_search_resources(testing_service_client):
                     prev_response = client.search_resources(
                         search_details=request.pop(util.camelize('SearchDetails')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)

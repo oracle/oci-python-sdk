@@ -55,6 +55,7 @@ def test_clone_sql_tuning_task(testing_service_client):
             response = client.clone_sql_tuning_task(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 clone_sql_tuning_task_details=request.pop(util.camelize('CloneSqlTuningTaskDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_drop_sql_tuning_task(testing_service_client):
             response = client.drop_sql_tuning_task(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 drop_sql_tuning_task_details=request.pop(util.camelize('DropSqlTuningTaskDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -139,6 +141,7 @@ def test_get_execution_plan_stats_comparision(testing_service_client):
                 sql_tuning_advisor_task_id=request.pop(util.camelize('sqlTuningAdvisorTaskId')),
                 sql_object_id=request.pop(util.camelize('sqlObjectId')),
                 execution_id=request.pop(util.camelize('executionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -182,6 +185,7 @@ def test_get_sql_execution_plan(testing_service_client):
                 sql_tuning_advisor_task_id=request.pop(util.camelize('sqlTuningAdvisorTaskId')),
                 sql_object_id=request.pop(util.camelize('sqlObjectId')),
                 attribute=request.pop(util.camelize('attribute')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -223,6 +227,7 @@ def test_get_sql_tuning_advisor_task_summary_report(testing_service_client):
             response = client.get_sql_tuning_advisor_task_summary_report(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 sql_tuning_advisor_task_id=request.pop(util.camelize('sqlTuningAdvisorTaskId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -265,6 +270,7 @@ def test_list_sql_tuning_advisor_task_findings(testing_service_client):
             response = client.list_sql_tuning_advisor_task_findings(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 sql_tuning_advisor_task_id=request.pop(util.camelize('sqlTuningAdvisorTaskId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -275,6 +281,7 @@ def test_list_sql_tuning_advisor_task_findings(testing_service_client):
                     managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                     sql_tuning_advisor_task_id=request.pop(util.camelize('sqlTuningAdvisorTaskId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -286,6 +293,7 @@ def test_list_sql_tuning_advisor_task_findings(testing_service_client):
                         managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                         sql_tuning_advisor_task_id=request.pop(util.camelize('sqlTuningAdvisorTaskId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -330,6 +338,7 @@ def test_list_sql_tuning_advisor_task_recommendations(testing_service_client):
                 sql_tuning_advisor_task_id=request.pop(util.camelize('sqlTuningAdvisorTaskId')),
                 sql_object_id=request.pop(util.camelize('sqlObjectId')),
                 execution_id=request.pop(util.camelize('executionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -342,6 +351,7 @@ def test_list_sql_tuning_advisor_task_recommendations(testing_service_client):
                     sql_object_id=request.pop(util.camelize('sqlObjectId')),
                     execution_id=request.pop(util.camelize('executionId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -355,6 +365,7 @@ def test_list_sql_tuning_advisor_task_recommendations(testing_service_client):
                         sql_object_id=request.pop(util.camelize('sqlObjectId')),
                         execution_id=request.pop(util.camelize('executionId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -396,6 +407,7 @@ def test_list_sql_tuning_advisor_tasks(testing_service_client):
             client = oci.database_management.SqlTuningClient(config, service_endpoint=service_endpoint)
             response = client.list_sql_tuning_advisor_tasks(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -405,6 +417,7 @@ def test_list_sql_tuning_advisor_tasks(testing_service_client):
                 next_response = client.list_sql_tuning_advisor_tasks(
                     managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -415,6 +428,7 @@ def test_list_sql_tuning_advisor_tasks(testing_service_client):
                     prev_response = client.list_sql_tuning_advisor_tasks(
                         managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -456,6 +470,7 @@ def test_start_sql_tuning_task(testing_service_client):
             response = client.start_sql_tuning_task(
                 managed_database_id=request.pop(util.camelize('managedDatabaseId')),
                 start_sql_tuning_task_details=request.pop(util.camelize('StartSqlTuningTaskDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

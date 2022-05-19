@@ -54,6 +54,7 @@ def test_create_dashboard(testing_service_client):
             client = oci.dashboard_service.DashboardClient(config, service_endpoint=service_endpoint)
             response = client.create_dashboard(
                 create_dashboard_details=request.pop(util.camelize('CreateDashboardDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -94,6 +95,7 @@ def test_delete_dashboard(testing_service_client):
             client = oci.dashboard_service.DashboardClient(config, service_endpoint=service_endpoint)
             response = client.delete_dashboard(
                 dashboard_id=request.pop(util.camelize('dashboardId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -134,6 +136,7 @@ def test_get_dashboard(testing_service_client):
             client = oci.dashboard_service.DashboardClient(config, service_endpoint=service_endpoint)
             response = client.get_dashboard(
                 dashboard_id=request.pop(util.camelize('dashboardId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -175,6 +178,7 @@ def test_list_dashboards(testing_service_client):
             client = oci.dashboard_service.DashboardClient(config, service_endpoint=service_endpoint)
             response = client.list_dashboards(
                 dashboard_group_id=request.pop(util.camelize('dashboardGroupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -184,6 +188,7 @@ def test_list_dashboards(testing_service_client):
                 next_response = client.list_dashboards(
                     dashboard_group_id=request.pop(util.camelize('dashboardGroupId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -194,6 +199,7 @@ def test_list_dashboards(testing_service_client):
                     prev_response = client.list_dashboards(
                         dashboard_group_id=request.pop(util.camelize('dashboardGroupId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -235,6 +241,7 @@ def test_update_dashboard(testing_service_client):
             response = client.update_dashboard(
                 dashboard_id=request.pop(util.camelize('dashboardId')),
                 update_dashboard_details=request.pop(util.camelize('UpdateDashboardDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

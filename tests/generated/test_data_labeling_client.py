@@ -54,6 +54,7 @@ def test_create_annotation(testing_service_client):
             client = oci.data_labeling_service_dataplane.DataLabelingClient(config, service_endpoint=service_endpoint)
             response = client.create_annotation(
                 create_annotation_details=request.pop(util.camelize('CreateAnnotationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -94,6 +95,7 @@ def test_create_record(testing_service_client):
             client = oci.data_labeling_service_dataplane.DataLabelingClient(config, service_endpoint=service_endpoint)
             response = client.create_record(
                 create_record_details=request.pop(util.camelize('CreateRecordDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -134,6 +136,7 @@ def test_delete_annotation(testing_service_client):
             client = oci.data_labeling_service_dataplane.DataLabelingClient(config, service_endpoint=service_endpoint)
             response = client.delete_annotation(
                 annotation_id=request.pop(util.camelize('annotationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -174,6 +177,7 @@ def test_delete_record(testing_service_client):
             client = oci.data_labeling_service_dataplane.DataLabelingClient(config, service_endpoint=service_endpoint)
             response = client.delete_record(
                 record_id=request.pop(util.camelize('recordId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -214,6 +218,7 @@ def test_get_annotation(testing_service_client):
             client = oci.data_labeling_service_dataplane.DataLabelingClient(config, service_endpoint=service_endpoint)
             response = client.get_annotation(
                 annotation_id=request.pop(util.camelize('annotationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -254,6 +259,7 @@ def test_get_dataset(testing_service_client):
             client = oci.data_labeling_service_dataplane.DataLabelingClient(config, service_endpoint=service_endpoint)
             response = client.get_dataset(
                 dataset_id=request.pop(util.camelize('datasetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -294,6 +300,7 @@ def test_get_record(testing_service_client):
             client = oci.data_labeling_service_dataplane.DataLabelingClient(config, service_endpoint=service_endpoint)
             response = client.get_record(
                 record_id=request.pop(util.camelize('recordId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -334,6 +341,7 @@ def test_get_record_content(testing_service_client):
             client = oci.data_labeling_service_dataplane.DataLabelingClient(config, service_endpoint=service_endpoint)
             response = client.get_record_content(
                 record_id=request.pop(util.camelize('recordId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -374,6 +382,7 @@ def test_get_record_preview_content(testing_service_client):
             client = oci.data_labeling_service_dataplane.DataLabelingClient(config, service_endpoint=service_endpoint)
             response = client.get_record_preview_content(
                 record_id=request.pop(util.camelize('recordId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -416,6 +425,7 @@ def test_list_annotations(testing_service_client):
             response = client.list_annotations(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 dataset_id=request.pop(util.camelize('datasetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -426,6 +436,7 @@ def test_list_annotations(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     dataset_id=request.pop(util.camelize('datasetId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -437,6 +448,7 @@ def test_list_annotations(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         dataset_id=request.pop(util.camelize('datasetId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -479,6 +491,7 @@ def test_list_records(testing_service_client):
             response = client.list_records(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 dataset_id=request.pop(util.camelize('datasetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -489,6 +502,7 @@ def test_list_records(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     dataset_id=request.pop(util.camelize('datasetId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -500,6 +514,7 @@ def test_list_records(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         dataset_id=request.pop(util.camelize('datasetId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -542,6 +557,7 @@ def test_summarize_annotation_analytics(testing_service_client):
             response = client.summarize_annotation_analytics(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 dataset_id=request.pop(util.camelize('datasetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -552,6 +568,7 @@ def test_summarize_annotation_analytics(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     dataset_id=request.pop(util.camelize('datasetId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -563,6 +580,7 @@ def test_summarize_annotation_analytics(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         dataset_id=request.pop(util.camelize('datasetId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -605,6 +623,7 @@ def test_summarize_record_analytics(testing_service_client):
             response = client.summarize_record_analytics(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 dataset_id=request.pop(util.camelize('datasetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -615,6 +634,7 @@ def test_summarize_record_analytics(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     dataset_id=request.pop(util.camelize('datasetId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -626,6 +646,7 @@ def test_summarize_record_analytics(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         dataset_id=request.pop(util.camelize('datasetId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -667,6 +688,7 @@ def test_update_annotation(testing_service_client):
             response = client.update_annotation(
                 annotation_id=request.pop(util.camelize('annotationId')),
                 update_annotation_details=request.pop(util.camelize('UpdateAnnotationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -708,6 +730,7 @@ def test_update_record(testing_service_client):
             response = client.update_record(
                 record_id=request.pop(util.camelize('recordId')),
                 update_record_details=request.pop(util.camelize('UpdateRecordDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

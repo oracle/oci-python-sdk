@@ -55,6 +55,7 @@ def test_approve_access_request(testing_service_client):
             response = client.approve_access_request(
                 access_request_id=request.pop(util.camelize('accessRequestId')),
                 approve_access_request_details=request.pop(util.camelize('ApproveAccessRequestDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_get_access_request(testing_service_client):
             client = oci.operator_access_control.AccessRequestsClient(config, service_endpoint=service_endpoint)
             response = client.get_access_request(
                 access_request_id=request.pop(util.camelize('accessRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -136,6 +138,7 @@ def test_interaction_request(testing_service_client):
             response = client.interaction_request(
                 access_request_id=request.pop(util.camelize('accessRequestId')),
                 interaction_request_details=request.pop(util.camelize('InteractionRequestDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -177,6 +180,7 @@ def test_list_access_request_histories(testing_service_client):
             client = oci.operator_access_control.AccessRequestsClient(config, service_endpoint=service_endpoint)
             response = client.list_access_request_histories(
                 access_request_id=request.pop(util.camelize('accessRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -186,6 +190,7 @@ def test_list_access_request_histories(testing_service_client):
                 next_response = client.list_access_request_histories(
                     access_request_id=request.pop(util.camelize('accessRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -196,6 +201,7 @@ def test_list_access_request_histories(testing_service_client):
                     prev_response = client.list_access_request_histories(
                         access_request_id=request.pop(util.camelize('accessRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -237,6 +243,7 @@ def test_list_access_requests(testing_service_client):
             client = oci.operator_access_control.AccessRequestsClient(config, service_endpoint=service_endpoint)
             response = client.list_access_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -246,6 +253,7 @@ def test_list_access_requests(testing_service_client):
                 next_response = client.list_access_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -256,6 +264,7 @@ def test_list_access_requests(testing_service_client):
                     prev_response = client.list_access_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -297,6 +306,7 @@ def test_list_interactions(testing_service_client):
             client = oci.operator_access_control.AccessRequestsClient(config, service_endpoint=service_endpoint)
             response = client.list_interactions(
                 access_request_id=request.pop(util.camelize('accessRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -306,6 +316,7 @@ def test_list_interactions(testing_service_client):
                 next_response = client.list_interactions(
                     access_request_id=request.pop(util.camelize('accessRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -316,6 +327,7 @@ def test_list_interactions(testing_service_client):
                     prev_response = client.list_interactions(
                         access_request_id=request.pop(util.camelize('accessRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -357,6 +369,7 @@ def test_reject_access_request(testing_service_client):
             response = client.reject_access_request(
                 access_request_id=request.pop(util.camelize('accessRequestId')),
                 reject_access_request_details=request.pop(util.camelize('RejectAccessRequestDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -398,6 +411,7 @@ def test_review_access_request(testing_service_client):
             response = client.review_access_request(
                 access_request_id=request.pop(util.camelize('accessRequestId')),
                 review_access_request_details=request.pop(util.camelize('ReviewAccessRequestDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -439,6 +453,7 @@ def test_revoke_access_request(testing_service_client):
             response = client.revoke_access_request(
                 access_request_id=request.pop(util.camelize('accessRequestId')),
                 revoke_access_request_details=request.pop(util.camelize('RevokeAccessRequestDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

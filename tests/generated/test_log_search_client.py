@@ -55,6 +55,7 @@ def test_search_logs(testing_service_client):
             client = oci.loggingsearch.LogSearchClient(config, service_endpoint=service_endpoint)
             response = client.search_logs(
                 search_logs_details=request.pop(util.camelize('SearchLogsDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -64,6 +65,7 @@ def test_search_logs(testing_service_client):
                 next_response = client.search_logs(
                     search_logs_details=request.pop(util.camelize('SearchLogsDetails')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -74,6 +76,7 @@ def test_search_logs(testing_service_client):
                     prev_response = client.search_logs(
                         search_logs_details=request.pop(util.camelize('SearchLogsDetails')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)

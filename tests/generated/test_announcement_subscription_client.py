@@ -55,6 +55,7 @@ def test_change_announcement_subscription_compartment(testing_service_client):
             response = client.change_announcement_subscription_compartment(
                 announcement_subscription_id=request.pop(util.camelize('announcementSubscriptionId')),
                 change_announcement_subscription_compartment_details=request.pop(util.camelize('ChangeAnnouncementSubscriptionCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_create_announcement_subscription(testing_service_client):
             client = oci.announcements_service.AnnouncementSubscriptionClient(config, service_endpoint=service_endpoint)
             response = client.create_announcement_subscription(
                 create_announcement_subscription_details=request.pop(util.camelize('CreateAnnouncementSubscriptionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -136,6 +138,7 @@ def test_create_filter_group(testing_service_client):
             response = client.create_filter_group(
                 announcement_subscription_id=request.pop(util.camelize('announcementSubscriptionId')),
                 create_filter_group_details=request.pop(util.camelize('CreateFilterGroupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -176,6 +179,7 @@ def test_delete_announcement_subscription(testing_service_client):
             client = oci.announcements_service.AnnouncementSubscriptionClient(config, service_endpoint=service_endpoint)
             response = client.delete_announcement_subscription(
                 announcement_subscription_id=request.pop(util.camelize('announcementSubscriptionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -217,6 +221,7 @@ def test_delete_filter_group(testing_service_client):
             response = client.delete_filter_group(
                 announcement_subscription_id=request.pop(util.camelize('announcementSubscriptionId')),
                 filter_group_name=request.pop(util.camelize('filterGroupName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -257,6 +262,7 @@ def test_get_announcement_subscription(testing_service_client):
             client = oci.announcements_service.AnnouncementSubscriptionClient(config, service_endpoint=service_endpoint)
             response = client.get_announcement_subscription(
                 announcement_subscription_id=request.pop(util.camelize('announcementSubscriptionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -298,6 +304,7 @@ def test_list_announcement_subscriptions(testing_service_client):
             client = oci.announcements_service.AnnouncementSubscriptionClient(config, service_endpoint=service_endpoint)
             response = client.list_announcement_subscriptions(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -307,6 +314,7 @@ def test_list_announcement_subscriptions(testing_service_client):
                 next_response = client.list_announcement_subscriptions(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -317,6 +325,7 @@ def test_list_announcement_subscriptions(testing_service_client):
                     prev_response = client.list_announcement_subscriptions(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -358,6 +367,7 @@ def test_update_announcement_subscription(testing_service_client):
             response = client.update_announcement_subscription(
                 announcement_subscription_id=request.pop(util.camelize('announcementSubscriptionId')),
                 update_announcement_subscription_details=request.pop(util.camelize('UpdateAnnouncementSubscriptionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -400,6 +410,7 @@ def test_update_filter_group(testing_service_client):
                 announcement_subscription_id=request.pop(util.camelize('announcementSubscriptionId')),
                 filter_group_name=request.pop(util.camelize('filterGroupName')),
                 update_filter_group_details=request.pop(util.camelize('UpdateFilterGroupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

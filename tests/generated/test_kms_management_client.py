@@ -54,6 +54,7 @@ def test_backup_key(testing_service_client):
             client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
             response = client.backup_key(
                 key_id=request.pop(util.camelize('keyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -94,6 +95,7 @@ def test_cancel_key_deletion(testing_service_client):
             client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
             response = client.cancel_key_deletion(
                 key_id=request.pop(util.camelize('keyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -135,6 +137,7 @@ def test_cancel_key_version_deletion(testing_service_client):
             response = client.cancel_key_version_deletion(
                 key_id=request.pop(util.camelize('keyId')),
                 key_version_id=request.pop(util.camelize('keyVersionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -176,6 +179,7 @@ def test_change_key_compartment(testing_service_client):
             response = client.change_key_compartment(
                 key_id=request.pop(util.camelize('keyId')),
                 change_key_compartment_details=request.pop(util.camelize('ChangeKeyCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -216,6 +220,7 @@ def test_create_key(testing_service_client):
             client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
             response = client.create_key(
                 create_key_details=request.pop(util.camelize('CreateKeyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -256,6 +261,7 @@ def test_create_key_version(testing_service_client):
             client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
             response = client.create_key_version(
                 key_id=request.pop(util.camelize('keyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -296,6 +302,7 @@ def test_disable_key(testing_service_client):
             client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
             response = client.disable_key(
                 key_id=request.pop(util.camelize('keyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -336,6 +343,7 @@ def test_enable_key(testing_service_client):
             client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
             response = client.enable_key(
                 key_id=request.pop(util.camelize('keyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -376,6 +384,7 @@ def test_get_key(testing_service_client):
             client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_key(
                 key_id=request.pop(util.camelize('keyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -417,6 +426,7 @@ def test_get_key_version(testing_service_client):
             response = client.get_key_version(
                 key_id=request.pop(util.camelize('keyId')),
                 key_version_id=request.pop(util.camelize('keyVersionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -457,6 +467,7 @@ def test_get_replication_status(testing_service_client):
             client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_replication_status(
                 replication_id=request.pop(util.camelize('replicationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -496,6 +507,7 @@ def test_get_wrapping_key(testing_service_client):
             service_endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "GetWrappingKey")
             client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_wrapping_key(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -536,6 +548,7 @@ def test_import_key(testing_service_client):
             client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
             response = client.import_key(
                 import_key_details=request.pop(util.camelize('ImportKeyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -577,6 +590,7 @@ def test_import_key_version(testing_service_client):
             response = client.import_key_version(
                 key_id=request.pop(util.camelize('keyId')),
                 import_key_version_details=request.pop(util.camelize('ImportKeyVersionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -618,6 +632,7 @@ def test_list_key_versions(testing_service_client):
             client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_key_versions(
                 key_id=request.pop(util.camelize('keyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -627,6 +642,7 @@ def test_list_key_versions(testing_service_client):
                 next_response = client.list_key_versions(
                     key_id=request.pop(util.camelize('keyId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -637,6 +653,7 @@ def test_list_key_versions(testing_service_client):
                     prev_response = client.list_key_versions(
                         key_id=request.pop(util.camelize('keyId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -678,6 +695,7 @@ def test_list_keys(testing_service_client):
             client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_keys(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -687,6 +705,7 @@ def test_list_keys(testing_service_client):
                 next_response = client.list_keys(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -697,6 +716,7 @@ def test_list_keys(testing_service_client):
                     prev_response = client.list_keys(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -737,6 +757,7 @@ def test_restore_key_from_file(testing_service_client):
             client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
             response = client.restore_key_from_file(
                 restore_key_from_file_details=request.pop(util.camelize('RestoreKeyFromFileDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -776,6 +797,7 @@ def test_restore_key_from_object_store(testing_service_client):
             service_endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "RestoreKeyFromObjectStore")
             client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
             response = client.restore_key_from_object_store(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -817,6 +839,7 @@ def test_schedule_key_deletion(testing_service_client):
             response = client.schedule_key_deletion(
                 key_id=request.pop(util.camelize('keyId')),
                 schedule_key_deletion_details=request.pop(util.camelize('ScheduleKeyDeletionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -859,6 +882,7 @@ def test_schedule_key_version_deletion(testing_service_client):
                 key_id=request.pop(util.camelize('keyId')),
                 key_version_id=request.pop(util.camelize('keyVersionId')),
                 schedule_key_version_deletion_details=request.pop(util.camelize('ScheduleKeyVersionDeletionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -900,6 +924,7 @@ def test_update_key(testing_service_client):
             response = client.update_key(
                 key_id=request.pop(util.camelize('keyId')),
                 update_key_details=request.pop(util.camelize('UpdateKeyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

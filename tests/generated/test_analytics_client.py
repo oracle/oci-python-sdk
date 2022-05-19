@@ -55,6 +55,7 @@ def test_change_analytics_instance_compartment(testing_service_client):
             response = client.change_analytics_instance_compartment(
                 analytics_instance_id=request.pop(util.camelize('analyticsInstanceId')),
                 change_compartment_details=request.pop(util.camelize('ChangeCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_change_analytics_instance_network_endpoint(testing_service_client):
             response = client.change_analytics_instance_network_endpoint(
                 analytics_instance_id=request.pop(util.camelize('analyticsInstanceId')),
                 change_analytics_instance_network_endpoint_details=request.pop(util.camelize('ChangeAnalyticsInstanceNetworkEndpointDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -136,6 +138,7 @@ def test_create_analytics_instance(testing_service_client):
             client = oci.analytics.AnalyticsClient(config, service_endpoint=service_endpoint)
             response = client.create_analytics_instance(
                 create_analytics_instance_details=request.pop(util.camelize('CreateAnalyticsInstanceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -177,6 +180,7 @@ def test_create_private_access_channel(testing_service_client):
             response = client.create_private_access_channel(
                 analytics_instance_id=request.pop(util.camelize('analyticsInstanceId')),
                 create_private_access_channel_details=request.pop(util.camelize('CreatePrivateAccessChannelDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -218,6 +222,7 @@ def test_create_vanity_url(testing_service_client):
             response = client.create_vanity_url(
                 analytics_instance_id=request.pop(util.camelize('analyticsInstanceId')),
                 create_vanity_url_details=request.pop(util.camelize('CreateVanityUrlDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -258,6 +263,7 @@ def test_delete_analytics_instance(testing_service_client):
             client = oci.analytics.AnalyticsClient(config, service_endpoint=service_endpoint)
             response = client.delete_analytics_instance(
                 analytics_instance_id=request.pop(util.camelize('analyticsInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -299,6 +305,7 @@ def test_delete_private_access_channel(testing_service_client):
             response = client.delete_private_access_channel(
                 private_access_channel_key=request.pop(util.camelize('privateAccessChannelKey')),
                 analytics_instance_id=request.pop(util.camelize('analyticsInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -340,6 +347,7 @@ def test_delete_vanity_url(testing_service_client):
             response = client.delete_vanity_url(
                 analytics_instance_id=request.pop(util.camelize('analyticsInstanceId')),
                 vanity_url_key=request.pop(util.camelize('vanityUrlKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -380,6 +388,7 @@ def test_delete_work_request(testing_service_client):
             client = oci.analytics.AnalyticsClient(config, service_endpoint=service_endpoint)
             response = client.delete_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -420,6 +429,7 @@ def test_get_analytics_instance(testing_service_client):
             client = oci.analytics.AnalyticsClient(config, service_endpoint=service_endpoint)
             response = client.get_analytics_instance(
                 analytics_instance_id=request.pop(util.camelize('analyticsInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -461,6 +471,7 @@ def test_get_private_access_channel(testing_service_client):
             response = client.get_private_access_channel(
                 private_access_channel_key=request.pop(util.camelize('privateAccessChannelKey')),
                 analytics_instance_id=request.pop(util.camelize('analyticsInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -501,6 +512,7 @@ def test_get_work_request(testing_service_client):
             client = oci.analytics.AnalyticsClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -542,6 +554,7 @@ def test_list_analytics_instances(testing_service_client):
             client = oci.analytics.AnalyticsClient(config, service_endpoint=service_endpoint)
             response = client.list_analytics_instances(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -551,6 +564,7 @@ def test_list_analytics_instances(testing_service_client):
                 next_response = client.list_analytics_instances(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -561,6 +575,7 @@ def test_list_analytics_instances(testing_service_client):
                     prev_response = client.list_analytics_instances(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -602,6 +617,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.analytics.AnalyticsClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -611,6 +627,7 @@ def test_list_work_request_errors(testing_service_client):
                 next_response = client.list_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -621,6 +638,7 @@ def test_list_work_request_errors(testing_service_client):
                     prev_response = client.list_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -662,6 +680,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.analytics.AnalyticsClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -671,6 +690,7 @@ def test_list_work_request_logs(testing_service_client):
                 next_response = client.list_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -681,6 +701,7 @@ def test_list_work_request_logs(testing_service_client):
                     prev_response = client.list_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -722,6 +743,7 @@ def test_list_work_requests(testing_service_client):
             client = oci.analytics.AnalyticsClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -731,6 +753,7 @@ def test_list_work_requests(testing_service_client):
                 next_response = client.list_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -741,6 +764,7 @@ def test_list_work_requests(testing_service_client):
                     prev_response = client.list_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -782,6 +806,7 @@ def test_scale_analytics_instance(testing_service_client):
             response = client.scale_analytics_instance(
                 analytics_instance_id=request.pop(util.camelize('analyticsInstanceId')),
                 scale_analytics_instance_details=request.pop(util.camelize('ScaleAnalyticsInstanceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -823,6 +848,7 @@ def test_set_kms_key(testing_service_client):
             response = client.set_kms_key(
                 analytics_instance_id=request.pop(util.camelize('analyticsInstanceId')),
                 set_kms_key_details=request.pop(util.camelize('SetKmsKeyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -863,6 +889,7 @@ def test_start_analytics_instance(testing_service_client):
             client = oci.analytics.AnalyticsClient(config, service_endpoint=service_endpoint)
             response = client.start_analytics_instance(
                 analytics_instance_id=request.pop(util.camelize('analyticsInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -903,6 +930,7 @@ def test_stop_analytics_instance(testing_service_client):
             client = oci.analytics.AnalyticsClient(config, service_endpoint=service_endpoint)
             response = client.stop_analytics_instance(
                 analytics_instance_id=request.pop(util.camelize('analyticsInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -944,6 +972,7 @@ def test_update_analytics_instance(testing_service_client):
             response = client.update_analytics_instance(
                 analytics_instance_id=request.pop(util.camelize('analyticsInstanceId')),
                 update_analytics_instance_details=request.pop(util.camelize('UpdateAnalyticsInstanceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -986,6 +1015,7 @@ def test_update_private_access_channel(testing_service_client):
                 private_access_channel_key=request.pop(util.camelize('privateAccessChannelKey')),
                 analytics_instance_id=request.pop(util.camelize('analyticsInstanceId')),
                 update_private_access_channel_details=request.pop(util.camelize('UpdatePrivateAccessChannelDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1028,6 +1058,7 @@ def test_update_vanity_url(testing_service_client):
                 analytics_instance_id=request.pop(util.camelize('analyticsInstanceId')),
                 vanity_url_key=request.pop(util.camelize('vanityUrlKey')),
                 update_vanity_url_details=request.pop(util.camelize('UpdateVanityUrlDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

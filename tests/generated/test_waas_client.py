@@ -55,6 +55,7 @@ def test_accept_recommendations(testing_service_client):
             response = client.accept_recommendations(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                 protection_rule_keys=request.pop(util.camelize('ProtectionRuleKeys')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_cancel_work_request(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.cancel_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -136,6 +138,7 @@ def test_change_address_list_compartment(testing_service_client):
             response = client.change_address_list_compartment(
                 address_list_id=request.pop(util.camelize('addressListId')),
                 change_address_list_compartment_details=request.pop(util.camelize('ChangeAddressListCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -177,6 +180,7 @@ def test_change_certificate_compartment(testing_service_client):
             response = client.change_certificate_compartment(
                 certificate_id=request.pop(util.camelize('certificateId')),
                 change_certificate_compartment_details=request.pop(util.camelize('ChangeCertificateCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -218,6 +222,7 @@ def test_change_custom_protection_rule_compartment(testing_service_client):
             response = client.change_custom_protection_rule_compartment(
                 custom_protection_rule_id=request.pop(util.camelize('customProtectionRuleId')),
                 change_custom_protection_rule_compartment_details=request.pop(util.camelize('ChangeCustomProtectionRuleCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -259,6 +264,7 @@ def test_change_waas_policy_compartment(testing_service_client):
             response = client.change_waas_policy_compartment(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                 change_waas_policy_compartment_details=request.pop(util.camelize('ChangeWaasPolicyCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -299,6 +305,7 @@ def test_create_address_list(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.create_address_list(
                 create_address_list_details=request.pop(util.camelize('CreateAddressListDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -339,6 +346,7 @@ def test_create_certificate(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.create_certificate(
                 create_certificate_details=request.pop(util.camelize('CreateCertificateDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -379,6 +387,7 @@ def test_create_custom_protection_rule(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.create_custom_protection_rule(
                 create_custom_protection_rule_details=request.pop(util.camelize('CreateCustomProtectionRuleDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -419,6 +428,7 @@ def test_create_waas_policy(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.create_waas_policy(
                 create_waas_policy_details=request.pop(util.camelize('CreateWaasPolicyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -459,6 +469,7 @@ def test_delete_address_list(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.delete_address_list(
                 address_list_id=request.pop(util.camelize('addressListId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -499,6 +510,7 @@ def test_delete_certificate(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.delete_certificate(
                 certificate_id=request.pop(util.camelize('certificateId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -539,6 +551,7 @@ def test_delete_custom_protection_rule(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.delete_custom_protection_rule(
                 custom_protection_rule_id=request.pop(util.camelize('customProtectionRuleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -579,6 +592,7 @@ def test_delete_waas_policy(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.delete_waas_policy(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -619,6 +633,7 @@ def test_get_address_list(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.get_address_list(
                 address_list_id=request.pop(util.camelize('addressListId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -659,6 +674,7 @@ def test_get_certificate(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.get_certificate(
                 certificate_id=request.pop(util.camelize('certificateId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -699,6 +715,7 @@ def test_get_custom_protection_rule(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.get_custom_protection_rule(
                 custom_protection_rule_id=request.pop(util.camelize('customProtectionRuleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -739,6 +756,7 @@ def test_get_device_fingerprint_challenge(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.get_device_fingerprint_challenge(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -779,6 +797,7 @@ def test_get_human_interaction_challenge(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.get_human_interaction_challenge(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -819,6 +838,7 @@ def test_get_js_challenge(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.get_js_challenge(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -859,6 +879,7 @@ def test_get_policy_config(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.get_policy_config(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -900,6 +921,7 @@ def test_get_protection_rule(testing_service_client):
             response = client.get_protection_rule(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                 protection_rule_key=request.pop(util.camelize('protectionRuleKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -940,6 +962,7 @@ def test_get_protection_settings(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.get_protection_settings(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -980,6 +1003,7 @@ def test_get_waas_policy(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.get_waas_policy(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1020,6 +1044,7 @@ def test_get_waf_address_rate_limiting(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.get_waf_address_rate_limiting(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1060,6 +1085,7 @@ def test_get_waf_config(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.get_waf_config(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1100,6 +1126,7 @@ def test_get_work_request(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1141,6 +1168,7 @@ def test_list_access_rules(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_access_rules(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1150,6 +1178,7 @@ def test_list_access_rules(testing_service_client):
                 next_response = client.list_access_rules(
                     waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1160,6 +1189,7 @@ def test_list_access_rules(testing_service_client):
                     prev_response = client.list_access_rules(
                         waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1201,6 +1231,7 @@ def test_list_address_lists(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_address_lists(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1210,6 +1241,7 @@ def test_list_address_lists(testing_service_client):
                 next_response = client.list_address_lists(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1220,6 +1252,7 @@ def test_list_address_lists(testing_service_client):
                     prev_response = client.list_address_lists(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1261,6 +1294,7 @@ def test_list_caching_rules(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_caching_rules(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1270,6 +1304,7 @@ def test_list_caching_rules(testing_service_client):
                 next_response = client.list_caching_rules(
                     waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1280,6 +1315,7 @@ def test_list_caching_rules(testing_service_client):
                     prev_response = client.list_caching_rules(
                         waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1321,6 +1357,7 @@ def test_list_captchas(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_captchas(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1330,6 +1367,7 @@ def test_list_captchas(testing_service_client):
                 next_response = client.list_captchas(
                     waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1340,6 +1378,7 @@ def test_list_captchas(testing_service_client):
                     prev_response = client.list_captchas(
                         waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1381,6 +1420,7 @@ def test_list_certificates(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_certificates(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1390,6 +1430,7 @@ def test_list_certificates(testing_service_client):
                 next_response = client.list_certificates(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1400,6 +1441,7 @@ def test_list_certificates(testing_service_client):
                     prev_response = client.list_certificates(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1441,6 +1483,7 @@ def test_list_custom_protection_rules(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_custom_protection_rules(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1450,6 +1493,7 @@ def test_list_custom_protection_rules(testing_service_client):
                 next_response = client.list_custom_protection_rules(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1460,6 +1504,7 @@ def test_list_custom_protection_rules(testing_service_client):
                     prev_response = client.list_custom_protection_rules(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1500,6 +1545,7 @@ def test_list_edge_subnets(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_edge_subnets(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1508,6 +1554,7 @@ def test_list_edge_subnets(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_edge_subnets(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1517,6 +1564,7 @@ def test_list_edge_subnets(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_edge_subnets(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1558,6 +1606,7 @@ def test_list_good_bots(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_good_bots(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1567,6 +1616,7 @@ def test_list_good_bots(testing_service_client):
                 next_response = client.list_good_bots(
                     waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1577,6 +1627,7 @@ def test_list_good_bots(testing_service_client):
                     prev_response = client.list_good_bots(
                         waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1618,6 +1669,7 @@ def test_list_protection_rules(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_protection_rules(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1627,6 +1679,7 @@ def test_list_protection_rules(testing_service_client):
                 next_response = client.list_protection_rules(
                     waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1637,6 +1690,7 @@ def test_list_protection_rules(testing_service_client):
                     prev_response = client.list_protection_rules(
                         waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1678,6 +1732,7 @@ def test_list_recommendations(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_recommendations(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1687,6 +1742,7 @@ def test_list_recommendations(testing_service_client):
                 next_response = client.list_recommendations(
                     waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1697,6 +1753,7 @@ def test_list_recommendations(testing_service_client):
                     prev_response = client.list_recommendations(
                         waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1738,6 +1795,7 @@ def test_list_threat_feeds(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_threat_feeds(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1747,6 +1805,7 @@ def test_list_threat_feeds(testing_service_client):
                 next_response = client.list_threat_feeds(
                     waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1757,6 +1816,7 @@ def test_list_threat_feeds(testing_service_client):
                     prev_response = client.list_threat_feeds(
                         waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1798,6 +1858,7 @@ def test_list_waas_policies(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_waas_policies(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1807,6 +1868,7 @@ def test_list_waas_policies(testing_service_client):
                 next_response = client.list_waas_policies(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1817,6 +1879,7 @@ def test_list_waas_policies(testing_service_client):
                     prev_response = client.list_waas_policies(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1858,6 +1921,7 @@ def test_list_waas_policy_custom_protection_rules(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_waas_policy_custom_protection_rules(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1867,6 +1931,7 @@ def test_list_waas_policy_custom_protection_rules(testing_service_client):
                 next_response = client.list_waas_policy_custom_protection_rules(
                     waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1877,6 +1942,7 @@ def test_list_waas_policy_custom_protection_rules(testing_service_client):
                     prev_response = client.list_waas_policy_custom_protection_rules(
                         waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1918,6 +1984,7 @@ def test_list_waf_blocked_requests(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_waf_blocked_requests(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1927,6 +1994,7 @@ def test_list_waf_blocked_requests(testing_service_client):
                 next_response = client.list_waf_blocked_requests(
                     waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1937,6 +2005,7 @@ def test_list_waf_blocked_requests(testing_service_client):
                     prev_response = client.list_waf_blocked_requests(
                         waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1978,6 +2047,7 @@ def test_list_waf_logs(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_waf_logs(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1987,6 +2057,7 @@ def test_list_waf_logs(testing_service_client):
                 next_response = client.list_waf_logs(
                     waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1997,6 +2068,7 @@ def test_list_waf_logs(testing_service_client):
                     prev_response = client.list_waf_logs(
                         waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2038,6 +2110,7 @@ def test_list_waf_requests(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_waf_requests(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2047,6 +2120,7 @@ def test_list_waf_requests(testing_service_client):
                 next_response = client.list_waf_requests(
                     waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2057,6 +2131,7 @@ def test_list_waf_requests(testing_service_client):
                     prev_response = client.list_waf_requests(
                         waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2098,6 +2173,7 @@ def test_list_waf_traffic(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_waf_traffic(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2107,6 +2183,7 @@ def test_list_waf_traffic(testing_service_client):
                 next_response = client.list_waf_traffic(
                     waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2117,6 +2194,7 @@ def test_list_waf_traffic(testing_service_client):
                     prev_response = client.list_waf_traffic(
                         waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2158,6 +2236,7 @@ def test_list_whitelists(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_whitelists(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2167,6 +2246,7 @@ def test_list_whitelists(testing_service_client):
                 next_response = client.list_whitelists(
                     waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2177,6 +2257,7 @@ def test_list_whitelists(testing_service_client):
                     prev_response = client.list_whitelists(
                         waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2219,6 +2300,7 @@ def test_list_work_requests(testing_service_client):
             response = client.list_work_requests(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2229,6 +2311,7 @@ def test_list_work_requests(testing_service_client):
                     waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2240,6 +2323,7 @@ def test_list_work_requests(testing_service_client):
                         waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2280,6 +2364,7 @@ def test_purge_cache(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.purge_cache(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2321,6 +2406,7 @@ def test_update_access_rules(testing_service_client):
             response = client.update_access_rules(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                 access_rules=request.pop(util.camelize('AccessRules')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2361,6 +2447,7 @@ def test_update_address_list(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.update_address_list(
                 address_list_id=request.pop(util.camelize('addressListId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2402,6 +2489,7 @@ def test_update_caching_rules(testing_service_client):
             response = client.update_caching_rules(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                 caching_rules_details=request.pop(util.camelize('CachingRulesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2443,6 +2531,7 @@ def test_update_captchas(testing_service_client):
             response = client.update_captchas(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                 captchas=request.pop(util.camelize('Captchas')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2483,6 +2572,7 @@ def test_update_certificate(testing_service_client):
             client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.update_certificate(
                 certificate_id=request.pop(util.camelize('certificateId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2524,6 +2614,7 @@ def test_update_custom_protection_rule(testing_service_client):
             response = client.update_custom_protection_rule(
                 custom_protection_rule_id=request.pop(util.camelize('customProtectionRuleId')),
                 update_custom_protection_rule_details=request.pop(util.camelize('UpdateCustomProtectionRuleDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2565,6 +2656,7 @@ def test_update_device_fingerprint_challenge(testing_service_client):
             response = client.update_device_fingerprint_challenge(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                 update_device_fingerprint_challenge_details=request.pop(util.camelize('UpdateDeviceFingerprintChallengeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2606,6 +2698,7 @@ def test_update_good_bots(testing_service_client):
             response = client.update_good_bots(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                 good_bots=request.pop(util.camelize('GoodBots')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2647,6 +2740,7 @@ def test_update_human_interaction_challenge(testing_service_client):
             response = client.update_human_interaction_challenge(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                 update_human_interaction_challenge_details=request.pop(util.camelize('UpdateHumanInteractionChallengeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2688,6 +2782,7 @@ def test_update_js_challenge(testing_service_client):
             response = client.update_js_challenge(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                 update_js_challenge_details=request.pop(util.camelize('UpdateJsChallengeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2729,6 +2824,7 @@ def test_update_policy_config(testing_service_client):
             response = client.update_policy_config(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                 update_policy_config_details=request.pop(util.camelize('UpdatePolicyConfigDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2770,6 +2866,7 @@ def test_update_protection_rules(testing_service_client):
             response = client.update_protection_rules(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                 protection_rules=request.pop(util.camelize('ProtectionRules')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2811,6 +2908,7 @@ def test_update_protection_settings(testing_service_client):
             response = client.update_protection_settings(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                 update_protection_settings_details=request.pop(util.camelize('UpdateProtectionSettingsDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2852,6 +2950,7 @@ def test_update_threat_feeds(testing_service_client):
             response = client.update_threat_feeds(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                 threat_feeds=request.pop(util.camelize('ThreatFeeds')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2893,6 +2992,7 @@ def test_update_waas_policy(testing_service_client):
             response = client.update_waas_policy(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                 update_waas_policy_details=request.pop(util.camelize('UpdateWaasPolicyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2934,6 +3034,7 @@ def test_update_waas_policy_custom_protection_rules(testing_service_client):
             response = client.update_waas_policy_custom_protection_rules(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                 update_custom_protection_rules_details=request.pop(util.camelize('UpdateCustomProtectionRulesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2975,6 +3076,7 @@ def test_update_waf_address_rate_limiting(testing_service_client):
             response = client.update_waf_address_rate_limiting(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                 update_waf_address_rate_limiting_details=request.pop(util.camelize('UpdateWafAddressRateLimitingDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3016,6 +3118,7 @@ def test_update_waf_config(testing_service_client):
             response = client.update_waf_config(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                 update_waf_config_details=request.pop(util.camelize('UpdateWafConfigDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3057,6 +3160,7 @@ def test_update_whitelists(testing_service_client):
             response = client.update_whitelists(
                 waas_policy_id=request.pop(util.camelize('waasPolicyId')),
                 whitelists=request.pop(util.camelize('Whitelists')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

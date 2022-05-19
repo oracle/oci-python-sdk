@@ -56,6 +56,7 @@ def test_get_instance_agent_plugin(testing_service_client):
                 instanceagent_id=request.pop(util.camelize('instanceagentId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 plugin_name=request.pop(util.camelize('pluginName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -98,6 +99,7 @@ def test_list_instance_agent_plugins(testing_service_client):
             response = client.list_instance_agent_plugins(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 instanceagent_id=request.pop(util.camelize('instanceagentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -108,6 +110,7 @@ def test_list_instance_agent_plugins(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     instanceagent_id=request.pop(util.camelize('instanceagentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -119,6 +122,7 @@ def test_list_instance_agent_plugins(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         instanceagent_id=request.pop(util.camelize('instanceagentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)

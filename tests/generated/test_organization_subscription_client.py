@@ -56,6 +56,7 @@ def test_list_organization_subscriptions(testing_service_client):
             response = client.list_organization_subscriptions(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 subscription_ids=request.pop(util.camelize('subscriptionIds')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -66,6 +67,7 @@ def test_list_organization_subscriptions(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     subscription_ids=request.pop(util.camelize('subscriptionIds')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -77,6 +79,7 @@ def test_list_organization_subscriptions(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         subscription_ids=request.pop(util.camelize('subscriptionIds')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)

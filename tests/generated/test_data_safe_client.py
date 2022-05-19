@@ -55,6 +55,7 @@ def test_activate_target_database(testing_service_client):
             response = client.activate_target_database(
                 activate_target_database_details=request.pop(util.camelize('ActivateTargetDatabaseDetails')),
                 target_database_id=request.pop(util.camelize('targetDatabaseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_add_masking_columns_from_sdm(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.add_masking_columns_from_sdm(
                 masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -136,6 +138,7 @@ def test_apply_discovery_job_results(testing_service_client):
             response = client.apply_discovery_job_results(
                 sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
                 apply_discovery_job_results_details=request.pop(util.camelize('ApplyDiscoveryJobResultsDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -177,6 +180,7 @@ def test_calculate_audit_volume_available(testing_service_client):
             response = client.calculate_audit_volume_available(
                 audit_profile_id=request.pop(util.camelize('auditProfileId')),
                 calculate_audit_volume_available_details=request.pop(util.camelize('CalculateAuditVolumeAvailableDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -218,6 +222,7 @@ def test_calculate_audit_volume_collected(testing_service_client):
             response = client.calculate_audit_volume_collected(
                 audit_profile_id=request.pop(util.camelize('auditProfileId')),
                 calculate_audit_volume_collected_details=request.pop(util.camelize('CalculateAuditVolumeCollectedDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -258,6 +263,7 @@ def test_cancel_work_request(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.cancel_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -299,6 +305,7 @@ def test_change_alert_compartment(testing_service_client):
             response = client.change_alert_compartment(
                 alert_id=request.pop(util.camelize('alertId')),
                 change_alert_compartment_details=request.pop(util.camelize('ChangeAlertCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -340,6 +347,7 @@ def test_change_audit_archive_retrieval_compartment(testing_service_client):
             response = client.change_audit_archive_retrieval_compartment(
                 audit_archive_retrieval_id=request.pop(util.camelize('auditArchiveRetrievalId')),
                 change_audit_archive_retrieval_compartment_details=request.pop(util.camelize('ChangeAuditArchiveRetrievalCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -381,6 +389,7 @@ def test_change_audit_policy_compartment(testing_service_client):
             response = client.change_audit_policy_compartment(
                 audit_policy_id=request.pop(util.camelize('auditPolicyId')),
                 change_audit_policy_compartment_details=request.pop(util.camelize('ChangeAuditPolicyCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -422,6 +431,7 @@ def test_change_audit_profile_compartment(testing_service_client):
             response = client.change_audit_profile_compartment(
                 audit_profile_id=request.pop(util.camelize('auditProfileId')),
                 change_audit_profile_compartment_details=request.pop(util.camelize('ChangeAuditProfileCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -463,6 +473,7 @@ def test_change_data_safe_private_endpoint_compartment(testing_service_client):
             response = client.change_data_safe_private_endpoint_compartment(
                 data_safe_private_endpoint_id=request.pop(util.camelize('dataSafePrivateEndpointId')),
                 change_data_safe_private_endpoint_compartment_details=request.pop(util.camelize('ChangeDataSafePrivateEndpointCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -504,6 +515,7 @@ def test_change_discovery_job_compartment(testing_service_client):
             response = client.change_discovery_job_compartment(
                 discovery_job_id=request.pop(util.camelize('discoveryJobId')),
                 change_discovery_job_compartment_details=request.pop(util.camelize('ChangeDiscoveryJobCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -545,6 +557,7 @@ def test_change_library_masking_format_compartment(testing_service_client):
             response = client.change_library_masking_format_compartment(
                 library_masking_format_id=request.pop(util.camelize('libraryMaskingFormatId')),
                 change_library_masking_format_compartment_details=request.pop(util.camelize('ChangeLibraryMaskingFormatCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -586,6 +599,7 @@ def test_change_masking_policy_compartment(testing_service_client):
             response = client.change_masking_policy_compartment(
                 masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
                 change_masking_policy_compartment_details=request.pop(util.camelize('ChangeMaskingPolicyCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -627,6 +641,7 @@ def test_change_on_prem_connector_compartment(testing_service_client):
             response = client.change_on_prem_connector_compartment(
                 on_prem_connector_id=request.pop(util.camelize('onPremConnectorId')),
                 change_on_prem_connector_compartment_details=request.pop(util.camelize('ChangeOnPremConnectorCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -668,6 +683,7 @@ def test_change_report_compartment(testing_service_client):
             response = client.change_report_compartment(
                 report_id=request.pop(util.camelize('reportId')),
                 change_report_compartment_details=request.pop(util.camelize('ChangeReportCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -709,6 +725,7 @@ def test_change_report_definition_compartment(testing_service_client):
             response = client.change_report_definition_compartment(
                 report_definition_id=request.pop(util.camelize('reportDefinitionId')),
                 change_report_definition_compartment_details=request.pop(util.camelize('ChangeReportDefinitionCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -750,6 +767,7 @@ def test_change_retention(testing_service_client):
             response = client.change_retention(
                 audit_profile_id=request.pop(util.camelize('auditProfileId')),
                 change_retention_details=request.pop(util.camelize('ChangeRetentionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -791,6 +809,7 @@ def test_change_security_assessment_compartment(testing_service_client):
             response = client.change_security_assessment_compartment(
                 security_assessment_id=request.pop(util.camelize('securityAssessmentId')),
                 change_security_assessment_compartment_details=request.pop(util.camelize('ChangeSecurityAssessmentCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -832,6 +851,7 @@ def test_change_sensitive_data_model_compartment(testing_service_client):
             response = client.change_sensitive_data_model_compartment(
                 sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
                 change_sensitive_data_model_compartment_details=request.pop(util.camelize('ChangeSensitiveDataModelCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -873,6 +893,7 @@ def test_change_sensitive_type_compartment(testing_service_client):
             response = client.change_sensitive_type_compartment(
                 sensitive_type_id=request.pop(util.camelize('sensitiveTypeId')),
                 change_sensitive_type_compartment_details=request.pop(util.camelize('ChangeSensitiveTypeCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -914,6 +935,7 @@ def test_change_target_alert_policy_association_compartment(testing_service_clie
             response = client.change_target_alert_policy_association_compartment(
                 target_alert_policy_association_id=request.pop(util.camelize('targetAlertPolicyAssociationId')),
                 change_target_alert_policy_association_compartment_details=request.pop(util.camelize('ChangeTargetAlertPolicyAssociationCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -955,6 +977,7 @@ def test_change_target_database_compartment(testing_service_client):
             response = client.change_target_database_compartment(
                 target_database_id=request.pop(util.camelize('targetDatabaseId')),
                 change_target_database_compartment_details=request.pop(util.camelize('ChangeTargetDatabaseCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -996,6 +1019,7 @@ def test_change_user_assessment_compartment(testing_service_client):
             response = client.change_user_assessment_compartment(
                 user_assessment_id=request.pop(util.camelize('userAssessmentId')),
                 change_user_assessment_compartment_details=request.pop(util.camelize('ChangeUserAssessmentCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1037,6 +1061,7 @@ def test_compare_security_assessment(testing_service_client):
             response = client.compare_security_assessment(
                 security_assessment_id=request.pop(util.camelize('securityAssessmentId')),
                 compare_security_assessment_details=request.pop(util.camelize('CompareSecurityAssessmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1078,6 +1103,7 @@ def test_compare_user_assessment(testing_service_client):
             response = client.compare_user_assessment(
                 user_assessment_id=request.pop(util.camelize('userAssessmentId')),
                 compare_user_assessment_details=request.pop(util.camelize('CompareUserAssessmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1118,6 +1144,7 @@ def test_create_audit_archive_retrieval(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.create_audit_archive_retrieval(
                 create_audit_archive_retrieval_details=request.pop(util.camelize('CreateAuditArchiveRetrievalDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1158,6 +1185,7 @@ def test_create_data_safe_private_endpoint(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.create_data_safe_private_endpoint(
                 create_data_safe_private_endpoint_details=request.pop(util.camelize('CreateDataSafePrivateEndpointDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1198,6 +1226,7 @@ def test_create_discovery_job(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.create_discovery_job(
                 create_discovery_job_details=request.pop(util.camelize('CreateDiscoveryJobDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1238,6 +1267,7 @@ def test_create_library_masking_format(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.create_library_masking_format(
                 create_library_masking_format_details=request.pop(util.camelize('CreateLibraryMaskingFormatDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1279,6 +1309,7 @@ def test_create_masking_column(testing_service_client):
             response = client.create_masking_column(
                 create_masking_column_details=request.pop(util.camelize('CreateMaskingColumnDetails')),
                 masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1319,6 +1350,7 @@ def test_create_masking_policy(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.create_masking_policy(
                 create_masking_policy_details=request.pop(util.camelize('CreateMaskingPolicyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1359,6 +1391,7 @@ def test_create_on_prem_connector(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.create_on_prem_connector(
                 create_on_prem_connector_details=request.pop(util.camelize('CreateOnPremConnectorDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1399,6 +1432,7 @@ def test_create_report_definition(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.create_report_definition(
                 create_report_definition_details=request.pop(util.camelize('CreateReportDefinitionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1439,6 +1473,7 @@ def test_create_security_assessment(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.create_security_assessment(
                 create_security_assessment_details=request.pop(util.camelize('CreateSecurityAssessmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1480,6 +1515,7 @@ def test_create_sensitive_column(testing_service_client):
             response = client.create_sensitive_column(
                 sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
                 create_sensitive_column_details=request.pop(util.camelize('CreateSensitiveColumnDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1520,6 +1556,7 @@ def test_create_sensitive_data_model(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.create_sensitive_data_model(
                 create_sensitive_data_model_details=request.pop(util.camelize('CreateSensitiveDataModelDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1560,6 +1597,7 @@ def test_create_sensitive_type(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.create_sensitive_type(
                 create_sensitive_type_details=request.pop(util.camelize('CreateSensitiveTypeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1600,6 +1638,7 @@ def test_create_target_alert_policy_association(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.create_target_alert_policy_association(
                 create_target_alert_policy_association_details=request.pop(util.camelize('CreateTargetAlertPolicyAssociationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1640,6 +1679,7 @@ def test_create_target_database(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.create_target_database(
                 create_target_database_details=request.pop(util.camelize('CreateTargetDatabaseDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1680,6 +1720,7 @@ def test_create_user_assessment(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.create_user_assessment(
                 create_user_assessment_details=request.pop(util.camelize('CreateUserAssessmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1720,6 +1761,7 @@ def test_deactivate_target_database(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.deactivate_target_database(
                 target_database_id=request.pop(util.camelize('targetDatabaseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1760,6 +1802,7 @@ def test_delete_audit_archive_retrieval(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.delete_audit_archive_retrieval(
                 audit_archive_retrieval_id=request.pop(util.camelize('auditArchiveRetrievalId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1800,6 +1843,7 @@ def test_delete_audit_trail(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.delete_audit_trail(
                 audit_trail_id=request.pop(util.camelize('auditTrailId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1840,6 +1884,7 @@ def test_delete_data_safe_private_endpoint(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.delete_data_safe_private_endpoint(
                 data_safe_private_endpoint_id=request.pop(util.camelize('dataSafePrivateEndpointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1880,6 +1925,7 @@ def test_delete_discovery_job(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.delete_discovery_job(
                 discovery_job_id=request.pop(util.camelize('discoveryJobId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1921,6 +1967,7 @@ def test_delete_discovery_job_result(testing_service_client):
             response = client.delete_discovery_job_result(
                 discovery_job_id=request.pop(util.camelize('discoveryJobId')),
                 result_key=request.pop(util.camelize('resultKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1961,6 +2008,7 @@ def test_delete_library_masking_format(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.delete_library_masking_format(
                 library_masking_format_id=request.pop(util.camelize('libraryMaskingFormatId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2002,6 +2050,7 @@ def test_delete_masking_column(testing_service_client):
             response = client.delete_masking_column(
                 masking_column_key=request.pop(util.camelize('maskingColumnKey')),
                 masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2042,6 +2091,7 @@ def test_delete_masking_policy(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.delete_masking_policy(
                 masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2082,6 +2132,7 @@ def test_delete_on_prem_connector(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.delete_on_prem_connector(
                 on_prem_connector_id=request.pop(util.camelize('onPremConnectorId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2122,6 +2173,7 @@ def test_delete_report_definition(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.delete_report_definition(
                 report_definition_id=request.pop(util.camelize('reportDefinitionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2162,6 +2214,7 @@ def test_delete_security_assessment(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.delete_security_assessment(
                 security_assessment_id=request.pop(util.camelize('securityAssessmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2203,6 +2256,7 @@ def test_delete_sensitive_column(testing_service_client):
             response = client.delete_sensitive_column(
                 sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
                 sensitive_column_key=request.pop(util.camelize('sensitiveColumnKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2243,6 +2297,7 @@ def test_delete_sensitive_data_model(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.delete_sensitive_data_model(
                 sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2283,6 +2338,7 @@ def test_delete_sensitive_type(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.delete_sensitive_type(
                 sensitive_type_id=request.pop(util.camelize('sensitiveTypeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2323,6 +2379,7 @@ def test_delete_target_alert_policy_association(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.delete_target_alert_policy_association(
                 target_alert_policy_association_id=request.pop(util.camelize('targetAlertPolicyAssociationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2363,6 +2420,7 @@ def test_delete_target_database(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.delete_target_database(
                 target_database_id=request.pop(util.camelize('targetDatabaseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2403,6 +2461,7 @@ def test_delete_user_assessment(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.delete_user_assessment(
                 user_assessment_id=request.pop(util.camelize('userAssessmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2443,6 +2502,7 @@ def test_discover_audit_trails(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.discover_audit_trails(
                 audit_profile_id=request.pop(util.camelize('auditProfileId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2484,6 +2544,7 @@ def test_download_discovery_report(testing_service_client):
             response = client.download_discovery_report(
                 sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
                 download_discovery_report_details=request.pop(util.camelize('DownloadDiscoveryReportDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2525,6 +2586,7 @@ def test_download_masking_log(testing_service_client):
             response = client.download_masking_log(
                 masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
                 download_masking_log_details=request.pop(util.camelize('DownloadMaskingLogDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2566,6 +2628,7 @@ def test_download_masking_policy(testing_service_client):
             response = client.download_masking_policy(
                 masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
                 download_masking_policy_details=request.pop(util.camelize('DownloadMaskingPolicyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2607,6 +2670,7 @@ def test_download_masking_report(testing_service_client):
             response = client.download_masking_report(
                 masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
                 download_masking_report_details=request.pop(util.camelize('DownloadMaskingReportDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2646,6 +2710,7 @@ def test_download_privilege_script(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.download_privilege_script(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2687,6 +2752,7 @@ def test_download_security_assessment_report(testing_service_client):
             response = client.download_security_assessment_report(
                 security_assessment_id=request.pop(util.camelize('securityAssessmentId')),
                 download_security_assessment_report_details=request.pop(util.camelize('DownloadSecurityAssessmentReportDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2728,6 +2794,7 @@ def test_download_sensitive_data_model(testing_service_client):
             response = client.download_sensitive_data_model(
                 sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
                 download_sensitive_data_model_details=request.pop(util.camelize('DownloadSensitiveDataModelDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2769,6 +2836,7 @@ def test_download_user_assessment_report(testing_service_client):
             response = client.download_user_assessment_report(
                 user_assessment_id=request.pop(util.camelize('userAssessmentId')),
                 download_user_assessment_report_details=request.pop(util.camelize('DownloadUserAssessmentReportDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2809,6 +2877,7 @@ def test_enable_data_safe_configuration(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.enable_data_safe_configuration(
                 enable_data_safe_configuration_details=request.pop(util.camelize('EnableDataSafeConfigurationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2850,6 +2919,7 @@ def test_generate_discovery_report_for_download(testing_service_client):
             response = client.generate_discovery_report_for_download(
                 sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
                 generate_discovery_report_for_download_details=request.pop(util.camelize('GenerateDiscoveryReportForDownloadDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2891,6 +2961,7 @@ def test_generate_masking_policy_for_download(testing_service_client):
             response = client.generate_masking_policy_for_download(
                 masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
                 generate_masking_policy_for_download_details=request.pop(util.camelize('GenerateMaskingPolicyForDownloadDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2932,6 +3003,7 @@ def test_generate_masking_report_for_download(testing_service_client):
             response = client.generate_masking_report_for_download(
                 masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
                 generate_masking_report_for_download_details=request.pop(util.camelize('GenerateMaskingReportForDownloadDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2973,6 +3045,7 @@ def test_generate_on_prem_connector_configuration(testing_service_client):
             response = client.generate_on_prem_connector_configuration(
                 generate_on_prem_connector_configuration_details=request.pop(util.camelize('GenerateOnPremConnectorConfigurationDetails')),
                 on_prem_connector_id=request.pop(util.camelize('onPremConnectorId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3014,6 +3087,7 @@ def test_generate_report(testing_service_client):
             response = client.generate_report(
                 report_definition_id=request.pop(util.camelize('reportDefinitionId')),
                 generate_report_details=request.pop(util.camelize('GenerateReportDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3055,6 +3129,7 @@ def test_generate_security_assessment_report(testing_service_client):
             response = client.generate_security_assessment_report(
                 security_assessment_id=request.pop(util.camelize('securityAssessmentId')),
                 generate_security_assessment_report_details=request.pop(util.camelize('GenerateSecurityAssessmentReportDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3096,6 +3171,7 @@ def test_generate_sensitive_data_model_for_download(testing_service_client):
             response = client.generate_sensitive_data_model_for_download(
                 sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
                 generate_sensitive_data_model_for_download_details=request.pop(util.camelize('GenerateSensitiveDataModelForDownloadDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3137,6 +3213,7 @@ def test_generate_user_assessment_report(testing_service_client):
             response = client.generate_user_assessment_report(
                 user_assessment_id=request.pop(util.camelize('userAssessmentId')),
                 generate_user_assessment_report_details=request.pop(util.camelize('GenerateUserAssessmentReportDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3177,6 +3254,7 @@ def test_get_alert(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.get_alert(
                 alert_id=request.pop(util.camelize('alertId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3217,6 +3295,7 @@ def test_get_alert_policy(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.get_alert_policy(
                 alert_policy_id=request.pop(util.camelize('alertPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3257,6 +3336,7 @@ def test_get_audit_archive_retrieval(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.get_audit_archive_retrieval(
                 audit_archive_retrieval_id=request.pop(util.camelize('auditArchiveRetrievalId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3297,6 +3377,7 @@ def test_get_audit_policy(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.get_audit_policy(
                 audit_policy_id=request.pop(util.camelize('auditPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3337,6 +3418,7 @@ def test_get_audit_profile(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.get_audit_profile(
                 audit_profile_id=request.pop(util.camelize('auditProfileId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3377,6 +3459,7 @@ def test_get_audit_trail(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.get_audit_trail(
                 audit_trail_id=request.pop(util.camelize('auditTrailId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3417,6 +3500,7 @@ def test_get_compatible_formats_for_data_types(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.get_compatible_formats_for_data_types(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3425,6 +3509,7 @@ def test_get_compatible_formats_for_data_types(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.get_compatible_formats_for_data_types(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3434,6 +3519,7 @@ def test_get_compatible_formats_for_data_types(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.get_compatible_formats_for_data_types(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3475,6 +3561,7 @@ def test_get_compatible_formats_for_sensitive_types(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.get_compatible_formats_for_sensitive_types(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3484,6 +3571,7 @@ def test_get_compatible_formats_for_sensitive_types(testing_service_client):
                 next_response = client.get_compatible_formats_for_sensitive_types(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3494,6 +3582,7 @@ def test_get_compatible_formats_for_sensitive_types(testing_service_client):
                     prev_response = client.get_compatible_formats_for_sensitive_types(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3533,6 +3622,7 @@ def test_get_data_safe_configuration(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.get_data_safe_configuration(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3573,6 +3663,7 @@ def test_get_data_safe_private_endpoint(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.get_data_safe_private_endpoint(
                 data_safe_private_endpoint_id=request.pop(util.camelize('dataSafePrivateEndpointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3613,6 +3704,7 @@ def test_get_discovery_job(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.get_discovery_job(
                 discovery_job_id=request.pop(util.camelize('discoveryJobId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3654,6 +3746,7 @@ def test_get_discovery_job_result(testing_service_client):
             response = client.get_discovery_job_result(
                 discovery_job_id=request.pop(util.camelize('discoveryJobId')),
                 result_key=request.pop(util.camelize('resultKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3694,6 +3787,7 @@ def test_get_library_masking_format(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.get_library_masking_format(
                 library_masking_format_id=request.pop(util.camelize('libraryMaskingFormatId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3735,6 +3829,7 @@ def test_get_masking_column(testing_service_client):
             response = client.get_masking_column(
                 masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
                 masking_column_key=request.pop(util.camelize('maskingColumnKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3775,6 +3870,7 @@ def test_get_masking_policy(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.get_masking_policy(
                 masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3815,6 +3911,7 @@ def test_get_masking_report(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.get_masking_report(
                 masking_report_id=request.pop(util.camelize('maskingReportId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3855,6 +3952,7 @@ def test_get_on_prem_connector(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.get_on_prem_connector(
                 on_prem_connector_id=request.pop(util.camelize('onPremConnectorId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3895,6 +3993,7 @@ def test_get_report(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.get_report(
                 report_id=request.pop(util.camelize('reportId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3935,6 +4034,7 @@ def test_get_report_content(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.get_report_content(
                 report_id=request.pop(util.camelize('reportId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3975,6 +4075,7 @@ def test_get_report_definition(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.get_report_definition(
                 report_definition_id=request.pop(util.camelize('reportDefinitionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4015,6 +4116,7 @@ def test_get_security_assessment(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.get_security_assessment(
                 security_assessment_id=request.pop(util.camelize('securityAssessmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4056,6 +4158,7 @@ def test_get_security_assessment_comparison(testing_service_client):
             response = client.get_security_assessment_comparison(
                 security_assessment_id=request.pop(util.camelize('securityAssessmentId')),
                 comparison_security_assessment_id=request.pop(util.camelize('comparisonSecurityAssessmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4097,6 +4200,7 @@ def test_get_sensitive_column(testing_service_client):
             response = client.get_sensitive_column(
                 sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
                 sensitive_column_key=request.pop(util.camelize('sensitiveColumnKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4137,6 +4241,7 @@ def test_get_sensitive_data_model(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.get_sensitive_data_model(
                 sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4177,6 +4282,7 @@ def test_get_sensitive_type(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.get_sensitive_type(
                 sensitive_type_id=request.pop(util.camelize('sensitiveTypeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4217,6 +4323,7 @@ def test_get_target_alert_policy_association(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.get_target_alert_policy_association(
                 target_alert_policy_association_id=request.pop(util.camelize('targetAlertPolicyAssociationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4257,6 +4364,7 @@ def test_get_target_database(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.get_target_database(
                 target_database_id=request.pop(util.camelize('targetDatabaseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4297,6 +4405,7 @@ def test_get_user_assessment(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.get_user_assessment(
                 user_assessment_id=request.pop(util.camelize('userAssessmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4338,6 +4447,7 @@ def test_get_user_assessment_comparison(testing_service_client):
             response = client.get_user_assessment_comparison(
                 user_assessment_id=request.pop(util.camelize('userAssessmentId')),
                 comparison_user_assessment_id=request.pop(util.camelize('comparisonUserAssessmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4378,6 +4488,7 @@ def test_get_work_request(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4419,6 +4530,7 @@ def test_list_alert_analytics(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_alert_analytics(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4428,6 +4540,7 @@ def test_list_alert_analytics(testing_service_client):
                 next_response = client.list_alert_analytics(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4438,6 +4551,7 @@ def test_list_alert_analytics(testing_service_client):
                     prev_response = client.list_alert_analytics(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4479,6 +4593,7 @@ def test_list_alert_policies(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_alert_policies(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4488,6 +4603,7 @@ def test_list_alert_policies(testing_service_client):
                 next_response = client.list_alert_policies(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4498,6 +4614,7 @@ def test_list_alert_policies(testing_service_client):
                     prev_response = client.list_alert_policies(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4539,6 +4656,7 @@ def test_list_alert_policy_rules(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_alert_policy_rules(
                 alert_policy_id=request.pop(util.camelize('alertPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4548,6 +4666,7 @@ def test_list_alert_policy_rules(testing_service_client):
                 next_response = client.list_alert_policy_rules(
                     alert_policy_id=request.pop(util.camelize('alertPolicyId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4558,6 +4677,7 @@ def test_list_alert_policy_rules(testing_service_client):
                     prev_response = client.list_alert_policy_rules(
                         alert_policy_id=request.pop(util.camelize('alertPolicyId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4599,6 +4719,7 @@ def test_list_alerts(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_alerts(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4608,6 +4729,7 @@ def test_list_alerts(testing_service_client):
                 next_response = client.list_alerts(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4618,6 +4740,7 @@ def test_list_alerts(testing_service_client):
                     prev_response = client.list_alerts(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4659,6 +4782,7 @@ def test_list_audit_archive_retrievals(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_audit_archive_retrievals(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4668,6 +4792,7 @@ def test_list_audit_archive_retrievals(testing_service_client):
                 next_response = client.list_audit_archive_retrievals(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4678,6 +4803,7 @@ def test_list_audit_archive_retrievals(testing_service_client):
                     prev_response = client.list_audit_archive_retrievals(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4719,6 +4845,7 @@ def test_list_audit_event_analytics(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_audit_event_analytics(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4728,6 +4855,7 @@ def test_list_audit_event_analytics(testing_service_client):
                 next_response = client.list_audit_event_analytics(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4738,6 +4866,7 @@ def test_list_audit_event_analytics(testing_service_client):
                     prev_response = client.list_audit_event_analytics(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4779,6 +4908,7 @@ def test_list_audit_events(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_audit_events(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4788,6 +4918,7 @@ def test_list_audit_events(testing_service_client):
                 next_response = client.list_audit_events(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4798,6 +4929,7 @@ def test_list_audit_events(testing_service_client):
                     prev_response = client.list_audit_events(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4839,6 +4971,7 @@ def test_list_audit_policies(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_audit_policies(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4848,6 +4981,7 @@ def test_list_audit_policies(testing_service_client):
                 next_response = client.list_audit_policies(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4858,6 +4992,7 @@ def test_list_audit_policies(testing_service_client):
                     prev_response = client.list_audit_policies(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4899,6 +5034,7 @@ def test_list_audit_profile_analytics(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_audit_profile_analytics(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4908,6 +5044,7 @@ def test_list_audit_profile_analytics(testing_service_client):
                 next_response = client.list_audit_profile_analytics(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4918,6 +5055,7 @@ def test_list_audit_profile_analytics(testing_service_client):
                     prev_response = client.list_audit_profile_analytics(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4959,6 +5097,7 @@ def test_list_audit_profiles(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_audit_profiles(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4968,6 +5107,7 @@ def test_list_audit_profiles(testing_service_client):
                 next_response = client.list_audit_profiles(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4978,6 +5118,7 @@ def test_list_audit_profiles(testing_service_client):
                     prev_response = client.list_audit_profiles(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5019,6 +5160,7 @@ def test_list_audit_trail_analytics(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_audit_trail_analytics(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5028,6 +5170,7 @@ def test_list_audit_trail_analytics(testing_service_client):
                 next_response = client.list_audit_trail_analytics(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5038,6 +5181,7 @@ def test_list_audit_trail_analytics(testing_service_client):
                     prev_response = client.list_audit_trail_analytics(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5079,6 +5223,7 @@ def test_list_audit_trails(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_audit_trails(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5088,6 +5233,7 @@ def test_list_audit_trails(testing_service_client):
                 next_response = client.list_audit_trails(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5098,6 +5244,7 @@ def test_list_audit_trails(testing_service_client):
                     prev_response = client.list_audit_trails(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5140,6 +5287,7 @@ def test_list_available_audit_volumes(testing_service_client):
             response = client.list_available_audit_volumes(
                 audit_profile_id=request.pop(util.camelize('auditProfileId')),
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5150,6 +5298,7 @@ def test_list_available_audit_volumes(testing_service_client):
                     audit_profile_id=request.pop(util.camelize('auditProfileId')),
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5161,6 +5310,7 @@ def test_list_available_audit_volumes(testing_service_client):
                         audit_profile_id=request.pop(util.camelize('auditProfileId')),
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5203,6 +5353,7 @@ def test_list_collected_audit_volumes(testing_service_client):
             response = client.list_collected_audit_volumes(
                 audit_profile_id=request.pop(util.camelize('auditProfileId')),
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5213,6 +5364,7 @@ def test_list_collected_audit_volumes(testing_service_client):
                     audit_profile_id=request.pop(util.camelize('auditProfileId')),
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5224,6 +5376,7 @@ def test_list_collected_audit_volumes(testing_service_client):
                         audit_profile_id=request.pop(util.camelize('auditProfileId')),
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5265,6 +5418,7 @@ def test_list_columns(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_columns(
                 target_database_id=request.pop(util.camelize('targetDatabaseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5274,6 +5428,7 @@ def test_list_columns(testing_service_client):
                 next_response = client.list_columns(
                     target_database_id=request.pop(util.camelize('targetDatabaseId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5284,6 +5439,7 @@ def test_list_columns(testing_service_client):
                     prev_response = client.list_columns(
                         target_database_id=request.pop(util.camelize('targetDatabaseId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5325,6 +5481,7 @@ def test_list_data_safe_private_endpoints(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_data_safe_private_endpoints(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5334,6 +5491,7 @@ def test_list_data_safe_private_endpoints(testing_service_client):
                 next_response = client.list_data_safe_private_endpoints(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5344,6 +5502,7 @@ def test_list_data_safe_private_endpoints(testing_service_client):
                     prev_response = client.list_data_safe_private_endpoints(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5385,6 +5544,7 @@ def test_list_discovery_analytics(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_discovery_analytics(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5394,6 +5554,7 @@ def test_list_discovery_analytics(testing_service_client):
                 next_response = client.list_discovery_analytics(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5404,6 +5565,7 @@ def test_list_discovery_analytics(testing_service_client):
                     prev_response = client.list_discovery_analytics(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5445,6 +5607,7 @@ def test_list_discovery_job_results(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_discovery_job_results(
                 discovery_job_id=request.pop(util.camelize('discoveryJobId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5454,6 +5617,7 @@ def test_list_discovery_job_results(testing_service_client):
                 next_response = client.list_discovery_job_results(
                     discovery_job_id=request.pop(util.camelize('discoveryJobId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5464,6 +5628,7 @@ def test_list_discovery_job_results(testing_service_client):
                     prev_response = client.list_discovery_job_results(
                         discovery_job_id=request.pop(util.camelize('discoveryJobId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5505,6 +5670,7 @@ def test_list_discovery_jobs(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_discovery_jobs(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5514,6 +5680,7 @@ def test_list_discovery_jobs(testing_service_client):
                 next_response = client.list_discovery_jobs(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5524,6 +5691,7 @@ def test_list_discovery_jobs(testing_service_client):
                     prev_response = client.list_discovery_jobs(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5565,6 +5733,7 @@ def test_list_findings(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_findings(
                 security_assessment_id=request.pop(util.camelize('securityAssessmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5574,6 +5743,7 @@ def test_list_findings(testing_service_client):
                 next_response = client.list_findings(
                     security_assessment_id=request.pop(util.camelize('securityAssessmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5584,6 +5754,7 @@ def test_list_findings(testing_service_client):
                     prev_response = client.list_findings(
                         security_assessment_id=request.pop(util.camelize('securityAssessmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5626,6 +5797,7 @@ def test_list_grants(testing_service_client):
             response = client.list_grants(
                 user_assessment_id=request.pop(util.camelize('userAssessmentId')),
                 user_key=request.pop(util.camelize('userKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5636,6 +5808,7 @@ def test_list_grants(testing_service_client):
                     user_assessment_id=request.pop(util.camelize('userAssessmentId')),
                     user_key=request.pop(util.camelize('userKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5647,6 +5820,7 @@ def test_list_grants(testing_service_client):
                         user_assessment_id=request.pop(util.camelize('userAssessmentId')),
                         user_key=request.pop(util.camelize('userKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5688,6 +5862,7 @@ def test_list_library_masking_formats(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_library_masking_formats(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5697,6 +5872,7 @@ def test_list_library_masking_formats(testing_service_client):
                 next_response = client.list_library_masking_formats(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5707,6 +5883,7 @@ def test_list_library_masking_formats(testing_service_client):
                     prev_response = client.list_library_masking_formats(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5748,6 +5925,7 @@ def test_list_masked_columns(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_masked_columns(
                 masking_report_id=request.pop(util.camelize('maskingReportId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5757,6 +5935,7 @@ def test_list_masked_columns(testing_service_client):
                 next_response = client.list_masked_columns(
                     masking_report_id=request.pop(util.camelize('maskingReportId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5767,6 +5946,7 @@ def test_list_masked_columns(testing_service_client):
                     prev_response = client.list_masked_columns(
                         masking_report_id=request.pop(util.camelize('maskingReportId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5808,6 +5988,7 @@ def test_list_masking_analytics(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_masking_analytics(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5817,6 +5998,7 @@ def test_list_masking_analytics(testing_service_client):
                 next_response = client.list_masking_analytics(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5827,6 +6009,7 @@ def test_list_masking_analytics(testing_service_client):
                     prev_response = client.list_masking_analytics(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5868,6 +6051,7 @@ def test_list_masking_columns(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_masking_columns(
                 masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5877,6 +6061,7 @@ def test_list_masking_columns(testing_service_client):
                 next_response = client.list_masking_columns(
                     masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5887,6 +6072,7 @@ def test_list_masking_columns(testing_service_client):
                     prev_response = client.list_masking_columns(
                         masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5928,6 +6114,7 @@ def test_list_masking_policies(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_masking_policies(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5937,6 +6124,7 @@ def test_list_masking_policies(testing_service_client):
                 next_response = client.list_masking_policies(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5947,6 +6135,7 @@ def test_list_masking_policies(testing_service_client):
                     prev_response = client.list_masking_policies(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5988,6 +6177,7 @@ def test_list_masking_reports(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_masking_reports(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5997,6 +6187,7 @@ def test_list_masking_reports(testing_service_client):
                 next_response = client.list_masking_reports(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6007,6 +6198,7 @@ def test_list_masking_reports(testing_service_client):
                     prev_response = client.list_masking_reports(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6048,6 +6240,7 @@ def test_list_on_prem_connectors(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_on_prem_connectors(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6057,6 +6250,7 @@ def test_list_on_prem_connectors(testing_service_client):
                 next_response = client.list_on_prem_connectors(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6067,6 +6261,7 @@ def test_list_on_prem_connectors(testing_service_client):
                     prev_response = client.list_on_prem_connectors(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6108,6 +6303,7 @@ def test_list_report_definitions(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_report_definitions(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6117,6 +6313,7 @@ def test_list_report_definitions(testing_service_client):
                 next_response = client.list_report_definitions(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6127,6 +6324,7 @@ def test_list_report_definitions(testing_service_client):
                     prev_response = client.list_report_definitions(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6168,6 +6366,7 @@ def test_list_reports(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_reports(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6177,6 +6376,7 @@ def test_list_reports(testing_service_client):
                 next_response = client.list_reports(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6187,6 +6387,7 @@ def test_list_reports(testing_service_client):
                     prev_response = client.list_reports(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6228,6 +6429,7 @@ def test_list_roles(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_roles(
                 target_database_id=request.pop(util.camelize('targetDatabaseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6237,6 +6439,7 @@ def test_list_roles(testing_service_client):
                 next_response = client.list_roles(
                     target_database_id=request.pop(util.camelize('targetDatabaseId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6247,6 +6450,7 @@ def test_list_roles(testing_service_client):
                     prev_response = client.list_roles(
                         target_database_id=request.pop(util.camelize('targetDatabaseId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6288,6 +6492,7 @@ def test_list_schemas(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_schemas(
                 target_database_id=request.pop(util.camelize('targetDatabaseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6297,6 +6502,7 @@ def test_list_schemas(testing_service_client):
                 next_response = client.list_schemas(
                     target_database_id=request.pop(util.camelize('targetDatabaseId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6307,6 +6513,7 @@ def test_list_schemas(testing_service_client):
                     prev_response = client.list_schemas(
                         target_database_id=request.pop(util.camelize('targetDatabaseId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6348,6 +6555,7 @@ def test_list_security_assessments(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_security_assessments(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6357,6 +6565,7 @@ def test_list_security_assessments(testing_service_client):
                 next_response = client.list_security_assessments(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6367,6 +6576,7 @@ def test_list_security_assessments(testing_service_client):
                     prev_response = client.list_security_assessments(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6408,6 +6618,7 @@ def test_list_sensitive_columns(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_sensitive_columns(
                 sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6417,6 +6628,7 @@ def test_list_sensitive_columns(testing_service_client):
                 next_response = client.list_sensitive_columns(
                     sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6427,6 +6639,7 @@ def test_list_sensitive_columns(testing_service_client):
                     prev_response = client.list_sensitive_columns(
                         sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6468,6 +6681,7 @@ def test_list_sensitive_data_models(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_sensitive_data_models(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6477,6 +6691,7 @@ def test_list_sensitive_data_models(testing_service_client):
                 next_response = client.list_sensitive_data_models(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6487,6 +6702,7 @@ def test_list_sensitive_data_models(testing_service_client):
                     prev_response = client.list_sensitive_data_models(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6528,6 +6744,7 @@ def test_list_sensitive_types(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_sensitive_types(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6537,6 +6754,7 @@ def test_list_sensitive_types(testing_service_client):
                 next_response = client.list_sensitive_types(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6547,6 +6765,7 @@ def test_list_sensitive_types(testing_service_client):
                     prev_response = client.list_sensitive_types(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6588,6 +6807,7 @@ def test_list_tables(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_tables(
                 target_database_id=request.pop(util.camelize('targetDatabaseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6597,6 +6817,7 @@ def test_list_tables(testing_service_client):
                 next_response = client.list_tables(
                     target_database_id=request.pop(util.camelize('targetDatabaseId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6607,6 +6828,7 @@ def test_list_tables(testing_service_client):
                     prev_response = client.list_tables(
                         target_database_id=request.pop(util.camelize('targetDatabaseId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6648,6 +6870,7 @@ def test_list_target_alert_policy_associations(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_target_alert_policy_associations(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6657,6 +6880,7 @@ def test_list_target_alert_policy_associations(testing_service_client):
                 next_response = client.list_target_alert_policy_associations(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6667,6 +6891,7 @@ def test_list_target_alert_policy_associations(testing_service_client):
                     prev_response = client.list_target_alert_policy_associations(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6708,6 +6933,7 @@ def test_list_target_databases(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_target_databases(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6717,6 +6943,7 @@ def test_list_target_databases(testing_service_client):
                 next_response = client.list_target_databases(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6727,6 +6954,7 @@ def test_list_target_databases(testing_service_client):
                     prev_response = client.list_target_databases(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6768,6 +6996,7 @@ def test_list_user_analytics(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_user_analytics(
                 user_assessment_id=request.pop(util.camelize('userAssessmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6777,6 +7006,7 @@ def test_list_user_analytics(testing_service_client):
                 next_response = client.list_user_analytics(
                     user_assessment_id=request.pop(util.camelize('userAssessmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6787,6 +7017,7 @@ def test_list_user_analytics(testing_service_client):
                     prev_response = client.list_user_analytics(
                         user_assessment_id=request.pop(util.camelize('userAssessmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6828,6 +7059,7 @@ def test_list_user_assessments(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_user_assessments(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6837,6 +7069,7 @@ def test_list_user_assessments(testing_service_client):
                 next_response = client.list_user_assessments(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6847,6 +7080,7 @@ def test_list_user_assessments(testing_service_client):
                     prev_response = client.list_user_assessments(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6888,6 +7122,7 @@ def test_list_users(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_users(
                 user_assessment_id=request.pop(util.camelize('userAssessmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6897,6 +7132,7 @@ def test_list_users(testing_service_client):
                 next_response = client.list_users(
                     user_assessment_id=request.pop(util.camelize('userAssessmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6907,6 +7143,7 @@ def test_list_users(testing_service_client):
                     prev_response = client.list_users(
                         user_assessment_id=request.pop(util.camelize('userAssessmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -6948,6 +7185,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6957,6 +7195,7 @@ def test_list_work_request_errors(testing_service_client):
                 next_response = client.list_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -6967,6 +7206,7 @@ def test_list_work_request_errors(testing_service_client):
                     prev_response = client.list_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -7008,6 +7248,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7017,6 +7258,7 @@ def test_list_work_request_logs(testing_service_client):
                 next_response = client.list_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -7027,6 +7269,7 @@ def test_list_work_request_logs(testing_service_client):
                     prev_response = client.list_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -7068,6 +7311,7 @@ def test_list_work_requests(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7077,6 +7321,7 @@ def test_list_work_requests(testing_service_client):
                 next_response = client.list_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -7087,6 +7332,7 @@ def test_list_work_requests(testing_service_client):
                     prev_response = client.list_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -7128,6 +7374,7 @@ def test_mask_data(testing_service_client):
             response = client.mask_data(
                 masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
                 mask_data_details=request.pop(util.camelize('MaskDataDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7169,6 +7416,7 @@ def test_modify_global_settings(testing_service_client):
             response = client.modify_global_settings(
                 modify_global_settings_details=request.pop(util.camelize('ModifyGlobalSettingsDetails')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7209,6 +7457,7 @@ def test_patch_alerts(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.patch_alerts(
                 patch_alerts_details=request.pop(util.camelize('PatchAlertsDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7250,6 +7499,7 @@ def test_patch_discovery_job_results(testing_service_client):
             response = client.patch_discovery_job_results(
                 discovery_job_id=request.pop(util.camelize('discoveryJobId')),
                 patch_discovery_job_result_details=request.pop(util.camelize('PatchDiscoveryJobResultDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7291,6 +7541,7 @@ def test_patch_masking_columns(testing_service_client):
             response = client.patch_masking_columns(
                 masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
                 patch_masking_columns_details=request.pop(util.camelize('PatchMaskingColumnsDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7332,6 +7583,7 @@ def test_patch_sensitive_columns(testing_service_client):
             response = client.patch_sensitive_columns(
                 sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
                 patch_sensitive_column_details=request.pop(util.camelize('PatchSensitiveColumnDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7373,6 +7625,7 @@ def test_provision_audit_policy(testing_service_client):
             response = client.provision_audit_policy(
                 provision_audit_policy_details=request.pop(util.camelize('ProvisionAuditPolicyDetails')),
                 audit_policy_id=request.pop(util.camelize('auditPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7414,6 +7667,7 @@ def test_refresh_security_assessment(testing_service_client):
             response = client.refresh_security_assessment(
                 security_assessment_id=request.pop(util.camelize('securityAssessmentId')),
                 run_security_assessment_details=request.pop(util.camelize('RunSecurityAssessmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7455,6 +7709,7 @@ def test_refresh_user_assessment(testing_service_client):
             response = client.refresh_user_assessment(
                 user_assessment_id=request.pop(util.camelize('userAssessmentId')),
                 run_user_assessment_details=request.pop(util.camelize('RunUserAssessmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7495,6 +7750,7 @@ def test_resume_audit_trail(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.resume_audit_trail(
                 audit_trail_id=request.pop(util.camelize('auditTrailId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7535,6 +7791,7 @@ def test_resume_work_request(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.resume_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7575,6 +7832,7 @@ def test_retrieve_audit_policies(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.retrieve_audit_policies(
                 audit_policy_id=request.pop(util.camelize('auditPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7615,6 +7873,7 @@ def test_set_security_assessment_baseline(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.set_security_assessment_baseline(
                 security_assessment_id=request.pop(util.camelize('securityAssessmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7655,6 +7914,7 @@ def test_set_user_assessment_baseline(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.set_user_assessment_baseline(
                 user_assessment_id=request.pop(util.camelize('userAssessmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7696,6 +7956,7 @@ def test_start_audit_trail(testing_service_client):
             response = client.start_audit_trail(
                 start_audit_trail_details=request.pop(util.camelize('StartAuditTrailDetails')),
                 audit_trail_id=request.pop(util.camelize('auditTrailId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7736,6 +7997,7 @@ def test_stop_audit_trail(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.stop_audit_trail(
                 audit_trail_id=request.pop(util.camelize('auditTrailId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7776,6 +8038,7 @@ def test_suspend_work_request(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.suspend_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7816,6 +8079,7 @@ def test_unset_security_assessment_baseline(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.unset_security_assessment_baseline(
                 security_assessment_id=request.pop(util.camelize('securityAssessmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7856,6 +8120,7 @@ def test_unset_user_assessment_baseline(testing_service_client):
             client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
             response = client.unset_user_assessment_baseline(
                 user_assessment_id=request.pop(util.camelize('userAssessmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7897,6 +8162,7 @@ def test_update_alert(testing_service_client):
             response = client.update_alert(
                 alert_id=request.pop(util.camelize('alertId')),
                 update_alert_details=request.pop(util.camelize('UpdateAlertDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7938,6 +8204,7 @@ def test_update_audit_archive_retrieval(testing_service_client):
             response = client.update_audit_archive_retrieval(
                 audit_archive_retrieval_id=request.pop(util.camelize('auditArchiveRetrievalId')),
                 update_audit_archive_retrieval_details=request.pop(util.camelize('UpdateAuditArchiveRetrievalDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -7979,6 +8246,7 @@ def test_update_audit_policy(testing_service_client):
             response = client.update_audit_policy(
                 audit_policy_id=request.pop(util.camelize('auditPolicyId')),
                 update_audit_policy_details=request.pop(util.camelize('UpdateAuditPolicyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8020,6 +8288,7 @@ def test_update_audit_profile(testing_service_client):
             response = client.update_audit_profile(
                 audit_profile_id=request.pop(util.camelize('auditProfileId')),
                 update_audit_profile_details=request.pop(util.camelize('UpdateAuditProfileDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8061,6 +8330,7 @@ def test_update_audit_trail(testing_service_client):
             response = client.update_audit_trail(
                 audit_trail_id=request.pop(util.camelize('auditTrailId')),
                 update_audit_trail_details=request.pop(util.camelize('UpdateAuditTrailDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8102,6 +8372,7 @@ def test_update_data_safe_private_endpoint(testing_service_client):
             response = client.update_data_safe_private_endpoint(
                 data_safe_private_endpoint_id=request.pop(util.camelize('dataSafePrivateEndpointId')),
                 update_data_safe_private_endpoint_details=request.pop(util.camelize('UpdateDataSafePrivateEndpointDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8143,6 +8414,7 @@ def test_update_library_masking_format(testing_service_client):
             response = client.update_library_masking_format(
                 library_masking_format_id=request.pop(util.camelize('libraryMaskingFormatId')),
                 update_library_masking_format_details=request.pop(util.camelize('UpdateLibraryMaskingFormatDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8185,6 +8457,7 @@ def test_update_masking_column(testing_service_client):
                 masking_column_key=request.pop(util.camelize('maskingColumnKey')),
                 masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
                 update_masking_column_details=request.pop(util.camelize('UpdateMaskingColumnDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8226,6 +8499,7 @@ def test_update_masking_policy(testing_service_client):
             response = client.update_masking_policy(
                 masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
                 update_masking_policy_details=request.pop(util.camelize('UpdateMaskingPolicyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8267,6 +8541,7 @@ def test_update_on_prem_connector(testing_service_client):
             response = client.update_on_prem_connector(
                 on_prem_connector_id=request.pop(util.camelize('onPremConnectorId')),
                 update_on_prem_connector_details=request.pop(util.camelize('UpdateOnPremConnectorDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8308,6 +8583,7 @@ def test_update_on_prem_connector_wallet(testing_service_client):
             response = client.update_on_prem_connector_wallet(
                 update_on_prem_connector_wallet_details=request.pop(util.camelize('UpdateOnPremConnectorWalletDetails')),
                 on_prem_connector_id=request.pop(util.camelize('onPremConnectorId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8349,6 +8625,7 @@ def test_update_report_definition(testing_service_client):
             response = client.update_report_definition(
                 report_definition_id=request.pop(util.camelize('reportDefinitionId')),
                 update_report_definition_details=request.pop(util.camelize('UpdateReportDefinitionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8390,6 +8667,7 @@ def test_update_security_assessment(testing_service_client):
             response = client.update_security_assessment(
                 security_assessment_id=request.pop(util.camelize('securityAssessmentId')),
                 update_security_assessment_details=request.pop(util.camelize('UpdateSecurityAssessmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8432,6 +8710,7 @@ def test_update_sensitive_column(testing_service_client):
                 sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
                 sensitive_column_key=request.pop(util.camelize('sensitiveColumnKey')),
                 update_sensitive_column_details=request.pop(util.camelize('UpdateSensitiveColumnDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8473,6 +8752,7 @@ def test_update_sensitive_data_model(testing_service_client):
             response = client.update_sensitive_data_model(
                 sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
                 update_sensitive_data_model_details=request.pop(util.camelize('UpdateSensitiveDataModelDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8514,6 +8794,7 @@ def test_update_sensitive_type(testing_service_client):
             response = client.update_sensitive_type(
                 sensitive_type_id=request.pop(util.camelize('sensitiveTypeId')),
                 update_sensitive_type_details=request.pop(util.camelize('UpdateSensitiveTypeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8555,6 +8836,7 @@ def test_update_target_alert_policy_association(testing_service_client):
             response = client.update_target_alert_policy_association(
                 target_alert_policy_association_id=request.pop(util.camelize('targetAlertPolicyAssociationId')),
                 update_target_alert_policy_association_details=request.pop(util.camelize('UpdateTargetAlertPolicyAssociationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8596,6 +8878,7 @@ def test_update_target_database(testing_service_client):
             response = client.update_target_database(
                 target_database_id=request.pop(util.camelize('targetDatabaseId')),
                 update_target_database_details=request.pop(util.camelize('UpdateTargetDatabaseDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8637,6 +8920,7 @@ def test_update_user_assessment(testing_service_client):
             response = client.update_user_assessment(
                 user_assessment_id=request.pop(util.camelize('userAssessmentId')),
                 update_user_assessment_details=request.pop(util.camelize('UpdateUserAssessmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8678,6 +8962,7 @@ def test_upload_masking_policy(testing_service_client):
             response = client.upload_masking_policy(
                 upload_masking_policy_details=request.pop(util.camelize('UploadMaskingPolicyDetails')),
                 masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -8719,6 +9004,7 @@ def test_upload_sensitive_data_model(testing_service_client):
             response = client.upload_sensitive_data_model(
                 sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
                 upload_sensitive_data_model_details=request.pop(util.camelize('UploadSensitiveDataModelDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

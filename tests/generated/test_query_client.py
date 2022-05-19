@@ -55,6 +55,7 @@ def test_list_quick_picks(testing_service_client):
             client = oci.apm_traces.QueryClient(config, service_endpoint=service_endpoint)
             response = client.list_quick_picks(
                 apm_domain_id=request.pop(util.camelize('apmDomainId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -64,6 +65,7 @@ def test_list_quick_picks(testing_service_client):
                 next_response = client.list_quick_picks(
                     apm_domain_id=request.pop(util.camelize('apmDomainId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -74,6 +76,7 @@ def test_list_quick_picks(testing_service_client):
                     prev_response = client.list_quick_picks(
                         apm_domain_id=request.pop(util.camelize('apmDomainId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -118,6 +121,7 @@ def test_query(testing_service_client):
                 time_span_started_greater_than_or_equal_to=request.pop(util.camelize('timeSpanStartedGreaterThanOrEqualTo')),
                 time_span_started_less_than=request.pop(util.camelize('timeSpanStartedLessThan')),
                 query_details=request.pop(util.camelize('QueryDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -130,6 +134,7 @@ def test_query(testing_service_client):
                     time_span_started_less_than=request.pop(util.camelize('timeSpanStartedLessThan')),
                     query_details=request.pop(util.camelize('QueryDetails')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -143,6 +148,7 @@ def test_query(testing_service_client):
                         time_span_started_less_than=request.pop(util.camelize('timeSpanStartedLessThan')),
                         query_details=request.pop(util.camelize('QueryDetails')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)

@@ -55,6 +55,7 @@ def test_change_boot_volume_backup_compartment(testing_service_client):
             response = client.change_boot_volume_backup_compartment(
                 boot_volume_backup_id=request.pop(util.camelize('bootVolumeBackupId')),
                 change_boot_volume_backup_compartment_details=request.pop(util.camelize('ChangeBootVolumeBackupCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_change_boot_volume_compartment(testing_service_client):
             response = client.change_boot_volume_compartment(
                 boot_volume_id=request.pop(util.camelize('bootVolumeId')),
                 change_boot_volume_compartment_details=request.pop(util.camelize('ChangeBootVolumeCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -137,6 +139,7 @@ def test_change_volume_backup_compartment(testing_service_client):
             response = client.change_volume_backup_compartment(
                 volume_backup_id=request.pop(util.camelize('volumeBackupId')),
                 change_volume_backup_compartment_details=request.pop(util.camelize('ChangeVolumeBackupCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -178,6 +181,7 @@ def test_change_volume_compartment(testing_service_client):
             response = client.change_volume_compartment(
                 volume_id=request.pop(util.camelize('volumeId')),
                 change_volume_compartment_details=request.pop(util.camelize('ChangeVolumeCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -219,6 +223,7 @@ def test_change_volume_group_backup_compartment(testing_service_client):
             response = client.change_volume_group_backup_compartment(
                 volume_group_backup_id=request.pop(util.camelize('volumeGroupBackupId')),
                 change_volume_group_backup_compartment_details=request.pop(util.camelize('ChangeVolumeGroupBackupCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -260,6 +265,7 @@ def test_change_volume_group_compartment(testing_service_client):
             response = client.change_volume_group_compartment(
                 volume_group_id=request.pop(util.camelize('volumeGroupId')),
                 change_volume_group_compartment_details=request.pop(util.camelize('ChangeVolumeGroupCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -301,6 +307,7 @@ def test_copy_boot_volume_backup(testing_service_client):
             response = client.copy_boot_volume_backup(
                 boot_volume_backup_id=request.pop(util.camelize('bootVolumeBackupId')),
                 copy_boot_volume_backup_details=request.pop(util.camelize('CopyBootVolumeBackupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -342,6 +349,7 @@ def test_copy_volume_backup(testing_service_client):
             response = client.copy_volume_backup(
                 volume_backup_id=request.pop(util.camelize('volumeBackupId')),
                 copy_volume_backup_details=request.pop(util.camelize('CopyVolumeBackupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -383,6 +391,7 @@ def test_copy_volume_group_backup(testing_service_client):
             response = client.copy_volume_group_backup(
                 volume_group_backup_id=request.pop(util.camelize('volumeGroupBackupId')),
                 copy_volume_group_backup_details=request.pop(util.camelize('CopyVolumeGroupBackupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -423,6 +432,7 @@ def test_create_boot_volume(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.create_boot_volume(
                 create_boot_volume_details=request.pop(util.camelize('CreateBootVolumeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -463,6 +473,7 @@ def test_create_boot_volume_backup(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.create_boot_volume_backup(
                 create_boot_volume_backup_details=request.pop(util.camelize('CreateBootVolumeBackupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -503,6 +514,7 @@ def test_create_volume(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.create_volume(
                 create_volume_details=request.pop(util.camelize('CreateVolumeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -543,6 +555,7 @@ def test_create_volume_backup(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.create_volume_backup(
                 create_volume_backup_details=request.pop(util.camelize('CreateVolumeBackupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -583,6 +596,7 @@ def test_create_volume_backup_policy(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.create_volume_backup_policy(
                 create_volume_backup_policy_details=request.pop(util.camelize('CreateVolumeBackupPolicyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -623,6 +637,7 @@ def test_create_volume_backup_policy_assignment(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.create_volume_backup_policy_assignment(
                 create_volume_backup_policy_assignment_details=request.pop(util.camelize('CreateVolumeBackupPolicyAssignmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -663,6 +678,7 @@ def test_create_volume_group(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.create_volume_group(
                 create_volume_group_details=request.pop(util.camelize('CreateVolumeGroupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -703,6 +719,7 @@ def test_create_volume_group_backup(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.create_volume_group_backup(
                 create_volume_group_backup_details=request.pop(util.camelize('CreateVolumeGroupBackupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -743,6 +760,7 @@ def test_delete_boot_volume(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_boot_volume(
                 boot_volume_id=request.pop(util.camelize('bootVolumeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -783,6 +801,7 @@ def test_delete_boot_volume_backup(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_boot_volume_backup(
                 boot_volume_backup_id=request.pop(util.camelize('bootVolumeBackupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -823,6 +842,7 @@ def test_delete_boot_volume_kms_key(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_boot_volume_kms_key(
                 boot_volume_id=request.pop(util.camelize('bootVolumeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -863,6 +883,7 @@ def test_delete_volume(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_volume(
                 volume_id=request.pop(util.camelize('volumeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -903,6 +924,7 @@ def test_delete_volume_backup(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_volume_backup(
                 volume_backup_id=request.pop(util.camelize('volumeBackupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -943,6 +965,7 @@ def test_delete_volume_backup_policy(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_volume_backup_policy(
                 policy_id=request.pop(util.camelize('policyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -983,6 +1006,7 @@ def test_delete_volume_backup_policy_assignment(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_volume_backup_policy_assignment(
                 policy_assignment_id=request.pop(util.camelize('policyAssignmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1023,6 +1047,7 @@ def test_delete_volume_group(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_volume_group(
                 volume_group_id=request.pop(util.camelize('volumeGroupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1063,6 +1088,7 @@ def test_delete_volume_group_backup(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_volume_group_backup(
                 volume_group_backup_id=request.pop(util.camelize('volumeGroupBackupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1103,6 +1129,7 @@ def test_delete_volume_kms_key(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_volume_kms_key(
                 volume_id=request.pop(util.camelize('volumeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1143,6 +1170,7 @@ def test_get_block_volume_replica(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.get_block_volume_replica(
                 block_volume_replica_id=request.pop(util.camelize('blockVolumeReplicaId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1183,6 +1211,7 @@ def test_get_boot_volume(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.get_boot_volume(
                 boot_volume_id=request.pop(util.camelize('bootVolumeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1223,6 +1252,7 @@ def test_get_boot_volume_backup(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.get_boot_volume_backup(
                 boot_volume_backup_id=request.pop(util.camelize('bootVolumeBackupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1263,6 +1293,7 @@ def test_get_boot_volume_kms_key(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.get_boot_volume_kms_key(
                 boot_volume_id=request.pop(util.camelize('bootVolumeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1303,6 +1334,7 @@ def test_get_boot_volume_replica(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.get_boot_volume_replica(
                 boot_volume_replica_id=request.pop(util.camelize('bootVolumeReplicaId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1343,6 +1375,7 @@ def test_get_volume(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.get_volume(
                 volume_id=request.pop(util.camelize('volumeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1383,6 +1416,7 @@ def test_get_volume_backup(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.get_volume_backup(
                 volume_backup_id=request.pop(util.camelize('volumeBackupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1423,6 +1457,7 @@ def test_get_volume_backup_policy(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.get_volume_backup_policy(
                 policy_id=request.pop(util.camelize('policyId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1464,6 +1499,7 @@ def test_get_volume_backup_policy_asset_assignment(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.get_volume_backup_policy_asset_assignment(
                 asset_id=request.pop(util.camelize('assetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1473,6 +1509,7 @@ def test_get_volume_backup_policy_asset_assignment(testing_service_client):
                 next_response = client.get_volume_backup_policy_asset_assignment(
                     asset_id=request.pop(util.camelize('assetId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1483,6 +1520,7 @@ def test_get_volume_backup_policy_asset_assignment(testing_service_client):
                     prev_response = client.get_volume_backup_policy_asset_assignment(
                         asset_id=request.pop(util.camelize('assetId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1523,6 +1561,7 @@ def test_get_volume_backup_policy_assignment(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.get_volume_backup_policy_assignment(
                 policy_assignment_id=request.pop(util.camelize('policyAssignmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1563,6 +1602,7 @@ def test_get_volume_group(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.get_volume_group(
                 volume_group_id=request.pop(util.camelize('volumeGroupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1603,6 +1643,7 @@ def test_get_volume_group_backup(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.get_volume_group_backup(
                 volume_group_backup_id=request.pop(util.camelize('volumeGroupBackupId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1643,6 +1684,7 @@ def test_get_volume_group_replica(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.get_volume_group_replica(
                 volume_group_replica_id=request.pop(util.camelize('volumeGroupReplicaId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1683,6 +1725,7 @@ def test_get_volume_kms_key(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.get_volume_kms_key(
                 volume_id=request.pop(util.camelize('volumeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1725,6 +1768,7 @@ def test_list_block_volume_replicas(testing_service_client):
             response = client.list_block_volume_replicas(
                 availability_domain=request.pop(util.camelize('availabilityDomain')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1735,6 +1779,7 @@ def test_list_block_volume_replicas(testing_service_client):
                     availability_domain=request.pop(util.camelize('availabilityDomain')),
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1746,6 +1791,7 @@ def test_list_block_volume_replicas(testing_service_client):
                         availability_domain=request.pop(util.camelize('availabilityDomain')),
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1787,6 +1833,7 @@ def test_list_boot_volume_backups(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.list_boot_volume_backups(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1796,6 +1843,7 @@ def test_list_boot_volume_backups(testing_service_client):
                 next_response = client.list_boot_volume_backups(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1806,6 +1854,7 @@ def test_list_boot_volume_backups(testing_service_client):
                     prev_response = client.list_boot_volume_backups(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1848,6 +1897,7 @@ def test_list_boot_volume_replicas(testing_service_client):
             response = client.list_boot_volume_replicas(
                 availability_domain=request.pop(util.camelize('availabilityDomain')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1858,6 +1908,7 @@ def test_list_boot_volume_replicas(testing_service_client):
                     availability_domain=request.pop(util.camelize('availabilityDomain')),
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1869,6 +1920,7 @@ def test_list_boot_volume_replicas(testing_service_client):
                         availability_domain=request.pop(util.camelize('availabilityDomain')),
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1911,6 +1963,7 @@ def test_list_boot_volumes(testing_service_client):
             response = client.list_boot_volumes(
                 availability_domain=request.pop(util.camelize('availabilityDomain')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1921,6 +1974,7 @@ def test_list_boot_volumes(testing_service_client):
                     availability_domain=request.pop(util.camelize('availabilityDomain')),
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1932,6 +1986,7 @@ def test_list_boot_volumes(testing_service_client):
                         availability_domain=request.pop(util.camelize('availabilityDomain')),
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -1972,6 +2027,7 @@ def test_list_volume_backup_policies(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.list_volume_backup_policies(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1980,6 +2036,7 @@ def test_list_volume_backup_policies(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_volume_backup_policies(
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -1989,6 +2046,7 @@ def test_list_volume_backup_policies(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_volume_backup_policies(
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2030,6 +2088,7 @@ def test_list_volume_backups(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.list_volume_backups(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2039,6 +2098,7 @@ def test_list_volume_backups(testing_service_client):
                 next_response = client.list_volume_backups(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2049,6 +2109,7 @@ def test_list_volume_backups(testing_service_client):
                     prev_response = client.list_volume_backups(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2090,6 +2151,7 @@ def test_list_volume_group_backups(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.list_volume_group_backups(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2099,6 +2161,7 @@ def test_list_volume_group_backups(testing_service_client):
                 next_response = client.list_volume_group_backups(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2109,6 +2172,7 @@ def test_list_volume_group_backups(testing_service_client):
                     prev_response = client.list_volume_group_backups(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2151,6 +2215,7 @@ def test_list_volume_group_replicas(testing_service_client):
             response = client.list_volume_group_replicas(
                 availability_domain=request.pop(util.camelize('availabilityDomain')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2161,6 +2226,7 @@ def test_list_volume_group_replicas(testing_service_client):
                     availability_domain=request.pop(util.camelize('availabilityDomain')),
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2172,6 +2238,7 @@ def test_list_volume_group_replicas(testing_service_client):
                         availability_domain=request.pop(util.camelize('availabilityDomain')),
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2213,6 +2280,7 @@ def test_list_volume_groups(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.list_volume_groups(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2222,6 +2290,7 @@ def test_list_volume_groups(testing_service_client):
                 next_response = client.list_volume_groups(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2232,6 +2301,7 @@ def test_list_volume_groups(testing_service_client):
                     prev_response = client.list_volume_groups(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2273,6 +2343,7 @@ def test_list_volumes(testing_service_client):
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.list_volumes(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2282,6 +2353,7 @@ def test_list_volumes(testing_service_client):
                 next_response = client.list_volumes(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -2292,6 +2364,7 @@ def test_list_volumes(testing_service_client):
                     prev_response = client.list_volumes(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -2333,6 +2406,7 @@ def test_update_boot_volume(testing_service_client):
             response = client.update_boot_volume(
                 boot_volume_id=request.pop(util.camelize('bootVolumeId')),
                 update_boot_volume_details=request.pop(util.camelize('UpdateBootVolumeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2374,6 +2448,7 @@ def test_update_boot_volume_backup(testing_service_client):
             response = client.update_boot_volume_backup(
                 boot_volume_backup_id=request.pop(util.camelize('bootVolumeBackupId')),
                 update_boot_volume_backup_details=request.pop(util.camelize('UpdateBootVolumeBackupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2415,6 +2490,7 @@ def test_update_boot_volume_kms_key(testing_service_client):
             response = client.update_boot_volume_kms_key(
                 boot_volume_id=request.pop(util.camelize('bootVolumeId')),
                 update_boot_volume_kms_key_details=request.pop(util.camelize('UpdateBootVolumeKmsKeyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2456,6 +2532,7 @@ def test_update_volume(testing_service_client):
             response = client.update_volume(
                 volume_id=request.pop(util.camelize('volumeId')),
                 update_volume_details=request.pop(util.camelize('UpdateVolumeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2497,6 +2574,7 @@ def test_update_volume_backup(testing_service_client):
             response = client.update_volume_backup(
                 volume_backup_id=request.pop(util.camelize('volumeBackupId')),
                 update_volume_backup_details=request.pop(util.camelize('UpdateVolumeBackupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2538,6 +2616,7 @@ def test_update_volume_backup_policy(testing_service_client):
             response = client.update_volume_backup_policy(
                 policy_id=request.pop(util.camelize('policyId')),
                 update_volume_backup_policy_details=request.pop(util.camelize('UpdateVolumeBackupPolicyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2579,6 +2658,7 @@ def test_update_volume_group(testing_service_client):
             response = client.update_volume_group(
                 volume_group_id=request.pop(util.camelize('volumeGroupId')),
                 update_volume_group_details=request.pop(util.camelize('UpdateVolumeGroupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2620,6 +2700,7 @@ def test_update_volume_group_backup(testing_service_client):
             response = client.update_volume_group_backup(
                 volume_group_backup_id=request.pop(util.camelize('volumeGroupBackupId')),
                 update_volume_group_backup_details=request.pop(util.camelize('UpdateVolumeGroupBackupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2661,6 +2742,7 @@ def test_update_volume_kms_key(testing_service_client):
             response = client.update_volume_kms_key(
                 volume_id=request.pop(util.camelize('volumeId')),
                 update_volume_kms_key_details=request.pop(util.camelize('UpdateVolumeKmsKeyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

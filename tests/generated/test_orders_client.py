@@ -55,6 +55,7 @@ def test_activate_order(testing_service_client):
             response = client.activate_order(
                 activate_order_details=request.pop(util.camelize('ActivateOrderDetails')),
                 activation_token=request.pop(util.camelize('activationToken')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_get_order(testing_service_client):
             client = oci.tenant_manager_control_plane.OrdersClient(config, service_endpoint=service_endpoint)
             response = client.get_order(
                 activation_token=request.pop(util.camelize('activationToken')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

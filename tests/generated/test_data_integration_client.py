@@ -55,6 +55,7 @@ def test_change_compartment(testing_service_client):
             response = client.change_compartment(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 change_compartment_details=request.pop(util.camelize('ChangeCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -97,6 +98,7 @@ def test_change_dis_application_compartment(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 dis_application_id=request.pop(util.camelize('disApplicationId')),
                 change_dis_application_compartment_details=request.pop(util.camelize('ChangeDisApplicationCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -138,6 +140,7 @@ def test_create_application(testing_service_client):
             response = client.create_application(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 create_application_details=request.pop(util.camelize('CreateApplicationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -179,6 +182,7 @@ def test_create_connection(testing_service_client):
             response = client.create_connection(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 create_connection_details=request.pop(util.camelize('CreateConnectionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -220,6 +224,7 @@ def test_create_connection_validation(testing_service_client):
             response = client.create_connection_validation(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 create_connection_validation_details=request.pop(util.camelize('CreateConnectionValidationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -261,6 +266,7 @@ def test_create_data_asset(testing_service_client):
             response = client.create_data_asset(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 create_data_asset_details=request.pop(util.camelize('CreateDataAssetDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -302,6 +308,7 @@ def test_create_data_flow(testing_service_client):
             response = client.create_data_flow(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 create_data_flow_details=request.pop(util.camelize('CreateDataFlowDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -343,6 +350,7 @@ def test_create_data_flow_validation(testing_service_client):
             response = client.create_data_flow_validation(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 create_data_flow_validation_details=request.pop(util.camelize('CreateDataFlowValidationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -384,6 +392,7 @@ def test_create_dis_application(testing_service_client):
             response = client.create_dis_application(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 create_dis_application_details=request.pop(util.camelize('CreateDisApplicationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -427,6 +436,7 @@ def test_create_entity_shape(testing_service_client):
                 connection_key=request.pop(util.camelize('connectionKey')),
                 schema_resource_name=request.pop(util.camelize('schemaResourceName')),
                 create_entity_shape_details=request.pop(util.camelize('CreateEntityShapeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -469,6 +479,7 @@ def test_create_external_publication(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 task_key=request.pop(util.camelize('taskKey')),
                 create_external_publication_details=request.pop(util.camelize('CreateExternalPublicationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -511,6 +522,7 @@ def test_create_external_publication_validation(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 task_key=request.pop(util.camelize('taskKey')),
                 create_external_publication_validation_details=request.pop(util.camelize('CreateExternalPublicationValidationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -552,6 +564,7 @@ def test_create_folder(testing_service_client):
             response = client.create_folder(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 create_folder_details=request.pop(util.camelize('CreateFolderDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -593,6 +606,7 @@ def test_create_function_library(testing_service_client):
             response = client.create_function_library(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 create_function_library_details=request.pop(util.camelize('CreateFunctionLibraryDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -635,6 +649,7 @@ def test_create_patch(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 application_key=request.pop(util.camelize('applicationKey')),
                 create_patch_details=request.pop(util.camelize('CreatePatchDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -676,6 +691,7 @@ def test_create_pipeline(testing_service_client):
             response = client.create_pipeline(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 create_pipeline_details=request.pop(util.camelize('CreatePipelineDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -717,6 +733,7 @@ def test_create_pipeline_validation(testing_service_client):
             response = client.create_pipeline_validation(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 create_pipeline_validation_details=request.pop(util.camelize('CreatePipelineValidationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -758,6 +775,7 @@ def test_create_project(testing_service_client):
             response = client.create_project(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 create_project_details=request.pop(util.camelize('CreateProjectDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -800,6 +818,7 @@ def test_create_schedule(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 application_key=request.pop(util.camelize('applicationKey')),
                 create_schedule_details=request.pop(util.camelize('CreateScheduleDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -841,6 +860,7 @@ def test_create_task(testing_service_client):
             response = client.create_task(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 create_task_details=request.pop(util.camelize('CreateTaskDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -883,6 +903,7 @@ def test_create_task_run(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 application_key=request.pop(util.camelize('applicationKey')),
                 create_task_run_details=request.pop(util.camelize('CreateTaskRunDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -925,6 +946,7 @@ def test_create_task_schedule(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 application_key=request.pop(util.camelize('applicationKey')),
                 create_task_schedule_details=request.pop(util.camelize('CreateTaskScheduleDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -966,6 +988,7 @@ def test_create_task_validation(testing_service_client):
             response = client.create_task_validation(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 create_task_validation_details=request.pop(util.camelize('CreateTaskValidationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1007,6 +1030,7 @@ def test_create_user_defined_function(testing_service_client):
             response = client.create_user_defined_function(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 create_user_defined_function_details=request.pop(util.camelize('CreateUserDefinedFunctionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1048,6 +1072,7 @@ def test_create_user_defined_function_validation(testing_service_client):
             response = client.create_user_defined_function_validation(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 create_user_defined_function_validation_details=request.pop(util.camelize('CreateUserDefinedFunctionValidationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1088,6 +1113,7 @@ def test_create_workspace(testing_service_client):
             client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
             response = client.create_workspace(
                 create_workspace_details=request.pop(util.camelize('CreateWorkspaceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1129,6 +1155,7 @@ def test_delete_application(testing_service_client):
             response = client.delete_application(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 application_key=request.pop(util.camelize('applicationKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1170,6 +1197,7 @@ def test_delete_connection(testing_service_client):
             response = client.delete_connection(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 connection_key=request.pop(util.camelize('connectionKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1211,6 +1239,7 @@ def test_delete_connection_validation(testing_service_client):
             response = client.delete_connection_validation(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 connection_validation_key=request.pop(util.camelize('connectionValidationKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1252,6 +1281,7 @@ def test_delete_data_asset(testing_service_client):
             response = client.delete_data_asset(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1293,6 +1323,7 @@ def test_delete_data_flow(testing_service_client):
             response = client.delete_data_flow(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 data_flow_key=request.pop(util.camelize('dataFlowKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1334,6 +1365,7 @@ def test_delete_data_flow_validation(testing_service_client):
             response = client.delete_data_flow_validation(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 data_flow_validation_key=request.pop(util.camelize('dataFlowValidationKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1375,6 +1407,7 @@ def test_delete_dis_application(testing_service_client):
             response = client.delete_dis_application(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 dis_application_id=request.pop(util.camelize('disApplicationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1417,6 +1450,7 @@ def test_delete_external_publication(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 task_key=request.pop(util.camelize('taskKey')),
                 external_publications_key=request.pop(util.camelize('externalPublicationsKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1459,6 +1493,7 @@ def test_delete_external_publication_validation(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 task_key=request.pop(util.camelize('taskKey')),
                 external_publication_validation_key=request.pop(util.camelize('externalPublicationValidationKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1500,6 +1535,7 @@ def test_delete_folder(testing_service_client):
             response = client.delete_folder(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 folder_key=request.pop(util.camelize('folderKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1541,6 +1577,7 @@ def test_delete_function_library(testing_service_client):
             response = client.delete_function_library(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 function_library_key=request.pop(util.camelize('functionLibraryKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1583,6 +1620,7 @@ def test_delete_patch(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 application_key=request.pop(util.camelize('applicationKey')),
                 patch_key=request.pop(util.camelize('patchKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1624,6 +1662,7 @@ def test_delete_pipeline(testing_service_client):
             response = client.delete_pipeline(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 pipeline_key=request.pop(util.camelize('pipelineKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1665,6 +1704,7 @@ def test_delete_pipeline_validation(testing_service_client):
             response = client.delete_pipeline_validation(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 pipeline_validation_key=request.pop(util.camelize('pipelineValidationKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1706,6 +1746,7 @@ def test_delete_project(testing_service_client):
             response = client.delete_project(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 project_key=request.pop(util.camelize('projectKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1748,6 +1789,7 @@ def test_delete_schedule(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 application_key=request.pop(util.camelize('applicationKey')),
                 schedule_key=request.pop(util.camelize('scheduleKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1789,6 +1831,7 @@ def test_delete_task(testing_service_client):
             response = client.delete_task(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 task_key=request.pop(util.camelize('taskKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1831,6 +1874,7 @@ def test_delete_task_run(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 application_key=request.pop(util.camelize('applicationKey')),
                 task_run_key=request.pop(util.camelize('taskRunKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1873,6 +1917,7 @@ def test_delete_task_schedule(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 application_key=request.pop(util.camelize('applicationKey')),
                 task_schedule_key=request.pop(util.camelize('taskScheduleKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1914,6 +1959,7 @@ def test_delete_task_validation(testing_service_client):
             response = client.delete_task_validation(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 task_validation_key=request.pop(util.camelize('taskValidationKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1955,6 +2001,7 @@ def test_delete_user_defined_function(testing_service_client):
             response = client.delete_user_defined_function(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 user_defined_function_key=request.pop(util.camelize('userDefinedFunctionKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1996,6 +2043,7 @@ def test_delete_user_defined_function_validation(testing_service_client):
             response = client.delete_user_defined_function_validation(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 user_defined_function_validation_key=request.pop(util.camelize('userDefinedFunctionValidationKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2036,6 +2084,7 @@ def test_delete_workspace(testing_service_client):
             client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
             response = client.delete_workspace(
                 workspace_id=request.pop(util.camelize('workspaceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2077,6 +2126,7 @@ def test_get_application(testing_service_client):
             response = client.get_application(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 application_key=request.pop(util.camelize('applicationKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2118,6 +2168,7 @@ def test_get_connection(testing_service_client):
             response = client.get_connection(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 connection_key=request.pop(util.camelize('connectionKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2159,6 +2210,7 @@ def test_get_connection_validation(testing_service_client):
             response = client.get_connection_validation(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 connection_validation_key=request.pop(util.camelize('connectionValidationKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2200,6 +2252,7 @@ def test_get_count_statistic(testing_service_client):
             response = client.get_count_statistic(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 count_statistic_key=request.pop(util.camelize('countStatisticKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2241,6 +2294,7 @@ def test_get_data_asset(testing_service_client):
             response = client.get_data_asset(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2284,6 +2338,7 @@ def test_get_data_entity(testing_service_client):
                 connection_key=request.pop(util.camelize('connectionKey')),
                 schema_resource_name=request.pop(util.camelize('schemaResourceName')),
                 data_entity_key=request.pop(util.camelize('dataEntityKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2325,6 +2380,7 @@ def test_get_data_flow(testing_service_client):
             response = client.get_data_flow(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 data_flow_key=request.pop(util.camelize('dataFlowKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2366,6 +2422,7 @@ def test_get_data_flow_validation(testing_service_client):
             response = client.get_data_flow_validation(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 data_flow_validation_key=request.pop(util.camelize('dataFlowValidationKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2408,6 +2465,7 @@ def test_get_dependent_object(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 application_key=request.pop(util.camelize('applicationKey')),
                 dependent_object_key=request.pop(util.camelize('dependentObjectKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2449,6 +2507,7 @@ def test_get_dis_application(testing_service_client):
             response = client.get_dis_application(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 dis_application_id=request.pop(util.camelize('disApplicationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2491,6 +2550,7 @@ def test_get_external_publication(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 task_key=request.pop(util.camelize('taskKey')),
                 external_publications_key=request.pop(util.camelize('externalPublicationsKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2533,6 +2593,7 @@ def test_get_external_publication_validation(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 task_key=request.pop(util.camelize('taskKey')),
                 external_publication_validation_key=request.pop(util.camelize('externalPublicationValidationKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2574,6 +2635,7 @@ def test_get_folder(testing_service_client):
             response = client.get_folder(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 folder_key=request.pop(util.camelize('folderKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2615,6 +2677,7 @@ def test_get_function_library(testing_service_client):
             response = client.get_function_library(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 function_library_key=request.pop(util.camelize('functionLibraryKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2657,6 +2720,7 @@ def test_get_patch(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 application_key=request.pop(util.camelize('applicationKey')),
                 patch_key=request.pop(util.camelize('patchKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2698,6 +2762,7 @@ def test_get_pipeline(testing_service_client):
             response = client.get_pipeline(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 pipeline_key=request.pop(util.camelize('pipelineKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2739,6 +2804,7 @@ def test_get_pipeline_validation(testing_service_client):
             response = client.get_pipeline_validation(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 pipeline_validation_key=request.pop(util.camelize('pipelineValidationKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2780,6 +2846,7 @@ def test_get_project(testing_service_client):
             response = client.get_project(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 project_key=request.pop(util.camelize('projectKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2822,6 +2889,7 @@ def test_get_published_object(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 application_key=request.pop(util.camelize('applicationKey')),
                 published_object_key=request.pop(util.camelize('publishedObjectKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2864,6 +2932,7 @@ def test_get_reference(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 application_key=request.pop(util.camelize('applicationKey')),
                 reference_key=request.pop(util.camelize('referenceKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2906,6 +2975,7 @@ def test_get_schedule(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 application_key=request.pop(util.camelize('applicationKey')),
                 schedule_key=request.pop(util.camelize('scheduleKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2948,6 +3018,7 @@ def test_get_schema(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 connection_key=request.pop(util.camelize('connectionKey')),
                 schema_resource_name=request.pop(util.camelize('schemaResourceName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2989,6 +3060,7 @@ def test_get_task(testing_service_client):
             response = client.get_task(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 task_key=request.pop(util.camelize('taskKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3031,6 +3103,7 @@ def test_get_task_run(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 application_key=request.pop(util.camelize('applicationKey')),
                 task_run_key=request.pop(util.camelize('taskRunKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3073,6 +3146,7 @@ def test_get_task_schedule(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 application_key=request.pop(util.camelize('applicationKey')),
                 task_schedule_key=request.pop(util.camelize('taskScheduleKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3114,6 +3188,7 @@ def test_get_task_validation(testing_service_client):
             response = client.get_task_validation(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 task_validation_key=request.pop(util.camelize('taskValidationKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3155,6 +3230,7 @@ def test_get_user_defined_function(testing_service_client):
             response = client.get_user_defined_function(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 user_defined_function_key=request.pop(util.camelize('userDefinedFunctionKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3196,6 +3272,7 @@ def test_get_user_defined_function_validation(testing_service_client):
             response = client.get_user_defined_function_validation(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 user_defined_function_validation_key=request.pop(util.camelize('userDefinedFunctionValidationKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3236,6 +3313,7 @@ def test_get_work_request(testing_service_client):
             client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3276,6 +3354,7 @@ def test_get_workspace(testing_service_client):
             client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
             response = client.get_workspace(
                 workspace_id=request.pop(util.camelize('workspaceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3317,6 +3396,7 @@ def test_list_applications(testing_service_client):
             client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
             response = client.list_applications(
                 workspace_id=request.pop(util.camelize('workspaceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3326,6 +3406,7 @@ def test_list_applications(testing_service_client):
                 next_response = client.list_applications(
                     workspace_id=request.pop(util.camelize('workspaceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3336,6 +3417,7 @@ def test_list_applications(testing_service_client):
                     prev_response = client.list_applications(
                         workspace_id=request.pop(util.camelize('workspaceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3377,6 +3459,7 @@ def test_list_connection_validations(testing_service_client):
             client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
             response = client.list_connection_validations(
                 workspace_id=request.pop(util.camelize('workspaceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3386,6 +3469,7 @@ def test_list_connection_validations(testing_service_client):
                 next_response = client.list_connection_validations(
                     workspace_id=request.pop(util.camelize('workspaceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3396,6 +3480,7 @@ def test_list_connection_validations(testing_service_client):
                     prev_response = client.list_connection_validations(
                         workspace_id=request.pop(util.camelize('workspaceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3438,6 +3523,7 @@ def test_list_connections(testing_service_client):
             response = client.list_connections(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3448,6 +3534,7 @@ def test_list_connections(testing_service_client):
                     workspace_id=request.pop(util.camelize('workspaceId')),
                     data_asset_key=request.pop(util.camelize('dataAssetKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3459,6 +3546,7 @@ def test_list_connections(testing_service_client):
                         workspace_id=request.pop(util.camelize('workspaceId')),
                         data_asset_key=request.pop(util.camelize('dataAssetKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3500,6 +3588,7 @@ def test_list_data_assets(testing_service_client):
             client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
             response = client.list_data_assets(
                 workspace_id=request.pop(util.camelize('workspaceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3509,6 +3598,7 @@ def test_list_data_assets(testing_service_client):
                 next_response = client.list_data_assets(
                     workspace_id=request.pop(util.camelize('workspaceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3519,6 +3609,7 @@ def test_list_data_assets(testing_service_client):
                     prev_response = client.list_data_assets(
                         workspace_id=request.pop(util.camelize('workspaceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3562,6 +3653,7 @@ def test_list_data_entities(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 connection_key=request.pop(util.camelize('connectionKey')),
                 schema_resource_name=request.pop(util.camelize('schemaResourceName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3573,6 +3665,7 @@ def test_list_data_entities(testing_service_client):
                     connection_key=request.pop(util.camelize('connectionKey')),
                     schema_resource_name=request.pop(util.camelize('schemaResourceName')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3585,6 +3678,7 @@ def test_list_data_entities(testing_service_client):
                         connection_key=request.pop(util.camelize('connectionKey')),
                         schema_resource_name=request.pop(util.camelize('schemaResourceName')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3626,6 +3720,7 @@ def test_list_data_flow_validations(testing_service_client):
             client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
             response = client.list_data_flow_validations(
                 workspace_id=request.pop(util.camelize('workspaceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3635,6 +3730,7 @@ def test_list_data_flow_validations(testing_service_client):
                 next_response = client.list_data_flow_validations(
                     workspace_id=request.pop(util.camelize('workspaceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3645,6 +3741,7 @@ def test_list_data_flow_validations(testing_service_client):
                     prev_response = client.list_data_flow_validations(
                         workspace_id=request.pop(util.camelize('workspaceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3686,6 +3783,7 @@ def test_list_data_flows(testing_service_client):
             client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
             response = client.list_data_flows(
                 workspace_id=request.pop(util.camelize('workspaceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3695,6 +3793,7 @@ def test_list_data_flows(testing_service_client):
                 next_response = client.list_data_flows(
                     workspace_id=request.pop(util.camelize('workspaceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3705,6 +3804,7 @@ def test_list_data_flows(testing_service_client):
                     prev_response = client.list_data_flows(
                         workspace_id=request.pop(util.camelize('workspaceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3747,6 +3847,7 @@ def test_list_dependent_objects(testing_service_client):
             response = client.list_dependent_objects(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 application_key=request.pop(util.camelize('applicationKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3757,6 +3858,7 @@ def test_list_dependent_objects(testing_service_client):
                     workspace_id=request.pop(util.camelize('workspaceId')),
                     application_key=request.pop(util.camelize('applicationKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3768,6 +3870,7 @@ def test_list_dependent_objects(testing_service_client):
                         workspace_id=request.pop(util.camelize('workspaceId')),
                         application_key=request.pop(util.camelize('applicationKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3810,6 +3913,7 @@ def test_list_dis_applications(testing_service_client):
             response = client.list_dis_applications(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3820,6 +3924,7 @@ def test_list_dis_applications(testing_service_client):
                     workspace_id=request.pop(util.camelize('workspaceId')),
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3831,6 +3936,7 @@ def test_list_dis_applications(testing_service_client):
                         workspace_id=request.pop(util.camelize('workspaceId')),
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3873,6 +3979,7 @@ def test_list_external_publication_validations(testing_service_client):
             response = client.list_external_publication_validations(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 task_key=request.pop(util.camelize('taskKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3883,6 +3990,7 @@ def test_list_external_publication_validations(testing_service_client):
                     workspace_id=request.pop(util.camelize('workspaceId')),
                     task_key=request.pop(util.camelize('taskKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3894,6 +4002,7 @@ def test_list_external_publication_validations(testing_service_client):
                         workspace_id=request.pop(util.camelize('workspaceId')),
                         task_key=request.pop(util.camelize('taskKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3936,6 +4045,7 @@ def test_list_external_publications(testing_service_client):
             response = client.list_external_publications(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 task_key=request.pop(util.camelize('taskKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3946,6 +4056,7 @@ def test_list_external_publications(testing_service_client):
                     workspace_id=request.pop(util.camelize('workspaceId')),
                     task_key=request.pop(util.camelize('taskKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -3957,6 +4068,7 @@ def test_list_external_publications(testing_service_client):
                         workspace_id=request.pop(util.camelize('workspaceId')),
                         task_key=request.pop(util.camelize('taskKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -3998,6 +4110,7 @@ def test_list_folders(testing_service_client):
             client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
             response = client.list_folders(
                 workspace_id=request.pop(util.camelize('workspaceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4007,6 +4120,7 @@ def test_list_folders(testing_service_client):
                 next_response = client.list_folders(
                     workspace_id=request.pop(util.camelize('workspaceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4017,6 +4131,7 @@ def test_list_folders(testing_service_client):
                     prev_response = client.list_folders(
                         workspace_id=request.pop(util.camelize('workspaceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4058,6 +4173,7 @@ def test_list_function_libraries(testing_service_client):
             client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
             response = client.list_function_libraries(
                 workspace_id=request.pop(util.camelize('workspaceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4067,6 +4183,7 @@ def test_list_function_libraries(testing_service_client):
                 next_response = client.list_function_libraries(
                     workspace_id=request.pop(util.camelize('workspaceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4077,6 +4194,7 @@ def test_list_function_libraries(testing_service_client):
                     prev_response = client.list_function_libraries(
                         workspace_id=request.pop(util.camelize('workspaceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4119,6 +4237,7 @@ def test_list_patch_changes(testing_service_client):
             response = client.list_patch_changes(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 application_key=request.pop(util.camelize('applicationKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4129,6 +4248,7 @@ def test_list_patch_changes(testing_service_client):
                     workspace_id=request.pop(util.camelize('workspaceId')),
                     application_key=request.pop(util.camelize('applicationKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4140,6 +4260,7 @@ def test_list_patch_changes(testing_service_client):
                         workspace_id=request.pop(util.camelize('workspaceId')),
                         application_key=request.pop(util.camelize('applicationKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4182,6 +4303,7 @@ def test_list_patches(testing_service_client):
             response = client.list_patches(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 application_key=request.pop(util.camelize('applicationKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4192,6 +4314,7 @@ def test_list_patches(testing_service_client):
                     workspace_id=request.pop(util.camelize('workspaceId')),
                     application_key=request.pop(util.camelize('applicationKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4203,6 +4326,7 @@ def test_list_patches(testing_service_client):
                         workspace_id=request.pop(util.camelize('workspaceId')),
                         application_key=request.pop(util.camelize('applicationKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4244,6 +4368,7 @@ def test_list_pipeline_validations(testing_service_client):
             client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
             response = client.list_pipeline_validations(
                 workspace_id=request.pop(util.camelize('workspaceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4253,6 +4378,7 @@ def test_list_pipeline_validations(testing_service_client):
                 next_response = client.list_pipeline_validations(
                     workspace_id=request.pop(util.camelize('workspaceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4263,6 +4389,7 @@ def test_list_pipeline_validations(testing_service_client):
                     prev_response = client.list_pipeline_validations(
                         workspace_id=request.pop(util.camelize('workspaceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4304,6 +4431,7 @@ def test_list_pipelines(testing_service_client):
             client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
             response = client.list_pipelines(
                 workspace_id=request.pop(util.camelize('workspaceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4313,6 +4441,7 @@ def test_list_pipelines(testing_service_client):
                 next_response = client.list_pipelines(
                     workspace_id=request.pop(util.camelize('workspaceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4323,6 +4452,7 @@ def test_list_pipelines(testing_service_client):
                     prev_response = client.list_pipelines(
                         workspace_id=request.pop(util.camelize('workspaceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4364,6 +4494,7 @@ def test_list_projects(testing_service_client):
             client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
             response = client.list_projects(
                 workspace_id=request.pop(util.camelize('workspaceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4373,6 +4504,7 @@ def test_list_projects(testing_service_client):
                 next_response = client.list_projects(
                     workspace_id=request.pop(util.camelize('workspaceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4383,6 +4515,7 @@ def test_list_projects(testing_service_client):
                     prev_response = client.list_projects(
                         workspace_id=request.pop(util.camelize('workspaceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4425,6 +4558,7 @@ def test_list_published_objects(testing_service_client):
             response = client.list_published_objects(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 application_key=request.pop(util.camelize('applicationKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4435,6 +4569,7 @@ def test_list_published_objects(testing_service_client):
                     workspace_id=request.pop(util.camelize('workspaceId')),
                     application_key=request.pop(util.camelize('applicationKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4446,6 +4581,7 @@ def test_list_published_objects(testing_service_client):
                         workspace_id=request.pop(util.camelize('workspaceId')),
                         application_key=request.pop(util.camelize('applicationKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4488,6 +4624,7 @@ def test_list_references(testing_service_client):
             response = client.list_references(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 application_key=request.pop(util.camelize('applicationKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4498,6 +4635,7 @@ def test_list_references(testing_service_client):
                     workspace_id=request.pop(util.camelize('workspaceId')),
                     application_key=request.pop(util.camelize('applicationKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4509,6 +4647,7 @@ def test_list_references(testing_service_client):
                         workspace_id=request.pop(util.camelize('workspaceId')),
                         application_key=request.pop(util.camelize('applicationKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4551,6 +4690,7 @@ def test_list_schedules(testing_service_client):
             response = client.list_schedules(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 application_key=request.pop(util.camelize('applicationKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4561,6 +4701,7 @@ def test_list_schedules(testing_service_client):
                     workspace_id=request.pop(util.camelize('workspaceId')),
                     application_key=request.pop(util.camelize('applicationKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4572,6 +4713,7 @@ def test_list_schedules(testing_service_client):
                         workspace_id=request.pop(util.camelize('workspaceId')),
                         application_key=request.pop(util.camelize('applicationKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4615,6 +4757,7 @@ def test_list_schemas(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 connection_key=request.pop(util.camelize('connectionKey')),
                 schema_resource_name=request.pop(util.camelize('schemaResourceName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4626,6 +4769,7 @@ def test_list_schemas(testing_service_client):
                     connection_key=request.pop(util.camelize('connectionKey')),
                     schema_resource_name=request.pop(util.camelize('schemaResourceName')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4638,6 +4782,7 @@ def test_list_schemas(testing_service_client):
                         connection_key=request.pop(util.camelize('connectionKey')),
                         schema_resource_name=request.pop(util.camelize('schemaResourceName')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4681,6 +4826,7 @@ def test_list_task_run_logs(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 application_key=request.pop(util.camelize('applicationKey')),
                 task_run_key=request.pop(util.camelize('taskRunKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4692,6 +4838,7 @@ def test_list_task_run_logs(testing_service_client):
                     application_key=request.pop(util.camelize('applicationKey')),
                     task_run_key=request.pop(util.camelize('taskRunKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4704,6 +4851,7 @@ def test_list_task_run_logs(testing_service_client):
                         application_key=request.pop(util.camelize('applicationKey')),
                         task_run_key=request.pop(util.camelize('taskRunKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4746,6 +4894,7 @@ def test_list_task_runs(testing_service_client):
             response = client.list_task_runs(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 application_key=request.pop(util.camelize('applicationKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4756,6 +4905,7 @@ def test_list_task_runs(testing_service_client):
                     workspace_id=request.pop(util.camelize('workspaceId')),
                     application_key=request.pop(util.camelize('applicationKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4767,6 +4917,7 @@ def test_list_task_runs(testing_service_client):
                         workspace_id=request.pop(util.camelize('workspaceId')),
                         application_key=request.pop(util.camelize('applicationKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4809,6 +4960,7 @@ def test_list_task_schedules(testing_service_client):
             response = client.list_task_schedules(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 application_key=request.pop(util.camelize('applicationKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4819,6 +4971,7 @@ def test_list_task_schedules(testing_service_client):
                     workspace_id=request.pop(util.camelize('workspaceId')),
                     application_key=request.pop(util.camelize('applicationKey')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4830,6 +4983,7 @@ def test_list_task_schedules(testing_service_client):
                         workspace_id=request.pop(util.camelize('workspaceId')),
                         application_key=request.pop(util.camelize('applicationKey')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4871,6 +5025,7 @@ def test_list_task_validations(testing_service_client):
             client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
             response = client.list_task_validations(
                 workspace_id=request.pop(util.camelize('workspaceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4880,6 +5035,7 @@ def test_list_task_validations(testing_service_client):
                 next_response = client.list_task_validations(
                     workspace_id=request.pop(util.camelize('workspaceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4890,6 +5046,7 @@ def test_list_task_validations(testing_service_client):
                     prev_response = client.list_task_validations(
                         workspace_id=request.pop(util.camelize('workspaceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4931,6 +5088,7 @@ def test_list_tasks(testing_service_client):
             client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
             response = client.list_tasks(
                 workspace_id=request.pop(util.camelize('workspaceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4940,6 +5098,7 @@ def test_list_tasks(testing_service_client):
                 next_response = client.list_tasks(
                     workspace_id=request.pop(util.camelize('workspaceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -4950,6 +5109,7 @@ def test_list_tasks(testing_service_client):
                     prev_response = client.list_tasks(
                         workspace_id=request.pop(util.camelize('workspaceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -4991,6 +5151,7 @@ def test_list_user_defined_function_validations(testing_service_client):
             client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
             response = client.list_user_defined_function_validations(
                 workspace_id=request.pop(util.camelize('workspaceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5000,6 +5161,7 @@ def test_list_user_defined_function_validations(testing_service_client):
                 next_response = client.list_user_defined_function_validations(
                     workspace_id=request.pop(util.camelize('workspaceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5010,6 +5172,7 @@ def test_list_user_defined_function_validations(testing_service_client):
                     prev_response = client.list_user_defined_function_validations(
                         workspace_id=request.pop(util.camelize('workspaceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5051,6 +5214,7 @@ def test_list_user_defined_functions(testing_service_client):
             client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
             response = client.list_user_defined_functions(
                 workspace_id=request.pop(util.camelize('workspaceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5060,6 +5224,7 @@ def test_list_user_defined_functions(testing_service_client):
                 next_response = client.list_user_defined_functions(
                     workspace_id=request.pop(util.camelize('workspaceId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5070,6 +5235,7 @@ def test_list_user_defined_functions(testing_service_client):
                     prev_response = client.list_user_defined_functions(
                         workspace_id=request.pop(util.camelize('workspaceId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5111,6 +5277,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5120,6 +5287,7 @@ def test_list_work_request_errors(testing_service_client):
                 next_response = client.list_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5130,6 +5298,7 @@ def test_list_work_request_errors(testing_service_client):
                     prev_response = client.list_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5171,6 +5340,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5180,6 +5350,7 @@ def test_list_work_request_logs(testing_service_client):
                 next_response = client.list_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5190,6 +5361,7 @@ def test_list_work_request_logs(testing_service_client):
                     prev_response = client.list_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5231,6 +5403,7 @@ def test_list_work_requests(testing_service_client):
             client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5240,6 +5413,7 @@ def test_list_work_requests(testing_service_client):
                 next_response = client.list_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5250,6 +5424,7 @@ def test_list_work_requests(testing_service_client):
                     prev_response = client.list_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5291,6 +5466,7 @@ def test_list_workspaces(testing_service_client):
             client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
             response = client.list_workspaces(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5300,6 +5476,7 @@ def test_list_workspaces(testing_service_client):
                 next_response = client.list_workspaces(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -5310,6 +5487,7 @@ def test_list_workspaces(testing_service_client):
                     prev_response = client.list_workspaces(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -5350,6 +5528,7 @@ def test_start_workspace(testing_service_client):
             client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
             response = client.start_workspace(
                 workspace_id=request.pop(util.camelize('workspaceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5390,6 +5569,7 @@ def test_stop_workspace(testing_service_client):
             client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
             response = client.stop_workspace(
                 workspace_id=request.pop(util.camelize('workspaceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5432,6 +5612,7 @@ def test_update_application(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 application_key=request.pop(util.camelize('applicationKey')),
                 update_application_details=request.pop(util.camelize('UpdateApplicationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5474,6 +5655,7 @@ def test_update_connection(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 connection_key=request.pop(util.camelize('connectionKey')),
                 update_connection_details=request.pop(util.camelize('UpdateConnectionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5516,6 +5698,7 @@ def test_update_data_asset(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 data_asset_key=request.pop(util.camelize('dataAssetKey')),
                 update_data_asset_details=request.pop(util.camelize('UpdateDataAssetDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5558,6 +5741,7 @@ def test_update_data_flow(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 data_flow_key=request.pop(util.camelize('dataFlowKey')),
                 update_data_flow_details=request.pop(util.camelize('UpdateDataFlowDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5600,6 +5784,7 @@ def test_update_dis_application(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 dis_application_id=request.pop(util.camelize('disApplicationId')),
                 update_dis_application_details=request.pop(util.camelize('UpdateDisApplicationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5643,6 +5828,7 @@ def test_update_external_publication(testing_service_client):
                 task_key=request.pop(util.camelize('taskKey')),
                 external_publications_key=request.pop(util.camelize('externalPublicationsKey')),
                 update_external_publication_details=request.pop(util.camelize('UpdateExternalPublicationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5685,6 +5871,7 @@ def test_update_folder(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 folder_key=request.pop(util.camelize('folderKey')),
                 update_folder_details=request.pop(util.camelize('UpdateFolderDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5727,6 +5914,7 @@ def test_update_function_library(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 function_library_key=request.pop(util.camelize('functionLibraryKey')),
                 update_function_library_details=request.pop(util.camelize('UpdateFunctionLibraryDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5769,6 +5957,7 @@ def test_update_pipeline(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 pipeline_key=request.pop(util.camelize('pipelineKey')),
                 update_pipeline_details=request.pop(util.camelize('UpdatePipelineDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5811,6 +6000,7 @@ def test_update_project(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 project_key=request.pop(util.camelize('projectKey')),
                 update_project_details=request.pop(util.camelize('UpdateProjectDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5854,6 +6044,7 @@ def test_update_reference(testing_service_client):
                 application_key=request.pop(util.camelize('applicationKey')),
                 reference_key=request.pop(util.camelize('referenceKey')),
                 update_reference_details=request.pop(util.camelize('UpdateReferenceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5897,6 +6088,7 @@ def test_update_schedule(testing_service_client):
                 application_key=request.pop(util.camelize('applicationKey')),
                 schedule_key=request.pop(util.camelize('scheduleKey')),
                 update_schedule_details=request.pop(util.camelize('UpdateScheduleDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5939,6 +6131,7 @@ def test_update_task(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 task_key=request.pop(util.camelize('taskKey')),
                 update_task_details=request.pop(util.camelize('UpdateTaskDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5982,6 +6175,7 @@ def test_update_task_run(testing_service_client):
                 application_key=request.pop(util.camelize('applicationKey')),
                 task_run_key=request.pop(util.camelize('taskRunKey')),
                 update_task_run_details=request.pop(util.camelize('UpdateTaskRunDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6025,6 +6219,7 @@ def test_update_task_schedule(testing_service_client):
                 application_key=request.pop(util.camelize('applicationKey')),
                 task_schedule_key=request.pop(util.camelize('taskScheduleKey')),
                 update_task_schedule_details=request.pop(util.camelize('UpdateTaskScheduleDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6067,6 +6262,7 @@ def test_update_user_defined_function(testing_service_client):
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 user_defined_function_key=request.pop(util.camelize('userDefinedFunctionKey')),
                 update_user_defined_function_details=request.pop(util.camelize('UpdateUserDefinedFunctionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6108,6 +6304,7 @@ def test_update_workspace(testing_service_client):
             response = client.update_workspace(
                 workspace_id=request.pop(util.camelize('workspaceId')),
                 update_workspace_details=request.pop(util.camelize('UpdateWorkspaceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

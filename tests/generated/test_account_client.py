@@ -55,6 +55,7 @@ def test_get_launch_eligibility(testing_service_client):
             response = client.get_launch_eligibility(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 image_id=request.pop(util.camelize('imageId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_get_third_party_paid_listing_eligibility(testing_service_client):
             client = oci.marketplace.AccountClient(config, service_endpoint=service_endpoint)
             response = client.get_third_party_paid_listing_eligibility(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

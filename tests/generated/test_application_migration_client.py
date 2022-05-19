@@ -54,6 +54,7 @@ def test_cancel_work_request(testing_service_client):
             client = oci.application_migration.ApplicationMigrationClient(config, service_endpoint=service_endpoint)
             response = client.cancel_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_change_migration_compartment(testing_service_client):
             response = client.change_migration_compartment(
                 migration_id=request.pop(util.camelize('migrationId')),
                 change_migration_compartment_details=request.pop(util.camelize('ChangeMigrationCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -136,6 +138,7 @@ def test_change_source_compartment(testing_service_client):
             response = client.change_source_compartment(
                 source_id=request.pop(util.camelize('sourceId')),
                 change_source_compartment_details=request.pop(util.camelize('ChangeSourceCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -176,6 +179,7 @@ def test_create_migration(testing_service_client):
             client = oci.application_migration.ApplicationMigrationClient(config, service_endpoint=service_endpoint)
             response = client.create_migration(
                 create_migration_details=request.pop(util.camelize('CreateMigrationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -216,6 +220,7 @@ def test_create_source(testing_service_client):
             client = oci.application_migration.ApplicationMigrationClient(config, service_endpoint=service_endpoint)
             response = client.create_source(
                 create_source_details=request.pop(util.camelize('CreateSourceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -256,6 +261,7 @@ def test_delete_migration(testing_service_client):
             client = oci.application_migration.ApplicationMigrationClient(config, service_endpoint=service_endpoint)
             response = client.delete_migration(
                 migration_id=request.pop(util.camelize('migrationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -296,6 +302,7 @@ def test_delete_source(testing_service_client):
             client = oci.application_migration.ApplicationMigrationClient(config, service_endpoint=service_endpoint)
             response = client.delete_source(
                 source_id=request.pop(util.camelize('sourceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -336,6 +343,7 @@ def test_get_migration(testing_service_client):
             client = oci.application_migration.ApplicationMigrationClient(config, service_endpoint=service_endpoint)
             response = client.get_migration(
                 migration_id=request.pop(util.camelize('migrationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -376,6 +384,7 @@ def test_get_source(testing_service_client):
             client = oci.application_migration.ApplicationMigrationClient(config, service_endpoint=service_endpoint)
             response = client.get_source(
                 source_id=request.pop(util.camelize('sourceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -416,6 +425,7 @@ def test_get_work_request(testing_service_client):
             client = oci.application_migration.ApplicationMigrationClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -457,6 +467,7 @@ def test_list_migrations(testing_service_client):
             client = oci.application_migration.ApplicationMigrationClient(config, service_endpoint=service_endpoint)
             response = client.list_migrations(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -466,6 +477,7 @@ def test_list_migrations(testing_service_client):
                 next_response = client.list_migrations(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -476,6 +488,7 @@ def test_list_migrations(testing_service_client):
                     prev_response = client.list_migrations(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -518,6 +531,7 @@ def test_list_source_applications(testing_service_client):
             response = client.list_source_applications(
                 source_id=request.pop(util.camelize('sourceId')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -528,6 +542,7 @@ def test_list_source_applications(testing_service_client):
                     source_id=request.pop(util.camelize('sourceId')),
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -539,6 +554,7 @@ def test_list_source_applications(testing_service_client):
                         source_id=request.pop(util.camelize('sourceId')),
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -580,6 +596,7 @@ def test_list_sources(testing_service_client):
             client = oci.application_migration.ApplicationMigrationClient(config, service_endpoint=service_endpoint)
             response = client.list_sources(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -589,6 +606,7 @@ def test_list_sources(testing_service_client):
                 next_response = client.list_sources(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -599,6 +617,7 @@ def test_list_sources(testing_service_client):
                     prev_response = client.list_sources(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -640,6 +659,7 @@ def test_list_work_request_errors(testing_service_client):
             client = oci.application_migration.ApplicationMigrationClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -649,6 +669,7 @@ def test_list_work_request_errors(testing_service_client):
                 next_response = client.list_work_request_errors(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -659,6 +680,7 @@ def test_list_work_request_errors(testing_service_client):
                     prev_response = client.list_work_request_errors(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -700,6 +722,7 @@ def test_list_work_request_logs(testing_service_client):
             client = oci.application_migration.ApplicationMigrationClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -709,6 +732,7 @@ def test_list_work_request_logs(testing_service_client):
                 next_response = client.list_work_request_logs(
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -719,6 +743,7 @@ def test_list_work_request_logs(testing_service_client):
                     prev_response = client.list_work_request_logs(
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -760,6 +785,7 @@ def test_list_work_requests(testing_service_client):
             client = oci.application_migration.ApplicationMigrationClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -769,6 +795,7 @@ def test_list_work_requests(testing_service_client):
                 next_response = client.list_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -779,6 +806,7 @@ def test_list_work_requests(testing_service_client):
                     prev_response = client.list_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -819,6 +847,7 @@ def test_migrate_application(testing_service_client):
             client = oci.application_migration.ApplicationMigrationClient(config, service_endpoint=service_endpoint)
             response = client.migrate_application(
                 migration_id=request.pop(util.camelize('migrationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -860,6 +889,7 @@ def test_update_migration(testing_service_client):
             response = client.update_migration(
                 migration_id=request.pop(util.camelize('migrationId')),
                 update_migration_details=request.pop(util.camelize('UpdateMigrationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -901,6 +931,7 @@ def test_update_source(testing_service_client):
             response = client.update_source(
                 source_id=request.pop(util.camelize('sourceId')),
                 update_source_details=request.pop(util.camelize('UpdateSourceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

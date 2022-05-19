@@ -56,6 +56,7 @@ def test_get_resource_availability(testing_service_client):
                 service_name=request.pop(util.camelize('serviceName')),
                 limit_name=request.pop(util.camelize('limitName')),
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -97,6 +98,7 @@ def test_list_limit_definitions(testing_service_client):
             client = oci.limits.LimitsClient(config, service_endpoint=service_endpoint)
             response = client.list_limit_definitions(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -106,6 +108,7 @@ def test_list_limit_definitions(testing_service_client):
                 next_response = client.list_limit_definitions(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -116,6 +119,7 @@ def test_list_limit_definitions(testing_service_client):
                     prev_response = client.list_limit_definitions(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -158,6 +162,7 @@ def test_list_limit_values(testing_service_client):
             response = client.list_limit_values(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 service_name=request.pop(util.camelize('serviceName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -168,6 +173,7 @@ def test_list_limit_values(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     service_name=request.pop(util.camelize('serviceName')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -179,6 +185,7 @@ def test_list_limit_values(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         service_name=request.pop(util.camelize('serviceName')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -220,6 +227,7 @@ def test_list_services(testing_service_client):
             client = oci.limits.LimitsClient(config, service_endpoint=service_endpoint)
             response = client.list_services(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -229,6 +237,7 @@ def test_list_services(testing_service_client):
                 next_response = client.list_services(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -239,6 +248,7 @@ def test_list_services(testing_service_client):
                     prev_response = client.list_services(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)

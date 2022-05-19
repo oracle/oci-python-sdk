@@ -55,6 +55,7 @@ def test_change_integration_instance_compartment(testing_service_client):
             response = client.change_integration_instance_compartment(
                 integration_instance_id=request.pop(util.camelize('integrationInstanceId')),
                 change_integration_instance_compartment_details=request.pop(util.camelize('ChangeIntegrationInstanceCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -96,6 +97,7 @@ def test_change_integration_instance_network_endpoint(testing_service_client):
             response = client.change_integration_instance_network_endpoint(
                 integration_instance_id=request.pop(util.camelize('integrationInstanceId')),
                 change_integration_instance_network_endpoint_details=request.pop(util.camelize('ChangeIntegrationInstanceNetworkEndpointDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -136,6 +138,7 @@ def test_create_integration_instance(testing_service_client):
             client = oci.integration.IntegrationInstanceClient(config, service_endpoint=service_endpoint)
             response = client.create_integration_instance(
                 create_integration_instance_details=request.pop(util.camelize('CreateIntegrationInstanceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -176,6 +179,7 @@ def test_delete_integration_instance(testing_service_client):
             client = oci.integration.IntegrationInstanceClient(config, service_endpoint=service_endpoint)
             response = client.delete_integration_instance(
                 integration_instance_id=request.pop(util.camelize('integrationInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -216,6 +220,7 @@ def test_get_integration_instance(testing_service_client):
             client = oci.integration.IntegrationInstanceClient(config, service_endpoint=service_endpoint)
             response = client.get_integration_instance(
                 integration_instance_id=request.pop(util.camelize('integrationInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -256,6 +261,7 @@ def test_get_work_request(testing_service_client):
             client = oci.integration.IntegrationInstanceClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -297,6 +303,7 @@ def test_list_integration_instances(testing_service_client):
             client = oci.integration.IntegrationInstanceClient(config, service_endpoint=service_endpoint)
             response = client.list_integration_instances(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -306,6 +313,7 @@ def test_list_integration_instances(testing_service_client):
                 next_response = client.list_integration_instances(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -316,6 +324,7 @@ def test_list_integration_instances(testing_service_client):
                     prev_response = client.list_integration_instances(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -358,6 +367,7 @@ def test_list_work_request_errors(testing_service_client):
             response = client.list_work_request_errors(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -368,6 +378,7 @@ def test_list_work_request_errors(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -379,6 +390,7 @@ def test_list_work_request_errors(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -421,6 +433,7 @@ def test_list_work_request_logs(testing_service_client):
             response = client.list_work_request_logs(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -431,6 +444,7 @@ def test_list_work_request_logs(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -442,6 +456,7 @@ def test_list_work_request_logs(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -483,6 +498,7 @@ def test_list_work_requests(testing_service_client):
             client = oci.integration.IntegrationInstanceClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -492,6 +508,7 @@ def test_list_work_requests(testing_service_client):
                 next_response = client.list_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -502,6 +519,7 @@ def test_list_work_requests(testing_service_client):
                     prev_response = client.list_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -542,6 +560,7 @@ def test_start_integration_instance(testing_service_client):
             client = oci.integration.IntegrationInstanceClient(config, service_endpoint=service_endpoint)
             response = client.start_integration_instance(
                 integration_instance_id=request.pop(util.camelize('integrationInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -582,6 +601,7 @@ def test_stop_integration_instance(testing_service_client):
             client = oci.integration.IntegrationInstanceClient(config, service_endpoint=service_endpoint)
             response = client.stop_integration_instance(
                 integration_instance_id=request.pop(util.camelize('integrationInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -623,6 +643,7 @@ def test_update_integration_instance(testing_service_client):
             response = client.update_integration_instance(
                 integration_instance_id=request.pop(util.camelize('integrationInstanceId')),
                 update_integration_instance_details=request.pop(util.camelize('UpdateIntegrationInstanceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

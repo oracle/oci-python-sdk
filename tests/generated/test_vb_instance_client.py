@@ -55,6 +55,7 @@ def test_change_vb_instance_compartment(testing_service_client):
             response = client.change_vb_instance_compartment(
                 vb_instance_id=request.pop(util.camelize('vbInstanceId')),
                 change_vb_instance_compartment_details=request.pop(util.camelize('ChangeVbInstanceCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -95,6 +96,7 @@ def test_create_vb_instance(testing_service_client):
             client = oci.visual_builder.VbInstanceClient(config, service_endpoint=service_endpoint)
             response = client.create_vb_instance(
                 create_vb_instance_details=request.pop(util.camelize('CreateVbInstanceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -135,6 +137,7 @@ def test_delete_vb_instance(testing_service_client):
             client = oci.visual_builder.VbInstanceClient(config, service_endpoint=service_endpoint)
             response = client.delete_vb_instance(
                 vb_instance_id=request.pop(util.camelize('vbInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -175,6 +178,7 @@ def test_get_vb_instance(testing_service_client):
             client = oci.visual_builder.VbInstanceClient(config, service_endpoint=service_endpoint)
             response = client.get_vb_instance(
                 vb_instance_id=request.pop(util.camelize('vbInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -215,6 +219,7 @@ def test_get_work_request(testing_service_client):
             client = oci.visual_builder.VbInstanceClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -256,6 +261,7 @@ def test_list_vb_instances(testing_service_client):
             client = oci.visual_builder.VbInstanceClient(config, service_endpoint=service_endpoint)
             response = client.list_vb_instances(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -265,6 +271,7 @@ def test_list_vb_instances(testing_service_client):
                 next_response = client.list_vb_instances(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -275,6 +282,7 @@ def test_list_vb_instances(testing_service_client):
                     prev_response = client.list_vb_instances(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -317,6 +325,7 @@ def test_list_work_request_errors(testing_service_client):
             response = client.list_work_request_errors(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -327,6 +336,7 @@ def test_list_work_request_errors(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -338,6 +348,7 @@ def test_list_work_request_errors(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -380,6 +391,7 @@ def test_list_work_request_logs(testing_service_client):
             response = client.list_work_request_logs(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -390,6 +402,7 @@ def test_list_work_request_logs(testing_service_client):
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -401,6 +414,7 @@ def test_list_work_request_logs(testing_service_client):
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -442,6 +456,7 @@ def test_list_work_requests(testing_service_client):
             client = oci.visual_builder.VbInstanceClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -451,6 +466,7 @@ def test_list_work_requests(testing_service_client):
                 next_response = client.list_work_requests(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
                 )
                 result.append(next_response)
@@ -461,6 +477,7 @@ def test_list_work_requests(testing_service_client):
                     prev_response = client.list_work_requests(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
                     )
                     result.append(prev_response)
@@ -502,6 +519,7 @@ def test_request_summarized_applications(testing_service_client):
             response = client.request_summarized_applications(
                 request_summarized_applications_details=request.pop(util.camelize('RequestSummarizedApplicationsDetails')),
                 vb_instance_id=request.pop(util.camelize('vbInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -542,6 +560,7 @@ def test_start_vb_instance(testing_service_client):
             client = oci.visual_builder.VbInstanceClient(config, service_endpoint=service_endpoint)
             response = client.start_vb_instance(
                 vb_instance_id=request.pop(util.camelize('vbInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -582,6 +601,7 @@ def test_stop_vb_instance(testing_service_client):
             client = oci.visual_builder.VbInstanceClient(config, service_endpoint=service_endpoint)
             response = client.stop_vb_instance(
                 vb_instance_id=request.pop(util.camelize('vbInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -623,6 +643,7 @@ def test_update_vb_instance(testing_service_client):
             response = client.update_vb_instance(
                 vb_instance_id=request.pop(util.camelize('vbInstanceId')),
                 update_vb_instance_details=request.pop(util.camelize('UpdateVbInstanceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
