@@ -200,7 +200,7 @@ class ResourceManagerClientCompositeOperations(object):
             The properties for creating a stack.
 
         :param list[str] wait_for_states:
-            An array of states to wait on. These should be valid values for :py:attr:`~oci.resource_manager.models.WorkRequest.status`
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.resource_manager.models.Stack.lifecycle_state`
 
         :param dict operation_kwargs:
             A dictionary of keyword arguments to pass to :py:func:`~oci.resource_manager.ResourceManagerClient.create_stack`
