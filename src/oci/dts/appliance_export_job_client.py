@@ -150,6 +150,8 @@ class ApplianceExportJobClient(object):
         """
         resource_path = "/applianceExportJobs/{applianceExportJobId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_appliance_export_job_compartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -199,14 +201,20 @@ class ApplianceExportJobClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_appliance_export_job_compartment_details)
+                body=change_appliance_export_job_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_appliance_export_job_compartment_details)
+                body=change_appliance_export_job_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_appliance_export_job(self, create_appliance_export_job_details, **kwargs):
         """
@@ -247,6 +255,8 @@ class ApplianceExportJobClient(object):
         """
         resource_path = "/applianceExportJobs"
         method = "POST"
+        operation_name = "create_appliance_export_job"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -284,14 +294,20 @@ class ApplianceExportJobClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_appliance_export_job_details,
-                response_type="ApplianceExportJob")
+                response_type="ApplianceExportJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_appliance_export_job_details,
-                response_type="ApplianceExportJob")
+                response_type="ApplianceExportJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_appliance_export_job(self, appliance_export_job_id, **kwargs):
         """
@@ -329,6 +345,8 @@ class ApplianceExportJobClient(object):
         """
         resource_path = "/applianceExportJobs/{applianceExportJobId}"
         method = "DELETE"
+        operation_name = "delete_appliance_export_job"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -374,13 +392,19 @@ class ApplianceExportJobClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_appliance_export_job(self, appliance_export_job_id, **kwargs):
         """
@@ -414,6 +438,8 @@ class ApplianceExportJobClient(object):
         """
         resource_path = "/applianceExportJobs/{applianceExportJobId}"
         method = "GET"
+        operation_name = "get_appliance_export_job"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -458,14 +484,20 @@ class ApplianceExportJobClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ApplianceExportJob")
+                response_type="ApplianceExportJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ApplianceExportJob")
+                response_type="ApplianceExportJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_appliance_export_jobs(self, compartment_id, **kwargs):
         """
@@ -523,6 +555,8 @@ class ApplianceExportJobClient(object):
         """
         resource_path = "/applianceExportJobs"
         method = "GET"
+        operation_name = "list_appliance_export_jobs"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -577,14 +611,20 @@ class ApplianceExportJobClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ApplianceExportJobSummary]")
+                response_type="list[ApplianceExportJobSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ApplianceExportJobSummary]")
+                response_type="list[ApplianceExportJobSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_appliance_export_job(self, appliance_export_job_id, update_appliance_export_job_details, **kwargs):
         """
@@ -625,6 +665,8 @@ class ApplianceExportJobClient(object):
         """
         resource_path = "/applianceExportJobs/{applianceExportJobId}"
         method = "PUT"
+        operation_name = "update_appliance_export_job"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -672,7 +714,10 @@ class ApplianceExportJobClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_appliance_export_job_details,
-                response_type="ApplianceExportJob")
+                response_type="ApplianceExportJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -680,4 +725,7 @@ class ApplianceExportJobClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_appliance_export_job_details,
-                response_type="ApplianceExportJob")
+                response_type="ApplianceExportJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

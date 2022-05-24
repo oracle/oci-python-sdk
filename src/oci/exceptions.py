@@ -2,8 +2,13 @@
 # Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
+import platform
+from .version import __version__
 from oci._vendor.requests.exceptions import RequestException as BaseRequestException
 from oci._vendor.requests.exceptions import ConnectTimeout as BaseConnectTimeout
+CLIENT_VERSION = "Oracle-PythonSDK/{}".format(__version__)
+OS_VERSION = platform.platform()
+UPLOAD_MANAGER_DEBUG_INFORMATION_LOG = "Client Version: {}, OS Version: {}, See https://docs.oracle.com/iaas/Content/API/Concepts/sdk_troubleshooting.htm for common issues and steps to resolve them. If you need to contact support, or file a GitHub issue, please include this full error message.".format(CLIENT_VERSION, OS_VERSION)
 
 
 class ServiceError(Exception):
@@ -16,16 +21,38 @@ class ServiceError(Exception):
         self.message = message
         self.original_request = kwargs.get('original_request')
         self.request_id = self._get_opc_request_id()
+        self.operation_name = kwargs.get('operation_name')
+        self.api_reference_link = kwargs.get('api_reference_link')
+        self.target_service = kwargs.get('target_service')
+        self.request_endpoint = kwargs.get('request_endpoint')
+        self.client_version = kwargs.get('client_version')
+        self.timestamp = kwargs.get('timestamp')
+
+        api_errors_info = "See https://docs.oracle.com/iaas/Content/API/References/apierrors.htm#apierrors_{}__{}_{} for more information about resolving this error.".format(str(self.status), str(self.status), str(self.code).lower())
+        contact_info = "If you are unable to resolve this {} issue, please contact Oracle support and provide them this full error message.".format(self.target_service)
 
         if not message:
             message = "The service returned error code %s" % self.status
 
-        super(ServiceError, self).__init__({
-            "opc-request-id": self.request_id,
+        error_details = {
+            "target_service": self.target_service,
+            "status": status,
             "code": code,
+            "opc-request-id": self.request_id,
             "message": message,
-            "status": status
-        })
+            "operation_name": self.operation_name,
+            "timestamp": self.timestamp,
+            "client_version": self.client_version,
+            "request_endpoint": self.request_endpoint,
+            "logging_tips": "To get more info on the failing request, refer to https://docs.oracle.com/en-us/iaas/tools/python/latest/logging.html for ways to log the request/response details."
+        }
+
+        if self.api_reference_link:
+            error_details['troubleshooting_tips'] = "{} Also see {} for details on this operation's requirements. {}".format(api_errors_info, self.api_reference_link, contact_info)
+        else:
+            error_details['troubleshooting_tips'] = "{} {}".format(api_errors_info, contact_info)
+
+        super(ServiceError, self).__init__(error_details)
 
     def _get_opc_request_id(self):
         if self.headers.get("opc-request-id"):
@@ -107,6 +134,9 @@ class MultipartUploadError(Exception):
         if 'error_causes_queue' in kwargs:
             while not kwargs['error_causes_queue'].empty():
                 self.error_causes.append(kwargs['error_causes_queue'].get())
+
+        self.message = "MultipartUploadError exception has occured. " + UPLOAD_MANAGER_DEBUG_INFORMATION_LOG
+        super(Exception, self).__init__(self.message)
 
 
 class CompositeOperationError(Exception):

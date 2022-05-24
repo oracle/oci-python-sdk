@@ -15,6 +15,8 @@ API Reference
 * :doc:`Api Gateway <apigateway/client/oci.apigateway.ApiGatewayClient>`
 * :doc:`Deployment <apigateway/client/oci.apigateway.DeploymentClient>`
 * :doc:`Gateway <apigateway/client/oci.apigateway.GatewayClient>`
+* :doc:`Subscribers <apigateway/client/oci.apigateway.SubscribersClient>`
+* :doc:`Usage Plans <apigateway/client/oci.apigateway.UsagePlansClient>`
 * :doc:`Work Requests <mysql/client/oci.mysql.WorkRequestsClient>`
 * :doc:`Config <apm_config/client/oci.apm_config.ConfigClient>`
 * :doc:`Apm Domain <apm_control_plane/client/oci.apm_control_plane.ApmDomainClient>`
@@ -83,6 +85,7 @@ API Reference
 * :doc:`Kms Crypto <key_management/client/oci.key_management.KmsCryptoClient>`
 * :doc:`Kms Management <key_management/client/oci.key_management.KmsManagementClient>`
 * :doc:`Kms Vault <key_management/client/oci.key_management.KmsVaultClient>`
+* :doc:`License Manager <license_manager/client/oci.license_manager.LicenseManagerClient>`
 * :doc:`Limits <limits/client/oci.limits.LimitsClient>`
 * :doc:`Quotas <limits/client/oci.limits.QuotasClient>`
 * :doc:`Load Balancer <load_balancer/client/oci.load_balancer.LoadBalancerClient>`
@@ -107,7 +110,9 @@ API Reference
 * :doc:`Esxi Host <ocvp/client/oci.ocvp.EsxiHostClient>`
 * :doc:`Sddc <ocvp/client/oci.ocvp.SddcClient>`
 * :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
+* :doc:`Management <oda/client/oci.oda.ManagementClient>`
 * :doc:`Oda <oda/client/oci.oda.OdaClient>`
+* :doc:`Odapackage <oda/client/oci.oda.OdapackageClient>`
 * :doc:`Notification Control Plane <ons/client/oci.ons.NotificationControlPlaneClient>`
 * :doc:`Notification Data Plane <ons/client/oci.ons.NotificationDataPlaneClient>`
 * :doc:`Access Requests <operator_access_control/client/oci.operator_access_control.AccessRequestsClient>`
@@ -234,6 +239,7 @@ API Reference
     integration
     jms
     key_management
+    license_manager
     limits
     load_balancer
     log_analytics

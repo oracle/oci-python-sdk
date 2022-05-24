@@ -34,6 +34,10 @@ from .change_api_compartment_details import ChangeApiCompartmentDetails
 from .change_certificate_compartment_details import ChangeCertificateCompartmentDetails
 from .change_deployment_compartment_details import ChangeDeploymentCompartmentDetails
 from .change_gateway_compartment_details import ChangeGatewayCompartmentDetails
+from .change_subscriber_compartment_details import ChangeSubscriberCompartmentDetails
+from .change_usage_plan_compartment_details import ChangeUsagePlanCompartmentDetails
+from .client import Client
+from .client_summary import ClientSummary
 from .content_validation import ContentValidation
 from .cors_policy import CorsPolicy
 from .create_api_details import CreateApiDetails
@@ -41,10 +45,15 @@ from .create_certificate_details import CreateCertificateDetails
 from .create_deployment_details import CreateDeploymentDetails
 from .create_gateway_details import CreateGatewayDetails
 from .create_sdk_details import CreateSdkDetails
+from .create_subscriber_details import CreateSubscriberDetails
+from .create_usage_plan_details import CreateUsagePlanDetails
 from .custom_authentication_policy import CustomAuthenticationPolicy
 from .deployment import Deployment
 from .deployment_collection import DeploymentCollection
 from .deployment_summary import DeploymentSummary
+from .entitlement import Entitlement
+from .entitlement_summary import EntitlementSummary
+from .entitlement_target import EntitlementTarget
 from .execution_log_policy import ExecutionLogPolicy
 from .external_resp_cache import ExternalRespCache
 from .filter_header_policy import FilterHeaderPolicy
@@ -73,6 +82,8 @@ from .public_key_set import PublicKeySet
 from .query_parameter_transformation_policy import QueryParameterTransformationPolicy
 from .query_parameter_validation_item import QueryParameterValidationItem
 from .query_parameter_validation_request_policy import QueryParameterValidationRequestPolicy
+from .quota import Quota
+from .rate_limit import RateLimit
 from .rate_limiting_policy import RateLimitingPolicy
 from .remote_json_web_key_set import RemoteJsonWebKeySet
 from .rename_header_policy import RenameHeaderPolicy
@@ -101,11 +112,20 @@ from .simple_lookup_policy import SimpleLookupPolicy
 from .static_public_key import StaticPublicKey
 from .static_public_key_set import StaticPublicKeySet
 from .stock_response_backend import StockResponseBackend
+from .subscriber import Subscriber
+from .subscriber_collection import SubscriberCollection
+from .subscriber_summary import SubscriberSummary
 from .update_api_details import UpdateApiDetails
 from .update_certificate_details import UpdateCertificateDetails
 from .update_deployment_details import UpdateDeploymentDetails
 from .update_gateway_details import UpdateGatewayDetails
 from .update_sdk_details import UpdateSdkDetails
+from .update_subscriber_details import UpdateSubscriberDetails
+from .update_usage_plan_details import UpdateUsagePlanDetails
+from .usage_plan import UsagePlan
+from .usage_plan_collection import UsagePlanCollection
+from .usage_plan_summary import UsagePlanSummary
+from .usage_plans_policy import UsagePlansPolicy
 from .validation_request_policy import ValidationRequestPolicy
 from .work_request import WorkRequest
 from .work_request_collection import WorkRequestCollection
@@ -148,6 +168,10 @@ apigateway_type_mapping = {
     "ChangeCertificateCompartmentDetails": ChangeCertificateCompartmentDetails,
     "ChangeDeploymentCompartmentDetails": ChangeDeploymentCompartmentDetails,
     "ChangeGatewayCompartmentDetails": ChangeGatewayCompartmentDetails,
+    "ChangeSubscriberCompartmentDetails": ChangeSubscriberCompartmentDetails,
+    "ChangeUsagePlanCompartmentDetails": ChangeUsagePlanCompartmentDetails,
+    "Client": Client,
+    "ClientSummary": ClientSummary,
     "ContentValidation": ContentValidation,
     "CorsPolicy": CorsPolicy,
     "CreateApiDetails": CreateApiDetails,
@@ -155,10 +179,15 @@ apigateway_type_mapping = {
     "CreateDeploymentDetails": CreateDeploymentDetails,
     "CreateGatewayDetails": CreateGatewayDetails,
     "CreateSdkDetails": CreateSdkDetails,
+    "CreateSubscriberDetails": CreateSubscriberDetails,
+    "CreateUsagePlanDetails": CreateUsagePlanDetails,
     "CustomAuthenticationPolicy": CustomAuthenticationPolicy,
     "Deployment": Deployment,
     "DeploymentCollection": DeploymentCollection,
     "DeploymentSummary": DeploymentSummary,
+    "Entitlement": Entitlement,
+    "EntitlementSummary": EntitlementSummary,
+    "EntitlementTarget": EntitlementTarget,
     "ExecutionLogPolicy": ExecutionLogPolicy,
     "ExternalRespCache": ExternalRespCache,
     "FilterHeaderPolicy": FilterHeaderPolicy,
@@ -187,6 +216,8 @@ apigateway_type_mapping = {
     "QueryParameterTransformationPolicy": QueryParameterTransformationPolicy,
     "QueryParameterValidationItem": QueryParameterValidationItem,
     "QueryParameterValidationRequestPolicy": QueryParameterValidationRequestPolicy,
+    "Quota": Quota,
+    "RateLimit": RateLimit,
     "RateLimitingPolicy": RateLimitingPolicy,
     "RemoteJsonWebKeySet": RemoteJsonWebKeySet,
     "RenameHeaderPolicy": RenameHeaderPolicy,
@@ -215,11 +246,20 @@ apigateway_type_mapping = {
     "StaticPublicKey": StaticPublicKey,
     "StaticPublicKeySet": StaticPublicKeySet,
     "StockResponseBackend": StockResponseBackend,
+    "Subscriber": Subscriber,
+    "SubscriberCollection": SubscriberCollection,
+    "SubscriberSummary": SubscriberSummary,
     "UpdateApiDetails": UpdateApiDetails,
     "UpdateCertificateDetails": UpdateCertificateDetails,
     "UpdateDeploymentDetails": UpdateDeploymentDetails,
     "UpdateGatewayDetails": UpdateGatewayDetails,
     "UpdateSdkDetails": UpdateSdkDetails,
+    "UpdateSubscriberDetails": UpdateSubscriberDetails,
+    "UpdateUsagePlanDetails": UpdateUsagePlanDetails,
+    "UsagePlan": UsagePlan,
+    "UsagePlanCollection": UsagePlanCollection,
+    "UsagePlanSummary": UsagePlanSummary,
+    "UsagePlansPolicy": UsagePlansPolicy,
     "ValidationRequestPolicy": ValidationRequestPolicy,
     "WorkRequest": WorkRequest,
     "WorkRequestCollection": WorkRequestCollection,

@@ -151,6 +151,8 @@ class DataFlowClient(object):
         """
         resource_path = "/applications/{applicationId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_application_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Application/ChangeApplicationCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -200,14 +202,20 @@ class DataFlowClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_application_compartment_details)
+                body=change_application_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_application_compartment_details)
+                body=change_application_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_private_endpoint_compartment(self, private_endpoint_id, change_private_endpoint_compartment_details, **kwargs):
         """
@@ -249,6 +257,8 @@ class DataFlowClient(object):
         """
         resource_path = "/privateEndpoints/{privateEndpointId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_private_endpoint_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/PrivateEndpoint/ChangePrivateEndpointCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -295,14 +305,20 @@ class DataFlowClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_private_endpoint_compartment_details)
+                body=change_private_endpoint_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_private_endpoint_compartment_details)
+                body=change_private_endpoint_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_run_compartment(self, run_id, change_run_compartment_details, **kwargs):
         """
@@ -353,6 +369,8 @@ class DataFlowClient(object):
         """
         resource_path = "/runs/{runId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_run_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Run/ChangeRunCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -402,14 +420,20 @@ class DataFlowClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_run_compartment_details)
+                body=change_run_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_run_compartment_details)
+                body=change_run_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_application(self, create_application_details, **kwargs):
         """
@@ -449,6 +473,8 @@ class DataFlowClient(object):
         """
         resource_path = "/applications"
         method = "POST"
+        operation_name = "create_application"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Application/CreateApplication"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -486,14 +512,20 @@ class DataFlowClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_application_details,
-                response_type="Application")
+                response_type="Application",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_application_details,
-                response_type="Application")
+                response_type="Application",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_private_endpoint(self, create_private_endpoint_details, **kwargs):
         """
@@ -533,6 +565,8 @@ class DataFlowClient(object):
         """
         resource_path = "/privateEndpoints"
         method = "POST"
+        operation_name = "create_private_endpoint"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -570,14 +604,20 @@ class DataFlowClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_private_endpoint_details,
-                response_type="PrivateEndpoint")
+                response_type="PrivateEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_private_endpoint_details,
-                response_type="PrivateEndpoint")
+                response_type="PrivateEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_run(self, create_run_details, **kwargs):
         """
@@ -617,6 +657,8 @@ class DataFlowClient(object):
         """
         resource_path = "/runs"
         method = "POST"
+        operation_name = "create_run"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Run/CreateRun"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -654,14 +696,20 @@ class DataFlowClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_run_details,
-                response_type="Run")
+                response_type="Run",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_run_details,
-                response_type="Run")
+                response_type="Run",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_application(self, application_id, **kwargs):
         """
@@ -700,6 +748,8 @@ class DataFlowClient(object):
         """
         resource_path = "/applications/{applicationId}"
         method = "DELETE"
+        operation_name = "delete_application"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Application/DeleteApplication"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -745,13 +795,19 @@ class DataFlowClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_private_endpoint(self, private_endpoint_id, **kwargs):
         """
@@ -790,6 +846,8 @@ class DataFlowClient(object):
         """
         resource_path = "/privateEndpoints/{privateEndpointId}"
         method = "DELETE"
+        operation_name = "delete_private_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/PrivateEndpoint/DeletePrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -835,13 +893,19 @@ class DataFlowClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_run(self, run_id, **kwargs):
         """
@@ -881,6 +945,8 @@ class DataFlowClient(object):
         """
         resource_path = "/runs/{runId}"
         method = "DELETE"
+        operation_name = "delete_run"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Run/DeleteRun"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -926,13 +992,19 @@ class DataFlowClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_application(self, application_id, **kwargs):
         """
@@ -966,6 +1038,8 @@ class DataFlowClient(object):
         """
         resource_path = "/applications/{applicationId}"
         method = "GET"
+        operation_name = "get_application"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Application/GetApplication"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1010,14 +1084,20 @@ class DataFlowClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Application")
+                response_type="Application",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Application")
+                response_type="Application",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_private_endpoint(self, private_endpoint_id, **kwargs):
         """
@@ -1051,6 +1131,8 @@ class DataFlowClient(object):
         """
         resource_path = "/privateEndpoints/{privateEndpointId}"
         method = "GET"
+        operation_name = "get_private_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/PrivateEndpoint/GetPrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1095,14 +1177,20 @@ class DataFlowClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PrivateEndpoint")
+                response_type="PrivateEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PrivateEndpoint")
+                response_type="PrivateEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_run(self, run_id, **kwargs):
         """
@@ -1136,6 +1224,8 @@ class DataFlowClient(object):
         """
         resource_path = "/runs/{runId}"
         method = "GET"
+        operation_name = "get_run"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Run/GetRun"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1180,14 +1270,20 @@ class DataFlowClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Run")
+                response_type="Run",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Run")
+                response_type="Run",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_run_log(self, run_id, name, **kwargs):
         """
@@ -1224,6 +1320,8 @@ class DataFlowClient(object):
         """
         resource_path = "/runs/{runId}/logs/{name}"
         method = "GET"
+        operation_name = "get_run_log"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Run/GetRunLog"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1269,14 +1367,20 @@ class DataFlowClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1310,6 +1414,8 @@ class DataFlowClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1354,14 +1460,20 @@ class DataFlowClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_applications(self, compartment_id, **kwargs):
         """
@@ -1424,6 +1536,8 @@ class DataFlowClient(object):
         """
         resource_path = "/applications"
         method = "GET"
+        operation_name = "list_applications"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/ApplicationSummary/ListApplications"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1493,14 +1607,20 @@ class DataFlowClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ApplicationSummary]")
+                response_type="list[ApplicationSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ApplicationSummary]")
+                response_type="list[ApplicationSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_private_endpoints(self, compartment_id, **kwargs):
         """
@@ -1565,6 +1685,8 @@ class DataFlowClient(object):
         """
         resource_path = "/privateEndpoints"
         method = "GET"
+        operation_name = "list_private_endpoints"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/PrivateEndpoint/ListPrivateEndpoints"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1641,14 +1763,20 @@ class DataFlowClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PrivateEndpointCollection")
+                response_type="PrivateEndpointCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PrivateEndpointCollection")
+                response_type="PrivateEndpointCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_run_logs(self, run_id, **kwargs):
         """
@@ -1689,6 +1817,8 @@ class DataFlowClient(object):
         """
         resource_path = "/runs/{runId}/logs"
         method = "GET"
+        operation_name = "list_run_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/RunLogSummary/ListRunLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1742,7 +1872,10 @@ class DataFlowClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[RunLogSummary]")
+                response_type="list[RunLogSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1750,7 +1883,10 @@ class DataFlowClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[RunLogSummary]")
+                response_type="list[RunLogSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_runs(self, compartment_id, **kwargs):
         """
@@ -1821,6 +1957,8 @@ class DataFlowClient(object):
         """
         resource_path = "/runs"
         method = "GET"
+        operation_name = "list_runs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/RunSummary/ListRuns"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1901,14 +2039,20 @@ class DataFlowClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[RunSummary]")
+                response_type="list[RunSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[RunSummary]")
+                response_type="list[RunSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -1949,6 +2093,8 @@ class DataFlowClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2002,7 +2148,10 @@ class DataFlowClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2010,7 +2159,10 @@ class DataFlowClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -2051,6 +2203,8 @@ class DataFlowClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/WorkRequestLog/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2104,7 +2258,10 @@ class DataFlowClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogCollection")
+                response_type="WorkRequestLogCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2112,7 +2269,10 @@ class DataFlowClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogCollection")
+                response_type="WorkRequestLogCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -2153,6 +2313,8 @@ class DataFlowClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2196,14 +2358,20 @@ class DataFlowClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestCollection")
+                response_type="WorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestCollection")
+                response_type="WorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_application(self, update_application_details, application_id, **kwargs):
         """
@@ -2245,6 +2413,8 @@ class DataFlowClient(object):
         """
         resource_path = "/applications/{applicationId}"
         method = "PUT"
+        operation_name = "update_application"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Application/UpdateApplication"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2292,7 +2462,10 @@ class DataFlowClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_application_details,
-                response_type="Application")
+                response_type="Application",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2300,7 +2473,10 @@ class DataFlowClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_application_details,
-                response_type="Application")
+                response_type="Application",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_private_endpoint(self, update_private_endpoint_details, private_endpoint_id, **kwargs):
         """
@@ -2344,6 +2520,8 @@ class DataFlowClient(object):
         """
         resource_path = "/privateEndpoints/{privateEndpointId}"
         method = "PUT"
+        operation_name = "update_private_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/PrivateEndpoint/UpdatePrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2390,14 +2568,20 @@ class DataFlowClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_private_endpoint_details)
+                body=update_private_endpoint_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_private_endpoint_details)
+                body=update_private_endpoint_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_run(self, update_run_details, run_id, **kwargs):
         """
@@ -2439,6 +2623,8 @@ class DataFlowClient(object):
         """
         resource_path = "/runs/{runId}"
         method = "PUT"
+        operation_name = "update_run"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Run/UpdateRun"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2486,7 +2672,10 @@ class DataFlowClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_run_details,
-                response_type="Run")
+                response_type="Run",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2494,4 +2683,7 @@ class DataFlowClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_run_details,
-                response_type="Run")
+                response_type="Run",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

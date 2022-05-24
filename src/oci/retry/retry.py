@@ -280,18 +280,41 @@ class ExponentialBackoffRetryStrategyBase(object):
         :return: the result of calling func_ref
         """
         should_retry = True
+        max_attempt = None
+        log_info = {'logger': None, 'debug': False}
         attempt = 0
         start_time = time.time()
         _should_record_body_position_for_retry = should_record_body_position_for_retry(func_ref, **func_kwargs)
         _is_body_retryable = True  # This will be always True for no body and bodies which are non-rewindable
+        checkers = self.checkers.checkers
+        for checker in checkers:
+            if type(checker) is retry_checkers.LimitBasedRetryChecker:
+                max_attempt = checker.max_attempts
+
+        if getattr(func_ref, '__self__', None):
+            base_client = func_ref.__self__
+            log_info['logger'] = getattr(base_client, 'logger', None)
+            log_info['debug'] = getattr(base_client, 'debug', False)
+
+        if log_info["logger"] and log_info["debug"]:
+            log_info["logger"].debug("Retry policy to use: MaximumNumberAttempts={}, MaxSleepBetween={}, ExponentialBackoffBase={}".format(max_attempt, self.max_wait_between_calls_seconds, self.exponent_growth_factor))
+
         while should_retry:
             try:
                 # File-like body should be treated differently while retrying
                 if _should_record_body_position_for_retry:
                     # Attempt to save current position for file-like body
                     _is_body_retryable, body_position = record_body_position_for_rewind(func_kwargs.get('body'))
-                return func_ref(*func_args, **func_kwargs)
+                response = func_ref(*func_args, **func_kwargs)
+                time_elapsed = time.time() - start_time
+
+                if log_info["logger"] and log_info["debug"]:
+                    log_info["logger"].debug("Total Latency for this API call is {}".format(time_elapsed))
+
+                return response
             except Exception as e:
+                status_code = getattr(e, 'status', None)
+                error_code = getattr(e, 'code', None)
                 attempt += 1
                 if _is_body_retryable and self.checkers.should_retry(exception=e, current_attempt=attempt,
                                                                      total_time_elapsed=(time.time() - start_time),
@@ -304,6 +327,9 @@ class ExponentialBackoffRetryStrategyBase(object):
                         # If the body should have been rewound but we were not able to, then raise
                         if not rewind_body(func_kwargs.get('body'), body_position):
                             raise
+
+                    if log_info["logger"] and log_info["debug"]:
+                        log_info["logger"].debug("Retry attempt: {}, Http Status Code: {}, Error Code: {}".format(attempt, status_code, error_code))
                 else:
                     raise
 

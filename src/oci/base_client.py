@@ -42,6 +42,7 @@ USER_INFO = "Oracle-PythonSDK/{}".format(__version__)
 
 DICT_VALUE_TYPE_REGEX = re.compile(r'dict\(str, (.+?)\)$')  # noqa: W605
 LIST_ITEM_TYPE_REGEX = re.compile(r'list\[(.+?)\]$')  # noqa: W605
+TROUBLESHOOT_URL = 'https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_troubleshooting.htm'
 
 # Expect header is enabled by default
 enable_expect_header = True
@@ -385,7 +386,9 @@ class BaseClient(object):
                  body=None,
                  response_type=None,
                  enforce_content_headers=True,
-                 allow_control_chars=None):
+                 allow_control_chars=None,
+                 operation_name=None,
+                 api_reference_link=None):
         """
         Makes the HTTP request and return the deserialized data.
 
@@ -399,6 +402,8 @@ class BaseClient(object):
         :param enforce_content_headers: (optional) Whether content headers should be added for
             PUT and POST requests when not present.  Defaults to True.
         :param allow_control_chars: (optional) Boolean that allows whether or not the response object can contain control chars
+        :param operation_name: (optional) String that represents the operational name of the API call.
+        :param api_reference_link: (optional) String that represents the link to the API reference page for this operation.
         :return: A Response object, or throw in the case of an error.
 
         """
@@ -460,7 +465,7 @@ class BaseClient(object):
             call_attempts = 0
             while call_attempts < 2:
                 try:
-                    return self.request(request, allow_control_chars)
+                    return self.request(request, allow_control_chars, operation_name, api_reference_link)
                 except exceptions.ServiceError as e:
                     call_attempts += 1
                     if e.status == 401 and call_attempts < 2:
@@ -469,7 +474,7 @@ class BaseClient(object):
                         raise
         else:
             start = timer()
-            response = self.request(request, allow_control_chars)
+            response = self.request(request, allow_control_chars, operation_name, api_reference_link)
             end = timer()
             self.logger.debug('time elapsed for request: {}'.format(str(end - start)))
             return response
@@ -548,7 +553,7 @@ class BaseClient(object):
 
         return processed_query_params
 
-    def request(self, request, allow_control_chars=None):
+    def request(self, request, allow_control_chars=None, operation_name=None, api_reference_link=None):
         self.logger.info(utc_now() + "Request: %s %s" % (str(request.method), request.url))
 
         initial_circuit_breaker_state = None
@@ -582,8 +587,14 @@ class BaseClient(object):
             if response and hasattr(response, 'elapsed'):
                 self.logger.debug(utc_now() + "time elapsed in response: " + str(response.elapsed))
         except requests.exceptions.ConnectTimeout as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ("Request Endpoint: " + request.method + " " + request.url + " See {} for help troubleshooting this error, or contact support and provide this full error message.".format(TROUBLESHOOT_URL),)
             raise exceptions.ConnectTimeout(e)
         except requests.exceptions.RequestException as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ("Request Endpoint: " + request.method + " " + request.url + " See {} for help troubleshooting this error, or contact support and provide this full error message.".format(TROUBLESHOOT_URL),)
             raise exceptions.RequestException(e)
 
         response_type = request.response_type
@@ -591,14 +602,18 @@ class BaseClient(object):
 
         # Raise Service Error or Transient Service Error
         if not 200 <= response.status_code <= 299:
+            target_service = self.service
+            request_endpoint = request.method + " " + request.url
+            client_version = USER_INFO
+            timestamp = datetime.now().isoformat()
             service_code, message = self.get_deserialized_service_code_and_message(response, allow_control_chars)
             if isinstance(self.circuit_breaker_strategy, CircuitBreakerStrategy) and self.circuit_breaker_strategy.is_transient_error(response.status_code, service_code):
                 new_circuit_breaker_state = CircuitBreakerMonitor.get(self.circuit_breaker_name).state
                 if initial_circuit_breaker_state != new_circuit_breaker_state:
                     self.logger.warning("Circuit Breaker state changed from {} to {}".format(initial_circuit_breaker_state, new_circuit_breaker_state))
-                self.raise_transient_service_error(request, response, service_code, message)
+                self.raise_transient_service_error(request, response, service_code, message, operation_name, api_reference_link, target_service, request_endpoint, client_version, timestamp)
             else:
-                self.raise_service_error(request, response, service_code, message)
+                self.raise_service_error(request, response, service_code, message, operation_name, api_reference_link, target_service, request_endpoint, client_version, timestamp)
 
         if stream:
             # Don't unpack a streaming response body
@@ -754,21 +769,33 @@ class BaseClient(object):
 
         return result
 
-    def raise_service_error(self, request, response, service_code, message):
+    def raise_service_error(self, request, response, service_code, message, operation_name=None, api_reference_link=None, target_service=None, request_endpoint=None, client_version=None, timestamp=None):
         raise exceptions.ServiceError(
             response.status_code,
             service_code,
             response.headers,
             message,
-            original_request=request)
+            original_request=request,
+            operation_name=operation_name,
+            api_reference_link=api_reference_link,
+            target_service=target_service,
+            request_endpoint=request_endpoint,
+            client_version=client_version,
+            timestamp=timestamp)
 
-    def raise_transient_service_error(self, request, response, service_code, message):
+    def raise_transient_service_error(self, request, response, service_code, message, operation_name=None, api_reference_link=None, target_service=None, request_endpoint=None, client_version=None, timestamp=None):
         raise exceptions.TransientServiceError(
             response.status_code,
             service_code,
             response.headers,
             message,
-            original_request=request)
+            original_request=request,
+            operation_name=operation_name,
+            api_reference_link=api_reference_link,
+            target_service=target_service,
+            request_endpoint=request_endpoint,
+            client_version=client_version,
+            timestamp=timestamp)
 
     def get_deserialized_service_code_and_message(self, response, allow_control_chars=None):
         deserialized_data = self.deserialize_response_data(response.content, 'object', allow_control_chars)

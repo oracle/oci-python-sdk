@@ -148,6 +148,8 @@ class ComputeInstanceAgentClient(object):
         """
         resource_path = "/instanceAgentCommands/{instanceAgentCommandId}"
         method = "DELETE"
+        operation_name = "cancel_instance_agent_command"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommand/CancelInstanceAgentCommand"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -193,13 +195,19 @@ class ComputeInstanceAgentClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_instance_agent_command(self, create_instance_agent_command_details, **kwargs):
         """
@@ -246,6 +254,8 @@ class ComputeInstanceAgentClient(object):
         """
         resource_path = "/instanceAgentCommands"
         method = "POST"
+        operation_name = "create_instance_agent_command"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommand/CreateInstanceAgentCommand"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -283,14 +293,20 @@ class ComputeInstanceAgentClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_instance_agent_command_details,
-                response_type="InstanceAgentCommand")
+                response_type="InstanceAgentCommand",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_instance_agent_command_details,
-                response_type="InstanceAgentCommand")
+                response_type="InstanceAgentCommand",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_instance_agent_command(self, instance_agent_command_id, **kwargs):
         """
@@ -326,6 +342,8 @@ class ComputeInstanceAgentClient(object):
         """
         resource_path = "/instanceAgentCommands/{instanceAgentCommandId}"
         method = "GET"
+        operation_name = "get_instance_agent_command"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommand/GetInstanceAgentCommand"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -370,14 +388,20 @@ class ComputeInstanceAgentClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="InstanceAgentCommand")
+                response_type="InstanceAgentCommand",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="InstanceAgentCommand")
+                response_type="InstanceAgentCommand",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_instance_agent_command_execution(self, instance_agent_command_id, instance_id, **kwargs):
         """
@@ -418,6 +442,8 @@ class ComputeInstanceAgentClient(object):
         """
         resource_path = "/instanceAgentCommands/{instanceAgentCommandId}/status"
         method = "GET"
+        operation_name = "get_instance_agent_command_execution"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommandExecution/GetInstanceAgentCommandExecution"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -468,7 +494,10 @@ class ComputeInstanceAgentClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="InstanceAgentCommandExecution")
+                response_type="InstanceAgentCommandExecution",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -476,7 +505,10 @@ class ComputeInstanceAgentClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="InstanceAgentCommandExecution")
+                response_type="InstanceAgentCommandExecution",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_instance_agent_command_executions(self, compartment_id, instance_id, **kwargs):
         """
@@ -554,6 +586,8 @@ class ComputeInstanceAgentClient(object):
         """
         resource_path = "/instanceAgentCommandExecutions"
         method = "GET"
+        operation_name = "list_instance_agent_command_executions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommandExecutionSummary/ListInstanceAgentCommandExecutions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -625,14 +659,20 @@ class ComputeInstanceAgentClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[InstanceAgentCommandExecutionSummary]")
+                response_type="list[InstanceAgentCommandExecutionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[InstanceAgentCommandExecutionSummary]")
+                response_type="list[InstanceAgentCommandExecutionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_instance_agent_commands(self, compartment_id, **kwargs):
         """
@@ -699,6 +739,8 @@ class ComputeInstanceAgentClient(object):
         """
         resource_path = "/instanceAgentCommands"
         method = "GET"
+        operation_name = "list_instance_agent_commands"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/InstanceAgentCommandSummary/ListInstanceAgentCommands"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -760,11 +802,17 @@ class ComputeInstanceAgentClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[InstanceAgentCommandSummary]")
+                response_type="list[InstanceAgentCommandSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[InstanceAgentCommandSummary]")
+                response_type="list[InstanceAgentCommandSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

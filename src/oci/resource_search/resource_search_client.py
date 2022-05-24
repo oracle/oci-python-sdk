@@ -136,6 +136,8 @@ class ResourceSearchClient(object):
         """
         resource_path = "/resourceTypes/{name}"
         method = "GET"
+        operation_name = "get_resource_type"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/search/20180409/ResourceType/GetResourceType"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -182,14 +184,20 @@ class ResourceSearchClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ResourceType")
+                response_type="ResourceType",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ResourceType")
+                response_type="ResourceType",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_resource_types(self, **kwargs):
         """
@@ -226,6 +234,8 @@ class ResourceSearchClient(object):
         """
         resource_path = "/resourceTypes"
         method = "GET"
+        operation_name = "list_resource_types"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/search/20180409/ResourceType/ListResourceTypes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -270,14 +280,20 @@ class ResourceSearchClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ResourceType]")
+                response_type="list[ResourceType]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ResourceType]")
+                response_type="list[ResourceType]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def search_resources(self, search_details, **kwargs):
         """
@@ -322,6 +338,8 @@ class ResourceSearchClient(object):
         """
         resource_path = "/resources"
         method = "POST"
+        operation_name = "search_resources"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/search/20180409/ResourceSummary/SearchResources"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -369,7 +387,10 @@ class ResourceSearchClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=search_details,
-                response_type="ResourceSummaryCollection")
+                response_type="ResourceSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -377,4 +398,7 @@ class ResourceSearchClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=search_details,
-                response_type="ResourceSummaryCollection")
+                response_type="ResourceSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

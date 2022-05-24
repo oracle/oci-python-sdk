@@ -138,6 +138,8 @@ class AnnouncementClient(object):
         """
         resource_path = "/announcements/{announcementId}"
         method = "GET"
+        operation_name = "get_announcement"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/Announcement/GetAnnouncement"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -182,14 +184,20 @@ class AnnouncementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Announcement")
+                response_type="Announcement",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Announcement")
+                response_type="Announcement",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_announcement_user_status(self, announcement_id, **kwargs):
         """
@@ -225,6 +233,8 @@ class AnnouncementClient(object):
         """
         resource_path = "/announcements/{announcementId}/userStatus"
         method = "GET"
+        operation_name = "get_announcement_user_status"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementUserStatusDetails/GetAnnouncementUserStatus"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -269,14 +279,20 @@ class AnnouncementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AnnouncementUserStatusDetails")
+                response_type="AnnouncementUserStatusDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AnnouncementUserStatusDetails")
+                response_type="AnnouncementUserStatusDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_announcements(self, compartment_id, **kwargs):
         """
@@ -359,6 +375,8 @@ class AnnouncementClient(object):
         """
         resource_path = "/announcements"
         method = "GET"
+        operation_name = "list_announcements"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsCollection/ListAnnouncements"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -452,14 +470,20 @@ class AnnouncementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AnnouncementsCollection")
+                response_type="AnnouncementsCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AnnouncementsCollection")
+                response_type="AnnouncementsCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_announcement_user_status(self, announcement_id, status_details, **kwargs):
         """
@@ -501,6 +525,8 @@ class AnnouncementClient(object):
         """
         resource_path = "/announcements/{announcementId}/userStatus"
         method = "PUT"
+        operation_name = "update_announcement_user_status"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementUserStatusDetails/UpdateAnnouncementUserStatus"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -548,7 +574,10 @@ class AnnouncementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=status_details,
-                response_type="AnnouncementUserStatusDetails")
+                response_type="AnnouncementUserStatusDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -556,4 +585,7 @@ class AnnouncementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=status_details,
-                response_type="AnnouncementUserStatusDetails")
+                response_type="AnnouncementUserStatusDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

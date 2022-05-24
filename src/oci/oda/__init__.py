@@ -5,8 +5,12 @@
 from __future__ import absolute_import
 
 
+from .management_client import ManagementClient
+from .management_client_composite_operations import ManagementClientCompositeOperations
 from .oda_client import OdaClient
 from .oda_client_composite_operations import OdaClientCompositeOperations
+from .odapackage_client import OdapackageClient
+from .odapackage_client_composite_operations import OdapackageClientCompositeOperations
 from . import models
 
-__all__ = ["OdaClient", "OdaClientCompositeOperations", "models"]
+__all__ = ["ManagementClient", "ManagementClientCompositeOperations", "OdaClient", "OdaClientCompositeOperations", "OdapackageClient", "OdapackageClientCompositeOperations", "models"]

@@ -145,6 +145,8 @@ class BudgetClient(object):
         """
         resource_path = "/budgets/{budgetId}/alertRules"
         method = "POST"
+        operation_name = "create_alert_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/AlertRule/CreateAlertRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -193,7 +195,10 @@ class BudgetClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_alert_rule_details,
-                response_type="AlertRule")
+                response_type="AlertRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -201,7 +206,10 @@ class BudgetClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_alert_rule_details,
-                response_type="AlertRule")
+                response_type="AlertRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_budget(self, create_budget_details, **kwargs):
         """
@@ -241,6 +249,8 @@ class BudgetClient(object):
         """
         resource_path = "/budgets"
         method = "POST"
+        operation_name = "create_budget"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/Budget/CreateBudget"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -278,14 +288,20 @@ class BudgetClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_budget_details,
-                response_type="Budget")
+                response_type="Budget",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_budget_details,
-                response_type="Budget")
+                response_type="Budget",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_alert_rule(self, budget_id, alert_rule_id, **kwargs):
         """
@@ -328,6 +344,8 @@ class BudgetClient(object):
         """
         resource_path = "/budgets/{budgetId}/alertRules/{alertRuleId}"
         method = "DELETE"
+        operation_name = "delete_alert_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/AlertRule/DeleteAlertRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -374,13 +392,19 @@ class BudgetClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_budget(self, budget_id, **kwargs):
         """
@@ -420,6 +444,8 @@ class BudgetClient(object):
         """
         resource_path = "/budgets/{budgetId}"
         method = "DELETE"
+        operation_name = "delete_budget"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/Budget/DeleteBudget"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -465,13 +491,19 @@ class BudgetClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_alert_rule(self, budget_id, alert_rule_id, **kwargs):
         """
@@ -507,6 +539,8 @@ class BudgetClient(object):
         """
         resource_path = "/budgets/{budgetId}/alertRules/{alertRuleId}"
         method = "GET"
+        operation_name = "get_alert_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/AlertRule/GetAlertRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -552,14 +586,20 @@ class BudgetClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AlertRule")
+                response_type="AlertRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AlertRule")
+                response_type="AlertRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_budget(self, budget_id, **kwargs):
         """
@@ -592,6 +632,8 @@ class BudgetClient(object):
         """
         resource_path = "/budgets/{budgetId}"
         method = "GET"
+        operation_name = "get_budget"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/Budget/GetBudget"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -636,14 +678,20 @@ class BudgetClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Budget")
+                response_type="Budget",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Budget")
+                response_type="Budget",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_alert_rules(self, budget_id, **kwargs):
         """
@@ -704,6 +752,8 @@ class BudgetClient(object):
         """
         resource_path = "/budgets/{budgetId}/alertRules"
         method = "GET"
+        operation_name = "list_alert_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/AlertRuleSummary/ListAlertRules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -786,7 +836,10 @@ class BudgetClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AlertRuleSummary]")
+                response_type="list[AlertRuleSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -794,7 +847,10 @@ class BudgetClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AlertRuleSummary]")
+                response_type="list[AlertRuleSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_budgets(self, compartment_id, **kwargs):
         """
@@ -870,6 +926,8 @@ class BudgetClient(object):
         """
         resource_path = "/budgets"
         method = "GET"
+        operation_name = "list_budgets"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/BudgetSummary/ListBudgets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -951,14 +1009,20 @@ class BudgetClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[BudgetSummary]")
+                response_type="list[BudgetSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[BudgetSummary]")
+                response_type="list[BudgetSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_alert_rule(self, budget_id, alert_rule_id, update_alert_rule_details, **kwargs):
         """
@@ -1004,6 +1068,8 @@ class BudgetClient(object):
         """
         resource_path = "/budgets/{budgetId}/alertRules/{alertRuleId}"
         method = "PUT"
+        operation_name = "update_alert_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/AlertRule/UpdateAlertRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1052,7 +1118,10 @@ class BudgetClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_alert_rule_details,
-                response_type="AlertRule")
+                response_type="AlertRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1060,7 +1129,10 @@ class BudgetClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_alert_rule_details,
-                response_type="AlertRule")
+                response_type="AlertRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_budget(self, budget_id, update_budget_details, **kwargs):
         """
@@ -1103,6 +1175,8 @@ class BudgetClient(object):
         """
         resource_path = "/budgets/{budgetId}"
         method = "PUT"
+        operation_name = "update_budget"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/budgets/20190111/Budget/UpdateBudget"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1150,7 +1224,10 @@ class BudgetClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_budget_details,
-                response_type="Budget")
+                response_type="Budget",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1158,4 +1235,7 @@ class BudgetClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_budget_details,
-                response_type="Budget")
+                response_type="Budget",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

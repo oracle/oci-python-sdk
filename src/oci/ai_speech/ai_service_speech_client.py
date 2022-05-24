@@ -149,6 +149,8 @@ class AIServiceSpeechClient(object):
         """
         resource_path = "/transcriptionJobs/{transcriptionJobId}/actions/cancel"
         method = "POST"
+        operation_name = "cancel_transcription_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/CancelTranscriptionJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -197,13 +199,19 @@ class AIServiceSpeechClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def cancel_transcription_task(self, transcription_job_id, transcription_task_id, **kwargs):
         """
@@ -253,6 +261,8 @@ class AIServiceSpeechClient(object):
         """
         resource_path = "/transcriptionJobs/{transcriptionJobId}/transcriptionTasks/{transcriptionTaskId}/actions/cancel"
         method = "POST"
+        operation_name = "cancel_transcription_task"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionTask/CancelTranscriptionTask"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -302,13 +312,19 @@ class AIServiceSpeechClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_transcription_job_compartment(self, transcription_job_id, change_transcription_job_compartment_details, **kwargs):
         """
@@ -358,6 +374,8 @@ class AIServiceSpeechClient(object):
         """
         resource_path = "/transcriptionJobs/{transcriptionJobId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_transcription_job_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/ChangeTranscriptionJobCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -407,14 +425,20 @@ class AIServiceSpeechClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_transcription_job_compartment_details)
+                body=change_transcription_job_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_transcription_job_compartment_details)
+                body=change_transcription_job_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_transcription_job(self, create_transcription_job_details, **kwargs):
         """
@@ -454,6 +478,8 @@ class AIServiceSpeechClient(object):
         """
         resource_path = "/transcriptionJobs"
         method = "POST"
+        operation_name = "create_transcription_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/CreateTranscriptionJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -491,14 +517,20 @@ class AIServiceSpeechClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_transcription_job_details,
-                response_type="TranscriptionJob")
+                response_type="TranscriptionJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_transcription_job_details,
-                response_type="TranscriptionJob")
+                response_type="TranscriptionJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_transcription_job(self, transcription_job_id, **kwargs):
         """
@@ -531,6 +563,8 @@ class AIServiceSpeechClient(object):
         """
         resource_path = "/transcriptionJobs/{transcriptionJobId}"
         method = "GET"
+        operation_name = "get_transcription_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/GetTranscriptionJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -575,14 +609,20 @@ class AIServiceSpeechClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TranscriptionJob")
+                response_type="TranscriptionJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TranscriptionJob")
+                response_type="TranscriptionJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_transcription_task(self, transcription_job_id, transcription_task_id, **kwargs):
         """
@@ -618,6 +658,8 @@ class AIServiceSpeechClient(object):
         """
         resource_path = "/transcriptionJobs/{transcriptionJobId}/transcriptionTasks/{transcriptionTaskId}"
         method = "GET"
+        operation_name = "get_transcription_task"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionTask/GetTranscriptionTask"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -663,14 +705,20 @@ class AIServiceSpeechClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TranscriptionTask")
+                response_type="TranscriptionTask",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TranscriptionTask")
+                response_type="TranscriptionTask",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_transcription_jobs(self, **kwargs):
         """
@@ -730,6 +778,8 @@ class AIServiceSpeechClient(object):
         """
         resource_path = "/transcriptionJobs"
         method = "GET"
+        operation_name = "list_transcription_jobs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/ListTranscriptionJobs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -805,14 +855,20 @@ class AIServiceSpeechClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TranscriptionJobCollection")
+                response_type="TranscriptionJobCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TranscriptionJobCollection")
+                response_type="TranscriptionJobCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_transcription_tasks(self, transcription_job_id, **kwargs):
         """
@@ -872,6 +928,8 @@ class AIServiceSpeechClient(object):
         """
         resource_path = "/transcriptionJobs/{transcriptionJobId}/transcriptionTasks"
         method = "GET"
+        operation_name = "list_transcription_tasks"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionTask/ListTranscriptionTasks"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -956,7 +1014,10 @@ class AIServiceSpeechClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TranscriptionTaskCollection")
+                response_type="TranscriptionTaskCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -964,7 +1025,10 @@ class AIServiceSpeechClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TranscriptionTaskCollection")
+                response_type="TranscriptionTaskCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_transcription_job(self, transcription_job_id, update_transcription_job_details, **kwargs):
         """
@@ -1007,6 +1071,8 @@ class AIServiceSpeechClient(object):
         """
         resource_path = "/transcriptionJobs/{transcriptionJobId}"
         method = "PUT"
+        operation_name = "update_transcription_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/UpdateTranscriptionJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1054,7 +1120,10 @@ class AIServiceSpeechClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_transcription_job_details,
-                response_type="TranscriptionJob")
+                response_type="TranscriptionJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1062,4 +1131,7 @@ class AIServiceSpeechClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_transcription_job_details,
-                response_type="TranscriptionJob")
+                response_type="TranscriptionJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

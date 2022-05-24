@@ -129,6 +129,8 @@ class ShippingVendorsClient(object):
         """
         resource_path = "/shippingVendors"
         method = "GET"
+        operation_name = "list_shipping_vendors"
+        api_reference_link = ""
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -155,10 +157,16 @@ class ShippingVendorsClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                response_type="ShippingVendors")
+                response_type="ShippingVendors",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                response_type="ShippingVendors")
+                response_type="ShippingVendors",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

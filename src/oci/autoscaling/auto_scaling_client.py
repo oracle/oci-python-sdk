@@ -163,6 +163,8 @@ class AutoScalingClient(object):
         """
         resource_path = "/autoScalingConfigurations/{autoScalingConfigurationId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_auto_scaling_configuration_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingConfiguration/ChangeAutoScalingConfigurationCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -212,14 +214,20 @@ class AutoScalingClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_compartment_details)
+                body=change_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_compartment_details)
+                body=change_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_auto_scaling_configuration(self, create_auto_scaling_configuration_details, **kwargs):
         """
@@ -258,6 +266,8 @@ class AutoScalingClient(object):
         """
         resource_path = "/autoScalingConfigurations"
         method = "POST"
+        operation_name = "create_auto_scaling_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingConfiguration/CreateAutoScalingConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -295,14 +305,20 @@ class AutoScalingClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_auto_scaling_configuration_details,
-                response_type="AutoScalingConfiguration")
+                response_type="AutoScalingConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_auto_scaling_configuration_details,
-                response_type="AutoScalingConfiguration")
+                response_type="AutoScalingConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_auto_scaling_policy(self, auto_scaling_configuration_id, create_auto_scaling_policy_details, **kwargs):
         """
@@ -354,6 +370,8 @@ class AutoScalingClient(object):
         """
         resource_path = "/autoScalingConfigurations/{autoScalingConfigurationId}/policies"
         method = "POST"
+        operation_name = "create_auto_scaling_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingPolicy/CreateAutoScalingPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -402,7 +420,10 @@ class AutoScalingClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_auto_scaling_policy_details,
-                response_type="AutoScalingPolicy")
+                response_type="AutoScalingPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -410,7 +431,10 @@ class AutoScalingClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_auto_scaling_policy_details,
-                response_type="AutoScalingPolicy")
+                response_type="AutoScalingPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_auto_scaling_configuration(self, auto_scaling_configuration_id, **kwargs):
         """
@@ -449,6 +473,8 @@ class AutoScalingClient(object):
         """
         resource_path = "/autoScalingConfigurations/{autoScalingConfigurationId}"
         method = "DELETE"
+        operation_name = "delete_auto_scaling_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingConfiguration/DeleteAutoScalingConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -494,13 +520,19 @@ class AutoScalingClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_auto_scaling_policy(self, auto_scaling_configuration_id, auto_scaling_policy_id, **kwargs):
         """
@@ -542,6 +574,8 @@ class AutoScalingClient(object):
         """
         resource_path = "/autoScalingConfigurations/{autoScalingConfigurationId}/policies/{autoScalingPolicyId}"
         method = "DELETE"
+        operation_name = "delete_auto_scaling_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingPolicy/DeleteAutoScalingPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -588,13 +622,19 @@ class AutoScalingClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_auto_scaling_configuration(self, auto_scaling_configuration_id, **kwargs):
         """
@@ -628,6 +668,8 @@ class AutoScalingClient(object):
         """
         resource_path = "/autoScalingConfigurations/{autoScalingConfigurationId}"
         method = "GET"
+        operation_name = "get_auto_scaling_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingConfiguration/GetAutoScalingConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -672,14 +714,20 @@ class AutoScalingClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutoScalingConfiguration")
+                response_type="AutoScalingConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutoScalingConfiguration")
+                response_type="AutoScalingConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_auto_scaling_policy(self, auto_scaling_configuration_id, auto_scaling_policy_id, **kwargs):
         """
@@ -716,6 +764,8 @@ class AutoScalingClient(object):
         """
         resource_path = "/autoScalingConfigurations/{autoScalingConfigurationId}/policies/{autoScalingPolicyId}"
         method = "GET"
+        operation_name = "get_auto_scaling_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingPolicy/GetAutoScalingPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -761,14 +811,20 @@ class AutoScalingClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutoScalingPolicy")
+                response_type="AutoScalingPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutoScalingPolicy")
+                response_type="AutoScalingPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_auto_scaling_configurations(self, compartment_id, **kwargs):
         """
@@ -832,6 +888,8 @@ class AutoScalingClient(object):
         """
         resource_path = "/autoScalingConfigurations"
         method = "GET"
+        operation_name = "list_auto_scaling_configurations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingConfigurationSummary/ListAutoScalingConfigurations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -895,14 +953,20 @@ class AutoScalingClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AutoScalingConfigurationSummary]")
+                response_type="list[AutoScalingConfigurationSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AutoScalingConfigurationSummary]")
+                response_type="list[AutoScalingConfigurationSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_auto_scaling_policies(self, auto_scaling_configuration_id, **kwargs):
         """
@@ -964,6 +1028,8 @@ class AutoScalingClient(object):
         """
         resource_path = "/autoScalingConfigurations/{autoScalingConfigurationId}/policies"
         method = "GET"
+        operation_name = "list_auto_scaling_policies"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingPolicySummary/ListAutoScalingPolicies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1037,7 +1103,10 @@ class AutoScalingClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AutoScalingPolicySummary]")
+                response_type="list[AutoScalingPolicySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1045,7 +1114,10 @@ class AutoScalingClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AutoScalingPolicySummary]")
+                response_type="list[AutoScalingPolicySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_auto_scaling_configuration(self, auto_scaling_configuration_id, update_auto_scaling_configuration_details, **kwargs):
         """
@@ -1095,6 +1167,8 @@ class AutoScalingClient(object):
         """
         resource_path = "/autoScalingConfigurations/{autoScalingConfigurationId}"
         method = "PUT"
+        operation_name = "update_auto_scaling_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingConfiguration/UpdateAutoScalingConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1145,7 +1219,10 @@ class AutoScalingClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_auto_scaling_configuration_details,
-                response_type="AutoScalingConfiguration")
+                response_type="AutoScalingConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1153,7 +1230,10 @@ class AutoScalingClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_auto_scaling_configuration_details,
-                response_type="AutoScalingConfiguration")
+                response_type="AutoScalingConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_auto_scaling_policy(self, auto_scaling_configuration_id, auto_scaling_policy_id, update_auto_scaling_policy_details, **kwargs):
         """
@@ -1205,6 +1285,8 @@ class AutoScalingClient(object):
         """
         resource_path = "/autoScalingConfigurations/{autoScalingConfigurationId}/policies/{autoScalingPolicyId}"
         method = "PUT"
+        operation_name = "update_auto_scaling_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/autoscaling/20181001/AutoScalingPolicy/UpdateAutoScalingPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1256,7 +1338,10 @@ class AutoScalingClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_auto_scaling_policy_details,
-                response_type="AutoScalingPolicy")
+                response_type="AutoScalingPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1264,4 +1349,7 @@ class AutoScalingClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_auto_scaling_policy_details,
-                response_type="AutoScalingPolicy")
+                response_type="AutoScalingPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

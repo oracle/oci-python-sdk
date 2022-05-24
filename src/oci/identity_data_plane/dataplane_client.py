@@ -132,6 +132,8 @@ class DataplaneClient(object):
         """
         resource_path = "/actions/generateScopedAccessToken"
         method = "POST"
+        operation_name = "generate_scoped_access_token"
+        api_reference_link = ""
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -159,11 +161,17 @@ class DataplaneClient(object):
                 method=method,
                 header_params=header_params,
                 body=generate_scoped_access_token_details,
-                response_type="SecurityToken")
+                response_type="SecurityToken",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=generate_scoped_access_token_details,
-                response_type="SecurityToken")
+                response_type="SecurityToken",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

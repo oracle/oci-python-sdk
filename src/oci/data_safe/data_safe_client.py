@@ -152,6 +152,8 @@ class DataSafeClient(object):
         """
         resource_path = "/targetDatabases/{targetDatabaseId}/actions/activate"
         method = "POST"
+        operation_name = "activate_target_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/ActivateTargetDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -203,14 +205,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=activate_target_database_details)
+                body=activate_target_database_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=activate_target_database_details)
+                body=activate_target_database_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def add_masking_columns_from_sdm(self, masking_policy_id, **kwargs):
         """
@@ -253,6 +261,8 @@ class DataSafeClient(object):
         """
         resource_path = "/maskingPolicies/{maskingPolicyId}/actions/addMaskingColumnsFromSdm"
         method = "POST"
+        operation_name = "add_masking_columns_from_sdm"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/AddMaskingColumnsFromSdm"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -300,13 +310,19 @@ class DataSafeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def apply_discovery_job_results(self, sensitive_data_model_id, apply_discovery_job_results_details, **kwargs):
         """
@@ -352,6 +368,8 @@ class DataSafeClient(object):
         """
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/sensitiveColumns/actions/applyDiscoveryJobResults"
         method = "POST"
+        operation_name = "apply_discovery_job_results"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/ApplyDiscoveryJobResults"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -400,14 +418,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=apply_discovery_job_results_details)
+                body=apply_discovery_job_results_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=apply_discovery_job_results_details)
+                body=apply_discovery_job_results_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def calculate_audit_volume_available(self, audit_profile_id, calculate_audit_volume_available_details, **kwargs):
         """
@@ -456,6 +480,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditProfiles/{auditProfileId}/actions/calculateAuditVolumeAvailable"
         method = "POST"
+        operation_name = "calculate_audit_volume_available"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfile/CalculateAuditVolumeAvailable"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -507,14 +533,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=calculate_audit_volume_available_details)
+                body=calculate_audit_volume_available_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=calculate_audit_volume_available_details)
+                body=calculate_audit_volume_available_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def calculate_audit_volume_collected(self, audit_profile_id, calculate_audit_volume_collected_details, **kwargs):
         """
@@ -563,6 +595,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditProfiles/{auditProfileId}/actions/calculateAuditVolumeCollected"
         method = "POST"
+        operation_name = "calculate_audit_volume_collected"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfile/CalculateAuditVolumeCollected"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -614,14 +648,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=calculate_audit_volume_collected_details)
+                body=calculate_audit_volume_collected_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=calculate_audit_volume_collected_details)
+                body=calculate_audit_volume_collected_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def cancel_work_request(self, work_request_id, **kwargs):
         """
@@ -667,6 +707,8 @@ class DataSafeClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
+        operation_name = "cancel_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/WorkRequest/CancelWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -717,13 +759,19 @@ class DataSafeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_alert_compartment(self, alert_id, change_alert_compartment_details, **kwargs):
         """
@@ -772,6 +820,8 @@ class DataSafeClient(object):
         """
         resource_path = "/alerts/{alertId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_alert_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Alert/ChangeAlertCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -823,14 +873,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_alert_compartment_details)
+                body=change_alert_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_alert_compartment_details)
+                body=change_alert_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_audit_archive_retrieval_compartment(self, audit_archive_retrieval_id, change_audit_archive_retrieval_compartment_details, **kwargs):
         """
@@ -879,6 +935,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditArchiveRetrievals/{auditArchiveRetrievalId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_audit_archive_retrieval_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditArchiveRetrieval/ChangeAuditArchiveRetrievalCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -930,14 +988,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_audit_archive_retrieval_compartment_details)
+                body=change_audit_archive_retrieval_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_audit_archive_retrieval_compartment_details)
+                body=change_audit_archive_retrieval_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_audit_policy_compartment(self, audit_policy_id, change_audit_policy_compartment_details, **kwargs):
         """
@@ -986,6 +1050,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditPolicies/{auditPolicyId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_audit_policy_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditPolicy/ChangeAuditPolicyCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1037,14 +1103,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_audit_policy_compartment_details)
+                body=change_audit_policy_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_audit_policy_compartment_details)
+                body=change_audit_policy_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_audit_profile_compartment(self, audit_profile_id, change_audit_profile_compartment_details, **kwargs):
         """
@@ -1093,6 +1165,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditProfiles/{auditProfileId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_audit_profile_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfile/ChangeAuditProfileCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1144,14 +1218,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_audit_profile_compartment_details)
+                body=change_audit_profile_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_audit_profile_compartment_details)
+                body=change_audit_profile_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_data_safe_private_endpoint_compartment(self, data_safe_private_endpoint_id, change_data_safe_private_endpoint_compartment_details, **kwargs):
         """
@@ -1194,6 +1274,8 @@ class DataSafeClient(object):
         """
         resource_path = "/dataSafePrivateEndpoints/{dataSafePrivateEndpointId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_data_safe_private_endpoint_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DataSafePrivateEndpoint/ChangeDataSafePrivateEndpointCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1242,14 +1324,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_data_safe_private_endpoint_compartment_details)
+                body=change_data_safe_private_endpoint_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_data_safe_private_endpoint_compartment_details)
+                body=change_data_safe_private_endpoint_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_discovery_job_compartment(self, discovery_job_id, change_discovery_job_compartment_details, **kwargs):
         """
@@ -1298,6 +1386,8 @@ class DataSafeClient(object):
         """
         resource_path = "/discoveryJobs/{discoveryJobId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_discovery_job_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DiscoveryJob/ChangeDiscoveryJobCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1349,14 +1439,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_discovery_job_compartment_details)
+                body=change_discovery_job_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_discovery_job_compartment_details)
+                body=change_discovery_job_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_library_masking_format_compartment(self, library_masking_format_id, change_library_masking_format_compartment_details, **kwargs):
         """
@@ -1405,6 +1501,8 @@ class DataSafeClient(object):
         """
         resource_path = "/libraryMaskingFormats/{libraryMaskingFormatId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_library_masking_format_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/LibraryMaskingFormat/ChangeLibraryMaskingFormatCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1456,14 +1554,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_library_masking_format_compartment_details)
+                body=change_library_masking_format_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_library_masking_format_compartment_details)
+                body=change_library_masking_format_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_masking_policy_compartment(self, masking_policy_id, change_masking_policy_compartment_details, **kwargs):
         """
@@ -1512,6 +1616,8 @@ class DataSafeClient(object):
         """
         resource_path = "/maskingPolicies/{maskingPolicyId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_masking_policy_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/ChangeMaskingPolicyCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1563,14 +1669,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_masking_policy_compartment_details)
+                body=change_masking_policy_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_masking_policy_compartment_details)
+                body=change_masking_policy_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_on_prem_connector_compartment(self, on_prem_connector_id, change_on_prem_connector_compartment_details, **kwargs):
         """
@@ -1619,6 +1731,8 @@ class DataSafeClient(object):
         """
         resource_path = "/onPremConnectors/{onPremConnectorId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_on_prem_connector_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/OnPremConnector/ChangeOnPremConnectorCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1670,14 +1784,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_on_prem_connector_compartment_details)
+                body=change_on_prem_connector_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_on_prem_connector_compartment_details)
+                body=change_on_prem_connector_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_report_compartment(self, report_id, change_report_compartment_details, **kwargs):
         """
@@ -1726,6 +1846,8 @@ class DataSafeClient(object):
         """
         resource_path = "/reports/{reportId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_report_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Report/ChangeReportCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1777,14 +1899,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_report_compartment_details)
+                body=change_report_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_report_compartment_details)
+                body=change_report_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_report_definition_compartment(self, report_definition_id, change_report_definition_compartment_details, **kwargs):
         """
@@ -1833,6 +1961,8 @@ class DataSafeClient(object):
         """
         resource_path = "/reportDefinitions/{reportDefinitionId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_report_definition_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReportDefinition/ChangeReportDefinitionCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1884,14 +2014,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_report_definition_compartment_details)
+                body=change_report_definition_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_report_definition_compartment_details)
+                body=change_report_definition_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_retention(self, audit_profile_id, change_retention_details, **kwargs):
         """
@@ -1940,6 +2076,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditProfiles/{auditProfileId}/actions/changeRetention"
         method = "POST"
+        operation_name = "change_retention"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfile/ChangeRetention"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1991,14 +2129,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_retention_details)
+                body=change_retention_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_retention_details)
+                body=change_retention_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_security_assessment_compartment(self, security_assessment_id, change_security_assessment_compartment_details, **kwargs):
         """
@@ -2051,6 +2195,8 @@ class DataSafeClient(object):
         """
         resource_path = "/securityAssessments/{securityAssessmentId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_security_assessment_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/ChangeSecurityAssessmentCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2102,14 +2248,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_security_assessment_compartment_details)
+                body=change_security_assessment_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_security_assessment_compartment_details)
+                body=change_security_assessment_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_sensitive_data_model_compartment(self, sensitive_data_model_id, change_sensitive_data_model_compartment_details, **kwargs):
         """
@@ -2158,6 +2310,8 @@ class DataSafeClient(object):
         """
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_sensitive_data_model_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/ChangeSensitiveDataModelCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2209,14 +2363,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_sensitive_data_model_compartment_details)
+                body=change_sensitive_data_model_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_sensitive_data_model_compartment_details)
+                body=change_sensitive_data_model_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_sensitive_type_compartment(self, sensitive_type_id, change_sensitive_type_compartment_details, **kwargs):
         """
@@ -2265,6 +2425,8 @@ class DataSafeClient(object):
         """
         resource_path = "/sensitiveTypes/{sensitiveTypeId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_sensitive_type_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveType/ChangeSensitiveTypeCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2316,14 +2478,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_sensitive_type_compartment_details)
+                body=change_sensitive_type_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_sensitive_type_compartment_details)
+                body=change_sensitive_type_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_target_alert_policy_association_compartment(self, target_alert_policy_association_id, change_target_alert_policy_association_compartment_details, **kwargs):
         """
@@ -2372,6 +2540,8 @@ class DataSafeClient(object):
         """
         resource_path = "/targetAlertPolicyAssociations/{targetAlertPolicyAssociationId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_target_alert_policy_association_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetAlertPolicyAssociation/ChangeTargetAlertPolicyAssociationCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2423,14 +2593,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_target_alert_policy_association_compartment_details)
+                body=change_target_alert_policy_association_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_target_alert_policy_association_compartment_details)
+                body=change_target_alert_policy_association_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_target_database_compartment(self, target_database_id, change_target_database_compartment_details, **kwargs):
         """
@@ -2479,6 +2655,8 @@ class DataSafeClient(object):
         """
         resource_path = "/targetDatabases/{targetDatabaseId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_target_database_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/ChangeTargetDatabaseCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2530,14 +2708,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_target_database_compartment_details)
+                body=change_target_database_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_target_database_compartment_details)
+                body=change_target_database_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_user_assessment_compartment(self, user_assessment_id, change_user_assessment_compartment_details, **kwargs):
         """
@@ -2590,6 +2774,8 @@ class DataSafeClient(object):
         """
         resource_path = "/userAssessments/{userAssessmentId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_user_assessment_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/ChangeUserAssessmentCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2641,14 +2827,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_user_assessment_compartment_details)
+                body=change_user_assessment_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_user_assessment_compartment_details)
+                body=change_user_assessment_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def compare_security_assessment(self, security_assessment_id, compare_security_assessment_details, **kwargs):
         """
@@ -2698,6 +2890,8 @@ class DataSafeClient(object):
         """
         resource_path = "/securityAssessments/{securityAssessmentId}/actions/compare"
         method = "POST"
+        operation_name = "compare_security_assessment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/CompareSecurityAssessment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2749,14 +2943,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=compare_security_assessment_details)
+                body=compare_security_assessment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=compare_security_assessment_details)
+                body=compare_security_assessment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def compare_user_assessment(self, user_assessment_id, compare_user_assessment_details, **kwargs):
         """
@@ -2806,6 +3006,8 @@ class DataSafeClient(object):
         """
         resource_path = "/userAssessments/{userAssessmentId}/actions/compare"
         method = "POST"
+        operation_name = "compare_user_assessment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/CompareUserAssessment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2857,14 +3059,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=compare_user_assessment_details)
+                body=compare_user_assessment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=compare_user_assessment_details)
+                body=compare_user_assessment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_audit_archive_retrieval(self, create_audit_archive_retrieval_details, **kwargs):
         """
@@ -2905,6 +3113,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditArchiveRetrievals"
         method = "POST"
+        operation_name = "create_audit_archive_retrieval"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2944,14 +3154,20 @@ class DataSafeClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_audit_archive_retrieval_details,
-                response_type="AuditArchiveRetrieval")
+                response_type="AuditArchiveRetrieval",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_audit_archive_retrieval_details,
-                response_type="AuditArchiveRetrieval")
+                response_type="AuditArchiveRetrieval",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_data_safe_private_endpoint(self, create_data_safe_private_endpoint_details, **kwargs):
         """
@@ -2990,6 +3206,8 @@ class DataSafeClient(object):
         """
         resource_path = "/dataSafePrivateEndpoints"
         method = "POST"
+        operation_name = "create_data_safe_private_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DataSafePrivateEndpoint/CreateDataSafePrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3029,14 +3247,20 @@ class DataSafeClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_data_safe_private_endpoint_details,
-                response_type="DataSafePrivateEndpoint")
+                response_type="DataSafePrivateEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_data_safe_private_endpoint_details,
-                response_type="DataSafePrivateEndpoint")
+                response_type="DataSafePrivateEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_discovery_job(self, create_discovery_job_details, **kwargs):
         """
@@ -3079,6 +3303,8 @@ class DataSafeClient(object):
         """
         resource_path = "/discoveryJobs"
         method = "POST"
+        operation_name = "create_discovery_job"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3118,14 +3344,20 @@ class DataSafeClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_discovery_job_details,
-                response_type="DiscoveryJob")
+                response_type="DiscoveryJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_discovery_job_details,
-                response_type="DiscoveryJob")
+                response_type="DiscoveryJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_library_masking_format(self, create_library_masking_format_details, **kwargs):
         """
@@ -3168,6 +3400,8 @@ class DataSafeClient(object):
         """
         resource_path = "/libraryMaskingFormats"
         method = "POST"
+        operation_name = "create_library_masking_format"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/LibraryMaskingFormat/CreateLibraryMaskingFormat"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3207,14 +3441,20 @@ class DataSafeClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_library_masking_format_details,
-                response_type="LibraryMaskingFormat")
+                response_type="LibraryMaskingFormat",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_library_masking_format_details,
-                response_type="LibraryMaskingFormat")
+                response_type="LibraryMaskingFormat",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_masking_column(self, create_masking_column_details, masking_policy_id, **kwargs):
         """
@@ -3275,6 +3515,8 @@ class DataSafeClient(object):
         """
         resource_path = "/maskingPolicies/{maskingPolicyId}/maskingColumns"
         method = "POST"
+        operation_name = "create_masking_column"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingColumn/CreateMaskingColumn"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3324,14 +3566,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_masking_column_details)
+                body=create_masking_column_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_masking_column_details)
+                body=create_masking_column_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_masking_policy(self, create_masking_policy_details, **kwargs):
         """
@@ -3386,6 +3634,8 @@ class DataSafeClient(object):
         """
         resource_path = "/maskingPolicies"
         method = "POST"
+        operation_name = "create_masking_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/CreateMaskingPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3425,14 +3675,20 @@ class DataSafeClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_masking_policy_details,
-                response_type="MaskingPolicy")
+                response_type="MaskingPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_masking_policy_details,
-                response_type="MaskingPolicy")
+                response_type="MaskingPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_on_prem_connector(self, create_on_prem_connector_details, **kwargs):
         """
@@ -3471,6 +3727,8 @@ class DataSafeClient(object):
         """
         resource_path = "/onPremConnectors"
         method = "POST"
+        operation_name = "create_on_prem_connector"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/OnPremConnector/CreateOnPremConnector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3510,14 +3768,20 @@ class DataSafeClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_on_prem_connector_details,
-                response_type="OnPremConnector")
+                response_type="OnPremConnector",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_on_prem_connector_details,
-                response_type="OnPremConnector")
+                response_type="OnPremConnector",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_report_definition(self, create_report_definition_details, **kwargs):
         """
@@ -3556,6 +3820,8 @@ class DataSafeClient(object):
         """
         resource_path = "/reportDefinitions"
         method = "POST"
+        operation_name = "create_report_definition"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReportDefinition/CreateReportDefinition"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3595,14 +3861,20 @@ class DataSafeClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_report_definition_details,
-                response_type="ReportDefinition")
+                response_type="ReportDefinition",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_report_definition_details,
-                response_type="ReportDefinition")
+                response_type="ReportDefinition",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_security_assessment(self, create_security_assessment_details, **kwargs):
         """
@@ -3645,6 +3917,8 @@ class DataSafeClient(object):
         """
         resource_path = "/securityAssessments"
         method = "POST"
+        operation_name = "create_security_assessment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/CreateSecurityAssessment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3684,14 +3958,20 @@ class DataSafeClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_security_assessment_details,
-                response_type="SecurityAssessment")
+                response_type="SecurityAssessment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_security_assessment_details,
-                response_type="SecurityAssessment")
+                response_type="SecurityAssessment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_sensitive_column(self, sensitive_data_model_id, create_sensitive_column_details, **kwargs):
         """
@@ -3733,6 +4013,8 @@ class DataSafeClient(object):
         """
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/sensitiveColumns"
         method = "POST"
+        operation_name = "create_sensitive_column"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveColumn/CreateSensitiveColumn"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3782,14 +4064,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_sensitive_column_details)
+                body=create_sensitive_column_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_sensitive_column_details)
+                body=create_sensitive_column_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_sensitive_data_model(self, create_sensitive_data_model_details, **kwargs):
         """
@@ -3830,6 +4118,8 @@ class DataSafeClient(object):
         """
         resource_path = "/sensitiveDataModels"
         method = "POST"
+        operation_name = "create_sensitive_data_model"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/CreateSensitiveDataModel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3869,14 +4159,20 @@ class DataSafeClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_sensitive_data_model_details,
-                response_type="SensitiveDataModel")
+                response_type="SensitiveDataModel",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_sensitive_data_model_details,
-                response_type="SensitiveDataModel")
+                response_type="SensitiveDataModel",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_sensitive_type(self, create_sensitive_type_details, **kwargs):
         """
@@ -3917,6 +4213,8 @@ class DataSafeClient(object):
         """
         resource_path = "/sensitiveTypes"
         method = "POST"
+        operation_name = "create_sensitive_type"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3956,14 +4254,20 @@ class DataSafeClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_sensitive_type_details,
-                response_type="SensitiveType")
+                response_type="SensitiveType",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_sensitive_type_details,
-                response_type="SensitiveType")
+                response_type="SensitiveType",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_target_alert_policy_association(self, create_target_alert_policy_association_details, **kwargs):
         """
@@ -4002,6 +4306,8 @@ class DataSafeClient(object):
         """
         resource_path = "/targetAlertPolicyAssociations"
         method = "POST"
+        operation_name = "create_target_alert_policy_association"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetAlertPolicyAssociation/CreateTargetAlertPolicyAssociation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4041,14 +4347,20 @@ class DataSafeClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_target_alert_policy_association_details,
-                response_type="TargetAlertPolicyAssociation")
+                response_type="TargetAlertPolicyAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_target_alert_policy_association_details,
-                response_type="TargetAlertPolicyAssociation")
+                response_type="TargetAlertPolicyAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_target_database(self, create_target_database_details, **kwargs):
         """
@@ -4087,6 +4399,8 @@ class DataSafeClient(object):
         """
         resource_path = "/targetDatabases"
         method = "POST"
+        operation_name = "create_target_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/CreateTargetDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4126,14 +4440,20 @@ class DataSafeClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_target_database_details,
-                response_type="TargetDatabase")
+                response_type="TargetDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_target_database_details,
-                response_type="TargetDatabase")
+                response_type="TargetDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_user_assessment(self, create_user_assessment_details, **kwargs):
         """
@@ -4176,6 +4496,8 @@ class DataSafeClient(object):
         """
         resource_path = "/userAssessments"
         method = "POST"
+        operation_name = "create_user_assessment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/CreateUserAssessment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4215,14 +4537,20 @@ class DataSafeClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_user_assessment_details,
-                response_type="UserAssessment")
+                response_type="UserAssessment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_user_assessment_details,
-                response_type="UserAssessment")
+                response_type="UserAssessment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def deactivate_target_database(self, target_database_id, **kwargs):
         """
@@ -4268,6 +4596,8 @@ class DataSafeClient(object):
         """
         resource_path = "/targetDatabases/{targetDatabaseId}/actions/deactivate"
         method = "POST"
+        operation_name = "deactivate_target_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/DeactivateTargetDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4318,13 +4648,19 @@ class DataSafeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_audit_archive_retrieval(self, audit_archive_retrieval_id, **kwargs):
         """
@@ -4365,6 +4701,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditArchiveRetrievals/{auditArchiveRetrievalId}"
         method = "DELETE"
+        operation_name = "delete_audit_archive_retrieval"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditArchiveRetrieval/DeleteAuditArchiveRetrieval"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4412,13 +4750,19 @@ class DataSafeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_audit_trail(self, audit_trail_id, **kwargs):
         """
@@ -4458,6 +4802,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditTrails/{auditTrailId}"
         method = "DELETE"
+        operation_name = "delete_audit_trail"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditTrail/DeleteAuditTrail"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4505,13 +4851,19 @@ class DataSafeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_data_safe_private_endpoint(self, data_safe_private_endpoint_id, **kwargs):
         """
@@ -4551,6 +4903,8 @@ class DataSafeClient(object):
         """
         resource_path = "/dataSafePrivateEndpoints/{dataSafePrivateEndpointId}"
         method = "DELETE"
+        operation_name = "delete_data_safe_private_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DataSafePrivateEndpoint/DeleteDataSafePrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4598,13 +4952,19 @@ class DataSafeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_discovery_job(self, discovery_job_id, **kwargs):
         """
@@ -4644,6 +5004,8 @@ class DataSafeClient(object):
         """
         resource_path = "/discoveryJobs/{discoveryJobId}"
         method = "DELETE"
+        operation_name = "delete_discovery_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DiscoveryJob/DeleteDiscoveryJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4691,13 +5053,19 @@ class DataSafeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_discovery_job_result(self, discovery_job_id, result_key, **kwargs):
         """
@@ -4740,6 +5108,8 @@ class DataSafeClient(object):
         """
         resource_path = "/discoveryJobs/{discoveryJobId}/results/{resultKey}"
         method = "DELETE"
+        operation_name = "delete_discovery_job_result"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DiscoveryJobResult/DeleteDiscoveryJobResult"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4788,13 +5158,19 @@ class DataSafeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_library_masking_format(self, library_masking_format_id, **kwargs):
         """
@@ -4834,6 +5210,8 @@ class DataSafeClient(object):
         """
         resource_path = "/libraryMaskingFormats/{libraryMaskingFormatId}"
         method = "DELETE"
+        operation_name = "delete_library_masking_format"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/LibraryMaskingFormat/DeleteLibraryMaskingFormat"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4881,13 +5259,19 @@ class DataSafeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_masking_column(self, masking_column_key, masking_policy_id, **kwargs):
         """
@@ -4930,6 +5314,8 @@ class DataSafeClient(object):
         """
         resource_path = "/maskingPolicies/{maskingPolicyId}/maskingColumns/{maskingColumnKey}"
         method = "DELETE"
+        operation_name = "delete_masking_column"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingColumn/DeleteMaskingColumn"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4978,13 +5364,19 @@ class DataSafeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_masking_policy(self, masking_policy_id, **kwargs):
         """
@@ -5024,6 +5416,8 @@ class DataSafeClient(object):
         """
         resource_path = "/maskingPolicies/{maskingPolicyId}"
         method = "DELETE"
+        operation_name = "delete_masking_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/DeleteMaskingPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5071,13 +5465,19 @@ class DataSafeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_on_prem_connector(self, on_prem_connector_id, **kwargs):
         """
@@ -5117,6 +5517,8 @@ class DataSafeClient(object):
         """
         resource_path = "/onPremConnectors/{onPremConnectorId}"
         method = "DELETE"
+        operation_name = "delete_on_prem_connector"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/OnPremConnector/DeleteOnPremConnector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5164,13 +5566,19 @@ class DataSafeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_report_definition(self, report_definition_id, **kwargs):
         """
@@ -5210,6 +5618,8 @@ class DataSafeClient(object):
         """
         resource_path = "/reportDefinitions/{reportDefinitionId}"
         method = "DELETE"
+        operation_name = "delete_report_definition"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReportDefinition/DeleteReportDefinition"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5257,13 +5667,19 @@ class DataSafeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_security_assessment(self, security_assessment_id, **kwargs):
         """
@@ -5306,6 +5722,8 @@ class DataSafeClient(object):
         """
         resource_path = "/securityAssessments/{securityAssessmentId}"
         method = "DELETE"
+        operation_name = "delete_security_assessment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/DeleteSecurityAssessment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5353,13 +5771,19 @@ class DataSafeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_sensitive_column(self, sensitive_data_model_id, sensitive_column_key, **kwargs):
         """
@@ -5402,6 +5826,8 @@ class DataSafeClient(object):
         """
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/sensitiveColumns/{sensitiveColumnKey}"
         method = "DELETE"
+        operation_name = "delete_sensitive_column"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveColumn/DeleteSensitiveColumn"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5450,13 +5876,19 @@ class DataSafeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_sensitive_data_model(self, sensitive_data_model_id, **kwargs):
         """
@@ -5496,6 +5928,8 @@ class DataSafeClient(object):
         """
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}"
         method = "DELETE"
+        operation_name = "delete_sensitive_data_model"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/DeleteSensitiveDataModel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5543,13 +5977,19 @@ class DataSafeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_sensitive_type(self, sensitive_type_id, **kwargs):
         """
@@ -5589,6 +6029,8 @@ class DataSafeClient(object):
         """
         resource_path = "/sensitiveTypes/{sensitiveTypeId}"
         method = "DELETE"
+        operation_name = "delete_sensitive_type"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveType/DeleteSensitiveType"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5636,13 +6078,19 @@ class DataSafeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_target_alert_policy_association(self, target_alert_policy_association_id, **kwargs):
         """
@@ -5682,6 +6130,8 @@ class DataSafeClient(object):
         """
         resource_path = "/targetAlertPolicyAssociations/{targetAlertPolicyAssociationId}"
         method = "DELETE"
+        operation_name = "delete_target_alert_policy_association"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetAlertPolicyAssociation/DeleteTargetAlertPolicyAssociation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5729,13 +6179,19 @@ class DataSafeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_target_database(self, target_database_id, **kwargs):
         """
@@ -5775,6 +6231,8 @@ class DataSafeClient(object):
         """
         resource_path = "/targetDatabases/{targetDatabaseId}"
         method = "DELETE"
+        operation_name = "delete_target_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/DeleteTargetDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5822,13 +6280,19 @@ class DataSafeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_user_assessment(self, user_assessment_id, **kwargs):
         """
@@ -5871,6 +6335,8 @@ class DataSafeClient(object):
         """
         resource_path = "/userAssessments/{userAssessmentId}"
         method = "DELETE"
+        operation_name = "delete_user_assessment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/DeleteUserAssessment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5918,13 +6384,19 @@ class DataSafeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def discover_audit_trails(self, audit_profile_id, **kwargs):
         """
@@ -5973,6 +6445,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditProfiles/{auditProfileId}/actions/discoverAuditTrails"
         method = "POST"
+        operation_name = "discover_audit_trails"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfile/DiscoverAuditTrails"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6023,13 +6497,19 @@ class DataSafeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def download_discovery_report(self, sensitive_data_model_id, download_discovery_report_details, **kwargs):
         """
@@ -6068,6 +6548,8 @@ class DataSafeClient(object):
         """
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/actions/downloadReport"
         method = "POST"
+        operation_name = "download_discovery_report"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/DownloadDiscoveryReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6115,7 +6597,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=download_discovery_report_details,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6123,7 +6608,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=download_discovery_report_details,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def download_masking_log(self, masking_policy_id, download_masking_log_details, **kwargs):
         """
@@ -6159,6 +6647,8 @@ class DataSafeClient(object):
         """
         resource_path = "/maskingPolicies/{maskingPolicyId}/actions/downloadLog"
         method = "POST"
+        operation_name = "download_masking_log"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/DownloadMaskingLog"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6206,7 +6696,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=download_masking_log_details,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6214,7 +6707,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=download_masking_log_details,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def download_masking_policy(self, masking_policy_id, download_masking_policy_details, **kwargs):
         """
@@ -6253,6 +6749,8 @@ class DataSafeClient(object):
         """
         resource_path = "/maskingPolicies/{maskingPolicyId}/actions/download"
         method = "POST"
+        operation_name = "download_masking_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/DownloadMaskingPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6300,7 +6798,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=download_masking_policy_details,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6308,7 +6809,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=download_masking_policy_details,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def download_masking_report(self, masking_policy_id, download_masking_report_details, **kwargs):
         """
@@ -6346,6 +6850,8 @@ class DataSafeClient(object):
         """
         resource_path = "/maskingPolicies/{maskingPolicyId}/actions/downloadReport"
         method = "POST"
+        operation_name = "download_masking_report"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/DownloadMaskingReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6393,7 +6899,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=download_masking_report_details,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6401,7 +6910,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=download_masking_report_details,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def download_privilege_script(self, **kwargs):
         """
@@ -6444,6 +6956,8 @@ class DataSafeClient(object):
         """
         resource_path = "/actions/downloadPrivilegeScript"
         method = "POST"
+        operation_name = "download_privilege_script"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/DownloadPrivilegeScript"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6484,13 +6998,19 @@ class DataSafeClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def download_security_assessment_report(self, security_assessment_id, download_security_assessment_report_details, **kwargs):
         """
@@ -6540,6 +7060,8 @@ class DataSafeClient(object):
         """
         resource_path = "/securityAssessments/{securityAssessmentId}/actions/downloadReport"
         method = "POST"
+        operation_name = "download_security_assessment_report"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/DownloadSecurityAssessmentReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6592,7 +7114,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=download_security_assessment_report_details,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6600,7 +7125,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=download_security_assessment_report_details,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def download_sensitive_data_model(self, sensitive_data_model_id, download_sensitive_data_model_details, **kwargs):
         """
@@ -6639,6 +7167,8 @@ class DataSafeClient(object):
         """
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/actions/download"
         method = "POST"
+        operation_name = "download_sensitive_data_model"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/DownloadSensitiveDataModel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6686,7 +7216,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=download_sensitive_data_model_details,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6694,7 +7227,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=download_sensitive_data_model_details,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def download_user_assessment_report(self, user_assessment_id, download_user_assessment_report_details, **kwargs):
         """
@@ -6744,6 +7280,8 @@ class DataSafeClient(object):
         """
         resource_path = "/userAssessments/{userAssessmentId}/actions/downloadReport"
         method = "POST"
+        operation_name = "download_user_assessment_report"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/DownloadUserAssessmentReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6796,7 +7334,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=download_user_assessment_report_details,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6804,7 +7345,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=download_user_assessment_report_details,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def enable_data_safe_configuration(self, enable_data_safe_configuration_details, **kwargs):
         """
@@ -6847,6 +7391,8 @@ class DataSafeClient(object):
         """
         resource_path = "/configuration"
         method = "PUT"
+        operation_name = "enable_data_safe_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DataSafeConfiguration/EnableDataSafeConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6891,14 +7437,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                body=enable_data_safe_configuration_details)
+                body=enable_data_safe_configuration_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                body=enable_data_safe_configuration_details)
+                body=enable_data_safe_configuration_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def generate_discovery_report_for_download(self, sensitive_data_model_id, generate_discovery_report_for_download_details, **kwargs):
         """
@@ -6937,6 +7489,8 @@ class DataSafeClient(object):
         """
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/actions/generateReportForDownload"
         method = "POST"
+        operation_name = "generate_discovery_report_for_download"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/GenerateDiscoveryReportForDownload"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6983,14 +7537,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=generate_discovery_report_for_download_details)
+                body=generate_discovery_report_for_download_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=generate_discovery_report_for_download_details)
+                body=generate_discovery_report_for_download_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def generate_masking_policy_for_download(self, masking_policy_id, generate_masking_policy_for_download_details, **kwargs):
         """
@@ -7030,6 +7590,8 @@ class DataSafeClient(object):
         """
         resource_path = "/maskingPolicies/{maskingPolicyId}/actions/generatePolicyForDownload"
         method = "POST"
+        operation_name = "generate_masking_policy_for_download"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/GenerateMaskingPolicyForDownload"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7076,14 +7638,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=generate_masking_policy_for_download_details)
+                body=generate_masking_policy_for_download_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=generate_masking_policy_for_download_details)
+                body=generate_masking_policy_for_download_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def generate_masking_report_for_download(self, masking_policy_id, generate_masking_report_for_download_details, **kwargs):
         """
@@ -7122,6 +7690,8 @@ class DataSafeClient(object):
         """
         resource_path = "/maskingPolicies/{maskingPolicyId}/actions/generateReportForDownload"
         method = "POST"
+        operation_name = "generate_masking_report_for_download"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/GenerateMaskingReportForDownload"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7168,14 +7738,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=generate_masking_report_for_download_details)
+                body=generate_masking_report_for_download_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=generate_masking_report_for_download_details)
+                body=generate_masking_report_for_download_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def generate_on_prem_connector_configuration(self, generate_on_prem_connector_configuration_details, on_prem_connector_id, **kwargs):
         """
@@ -7224,6 +7800,8 @@ class DataSafeClient(object):
         """
         resource_path = "/onPremConnectors/{onPremConnectorId}/actions/generateConfiguration"
         method = "POST"
+        operation_name = "generate_on_prem_connector_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/OnPremConnector/GenerateOnPremConnectorConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7276,7 +7854,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=generate_on_prem_connector_configuration_details,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7284,7 +7865,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=generate_on_prem_connector_configuration_details,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def generate_report(self, report_definition_id, generate_report_details, **kwargs):
         """
@@ -7344,6 +7928,8 @@ class DataSafeClient(object):
         """
         resource_path = "/reportDefinitions/{reportDefinitionId}/actions/generateReport"
         method = "POST"
+        operation_name = "generate_report"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReportDefinition/GenerateReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7402,7 +7988,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=generate_report_details)
+                body=generate_report_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7410,7 +7999,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=generate_report_details)
+                body=generate_report_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def generate_security_assessment_report(self, security_assessment_id, generate_security_assessment_report_details, **kwargs):
         """
@@ -7460,6 +8052,8 @@ class DataSafeClient(object):
         """
         resource_path = "/securityAssessments/{securityAssessmentId}/actions/generateReport"
         method = "POST"
+        operation_name = "generate_security_assessment_report"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/GenerateSecurityAssessmentReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7511,14 +8105,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=generate_security_assessment_report_details)
+                body=generate_security_assessment_report_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=generate_security_assessment_report_details)
+                body=generate_security_assessment_report_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def generate_sensitive_data_model_for_download(self, sensitive_data_model_id, generate_sensitive_data_model_for_download_details, **kwargs):
         """
@@ -7557,6 +8157,8 @@ class DataSafeClient(object):
         """
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/actions/generateDataModelForDownload"
         method = "POST"
+        operation_name = "generate_sensitive_data_model_for_download"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/GenerateSensitiveDataModelForDownload"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7603,14 +8205,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=generate_sensitive_data_model_for_download_details)
+                body=generate_sensitive_data_model_for_download_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=generate_sensitive_data_model_for_download_details)
+                body=generate_sensitive_data_model_for_download_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def generate_user_assessment_report(self, user_assessment_id, generate_user_assessment_report_details, **kwargs):
         """
@@ -7660,6 +8268,8 @@ class DataSafeClient(object):
         """
         resource_path = "/userAssessments/{userAssessmentId}/actions/generateReport"
         method = "POST"
+        operation_name = "generate_user_assessment_report"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/GenerateUserAssessmentReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7711,14 +8321,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=generate_user_assessment_report_details)
+                body=generate_user_assessment_report_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=generate_user_assessment_report_details)
+                body=generate_user_assessment_report_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_alert(self, alert_id, **kwargs):
         """
@@ -7751,6 +8367,8 @@ class DataSafeClient(object):
         """
         resource_path = "/alerts/{alertId}"
         method = "GET"
+        operation_name = "get_alert"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Alert/GetAlert"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7797,14 +8415,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Alert")
+                response_type="Alert",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Alert")
+                response_type="Alert",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_alert_policy(self, alert_policy_id, **kwargs):
         """
@@ -7837,6 +8461,8 @@ class DataSafeClient(object):
         """
         resource_path = "/alertPolicies/{alertPolicyId}"
         method = "GET"
+        operation_name = "get_alert_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertPolicy/GetAlertPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7883,14 +8509,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AlertPolicy")
+                response_type="AlertPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AlertPolicy")
+                response_type="AlertPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_audit_archive_retrieval(self, audit_archive_retrieval_id, **kwargs):
         """
@@ -7930,6 +8562,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditArchiveRetrievals/{auditArchiveRetrievalId}"
         method = "GET"
+        operation_name = "get_audit_archive_retrieval"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditArchiveRetrieval/GetAuditArchiveRetrieval"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7978,14 +8612,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AuditArchiveRetrieval")
+                response_type="AuditArchiveRetrieval",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AuditArchiveRetrieval")
+                response_type="AuditArchiveRetrieval",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_audit_policy(self, audit_policy_id, **kwargs):
         """
@@ -8018,6 +8658,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditPolicies/{auditPolicyId}"
         method = "GET"
+        operation_name = "get_audit_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditPolicy/GetAuditPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8064,14 +8706,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AuditPolicy")
+                response_type="AuditPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AuditPolicy")
+                response_type="AuditPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_audit_profile(self, audit_profile_id, **kwargs):
         """
@@ -8104,6 +8752,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditProfiles/{auditProfileId}"
         method = "GET"
+        operation_name = "get_audit_profile"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfile/GetAuditProfile"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8150,14 +8800,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AuditProfile")
+                response_type="AuditProfile",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AuditProfile")
+                response_type="AuditProfile",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_audit_trail(self, audit_trail_id, **kwargs):
         """
@@ -8190,6 +8846,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditTrails/{auditTrailId}"
         method = "GET"
+        operation_name = "get_audit_trail"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditTrail/GetAuditTrail"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8236,14 +8894,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AuditTrail")
+                response_type="AuditTrail",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AuditTrail")
+                response_type="AuditTrail",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_compatible_formats_for_data_types(self, **kwargs):
         """
@@ -8289,6 +8953,8 @@ class DataSafeClient(object):
         """
         resource_path = "/compatibleFormatsForDataTypes"
         method = "GET"
+        operation_name = "get_compatible_formats_for_data_types"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingColumn/GetCompatibleFormatsForDataTypes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8333,14 +8999,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="CompatibleFormatsForDataTypes")
+                response_type="CompatibleFormatsForDataTypes",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="CompatibleFormatsForDataTypes")
+                response_type="CompatibleFormatsForDataTypes",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_compatible_formats_for_sensitive_types(self, compartment_id, **kwargs):
         """
@@ -8398,6 +9070,8 @@ class DataSafeClient(object):
         """
         resource_path = "/compatibleFormatsForSensitiveTypes"
         method = "GET"
+        operation_name = "get_compatible_formats_for_sensitive_types"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingColumn/GetCompatibleFormatsForSensitiveTypes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8454,14 +9128,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="CompatibleFormatsForSensitiveTypes")
+                response_type="CompatibleFormatsForSensitiveTypes",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="CompatibleFormatsForSensitiveTypes")
+                response_type="CompatibleFormatsForSensitiveTypes",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_data_safe_configuration(self, **kwargs):
         """
@@ -8494,6 +9174,8 @@ class DataSafeClient(object):
         """
         resource_path = "/configuration"
         method = "GET"
+        operation_name = "get_data_safe_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DataSafeConfiguration/GetDataSafeConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8536,14 +9218,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataSafeConfiguration")
+                response_type="DataSafeConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataSafeConfiguration")
+                response_type="DataSafeConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_data_safe_private_endpoint(self, data_safe_private_endpoint_id, **kwargs):
         """
@@ -8576,6 +9264,8 @@ class DataSafeClient(object):
         """
         resource_path = "/dataSafePrivateEndpoints/{dataSafePrivateEndpointId}"
         method = "GET"
+        operation_name = "get_data_safe_private_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DataSafePrivateEndpoint/GetDataSafePrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8622,14 +9312,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DataSafePrivateEndpoint")
+                response_type="DataSafePrivateEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DataSafePrivateEndpoint")
+                response_type="DataSafePrivateEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_discovery_job(self, discovery_job_id, **kwargs):
         """
@@ -8662,6 +9358,8 @@ class DataSafeClient(object):
         """
         resource_path = "/discoveryJobs/{discoveryJobId}"
         method = "GET"
+        operation_name = "get_discovery_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DiscoveryJob/GetDiscoveryJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8708,14 +9406,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DiscoveryJob")
+                response_type="DiscoveryJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DiscoveryJob")
+                response_type="DiscoveryJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_discovery_job_result(self, discovery_job_id, result_key, **kwargs):
         """
@@ -8751,6 +9455,8 @@ class DataSafeClient(object):
         """
         resource_path = "/discoveryJobs/{discoveryJobId}/results/{resultKey}"
         method = "GET"
+        operation_name = "get_discovery_job_result"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DiscoveryJobResult/GetDiscoveryJobResult"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8798,14 +9504,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DiscoveryJobResult")
+                response_type="DiscoveryJobResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DiscoveryJobResult")
+                response_type="DiscoveryJobResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_library_masking_format(self, library_masking_format_id, **kwargs):
         """
@@ -8838,6 +9550,8 @@ class DataSafeClient(object):
         """
         resource_path = "/libraryMaskingFormats/{libraryMaskingFormatId}"
         method = "GET"
+        operation_name = "get_library_masking_format"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/LibraryMaskingFormat/GetLibraryMaskingFormat"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8884,14 +9598,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LibraryMaskingFormat")
+                response_type="LibraryMaskingFormat",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LibraryMaskingFormat")
+                response_type="LibraryMaskingFormat",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_masking_column(self, masking_policy_id, masking_column_key, **kwargs):
         """
@@ -8927,6 +9647,8 @@ class DataSafeClient(object):
         """
         resource_path = "/maskingPolicies/{maskingPolicyId}/maskingColumns/{maskingColumnKey}"
         method = "GET"
+        operation_name = "get_masking_column"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingColumn/GetMaskingColumn"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8974,14 +9696,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="MaskingColumn")
+                response_type="MaskingColumn",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="MaskingColumn")
+                response_type="MaskingColumn",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_masking_policy(self, masking_policy_id, **kwargs):
         """
@@ -9014,6 +9742,8 @@ class DataSafeClient(object):
         """
         resource_path = "/maskingPolicies/{maskingPolicyId}"
         method = "GET"
+        operation_name = "get_masking_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/GetMaskingPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9060,14 +9790,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="MaskingPolicy")
+                response_type="MaskingPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="MaskingPolicy")
+                response_type="MaskingPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_masking_report(self, masking_report_id, **kwargs):
         """
@@ -9100,6 +9836,8 @@ class DataSafeClient(object):
         """
         resource_path = "/maskingReports/{maskingReportId}"
         method = "GET"
+        operation_name = "get_masking_report"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingReport/GetMaskingReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9146,14 +9884,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="MaskingReport")
+                response_type="MaskingReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="MaskingReport")
+                response_type="MaskingReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_on_prem_connector(self, on_prem_connector_id, **kwargs):
         """
@@ -9186,6 +9930,8 @@ class DataSafeClient(object):
         """
         resource_path = "/onPremConnectors/{onPremConnectorId}"
         method = "GET"
+        operation_name = "get_on_prem_connector"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/OnPremConnector/GetOnPremConnector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9232,14 +9978,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="OnPremConnector")
+                response_type="OnPremConnector",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="OnPremConnector")
+                response_type="OnPremConnector",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_report(self, report_id, **kwargs):
         """
@@ -9272,6 +10024,8 @@ class DataSafeClient(object):
         """
         resource_path = "/reports/{reportId}"
         method = "GET"
+        operation_name = "get_report"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Report/GetReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9318,14 +10072,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Report")
+                response_type="Report",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Report")
+                response_type="Report",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_report_content(self, report_id, **kwargs):
         """
@@ -9358,6 +10118,8 @@ class DataSafeClient(object):
         """
         resource_path = "/reports/{reportId}/content"
         method = "GET"
+        operation_name = "get_report_content"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Report/GetReportContent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9404,14 +10166,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_report_definition(self, report_definition_id, **kwargs):
         """
@@ -9444,6 +10212,8 @@ class DataSafeClient(object):
         """
         resource_path = "/reportDefinitions/{reportDefinitionId}"
         method = "GET"
+        operation_name = "get_report_definition"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReportDefinition/GetReportDefinition"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9490,14 +10260,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ReportDefinition")
+                response_type="ReportDefinition",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ReportDefinition")
+                response_type="ReportDefinition",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_security_assessment(self, security_assessment_id, **kwargs):
         """
@@ -9530,6 +10306,8 @@ class DataSafeClient(object):
         """
         resource_path = "/securityAssessments/{securityAssessmentId}"
         method = "GET"
+        operation_name = "get_security_assessment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/GetSecurityAssessment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9576,14 +10354,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SecurityAssessment")
+                response_type="SecurityAssessment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SecurityAssessment")
+                response_type="SecurityAssessment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_security_assessment_comparison(self, security_assessment_id, comparison_security_assessment_id, **kwargs):
         """
@@ -9619,6 +10403,8 @@ class DataSafeClient(object):
         """
         resource_path = "/securityAssessments/{securityAssessmentId}/comparison/{comparisonSecurityAssessmentId}"
         method = "GET"
+        operation_name = "get_security_assessment_comparison"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/GetSecurityAssessmentComparison"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9666,14 +10452,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SecurityAssessmentComparison")
+                response_type="SecurityAssessmentComparison",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SecurityAssessmentComparison")
+                response_type="SecurityAssessmentComparison",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_sensitive_column(self, sensitive_data_model_id, sensitive_column_key, **kwargs):
         """
@@ -9709,6 +10501,8 @@ class DataSafeClient(object):
         """
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/sensitiveColumns/{sensitiveColumnKey}"
         method = "GET"
+        operation_name = "get_sensitive_column"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveColumn/GetSensitiveColumn"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9756,14 +10550,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SensitiveColumn")
+                response_type="SensitiveColumn",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SensitiveColumn")
+                response_type="SensitiveColumn",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_sensitive_data_model(self, sensitive_data_model_id, **kwargs):
         """
@@ -9796,6 +10596,8 @@ class DataSafeClient(object):
         """
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}"
         method = "GET"
+        operation_name = "get_sensitive_data_model"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/GetSensitiveDataModel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9842,14 +10644,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SensitiveDataModel")
+                response_type="SensitiveDataModel",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SensitiveDataModel")
+                response_type="SensitiveDataModel",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_sensitive_type(self, sensitive_type_id, **kwargs):
         """
@@ -9882,6 +10690,8 @@ class DataSafeClient(object):
         """
         resource_path = "/sensitiveTypes/{sensitiveTypeId}"
         method = "GET"
+        operation_name = "get_sensitive_type"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveType/GetSensitiveType"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9928,14 +10738,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SensitiveType")
+                response_type="SensitiveType",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SensitiveType")
+                response_type="SensitiveType",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_target_alert_policy_association(self, target_alert_policy_association_id, **kwargs):
         """
@@ -9968,6 +10784,8 @@ class DataSafeClient(object):
         """
         resource_path = "/targetAlertPolicyAssociations/{targetAlertPolicyAssociationId}"
         method = "GET"
+        operation_name = "get_target_alert_policy_association"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetAlertPolicyAssociation/GetTargetAlertPolicyAssociation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10014,14 +10832,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TargetAlertPolicyAssociation")
+                response_type="TargetAlertPolicyAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TargetAlertPolicyAssociation")
+                response_type="TargetAlertPolicyAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_target_database(self, target_database_id, **kwargs):
         """
@@ -10054,6 +10878,8 @@ class DataSafeClient(object):
         """
         resource_path = "/targetDatabases/{targetDatabaseId}"
         method = "GET"
+        operation_name = "get_target_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/GetTargetDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10100,14 +10926,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TargetDatabase")
+                response_type="TargetDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TargetDatabase")
+                response_type="TargetDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_user_assessment(self, user_assessment_id, **kwargs):
         """
@@ -10140,6 +10972,8 @@ class DataSafeClient(object):
         """
         resource_path = "/userAssessments/{userAssessmentId}"
         method = "GET"
+        operation_name = "get_user_assessment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/GetUserAssessment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10186,14 +11020,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="UserAssessment")
+                response_type="UserAssessment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="UserAssessment")
+                response_type="UserAssessment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_user_assessment_comparison(self, user_assessment_id, comparison_user_assessment_id, **kwargs):
         """
@@ -10229,6 +11069,8 @@ class DataSafeClient(object):
         """
         resource_path = "/userAssessments/{userAssessmentId}/comparison/{comparisonUserAssessmentId}"
         method = "GET"
+        operation_name = "get_user_assessment_comparison"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/GetUserAssessmentComparison"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10276,14 +11118,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="UserAssessmentComparison")
+                response_type="UserAssessmentComparison",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="UserAssessmentComparison")
+                response_type="UserAssessmentComparison",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -10316,6 +11164,8 @@ class DataSafeClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10362,14 +11212,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_alert_analytics(self, compartment_id, **kwargs):
         """
@@ -10495,6 +11351,8 @@ class DataSafeClient(object):
         """
         resource_path = "/alertAnalytics"
         method = "GET"
+        operation_name = "list_alert_analytics"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertSummary/ListAlertAnalytics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10602,14 +11460,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AlertAnalyticsCollection")
+                response_type="AlertAnalyticsCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AlertAnalyticsCollection")
+                response_type="AlertAnalyticsCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_alert_policies(self, compartment_id, **kwargs):
         """
@@ -10710,6 +11574,8 @@ class DataSafeClient(object):
         """
         resource_path = "/alertPolicies"
         method = "GET"
+        operation_name = "list_alert_policies"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertPolicy/ListAlertPolicies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10812,14 +11678,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AlertPolicyCollection")
+                response_type="AlertPolicyCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AlertPolicyCollection")
+                response_type="AlertPolicyCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_alert_policy_rules(self, alert_policy_id, **kwargs):
         """
@@ -10863,6 +11735,8 @@ class DataSafeClient(object):
         """
         resource_path = "/alertPolicies/{alertPolicyId}/rules"
         method = "GET"
+        operation_name = "list_alert_policy_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertPolicy/ListAlertPolicyRules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10918,7 +11792,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AlertPolicyRuleCollection")
+                response_type="AlertPolicyRuleCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10926,7 +11803,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AlertPolicyRuleCollection")
+                response_type="AlertPolicyRuleCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_alerts(self, compartment_id, **kwargs):
         """
@@ -11021,6 +11901,8 @@ class DataSafeClient(object):
         """
         resource_path = "/alerts"
         method = "GET"
+        operation_name = "list_alerts"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertSummary/ListAlerts"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11109,14 +11991,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AlertCollection")
+                response_type="AlertCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AlertCollection")
+                response_type="AlertCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_audit_archive_retrievals(self, compartment_id, **kwargs):
         """
@@ -11200,6 +12088,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditArchiveRetrievals"
         method = "GET"
+        operation_name = "list_audit_archive_retrievals"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditArchiveRetrieval/ListAuditArchiveRetrievals"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11291,14 +12181,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AuditArchiveRetrievalCollection")
+                response_type="AuditArchiveRetrievalCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AuditArchiveRetrievalCollection")
+                response_type="AuditArchiveRetrievalCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_audit_event_analytics(self, compartment_id, **kwargs):
         """
@@ -11419,6 +12315,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditEventAnalytics"
         method = "GET"
+        operation_name = "list_audit_event_analytics"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditEventSummary/ListAuditEventAnalytics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11526,14 +12424,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AuditEventAnalyticsCollection")
+                response_type="AuditEventAnalyticsCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AuditEventAnalyticsCollection")
+                response_type="AuditEventAnalyticsCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_audit_events(self, compartment_id, **kwargs):
         """
@@ -11622,6 +12526,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditEvents"
         method = "GET"
+        operation_name = "list_audit_events"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditEventSummary/ListAuditEvents"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11698,14 +12604,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AuditEventCollection")
+                response_type="AuditEventCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AuditEventCollection")
+                response_type="AuditEventCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_audit_policies(self, compartment_id, **kwargs):
         """
@@ -11800,6 +12712,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditPolicies"
         method = "GET"
+        operation_name = "list_audit_policies"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditPolicyCollection/ListAuditPolicies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11889,14 +12803,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AuditPolicyCollection")
+                response_type="AuditPolicyCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AuditPolicyCollection")
+                response_type="AuditPolicyCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_audit_profile_analytics(self, compartment_id, **kwargs):
         """
@@ -11968,6 +12888,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditProfileAnalytics"
         method = "GET"
+        operation_name = "list_audit_profile_analytics"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfileAnalyticCollection/ListAuditProfileAnalytics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12034,14 +12956,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AuditProfileAnalyticCollection")
+                response_type="AuditProfileAnalyticCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AuditProfileAnalyticCollection")
+                response_type="AuditProfileAnalyticCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_audit_profiles(self, compartment_id, **kwargs):
         """
@@ -12148,6 +13076,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditProfiles"
         method = "GET"
+        operation_name = "list_audit_profiles"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfile/ListAuditProfiles"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12243,14 +13173,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AuditProfileCollection")
+                response_type="AuditProfileCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AuditProfileCollection")
+                response_type="AuditProfileCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_audit_trail_analytics(self, compartment_id, **kwargs):
         """
@@ -12325,6 +13261,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditTrailAnalytics"
         method = "GET"
+        operation_name = "list_audit_trail_analytics"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditTrailAnalyticCollection/ListAuditTrailAnalytics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12393,14 +13331,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AuditTrailAnalyticCollection")
+                response_type="AuditTrailAnalyticCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AuditTrailAnalyticCollection")
+                response_type="AuditTrailAnalyticCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_audit_trails(self, compartment_id, **kwargs):
         """
@@ -12499,6 +13443,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditTrails"
         method = "GET"
+        operation_name = "list_audit_trails"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditTrail/ListAuditTrails"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12597,14 +13543,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AuditTrailCollection")
+                response_type="AuditTrailCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AuditTrailCollection")
+                response_type="AuditTrailCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_available_audit_volumes(self, audit_profile_id, work_request_id, **kwargs):
         """
@@ -12683,6 +13635,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditProfiles/{auditProfileId}/availableAuditVolumes"
         method = "GET"
+        operation_name = "list_available_audit_volumes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfile/ListAvailableAuditVolumes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12763,7 +13717,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AvailableAuditVolumeCollection")
+                response_type="AvailableAuditVolumeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12771,7 +13728,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AvailableAuditVolumeCollection")
+                response_type="AvailableAuditVolumeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_collected_audit_volumes(self, audit_profile_id, work_request_id, **kwargs):
         """
@@ -12847,6 +13807,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditProfiles/{auditProfileId}/collectedAuditVolumes"
         method = "GET"
+        operation_name = "list_collected_audit_volumes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfile/ListCollectedAuditVolumes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12925,7 +13887,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="CollectedAuditVolumeCollection")
+                response_type="CollectedAuditVolumeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12933,7 +13898,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="CollectedAuditVolumeCollection")
+                response_type="CollectedAuditVolumeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_columns(self, target_database_id, **kwargs):
         """
@@ -13007,6 +13975,8 @@ class DataSafeClient(object):
         """
         resource_path = "/targetDatabases/{targetDatabaseId}/columns"
         method = "GET"
+        operation_name = "list_columns"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/ListColumns"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13094,7 +14064,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ColumnSummary]")
+                response_type="list[ColumnSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13102,7 +14075,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ColumnSummary]")
+                response_type="list[ColumnSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_data_safe_private_endpoints(self, compartment_id, **kwargs):
         """
@@ -13180,6 +14156,8 @@ class DataSafeClient(object):
         """
         resource_path = "/dataSafePrivateEndpoints"
         method = "GET"
+        operation_name = "list_data_safe_private_endpoints"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DataSafePrivateEndpointSummary/ListDataSafePrivateEndpoints"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13267,14 +14245,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DataSafePrivateEndpointSummary]")
+                response_type="list[DataSafePrivateEndpointSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DataSafePrivateEndpointSummary]")
+                response_type="list[DataSafePrivateEndpointSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_discovery_analytics(self, compartment_id, **kwargs):
         """
@@ -13332,6 +14316,8 @@ class DataSafeClient(object):
         """
         resource_path = "/discoveryAnalytics"
         method = "GET"
+        operation_name = "list_discovery_analytics"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/ListDiscoveryAnalytics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13392,14 +14378,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DiscoveryAnalyticsCollection")
+                response_type="DiscoveryAnalyticsCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DiscoveryAnalyticsCollection")
+                response_type="DiscoveryAnalyticsCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_discovery_job_results(self, discovery_job_id, **kwargs):
         """
@@ -13475,6 +14467,8 @@ class DataSafeClient(object):
         """
         resource_path = "/discoveryJobs/{discoveryJobId}/results"
         method = "GET"
+        operation_name = "list_discovery_job_results"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DiscoveryJob/ListDiscoveryJobResults"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13574,7 +14568,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DiscoveryJobResultCollection")
+                response_type="DiscoveryJobResultCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13582,7 +14579,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DiscoveryJobResultCollection")
+                response_type="DiscoveryJobResultCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_discovery_jobs(self, compartment_id, **kwargs):
         """
@@ -13665,6 +14665,8 @@ class DataSafeClient(object):
         """
         resource_path = "/discoveryJobs"
         method = "GET"
+        operation_name = "list_discovery_jobs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DiscoveryJob/ListDiscoveryJobs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13756,14 +14758,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DiscoveryJobCollection")
+                response_type="DiscoveryJobCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DiscoveryJobCollection")
+                response_type="DiscoveryJobCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_findings(self, security_assessment_id, **kwargs):
         """
@@ -13826,6 +14834,8 @@ class DataSafeClient(object):
         """
         resource_path = "/securityAssessments/{securityAssessmentId}/findings"
         method = "GET"
+        operation_name = "list_findings"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/ListFindings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13903,7 +14913,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[FindingSummary]")
+                response_type="list[FindingSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13911,7 +14924,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[FindingSummary]")
+                response_type="list[FindingSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_grants(self, user_assessment_id, user_key, **kwargs):
         """
@@ -13991,6 +15007,8 @@ class DataSafeClient(object):
         """
         resource_path = "/userAssessments/{userAssessmentId}/users/{userKey}/grants"
         method = "GET"
+        operation_name = "list_grants"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/ListGrants"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14079,7 +15097,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[GrantSummary]")
+                response_type="list[GrantSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14087,7 +15108,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[GrantSummary]")
+                response_type="list[GrantSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_library_masking_formats(self, compartment_id, **kwargs):
         """
@@ -14186,6 +15210,8 @@ class DataSafeClient(object):
         """
         resource_path = "/libraryMaskingFormats"
         method = "GET"
+        operation_name = "list_library_masking_formats"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/LibraryMaskingFormatSummary/ListLibraryMaskingFormats"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14286,14 +15312,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LibraryMaskingFormatCollection")
+                response_type="LibraryMaskingFormatCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LibraryMaskingFormatCollection")
+                response_type="LibraryMaskingFormatCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_masked_columns(self, masking_report_id, **kwargs):
         """
@@ -14366,6 +15398,8 @@ class DataSafeClient(object):
         """
         resource_path = "/maskingReports/{maskingReportId}/maskedColumns"
         method = "GET"
+        operation_name = "list_masked_columns"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskedColumnSummary/ListMaskedColumns"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14459,7 +15493,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="MaskedColumnCollection")
+                response_type="MaskedColumnCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14467,7 +15504,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="MaskedColumnCollection")
+                response_type="MaskedColumnCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_masking_analytics(self, compartment_id, **kwargs):
         """
@@ -14525,6 +15565,8 @@ class DataSafeClient(object):
         """
         resource_path = "/maskingAnalytics"
         method = "GET"
+        operation_name = "list_masking_analytics"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/ListMaskingAnalytics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14585,14 +15627,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="MaskingAnalyticsCollection")
+                response_type="MaskingAnalyticsCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="MaskingAnalyticsCollection")
+                response_type="MaskingAnalyticsCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_masking_columns(self, masking_policy_id, **kwargs):
         """
@@ -14717,6 +15765,8 @@ class DataSafeClient(object):
         """
         resource_path = "/maskingPolicies/{maskingPolicyId}/maskingColumns"
         method = "GET"
+        operation_name = "list_masking_columns"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingColumn/ListMaskingColumns"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14841,7 +15891,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="MaskingColumnCollection")
+                response_type="MaskingColumnCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14849,7 +15902,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="MaskingColumnCollection")
+                response_type="MaskingColumnCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_masking_policies(self, compartment_id, **kwargs):
         """
@@ -14949,6 +16005,8 @@ class DataSafeClient(object):
         """
         resource_path = "/maskingPolicies"
         method = "GET"
+        operation_name = "list_masking_policies"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/ListMaskingPolicies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15044,14 +16102,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="MaskingPolicyCollection")
+                response_type="MaskingPolicyCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="MaskingPolicyCollection")
+                response_type="MaskingPolicyCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_masking_reports(self, compartment_id, **kwargs):
         """
@@ -15122,6 +16186,8 @@ class DataSafeClient(object):
         """
         resource_path = "/maskingReports"
         method = "GET"
+        operation_name = "list_masking_reports"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/ListMaskingReports"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15200,14 +16266,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="MaskingReportCollection")
+                response_type="MaskingReportCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="MaskingReportCollection")
+                response_type="MaskingReportCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_on_prem_connectors(self, compartment_id, **kwargs):
         """
@@ -15285,6 +16357,8 @@ class DataSafeClient(object):
         """
         resource_path = "/onPremConnectors"
         method = "GET"
+        operation_name = "list_on_prem_connectors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/OnPremConnectorSummary/ListOnPremConnectors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15372,14 +16446,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[OnPremConnectorSummary]")
+                response_type="list[OnPremConnectorSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[OnPremConnectorSummary]")
+                response_type="list[OnPremConnectorSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_report_definitions(self, compartment_id, **kwargs):
         """
@@ -15469,6 +16549,8 @@ class DataSafeClient(object):
         """
         resource_path = "/reportDefinitions"
         method = "GET"
+        operation_name = "list_report_definitions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReportDefinition/ListReportDefinitions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15574,14 +16656,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ReportDefinitionCollection")
+                response_type="ReportDefinitionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ReportDefinitionCollection")
+                response_type="ReportDefinitionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_reports(self, compartment_id, **kwargs):
         """
@@ -15657,6 +16745,8 @@ class DataSafeClient(object):
         """
         resource_path = "/reports"
         method = "GET"
+        operation_name = "list_reports"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReportSummary/ListReports"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15744,14 +16834,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ReportCollection")
+                response_type="ReportCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ReportCollection")
+                response_type="ReportCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_roles(self, target_database_id, **kwargs):
         """
@@ -15816,6 +16912,8 @@ class DataSafeClient(object):
         """
         resource_path = "/targetDatabases/{targetDatabaseId}/roles"
         method = "GET"
+        operation_name = "list_roles"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/ListRoles"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15897,7 +16995,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[RoleSummary]")
+                response_type="list[RoleSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15905,7 +17006,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[RoleSummary]")
+                response_type="list[RoleSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_schemas(self, target_database_id, **kwargs):
         """
@@ -15967,6 +17071,8 @@ class DataSafeClient(object):
         """
         resource_path = "/targetDatabases/{targetDatabaseId}/schemas"
         method = "GET"
+        operation_name = "list_schemas"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/ListSchemas"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16046,7 +17152,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SchemaSummary]")
+                response_type="list[SchemaSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16054,7 +17163,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SchemaSummary]")
+                response_type="list[SchemaSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_security_assessments(self, compartment_id, **kwargs):
         """
@@ -16180,6 +17292,8 @@ class DataSafeClient(object):
         """
         resource_path = "/securityAssessments"
         method = "GET"
+        operation_name = "list_security_assessments"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessmentSummary/ListSecurityAssessments"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16295,14 +17409,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SecurityAssessmentSummary]")
+                response_type="list[SecurityAssessmentSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SecurityAssessmentSummary]")
+                response_type="list[SecurityAssessmentSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_sensitive_columns(self, sensitive_data_model_id, **kwargs):
         """
@@ -16432,6 +17552,8 @@ class DataSafeClient(object):
         """
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/sensitiveColumns"
         method = "GET"
+        operation_name = "list_sensitive_columns"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveColumn/ListSensitiveColumns"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16566,7 +17688,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SensitiveColumnCollection")
+                response_type="SensitiveColumnCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16574,7 +17699,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SensitiveColumnCollection")
+                response_type="SensitiveColumnCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_sensitive_data_models(self, compartment_id, **kwargs):
         """
@@ -16671,6 +17799,8 @@ class DataSafeClient(object):
         """
         resource_path = "/sensitiveDataModels"
         method = "GET"
+        operation_name = "list_sensitive_data_models"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/ListSensitiveDataModels"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16764,14 +17894,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SensitiveDataModelCollection")
+                response_type="SensitiveDataModelCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SensitiveDataModelCollection")
+                response_type="SensitiveDataModelCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_sensitive_types(self, compartment_id, **kwargs):
         """
@@ -16881,6 +18017,8 @@ class DataSafeClient(object):
         """
         resource_path = "/sensitiveTypes"
         method = "GET"
+        operation_name = "list_sensitive_types"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveType/ListSensitiveTypes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16994,14 +18132,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SensitiveTypeCollection")
+                response_type="SensitiveTypeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SensitiveTypeCollection")
+                response_type="SensitiveTypeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_tables(self, target_database_id, **kwargs):
         """
@@ -17066,6 +18210,8 @@ class DataSafeClient(object):
         """
         resource_path = "/targetDatabases/{targetDatabaseId}/tables"
         method = "GET"
+        operation_name = "list_tables"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/ListTables"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17147,7 +18293,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TableSummary]")
+                response_type="list[TableSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17155,7 +18304,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TableSummary]")
+                response_type="list[TableSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_target_alert_policy_associations(self, compartment_id, **kwargs):
         """
@@ -17253,6 +18405,8 @@ class DataSafeClient(object):
         """
         resource_path = "/targetAlertPolicyAssociations"
         method = "GET"
+        operation_name = "list_target_alert_policy_associations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetAlertPolicyAssociationSummary/ListTargetAlertPolicyAssociations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17346,14 +18500,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TargetAlertPolicyAssociationCollection")
+                response_type="TargetAlertPolicyAssociationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TargetAlertPolicyAssociationCollection")
+                response_type="TargetAlertPolicyAssociationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_target_databases(self, compartment_id, **kwargs):
         """
@@ -17444,6 +18604,8 @@ class DataSafeClient(object):
         """
         resource_path = "/targetDatabases"
         method = "GET"
+        operation_name = "list_target_databases"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabaseSummary/ListTargetDatabases"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17551,14 +18713,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TargetDatabaseSummary]")
+                response_type="list[TargetDatabaseSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TargetDatabaseSummary]")
+                response_type="list[TargetDatabaseSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_user_analytics(self, user_assessment_id, **kwargs):
         """
@@ -17694,6 +18862,8 @@ class DataSafeClient(object):
         """
         resource_path = "/userAssessments/{userAssessmentId}/userAnalytics"
         method = "GET"
+        operation_name = "list_user_analytics"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/ListUserAnalytics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17802,7 +18972,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[UserAggregation]")
+                response_type="list[UserAggregation]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17810,7 +18983,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[UserAggregation]")
+                response_type="list[UserAggregation]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_user_assessments(self, compartment_id, **kwargs):
         """
@@ -17936,6 +19112,8 @@ class DataSafeClient(object):
         """
         resource_path = "/userAssessments"
         method = "GET"
+        operation_name = "list_user_assessments"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessmentSummary/ListUserAssessments"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18051,14 +19229,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[UserAssessmentSummary]")
+                response_type="list[UserAssessmentSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[UserAssessmentSummary]")
+                response_type="list[UserAssessmentSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_users(self, user_assessment_id, **kwargs):
         """
@@ -18183,6 +19367,8 @@ class DataSafeClient(object):
         """
         resource_path = "/userAssessments/{userAssessmentId}/users"
         method = "GET"
+        operation_name = "list_users"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/ListUsers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18291,7 +19477,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[UserSummary]")
+                response_type="list[UserSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18299,7 +19488,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[UserSummary]")
+                response_type="list[UserSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -18342,6 +19534,8 @@ class DataSafeClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18397,7 +19591,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18405,7 +19602,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -18448,6 +19648,8 @@ class DataSafeClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18503,7 +19705,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLogEntry]")
+                response_type="list[WorkRequestLogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18511,7 +19716,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLogEntry]")
+                response_type="list[WorkRequestLogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -18574,6 +19782,8 @@ class DataSafeClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/WorkRequestSummary/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18643,14 +19853,20 @@ class DataSafeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestSummary]")
+                response_type="list[WorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestSummary]")
+                response_type="list[WorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def mask_data(self, masking_policy_id, mask_data_details, **kwargs):
         """
@@ -18686,6 +19902,8 @@ class DataSafeClient(object):
         """
         resource_path = "/maskingPolicies/{maskingPolicyId}/actions/mask"
         method = "POST"
+        operation_name = "mask_data"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/MaskData"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18732,14 +19950,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=mask_data_details)
+                body=mask_data_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=mask_data_details)
+                body=mask_data_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def modify_global_settings(self, modify_global_settings_details, compartment_id, **kwargs):
         """
@@ -18788,6 +20012,8 @@ class DataSafeClient(object):
         """
         resource_path = "/configuration/{compartmentId}/actions/modifyGlobalSettings"
         method = "POST"
+        operation_name = "modify_global_settings"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DataSafeConfiguration/ModifyGlobalSettings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18839,14 +20065,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=modify_global_settings_details)
+                body=modify_global_settings_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=modify_global_settings_details)
+                body=modify_global_settings_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def patch_alerts(self, patch_alerts_details, **kwargs):
         """
@@ -18886,6 +20118,8 @@ class DataSafeClient(object):
         """
         resource_path = "/alerts"
         method = "PATCH"
+        operation_name = "patch_alerts"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Alert/PatchAlerts"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18923,13 +20157,19 @@ class DataSafeClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=patch_alerts_details)
+                body=patch_alerts_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=patch_alerts_details)
+                body=patch_alerts_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def patch_discovery_job_results(self, discovery_job_id, patch_discovery_job_result_details, **kwargs):
         """
@@ -18973,6 +20213,8 @@ class DataSafeClient(object):
         """
         resource_path = "/discoveryJobs/{discoveryJobId}/results"
         method = "PATCH"
+        operation_name = "patch_discovery_job_results"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DiscoveryJob/PatchDiscoveryJobResults"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19021,14 +20263,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=patch_discovery_job_result_details)
+                body=patch_discovery_job_result_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=patch_discovery_job_result_details)
+                body=patch_discovery_job_result_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def patch_masking_columns(self, masking_policy_id, patch_masking_columns_details, **kwargs):
         """
@@ -19073,6 +20321,8 @@ class DataSafeClient(object):
         """
         resource_path = "/maskingPolicies/{maskingPolicyId}/maskingColumns"
         method = "PATCH"
+        operation_name = "patch_masking_columns"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingColumn/PatchMaskingColumns"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19121,14 +20371,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=patch_masking_columns_details)
+                body=patch_masking_columns_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=patch_masking_columns_details)
+                body=patch_masking_columns_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def patch_sensitive_columns(self, sensitive_data_model_id, patch_sensitive_column_details, **kwargs):
         """
@@ -19173,6 +20429,8 @@ class DataSafeClient(object):
         """
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/sensitiveColumns"
         method = "PATCH"
+        operation_name = "patch_sensitive_columns"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveColumn/PatchSensitiveColumns"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19221,14 +20479,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=patch_sensitive_column_details)
+                body=patch_sensitive_column_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=patch_sensitive_column_details)
+                body=patch_sensitive_column_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def provision_audit_policy(self, provision_audit_policy_details, audit_policy_id, **kwargs):
         """
@@ -19277,6 +20541,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditPolicies/{auditPolicyId}/actions/provision"
         method = "POST"
+        operation_name = "provision_audit_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditPolicy/ProvisionAuditPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19328,14 +20594,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=provision_audit_policy_details)
+                body=provision_audit_policy_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=provision_audit_policy_details)
+                body=provision_audit_policy_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def refresh_security_assessment(self, security_assessment_id, run_security_assessment_details, **kwargs):
         """
@@ -19385,6 +20657,8 @@ class DataSafeClient(object):
         """
         resource_path = "/securityAssessments/{securityAssessmentId}/actions/refresh"
         method = "POST"
+        operation_name = "refresh_security_assessment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/RefreshSecurityAssessment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19436,14 +20710,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=run_security_assessment_details)
+                body=run_security_assessment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=run_security_assessment_details)
+                body=run_security_assessment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def refresh_user_assessment(self, user_assessment_id, run_user_assessment_details, **kwargs):
         """
@@ -19494,6 +20774,8 @@ class DataSafeClient(object):
         """
         resource_path = "/userAssessments/{userAssessmentId}/actions/refresh"
         method = "POST"
+        operation_name = "refresh_user_assessment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/RefreshUserAssessment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19545,14 +20827,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=run_user_assessment_details)
+                body=run_user_assessment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=run_user_assessment_details)
+                body=run_user_assessment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def resume_audit_trail(self, audit_trail_id, **kwargs):
         """
@@ -19592,6 +20880,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditTrails/{auditTrailId}/actions/resume"
         method = "POST"
+        operation_name = "resume_audit_trail"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditTrail/ResumeAuditTrail"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19639,13 +20929,19 @@ class DataSafeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def resume_work_request(self, work_request_id, **kwargs):
         """
@@ -19691,6 +20987,8 @@ class DataSafeClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/actions/resume"
         method = "POST"
+        operation_name = "resume_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/WorkRequest/ResumeWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19741,13 +21039,19 @@ class DataSafeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def retrieve_audit_policies(self, audit_policy_id, **kwargs):
         """
@@ -19793,6 +21097,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditPolicies/{auditPolicyId}/actions/retrieveFromTarget"
         method = "POST"
+        operation_name = "retrieve_audit_policies"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditPolicy/RetrieveAuditPolicies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19843,13 +21149,19 @@ class DataSafeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def set_security_assessment_baseline(self, security_assessment_id, **kwargs):
         """
@@ -19898,6 +21210,8 @@ class DataSafeClient(object):
         """
         resource_path = "/securityAssessments/{securityAssessmentId}/actions/setBaseline"
         method = "POST"
+        operation_name = "set_security_assessment_baseline"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/SetSecurityAssessmentBaseline"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19950,14 +21264,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=kwargs.get('base_line_details'))
+                body=kwargs.get('base_line_details'),
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=kwargs.get('base_line_details'))
+                body=kwargs.get('base_line_details'),
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def set_user_assessment_baseline(self, user_assessment_id, **kwargs):
         """
@@ -20006,6 +21326,8 @@ class DataSafeClient(object):
         """
         resource_path = "/userAssessments/{userAssessmentId}/actions/setBaseline"
         method = "POST"
+        operation_name = "set_user_assessment_baseline"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/SetUserAssessmentBaseline"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20058,14 +21380,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=kwargs.get('base_line_details'))
+                body=kwargs.get('base_line_details'),
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=kwargs.get('base_line_details'))
+                body=kwargs.get('base_line_details'),
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def start_audit_trail(self, start_audit_trail_details, audit_trail_id, **kwargs):
         """
@@ -20114,6 +21442,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditTrails/{auditTrailId}/actions/start"
         method = "POST"
+        operation_name = "start_audit_trail"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditTrail/StartAuditTrail"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20165,14 +21495,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=start_audit_trail_details)
+                body=start_audit_trail_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=start_audit_trail_details)
+                body=start_audit_trail_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def stop_audit_trail(self, audit_trail_id, **kwargs):
         """
@@ -20212,6 +21548,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditTrails/{auditTrailId}/actions/stop"
         method = "POST"
+        operation_name = "stop_audit_trail"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditTrail/StopAuditTrail"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20259,13 +21597,19 @@ class DataSafeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def suspend_work_request(self, work_request_id, **kwargs):
         """
@@ -20311,6 +21655,8 @@ class DataSafeClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/actions/suspend"
         method = "POST"
+        operation_name = "suspend_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/WorkRequest/SuspendWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20361,13 +21707,19 @@ class DataSafeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def unset_security_assessment_baseline(self, security_assessment_id, **kwargs):
         """
@@ -20414,6 +21766,8 @@ class DataSafeClient(object):
         """
         resource_path = "/securityAssessments/{securityAssessmentId}/actions/unsetBaseline"
         method = "POST"
+        operation_name = "unset_security_assessment_baseline"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/UnsetSecurityAssessmentBaseline"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20464,13 +21818,19 @@ class DataSafeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def unset_user_assessment_baseline(self, user_assessment_id, **kwargs):
         """
@@ -20517,6 +21877,8 @@ class DataSafeClient(object):
         """
         resource_path = "/userAssessments/{userAssessmentId}/actions/unsetBaseline"
         method = "POST"
+        operation_name = "unset_user_assessment_baseline"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/UnsetUserAssessmentBaseline"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20567,13 +21929,19 @@ class DataSafeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_alert(self, alert_id, update_alert_details, **kwargs):
         """
@@ -20616,6 +21984,8 @@ class DataSafeClient(object):
         """
         resource_path = "/alerts/{alertId}"
         method = "PUT"
+        operation_name = "update_alert"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Alert/UpdateAlert"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20665,7 +22035,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_alert_details,
-                response_type="Alert")
+                response_type="Alert",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -20673,7 +22046,10 @@ class DataSafeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_alert_details,
-                response_type="Alert")
+                response_type="Alert",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_audit_archive_retrieval(self, audit_archive_retrieval_id, update_audit_archive_retrieval_details, **kwargs):
         """
@@ -20716,6 +22092,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditArchiveRetrievals/{auditArchiveRetrievalId}"
         method = "PUT"
+        operation_name = "update_audit_archive_retrieval"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditArchiveRetrieval/UpdateAuditArchiveRetrieval"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20764,14 +22142,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_audit_archive_retrieval_details)
+                body=update_audit_archive_retrieval_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_audit_archive_retrieval_details)
+                body=update_audit_archive_retrieval_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_audit_policy(self, audit_policy_id, update_audit_policy_details, **kwargs):
         """
@@ -20814,6 +22198,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditPolicies/{auditPolicyId}"
         method = "PUT"
+        operation_name = "update_audit_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditPolicy/UpdateAuditPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20862,14 +22248,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_audit_policy_details)
+                body=update_audit_policy_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_audit_policy_details)
+                body=update_audit_policy_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_audit_profile(self, audit_profile_id, update_audit_profile_details, **kwargs):
         """
@@ -20912,6 +22304,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditProfiles/{auditProfileId}"
         method = "PUT"
+        operation_name = "update_audit_profile"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditProfile/UpdateAuditProfile"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20960,14 +22354,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_audit_profile_details)
+                body=update_audit_profile_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_audit_profile_details)
+                body=update_audit_profile_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_audit_trail(self, audit_trail_id, update_audit_trail_details, **kwargs):
         """
@@ -21010,6 +22410,8 @@ class DataSafeClient(object):
         """
         resource_path = "/auditTrails/{auditTrailId}"
         method = "PUT"
+        operation_name = "update_audit_trail"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditTrail/UpdateAuditTrail"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21058,14 +22460,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_audit_trail_details)
+                body=update_audit_trail_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_audit_trail_details)
+                body=update_audit_trail_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_data_safe_private_endpoint(self, data_safe_private_endpoint_id, update_data_safe_private_endpoint_details, **kwargs):
         """
@@ -21108,6 +22516,8 @@ class DataSafeClient(object):
         """
         resource_path = "/dataSafePrivateEndpoints/{dataSafePrivateEndpointId}"
         method = "PUT"
+        operation_name = "update_data_safe_private_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DataSafePrivateEndpoint/UpdateDataSafePrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21156,14 +22566,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_data_safe_private_endpoint_details)
+                body=update_data_safe_private_endpoint_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_data_safe_private_endpoint_details)
+                body=update_data_safe_private_endpoint_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_library_masking_format(self, library_masking_format_id, update_library_masking_format_details, **kwargs):
         """
@@ -21206,6 +22622,8 @@ class DataSafeClient(object):
         """
         resource_path = "/libraryMaskingFormats/{libraryMaskingFormatId}"
         method = "PUT"
+        operation_name = "update_library_masking_format"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/LibraryMaskingFormat/UpdateLibraryMaskingFormat"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21254,14 +22672,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_library_masking_format_details)
+                body=update_library_masking_format_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_library_masking_format_details)
+                body=update_library_masking_format_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_masking_column(self, masking_column_key, masking_policy_id, update_masking_column_details, **kwargs):
         """
@@ -21308,6 +22732,8 @@ class DataSafeClient(object):
         """
         resource_path = "/maskingPolicies/{maskingPolicyId}/maskingColumns/{maskingColumnKey}"
         method = "PUT"
+        operation_name = "update_masking_column"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingColumn/UpdateMaskingColumn"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21357,14 +22783,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_masking_column_details)
+                body=update_masking_column_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_masking_column_details)
+                body=update_masking_column_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_masking_policy(self, masking_policy_id, update_masking_policy_details, **kwargs):
         """
@@ -21407,6 +22839,8 @@ class DataSafeClient(object):
         """
         resource_path = "/maskingPolicies/{maskingPolicyId}"
         method = "PUT"
+        operation_name = "update_masking_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/UpdateMaskingPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21455,14 +22889,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_masking_policy_details)
+                body=update_masking_policy_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_masking_policy_details)
+                body=update_masking_policy_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_on_prem_connector(self, on_prem_connector_id, update_on_prem_connector_details, **kwargs):
         """
@@ -21505,6 +22945,8 @@ class DataSafeClient(object):
         """
         resource_path = "/onPremConnectors/{onPremConnectorId}"
         method = "PUT"
+        operation_name = "update_on_prem_connector"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/OnPremConnector/UpdateOnPremConnector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21553,14 +22995,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_on_prem_connector_details)
+                body=update_on_prem_connector_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_on_prem_connector_details)
+                body=update_on_prem_connector_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_on_prem_connector_wallet(self, update_on_prem_connector_wallet_details, on_prem_connector_id, **kwargs):
         """
@@ -21609,6 +23057,8 @@ class DataSafeClient(object):
         """
         resource_path = "/onPremConnectors/{onPremConnectorId}/wallet"
         method = "PUT"
+        operation_name = "update_on_prem_connector_wallet"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/OnPremConnector/UpdateOnPremConnectorWallet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21660,14 +23110,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_on_prem_connector_wallet_details)
+                body=update_on_prem_connector_wallet_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_on_prem_connector_wallet_details)
+                body=update_on_prem_connector_wallet_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_report_definition(self, report_definition_id, update_report_definition_details, **kwargs):
         """
@@ -21716,6 +23172,8 @@ class DataSafeClient(object):
         """
         resource_path = "/reportDefinitions/{reportDefinitionId}"
         method = "PUT"
+        operation_name = "update_report_definition"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReportDefinition/UpdateReportDefinition"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21767,14 +23225,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_report_definition_details)
+                body=update_report_definition_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_report_definition_details)
+                body=update_report_definition_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_security_assessment(self, security_assessment_id, update_security_assessment_details, **kwargs):
         """
@@ -21817,6 +23281,8 @@ class DataSafeClient(object):
         """
         resource_path = "/securityAssessments/{securityAssessmentId}"
         method = "PUT"
+        operation_name = "update_security_assessment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/UpdateSecurityAssessment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21865,14 +23331,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_security_assessment_details)
+                body=update_security_assessment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_security_assessment_details)
+                body=update_security_assessment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_sensitive_column(self, sensitive_data_model_id, sensitive_column_key, update_sensitive_column_details, **kwargs):
         """
@@ -21918,6 +23390,8 @@ class DataSafeClient(object):
         """
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/sensitiveColumns/{sensitiveColumnKey}"
         method = "PUT"
+        operation_name = "update_sensitive_column"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveColumn/UpdateSensitiveColumn"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21967,14 +23441,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_sensitive_column_details)
+                body=update_sensitive_column_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_sensitive_column_details)
+                body=update_sensitive_column_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_sensitive_data_model(self, sensitive_data_model_id, update_sensitive_data_model_details, **kwargs):
         """
@@ -22018,6 +23498,8 @@ class DataSafeClient(object):
         """
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}"
         method = "PUT"
+        operation_name = "update_sensitive_data_model"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/UpdateSensitiveDataModel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22066,14 +23548,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_sensitive_data_model_details)
+                body=update_sensitive_data_model_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_sensitive_data_model_details)
+                body=update_sensitive_data_model_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_sensitive_type(self, sensitive_type_id, update_sensitive_type_details, **kwargs):
         """
@@ -22116,6 +23604,8 @@ class DataSafeClient(object):
         """
         resource_path = "/sensitiveTypes/{sensitiveTypeId}"
         method = "PUT"
+        operation_name = "update_sensitive_type"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveType/UpdateSensitiveType"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22164,14 +23654,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_sensitive_type_details)
+                body=update_sensitive_type_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_sensitive_type_details)
+                body=update_sensitive_type_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_target_alert_policy_association(self, target_alert_policy_association_id, update_target_alert_policy_association_details, **kwargs):
         """
@@ -22214,6 +23710,8 @@ class DataSafeClient(object):
         """
         resource_path = "/targetAlertPolicyAssociations/{targetAlertPolicyAssociationId}"
         method = "PUT"
+        operation_name = "update_target_alert_policy_association"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetAlertPolicyAssociation/UpdateTargetAlertPolicyAssociation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22262,14 +23760,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_target_alert_policy_association_details)
+                body=update_target_alert_policy_association_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_target_alert_policy_association_details)
+                body=update_target_alert_policy_association_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_target_database(self, target_database_id, update_target_database_details, **kwargs):
         """
@@ -22318,6 +23822,8 @@ class DataSafeClient(object):
         """
         resource_path = "/targetDatabases/{targetDatabaseId}"
         method = "PUT"
+        operation_name = "update_target_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/UpdateTargetDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22369,14 +23875,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_target_database_details)
+                body=update_target_database_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_target_database_details)
+                body=update_target_database_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_user_assessment(self, user_assessment_id, update_user_assessment_details, **kwargs):
         """
@@ -22419,6 +23931,8 @@ class DataSafeClient(object):
         """
         resource_path = "/userAssessments/{userAssessmentId}"
         method = "PUT"
+        operation_name = "update_user_assessment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/UpdateUserAssessment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22467,14 +23981,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_user_assessment_details)
+                body=update_user_assessment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_user_assessment_details)
+                body=update_user_assessment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def upload_masking_policy(self, upload_masking_policy_details, masking_policy_id, **kwargs):
         """
@@ -22528,6 +24048,8 @@ class DataSafeClient(object):
         """
         resource_path = "/maskingPolicies/{maskingPolicyId}/actions/upload"
         method = "POST"
+        operation_name = "upload_masking_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicy/UploadMaskingPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22597,14 +24119,20 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=upload_masking_policy_details)
+                body=upload_masking_policy_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=upload_masking_policy_details)
+                body=upload_masking_policy_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def upload_sensitive_data_model(self, sensitive_data_model_id, upload_sensitive_data_model_details, **kwargs):
         """
@@ -22657,6 +24185,8 @@ class DataSafeClient(object):
         """
         resource_path = "/sensitiveDataModels/{sensitiveDataModelId}/actions/upload"
         method = "POST"
+        operation_name = "upload_sensitive_data_model"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModel/UploadSensitiveDataModel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22726,11 +24256,17 @@ class DataSafeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=upload_sensitive_data_model_details)
+                body=upload_sensitive_data_model_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=upload_sensitive_data_model_details)
+                body=upload_sensitive_data_model_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

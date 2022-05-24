@@ -150,6 +150,8 @@ class LimitsClient(object):
         """
         resource_path = "/20190729/services/{serviceName}/limits/{limitName}/resourceAvailability"
         method = "GET"
+        operation_name = "get_resource_availability"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits/20181025/ResourceAvailability/GetResourceAvailability"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -203,7 +205,10 @@ class LimitsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResourceAvailability")
+                response_type="ResourceAvailability",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -211,7 +216,10 @@ class LimitsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResourceAvailability")
+                response_type="ResourceAvailability",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_limit_definitions(self, compartment_id, **kwargs):
         """
@@ -269,6 +277,8 @@ class LimitsClient(object):
         """
         resource_path = "/20190729/limitDefinitions"
         method = "GET"
+        operation_name = "list_limit_definitions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits/20181025/LimitDefinitionSummary/ListLimitDefinitions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -334,14 +344,20 @@ class LimitsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[LimitDefinitionSummary]")
+                response_type="list[LimitDefinitionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[LimitDefinitionSummary]")
+                response_type="list[LimitDefinitionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_limit_values(self, compartment_id, service_name, **kwargs):
         """
@@ -405,6 +421,8 @@ class LimitsClient(object):
         """
         resource_path = "/20190729/limitValues"
         method = "GET"
+        operation_name = "list_limit_values"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits/20181025/LimitValueSummary/ListLimitValues"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -480,14 +498,20 @@ class LimitsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[LimitValueSummary]")
+                response_type="list[LimitValueSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[LimitValueSummary]")
+                response_type="list[LimitValueSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_services(self, compartment_id, **kwargs):
         """
@@ -538,6 +562,8 @@ class LimitsClient(object):
         """
         resource_path = "/20190729/services"
         method = "GET"
+        operation_name = "list_services"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits/20181025/ServiceSummary/ListServices"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -599,11 +625,17 @@ class LimitsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ServiceSummary]")
+                response_type="list[ServiceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ServiceSummary]")
+                response_type="list[ServiceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

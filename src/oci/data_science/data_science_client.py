@@ -145,6 +145,8 @@ class DataScienceClient(object):
         """
         resource_path = "/models/{modelId}/actions/activate"
         method = "POST"
+        operation_name = "activate_model"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/ActivateModel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -193,14 +195,20 @@ class DataScienceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Model")
+                response_type="Model",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Model")
+                response_type="Model",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def activate_model_deployment(self, model_deployment_id, **kwargs):
         """
@@ -242,6 +250,8 @@ class DataScienceClient(object):
         """
         resource_path = "/modelDeployments/{modelDeploymentId}/actions/activate"
         method = "POST"
+        operation_name = "activate_model_deployment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/ActivateModelDeployment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -287,13 +297,19 @@ class DataScienceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def activate_notebook_session(self, notebook_session_id, **kwargs):
         """
@@ -335,6 +351,8 @@ class DataScienceClient(object):
         """
         resource_path = "/notebookSessions/{notebookSessionId}/actions/activate"
         method = "POST"
+        operation_name = "activate_notebook_session"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/ActivateNotebookSession"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -380,13 +398,19 @@ class DataScienceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def cancel_job_run(self, job_run_id, **kwargs):
         """
@@ -428,6 +452,8 @@ class DataScienceClient(object):
         """
         resource_path = "/jobRuns/{jobRunId}/actions/cancelJobRun"
         method = "POST"
+        operation_name = "cancel_job_run"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRun/CancelJobRun"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -475,13 +501,19 @@ class DataScienceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def cancel_work_request(self, work_request_id, **kwargs):
         """
@@ -523,6 +555,8 @@ class DataScienceClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
+        operation_name = "cancel_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/WorkRequest/CancelWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -568,13 +602,19 @@ class DataScienceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_job_compartment(self, job_id, change_job_compartment_details, **kwargs):
         """
@@ -619,6 +659,8 @@ class DataScienceClient(object):
         """
         resource_path = "/jobs/{jobId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_job_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/ChangeJobCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -665,14 +707,20 @@ class DataScienceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_job_compartment_details)
+                body=change_job_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_job_compartment_details)
+                body=change_job_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_job_run_compartment(self, job_run_id, change_job_run_compartment_details, **kwargs):
         """
@@ -717,6 +765,8 @@ class DataScienceClient(object):
         """
         resource_path = "/jobRuns/{jobRunId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_job_run_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRun/ChangeJobRunCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -763,14 +813,20 @@ class DataScienceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_job_run_compartment_details)
+                body=change_job_run_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_job_run_compartment_details)
+                body=change_job_run_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_model_compartment(self, model_id, change_model_compartment_details, **kwargs):
         """
@@ -818,6 +874,8 @@ class DataScienceClient(object):
         """
         resource_path = "/models/{modelId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_model_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/ChangeModelCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -867,14 +925,20 @@ class DataScienceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_model_compartment_details)
+                body=change_model_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_model_compartment_details)
+                body=change_model_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_model_deployment_compartment(self, model_deployment_id, change_model_deployment_compartment_details, **kwargs):
         """
@@ -922,6 +986,8 @@ class DataScienceClient(object):
         """
         resource_path = "/modelDeployments/{modelDeploymentId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_model_deployment_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/ChangeModelDeploymentCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -971,14 +1037,20 @@ class DataScienceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_model_deployment_compartment_details)
+                body=change_model_deployment_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_model_deployment_compartment_details)
+                body=change_model_deployment_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_notebook_session_compartment(self, notebook_session_id, change_notebook_session_compartment_details, **kwargs):
         """
@@ -1026,6 +1098,8 @@ class DataScienceClient(object):
         """
         resource_path = "/notebookSessions/{notebookSessionId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_notebook_session_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/ChangeNotebookSessionCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1075,14 +1149,20 @@ class DataScienceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_notebook_session_compartment_details)
+                body=change_notebook_session_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_notebook_session_compartment_details)
+                body=change_notebook_session_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_project_compartment(self, project_id, change_project_compartment_details, **kwargs):
         """
@@ -1130,6 +1210,8 @@ class DataScienceClient(object):
         """
         resource_path = "/projects/{projectId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_project_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Project/ChangeProjectCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1179,14 +1261,20 @@ class DataScienceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_project_compartment_details)
+                body=change_project_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_project_compartment_details)
+                body=change_project_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_job(self, create_job_details, **kwargs):
         """
@@ -1222,6 +1310,8 @@ class DataScienceClient(object):
         """
         resource_path = "/jobs"
         method = "POST"
+        operation_name = "create_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/CreateJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1261,14 +1351,20 @@ class DataScienceClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_job_details,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_job_details,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_job_artifact(self, job_id, job_artifact, **kwargs):
         """
@@ -1323,6 +1419,8 @@ class DataScienceClient(object):
         """
         resource_path = "/jobs/{jobId}/artifact"
         method = "POST"
+        operation_name = "create_job_artifact"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/CreateJobArtifact"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1396,8 +1494,10 @@ class DataScienceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=job_artifact,
+                enforce_content_headers=False,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enforce_content_headers=False)
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1405,8 +1505,10 @@ class DataScienceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=job_artifact,
+                enforce_content_headers=False,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enforce_content_headers=False)
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_job_run(self, create_job_run_details, **kwargs):
         """
@@ -1442,6 +1544,8 @@ class DataScienceClient(object):
         """
         resource_path = "/jobRuns"
         method = "POST"
+        operation_name = "create_job_run"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRun/CreateJobRun"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1481,14 +1585,20 @@ class DataScienceClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_job_run_details,
-                response_type="JobRun")
+                response_type="JobRun",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_job_run_details,
-                response_type="JobRun")
+                response_type="JobRun",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_model(self, create_model_details, **kwargs):
         """
@@ -1524,6 +1634,8 @@ class DataScienceClient(object):
         """
         resource_path = "/models"
         method = "POST"
+        operation_name = "create_model"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/CreateModel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1563,14 +1675,20 @@ class DataScienceClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_model_details,
-                response_type="Model")
+                response_type="Model",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_model_details,
-                response_type="Model")
+                response_type="Model",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_model_artifact(self, model_id, model_artifact, **kwargs):
         """
@@ -1630,6 +1748,8 @@ class DataScienceClient(object):
         """
         resource_path = "/models/{modelId}/artifact"
         method = "POST"
+        operation_name = "create_model_artifact"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/CreateModelArtifact"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1705,8 +1825,10 @@ class DataScienceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=model_artifact,
+                enforce_content_headers=False,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enforce_content_headers=False)
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1714,8 +1836,10 @@ class DataScienceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=model_artifact,
+                enforce_content_headers=False,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enforce_content_headers=False)
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_model_deployment(self, create_model_deployment_details, **kwargs):
         """
@@ -1751,6 +1875,8 @@ class DataScienceClient(object):
         """
         resource_path = "/modelDeployments"
         method = "POST"
+        operation_name = "create_model_deployment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/CreateModelDeployment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1790,14 +1916,20 @@ class DataScienceClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_model_deployment_details,
-                response_type="ModelDeployment")
+                response_type="ModelDeployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_model_deployment_details,
-                response_type="ModelDeployment")
+                response_type="ModelDeployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_model_provenance(self, model_id, create_model_provenance_details, **kwargs):
         """
@@ -1838,6 +1970,8 @@ class DataScienceClient(object):
         """
         resource_path = "/models/{modelId}/provenance"
         method = "POST"
+        operation_name = "create_model_provenance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/CreateModelProvenance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1888,7 +2022,10 @@ class DataScienceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_model_provenance_details,
-                response_type="ModelProvenance")
+                response_type="ModelProvenance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1896,7 +2033,10 @@ class DataScienceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_model_provenance_details,
-                response_type="ModelProvenance")
+                response_type="ModelProvenance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_notebook_session(self, create_notebook_session_details, **kwargs):
         """
@@ -1932,6 +2072,8 @@ class DataScienceClient(object):
         """
         resource_path = "/notebookSessions"
         method = "POST"
+        operation_name = "create_notebook_session"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/CreateNotebookSession"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1971,14 +2113,20 @@ class DataScienceClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_notebook_session_details,
-                response_type="NotebookSession")
+                response_type="NotebookSession",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_notebook_session_details,
-                response_type="NotebookSession")
+                response_type="NotebookSession",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_project(self, create_project_details, **kwargs):
         """
@@ -2014,6 +2162,8 @@ class DataScienceClient(object):
         """
         resource_path = "/projects"
         method = "POST"
+        operation_name = "create_project"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Project/CreateProject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2053,14 +2203,20 @@ class DataScienceClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_project_details,
-                response_type="Project")
+                response_type="Project",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_project_details,
-                response_type="Project")
+                response_type="Project",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def deactivate_model(self, model_id, **kwargs):
         """
@@ -2102,6 +2258,8 @@ class DataScienceClient(object):
         """
         resource_path = "/models/{modelId}/actions/deactivate"
         method = "POST"
+        operation_name = "deactivate_model"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/DeactivateModel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2150,14 +2308,20 @@ class DataScienceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Model")
+                response_type="Model",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Model")
+                response_type="Model",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def deactivate_model_deployment(self, model_deployment_id, **kwargs):
         """
@@ -2199,6 +2363,8 @@ class DataScienceClient(object):
         """
         resource_path = "/modelDeployments/{modelDeploymentId}/actions/deactivate"
         method = "POST"
+        operation_name = "deactivate_model_deployment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/DeactivateModelDeployment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2244,13 +2410,19 @@ class DataScienceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def deactivate_notebook_session(self, notebook_session_id, **kwargs):
         """
@@ -2292,6 +2464,8 @@ class DataScienceClient(object):
         """
         resource_path = "/notebookSessions/{notebookSessionId}/actions/deactivate"
         method = "POST"
+        operation_name = "deactivate_notebook_session"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/DeactivateNotebookSession"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2337,13 +2511,19 @@ class DataScienceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_job(self, job_id, **kwargs):
         """
@@ -2388,6 +2568,8 @@ class DataScienceClient(object):
         """
         resource_path = "/jobs/{jobId}"
         method = "DELETE"
+        operation_name = "delete_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/DeleteJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2442,14 +2624,20 @@ class DataScienceClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_job_run(self, job_run_id, **kwargs):
         """
@@ -2491,6 +2679,8 @@ class DataScienceClient(object):
         """
         resource_path = "/jobRuns/{jobRunId}"
         method = "DELETE"
+        operation_name = "delete_job_run"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRun/DeleteJobRun"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2538,13 +2728,19 @@ class DataScienceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_model(self, model_id, **kwargs):
         """
@@ -2586,6 +2782,8 @@ class DataScienceClient(object):
         """
         resource_path = "/models/{modelId}"
         method = "DELETE"
+        operation_name = "delete_model"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/DeleteModel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2633,13 +2831,19 @@ class DataScienceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_model_deployment(self, model_deployment_id, **kwargs):
         """
@@ -2681,6 +2885,8 @@ class DataScienceClient(object):
         """
         resource_path = "/modelDeployments/{modelDeploymentId}"
         method = "DELETE"
+        operation_name = "delete_model_deployment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/DeleteModelDeployment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2728,13 +2934,19 @@ class DataScienceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_notebook_session(self, notebook_session_id, **kwargs):
         """
@@ -2776,6 +2988,8 @@ class DataScienceClient(object):
         """
         resource_path = "/notebookSessions/{notebookSessionId}"
         method = "DELETE"
+        operation_name = "delete_notebook_session"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/DeleteNotebookSession"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2823,13 +3037,19 @@ class DataScienceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_project(self, project_id, **kwargs):
         """
@@ -2871,6 +3091,8 @@ class DataScienceClient(object):
         """
         resource_path = "/projects/{projectId}"
         method = "DELETE"
+        operation_name = "delete_project"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Project/DeleteProject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2918,13 +3140,19 @@ class DataScienceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_job(self, job_id, **kwargs):
         """
@@ -2959,6 +3187,8 @@ class DataScienceClient(object):
         """
         resource_path = "/jobs/{jobId}"
         method = "GET"
+        operation_name = "get_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/GetJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3005,14 +3235,20 @@ class DataScienceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_job_artifact_content(self, job_id, **kwargs):
         """
@@ -3053,6 +3289,8 @@ class DataScienceClient(object):
         """
         resource_path = "/jobs/{jobId}/artifact/content"
         method = "GET"
+        operation_name = "get_job_artifact_content"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/GetJobArtifactContent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3101,14 +3339,20 @@ class DataScienceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_job_run(self, job_run_id, **kwargs):
         """
@@ -3143,6 +3387,8 @@ class DataScienceClient(object):
         """
         resource_path = "/jobRuns/{jobRunId}"
         method = "GET"
+        operation_name = "get_job_run"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRun/GetJobRun"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3189,14 +3435,20 @@ class DataScienceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="JobRun")
+                response_type="JobRun",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="JobRun")
+                response_type="JobRun",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_model(self, model_id, **kwargs):
         """
@@ -3231,6 +3483,8 @@ class DataScienceClient(object):
         """
         resource_path = "/models/{modelId}"
         method = "GET"
+        operation_name = "get_model"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/GetModel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3277,14 +3531,20 @@ class DataScienceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Model")
+                response_type="Model",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Model")
+                response_type="Model",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_model_artifact_content(self, model_id, **kwargs):
         """
@@ -3325,6 +3585,8 @@ class DataScienceClient(object):
         """
         resource_path = "/models/{modelId}/artifact/content"
         method = "GET"
+        operation_name = "get_model_artifact_content"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/GetModelArtifactContent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3373,14 +3635,20 @@ class DataScienceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_model_deployment(self, model_deployment_id, **kwargs):
         """
@@ -3415,6 +3683,8 @@ class DataScienceClient(object):
         """
         resource_path = "/modelDeployments/{modelDeploymentId}"
         method = "GET"
+        operation_name = "get_model_deployment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/GetModelDeployment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3461,14 +3731,20 @@ class DataScienceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ModelDeployment")
+                response_type="ModelDeployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ModelDeployment")
+                response_type="ModelDeployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_model_provenance(self, model_id, **kwargs):
         """
@@ -3503,6 +3779,8 @@ class DataScienceClient(object):
         """
         resource_path = "/models/{modelId}/provenance"
         method = "GET"
+        operation_name = "get_model_provenance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/GetModelProvenance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3549,14 +3827,20 @@ class DataScienceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ModelProvenance")
+                response_type="ModelProvenance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ModelProvenance")
+                response_type="ModelProvenance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_notebook_session(self, notebook_session_id, **kwargs):
         """
@@ -3591,6 +3875,8 @@ class DataScienceClient(object):
         """
         resource_path = "/notebookSessions/{notebookSessionId}"
         method = "GET"
+        operation_name = "get_notebook_session"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/GetNotebookSession"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3637,14 +3923,20 @@ class DataScienceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="NotebookSession")
+                response_type="NotebookSession",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="NotebookSession")
+                response_type="NotebookSession",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_project(self, project_id, **kwargs):
         """
@@ -3679,6 +3971,8 @@ class DataScienceClient(object):
         """
         resource_path = "/projects/{projectId}"
         method = "GET"
+        operation_name = "get_project"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Project/GetProject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3725,14 +4019,20 @@ class DataScienceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Project")
+                response_type="Project",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Project")
+                response_type="Project",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -3767,6 +4067,8 @@ class DataScienceClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3811,14 +4113,20 @@ class DataScienceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def head_job_artifact(self, job_id, **kwargs):
         """
@@ -3853,6 +4161,8 @@ class DataScienceClient(object):
         """
         resource_path = "/jobs/{jobId}/artifact/content"
         method = "HEAD"
+        operation_name = "head_job_artifact"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/HeadJobArtifact"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3898,13 +4208,19 @@ class DataScienceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def head_model_artifact(self, model_id, **kwargs):
         """
@@ -3939,6 +4255,8 @@ class DataScienceClient(object):
         """
         resource_path = "/models/{modelId}/artifact/content"
         method = "HEAD"
+        operation_name = "head_model_artifact"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/HeadModelArtifact"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3984,13 +4302,19 @@ class DataScienceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_fast_launch_job_configs(self, compartment_id, **kwargs):
         """
@@ -4043,6 +4367,8 @@ class DataScienceClient(object):
         """
         resource_path = "/fastLaunchJobConfigs"
         method = "GET"
+        operation_name = "list_fast_launch_job_configs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/FastLaunchJobConfigSummary/ListFastLaunchJobConfigs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4088,14 +4414,20 @@ class DataScienceClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[FastLaunchJobConfigSummary]")
+                response_type="list[FastLaunchJobConfigSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[FastLaunchJobConfigSummary]")
+                response_type="list[FastLaunchJobConfigSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_job_runs(self, compartment_id, **kwargs):
         """
@@ -4185,6 +4517,8 @@ class DataScienceClient(object):
         """
         resource_path = "/jobRuns"
         method = "GET"
+        operation_name = "list_job_runs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRunSummary/ListJobRuns"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4265,14 +4599,20 @@ class DataScienceClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[JobRunSummary]")
+                response_type="list[JobRunSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[JobRunSummary]")
+                response_type="list[JobRunSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_job_shapes(self, compartment_id, **kwargs):
         """
@@ -4325,6 +4665,8 @@ class DataScienceClient(object):
         """
         resource_path = "/jobShapes"
         method = "GET"
+        operation_name = "list_job_shapes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobShapeSummary/ListJobShapes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4370,14 +4712,20 @@ class DataScienceClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[JobShapeSummary]")
+                response_type="list[JobShapeSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[JobShapeSummary]")
+                response_type="list[JobShapeSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_jobs(self, compartment_id, **kwargs):
         """
@@ -4467,6 +4815,8 @@ class DataScienceClient(object):
         """
         resource_path = "/jobs"
         method = "GET"
+        operation_name = "list_jobs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobSummary/ListJobs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4547,14 +4897,20 @@ class DataScienceClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[JobSummary]")
+                response_type="list[JobSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[JobSummary]")
+                response_type="list[JobSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_model_deployment_shapes(self, compartment_id, **kwargs):
         """
@@ -4607,6 +4963,8 @@ class DataScienceClient(object):
         """
         resource_path = "/modelDeploymentShapes"
         method = "GET"
+        operation_name = "list_model_deployment_shapes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeploymentShapeSummary/ListModelDeploymentShapes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4652,14 +5010,20 @@ class DataScienceClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ModelDeploymentShapeSummary]")
+                response_type="list[ModelDeploymentShapeSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ModelDeploymentShapeSummary]")
+                response_type="list[ModelDeploymentShapeSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_model_deployments(self, compartment_id, **kwargs):
         """
@@ -4749,6 +5113,8 @@ class DataScienceClient(object):
         """
         resource_path = "/modelDeployments"
         method = "GET"
+        operation_name = "list_model_deployments"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeploymentSummary/ListModelDeployments"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4829,14 +5195,20 @@ class DataScienceClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ModelDeploymentSummary]")
+                response_type="list[ModelDeploymentSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ModelDeploymentSummary]")
+                response_type="list[ModelDeploymentSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_models(self, compartment_id, **kwargs):
         """
@@ -4925,6 +5297,8 @@ class DataScienceClient(object):
         """
         resource_path = "/models"
         method = "GET"
+        operation_name = "list_models"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelSummary/ListModels"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5005,14 +5379,20 @@ class DataScienceClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ModelSummary]")
+                response_type="list[ModelSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ModelSummary]")
+                response_type="list[ModelSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_notebook_session_shapes(self, compartment_id, **kwargs):
         """
@@ -5065,6 +5445,8 @@ class DataScienceClient(object):
         """
         resource_path = "/notebookSessionShapes"
         method = "GET"
+        operation_name = "list_notebook_session_shapes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSessionShapeSummary/ListNotebookSessionShapes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5110,14 +5492,20 @@ class DataScienceClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[NotebookSessionShapeSummary]")
+                response_type="list[NotebookSessionShapeSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[NotebookSessionShapeSummary]")
+                response_type="list[NotebookSessionShapeSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_notebook_sessions(self, compartment_id, **kwargs):
         """
@@ -5207,6 +5595,8 @@ class DataScienceClient(object):
         """
         resource_path = "/notebookSessions"
         method = "GET"
+        operation_name = "list_notebook_sessions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSessionSummary/ListNotebookSessions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5287,14 +5677,20 @@ class DataScienceClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[NotebookSessionSummary]")
+                response_type="list[NotebookSessionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[NotebookSessionSummary]")
+                response_type="list[NotebookSessionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_projects(self, compartment_id, **kwargs):
         """
@@ -5379,6 +5775,8 @@ class DataScienceClient(object):
         """
         resource_path = "/projects"
         method = "GET"
+        operation_name = "list_projects"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ProjectSummary/ListProjects"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5457,14 +5855,20 @@ class DataScienceClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ProjectSummary]")
+                response_type="list[ProjectSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ProjectSummary]")
+                response_type="list[ProjectSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -5499,6 +5903,8 @@ class DataScienceClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/WorkRequest/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5543,14 +5949,20 @@ class DataScienceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -5585,6 +5997,8 @@ class DataScienceClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/WorkRequest/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5629,14 +6043,20 @@ class DataScienceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLogEntry]")
+                response_type="list[WorkRequestLogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLogEntry]")
+                response_type="list[WorkRequestLogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -5714,6 +6134,8 @@ class DataScienceClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/WorkRequestSummary/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5795,14 +6217,20 @@ class DataScienceClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestSummary]")
+                response_type="list[WorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestSummary]")
+                response_type="list[WorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_job(self, job_id, update_job_details, **kwargs):
         """
@@ -5847,6 +6275,8 @@ class DataScienceClient(object):
         """
         resource_path = "/jobs/{jobId}"
         method = "PUT"
+        operation_name = "update_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/UpdateJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5896,7 +6326,10 @@ class DataScienceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_job_details,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5904,7 +6337,10 @@ class DataScienceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_job_details,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_job_run(self, job_run_id, update_job_run_details, **kwargs):
         """
@@ -5949,6 +6385,8 @@ class DataScienceClient(object):
         """
         resource_path = "/jobRuns/{jobRunId}"
         method = "PUT"
+        operation_name = "update_job_run"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRun/UpdateJobRun"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5998,7 +6436,10 @@ class DataScienceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_job_run_details,
-                response_type="JobRun")
+                response_type="JobRun",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6006,7 +6447,10 @@ class DataScienceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_job_run_details,
-                response_type="JobRun")
+                response_type="JobRun",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_model(self, model_id, update_model_details, **kwargs):
         """
@@ -6051,6 +6495,8 @@ class DataScienceClient(object):
         """
         resource_path = "/models/{modelId}"
         method = "PUT"
+        operation_name = "update_model"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/UpdateModel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6100,7 +6546,10 @@ class DataScienceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_model_details,
-                response_type="Model")
+                response_type="Model",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6108,7 +6557,10 @@ class DataScienceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_model_details,
-                response_type="Model")
+                response_type="Model",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_model_deployment(self, model_deployment_id, update_model_deployment_details, **kwargs):
         """
@@ -6159,6 +6611,8 @@ class DataScienceClient(object):
         """
         resource_path = "/modelDeployments/{modelDeploymentId}"
         method = "PUT"
+        operation_name = "update_model_deployment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/UpdateModelDeployment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6207,14 +6661,20 @@ class DataScienceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_model_deployment_details)
+                body=update_model_deployment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_model_deployment_details)
+                body=update_model_deployment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_model_provenance(self, model_id, update_model_provenance_details, **kwargs):
         """
@@ -6259,6 +6719,8 @@ class DataScienceClient(object):
         """
         resource_path = "/models/{modelId}/provenance"
         method = "PUT"
+        operation_name = "update_model_provenance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/UpdateModelProvenance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6308,7 +6770,10 @@ class DataScienceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_model_provenance_details,
-                response_type="ModelProvenance")
+                response_type="ModelProvenance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6316,7 +6781,10 @@ class DataScienceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_model_provenance_details,
-                response_type="ModelProvenance")
+                response_type="ModelProvenance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_notebook_session(self, notebook_session_id, update_notebook_session_details, **kwargs):
         """
@@ -6364,6 +6832,8 @@ class DataScienceClient(object):
         """
         resource_path = "/notebookSessions/{notebookSessionId}"
         method = "PUT"
+        operation_name = "update_notebook_session"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/UpdateNotebookSession"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6413,7 +6883,10 @@ class DataScienceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_notebook_session_details,
-                response_type="NotebookSession")
+                response_type="NotebookSession",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6421,7 +6894,10 @@ class DataScienceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_notebook_session_details,
-                response_type="NotebookSession")
+                response_type="NotebookSession",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_project(self, project_id, update_project_details, **kwargs):
         """
@@ -6466,6 +6942,8 @@ class DataScienceClient(object):
         """
         resource_path = "/projects/{projectId}"
         method = "PUT"
+        operation_name = "update_project"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Project/UpdateProject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6515,7 +6993,10 @@ class DataScienceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_project_details,
-                response_type="Project")
+                response_type="Project",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6523,4 +7004,7 @@ class DataScienceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_project_details,
-                response_type="Project")
+                response_type="Project",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

@@ -145,6 +145,8 @@ class OrdersClient(object):
         """
         resource_path = "/orders/{activationToken}/actions/activate"
         method = "POST"
+        operation_name = "activate_order"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Order/ActivateOrder"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -192,14 +194,20 @@ class OrdersClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=activate_order_details)
+                body=activate_order_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=activate_order_details)
+                body=activate_order_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_order(self, activation_token, **kwargs):
         """
@@ -232,6 +240,8 @@ class OrdersClient(object):
         """
         resource_path = "/orders/{activationToken}"
         method = "GET"
+        operation_name = "get_order"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Order/GetOrder"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -276,11 +286,17 @@ class OrdersClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Order")
+                response_type="Order",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Order")
+                response_type="Order",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

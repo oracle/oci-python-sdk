@@ -2648,7 +2648,7 @@ class ShowOCISummary(object):
     ############################################
     def __init__(self):
 
-        # Initiate summary objects every time class is instantiated
+        # Initiate summary objects everytime class is instantiated
         self.summary_global_list = []
         self.summary_global_data = []
         self.summary_global_region_total = []
@@ -3432,6 +3432,7 @@ class ShowOCICSV(object):
     csv_block_volumes_backups = []
     csv_compute_reservations = []
     csv_db_exacc_vmclusters = []
+    csv_db_exa_infrastructure = []
     csv_db_exacs_vmclusters = []
     csv_db_vm_bm = []
     csv_db_all = []
@@ -3526,6 +3527,7 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("database_autonomous", self.csv_db_autonomous)
             self.__export_to_csv_file("database_db_all", self.csv_db_all)
             self.__export_to_csv_file("database_db_vm_bm", self.csv_db_vm_bm)
+            self.__export_to_csv_file("database_db_exa_infra", self.csv_db_exa_infrastructure)
             self.__export_to_csv_file("database_db_exacs", self.csv_db_exacs_vmclusters)
             self.__export_to_csv_file("database_db_exacc", self.csv_db_exacc_vmclusters)
             self.__export_to_csv_file("load_balancer_listeners", self.csv_load_balancer)
@@ -4267,6 +4269,46 @@ class ShowOCICSV(object):
 
         try:
             for dbs in list_exa:
+
+                infs = {'region_name': region_name,
+                        'availability_domain': dbs['availability_domain'],
+                        'compartment_name': dbs['compartment_name'],
+                        'status': dbs['lifecycle_state'],
+                        'type': "ExaCS",
+                        'name': dbs['display_name'],
+                        'shape': dbs['shape'],
+                        'time_zone': "",
+                        'cpus_enabled': "",
+                        'max_cpu_count': dbs['shape_ocpu'],
+                        'memory_size_in_gbs': "",
+                        'max_memory_in_gbs': dbs['shape_memory_gb'],
+                        'db_node_storage_size_in_gbs': "",
+                        'max_db_node_storage_in_g_bs': "",
+                        'data_storage_size_in_tbs': "",
+                        'max_data_storage_in_t_bs': dbs['shape_storage_tb'],
+                        'total_storage_size_in_gbs': dbs['total_storage_size_in_gbs'],
+                        'available_storage_size_in_gbs': dbs['available_storage_size_in_gbs'],
+                        'storage_count': dbs['storage_count'],
+                        'additional_storage_count': "",
+                        'activated_storage_count': "",
+                        'compute_count': dbs['compute_count'],
+                        'dns_server': "",
+                        'ntp_server': "",
+                        'csi_number': "",
+                        'node_count': "",
+                        'db_servers': "",
+                        'cluster_count': len(dbs['vm_clusters']),
+                        'cluster_names': str(', '.join(x['display_name'] for x in dbs['vm_clusters'])),
+                        'time_created': dbs['time_created'],
+                        'freeform_tags': self.__get_freeform_tags(dbs['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(dbs['defined_tags']),
+                        'maintenance_window': dbs['maintenance_window']['display'] if dbs['maintenance_window'] else "",
+                        'last_maintenance_run': dbs['last_maintenance_run']['maintenance_display'] if dbs['last_maintenance_run'] else "",
+                        'next_maintenance_run': dbs['next_maintenance_run']['maintenance_display'] if dbs['next_maintenance_run'] else "",
+                        'infra_id': dbs['id']
+                        }
+                self.csv_db_exa_infrastructure.append(infs)
+
                 for vm in dbs['vm_clusters']:
                     # Db Exa CSV
                     dbsd = {'region_name': region_name,
@@ -4378,6 +4420,47 @@ class ShowOCICSV(object):
 
         try:
             for dbs in list_exa:
+
+                infs = {'region_name': region_name,
+                        'availability_domain': 'ExaCC',
+                        'compartment_name': dbs['compartment_name'],
+                        'status': dbs['lifecycle_state'],
+                        'type': "ExaCC",
+                        'name': dbs['display_name'],
+                        'shape': dbs['shape'],
+                        'time_zone': dbs['time_zone'],
+                        'cpus_enabled': dbs['cpus_enabled'],
+                        'max_cpu_count': dbs['max_cpu_count'],
+                        'memory_size_in_gbs': dbs['memory_size_in_gbs'],
+                        'max_memory_in_gbs': dbs['max_memory_in_gbs'],
+                        'db_node_storage_size_in_gbs': dbs['db_node_storage_size_in_gbs'],
+                        'max_db_node_storage_in_g_bs': dbs['max_db_node_storage_in_g_bs'],
+                        'data_storage_size_in_tbs': dbs['data_storage_size_in_tbs'],
+                        'max_data_storage_in_t_bs': dbs['max_data_storage_in_t_bs'],
+                        'total_storage_size_in_gbs': "",
+                        'available_storage_size_in_gbs': "",
+                        'storage_count': dbs['storage_count'],
+                        'additional_storage_count': dbs['additional_storage_count'],
+                        'activated_storage_count': dbs['activated_storage_count'],
+                        'compute_count': dbs['compute_count'],
+                        'dns_server': dbs['dns_server'],
+                        'ntp_server': dbs['ntp_server'],
+                        'csi_number': dbs['csi_number'],
+                        'node_count': len(dbs['db_servers']),
+                        'db_servers': str(', '.join(x['desc'] for x in dbs['db_servers'])),
+                        'cluster_count': len(dbs['vm_clusters']),
+                        'cluster_names': str(', '.join(x['display_name'] for x in dbs['vm_clusters'])),
+                        'time_created': dbs['time_created'],
+                        'freeform_tags': self.__get_freeform_tags(dbs['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(dbs['defined_tags']),
+                        'maintenance_window': dbs['maintenance_window']['display'] if dbs['maintenance_window'] else "",
+                        'last_maintenance_run': dbs['last_maintenance_run']['maintenance_display'] if dbs['last_maintenance_run'] else "",
+                        'next_maintenance_run': dbs['next_maintenance_run']['maintenance_display'] if dbs['next_maintenance_run'] else "",
+                        'infra_id': dbs['id']
+                        }
+                self.csv_db_exa_infrastructure.append(infs)
+
+                # VM Clusters
                 for vm in dbs['vm_clusters']:
                     # Db Exa CSV
                     dbsd = {'region_name': region_name,
@@ -4774,7 +4857,8 @@ class ShowOCICSV(object):
                     'time_created': ct['time_created'],
                     'reserved_instance_count': str(ct['reserved_instance_count']),
                     'used_instance_count': str(ct['used_instance_count']),
-                    'shapes': ",".join(x['instance_shape'] for x in ct['config'])
+                    'shapes': ",".join(x['instance_shape'] for x in ct['config']),
+                    'shapes_capacity': ",".join(x['instance_shape'] + ":Shape OCPUs=" + str(x['ocpus']) + ":Shape Mem=" + str(x['memory_in_gbs']) + " (Reserve=" + str(x['reserved_count']) + ":Use=" + str(x['used_count']) + ")" for x in ct['config'])
                 }
 
                 self.csv_compute_reservations.append(val)

@@ -164,6 +164,8 @@ class EmailClient(object):
         """
         resource_path = "/emailDomains/{emailDomainId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_email_domain_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailDomain/ChangeEmailDomainCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -213,14 +215,20 @@ class EmailClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_email_domain_compartment_details)
+                body=change_email_domain_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_email_domain_compartment_details)
+                body=change_email_domain_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_sender_compartment(self, sender_id, change_sender_compartment_details, **kwargs):
         """
@@ -261,6 +269,8 @@ class EmailClient(object):
         """
         resource_path = "/senders/{senderId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_sender_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Sender/ChangeSenderCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -307,14 +317,20 @@ class EmailClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_sender_compartment_details)
+                body=change_sender_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_sender_compartment_details)
+                body=change_sender_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_dkim(self, create_dkim_details, **kwargs):
         """
@@ -358,6 +374,8 @@ class EmailClient(object):
         """
         resource_path = "/dkims"
         method = "POST"
+        operation_name = "create_dkim"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Dkim/CreateDkim"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -395,14 +413,20 @@ class EmailClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_dkim_details,
-                response_type="Dkim")
+                response_type="Dkim",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_dkim_details,
-                response_type="Dkim")
+                response_type="Dkim",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_email_domain(self, create_email_domain_details, **kwargs):
         """
@@ -442,6 +466,8 @@ class EmailClient(object):
         """
         resource_path = "/emailDomains"
         method = "POST"
+        operation_name = "create_email_domain"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailDomain/CreateEmailDomain"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -479,14 +505,20 @@ class EmailClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_email_domain_details,
-                response_type="EmailDomain")
+                response_type="EmailDomain",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_email_domain_details,
-                response_type="EmailDomain")
+                response_type="EmailDomain",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_sender(self, create_sender_details, **kwargs):
         """
@@ -519,6 +551,8 @@ class EmailClient(object):
         """
         resource_path = "/senders"
         method = "POST"
+        operation_name = "create_sender"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Sender/CreateSender"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -553,14 +587,20 @@ class EmailClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_sender_details,
-                response_type="Sender")
+                response_type="Sender",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_sender_details,
-                response_type="Sender")
+                response_type="Sender",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_suppression(self, create_suppression_details, **kwargs):
         """
@@ -596,6 +636,8 @@ class EmailClient(object):
         """
         resource_path = "/suppressions"
         method = "POST"
+        operation_name = "create_suppression"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Suppression/CreateSuppression"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -630,14 +672,20 @@ class EmailClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_suppression_details,
-                response_type="Suppression")
+                response_type="Suppression",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_suppression_details,
-                response_type="Suppression")
+                response_type="Suppression",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_dkim(self, dkim_id, **kwargs):
         """
@@ -682,6 +730,8 @@ class EmailClient(object):
         """
         resource_path = "/dkims/{dkimId}"
         method = "DELETE"
+        operation_name = "delete_dkim"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Dkim/DeleteDkim"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -727,13 +777,19 @@ class EmailClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_email_domain(self, email_domain_id, **kwargs):
         """
@@ -773,6 +829,8 @@ class EmailClient(object):
         """
         resource_path = "/emailDomains/{emailDomainId}"
         method = "DELETE"
+        operation_name = "delete_email_domain"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailDomain/DeleteEmailDomain"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -818,13 +876,19 @@ class EmailClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_sender(self, sender_id, **kwargs):
         """
@@ -863,6 +927,8 @@ class EmailClient(object):
         """
         resource_path = "/senders/{senderId}"
         method = "DELETE"
+        operation_name = "delete_sender"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Sender/DeleteSender"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -908,13 +974,19 @@ class EmailClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_suppression(self, suppression_id, **kwargs):
         """
@@ -948,6 +1020,8 @@ class EmailClient(object):
         """
         resource_path = "/suppressions/{suppressionId}"
         method = "DELETE"
+        operation_name = "delete_suppression"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Suppression/DeleteSuppression"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -991,13 +1065,19 @@ class EmailClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_dkim(self, dkim_id, **kwargs):
         """
@@ -1032,6 +1112,8 @@ class EmailClient(object):
         """
         resource_path = "/dkims/{dkimId}"
         method = "GET"
+        operation_name = "get_dkim"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Dkim/GetDkim"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1076,14 +1158,20 @@ class EmailClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Dkim")
+                response_type="Dkim",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Dkim")
+                response_type="Dkim",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_email_domain(self, email_domain_id, **kwargs):
         """
@@ -1118,6 +1206,8 @@ class EmailClient(object):
         """
         resource_path = "/emailDomains/{emailDomainId}"
         method = "GET"
+        operation_name = "get_email_domain"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailDomain/GetEmailDomain"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1162,14 +1252,20 @@ class EmailClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="EmailDomain")
+                response_type="EmailDomain",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="EmailDomain")
+                response_type="EmailDomain",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_sender(self, sender_id, **kwargs):
         """
@@ -1202,6 +1298,8 @@ class EmailClient(object):
         """
         resource_path = "/senders/{senderId}"
         method = "GET"
+        operation_name = "get_sender"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Sender/GetSender"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1246,14 +1344,20 @@ class EmailClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Sender")
+                response_type="Sender",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Sender")
+                response_type="Sender",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_suppression(self, suppression_id, **kwargs):
         """
@@ -1287,6 +1391,8 @@ class EmailClient(object):
         """
         resource_path = "/suppressions/{suppressionId}"
         method = "GET"
+        operation_name = "get_suppression"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Suppression/GetSuppression"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1331,14 +1437,20 @@ class EmailClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Suppression")
+                response_type="Suppression",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Suppression")
+                response_type="Suppression",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1371,6 +1483,8 @@ class EmailClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1415,14 +1529,20 @@ class EmailClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_dkims(self, email_domain_id, **kwargs):
         """
@@ -1498,6 +1618,8 @@ class EmailClient(object):
         """
         resource_path = "/dkims"
         method = "GET"
+        operation_name = "list_dkims"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Dkim/ListDkims"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1572,14 +1694,20 @@ class EmailClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DkimCollection")
+                response_type="DkimCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DkimCollection")
+                response_type="DkimCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_email_domains(self, compartment_id, **kwargs):
         """
@@ -1653,6 +1781,8 @@ class EmailClient(object):
         """
         resource_path = "/emailDomains"
         method = "GET"
+        operation_name = "list_email_domains"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailDomain/ListEmailDomains"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1727,14 +1857,20 @@ class EmailClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="EmailDomainCollection")
+                response_type="EmailDomainCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="EmailDomainCollection")
+                response_type="EmailDomainCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_senders(self, compartment_id, **kwargs):
         """
@@ -1805,6 +1941,8 @@ class EmailClient(object):
         """
         resource_path = "/senders"
         method = "GET"
+        operation_name = "list_senders"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Sender/ListSenders"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1879,14 +2017,20 @@ class EmailClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SenderSummary]")
+                response_type="list[SenderSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SenderSummary]")
+                response_type="list[SenderSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_suppressions(self, compartment_id, **kwargs):
         """
@@ -1971,6 +2115,8 @@ class EmailClient(object):
         """
         resource_path = "/suppressions"
         method = "GET"
+        operation_name = "list_suppressions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Suppression/ListSuppressions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2038,14 +2184,20 @@ class EmailClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SuppressionSummary]")
+                response_type="list[SuppressionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SuppressionSummary]")
+                response_type="list[SuppressionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -2092,6 +2244,8 @@ class EmailClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/WorkRequestErrorCollection/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2145,7 +2299,10 @@ class EmailClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2153,7 +2310,10 @@ class EmailClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -2200,6 +2360,8 @@ class EmailClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/WorkRequestLogEntryCollection/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2253,7 +2415,10 @@ class EmailClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2261,7 +2426,10 @@ class EmailClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -2311,6 +2479,8 @@ class EmailClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/WorkRequestSummaryCollection/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2356,14 +2526,20 @@ class EmailClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestSummaryCollection")
+                response_type="WorkRequestSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestSummaryCollection")
+                response_type="WorkRequestSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_dkim(self, dkim_id, update_dkim_details, **kwargs):
         """
@@ -2406,6 +2582,8 @@ class EmailClient(object):
         """
         resource_path = "/dkims/{dkimId}"
         method = "PUT"
+        operation_name = "update_dkim"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Dkim/UpdateDkim"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2452,14 +2630,20 @@ class EmailClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_dkim_details)
+                body=update_dkim_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_dkim_details)
+                body=update_dkim_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_email_domain(self, email_domain_id, update_email_domain_details, **kwargs):
         """
@@ -2502,6 +2686,8 @@ class EmailClient(object):
         """
         resource_path = "/emailDomains/{emailDomainId}"
         method = "PUT"
+        operation_name = "update_email_domain"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailDomain/UpdateEmailDomain"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2548,14 +2734,20 @@ class EmailClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_email_domain_details)
+                body=update_email_domain_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_email_domain_details)
+                body=update_email_domain_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_sender(self, sender_id, update_sender_details, **kwargs):
         """
@@ -2601,6 +2793,8 @@ class EmailClient(object):
         """
         resource_path = "/senders/{senderId}"
         method = "PUT"
+        operation_name = "update_sender"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Sender/UpdateSender"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2648,7 +2842,10 @@ class EmailClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_sender_details,
-                response_type="Sender")
+                response_type="Sender",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2656,4 +2853,7 @@ class EmailClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_sender_details,
-                response_type="Sender")
+                response_type="Sender",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

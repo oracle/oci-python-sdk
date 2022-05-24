@@ -4,6 +4,32 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.69.0 - 2022-05-24
+====================
+
+Added
+-----
+* Support for the License Manager service
+* Support for usage plans in the API Gateway service
+* Support for packaged skill and instance metadata management, role-based access options on instance creation, and assigned ownership in the Digital Assistant service
+* Support for compute capacity reservations in the VMWare Solution service
+* Support for Oracle Linux 8 application streams in the OS Management service
+ 
+Breaking
+--------
+* Support for retries by default on operations in the API Gateway service
+* The property `specification` is now a required parameter for the deployment model in the API Gateway service
+* The property `specification` is now a required parameter for the create_deployment_details model in the API Gateway service
+ 
+Changed
+-------
+* The vendored dependency `requests` was updgraded from version `2.21.0` to `2.27.1`
+* The vendored dependency `urllib3` was updgraded from version `1.24.1` to `1.26.9`
+* The vendored dependency `chardet` was updgraded from version `3.0.4` to `4.0.0`
+* The vendored dependency `idna` was updgraded from version `2.8` to `2.10`
+* The vendored dependency `six` was updgraded from version `1.12.0` to `1.16.0`
+ 
+====================
 2.68.0 - 2022-05-17
 ====================
 

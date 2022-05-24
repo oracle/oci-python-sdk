@@ -154,6 +154,8 @@ class DeploymentClient(object):
         """
         resource_path = "/deployments/{deploymentId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_deployment_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Deployment/ChangeDeploymentCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -203,14 +205,20 @@ class DeploymentClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_deployment_compartment_details)
+                body=change_deployment_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_deployment_compartment_details)
+                body=change_deployment_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_deployment(self, create_deployment_details, **kwargs):
         """
@@ -233,7 +241,7 @@ class DeploymentClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -250,6 +258,8 @@ class DeploymentClient(object):
         """
         resource_path = "/deployments"
         method = "POST"
+        operation_name = "create_deployment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -275,6 +285,8 @@ class DeploymentClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -287,14 +299,20 @@ class DeploymentClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_deployment_details,
-                response_type="Deployment")
+                response_type="Deployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_deployment_details,
-                response_type="Deployment")
+                response_type="Deployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_deployment(self, deployment_id, **kwargs):
         """
@@ -334,6 +352,8 @@ class DeploymentClient(object):
         """
         resource_path = "/deployments/{deploymentId}"
         method = "DELETE"
+        operation_name = "delete_deployment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Deployment/DeleteDeployment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -379,13 +399,19 @@ class DeploymentClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_deployment(self, deployment_id, **kwargs):
         """
@@ -401,7 +427,7 @@ class DeploymentClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -418,6 +444,8 @@ class DeploymentClient(object):
         """
         resource_path = "/deployments/{deploymentId}"
         method = "GET"
+        operation_name = "get_deployment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Deployment/GetDeployment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -451,6 +479,8 @@ class DeploymentClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -462,14 +492,20 @@ class DeploymentClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Deployment")
+                response_type="Deployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Deployment")
+                response_type="Deployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_deployments(self, compartment_id, **kwargs):
         """
@@ -519,7 +555,7 @@ class DeploymentClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -536,6 +572,8 @@ class DeploymentClient(object):
         """
         resource_path = "/deployments"
         method = "GET"
+        operation_name = "list_deployments"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/DeploymentSummary/ListDeployments"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -599,6 +637,8 @@ class DeploymentClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -610,14 +650,20 @@ class DeploymentClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DeploymentCollection")
+                response_type="DeploymentCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DeploymentCollection")
+                response_type="DeploymentCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_deployment(self, deployment_id, update_deployment_details, **kwargs):
         """
@@ -660,6 +706,8 @@ class DeploymentClient(object):
         """
         resource_path = "/deployments/{deploymentId}"
         method = "PUT"
+        operation_name = "update_deployment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Deployment/UpdateDeployment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -706,11 +754,17 @@ class DeploymentClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_deployment_details)
+                body=update_deployment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_deployment_details)
+                body=update_deployment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

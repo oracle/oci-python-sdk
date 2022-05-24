@@ -149,6 +149,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/u/{objectName}"
         method = "DELETE"
+        operation_name = "abort_multipart_upload"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/MultipartUpload/AbortMultipartUpload"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -202,14 +204,20 @@ class ObjectStorageClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def cancel_work_request(self, work_request_id, **kwargs):
         """
@@ -242,6 +250,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
+        operation_name = "cancel_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/WorkRequest/CancelWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -287,13 +297,19 @@ class ObjectStorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def commit_multipart_upload(self, namespace_name, bucket_name, object_name, upload_id, commit_multipart_upload_details, **kwargs):
         """
@@ -349,6 +365,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/u/{objectName}"
         method = "POST"
+        operation_name = "commit_multipart_upload"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/MultipartUpload/CommitMultipartUpload"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -407,7 +425,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=commit_multipart_upload_details)
+                body=commit_multipart_upload_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -415,7 +436,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=commit_multipart_upload_details)
+                body=commit_multipart_upload_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def copy_object(self, namespace_name, bucket_name, copy_object_details, **kwargs):
         """
@@ -508,6 +532,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/actions/copyObject"
         method = "POST"
+        operation_name = "copy_object"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/CopyObject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -569,14 +595,20 @@ class ObjectStorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=copy_object_details)
+                body=copy_object_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=copy_object_details)
+                body=copy_object_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_bucket(self, namespace_name, create_bucket_details, **kwargs):
         """
@@ -613,6 +645,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b"
         method = "POST"
+        operation_name = "create_bucket"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/CreateBucket"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -660,7 +694,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_bucket_details,
-                response_type="Bucket")
+                response_type="Bucket",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -668,7 +705,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_bucket_details,
-                response_type="Bucket")
+                response_type="Bucket",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_multipart_upload(self, namespace_name, bucket_name, create_multipart_upload_details, **kwargs):
         """
@@ -748,6 +788,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/u"
         method = "POST"
+        operation_name = "create_multipart_upload"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/MultipartUpload/CreateMultipartUpload"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -808,7 +850,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_multipart_upload_details,
-                response_type="MultipartUpload")
+                response_type="MultipartUpload",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -816,7 +861,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_multipart_upload_details,
-                response_type="MultipartUpload")
+                response_type="MultipartUpload",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_preauthenticated_request(self, namespace_name, bucket_name, create_preauthenticated_request_details, **kwargs):
         """
@@ -856,6 +904,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/p"
         method = "POST"
+        operation_name = "create_preauthenticated_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PreauthenticatedRequest/CreatePreauthenticatedRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -904,7 +954,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_preauthenticated_request_details,
-                response_type="PreauthenticatedRequest")
+                response_type="PreauthenticatedRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -912,7 +965,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_preauthenticated_request_details,
-                response_type="PreauthenticatedRequest")
+                response_type="PreauthenticatedRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_replication_policy(self, namespace_name, bucket_name, create_replication_policy_details, **kwargs):
         """
@@ -952,6 +1008,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/replicationPolicies"
         method = "POST"
+        operation_name = "create_replication_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Replication/CreateReplicationPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1000,7 +1058,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_replication_policy_details,
-                response_type="ReplicationPolicy")
+                response_type="ReplicationPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1008,7 +1069,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_replication_policy_details,
-                response_type="ReplicationPolicy")
+                response_type="ReplicationPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_retention_rule(self, namespace_name, bucket_name, create_retention_rule_details, **kwargs):
         """
@@ -1049,6 +1113,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/retentionRules"
         method = "POST"
+        operation_name = "create_retention_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/RetentionRule/CreateRetentionRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1097,7 +1163,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_retention_rule_details,
-                response_type="RetentionRule")
+                response_type="RetentionRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1105,7 +1174,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_retention_rule_details,
-                response_type="RetentionRule")
+                response_type="RetentionRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_bucket(self, namespace_name, bucket_name, **kwargs):
         """
@@ -1150,6 +1222,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}"
         method = "DELETE"
+        operation_name = "delete_bucket"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/DeleteBucket"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1198,13 +1272,19 @@ class ObjectStorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_object(self, namespace_name, bucket_name, object_name, **kwargs):
         """
@@ -1253,6 +1333,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/o/{objectName}"
         method = "DELETE"
+        operation_name = "delete_object"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/DeleteObject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1309,14 +1391,20 @@ class ObjectStorageClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_object_lifecycle_policy(self, namespace_name, bucket_name, **kwargs):
         """
@@ -1358,6 +1446,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/l"
         method = "DELETE"
+        operation_name = "delete_object_lifecycle_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/ObjectLifecyclePolicy/DeleteObjectLifecyclePolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1406,13 +1496,19 @@ class ObjectStorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_preauthenticated_request(self, namespace_name, bucket_name, par_id, **kwargs):
         """
@@ -1453,6 +1549,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/p/{parId}"
         method = "DELETE"
+        operation_name = "delete_preauthenticated_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PreauthenticatedRequest/DeletePreauthenticatedRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1500,13 +1598,19 @@ class ObjectStorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_replication_policy(self, namespace_name, bucket_name, replication_id, **kwargs):
         """
@@ -1546,6 +1650,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/replicationPolicies/{replicationId}"
         method = "DELETE"
+        operation_name = "delete_replication_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Replication/DeleteReplicationPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1593,13 +1699,19 @@ class ObjectStorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_retention_rule(self, namespace_name, bucket_name, retention_rule_id, **kwargs):
         """
@@ -1644,6 +1756,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/retentionRules/{retentionRuleId}"
         method = "DELETE"
+        operation_name = "delete_retention_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/RetentionRule/DeleteRetentionRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1693,13 +1807,19 @@ class ObjectStorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_bucket(self, namespace_name, bucket_name, **kwargs):
         """
@@ -1754,6 +1874,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}"
         method = "GET"
+        operation_name = "get_bucket"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/GetBucket"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1820,7 +1942,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Bucket")
+                response_type="Bucket",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1828,7 +1953,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Bucket")
+                response_type="Bucket",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_namespace(self, **kwargs):
         """
@@ -1871,6 +1999,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n"
         method = "GET"
+        operation_name = "get_namespace"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Namespace/GetNamespace"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1913,14 +2043,20 @@ class ObjectStorageClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="str")
+                response_type="str",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="str")
+                response_type="str",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_namespace_metadata(self, namespace_name, **kwargs):
         """
@@ -1961,6 +2097,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}"
         method = "GET"
+        operation_name = "get_namespace_metadata"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Namespace/GetNamespaceMetadata"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2007,14 +2145,20 @@ class ObjectStorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="NamespaceMetadata")
+                response_type="NamespaceMetadata",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="NamespaceMetadata")
+                response_type="NamespaceMetadata",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_object(self, namespace_name, bucket_name, object_name, **kwargs):
         """
@@ -2112,6 +2256,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/o/{objectName}"
         method = "GET"
+        operation_name = "get_object"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/GetObject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2191,7 +2337,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2199,7 +2348,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_object_lifecycle_policy(self, namespace_name, bucket_name, **kwargs):
         """
@@ -2236,6 +2388,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/l"
         method = "GET"
+        operation_name = "get_object_lifecycle_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/ObjectLifecyclePolicy/GetObjectLifecyclePolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2283,14 +2437,20 @@ class ObjectStorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ObjectLifecyclePolicy")
+                response_type="ObjectLifecyclePolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ObjectLifecyclePolicy")
+                response_type="ObjectLifecyclePolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_preauthenticated_request(self, namespace_name, bucket_name, par_id, **kwargs):
         """
@@ -2331,6 +2491,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/p/{parId}"
         method = "GET"
+        operation_name = "get_preauthenticated_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PreauthenticatedRequest/GetPreauthenticatedRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2379,14 +2541,20 @@ class ObjectStorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PreauthenticatedRequestSummary")
+                response_type="PreauthenticatedRequestSummary",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PreauthenticatedRequestSummary")
+                response_type="PreauthenticatedRequestSummary",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_replication_policy(self, namespace_name, bucket_name, replication_id, **kwargs):
         """
@@ -2426,6 +2594,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/replicationPolicies/{replicationId}"
         method = "GET"
+        operation_name = "get_replication_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Replication/GetReplicationPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2474,14 +2644,20 @@ class ObjectStorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ReplicationPolicy")
+                response_type="ReplicationPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ReplicationPolicy")
+                response_type="ReplicationPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_retention_rule(self, namespace_name, bucket_name, retention_rule_id, **kwargs):
         """
@@ -2521,6 +2697,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/retentionRules/{retentionRuleId}"
         method = "GET"
+        operation_name = "get_retention_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/RetentionRule/GetRetentionRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2569,14 +2747,20 @@ class ObjectStorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="RetentionRule")
+                response_type="RetentionRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="RetentionRule")
+                response_type="RetentionRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -2609,6 +2793,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2655,14 +2841,20 @@ class ObjectStorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def head_bucket(self, namespace_name, bucket_name, **kwargs):
         """
@@ -2709,6 +2901,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}"
         method = "HEAD"
+        operation_name = "head_bucket"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/HeadBucket"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2759,13 +2953,19 @@ class ObjectStorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def head_object(self, namespace_name, bucket_name, object_name, **kwargs):
         """
@@ -2839,6 +3039,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/o/{objectName}"
         method = "HEAD"
+        operation_name = "head_object"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/HeadObject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2903,14 +3105,20 @@ class ObjectStorageClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_buckets(self, namespace_name, compartment_id, **kwargs):
         """
@@ -2975,6 +3183,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b"
         method = "GET"
+        operation_name = "list_buckets"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/ListBuckets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3041,7 +3251,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[BucketSummary]")
+                response_type="list[BucketSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3049,7 +3262,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[BucketSummary]")
+                response_type="list[BucketSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_multipart_upload_parts(self, namespace_name, bucket_name, object_name, upload_id, **kwargs):
         """
@@ -3106,6 +3322,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/u/{objectName}"
         method = "GET"
+        operation_name = "list_multipart_upload_parts"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/MultipartUpload/ListMultipartUploadParts"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3164,7 +3382,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[MultipartUploadPartSummary]")
+                response_type="list[MultipartUploadPartSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3172,7 +3393,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[MultipartUploadPartSummary]")
+                response_type="list[MultipartUploadPartSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_multipart_uploads(self, namespace_name, bucket_name, **kwargs):
         """
@@ -3222,6 +3446,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/u"
         method = "GET"
+        operation_name = "list_multipart_uploads"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/MultipartUpload/ListMultipartUploads"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3278,7 +3504,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[MultipartUpload]")
+                response_type="list[MultipartUpload]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3286,7 +3515,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[MultipartUpload]")
+                response_type="list[MultipartUpload]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_object_versions(self, namespace_name, bucket_name, **kwargs):
         """
@@ -3373,6 +3605,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/objectversions"
         method = "GET"
+        operation_name = "list_object_versions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/ListObjectVersions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3441,7 +3675,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ObjectVersionCollection")
+                response_type="ObjectVersionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3449,7 +3686,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ObjectVersionCollection")
+                response_type="ObjectVersionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_objects(self, namespace_name, bucket_name, **kwargs):
         """
@@ -3532,6 +3772,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/o"
         method = "GET"
+        operation_name = "list_objects"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/ListObjects"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3598,7 +3840,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ListObjects")
+                response_type="ListObjects",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3606,7 +3851,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ListObjects")
+                response_type="ListObjects",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_preauthenticated_requests(self, namespace_name, bucket_name, **kwargs):
         """
@@ -3659,6 +3907,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/p"
         method = "GET"
+        operation_name = "list_preauthenticated_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PreauthenticatedRequest/ListPreauthenticatedRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3717,7 +3967,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PreauthenticatedRequestSummary]")
+                response_type="list[PreauthenticatedRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3725,7 +3978,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PreauthenticatedRequestSummary]")
+                response_type="list[PreauthenticatedRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_replication_policies(self, namespace_name, bucket_name, **kwargs):
         """
@@ -3775,6 +4031,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/replicationPolicies"
         method = "GET"
+        operation_name = "list_replication_policies"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Replication/ListReplicationPolicies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3831,7 +4089,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ReplicationPolicySummary]")
+                response_type="list[ReplicationPolicySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3839,7 +4100,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ReplicationPolicySummary]")
+                response_type="list[ReplicationPolicySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_replication_sources(self, namespace_name, bucket_name, **kwargs):
         """
@@ -3889,6 +4153,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/replicationSources"
         method = "GET"
+        operation_name = "list_replication_sources"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Replication/ListReplicationSources"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3945,7 +4211,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ReplicationSource]")
+                response_type="list[ReplicationSource]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3953,7 +4222,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ReplicationSource]")
+                response_type="list[ReplicationSource]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_retention_rules(self, namespace_name, bucket_name, **kwargs):
         """
@@ -3994,6 +4266,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/retentionRules"
         method = "GET"
+        operation_name = "list_retention_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/RetentionRule/ListRetentionRules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4045,7 +4319,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RetentionRuleCollection")
+                response_type="RetentionRuleCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4053,7 +4330,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RetentionRuleCollection")
+                response_type="RetentionRuleCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -4099,6 +4379,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4154,7 +4436,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4162,7 +4447,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -4208,6 +4496,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4263,7 +4553,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLogEntry]")
+                response_type="list[WorkRequestLogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4271,7 +4564,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLogEntry]")
+                response_type="list[WorkRequestLogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -4317,6 +4613,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4362,14 +4660,20 @@ class ObjectStorageClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestSummary]")
+                response_type="list[WorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestSummary]")
+                response_type="list[WorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def make_bucket_writable(self, namespace_name, bucket_name, **kwargs):
         """
@@ -4409,6 +4713,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/actions/makeBucketWritable"
         method = "POST"
+        operation_name = "make_bucket_writable"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Replication/MakeBucketWritable"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4455,13 +4761,19 @@ class ObjectStorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def put_object(self, namespace_name, bucket_name, object_name, put_object_body, **kwargs):
         """
@@ -4615,6 +4927,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/o/{objectName}"
         method = "PUT"
+        operation_name = "put_object"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/PutObject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4723,8 +5037,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=put_object_body,
+                enforce_content_headers=False,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enforce_content_headers=False)
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4732,8 +5048,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=put_object_body,
+                enforce_content_headers=False,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enforce_content_headers=False)
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def put_object_lifecycle_policy(self, namespace_name, bucket_name, put_object_lifecycle_policy_details, **kwargs):
         """
@@ -4782,6 +5100,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/l"
         method = "PUT"
+        operation_name = "put_object_lifecycle_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/ObjectLifecyclePolicy/PutObjectLifecyclePolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4834,7 +5154,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=put_object_lifecycle_policy_details,
-                response_type="ObjectLifecyclePolicy")
+                response_type="ObjectLifecyclePolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4842,7 +5165,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=put_object_lifecycle_policy_details,
-                response_type="ObjectLifecyclePolicy")
+                response_type="ObjectLifecyclePolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def reencrypt_bucket(self, namespace_name, bucket_name, **kwargs):
         """
@@ -4893,6 +5219,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/actions/reencrypt"
         method = "POST"
+        operation_name = "reencrypt_bucket"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/ReencryptBucket"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4939,13 +5267,19 @@ class ObjectStorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def reencrypt_object(self, namespace_name, bucket_name, object_name, reencrypt_object_details, **kwargs):
         """
@@ -5000,6 +5334,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/actions/reencrypt/{objectName}"
         method = "POST"
+        operation_name = "reencrypt_object"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/ReencryptObject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5055,7 +5391,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=reencrypt_object_details)
+                body=reencrypt_object_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5063,7 +5402,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=reencrypt_object_details)
+                body=reencrypt_object_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def rename_object(self, namespace_name, bucket_name, rename_object_details, **kwargs):
         """
@@ -5108,6 +5450,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/actions/renameObject"
         method = "POST"
+        operation_name = "rename_object"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/RenameObject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5155,14 +5499,20 @@ class ObjectStorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=rename_object_details)
+                body=rename_object_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=rename_object_details)
+                body=rename_object_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def restore_objects(self, namespace_name, bucket_name, restore_objects_details, **kwargs):
         """
@@ -5203,6 +5553,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/actions/restoreObjects"
         method = "POST"
+        operation_name = "restore_objects"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/RestoreObjects"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5250,14 +5602,20 @@ class ObjectStorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=restore_objects_details)
+                body=restore_objects_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=restore_objects_details)
+                body=restore_objects_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_bucket(self, namespace_name, bucket_name, update_bucket_details, **kwargs):
         """
@@ -5308,6 +5666,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}"
         method = "POST"
+        operation_name = "update_bucket"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Bucket/UpdateBucket"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5358,7 +5718,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_bucket_details,
-                response_type="Bucket")
+                response_type="Bucket",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5366,7 +5729,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_bucket_details,
-                response_type="Bucket")
+                response_type="Bucket",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_namespace_metadata(self, namespace_name, update_namespace_metadata_details, **kwargs):
         """
@@ -5408,6 +5774,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}"
         method = "PUT"
+        operation_name = "update_namespace_metadata"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Namespace/UpdateNamespaceMetadata"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5455,7 +5823,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_namespace_metadata_details,
-                response_type="NamespaceMetadata")
+                response_type="NamespaceMetadata",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5463,7 +5834,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_namespace_metadata_details,
-                response_type="NamespaceMetadata")
+                response_type="NamespaceMetadata",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_object_storage_tier(self, namespace_name, bucket_name, update_object_storage_tier_details, **kwargs):
         """
@@ -5503,6 +5877,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/actions/updateObjectStorageTier"
         method = "POST"
+        operation_name = "update_object_storage_tier"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/Object/UpdateObjectStorageTier"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5550,14 +5926,20 @@ class ObjectStorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_object_storage_tier_details)
+                body=update_object_storage_tier_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_object_storage_tier_details)
+                body=update_object_storage_tier_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_retention_rule(self, namespace_name, bucket_name, retention_rule_id, update_retention_rule_details, **kwargs):
         """
@@ -5605,6 +5987,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/retentionRules/{retentionRuleId}"
         method = "PUT"
+        operation_name = "update_retention_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/RetentionRule/UpdateRetentionRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5656,7 +6040,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_retention_rule_details,
-                response_type="RetentionRule")
+                response_type="RetentionRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5664,7 +6051,10 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_retention_rule_details,
-                response_type="RetentionRule")
+                response_type="RetentionRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def upload_part(self, namespace_name, bucket_name, object_name, upload_id, upload_part_num, upload_part_body, **kwargs):
         """
@@ -5772,6 +6162,8 @@ class ObjectStorageClient(object):
         """
         resource_path = "/n/{namespaceName}/b/{bucketName}/u/{objectName}"
         method = "PUT"
+        operation_name = "upload_part"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/MultipartUpload/UploadPart"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5871,8 +6263,10 @@ class ObjectStorageClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=upload_part_body,
+                enforce_content_headers=False,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enforce_content_headers=False)
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5881,5 +6275,7 @@ class ObjectStorageClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=upload_part_body,
+                enforce_content_headers=False,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enforce_content_headers=False)
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

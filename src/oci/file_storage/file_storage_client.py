@@ -150,6 +150,8 @@ class FileStorageClient(object):
         """
         resource_path = "/fileSystems/{fileSystemId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_file_system_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/ChangeFileSystemCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -196,14 +198,20 @@ class FileStorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_file_system_compartment_details)
+                body=change_file_system_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_file_system_compartment_details)
+                body=change_file_system_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_mount_target_compartment(self, mount_target_id, change_mount_target_compartment_details, **kwargs):
         """
@@ -251,6 +259,8 @@ class FileStorageClient(object):
         """
         resource_path = "/mountTargets/{mountTargetId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_mount_target_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/ChangeMountTargetCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -297,14 +307,20 @@ class FileStorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_mount_target_compartment_details)
+                body=change_mount_target_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_mount_target_compartment_details)
+                body=change_mount_target_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_export(self, create_export_details, **kwargs):
         """
@@ -346,6 +362,8 @@ class FileStorageClient(object):
         """
         resource_path = "/exports"
         method = "POST"
+        operation_name = "create_export"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/CreateExport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -383,14 +401,20 @@ class FileStorageClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_export_details,
-                response_type="Export")
+                response_type="Export",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_export_details,
-                response_type="Export")
+                response_type="Export",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_file_system(self, create_file_system_details, **kwargs):
         """
@@ -464,6 +488,8 @@ class FileStorageClient(object):
         """
         resource_path = "/fileSystems"
         method = "POST"
+        operation_name = "create_file_system"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/CreateFileSystem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -501,14 +527,20 @@ class FileStorageClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_file_system_details,
-                response_type="FileSystem")
+                response_type="FileSystem",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_file_system_details,
-                response_type="FileSystem")
+                response_type="FileSystem",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_mount_target(self, create_mount_target_details, **kwargs):
         """
@@ -584,6 +616,8 @@ class FileStorageClient(object):
         """
         resource_path = "/mountTargets"
         method = "POST"
+        operation_name = "create_mount_target"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/CreateMountTarget"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -621,14 +655,20 @@ class FileStorageClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_mount_target_details,
-                response_type="MountTarget")
+                response_type="MountTarget",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_mount_target_details,
-                response_type="MountTarget")
+                response_type="MountTarget",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_snapshot(self, create_snapshot_details, **kwargs):
         """
@@ -670,6 +710,8 @@ class FileStorageClient(object):
         """
         resource_path = "/snapshots"
         method = "POST"
+        operation_name = "create_snapshot"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/CreateSnapshot"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -707,14 +749,20 @@ class FileStorageClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_snapshot_details,
-                response_type="Snapshot")
+                response_type="Snapshot",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_snapshot_details,
-                response_type="Snapshot")
+                response_type="Snapshot",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_export(self, export_id, **kwargs):
         """
@@ -757,6 +805,8 @@ class FileStorageClient(object):
         """
         resource_path = "/exports/{exportId}"
         method = "DELETE"
+        operation_name = "delete_export"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/DeleteExport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -802,13 +852,19 @@ class FileStorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_file_system(self, file_system_id, **kwargs):
         """
@@ -853,6 +909,8 @@ class FileStorageClient(object):
         """
         resource_path = "/fileSystems/{fileSystemId}"
         method = "DELETE"
+        operation_name = "delete_file_system"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/DeleteFileSystem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -898,13 +956,19 @@ class FileStorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_mount_target(self, mount_target_id, **kwargs):
         """
@@ -948,6 +1012,8 @@ class FileStorageClient(object):
         """
         resource_path = "/mountTargets/{mountTargetId}"
         method = "DELETE"
+        operation_name = "delete_mount_target"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/DeleteMountTarget"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -993,13 +1059,19 @@ class FileStorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_snapshot(self, snapshot_id, **kwargs):
         """
@@ -1042,6 +1114,8 @@ class FileStorageClient(object):
         """
         resource_path = "/snapshots/{snapshotId}"
         method = "DELETE"
+        operation_name = "delete_snapshot"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/DeleteSnapshot"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1087,13 +1161,19 @@ class FileStorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_export(self, export_id, **kwargs):
         """
@@ -1129,6 +1209,8 @@ class FileStorageClient(object):
         """
         resource_path = "/exports/{exportId}"
         method = "GET"
+        operation_name = "get_export"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/GetExport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1173,14 +1255,20 @@ class FileStorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Export")
+                response_type="Export",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Export")
+                response_type="Export",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_export_set(self, export_set_id, **kwargs):
         """
@@ -1216,6 +1304,8 @@ class FileStorageClient(object):
         """
         resource_path = "/exportSets/{exportSetId}"
         method = "GET"
+        operation_name = "get_export_set"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ExportSet/GetExportSet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1260,14 +1350,20 @@ class FileStorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ExportSet")
+                response_type="ExportSet",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ExportSet")
+                response_type="ExportSet",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_file_system(self, file_system_id, **kwargs):
         """
@@ -1303,6 +1399,8 @@ class FileStorageClient(object):
         """
         resource_path = "/fileSystems/{fileSystemId}"
         method = "GET"
+        operation_name = "get_file_system"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/GetFileSystem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1347,14 +1445,20 @@ class FileStorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="FileSystem")
+                response_type="FileSystem",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="FileSystem")
+                response_type="FileSystem",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_mount_target(self, mount_target_id, **kwargs):
         """
@@ -1390,6 +1494,8 @@ class FileStorageClient(object):
         """
         resource_path = "/mountTargets/{mountTargetId}"
         method = "GET"
+        operation_name = "get_mount_target"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/GetMountTarget"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1434,14 +1540,20 @@ class FileStorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="MountTarget")
+                response_type="MountTarget",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="MountTarget")
+                response_type="MountTarget",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_snapshot(self, snapshot_id, **kwargs):
         """
@@ -1477,6 +1589,8 @@ class FileStorageClient(object):
         """
         resource_path = "/snapshots/{snapshotId}"
         method = "GET"
+        operation_name = "get_snapshot"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/GetSnapshot"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1521,14 +1635,20 @@ class FileStorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Snapshot")
+                response_type="Snapshot",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Snapshot")
+                response_type="Snapshot",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_export_sets(self, compartment_id, availability_domain, **kwargs):
         """
@@ -1622,6 +1742,8 @@ class FileStorageClient(object):
         """
         resource_path = "/exportSets"
         method = "GET"
+        operation_name = "list_export_sets"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ExportSetSummary/ListExportSets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1697,14 +1819,20 @@ class FileStorageClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ExportSetSummary]")
+                response_type="list[ExportSetSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ExportSetSummary]")
+                response_type="list[ExportSetSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_exports(self, **kwargs):
         """
@@ -1800,6 +1928,8 @@ class FileStorageClient(object):
         """
         resource_path = "/exports"
         method = "GET"
+        operation_name = "list_exports"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ExportSummary/ListExports"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1877,14 +2007,20 @@ class FileStorageClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ExportSummary]")
+                response_type="list[ExportSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ExportSummary]")
+                response_type="list[ExportSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_file_systems(self, compartment_id, availability_domain, **kwargs):
         """
@@ -1990,6 +2126,8 @@ class FileStorageClient(object):
         """
         resource_path = "/fileSystems"
         method = "GET"
+        operation_name = "list_file_systems"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystemSummary/ListFileSystems"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2069,14 +2207,20 @@ class FileStorageClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[FileSystemSummary]")
+                response_type="list[FileSystemSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[FileSystemSummary]")
+                response_type="list[FileSystemSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_mount_targets(self, compartment_id, availability_domain, **kwargs):
         """
@@ -2175,6 +2319,8 @@ class FileStorageClient(object):
         """
         resource_path = "/mountTargets"
         method = "GET"
+        operation_name = "list_mount_targets"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTargetSummary/ListMountTargets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2252,14 +2398,20 @@ class FileStorageClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[MountTargetSummary]")
+                response_type="list[MountTargetSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[MountTargetSummary]")
+                response_type="list[MountTargetSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_snapshots(self, file_system_id, **kwargs):
         """
@@ -2335,6 +2487,8 @@ class FileStorageClient(object):
         """
         resource_path = "/snapshots"
         method = "GET"
+        operation_name = "list_snapshots"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/SnapshotSummary/ListSnapshots"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2398,14 +2552,20 @@ class FileStorageClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SnapshotSummary]")
+                response_type="list[SnapshotSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SnapshotSummary]")
+                response_type="list[SnapshotSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_export(self, export_id, update_export_details, **kwargs):
         """
@@ -2451,6 +2611,8 @@ class FileStorageClient(object):
         """
         resource_path = "/exports/{exportId}"
         method = "PUT"
+        operation_name = "update_export"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/UpdateExport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2498,7 +2660,10 @@ class FileStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_export_details,
-                response_type="Export")
+                response_type="Export",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2506,7 +2671,10 @@ class FileStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_export_details,
-                response_type="Export")
+                response_type="Export",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_export_set(self, export_set_id, update_export_set_details, **kwargs):
         """
@@ -2552,6 +2720,8 @@ class FileStorageClient(object):
         """
         resource_path = "/exportSets/{exportSetId}"
         method = "PUT"
+        operation_name = "update_export_set"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/ExportSet/UpdateExportSet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2599,7 +2769,10 @@ class FileStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_export_set_details,
-                response_type="ExportSet")
+                response_type="ExportSet",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2607,7 +2780,10 @@ class FileStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_export_set_details,
-                response_type="ExportSet")
+                response_type="ExportSet",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_file_system(self, file_system_id, update_file_system_details, **kwargs):
         """
@@ -2654,6 +2830,8 @@ class FileStorageClient(object):
         """
         resource_path = "/fileSystems/{fileSystemId}"
         method = "PUT"
+        operation_name = "update_file_system"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/UpdateFileSystem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2701,7 +2879,10 @@ class FileStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_file_system_details,
-                response_type="FileSystem")
+                response_type="FileSystem",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2709,7 +2890,10 @@ class FileStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_file_system_details,
-                response_type="FileSystem")
+                response_type="FileSystem",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_mount_target(self, mount_target_id, update_mount_target_details, **kwargs):
         """
@@ -2755,6 +2939,8 @@ class FileStorageClient(object):
         """
         resource_path = "/mountTargets/{mountTargetId}"
         method = "PUT"
+        operation_name = "update_mount_target"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/UpdateMountTarget"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2802,7 +2988,10 @@ class FileStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_mount_target_details,
-                response_type="MountTarget")
+                response_type="MountTarget",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2810,7 +2999,10 @@ class FileStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_mount_target_details,
-                response_type="MountTarget")
+                response_type="MountTarget",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_snapshot(self, snapshot_id, update_snapshot_details, **kwargs):
         """
@@ -2856,6 +3048,8 @@ class FileStorageClient(object):
         """
         resource_path = "/snapshots/{snapshotId}"
         method = "PUT"
+        operation_name = "update_snapshot"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/UpdateSnapshot"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2903,7 +3097,10 @@ class FileStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_snapshot_details,
-                response_type="Snapshot")
+                response_type="Snapshot",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2911,4 +3108,7 @@ class FileStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_snapshot_details,
-                response_type="Snapshot")
+                response_type="Snapshot",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

@@ -154,6 +154,8 @@ class IdentityClient(object):
         """
         resource_path = "/domains/{domainId}/actions/activate"
         method = "POST"
+        operation_name = "activate_domain"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/ActivateDomain"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -204,13 +206,19 @@ class IdentityClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def activate_mfa_totp_device(self, user_id, mfa_totp_device_id, mfa_totp_token, **kwargs):
         """
@@ -258,6 +266,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/mfaTotpDevices/{mfaTotpDeviceId}/actions/activate"
         method = "POST"
+        operation_name = "activate_mfa_totp_device"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/MfaTotpDeviceSummary/ActivateMfaTotpDevice"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -309,7 +319,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=mfa_totp_token,
-                response_type="MfaTotpDeviceSummary")
+                response_type="MfaTotpDeviceSummary",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -317,7 +330,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=mfa_totp_token,
-                response_type="MfaTotpDeviceSummary")
+                response_type="MfaTotpDeviceSummary",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def add_user_to_group(self, add_user_to_group_details, **kwargs):
         """
@@ -357,6 +373,8 @@ class IdentityClient(object):
         """
         resource_path = "/userGroupMemberships"
         method = "POST"
+        operation_name = "add_user_to_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/UserGroupMembership/AddUserToGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -394,14 +412,20 @@ class IdentityClient(object):
                 method=method,
                 header_params=header_params,
                 body=add_user_to_group_details,
-                response_type="UserGroupMembership")
+                response_type="UserGroupMembership",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=add_user_to_group_details,
-                response_type="UserGroupMembership")
+                response_type="UserGroupMembership",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def assemble_effective_tag_set(self, compartment_id, **kwargs):
         """
@@ -439,6 +463,8 @@ class IdentityClient(object):
         """
         resource_path = "/tagDefaults/actions/assembleEffectiveTagSet"
         method = "GET"
+        operation_name = "assemble_effective_tag_set"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/AssembleEffectiveTagSet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -486,14 +512,20 @@ class IdentityClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TagDefaultSummary]")
+                response_type="list[TagDefaultSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TagDefaultSummary]")
+                response_type="list[TagDefaultSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def bulk_delete_resources(self, compartment_id, bulk_delete_resources_details, **kwargs):
         """
@@ -543,6 +575,8 @@ class IdentityClient(object):
         """
         resource_path = "/compartments/{compartmentId}/actions/bulkDeleteResources"
         method = "POST"
+        operation_name = "bulk_delete_resources"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/BulkDeleteResources"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -592,14 +626,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=bulk_delete_resources_details)
+                body=bulk_delete_resources_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=bulk_delete_resources_details)
+                body=bulk_delete_resources_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def bulk_delete_tags(self, bulk_delete_tags_details, **kwargs):
         """
@@ -660,6 +700,8 @@ class IdentityClient(object):
         """
         resource_path = "/tags/actions/bulkDelete"
         method = "POST"
+        operation_name = "bulk_delete_tags"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/BulkDeleteTags"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -698,13 +740,19 @@ class IdentityClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=bulk_delete_tags_details)
+                body=bulk_delete_tags_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=bulk_delete_tags_details)
+                body=bulk_delete_tags_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def bulk_edit_tags(self, **kwargs):
         """
@@ -758,6 +806,8 @@ class IdentityClient(object):
         """
         resource_path = "/tags/actions/bulkEdit"
         method = "POST"
+        operation_name = "bulk_edit_tags"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/BulkEditTags"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -797,13 +847,19 @@ class IdentityClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=kwargs.get('bulk_edit_tags_details'))
+                body=kwargs.get('bulk_edit_tags_details'),
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=kwargs.get('bulk_edit_tags_details'))
+                body=kwargs.get('bulk_edit_tags_details'),
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def bulk_move_resources(self, compartment_id, bulk_move_resources_details, **kwargs):
         """
@@ -853,6 +909,8 @@ class IdentityClient(object):
         """
         resource_path = "/compartments/{compartmentId}/actions/bulkMoveResources"
         method = "POST"
+        operation_name = "bulk_move_resources"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/BulkMoveResources"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -902,14 +960,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=bulk_move_resources_details)
+                body=bulk_move_resources_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=bulk_move_resources_details)
+                body=bulk_move_resources_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def cascade_delete_tag_namespace(self, tag_namespace_id, **kwargs):
         """
@@ -973,6 +1037,8 @@ class IdentityClient(object):
         """
         resource_path = "/tagNamespaces/{tagNamespaceId}/actions/cascadeDelete"
         method = "POST"
+        operation_name = "cascade_delete_tag_namespace"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/CascadeDeleteTagNamespace"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1023,13 +1089,19 @@ class IdentityClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_domain_compartment(self, domain_id, change_domain_compartment_details, **kwargs):
         """
@@ -1081,6 +1153,8 @@ class IdentityClient(object):
         """
         resource_path = "/domains/{domainId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_domain_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/ChangeDomainCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1132,14 +1206,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_domain_compartment_details)
+                body=change_domain_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_domain_compartment_details)
+                body=change_domain_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_domain_license_type(self, domain_id, change_domain_license_type_details, **kwargs):
         """
@@ -1196,6 +1276,8 @@ class IdentityClient(object):
         """
         resource_path = "/domains/{domainId}/actions/changeLicenseType"
         method = "POST"
+        operation_name = "change_domain_license_type"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/ChangeDomainLicenseType"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1247,14 +1329,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_domain_license_type_details)
+                body=change_domain_license_type_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_domain_license_type_details)
+                body=change_domain_license_type_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_tag_namespace_compartment(self, tag_namespace_id, change_tag_namespace_compartment_detail, **kwargs):
         """
@@ -1301,6 +1389,8 @@ class IdentityClient(object):
         """
         resource_path = "/tagNamespaces/{tagNamespaceId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_tag_namespace_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/ChangeTagNamespaceCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1348,14 +1438,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_tag_namespace_compartment_detail)
+                body=change_tag_namespace_compartment_detail,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_tag_namespace_compartment_detail)
+                body=change_tag_namespace_compartment_detail,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_auth_token(self, create_auth_token_details, user_id, **kwargs):
         """
@@ -1406,6 +1502,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/authTokens"
         method = "POST"
+        operation_name = "create_auth_token"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/AuthToken/CreateAuthToken"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1454,7 +1552,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_auth_token_details,
-                response_type="AuthToken")
+                response_type="AuthToken",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1462,7 +1563,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_auth_token_details,
-                response_type="AuthToken")
+                response_type="AuthToken",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_compartment(self, create_compartment_details, **kwargs):
         """
@@ -1518,6 +1622,8 @@ class IdentityClient(object):
         """
         resource_path = "/compartments"
         method = "POST"
+        operation_name = "create_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/CreateCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1555,14 +1661,20 @@ class IdentityClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_compartment_details,
-                response_type="Compartment")
+                response_type="Compartment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_compartment_details,
-                response_type="Compartment")
+                response_type="Compartment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_customer_secret_key(self, create_customer_secret_key_details, user_id, **kwargs):
         """
@@ -1614,6 +1726,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/customerSecretKeys"
         method = "POST"
+        operation_name = "create_customer_secret_key"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/CustomerSecretKey/CreateCustomerSecretKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1662,7 +1776,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_customer_secret_key_details,
-                response_type="CustomerSecretKey")
+                response_type="CustomerSecretKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1670,7 +1787,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_customer_secret_key_details,
-                response_type="CustomerSecretKey")
+                response_type="CustomerSecretKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_db_credential(self, create_db_credential_details, user_id, **kwargs):
         """
@@ -1714,6 +1834,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/dbCredentials"
         method = "POST"
+        operation_name = "create_db_credential"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/CreateDbCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1764,7 +1886,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_db_credential_details,
-                response_type="DbCredential")
+                response_type="DbCredential",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1772,7 +1897,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_db_credential_details,
-                response_type="DbCredential")
+                response_type="DbCredential",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_domain(self, create_domain_details, **kwargs):
         """
@@ -1820,6 +1948,8 @@ class IdentityClient(object):
         """
         resource_path = "/domains"
         method = "POST"
+        operation_name = "create_domain"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/CreateDomain"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1858,13 +1988,19 @@ class IdentityClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_domain_details)
+                body=create_domain_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_domain_details)
+                body=create_domain_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_dynamic_group(self, create_dynamic_group_details, **kwargs):
         """
@@ -1921,6 +2057,8 @@ class IdentityClient(object):
         """
         resource_path = "/dynamicGroups"
         method = "POST"
+        operation_name = "create_dynamic_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/DynamicGroup/CreateDynamicGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1958,14 +2096,20 @@ class IdentityClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_dynamic_group_details,
-                response_type="DynamicGroup")
+                response_type="DynamicGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_dynamic_group_details,
-                response_type="DynamicGroup")
+                response_type="DynamicGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_group(self, create_group_details, **kwargs):
         """
@@ -2025,6 +2169,8 @@ class IdentityClient(object):
         """
         resource_path = "/groups"
         method = "POST"
+        operation_name = "create_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Group/CreateGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2062,14 +2208,20 @@ class IdentityClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_group_details,
-                response_type="Group")
+                response_type="Group",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_group_details,
-                response_type="Group")
+                response_type="Group",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_identity_provider(self, create_identity_provider_details, **kwargs):
         """
@@ -2129,6 +2281,8 @@ class IdentityClient(object):
         """
         resource_path = "/identityProviders"
         method = "POST"
+        operation_name = "create_identity_provider"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdentityProvider/CreateIdentityProvider"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2166,14 +2320,20 @@ class IdentityClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_identity_provider_details,
-                response_type="IdentityProvider")
+                response_type="IdentityProvider",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_identity_provider_details,
-                response_type="IdentityProvider")
+                response_type="IdentityProvider",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_idp_group_mapping(self, create_idp_group_mapping_details, identity_provider_id, **kwargs):
         """
@@ -2218,6 +2378,8 @@ class IdentityClient(object):
         """
         resource_path = "/identityProviders/{identityProviderId}/groupMappings"
         method = "POST"
+        operation_name = "create_idp_group_mapping"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdpGroupMapping/CreateIdpGroupMapping"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2266,7 +2428,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_idp_group_mapping_details,
-                response_type="IdpGroupMapping")
+                response_type="IdpGroupMapping",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2274,7 +2439,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_idp_group_mapping_details,
-                response_type="IdpGroupMapping")
+                response_type="IdpGroupMapping",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_mfa_totp_device(self, user_id, **kwargs):
         """
@@ -2311,6 +2479,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/mfaTotpDevices"
         method = "POST"
+        operation_name = "create_mfa_totp_device"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/MfaTotpDevice/CreateMfaTotpDevice"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2358,14 +2528,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="MfaTotpDevice")
+                response_type="MfaTotpDevice",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="MfaTotpDevice")
+                response_type="MfaTotpDevice",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_network_source(self, create_network_source_details, **kwargs):
         """
@@ -2426,6 +2602,8 @@ class IdentityClient(object):
         """
         resource_path = "/networkSources"
         method = "POST"
+        operation_name = "create_network_source"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/NetworkSources/CreateNetworkSource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2463,14 +2641,20 @@ class IdentityClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_network_source_details,
-                response_type="NetworkSources")
+                response_type="NetworkSources",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_network_source_details,
-                response_type="NetworkSources")
+                response_type="NetworkSources",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_o_auth_client_credential(self, user_id, create_o_auth2_client_credential_details, **kwargs):
         """
@@ -2510,6 +2694,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/oauth2ClientCredentials"
         method = "POST"
+        operation_name = "create_o_auth_client_credential"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/CreateOAuthClientCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2558,7 +2744,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_o_auth2_client_credential_details,
-                response_type="OAuth2ClientCredential")
+                response_type="OAuth2ClientCredential",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2566,7 +2755,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_o_auth2_client_credential_details,
-                response_type="OAuth2ClientCredential")
+                response_type="OAuth2ClientCredential",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_or_reset_ui_password(self, user_id, **kwargs):
         """
@@ -2619,6 +2811,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/uiPassword"
         method = "POST"
+        operation_name = "create_or_reset_ui_password"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/UIPassword/CreateOrResetUiPassword"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2666,14 +2860,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="UIPassword")
+                response_type="UIPassword",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="UIPassword")
+                response_type="UIPassword",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_policy(self, create_policy_details, **kwargs):
         """
@@ -2730,6 +2930,8 @@ class IdentityClient(object):
         """
         resource_path = "/policies"
         method = "POST"
+        operation_name = "create_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Policy/CreatePolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2767,14 +2969,20 @@ class IdentityClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_policy_details,
-                response_type="Policy")
+                response_type="Policy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_policy_details,
-                response_type="Policy")
+                response_type="Policy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_region_subscription(self, create_region_subscription_details, tenancy_id, **kwargs):
         """
@@ -2814,6 +3022,8 @@ class IdentityClient(object):
         """
         resource_path = "/tenancies/{tenancyId}/regionSubscriptions"
         method = "POST"
+        operation_name = "create_region_subscription"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/RegionSubscription/CreateRegionSubscription"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2862,7 +3072,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_region_subscription_details,
-                response_type="RegionSubscription")
+                response_type="RegionSubscription",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2870,7 +3083,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_region_subscription_details,
-                response_type="RegionSubscription")
+                response_type="RegionSubscription",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_smtp_credential(self, create_smtp_credential_details, user_id, **kwargs):
         """
@@ -2913,6 +3129,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/smtpCredentials"
         method = "POST"
+        operation_name = "create_smtp_credential"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/SmtpCredential/CreateSmtpCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2961,7 +3179,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_smtp_credential_details,
-                response_type="SmtpCredential")
+                response_type="SmtpCredential",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2969,7 +3190,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_smtp_credential_details,
-                response_type="SmtpCredential")
+                response_type="SmtpCredential",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_swift_password(self, create_swift_password_details, user_id, **kwargs):
         """
@@ -3022,6 +3246,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/swiftPasswords"
         method = "POST"
+        operation_name = "create_swift_password"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/SwiftPassword/CreateSwiftPassword"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3070,7 +3296,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_swift_password_details,
-                response_type="SwiftPassword")
+                response_type="SwiftPassword",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3078,7 +3307,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_swift_password_details,
-                response_type="SwiftPassword")
+                response_type="SwiftPassword",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_tag(self, tag_namespace_id, create_tag_details, **kwargs):
         """
@@ -3139,6 +3371,8 @@ class IdentityClient(object):
         """
         resource_path = "/tagNamespaces/{tagNamespaceId}/tags"
         method = "POST"
+        operation_name = "create_tag"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/CreateTag"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3187,7 +3421,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_tag_details,
-                response_type="Tag")
+                response_type="Tag",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3195,7 +3432,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_tag_details,
-                response_type="Tag")
+                response_type="Tag",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_tag_default(self, create_tag_default_details, **kwargs):
         """
@@ -3243,6 +3483,8 @@ class IdentityClient(object):
         """
         resource_path = "/tagDefaults"
         method = "POST"
+        operation_name = "create_tag_default"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/CreateTagDefault"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3282,14 +3524,20 @@ class IdentityClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_tag_default_details,
-                response_type="TagDefault")
+                response_type="TagDefault",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_tag_default_details,
-                response_type="TagDefault")
+                response_type="TagDefault",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_tag_namespace(self, create_tag_namespace_details, **kwargs):
         """
@@ -3339,6 +3587,8 @@ class IdentityClient(object):
         """
         resource_path = "/tagNamespaces"
         method = "POST"
+        operation_name = "create_tag_namespace"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/CreateTagNamespace"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3376,14 +3626,20 @@ class IdentityClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_tag_namespace_details,
-                response_type="TagNamespace")
+                response_type="TagNamespace",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_tag_namespace_details,
-                response_type="TagNamespace")
+                response_type="TagNamespace",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_user(self, create_user_details, **kwargs):
         """
@@ -3458,6 +3714,8 @@ class IdentityClient(object):
         """
         resource_path = "/users"
         method = "POST"
+        operation_name = "create_user"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/CreateUser"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3495,14 +3753,20 @@ class IdentityClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_user_details,
-                response_type="User")
+                response_type="User",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_user_details,
-                response_type="User")
+                response_type="User",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def deactivate_domain(self, domain_id, **kwargs):
         """
@@ -3556,6 +3820,8 @@ class IdentityClient(object):
         """
         resource_path = "/domains/{domainId}/actions/deactivate"
         method = "POST"
+        operation_name = "deactivate_domain"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/DeactivateDomain"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3606,13 +3872,19 @@ class IdentityClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_api_key(self, user_id, fingerprint, **kwargs):
         """
@@ -3655,6 +3927,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/apiKeys/{fingerprint}"
         method = "DELETE"
+        operation_name = "delete_api_key"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3701,13 +3975,19 @@ class IdentityClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_auth_token(self, user_id, auth_token_id, **kwargs):
         """
@@ -3745,6 +4025,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/authTokens/{authTokenId}"
         method = "DELETE"
+        operation_name = "delete_auth_token"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3791,13 +4073,19 @@ class IdentityClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_compartment(self, compartment_id, **kwargs):
         """
@@ -3832,6 +4120,8 @@ class IdentityClient(object):
         """
         resource_path = "/compartments/{compartmentId}"
         method = "DELETE"
+        operation_name = "delete_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/DeleteCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3877,13 +4167,19 @@ class IdentityClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_customer_secret_key(self, user_id, customer_secret_key_id, **kwargs):
         """
@@ -3921,6 +4217,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/customerSecretKeys/{customerSecretKeyId}"
         method = "DELETE"
+        operation_name = "delete_customer_secret_key"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3967,13 +4265,19 @@ class IdentityClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_db_credential(self, user_id, db_credential_id, **kwargs):
         """
@@ -4015,6 +4319,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/dbCredentials/{dbCredentialId}"
         method = "DELETE"
+        operation_name = "delete_db_credential"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/DeleteDbCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4063,13 +4369,19 @@ class IdentityClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_domain(self, domain_id, **kwargs):
         """
@@ -4114,6 +4426,8 @@ class IdentityClient(object):
         """
         resource_path = "/domains/{domainId}"
         method = "DELETE"
+        operation_name = "delete_domain"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/DeleteDomain"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4161,13 +4475,19 @@ class IdentityClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_dynamic_group(self, dynamic_group_id, **kwargs):
         """
@@ -4202,6 +4522,8 @@ class IdentityClient(object):
         """
         resource_path = "/dynamicGroups/{dynamicGroupId}"
         method = "DELETE"
+        operation_name = "delete_dynamic_group"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4247,13 +4569,19 @@ class IdentityClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_group(self, group_id, **kwargs):
         """
@@ -4288,6 +4616,8 @@ class IdentityClient(object):
         """
         resource_path = "/groups/{groupId}"
         method = "DELETE"
+        operation_name = "delete_group"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4333,13 +4663,19 @@ class IdentityClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_identity_provider(self, identity_provider_id, **kwargs):
         """
@@ -4379,6 +4715,8 @@ class IdentityClient(object):
         """
         resource_path = "/identityProviders/{identityProviderId}"
         method = "DELETE"
+        operation_name = "delete_identity_provider"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4424,13 +4762,19 @@ class IdentityClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_idp_group_mapping(self, identity_provider_id, mapping_id, **kwargs):
         """
@@ -4472,6 +4816,8 @@ class IdentityClient(object):
         """
         resource_path = "/identityProviders/{identityProviderId}/groupMappings/{mappingId}"
         method = "DELETE"
+        operation_name = "delete_idp_group_mapping"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4518,13 +4864,19 @@ class IdentityClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_mfa_totp_device(self, user_id, mfa_totp_device_id, **kwargs):
         """
@@ -4562,6 +4914,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/mfaTotpDevices/{mfaTotpDeviceId}"
         method = "DELETE"
+        operation_name = "delete_mfa_totp_device"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/MfaTotpDevice/DeleteMfaTotpDevice"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4608,13 +4962,19 @@ class IdentityClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_network_source(self, network_source_id, **kwargs):
         """
@@ -4649,6 +5009,8 @@ class IdentityClient(object):
         """
         resource_path = "/networkSources/{networkSourceId}"
         method = "DELETE"
+        operation_name = "delete_network_source"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/NetworkSources/DeleteNetworkSource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4694,13 +5056,19 @@ class IdentityClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_o_auth_client_credential(self, user_id, oauth2_client_credential_id, **kwargs):
         """
@@ -4738,6 +5106,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/oauth2ClientCredentials/{oauth2ClientCredentialId}"
         method = "DELETE"
+        operation_name = "delete_o_auth_client_credential"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/DeleteOAuthClientCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4784,13 +5154,19 @@ class IdentityClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_policy(self, policy_id, **kwargs):
         """
@@ -4825,6 +5201,8 @@ class IdentityClient(object):
         """
         resource_path = "/policies/{policyId}"
         method = "DELETE"
+        operation_name = "delete_policy"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4870,13 +5248,19 @@ class IdentityClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_smtp_credential(self, user_id, smtp_credential_id, **kwargs):
         """
@@ -4914,6 +5298,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/smtpCredentials/{smtpCredentialId}"
         method = "DELETE"
+        operation_name = "delete_smtp_credential"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4960,13 +5346,19 @@ class IdentityClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_swift_password(self, user_id, swift_password_id, **kwargs):
         """
@@ -5006,6 +5398,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/swiftPasswords/{swiftPasswordId}"
         method = "DELETE"
+        operation_name = "delete_swift_password"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5052,13 +5446,19 @@ class IdentityClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_tag(self, tag_namespace_id, tag_name, **kwargs):
         """
@@ -5116,6 +5516,8 @@ class IdentityClient(object):
         """
         resource_path = "/tagNamespaces/{tagNamespaceId}/tags/{tagName}"
         method = "DELETE"
+        operation_name = "delete_tag"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/DeleteTag"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5162,13 +5564,19 @@ class IdentityClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_tag_default(self, tag_default_id, **kwargs):
         """
@@ -5207,6 +5615,8 @@ class IdentityClient(object):
         """
         resource_path = "/tagDefaults/{tagDefaultId}"
         method = "DELETE"
+        operation_name = "delete_tag_default"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/DeleteTagDefault"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5254,13 +5664,19 @@ class IdentityClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_tag_namespace(self, tag_namespace_id, **kwargs):
         """
@@ -5305,6 +5721,8 @@ class IdentityClient(object):
         """
         resource_path = "/tagNamespaces/{tagNamespaceId}"
         method = "DELETE"
+        operation_name = "delete_tag_namespace"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/DeleteTagNamespace"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5352,13 +5770,19 @@ class IdentityClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_user(self, user_id, **kwargs):
         """
@@ -5393,6 +5817,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}"
         method = "DELETE"
+        operation_name = "delete_user"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5438,13 +5864,19 @@ class IdentityClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def enable_replication_to_region(self, domain_id, enable_replication_to_region_details, **kwargs):
         """
@@ -5502,6 +5934,8 @@ class IdentityClient(object):
         """
         resource_path = "/domains/{domainId}/actions/enableReplicationToRegion"
         method = "POST"
+        operation_name = "enable_replication_to_region"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/EnableReplicationToRegion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5553,14 +5987,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=enable_replication_to_region_details)
+                body=enable_replication_to_region_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=enable_replication_to_region_details)
+                body=enable_replication_to_region_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def generate_totp_seed(self, user_id, mfa_totp_device_id, **kwargs):
         """
@@ -5598,6 +6038,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/mfaTotpDevices/{mfaTotpDeviceId}/actions/generateSeed"
         method = "POST"
+        operation_name = "generate_totp_seed"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/MfaTotpDevice/GenerateTotpSeed"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5645,14 +6087,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="MfaTotpDevice")
+                response_type="MfaTotpDevice",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="MfaTotpDevice")
+                response_type="MfaTotpDevice",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_authentication_policy(self, compartment_id, **kwargs):
         """
@@ -5683,6 +6131,8 @@ class IdentityClient(object):
         """
         resource_path = "/authenticationPolicies/{compartmentId}"
         method = "GET"
+        operation_name = "get_authentication_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/AuthenticationPolicy/GetAuthenticationPolicy"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -5722,14 +6172,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AuthenticationPolicy")
+                response_type="AuthenticationPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AuthenticationPolicy")
+                response_type="AuthenticationPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_compartment(self, compartment_id, **kwargs):
         """
@@ -5766,6 +6222,8 @@ class IdentityClient(object):
         """
         resource_path = "/compartments/{compartmentId}"
         method = "GET"
+        operation_name = "get_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/GetCompartment"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -5805,14 +6263,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Compartment")
+                response_type="Compartment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Compartment")
+                response_type="Compartment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_domain(self, domain_id, **kwargs):
         """
@@ -5846,6 +6310,8 @@ class IdentityClient(object):
         """
         resource_path = "/domains/{domainId}"
         method = "GET"
+        operation_name = "get_domain"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/GetDomain"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5892,14 +6358,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Domain")
+                response_type="Domain",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Domain")
+                response_type="Domain",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_dynamic_group(self, dynamic_group_id, **kwargs):
         """
@@ -5929,6 +6401,8 @@ class IdentityClient(object):
         """
         resource_path = "/dynamicGroups/{dynamicGroupId}"
         method = "GET"
+        operation_name = "get_dynamic_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/DynamicGroup/GetDynamicGroup"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -5968,14 +6442,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DynamicGroup")
+                response_type="DynamicGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DynamicGroup")
+                response_type="DynamicGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_group(self, group_id, **kwargs):
         """
@@ -6009,6 +6489,8 @@ class IdentityClient(object):
         """
         resource_path = "/groups/{groupId}"
         method = "GET"
+        operation_name = "get_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Group/GetGroup"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -6048,14 +6530,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Group")
+                response_type="Group",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Group")
+                response_type="Group",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_iam_work_request(self, iam_work_request_id, **kwargs):
         """
@@ -6089,6 +6577,8 @@ class IdentityClient(object):
         """
         resource_path = "/iamWorkRequests/{iamWorkRequestId}"
         method = "GET"
+        operation_name = "get_iam_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IamWorkRequest/GetIamWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6135,14 +6625,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="IamWorkRequest")
+                response_type="IamWorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="IamWorkRequest")
+                response_type="IamWorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_identity_provider(self, identity_provider_id, **kwargs):
         """
@@ -6176,6 +6672,8 @@ class IdentityClient(object):
         """
         resource_path = "/identityProviders/{identityProviderId}"
         method = "GET"
+        operation_name = "get_identity_provider"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdentityProvider/GetIdentityProvider"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -6215,14 +6713,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="IdentityProvider")
+                response_type="IdentityProvider",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="IdentityProvider")
+                response_type="IdentityProvider",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_idp_group_mapping(self, identity_provider_id, mapping_id, **kwargs):
         """
@@ -6259,6 +6763,8 @@ class IdentityClient(object):
         """
         resource_path = "/identityProviders/{identityProviderId}/groupMappings/{mappingId}"
         method = "GET"
+        operation_name = "get_idp_group_mapping"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdpGroupMapping/GetIdpGroupMapping"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -6299,14 +6805,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="IdpGroupMapping")
+                response_type="IdpGroupMapping",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="IdpGroupMapping")
+                response_type="IdpGroupMapping",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_mfa_totp_device(self, user_id, mfa_totp_device_id, **kwargs):
         """
@@ -6339,6 +6851,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/mfaTotpDevices/{mfaTotpDeviceId}"
         method = "GET"
+        operation_name = "get_mfa_totp_device"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/MfaTotpDeviceSummary/GetMfaTotpDevice"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -6379,14 +6893,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="MfaTotpDeviceSummary")
+                response_type="MfaTotpDeviceSummary",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="MfaTotpDeviceSummary")
+                response_type="MfaTotpDeviceSummary",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_network_source(self, network_source_id, **kwargs):
         """
@@ -6416,6 +6936,8 @@ class IdentityClient(object):
         """
         resource_path = "/networkSources/{networkSourceId}"
         method = "GET"
+        operation_name = "get_network_source"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/NetworkSources/GetNetworkSource"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -6455,14 +6977,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="NetworkSources")
+                response_type="NetworkSources",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="NetworkSources")
+                response_type="NetworkSources",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_policy(self, policy_id, **kwargs):
         """
@@ -6492,6 +7020,8 @@ class IdentityClient(object):
         """
         resource_path = "/policies/{policyId}"
         method = "GET"
+        operation_name = "get_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Policy/GetPolicy"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -6531,14 +7061,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Policy")
+                response_type="Policy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Policy")
+                response_type="Policy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_standard_tag_template(self, compartment_id, standard_tag_namespace_name, **kwargs):
         """
@@ -6571,6 +7107,8 @@ class IdentityClient(object):
         """
         resource_path = "/tags/standardTagNamespaceTemplates/{standardTagNamespaceName}"
         method = "GET"
+        operation_name = "get_standard_tag_template"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/StandardTagNamespaceTemplate/GetStandardTagTemplate"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -6616,7 +7154,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="StandardTagNamespaceTemplate")
+                response_type="StandardTagNamespaceTemplate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6624,7 +7165,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="StandardTagNamespaceTemplate")
+                response_type="StandardTagNamespaceTemplate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_tag(self, tag_namespace_id, tag_name, **kwargs):
         """
@@ -6657,6 +7201,8 @@ class IdentityClient(object):
         """
         resource_path = "/tagNamespaces/{tagNamespaceId}/tags/{tagName}"
         method = "GET"
+        operation_name = "get_tag"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/GetTag"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -6697,14 +7243,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Tag")
+                response_type="Tag",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Tag")
+                response_type="Tag",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_tag_default(self, tag_default_id, **kwargs):
         """
@@ -6734,6 +7286,8 @@ class IdentityClient(object):
         """
         resource_path = "/tagDefaults/{tagDefaultId}"
         method = "GET"
+        operation_name = "get_tag_default"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/GetTagDefault"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -6773,14 +7327,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TagDefault")
+                response_type="TagDefault",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TagDefault")
+                response_type="TagDefault",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_tag_namespace(self, tag_namespace_id, **kwargs):
         """
@@ -6810,6 +7370,8 @@ class IdentityClient(object):
         """
         resource_path = "/tagNamespaces/{tagNamespaceId}"
         method = "GET"
+        operation_name = "get_tag_namespace"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/GetTagNamespace"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -6849,14 +7411,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TagNamespace")
+                response_type="TagNamespace",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TagNamespace")
+                response_type="TagNamespace",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_tagging_work_request(self, work_request_id, **kwargs):
         """
@@ -6887,6 +7455,8 @@ class IdentityClient(object):
         """
         resource_path = "/taggingWorkRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_tagging_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TaggingWorkRequest/GetTaggingWorkRequest"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -6926,14 +7496,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TaggingWorkRequest")
+                response_type="TaggingWorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TaggingWorkRequest")
+                response_type="TaggingWorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_tenancy(self, tenancy_id, **kwargs):
         """
@@ -6963,6 +7539,8 @@ class IdentityClient(object):
         """
         resource_path = "/tenancies/{tenancyId}"
         method = "GET"
+        operation_name = "get_tenancy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tenancy/GetTenancy"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -7002,14 +7580,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Tenancy")
+                response_type="Tenancy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Tenancy")
+                response_type="Tenancy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_user(self, user_id, **kwargs):
         """
@@ -7039,6 +7623,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}"
         method = "GET"
+        operation_name = "get_user"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/GetUser"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -7078,14 +7664,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="User")
+                response_type="User",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="User")
+                response_type="User",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_user_group_membership(self, user_group_membership_id, **kwargs):
         """
@@ -7115,6 +7707,8 @@ class IdentityClient(object):
         """
         resource_path = "/userGroupMemberships/{userGroupMembershipId}"
         method = "GET"
+        operation_name = "get_user_group_membership"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/UserGroupMembership/GetUserGroupMembership"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -7154,14 +7748,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="UserGroupMembership")
+                response_type="UserGroupMembership",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="UserGroupMembership")
+                response_type="UserGroupMembership",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_user_ui_password_information(self, user_id, **kwargs):
         """
@@ -7192,6 +7792,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/uiPassword"
         method = "GET"
+        operation_name = "get_user_ui_password_information"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/UIPasswordInformation/GetUserUiPasswordInformation"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -7231,14 +7833,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="UIPasswordInformation")
+                response_type="UIPasswordInformation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="UIPasswordInformation")
+                response_type="UIPasswordInformation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -7269,6 +7877,8 @@ class IdentityClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/WorkRequest/GetWorkRequest"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -7308,14 +7918,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def import_standard_tags(self, **kwargs):
         """
@@ -7357,6 +7973,8 @@ class IdentityClient(object):
         """
         resource_path = "/tags/actions/importStandardTags"
         method = "POST"
+        operation_name = "import_standard_tags"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/ImportStandardTags"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7396,13 +8014,19 @@ class IdentityClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=kwargs.get('import_standard_tags_details'))
+                body=kwargs.get('import_standard_tags_details'),
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=kwargs.get('import_standard_tags_details'))
+                body=kwargs.get('import_standard_tags_details'),
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_allowed_domain_license_types(self, **kwargs):
         """
@@ -7440,6 +8064,8 @@ class IdentityClient(object):
         """
         resource_path = "/allowedDomainLicenseTypes"
         method = "GET"
+        operation_name = "list_allowed_domain_license_types"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/ListAllowedDomainLicenseTypes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7482,14 +8108,20 @@ class IdentityClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AllowedDomainLicenseTypeSummary]")
+                response_type="list[AllowedDomainLicenseTypeSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AllowedDomainLicenseTypeSummary]")
+                response_type="list[AllowedDomainLicenseTypeSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_api_keys(self, user_id, **kwargs):
         """
@@ -7522,6 +8154,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/apiKeys"
         method = "GET"
+        operation_name = "list_api_keys"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/ApiKey/ListApiKeys"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -7561,14 +8195,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[ApiKey]")
+                response_type="list[ApiKey]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[ApiKey]")
+                response_type="list[ApiKey]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_auth_tokens(self, user_id, **kwargs):
         """
@@ -7599,6 +8239,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/authTokens"
         method = "GET"
+        operation_name = "list_auth_tokens"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/AuthToken/ListAuthTokens"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -7638,14 +8280,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[AuthToken]")
+                response_type="list[AuthToken]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[AuthToken]")
+                response_type="list[AuthToken]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_availability_domains(self, compartment_id, **kwargs):
         """
@@ -7681,6 +8329,8 @@ class IdentityClient(object):
         """
         resource_path = "/availabilityDomains"
         method = "GET"
+        operation_name = "list_availability_domains"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -7715,14 +8365,20 @@ class IdentityClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AvailabilityDomain]")
+                response_type="list[AvailabilityDomain]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AvailabilityDomain]")
+                response_type="list[AvailabilityDomain]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_bulk_action_resource_types(self, bulk_action_type, **kwargs):
         """
@@ -7768,6 +8424,8 @@ class IdentityClient(object):
         """
         resource_path = "/compartments/bulkActionResourceTypes"
         method = "GET"
+        operation_name = "list_bulk_action_resource_types"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/BulkActionResourceTypeCollection/ListBulkActionResourceTypes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7816,14 +8474,20 @@ class IdentityClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="BulkActionResourceTypeCollection")
+                response_type="BulkActionResourceTypeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="BulkActionResourceTypeCollection")
+                response_type="BulkActionResourceTypeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_bulk_edit_tags_resource_types(self, **kwargs):
         """
@@ -7856,6 +8520,8 @@ class IdentityClient(object):
         """
         resource_path = "/tags/bulkEditResourceTypes"
         method = "GET"
+        operation_name = "list_bulk_edit_tags_resource_types"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/BulkEditTagsResourceTypeCollection/ListBulkEditTagsResourceTypes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7897,14 +8563,20 @@ class IdentityClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="BulkEditTagsResourceTypeCollection")
+                response_type="BulkEditTagsResourceTypeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="BulkEditTagsResourceTypeCollection")
+                response_type="BulkEditTagsResourceTypeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_compartments(self, compartment_id, **kwargs):
         """
@@ -8003,6 +8675,8 @@ class IdentityClient(object):
         """
         resource_path = "/compartments"
         method = "GET"
+        operation_name = "list_compartments"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/ListCompartments"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8085,14 +8759,20 @@ class IdentityClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Compartment]")
+                response_type="list[Compartment]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Compartment]")
+                response_type="list[Compartment]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_cost_tracking_tags(self, compartment_id, **kwargs):
         """
@@ -8131,6 +8811,8 @@ class IdentityClient(object):
         """
         resource_path = "/tagNamespaces/actions/listCostTrackingTags"
         method = "GET"
+        operation_name = "list_cost_tracking_tags"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/ListCostTrackingTags"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8173,14 +8855,20 @@ class IdentityClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Tag]")
+                response_type="list[Tag]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Tag]")
+                response_type="list[Tag]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_customer_secret_keys(self, user_id, **kwargs):
         """
@@ -8211,6 +8899,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/customerSecretKeys"
         method = "GET"
+        operation_name = "list_customer_secret_keys"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/CustomerSecretKeySummary/ListCustomerSecretKeys"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -8250,14 +8940,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[CustomerSecretKeySummary]")
+                response_type="list[CustomerSecretKeySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[CustomerSecretKeySummary]")
+                response_type="list[CustomerSecretKeySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_db_credentials(self, user_id, **kwargs):
         """
@@ -8323,6 +9019,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/dbCredentials"
         method = "GET"
+        operation_name = "list_db_credentials"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/ListDbCredentials"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8407,7 +9105,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DbCredentialSummary]")
+                response_type="list[DbCredentialSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8415,7 +9116,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DbCredentialSummary]")
+                response_type="list[DbCredentialSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_domains(self, compartment_id, **kwargs):
         """
@@ -8499,6 +9203,8 @@ class IdentityClient(object):
         """
         resource_path = "/domains"
         method = "GET"
+        operation_name = "list_domains"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/DomainSummary/ListDomains"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8585,14 +9291,20 @@ class IdentityClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DomainSummary]")
+                response_type="list[DomainSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DomainSummary]")
+                response_type="list[DomainSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_dynamic_groups(self, compartment_id, **kwargs):
         """
@@ -8658,6 +9370,8 @@ class IdentityClient(object):
         """
         resource_path = "/dynamicGroups"
         method = "GET"
+        operation_name = "list_dynamic_groups"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/DynamicGroup/ListDynamicGroups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8729,14 +9443,20 @@ class IdentityClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DynamicGroup]")
+                response_type="list[DynamicGroup]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DynamicGroup]")
+                response_type="list[DynamicGroup]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_fault_domains(self, compartment_id, availability_domain, **kwargs):
         """
@@ -8773,6 +9493,8 @@ class IdentityClient(object):
         """
         resource_path = "/faultDomains"
         method = "GET"
+        operation_name = "list_fault_domains"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -8808,14 +9530,20 @@ class IdentityClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[FaultDomain]")
+                response_type="list[FaultDomain]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[FaultDomain]")
+                response_type="list[FaultDomain]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_groups(self, compartment_id, **kwargs):
         """
@@ -8881,6 +9609,8 @@ class IdentityClient(object):
         """
         resource_path = "/groups"
         method = "GET"
+        operation_name = "list_groups"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Group/ListGroups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8952,14 +9682,20 @@ class IdentityClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Group]")
+                response_type="list[Group]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Group]")
+                response_type="list[Group]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_iam_work_request_errors(self, iam_work_request_id, **kwargs):
         """
@@ -9005,6 +9741,8 @@ class IdentityClient(object):
         """
         resource_path = "/iamWorkRequests/{iamWorkRequestId}/errors"
         method = "GET"
+        operation_name = "list_iam_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IamWorkRequest/ListIamWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9069,7 +9807,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[IamWorkRequestErrorSummary]")
+                response_type="list[IamWorkRequestErrorSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9077,7 +9818,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[IamWorkRequestErrorSummary]")
+                response_type="list[IamWorkRequestErrorSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_iam_work_request_logs(self, iam_work_request_id, **kwargs):
         """
@@ -9123,6 +9867,8 @@ class IdentityClient(object):
         """
         resource_path = "/iamWorkRequests/{iamWorkRequestId}/logs"
         method = "GET"
+        operation_name = "list_iam_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IamWorkRequestLogSummary/ListIamWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9187,7 +9933,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[IamWorkRequestLogSummary]")
+                response_type="list[IamWorkRequestLogSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9195,7 +9944,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[IamWorkRequestLogSummary]")
+                response_type="list[IamWorkRequestLogSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_iam_work_requests(self, compartment_id, **kwargs):
         """
@@ -9238,6 +9990,8 @@ class IdentityClient(object):
         """
         resource_path = "/iamWorkRequests"
         method = "GET"
+        operation_name = "list_iam_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IamWorkRequestSummary/ListIamWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9285,14 +10039,20 @@ class IdentityClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[IamWorkRequestSummary]")
+                response_type="list[IamWorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[IamWorkRequestSummary]")
+                response_type="list[IamWorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_identity_provider_groups(self, identity_provider_id, **kwargs):
         """
@@ -9340,6 +10100,8 @@ class IdentityClient(object):
         """
         resource_path = "/identityProviders/{identityProviderId}/groups"
         method = "GET"
+        operation_name = "list_identity_provider_groups"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdentityProviderGroupSummary/ListIdentityProviderGroups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9403,7 +10165,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[IdentityProviderGroupSummary]")
+                response_type="list[IdentityProviderGroupSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9411,7 +10176,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[IdentityProviderGroupSummary]")
+                response_type="list[IdentityProviderGroupSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_identity_providers(self, protocol, compartment_id, **kwargs):
         """
@@ -9486,6 +10254,8 @@ class IdentityClient(object):
         """
         resource_path = "/identityProviders"
         method = "GET"
+        operation_name = "list_identity_providers"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdentityProvider/ListIdentityProviders"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9558,14 +10328,20 @@ class IdentityClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[IdentityProvider]")
+                response_type="list[IdentityProvider]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[IdentityProvider]")
+                response_type="list[IdentityProvider]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_idp_group_mappings(self, identity_provider_id, **kwargs):
         """
@@ -9605,6 +10381,8 @@ class IdentityClient(object):
         """
         resource_path = "/identityProviders/{identityProviderId}/groupMappings"
         method = "GET"
+        operation_name = "list_idp_group_mappings"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdpGroupMapping/ListIdpGroupMappings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9657,7 +10435,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[IdpGroupMapping]")
+                response_type="list[IdpGroupMapping]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9665,7 +10446,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[IdpGroupMapping]")
+                response_type="list[IdpGroupMapping]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_mfa_totp_devices(self, user_id, **kwargs):
         """
@@ -9720,6 +10504,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/mfaTotpDevices"
         method = "GET"
+        operation_name = "list_mfa_totp_devices"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/MfaTotpDeviceSummary/ListMfaTotpDevices"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9790,7 +10576,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[MfaTotpDeviceSummary]")
+                response_type="list[MfaTotpDeviceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9798,7 +10587,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[MfaTotpDeviceSummary]")
+                response_type="list[MfaTotpDeviceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_network_sources(self, compartment_id, **kwargs):
         """
@@ -9864,6 +10656,8 @@ class IdentityClient(object):
         """
         resource_path = "/networkSources"
         method = "GET"
+        operation_name = "list_network_sources"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/NetworkSourcesSummary/ListNetworkSources"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9935,14 +10729,20 @@ class IdentityClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[NetworkSourcesSummary]")
+                response_type="list[NetworkSourcesSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[NetworkSourcesSummary]")
+                response_type="list[NetworkSourcesSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_o_auth_client_credentials(self, user_id, **kwargs):
         """
@@ -9983,6 +10783,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/oauth2ClientCredentials"
         method = "GET"
+        operation_name = "list_o_auth_client_credentials"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/ListOAuthClientCredentials"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10044,7 +10846,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[OAuth2ClientCredentialSummary]")
+                response_type="list[OAuth2ClientCredentialSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10052,7 +10857,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[OAuth2ClientCredentialSummary]")
+                response_type="list[OAuth2ClientCredentialSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_policies(self, compartment_id, **kwargs):
         """
@@ -10120,6 +10928,8 @@ class IdentityClient(object):
         """
         resource_path = "/policies"
         method = "GET"
+        operation_name = "list_policies"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Policy/ListPolicies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10191,14 +11001,20 @@ class IdentityClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Policy]")
+                response_type="list[Policy]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Policy]")
+                response_type="list[Policy]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_region_subscriptions(self, tenancy_id, **kwargs):
         """
@@ -10228,6 +11044,8 @@ class IdentityClient(object):
         """
         resource_path = "/tenancies/{tenancyId}/regionSubscriptions"
         method = "GET"
+        operation_name = "list_region_subscriptions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/RegionSubscription/ListRegionSubscriptions"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -10267,14 +11085,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[RegionSubscription]")
+                response_type="list[RegionSubscription]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[RegionSubscription]")
+                response_type="list[RegionSubscription]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_regions(self, **kwargs):
         """
@@ -10301,6 +11125,8 @@ class IdentityClient(object):
         """
         resource_path = "/regions"
         method = "GET"
+        operation_name = "list_regions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Region/ListRegions"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -10329,13 +11155,19 @@ class IdentityClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                response_type="list[Region]")
+                response_type="list[Region]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                response_type="list[Region]")
+                response_type="list[Region]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_smtp_credentials(self, user_id, **kwargs):
         """
@@ -10366,6 +11198,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/smtpCredentials"
         method = "GET"
+        operation_name = "list_smtp_credentials"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/SmtpCredentialSummary/ListSmtpCredentials"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -10405,14 +11239,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[SmtpCredentialSummary]")
+                response_type="list[SmtpCredentialSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[SmtpCredentialSummary]")
+                response_type="list[SmtpCredentialSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_standard_tag_namespaces(self, compartment_id, **kwargs):
         """
@@ -10448,6 +11288,8 @@ class IdentityClient(object):
         """
         resource_path = "/tags/standardTagNamespaceTemplates"
         method = "GET"
+        operation_name = "list_standard_tag_namespaces"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/StandardTagNamespaceTemplateSummary/ListStandardTagNamespaces"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10490,14 +11332,20 @@ class IdentityClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[StandardTagNamespaceTemplateSummary]")
+                response_type="list[StandardTagNamespaceTemplateSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[StandardTagNamespaceTemplateSummary]")
+                response_type="list[StandardTagNamespaceTemplateSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_swift_passwords(self, user_id, **kwargs):
         """
@@ -10530,6 +11378,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/swiftPasswords"
         method = "GET"
+        operation_name = "list_swift_passwords"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/SwiftPassword/ListSwiftPasswords"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -10569,14 +11419,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[SwiftPassword]")
+                response_type="list[SwiftPassword]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[SwiftPassword]")
+                response_type="list[SwiftPassword]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_tag_defaults(self, **kwargs):
         """
@@ -10623,6 +11479,8 @@ class IdentityClient(object):
         """
         resource_path = "/tagDefaults"
         method = "GET"
+        operation_name = "list_tag_defaults"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefaultSummary/ListTagDefaults"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10679,14 +11537,20 @@ class IdentityClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TagDefaultSummary]")
+                response_type="list[TagDefaultSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TagDefaultSummary]")
+                response_type="list[TagDefaultSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_tag_namespaces(self, compartment_id, **kwargs):
         """
@@ -10731,6 +11595,8 @@ class IdentityClient(object):
         """
         resource_path = "/tagNamespaces"
         method = "GET"
+        operation_name = "list_tag_namespaces"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespaceSummary/ListTagNamespaces"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10784,14 +11650,20 @@ class IdentityClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TagNamespaceSummary]")
+                response_type="list[TagNamespaceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TagNamespaceSummary]")
+                response_type="list[TagNamespaceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_tagging_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -10827,6 +11699,8 @@ class IdentityClient(object):
         """
         resource_path = "/taggingWorkRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_tagging_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TaggingWorkRequestErrorSummary/ListTaggingWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10879,7 +11753,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TaggingWorkRequestErrorSummary]")
+                response_type="list[TaggingWorkRequestErrorSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10887,7 +11764,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TaggingWorkRequestErrorSummary]")
+                response_type="list[TaggingWorkRequestErrorSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_tagging_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -10923,6 +11803,8 @@ class IdentityClient(object):
         """
         resource_path = "/taggingWorkRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_tagging_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TaggingWorkRequestLogSummary/ListTaggingWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10975,7 +11857,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TaggingWorkRequestLogSummary]")
+                response_type="list[TaggingWorkRequestLogSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10983,7 +11868,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TaggingWorkRequestLogSummary]")
+                response_type="list[TaggingWorkRequestLogSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_tagging_work_requests(self, compartment_id, **kwargs):
         """
@@ -11022,6 +11910,8 @@ class IdentityClient(object):
         """
         resource_path = "/taggingWorkRequests"
         method = "GET"
+        operation_name = "list_tagging_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TaggingWorkRequestSummary/ListTaggingWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11066,14 +11956,20 @@ class IdentityClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TaggingWorkRequestSummary]")
+                response_type="list[TaggingWorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TaggingWorkRequestSummary]")
+                response_type="list[TaggingWorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_tags(self, tag_namespace_id, **kwargs):
         """
@@ -11114,6 +12010,8 @@ class IdentityClient(object):
         """
         resource_path = "/tagNamespaces/{tagNamespaceId}/tags"
         method = "GET"
+        operation_name = "list_tags"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagSummary/ListTags"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11175,7 +12073,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TagSummary]")
+                response_type="list[TagSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11183,7 +12084,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TagSummary]")
+                response_type="list[TagSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_user_group_memberships(self, compartment_id, **kwargs):
         """
@@ -11236,6 +12140,8 @@ class IdentityClient(object):
         """
         resource_path = "/userGroupMemberships"
         method = "GET"
+        operation_name = "list_user_group_memberships"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/UserGroupMembership/ListUserGroupMemberships"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11282,14 +12188,20 @@ class IdentityClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[UserGroupMembership]")
+                response_type="list[UserGroupMembership]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[UserGroupMembership]")
+                response_type="list[UserGroupMembership]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_users(self, compartment_id, **kwargs):
         """
@@ -11361,6 +12273,8 @@ class IdentityClient(object):
         """
         resource_path = "/users"
         method = "GET"
+        operation_name = "list_users"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/ListUsers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11436,14 +12350,20 @@ class IdentityClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[User]")
+                response_type="list[User]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[User]")
+                response_type="list[User]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -11482,6 +12402,8 @@ class IdentityClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/WorkRequestSummary/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11526,14 +12448,20 @@ class IdentityClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestSummary]")
+                response_type="list[WorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestSummary]")
+                response_type="list[WorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def move_compartment(self, compartment_id, move_compartment_details, **kwargs):
         """
@@ -11591,6 +12519,8 @@ class IdentityClient(object):
         """
         resource_path = "/compartments/{compartmentId}/actions/moveCompartment"
         method = "POST"
+        operation_name = "move_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/MoveCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11642,14 +12572,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=move_compartment_details)
+                body=move_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=move_compartment_details)
+                body=move_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def recover_compartment(self, compartment_id, **kwargs):
         """
@@ -11688,6 +12624,8 @@ class IdentityClient(object):
         """
         resource_path = "/compartments/{compartmentId}/actions/recoverCompartment"
         method = "POST"
+        operation_name = "recover_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/RecoverCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11736,14 +12674,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Compartment")
+                response_type="Compartment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Compartment")
+                response_type="Compartment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_user_from_group(self, user_group_membership_id, **kwargs):
         """
@@ -11778,6 +12722,8 @@ class IdentityClient(object):
         """
         resource_path = "/userGroupMemberships/{userGroupMembershipId}"
         method = "DELETE"
+        operation_name = "remove_user_from_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/UserGroupMembership/RemoveUserFromGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11823,13 +12769,19 @@ class IdentityClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def reset_idp_scim_client(self, identity_provider_id, **kwargs):
         """
@@ -11859,6 +12811,8 @@ class IdentityClient(object):
         """
         resource_path = "/identityProviders/{identityProviderId}/actions/resetScimClient"
         method = "POST"
+        operation_name = "reset_idp_scim_client"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/ScimClientCredentials/ResetIdpScimClient"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -11898,14 +12852,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ScimClientCredentials")
+                response_type="ScimClientCredentials",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ScimClientCredentials")
+                response_type="ScimClientCredentials",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_auth_token(self, user_id, auth_token_id, update_auth_token_details, **kwargs):
         """
@@ -11946,6 +12906,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/authTokens/{authTokenId}"
         method = "PUT"
+        operation_name = "update_auth_token"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/AuthToken/UpdateAuthToken"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11994,7 +12956,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_auth_token_details,
-                response_type="AuthToken")
+                response_type="AuthToken",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12002,7 +12967,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_auth_token_details,
-                response_type="AuthToken")
+                response_type="AuthToken",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_authentication_policy(self, compartment_id, update_authentication_policy_details, **kwargs):
         """
@@ -12040,6 +13008,8 @@ class IdentityClient(object):
         """
         resource_path = "/authenticationPolicies/{compartmentId}"
         method = "PUT"
+        operation_name = "update_authentication_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/AuthenticationPolicy/UpdateAuthenticationPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12087,7 +13057,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_authentication_policy_details,
-                response_type="AuthenticationPolicy")
+                response_type="AuthenticationPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12095,7 +13068,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_authentication_policy_details,
-                response_type="AuthenticationPolicy")
+                response_type="AuthenticationPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_compartment(self, compartment_id, update_compartment_details, **kwargs):
         """
@@ -12133,6 +13109,8 @@ class IdentityClient(object):
         """
         resource_path = "/compartments/{compartmentId}"
         method = "PUT"
+        operation_name = "update_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Compartment/UpdateCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12180,7 +13158,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_compartment_details,
-                response_type="Compartment")
+                response_type="Compartment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12188,7 +13169,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_compartment_details,
-                response_type="Compartment")
+                response_type="Compartment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_customer_secret_key(self, user_id, customer_secret_key_id, update_customer_secret_key_details, **kwargs):
         """
@@ -12229,6 +13213,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/customerSecretKeys/{customerSecretKeyId}"
         method = "PUT"
+        operation_name = "update_customer_secret_key"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/CustomerSecretKeySummary/UpdateCustomerSecretKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12277,7 +13263,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_customer_secret_key_details,
-                response_type="CustomerSecretKeySummary")
+                response_type="CustomerSecretKeySummary",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12285,7 +13274,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_customer_secret_key_details,
-                response_type="CustomerSecretKeySummary")
+                response_type="CustomerSecretKeySummary",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_domain(self, domain_id, update_domain_details, **kwargs):
         """
@@ -12330,6 +13322,8 @@ class IdentityClient(object):
         """
         resource_path = "/domains/{domainId}"
         method = "PUT"
+        operation_name = "update_domain"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Domain/UpdateDomain"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12378,14 +13372,20 @@ class IdentityClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_domain_details)
+                body=update_domain_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_domain_details)
+                body=update_domain_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_dynamic_group(self, dynamic_group_id, update_dynamic_group_details, **kwargs):
         """
@@ -12423,6 +13423,8 @@ class IdentityClient(object):
         """
         resource_path = "/dynamicGroups/{dynamicGroupId}"
         method = "PUT"
+        operation_name = "update_dynamic_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/DynamicGroup/UpdateDynamicGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12470,7 +13472,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_dynamic_group_details,
-                response_type="DynamicGroup")
+                response_type="DynamicGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12478,7 +13483,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_dynamic_group_details,
-                response_type="DynamicGroup")
+                response_type="DynamicGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_group(self, group_id, update_group_details, **kwargs):
         """
@@ -12516,6 +13524,8 @@ class IdentityClient(object):
         """
         resource_path = "/groups/{groupId}"
         method = "PUT"
+        operation_name = "update_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Group/UpdateGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12563,7 +13573,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_group_details,
-                response_type="Group")
+                response_type="Group",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12571,7 +13584,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_group_details,
-                response_type="Group")
+                response_type="Group",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_identity_provider(self, identity_provider_id, update_identity_provider_details, **kwargs):
         """
@@ -12613,6 +13629,8 @@ class IdentityClient(object):
         """
         resource_path = "/identityProviders/{identityProviderId}"
         method = "PUT"
+        operation_name = "update_identity_provider"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdentityProvider/UpdateIdentityProvider"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12660,7 +13678,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_identity_provider_details,
-                response_type="IdentityProvider")
+                response_type="IdentityProvider",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12668,7 +13689,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_identity_provider_details,
-                response_type="IdentityProvider")
+                response_type="IdentityProvider",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_idp_group_mapping(self, identity_provider_id, mapping_id, update_idp_group_mapping_details, **kwargs):
         """
@@ -12713,6 +13737,8 @@ class IdentityClient(object):
         """
         resource_path = "/identityProviders/{identityProviderId}/groupMappings/{mappingId}"
         method = "PUT"
+        operation_name = "update_idp_group_mapping"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/IdpGroupMapping/UpdateIdpGroupMapping"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12761,7 +13787,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_idp_group_mapping_details,
-                response_type="IdpGroupMapping")
+                response_type="IdpGroupMapping",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12769,7 +13798,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_idp_group_mapping_details,
-                response_type="IdpGroupMapping")
+                response_type="IdpGroupMapping",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_network_source(self, network_source_id, update_network_source_details, **kwargs):
         """
@@ -12807,6 +13839,8 @@ class IdentityClient(object):
         """
         resource_path = "/networkSources/{networkSourceId}"
         method = "PUT"
+        operation_name = "update_network_source"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/NetworkSources/UpdateNetworkSource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12854,7 +13888,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_network_source_details,
-                response_type="NetworkSources")
+                response_type="NetworkSources",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12862,7 +13899,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_network_source_details,
-                response_type="NetworkSources")
+                response_type="NetworkSources",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_o_auth_client_credential(self, user_id, oauth2_client_credential_id, update_o_auth2_client_credential_details, **kwargs):
         """
@@ -12903,6 +13943,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/oauth2ClientCredentials/{oauth2ClientCredentialId}"
         method = "PUT"
+        operation_name = "update_o_auth_client_credential"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/UpdateOAuthClientCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12951,7 +13993,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_o_auth2_client_credential_details,
-                response_type="OAuth2ClientCredential")
+                response_type="OAuth2ClientCredential",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12959,7 +14004,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_o_auth2_client_credential_details,
-                response_type="OAuth2ClientCredential")
+                response_type="OAuth2ClientCredential",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_policy(self, policy_id, update_policy_details, **kwargs):
         """
@@ -12999,6 +14047,8 @@ class IdentityClient(object):
         """
         resource_path = "/policies/{policyId}"
         method = "PUT"
+        operation_name = "update_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Policy/UpdatePolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13046,7 +14096,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_policy_details,
-                response_type="Policy")
+                response_type="Policy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13054,7 +14107,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_policy_details,
-                response_type="Policy")
+                response_type="Policy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_smtp_credential(self, user_id, smtp_credential_id, update_smtp_credential_details, **kwargs):
         """
@@ -13095,6 +14151,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/smtpCredentials/{smtpCredentialId}"
         method = "PUT"
+        operation_name = "update_smtp_credential"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/SmtpCredentialSummary/UpdateSmtpCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13143,7 +14201,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_smtp_credential_details,
-                response_type="SmtpCredentialSummary")
+                response_type="SmtpCredentialSummary",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13151,7 +14212,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_smtp_credential_details,
-                response_type="SmtpCredentialSummary")
+                response_type="SmtpCredentialSummary",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_swift_password(self, user_id, swift_password_id, update_swift_password_details, **kwargs):
         """
@@ -13194,6 +14258,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/swiftPasswords/{swiftPasswordId}"
         method = "PUT"
+        operation_name = "update_swift_password"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/SwiftPassword/UpdateSwiftPassword"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13242,7 +14308,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_swift_password_details,
-                response_type="SwiftPassword")
+                response_type="SwiftPassword",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13250,7 +14319,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_swift_password_details,
-                response_type="SwiftPassword")
+                response_type="SwiftPassword",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_tag(self, tag_namespace_id, tag_name, update_tag_details, **kwargs):
         """
@@ -13300,6 +14372,8 @@ class IdentityClient(object):
         """
         resource_path = "/tagNamespaces/{tagNamespaceId}/tags/{tagName}"
         method = "PUT"
+        operation_name = "update_tag"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/Tag/UpdateTag"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13348,7 +14422,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_tag_details,
-                response_type="Tag")
+                response_type="Tag",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13356,7 +14433,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_tag_details,
-                response_type="Tag")
+                response_type="Tag",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_tag_default(self, tag_default_id, update_tag_default_details, **kwargs):
         """
@@ -13403,6 +14483,8 @@ class IdentityClient(object):
         """
         resource_path = "/tagDefaults/{tagDefaultId}"
         method = "PUT"
+        operation_name = "update_tag_default"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagDefault/UpdateTagDefault"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13452,7 +14534,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_tag_default_details,
-                response_type="TagDefault")
+                response_type="TagDefault",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13460,7 +14545,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_tag_default_details,
-                response_type="TagDefault")
+                response_type="TagDefault",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_tag_namespace(self, tag_namespace_id, update_tag_namespace_details, **kwargs):
         """
@@ -13503,6 +14591,8 @@ class IdentityClient(object):
         """
         resource_path = "/tagNamespaces/{tagNamespaceId}"
         method = "PUT"
+        operation_name = "update_tag_namespace"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/TagNamespace/UpdateTagNamespace"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -13543,7 +14633,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_tag_namespace_details,
-                response_type="TagNamespace")
+                response_type="TagNamespace",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13551,7 +14644,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_tag_namespace_details,
-                response_type="TagNamespace")
+                response_type="TagNamespace",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_user(self, user_id, update_user_details, **kwargs):
         """
@@ -13589,6 +14685,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}"
         method = "PUT"
+        operation_name = "update_user"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/UpdateUser"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13636,7 +14734,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_user_details,
-                response_type="User")
+                response_type="User",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13644,7 +14745,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_user_details,
-                response_type="User")
+                response_type="User",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_user_capabilities(self, user_id, update_user_capabilities_details, **kwargs):
         """
@@ -13682,6 +14786,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/capabilities"
         method = "PUT"
+        operation_name = "update_user_capabilities"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/UpdateUserCapabilities"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13729,7 +14835,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_user_capabilities_details,
-                response_type="User")
+                response_type="User",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13737,7 +14846,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_user_capabilities_details,
-                response_type="User")
+                response_type="User",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_user_state(self, user_id, update_state_details, **kwargs):
         """
@@ -13775,6 +14887,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/state"
         method = "PUT"
+        operation_name = "update_user_state"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/User/UpdateUserState"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13822,7 +14936,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_state_details,
-                response_type="User")
+                response_type="User",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13830,7 +14947,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_state_details,
-                response_type="User")
+                response_type="User",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def upload_api_key(self, user_id, create_api_key_details, **kwargs):
         """
@@ -13884,6 +15004,8 @@ class IdentityClient(object):
         """
         resource_path = "/users/{userId}/apiKeys"
         method = "POST"
+        operation_name = "upload_api_key"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity/20160918/ApiKey/UploadApiKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13932,7 +15054,10 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_api_key_details,
-                response_type="ApiKey")
+                response_type="ApiKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13940,4 +15065,7 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_api_key_details,
-                response_type="ApiKey")
+                response_type="ApiKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

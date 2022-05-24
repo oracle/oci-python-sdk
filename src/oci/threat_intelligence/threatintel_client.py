@@ -138,6 +138,8 @@ class ThreatintelClient(object):
         """
         resource_path = "/indicators/{indicatorId}"
         method = "GET"
+        operation_name = "get_indicator"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/Indicator/GetIndicator"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -188,7 +190,10 @@ class ThreatintelClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Indicator")
+                response_type="Indicator",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -196,7 +201,10 @@ class ThreatintelClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Indicator")
+                response_type="Indicator",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_indicator_counts(self, compartment_id, **kwargs):
         """
@@ -234,6 +242,8 @@ class ThreatintelClient(object):
         """
         resource_path = "/indicatorCounts"
         method = "GET"
+        operation_name = "list_indicator_counts"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/IndicatorCountCollection/ListIndicatorCounts"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -282,14 +292,20 @@ class ThreatintelClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="IndicatorCountCollection")
+                response_type="IndicatorCountCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="IndicatorCountCollection")
+                response_type="IndicatorCountCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_indicators(self, compartment_id, **kwargs):
         """
@@ -355,6 +371,8 @@ class ThreatintelClient(object):
         """
         resource_path = "/indicators"
         method = "GET"
+        operation_name = "list_indicators"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/IndicatorSummaryCollection/ListIndicators"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -433,14 +451,20 @@ class ThreatintelClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="IndicatorSummaryCollection")
+                response_type="IndicatorSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="IndicatorSummaryCollection")
+                response_type="IndicatorSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_threat_types(self, compartment_id, **kwargs):
         """
@@ -485,6 +509,8 @@ class ThreatintelClient(object):
         """
         resource_path = "/threatTypes"
         method = "GET"
+        operation_name = "list_threat_types"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/ThreatTypesCollection/ListThreatTypes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -537,11 +563,17 @@ class ThreatintelClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ThreatTypesCollection")
+                response_type="ThreatTypesCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ThreatTypesCollection")
+                response_type="ThreatTypesCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

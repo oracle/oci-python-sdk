@@ -6,6 +6,7 @@ import io
 import hashlib
 import base64
 import logging
+import platform
 from . import md5 as MD5
 from multiprocessing.dummy import Pool
 from os import stat
@@ -21,6 +22,7 @@ from oci._vendor.six.moves.queue import Queue
 from threading import Semaphore
 from oci._vendor import six
 from oci.fips import is_fips_mode
+from ....version import __version__
 
 READ_BUFFER_SIZE = 8 * 1024
 DEFAULT_PARALLEL_PROCESS_COUNT = 3
@@ -30,6 +32,11 @@ SSEC_PARAM_NAMES = [
     'opc_sse_customer_key',
     'opc_sse_customer_key_sha256'
 ]
+
+CLIENT_VERSION = "Oracle-PythonSDK/{}".format(__version__)
+OS_VERSION = platform.platform()
+UPLOAD_MANAGER_DEBUG_INFORMATION_LOG = "Client Version: {}, OS Version: {}, See https://docs.oracle.com/iaas/Content/API/Concepts/sdk_troubleshooting.htm for common issues and steps to resolve them. If you need to contact support, or file a GitHub issue, please include this full error message.".format(CLIENT_VERSION, OS_VERSION)
+
 logger = logging.getLogger(__name__)
 
 
@@ -564,7 +571,7 @@ class MultipartObjectAssembler:
         """
 
         if self.manifest["uploadId"] is None:
-            raise RuntimeError('Cannot call upload before initializing an upload using new_upload.')
+            raise RuntimeError('Cannot call upload before initializing an upload using new_upload. ' + UPLOAD_MANAGER_DEBUG_INFORMATION_LOG)
 
         pool = Pool(processes=self.parallel_process_count)
         pool.map(lambda part_tuple: self._upload_part(part_num=part_tuple[0] + 1, part=part_tuple[1], **kwargs),
@@ -575,7 +582,7 @@ class MultipartObjectAssembler:
     def upload_stream(self, stream_ref, **kwargs):
 
         if self.manifest["uploadId"] is None:
-            raise RuntimeError('Cannot call upload before initializing an upload using new_upload.')
+            raise RuntimeError('Cannot call upload before initializing an upload using new_upload. ' + UPLOAD_MANAGER_DEBUG_INFORMATION_LOG)
 
         # The pool of work we have available, and the sempahore to gate work into the pool (since just submitting
         # work to the pool doesn't block on the number of processes available to do work in the pool)

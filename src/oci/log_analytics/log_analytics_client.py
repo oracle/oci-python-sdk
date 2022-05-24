@@ -156,6 +156,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntities/{logAnalyticsEntityId}/actions/addEntityAssociations"
         method = "POST"
+        operation_name = "add_entity_association"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/AddEntityAssociation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -210,14 +212,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=add_entity_association_details)
+                body=add_entity_association_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=add_entity_association_details)
+                body=add_entity_association_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def add_source_event_types(self, namespace_name, source_name, add_event_type_details, **kwargs):
         """
@@ -263,6 +271,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/sources/{sourceName}/actions/addEventTypes"
         method = "POST"
+        operation_name = "add_source_event_types"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/AddSourceEventTypes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -315,14 +325,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=add_event_type_details)
+                body=add_event_type_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=add_event_type_details)
+                body=add_event_type_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def append_lookup_data(self, namespace_name, lookup_name, append_lookup_file_body, **kwargs):
         """
@@ -393,6 +409,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/lookups/{lookupName}/actions/appendData"
         method = "POST"
+        operation_name = "append_lookup_data"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/AppendLookupData"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -479,7 +497,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=append_lookup_file_body)
+                body=append_lookup_file_body,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -487,7 +508,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=append_lookup_file_body)
+                body=append_lookup_file_body,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def batch_get_basic_info(self, namespace_name, basic_details, is_include_deleted, **kwargs):
         """
@@ -542,6 +566,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/labels/actions/basicInfo"
         method = "POST"
+        operation_name = "batch_get_basic_info"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/BatchGetBasicInfo"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -619,7 +645,10 @@ class LogAnalyticsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=basic_details,
-                response_type="LogAnalyticsLabelCollection")
+                response_type="LogAnalyticsLabelCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -628,7 +657,10 @@ class LogAnalyticsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=basic_details,
-                response_type="LogAnalyticsLabelCollection")
+                response_type="LogAnalyticsLabelCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def cancel_query_work_request(self, namespace_name, work_request_id, **kwargs):
         """
@@ -673,6 +705,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/queryWorkRequests/{workRequestId}"
         method = "DELETE"
+        operation_name = "cancel_query_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryWorkRequest/CancelQueryWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -719,13 +753,19 @@ class LogAnalyticsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_log_analytics_em_bridge_compartment(self, namespace_name, log_analytics_em_bridge_id, change_log_analytics_em_bridge_compartment_details, **kwargs):
         """
@@ -778,6 +818,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEmBridges/{logAnalyticsEmBridgeId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_log_analytics_em_bridge_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/ChangeLogAnalyticsEmBridgeCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -832,14 +874,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_log_analytics_em_bridge_compartment_details)
+                body=change_log_analytics_em_bridge_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_log_analytics_em_bridge_compartment_details)
+                body=change_log_analytics_em_bridge_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_log_analytics_entity_compartment(self, namespace_name, log_analytics_entity_id, change_log_analytics_entity_compartment_details, **kwargs):
         """
@@ -892,6 +940,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntities/{logAnalyticsEntityId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_log_analytics_entity_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/ChangeLogAnalyticsEntityCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -946,14 +996,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_log_analytics_entity_compartment_details)
+                body=change_log_analytics_entity_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_log_analytics_entity_compartment_details)
+                body=change_log_analytics_entity_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_log_analytics_log_group_compartment(self, namespace_name, log_analytics_log_group_id, change_log_analytics_log_group_compartment_details, **kwargs):
         """
@@ -1006,6 +1062,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsLogGroups/{logAnalyticsLogGroupId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_log_analytics_log_group_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/ChangeLogAnalyticsLogGroupCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1060,14 +1118,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_log_analytics_log_group_compartment_details)
+                body=change_log_analytics_log_group_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_log_analytics_log_group_compartment_details)
+                body=change_log_analytics_log_group_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_log_analytics_object_collection_rule_compartment(self, namespace_name, log_analytics_object_collection_rule_id, change_log_analytics_object_collection_rule_compartment_details, **kwargs):
         """
@@ -1115,6 +1179,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsObjectCollectionRules/{logAnalyticsObjectCollectionRuleId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_log_analytics_object_collection_rule_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/ChangeLogAnalyticsObjectCollectionRuleCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1166,14 +1232,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_log_analytics_object_collection_rule_compartment_details)
+                body=change_log_analytics_object_collection_rule_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_log_analytics_object_collection_rule_compartment_details)
+                body=change_log_analytics_object_collection_rule_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_scheduled_task_compartment(self, namespace_name, scheduled_task_id, change_scheduled_task_compartment_details, **kwargs):
         """
@@ -1227,6 +1299,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_scheduled_task_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/ChangeScheduledTaskCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1281,14 +1355,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_scheduled_task_compartment_details)
+                body=change_scheduled_task_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_scheduled_task_compartment_details)
+                body=change_scheduled_task_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def clean(self, namespace_name, scheduled_task_id, **kwargs):
         """
@@ -1341,6 +1421,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}/actions/clean"
         method = "POST"
+        operation_name = "clean"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/Clean"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1397,14 +1479,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def compare_content(self, namespace_name, compare_content_details, **kwargs):
         """
@@ -1440,6 +1528,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/search/actions/compareContent"
         method = "POST"
+        operation_name = "compare_content"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/CompareContent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1489,7 +1579,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=compare_content_details,
-                response_type="CompareContentResult")
+                response_type="CompareContentResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1497,7 +1590,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=compare_content_details,
-                response_type="CompareContentResult")
+                response_type="CompareContentResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_log_analytics_em_bridge(self, namespace_name, create_log_analytics_em_bridge_details, **kwargs):
         """
@@ -1540,6 +1636,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEmBridges"
         method = "POST"
+        operation_name = "create_log_analytics_em_bridge"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/CreateLogAnalyticsEmBridge"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1592,7 +1690,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_log_analytics_em_bridge_details,
-                response_type="LogAnalyticsEmBridge")
+                response_type="LogAnalyticsEmBridge",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1600,7 +1701,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_log_analytics_em_bridge_details,
-                response_type="LogAnalyticsEmBridge")
+                response_type="LogAnalyticsEmBridge",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_log_analytics_entity(self, namespace_name, create_log_analytics_entity_details, **kwargs):
         """
@@ -1643,6 +1747,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntities"
         method = "POST"
+        operation_name = "create_log_analytics_entity"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/CreateLogAnalyticsEntity"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1695,7 +1801,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_log_analytics_entity_details,
-                response_type="LogAnalyticsEntity")
+                response_type="LogAnalyticsEntity",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1703,7 +1812,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_log_analytics_entity_details,
-                response_type="LogAnalyticsEntity")
+                response_type="LogAnalyticsEntity",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_log_analytics_entity_type(self, namespace_name, create_log_analytics_entity_type_details, **kwargs):
         """
@@ -1746,6 +1858,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntityTypes"
         method = "POST"
+        operation_name = "create_log_analytics_entity_type"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntityType/CreateLogAnalyticsEntityType"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1797,14 +1911,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_log_analytics_entity_type_details)
+                body=create_log_analytics_entity_type_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_log_analytics_entity_type_details)
+                body=create_log_analytics_entity_type_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_log_analytics_log_group(self, namespace_name, create_log_analytics_log_group_details, **kwargs):
         """
@@ -1847,6 +1967,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsLogGroups"
         method = "POST"
+        operation_name = "create_log_analytics_log_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/CreateLogAnalyticsLogGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1899,7 +2021,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_log_analytics_log_group_details,
-                response_type="LogAnalyticsLogGroup")
+                response_type="LogAnalyticsLogGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1907,7 +2032,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_log_analytics_log_group_details,
-                response_type="LogAnalyticsLogGroup")
+                response_type="LogAnalyticsLogGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_log_analytics_object_collection_rule(self, namespace_name, create_log_analytics_object_collection_rule_details, **kwargs):
         """
@@ -1943,6 +2071,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsObjectCollectionRules"
         method = "POST"
+        operation_name = "create_log_analytics_object_collection_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/CreateLogAnalyticsObjectCollectionRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1992,7 +2122,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_log_analytics_object_collection_rule_details,
-                response_type="LogAnalyticsObjectCollectionRule")
+                response_type="LogAnalyticsObjectCollectionRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2000,7 +2133,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_log_analytics_object_collection_rule_details,
-                response_type="LogAnalyticsObjectCollectionRule")
+                response_type="LogAnalyticsObjectCollectionRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_scheduled_task(self, namespace_name, create_scheduled_task_details, **kwargs):
         """
@@ -2043,6 +2179,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/scheduledTasks"
         method = "POST"
+        operation_name = "create_scheduled_task"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/CreateScheduledTask"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2095,7 +2233,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_scheduled_task_details,
-                response_type="ScheduledTask")
+                response_type="ScheduledTask",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2103,7 +2244,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_scheduled_task_details,
-                response_type="ScheduledTask")
+                response_type="ScheduledTask",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_associations(self, namespace_name, delete_log_analytics_association_details, **kwargs):
         """
@@ -2146,6 +2290,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/associations/actions/delete"
         method = "POST"
+        operation_name = "delete_associations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/DeleteAssociations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2197,14 +2343,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=delete_log_analytics_association_details)
+                body=delete_log_analytics_association_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=delete_log_analytics_association_details)
+                body=delete_log_analytics_association_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_field(self, namespace_name, field_name, **kwargs):
         """
@@ -2254,6 +2406,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/fields/{fieldName}"
         method = "DELETE"
+        operation_name = "delete_field"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/DeleteField"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2303,13 +2457,19 @@ class LogAnalyticsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_label(self, namespace_name, label_name, **kwargs):
         """
@@ -2359,6 +2519,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/labels/{labelName}"
         method = "DELETE"
+        operation_name = "delete_label"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/DeleteLabel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2408,13 +2570,19 @@ class LogAnalyticsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_log_analytics_em_bridge(self, namespace_name, log_analytics_em_bridge_id, **kwargs):
         """
@@ -2457,6 +2625,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEmBridges/{logAnalyticsEmBridgeId}"
         method = "DELETE"
+        operation_name = "delete_log_analytics_em_bridge"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/DeleteLogAnalyticsEmBridge"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2503,13 +2673,19 @@ class LogAnalyticsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_log_analytics_entity(self, namespace_name, log_analytics_entity_id, **kwargs):
         """
@@ -2552,6 +2728,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntities/{logAnalyticsEntityId}"
         method = "DELETE"
+        operation_name = "delete_log_analytics_entity"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/DeleteLogAnalyticsEntity"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2598,13 +2776,19 @@ class LogAnalyticsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_log_analytics_entity_type(self, namespace_name, entity_type_name, **kwargs):
         """
@@ -2647,6 +2831,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntityTypes/{entityTypeName}"
         method = "DELETE"
+        operation_name = "delete_log_analytics_entity_type"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntityType/DeleteLogAnalyticsEntityType"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2693,13 +2879,19 @@ class LogAnalyticsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_log_analytics_log_group(self, namespace_name, log_analytics_log_group_id, **kwargs):
         """
@@ -2742,6 +2934,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsLogGroups/{logAnalyticsLogGroupId}"
         method = "DELETE"
+        operation_name = "delete_log_analytics_log_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/DeleteLogAnalyticsLogGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2788,13 +2982,19 @@ class LogAnalyticsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_log_analytics_object_collection_rule(self, namespace_name, log_analytics_object_collection_rule_id, **kwargs):
         """
@@ -2840,6 +3040,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsObjectCollectionRules/{logAnalyticsObjectCollectionRuleId}"
         method = "DELETE"
+        operation_name = "delete_log_analytics_object_collection_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/DeleteLogAnalyticsObjectCollectionRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2886,13 +3088,19 @@ class LogAnalyticsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_lookup(self, namespace_name, lookup_name, **kwargs):
         """
@@ -2945,6 +3153,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/lookups/{lookupName}"
         method = "DELETE"
+        operation_name = "delete_lookup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/DeleteLookup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3001,14 +3211,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_parser(self, namespace_name, parser_name, **kwargs):
         """
@@ -3058,6 +3274,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/parsers/{parserName}"
         method = "DELETE"
+        operation_name = "delete_parser"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/DeleteParser"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3107,13 +3325,19 @@ class LogAnalyticsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_scheduled_task(self, namespace_name, scheduled_task_id, **kwargs):
         """
@@ -3157,6 +3381,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}"
         method = "DELETE"
+        operation_name = "delete_scheduled_task"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/DeleteScheduledTask"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3203,13 +3429,19 @@ class LogAnalyticsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_source(self, namespace_name, source_name, **kwargs):
         """
@@ -3259,6 +3491,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/sources/{sourceName}"
         method = "DELETE"
+        operation_name = "delete_source"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/DeleteSource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3308,13 +3542,19 @@ class LogAnalyticsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_upload(self, namespace_name, upload_reference, **kwargs):
         """
@@ -3358,6 +3598,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/uploads/{uploadReference}"
         method = "DELETE"
+        operation_name = "delete_upload"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/DeleteUpload"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3404,13 +3646,19 @@ class LogAnalyticsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_upload_file(self, namespace_name, upload_reference, file_reference, **kwargs):
         """
@@ -3450,6 +3698,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/uploads/{uploadReference}/files/{fileReference}"
         method = "DELETE"
+        operation_name = "delete_upload_file"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/DeleteUploadFile"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3495,13 +3745,19 @@ class LogAnalyticsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_upload_warning(self, namespace_name, upload_reference, warning_reference, **kwargs):
         """
@@ -3540,6 +3796,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/uploads/{uploadReference}/warnings/{warningReference}"
         method = "DELETE"
+        operation_name = "delete_upload_warning"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/DeleteUploadWarning"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3585,13 +3843,19 @@ class LogAnalyticsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def disable_archiving(self, namespace_name, **kwargs):
         """
@@ -3631,6 +3895,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/storage/actions/disableArchiving"
         method = "POST"
+        operation_name = "disable_archiving"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/DisableArchiving"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3677,14 +3943,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Success")
+                response_type="Success",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Success")
+                response_type="Success",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def disable_auto_association(self, namespace_name, source_name, disable_auto_association_details, **kwargs):
         """
@@ -3732,6 +4004,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/sources/{sourceName}/actions/disableAutoAssociation"
         method = "POST"
+        operation_name = "disable_auto_association"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/DisableAutoAssociation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3784,14 +4058,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=disable_auto_association_details)
+                body=disable_auto_association_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=disable_auto_association_details)
+                body=disable_auto_association_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def disable_source_event_types(self, namespace_name, source_name, disable_event_type_details, **kwargs):
         """
@@ -3837,6 +4117,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/sources/{sourceName}/actions/disableEventTypes"
         method = "POST"
+        operation_name = "disable_source_event_types"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/DisableSourceEventTypes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3889,14 +4171,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=disable_event_type_details)
+                body=disable_event_type_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=disable_event_type_details)
+                body=disable_event_type_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def enable_archiving(self, namespace_name, **kwargs):
         """
@@ -3936,6 +4224,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/storage/actions/enableArchiving"
         method = "POST"
+        operation_name = "enable_archiving"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/EnableArchiving"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3982,14 +4272,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Success")
+                response_type="Success",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Success")
+                response_type="Success",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def enable_auto_association(self, namespace_name, source_name, enable_auto_association_details, **kwargs):
         """
@@ -4037,6 +4333,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/sources/{sourceName}/actions/enableAutoAssociation"
         method = "POST"
+        operation_name = "enable_auto_association"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/EnableAutoAssociation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4089,14 +4387,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=enable_auto_association_details)
+                body=enable_auto_association_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=enable_auto_association_details)
+                body=enable_auto_association_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def enable_source_event_types(self, namespace_name, source_name, enable_event_type_details, **kwargs):
         """
@@ -4142,6 +4446,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/sources/{sourceName}/actions/enableEventTypes"
         method = "POST"
+        operation_name = "enable_source_event_types"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/EnableSourceEventTypes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4194,14 +4500,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=enable_event_type_details)
+                body=enable_event_type_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=enable_event_type_details)
+                body=enable_event_type_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def estimate_purge_data_size(self, namespace_name, estimate_purge_data_size_details, **kwargs):
         """
@@ -4251,6 +4563,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/storage/actions/estimatePurgeDataSize"
         method = "POST"
+        operation_name = "estimate_purge_data_size"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/EstimatePurgeDataSize"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4305,7 +4619,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=estimate_purge_data_size_details,
-                response_type="EstimatePurgeDataSizeResult")
+                response_type="EstimatePurgeDataSizeResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4313,7 +4630,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=estimate_purge_data_size_details,
-                response_type="EstimatePurgeDataSizeResult")
+                response_type="EstimatePurgeDataSizeResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def estimate_recall_data_size(self, namespace_name, estimate_recall_data_size_details, **kwargs):
         """
@@ -4349,6 +4669,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/storage/actions/estimateRecallDataSize"
         method = "POST"
+        operation_name = "estimate_recall_data_size"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/EstimateRecallDataSize"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4398,7 +4720,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=estimate_recall_data_size_details,
-                response_type="EstimateRecallDataSizeResult")
+                response_type="EstimateRecallDataSizeResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4406,7 +4731,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=estimate_recall_data_size_details,
-                response_type="EstimateRecallDataSizeResult")
+                response_type="EstimateRecallDataSizeResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def estimate_release_data_size(self, namespace_name, estimate_release_data_size_details, **kwargs):
         """
@@ -4442,6 +4770,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/storage/actions/estimateReleaseDataSize"
         method = "POST"
+        operation_name = "estimate_release_data_size"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/EstimateReleaseDataSize"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4491,7 +4821,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=estimate_release_data_size_details,
-                response_type="EstimateReleaseDataSizeResult")
+                response_type="EstimateReleaseDataSizeResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4499,7 +4832,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=estimate_release_data_size_details,
-                response_type="EstimateReleaseDataSizeResult")
+                response_type="EstimateReleaseDataSizeResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def export_custom_content(self, namespace_name, export_custom_content_details, **kwargs):
         """
@@ -4542,6 +4878,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/contents/actions/exportCustomContent"
         method = "POST"
+        operation_name = "export_custom_content"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4594,7 +4932,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=export_custom_content_details,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4602,7 +4943,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=export_custom_content_details,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def export_query_result(self, namespace_name, export_details, **kwargs):
         """
@@ -4638,6 +4982,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/search/actions/export"
         method = "POST"
+        operation_name = "export_query_result"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/ExportQueryResult"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4687,7 +5033,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=export_details,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4695,7 +5044,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=export_details,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def extract_structured_log_field_paths(self, namespace_name, logan_parser_details, **kwargs):
         """
@@ -4743,6 +5095,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/parsers/actions/extractLogFieldPaths"
         method = "POST"
+        operation_name = "extract_structured_log_field_paths"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ExtractStructuredLogFieldPaths"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4809,7 +5163,10 @@ class LogAnalyticsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=logan_parser_details,
-                response_type="ExtractLogFieldResults")
+                response_type="ExtractLogFieldResults",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4818,7 +5175,10 @@ class LogAnalyticsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=logan_parser_details,
-                response_type="ExtractLogFieldResults")
+                response_type="ExtractLogFieldResults",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def extract_structured_log_header_paths(self, namespace_name, logan_parser_details, **kwargs):
         """
@@ -4866,6 +5226,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/parsers/actions/extractLogHeaderPaths"
         method = "POST"
+        operation_name = "extract_structured_log_header_paths"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ExtractStructuredLogHeaderPaths"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4932,7 +5294,10 @@ class LogAnalyticsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=logan_parser_details,
-                response_type="ExtractLogHeaderResults")
+                response_type="ExtractLogHeaderResults",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4941,7 +5306,10 @@ class LogAnalyticsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=logan_parser_details,
-                response_type="ExtractLogHeaderResults")
+                response_type="ExtractLogHeaderResults",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def filter(self, namespace_name, filter_details, **kwargs):
         """
@@ -4977,6 +5345,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/search/actions/filter"
         method = "POST"
+        operation_name = "filter"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/Filter"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5026,7 +5396,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=filter_details,
-                response_type="FilterOutput")
+                response_type="FilterOutput",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5034,7 +5407,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=filter_details,
-                response_type="FilterOutput")
+                response_type="FilterOutput",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_association_summary(self, namespace_name, compartment_id, **kwargs):
         """
@@ -5070,6 +5446,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/associationSummary"
         method = "GET"
+        operation_name = "get_association_summary"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/GetAssociationSummary"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5120,7 +5498,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AssociationSummaryReport")
+                response_type="AssociationSummaryReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5128,7 +5509,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AssociationSummaryReport")
+                response_type="AssociationSummaryReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_category(self, namespace_name, category_name, **kwargs):
         """
@@ -5164,6 +5548,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/categories/{categoryName}"
         method = "GET"
+        operation_name = "get_category"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsCategory/GetCategory"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5209,14 +5595,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LogAnalyticsCategory")
+                response_type="LogAnalyticsCategory",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LogAnalyticsCategory")
+                response_type="LogAnalyticsCategory",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_column_names(self, namespace_name, sql_query, **kwargs):
         """
@@ -5259,6 +5651,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/sources/sqlColumnNames"
         method = "GET"
+        operation_name = "get_column_names"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/GetColumnNames"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5312,7 +5706,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ColumnNameCollection")
+                response_type="ColumnNameCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5320,7 +5717,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ColumnNameCollection")
+                response_type="ColumnNameCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_config_work_request(self, namespace_name, work_request_id, **kwargs):
         """
@@ -5358,6 +5758,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/configWorkRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_config_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsConfigWorkRequest/GetConfigWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5403,14 +5805,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LogAnalyticsConfigWorkRequest")
+                response_type="LogAnalyticsConfigWorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LogAnalyticsConfigWorkRequest")
+                response_type="LogAnalyticsConfigWorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_field(self, namespace_name, field_name, **kwargs):
         """
@@ -5446,6 +5854,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/fields/{fieldName}"
         method = "GET"
+        operation_name = "get_field"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/GetField"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5491,14 +5901,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LogAnalyticsField")
+                response_type="LogAnalyticsField",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LogAnalyticsField")
+                response_type="LogAnalyticsField",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_fields_summary(self, namespace_name, **kwargs):
         """
@@ -5534,6 +5950,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/fieldSummary"
         method = "GET"
+        operation_name = "get_fields_summary"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/GetFieldsSummary"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5585,7 +6003,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="FieldSummaryReport")
+                response_type="FieldSummaryReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5593,7 +6014,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="FieldSummaryReport")
+                response_type="FieldSummaryReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_label(self, namespace_name, label_name, **kwargs):
         """
@@ -5629,6 +6053,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/labels/{labelName}"
         method = "GET"
+        operation_name = "get_label"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/GetLabel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5674,14 +6100,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LogAnalyticsLabel")
+                response_type="LogAnalyticsLabel",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LogAnalyticsLabel")
+                response_type="LogAnalyticsLabel",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_label_summary(self, namespace_name, **kwargs):
         """
@@ -5714,6 +6146,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/labelSummary"
         method = "GET"
+        operation_name = "get_label_summary"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/GetLabelSummary"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5758,14 +6192,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LabelSummaryReport")
+                response_type="LabelSummaryReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LabelSummaryReport")
+                response_type="LabelSummaryReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_log_analytics_em_bridge(self, namespace_name, log_analytics_em_bridge_id, **kwargs):
         """
@@ -5801,6 +6241,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEmBridges/{logAnalyticsEmBridgeId}"
         method = "GET"
+        operation_name = "get_log_analytics_em_bridge"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/GetLogAnalyticsEmBridge"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5846,14 +6288,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LogAnalyticsEmBridge")
+                response_type="LogAnalyticsEmBridge",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LogAnalyticsEmBridge")
+                response_type="LogAnalyticsEmBridge",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_log_analytics_em_bridge_summary(self, namespace_name, compartment_id, **kwargs):
         """
@@ -5889,6 +6337,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEmBridges/emBridgeSummary"
         method = "GET"
+        operation_name = "get_log_analytics_em_bridge_summary"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/GetLogAnalyticsEmBridgeSummary"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5939,7 +6389,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsEmBridgeSummaryReport")
+                response_type="LogAnalyticsEmBridgeSummaryReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5947,7 +6400,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsEmBridgeSummaryReport")
+                response_type="LogAnalyticsEmBridgeSummaryReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_log_analytics_entities_summary(self, namespace_name, compartment_id, **kwargs):
         """
@@ -5983,6 +6439,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntities/entitySummary"
         method = "GET"
+        operation_name = "get_log_analytics_entities_summary"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/GetLogAnalyticsEntitiesSummary"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6033,7 +6491,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsEntitySummaryReport")
+                response_type="LogAnalyticsEntitySummaryReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6041,7 +6502,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsEntitySummaryReport")
+                response_type="LogAnalyticsEntitySummaryReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_log_analytics_entity(self, namespace_name, log_analytics_entity_id, **kwargs):
         """
@@ -6077,6 +6541,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntities/{logAnalyticsEntityId}"
         method = "GET"
+        operation_name = "get_log_analytics_entity"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/GetLogAnalyticsEntity"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6122,14 +6588,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LogAnalyticsEntity")
+                response_type="LogAnalyticsEntity",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LogAnalyticsEntity")
+                response_type="LogAnalyticsEntity",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_log_analytics_entity_type(self, namespace_name, entity_type_name, **kwargs):
         """
@@ -6165,6 +6637,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntityTypes/{entityTypeName}"
         method = "GET"
+        operation_name = "get_log_analytics_entity_type"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntityType/GetLogAnalyticsEntityType"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6210,14 +6684,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LogAnalyticsEntityType")
+                response_type="LogAnalyticsEntityType",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LogAnalyticsEntityType")
+                response_type="LogAnalyticsEntityType",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_log_analytics_log_group(self, namespace_name, log_analytics_log_group_id, **kwargs):
         """
@@ -6253,6 +6733,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsLogGroups/{logAnalyticsLogGroupId}"
         method = "GET"
+        operation_name = "get_log_analytics_log_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/GetLogAnalyticsLogGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6298,14 +6780,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LogAnalyticsLogGroup")
+                response_type="LogAnalyticsLogGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LogAnalyticsLogGroup")
+                response_type="LogAnalyticsLogGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_log_analytics_log_groups_summary(self, namespace_name, compartment_id, **kwargs):
         """
@@ -6341,6 +6829,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsLogGroupsSummary"
         method = "GET"
+        operation_name = "get_log_analytics_log_groups_summary"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/GetLogAnalyticsLogGroupsSummary"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6391,7 +6881,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogGroupSummaryReport")
+                response_type="LogGroupSummaryReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6399,7 +6892,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogGroupSummaryReport")
+                response_type="LogGroupSummaryReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_log_analytics_object_collection_rule(self, namespace_name, log_analytics_object_collection_rule_id, **kwargs):
         """
@@ -6437,6 +6933,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsObjectCollectionRules/{logAnalyticsObjectCollectionRuleId}"
         method = "GET"
+        operation_name = "get_log_analytics_object_collection_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/GetLogAnalyticsObjectCollectionRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6482,14 +6980,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LogAnalyticsObjectCollectionRule")
+                response_type="LogAnalyticsObjectCollectionRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LogAnalyticsObjectCollectionRule")
+                response_type="LogAnalyticsObjectCollectionRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_log_sets_count(self, namespace_name, **kwargs):
         """
@@ -6522,6 +7026,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/storage/logSetsCount"
         method = "GET"
+        operation_name = "get_log_sets_count"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/GetLogSetsCount"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6566,14 +7072,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LogSetsCount")
+                response_type="LogSetsCount",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LogSetsCount")
+                response_type="LogSetsCount",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_lookup(self, namespace_name, lookup_name, **kwargs):
         """
@@ -6609,6 +7121,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/lookups/{lookupName}"
         method = "GET"
+        operation_name = "get_lookup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/GetLookup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6654,14 +7168,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LogAnalyticsLookup")
+                response_type="LogAnalyticsLookup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LogAnalyticsLookup")
+                response_type="LogAnalyticsLookup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_lookup_summary(self, namespace_name, **kwargs):
         """
@@ -6694,6 +7214,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/lookupSummary"
         method = "GET"
+        operation_name = "get_lookup_summary"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/GetLookupSummary"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6738,14 +7260,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LookupSummaryReport")
+                response_type="LookupSummaryReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LookupSummaryReport")
+                response_type="LookupSummaryReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_namespace(self, namespace_name, **kwargs):
         """
@@ -6778,6 +7306,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}"
         method = "GET"
+        operation_name = "get_namespace"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Namespace/GetNamespace"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6822,14 +7352,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Namespace")
+                response_type="Namespace",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Namespace")
+                response_type="Namespace",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_parser(self, namespace_name, parser_name, **kwargs):
         """
@@ -6865,6 +7401,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/parsers/{parserName}"
         method = "GET"
+        operation_name = "get_parser"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/GetParser"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6910,14 +7448,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LogAnalyticsParser")
+                response_type="LogAnalyticsParser",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LogAnalyticsParser")
+                response_type="LogAnalyticsParser",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_parser_summary(self, namespace_name, **kwargs):
         """
@@ -6950,6 +7494,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/parsersSummary"
         method = "GET"
+        operation_name = "get_parser_summary"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/GetParserSummary"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6994,14 +7540,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ParserSummaryReport")
+                response_type="ParserSummaryReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ParserSummaryReport")
+                response_type="ParserSummaryReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_preferences(self, namespace_name, **kwargs):
         """
@@ -7050,6 +7602,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/preferences"
         method = "GET"
+        operation_name = "get_preferences"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsPreference/GetPreferences"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7121,7 +7675,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsPreferenceCollection")
+                response_type="LogAnalyticsPreferenceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7129,7 +7686,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsPreferenceCollection")
+                response_type="LogAnalyticsPreferenceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_query_result(self, namespace_name, work_request_id, **kwargs):
         """
@@ -7185,6 +7745,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/search/actions/query"
         method = "GET"
+        operation_name = "get_query_result"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/GetQueryResult"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7252,7 +7814,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="QueryAggregation")
+                response_type="QueryAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7260,7 +7825,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="QueryAggregation")
+                response_type="QueryAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_query_work_request(self, namespace_name, work_request_id, **kwargs):
         """
@@ -7298,6 +7866,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/queryWorkRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_query_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryWorkRequest/GetQueryWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7343,14 +7913,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="QueryWorkRequest")
+                response_type="QueryWorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="QueryWorkRequest")
+                response_type="QueryWorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_scheduled_task(self, namespace_name, scheduled_task_id, **kwargs):
         """
@@ -7387,6 +7963,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}"
         method = "GET"
+        operation_name = "get_scheduled_task"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/GetScheduledTask"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7432,14 +8010,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ScheduledTask")
+                response_type="ScheduledTask",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ScheduledTask")
+                response_type="ScheduledTask",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_source(self, namespace_name, source_name, compartment_id, **kwargs):
         """
@@ -7478,6 +8062,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/sources/{sourceName}"
         method = "GET"
+        operation_name = "get_source"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/GetSource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7529,7 +8115,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsSource")
+                response_type="LogAnalyticsSource",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7537,7 +8126,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsSource")
+                response_type="LogAnalyticsSource",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_source_summary(self, namespace_name, **kwargs):
         """
@@ -7570,6 +8162,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/sourceSummary"
         method = "GET"
+        operation_name = "get_source_summary"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/GetSourceSummary"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7614,14 +8208,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SourceSummaryReport")
+                response_type="SourceSummaryReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SourceSummaryReport")
+                response_type="SourceSummaryReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_storage(self, namespace_name, **kwargs):
         """
@@ -7654,6 +8254,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/storage"
         method = "GET"
+        operation_name = "get_storage"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/GetStorage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7698,14 +8300,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Storage")
+                response_type="Storage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Storage")
+                response_type="Storage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_storage_usage(self, namespace_name, **kwargs):
         """
@@ -7739,6 +8347,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/storage/usage"
         method = "GET"
+        operation_name = "get_storage_usage"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/GetStorageUsage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7783,14 +8393,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="StorageUsage")
+                response_type="StorageUsage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="StorageUsage")
+                response_type="StorageUsage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_storage_work_request(self, work_request_id, namespace_name, **kwargs):
         """
@@ -7829,6 +8445,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/storageWorkRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_storage_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/GetStorageWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7874,14 +8492,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="StorageWorkRequest")
+                response_type="StorageWorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="StorageWorkRequest")
+                response_type="StorageWorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_unprocessed_data_bucket(self, namespace_name, **kwargs):
         """
@@ -7914,6 +8538,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/unprocessedDataBucket"
         method = "GET"
+        operation_name = "get_unprocessed_data_bucket"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/GetUnprocessedDataBucket"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7958,14 +8584,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="UnprocessedDataBucket")
+                response_type="UnprocessedDataBucket",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="UnprocessedDataBucket")
+                response_type="UnprocessedDataBucket",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_upload(self, namespace_name, upload_reference, **kwargs):
         """
@@ -8001,6 +8633,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/uploads/{uploadReference}"
         method = "GET"
+        operation_name = "get_upload"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/GetUpload"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8046,14 +8680,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Upload")
+                response_type="Upload",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Upload")
+                response_type="Upload",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, namespace_name, work_request_id, **kwargs):
         """
@@ -8091,6 +8731,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8136,14 +8778,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def import_custom_content(self, namespace_name, import_custom_content_file_body, **kwargs):
         """
@@ -8202,6 +8850,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/contents/actions/importCustomContent"
         method = "POST"
+        operation_name = "import_custom_content"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsImportCustomContent/ImportCustomContent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8284,7 +8934,10 @@ class LogAnalyticsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=import_custom_content_file_body,
-                response_type="LogAnalyticsImportCustomContent")
+                response_type="LogAnalyticsImportCustomContent",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8293,7 +8946,10 @@ class LogAnalyticsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=import_custom_content_file_body,
-                response_type="LogAnalyticsImportCustomContent")
+                response_type="LogAnalyticsImportCustomContent",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_associable_entities(self, namespace_name, source_name, compartment_id, **kwargs):
         """
@@ -8357,6 +9013,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/sources/{sourceName}/associableEntities"
         method = "GET"
+        operation_name = "list_associable_entities"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListAssociableEntities"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8441,7 +9099,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AssociableEntityCollection")
+                response_type="AssociableEntityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8449,7 +9110,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AssociableEntityCollection")
+                response_type="AssociableEntityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_associated_entities(self, namespace_name, compartment_id, **kwargs):
         """
@@ -8512,6 +9176,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/associatedEntities"
         method = "GET"
+        operation_name = "list_associated_entities"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/ListAssociatedEntities"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8590,7 +9256,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsAssociatedEntityCollection")
+                response_type="LogAnalyticsAssociatedEntityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8598,7 +9267,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsAssociatedEntityCollection")
+                response_type="LogAnalyticsAssociatedEntityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_auto_associations(self, namespace_name, source_name, **kwargs):
         """
@@ -8650,6 +9322,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/sources/{sourceName}/autoAssociations"
         method = "GET"
+        operation_name = "list_auto_associations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListAutoAssociations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8722,7 +9396,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AutoAssociationCollection")
+                response_type="AutoAssociationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8730,7 +9407,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AutoAssociationCollection")
+                response_type="AutoAssociationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_categories(self, namespace_name, **kwargs):
         """
@@ -8791,6 +9471,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/categories"
         method = "GET"
+        operation_name = "list_categories"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsCategory/ListCategories"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8868,7 +9550,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsCategoryCollection")
+                response_type="LogAnalyticsCategoryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8876,7 +9561,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsCategoryCollection")
+                response_type="LogAnalyticsCategoryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_config_work_requests(self, namespace_name, compartment_id, **kwargs):
         """
@@ -8925,6 +9613,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/configWorkRequests"
         method = "GET"
+        operation_name = "list_config_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsConfigWorkRequest/ListConfigWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8994,7 +9684,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsConfigWorkRequestCollection")
+                response_type="LogAnalyticsConfigWorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9002,7 +9695,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsConfigWorkRequestCollection")
+                response_type="LogAnalyticsConfigWorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_entity_associations(self, namespace_name, log_analytics_entity_id, **kwargs):
         """
@@ -9060,6 +9756,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntities/{logAnalyticsEntityId}/entityAssociations"
         method = "GET"
+        operation_name = "list_entity_associations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/ListEntityAssociations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9141,7 +9839,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsEntityCollection")
+                response_type="LogAnalyticsEntityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9149,7 +9850,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsEntityCollection")
+                response_type="LogAnalyticsEntityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_entity_source_associations(self, namespace_name, compartment_id, **kwargs):
         """
@@ -9221,6 +9925,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/entityAssociations"
         method = "GET"
+        operation_name = "list_entity_source_associations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/ListEntitySourceAssociations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9310,7 +10016,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsAssociationCollection")
+                response_type="LogAnalyticsAssociationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9318,7 +10027,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsAssociationCollection")
+                response_type="LogAnalyticsAssociationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_fields(self, namespace_name, **kwargs):
         """
@@ -9402,6 +10114,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/fields"
         method = "GET"
+        operation_name = "list_fields"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/ListFields"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9496,7 +10210,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsFieldCollection")
+                response_type="LogAnalyticsFieldCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9504,7 +10221,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsFieldCollection")
+                response_type="LogAnalyticsFieldCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_label_priorities(self, namespace_name, **kwargs):
         """
@@ -9543,6 +10263,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/labelPriorities"
         method = "GET"
+        operation_name = "list_label_priorities"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/ListLabelPriorities"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9596,7 +10318,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LabelPriorityCollection")
+                response_type="LabelPriorityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9604,7 +10329,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LabelPriorityCollection")
+                response_type="LabelPriorityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_label_source_details(self, namespace_name, **kwargs):
         """
@@ -9657,6 +10385,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/labelSourceDetails"
         method = "GET"
+        operation_name = "list_label_source_details"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/ListLabelSourceDetails"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9730,7 +10460,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LabelSourceCollection")
+                response_type="LabelSourceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9738,7 +10471,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LabelSourceCollection")
+                response_type="LabelSourceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_labels(self, namespace_name, **kwargs):
         """
@@ -9814,6 +10550,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/labels"
         method = "GET"
+        operation_name = "list_labels"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/ListLabels"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9911,7 +10649,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsLabelCollection")
+                response_type="LogAnalyticsLabelCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9919,7 +10660,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsLabelCollection")
+                response_type="LogAnalyticsLabelCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_log_analytics_em_bridges(self, namespace_name, compartment_id, **kwargs):
         """
@@ -9989,6 +10733,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEmBridges"
         method = "GET"
+        operation_name = "list_log_analytics_em_bridges"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/ListLogAnalyticsEmBridges"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10085,7 +10831,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsEmBridgeCollection")
+                response_type="LogAnalyticsEmBridgeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10093,7 +10842,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsEmBridgeCollection")
+                response_type="LogAnalyticsEmBridgeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_log_analytics_entities(self, namespace_name, compartment_id, **kwargs):
         """
@@ -10193,6 +10945,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntities"
         method = "GET"
+        operation_name = "list_log_analytics_entities"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/ListLogAnalyticsEntities"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10311,7 +11065,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsEntityCollection")
+                response_type="LogAnalyticsEntityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10319,7 +11076,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsEntityCollection")
+                response_type="LogAnalyticsEntityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_log_analytics_entity_topology(self, namespace_name, log_analytics_entity_id, **kwargs):
         """
@@ -10378,6 +11138,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntities/{logAnalyticsEntityId}/entityTopology"
         method = "GET"
+        operation_name = "list_log_analytics_entity_topology"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntitySummary/ListLogAnalyticsEntityTopology"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10459,7 +11221,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsEntityTopologyCollection")
+                response_type="LogAnalyticsEntityTopologyCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10467,7 +11232,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsEntityTopologyCollection")
+                response_type="LogAnalyticsEntityTopologyCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_log_analytics_entity_types(self, namespace_name, **kwargs):
         """
@@ -10536,6 +11304,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntityTypes"
         method = "GET"
+        operation_name = "list_log_analytics_entity_types"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntityType/ListLogAnalyticsEntityTypes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10629,7 +11399,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsEntityTypeCollection")
+                response_type="LogAnalyticsEntityTypeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10637,7 +11410,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsEntityTypeCollection")
+                response_type="LogAnalyticsEntityTypeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_log_analytics_log_groups(self, namespace_name, compartment_id, **kwargs):
         """
@@ -10693,6 +11469,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsLogGroups"
         method = "GET"
+        operation_name = "list_log_analytics_log_groups"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/ListLogAnalyticsLogGroups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10767,7 +11545,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsLogGroupSummaryCollection")
+                response_type="LogAnalyticsLogGroupSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10775,7 +11556,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsLogGroupSummaryCollection")
+                response_type="LogAnalyticsLogGroupSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_log_analytics_object_collection_rules(self, namespace_name, compartment_id, **kwargs):
         """
@@ -10836,6 +11620,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsObjectCollectionRules"
         method = "GET"
+        operation_name = "list_log_analytics_object_collection_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/ListLogAnalyticsObjectCollectionRules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10919,7 +11705,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsObjectCollectionRuleCollection")
+                response_type="LogAnalyticsObjectCollectionRuleCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10927,7 +11716,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsObjectCollectionRuleCollection")
+                response_type="LogAnalyticsObjectCollectionRuleCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_log_sets(self, namespace_name, **kwargs):
         """
@@ -10974,6 +11766,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/storage/logSets"
         method = "GET"
+        operation_name = "list_log_sets"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListLogSets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11038,7 +11832,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogSetCollection")
+                response_type="LogSetCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11046,7 +11843,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogSetCollection")
+                response_type="LogSetCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_lookups(self, namespace_name, type, **kwargs):
         """
@@ -11122,6 +11922,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/lookups"
         method = "GET"
+        operation_name = "list_lookups"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/ListLookups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11224,7 +12026,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsLookupCollection")
+                response_type="LogAnalyticsLookupCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11232,7 +12037,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsLookupCollection")
+                response_type="LogAnalyticsLookupCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_meta_source_types(self, namespace_name, **kwargs):
         """
@@ -11281,6 +12089,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/sourceMetaTypes"
         method = "GET"
+        operation_name = "list_meta_source_types"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListMetaSourceTypes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11352,7 +12162,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsMetaSourceTypeCollection")
+                response_type="LogAnalyticsMetaSourceTypeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11360,7 +12173,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsMetaSourceTypeCollection")
+                response_type="LogAnalyticsMetaSourceTypeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_namespaces(self, compartment_id, **kwargs):
         """
@@ -11394,6 +12210,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces"
         method = "GET"
+        operation_name = "list_namespaces"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Namespace/ListNamespaces"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11433,14 +12251,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="NamespaceCollection")
+                response_type="NamespaceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="NamespaceCollection")
+                response_type="NamespaceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_parser_functions(self, namespace_name, **kwargs):
         """
@@ -11492,6 +12316,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/parserFunctions"
         method = "GET"
+        operation_name = "list_parser_functions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ListParserFunctions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11565,7 +12391,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsParserFunctionCollection")
+                response_type="LogAnalyticsParserFunctionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11573,7 +12402,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsParserFunctionCollection")
+                response_type="LogAnalyticsParserFunctionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_parser_meta_plugins(self, namespace_name, **kwargs):
         """
@@ -11622,6 +12454,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/parserMetaPlugins"
         method = "GET"
+        operation_name = "list_parser_meta_plugins"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ListParserMetaPlugins"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11693,7 +12527,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsParserMetaPluginCollection")
+                response_type="LogAnalyticsParserMetaPluginCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11701,7 +12538,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsParserMetaPluginCollection")
+                response_type="LogAnalyticsParserMetaPluginCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_parsers(self, namespace_name, **kwargs):
         """
@@ -11786,6 +12626,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/parsers"
         method = "GET"
+        operation_name = "list_parsers"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ListParsers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11892,7 +12734,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsParserCollection")
+                response_type="LogAnalyticsParserCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11900,7 +12745,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsParserCollection")
+                response_type="LogAnalyticsParserCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_query_work_requests(self, namespace_name, compartment_id, **kwargs):
         """
@@ -11957,6 +12805,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/queryWorkRequests"
         method = "GET"
+        operation_name = "list_query_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryWorkRequest/ListQueryWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12038,7 +12888,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="QueryWorkRequestCollection")
+                response_type="QueryWorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12046,7 +12899,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="QueryWorkRequestCollection")
+                response_type="QueryWorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_recalled_data(self, namespace_name, **kwargs):
         """
@@ -12102,6 +12958,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/storage/recalledData"
         method = "GET"
+        operation_name = "list_recalled_data"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListRecalledData"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12177,7 +13035,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RecalledDataCollection")
+                response_type="RecalledDataCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12185,7 +13046,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RecalledDataCollection")
+                response_type="RecalledDataCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_resource_categories(self, namespace_name, **kwargs):
         """
@@ -12246,6 +13110,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/categories/resourceCategories"
         method = "GET"
+        operation_name = "list_resource_categories"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsCategory/ListResourceCategories"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12323,7 +13189,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsResourceCategoryCollection")
+                response_type="LogAnalyticsResourceCategoryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12331,7 +13200,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsResourceCategoryCollection")
+                response_type="LogAnalyticsResourceCategoryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_scheduled_tasks(self, namespace_name, task_type, compartment_id, **kwargs):
         """
@@ -12398,6 +13270,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/scheduledTasks"
         method = "GET"
+        operation_name = "list_scheduled_tasks"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/ListScheduledTasks"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12483,7 +13357,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ScheduledTaskCollection")
+                response_type="ScheduledTaskCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12491,7 +13368,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ScheduledTaskCollection")
+                response_type="ScheduledTaskCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_source_associations(self, namespace_name, source_name, compartment_id, **kwargs):
         """
@@ -12558,6 +13438,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/sourceAssociations"
         method = "GET"
+        operation_name = "list_source_associations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/ListSourceAssociations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12644,7 +13526,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsAssociationCollection")
+                response_type="LogAnalyticsAssociationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12652,7 +13537,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsAssociationCollection")
+                response_type="LogAnalyticsAssociationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_source_event_types(self, namespace_name, source_name, **kwargs):
         """
@@ -12718,6 +13606,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/sources/{sourceName}/eventTypes"
         method = "GET"
+        operation_name = "list_source_event_types"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSourceEventTypes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12803,7 +13693,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="EventTypeCollection")
+                response_type="EventTypeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12811,7 +13704,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="EventTypeCollection")
+                response_type="EventTypeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_source_extended_field_definitions(self, namespace_name, source_name, **kwargs):
         """
@@ -12863,6 +13759,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/sources/{sourceName}/extendedFieldDefinitions"
         method = "GET"
+        operation_name = "list_source_extended_field_definitions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSourceExtendedFieldDefinitions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12935,7 +13833,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsSourceExtendedFieldDefinitionCollection")
+                response_type="LogAnalyticsSourceExtendedFieldDefinitionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12943,7 +13844,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsSourceExtendedFieldDefinitionCollection")
+                response_type="LogAnalyticsSourceExtendedFieldDefinitionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_source_label_operators(self, namespace_name, **kwargs):
         """
@@ -12992,6 +13896,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/sourceLabelOperators"
         method = "GET"
+        operation_name = "list_source_label_operators"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSourceLabelOperators"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13063,7 +13969,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsLabelOperatorCollection")
+                response_type="LogAnalyticsLabelOperatorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13071,7 +13980,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsLabelOperatorCollection")
+                response_type="LogAnalyticsLabelOperatorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_source_meta_functions(self, namespace_name, **kwargs):
         """
@@ -13120,6 +14032,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/sourceMetaFunctions"
         method = "GET"
+        operation_name = "list_source_meta_functions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSourceMetaFunctions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13191,7 +14105,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsMetaFunctionCollection")
+                response_type="LogAnalyticsMetaFunctionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13199,7 +14116,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsMetaFunctionCollection")
+                response_type="LogAnalyticsMetaFunctionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_source_patterns(self, namespace_name, source_name, **kwargs):
         """
@@ -13254,6 +14174,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/sources/{sourceName}/patterns"
         method = "GET"
+        operation_name = "list_source_patterns"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSourcePatterns"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13328,7 +14250,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsSourcePatternCollection")
+                response_type="LogAnalyticsSourcePatternCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13336,7 +14261,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsSourcePatternCollection")
+                response_type="LogAnalyticsSourcePatternCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_sources(self, namespace_name, compartment_id, **kwargs):
         """
@@ -13420,6 +14348,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/sources"
         method = "GET"
+        operation_name = "list_sources"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ListSources"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13513,7 +14443,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsSourceCollection")
+                response_type="LogAnalyticsSourceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13521,7 +14454,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsSourceCollection")
+                response_type="LogAnalyticsSourceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_storage_work_request_errors(self, compartment_id, work_request_id, namespace_name, **kwargs):
         """
@@ -13578,6 +14514,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/storageWorkRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_storage_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListStorageWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13651,7 +14589,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13659,7 +14600,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_storage_work_requests(self, compartment_id, namespace_name, **kwargs):
         """
@@ -13734,6 +14678,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/storageWorkRequests"
         method = "GET"
+        operation_name = "list_storage_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListStorageWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13832,7 +14778,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="StorageWorkRequestCollection")
+                response_type="StorageWorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13840,7 +14789,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="StorageWorkRequestCollection")
+                response_type="StorageWorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_supported_char_encodings(self, namespace_name, **kwargs):
         """
@@ -13879,6 +14831,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/supportedCharEncodings"
         method = "GET"
+        operation_name = "list_supported_char_encodings"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/CharEncodingCollection/ListSupportedCharEncodings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13932,7 +14886,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="CharEncodingCollection")
+                response_type="CharEncodingCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13940,7 +14897,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="CharEncodingCollection")
+                response_type="CharEncodingCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_supported_timezones(self, namespace_name, **kwargs):
         """
@@ -13979,6 +14939,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/supportedTimezones"
         method = "GET"
+        operation_name = "list_supported_timezones"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/TimezoneCollection/ListSupportedTimezones"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14032,7 +14994,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TimezoneCollection")
+                response_type="TimezoneCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14040,7 +15005,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TimezoneCollection")
+                response_type="TimezoneCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_upload_files(self, namespace_name, upload_reference, **kwargs):
         """
@@ -14101,6 +15069,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/uploads/{uploadReference}/files"
         method = "GET"
+        operation_name = "list_upload_files"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/ListUploadFiles"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14185,7 +15155,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="UploadFileCollection")
+                response_type="UploadFileCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14193,7 +15166,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="UploadFileCollection")
+                response_type="UploadFileCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_upload_warnings(self, namespace_name, upload_reference, **kwargs):
         """
@@ -14235,6 +15211,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/uploads/{uploadReference}/warnings"
         method = "GET"
+        operation_name = "list_upload_warnings"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/ListUploadWarnings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14289,7 +15267,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="UploadWarningCollection")
+                response_type="UploadWarningCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14297,7 +15278,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="UploadWarningCollection")
+                response_type="UploadWarningCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_uploads(self, namespace_name, **kwargs):
         """
@@ -14360,6 +15344,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/uploads"
         method = "GET"
+        operation_name = "list_uploads"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/ListUploads"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14444,7 +15430,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="UploadCollection")
+                response_type="UploadCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14452,7 +15441,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="UploadCollection")
+                response_type="UploadCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_warnings(self, namespace_name, compartment_id, **kwargs):
         """
@@ -14544,6 +15536,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/warnings"
         method = "GET"
+        operation_name = "list_warnings"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsWarning/ListWarnings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14643,7 +15637,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsWarningCollection")
+                response_type="LogAnalyticsWarningCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14651,7 +15648,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogAnalyticsWarningCollection")
+                response_type="LogAnalyticsWarningCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, namespace_name, work_request_id, **kwargs):
         """
@@ -14695,6 +15695,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14749,7 +15751,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14757,7 +15762,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, namespace_name, work_request_id, **kwargs):
         """
@@ -14801,6 +15809,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/WorkRequestLog/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14855,7 +15865,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogCollection")
+                response_type="WorkRequestLogCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14863,7 +15876,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogCollection")
+                response_type="WorkRequestLogCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, namespace_name, compartment_id, **kwargs):
         """
@@ -14905,6 +15921,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14959,7 +15977,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestCollection")
+                response_type="WorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14967,7 +15988,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestCollection")
+                response_type="WorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def offboard_namespace(self, namespace_name, **kwargs):
         """
@@ -15007,6 +16031,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/actions/offboard"
         method = "POST"
+        operation_name = "offboard_namespace"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Namespace/OffboardNamespace"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15053,13 +16079,19 @@ class LogAnalyticsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def onboard_namespace(self, namespace_name, **kwargs):
         """
@@ -15099,6 +16131,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/actions/onboard"
         method = "POST"
+        operation_name = "onboard_namespace"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Namespace/OnboardNamespace"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15145,13 +16179,19 @@ class LogAnalyticsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def parse_query(self, namespace_name, parse_query_details, **kwargs):
         """
@@ -15187,6 +16227,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/search/actions/parse"
         method = "POST"
+        operation_name = "parse_query"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/ParseQuery"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15236,7 +16278,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=parse_query_details,
-                response_type="ParseQueryOutput")
+                response_type="ParseQueryOutput",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15244,7 +16289,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=parse_query_details,
-                response_type="ParseQueryOutput")
+                response_type="ParseQueryOutput",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def pause_scheduled_task(self, namespace_name, scheduled_task_id, **kwargs):
         """
@@ -15288,6 +16336,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}/actions/pause"
         method = "POST"
+        operation_name = "pause_scheduled_task"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/PauseScheduledTask"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15335,14 +16385,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ScheduledTask")
+                response_type="ScheduledTask",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ScheduledTask")
+                response_type="ScheduledTask",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def purge_storage_data(self, namespace_name, purge_storage_data_details, **kwargs):
         """
@@ -15393,6 +16449,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/storage/actions/purgeData"
         method = "POST"
+        operation_name = "purge_storage_data"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/PurgeStorageData"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15446,14 +16504,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=purge_storage_data_details)
+                body=purge_storage_data_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=purge_storage_data_details)
+                body=purge_storage_data_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def put_query_work_request_background(self, namespace_name, work_request_id, **kwargs):
         """
@@ -15498,6 +16562,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/queryWorkRequests/{workRequestId}/actions/background"
         method = "PUT"
+        operation_name = "put_query_work_request_background"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryWorkRequest/PutQueryWorkRequestBackground"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15545,14 +16611,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="QueryWorkRequest")
+                response_type="QueryWorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="QueryWorkRequest")
+                response_type="QueryWorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def query(self, namespace_name, query_details, **kwargs):
         """
@@ -15594,6 +16666,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/search/actions/query"
         method = "POST"
+        operation_name = "query"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/Query"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15652,7 +16726,10 @@ class LogAnalyticsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=query_details,
-                response_type="QueryAggregation")
+                response_type="QueryAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15661,7 +16738,10 @@ class LogAnalyticsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=query_details,
-                response_type="QueryAggregation")
+                response_type="QueryAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def recall_archived_data(self, namespace_name, recall_archived_data_details, **kwargs):
         """
@@ -15711,6 +16791,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/storage/actions/recallArchivedData"
         method = "POST"
+        operation_name = "recall_archived_data"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/RecallArchivedData"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15764,14 +16846,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=recall_archived_data_details)
+                body=recall_archived_data_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=recall_archived_data_details)
+                body=recall_archived_data_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def register_lookup(self, namespace_name, type, register_lookup_content_file_body, **kwargs):
         """
@@ -15844,6 +16932,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/lookups/actions/register"
         method = "POST"
+        operation_name = "register_lookup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/RegisterLookup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15939,7 +17029,10 @@ class LogAnalyticsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=register_lookup_content_file_body,
-                response_type="LogAnalyticsLookup")
+                response_type="LogAnalyticsLookup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15948,7 +17041,10 @@ class LogAnalyticsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=register_lookup_content_file_body,
-                response_type="LogAnalyticsLookup")
+                response_type="LogAnalyticsLookup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def release_recalled_data(self, namespace_name, release_recalled_data_details, **kwargs):
         """
@@ -15998,6 +17094,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/storage/actions/releaseRecalledData"
         method = "POST"
+        operation_name = "release_recalled_data"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ReleaseRecalledData"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16051,14 +17149,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=release_recalled_data_details)
+                body=release_recalled_data_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=release_recalled_data_details)
+                body=release_recalled_data_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_entity_associations(self, namespace_name, log_analytics_entity_id, remove_entity_associations_details, **kwargs):
         """
@@ -16111,6 +17215,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntities/{logAnalyticsEntityId}/actions/removeEntityAssociations"
         method = "POST"
+        operation_name = "remove_entity_associations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/RemoveEntityAssociations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16165,14 +17271,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_entity_associations_details)
+                body=remove_entity_associations_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_entity_associations_details)
+                body=remove_entity_associations_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_preferences(self, namespace_name, remove_preferences_details, **kwargs):
         """
@@ -16215,6 +17327,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/preferences/actions/removePreferences"
         method = "POST"
+        operation_name = "remove_preferences"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsPreference/RemovePreferences"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16266,14 +17380,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_preferences_details)
+                body=remove_preferences_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_preferences_details)
+                body=remove_preferences_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_resource_categories(self, namespace_name, remove_resource_categories_details, **kwargs):
         """
@@ -16309,6 +17429,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/categories/actions/removeResourceCategories"
         method = "POST"
+        operation_name = "remove_resource_categories"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsCategory/RemoveResourceCategories"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16357,14 +17479,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_resource_categories_details)
+                body=remove_resource_categories_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_resource_categories_details)
+                body=remove_resource_categories_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_source_event_types(self, namespace_name, source_name, remove_event_type_details, **kwargs):
         """
@@ -16410,6 +17538,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/sources/{sourceName}/actions/removeEventTypes"
         method = "POST"
+        operation_name = "remove_source_event_types"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/RemoveSourceEventTypes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16462,14 +17592,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_event_type_details)
+                body=remove_event_type_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_event_type_details)
+                body=remove_event_type_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def resume_scheduled_task(self, namespace_name, scheduled_task_id, **kwargs):
         """
@@ -16513,6 +17649,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}/actions/resume"
         method = "POST"
+        operation_name = "resume_scheduled_task"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/ResumeScheduledTask"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16560,14 +17698,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ScheduledTask")
+                response_type="ScheduledTask",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ScheduledTask")
+                response_type="ScheduledTask",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def run(self, namespace_name, scheduled_task_id, **kwargs):
         """
@@ -16621,6 +17765,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}/actions/run"
         method = "POST"
+        operation_name = "run"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/Run"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16677,14 +17823,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def set_unprocessed_data_bucket(self, namespace_name, bucket_name, **kwargs):
         """
@@ -16726,6 +17878,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/actions/setUnprocessedDataBucket"
         method = "POST"
+        operation_name = "set_unprocessed_data_bucket"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/SetUnprocessedDataBucket"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16778,7 +17932,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="UnprocessedDataBucket")
+                response_type="UnprocessedDataBucket",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16786,7 +17943,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="UnprocessedDataBucket")
+                response_type="UnprocessedDataBucket",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def suggest(self, namespace_name, suggest_details, **kwargs):
         """
@@ -16822,6 +17982,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/search/actions/suggest"
         method = "POST"
+        operation_name = "suggest"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/QueryDetails/Suggest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16871,7 +18033,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=suggest_details,
-                response_type="SuggestOutput")
+                response_type="SuggestOutput",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16879,7 +18044,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=suggest_details,
-                response_type="SuggestOutput")
+                response_type="SuggestOutput",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def suppress_warning(self, namespace_name, warning_reference_details, compartment_id, **kwargs):
         """
@@ -16925,6 +18093,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/warnings/actions/suppress"
         method = "POST"
+        operation_name = "suppress_warning"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsWarning/SuppressWarning"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16982,7 +18152,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=warning_reference_details)
+                body=warning_reference_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16990,7 +18163,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=warning_reference_details)
+                body=warning_reference_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def test_parser(self, namespace_name, test_parser_payload_details, **kwargs):
         """
@@ -17042,6 +18218,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/parsers/actions/test"
         method = "POST"
+        operation_name = "test_parser"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/TestParser"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17110,7 +18288,10 @@ class LogAnalyticsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=test_parser_payload_details,
-                response_type="ParserTestResult")
+                response_type="ParserTestResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17119,7 +18300,10 @@ class LogAnalyticsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=test_parser_payload_details,
-                response_type="ParserTestResult")
+                response_type="ParserTestResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def unsuppress_warning(self, namespace_name, warning_reference_details, compartment_id, **kwargs):
         """
@@ -17165,6 +18349,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/warnings/actions/unsuppress"
         method = "POST"
+        operation_name = "unsuppress_warning"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsWarning/UnsuppressWarning"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17222,7 +18408,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=warning_reference_details)
+                body=warning_reference_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17230,7 +18419,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=warning_reference_details)
+                body=warning_reference_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_log_analytics_em_bridge(self, namespace_name, log_analytics_em_bridge_id, update_log_analytics_em_bridge_details, **kwargs):
         """
@@ -17276,6 +18468,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEmBridges/{logAnalyticsEmBridgeId}"
         method = "PUT"
+        operation_name = "update_log_analytics_em_bridge"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEmBridge/UpdateLogAnalyticsEmBridge"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17328,7 +18522,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_log_analytics_em_bridge_details,
-                response_type="LogAnalyticsEmBridge")
+                response_type="LogAnalyticsEmBridge",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17336,7 +18533,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_log_analytics_em_bridge_details,
-                response_type="LogAnalyticsEmBridge")
+                response_type="LogAnalyticsEmBridge",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_log_analytics_entity(self, namespace_name, log_analytics_entity_id, update_log_analytics_entity_details, **kwargs):
         """
@@ -17382,6 +18582,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntities/{logAnalyticsEntityId}"
         method = "PUT"
+        operation_name = "update_log_analytics_entity"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/UpdateLogAnalyticsEntity"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17434,7 +18636,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_log_analytics_entity_details,
-                response_type="LogAnalyticsEntity")
+                response_type="LogAnalyticsEntity",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17442,7 +18647,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_log_analytics_entity_details,
-                response_type="LogAnalyticsEntity")
+                response_type="LogAnalyticsEntity",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_log_analytics_entity_type(self, namespace_name, update_log_analytics_entity_type_details, entity_type_name, **kwargs):
         """
@@ -17488,6 +18696,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsEntityTypes/{entityTypeName}"
         method = "PUT"
+        operation_name = "update_log_analytics_entity_type"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntityType/UpdateLogAnalyticsEntityType"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17539,14 +18749,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_log_analytics_entity_type_details)
+                body=update_log_analytics_entity_type_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_log_analytics_entity_type_details)
+                body=update_log_analytics_entity_type_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_log_analytics_log_group(self, namespace_name, log_analytics_log_group_id, update_log_analytics_log_group_details, **kwargs):
         """
@@ -17592,6 +18808,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsLogGroups/{logAnalyticsLogGroupId}"
         method = "PUT"
+        operation_name = "update_log_analytics_log_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLogGroup/UpdateLogAnalyticsLogGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17644,7 +18862,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_log_analytics_log_group_details,
-                response_type="LogAnalyticsLogGroup")
+                response_type="LogAnalyticsLogGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17652,7 +18873,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_log_analytics_log_group_details,
-                response_type="LogAnalyticsLogGroup")
+                response_type="LogAnalyticsLogGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_log_analytics_object_collection_rule(self, namespace_name, log_analytics_object_collection_rule_id, update_log_analytics_object_collection_rule_details, **kwargs):
         """
@@ -17700,6 +18924,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/logAnalyticsObjectCollectionRules/{logAnalyticsObjectCollectionRuleId}"
         method = "PUT"
+        operation_name = "update_log_analytics_object_collection_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsObjectCollectionRule/UpdateLogAnalyticsObjectCollectionRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17752,7 +18978,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_log_analytics_object_collection_rule_details,
-                response_type="LogAnalyticsObjectCollectionRule")
+                response_type="LogAnalyticsObjectCollectionRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17760,7 +18989,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_log_analytics_object_collection_rule_details,
-                response_type="LogAnalyticsObjectCollectionRule")
+                response_type="LogAnalyticsObjectCollectionRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_lookup(self, namespace_name, lookup_name, update_lookup_metadata_details, **kwargs):
         """
@@ -17813,6 +19045,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/lookups/{lookupName}"
         method = "PUT"
+        operation_name = "update_lookup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/UpdateLookup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17868,7 +19102,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_lookup_metadata_details,
-                response_type="LogAnalyticsLookup")
+                response_type="LogAnalyticsLookup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17876,7 +19113,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_lookup_metadata_details,
-                response_type="LogAnalyticsLookup")
+                response_type="LogAnalyticsLookup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_lookup_data(self, namespace_name, lookup_name, update_lookup_file_body, **kwargs):
         """
@@ -17947,6 +19187,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/lookups/{lookupName}/actions/updateData"
         method = "POST"
+        operation_name = "update_lookup_data"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLookup/UpdateLookupData"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18033,7 +19275,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=update_lookup_file_body)
+                body=update_lookup_file_body,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18041,7 +19286,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=update_lookup_file_body)
+                body=update_lookup_file_body,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_preferences(self, namespace_name, update_preferences_details, **kwargs):
         """
@@ -18084,6 +19332,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/preferences/actions/updatePreferences"
         method = "POST"
+        operation_name = "update_preferences"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsPreference/UpdatePreferences"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18135,14 +19385,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_preferences_details)
+                body=update_preferences_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_preferences_details)
+                body=update_preferences_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_resource_categories(self, namespace_name, update_resource_categories_details, **kwargs):
         """
@@ -18178,6 +19434,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/categories/actions/updateResourceCategories"
         method = "POST"
+        operation_name = "update_resource_categories"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsCategory/UpdateResourceCategories"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18226,14 +19484,20 @@ class LogAnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_resource_categories_details)
+                body=update_resource_categories_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_resource_categories_details)
+                body=update_resource_categories_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_scheduled_task(self, namespace_name, scheduled_task_id, update_scheduled_task_details, **kwargs):
         """
@@ -18281,6 +19545,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}"
         method = "PUT"
+        operation_name = "update_scheduled_task"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/UpdateScheduledTask"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18333,7 +19599,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_scheduled_task_details,
-                response_type="ScheduledTask")
+                response_type="ScheduledTask",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18341,7 +19610,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_scheduled_task_details,
-                response_type="ScheduledTask")
+                response_type="ScheduledTask",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_storage(self, namespace_name, update_storage_details, **kwargs):
         """
@@ -18384,6 +19656,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/storage"
         method = "PUT"
+        operation_name = "update_storage"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/UpdateStorage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18435,7 +19709,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_storage_details,
-                response_type="Storage")
+                response_type="Storage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18443,7 +19720,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_storage_details,
-                response_type="Storage")
+                response_type="Storage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def upload_log_events_file(self, namespace_name, log_group_id, upload_log_events_file_details, **kwargs):
         """
@@ -18516,6 +19796,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/actions/uploadLogEventsFile"
         method = "POST"
+        operation_name = "upload_log_events_file"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/UploadLogEventsFile"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18610,8 +19892,10 @@ class LogAnalyticsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=upload_log_events_file_details,
+                enforce_content_headers=False,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enforce_content_headers=False)
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18620,8 +19904,10 @@ class LogAnalyticsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=upload_log_events_file_details,
+                enforce_content_headers=False,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enforce_content_headers=False)
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def upload_log_file(self, namespace_name, upload_name, log_source_name, filename, opc_meta_loggrpid, upload_log_file_body, **kwargs):
         """
@@ -18720,6 +20006,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/actions/uploadLogFile"
         method = "POST"
+        operation_name = "upload_log_file"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/UploadLogFile"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18823,8 +20111,10 @@ class LogAnalyticsClient(object):
                 header_params=header_params,
                 body=upload_log_file_body,
                 response_type="Upload",
+                enforce_content_headers=False,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enforce_content_headers=False)
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18834,8 +20124,10 @@ class LogAnalyticsClient(object):
                 header_params=header_params,
                 body=upload_log_file_body,
                 response_type="Upload",
+                enforce_content_headers=False,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enforce_content_headers=False)
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def upsert_associations(self, namespace_name, upsert_log_analytics_association_details, **kwargs):
         """
@@ -18881,6 +20173,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/associations/actions/upsert"
         method = "POST"
+        operation_name = "upsert_associations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/UpsertAssociations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18939,7 +20233,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=upsert_log_analytics_association_details)
+                body=upsert_log_analytics_association_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18947,7 +20244,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=upsert_log_analytics_association_details)
+                body=upsert_log_analytics_association_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def upsert_field(self, namespace_name, upsert_log_analytics_field_details, **kwargs):
         """
@@ -18997,6 +20297,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/fields/actions/upsert"
         method = "POST"
+        operation_name = "upsert_field"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsField/UpsertField"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19051,7 +20353,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=upsert_log_analytics_field_details,
-                response_type="LogAnalyticsField")
+                response_type="LogAnalyticsField",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -19059,7 +20364,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=upsert_log_analytics_field_details,
-                response_type="LogAnalyticsField")
+                response_type="LogAnalyticsField",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def upsert_label(self, namespace_name, upsert_log_analytics_label_details, **kwargs):
         """
@@ -19109,6 +20417,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/labels/actions/upsert"
         method = "POST"
+        operation_name = "upsert_label"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsLabel/UpsertLabel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19163,7 +20473,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=upsert_log_analytics_label_details,
-                response_type="LogAnalyticsLabel")
+                response_type="LogAnalyticsLabel",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -19171,7 +20484,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=upsert_log_analytics_label_details,
-                response_type="LogAnalyticsLabel")
+                response_type="LogAnalyticsLabel",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def upsert_parser(self, namespace_name, upsert_log_analytics_parser_details, **kwargs):
         """
@@ -19221,6 +20537,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/parsers/actions/upsert"
         method = "POST"
+        operation_name = "upsert_parser"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/UpsertParser"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19275,7 +20593,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=upsert_log_analytics_parser_details,
-                response_type="LogAnalyticsParser")
+                response_type="LogAnalyticsParser",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -19283,7 +20604,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=upsert_log_analytics_parser_details,
-                response_type="LogAnalyticsParser")
+                response_type="LogAnalyticsParser",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def upsert_source(self, namespace_name, upsert_log_analytics_source_details, **kwargs):
         """
@@ -19344,6 +20668,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/sources/actions/upsert"
         method = "POST"
+        operation_name = "upsert_source"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/UpsertSource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19409,7 +20735,10 @@ class LogAnalyticsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=upsert_log_analytics_source_details,
-                response_type="LogAnalyticsSource")
+                response_type="LogAnalyticsSource",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -19418,7 +20747,10 @@ class LogAnalyticsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=upsert_log_analytics_source_details,
-                response_type="LogAnalyticsSource")
+                response_type="LogAnalyticsSource",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def validate_association_parameters(self, namespace_name, upsert_log_analytics_association_details, **kwargs):
         """
@@ -19477,6 +20809,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/associations/actions/validateParameters"
         method = "POST"
+        operation_name = "validate_association_parameters"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsAssociation/ValidateAssociationParameters"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19556,7 +20890,10 @@ class LogAnalyticsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=upsert_log_analytics_association_details,
-                response_type="LogAnalyticsAssociationParameterCollection")
+                response_type="LogAnalyticsAssociationParameterCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -19565,7 +20902,10 @@ class LogAnalyticsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=upsert_log_analytics_association_details,
-                response_type="LogAnalyticsAssociationParameterCollection")
+                response_type="LogAnalyticsAssociationParameterCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def validate_file(self, namespace_name, object_location, filename, **kwargs):
         """
@@ -19604,6 +20944,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/uploads/actions/validateFile"
         method = "POST"
+        operation_name = "validate_file"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/ValidateFile"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19655,7 +20997,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="FileValidationResponse")
+                response_type="FileValidationResponse",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -19663,7 +21008,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="FileValidationResponse")
+                response_type="FileValidationResponse",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def validate_source(self, namespace_name, upsert_log_analytics_source_details, **kwargs):
         """
@@ -19717,6 +21065,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/sources/actions/validate"
         method = "POST"
+        operation_name = "validate_source"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ValidateSource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19780,7 +21130,10 @@ class LogAnalyticsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=upsert_log_analytics_source_details,
-                response_type="SourceValidateResults")
+                response_type="SourceValidateResults",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -19789,7 +21142,10 @@ class LogAnalyticsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=upsert_log_analytics_source_details,
-                response_type="SourceValidateResults")
+                response_type="SourceValidateResults",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def validate_source_extended_field_details(self, namespace_name, log_analytics_source, **kwargs):
         """
@@ -19832,6 +21188,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/sources/actions/validateExtendedFields"
         method = "POST"
+        operation_name = "validate_source_extended_field_details"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ValidateSourceExtendedFieldDetails"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19884,7 +21242,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=log_analytics_source,
-                response_type="ExtendedFieldsValidationResult")
+                response_type="ExtendedFieldsValidationResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -19892,7 +21253,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=log_analytics_source,
-                response_type="ExtendedFieldsValidationResult")
+                response_type="ExtendedFieldsValidationResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def validate_source_mapping(self, namespace_name, object_location, filename, log_source_name, **kwargs):
         """
@@ -19934,6 +21298,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/uploads/actions/validateSourceMapping"
         method = "POST"
+        operation_name = "validate_source_mapping"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Upload/ValidateSourceMapping"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19986,7 +21352,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SourceMappingResponse")
+                response_type="SourceMappingResponse",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -19994,7 +21363,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SourceMappingResponse")
+                response_type="SourceMappingResponse",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def verify(self, namespace_name, scheduled_task_id, **kwargs):
         """
@@ -20045,6 +21417,8 @@ class LogAnalyticsClient(object):
         """
         resource_path = "/namespaces/{namespaceName}/scheduledTasks/{scheduledTaskId}/actions/verify"
         method = "POST"
+        operation_name = "verify"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/ScheduledTask/Verify"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20100,7 +21474,10 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="VerifyOutput")
+                response_type="VerifyOutput",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -20108,4 +21485,7 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="VerifyOutput")
+                response_type="VerifyOutput",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

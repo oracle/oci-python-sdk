@@ -155,6 +155,8 @@ class OperatorControlClient(object):
         """
         resource_path = "/operatorControls/{operatorControlId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_operator_control_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/ChangeOperatorControlCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -204,14 +206,20 @@ class OperatorControlClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_operator_control_compartment_details)
+                body=change_operator_control_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_operator_control_compartment_details)
+                body=change_operator_control_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_operator_control(self, create_operator_control_details, **kwargs):
         """
@@ -251,6 +259,8 @@ class OperatorControlClient(object):
         """
         resource_path = "/operatorControls"
         method = "POST"
+        operation_name = "create_operator_control"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/CreateOperatorControl"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -288,14 +298,20 @@ class OperatorControlClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_operator_control_details,
-                response_type="OperatorControl")
+                response_type="OperatorControl",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_operator_control_details,
-                response_type="OperatorControl")
+                response_type="OperatorControl",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_operator_control(self, operator_control_id, **kwargs):
         """
@@ -342,6 +358,8 @@ class OperatorControlClient(object):
         """
         resource_path = "/operatorControls/{operatorControlId}"
         method = "DELETE"
+        operation_name = "delete_operator_control"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/DeleteOperatorControl"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -394,14 +412,20 @@ class OperatorControlClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_operator_control(self, operator_control_id, **kwargs):
         """
@@ -434,6 +458,8 @@ class OperatorControlClient(object):
         """
         resource_path = "/operatorControls/{operatorControlId}"
         method = "GET"
+        operation_name = "get_operator_control"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/GetOperatorControl"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -478,14 +504,20 @@ class OperatorControlClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="OperatorControl")
+                response_type="OperatorControl",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="OperatorControl")
+                response_type="OperatorControl",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_operator_controls(self, compartment_id, **kwargs):
         """
@@ -545,6 +577,8 @@ class OperatorControlClient(object):
         """
         resource_path = "/operatorControls"
         method = "GET"
+        operation_name = "list_operator_controls"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/ListOperatorControls"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -619,14 +653,20 @@ class OperatorControlClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="OperatorControlCollection")
+                response_type="OperatorControlCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="OperatorControlCollection")
+                response_type="OperatorControlCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_operator_control(self, operator_control_id, update_operator_control_details, **kwargs):
         """
@@ -669,6 +709,8 @@ class OperatorControlClient(object):
         """
         resource_path = "/operatorControls/{operatorControlId}"
         method = "PUT"
+        operation_name = "update_operator_control"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/UpdateOperatorControl"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -716,7 +758,10 @@ class OperatorControlClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_operator_control_details,
-                response_type="OperatorControl")
+                response_type="OperatorControl",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -724,4 +769,7 @@ class OperatorControlClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_operator_control_details,
-                response_type="OperatorControl")
+                response_type="OperatorControl",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

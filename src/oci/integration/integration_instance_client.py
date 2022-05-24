@@ -153,6 +153,8 @@ class IntegrationInstanceClient(object):
         """
         resource_path = "/integrationInstances/{integrationInstanceId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_integration_instance_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/ChangeIntegrationInstanceCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -202,14 +204,20 @@ class IntegrationInstanceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_integration_instance_compartment_details)
+                body=change_integration_instance_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_integration_instance_compartment_details)
+                body=change_integration_instance_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_integration_instance_network_endpoint(self, integration_instance_id, change_integration_instance_network_endpoint_details, **kwargs):
         """
@@ -261,6 +269,8 @@ class IntegrationInstanceClient(object):
         """
         resource_path = "/integrationInstances/{integrationInstanceId}/actions/changeNetworkEndpoint"
         method = "POST"
+        operation_name = "change_integration_instance_network_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/ChangeIntegrationInstanceNetworkEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -310,14 +320,20 @@ class IntegrationInstanceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_integration_instance_network_endpoint_details)
+                body=change_integration_instance_network_endpoint_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_integration_instance_network_endpoint_details)
+                body=change_integration_instance_network_endpoint_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_integration_instance(self, create_integration_instance_details, **kwargs):
         """
@@ -358,6 +374,8 @@ class IntegrationInstanceClient(object):
         """
         resource_path = "/integrationInstances"
         method = "POST"
+        operation_name = "create_integration_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/CreateIntegrationInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -394,13 +412,19 @@ class IntegrationInstanceClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_integration_instance_details)
+                body=create_integration_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_integration_instance_details)
+                body=create_integration_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_integration_instance(self, integration_instance_id, **kwargs):
         """
@@ -440,6 +464,8 @@ class IntegrationInstanceClient(object):
         """
         resource_path = "/integrationInstances/{integrationInstanceId}"
         method = "DELETE"
+        operation_name = "delete_integration_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/DeleteIntegrationInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -485,13 +511,19 @@ class IntegrationInstanceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_integration_instance(self, integration_instance_id, **kwargs):
         """
@@ -524,6 +556,8 @@ class IntegrationInstanceClient(object):
         """
         resource_path = "/integrationInstances/{integrationInstanceId}"
         method = "GET"
+        operation_name = "get_integration_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/GetIntegrationInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -568,14 +602,20 @@ class IntegrationInstanceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="IntegrationInstance")
+                response_type="IntegrationInstance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="IntegrationInstance")
+                response_type="IntegrationInstance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -608,6 +648,8 @@ class IntegrationInstanceClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/integration/20190131/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -652,14 +694,20 @@ class IntegrationInstanceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_integration_instances(self, compartment_id, **kwargs):
         """
@@ -720,6 +768,8 @@ class IntegrationInstanceClient(object):
         """
         resource_path = "/integrationInstances"
         method = "GET"
+        operation_name = "list_integration_instances"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstanceSummary/ListIntegrationInstances"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -792,14 +842,20 @@ class IntegrationInstanceClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[IntegrationInstanceSummary]")
+                response_type="list[IntegrationInstanceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[IntegrationInstanceSummary]")
+                response_type="list[IntegrationInstanceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, compartment_id, work_request_id, **kwargs):
         """
@@ -841,6 +897,8 @@ class IntegrationInstanceClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/integration/20190131/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -895,7 +953,10 @@ class IntegrationInstanceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -903,7 +964,10 @@ class IntegrationInstanceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, compartment_id, work_request_id, **kwargs):
         """
@@ -945,6 +1009,8 @@ class IntegrationInstanceClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/integration/20190131/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -999,7 +1065,10 @@ class IntegrationInstanceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLogEntry]")
+                response_type="list[WorkRequestLogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1007,7 +1076,10 @@ class IntegrationInstanceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLogEntry]")
+                response_type="list[WorkRequestLogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -1049,6 +1121,8 @@ class IntegrationInstanceClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/integration/20190131/WorkRequestSummary/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1094,14 +1168,20 @@ class IntegrationInstanceClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestSummary]")
+                response_type="list[WorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestSummary]")
+                response_type="list[WorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def start_integration_instance(self, integration_instance_id, **kwargs):
         """
@@ -1149,6 +1229,8 @@ class IntegrationInstanceClient(object):
         """
         resource_path = "/integrationInstances/{integrationInstanceId}/actions/start"
         method = "POST"
+        operation_name = "start_integration_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/StartIntegrationInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1197,13 +1279,19 @@ class IntegrationInstanceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def stop_integration_instance(self, integration_instance_id, **kwargs):
         """
@@ -1251,6 +1339,8 @@ class IntegrationInstanceClient(object):
         """
         resource_path = "/integrationInstances/{integrationInstanceId}/actions/stop"
         method = "POST"
+        operation_name = "stop_integration_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/StopIntegrationInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1299,13 +1389,19 @@ class IntegrationInstanceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_integration_instance(self, integration_instance_id, update_integration_instance_details, **kwargs):
         """
@@ -1348,6 +1444,8 @@ class IntegrationInstanceClient(object):
         """
         resource_path = "/integrationInstances/{integrationInstanceId}"
         method = "PUT"
+        operation_name = "update_integration_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/UpdateIntegrationInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1394,11 +1492,17 @@ class IntegrationInstanceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_integration_instance_details)
+                body=update_integration_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_integration_instance_details)
+                body=update_integration_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

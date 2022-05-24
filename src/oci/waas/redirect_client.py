@@ -146,6 +146,8 @@ class RedirectClient(object):
         """
         resource_path = "/httpRedirects/{httpRedirectId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_http_redirect_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HttpRedirect/ChangeHttpRedirectCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -195,14 +197,20 @@ class RedirectClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_http_redirect_compartment_details)
+                body=change_http_redirect_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_http_redirect_compartment_details)
+                body=change_http_redirect_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_http_redirect(self, create_http_redirect_details, **kwargs):
         """
@@ -239,6 +247,8 @@ class RedirectClient(object):
         """
         resource_path = "/httpRedirects"
         method = "POST"
+        operation_name = "create_http_redirect"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HttpRedirect/CreateHttpRedirect"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -275,13 +285,19 @@ class RedirectClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_http_redirect_details)
+                body=create_http_redirect_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_http_redirect_details)
+                body=create_http_redirect_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_http_redirect(self, http_redirect_id, **kwargs):
         """
@@ -323,6 +339,8 @@ class RedirectClient(object):
         """
         resource_path = "/httpRedirects/{httpRedirectId}"
         method = "DELETE"
+        operation_name = "delete_http_redirect"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HttpRedirect/DeleteHttpRedirect"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -371,13 +389,19 @@ class RedirectClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_http_redirect(self, http_redirect_id, **kwargs):
         """
@@ -412,6 +436,8 @@ class RedirectClient(object):
         """
         resource_path = "/httpRedirects/{httpRedirectId}"
         method = "GET"
+        operation_name = "get_http_redirect"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HttpRedirect/GetHttpRedirect"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -458,14 +484,20 @@ class RedirectClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="HttpRedirect")
+                response_type="HttpRedirect",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="HttpRedirect")
+                response_type="HttpRedirect",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_http_redirects(self, compartment_id, **kwargs):
         """
@@ -533,6 +565,8 @@ class RedirectClient(object):
         """
         resource_path = "/httpRedirects"
         method = "GET"
+        operation_name = "list_http_redirects"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HttpRedirect/ListHttpRedirects"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -614,14 +648,20 @@ class RedirectClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[HttpRedirectSummary]")
+                response_type="list[HttpRedirectSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[HttpRedirectSummary]")
+                response_type="list[HttpRedirectSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_http_redirect(self, http_redirect_id, update_http_redirect_details, **kwargs):
         """
@@ -666,6 +706,8 @@ class RedirectClient(object):
         """
         resource_path = "/httpRedirects/{httpRedirectId}"
         method = "PUT"
+        operation_name = "update_http_redirect"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HttpRedirect/UpdateHttpRedirect"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -715,11 +757,17 @@ class RedirectClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_http_redirect_details)
+                body=update_http_redirect_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_http_redirect_details)
+                body=update_http_redirect_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

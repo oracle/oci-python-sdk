@@ -66,6 +66,18 @@ class OdaInstance(object):
     LIFECYCLE_SUB_STATE_CHANGING_COMPARTMENT = "CHANGING_COMPARTMENT"
 
     #: A constant which can be used with the lifecycle_sub_state property of a OdaInstance.
+    #: This constant has a value of "ACTIVATING_CUSTOMER_ENCRYPTION_KEY"
+    LIFECYCLE_SUB_STATE_ACTIVATING_CUSTOMER_ENCRYPTION_KEY = "ACTIVATING_CUSTOMER_ENCRYPTION_KEY"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a OdaInstance.
+    #: This constant has a value of "UPDATING_CUSTOMER_ENCRYPTION_KEY"
+    LIFECYCLE_SUB_STATE_UPDATING_CUSTOMER_ENCRYPTION_KEY = "UPDATING_CUSTOMER_ENCRYPTION_KEY"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a OdaInstance.
+    #: This constant has a value of "DEACTIVATING_CUSTOMER_ENCRYPTION_KEY"
+    LIFECYCLE_SUB_STATE_DEACTIVATING_CUSTOMER_ENCRYPTION_KEY = "DEACTIVATING_CUSTOMER_ENCRYPTION_KEY"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a OdaInstance.
     #: This constant has a value of "DELETING"
     LIFECYCLE_SUB_STATE_DELETING = "DELETING"
 
@@ -76,6 +88,10 @@ class OdaInstance(object):
     #: A constant which can be used with the lifecycle_sub_state property of a OdaInstance.
     #: This constant has a value of "RECOVERING"
     LIFECYCLE_SUB_STATE_RECOVERING = "RECOVERING"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a OdaInstance.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_SUB_STATE_UPDATING = "UPDATING"
 
     #: A constant which can be used with the lifecycle_sub_state property of a OdaInstance.
     #: This constant has a value of "PURGING"
@@ -136,7 +152,7 @@ class OdaInstance(object):
 
         :param lifecycle_sub_state:
             The value to assign to the lifecycle_sub_state property of this OdaInstance.
-            Allowed values for this property are: "CREATING", "STARTING", "STOPPING", "CHANGING_COMPARTMENT", "DELETING", "DELETE_PENDING", "RECOVERING", "PURGING", "QUEUED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "STARTING", "STOPPING", "CHANGING_COMPARTMENT", "ACTIVATING_CUSTOMER_ENCRYPTION_KEY", "UPDATING_CUSTOMER_ENCRYPTION_KEY", "DEACTIVATING_CUSTOMER_ENCRYPTION_KEY", "DELETING", "DELETE_PENDING", "RECOVERING", "UPDATING", "PURGING", "QUEUED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_sub_state: str
 
@@ -151,6 +167,42 @@ class OdaInstance(object):
         :param defined_tags:
             The value to assign to the defined_tags property of this OdaInstance.
         :type defined_tags: dict(str, dict(str, object))
+
+        :param is_role_based_access:
+            The value to assign to the is_role_based_access property of this OdaInstance.
+        :type is_role_based_access: bool
+
+        :param identity_domain:
+            The value to assign to the identity_domain property of this OdaInstance.
+        :type identity_domain: str
+
+        :param identity_app_guid:
+            The value to assign to the identity_app_guid property of this OdaInstance.
+        :type identity_app_guid: str
+
+        :param identity_app_console_url:
+            The value to assign to the identity_app_console_url property of this OdaInstance.
+        :type identity_app_console_url: str
+
+        :param imported_package_names:
+            The value to assign to the imported_package_names property of this OdaInstance.
+        :type imported_package_names: list[str]
+
+        :param imported_package_ids:
+            The value to assign to the imported_package_ids property of this OdaInstance.
+        :type imported_package_ids: list[str]
+
+        :param attachment_types:
+            The value to assign to the attachment_types property of this OdaInstance.
+        :type attachment_types: list[str]
+
+        :param attachment_ids:
+            The value to assign to the attachment_ids property of this OdaInstance.
+        :type attachment_ids: list[str]
+
+        :param restricted_operations:
+            The value to assign to the restricted_operations property of this OdaInstance.
+        :type restricted_operations: list[oci.oda.models.RestrictedOperation]
 
         """
         self.swagger_types = {
@@ -167,7 +219,16 @@ class OdaInstance(object):
             'lifecycle_sub_state': 'str',
             'state_message': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'is_role_based_access': 'bool',
+            'identity_domain': 'str',
+            'identity_app_guid': 'str',
+            'identity_app_console_url': 'str',
+            'imported_package_names': 'list[str]',
+            'imported_package_ids': 'list[str]',
+            'attachment_types': 'list[str]',
+            'attachment_ids': 'list[str]',
+            'restricted_operations': 'list[RestrictedOperation]'
         }
 
         self.attribute_map = {
@@ -184,7 +245,16 @@ class OdaInstance(object):
             'lifecycle_sub_state': 'lifecycleSubState',
             'state_message': 'stateMessage',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'is_role_based_access': 'isRoleBasedAccess',
+            'identity_domain': 'identityDomain',
+            'identity_app_guid': 'identityAppGuid',
+            'identity_app_console_url': 'identityAppConsoleUrl',
+            'imported_package_names': 'importedPackageNames',
+            'imported_package_ids': 'importedPackageIds',
+            'attachment_types': 'attachmentTypes',
+            'attachment_ids': 'attachmentIds',
+            'restricted_operations': 'restrictedOperations'
         }
 
         self._id = None
@@ -201,6 +271,15 @@ class OdaInstance(object):
         self._state_message = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._is_role_based_access = None
+        self._identity_domain = None
+        self._identity_app_guid = None
+        self._identity_app_console_url = None
+        self._imported_package_names = None
+        self._imported_package_ids = None
+        self._attachment_types = None
+        self._attachment_ids = None
+        self._restricted_operations = None
 
     @property
     def id(self):
@@ -470,7 +549,7 @@ class OdaInstance(object):
         Gets the lifecycle_sub_state of this OdaInstance.
         The current sub-state of the Digital Assistant instance.
 
-        Allowed values for this property are: "CREATING", "STARTING", "STOPPING", "CHANGING_COMPARTMENT", "DELETING", "DELETE_PENDING", "RECOVERING", "PURGING", "QUEUED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "STARTING", "STOPPING", "CHANGING_COMPARTMENT", "ACTIVATING_CUSTOMER_ENCRYPTION_KEY", "UPDATING_CUSTOMER_ENCRYPTION_KEY", "DEACTIVATING_CUSTOMER_ENCRYPTION_KEY", "DELETING", "DELETE_PENDING", "RECOVERING", "UPDATING", "PURGING", "QUEUED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -489,7 +568,7 @@ class OdaInstance(object):
         :param lifecycle_sub_state: The lifecycle_sub_state of this OdaInstance.
         :type: str
         """
-        allowed_values = ["CREATING", "STARTING", "STOPPING", "CHANGING_COMPARTMENT", "DELETING", "DELETE_PENDING", "RECOVERING", "PURGING", "QUEUED"]
+        allowed_values = ["CREATING", "STARTING", "STOPPING", "CHANGING_COMPARTMENT", "ACTIVATING_CUSTOMER_ENCRYPTION_KEY", "UPDATING_CUSTOMER_ENCRYPTION_KEY", "DEACTIVATING_CUSTOMER_ENCRYPTION_KEY", "DELETING", "DELETE_PENDING", "RECOVERING", "UPDATING", "PURGING", "QUEUED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_sub_state, allowed_values):
             lifecycle_sub_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_sub_state = lifecycle_sub_state
@@ -571,6 +650,222 @@ class OdaInstance(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def is_role_based_access(self):
+        """
+        Gets the is_role_based_access of this OdaInstance.
+        Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+
+
+        :return: The is_role_based_access of this OdaInstance.
+        :rtype: bool
+        """
+        return self._is_role_based_access
+
+    @is_role_based_access.setter
+    def is_role_based_access(self, is_role_based_access):
+        """
+        Sets the is_role_based_access of this OdaInstance.
+        Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+
+
+        :param is_role_based_access: The is_role_based_access of this OdaInstance.
+        :type: bool
+        """
+        self._is_role_based_access = is_role_based_access
+
+    @property
+    def identity_domain(self):
+        """
+        Gets the identity_domain of this OdaInstance.
+        If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+
+
+        :return: The identity_domain of this OdaInstance.
+        :rtype: str
+        """
+        return self._identity_domain
+
+    @identity_domain.setter
+    def identity_domain(self, identity_domain):
+        """
+        Sets the identity_domain of this OdaInstance.
+        If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+
+
+        :param identity_domain: The identity_domain of this OdaInstance.
+        :type: str
+        """
+        self._identity_domain = identity_domain
+
+    @property
+    def identity_app_guid(self):
+        """
+        Gets the identity_app_guid of this OdaInstance.
+        If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
+
+
+        :return: The identity_app_guid of this OdaInstance.
+        :rtype: str
+        """
+        return self._identity_app_guid
+
+    @identity_app_guid.setter
+    def identity_app_guid(self, identity_app_guid):
+        """
+        Sets the identity_app_guid of this OdaInstance.
+        If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
+
+
+        :param identity_app_guid: The identity_app_guid of this OdaInstance.
+        :type: str
+        """
+        self._identity_app_guid = identity_app_guid
+
+    @property
+    def identity_app_console_url(self):
+        """
+        Gets the identity_app_console_url of this OdaInstance.
+        If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
+
+
+        :return: The identity_app_console_url of this OdaInstance.
+        :rtype: str
+        """
+        return self._identity_app_console_url
+
+    @identity_app_console_url.setter
+    def identity_app_console_url(self, identity_app_console_url):
+        """
+        Sets the identity_app_console_url of this OdaInstance.
+        If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
+
+
+        :param identity_app_console_url: The identity_app_console_url of this OdaInstance.
+        :type: str
+        """
+        self._identity_app_console_url = identity_app_console_url
+
+    @property
+    def imported_package_names(self):
+        """
+        Gets the imported_package_names of this OdaInstance.
+        A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+
+
+        :return: The imported_package_names of this OdaInstance.
+        :rtype: list[str]
+        """
+        return self._imported_package_names
+
+    @imported_package_names.setter
+    def imported_package_names(self, imported_package_names):
+        """
+        Sets the imported_package_names of this OdaInstance.
+        A list of package names imported into this instance (if any). Use importedPackageIds field to get the details of the imported packages.
+
+
+        :param imported_package_names: The imported_package_names of this OdaInstance.
+        :type: list[str]
+        """
+        self._imported_package_names = imported_package_names
+
+    @property
+    def imported_package_ids(self):
+        """
+        Gets the imported_package_ids of this OdaInstance.
+        A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+
+
+        :return: The imported_package_ids of this OdaInstance.
+        :rtype: list[str]
+        """
+        return self._imported_package_ids
+
+    @imported_package_ids.setter
+    def imported_package_ids(self, imported_package_ids):
+        """
+        Sets the imported_package_ids of this OdaInstance.
+        A list of package ids imported into this instance (if any). Use GetImportedPackage to get the details of the imported packages.
+
+
+        :param imported_package_ids: The imported_package_ids of this OdaInstance.
+        :type: list[str]
+        """
+        self._imported_package_ids = imported_package_ids
+
+    @property
+    def attachment_types(self):
+        """
+        Gets the attachment_types of this OdaInstance.
+        A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
+
+
+        :return: The attachment_types of this OdaInstance.
+        :rtype: list[str]
+        """
+        return self._attachment_types
+
+    @attachment_types.setter
+    def attachment_types(self, attachment_types):
+        """
+        Sets the attachment_types of this OdaInstance.
+        A list of attachment types for this instance (if any). Use attachmentIds to get the details of the attachments.
+
+
+        :param attachment_types: The attachment_types of this OdaInstance.
+        :type: list[str]
+        """
+        self._attachment_types = attachment_types
+
+    @property
+    def attachment_ids(self):
+        """
+        Gets the attachment_ids of this OdaInstance.
+        A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+
+
+        :return: The attachment_ids of this OdaInstance.
+        :rtype: list[str]
+        """
+        return self._attachment_ids
+
+    @attachment_ids.setter
+    def attachment_ids(self, attachment_ids):
+        """
+        Sets the attachment_ids of this OdaInstance.
+        A list of attachment identifiers for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+
+
+        :param attachment_ids: The attachment_ids of this OdaInstance.
+        :type: list[str]
+        """
+        self._attachment_ids = attachment_ids
+
+    @property
+    def restricted_operations(self):
+        """
+        Gets the restricted_operations of this OdaInstance.
+        A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+
+
+        :return: The restricted_operations of this OdaInstance.
+        :rtype: list[oci.oda.models.RestrictedOperation]
+        """
+        return self._restricted_operations
+
+    @restricted_operations.setter
+    def restricted_operations(self, restricted_operations):
+        """
+        Sets the restricted_operations of this OdaInstance.
+        A list of restricted operations (across all attachments) for this instance (if any). Use GetOdaInstanceAttachment to get the details of the attachments.
+
+
+        :param restricted_operations: The restricted_operations of this OdaInstance.
+        :type: list[oci.oda.models.RestrictedOperation]
+        """
+        self._restricted_operations = restricted_operations
 
     def __repr__(self):
         return formatted_flat_dict(self)

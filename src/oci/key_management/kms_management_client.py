@@ -156,6 +156,8 @@ class KmsManagementClient(object):
         """
         resource_path = "/20180608/keys/{keyId}/actions/backup"
         method = "POST"
+        operation_name = "backup_key"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -207,7 +209,10 @@ class KmsManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=kwargs.get('backup_key_details'),
-                response_type="Key")
+                response_type="Key",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -215,7 +220,10 @@ class KmsManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=kwargs.get('backup_key_details'),
-                response_type="Key")
+                response_type="Key",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def cancel_key_deletion(self, key_id, **kwargs):
         """
@@ -272,6 +280,8 @@ class KmsManagementClient(object):
         """
         resource_path = "/20180608/keys/{keyId}/actions/cancelDeletion"
         method = "POST"
+        operation_name = "cancel_key_deletion"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -321,14 +331,20 @@ class KmsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Key")
+                response_type="Key",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Key")
+                response_type="Key",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def cancel_key_version_deletion(self, key_id, key_version_id, **kwargs):
         """
@@ -388,6 +404,8 @@ class KmsManagementClient(object):
         """
         resource_path = "/20180608/keys/{keyId}/keyVersions/{keyVersionId}/actions/cancelDeletion"
         method = "POST"
+        operation_name = "cancel_key_version_deletion"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -438,14 +456,20 @@ class KmsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="KeyVersion")
+                response_type="KeyVersion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="KeyVersion")
+                response_type="KeyVersion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_key_compartment(self, key_id, change_key_compartment_details, **kwargs):
         """
@@ -507,6 +531,8 @@ class KmsManagementClient(object):
         """
         resource_path = "/20180608/keys/{keyId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_key_compartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -556,14 +582,20 @@ class KmsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_key_compartment_details)
+                body=change_key_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_key_compartment_details)
+                body=change_key_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_key(self, create_key_details, **kwargs):
         """
@@ -611,6 +643,8 @@ class KmsManagementClient(object):
         """
         resource_path = "/20180608/keys"
         method = "POST"
+        operation_name = "create_key"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -648,14 +682,20 @@ class KmsManagementClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_key_details,
-                response_type="Key")
+                response_type="Key",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_key_details,
-                response_type="Key")
+                response_type="Key",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_key_version(self, key_id, **kwargs):
         """
@@ -706,6 +746,8 @@ class KmsManagementClient(object):
         """
         resource_path = "/20180608/keys/{keyId}/keyVersions"
         method = "POST"
+        operation_name = "create_key_version"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -753,14 +795,20 @@ class KmsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="KeyVersion")
+                response_type="KeyVersion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="KeyVersion")
+                response_type="KeyVersion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def disable_key(self, key_id, **kwargs):
         """
@@ -816,6 +864,8 @@ class KmsManagementClient(object):
         """
         resource_path = "/20180608/keys/{keyId}/actions/disable"
         method = "POST"
+        operation_name = "disable_key"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -865,14 +915,20 @@ class KmsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Key")
+                response_type="Key",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Key")
+                response_type="Key",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def enable_key(self, key_id, **kwargs):
         """
@@ -928,6 +984,8 @@ class KmsManagementClient(object):
         """
         resource_path = "/20180608/keys/{keyId}/actions/enable"
         method = "POST"
+        operation_name = "enable_key"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -977,14 +1035,20 @@ class KmsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Key")
+                response_type="Key",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Key")
+                response_type="Key",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_key(self, key_id, **kwargs):
         """
@@ -1024,6 +1088,8 @@ class KmsManagementClient(object):
         """
         resource_path = "/20180608/keys/{keyId}"
         method = "GET"
+        operation_name = "get_key"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1068,14 +1134,20 @@ class KmsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Key")
+                response_type="Key",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Key")
+                response_type="Key",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_key_version(self, key_id, key_version_id, **kwargs):
         """
@@ -1118,6 +1190,8 @@ class KmsManagementClient(object):
         """
         resource_path = "/20180608/keys/{keyId}/keyVersions/{keyVersionId}"
         method = "GET"
+        operation_name = "get_key_version"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1163,14 +1237,20 @@ class KmsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="KeyVersion")
+                response_type="KeyVersion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="KeyVersion")
+                response_type="KeyVersion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_replication_status(self, replication_id, **kwargs):
         """
@@ -1208,6 +1288,8 @@ class KmsManagementClient(object):
         """
         resource_path = "/20180608/replicaOperations/{replicationId}/status"
         method = "GET"
+        operation_name = "get_replication_status"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1252,14 +1334,20 @@ class KmsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ReplicationStatusDetails")
+                response_type="ReplicationStatusDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ReplicationStatusDetails")
+                response_type="ReplicationStatusDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_wrapping_key(self, **kwargs):
         """
@@ -1292,6 +1380,8 @@ class KmsManagementClient(object):
         """
         resource_path = "/20180608/wrappingKeys"
         method = "GET"
+        operation_name = "get_wrapping_key"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1325,13 +1415,19 @@ class KmsManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                response_type="WrappingKey")
+                response_type="WrappingKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                response_type="WrappingKey")
+                response_type="WrappingKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def import_key(self, import_key_details, **kwargs):
         """
@@ -1376,6 +1472,8 @@ class KmsManagementClient(object):
         """
         resource_path = "/20180608/keys/import"
         method = "POST"
+        operation_name = "import_key"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1413,14 +1511,20 @@ class KmsManagementClient(object):
                 method=method,
                 header_params=header_params,
                 body=import_key_details,
-                response_type="Key")
+                response_type="Key",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=import_key_details,
-                response_type="Key")
+                response_type="Key",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def import_key_version(self, key_id, import_key_version_details, **kwargs):
         """
@@ -1470,6 +1574,8 @@ class KmsManagementClient(object):
         """
         resource_path = "/20180608/keys/{keyId}/keyVersions/import"
         method = "POST"
+        operation_name = "import_key_version"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1518,7 +1624,10 @@ class KmsManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=import_key_version_details,
-                response_type="KeyVersion")
+                response_type="KeyVersion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1526,7 +1635,10 @@ class KmsManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=import_key_version_details,
-                response_type="KeyVersion")
+                response_type="KeyVersion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_key_versions(self, key_id, **kwargs):
         """
@@ -1588,6 +1700,8 @@ class KmsManagementClient(object):
         """
         resource_path = "/20180608/keys/{keyId}/keyVersions"
         method = "GET"
+        operation_name = "list_key_versions"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1659,7 +1773,10 @@ class KmsManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[KeyVersionSummary]")
+                response_type="list[KeyVersionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1667,7 +1784,10 @@ class KmsManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[KeyVersionSummary]")
+                response_type="list[KeyVersionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_keys(self, compartment_id, **kwargs):
         """
@@ -1748,6 +1868,8 @@ class KmsManagementClient(object):
         """
         resource_path = "/20180608/keys"
         method = "GET"
+        operation_name = "list_keys"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1838,14 +1960,20 @@ class KmsManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[KeySummary]")
+                response_type="list[KeySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[KeySummary]")
+                response_type="list[KeySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def restore_key_from_file(self, restore_key_from_file_details, **kwargs):
         """
@@ -1916,6 +2044,8 @@ class KmsManagementClient(object):
         """
         resource_path = "/20180608/keys/actions/restoreFromFile"
         method = "POST"
+        operation_name = "restore_key_from_file"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1980,14 +2110,20 @@ class KmsManagementClient(object):
                 method=method,
                 header_params=header_params,
                 body=restore_key_from_file_details,
-                response_type="Key")
+                response_type="Key",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=restore_key_from_file_details,
-                response_type="Key")
+                response_type="Key",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def restore_key_from_object_store(self, **kwargs):
         """
@@ -2039,6 +2175,8 @@ class KmsManagementClient(object):
         """
         resource_path = "/20180608/keys/actions/restoreFromObjectStore"
         method = "POST"
+        operation_name = "restore_key_from_object_store"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2079,14 +2217,20 @@ class KmsManagementClient(object):
                 method=method,
                 header_params=header_params,
                 body=kwargs.get('restore_key_from_object_store_details'),
-                response_type="Key")
+                response_type="Key",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=kwargs.get('restore_key_from_object_store_details'),
-                response_type="Key")
+                response_type="Key",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def schedule_key_deletion(self, key_id, schedule_key_deletion_details, **kwargs):
         """
@@ -2145,6 +2289,8 @@ class KmsManagementClient(object):
         """
         resource_path = "/20180608/keys/{keyId}/actions/scheduleDeletion"
         method = "POST"
+        operation_name = "schedule_key_deletion"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2195,7 +2341,10 @@ class KmsManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=schedule_key_deletion_details,
-                response_type="Key")
+                response_type="Key",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2203,7 +2352,10 @@ class KmsManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=schedule_key_deletion_details,
-                response_type="Key")
+                response_type="Key",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def schedule_key_version_deletion(self, key_id, key_version_id, schedule_key_version_deletion_details, **kwargs):
         """
@@ -2265,6 +2417,8 @@ class KmsManagementClient(object):
         """
         resource_path = "/20180608/keys/{keyId}/keyVersions/{keyVersionId}/actions/scheduleDeletion"
         method = "POST"
+        operation_name = "schedule_key_version_deletion"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2316,7 +2470,10 @@ class KmsManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=schedule_key_version_deletion_details,
-                response_type="KeyVersion")
+                response_type="KeyVersion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2324,7 +2481,10 @@ class KmsManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=schedule_key_version_deletion_details,
-                response_type="KeyVersion")
+                response_type="KeyVersion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_key(self, key_id, update_key_details, **kwargs):
         """
@@ -2376,6 +2536,8 @@ class KmsManagementClient(object):
         """
         resource_path = "/20180608/keys/{keyId}"
         method = "PUT"
+        operation_name = "update_key"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2423,7 +2585,10 @@ class KmsManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_key_details,
-                response_type="Key")
+                response_type="Key",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2431,4 +2596,7 @@ class KmsManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_key_details,
-                response_type="Key")
+                response_type="Key",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

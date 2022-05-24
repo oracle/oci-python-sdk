@@ -144,6 +144,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/certificateAuthorities/{certificateAuthorityId}/actions/cancelDeletion"
         method = "POST"
+        operation_name = "cancel_certificate_authority_deletion"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/CancelCertificateAuthorityDeletion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -189,13 +191,19 @@ class CertificatesManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def cancel_certificate_authority_version_deletion(self, certificate_authority_id, certificate_authority_version_number, **kwargs):
         """
@@ -242,6 +250,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/certificateAuthorities/{certificateAuthorityId}/version/{certificateAuthorityVersionNumber}/actions/cancelDeletion"
         method = "POST"
+        operation_name = "cancel_certificate_authority_version_deletion"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersion/CancelCertificateAuthorityVersionDeletion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -288,13 +298,19 @@ class CertificatesManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def cancel_certificate_deletion(self, certificate_id, **kwargs):
         """
@@ -338,6 +354,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/certificates/{certificateId}/actions/cancelDeletion"
         method = "POST"
+        operation_name = "cancel_certificate_deletion"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/CancelCertificateDeletion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -383,13 +401,19 @@ class CertificatesManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def cancel_certificate_version_deletion(self, certificate_id, certificate_version_number, **kwargs):
         """
@@ -434,6 +458,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/certificates/{certificateId}/version/{certificateVersionNumber}/actions/cancelDeletion"
         method = "POST"
+        operation_name = "cancel_certificate_version_deletion"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersion/CancelCertificateVersionDeletion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -480,13 +506,19 @@ class CertificatesManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_ca_bundle_compartment(self, ca_bundle_id, change_ca_bundle_compartment_details, **kwargs):
         """
@@ -544,6 +576,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/caBundles/{caBundleId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_ca_bundle_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/ChangeCaBundleCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -593,14 +627,20 @@ class CertificatesManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_ca_bundle_compartment_details)
+                body=change_ca_bundle_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_ca_bundle_compartment_details)
+                body=change_ca_bundle_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_certificate_authority_compartment(self, certificate_authority_id, change_certificate_authority_compartment_details, **kwargs):
         """
@@ -658,6 +698,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/certificateAuthorities/{certificateAuthorityId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_certificate_authority_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/ChangeCertificateAuthorityCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -707,14 +749,20 @@ class CertificatesManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_certificate_authority_compartment_details)
+                body=change_certificate_authority_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_certificate_authority_compartment_details)
+                body=change_certificate_authority_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_certificate_compartment(self, certificate_id, change_certificate_compartment_details, **kwargs):
         """
@@ -772,6 +820,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/certificates/{certificateId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_certificate_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/ChangeCertificateCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -821,14 +871,20 @@ class CertificatesManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_certificate_compartment_details)
+                body=change_certificate_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_certificate_compartment_details)
+                body=change_certificate_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_ca_bundle(self, create_ca_bundle_details, **kwargs):
         """
@@ -871,6 +927,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/caBundles"
         method = "POST"
+        operation_name = "create_ca_bundle"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/CreateCaBundle"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -908,14 +966,20 @@ class CertificatesManagementClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_ca_bundle_details,
-                response_type="CaBundle")
+                response_type="CaBundle",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_ca_bundle_details,
-                response_type="CaBundle")
+                response_type="CaBundle",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_certificate(self, create_certificate_details, **kwargs):
         """
@@ -958,6 +1022,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/certificates"
         method = "POST"
+        operation_name = "create_certificate"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/CreateCertificate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -995,14 +1061,20 @@ class CertificatesManagementClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_certificate_details,
-                response_type="Certificate")
+                response_type="Certificate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_certificate_details,
-                response_type="Certificate")
+                response_type="Certificate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_certificate_authority(self, create_certificate_authority_details, **kwargs):
         """
@@ -1045,6 +1117,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/certificateAuthorities"
         method = "POST"
+        operation_name = "create_certificate_authority"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/CreateCertificateAuthority"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1082,14 +1156,20 @@ class CertificatesManagementClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_certificate_authority_details,
-                response_type="CertificateAuthority")
+                response_type="CertificateAuthority",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_certificate_authority_details,
-                response_type="CertificateAuthority")
+                response_type="CertificateAuthority",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_ca_bundle(self, ca_bundle_id, **kwargs):
         """
@@ -1131,6 +1211,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/caBundles/{caBundleId}"
         method = "DELETE"
+        operation_name = "delete_ca_bundle"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/DeleteCaBundle"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1176,13 +1258,19 @@ class CertificatesManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_association(self, association_id, **kwargs):
         """
@@ -1217,6 +1305,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/associations/{associationId}"
         method = "GET"
+        operation_name = "get_association"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Association/GetAssociation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1261,14 +1351,20 @@ class CertificatesManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Association")
+                response_type="Association",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Association")
+                response_type="Association",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_ca_bundle(self, ca_bundle_id, **kwargs):
         """
@@ -1303,6 +1399,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/caBundles/{caBundleId}"
         method = "GET"
+        operation_name = "get_ca_bundle"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/GetCaBundle"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1347,14 +1445,20 @@ class CertificatesManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CaBundle")
+                response_type="CaBundle",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CaBundle")
+                response_type="CaBundle",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_certificate(self, certificate_id, **kwargs):
         """
@@ -1389,6 +1493,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/certificates/{certificateId}"
         method = "GET"
+        operation_name = "get_certificate"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/GetCertificate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1433,14 +1539,20 @@ class CertificatesManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Certificate")
+                response_type="Certificate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Certificate")
+                response_type="Certificate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_certificate_authority(self, certificate_authority_id, **kwargs):
         """
@@ -1475,6 +1587,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/certificateAuthorities/{certificateAuthorityId}"
         method = "GET"
+        operation_name = "get_certificate_authority"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/GetCertificateAuthority"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1519,14 +1633,20 @@ class CertificatesManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CertificateAuthority")
+                response_type="CertificateAuthority",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CertificateAuthority")
+                response_type="CertificateAuthority",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_certificate_authority_version(self, certificate_authority_id, certificate_authority_version_number, **kwargs):
         """
@@ -1564,6 +1684,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/certificateAuthorities/{certificateAuthorityId}/version/{certificateAuthorityVersionNumber}"
         method = "GET"
+        operation_name = "get_certificate_authority_version"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersion/GetCertificateAuthorityVersion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1609,14 +1731,20 @@ class CertificatesManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CertificateAuthorityVersion")
+                response_type="CertificateAuthorityVersion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CertificateAuthorityVersion")
+                response_type="CertificateAuthorityVersion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_certificate_version(self, certificate_id, certificate_version_number, **kwargs):
         """
@@ -1654,6 +1782,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/certificates/{certificateId}/version/{certificateVersionNumber}"
         method = "GET"
+        operation_name = "get_certificate_version"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersion/GetCertificateVersion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1699,14 +1829,20 @@ class CertificatesManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CertificateVersion")
+                response_type="CertificateVersion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CertificateVersion")
+                response_type="CertificateVersion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_associations(self, **kwargs):
         """
@@ -1777,6 +1913,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/associations"
         method = "GET"
+        operation_name = "list_associations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/AssociationSummary/ListAssociations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1856,14 +1994,20 @@ class CertificatesManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AssociationCollection")
+                response_type="AssociationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AssociationCollection")
+                response_type="AssociationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_ca_bundles(self, **kwargs):
         """
@@ -1928,6 +2072,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/caBundles"
         method = "GET"
+        operation_name = "list_ca_bundles"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundleSummary/ListCaBundles"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2003,14 +2149,20 @@ class CertificatesManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="CaBundleCollection")
+                response_type="CaBundleCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="CaBundleCollection")
+                response_type="CaBundleCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_certificate_authorities(self, **kwargs):
         """
@@ -2079,6 +2231,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/certificateAuthorities"
         method = "GET"
+        operation_name = "list_certificate_authorities"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthoritySummary/ListCertificateAuthorities"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2156,14 +2310,20 @@ class CertificatesManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="CertificateAuthorityCollection")
+                response_type="CertificateAuthorityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="CertificateAuthorityCollection")
+                response_type="CertificateAuthorityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_certificate_authority_versions(self, certificate_authority_id, **kwargs):
         """
@@ -2219,6 +2379,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/certificateAuthorities/{certificateAuthorityId}/versions"
         method = "GET"
+        operation_name = "list_certificate_authority_versions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersionSummary/ListCertificateAuthorityVersions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2292,7 +2454,10 @@ class CertificatesManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="CertificateAuthorityVersionCollection")
+                response_type="CertificateAuthorityVersionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2300,7 +2465,10 @@ class CertificatesManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="CertificateAuthorityVersionCollection")
+                response_type="CertificateAuthorityVersionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_certificate_versions(self, certificate_id, **kwargs):
         """
@@ -2356,6 +2524,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/certificates/{certificateId}/versions"
         method = "GET"
+        operation_name = "list_certificate_versions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersionSummary/ListCertificateVersions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2429,7 +2599,10 @@ class CertificatesManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="CertificateVersionCollection")
+                response_type="CertificateVersionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2437,7 +2610,10 @@ class CertificatesManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="CertificateVersionCollection")
+                response_type="CertificateVersionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_certificates(self, **kwargs):
         """
@@ -2506,6 +2682,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/certificates"
         method = "GET"
+        operation_name = "list_certificates"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateSummary/ListCertificates"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2583,14 +2761,20 @@ class CertificatesManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="CertificateCollection")
+                response_type="CertificateCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="CertificateCollection")
+                response_type="CertificateCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def revoke_certificate_authority_version(self, certificate_authority_id, certificate_authority_version_number, revoke_certificate_authority_version_details, **kwargs):
         """
@@ -2646,6 +2830,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/certificateAuthorities/{certificateAuthorityId}/version/{certificateAuthorityVersionNumber}/actions/revoke"
         method = "POST"
+        operation_name = "revoke_certificate_authority_version"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersion/RevokeCertificateAuthorityVersion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2696,14 +2882,20 @@ class CertificatesManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=revoke_certificate_authority_version_details)
+                body=revoke_certificate_authority_version_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=revoke_certificate_authority_version_details)
+                body=revoke_certificate_authority_version_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def revoke_certificate_version(self, certificate_id, certificate_version_number, revoke_certificate_version_details, **kwargs):
         """
@@ -2759,6 +2951,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/certificates/{certificateId}/version/{certificateVersionNumber}/actions/revoke"
         method = "POST"
+        operation_name = "revoke_certificate_version"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersion/RevokeCertificateVersion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2809,14 +3003,20 @@ class CertificatesManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=revoke_certificate_version_details)
+                body=revoke_certificate_version_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=revoke_certificate_version_details)
+                body=revoke_certificate_version_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def schedule_certificate_authority_deletion(self, certificate_authority_id, schedule_certificate_authority_deletion_details, **kwargs):
         """
@@ -2861,6 +3061,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/certificateAuthorities/{certificateAuthorityId}/actions/scheduleDeletion"
         method = "POST"
+        operation_name = "schedule_certificate_authority_deletion"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/ScheduleCertificateAuthorityDeletion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2907,14 +3109,20 @@ class CertificatesManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=schedule_certificate_authority_deletion_details)
+                body=schedule_certificate_authority_deletion_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=schedule_certificate_authority_deletion_details)
+                body=schedule_certificate_authority_deletion_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def schedule_certificate_authority_version_deletion(self, certificate_authority_id, certificate_authority_version_number, schedule_certificate_authority_version_deletion_details, **kwargs):
         """
@@ -2964,6 +3172,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/certificateAuthorities/{certificateAuthorityId}/version/{certificateAuthorityVersionNumber}/actions/scheduleDeletion"
         method = "POST"
+        operation_name = "schedule_certificate_authority_version_deletion"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersion/ScheduleCertificateAuthorityVersionDeletion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3011,14 +3221,20 @@ class CertificatesManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=schedule_certificate_authority_version_deletion_details)
+                body=schedule_certificate_authority_version_deletion_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=schedule_certificate_authority_version_deletion_details)
+                body=schedule_certificate_authority_version_deletion_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def schedule_certificate_deletion(self, certificate_id, schedule_certificate_deletion_details, **kwargs):
         """
@@ -3068,6 +3284,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/certificates/{certificateId}/actions/scheduleDeletion"
         method = "POST"
+        operation_name = "schedule_certificate_deletion"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/ScheduleCertificateDeletion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3114,14 +3332,20 @@ class CertificatesManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=schedule_certificate_deletion_details)
+                body=schedule_certificate_deletion_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=schedule_certificate_deletion_details)
+                body=schedule_certificate_deletion_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def schedule_certificate_version_deletion(self, certificate_id, certificate_version_number, schedule_certificate_version_deletion_details, **kwargs):
         """
@@ -3172,6 +3396,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/certificates/{certificateId}/version/{certificateVersionNumber}/actions/scheduleDeletion"
         method = "POST"
+        operation_name = "schedule_certificate_version_deletion"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersion/ScheduleCertificateVersionDeletion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3219,14 +3445,20 @@ class CertificatesManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=schedule_certificate_version_deletion_details)
+                body=schedule_certificate_version_deletion_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=schedule_certificate_version_deletion_details)
+                body=schedule_certificate_version_deletion_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_ca_bundle(self, ca_bundle_id, update_ca_bundle_details, **kwargs):
         """
@@ -3271,6 +3503,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/caBundles/{caBundleId}"
         method = "PUT"
+        operation_name = "update_ca_bundle"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/UpdateCaBundle"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3318,7 +3552,10 @@ class CertificatesManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_ca_bundle_details,
-                response_type="CaBundle")
+                response_type="CaBundle",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3326,7 +3563,10 @@ class CertificatesManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_ca_bundle_details,
-                response_type="CaBundle")
+                response_type="CaBundle",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_certificate(self, certificate_id, update_certificate_details, **kwargs):
         """
@@ -3371,6 +3611,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/certificates/{certificateId}"
         method = "PUT"
+        operation_name = "update_certificate"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/UpdateCertificate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3418,7 +3660,10 @@ class CertificatesManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_certificate_details,
-                response_type="Certificate")
+                response_type="Certificate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3426,7 +3671,10 @@ class CertificatesManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_certificate_details,
-                response_type="Certificate")
+                response_type="Certificate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_certificate_authority(self, certificate_authority_id, update_certificate_authority_details, **kwargs):
         """
@@ -3471,6 +3719,8 @@ class CertificatesManagementClient(object):
         """
         resource_path = "/certificateAuthorities/{certificateAuthorityId}"
         method = "PUT"
+        operation_name = "update_certificate_authority"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/UpdateCertificateAuthority"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3518,7 +3768,10 @@ class CertificatesManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_certificate_authority_details,
-                response_type="CertificateAuthority")
+                response_type="CertificateAuthority",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3526,4 +3779,7 @@ class CertificatesManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_certificate_authority_details,
-                response_type="CertificateAuthority")
+                response_type="CertificateAuthority",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

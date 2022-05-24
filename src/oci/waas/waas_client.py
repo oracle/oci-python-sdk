@@ -146,6 +146,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/actions/acceptWafConfigRecommendations"
         method = "POST"
+        operation_name = "accept_recommendations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Recommendation/AcceptRecommendations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -192,14 +194,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=protection_rule_keys)
+                body=protection_rule_keys,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=protection_rule_keys)
+                body=protection_rule_keys,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def cancel_work_request(self, work_request_id, **kwargs):
         """
@@ -241,6 +249,8 @@ class WaasClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
+        operation_name = "cancel_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WorkRequest/CancelWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -289,13 +299,19 @@ class WaasClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_address_list_compartment(self, address_list_id, change_address_list_compartment_details, **kwargs):
         """
@@ -343,6 +359,8 @@ class WaasClient(object):
         """
         resource_path = "/addressLists/{addressListId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_address_list_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/ChangeAddressListCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -392,14 +410,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_address_list_compartment_details)
+                body=change_address_list_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_address_list_compartment_details)
+                body=change_address_list_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_certificate_compartment(self, certificate_id, change_certificate_compartment_details, **kwargs):
         """
@@ -446,6 +470,8 @@ class WaasClient(object):
         """
         resource_path = "/certificates/{certificateId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_certificate_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Certificate/ChangeCertificateCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -495,14 +521,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_certificate_compartment_details)
+                body=change_certificate_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_certificate_compartment_details)
+                body=change_certificate_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_custom_protection_rule_compartment(self, custom_protection_rule_id, change_custom_protection_rule_compartment_details, **kwargs):
         """
@@ -548,6 +580,8 @@ class WaasClient(object):
         """
         resource_path = "/customProtectionRules/{customProtectionRuleId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_custom_protection_rule_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/ChangeCustomProtectionRuleCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -597,14 +631,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_custom_protection_rule_compartment_details)
+                body=change_custom_protection_rule_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_custom_protection_rule_compartment_details)
+                body=change_custom_protection_rule_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_waas_policy_compartment(self, waas_policy_id, change_waas_policy_compartment_details, **kwargs):
         """
@@ -651,6 +691,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_waas_policy_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/ChangeWaasPolicyCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -700,14 +742,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_waas_policy_compartment_details)
+                body=change_waas_policy_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_waas_policy_compartment_details)
+                body=change_waas_policy_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_address_list(self, create_address_list_details, **kwargs):
         """
@@ -744,6 +792,8 @@ class WaasClient(object):
         """
         resource_path = "/addressLists"
         method = "POST"
+        operation_name = "create_address_list"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/CreateAddressList"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -781,14 +831,20 @@ class WaasClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_address_list_details,
-                response_type="AddressList")
+                response_type="AddressList",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_address_list_details,
-                response_type="AddressList")
+                response_type="AddressList",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_certificate(self, create_certificate_details, **kwargs):
         """
@@ -829,6 +885,8 @@ class WaasClient(object):
         """
         resource_path = "/certificates"
         method = "POST"
+        operation_name = "create_certificate"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Certificate/CreateCertificate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -866,14 +924,20 @@ class WaasClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_certificate_details,
-                response_type="Certificate")
+                response_type="Certificate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_certificate_details,
-                response_type="Certificate")
+                response_type="Certificate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_custom_protection_rule(self, create_custom_protection_rule_details, **kwargs):
         """
@@ -915,6 +979,8 @@ class WaasClient(object):
         """
         resource_path = "/customProtectionRules"
         method = "POST"
+        operation_name = "create_custom_protection_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/CreateCustomProtectionRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -952,14 +1018,20 @@ class WaasClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_custom_protection_rule_details,
-                response_type="CustomProtectionRule")
+                response_type="CustomProtectionRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_custom_protection_rule_details,
-                response_type="CustomProtectionRule")
+                response_type="CustomProtectionRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_waas_policy(self, create_waas_policy_details, **kwargs):
         """
@@ -1011,6 +1083,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies"
         method = "POST"
+        operation_name = "create_waas_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/CreateWaasPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1047,13 +1121,19 @@ class WaasClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_waas_policy_details)
+                body=create_waas_policy_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_waas_policy_details)
+                body=create_waas_policy_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_address_list(self, address_list_id, **kwargs):
         """
@@ -1095,6 +1175,8 @@ class WaasClient(object):
         """
         resource_path = "/addressLists/{addressListId}"
         method = "DELETE"
+        operation_name = "delete_address_list"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/DeleteAddressList"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1143,13 +1225,19 @@ class WaasClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_certificate(self, certificate_id, **kwargs):
         """
@@ -1191,6 +1279,8 @@ class WaasClient(object):
         """
         resource_path = "/certificates/{certificateId}"
         method = "DELETE"
+        operation_name = "delete_certificate"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Certificate/DeleteCertificate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1239,13 +1329,19 @@ class WaasClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_custom_protection_rule(self, custom_protection_rule_id, **kwargs):
         """
@@ -1287,6 +1383,8 @@ class WaasClient(object):
         """
         resource_path = "/customProtectionRules/{customProtectionRuleId}"
         method = "DELETE"
+        operation_name = "delete_custom_protection_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/DeleteCustomProtectionRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1335,13 +1433,19 @@ class WaasClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_waas_policy(self, waas_policy_id, **kwargs):
         """
@@ -1383,6 +1487,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}"
         method = "DELETE"
+        operation_name = "delete_waas_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/DeleteWaasPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1431,13 +1537,19 @@ class WaasClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_address_list(self, address_list_id, **kwargs):
         """
@@ -1472,6 +1584,8 @@ class WaasClient(object):
         """
         resource_path = "/addressLists/{addressListId}"
         method = "GET"
+        operation_name = "get_address_list"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/GetAddressList"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1518,14 +1632,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AddressList")
+                response_type="AddressList",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AddressList")
+                response_type="AddressList",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_certificate(self, certificate_id, **kwargs):
         """
@@ -1560,6 +1680,8 @@ class WaasClient(object):
         """
         resource_path = "/certificates/{certificateId}"
         method = "GET"
+        operation_name = "get_certificate"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Certificate/GetCertificate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1606,14 +1728,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Certificate")
+                response_type="Certificate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Certificate")
+                response_type="Certificate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_custom_protection_rule(self, custom_protection_rule_id, **kwargs):
         """
@@ -1648,6 +1776,8 @@ class WaasClient(object):
         """
         resource_path = "/customProtectionRules/{customProtectionRuleId}"
         method = "GET"
+        operation_name = "get_custom_protection_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/GetCustomProtectionRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1694,14 +1824,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CustomProtectionRule")
+                response_type="CustomProtectionRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CustomProtectionRule")
+                response_type="CustomProtectionRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_device_fingerprint_challenge(self, waas_policy_id, **kwargs):
         """
@@ -1736,6 +1872,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/deviceFingerprintChallenge"
         method = "GET"
+        operation_name = "get_device_fingerprint_challenge"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/DeviceFingerprintChallenge/GetDeviceFingerprintChallenge"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1782,14 +1920,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DeviceFingerprintChallenge")
+                response_type="DeviceFingerprintChallenge",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DeviceFingerprintChallenge")
+                response_type="DeviceFingerprintChallenge",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_human_interaction_challenge(self, waas_policy_id, **kwargs):
         """
@@ -1824,6 +1968,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/humanInteractionChallenge"
         method = "GET"
+        operation_name = "get_human_interaction_challenge"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HumanInteractionChallenge/GetHumanInteractionChallenge"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1870,14 +2016,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="HumanInteractionChallenge")
+                response_type="HumanInteractionChallenge",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="HumanInteractionChallenge")
+                response_type="HumanInteractionChallenge",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_js_challenge(self, waas_policy_id, **kwargs):
         """
@@ -1912,6 +2064,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/jsChallenge"
         method = "GET"
+        operation_name = "get_js_challenge"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/JsChallenge/GetJsChallenge"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1958,14 +2112,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="JsChallenge")
+                response_type="JsChallenge",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="JsChallenge")
+                response_type="JsChallenge",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_policy_config(self, waas_policy_id, **kwargs):
         """
@@ -2000,6 +2160,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/policyConfig"
         method = "GET"
+        operation_name = "get_policy_config"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/PolicyConfig/GetPolicyConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2046,14 +2208,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PolicyConfig")
+                response_type="PolicyConfig",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PolicyConfig")
+                response_type="PolicyConfig",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_protection_rule(self, waas_policy_id, protection_rule_key, **kwargs):
         """
@@ -2091,6 +2259,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/protectionRules/{protectionRuleKey}"
         method = "GET"
+        operation_name = "get_protection_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ProtectionRule/GetProtectionRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2138,14 +2308,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ProtectionRule")
+                response_type="ProtectionRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ProtectionRule")
+                response_type="ProtectionRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_protection_settings(self, waas_policy_id, **kwargs):
         """
@@ -2180,6 +2356,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/protectionSettings"
         method = "GET"
+        operation_name = "get_protection_settings"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ProtectionSettings/GetProtectionSettings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2226,14 +2404,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ProtectionSettings")
+                response_type="ProtectionSettings",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ProtectionSettings")
+                response_type="ProtectionSettings",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_waas_policy(self, waas_policy_id, **kwargs):
         """
@@ -2268,6 +2452,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}"
         method = "GET"
+        operation_name = "get_waas_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/GetWaasPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2314,14 +2500,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WaasPolicy")
+                response_type="WaasPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WaasPolicy")
+                response_type="WaasPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_waf_address_rate_limiting(self, waas_policy_id, **kwargs):
         """
@@ -2356,6 +2548,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/addressRateLimiting"
         method = "GET"
+        operation_name = "get_waf_address_rate_limiting"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressRateLimiting/GetWafAddressRateLimiting"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2402,14 +2596,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AddressRateLimiting")
+                response_type="AddressRateLimiting",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AddressRateLimiting")
+                response_type="AddressRateLimiting",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_waf_config(self, waas_policy_id, **kwargs):
         """
@@ -2444,6 +2644,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig"
         method = "GET"
+        operation_name = "get_waf_config"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafConfig/GetWafConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2490,14 +2692,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WafConfig")
+                response_type="WafConfig",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WafConfig")
+                response_type="WafConfig",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -2532,6 +2740,8 @@ class WaasClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2578,14 +2788,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_access_rules(self, waas_policy_id, **kwargs):
         """
@@ -2627,6 +2843,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/accessRules"
         method = "GET"
+        operation_name = "list_access_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AccessRule/ListAccessRules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2682,7 +2900,10 @@ class WaasClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AccessRule]")
+                response_type="list[AccessRule]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2690,7 +2911,10 @@ class WaasClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AccessRule]")
+                response_type="list[AccessRule]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_address_lists(self, compartment_id, **kwargs):
         """
@@ -2758,6 +2982,8 @@ class WaasClient(object):
         """
         resource_path = "/addressLists"
         method = "GET"
+        operation_name = "list_address_lists"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/ListAddressLists"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2839,14 +3065,20 @@ class WaasClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AddressListSummary]")
+                response_type="list[AddressListSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AddressListSummary]")
+                response_type="list[AddressListSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_caching_rules(self, waas_policy_id, **kwargs):
         """
@@ -2888,6 +3120,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/cachingRules"
         method = "GET"
+        operation_name = "list_caching_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CachingRuleSummary/ListCachingRules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2943,7 +3177,10 @@ class WaasClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CachingRuleSummary]")
+                response_type="list[CachingRuleSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2951,7 +3188,10 @@ class WaasClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CachingRuleSummary]")
+                response_type="list[CachingRuleSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_captchas(self, waas_policy_id, **kwargs):
         """
@@ -2996,6 +3236,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/captchas"
         method = "GET"
+        operation_name = "list_captchas"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Captcha/ListCaptchas"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3051,7 +3293,10 @@ class WaasClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Captcha]")
+                response_type="list[Captcha]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3059,7 +3304,10 @@ class WaasClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Captcha]")
+                response_type="list[Captcha]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_certificates(self, compartment_id, **kwargs):
         """
@@ -3127,6 +3375,8 @@ class WaasClient(object):
         """
         resource_path = "/certificates"
         method = "GET"
+        operation_name = "list_certificates"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CertificateSummary/ListCertificates"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3208,14 +3458,20 @@ class WaasClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CertificateSummary]")
+                response_type="list[CertificateSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CertificateSummary]")
+                response_type="list[CertificateSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_custom_protection_rules(self, compartment_id, **kwargs):
         """
@@ -3283,6 +3539,8 @@ class WaasClient(object):
         """
         resource_path = "/customProtectionRules"
         method = "GET"
+        operation_name = "list_custom_protection_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/ListCustomProtectionRules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3364,14 +3622,20 @@ class WaasClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CustomProtectionRuleSummary]")
+                response_type="list[CustomProtectionRuleSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CustomProtectionRuleSummary]")
+                response_type="list[CustomProtectionRuleSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_edge_subnets(self, **kwargs):
         """
@@ -3417,6 +3681,8 @@ class WaasClient(object):
         """
         resource_path = "/edgeSubnets"
         method = "GET"
+        operation_name = "list_edge_subnets"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/EdgeSubnet/ListEdgeSubnets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3479,14 +3745,20 @@ class WaasClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[EdgeSubnet]")
+                response_type="list[EdgeSubnet]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[EdgeSubnet]")
+                response_type="list[EdgeSubnet]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_good_bots(self, waas_policy_id, **kwargs):
         """
@@ -3529,6 +3801,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/goodBots"
         method = "GET"
+        operation_name = "list_good_bots"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/GoodBot/ListGoodBots"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3584,7 +3858,10 @@ class WaasClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[GoodBot]")
+                response_type="list[GoodBot]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3592,7 +3869,10 @@ class WaasClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[GoodBot]")
+                response_type="list[GoodBot]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_protection_rules(self, waas_policy_id, **kwargs):
         """
@@ -3642,6 +3922,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/protectionRules"
         method = "GET"
+        operation_name = "list_protection_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ProtectionRule/ListProtectionRules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3709,7 +3991,10 @@ class WaasClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ProtectionRule]")
+                response_type="list[ProtectionRule]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3717,7 +4002,10 @@ class WaasClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ProtectionRule]")
+                response_type="list[ProtectionRule]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_recommendations(self, waas_policy_id, **kwargs):
         """
@@ -3768,6 +4056,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/recommendations"
         method = "GET"
+        operation_name = "list_recommendations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Recommendation/ListRecommendations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3832,7 +4122,10 @@ class WaasClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Recommendation]")
+                response_type="list[Recommendation]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3840,7 +4133,10 @@ class WaasClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Recommendation]")
+                response_type="list[Recommendation]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_threat_feeds(self, waas_policy_id, **kwargs):
         """
@@ -3883,6 +4179,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/threatFeeds"
         method = "GET"
+        operation_name = "list_threat_feeds"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ThreatFeed/ListThreatFeeds"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3938,7 +4236,10 @@ class WaasClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ThreatFeed]")
+                response_type="list[ThreatFeed]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3946,7 +4247,10 @@ class WaasClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ThreatFeed]")
+                response_type="list[ThreatFeed]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_waas_policies(self, compartment_id, **kwargs):
         """
@@ -4014,6 +4318,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies"
         method = "GET"
+        operation_name = "list_waas_policies"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/ListWaasPolicies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4095,14 +4401,20 @@ class WaasClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WaasPolicySummary]")
+                response_type="list[WaasPolicySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WaasPolicySummary]")
+                response_type="list[WaasPolicySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_waas_policy_custom_protection_rules(self, waas_policy_id, **kwargs):
         """
@@ -4151,6 +4463,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/customProtectionRules"
         method = "GET"
+        operation_name = "list_waas_policy_custom_protection_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/ListWaasPolicyCustomProtectionRules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4218,7 +4532,10 @@ class WaasClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WaasPolicyCustomProtectionRuleSummary]")
+                response_type="list[WaasPolicyCustomProtectionRuleSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4226,7 +4543,10 @@ class WaasClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WaasPolicyCustomProtectionRuleSummary]")
+                response_type="list[WaasPolicyCustomProtectionRuleSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_waf_blocked_requests(self, waas_policy_id, **kwargs):
         """
@@ -4278,6 +4598,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/reports/waf/blocked"
         method = "GET"
+        operation_name = "list_waf_blocked_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafBlockedRequest/ListWafBlockedRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4347,7 +4669,10 @@ class WaasClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WafBlockedRequest]")
+                response_type="list[WafBlockedRequest]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4355,7 +4680,10 @@ class WaasClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WafBlockedRequest]")
+                response_type="list[WafBlockedRequest]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_waf_logs(self, waas_policy_id, **kwargs):
         """
@@ -4465,6 +4793,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafLogs"
         method = "GET"
+        operation_name = "list_waf_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafLog/ListWafLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4582,7 +4912,10 @@ class WaasClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WafLog]")
+                response_type="list[WafLog]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4590,7 +4923,10 @@ class WaasClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WafLog]")
+                response_type="list[WafLog]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_waf_requests(self, waas_policy_id, **kwargs):
         """
@@ -4639,6 +4975,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/reports/waf/requests"
         method = "GET"
+        operation_name = "list_waf_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafRequest/ListWafRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4698,7 +5036,10 @@ class WaasClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WafRequest]")
+                response_type="list[WafRequest]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4706,7 +5047,10 @@ class WaasClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WafRequest]")
+                response_type="list[WafRequest]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_waf_traffic(self, waas_policy_id, **kwargs):
         """
@@ -4754,6 +5098,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/reports/waf/traffic"
         method = "GET"
+        operation_name = "list_waf_traffic"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafTrafficDatum/ListWafTraffic"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4813,7 +5159,10 @@ class WaasClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WafTrafficDatum]")
+                response_type="list[WafTrafficDatum]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4821,7 +5170,10 @@ class WaasClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WafTrafficDatum]")
+                response_type="list[WafTrafficDatum]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_whitelists(self, waas_policy_id, **kwargs):
         """
@@ -4862,6 +5214,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/whitelists"
         method = "GET"
+        operation_name = "list_whitelists"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Whitelist/ListWhitelists"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4917,7 +5271,10 @@ class WaasClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Whitelist]")
+                response_type="list[Whitelist]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4925,7 +5282,10 @@ class WaasClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Whitelist]")
+                response_type="list[Whitelist]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, waas_policy_id, compartment_id, **kwargs):
         """
@@ -4981,6 +5341,8 @@ class WaasClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WorkRequestSummary/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5045,14 +5407,20 @@ class WaasClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestSummary]")
+                response_type="list[WorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestSummary]")
+                response_type="list[WorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def purge_cache(self, waas_policy_id, **kwargs):
         """
@@ -5095,6 +5463,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/actions/purgeCache"
         method = "POST"
+        operation_name = "purge_cache"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/PurgeCache/PurgeCache"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5142,14 +5512,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=kwargs.get('purge_cache'))
+                body=kwargs.get('purge_cache'),
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=kwargs.get('purge_cache'))
+                body=kwargs.get('purge_cache'),
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_access_rules(self, waas_policy_id, access_rules, **kwargs):
         """
@@ -5201,6 +5577,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/accessRules"
         method = "PUT"
+        operation_name = "update_access_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AccessRule/UpdateAccessRules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5250,14 +5628,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=access_rules)
+                body=access_rules,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=access_rules)
+                body=access_rules,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_address_list(self, address_list_id, **kwargs):
         """
@@ -5298,6 +5682,8 @@ class WaasClient(object):
         """
         resource_path = "/addressLists/{addressListId}"
         method = "PUT"
+        operation_name = "update_address_list"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/UpdateAddressList"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5346,7 +5732,10 @@ class WaasClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=kwargs.get('update_address_list_details'),
-                response_type="AddressList")
+                response_type="AddressList",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5354,7 +5743,10 @@ class WaasClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=kwargs.get('update_address_list_details'),
-                response_type="AddressList")
+                response_type="AddressList",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_caching_rules(self, waas_policy_id, caching_rules_details, **kwargs):
         """
@@ -5406,6 +5798,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/cachingRules"
         method = "PUT"
+        operation_name = "update_caching_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CachingRule/UpdateCachingRules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5455,14 +5849,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=caching_rules_details)
+                body=caching_rules_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=caching_rules_details)
+                body=caching_rules_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_captchas(self, waas_policy_id, captchas, **kwargs):
         """
@@ -5515,6 +5915,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/captchas"
         method = "PUT"
+        operation_name = "update_captchas"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Captcha/UpdateCaptchas"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5564,14 +5966,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=captchas)
+                body=captchas,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=captchas)
+                body=captchas,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_certificate(self, certificate_id, **kwargs):
         """
@@ -5612,6 +6020,8 @@ class WaasClient(object):
         """
         resource_path = "/certificates/{certificateId}"
         method = "PUT"
+        operation_name = "update_certificate"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Certificate/UpdateCertificate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5660,7 +6070,10 @@ class WaasClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=kwargs.get('update_certificate_details'),
-                response_type="Certificate")
+                response_type="Certificate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5668,7 +6081,10 @@ class WaasClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=kwargs.get('update_certificate_details'),
-                response_type="Certificate")
+                response_type="Certificate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_custom_protection_rule(self, custom_protection_rule_id, update_custom_protection_rule_details, **kwargs):
         """
@@ -5713,6 +6129,8 @@ class WaasClient(object):
         """
         resource_path = "/customProtectionRules/{customProtectionRuleId}"
         method = "PUT"
+        operation_name = "update_custom_protection_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/UpdateCustomProtectionRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5763,7 +6181,10 @@ class WaasClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_custom_protection_rule_details,
-                response_type="CustomProtectionRule")
+                response_type="CustomProtectionRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5771,7 +6192,10 @@ class WaasClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_custom_protection_rule_details,
-                response_type="CustomProtectionRule")
+                response_type="CustomProtectionRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_device_fingerprint_challenge(self, waas_policy_id, update_device_fingerprint_challenge_details, **kwargs):
         """
@@ -5820,6 +6244,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/deviceFingerprintChallenge"
         method = "PUT"
+        operation_name = "update_device_fingerprint_challenge"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/DeviceFingerprintChallenge/UpdateDeviceFingerprintChallenge"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5869,14 +6295,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_device_fingerprint_challenge_details)
+                body=update_device_fingerprint_challenge_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_device_fingerprint_challenge_details)
+                body=update_device_fingerprint_challenge_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_good_bots(self, waas_policy_id, good_bots, **kwargs):
         """
@@ -5924,6 +6356,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/goodBots"
         method = "PUT"
+        operation_name = "update_good_bots"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/GoodBot/UpdateGoodBots"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5973,14 +6407,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=good_bots)
+                body=good_bots,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=good_bots)
+                body=good_bots,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_human_interaction_challenge(self, waas_policy_id, update_human_interaction_challenge_details, **kwargs):
         """
@@ -6025,6 +6465,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/humanInteractionChallenge"
         method = "PUT"
+        operation_name = "update_human_interaction_challenge"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HumanInteractionChallenge/UpdateHumanInteractionChallenge"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6074,14 +6516,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_human_interaction_challenge_details)
+                body=update_human_interaction_challenge_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_human_interaction_challenge_details)
+                body=update_human_interaction_challenge_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_js_challenge(self, waas_policy_id, update_js_challenge_details, **kwargs):
         """
@@ -6128,6 +6576,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/jsChallenge"
         method = "PUT"
+        operation_name = "update_js_challenge"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/JsChallenge/UpdateJsChallenge"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6177,14 +6627,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_js_challenge_details)
+                body=update_js_challenge_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_js_challenge_details)
+                body=update_js_challenge_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_policy_config(self, waas_policy_id, update_policy_config_details, **kwargs):
         """
@@ -6229,6 +6685,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/policyConfig"
         method = "PUT"
+        operation_name = "update_policy_config"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/PolicyConfig/UpdatePolicyConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6278,14 +6736,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_policy_config_details)
+                body=update_policy_config_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_policy_config_details)
+                body=update_policy_config_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_protection_rules(self, waas_policy_id, protection_rules, **kwargs):
         """
@@ -6329,6 +6793,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/protectionRules"
         method = "PUT"
+        operation_name = "update_protection_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ProtectionRule/UpdateProtectionRules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6375,14 +6841,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=protection_rules)
+                body=protection_rules,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=protection_rules)
+                body=protection_rules,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_protection_settings(self, waas_policy_id, update_protection_settings_details, **kwargs):
         """
@@ -6427,6 +6899,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/protectionSettings"
         method = "PUT"
+        operation_name = "update_protection_settings"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ProtectionSettings/UpdateProtectionSettings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6476,14 +6950,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_protection_settings_details)
+                body=update_protection_settings_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_protection_settings_details)
+                body=update_protection_settings_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_threat_feeds(self, waas_policy_id, threat_feeds, **kwargs):
         """
@@ -6524,6 +7004,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/threatFeeds"
         method = "PUT"
+        operation_name = "update_threat_feeds"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ThreatFeed/UpdateThreatFeeds"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6570,14 +7052,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=threat_feeds)
+                body=threat_feeds,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=threat_feeds)
+                body=threat_feeds,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_waas_policy(self, waas_policy_id, update_waas_policy_details, **kwargs):
         """
@@ -6624,6 +7112,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}"
         method = "PUT"
+        operation_name = "update_waas_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/UpdateWaasPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6673,14 +7163,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_waas_policy_details)
+                body=update_waas_policy_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_waas_policy_details)
+                body=update_waas_policy_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_waas_policy_custom_protection_rules(self, waas_policy_id, update_custom_protection_rules_details, **kwargs):
         """
@@ -6726,6 +7222,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/customProtectionRules"
         method = "PUT"
+        operation_name = "update_waas_policy_custom_protection_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/UpdateWaasPolicyCustomProtectionRules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6775,14 +7273,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_custom_protection_rules_details)
+                body=update_custom_protection_rules_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_custom_protection_rules_details)
+                body=update_custom_protection_rules_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_waf_address_rate_limiting(self, waas_policy_id, update_waf_address_rate_limiting_details, **kwargs):
         """
@@ -6827,6 +7331,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/addressRateLimiting"
         method = "PUT"
+        operation_name = "update_waf_address_rate_limiting"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressRateLimiting/UpdateWafAddressRateLimiting"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6876,14 +7382,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_waf_address_rate_limiting_details)
+                body=update_waf_address_rate_limiting_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_waf_address_rate_limiting_details)
+                body=update_waf_address_rate_limiting_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_waf_config(self, waas_policy_id, update_waf_config_details, **kwargs):
         """
@@ -6935,6 +7447,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig"
         method = "PUT"
+        operation_name = "update_waf_config"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafConfig/UpdateWafConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6984,14 +7498,20 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_waf_config_details)
+                body=update_waf_config_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_waf_config_details)
+                body=update_waf_config_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_whitelists(self, waas_policy_id, whitelists, **kwargs):
         """
@@ -7043,6 +7563,8 @@ class WaasClient(object):
         """
         resource_path = "/waasPolicies/{waasPolicyId}/wafConfig/whitelists"
         method = "PUT"
+        operation_name = "update_whitelists"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Whitelist/UpdateWhitelists"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7092,11 +7614,17 @@ class WaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=whitelists)
+                body=whitelists,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=whitelists)
+                body=whitelists,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

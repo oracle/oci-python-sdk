@@ -152,6 +152,8 @@ class DataLabelingManagementClient(object):
         """
         resource_path = "/datasets/{datasetId}/actions/addLabels"
         method = "POST"
+        operation_name = "add_dataset_labels"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/AddDatasetLabels"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -203,14 +205,20 @@ class DataLabelingManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=add_dataset_labels_details)
+                body=add_dataset_labels_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=add_dataset_labels_details)
+                body=add_dataset_labels_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_dataset_compartment(self, dataset_id, change_dataset_compartment_details, **kwargs):
         """
@@ -253,6 +261,8 @@ class DataLabelingManagementClient(object):
         """
         resource_path = "/datasets/{datasetId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_dataset_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/ChangeDatasetCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -301,14 +311,20 @@ class DataLabelingManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_dataset_compartment_details)
+                body=change_dataset_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_dataset_compartment_details)
+                body=change_dataset_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_dataset(self, create_dataset_details, **kwargs):
         """
@@ -348,6 +364,8 @@ class DataLabelingManagementClient(object):
         """
         resource_path = "/datasets"
         method = "POST"
+        operation_name = "create_dataset"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/CreateDataset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -387,14 +405,20 @@ class DataLabelingManagementClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_dataset_details,
-                response_type="Dataset")
+                response_type="Dataset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_dataset_details,
-                response_type="Dataset")
+                response_type="Dataset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_dataset(self, dataset_id, **kwargs):
         """
@@ -434,6 +458,8 @@ class DataLabelingManagementClient(object):
         """
         resource_path = "/datasets/{datasetId}"
         method = "DELETE"
+        operation_name = "delete_dataset"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/DeleteDataset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -481,13 +507,19 @@ class DataLabelingManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def generate_dataset_records(self, dataset_id, generate_dataset_records_details, **kwargs):
         """
@@ -537,6 +569,8 @@ class DataLabelingManagementClient(object):
         """
         resource_path = "/datasets/{datasetId}/actions/generateDatasetRecords"
         method = "POST"
+        operation_name = "generate_dataset_records"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/GenerateDatasetRecords"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -588,14 +622,20 @@ class DataLabelingManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=generate_dataset_records_details)
+                body=generate_dataset_records_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=generate_dataset_records_details)
+                body=generate_dataset_records_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_dataset(self, dataset_id, **kwargs):
         """
@@ -628,6 +668,8 @@ class DataLabelingManagementClient(object):
         """
         resource_path = "/datasets/{datasetId}"
         method = "GET"
+        operation_name = "get_dataset"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/GetDataset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -674,14 +716,20 @@ class DataLabelingManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Dataset")
+                response_type="Dataset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Dataset")
+                response_type="Dataset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -714,6 +762,8 @@ class DataLabelingManagementClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -760,14 +810,20 @@ class DataLabelingManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_annotation_formats(self, compartment_id, **kwargs):
         """
@@ -811,6 +867,8 @@ class DataLabelingManagementClient(object):
         """
         resource_path = "/annotationFormats"
         method = "GET"
+        operation_name = "list_annotation_formats"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/AnnotationFormat/ListAnnotationFormats"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -865,14 +923,20 @@ class DataLabelingManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AnnotationFormatCollection")
+                response_type="AnnotationFormatCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AnnotationFormatCollection")
+                response_type="AnnotationFormatCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_datasets(self, compartment_id, **kwargs):
         """
@@ -935,6 +999,8 @@ class DataLabelingManagementClient(object):
         """
         resource_path = "/datasets"
         method = "GET"
+        operation_name = "list_datasets"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/DatasetCollection/ListDatasets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1013,14 +1079,20 @@ class DataLabelingManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DatasetCollection")
+                response_type="DatasetCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DatasetCollection")
+                response_type="DatasetCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -1059,6 +1131,8 @@ class DataLabelingManagementClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/WorkRequest/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1114,7 +1188,10 @@ class DataLabelingManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1122,7 +1199,10 @@ class DataLabelingManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -1161,6 +1241,8 @@ class DataLabelingManagementClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/WorkRequest/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1216,7 +1298,10 @@ class DataLabelingManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1224,7 +1309,10 @@ class DataLabelingManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -1266,6 +1354,8 @@ class DataLabelingManagementClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1313,14 +1403,20 @@ class DataLabelingManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestSummaryCollection")
+                response_type="WorkRequestSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestSummaryCollection")
+                response_type="WorkRequestSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_dataset_labels(self, dataset_id, remove_dataset_labels_details, **kwargs):
         """
@@ -1370,6 +1466,8 @@ class DataLabelingManagementClient(object):
         """
         resource_path = "/datasets/{datasetId}/actions/removeLabels"
         method = "POST"
+        operation_name = "remove_dataset_labels"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/RemoveDatasetLabels"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1421,14 +1519,20 @@ class DataLabelingManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_dataset_labels_details)
+                body=remove_dataset_labels_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_dataset_labels_details)
+                body=remove_dataset_labels_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def rename_dataset_labels(self, dataset_id, rename_dataset_labels_details, **kwargs):
         """
@@ -1478,6 +1582,8 @@ class DataLabelingManagementClient(object):
         """
         resource_path = "/datasets/{datasetId}/actions/renameLabels"
         method = "POST"
+        operation_name = "rename_dataset_labels"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/RenameDatasetLabels"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1529,14 +1635,20 @@ class DataLabelingManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=rename_dataset_labels_details)
+                body=rename_dataset_labels_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=rename_dataset_labels_details)
+                body=rename_dataset_labels_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def snapshot_dataset(self, dataset_id, snapshot_dataset_details, **kwargs):
         """
@@ -1587,6 +1699,8 @@ class DataLabelingManagementClient(object):
         """
         resource_path = "/datasets/{datasetId}/actions/snapshot"
         method = "POST"
+        operation_name = "snapshot_dataset"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/SnapshotDataset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1638,14 +1752,20 @@ class DataLabelingManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=snapshot_dataset_details)
+                body=snapshot_dataset_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=snapshot_dataset_details)
+                body=snapshot_dataset_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_dataset(self, dataset_id, update_dataset_details, **kwargs):
         """
@@ -1688,6 +1808,8 @@ class DataLabelingManagementClient(object):
         """
         resource_path = "/datasets/{datasetId}"
         method = "PUT"
+        operation_name = "update_dataset"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling/20211001/Dataset/UpdateDataset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1737,7 +1859,10 @@ class DataLabelingManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_dataset_details,
-                response_type="Dataset")
+                response_type="Dataset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1745,4 +1870,7 @@ class DataLabelingManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_dataset_details,
-                response_type="Dataset")
+                response_type="Dataset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

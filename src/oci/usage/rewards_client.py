@@ -158,6 +158,8 @@ class RewardsClient(object):
         """
         resource_path = "/subscriptions/{subscriptionId}/redeemableUsers"
         method = "POST"
+        operation_name = "create_redeemable_user"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/usage-proxy/20190111/RedeemableUser/CreateRedeemableUser"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -216,7 +218,10 @@ class RewardsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_redeemable_user_details,
-                response_type="RedeemableUserCollection")
+                response_type="RedeemableUserCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -225,7 +230,10 @@ class RewardsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_redeemable_user_details,
-                response_type="RedeemableUserCollection")
+                response_type="RedeemableUserCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_redeemable_user(self, email_id, tenancy_id, subscription_id, **kwargs):
         """
@@ -271,6 +279,8 @@ class RewardsClient(object):
         """
         resource_path = "/subscriptions/{subscriptionId}/redeemableUsers"
         method = "DELETE"
+        operation_name = "delete_redeemable_user"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/usage-proxy/20190111/RedeemableUser/DeleteRedeemableUser"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -323,14 +333,20 @@ class RewardsClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_products(self, tenancy_id, subscription_id, usage_period_key, **kwargs):
         """
@@ -390,6 +406,8 @@ class RewardsClient(object):
         """
         resource_path = "/subscriptions/{subscriptionId}/products"
         method = "GET"
+        operation_name = "list_products"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/usage-proxy/20190111/ProductSummary/ListProducts"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -472,7 +490,10 @@ class RewardsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProductCollection")
+                response_type="ProductCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -480,7 +501,10 @@ class RewardsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProductCollection")
+                response_type="ProductCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_redeemable_users(self, tenancy_id, subscription_id, **kwargs):
         """
@@ -532,6 +556,8 @@ class RewardsClient(object):
         """
         resource_path = "/subscriptions/{subscriptionId}/redeemableUsers"
         method = "GET"
+        operation_name = "list_redeemable_users"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/usage-proxy/20190111/RedeemableUserSummary/ListRedeemableUsers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -604,7 +630,10 @@ class RewardsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RedeemableUserCollection")
+                response_type="RedeemableUserCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -612,7 +641,10 @@ class RewardsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RedeemableUserCollection")
+                response_type="RedeemableUserCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_rewards(self, tenancy_id, subscription_id, **kwargs):
         """
@@ -648,6 +680,8 @@ class RewardsClient(object):
         """
         resource_path = "/subscriptions/{subscriptionId}/rewards"
         method = "GET"
+        operation_name = "list_rewards"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/usage-proxy/20190111/MonthlyRewardSummary/ListRewards"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -698,7 +732,10 @@ class RewardsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RewardCollection")
+                response_type="RewardCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -706,4 +743,7 @@ class RewardsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RewardCollection")
+                response_type="RewardCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

@@ -150,6 +150,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/jobs/{jobId}/actions/abort"
         method = "POST"
+        operation_name = "abort_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/AbortJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -199,14 +201,20 @@ class DatabaseMigrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def add_migration_objects(self, migration_id, add_migration_objects_details, **kwargs):
         """
@@ -250,6 +258,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/migrations/{migrationId}/actions/addMigrationObjects"
         method = "POST"
+        operation_name = "add_migration_objects"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/AddMigrationObjects"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -296,14 +306,20 @@ class DatabaseMigrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=add_migration_objects_details)
+                body=add_migration_objects_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=add_migration_objects_details)
+                body=add_migration_objects_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_agent_compartment(self, agent_id, change_agent_compartment_details, **kwargs):
         """
@@ -354,6 +370,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/agents/{agentId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_agent_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Agent/ChangeAgentCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -403,14 +421,20 @@ class DatabaseMigrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_agent_compartment_details)
+                body=change_agent_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_agent_compartment_details)
+                body=change_agent_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_connection_compartment(self, connection_id, change_connection_compartment_details, **kwargs):
         """
@@ -461,6 +485,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/connections/{connectionId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_connection_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Connection/ChangeConnectionCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -510,14 +536,20 @@ class DatabaseMigrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_connection_compartment_details)
+                body=change_connection_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_connection_compartment_details)
+                body=change_connection_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_migration_compartment(self, migration_id, change_migration_compartment_details, **kwargs):
         """
@@ -568,6 +600,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/migrations/{migrationId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_migration_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/ChangeMigrationCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -617,14 +651,20 @@ class DatabaseMigrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_migration_compartment_details)
+                body=change_migration_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_migration_compartment_details)
+                body=change_migration_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def clone_migration(self, migration_id, clone_migration_details, **kwargs):
         """
@@ -675,6 +715,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/migrations/{migrationId}/actions/clone"
         method = "POST"
+        operation_name = "clone_migration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/CloneMigration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -725,7 +767,10 @@ class DatabaseMigrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=clone_migration_details,
-                response_type="Migration")
+                response_type="Migration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -733,7 +778,10 @@ class DatabaseMigrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=clone_migration_details,
-                response_type="Migration")
+                response_type="Migration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_connection(self, create_connection_details, **kwargs):
         """
@@ -775,6 +823,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/connections"
         method = "POST"
+        operation_name = "create_connection"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -812,14 +862,20 @@ class DatabaseMigrationClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_connection_details,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_connection_details,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_migration(self, create_migration_details, **kwargs):
         """
@@ -862,6 +918,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/migrations"
         method = "POST"
+        operation_name = "create_migration"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -899,14 +957,20 @@ class DatabaseMigrationClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_migration_details,
-                response_type="Migration")
+                response_type="Migration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_migration_details,
-                response_type="Migration")
+                response_type="Migration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_agent(self, agent_id, **kwargs):
         """
@@ -947,6 +1011,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/agents/{agentId}"
         method = "DELETE"
+        operation_name = "delete_agent"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Agent/DeleteAgent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -992,13 +1058,19 @@ class DatabaseMigrationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_connection(self, connection_id, **kwargs):
         """
@@ -1039,6 +1111,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/connections/{connectionId}"
         method = "DELETE"
+        operation_name = "delete_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Connection/DeleteConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1084,13 +1158,19 @@ class DatabaseMigrationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_job(self, job_id, **kwargs):
         """
@@ -1131,6 +1211,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/jobs/{jobId}"
         method = "DELETE"
+        operation_name = "delete_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/DeleteJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1176,13 +1258,19 @@ class DatabaseMigrationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_migration(self, migration_id, **kwargs):
         """
@@ -1223,6 +1311,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/migrations/{migrationId}"
         method = "DELETE"
+        operation_name = "delete_migration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/DeleteMigration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1268,13 +1358,19 @@ class DatabaseMigrationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def evaluate_migration(self, migration_id, **kwargs):
         """
@@ -1322,6 +1418,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/migrations/{migrationId}/actions/validate"
         method = "POST"
+        operation_name = "evaluate_migration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/EvaluateMigration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1371,14 +1469,20 @@ class DatabaseMigrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_advisor_report(self, job_id, **kwargs):
         """
@@ -1412,6 +1516,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/jobs/{jobId}/advisorReport"
         method = "GET"
+        operation_name = "get_advisor_report"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/GetAdvisorReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1456,14 +1562,20 @@ class DatabaseMigrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AdvisorReport")
+                response_type="AdvisorReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AdvisorReport")
+                response_type="AdvisorReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_agent(self, agent_id, **kwargs):
         """
@@ -1497,6 +1609,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/agents/{agentId}"
         method = "GET"
+        operation_name = "get_agent"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Agent/GetAgent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1541,14 +1655,20 @@ class DatabaseMigrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Agent")
+                response_type="Agent",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Agent")
+                response_type="Agent",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_connection(self, connection_id, **kwargs):
         """
@@ -1582,6 +1702,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/connections/{connectionId}"
         method = "GET"
+        operation_name = "get_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Connection/GetConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1626,14 +1748,20 @@ class DatabaseMigrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_job(self, job_id, **kwargs):
         """
@@ -1667,6 +1795,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/jobs/{jobId}"
         method = "GET"
+        operation_name = "get_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/GetJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1711,14 +1841,20 @@ class DatabaseMigrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_job_output_content(self, job_id, **kwargs):
         """
@@ -1752,6 +1888,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/jobs/{jobId}/output/content"
         method = "GET"
+        operation_name = "get_job_output_content"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/GetJobOutputContent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1796,14 +1934,20 @@ class DatabaseMigrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_migration(self, migration_id, **kwargs):
         """
@@ -1844,6 +1988,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/migrations/{migrationId}"
         method = "GET"
+        operation_name = "get_migration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/GetMigration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1890,14 +2036,20 @@ class DatabaseMigrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Migration")
+                response_type="Migration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Migration")
+                response_type="Migration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1931,6 +2083,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1975,14 +2129,20 @@ class DatabaseMigrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_agent_images(self, **kwargs):
         """
@@ -2024,6 +2184,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/agentImages"
         method = "GET"
+        operation_name = "list_agent_images"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/AgentImageSummary/ListAgentImages"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2075,14 +2237,20 @@ class DatabaseMigrationClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AgentImageCollection")
+                response_type="AgentImageCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AgentImageCollection")
+                response_type="AgentImageCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_agents(self, compartment_id, **kwargs):
         """
@@ -2141,6 +2309,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/agents"
         method = "GET"
+        operation_name = "list_agents"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/AgentSummary/ListAgents"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2213,14 +2383,20 @@ class DatabaseMigrationClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AgentCollection")
+                response_type="AgentCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AgentCollection")
+                response_type="AgentCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_connections(self, compartment_id, **kwargs):
         """
@@ -2279,6 +2455,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/connections"
         method = "GET"
+        operation_name = "list_connections"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/ConnectionSummary/ListConnections"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2351,14 +2529,20 @@ class DatabaseMigrationClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ConnectionCollection")
+                response_type="ConnectionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ConnectionCollection")
+                response_type="ConnectionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_excluded_objects(self, job_id, **kwargs):
         """
@@ -2433,6 +2617,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/jobs/{jobId}/excludedObjects"
         method = "GET"
+        operation_name = "list_excluded_objects"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/ExcludedObjectSummary/ListExcludedObjects"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2525,7 +2711,10 @@ class DatabaseMigrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ExcludedObjectSummaryCollection")
+                response_type="ExcludedObjectSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2533,7 +2722,10 @@ class DatabaseMigrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ExcludedObjectSummaryCollection")
+                response_type="ExcludedObjectSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_job_outputs(self, job_id, **kwargs):
         """
@@ -2573,6 +2765,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/jobs/{jobId}/output"
         method = "GET"
+        operation_name = "list_job_outputs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/JobOutputSummary/ListJobOutputs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2626,7 +2820,10 @@ class DatabaseMigrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JobOutputSummaryCollection")
+                response_type="JobOutputSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2634,7 +2831,10 @@ class DatabaseMigrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JobOutputSummaryCollection")
+                response_type="JobOutputSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_jobs(self, migration_id, **kwargs):
         """
@@ -2694,6 +2894,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/jobs"
         method = "GET"
+        operation_name = "list_jobs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/JobSummary/ListJobs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2766,14 +2968,20 @@ class DatabaseMigrationClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JobCollection")
+                response_type="JobCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JobCollection")
+                response_type="JobCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_migration_object_types(self, **kwargs):
         """
@@ -2821,6 +3029,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/migrationObjectTypes"
         method = "GET"
+        operation_name = "list_migration_object_types"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/MigrationObjectTypeSummary/ListMigrationObjectTypes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2881,14 +3091,20 @@ class DatabaseMigrationClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="MigrationObjectTypeSummaryCollection")
+                response_type="MigrationObjectTypeSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="MigrationObjectTypeSummaryCollection")
+                response_type="MigrationObjectTypeSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_migration_objects(self, migration_id, **kwargs):
         """
@@ -2935,6 +3151,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/migrations/{migrationId}/migrationObjects"
         method = "GET"
+        operation_name = "list_migration_objects"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/MigrationObjectCollection/ListMigrationObjects"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2990,7 +3208,10 @@ class DatabaseMigrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="MigrationObjectCollection")
+                response_type="MigrationObjectCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2998,7 +3219,10 @@ class DatabaseMigrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="MigrationObjectCollection")
+                response_type="MigrationObjectCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_migrations(self, compartment_id, **kwargs):
         """
@@ -3062,6 +3286,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/migrations"
         method = "GET"
+        operation_name = "list_migrations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/MigrationSummary/ListMigrations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3143,14 +3369,20 @@ class DatabaseMigrationClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="MigrationCollection")
+                response_type="MigrationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="MigrationCollection")
+                response_type="MigrationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -3200,6 +3432,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3271,7 +3505,10 @@ class DatabaseMigrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3279,7 +3516,10 @@ class DatabaseMigrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -3329,6 +3569,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3400,7 +3642,10 @@ class DatabaseMigrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3408,7 +3653,10 @@ class DatabaseMigrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -3468,6 +3716,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/WorkRequestSummary/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3540,14 +3790,20 @@ class DatabaseMigrationClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestCollection")
+                response_type="WorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestCollection")
+                response_type="WorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_migration_objects(self, migration_id, remove_migration_objects_details, **kwargs):
         """
@@ -3591,6 +3847,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/migrations/{migrationId}/actions/removeMigrationObjects"
         method = "POST"
+        operation_name = "remove_migration_objects"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/RemoveMigrationObjects"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3637,14 +3895,20 @@ class DatabaseMigrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_migration_objects_details)
+                body=remove_migration_objects_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_migration_objects_details)
+                body=remove_migration_objects_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def resume_job(self, job_id, **kwargs):
         """
@@ -3695,6 +3959,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/jobs/{jobId}/actions/resume"
         method = "POST"
+        operation_name = "resume_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/ResumeJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3746,7 +4012,10 @@ class DatabaseMigrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=kwargs.get('resume_job_details'),
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3754,7 +4023,10 @@ class DatabaseMigrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=kwargs.get('resume_job_details'),
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def retrieve_supported_phases(self, migration_id, **kwargs):
         """
@@ -3788,6 +4060,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/migrations/{migrationId}/actions/getSupportedPhases"
         method = "POST"
+        operation_name = "retrieve_supported_phases"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/RetrieveSupportedPhases"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3832,14 +4106,20 @@ class DatabaseMigrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="MigrationPhaseCollection")
+                response_type="MigrationPhaseCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="MigrationPhaseCollection")
+                response_type="MigrationPhaseCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def start_migration(self, migration_id, **kwargs):
         """
@@ -3890,6 +4170,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/migrations/{migrationId}/actions/start"
         method = "POST"
+        operation_name = "start_migration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/StartMigration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3941,7 +4223,10 @@ class DatabaseMigrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=kwargs.get('start_migration_details'),
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3949,7 +4234,10 @@ class DatabaseMigrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=kwargs.get('start_migration_details'),
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_agent(self, agent_id, update_agent_details, **kwargs):
         """
@@ -4000,6 +4288,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/agents/{agentId}"
         method = "PUT"
+        operation_name = "update_agent"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Agent/UpdateAgent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4050,7 +4340,10 @@ class DatabaseMigrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_agent_details,
-                response_type="Agent")
+                response_type="Agent",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4058,7 +4351,10 @@ class DatabaseMigrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_agent_details,
-                response_type="Agent")
+                response_type="Agent",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_connection(self, connection_id, update_connection_details, **kwargs):
         """
@@ -4102,6 +4398,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/connections/{connectionId}"
         method = "PUT"
+        operation_name = "update_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Connection/UpdateConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4148,14 +4446,20 @@ class DatabaseMigrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_connection_details)
+                body=update_connection_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_connection_details)
+                body=update_connection_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_job(self, job_id, update_job_details, **kwargs):
         """
@@ -4199,6 +4503,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/jobs/{jobId}"
         method = "PUT"
+        operation_name = "update_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Job/UpdateJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4246,7 +4552,10 @@ class DatabaseMigrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_job_details,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4254,7 +4563,10 @@ class DatabaseMigrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_job_details,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_migration(self, migration_id, update_migration_details, **kwargs):
         """
@@ -4298,6 +4610,8 @@ class DatabaseMigrationClient(object):
         """
         resource_path = "/migrations/{migrationId}"
         method = "PUT"
+        operation_name = "update_migration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-migration/20210929/Migration/UpdateMigration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4344,11 +4658,17 @@ class DatabaseMigrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_migration_details)
+                body=update_migration_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_migration_details)
+                body=update_migration_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

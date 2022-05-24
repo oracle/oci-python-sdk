@@ -152,6 +152,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/tablespaces/{tablespaceName}/actions/addDataFiles"
         method = "POST"
+        operation_name = "add_data_files"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/AddDataFiles"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -201,7 +203,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=add_data_files_details,
-                response_type="TablespaceAdminStatus")
+                response_type="TablespaceAdminStatus",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -209,7 +214,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=add_data_files_details,
-                response_type="TablespaceAdminStatus")
+                response_type="TablespaceAdminStatus",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def add_managed_database_to_managed_database_group(self, managed_database_group_id, add_managed_database_to_managed_database_group_details, **kwargs):
         """
@@ -256,6 +264,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabaseGroups/{managedDatabaseGroupId}/actions/addManagedDatabase"
         method = "POST"
+        operation_name = "add_managed_database_to_managed_database_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/AddManagedDatabaseToManagedDatabaseGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -303,14 +313,20 @@ class DbManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=add_managed_database_to_managed_database_group_details)
+                body=add_managed_database_to_managed_database_group_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=add_managed_database_to_managed_database_group_details)
+                body=add_managed_database_to_managed_database_group_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_database_parameters(self, managed_database_id, change_database_parameters_details, **kwargs):
         """
@@ -367,6 +383,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/actions/changeDatabaseParameters"
         method = "POST"
+        operation_name = "change_database_parameters"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ChangeDatabaseParameters"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -415,7 +433,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=change_database_parameters_details,
-                response_type="UpdateDatabaseParametersResult")
+                response_type="UpdateDatabaseParametersResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -423,7 +444,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=change_database_parameters_details,
-                response_type="UpdateDatabaseParametersResult")
+                response_type="UpdateDatabaseParametersResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_db_management_private_endpoint_compartment(self, db_management_private_endpoint_id, change_db_management_private_endpoint_compartment_details, **kwargs):
         """
@@ -475,6 +499,8 @@ class DbManagementClient(object):
         """
         resource_path = "/dbManagementPrivateEndpoints/{dbManagementPrivateEndpointId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_db_management_private_endpoint_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DbManagementPrivateEndpoint/ChangeDbManagementPrivateEndpointCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -524,14 +550,20 @@ class DbManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_db_management_private_endpoint_compartment_details)
+                body=change_db_management_private_endpoint_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_db_management_private_endpoint_compartment_details)
+                body=change_db_management_private_endpoint_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_job_compartment(self, job_id, change_job_compartment_details, **kwargs):
         """
@@ -583,6 +615,8 @@ class DbManagementClient(object):
         """
         resource_path = "/jobs/{jobId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_job_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Job/ChangeJobCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -632,14 +666,20 @@ class DbManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_job_compartment_details)
+                body=change_job_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_job_compartment_details)
+                body=change_job_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_managed_database_group_compartment(self, managed_database_group_id, change_managed_database_group_compartment_details, **kwargs):
         """
@@ -695,6 +735,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabaseGroups/{managedDatabaseGroupId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_managed_database_group_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/ChangeManagedDatabaseGroupCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -744,14 +786,20 @@ class DbManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_managed_database_group_compartment_details)
+                body=change_managed_database_group_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_managed_database_group_compartment_details)
+                body=change_managed_database_group_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_db_management_private_endpoint(self, create_db_management_private_endpoint_details, **kwargs):
         """
@@ -791,6 +839,8 @@ class DbManagementClient(object):
         """
         resource_path = "/dbManagementPrivateEndpoints"
         method = "POST"
+        operation_name = "create_db_management_private_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DbManagementPrivateEndpoint/CreateDbManagementPrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -828,14 +878,20 @@ class DbManagementClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_db_management_private_endpoint_details,
-                response_type="DbManagementPrivateEndpoint")
+                response_type="DbManagementPrivateEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_db_management_private_endpoint_details,
-                response_type="DbManagementPrivateEndpoint")
+                response_type="DbManagementPrivateEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_job(self, create_job_details, **kwargs):
         """
@@ -877,6 +933,8 @@ class DbManagementClient(object):
         """
         resource_path = "/jobs"
         method = "POST"
+        operation_name = "create_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Job/CreateJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -914,14 +972,20 @@ class DbManagementClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_job_details,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_job_details,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_managed_database_group(self, create_managed_database_group_details, **kwargs):
         """
@@ -962,6 +1026,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabaseGroups"
         method = "POST"
+        operation_name = "create_managed_database_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/CreateManagedDatabaseGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -999,14 +1065,20 @@ class DbManagementClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_managed_database_group_details,
-                response_type="ManagedDatabaseGroup")
+                response_type="ManagedDatabaseGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_managed_database_group_details,
-                response_type="ManagedDatabaseGroup")
+                response_type="ManagedDatabaseGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_tablespace(self, managed_database_id, create_tablespace_details, **kwargs):
         """
@@ -1051,6 +1123,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/tablespaces"
         method = "POST"
+        operation_name = "create_tablespace"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/CreateTablespace"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1099,7 +1173,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_tablespace_details,
-                response_type="Tablespace")
+                response_type="Tablespace",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1107,7 +1184,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_tablespace_details,
-                response_type="Tablespace")
+                response_type="Tablespace",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_db_management_private_endpoint(self, db_management_private_endpoint_id, **kwargs):
         """
@@ -1149,6 +1229,8 @@ class DbManagementClient(object):
         """
         resource_path = "/dbManagementPrivateEndpoints/{dbManagementPrivateEndpointId}"
         method = "DELETE"
+        operation_name = "delete_db_management_private_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DbManagementPrivateEndpoint/DeleteDbManagementPrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1194,13 +1276,19 @@ class DbManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_job(self, job_id, **kwargs):
         """
@@ -1240,6 +1328,8 @@ class DbManagementClient(object):
         """
         resource_path = "/jobs/{jobId}"
         method = "DELETE"
+        operation_name = "delete_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Job/DeleteJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1285,13 +1375,19 @@ class DbManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_managed_database_group(self, managed_database_group_id, **kwargs):
         """
@@ -1334,6 +1430,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabaseGroups/{managedDatabaseGroupId}"
         method = "DELETE"
+        operation_name = "delete_managed_database_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/DeleteManagedDatabaseGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1379,13 +1477,19 @@ class DbManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def drop_tablespace(self, managed_database_id, tablespace_name, drop_tablespace_details, **kwargs):
         """
@@ -1433,6 +1537,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/tablespaces/{tablespaceName}/actions/dropTablespace"
         method = "POST"
+        operation_name = "drop_tablespace"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/DropTablespace"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1482,7 +1588,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=drop_tablespace_details,
-                response_type="TablespaceAdminStatus")
+                response_type="TablespaceAdminStatus",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1490,7 +1599,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=drop_tablespace_details,
-                response_type="TablespaceAdminStatus")
+                response_type="TablespaceAdminStatus",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_awr_db_report(self, managed_database_id, awr_db_id, **kwargs):
         """
@@ -1567,6 +1679,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbReport"
         method = "GET"
+        operation_name = "get_awr_db_report"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetAwrDbReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1650,7 +1764,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrDbReport")
+                response_type="AwrDbReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1658,7 +1775,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrDbReport")
+                response_type="AwrDbReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_awr_db_sql_report(self, managed_database_id, awr_db_id, sql_id, **kwargs):
         """
@@ -1733,6 +1853,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSqlReport"
         method = "GET"
+        operation_name = "get_awr_db_sql_report"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetAwrDbSqlReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1808,7 +1930,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrDbSqlReport")
+                response_type="AwrDbSqlReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1816,7 +1941,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrDbSqlReport")
+                response_type="AwrDbSqlReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_cluster_cache_metric(self, managed_database_id, start_time, end_time, **kwargs):
         """
@@ -1861,6 +1989,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/clusterCacheMetrics"
         method = "GET"
+        operation_name = "get_cluster_cache_metric"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ClusterCacheMetric/GetClusterCacheMetric"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1912,7 +2042,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ClusterCacheMetric")
+                response_type="ClusterCacheMetric",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1920,7 +2053,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ClusterCacheMetric")
+                response_type="ClusterCacheMetric",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_database_fleet_health_metrics(self, compare_baseline_time, compare_target_time, **kwargs):
         """
@@ -1987,6 +2123,8 @@ class DbManagementClient(object):
         """
         resource_path = "/fleetMetrics"
         method = "GET"
+        operation_name = "get_database_fleet_health_metrics"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DatabaseFleetHealthMetrics/GetDatabaseFleetHealthMetrics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2050,14 +2188,20 @@ class DbManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DatabaseFleetHealthMetrics")
+                response_type="DatabaseFleetHealthMetrics",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DatabaseFleetHealthMetrics")
+                response_type="DatabaseFleetHealthMetrics",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_database_home_metrics(self, managed_database_id, start_time, end_time, **kwargs):
         """
@@ -2100,6 +2244,8 @@ class DbManagementClient(object):
         """
         resource_path = "/databaseHomeMetrics"
         method = "GET"
+        operation_name = "get_database_home_metrics"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DatabaseHomeMetrics/GetDatabaseHomeMetrics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2141,14 +2287,20 @@ class DbManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DatabaseHomeMetrics")
+                response_type="DatabaseHomeMetrics",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DatabaseHomeMetrics")
+                response_type="DatabaseHomeMetrics",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_db_management_private_endpoint(self, db_management_private_endpoint_id, **kwargs):
         """
@@ -2183,6 +2335,8 @@ class DbManagementClient(object):
         """
         resource_path = "/dbManagementPrivateEndpoints/{dbManagementPrivateEndpointId}"
         method = "GET"
+        operation_name = "get_db_management_private_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DbManagementPrivateEndpoint/GetDbManagementPrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2227,14 +2381,20 @@ class DbManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DbManagementPrivateEndpoint")
+                response_type="DbManagementPrivateEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DbManagementPrivateEndpoint")
+                response_type="DbManagementPrivateEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_job(self, job_id, **kwargs):
         """
@@ -2267,6 +2427,8 @@ class DbManagementClient(object):
         """
         resource_path = "/jobs/{jobId}"
         method = "GET"
+        operation_name = "get_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Job/GetJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2311,14 +2473,20 @@ class DbManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_job_execution(self, job_execution_id, **kwargs):
         """
@@ -2351,6 +2519,8 @@ class DbManagementClient(object):
         """
         resource_path = "/jobExecutions/{jobExecutionId}"
         method = "GET"
+        operation_name = "get_job_execution"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/JobExecution/GetJobExecution"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2395,14 +2565,20 @@ class DbManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="JobExecution")
+                response_type="JobExecution",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="JobExecution")
+                response_type="JobExecution",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_job_run(self, job_run_id, **kwargs):
         """
@@ -2435,6 +2611,8 @@ class DbManagementClient(object):
         """
         resource_path = "/jobRuns/{jobRunId}"
         method = "GET"
+        operation_name = "get_job_run"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/JobRun/GetJobRun"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2479,14 +2657,20 @@ class DbManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="JobRun")
+                response_type="JobRun",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="JobRun")
+                response_type="JobRun",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_managed_database(self, managed_database_id, **kwargs):
         """
@@ -2521,6 +2705,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}"
         method = "GET"
+        operation_name = "get_managed_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetManagedDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2565,14 +2751,20 @@ class DbManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ManagedDatabase")
+                response_type="ManagedDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ManagedDatabase")
+                response_type="ManagedDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_managed_database_group(self, managed_database_group_id, **kwargs):
         """
@@ -2607,6 +2799,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabaseGroups/{managedDatabaseGroupId}"
         method = "GET"
+        operation_name = "get_managed_database_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/GetManagedDatabaseGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2651,14 +2845,20 @@ class DbManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ManagedDatabaseGroup")
+                response_type="ManagedDatabaseGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ManagedDatabaseGroup")
+                response_type="ManagedDatabaseGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_pdb_metrics(self, managed_database_id, start_time, end_time, **kwargs):
         """
@@ -2717,6 +2917,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/pdbMetrics"
         method = "GET"
+        operation_name = "get_pdb_metrics"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/PdbMetrics/GetPdbMetrics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2781,7 +2983,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PdbMetrics")
+                response_type="PdbMetrics",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2789,7 +2994,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PdbMetrics")
+                response_type="PdbMetrics",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_tablespace(self, managed_database_id, tablespace_name, **kwargs):
         """
@@ -2827,6 +3035,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/tablespaces/{tablespaceName}"
         method = "GET"
+        operation_name = "get_tablespace"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/GetTablespace"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2872,14 +3082,20 @@ class DbManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Tablespace")
+                response_type="Tablespace",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Tablespace")
+                response_type="Tablespace",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_user(self, managed_database_id, user_name, **kwargs):
         """
@@ -2917,6 +3133,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/users/{userName}"
         method = "GET"
+        operation_name = "get_user"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetUser"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2962,14 +3180,20 @@ class DbManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="User")
+                response_type="User",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="User")
+                response_type="User",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -3004,6 +3228,8 @@ class DbManagementClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3048,14 +3274,20 @@ class DbManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_asm_properties(self, managed_database_id, **kwargs):
         """
@@ -3112,6 +3344,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/asmProperties"
         method = "GET"
+        operation_name = "list_asm_properties"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListAsmProperties"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3185,7 +3419,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AsmPropertyCollection")
+                response_type="AsmPropertyCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3193,7 +3430,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AsmPropertyCollection")
+                response_type="AsmPropertyCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_associated_databases(self, db_management_private_endpoint_id, compartment_id, **kwargs):
         """
@@ -3250,6 +3490,8 @@ class DbManagementClient(object):
         """
         resource_path = "/dbManagementPrivateEndpoints/{dbManagementPrivateEndpointId}/associatedDatabases"
         method = "GET"
+        operation_name = "list_associated_databases"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/AssociatedDatabaseSummary/ListAssociatedDatabases"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3322,7 +3564,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AssociatedDatabaseCollection")
+                response_type="AssociatedDatabaseCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3330,7 +3575,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AssociatedDatabaseCollection")
+                response_type="AssociatedDatabaseCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_awr_db_snapshots(self, managed_database_id, awr_db_id, **kwargs):
         """
@@ -3414,6 +3662,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSnapshots"
         method = "GET"
+        operation_name = "list_awr_db_snapshots"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListAwrDbSnapshots"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3501,7 +3751,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrDbSnapshotCollection")
+                response_type="AwrDbSnapshotCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3509,7 +3762,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrDbSnapshotCollection")
+                response_type="AwrDbSnapshotCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_awr_dbs(self, managed_database_id, **kwargs):
         """
@@ -3577,6 +3833,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/awrDbs"
         method = "GET"
+        operation_name = "list_awr_dbs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListAwrDbs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3657,7 +3915,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrDbCollection")
+                response_type="AwrDbCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3665,7 +3926,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrDbCollection")
+                response_type="AwrDbCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_consumer_group_privileges(self, managed_database_id, user_name, **kwargs):
         """
@@ -3724,6 +3988,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/users/{userName}/consumerGroupPrivileges"
         method = "GET"
+        operation_name = "list_consumer_group_privileges"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListConsumerGroupPrivileges"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3798,7 +4064,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ConsumerGroupPrivilegeCollection")
+                response_type="ConsumerGroupPrivilegeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3806,7 +4075,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ConsumerGroupPrivilegeCollection")
+                response_type="ConsumerGroupPrivilegeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_data_access_containers(self, managed_database_id, user_name, **kwargs):
         """
@@ -3865,6 +4137,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/users/{userName}/dataAccessContainers"
         method = "GET"
+        operation_name = "list_data_access_containers"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListDataAccessContainers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3939,7 +4213,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataAccessContainerCollection")
+                response_type="DataAccessContainerCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3947,7 +4224,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataAccessContainerCollection")
+                response_type="DataAccessContainerCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_database_parameters(self, managed_database_id, **kwargs):
         """
@@ -4007,6 +4287,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/databaseParameters"
         method = "GET"
+        operation_name = "list_database_parameters"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListDatabaseParameters"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4087,7 +4369,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DatabaseParametersCollection")
+                response_type="DatabaseParametersCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4095,7 +4380,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DatabaseParametersCollection")
+                response_type="DatabaseParametersCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_db_management_private_endpoints(self, compartment_id, **kwargs):
         """
@@ -4165,6 +4453,8 @@ class DbManagementClient(object):
         """
         resource_path = "/dbManagementPrivateEndpoints"
         method = "GET"
+        operation_name = "list_db_management_private_endpoints"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DbManagementPrivateEndpoint/ListDbManagementPrivateEndpoints"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4241,14 +4531,20 @@ class DbManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DbManagementPrivateEndpointCollection")
+                response_type="DbManagementPrivateEndpointCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DbManagementPrivateEndpointCollection")
+                response_type="DbManagementPrivateEndpointCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_job_executions(self, compartment_id, **kwargs):
         """
@@ -4330,6 +4626,8 @@ class DbManagementClient(object):
         """
         resource_path = "/jobExecutions"
         method = "GET"
+        operation_name = "list_job_executions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/JobExecution/ListJobExecutions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4405,14 +4703,20 @@ class DbManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JobExecutionCollection")
+                response_type="JobExecutionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JobExecutionCollection")
+                response_type="JobExecutionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_job_runs(self, compartment_id, **kwargs):
         """
@@ -4491,6 +4795,8 @@ class DbManagementClient(object):
         """
         resource_path = "/jobRuns"
         method = "GET"
+        operation_name = "list_job_runs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/JobRun/ListJobRuns"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4564,14 +4870,20 @@ class DbManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JobRunCollection")
+                response_type="JobRunCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JobRunCollection")
+                response_type="JobRunCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_jobs(self, compartment_id, **kwargs):
         """
@@ -4649,6 +4961,8 @@ class DbManagementClient(object):
         """
         resource_path = "/jobs"
         method = "GET"
+        operation_name = "list_jobs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Job/ListJobs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4727,14 +5041,20 @@ class DbManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JobCollection")
+                response_type="JobCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JobCollection")
+                response_type="JobCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_managed_database_groups(self, compartment_id, **kwargs):
         """
@@ -4802,6 +5122,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabaseGroups"
         method = "GET"
+        operation_name = "list_managed_database_groups"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/ListManagedDatabaseGroups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4876,14 +5198,20 @@ class DbManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ManagedDatabaseGroupCollection")
+                response_type="ManagedDatabaseGroupCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ManagedDatabaseGroupCollection")
+                response_type="ManagedDatabaseGroupCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_managed_databases(self, compartment_id, **kwargs):
         """
@@ -4958,6 +5286,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases"
         method = "GET"
+        operation_name = "list_managed_databases"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListManagedDatabases"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5041,14 +5371,20 @@ class DbManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ManagedDatabaseCollection")
+                response_type="ManagedDatabaseCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ManagedDatabaseCollection")
+                response_type="ManagedDatabaseCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_object_privileges(self, managed_database_id, user_name, **kwargs):
         """
@@ -5107,6 +5443,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/users/{userName}/objectPrivileges"
         method = "GET"
+        operation_name = "list_object_privileges"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListObjectPrivileges"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5181,7 +5519,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ObjectPrivilegeCollection")
+                response_type="ObjectPrivilegeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5189,7 +5530,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ObjectPrivilegeCollection")
+                response_type="ObjectPrivilegeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_proxied_for_users(self, managed_database_id, user_name, **kwargs):
         """
@@ -5248,6 +5592,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/users/{userName}/proxiedForUsers"
         method = "GET"
+        operation_name = "list_proxied_for_users"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListProxiedForUsers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5322,7 +5668,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProxiedForUserCollection")
+                response_type="ProxiedForUserCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5330,7 +5679,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProxiedForUserCollection")
+                response_type="ProxiedForUserCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_proxy_users(self, managed_database_id, user_name, **kwargs):
         """
@@ -5389,6 +5741,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/users/{userName}/proxyUsers"
         method = "GET"
+        operation_name = "list_proxy_users"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListProxyUsers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5463,7 +5817,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProxyUserCollection")
+                response_type="ProxyUserCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5471,7 +5828,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProxyUserCollection")
+                response_type="ProxyUserCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_roles(self, managed_database_id, user_name, **kwargs):
         """
@@ -5530,6 +5890,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/users/{userName}/roles"
         method = "GET"
+        operation_name = "list_roles"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListRoles"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5604,7 +5966,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RoleCollection")
+                response_type="RoleCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5612,7 +5977,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RoleCollection")
+                response_type="RoleCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_system_privileges(self, managed_database_id, user_name, **kwargs):
         """
@@ -5671,6 +6039,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/users/{userName}/systemPrivileges"
         method = "GET"
+        operation_name = "list_system_privileges"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListSystemPrivileges"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5745,7 +6115,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SystemPrivilegeCollection")
+                response_type="SystemPrivilegeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5753,7 +6126,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SystemPrivilegeCollection")
+                response_type="SystemPrivilegeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_tablespaces(self, managed_database_id, **kwargs):
         """
@@ -5810,6 +6186,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/tablespaces"
         method = "GET"
+        operation_name = "list_tablespaces"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/ListTablespaces"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5883,7 +6261,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TablespaceCollection")
+                response_type="TablespaceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5891,7 +6272,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TablespaceCollection")
+                response_type="TablespaceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_users(self, managed_database_id, **kwargs):
         """
@@ -5948,6 +6332,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/users"
         method = "GET"
+        operation_name = "list_users"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListUsers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6021,7 +6407,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="UserCollection")
+                response_type="UserCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6029,7 +6418,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="UserCollection")
+                response_type="UserCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -6081,6 +6473,8 @@ class DbManagementClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6152,7 +6546,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6160,7 +6557,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -6212,6 +6612,8 @@ class DbManagementClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6283,7 +6685,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6291,7 +6696,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -6358,6 +6766,8 @@ class DbManagementClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6432,14 +6842,20 @@ class DbManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestCollection")
+                response_type="WorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestCollection")
+                response_type="WorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_data_file(self, managed_database_id, tablespace_name, remove_data_file_details, **kwargs):
         """
@@ -6487,6 +6903,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/tablespaces/{tablespaceName}/actions/removeDataFile"
         method = "POST"
+        operation_name = "remove_data_file"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/RemoveDataFile"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6536,7 +6954,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=remove_data_file_details,
-                response_type="TablespaceAdminStatus")
+                response_type="TablespaceAdminStatus",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6544,7 +6965,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=remove_data_file_details,
-                response_type="TablespaceAdminStatus")
+                response_type="TablespaceAdminStatus",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_managed_database_from_managed_database_group(self, managed_database_group_id, remove_managed_database_from_managed_database_group_details, **kwargs):
         """
@@ -6592,6 +7016,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabaseGroups/{managedDatabaseGroupId}/actions/removeManagedDatabase"
         method = "POST"
+        operation_name = "remove_managed_database_from_managed_database_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/RemoveManagedDatabaseFromManagedDatabaseGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6639,14 +7065,20 @@ class DbManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_managed_database_from_managed_database_group_details)
+                body=remove_managed_database_from_managed_database_group_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_managed_database_from_managed_database_group_details)
+                body=remove_managed_database_from_managed_database_group_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def reset_database_parameters(self, managed_database_id, reset_database_parameters_details, **kwargs):
         """
@@ -6691,6 +7123,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/actions/resetDatabaseParameters"
         method = "POST"
+        operation_name = "reset_database_parameters"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ResetDatabaseParameters"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6739,7 +7173,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=reset_database_parameters_details,
-                response_type="UpdateDatabaseParametersResult")
+                response_type="UpdateDatabaseParametersResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6747,7 +7184,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=reset_database_parameters_details,
-                response_type="UpdateDatabaseParametersResult")
+                response_type="UpdateDatabaseParametersResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def resize_data_file(self, managed_database_id, tablespace_name, resize_data_file_details, **kwargs):
         """
@@ -6795,6 +7235,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/tablespaces/{tablespaceName}/actions/resizeDataFile"
         method = "POST"
+        operation_name = "resize_data_file"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/ResizeDataFile"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6844,7 +7286,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=resize_data_file_details,
-                response_type="TablespaceAdminStatus")
+                response_type="TablespaceAdminStatus",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6852,7 +7297,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=resize_data_file_details,
-                response_type="TablespaceAdminStatus")
+                response_type="TablespaceAdminStatus",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_awr_db_cpu_usages(self, managed_database_id, awr_db_id, **kwargs):
         """
@@ -6941,6 +7389,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbCpuUsages"
         method = "GET"
+        operation_name = "summarize_awr_db_cpu_usages"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbCpuUsages"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7037,7 +7487,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrDbCpuUsageCollection")
+                response_type="AwrDbCpuUsageCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7045,7 +7498,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrDbCpuUsageCollection")
+                response_type="AwrDbCpuUsageCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_awr_db_metrics(self, managed_database_id, awr_db_id, name, **kwargs):
         """
@@ -7132,6 +7588,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbMetrics"
         method = "GET"
+        operation_name = "summarize_awr_db_metrics"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbMetrics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7220,7 +7678,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrDbMetricCollection")
+                response_type="AwrDbMetricCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7228,7 +7689,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrDbMetricCollection")
+                response_type="AwrDbMetricCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_awr_db_parameter_changes(self, managed_database_id, awr_db_id, name, **kwargs):
         """
@@ -7319,6 +7783,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbParameterChanges"
         method = "GET"
+        operation_name = "summarize_awr_db_parameter_changes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbParameterChanges"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7407,7 +7873,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrDbParameterChangeCollection")
+                response_type="AwrDbParameterChangeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7415,7 +7884,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrDbParameterChangeCollection")
+                response_type="AwrDbParameterChangeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_awr_db_parameters(self, managed_database_id, awr_db_id, **kwargs):
         """
@@ -7530,6 +8002,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbParameters"
         method = "GET"
+        operation_name = "summarize_awr_db_parameters"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbParameters"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7648,7 +8122,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrDbParameterCollection")
+                response_type="AwrDbParameterCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7656,7 +8133,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrDbParameterCollection")
+                response_type="AwrDbParameterCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_awr_db_snapshot_ranges(self, managed_database_id, **kwargs):
         """
@@ -7724,6 +8204,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges"
         method = "GET"
+        operation_name = "summarize_awr_db_snapshot_ranges"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbSnapshotRanges"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7804,7 +8286,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrDbSnapshotRangeCollection")
+                response_type="AwrDbSnapshotRangeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7812,7 +8297,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrDbSnapshotRangeCollection")
+                response_type="AwrDbSnapshotRangeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_awr_db_sysstats(self, managed_database_id, awr_db_id, name, **kwargs):
         """
@@ -7899,6 +8387,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbSysstats"
         method = "GET"
+        operation_name = "summarize_awr_db_sysstats"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbSysstats"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7987,7 +8477,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrDbSysstatCollection")
+                response_type="AwrDbSysstatCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7995,7 +8488,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrDbSysstatCollection")
+                response_type="AwrDbSysstatCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_awr_db_top_wait_events(self, managed_database_id, awr_db_id, **kwargs):
         """
@@ -8080,6 +8576,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbTopWaitEvents"
         method = "GET"
+        operation_name = "summarize_awr_db_top_wait_events"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbTopWaitEvents"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8174,7 +8672,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrDbTopWaitEventCollection")
+                response_type="AwrDbTopWaitEventCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8182,7 +8683,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrDbTopWaitEventCollection")
+                response_type="AwrDbTopWaitEventCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_awr_db_wait_event_buckets(self, managed_database_id, awr_db_id, name, **kwargs):
         """
@@ -8278,6 +8782,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbWaitEventBuckets"
         method = "GET"
+        operation_name = "summarize_awr_db_wait_event_buckets"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbWaitEventBuckets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8372,7 +8878,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrDbWaitEventBucketCollection")
+                response_type="AwrDbWaitEventBucketCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8380,7 +8889,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrDbWaitEventBucketCollection")
+                response_type="AwrDbWaitEventBucketCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_awr_db_wait_events(self, managed_database_id, awr_db_id, **kwargs):
         """
@@ -8472,6 +8984,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbWaitEvents"
         method = "GET"
+        operation_name = "summarize_awr_db_wait_events"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbWaitEvents"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8570,7 +9084,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrDbWaitEventCollection")
+                response_type="AwrDbWaitEventCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8578,7 +9095,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrDbWaitEventCollection")
+                response_type="AwrDbWaitEventCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_job_executions_statuses(self, compartment_id, start_time, end_time, **kwargs):
         """
@@ -8649,6 +9169,8 @@ class DbManagementClient(object):
         """
         resource_path = "/jobExecutionsStatus"
         method = "GET"
+        operation_name = "summarize_job_executions_statuses"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/JobExecutionsStatusSummaryCollection/SummarizeJobExecutionsStatuses"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8716,14 +9238,20 @@ class DbManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JobExecutionsStatusSummaryCollection")
+                response_type="JobExecutionsStatusSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JobExecutionsStatusSummaryCollection")
+                response_type="JobExecutionsStatusSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_db_management_private_endpoint(self, db_management_private_endpoint_id, update_db_management_private_endpoint_details, **kwargs):
         """
@@ -8768,6 +9296,8 @@ class DbManagementClient(object):
         """
         resource_path = "/dbManagementPrivateEndpoints/{dbManagementPrivateEndpointId}"
         method = "PUT"
+        operation_name = "update_db_management_private_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DbManagementPrivateEndpoint/UpdateDbManagementPrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8815,7 +9345,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_db_management_private_endpoint_details,
-                response_type="DbManagementPrivateEndpoint")
+                response_type="DbManagementPrivateEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8823,7 +9356,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_db_management_private_endpoint_details,
-                response_type="DbManagementPrivateEndpoint")
+                response_type="DbManagementPrivateEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_job(self, job_id, update_job_details, **kwargs):
         """
@@ -8866,6 +9402,8 @@ class DbManagementClient(object):
         """
         resource_path = "/jobs/{jobId}"
         method = "PUT"
+        operation_name = "update_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Job/UpdateJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8913,7 +9451,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_job_details,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8921,7 +9462,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_job_details,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_managed_database_group(self, managed_database_group_id, update_managed_database_group_details, **kwargs):
         """
@@ -8966,6 +9510,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabaseGroups/{managedDatabaseGroupId}"
         method = "PUT"
+        operation_name = "update_managed_database_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/UpdateManagedDatabaseGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9013,7 +9559,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_managed_database_group_details,
-                response_type="ManagedDatabaseGroup")
+                response_type="ManagedDatabaseGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9021,7 +9570,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_managed_database_group_details,
-                response_type="ManagedDatabaseGroup")
+                response_type="ManagedDatabaseGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_tablespace(self, managed_database_id, tablespace_name, update_tablespace_details, **kwargs):
         """
@@ -9062,6 +9614,8 @@ class DbManagementClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/tablespaces/{tablespaceName}"
         method = "PUT"
+        operation_name = "update_tablespace"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/UpdateTablespace"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9108,7 +9662,10 @@ class DbManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_tablespace_details,
-                response_type="Tablespace")
+                response_type="Tablespace",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9116,4 +9673,7 @@ class DbManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_tablespace_details,
-                response_type="Tablespace")
+                response_type="Tablespace",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

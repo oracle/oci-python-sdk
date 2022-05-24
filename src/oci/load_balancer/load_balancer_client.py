@@ -159,6 +159,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/changeCompartment"
         method = "POST"
+        operation_name = "change_load_balancer_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancer/ChangeLoadBalancerCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -208,14 +210,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_load_balancer_compartment_details)
+                body=change_load_balancer_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_load_balancer_compartment_details)
+                body=change_load_balancer_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_backend(self, create_backend_details, load_balancer_id, backend_set_name, **kwargs):
         """
@@ -266,6 +274,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends"
         method = "POST"
+        operation_name = "create_backend"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -314,14 +324,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_backend_details)
+                body=create_backend_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_backend_details)
+                body=create_backend_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_backend_set(self, create_backend_set_details, load_balancer_id, **kwargs):
         """
@@ -367,6 +383,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets"
         method = "POST"
+        operation_name = "create_backend_set"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -414,14 +432,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_backend_set_details)
+                body=create_backend_set_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_backend_set_details)
+                body=create_backend_set_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_certificate(self, create_certificate_details, load_balancer_id, **kwargs):
         """
@@ -467,6 +491,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/certificates"
         method = "POST"
+        operation_name = "create_certificate"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -514,14 +540,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_certificate_details)
+                body=create_certificate_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_certificate_details)
+                body=create_certificate_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_hostname(self, create_hostname_details, load_balancer_id, **kwargs):
         """
@@ -570,6 +602,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/hostnames"
         method = "POST"
+        operation_name = "create_hostname"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -617,14 +651,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_hostname_details)
+                body=create_hostname_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_hostname_details)
+                body=create_hostname_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_listener(self, create_listener_details, load_balancer_id, **kwargs):
         """
@@ -670,6 +710,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/listeners"
         method = "POST"
+        operation_name = "create_listener"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -717,14 +759,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_listener_details)
+                body=create_listener_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_listener_details)
+                body=create_listener_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_load_balancer(self, create_load_balancer_details, **kwargs):
         """
@@ -796,6 +844,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers"
         method = "POST"
+        operation_name = "create_load_balancer"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -832,13 +882,19 @@ class LoadBalancerClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_load_balancer_details)
+                body=create_load_balancer_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_load_balancer_details)
+                body=create_load_balancer_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_path_route_set(self, create_path_route_set_details, load_balancer_id, **kwargs):
         """
@@ -887,6 +943,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/pathRouteSets"
         method = "POST"
+        operation_name = "create_path_route_set"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -934,14 +992,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_path_route_set_details)
+                body=create_path_route_set_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_path_route_set_details)
+                body=create_path_route_set_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_routing_policy(self, create_routing_policy_details, load_balancer_id, **kwargs):
         """
@@ -990,6 +1054,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/routingPolicies"
         method = "POST"
+        operation_name = "create_routing_policy"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1037,14 +1103,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_routing_policy_details)
+                body=create_routing_policy_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_routing_policy_details)
+                body=create_routing_policy_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_rule_set(self, load_balancer_id, create_rule_set_details, **kwargs):
         """
@@ -1086,6 +1158,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/ruleSets"
         method = "POST"
+        operation_name = "create_rule_set"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1130,14 +1204,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_rule_set_details)
+                body=create_rule_set_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_rule_set_details)
+                body=create_rule_set_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_ssl_cipher_suite(self, create_ssl_cipher_suite_details, load_balancer_id, **kwargs):
         """
@@ -1183,6 +1263,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/sslCipherSuites"
         method = "POST"
+        operation_name = "create_ssl_cipher_suite"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1230,14 +1312,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_ssl_cipher_suite_details)
+                body=create_ssl_cipher_suite_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_ssl_cipher_suite_details)
+                body=create_ssl_cipher_suite_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_backend(self, load_balancer_id, backend_set_name, backend_name, **kwargs):
         """
@@ -1283,6 +1371,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
         method = "DELETE"
+        operation_name = "delete_backend"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1328,13 +1418,19 @@ class LoadBalancerClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_backend_set(self, load_balancer_id, backend_set_name, **kwargs):
         """
@@ -1377,6 +1473,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}"
         method = "DELETE"
+        operation_name = "delete_backend_set"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1421,13 +1519,19 @@ class LoadBalancerClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_certificate(self, load_balancer_id, certificate_name, **kwargs):
         """
@@ -1469,6 +1573,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/certificates/{certificateName}"
         method = "DELETE"
+        operation_name = "delete_certificate"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1513,13 +1619,19 @@ class LoadBalancerClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_hostname(self, load_balancer_id, name, **kwargs):
         """
@@ -1560,6 +1672,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/hostnames/{name}"
         method = "DELETE"
+        operation_name = "delete_hostname"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1604,13 +1718,19 @@ class LoadBalancerClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_listener(self, load_balancer_id, listener_name, **kwargs):
         """
@@ -1651,6 +1771,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/listeners/{listenerName}"
         method = "DELETE"
+        operation_name = "delete_listener"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1695,13 +1817,19 @@ class LoadBalancerClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_load_balancer(self, load_balancer_id, **kwargs):
         """
@@ -1737,6 +1865,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}"
         method = "DELETE"
+        operation_name = "delete_load_balancer"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1780,13 +1910,19 @@ class LoadBalancerClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_path_route_set(self, load_balancer_id, path_route_set_name, **kwargs):
         """
@@ -1830,6 +1966,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/pathRouteSets/{pathRouteSetName}"
         method = "DELETE"
+        operation_name = "delete_path_route_set"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1874,13 +2012,19 @@ class LoadBalancerClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_routing_policy(self, load_balancer_id, routing_policy_name, **kwargs):
         """
@@ -1924,6 +2068,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/routingPolicies/{routingPolicyName}"
         method = "DELETE"
+        operation_name = "delete_routing_policy"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1968,13 +2114,19 @@ class LoadBalancerClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_rule_set(self, load_balancer_id, rule_set_name, **kwargs):
         """
@@ -2018,6 +2170,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/ruleSets/{ruleSetName}"
         method = "DELETE"
+        operation_name = "delete_rule_set"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2062,13 +2216,19 @@ class LoadBalancerClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_ssl_cipher_suite(self, load_balancer_id, name, **kwargs):
         """
@@ -2109,6 +2269,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/sslCipherSuites/{name}"
         method = "DELETE"
+        operation_name = "delete_ssl_cipher_suite"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2153,13 +2315,19 @@ class LoadBalancerClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_backend(self, load_balancer_id, backend_set_name, backend_name, **kwargs):
         """
@@ -2205,6 +2373,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
         method = "GET"
+        operation_name = "get_backend"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/Backend/GetBackend"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2251,14 +2421,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Backend")
+                response_type="Backend",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Backend")
+                response_type="Backend",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_backend_health(self, load_balancer_id, backend_set_name, backend_name, **kwargs):
         """
@@ -2304,6 +2480,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends/{backendName}/health"
         method = "GET"
+        operation_name = "get_backend_health"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/BackendHealth/GetBackendHealth"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2350,14 +2528,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BackendHealth")
+                response_type="BackendHealth",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BackendHealth")
+                response_type="BackendHealth",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_backend_set(self, load_balancer_id, backend_set_name, **kwargs):
         """
@@ -2398,6 +2582,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}"
         method = "GET"
+        operation_name = "get_backend_set"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/BackendSet/GetBackendSet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2443,14 +2629,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BackendSet")
+                response_type="BackendSet",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BackendSet")
+                response_type="BackendSet",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_backend_set_health(self, load_balancer_id, backend_set_name, **kwargs):
         """
@@ -2491,6 +2683,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/health"
         method = "GET"
+        operation_name = "get_backend_set_health"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/BackendSetHealth/GetBackendSetHealth"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2536,14 +2730,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BackendSetHealth")
+                response_type="BackendSetHealth",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BackendSetHealth")
+                response_type="BackendSetHealth",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_health_checker(self, load_balancer_id, backend_set_name, **kwargs):
         """
@@ -2584,6 +2784,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/healthChecker"
         method = "GET"
+        operation_name = "get_health_checker"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/HealthChecker/GetHealthChecker"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2629,14 +2831,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="HealthChecker")
+                response_type="HealthChecker",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="HealthChecker")
+                response_type="HealthChecker",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_hostname(self, load_balancer_id, name, **kwargs):
         """
@@ -2677,6 +2885,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/hostnames/{name}"
         method = "GET"
+        operation_name = "get_hostname"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/Hostname/GetHostname"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2722,14 +2932,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Hostname")
+                response_type="Hostname",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Hostname")
+                response_type="Hostname",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_load_balancer(self, load_balancer_id, **kwargs):
         """
@@ -2765,6 +2981,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}"
         method = "GET"
+        operation_name = "get_load_balancer"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancer/GetLoadBalancer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2809,14 +3027,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LoadBalancer")
+                response_type="LoadBalancer",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LoadBalancer")
+                response_type="LoadBalancer",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_load_balancer_health(self, load_balancer_id, **kwargs):
         """
@@ -2852,6 +3076,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/health"
         method = "GET"
+        operation_name = "get_load_balancer_health"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerHealth/GetLoadBalancerHealth"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2896,14 +3122,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LoadBalancerHealth")
+                response_type="LoadBalancerHealth",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LoadBalancerHealth")
+                response_type="LoadBalancerHealth",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_path_route_set(self, load_balancer_id, path_route_set_name, **kwargs):
         """
@@ -2944,6 +3176,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/pathRouteSets/{pathRouteSetName}"
         method = "GET"
+        operation_name = "get_path_route_set"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/GetPathRouteSet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2989,14 +3223,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PathRouteSet")
+                response_type="PathRouteSet",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PathRouteSet")
+                response_type="PathRouteSet",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_routing_policy(self, load_balancer_id, routing_policy_name, **kwargs):
         """
@@ -3037,6 +3277,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/routingPolicies/{routingPolicyName}"
         method = "GET"
+        operation_name = "get_routing_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/RoutingPolicy/GetRoutingPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3082,14 +3324,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="RoutingPolicy")
+                response_type="RoutingPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="RoutingPolicy")
+                response_type="RoutingPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_rule_set(self, load_balancer_id, rule_set_name, **kwargs):
         """
@@ -3130,6 +3378,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/ruleSets/{ruleSetName}"
         method = "GET"
+        operation_name = "get_rule_set"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/GetRuleSet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3175,14 +3425,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="RuleSet")
+                response_type="RuleSet",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="RuleSet")
+                response_type="RuleSet",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_ssl_cipher_suite(self, load_balancer_id, name, **kwargs):
         """
@@ -3223,6 +3479,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/sslCipherSuites/{name}"
         method = "GET"
+        operation_name = "get_ssl_cipher_suite"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/SSLCipherSuite/GetSslCipherSuite"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3268,14 +3526,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SSLCipherSuite")
+                response_type="SSLCipherSuite",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SSLCipherSuite")
+                response_type="SSLCipherSuite",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -3311,6 +3575,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancerWorkRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3355,14 +3621,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_backend_sets(self, load_balancer_id, **kwargs):
         """
@@ -3398,6 +3670,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets"
         method = "GET"
+        operation_name = "list_backend_sets"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/BackendSet/ListBackendSets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3442,14 +3716,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[BackendSet]")
+                response_type="list[BackendSet]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[BackendSet]")
+                response_type="list[BackendSet]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_backends(self, load_balancer_id, backend_set_name, **kwargs):
         """
@@ -3490,6 +3770,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends"
         method = "GET"
+        operation_name = "list_backends"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/Backend/ListBackends"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3535,14 +3817,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[Backend]")
+                response_type="list[Backend]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[Backend]")
+                response_type="list[Backend]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_certificates(self, load_balancer_id, **kwargs):
         """
@@ -3579,6 +3867,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/certificates"
         method = "GET"
+        operation_name = "list_certificates"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/Certificate/ListCertificates"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3623,14 +3913,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[Certificate]")
+                response_type="list[Certificate]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[Certificate]")
+                response_type="list[Certificate]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_hostnames(self, load_balancer_id, **kwargs):
         """
@@ -3667,6 +3963,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/hostnames"
         method = "GET"
+        operation_name = "list_hostnames"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/Hostname/ListHostnames"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3711,14 +4009,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[Hostname]")
+                response_type="list[Hostname]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[Hostname]")
+                response_type="list[Hostname]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_listener_rules(self, load_balancer_id, listener_name, **kwargs):
         """
@@ -3763,6 +4067,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/listeners/{listenerName}/rules"
         method = "GET"
+        operation_name = "list_listener_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/ListenerRuleSummary/ListListenerRules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3808,14 +4114,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[ListenerRuleSummary]")
+                response_type="list[ListenerRuleSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[ListenerRuleSummary]")
+                response_type="list[ListenerRuleSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_load_balancer_healths(self, compartment_id, **kwargs):
         """
@@ -3867,6 +4179,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancerHealths"
         method = "GET"
+        operation_name = "list_load_balancer_healths"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerHealthSummary/ListLoadBalancerHealths"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3910,14 +4224,20 @@ class LoadBalancerClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[LoadBalancerHealthSummary]")
+                response_type="list[LoadBalancerHealthSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[LoadBalancerHealthSummary]")
+                response_type="list[LoadBalancerHealthSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_load_balancers(self, compartment_id, **kwargs):
         """
@@ -3997,6 +4317,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers"
         method = "GET"
+        operation_name = "list_load_balancers"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancer/ListLoadBalancers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4071,14 +4393,20 @@ class LoadBalancerClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[LoadBalancer]")
+                response_type="list[LoadBalancer]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[LoadBalancer]")
+                response_type="list[LoadBalancer]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_path_route_sets(self, load_balancer_id, **kwargs):
         """
@@ -4115,6 +4443,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/pathRouteSets"
         method = "GET"
+        operation_name = "list_path_route_sets"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/ListPathRouteSets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4159,14 +4489,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[PathRouteSet]")
+                response_type="list[PathRouteSet]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[PathRouteSet]")
+                response_type="list[PathRouteSet]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_policies(self, compartment_id, **kwargs):
         """
@@ -4218,6 +4554,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancerPolicies"
         method = "GET"
+        operation_name = "list_policies"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerPolicy/ListPolicies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4261,14 +4599,20 @@ class LoadBalancerClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[LoadBalancerPolicy]")
+                response_type="list[LoadBalancerPolicy]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[LoadBalancerPolicy]")
+                response_type="list[LoadBalancerPolicy]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_protocols(self, compartment_id, **kwargs):
         """
@@ -4320,6 +4664,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancerProtocols"
         method = "GET"
+        operation_name = "list_protocols"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4363,14 +4709,20 @@ class LoadBalancerClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[LoadBalancerProtocol]")
+                response_type="list[LoadBalancerProtocol]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[LoadBalancerProtocol]")
+                response_type="list[LoadBalancerProtocol]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_routing_policies(self, load_balancer_id, **kwargs):
         """
@@ -4422,6 +4774,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/routingPolicies"
         method = "GET"
+        operation_name = "list_routing_policies"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/RoutingPolicy/ListRoutingPolicies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4475,7 +4829,10 @@ class LoadBalancerClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[RoutingPolicy]")
+                response_type="list[RoutingPolicy]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4483,7 +4840,10 @@ class LoadBalancerClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[RoutingPolicy]")
+                response_type="list[RoutingPolicy]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_rule_sets(self, load_balancer_id, **kwargs):
         """
@@ -4519,6 +4879,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/ruleSets"
         method = "GET"
+        operation_name = "list_rule_sets"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/ListRuleSets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4563,14 +4925,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[RuleSet]")
+                response_type="list[RuleSet]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[RuleSet]")
+                response_type="list[RuleSet]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_shapes(self, compartment_id, **kwargs):
         """
@@ -4622,6 +4990,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancerShapes"
         method = "GET"
+        operation_name = "list_shapes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4665,14 +5035,20 @@ class LoadBalancerClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[LoadBalancerShape]")
+                response_type="list[LoadBalancerShape]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[LoadBalancerShape]")
+                response_type="list[LoadBalancerShape]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_ssl_cipher_suites(self, load_balancer_id, **kwargs):
         """
@@ -4708,6 +5084,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/sslCipherSuites"
         method = "GET"
+        operation_name = "list_ssl_cipher_suites"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/SSLCipherSuite/ListSslCipherSuites"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4752,14 +5130,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[SSLCipherSuite]")
+                response_type="list[SSLCipherSuite]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[SSLCipherSuite]")
+                response_type="list[SSLCipherSuite]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, load_balancer_id, **kwargs):
         """
@@ -4811,6 +5195,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4864,7 +5250,10 @@ class LoadBalancerClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequest]")
+                response_type="list[WorkRequest]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4872,7 +5261,10 @@ class LoadBalancerClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequest]")
+                response_type="list[WorkRequest]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_backend(self, update_backend_details, load_balancer_id, backend_set_name, backend_name, **kwargs):
         """
@@ -4928,6 +5320,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
         method = "PUT"
+        operation_name = "update_backend"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4977,14 +5371,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_backend_details)
+                body=update_backend_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_backend_details)
+                body=update_backend_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_backend_set(self, update_backend_set_details, load_balancer_id, backend_set_name, **kwargs):
         """
@@ -5035,6 +5435,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}"
         method = "PUT"
+        operation_name = "update_backend_set"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5083,14 +5485,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_backend_set_details)
+                body=update_backend_set_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_backend_set_details)
+                body=update_backend_set_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_health_checker(self, health_checker, load_balancer_id, backend_set_name, **kwargs):
         """
@@ -5141,6 +5549,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/healthChecker"
         method = "PUT"
+        operation_name = "update_health_checker"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5189,14 +5599,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=health_checker)
+                body=health_checker,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=health_checker)
+                body=health_checker,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_hostname(self, update_hostname_details, load_balancer_id, name, **kwargs):
         """
@@ -5242,6 +5658,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/hostnames/{name}"
         method = "PUT"
+        operation_name = "update_hostname"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5287,14 +5705,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_hostname_details)
+                body=update_hostname_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_hostname_details)
+                body=update_hostname_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_listener(self, update_listener_details, load_balancer_id, listener_name, **kwargs):
         """
@@ -5345,6 +5769,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/listeners/{listenerName}"
         method = "PUT"
+        operation_name = "update_listener"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5393,14 +5819,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_listener_details)
+                body=update_listener_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_listener_details)
+                body=update_listener_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_load_balancer(self, update_load_balancer_details, load_balancer_id, **kwargs):
         """
@@ -5446,6 +5878,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}"
         method = "PUT"
+        operation_name = "update_load_balancer"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5493,14 +5927,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_load_balancer_details)
+                body=update_load_balancer_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_load_balancer_details)
+                body=update_load_balancer_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_load_balancer_shape(self, load_balancer_id, update_load_balancer_shape_details, **kwargs):
         """
@@ -5551,6 +5991,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/updateShape"
         method = "PUT"
+        operation_name = "update_load_balancer_shape"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancer/UpdateLoadBalancerShape"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5598,14 +6040,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_load_balancer_shape_details)
+                body=update_load_balancer_shape_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_load_balancer_shape_details)
+                body=update_load_balancer_shape_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_network_security_groups(self, update_network_security_groups_details, load_balancer_id, **kwargs):
         """
@@ -5651,6 +6099,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/networkSecurityGroups"
         method = "PUT"
+        operation_name = "update_network_security_groups"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/NetworkSecurityGroups/UpdateNetworkSecurityGroups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5698,14 +6148,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_network_security_groups_details)
+                body=update_network_security_groups_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_network_security_groups_details)
+                body=update_network_security_groups_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_path_route_set(self, update_path_route_set_details, load_balancer_id, path_route_set_name, **kwargs):
         """
@@ -5761,6 +6217,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/pathRouteSets/{pathRouteSetName}"
         method = "PUT"
+        operation_name = "update_path_route_set"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5809,14 +6267,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_path_route_set_details)
+                body=update_path_route_set_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_path_route_set_details)
+                body=update_path_route_set_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_routing_policy(self, update_routing_policy_details, load_balancer_id, routing_policy_name, **kwargs):
         """
@@ -5870,6 +6334,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/routingPolicies/{routingPolicyName}"
         method = "PUT"
+        operation_name = "update_routing_policy"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5918,14 +6384,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_routing_policy_details)
+                body=update_routing_policy_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_routing_policy_details)
+                body=update_routing_policy_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_rule_set(self, load_balancer_id, rule_set_name, update_rule_set_details, **kwargs):
         """
@@ -5972,6 +6444,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/ruleSets/{ruleSetName}"
         method = "PUT"
+        operation_name = "update_rule_set"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6017,14 +6491,20 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_rule_set_details)
+                body=update_rule_set_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_rule_set_details)
+                body=update_rule_set_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_ssl_cipher_suite(self, update_ssl_cipher_suite_details, load_balancer_id, name, **kwargs):
         """
@@ -6075,6 +6555,8 @@ class LoadBalancerClient(object):
         """
         resource_path = "/loadBalancers/{loadBalancerId}/sslCipherSuites/{name}"
         method = "PUT"
+        operation_name = "update_ssl_cipher_suite"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6123,11 +6605,17 @@ class LoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_ssl_cipher_suite_details)
+                body=update_ssl_cipher_suite_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_ssl_cipher_suite_details)
+                body=update_ssl_cipher_suite_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

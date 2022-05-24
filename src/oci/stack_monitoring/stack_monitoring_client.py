@@ -150,6 +150,8 @@ class StackMonitoringClient(object):
         """
         resource_path = "/monitoredResources/actions/associateMonitoredResources"
         method = "POST"
+        operation_name = "associate_monitored_resources"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/AssociateMonitoredResources"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -189,14 +191,20 @@ class StackMonitoringClient(object):
                 method=method,
                 header_params=header_params,
                 body=associate_monitored_resources_details,
-                response_type="MonitoredResourceAssociation")
+                response_type="MonitoredResourceAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=associate_monitored_resources_details,
-                response_type="MonitoredResourceAssociation")
+                response_type="MonitoredResourceAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_monitored_resource_compartment(self, monitored_resource_id, change_monitored_resource_compartment_details, **kwargs):
         """
@@ -249,6 +257,8 @@ class StackMonitoringClient(object):
         """
         resource_path = "/monitoredResources/{monitoredResourceId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_monitored_resource_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/ChangeMonitoredResourceCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -298,14 +308,20 @@ class StackMonitoringClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_monitored_resource_compartment_details)
+                body=change_monitored_resource_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_monitored_resource_compartment_details)
+                body=change_monitored_resource_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_discovery_job(self, create_discovery_job_details, **kwargs):
         """
@@ -346,6 +362,8 @@ class StackMonitoringClient(object):
         """
         resource_path = "/discoveryJobs"
         method = "POST"
+        operation_name = "create_discovery_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/DiscoveryJob/CreateDiscoveryJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -383,14 +401,20 @@ class StackMonitoringClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_discovery_job_details,
-                response_type="DiscoveryJob")
+                response_type="DiscoveryJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_discovery_job_details,
-                response_type="DiscoveryJob")
+                response_type="DiscoveryJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_monitored_resource(self, create_monitored_resource_details, **kwargs):
         """
@@ -437,6 +461,8 @@ class StackMonitoringClient(object):
         """
         resource_path = "/monitoredResources"
         method = "POST"
+        operation_name = "create_monitored_resource"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/CreateMonitoredResource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -476,14 +502,20 @@ class StackMonitoringClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_monitored_resource_details,
-                response_type="MonitoredResource")
+                response_type="MonitoredResource",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_monitored_resource_details,
-                response_type="MonitoredResource")
+                response_type="MonitoredResource",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_discovery_job(self, discovery_job_id, **kwargs):
         """
@@ -524,6 +556,8 @@ class StackMonitoringClient(object):
         """
         resource_path = "/discoveryJobs/{discoveryJobId}"
         method = "DELETE"
+        operation_name = "delete_discovery_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/DiscoveryJob/DeleteDiscoveryJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -571,13 +605,19 @@ class StackMonitoringClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_monitored_resource(self, monitored_resource_id, **kwargs):
         """
@@ -620,6 +660,8 @@ class StackMonitoringClient(object):
         """
         resource_path = "/monitoredResources/{monitoredResourceId}"
         method = "DELETE"
+        operation_name = "delete_monitored_resource"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/DeleteMonitoredResource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -665,13 +707,19 @@ class StackMonitoringClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def disable_external_database(self, monitored_resource_id, **kwargs):
         """
@@ -721,6 +769,8 @@ class StackMonitoringClient(object):
         """
         resource_path = "/monitoredResources/{monitoredResourceId}/actions/disableExternalDatabase"
         method = "POST"
+        operation_name = "disable_external_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/DisableExternalDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -769,13 +819,19 @@ class StackMonitoringClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def disassociate_monitored_resources(self, disassociate_monitored_resources_details, **kwargs):
         """
@@ -823,6 +879,8 @@ class StackMonitoringClient(object):
         """
         resource_path = "/monitoredResources/actions/disassociateMonitoredResources"
         method = "POST"
+        operation_name = "disassociate_monitored_resources"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/DisassociateMonitoredResources"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -861,13 +919,19 @@ class StackMonitoringClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=disassociate_monitored_resources_details)
+                body=disassociate_monitored_resources_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=disassociate_monitored_resources_details)
+                body=disassociate_monitored_resources_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_discovery_job(self, discovery_job_id, **kwargs):
         """
@@ -901,6 +965,8 @@ class StackMonitoringClient(object):
         """
         resource_path = "/discoveryJobs/{discoveryJobId}"
         method = "GET"
+        operation_name = "get_discovery_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/DiscoveryJob/GetDiscoveryJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -947,14 +1013,20 @@ class StackMonitoringClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DiscoveryJob")
+                response_type="DiscoveryJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DiscoveryJob")
+                response_type="DiscoveryJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_monitored_resource(self, monitored_resource_id, **kwargs):
         """
@@ -990,6 +1062,8 @@ class StackMonitoringClient(object):
         """
         resource_path = "/monitoredResources/{monitoredResourceId}"
         method = "GET"
+        operation_name = "get_monitored_resource"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/GetMonitoredResource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1036,14 +1110,20 @@ class StackMonitoringClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="MonitoredResource")
+                response_type="MonitoredResource",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="MonitoredResource")
+                response_type="MonitoredResource",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1079,6 +1159,8 @@ class StackMonitoringClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1125,14 +1207,20 @@ class StackMonitoringClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_discovery_job_logs(self, discovery_job_id, **kwargs):
         """
@@ -1195,6 +1283,8 @@ class StackMonitoringClient(object):
         """
         resource_path = "/discoveryJobs/{discoveryJobId}/logs"
         method = "GET"
+        operation_name = "list_discovery_job_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/DiscoveryJobLogCollection/ListDiscoveryJobLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1277,7 +1367,10 @@ class StackMonitoringClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DiscoveryJobLogCollection")
+                response_type="DiscoveryJobLogCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1285,7 +1378,10 @@ class StackMonitoringClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DiscoveryJobLogCollection")
+                response_type="DiscoveryJobLogCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_discovery_jobs(self, compartment_id, **kwargs):
         """
@@ -1346,6 +1442,8 @@ class StackMonitoringClient(object):
         """
         resource_path = "/discoveryJobs"
         method = "GET"
+        operation_name = "list_discovery_jobs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/DiscoveryJobCollection/ListDiscoveryJobs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1411,14 +1509,20 @@ class StackMonitoringClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DiscoveryJobCollection")
+                response_type="DiscoveryJobCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DiscoveryJobCollection")
+                response_type="DiscoveryJobCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -1478,6 +1582,8 @@ class StackMonitoringClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/WorkRequestErrorCollection/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1551,7 +1657,10 @@ class StackMonitoringClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1559,7 +1668,10 @@ class StackMonitoringClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -1619,6 +1731,8 @@ class StackMonitoringClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/WorkRequestLogEntryCollection/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1692,7 +1806,10 @@ class StackMonitoringClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1700,7 +1817,10 @@ class StackMonitoringClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -1769,6 +1889,8 @@ class StackMonitoringClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/WorkRequestSummaryCollection/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1845,14 +1967,20 @@ class StackMonitoringClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestSummaryCollection")
+                response_type="WorkRequestSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestSummaryCollection")
+                response_type="WorkRequestSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def search_monitored_resource_associations(self, search_monitored_resource_associations_details, **kwargs):
         """
@@ -1914,6 +2042,8 @@ class StackMonitoringClient(object):
         """
         resource_path = "/monitoredResources/actions/searchAssociations"
         method = "POST"
+        operation_name = "search_monitored_resource_associations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/SearchMonitoredResourceAssociations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1964,7 +2094,10 @@ class StackMonitoringClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=search_monitored_resource_associations_details,
-                response_type="MonitoredResourceAssociationsCollection")
+                response_type="MonitoredResourceAssociationsCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1972,7 +2105,10 @@ class StackMonitoringClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=search_monitored_resource_associations_details,
-                response_type="MonitoredResourceAssociationsCollection")
+                response_type="MonitoredResourceAssociationsCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def search_monitored_resource_members(self, monitored_resource_id, search_monitored_resource_members_details, **kwargs):
         """
@@ -2049,6 +2185,8 @@ class StackMonitoringClient(object):
         """
         resource_path = "/monitoredResources/{monitoredResourceId}/actions/listMembers"
         method = "POST"
+        operation_name = "search_monitored_resource_members"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/SearchMonitoredResourceMembers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2128,7 +2266,10 @@ class StackMonitoringClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=search_monitored_resource_members_details,
-                response_type="MonitoredResourceMembersCollection")
+                response_type="MonitoredResourceMembersCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2137,7 +2278,10 @@ class StackMonitoringClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=search_monitored_resource_members_details,
-                response_type="MonitoredResourceMembersCollection")
+                response_type="MonitoredResourceMembersCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def search_monitored_resources(self, search_monitored_resources_details, **kwargs):
         """
@@ -2199,6 +2343,8 @@ class StackMonitoringClient(object):
         """
         resource_path = "/monitoredResources/actions/search"
         method = "POST"
+        operation_name = "search_monitored_resources"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/SearchMonitoredResources"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2249,7 +2395,10 @@ class StackMonitoringClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=search_monitored_resources_details,
-                response_type="MonitoredResourceCollection")
+                response_type="MonitoredResourceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2257,7 +2406,10 @@ class StackMonitoringClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=search_monitored_resources_details,
-                response_type="MonitoredResourceCollection")
+                response_type="MonitoredResourceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_monitored_resource(self, monitored_resource_id, update_monitored_resource_details, **kwargs):
         """
@@ -2303,6 +2455,8 @@ class StackMonitoringClient(object):
         """
         resource_path = "/monitoredResources/{monitoredResourceId}"
         method = "PUT"
+        operation_name = "update_monitored_resource"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/UpdateMonitoredResource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2349,11 +2503,17 @@ class StackMonitoringClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_monitored_resource_details)
+                body=update_monitored_resource_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_monitored_resource_details)
+                body=update_monitored_resource_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

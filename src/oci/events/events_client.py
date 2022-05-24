@@ -156,6 +156,8 @@ class EventsClient(object):
         """
         resource_path = "/rules/{ruleId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_rule_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/events/20181201/Rule/ChangeRuleCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -205,14 +207,20 @@ class EventsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_rule_compartment_details)
+                body=change_rule_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_rule_compartment_details)
+                body=change_rule_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_rule(self, create_rule_details, **kwargs):
         """
@@ -253,6 +261,8 @@ class EventsClient(object):
         """
         resource_path = "/rules"
         method = "POST"
+        operation_name = "create_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/events/20181201/Rule/CreateRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -290,14 +300,20 @@ class EventsClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_rule_details,
-                response_type="Rule")
+                response_type="Rule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_rule_details,
-                response_type="Rule")
+                response_type="Rule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_rule(self, rule_id, **kwargs):
         """
@@ -338,6 +354,8 @@ class EventsClient(object):
         """
         resource_path = "/rules/{ruleId}"
         method = "DELETE"
+        operation_name = "delete_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/events/20181201/Rule/DeleteRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -383,13 +401,19 @@ class EventsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_rule(self, rule_id, **kwargs):
         """
@@ -425,6 +449,8 @@ class EventsClient(object):
         """
         resource_path = "/rules/{ruleId}"
         method = "GET"
+        operation_name = "get_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/events/20181201/Rule/GetRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -469,14 +495,20 @@ class EventsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Rule")
+                response_type="Rule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Rule")
+                response_type="Rule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_rules(self, compartment_id, **kwargs):
         """
@@ -555,6 +587,8 @@ class EventsClient(object):
         """
         resource_path = "/rules"
         method = "GET"
+        operation_name = "list_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/events/20181201/RuleSummary/ListRules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -627,14 +661,20 @@ class EventsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[RuleSummary]")
+                response_type="list[RuleSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[RuleSummary]")
+                response_type="list[RuleSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_rule(self, rule_id, update_rule_details, **kwargs):
         """
@@ -678,6 +718,8 @@ class EventsClient(object):
         """
         resource_path = "/rules/{ruleId}"
         method = "PUT"
+        operation_name = "update_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/events/20181201/Rule/UpdateRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -725,7 +767,10 @@ class EventsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_rule_details,
-                response_type="Rule")
+                response_type="Rule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -733,4 +778,7 @@ class EventsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_rule_details,
-                response_type="Rule")
+                response_type="Rule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

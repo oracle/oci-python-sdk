@@ -141,6 +141,8 @@ class IncidentClient(object):
         """
         resource_path = "/v2/incidents"
         method = "POST"
+        operation_name = "create_incident"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/Incident/CreateIncident"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -178,14 +180,20 @@ class IncidentClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_incident_details,
-                response_type="Incident")
+                response_type="Incident",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_incident_details,
-                response_type="Incident")
+                response_type="Incident",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_incident(self, incident_key, csi, ocid, **kwargs):
         """
@@ -230,6 +238,8 @@ class IncidentClient(object):
         """
         resource_path = "/v2/incidents/{incidentKey}"
         method = "GET"
+        operation_name = "get_incident"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/Incident/GetIncident"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -280,14 +290,20 @@ class IncidentClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Incident")
+                response_type="Incident",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Incident")
+                response_type="Incident",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_status(self, source, ocid, **kwargs):
         """
@@ -326,6 +342,8 @@ class IncidentClient(object):
         """
         resource_path = "/v2/incidents/status/{source}"
         method = "GET"
+        operation_name = "get_status"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/Status/GetStatus"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -373,14 +391,20 @@ class IncidentClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Status")
+                response_type="Status",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Status")
+                response_type="Status",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_incident_resource_types(self, problem_type, compartment_id, csi, ocid, **kwargs):
         """
@@ -448,6 +472,8 @@ class IncidentClient(object):
         """
         resource_path = "/v2/incidents/incidentResourceTypes"
         method = "GET"
+        operation_name = "list_incident_resource_types"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/IncidentResourceType/ListIncidentResourceTypes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -516,14 +542,20 @@ class IncidentClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[IncidentResourceType]")
+                response_type="list[IncidentResourceType]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[IncidentResourceType]")
+                response_type="list[IncidentResourceType]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_incidents(self, csi, compartment_id, ocid, **kwargs):
         """
@@ -593,6 +625,8 @@ class IncidentClient(object):
         """
         resource_path = "/v2/incidents"
         method = "GET"
+        operation_name = "list_incidents"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/IncidentSummary/ListIncidents"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -669,14 +703,20 @@ class IncidentClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[IncidentSummary]")
+                response_type="list[IncidentSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[IncidentSummary]")
+                response_type="list[IncidentSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_incident(self, incident_key, csi, update_incident_details, ocid, **kwargs):
         """
@@ -724,6 +764,8 @@ class IncidentClient(object):
         """
         resource_path = "/v2/incidents/{incidentKey}"
         method = "PUT"
+        operation_name = "update_incident"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/UpdateIncident/UpdateIncident"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -775,7 +817,10 @@ class IncidentClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_incident_details,
-                response_type="Incident")
+                response_type="Incident",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -783,7 +828,10 @@ class IncidentClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_incident_details,
-                response_type="Incident")
+                response_type="Incident",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def validate_user(self, csi, ocid, **kwargs):
         """
@@ -825,6 +873,8 @@ class IncidentClient(object):
         """
         resource_path = "/v2/incidents/user/validate"
         method = "GET"
+        operation_name = "validate_user"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/ValidationResponse/ValidateUser"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -869,11 +919,17 @@ class IncidentClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ValidationResponse")
+                response_type="ValidationResponse",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ValidationResponse")
+                response_type="ValidationResponse",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

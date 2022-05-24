@@ -1,0 +1,11 @@
+CloneDigitalAssistantDetails
+============================
+
+.. currentmodule:: oci.oda.models
+
+.. autoclass:: CloneDigitalAssistantDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

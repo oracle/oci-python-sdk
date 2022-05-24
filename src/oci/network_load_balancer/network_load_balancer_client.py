@@ -158,6 +158,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_network_load_balancer_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancer/ChangeNetworkLoadBalancerCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -207,14 +209,20 @@ class NetworkLoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_network_load_balancer_compartment_details)
+                body=change_network_load_balancer_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_network_load_balancer_compartment_details)
+                body=change_network_load_balancer_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_backend(self, network_load_balancer_id, create_backend_details, backend_set_name, **kwargs):
         """
@@ -272,6 +280,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}/backends"
         method = "POST"
+        operation_name = "create_backend"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Backend/CreateBackend"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -322,14 +332,20 @@ class NetworkLoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_backend_details)
+                body=create_backend_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_backend_details)
+                body=create_backend_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_backend_set(self, network_load_balancer_id, create_backend_set_details, **kwargs):
         """
@@ -382,6 +398,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/backendSets"
         method = "POST"
+        operation_name = "create_backend_set"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendSet/CreateBackendSet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -431,14 +449,20 @@ class NetworkLoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_backend_set_details)
+                body=create_backend_set_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_backend_set_details)
+                body=create_backend_set_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_listener(self, network_load_balancer_id, create_listener_details, **kwargs):
         """
@@ -491,6 +515,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/listeners"
         method = "POST"
+        operation_name = "create_listener"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Listener/CreateListener"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -540,14 +566,20 @@ class NetworkLoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_listener_details)
+                body=create_listener_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_listener_details)
+                body=create_listener_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_network_load_balancer(self, create_network_load_balancer_details, **kwargs):
         """
@@ -588,6 +620,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/networkLoadBalancers"
         method = "POST"
+        operation_name = "create_network_load_balancer"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancer/CreateNetworkLoadBalancer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -625,14 +659,20 @@ class NetworkLoadBalancerClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_network_load_balancer_details,
-                response_type="NetworkLoadBalancer")
+                response_type="NetworkLoadBalancer",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_network_load_balancer_details,
-                response_type="NetworkLoadBalancer")
+                response_type="NetworkLoadBalancer",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_backend(self, network_load_balancer_id, backend_set_name, backend_name, **kwargs):
         """
@@ -688,6 +728,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
         method = "DELETE"
+        operation_name = "delete_backend"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Backend/DeleteBackend"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -735,13 +777,19 @@ class NetworkLoadBalancerClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_backend_set(self, network_load_balancer_id, backend_set_name, **kwargs):
         """
@@ -791,6 +839,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}"
         method = "DELETE"
+        operation_name = "delete_backend_set"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendSet/DeleteBackendSet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -837,13 +887,19 @@ class NetworkLoadBalancerClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_listener(self, network_load_balancer_id, listener_name, **kwargs):
         """
@@ -891,6 +947,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/listeners/{listenerName}"
         method = "DELETE"
+        operation_name = "delete_listener"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Listener/DeleteListener"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -937,13 +995,19 @@ class NetworkLoadBalancerClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_network_load_balancer(self, network_load_balancer_id, **kwargs):
         """
@@ -986,6 +1050,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}"
         method = "DELETE"
+        operation_name = "delete_network_load_balancer"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancer/DeleteNetworkLoadBalancer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1031,13 +1097,19 @@ class NetworkLoadBalancerClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_backend(self, network_load_balancer_id, backend_set_name, backend_name, **kwargs):
         """
@@ -1093,6 +1165,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
         method = "GET"
+        operation_name = "get_backend"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Backend/GetBackend"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1141,14 +1215,20 @@ class NetworkLoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Backend")
+                response_type="Backend",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Backend")
+                response_type="Backend",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_backend_health(self, network_load_balancer_id, backend_set_name, backend_name, **kwargs):
         """
@@ -1197,6 +1277,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}/backends/{backendName}/health"
         method = "GET"
+        operation_name = "get_backend_health"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendHealth/GetBackendHealth"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1243,14 +1325,20 @@ class NetworkLoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BackendHealth")
+                response_type="BackendHealth",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BackendHealth")
+                response_type="BackendHealth",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_backend_set(self, network_load_balancer_id, backend_set_name, **kwargs):
         """
@@ -1298,6 +1386,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}"
         method = "GET"
+        operation_name = "get_backend_set"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendSet/GetBackendSet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1345,14 +1435,20 @@ class NetworkLoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BackendSet")
+                response_type="BackendSet",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BackendSet")
+                response_type="BackendSet",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_backend_set_health(self, network_load_balancer_id, backend_set_name, **kwargs):
         """
@@ -1393,6 +1489,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}/health"
         method = "GET"
+        operation_name = "get_backend_set_health"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendSetHealth/GetBackendSetHealth"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1438,14 +1536,20 @@ class NetworkLoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BackendSetHealth")
+                response_type="BackendSetHealth",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BackendSetHealth")
+                response_type="BackendSetHealth",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_health_checker(self, network_load_balancer_id, backend_set_name, **kwargs):
         """
@@ -1500,6 +1604,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}/healthChecker"
         method = "GET"
+        operation_name = "get_health_checker"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/HealthChecker/GetHealthChecker"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1550,14 +1656,20 @@ class NetworkLoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="HealthChecker")
+                response_type="HealthChecker",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="HealthChecker")
+                response_type="HealthChecker",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_listener(self, network_load_balancer_id, listener_name, **kwargs):
         """
@@ -1605,6 +1717,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/listeners/{listenerName}"
         method = "GET"
+        operation_name = "get_listener"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Listener/GetListener"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1652,14 +1766,20 @@ class NetworkLoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Listener")
+                response_type="Listener",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Listener")
+                response_type="Listener",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_network_load_balancer(self, network_load_balancer_id, **kwargs):
         """
@@ -1702,6 +1822,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}"
         method = "GET"
+        operation_name = "get_network_load_balancer"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancer/GetNetworkLoadBalancer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1748,14 +1870,20 @@ class NetworkLoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="NetworkLoadBalancer")
+                response_type="NetworkLoadBalancer",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="NetworkLoadBalancer")
+                response_type="NetworkLoadBalancer",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_network_load_balancer_health(self, network_load_balancer_id, **kwargs):
         """
@@ -1791,6 +1919,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/health"
         method = "GET"
+        operation_name = "get_network_load_balancer_health"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancerHealth/GetNetworkLoadBalancerHealth"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1835,14 +1965,20 @@ class NetworkLoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="NetworkLoadBalancerHealth")
+                response_type="NetworkLoadBalancerHealth",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="NetworkLoadBalancerHealth")
+                response_type="NetworkLoadBalancerHealth",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1876,6 +2012,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1920,14 +2058,20 @@ class NetworkLoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_backend_sets(self, network_load_balancer_id, **kwargs):
         """
@@ -1994,6 +2138,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/backendSets"
         method = "GET"
+        operation_name = "list_backend_sets"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendSetSummary/ListBackendSets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2067,7 +2213,10 @@ class NetworkLoadBalancerClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="BackendSetCollection")
+                response_type="BackendSetCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2075,7 +2224,10 @@ class NetworkLoadBalancerClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="BackendSetCollection")
+                response_type="BackendSetCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_backends(self, network_load_balancer_id, backend_set_name, **kwargs):
         """
@@ -2147,6 +2299,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}/backends"
         method = "GET"
+        operation_name = "list_backends"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendSummary/ListBackends"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2221,7 +2375,10 @@ class NetworkLoadBalancerClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="BackendCollection")
+                response_type="BackendCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2229,7 +2386,10 @@ class NetworkLoadBalancerClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="BackendCollection")
+                response_type="BackendCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_listeners(self, network_load_balancer_id, **kwargs):
         """
@@ -2296,6 +2456,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/listeners"
         method = "GET"
+        operation_name = "list_listeners"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/ListenerSummary/ListListeners"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2369,7 +2531,10 @@ class NetworkLoadBalancerClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ListenerCollection")
+                response_type="ListenerCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2377,7 +2542,10 @@ class NetworkLoadBalancerClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ListenerCollection")
+                response_type="ListenerCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_network_load_balancer_healths(self, compartment_id, **kwargs):
         """
@@ -2437,6 +2605,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/networkLoadBalancers/health"
         method = "GET"
+        operation_name = "list_network_load_balancer_healths"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancerHealth/ListNetworkLoadBalancerHealths"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2498,14 +2668,20 @@ class NetworkLoadBalancerClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="NetworkLoadBalancerHealthCollection")
+                response_type="NetworkLoadBalancerHealthCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="NetworkLoadBalancerHealthCollection")
+                response_type="NetworkLoadBalancerHealthCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_network_load_balancers(self, compartment_id, **kwargs):
         """
@@ -2573,6 +2749,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/networkLoadBalancers"
         method = "GET"
+        operation_name = "list_network_load_balancers"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancer/ListNetworkLoadBalancers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2645,14 +2823,20 @@ class NetworkLoadBalancerClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="NetworkLoadBalancerCollection")
+                response_type="NetworkLoadBalancerCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="NetworkLoadBalancerCollection")
+                response_type="NetworkLoadBalancerCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_network_load_balancers_policies(self, **kwargs):
         """
@@ -2707,6 +2891,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/networkLoadBalancersPolicies"
         method = "GET"
+        operation_name = "list_network_load_balancers_policies"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancingPolicy/ListNetworkLoadBalancersPolicies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2767,14 +2953,20 @@ class NetworkLoadBalancerClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="NetworkLoadBalancersPolicyCollection")
+                response_type="NetworkLoadBalancersPolicyCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="NetworkLoadBalancersPolicyCollection")
+                response_type="NetworkLoadBalancersPolicyCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_network_load_balancers_protocols(self, **kwargs):
         """
@@ -2830,6 +3022,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/networkLoadBalancersProtocols"
         method = "GET"
+        operation_name = "list_network_load_balancers_protocols"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/ListenerProtocols/ListNetworkLoadBalancersProtocols"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2890,14 +3084,20 @@ class NetworkLoadBalancerClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="NetworkLoadBalancersProtocolCollection")
+                response_type="NetworkLoadBalancersProtocolCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="NetworkLoadBalancersProtocolCollection")
+                response_type="NetworkLoadBalancersProtocolCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, compartment_id, **kwargs):
         """
@@ -2949,6 +3149,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3003,7 +3205,10 @@ class NetworkLoadBalancerClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3011,7 +3216,10 @@ class NetworkLoadBalancerClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, compartment_id, **kwargs):
         """
@@ -3063,6 +3271,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3117,7 +3327,10 @@ class NetworkLoadBalancerClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3125,7 +3338,10 @@ class NetworkLoadBalancerClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -3174,6 +3390,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3217,14 +3435,20 @@ class NetworkLoadBalancerClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestCollection")
+                response_type="WorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestCollection")
+                response_type="WorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_backend(self, network_load_balancer_id, update_backend_details, backend_set_name, backend_name, **kwargs):
         """
@@ -3290,6 +3514,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"
         method = "PUT"
+        operation_name = "update_backend"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Backend/UpdateBackend"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3341,14 +3567,20 @@ class NetworkLoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_backend_details)
+                body=update_backend_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_backend_details)
+                body=update_backend_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_backend_set(self, network_load_balancer_id, update_backend_set_details, backend_set_name, **kwargs):
         """
@@ -3406,6 +3638,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}"
         method = "PUT"
+        operation_name = "update_backend_set"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendSet/UpdateBackendSet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3456,14 +3690,20 @@ class NetworkLoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_backend_set_details)
+                body=update_backend_set_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_backend_set_details)
+                body=update_backend_set_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_health_checker(self, network_load_balancer_id, update_health_checker_details, backend_set_name, **kwargs):
         """
@@ -3521,6 +3761,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/backendSets/{backendSetName}/healthChecker"
         method = "PUT"
+        operation_name = "update_health_checker"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/HealthChecker/UpdateHealthChecker"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3571,14 +3813,20 @@ class NetworkLoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_health_checker_details)
+                body=update_health_checker_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_health_checker_details)
+                body=update_health_checker_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_listener(self, network_load_balancer_id, update_listener_details, listener_name, **kwargs):
         """
@@ -3636,6 +3884,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/listeners/{listenerName}"
         method = "PUT"
+        operation_name = "update_listener"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/Listener/UpdateListener"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3686,14 +3936,20 @@ class NetworkLoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_listener_details)
+                body=update_listener_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_listener_details)
+                body=update_listener_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_network_load_balancer(self, network_load_balancer_id, update_network_load_balancer_details, **kwargs):
         """
@@ -3739,6 +3995,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}"
         method = "PUT"
+        operation_name = "update_network_load_balancer"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancer/UpdateNetworkLoadBalancer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3785,14 +4043,20 @@ class NetworkLoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_network_load_balancer_details)
+                body=update_network_load_balancer_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_network_load_balancer_details)
+                body=update_network_load_balancer_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_network_security_groups(self, network_load_balancer_id, update_network_security_groups_details, **kwargs):
         """
@@ -3845,6 +4109,8 @@ class NetworkLoadBalancerClient(object):
         """
         resource_path = "/networkLoadBalancers/{networkLoadBalancerId}/networkSecurityGroups"
         method = "PUT"
+        operation_name = "update_network_security_groups"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/NetworkLoadBalancer/UpdateNetworkSecurityGroups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3894,11 +4160,17 @@ class NetworkLoadBalancerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_network_security_groups_details)
+                body=update_network_security_groups_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_network_security_groups_details)
+                body=update_network_security_groups_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

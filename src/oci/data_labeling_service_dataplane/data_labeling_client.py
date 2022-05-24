@@ -142,6 +142,8 @@ class DataLabelingClient(object):
         """
         resource_path = "/annotations"
         method = "POST"
+        operation_name = "create_annotation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Annotation/CreateAnnotation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -179,14 +181,20 @@ class DataLabelingClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_annotation_details,
-                response_type="Annotation")
+                response_type="Annotation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_annotation_details,
-                response_type="Annotation")
+                response_type="Annotation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_record(self, create_record_details, **kwargs):
         """
@@ -226,6 +234,8 @@ class DataLabelingClient(object):
         """
         resource_path = "/records"
         method = "POST"
+        operation_name = "create_record"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Record/CreateRecord"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -265,14 +275,20 @@ class DataLabelingClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_record_details,
-                response_type="Record")
+                response_type="Record",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_record_details,
-                response_type="Record")
+                response_type="Record",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_annotation(self, annotation_id, **kwargs):
         """
@@ -312,6 +328,8 @@ class DataLabelingClient(object):
         """
         resource_path = "/annotations/{annotationId}"
         method = "DELETE"
+        operation_name = "delete_annotation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Annotation/DeleteAnnotation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -359,13 +377,19 @@ class DataLabelingClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_record(self, record_id, **kwargs):
         """
@@ -405,6 +429,8 @@ class DataLabelingClient(object):
         """
         resource_path = "/records/{recordId}"
         method = "DELETE"
+        operation_name = "delete_record"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Record/DeleteRecord"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -452,13 +478,19 @@ class DataLabelingClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_annotation(self, annotation_id, **kwargs):
         """
@@ -491,6 +523,8 @@ class DataLabelingClient(object):
         """
         resource_path = "/annotations/{annotationId}"
         method = "GET"
+        operation_name = "get_annotation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Annotation/GetAnnotation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -537,14 +571,20 @@ class DataLabelingClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Annotation")
+                response_type="Annotation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Annotation")
+                response_type="Annotation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_dataset(self, dataset_id, **kwargs):
         """
@@ -577,6 +617,8 @@ class DataLabelingClient(object):
         """
         resource_path = "/datasets/{datasetId}"
         method = "GET"
+        operation_name = "get_dataset"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Dataset/GetDataset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -623,14 +665,20 @@ class DataLabelingClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Dataset")
+                response_type="Dataset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Dataset")
+                response_type="Dataset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_record(self, record_id, **kwargs):
         """
@@ -663,6 +711,8 @@ class DataLabelingClient(object):
         """
         resource_path = "/records/{recordId}"
         method = "GET"
+        operation_name = "get_record"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Record/GetRecord"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -709,14 +759,20 @@ class DataLabelingClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Record")
+                response_type="Record",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Record")
+                response_type="Record",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_record_content(self, record_id, **kwargs):
         """
@@ -756,6 +812,8 @@ class DataLabelingClient(object):
         """
         resource_path = "/records/{recordId}/content"
         method = "GET"
+        operation_name = "get_record_content"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Record/GetRecordContent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -804,14 +862,20 @@ class DataLabelingClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_record_preview_content(self, record_id, **kwargs):
         """
@@ -851,6 +915,8 @@ class DataLabelingClient(object):
         """
         resource_path = "/records/{recordId}/preview/content"
         method = "GET"
+        operation_name = "get_record_preview_content"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Record/GetRecordPreviewContent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -899,14 +965,20 @@ class DataLabelingClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_annotations(self, compartment_id, dataset_id, **kwargs):
         """
@@ -978,6 +1050,8 @@ class DataLabelingClient(object):
         """
         resource_path = "/annotations"
         method = "GET"
+        operation_name = "list_annotations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/AnnotationCollection/ListAnnotations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1061,14 +1135,20 @@ class DataLabelingClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AnnotationCollection")
+                response_type="AnnotationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AnnotationCollection")
+                response_type="AnnotationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_records(self, compartment_id, dataset_id, **kwargs):
         """
@@ -1137,6 +1217,8 @@ class DataLabelingClient(object):
         """
         resource_path = "/records"
         method = "GET"
+        operation_name = "list_records"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/RecordCollection/ListRecords"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1218,14 +1300,20 @@ class DataLabelingClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RecordCollection")
+                response_type="RecordCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RecordCollection")
+                response_type="RecordCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_annotation_analytics(self, compartment_id, dataset_id, **kwargs):
         """
@@ -1290,6 +1378,8 @@ class DataLabelingClient(object):
         """
         resource_path = "/annotationAnalytics"
         method = "GET"
+        operation_name = "summarize_annotation_analytics"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/AnnotationAnalyticsAggregationCollection/SummarizeAnnotationAnalytics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1374,14 +1464,20 @@ class DataLabelingClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AnnotationAnalyticsAggregationCollection")
+                response_type="AnnotationAnalyticsAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AnnotationAnalyticsAggregationCollection")
+                response_type="AnnotationAnalyticsAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_record_analytics(self, compartment_id, dataset_id, **kwargs):
         """
@@ -1443,6 +1539,8 @@ class DataLabelingClient(object):
         """
         resource_path = "/recordAnalytics"
         method = "GET"
+        operation_name = "summarize_record_analytics"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/RecordAnalyticsAggregationCollection/SummarizeRecordAnalytics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1525,14 +1623,20 @@ class DataLabelingClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RecordAnalyticsAggregationCollection")
+                response_type="RecordAnalyticsAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RecordAnalyticsAggregationCollection")
+                response_type="RecordAnalyticsAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_annotation(self, annotation_id, update_annotation_details, **kwargs):
         """
@@ -1575,6 +1679,8 @@ class DataLabelingClient(object):
         """
         resource_path = "/annotations/{annotationId}"
         method = "PUT"
+        operation_name = "update_annotation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Annotation/UpdateAnnotation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1624,7 +1730,10 @@ class DataLabelingClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_annotation_details,
-                response_type="Annotation")
+                response_type="Annotation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1632,7 +1741,10 @@ class DataLabelingClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_annotation_details,
-                response_type="Annotation")
+                response_type="Annotation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_record(self, record_id, update_record_details, **kwargs):
         """
@@ -1675,6 +1787,8 @@ class DataLabelingClient(object):
         """
         resource_path = "/records/{recordId}"
         method = "PUT"
+        operation_name = "update_record"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/datalabeling-dp/20211001/Record/UpdateRecord"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1724,7 +1838,10 @@ class DataLabelingClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_record_details,
-                response_type="Record")
+                response_type="Record",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1732,4 +1849,7 @@ class DataLabelingClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_record_details,
-                response_type="Record")
+                response_type="Record",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

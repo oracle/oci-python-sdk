@@ -149,6 +149,8 @@ class SubscriptionClient(object):
         """
         resource_path = "/subscriptionMappings"
         method = "POST"
+        operation_name = "create_subscription_mapping"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/CreateSubscriptionMapping"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -188,14 +190,20 @@ class SubscriptionClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_subscription_mapping_details,
-                response_type="SubscriptionMapping")
+                response_type="SubscriptionMapping",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_subscription_mapping_details,
-                response_type="SubscriptionMapping")
+                response_type="SubscriptionMapping",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_subscription_mapping(self, subscription_mapping_id, **kwargs):
         """
@@ -235,6 +243,8 @@ class SubscriptionClient(object):
         """
         resource_path = "/subscriptionMappings/{subscriptionMappingId}"
         method = "DELETE"
+        operation_name = "delete_subscription_mapping"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/DeleteSubscriptionMapping"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -280,13 +290,19 @@ class SubscriptionClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_assigned_subscription(self, assigned_subscription_id, **kwargs):
         """
@@ -319,6 +335,8 @@ class SubscriptionClient(object):
         """
         resource_path = "/assignedSubscriptions/{assignedSubscriptionId}"
         method = "GET"
+        operation_name = "get_assigned_subscription"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/AssignedSubscription/GetAssignedSubscription"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -363,14 +381,20 @@ class SubscriptionClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AssignedSubscription")
+                response_type="AssignedSubscription",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AssignedSubscription")
+                response_type="AssignedSubscription",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_subscription(self, subscription_id, **kwargs):
         """
@@ -403,6 +427,8 @@ class SubscriptionClient(object):
         """
         resource_path = "/subscriptions/{subscriptionId}"
         method = "GET"
+        operation_name = "get_subscription"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Subscription/GetSubscription"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -447,14 +473,20 @@ class SubscriptionClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Subscription")
+                response_type="Subscription",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Subscription")
+                response_type="Subscription",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_subscription_mapping(self, subscription_mapping_id, **kwargs):
         """
@@ -487,6 +519,8 @@ class SubscriptionClient(object):
         """
         resource_path = "/subscriptionMappings/{subscriptionMappingId}"
         method = "GET"
+        operation_name = "get_subscription_mapping"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/GetSubscriptionMapping"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -531,14 +565,20 @@ class SubscriptionClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SubscriptionMapping")
+                response_type="SubscriptionMapping",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SubscriptionMapping")
+                response_type="SubscriptionMapping",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_assigned_subscriptions(self, compartment_id, **kwargs):
         """
@@ -593,6 +633,8 @@ class SubscriptionClient(object):
         """
         resource_path = "/assignedSubscriptions"
         method = "GET"
+        operation_name = "list_assigned_subscriptions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/AssignedSubscription/ListAssignedSubscriptions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -656,14 +698,20 @@ class SubscriptionClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AssignedSubscriptionCollection")
+                response_type="AssignedSubscriptionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AssignedSubscriptionCollection")
+                response_type="AssignedSubscriptionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_available_regions(self, subscription_id, **kwargs):
         """
@@ -699,6 +747,8 @@ class SubscriptionClient(object):
         """
         resource_path = "/subscriptions/{subscriptionId}/availableRegions"
         method = "GET"
+        operation_name = "list_available_regions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Subscription/ListAvailableRegions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -750,7 +800,10 @@ class SubscriptionClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AvailableRegionCollection")
+                response_type="AvailableRegionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -758,7 +811,10 @@ class SubscriptionClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AvailableRegionCollection")
+                response_type="AvailableRegionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_subscription_mappings(self, subscription_id, **kwargs):
         """
@@ -821,6 +877,8 @@ class SubscriptionClient(object):
         """
         resource_path = "/subscriptionMappings"
         method = "GET"
+        operation_name = "list_subscription_mappings"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/ListSubscriptionMappings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -895,14 +953,20 @@ class SubscriptionClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SubscriptionMappingCollection")
+                response_type="SubscriptionMappingCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SubscriptionMappingCollection")
+                response_type="SubscriptionMappingCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_subscriptions(self, **kwargs):
         """
@@ -957,6 +1021,8 @@ class SubscriptionClient(object):
         """
         resource_path = "/subscriptions"
         method = "GET"
+        operation_name = "list_subscriptions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Subscription/ListSubscriptions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1021,11 +1087,17 @@ class SubscriptionClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SubscriptionCollection")
+                response_type="SubscriptionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SubscriptionCollection")
+                response_type="SubscriptionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

@@ -147,6 +147,8 @@ class SecretsClient(object):
         """
         resource_path = "/secretbundles/{secretId}"
         method = "GET"
+        operation_name = "get_secret_bundle"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secretretrieval/20190301/SecretBundle/GetSecretBundle"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -211,7 +213,10 @@ class SecretsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SecretBundle")
+                response_type="SecretBundle",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -219,7 +224,10 @@ class SecretsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SecretBundle")
+                response_type="SecretBundle",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_secret_bundle_by_name(self, secret_name, vault_id, **kwargs):
         """
@@ -267,6 +275,8 @@ class SecretsClient(object):
         """
         resource_path = "/secretbundles/actions/getByName"
         method = "POST"
+        operation_name = "get_secret_bundle_by_name"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secretretrieval/20190301/SecretBundle/GetSecretBundleByName"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -322,14 +332,20 @@ class SecretsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SecretBundle")
+                response_type="SecretBundle",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SecretBundle")
+                response_type="SecretBundle",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_secret_bundle_versions(self, secret_id, **kwargs):
         """
@@ -385,6 +401,8 @@ class SecretsClient(object):
         """
         resource_path = "/secretbundles/{secretId}/versions"
         method = "GET"
+        operation_name = "list_secret_bundle_versions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secretretrieval/20190301/SecretBundleVersionSummary/ListSecretBundleVersions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -458,7 +476,10 @@ class SecretsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SecretBundleVersionSummary]")
+                response_type="list[SecretBundleVersionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -466,4 +487,7 @@ class SecretsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SecretBundleVersionSummary]")
+                response_type="list[SecretBundleVersionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

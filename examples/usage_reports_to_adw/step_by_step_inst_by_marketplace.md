@@ -60,6 +60,7 @@ It is generally the location that you have access to build the compute node and 
    - I have already created Dynamic Group and Policy per the documentation – 
      Choose this option if you already created Dynamic group and policies according to the documentation.
      Below is the requirement:
+   - APPCOMP is the compartment where the usage2adw will be installed
      
      Dynamic Group:
          OCI -> Menu -> Identity -> Dynamic Groups -> Create Dynamic Group
@@ -78,6 +79,7 @@ It is generally the location that you have access to build the compute node and 
          endorse dynamic-group UsageDownloadGroup to read objects in tenancy usage-report
          Allow dynamic-group UsageDownloadGroup to inspect compartments in tenancy
          Allow dynamic-group UsageDownloadGroup to inspect tenancies in tenancy
+         Allow dynamic-group UsageDownloadGroup to read autonomoud-database in compartment {APPCOMP}
          *** Please don't change the usage report tenant OCID, it is fixed.
      
 ```

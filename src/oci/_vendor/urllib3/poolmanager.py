@@ -39,6 +39,7 @@ SSL_KEYWORDS = (
     "ca_cert_dir",
     "ssl_context",
     "key_password",
+    "server_hostname",
 )
 
 # All known keyword arguments that could be provided to the pool manager, its

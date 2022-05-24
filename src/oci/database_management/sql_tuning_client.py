@@ -149,6 +149,8 @@ class SqlTuningClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/actions/cloneSqlTuningTask"
         method = "POST"
+        operation_name = "clone_sql_tuning_task"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/CloneSqlTuningTask"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -197,7 +199,10 @@ class SqlTuningClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=clone_sql_tuning_task_details,
-                response_type="SqlTuningTaskReturn")
+                response_type="SqlTuningTaskReturn",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -205,7 +210,10 @@ class SqlTuningClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=clone_sql_tuning_task_details,
-                response_type="SqlTuningTaskReturn")
+                response_type="SqlTuningTaskReturn",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def drop_sql_tuning_task(self, managed_database_id, drop_sql_tuning_task_details, **kwargs):
         """
@@ -250,6 +258,8 @@ class SqlTuningClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/actions/dropSqlTuningTask"
         method = "POST"
+        operation_name = "drop_sql_tuning_task"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/DropSqlTuningTask"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -297,14 +307,20 @@ class SqlTuningClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=drop_sql_tuning_task_details)
+                body=drop_sql_tuning_task_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=drop_sql_tuning_task_details)
+                body=drop_sql_tuning_task_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_execution_plan_stats_comparision(self, managed_database_id, sql_tuning_advisor_task_id, sql_object_id, execution_id, **kwargs):
         """
@@ -356,6 +372,8 @@ class SqlTuningClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/sqlTuningAdvisorTasks/{sqlTuningAdvisorTaskId}/executionPlanStatsComparision"
         method = "GET"
+        operation_name = "get_execution_plan_stats_comparision"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetExecutionPlanStatsComparision"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -408,7 +426,10 @@ class SqlTuningClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ExecutionPlanStatsComparision")
+                response_type="ExecutionPlanStatsComparision",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -416,7 +437,10 @@ class SqlTuningClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ExecutionPlanStatsComparision")
+                response_type="ExecutionPlanStatsComparision",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_sql_execution_plan(self, managed_database_id, sql_tuning_advisor_task_id, sql_object_id, attribute, **kwargs):
         """
@@ -466,6 +490,8 @@ class SqlTuningClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/sqlTuningAdvisorTasks/{sqlTuningAdvisorTaskId}/sqlExecutionPlan"
         method = "GET"
+        operation_name = "get_sql_execution_plan"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetSqlExecutionPlan"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -524,7 +550,10 @@ class SqlTuningClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SqlTuningAdvisorTaskSqlExecutionPlan")
+                response_type="SqlTuningAdvisorTaskSqlExecutionPlan",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -532,7 +561,10 @@ class SqlTuningClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SqlTuningAdvisorTaskSqlExecutionPlan")
+                response_type="SqlTuningAdvisorTaskSqlExecutionPlan",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_sql_tuning_advisor_task_summary_report(self, managed_database_id, sql_tuning_advisor_task_id, **kwargs):
         """
@@ -589,6 +621,8 @@ class SqlTuningClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/sqlTuningAdvisorTasks/{sqlTuningAdvisorTaskId}/summaryReport"
         method = "GET"
+        operation_name = "get_sql_tuning_advisor_task_summary_report"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetSqlTuningAdvisorTaskSummaryReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -656,7 +690,10 @@ class SqlTuningClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SqlTuningAdvisorTaskSummaryReport")
+                response_type="SqlTuningAdvisorTaskSummaryReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -664,7 +701,10 @@ class SqlTuningClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SqlTuningAdvisorTaskSummaryReport")
+                response_type="SqlTuningAdvisorTaskSummaryReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_sql_tuning_advisor_task_findings(self, managed_database_id, sql_tuning_advisor_task_id, **kwargs):
         """
@@ -744,6 +784,8 @@ class SqlTuningClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/sqlTuningAdvisorTasks/{sqlTuningAdvisorTaskId}/findings"
         method = "GET"
+        operation_name = "list_sql_tuning_advisor_task_findings"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListSqlTuningAdvisorTaskFindings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -842,7 +884,10 @@ class SqlTuningClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SqlTuningAdvisorTaskFindingCollection")
+                response_type="SqlTuningAdvisorTaskFindingCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -850,7 +895,10 @@ class SqlTuningClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SqlTuningAdvisorTaskFindingCollection")
+                response_type="SqlTuningAdvisorTaskFindingCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_sql_tuning_advisor_task_recommendations(self, managed_database_id, sql_tuning_advisor_task_id, sql_object_id, execution_id, **kwargs):
         """
@@ -918,6 +966,8 @@ class SqlTuningClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/sqlTuningAdvisorTasks/{sqlTuningAdvisorTaskId}/recommendations"
         method = "GET"
+        operation_name = "list_sql_tuning_advisor_task_recommendations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListSqlTuningAdvisorTaskRecommendations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -992,7 +1042,10 @@ class SqlTuningClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SqlTuningAdvisorTaskRecommendationCollection")
+                response_type="SqlTuningAdvisorTaskRecommendationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1000,7 +1053,10 @@ class SqlTuningClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SqlTuningAdvisorTaskRecommendationCollection")
+                response_type="SqlTuningAdvisorTaskRecommendationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_sql_tuning_advisor_tasks(self, managed_database_id, **kwargs):
         """
@@ -1066,6 +1122,8 @@ class SqlTuningClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/sqlTuningAdvisorTasks"
         method = "GET"
+        operation_name = "list_sql_tuning_advisor_tasks"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListSqlTuningAdvisorTasks"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1152,7 +1210,10 @@ class SqlTuningClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SqlTuningAdvisorTaskCollection")
+                response_type="SqlTuningAdvisorTaskCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1160,7 +1221,10 @@ class SqlTuningClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SqlTuningAdvisorTaskCollection")
+                response_type="SqlTuningAdvisorTaskCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def start_sql_tuning_task(self, managed_database_id, start_sql_tuning_task_details, **kwargs):
         """
@@ -1205,6 +1269,8 @@ class SqlTuningClient(object):
         """
         resource_path = "/managedDatabases/{managedDatabaseId}/actions/startSqlTuningTask"
         method = "POST"
+        operation_name = "start_sql_tuning_task"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/StartSqlTuningTask"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1253,7 +1319,10 @@ class SqlTuningClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=start_sql_tuning_task_details,
-                response_type="SqlTuningTaskReturn")
+                response_type="SqlTuningTaskReturn",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1261,4 +1330,7 @@ class SqlTuningClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=start_sql_tuning_task_details,
-                response_type="SqlTuningTaskReturn")
+                response_type="SqlTuningTaskReturn",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

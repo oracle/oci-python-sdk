@@ -147,6 +147,8 @@ class WafClient(object):
         """
         resource_path = "/networkAddressLists/{networkAddressListId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_network_address_list_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waf/20210930/NetworkAddressList/ChangeNetworkAddressListCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -195,14 +197,20 @@ class WafClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_network_address_list_compartment_details)
+                body=change_network_address_list_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_network_address_list_compartment_details)
+                body=change_network_address_list_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_web_app_firewall_compartment(self, web_app_firewall_id, change_web_app_firewall_compartment_details, **kwargs):
         """
@@ -246,6 +254,8 @@ class WafClient(object):
         """
         resource_path = "/webAppFirewalls/{webAppFirewallId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_web_app_firewall_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewall/ChangeWebAppFirewallCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -294,14 +304,20 @@ class WafClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_web_app_firewall_compartment_details)
+                body=change_web_app_firewall_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_web_app_firewall_compartment_details)
+                body=change_web_app_firewall_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_web_app_firewall_policy_compartment(self, web_app_firewall_policy_id, change_web_app_firewall_policy_compartment_details, **kwargs):
         """
@@ -345,6 +361,8 @@ class WafClient(object):
         """
         resource_path = "/webAppFirewallPolicies/{webAppFirewallPolicyId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_web_app_firewall_policy_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewallPolicy/ChangeWebAppFirewallPolicyCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -393,14 +411,20 @@ class WafClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_web_app_firewall_policy_compartment_details)
+                body=change_web_app_firewall_policy_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_web_app_firewall_policy_compartment_details)
+                body=change_web_app_firewall_policy_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_network_address_list(self, create_network_address_list_details, **kwargs):
         """
@@ -439,6 +463,8 @@ class WafClient(object):
         """
         resource_path = "/networkAddressLists"
         method = "POST"
+        operation_name = "create_network_address_list"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waf/20210930/NetworkAddressList/CreateNetworkAddressList"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -478,14 +504,20 @@ class WafClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_network_address_list_details,
-                response_type="NetworkAddressList")
+                response_type="NetworkAddressList",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_network_address_list_details,
-                response_type="NetworkAddressList")
+                response_type="NetworkAddressList",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_web_app_firewall(self, create_web_app_firewall_details, **kwargs):
         """
@@ -524,6 +556,8 @@ class WafClient(object):
         """
         resource_path = "/webAppFirewalls"
         method = "POST"
+        operation_name = "create_web_app_firewall"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewall/CreateWebAppFirewall"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -563,14 +597,20 @@ class WafClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_web_app_firewall_details,
-                response_type="WebAppFirewall")
+                response_type="WebAppFirewall",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_web_app_firewall_details,
-                response_type="WebAppFirewall")
+                response_type="WebAppFirewall",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_web_app_firewall_policy(self, create_web_app_firewall_policy_details, **kwargs):
         """
@@ -609,6 +649,8 @@ class WafClient(object):
         """
         resource_path = "/webAppFirewallPolicies"
         method = "POST"
+        operation_name = "create_web_app_firewall_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewallPolicy/CreateWebAppFirewallPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -648,14 +690,20 @@ class WafClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_web_app_firewall_policy_details,
-                response_type="WebAppFirewallPolicy")
+                response_type="WebAppFirewallPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_web_app_firewall_policy_details,
-                response_type="WebAppFirewallPolicy")
+                response_type="WebAppFirewallPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_network_address_list(self, network_address_list_id, **kwargs):
         """
@@ -695,6 +743,8 @@ class WafClient(object):
         """
         resource_path = "/networkAddressLists/{networkAddressListId}"
         method = "DELETE"
+        operation_name = "delete_network_address_list"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waf/20210930/NetworkAddressList/DeleteNetworkAddressList"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -742,13 +792,19 @@ class WafClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_web_app_firewall(self, web_app_firewall_id, **kwargs):
         """
@@ -788,6 +844,8 @@ class WafClient(object):
         """
         resource_path = "/webAppFirewalls/{webAppFirewallId}"
         method = "DELETE"
+        operation_name = "delete_web_app_firewall"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewall/DeleteWebAppFirewall"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -835,13 +893,19 @@ class WafClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_web_app_firewall_policy(self, web_app_firewall_policy_id, **kwargs):
         """
@@ -881,6 +945,8 @@ class WafClient(object):
         """
         resource_path = "/webAppFirewallPolicies/{webAppFirewallPolicyId}"
         method = "DELETE"
+        operation_name = "delete_web_app_firewall_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewallPolicy/DeleteWebAppFirewallPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -928,13 +994,19 @@ class WafClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_network_address_list(self, network_address_list_id, **kwargs):
         """
@@ -969,6 +1041,8 @@ class WafClient(object):
         """
         resource_path = "/networkAddressLists/{networkAddressListId}"
         method = "GET"
+        operation_name = "get_network_address_list"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waf/20210930/NetworkAddressList/GetNetworkAddressList"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1015,14 +1089,20 @@ class WafClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="NetworkAddressList")
+                response_type="NetworkAddressList",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="NetworkAddressList")
+                response_type="NetworkAddressList",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_web_app_firewall(self, web_app_firewall_id, **kwargs):
         """
@@ -1057,6 +1137,8 @@ class WafClient(object):
         """
         resource_path = "/webAppFirewalls/{webAppFirewallId}"
         method = "GET"
+        operation_name = "get_web_app_firewall"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewall/GetWebAppFirewall"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1103,14 +1185,20 @@ class WafClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WebAppFirewall")
+                response_type="WebAppFirewall",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WebAppFirewall")
+                response_type="WebAppFirewall",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_web_app_firewall_policy(self, web_app_firewall_policy_id, **kwargs):
         """
@@ -1145,6 +1233,8 @@ class WafClient(object):
         """
         resource_path = "/webAppFirewallPolicies/{webAppFirewallPolicyId}"
         method = "GET"
+        operation_name = "get_web_app_firewall_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewallPolicy/GetWebAppFirewallPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1191,14 +1281,20 @@ class WafClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WebAppFirewallPolicy")
+                response_type="WebAppFirewallPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WebAppFirewallPolicy")
+                response_type="WebAppFirewallPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1233,6 +1329,8 @@ class WafClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1279,14 +1377,20 @@ class WafClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_network_address_lists(self, compartment_id, **kwargs):
         """
@@ -1352,6 +1456,8 @@ class WafClient(object):
         """
         resource_path = "/networkAddressLists"
         method = "GET"
+        operation_name = "list_network_address_lists"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waf/20210930/NetworkAddressList/ListNetworkAddressLists"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1421,14 +1527,20 @@ class WafClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="NetworkAddressListCollection")
+                response_type="NetworkAddressListCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="NetworkAddressListCollection")
+                response_type="NetworkAddressListCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_protection_capabilities(self, compartment_id, **kwargs):
         """
@@ -1501,6 +1613,8 @@ class WafClient(object):
         """
         resource_path = "/protectionCapabilities"
         method = "GET"
+        operation_name = "list_protection_capabilities"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waf/20210930/ProtectionCapability/ListProtectionCapabilities"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1581,14 +1695,20 @@ class WafClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProtectionCapabilityCollection")
+                response_type="ProtectionCapabilityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProtectionCapabilityCollection")
+                response_type="ProtectionCapabilityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_protection_capability_group_tags(self, compartment_id, **kwargs):
         """
@@ -1650,6 +1770,8 @@ class WafClient(object):
         """
         resource_path = "/protectionCapabilities/groupTags"
         method = "GET"
+        operation_name = "list_protection_capability_group_tags"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waf/20210930/ProtectionCapability/ListProtectionCapabilityGroupTags"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1724,14 +1846,20 @@ class WafClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProtectionCapabilityGroupTagCollection")
+                response_type="ProtectionCapabilityGroupTagCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProtectionCapabilityGroupTagCollection")
+                response_type="ProtectionCapabilityGroupTagCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_web_app_firewall_policies(self, compartment_id, **kwargs):
         """
@@ -1797,6 +1925,8 @@ class WafClient(object):
         """
         resource_path = "/webAppFirewallPolicies"
         method = "GET"
+        operation_name = "list_web_app_firewall_policies"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewallPolicy/ListWebAppFirewallPolicies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1866,14 +1996,20 @@ class WafClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WebAppFirewallPolicyCollection")
+                response_type="WebAppFirewallPolicyCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WebAppFirewallPolicyCollection")
+                response_type="WebAppFirewallPolicyCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_web_app_firewalls(self, compartment_id, **kwargs):
         """
@@ -1944,6 +2080,8 @@ class WafClient(object):
         """
         resource_path = "/webAppFirewalls"
         method = "GET"
+        operation_name = "list_web_app_firewalls"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewall/ListWebAppFirewalls"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2015,14 +2153,20 @@ class WafClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WebAppFirewallCollection")
+                response_type="WebAppFirewallCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WebAppFirewallCollection")
+                response_type="WebAppFirewallCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -2064,6 +2208,8 @@ class WafClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2119,7 +2265,10 @@ class WafClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2127,7 +2276,10 @@ class WafClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -2169,6 +2321,8 @@ class WafClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2224,7 +2378,10 @@ class WafClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2232,7 +2389,10 @@ class WafClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -2279,6 +2439,8 @@ class WafClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2326,14 +2488,20 @@ class WafClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestCollection")
+                response_type="WorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestCollection")
+                response_type="WorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_network_address_list(self, network_address_list_id, update_network_address_list_details, **kwargs):
         """
@@ -2376,6 +2544,8 @@ class WafClient(object):
         """
         resource_path = "/networkAddressLists/{networkAddressListId}"
         method = "PUT"
+        operation_name = "update_network_address_list"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waf/20210930/NetworkAddressList/UpdateNetworkAddressList"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2424,14 +2594,20 @@ class WafClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_network_address_list_details)
+                body=update_network_address_list_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_network_address_list_details)
+                body=update_network_address_list_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_web_app_firewall(self, web_app_firewall_id, update_web_app_firewall_details, **kwargs):
         """
@@ -2474,6 +2650,8 @@ class WafClient(object):
         """
         resource_path = "/webAppFirewalls/{webAppFirewallId}"
         method = "PUT"
+        operation_name = "update_web_app_firewall"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewall/UpdateWebAppFirewall"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2522,14 +2700,20 @@ class WafClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_web_app_firewall_details)
+                body=update_web_app_firewall_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_web_app_firewall_details)
+                body=update_web_app_firewall_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_web_app_firewall_policy(self, web_app_firewall_policy_id, update_web_app_firewall_policy_details, **kwargs):
         """
@@ -2572,6 +2756,8 @@ class WafClient(object):
         """
         resource_path = "/webAppFirewallPolicies/{webAppFirewallPolicyId}"
         method = "PUT"
+        operation_name = "update_web_app_firewall_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waf/20210930/WebAppFirewallPolicy/UpdateWebAppFirewallPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2620,11 +2806,17 @@ class WafClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_web_app_firewall_policy_details)
+                body=update_web_app_firewall_policy_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_web_app_firewall_policy_details)
+                body=update_web_app_firewall_policy_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

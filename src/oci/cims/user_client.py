@@ -141,6 +141,8 @@ class UserClient(object):
         """
         resource_path = "/v2/users"
         method = "POST"
+        operation_name = "create_user"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/User/CreateUser"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -178,11 +180,17 @@ class UserClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_user_details,
-                response_type="User")
+                response_type="User",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_user_details,
-                response_type="User")
+                response_type="User",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

@@ -51,6 +51,14 @@ class CreateOdaInstanceDetails(object):
             The value to assign to the defined_tags property of this CreateOdaInstanceDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param is_role_based_access:
+            The value to assign to the is_role_based_access property of this CreateOdaInstanceDetails.
+        :type is_role_based_access: bool
+
+        :param identity_domain:
+            The value to assign to the identity_domain property of this CreateOdaInstanceDetails.
+        :type identity_domain: str
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -58,7 +66,9 @@ class CreateOdaInstanceDetails(object):
             'compartment_id': 'str',
             'shape_name': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'is_role_based_access': 'bool',
+            'identity_domain': 'str'
         }
 
         self.attribute_map = {
@@ -67,7 +77,9 @@ class CreateOdaInstanceDetails(object):
             'compartment_id': 'compartmentId',
             'shape_name': 'shapeName',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'is_role_based_access': 'isRoleBasedAccess',
+            'identity_domain': 'identityDomain'
         }
 
         self._display_name = None
@@ -76,6 +88,8 @@ class CreateOdaInstanceDetails(object):
         self._shape_name = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._is_role_based_access = None
+        self._identity_domain = None
 
     @property
     def display_name(self):
@@ -185,8 +199,7 @@ class CreateOdaInstanceDetails(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this CreateOdaInstanceDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-        cross-compatibility only.
+        Simple key-value pair that is applied without any predefined name, type, or scope.
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -199,8 +212,7 @@ class CreateOdaInstanceDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this CreateOdaInstanceDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-        cross-compatibility only.
+        Simple key-value pair that is applied without any predefined name, type, or scope.
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -234,6 +246,54 @@ class CreateOdaInstanceDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def is_role_based_access(self):
+        """
+        Gets the is_role_based_access of this CreateOdaInstanceDetails.
+        Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+
+
+        :return: The is_role_based_access of this CreateOdaInstanceDetails.
+        :rtype: bool
+        """
+        return self._is_role_based_access
+
+    @is_role_based_access.setter
+    def is_role_based_access(self, is_role_based_access):
+        """
+        Sets the is_role_based_access of this CreateOdaInstanceDetails.
+        Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
+
+
+        :param is_role_based_access: The is_role_based_access of this CreateOdaInstanceDetails.
+        :type: bool
+        """
+        self._is_role_based_access = is_role_based_access
+
+    @property
+    def identity_domain(self):
+        """
+        Gets the identity_domain of this CreateOdaInstanceDetails.
+        If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+
+
+        :return: The identity_domain of this CreateOdaInstanceDetails.
+        :rtype: str
+        """
+        return self._identity_domain
+
+    @identity_domain.setter
+    def identity_domain(self, identity_domain):
+        """
+        Sets the identity_domain of this CreateOdaInstanceDetails.
+        If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
+
+
+        :param identity_domain: The identity_domain of this CreateOdaInstanceDetails.
+        :type: str
+        """
+        self._identity_domain = identity_domain
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -142,6 +142,8 @@ class CommitmentClient(object):
         """
         resource_path = "/commitments/{commitmentId}"
         method = "GET"
+        operation_name = "get_commitment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -190,14 +192,20 @@ class CommitmentClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CommitmentDetail")
+                response_type="CommitmentDetail",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CommitmentDetail")
+                response_type="CommitmentDetail",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_commitments(self, subscribed_service_id, compartment_id, **kwargs):
         """
@@ -258,6 +266,8 @@ class CommitmentClient(object):
         """
         resource_path = "/commitments"
         method = "GET"
+        operation_name = "list_commitments"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -324,11 +334,17 @@ class CommitmentClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CommitmentSummary]")
+                response_type="list[CommitmentSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CommitmentSummary]")
+                response_type="list[CommitmentSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
