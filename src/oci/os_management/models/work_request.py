@@ -29,6 +29,30 @@ class WorkRequest(object):
     #: This constant has a value of "UPDATEALL"
     OPERATION_TYPE_UPDATEALL = "UPDATEALL"
 
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "ENABLEMODULESTREAM"
+    OPERATION_TYPE_ENABLEMODULESTREAM = "ENABLEMODULESTREAM"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DISABLEMODULESTREAM"
+    OPERATION_TYPE_DISABLEMODULESTREAM = "DISABLEMODULESTREAM"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "SWITCHMODULESTREAM"
+    OPERATION_TYPE_SWITCHMODULESTREAM = "SWITCHMODULESTREAM"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "INSTALLMODULESTREAMPROFILE"
+    OPERATION_TYPE_INSTALLMODULESTREAMPROFILE = "INSTALLMODULESTREAMPROFILE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "REMOVEMODULESTREAMPROFILE"
+    OPERATION_TYPE_REMOVEMODULESTREAMPROFILE = "REMOVEMODULESTREAMPROFILE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "COMPOUND"
+    OPERATION_TYPE_COMPOUND = "COMPOUND"
+
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -72,7 +96,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "INSTALL", "UPDATE", "REMOVE", "UPDATEALL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "INSTALL", "UPDATE", "REMOVE", "UPDATEALL", "ENABLEMODULESTREAM", "DISABLEMODULESTREAM", "SWITCHMODULESTREAM", "INSTALLMODULESTREAMPROFILE", "REMOVEMODULESTREAMPROFILE", "COMPOUND", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -128,6 +152,14 @@ class WorkRequest(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type os_family: str
 
+        :param parent_id:
+            The value to assign to the parent_id property of this WorkRequest.
+        :type parent_id: str
+
+        :param children_ids:
+            The value to assign to the children_ids property of this WorkRequest.
+        :type children_ids: list[str]
+
         """
         self.swagger_types = {
             'operation_type': 'str',
@@ -142,7 +174,9 @@ class WorkRequest(object):
             'time_accepted': 'datetime',
             'time_started': 'datetime',
             'time_finished': 'datetime',
-            'os_family': 'str'
+            'os_family': 'str',
+            'parent_id': 'str',
+            'children_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -158,7 +192,9 @@ class WorkRequest(object):
             'time_accepted': 'timeAccepted',
             'time_started': 'timeStarted',
             'time_finished': 'timeFinished',
-            'os_family': 'osFamily'
+            'os_family': 'osFamily',
+            'parent_id': 'parentId',
+            'children_ids': 'childrenIds'
         }
 
         self._operation_type = None
@@ -174,6 +210,8 @@ class WorkRequest(object):
         self._time_started = None
         self._time_finished = None
         self._os_family = None
+        self._parent_id = None
+        self._children_ids = None
 
     @property
     def operation_type(self):
@@ -181,7 +219,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         the type of operation this Work Request performs
 
-        Allowed values for this property are: "INSTALL", "UPDATE", "REMOVE", "UPDATEALL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "INSTALL", "UPDATE", "REMOVE", "UPDATEALL", "ENABLEMODULESTREAM", "DISABLEMODULESTREAM", "SWITCHMODULESTREAM", "INSTALLMODULESTREAMPROFILE", "REMOVEMODULESTREAMPROFILE", "COMPOUND", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -200,7 +238,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["INSTALL", "UPDATE", "REMOVE", "UPDATEALL"]
+        allowed_values = ["INSTALL", "UPDATE", "REMOVE", "UPDATEALL", "ENABLEMODULESTREAM", "DISABLEMODULESTREAM", "SWITCHMODULESTREAM", "INSTALLMODULESTREAMPROFILE", "REMOVEMODULESTREAMPROFILE", "COMPOUND"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
@@ -522,6 +560,54 @@ class WorkRequest(object):
         if not value_allowed_none_or_none_sentinel(os_family, allowed_values):
             os_family = 'UNKNOWN_ENUM_VALUE'
         self._os_family = os_family
+
+    @property
+    def parent_id(self):
+        """
+        Gets the parent_id of this WorkRequest.
+        The parent of this work request, if one exists.
+
+
+        :return: The parent_id of this WorkRequest.
+        :rtype: str
+        """
+        return self._parent_id
+
+    @parent_id.setter
+    def parent_id(self, parent_id):
+        """
+        Sets the parent_id of this WorkRequest.
+        The parent of this work request, if one exists.
+
+
+        :param parent_id: The parent_id of this WorkRequest.
+        :type: str
+        """
+        self._parent_id = parent_id
+
+    @property
+    def children_ids(self):
+        """
+        Gets the children_ids of this WorkRequest.
+        A list of the IDs of any children of this work request
+
+
+        :return: The children_ids of this WorkRequest.
+        :rtype: list[str]
+        """
+        return self._children_ids
+
+    @children_ids.setter
+    def children_ids(self, children_ids):
+        """
+        Sets the children_ids of this WorkRequest.
+        A list of the IDs of any children of this work request
+
+
+        :param children_ids: The children_ids of this WorkRequest.
+        :type: list[str]
+        """
+        self._children_ids = children_ids
 
     def __repr__(self):
         return formatted_flat_dict(self)

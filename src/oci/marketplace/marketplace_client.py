@@ -150,6 +150,8 @@ class MarketplaceClient(object):
         """
         resource_path = "/publications/{publicationId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_publication_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/Publication/ChangePublicationCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -201,14 +203,20 @@ class MarketplaceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_publication_compartment_details)
+                body=change_publication_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_publication_compartment_details)
+                body=change_publication_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_accepted_agreement(self, create_accepted_agreement_details, **kwargs):
         """
@@ -249,6 +257,8 @@ class MarketplaceClient(object):
         """
         resource_path = "/acceptedAgreements"
         method = "POST"
+        operation_name = "create_accepted_agreement"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/AcceptedAgreement/CreateAcceptedAgreement"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -288,14 +298,20 @@ class MarketplaceClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_accepted_agreement_details,
-                response_type="AcceptedAgreement")
+                response_type="AcceptedAgreement",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_accepted_agreement_details,
-                response_type="AcceptedAgreement")
+                response_type="AcceptedAgreement",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_publication(self, create_publication_details, **kwargs):
         """
@@ -335,6 +351,8 @@ class MarketplaceClient(object):
         """
         resource_path = "/publications"
         method = "POST"
+        operation_name = "create_publication"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/Publication/CreatePublication"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -374,14 +392,20 @@ class MarketplaceClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_publication_details,
-                response_type="Publication")
+                response_type="Publication",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_publication_details,
-                response_type="Publication")
+                response_type="Publication",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_accepted_agreement(self, accepted_agreement_id, **kwargs):
         """
@@ -425,6 +449,8 @@ class MarketplaceClient(object):
         """
         resource_path = "/acceptedAgreements/{acceptedAgreementId}"
         method = "DELETE"
+        operation_name = "delete_accepted_agreement"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/AcceptedAgreement/DeleteAcceptedAgreement"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -479,14 +505,20 @@ class MarketplaceClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_publication(self, publication_id, **kwargs):
         """
@@ -525,6 +557,8 @@ class MarketplaceClient(object):
         """
         resource_path = "/publications/{publicationId}"
         method = "DELETE"
+        operation_name = "delete_publication"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/Publication/DeletePublication"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -572,13 +606,19 @@ class MarketplaceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_accepted_agreement(self, accepted_agreement_id, **kwargs):
         """
@@ -612,6 +652,8 @@ class MarketplaceClient(object):
         """
         resource_path = "/acceptedAgreements/{acceptedAgreementId}"
         method = "GET"
+        operation_name = "get_accepted_agreement"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/AcceptedAgreement/GetAcceptedAgreement"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -658,14 +700,20 @@ class MarketplaceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AcceptedAgreement")
+                response_type="AcceptedAgreement",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AcceptedAgreement")
+                response_type="AcceptedAgreement",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_agreement(self, listing_id, package_version, agreement_id, **kwargs):
         """
@@ -709,6 +757,8 @@ class MarketplaceClient(object):
         """
         resource_path = "/listings/{listingId}/packages/{packageVersion}/agreements/{agreementId}"
         method = "GET"
+        operation_name = "get_agreement"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/Agreement/GetAgreement"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -764,7 +814,10 @@ class MarketplaceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Agreement")
+                response_type="Agreement",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -772,7 +825,10 @@ class MarketplaceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Agreement")
+                response_type="Agreement",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_listing(self, listing_id, **kwargs):
         """
@@ -829,6 +885,8 @@ class MarketplaceClient(object):
         """
         resource_path = "/listings/{listingId}"
         method = "GET"
+        operation_name = "get_listing"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/Listing/GetListing"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -882,7 +940,10 @@ class MarketplaceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Listing")
+                response_type="Listing",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -890,7 +951,10 @@ class MarketplaceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Listing")
+                response_type="Listing",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_package(self, listing_id, package_version, **kwargs):
         """
@@ -949,6 +1013,8 @@ class MarketplaceClient(object):
         """
         resource_path = "/listings/{listingId}/packages/{packageVersion}"
         method = "GET"
+        operation_name = "get_package"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/ListingPackage/GetPackage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1003,7 +1069,10 @@ class MarketplaceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ListingPackage")
+                response_type="ListingPackage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1011,7 +1080,10 @@ class MarketplaceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ListingPackage")
+                response_type="ListingPackage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_publication(self, publication_id, **kwargs):
         """
@@ -1045,6 +1117,8 @@ class MarketplaceClient(object):
         """
         resource_path = "/publications/{publicationId}"
         method = "GET"
+        operation_name = "get_publication"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/Publication/GetPublication"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1091,14 +1165,20 @@ class MarketplaceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Publication")
+                response_type="Publication",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Publication")
+                response_type="Publication",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_publication_package(self, publication_id, package_version, **kwargs):
         """
@@ -1135,6 +1215,8 @@ class MarketplaceClient(object):
         """
         resource_path = "/publications/{publicationId}/packages/{packageVersion}"
         method = "GET"
+        operation_name = "get_publication_package"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/PublicationPackage/GetPublicationPackage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1182,14 +1264,20 @@ class MarketplaceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PublicationPackage")
+                response_type="PublicationPackage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PublicationPackage")
+                response_type="PublicationPackage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_accepted_agreements(self, compartment_id, **kwargs):
         """
@@ -1254,6 +1342,8 @@ class MarketplaceClient(object):
         """
         resource_path = "/acceptedAgreements"
         method = "GET"
+        operation_name = "list_accepted_agreements"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/AcceptedAgreementSummary/ListAcceptedAgreements"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1325,14 +1415,20 @@ class MarketplaceClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AcceptedAgreementSummary]")
+                response_type="list[AcceptedAgreementSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AcceptedAgreementSummary]")
+                response_type="list[AcceptedAgreementSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_agreements(self, listing_id, package_version, **kwargs):
         """
@@ -1378,6 +1474,8 @@ class MarketplaceClient(object):
         """
         resource_path = "/listings/{listingId}/packages/{packageVersion}/agreements"
         method = "GET"
+        operation_name = "list_agreements"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/AgreementSummary/ListAgreements"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1436,7 +1534,10 @@ class MarketplaceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AgreementSummary]")
+                response_type="list[AgreementSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1444,7 +1545,10 @@ class MarketplaceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AgreementSummary]")
+                response_type="list[AgreementSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_categories(self, **kwargs):
         """
@@ -1485,6 +1589,8 @@ class MarketplaceClient(object):
         """
         resource_path = "/categories"
         method = "GET"
+        operation_name = "list_categories"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/CategorySummary/ListCategories"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1531,14 +1637,20 @@ class MarketplaceClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CategorySummary]")
+                response_type="list[CategorySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CategorySummary]")
+                response_type="list[CategorySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_listings(self, **kwargs):
         """
@@ -1646,6 +1758,8 @@ class MarketplaceClient(object):
         """
         resource_path = "/listings"
         method = "GET"
+        operation_name = "list_listings"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/ListingSummary/ListListings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1746,14 +1860,20 @@ class MarketplaceClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ListingSummary]")
+                response_type="list[ListingSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ListingSummary]")
+                response_type="list[ListingSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_packages(self, listing_id, **kwargs):
         """
@@ -1833,6 +1953,8 @@ class MarketplaceClient(object):
         """
         resource_path = "/listings/{listingId}/packages"
         method = "GET"
+        operation_name = "list_packages"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/ListingPackageSummary/ListPackages"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1912,7 +2034,10 @@ class MarketplaceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ListingPackageSummary]")
+                response_type="list[ListingPackageSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1920,7 +2045,10 @@ class MarketplaceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ListingPackageSummary]")
+                response_type="list[ListingPackageSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_publication_packages(self, publication_id, **kwargs):
         """
@@ -1978,6 +2106,8 @@ class MarketplaceClient(object):
         """
         resource_path = "/publications/{publicationId}/packages"
         method = "GET"
+        operation_name = "list_publication_packages"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/PublicationPackageSummary/ListPublicationPackages"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2055,7 +2185,10 @@ class MarketplaceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PublicationPackageSummary]")
+                response_type="list[PublicationPackageSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2063,7 +2196,10 @@ class MarketplaceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PublicationPackageSummary]")
+                response_type="list[PublicationPackageSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_publications(self, compartment_id, listing_type, **kwargs):
         """
@@ -2129,6 +2265,8 @@ class MarketplaceClient(object):
         """
         resource_path = "/publications"
         method = "GET"
+        operation_name = "list_publications"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/PublicationSummary/ListPublications"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2205,14 +2343,20 @@ class MarketplaceClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PublicationSummary]")
+                response_type="list[PublicationSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PublicationSummary]")
+                response_type="list[PublicationSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_publishers(self, **kwargs):
         """
@@ -2255,6 +2399,8 @@ class MarketplaceClient(object):
         """
         resource_path = "/publishers"
         method = "GET"
+        operation_name = "list_publishers"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/PublisherSummary/ListPublishers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2303,14 +2449,20 @@ class MarketplaceClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PublisherSummary]")
+                response_type="list[PublisherSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PublisherSummary]")
+                response_type="list[PublisherSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_report_types(self, compartment_id, **kwargs):
         """
@@ -2347,6 +2499,8 @@ class MarketplaceClient(object):
         """
         resource_path = "/reportTypes"
         method = "GET"
+        operation_name = "list_report_types"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/ReportTypeCollection/ListReportTypes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2390,14 +2544,20 @@ class MarketplaceClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ReportTypeCollection")
+                response_type="ReportTypeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ReportTypeCollection")
+                response_type="ReportTypeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_reports(self, report_type, date, compartment_id, **kwargs):
         """
@@ -2442,6 +2602,8 @@ class MarketplaceClient(object):
         """
         resource_path = "/reports"
         method = "GET"
+        operation_name = "list_reports"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/ReportCollection/ListReports"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2487,14 +2649,20 @@ class MarketplaceClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ReportCollection")
+                response_type="ReportCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ReportCollection")
+                response_type="ReportCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_taxes(self, listing_id, **kwargs):
         """
@@ -2531,6 +2699,8 @@ class MarketplaceClient(object):
         """
         resource_path = "/listings/{listingId}/taxes"
         method = "GET"
+        operation_name = "list_taxes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/TaxSummary/ListTaxes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2584,7 +2754,10 @@ class MarketplaceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TaxSummary]")
+                response_type="list[TaxSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2592,7 +2765,10 @@ class MarketplaceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TaxSummary]")
+                response_type="list[TaxSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def search_listings(self, search_listings_details, **kwargs):
         """
@@ -2633,6 +2809,8 @@ class MarketplaceClient(object):
         """
         resource_path = "/searchListings"
         method = "POST"
+        operation_name = "search_listings"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/ListingSummary/SearchListings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2678,7 +2856,10 @@ class MarketplaceClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=search_listings_details,
-                response_type="list[ListingSummary]")
+                response_type="list[ListingSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2686,7 +2867,10 @@ class MarketplaceClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=search_listings_details,
-                response_type="list[ListingSummary]")
+                response_type="list[ListingSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_accepted_agreement(self, accepted_agreement_id, update_accepted_agreement_details, **kwargs):
         """
@@ -2734,6 +2918,8 @@ class MarketplaceClient(object):
         """
         resource_path = "/acceptedAgreements/{acceptedAgreementId}"
         method = "PUT"
+        operation_name = "update_accepted_agreement"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/AcceptedAgreement/UpdateAcceptedAgreement"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2786,7 +2972,10 @@ class MarketplaceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_accepted_agreement_details,
-                response_type="AcceptedAgreement")
+                response_type="AcceptedAgreement",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2794,7 +2983,10 @@ class MarketplaceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_accepted_agreement_details,
-                response_type="AcceptedAgreement")
+                response_type="AcceptedAgreement",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_publication(self, publication_id, update_publication_details, **kwargs):
         """
@@ -2842,6 +3034,8 @@ class MarketplaceClient(object):
         """
         resource_path = "/publications/{publicationId}"
         method = "PUT"
+        operation_name = "update_publication"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/Publication/UpdatePublication"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2894,7 +3088,10 @@ class MarketplaceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_publication_details,
-                response_type="Publication")
+                response_type="Publication",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2902,4 +3099,7 @@ class MarketplaceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_publication_details,
-                response_type="Publication")
+                response_type="Publication",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

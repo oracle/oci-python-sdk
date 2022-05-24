@@ -144,6 +144,8 @@ class GoldenGateClient(object):
         """
         resource_path = "/deploymentBackups/{deploymentBackupId}/actions/cancel"
         method = "POST"
+        operation_name = "cancel_deployment_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/CancelDeploymentBackup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -193,14 +195,20 @@ class GoldenGateClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=cancel_deployment_backup_details)
+                body=cancel_deployment_backup_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=cancel_deployment_backup_details)
+                body=cancel_deployment_backup_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_database_registration_compartment(self, database_registration_id, change_database_registration_compartment_details, **kwargs):
         """
@@ -244,6 +252,8 @@ class GoldenGateClient(object):
         """
         resource_path = "/databaseRegistrations/{databaseRegistrationId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_database_registration_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DatabaseRegistration/ChangeDatabaseRegistrationCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -293,14 +303,20 @@ class GoldenGateClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_database_registration_compartment_details)
+                body=change_database_registration_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_database_registration_compartment_details)
+                body=change_database_registration_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_deployment_backup_compartment(self, deployment_backup_id, change_deployment_backup_compartment_details, **kwargs):
         """
@@ -344,6 +360,8 @@ class GoldenGateClient(object):
         """
         resource_path = "/deploymentBackups/{deploymentBackupId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_deployment_backup_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/ChangeDeploymentBackupCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -393,14 +411,20 @@ class GoldenGateClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_deployment_backup_compartment_details)
+                body=change_deployment_backup_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_deployment_backup_compartment_details)
+                body=change_deployment_backup_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_deployment_compartment(self, deployment_id, change_deployment_compartment_details, **kwargs):
         """
@@ -444,6 +468,8 @@ class GoldenGateClient(object):
         """
         resource_path = "/deployments/{deploymentId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_deployment_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/ChangeDeploymentCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -493,14 +519,20 @@ class GoldenGateClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_deployment_compartment_details)
+                body=change_deployment_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_deployment_compartment_details)
+                body=change_deployment_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_database_registration(self, create_database_registration_details, **kwargs):
         """
@@ -536,6 +568,8 @@ class GoldenGateClient(object):
         """
         resource_path = "/databaseRegistrations"
         method = "POST"
+        operation_name = "create_database_registration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DatabaseRegistration/CreateDatabaseRegistration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -573,14 +607,20 @@ class GoldenGateClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_database_registration_details,
-                response_type="DatabaseRegistration")
+                response_type="DatabaseRegistration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_database_registration_details,
-                response_type="DatabaseRegistration")
+                response_type="DatabaseRegistration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_deployment(self, create_deployment_details, **kwargs):
         """
@@ -616,6 +656,8 @@ class GoldenGateClient(object):
         """
         resource_path = "/deployments"
         method = "POST"
+        operation_name = "create_deployment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/CreateDeployment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -653,14 +695,20 @@ class GoldenGateClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_deployment_details,
-                response_type="Deployment")
+                response_type="Deployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_deployment_details,
-                response_type="Deployment")
+                response_type="Deployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_deployment_backup(self, create_deployment_backup_details, **kwargs):
         """
@@ -696,6 +744,8 @@ class GoldenGateClient(object):
         """
         resource_path = "/deploymentBackups"
         method = "POST"
+        operation_name = "create_deployment_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/CreateDeploymentBackup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -732,13 +782,19 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_deployment_backup_details)
+                body=create_deployment_backup_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_deployment_backup_details)
+                body=create_deployment_backup_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_database_registration(self, database_registration_id, **kwargs):
         """
@@ -774,6 +830,8 @@ class GoldenGateClient(object):
         """
         resource_path = "/databaseRegistrations/{databaseRegistrationId}"
         method = "DELETE"
+        operation_name = "delete_database_registration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DatabaseRegistration/DeleteDatabaseRegistration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -819,13 +877,19 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_deployment(self, deployment_id, **kwargs):
         """
@@ -861,6 +925,8 @@ class GoldenGateClient(object):
         """
         resource_path = "/deployments/{deploymentId}"
         method = "DELETE"
+        operation_name = "delete_deployment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/DeleteDeployment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -906,13 +972,19 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_deployment_backup(self, deployment_backup_id, **kwargs):
         """
@@ -948,6 +1020,8 @@ class GoldenGateClient(object):
         """
         resource_path = "/deploymentBackups/{deploymentBackupId}"
         method = "DELETE"
+        operation_name = "delete_deployment_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/DeleteDeploymentBackup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -993,13 +1067,19 @@ class GoldenGateClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_database_registration(self, database_registration_id, **kwargs):
         """
@@ -1032,6 +1112,8 @@ class GoldenGateClient(object):
         """
         resource_path = "/databaseRegistrations/{databaseRegistrationId}"
         method = "GET"
+        operation_name = "get_database_registration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DatabaseRegistration/GetDatabaseRegistration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1076,14 +1158,20 @@ class GoldenGateClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DatabaseRegistration")
+                response_type="DatabaseRegistration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DatabaseRegistration")
+                response_type="DatabaseRegistration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_deployment(self, deployment_id, **kwargs):
         """
@@ -1116,6 +1204,8 @@ class GoldenGateClient(object):
         """
         resource_path = "/deployments/{deploymentId}"
         method = "GET"
+        operation_name = "get_deployment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/GetDeployment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1160,14 +1250,20 @@ class GoldenGateClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Deployment")
+                response_type="Deployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Deployment")
+                response_type="Deployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_deployment_backup(self, deployment_backup_id, **kwargs):
         """
@@ -1200,6 +1296,8 @@ class GoldenGateClient(object):
         """
         resource_path = "/deploymentBackups/{deploymentBackupId}"
         method = "GET"
+        operation_name = "get_deployment_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/GetDeploymentBackup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1244,14 +1342,20 @@ class GoldenGateClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DeploymentBackup")
+                response_type="DeploymentBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DeploymentBackup")
+                response_type="DeploymentBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_deployment_upgrade(self, deployment_upgrade_id, **kwargs):
         """
@@ -1284,6 +1388,8 @@ class GoldenGateClient(object):
         """
         resource_path = "/deploymentUpgrades/{deploymentUpgradeId}"
         method = "GET"
+        operation_name = "get_deployment_upgrade"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentUpgrade/GetDeploymentUpgrade"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1328,14 +1434,20 @@ class GoldenGateClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DeploymentUpgrade")
+                response_type="DeploymentUpgrade",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DeploymentUpgrade")
+                response_type="DeploymentUpgrade",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1368,6 +1480,8 @@ class GoldenGateClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1412,14 +1526,20 @@ class GoldenGateClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_database_registrations(self, compartment_id, **kwargs):
         """
@@ -1476,6 +1596,8 @@ class GoldenGateClient(object):
         """
         resource_path = "/databaseRegistrations"
         method = "GET"
+        operation_name = "list_database_registrations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DatabaseRegistration/ListDatabaseRegistrations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1548,14 +1670,20 @@ class GoldenGateClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DatabaseRegistrationCollection")
+                response_type="DatabaseRegistrationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DatabaseRegistrationCollection")
+                response_type="DatabaseRegistrationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_deployment_backups(self, compartment_id, **kwargs):
         """
@@ -1615,6 +1743,8 @@ class GoldenGateClient(object):
         """
         resource_path = "/deploymentBackups"
         method = "GET"
+        operation_name = "list_deployment_backups"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/ListDeploymentBackups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1689,14 +1819,20 @@ class GoldenGateClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DeploymentBackupCollection")
+                response_type="DeploymentBackupCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DeploymentBackupCollection")
+                response_type="DeploymentBackupCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_deployment_upgrades(self, compartment_id, **kwargs):
         """
@@ -1756,6 +1892,8 @@ class GoldenGateClient(object):
         """
         resource_path = "/deploymentUpgrades"
         method = "GET"
+        operation_name = "list_deployment_upgrades"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentUpgrade/ListDeploymentUpgrades"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1830,14 +1968,20 @@ class GoldenGateClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DeploymentUpgradeCollection")
+                response_type="DeploymentUpgradeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DeploymentUpgradeCollection")
+                response_type="DeploymentUpgradeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_deployments(self, compartment_id, **kwargs):
         """
@@ -1902,6 +2046,8 @@ class GoldenGateClient(object):
         """
         resource_path = "/deployments"
         method = "GET"
+        operation_name = "list_deployments"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/ListDeployments"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1985,14 +2131,20 @@ class GoldenGateClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DeploymentCollection")
+                response_type="DeploymentCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DeploymentCollection")
+                response_type="DeploymentCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -2031,6 +2183,8 @@ class GoldenGateClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2084,7 +2238,10 @@ class GoldenGateClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2092,7 +2249,10 @@ class GoldenGateClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -2131,6 +2291,8 @@ class GoldenGateClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2184,7 +2346,10 @@ class GoldenGateClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLogEntry]")
+                response_type="list[WorkRequestLogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2192,7 +2357,10 @@ class GoldenGateClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLogEntry]")
+                response_type="list[WorkRequestLogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -2234,6 +2402,8 @@ class GoldenGateClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2279,14 +2449,20 @@ class GoldenGateClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequest]")
+                response_type="list[WorkRequest]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequest]")
+                response_type="list[WorkRequest]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def restore_deployment(self, deployment_backup_id, restore_deployment_details, **kwargs):
         """
@@ -2328,6 +2504,8 @@ class GoldenGateClient(object):
         """
         resource_path = "/deploymentBackups/{deploymentBackupId}/actions/restore"
         method = "POST"
+        operation_name = "restore_deployment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/RestoreDeployment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2377,14 +2555,20 @@ class GoldenGateClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=restore_deployment_details)
+                body=restore_deployment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=restore_deployment_details)
+                body=restore_deployment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def start_deployment(self, deployment_id, start_deployment_details, **kwargs):
         """
@@ -2426,6 +2610,8 @@ class GoldenGateClient(object):
         """
         resource_path = "/deployments/{deploymentId}/actions/start"
         method = "POST"
+        operation_name = "start_deployment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/StartDeployment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2475,14 +2661,20 @@ class GoldenGateClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=start_deployment_details)
+                body=start_deployment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=start_deployment_details)
+                body=start_deployment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def stop_deployment(self, deployment_id, stop_deployment_details, **kwargs):
         """
@@ -2524,6 +2716,8 @@ class GoldenGateClient(object):
         """
         resource_path = "/deployments/{deploymentId}/actions/stop"
         method = "POST"
+        operation_name = "stop_deployment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/StopDeployment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2573,14 +2767,20 @@ class GoldenGateClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=stop_deployment_details)
+                body=stop_deployment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=stop_deployment_details)
+                body=stop_deployment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_database_registration(self, database_registration_id, update_database_registration_details, **kwargs):
         """
@@ -2619,6 +2819,8 @@ class GoldenGateClient(object):
         """
         resource_path = "/databaseRegistrations/{databaseRegistrationId}"
         method = "PUT"
+        operation_name = "update_database_registration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DatabaseRegistration/UpdateDatabaseRegistration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2665,14 +2867,20 @@ class GoldenGateClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_database_registration_details)
+                body=update_database_registration_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_database_registration_details)
+                body=update_database_registration_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_deployment(self, deployment_id, update_deployment_details, **kwargs):
         """
@@ -2711,6 +2919,8 @@ class GoldenGateClient(object):
         """
         resource_path = "/deployments/{deploymentId}"
         method = "PUT"
+        operation_name = "update_deployment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/UpdateDeployment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2757,14 +2967,20 @@ class GoldenGateClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_deployment_details)
+                body=update_deployment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_deployment_details)
+                body=update_deployment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_deployment_backup(self, deployment_backup_id, update_deployment_backup_details, **kwargs):
         """
@@ -2803,6 +3019,8 @@ class GoldenGateClient(object):
         """
         resource_path = "/deploymentBackups/{deploymentBackupId}"
         method = "PUT"
+        operation_name = "update_deployment_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/UpdateDeploymentBackup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2850,7 +3068,10 @@ class GoldenGateClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_deployment_backup_details,
-                response_type="DeploymentBackup")
+                response_type="DeploymentBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2858,7 +3079,10 @@ class GoldenGateClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_deployment_backup_details,
-                response_type="DeploymentBackup")
+                response_type="DeploymentBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def upgrade_deployment(self, deployment_id, upgrade_deployment_details, **kwargs):
         """
@@ -2900,6 +3124,8 @@ class GoldenGateClient(object):
         """
         resource_path = "/deployments/{deploymentId}/actions/upgrade"
         method = "POST"
+        operation_name = "upgrade_deployment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/UpgradeDeployment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2949,11 +3175,17 @@ class GoldenGateClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=upgrade_deployment_details)
+                body=upgrade_deployment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=upgrade_deployment_details)
+                body=upgrade_deployment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

@@ -159,6 +159,8 @@ class KmsVaultClient(object):
         """
         resource_path = "/20180608/vaults/{vaultId}/actions/backup"
         method = "POST"
+        operation_name = "backup_vault"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -210,7 +212,10 @@ class KmsVaultClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=kwargs.get('backup_vault_details'),
-                response_type="Vault")
+                response_type="Vault",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -218,7 +223,10 @@ class KmsVaultClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=kwargs.get('backup_vault_details'),
-                response_type="Vault")
+                response_type="Vault",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def cancel_vault_deletion(self, vault_id, **kwargs):
         """
@@ -276,6 +284,8 @@ class KmsVaultClient(object):
         """
         resource_path = "/20180608/vaults/{vaultId}/actions/cancelDeletion"
         method = "POST"
+        operation_name = "cancel_vault_deletion"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -325,14 +335,20 @@ class KmsVaultClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Vault")
+                response_type="Vault",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Vault")
+                response_type="Vault",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_vault_compartment(self, vault_id, change_vault_compartment_details, **kwargs):
         """
@@ -394,6 +410,8 @@ class KmsVaultClient(object):
         """
         resource_path = "/20180608/vaults/{vaultId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_vault_compartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -443,14 +461,20 @@ class KmsVaultClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_vault_compartment_details)
+                body=change_vault_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_vault_compartment_details)
+                body=change_vault_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_vault(self, create_vault_details, **kwargs):
         """
@@ -501,6 +525,8 @@ class KmsVaultClient(object):
         """
         resource_path = "/20180608/vaults"
         method = "POST"
+        operation_name = "create_vault"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -538,14 +564,20 @@ class KmsVaultClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_vault_details,
-                response_type="Vault")
+                response_type="Vault",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_vault_details,
-                response_type="Vault")
+                response_type="Vault",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_vault_replica(self, vault_id, create_vault_replica_details, **kwargs):
         """
@@ -607,6 +639,8 @@ class KmsVaultClient(object):
         """
         resource_path = "/20180608/vaults/{vaultId}/actions/createReplica"
         method = "POST"
+        operation_name = "create_vault_replica"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -656,14 +690,20 @@ class KmsVaultClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_vault_replica_details)
+                body=create_vault_replica_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_vault_replica_details)
+                body=create_vault_replica_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_vault_replica(self, vault_id, delete_vault_replica_details, **kwargs):
         """
@@ -721,6 +761,8 @@ class KmsVaultClient(object):
         """
         resource_path = "/20180608/vaults/{vaultId}/actions/deleteReplica"
         method = "POST"
+        operation_name = "delete_vault_replica"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -770,14 +812,20 @@ class KmsVaultClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=delete_vault_replica_details)
+                body=delete_vault_replica_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=delete_vault_replica_details)
+                body=delete_vault_replica_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_vault(self, vault_id, **kwargs):
         """
@@ -817,6 +865,8 @@ class KmsVaultClient(object):
         """
         resource_path = "/20180608/vaults/{vaultId}"
         method = "GET"
+        operation_name = "get_vault"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -861,14 +911,20 @@ class KmsVaultClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Vault")
+                response_type="Vault",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Vault")
+                response_type="Vault",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_vault_usage(self, vault_id, **kwargs):
         """
@@ -903,6 +959,8 @@ class KmsVaultClient(object):
         """
         resource_path = "/20180608/vaults/{vaultId}/usage"
         method = "GET"
+        operation_name = "get_vault_usage"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -947,14 +1005,20 @@ class KmsVaultClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VaultUsage")
+                response_type="VaultUsage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VaultUsage")
+                response_type="VaultUsage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_vault_replicas(self, vault_id, **kwargs):
         """
@@ -1028,6 +1092,8 @@ class KmsVaultClient(object):
         """
         resource_path = "/20180608/vaults/{vaultId}/actions/listReplicas"
         method = "GET"
+        operation_name = "list_vault_replicas"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1104,7 +1170,10 @@ class KmsVaultClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VaultReplicaSummary]")
+                response_type="list[VaultReplicaSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1112,7 +1181,10 @@ class KmsVaultClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VaultReplicaSummary]")
+                response_type="list[VaultReplicaSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_vaults(self, compartment_id, **kwargs):
         """
@@ -1171,6 +1243,8 @@ class KmsVaultClient(object):
         """
         resource_path = "/20180608/vaults"
         method = "GET"
+        operation_name = "list_vaults"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1232,14 +1306,20 @@ class KmsVaultClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VaultSummary]")
+                response_type="list[VaultSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VaultSummary]")
+                response_type="list[VaultSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def restore_vault_from_file(self, compartment_id, restore_vault_from_file_details, **kwargs):
         """
@@ -1313,6 +1393,8 @@ class KmsVaultClient(object):
         """
         resource_path = "/20180608/vaults/actions/restoreFromFile"
         method = "POST"
+        operation_name = "restore_vault_from_file"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1383,7 +1465,10 @@ class KmsVaultClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=restore_vault_from_file_details,
-                response_type="Vault")
+                response_type="Vault",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1391,7 +1476,10 @@ class KmsVaultClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=restore_vault_from_file_details,
-                response_type="Vault")
+                response_type="Vault",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def restore_vault_from_object_store(self, compartment_id, **kwargs):
         """
@@ -1446,6 +1534,8 @@ class KmsVaultClient(object):
         """
         resource_path = "/20180608/vaults/actions/restoreFromObjectStore"
         method = "POST"
+        operation_name = "restore_vault_from_object_store"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1492,7 +1582,10 @@ class KmsVaultClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=kwargs.get('restore_vault_from_object_store_details'),
-                response_type="Vault")
+                response_type="Vault",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1500,7 +1593,10 @@ class KmsVaultClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=kwargs.get('restore_vault_from_object_store_details'),
-                response_type="Vault")
+                response_type="Vault",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def schedule_vault_deletion(self, vault_id, schedule_vault_deletion_details, **kwargs):
         """
@@ -1562,6 +1658,8 @@ class KmsVaultClient(object):
         """
         resource_path = "/20180608/vaults/{vaultId}/actions/scheduleDeletion"
         method = "POST"
+        operation_name = "schedule_vault_deletion"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1612,7 +1710,10 @@ class KmsVaultClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=schedule_vault_deletion_details,
-                response_type="Vault")
+                response_type="Vault",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1620,7 +1721,10 @@ class KmsVaultClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=schedule_vault_deletion_details,
-                response_type="Vault")
+                response_type="Vault",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_vault(self, vault_id, update_vault_details, **kwargs):
         """
@@ -1672,6 +1776,8 @@ class KmsVaultClient(object):
         """
         resource_path = "/20180608/vaults/{vaultId}"
         method = "PUT"
+        operation_name = "update_vault"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1719,7 +1825,10 @@ class KmsVaultClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_vault_details,
-                response_type="Vault")
+                response_type="Vault",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1727,4 +1836,7 @@ class KmsVaultClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_vault_details,
-                response_type="Vault")
+                response_type="Vault",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

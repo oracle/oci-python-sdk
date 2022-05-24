@@ -7,9 +7,8 @@ from __future__ import absolute_import
 
 import socket
 
-from ..exceptions import LocationParseError
-
 from ..contrib import _appengine_environ
+from ..exceptions import LocationParseError
 from ..packages import six
 from .wait import NoWayToWaitForSocketError, wait_for_read
 
@@ -123,7 +122,7 @@ def allowed_gai_family():
 
 
 def _has_ipv6(host):
-    """ Returns True if the system can bind an IPv6 address. """
+    """Returns True if the system can bind an IPv6 address."""
     sock = None
     has_ipv6 = False
 

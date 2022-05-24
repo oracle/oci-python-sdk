@@ -148,6 +148,8 @@ class OptimizerClient(object):
         """
         resource_path = "/recommendations/{recommendationId}/actions/bulkApplyRecommendations"
         method = "POST"
+        operation_name = "bulk_apply_recommendations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Recommendation/BulkApplyRecommendations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -195,14 +197,20 @@ class OptimizerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=bulk_apply_recommendations_details)
+                body=bulk_apply_recommendations_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=bulk_apply_recommendations_details)
+                body=bulk_apply_recommendations_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_profile(self, create_profile_details, **kwargs):
         """
@@ -243,6 +251,8 @@ class OptimizerClient(object):
         """
         resource_path = "/profiles"
         method = "POST"
+        operation_name = "create_profile"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Profile/CreateProfile"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -280,14 +290,20 @@ class OptimizerClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_profile_details,
-                response_type="Profile")
+                response_type="Profile",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_profile_details,
-                response_type="Profile")
+                response_type="Profile",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_profile(self, profile_id, **kwargs):
         """
@@ -328,6 +344,8 @@ class OptimizerClient(object):
         """
         resource_path = "/profiles/{profileId}"
         method = "DELETE"
+        operation_name = "delete_profile"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Profile/DeleteProfile"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -373,13 +391,19 @@ class OptimizerClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def filter_resource_actions(self, compartment_id, compartment_id_in_subtree, recommendation_id, query_details, **kwargs):
         """
@@ -430,6 +454,8 @@ class OptimizerClient(object):
         """
         resource_path = "/actions/filterResourceActions"
         method = "POST"
+        operation_name = "filter_resource_actions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/ResourceActionSummary/FilterResourceActions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -476,7 +502,10 @@ class OptimizerClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=query_details,
-                response_type="ResourceActionCollection")
+                response_type="ResourceActionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -484,7 +513,10 @@ class OptimizerClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=query_details,
-                response_type="ResourceActionCollection")
+                response_type="ResourceActionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_category(self, category_id, **kwargs):
         """
@@ -518,6 +550,8 @@ class OptimizerClient(object):
         """
         resource_path = "/categories/{categoryId}"
         method = "GET"
+        operation_name = "get_category"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Category/GetCategory"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -562,14 +596,20 @@ class OptimizerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Category")
+                response_type="Category",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Category")
+                response_type="Category",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_enrollment_status(self, enrollment_status_id, **kwargs):
         """
@@ -603,6 +643,8 @@ class OptimizerClient(object):
         """
         resource_path = "/enrollmentStatus/{enrollmentStatusId}"
         method = "GET"
+        operation_name = "get_enrollment_status"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/EnrollmentStatus/GetEnrollmentStatus"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -647,14 +689,20 @@ class OptimizerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="EnrollmentStatus")
+                response_type="EnrollmentStatus",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="EnrollmentStatus")
+                response_type="EnrollmentStatus",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_profile(self, profile_id, **kwargs):
         """
@@ -688,6 +736,8 @@ class OptimizerClient(object):
         """
         resource_path = "/profiles/{profileId}"
         method = "GET"
+        operation_name = "get_profile"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Profile/GetProfile"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -732,14 +782,20 @@ class OptimizerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Profile")
+                response_type="Profile",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Profile")
+                response_type="Profile",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_recommendation(self, recommendation_id, **kwargs):
         """
@@ -773,6 +829,8 @@ class OptimizerClient(object):
         """
         resource_path = "/recommendations/{recommendationId}"
         method = "GET"
+        operation_name = "get_recommendation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Recommendation/GetRecommendation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -817,14 +875,20 @@ class OptimizerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Recommendation")
+                response_type="Recommendation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Recommendation")
+                response_type="Recommendation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_resource_action(self, resource_action_id, **kwargs):
         """
@@ -858,6 +922,8 @@ class OptimizerClient(object):
         """
         resource_path = "/resourceActions/{resourceActionId}"
         method = "GET"
+        operation_name = "get_resource_action"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/ResourceAction/GetResourceAction"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -902,14 +968,20 @@ class OptimizerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ResourceAction")
+                response_type="ResourceAction",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ResourceAction")
+                response_type="ResourceAction",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -943,6 +1015,8 @@ class OptimizerClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -987,14 +1061,20 @@ class OptimizerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_categories(self, compartment_id, compartment_id_in_subtree, **kwargs):
         """
@@ -1057,6 +1137,8 @@ class OptimizerClient(object):
         """
         resource_path = "/categories"
         method = "GET"
+        operation_name = "list_categories"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/CategorySummary/ListCategories"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1130,14 +1212,20 @@ class OptimizerClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="CategoryCollection")
+                response_type="CategoryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="CategoryCollection")
+                response_type="CategoryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_enrollment_statuses(self, compartment_id, **kwargs):
         """
@@ -1197,6 +1285,8 @@ class OptimizerClient(object):
         """
         resource_path = "/enrollmentStatus"
         method = "GET"
+        operation_name = "list_enrollment_statuses"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/EnrollmentStatusSummary/ListEnrollmentStatuses"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1276,14 +1366,20 @@ class OptimizerClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="EnrollmentStatusCollection")
+                response_type="EnrollmentStatusCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="EnrollmentStatusCollection")
+                response_type="EnrollmentStatusCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_histories(self, compartment_id, compartment_id_in_subtree, **kwargs):
         """
@@ -1361,6 +1457,8 @@ class OptimizerClient(object):
         """
         resource_path = "/histories"
         method = "GET"
+        operation_name = "list_histories"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/HistorySummary/ListHistories"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1449,14 +1547,20 @@ class OptimizerClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="HistoryCollection")
+                response_type="HistoryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="HistoryCollection")
+                response_type="HistoryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_profile_levels(self, compartment_id, compartment_id_in_subtree, **kwargs):
         """
@@ -1517,6 +1621,8 @@ class OptimizerClient(object):
         """
         resource_path = "/profileLevels"
         method = "GET"
+        operation_name = "list_profile_levels"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/ProfileLevelSummary/ListProfileLevels"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1583,14 +1689,20 @@ class OptimizerClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProfileLevelCollection")
+                response_type="ProfileLevelCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProfileLevelCollection")
+                response_type="ProfileLevelCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_profiles(self, compartment_id, **kwargs):
         """
@@ -1648,6 +1760,8 @@ class OptimizerClient(object):
         """
         resource_path = "/profiles"
         method = "GET"
+        operation_name = "list_profiles"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/ProfileSummary/ListProfiles"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1720,14 +1834,20 @@ class OptimizerClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProfileCollection")
+                response_type="ProfileCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProfileCollection")
+                response_type="ProfileCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_recommendation_strategies(self, compartment_id, compartment_id_in_subtree, **kwargs):
         """
@@ -1788,6 +1908,8 @@ class OptimizerClient(object):
         """
         resource_path = "/recommendationStrategies"
         method = "GET"
+        operation_name = "list_recommendation_strategies"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/RecommendationStrategySummary/ListRecommendationStrategies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1854,14 +1976,20 @@ class OptimizerClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RecommendationStrategyCollection")
+                response_type="RecommendationStrategyCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RecommendationStrategyCollection")
+                response_type="RecommendationStrategyCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_recommendations(self, compartment_id, compartment_id_in_subtree, category_id, **kwargs):
         """
@@ -1932,6 +2060,8 @@ class OptimizerClient(object):
         """
         resource_path = "/recommendations"
         method = "GET"
+        operation_name = "list_recommendations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/RecommendationSummary/ListRecommendations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2015,14 +2145,20 @@ class OptimizerClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RecommendationCollection")
+                response_type="RecommendationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RecommendationCollection")
+                response_type="RecommendationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_resource_action_queryable_fields(self, compartment_id, compartment_id_in_subtree, **kwargs):
         """
@@ -2067,6 +2203,8 @@ class OptimizerClient(object):
         """
         resource_path = "/resourceActions/actions/getQueryableFields"
         method = "GET"
+        operation_name = "list_resource_action_queryable_fields"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/QueryableFieldSummary/ListResourceActionQueryableFields"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2111,14 +2249,20 @@ class OptimizerClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="QueryableFieldCollection")
+                response_type="QueryableFieldCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="QueryableFieldCollection")
+                response_type="QueryableFieldCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_resource_actions(self, compartment_id, compartment_id_in_subtree, recommendation_id, **kwargs):
         """
@@ -2192,6 +2336,8 @@ class OptimizerClient(object):
         """
         resource_path = "/resourceActions"
         method = "GET"
+        operation_name = "list_resource_actions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/ResourceActionSummary/ListResourceActions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2277,14 +2423,20 @@ class OptimizerClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResourceActionCollection")
+                response_type="ResourceActionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResourceActionCollection")
+                response_type="ResourceActionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -2324,6 +2476,8 @@ class OptimizerClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2377,7 +2531,10 @@ class OptimizerClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2385,7 +2542,10 @@ class OptimizerClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -2425,6 +2585,8 @@ class OptimizerClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2478,7 +2640,10 @@ class OptimizerClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2486,7 +2651,10 @@ class OptimizerClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -2526,6 +2694,8 @@ class OptimizerClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2569,14 +2739,20 @@ class OptimizerClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestCollection")
+                response_type="WorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestCollection")
+                response_type="WorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_enrollment_status(self, enrollment_status_id, update_enrollment_status_details, **kwargs):
         """
@@ -2620,6 +2796,8 @@ class OptimizerClient(object):
         """
         resource_path = "/enrollmentStatus/{enrollmentStatusId}"
         method = "PUT"
+        operation_name = "update_enrollment_status"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/EnrollmentStatus/UpdateEnrollmentStatus"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2667,7 +2845,10 @@ class OptimizerClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_enrollment_status_details,
-                response_type="EnrollmentStatus")
+                response_type="EnrollmentStatus",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2675,7 +2856,10 @@ class OptimizerClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_enrollment_status_details,
-                response_type="EnrollmentStatus")
+                response_type="EnrollmentStatus",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_profile(self, profile_id, update_profile_details, **kwargs):
         """
@@ -2719,6 +2903,8 @@ class OptimizerClient(object):
         """
         resource_path = "/profiles/{profileId}"
         method = "PUT"
+        operation_name = "update_profile"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Profile/UpdateProfile"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2766,7 +2952,10 @@ class OptimizerClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_profile_details,
-                response_type="Profile")
+                response_type="Profile",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2774,7 +2963,10 @@ class OptimizerClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_profile_details,
-                response_type="Profile")
+                response_type="Profile",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_recommendation(self, recommendation_id, update_recommendation_details, **kwargs):
         """
@@ -2823,6 +3015,8 @@ class OptimizerClient(object):
         """
         resource_path = "/recommendations/{recommendationId}"
         method = "PUT"
+        operation_name = "update_recommendation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/Recommendation/UpdateRecommendation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2870,7 +3064,10 @@ class OptimizerClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_recommendation_details,
-                response_type="Recommendation")
+                response_type="Recommendation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2878,7 +3075,10 @@ class OptimizerClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_recommendation_details,
-                response_type="Recommendation")
+                response_type="Recommendation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_resource_action(self, resource_action_id, update_resource_action_details, **kwargs):
         """
@@ -2927,6 +3127,8 @@ class OptimizerClient(object):
         """
         resource_path = "/resourceActions/{resourceActionId}"
         method = "PUT"
+        operation_name = "update_resource_action"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/advisor/20200606/ResourceAction/UpdateResourceAction"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2974,7 +3176,10 @@ class OptimizerClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_resource_action_details,
-                response_type="ResourceAction")
+                response_type="ResourceAction",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2982,4 +3187,7 @@ class OptimizerClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_resource_action_details,
-                response_type="ResourceAction")
+                response_type="ResourceAction",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

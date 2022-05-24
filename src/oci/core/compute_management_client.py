@@ -154,6 +154,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/instancePools/{instancePoolId}/instances"
         method = "POST"
+        operation_name = "attach_instance_pool_instance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -200,7 +202,10 @@ class ComputeManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=attach_instance_pool_instance_details,
-                response_type="InstancePoolInstance")
+                response_type="InstancePoolInstance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -208,7 +213,10 @@ class ComputeManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=attach_instance_pool_instance_details,
-                response_type="InstancePoolInstance")
+                response_type="InstancePoolInstance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def attach_load_balancer(self, instance_pool_id, attach_load_balancer_details, **kwargs):
         """
@@ -255,6 +263,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/instancePools/{instancePoolId}/actions/attachLoadBalancer"
         method = "POST"
+        operation_name = "attach_load_balancer"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/AttachLoadBalancer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -303,7 +313,10 @@ class ComputeManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=attach_load_balancer_details,
-                response_type="InstancePool")
+                response_type="InstancePool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -311,7 +324,10 @@ class ComputeManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=attach_load_balancer_details,
-                response_type="InstancePool")
+                response_type="InstancePool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_cluster_network_compartment(self, cluster_network_id, change_cluster_network_compartment_details, **kwargs):
         """
@@ -369,6 +385,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/clusterNetworks/{clusterNetworkId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_cluster_network_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/ChangeClusterNetworkCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -418,14 +436,20 @@ class ComputeManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_cluster_network_compartment_details)
+                body=change_cluster_network_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_cluster_network_compartment_details)
+                body=change_cluster_network_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_instance_configuration_compartment(self, instance_configuration_id, change_instance_configuration_compartment_details, **kwargs):
         """
@@ -489,6 +513,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/instanceConfigurations/{instanceConfigurationId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_instance_configuration_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/ChangeInstanceConfigurationCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -538,14 +564,20 @@ class ComputeManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_instance_configuration_compartment_details)
+                body=change_instance_configuration_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_instance_configuration_compartment_details)
+                body=change_instance_configuration_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_instance_pool_compartment(self, instance_pool_id, change_instance_pool_compartment_details, **kwargs):
         """
@@ -603,6 +635,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/instancePools/{instancePoolId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_instance_pool_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/ChangeInstancePoolCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -652,14 +686,20 @@ class ComputeManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_instance_pool_compartment_details)
+                body=change_instance_pool_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_instance_pool_compartment_details)
+                body=change_instance_pool_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_cluster_network(self, create_cluster_network_details, **kwargs):
         """
@@ -699,6 +739,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/clusterNetworks"
         method = "POST"
+        operation_name = "create_cluster_network"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/CreateClusterNetwork"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -734,14 +776,20 @@ class ComputeManagementClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_cluster_network_details,
-                response_type="ClusterNetwork")
+                response_type="ClusterNetwork",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_cluster_network_details,
-                response_type="ClusterNetwork")
+                response_type="ClusterNetwork",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_instance_configuration(self, create_instance_configuration, **kwargs):
         """
@@ -779,6 +827,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/instanceConfigurations"
         method = "POST"
+        operation_name = "create_instance_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/CreateInstanceConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -814,14 +864,20 @@ class ComputeManagementClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_instance_configuration,
-                response_type="InstanceConfiguration")
+                response_type="InstanceConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_instance_configuration,
-                response_type="InstanceConfiguration")
+                response_type="InstanceConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_instance_pool(self, create_instance_pool_details, **kwargs):
         """
@@ -858,6 +914,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/instancePools"
         method = "POST"
+        operation_name = "create_instance_pool"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/CreateInstancePool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -893,14 +951,20 @@ class ComputeManagementClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_instance_pool_details,
-                response_type="InstancePool")
+                response_type="InstancePool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_instance_pool_details,
-                response_type="InstancePool")
+                response_type="InstancePool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_instance_configuration(self, instance_configuration_id, **kwargs):
         """
@@ -935,6 +999,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/instanceConfigurations/{instanceConfigurationId}"
         method = "DELETE"
+        operation_name = "delete_instance_configuration"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -978,13 +1044,19 @@ class ComputeManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def detach_instance_pool_instance(self, instance_pool_id, detach_instance_pool_instance_details, **kwargs):
         """
@@ -1026,6 +1098,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/instancePools/{instancePoolId}/actions/detachInstance"
         method = "POST"
+        operation_name = "detach_instance_pool_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolInstance/DetachInstancePoolInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1071,14 +1145,20 @@ class ComputeManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=detach_instance_pool_instance_details)
+                body=detach_instance_pool_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=detach_instance_pool_instance_details)
+                body=detach_instance_pool_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def detach_load_balancer(self, instance_pool_id, detach_load_balancer_details, **kwargs):
         """
@@ -1125,6 +1205,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/instancePools/{instancePoolId}/actions/detachLoadBalancer"
         method = "POST"
+        operation_name = "detach_load_balancer"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/DetachLoadBalancer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1173,7 +1255,10 @@ class ComputeManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=detach_load_balancer_details,
-                response_type="InstancePool")
+                response_type="InstancePool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1181,7 +1266,10 @@ class ComputeManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=detach_load_balancer_details,
-                response_type="InstancePool")
+                response_type="InstancePool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_cluster_network(self, cluster_network_id, **kwargs):
         """
@@ -1213,6 +1301,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/clusterNetworks/{clusterNetworkId}"
         method = "GET"
+        operation_name = "get_cluster_network"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/GetClusterNetwork"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -1250,14 +1340,20 @@ class ComputeManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ClusterNetwork")
+                response_type="ClusterNetwork",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ClusterNetwork")
+                response_type="ClusterNetwork",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_instance_configuration(self, instance_configuration_id, **kwargs):
         """
@@ -1287,6 +1383,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/instanceConfigurations/{instanceConfigurationId}"
         method = "GET"
+        operation_name = "get_instance_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/GetInstanceConfiguration"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -1324,14 +1422,20 @@ class ComputeManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="InstanceConfiguration")
+                response_type="InstanceConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="InstanceConfiguration")
+                response_type="InstanceConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_instance_pool(self, instance_pool_id, **kwargs):
         """
@@ -1363,6 +1467,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/instancePools/{instancePoolId}"
         method = "GET"
+        operation_name = "get_instance_pool"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/GetInstancePool"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -1400,14 +1506,20 @@ class ComputeManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="InstancePool")
+                response_type="InstancePool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="InstancePool")
+                response_type="InstancePool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_instance_pool_instance(self, instance_pool_id, instance_id, **kwargs):
         """
@@ -1444,6 +1556,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/instancePools/{instancePoolId}/instances/{instanceId}"
         method = "GET"
+        operation_name = "get_instance_pool_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolInstance/GetInstancePoolInstance"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -1482,14 +1596,20 @@ class ComputeManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="InstancePoolInstance")
+                response_type="InstancePoolInstance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="InstancePoolInstance")
+                response_type="InstancePoolInstance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_instance_pool_load_balancer_attachment(self, instance_pool_id, instance_pool_load_balancer_attachment_id, **kwargs):
         """
@@ -1524,6 +1644,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/instancePools/{instancePoolId}/loadBalancerAttachments/{instancePoolLoadBalancerAttachmentId}"
         method = "GET"
+        operation_name = "get_instance_pool_load_balancer_attachment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolLoadBalancerAttachment/GetInstancePoolLoadBalancerAttachment"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -1562,14 +1684,20 @@ class ComputeManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="InstancePoolLoadBalancerAttachment")
+                response_type="InstancePoolLoadBalancerAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="InstancePoolLoadBalancerAttachment")
+                response_type="InstancePoolLoadBalancerAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def launch_instance_configuration(self, instance_configuration_id, instance_configuration, **kwargs):
         """
@@ -1615,6 +1743,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/instanceConfigurations/{instanceConfigurationId}/actions/launch"
         method = "POST"
+        operation_name = "launch_instance_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/LaunchInstanceConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1661,7 +1791,10 @@ class ComputeManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=instance_configuration,
-                response_type="Instance")
+                response_type="Instance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1669,7 +1802,10 @@ class ComputeManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=instance_configuration,
-                response_type="Instance")
+                response_type="Instance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_cluster_network_instances(self, compartment_id, cluster_network_id, **kwargs):
         """
@@ -1743,6 +1879,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/clusterNetworks/{clusterNetworkId}/instances"
         method = "GET"
+        operation_name = "list_cluster_network_instances"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/ListClusterNetworkInstances"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1814,7 +1952,10 @@ class ComputeManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[InstanceSummary]")
+                response_type="list[InstanceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1822,7 +1963,10 @@ class ComputeManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[InstanceSummary]")
+                response_type="list[InstanceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_cluster_networks(self, compartment_id, **kwargs):
         """
@@ -1897,6 +2041,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/clusterNetworks"
         method = "GET"
+        operation_name = "list_cluster_networks"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/ListClusterNetworks"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1966,14 +2112,20 @@ class ComputeManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ClusterNetworkSummary]")
+                response_type="list[ClusterNetworkSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ClusterNetworkSummary]")
+                response_type="list[ClusterNetworkSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_instance_configurations(self, compartment_id, **kwargs):
         """
@@ -2039,6 +2191,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/instanceConfigurations"
         method = "GET"
+        operation_name = "list_instance_configurations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfigurationSummary/ListInstanceConfigurations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2097,14 +2251,20 @@ class ComputeManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[InstanceConfigurationSummary]")
+                response_type="list[InstanceConfigurationSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[InstanceConfigurationSummary]")
+                response_type="list[InstanceConfigurationSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_instance_pool_instances(self, compartment_id, instance_pool_id, **kwargs):
         """
@@ -2178,6 +2338,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/instancePools/{instancePoolId}/instances"
         method = "GET"
+        operation_name = "list_instance_pool_instances"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceSummary/ListInstancePoolInstances"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2249,7 +2411,10 @@ class ComputeManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[InstanceSummary]")
+                response_type="list[InstanceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2257,7 +2422,10 @@ class ComputeManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[InstanceSummary]")
+                response_type="list[InstanceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_instance_pools(self, compartment_id, **kwargs):
         """
@@ -2332,6 +2500,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/instancePools"
         method = "GET"
+        operation_name = "list_instance_pools"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePoolSummary/ListInstancePools"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2401,14 +2571,20 @@ class ComputeManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[InstancePoolSummary]")
+                response_type="list[InstancePoolSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[InstancePoolSummary]")
+                response_type="list[InstancePoolSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def reset_instance_pool(self, instance_pool_id, **kwargs):
         """
@@ -2453,6 +2629,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/instancePools/{instancePoolId}/actions/reset"
         method = "POST"
+        operation_name = "reset_instance_pool"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/ResetInstancePool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2500,14 +2678,20 @@ class ComputeManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="InstancePool")
+                response_type="InstancePool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="InstancePool")
+                response_type="InstancePool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def softreset_instance_pool(self, instance_pool_id, **kwargs):
         """
@@ -2555,6 +2739,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/instancePools/{instancePoolId}/actions/softreset"
         method = "POST"
+        operation_name = "softreset_instance_pool"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/SoftresetInstancePool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2602,14 +2788,20 @@ class ComputeManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="InstancePool")
+                response_type="InstancePool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="InstancePool")
+                response_type="InstancePool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def start_instance_pool(self, instance_pool_id, **kwargs):
         """
@@ -2654,6 +2846,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/instancePools/{instancePoolId}/actions/start"
         method = "POST"
+        operation_name = "start_instance_pool"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/StartInstancePool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2701,14 +2895,20 @@ class ComputeManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="InstancePool")
+                response_type="InstancePool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="InstancePool")
+                response_type="InstancePool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def stop_instance_pool(self, instance_pool_id, **kwargs):
         """
@@ -2753,6 +2953,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/instancePools/{instancePoolId}/actions/stop"
         method = "POST"
+        operation_name = "stop_instance_pool"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/StopInstancePool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2800,14 +3002,20 @@ class ComputeManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="InstancePool")
+                response_type="InstancePool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="InstancePool")
+                response_type="InstancePool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def terminate_cluster_network(self, cluster_network_id, **kwargs):
         """
@@ -2847,6 +3055,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/clusterNetworks/{clusterNetworkId}"
         method = "DELETE"
+        operation_name = "terminate_cluster_network"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/TerminateClusterNetwork"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2890,13 +3100,19 @@ class ComputeManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def terminate_instance_pool(self, instance_pool_id, **kwargs):
         """
@@ -2940,6 +3156,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/instancePools/{instancePoolId}"
         method = "DELETE"
+        operation_name = "terminate_instance_pool"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2983,13 +3201,19 @@ class ComputeManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_cluster_network(self, cluster_network_id, update_cluster_network_details, **kwargs):
         """
@@ -3036,6 +3260,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/clusterNetworks/{clusterNetworkId}"
         method = "PUT"
+        operation_name = "update_cluster_network"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ClusterNetwork/UpdateClusterNetwork"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3084,7 +3310,10 @@ class ComputeManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_cluster_network_details,
-                response_type="ClusterNetwork")
+                response_type="ClusterNetwork",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3092,7 +3321,10 @@ class ComputeManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_cluster_network_details,
-                response_type="ClusterNetwork")
+                response_type="ClusterNetwork",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_instance_configuration(self, instance_configuration_id, update_instance_configuration_details, **kwargs):
         """
@@ -3137,6 +3369,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/instanceConfigurations/{instanceConfigurationId}"
         method = "PUT"
+        operation_name = "update_instance_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/UpdateInstanceConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3185,7 +3419,10 @@ class ComputeManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_instance_configuration_details,
-                response_type="InstanceConfiguration")
+                response_type="InstanceConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3193,7 +3430,10 @@ class ComputeManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_instance_configuration_details,
-                response_type="InstanceConfiguration")
+                response_type="InstanceConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_instance_pool(self, instance_pool_id, update_instance_pool_details, **kwargs):
         """
@@ -3242,6 +3482,8 @@ class ComputeManagementClient(object):
         """
         resource_path = "/instancePools/{instancePoolId}"
         method = "PUT"
+        operation_name = "update_instance_pool"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstancePool/UpdateInstancePool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3290,7 +3532,10 @@ class ComputeManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_instance_pool_details,
-                response_type="InstancePool")
+                response_type="InstancePool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3298,4 +3543,7 @@ class ComputeManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_instance_pool_details,
-                response_type="InstancePool")
+                response_type="InstancePool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

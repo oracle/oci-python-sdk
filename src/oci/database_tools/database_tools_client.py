@@ -158,6 +158,8 @@ class DatabaseToolsClient(object):
         """
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_database_tools_connection_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ChangeDatabaseToolsConnectionCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -207,14 +209,20 @@ class DatabaseToolsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_database_tools_connection_compartment_details)
+                body=change_database_tools_connection_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_database_tools_connection_compartment_details)
+                body=change_database_tools_connection_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_database_tools_private_endpoint_compartment(self, database_tools_private_endpoint_id, change_database_tools_private_endpoint_compartment_details, **kwargs):
         """
@@ -270,6 +278,8 @@ class DatabaseToolsClient(object):
         """
         resource_path = "/databaseToolsPrivateEndpoints/{databaseToolsPrivateEndpointId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_database_tools_private_endpoint_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/ChangeDatabaseToolsPrivateEndpointCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -319,14 +329,20 @@ class DatabaseToolsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_database_tools_private_endpoint_compartment_details)
+                body=change_database_tools_private_endpoint_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_database_tools_private_endpoint_compartment_details)
+                body=change_database_tools_private_endpoint_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_database_tools_connection(self, create_database_tools_connection_details, **kwargs):
         """
@@ -366,6 +382,8 @@ class DatabaseToolsClient(object):
         """
         resource_path = "/databaseToolsConnections"
         method = "POST"
+        operation_name = "create_database_tools_connection"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -403,14 +421,20 @@ class DatabaseToolsClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_database_tools_connection_details,
-                response_type="DatabaseToolsConnection")
+                response_type="DatabaseToolsConnection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_database_tools_connection_details,
-                response_type="DatabaseToolsConnection")
+                response_type="DatabaseToolsConnection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_database_tools_private_endpoint(self, create_database_tools_private_endpoint_details, **kwargs):
         """
@@ -450,6 +474,8 @@ class DatabaseToolsClient(object):
         """
         resource_path = "/databaseToolsPrivateEndpoints"
         method = "POST"
+        operation_name = "create_database_tools_private_endpoint"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -487,14 +513,20 @@ class DatabaseToolsClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_database_tools_private_endpoint_details,
-                response_type="DatabaseToolsPrivateEndpoint")
+                response_type="DatabaseToolsPrivateEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_database_tools_private_endpoint_details,
-                response_type="DatabaseToolsPrivateEndpoint")
+                response_type="DatabaseToolsPrivateEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_database_tools_connection(self, database_tools_connection_id, **kwargs):
         """
@@ -536,6 +568,8 @@ class DatabaseToolsClient(object):
         """
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}"
         method = "DELETE"
+        operation_name = "delete_database_tools_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/DeleteDatabaseToolsConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -581,13 +615,19 @@ class DatabaseToolsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_database_tools_private_endpoint(self, database_tools_private_endpoint_id, **kwargs):
         """
@@ -629,6 +669,8 @@ class DatabaseToolsClient(object):
         """
         resource_path = "/databaseToolsPrivateEndpoints/{databaseToolsPrivateEndpointId}"
         method = "DELETE"
+        operation_name = "delete_database_tools_private_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/DeleteDatabaseToolsPrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -674,13 +716,19 @@ class DatabaseToolsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_database_tools_connection(self, database_tools_connection_id, **kwargs):
         """
@@ -715,6 +763,8 @@ class DatabaseToolsClient(object):
         """
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}"
         method = "GET"
+        operation_name = "get_database_tools_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/GetDatabaseToolsConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -759,14 +809,20 @@ class DatabaseToolsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DatabaseToolsConnection")
+                response_type="DatabaseToolsConnection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DatabaseToolsConnection")
+                response_type="DatabaseToolsConnection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_database_tools_endpoint_service(self, database_tools_endpoint_service_id, **kwargs):
         """
@@ -801,6 +857,8 @@ class DatabaseToolsClient(object):
         """
         resource_path = "/databaseToolsEndpointServices/{databaseToolsEndpointServiceId}"
         method = "GET"
+        operation_name = "get_database_tools_endpoint_service"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsEndpointService/GetDatabaseToolsEndpointService"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -845,14 +903,20 @@ class DatabaseToolsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DatabaseToolsEndpointService")
+                response_type="DatabaseToolsEndpointService",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DatabaseToolsEndpointService")
+                response_type="DatabaseToolsEndpointService",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_database_tools_private_endpoint(self, database_tools_private_endpoint_id, **kwargs):
         """
@@ -887,6 +951,8 @@ class DatabaseToolsClient(object):
         """
         resource_path = "/databaseToolsPrivateEndpoints/{databaseToolsPrivateEndpointId}"
         method = "GET"
+        operation_name = "get_database_tools_private_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/GetDatabaseToolsPrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -931,14 +997,20 @@ class DatabaseToolsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DatabaseToolsPrivateEndpoint")
+                response_type="DatabaseToolsPrivateEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DatabaseToolsPrivateEndpoint")
+                response_type="DatabaseToolsPrivateEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -971,6 +1043,8 @@ class DatabaseToolsClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1015,14 +1089,20 @@ class DatabaseToolsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_database_tools_connections(self, compartment_id, **kwargs):
         """
@@ -1084,6 +1164,8 @@ class DatabaseToolsClient(object):
         """
         resource_path = "/databaseToolsConnections"
         method = "GET"
+        operation_name = "list_database_tools_connections"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ListDatabaseToolsConnections"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1166,14 +1248,20 @@ class DatabaseToolsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DatabaseToolsConnectionCollection")
+                response_type="DatabaseToolsConnectionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DatabaseToolsConnectionCollection")
+                response_type="DatabaseToolsConnectionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_database_tools_endpoint_services(self, compartment_id, **kwargs):
         """
@@ -1233,6 +1321,8 @@ class DatabaseToolsClient(object):
         """
         resource_path = "/databaseToolsEndpointServices"
         method = "GET"
+        operation_name = "list_database_tools_endpoint_services"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsEndpointService/ListDatabaseToolsEndpointServices"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1307,14 +1397,20 @@ class DatabaseToolsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DatabaseToolsEndpointServiceCollection")
+                response_type="DatabaseToolsEndpointServiceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DatabaseToolsEndpointServiceCollection")
+                response_type="DatabaseToolsEndpointServiceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_database_tools_private_endpoints(self, compartment_id, **kwargs):
         """
@@ -1377,6 +1473,8 @@ class DatabaseToolsClient(object):
         """
         resource_path = "/databaseToolsPrivateEndpoints"
         method = "GET"
+        operation_name = "list_database_tools_private_endpoints"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/ListDatabaseToolsPrivateEndpoints"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1453,14 +1551,20 @@ class DatabaseToolsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DatabaseToolsPrivateEndpointCollection")
+                response_type="DatabaseToolsPrivateEndpointCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DatabaseToolsPrivateEndpointCollection")
+                response_type="DatabaseToolsPrivateEndpointCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -1509,6 +1613,8 @@ class DatabaseToolsClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1580,7 +1686,10 @@ class DatabaseToolsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1588,7 +1697,10 @@ class DatabaseToolsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -1637,6 +1749,8 @@ class DatabaseToolsClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1708,7 +1822,10 @@ class DatabaseToolsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1716,7 +1833,10 @@ class DatabaseToolsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -1770,6 +1890,8 @@ class DatabaseToolsClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1833,14 +1955,20 @@ class DatabaseToolsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestCollection")
+                response_type="WorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestCollection")
+                response_type="WorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_database_tools_connection(self, database_tools_connection_id, update_database_tools_connection_details, **kwargs):
         """
@@ -1885,6 +2013,8 @@ class DatabaseToolsClient(object):
         """
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}"
         method = "PUT"
+        operation_name = "update_database_tools_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/UpdateDatabaseToolsConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1931,14 +2061,20 @@ class DatabaseToolsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_database_tools_connection_details)
+                body=update_database_tools_connection_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_database_tools_connection_details)
+                body=update_database_tools_connection_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_database_tools_private_endpoint(self, database_tools_private_endpoint_id, update_database_tools_private_endpoint_details, **kwargs):
         """
@@ -1983,6 +2119,8 @@ class DatabaseToolsClient(object):
         """
         resource_path = "/databaseToolsPrivateEndpoints/{databaseToolsPrivateEndpointId}"
         method = "PUT"
+        operation_name = "update_database_tools_private_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsPrivateEndpoint/UpdateDatabaseToolsPrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2029,14 +2167,20 @@ class DatabaseToolsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_database_tools_private_endpoint_details)
+                body=update_database_tools_private_endpoint_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_database_tools_private_endpoint_details)
+                body=update_database_tools_private_endpoint_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def validate_database_tools_connection(self, database_tools_connection_id, validate_database_tools_connection_details, **kwargs):
         """
@@ -2081,6 +2225,8 @@ class DatabaseToolsClient(object):
         """
         resource_path = "/databaseToolsConnections/{databaseToolsConnectionId}/actions/validateConnection"
         method = "POST"
+        operation_name = "validate_database_tools_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database-tools/20201005/DatabaseToolsConnection/ValidateDatabaseToolsConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2128,7 +2274,10 @@ class DatabaseToolsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=validate_database_tools_connection_details,
-                response_type="ValidateDatabaseToolsConnectionResult")
+                response_type="ValidateDatabaseToolsConnectionResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2136,4 +2285,7 @@ class DatabaseToolsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=validate_database_tools_connection_details,
-                response_type="ValidateDatabaseToolsConnectionResult")
+                response_type="ValidateDatabaseToolsConnectionResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

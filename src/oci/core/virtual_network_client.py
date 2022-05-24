@@ -143,6 +143,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgRouteDistributions/{drgRouteDistributionId}/actions/addDrgRouteDistributionStatements"
         method = "POST"
+        operation_name = "add_drg_route_distribution_statements"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/AddDrgRouteDistributionStatements"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -181,7 +183,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=add_drg_route_distribution_statements_details,
-                response_type="list[DrgRouteDistributionStatement]")
+                response_type="list[DrgRouteDistributionStatement]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -189,7 +194,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=add_drg_route_distribution_statements_details,
-                response_type="list[DrgRouteDistributionStatement]")
+                response_type="list[DrgRouteDistributionStatement]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def add_drg_route_rules(self, drg_route_table_id, add_drg_route_rules_details, **kwargs):
         """
@@ -231,6 +239,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgRouteTables/{drgRouteTableId}/actions/addDrgRouteRules"
         method = "POST"
+        operation_name = "add_drg_route_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/AddDrgRouteRules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -277,7 +287,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=add_drg_route_rules_details,
-                response_type="list[DrgRouteRule]")
+                response_type="list[DrgRouteRule]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -285,7 +298,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=add_drg_route_rules_details,
-                response_type="list[DrgRouteRule]")
+                response_type="list[DrgRouteRule]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def add_ipv6_subnet_cidr(self, subnet_id, add_subnet_ipv6_cidr_details, **kwargs):
         """
@@ -336,6 +352,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/subnets/{subnetId}/actions/addIpv6Cidr"
         method = "POST"
+        operation_name = "add_ipv6_subnet_cidr"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/AddIpv6SubnetCidr"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -385,14 +403,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=add_subnet_ipv6_cidr_details)
+                body=add_subnet_ipv6_cidr_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=add_subnet_ipv6_cidr_details)
+                body=add_subnet_ipv6_cidr_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def add_ipv6_vcn_cidr(self, vcn_id, **kwargs):
         """
@@ -444,6 +468,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/vcns/{vcnId}/actions/addIpv6Cidr"
         method = "POST"
+        operation_name = "add_ipv6_vcn_cidr"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/AddIpv6VcnCidr"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -494,14 +520,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=kwargs.get('add_vcn_ipv6_cidr_details'))
+                body=kwargs.get('add_vcn_ipv6_cidr_details'),
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=kwargs.get('add_vcn_ipv6_cidr_details'))
+                body=kwargs.get('add_vcn_ipv6_cidr_details'),
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def add_network_security_group_security_rules(self, network_security_group_id, add_network_security_group_security_rules_details, **kwargs):
         """
@@ -536,6 +568,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/networkSecurityGroups/{networkSecurityGroupId}/actions/addSecurityRules"
         method = "POST"
+        operation_name = "add_network_security_group_security_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/AddNetworkSecurityGroupSecurityRules"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -574,7 +608,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=add_network_security_group_security_rules_details,
-                response_type="AddedNetworkSecurityGroupSecurityRules")
+                response_type="AddedNetworkSecurityGroupSecurityRules",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -582,7 +619,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=add_network_security_group_security_rules_details,
-                response_type="AddedNetworkSecurityGroupSecurityRules")
+                response_type="AddedNetworkSecurityGroupSecurityRules",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def add_public_ip_pool_capacity(self, public_ip_pool_id, add_public_ip_pool_capacity_details, **kwargs):
         """
@@ -630,6 +670,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/publicIpPools/{publicIpPoolId}/actions/addCapacity"
         method = "POST"
+        operation_name = "add_public_ip_pool_capacity"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/AddPublicIpPoolCapacity"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -678,7 +720,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=add_public_ip_pool_capacity_details,
-                response_type="PublicIpPool")
+                response_type="PublicIpPool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -686,7 +731,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=add_public_ip_pool_capacity_details,
-                response_type="PublicIpPool")
+                response_type="PublicIpPool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def add_vcn_cidr(self, vcn_id, add_vcn_cidr_details, **kwargs):
         """
@@ -743,6 +791,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/vcns/{vcnId}/actions/addCidr"
         method = "POST"
+        operation_name = "add_vcn_cidr"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/AddVcnCidr"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -792,14 +842,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=add_vcn_cidr_details)
+                body=add_vcn_cidr_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=add_vcn_cidr_details)
+                body=add_vcn_cidr_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def advertise_byoip_range(self, byoip_range_id, **kwargs):
         """
@@ -836,6 +892,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/byoipRanges/{byoipRangeId}/actions/advertise"
         method = "POST"
+        operation_name = "advertise_byoip_range"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/AdvertiseByoipRange"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -879,13 +937,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def attach_service_id(self, service_gateway_id, attach_service_details, **kwargs):
         """
@@ -934,6 +998,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/serviceGateways/{serviceGatewayId}/actions/attachService"
         method = "POST"
+        operation_name = "attach_service_id"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/AttachServiceId"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -979,7 +1045,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=attach_service_details,
-                response_type="ServiceGateway")
+                response_type="ServiceGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -987,7 +1056,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=attach_service_details,
-                response_type="ServiceGateway")
+                response_type="ServiceGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def bulk_add_virtual_circuit_public_prefixes(self, virtual_circuit_id, bulk_add_virtual_circuit_public_prefixes_details, **kwargs):
         """
@@ -1025,6 +1097,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/virtualCircuits/{virtualCircuitId}/actions/bulkAddPublicPrefixes"
         method = "POST"
+        operation_name = "bulk_add_virtual_circuit_public_prefixes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitPublicPrefix/BulkAddVirtualCircuitPublicPrefixes"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -1064,14 +1138,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=bulk_add_virtual_circuit_public_prefixes_details)
+                body=bulk_add_virtual_circuit_public_prefixes_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=bulk_add_virtual_circuit_public_prefixes_details)
+                body=bulk_add_virtual_circuit_public_prefixes_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def bulk_delete_virtual_circuit_public_prefixes(self, virtual_circuit_id, bulk_delete_virtual_circuit_public_prefixes_details, **kwargs):
         """
@@ -1109,6 +1189,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/virtualCircuits/{virtualCircuitId}/actions/bulkDeletePublicPrefixes"
         method = "POST"
+        operation_name = "bulk_delete_virtual_circuit_public_prefixes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitPublicPrefix/BulkDeleteVirtualCircuitPublicPrefixes"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -1148,14 +1230,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=bulk_delete_virtual_circuit_public_prefixes_details)
+                body=bulk_delete_virtual_circuit_public_prefixes_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=bulk_delete_virtual_circuit_public_prefixes_details)
+                body=bulk_delete_virtual_circuit_public_prefixes_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_byoip_range_compartment(self, byoip_range_id, change_byoip_range_compartment_details, **kwargs):
         """
@@ -1205,6 +1293,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/byoipRanges/{byoipRangeId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_byoip_range_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/ChangeByoipRangeCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1252,14 +1342,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_byoip_range_compartment_details)
+                body=change_byoip_range_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_byoip_range_compartment_details)
+                body=change_byoip_range_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_capture_filter_compartment(self, capture_filter_id, change_capture_filter_compartment_details, **kwargs):
         """
@@ -1314,6 +1410,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/captureFilters/{captureFilterId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_capture_filter_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/ChangeCaptureFilterCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1363,14 +1461,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_capture_filter_compartment_details)
+                body=change_capture_filter_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_capture_filter_compartment_details)
+                body=change_capture_filter_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_cpe_compartment(self, cpe_id, change_cpe_compartment_details, **kwargs):
         """
@@ -1420,6 +1524,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/cpes/{cpeId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_cpe_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/ChangeCpeCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1469,14 +1575,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_cpe_compartment_details)
+                body=change_cpe_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_cpe_compartment_details)
+                body=change_cpe_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_cross_connect_compartment(self, cross_connect_id, change_cross_connect_compartment_details, **kwargs):
         """
@@ -1526,6 +1638,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/crossConnects/{crossConnectId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_cross_connect_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/ChangeCrossConnectCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1575,14 +1689,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_cross_connect_compartment_details)
+                body=change_cross_connect_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_cross_connect_compartment_details)
+                body=change_cross_connect_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_cross_connect_group_compartment(self, cross_connect_group_id, change_cross_connect_group_compartment_details, **kwargs):
         """
@@ -1632,6 +1752,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/crossConnectGroups/{crossConnectGroupId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_cross_connect_group_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/ChangeCrossConnectGroupCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1681,14 +1803,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_cross_connect_group_compartment_details)
+                body=change_cross_connect_group_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_cross_connect_group_compartment_details)
+                body=change_cross_connect_group_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_dhcp_options_compartment(self, dhcp_id, change_dhcp_options_compartment_details, **kwargs):
         """
@@ -1738,6 +1866,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/dhcps/{dhcpId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_dhcp_options_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/ChangeDhcpOptionsCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1785,14 +1915,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_dhcp_options_compartment_details)
+                body=change_dhcp_options_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_dhcp_options_compartment_details)
+                body=change_dhcp_options_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_drg_compartment(self, drg_id, change_drg_compartment_details, **kwargs):
         """
@@ -1842,6 +1978,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgs/{drgId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_drg_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/ChangeDrgCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1889,14 +2027,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_drg_compartment_details)
+                body=change_drg_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_drg_compartment_details)
+                body=change_drg_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_internet_gateway_compartment(self, ig_id, change_internet_gateway_compartment_details, **kwargs):
         """
@@ -1946,6 +2090,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/internetGateways/{igId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_internet_gateway_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/ChangeInternetGatewayCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1993,14 +2139,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_internet_gateway_compartment_details)
+                body=change_internet_gateway_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_internet_gateway_compartment_details)
+                body=change_internet_gateway_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_ip_sec_connection_compartment(self, ipsc_id, change_ip_sec_connection_compartment_details, **kwargs):
         """
@@ -2050,6 +2202,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/ipsecConnections/{ipscId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_ip_sec_connection_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/ChangeIpSecConnectionCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2099,14 +2253,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_ip_sec_connection_compartment_details)
+                body=change_ip_sec_connection_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_ip_sec_connection_compartment_details)
+                body=change_ip_sec_connection_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_local_peering_gateway_compartment(self, local_peering_gateway_id, change_local_peering_gateway_compartment_details, **kwargs):
         """
@@ -2156,6 +2316,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/localPeeringGateways/{localPeeringGatewayId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_local_peering_gateway_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/ChangeLocalPeeringGatewayCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2203,14 +2365,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_local_peering_gateway_compartment_details)
+                body=change_local_peering_gateway_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_local_peering_gateway_compartment_details)
+                body=change_local_peering_gateway_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_nat_gateway_compartment(self, nat_gateway_id, change_nat_gateway_compartment_details, **kwargs):
         """
@@ -2260,6 +2428,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/natGateways/{natGatewayId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_nat_gateway_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/ChangeNatGatewayCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2307,14 +2477,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_nat_gateway_compartment_details)
+                body=change_nat_gateway_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_nat_gateway_compartment_details)
+                body=change_nat_gateway_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_network_security_group_compartment(self, network_security_group_id, change_network_security_group_compartment_details, **kwargs):
         """
@@ -2363,6 +2539,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/networkSecurityGroups/{networkSecurityGroupId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_network_security_group_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/ChangeNetworkSecurityGroupCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2410,14 +2588,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_network_security_group_compartment_details)
+                body=change_network_security_group_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_network_security_group_compartment_details)
+                body=change_network_security_group_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_public_ip_compartment(self, public_ip_id, change_public_ip_compartment_details, **kwargs):
         """
@@ -2470,6 +2654,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/publicIps/{publicIpId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_public_ip_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/ChangePublicIpCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2517,14 +2703,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_public_ip_compartment_details)
+                body=change_public_ip_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_public_ip_compartment_details)
+                body=change_public_ip_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_public_ip_pool_compartment(self, public_ip_pool_id, change_public_ip_pool_compartment_details, **kwargs):
         """
@@ -2574,6 +2766,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/publicIpPools/{publicIpPoolId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_public_ip_pool_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/ChangePublicIpPoolCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2621,14 +2815,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_public_ip_pool_compartment_details)
+                body=change_public_ip_pool_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_public_ip_pool_compartment_details)
+                body=change_public_ip_pool_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_remote_peering_connection_compartment(self, remote_peering_connection_id, change_remote_peering_connection_compartment_details, **kwargs):
         """
@@ -2678,6 +2878,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/remotePeeringConnections/{remotePeeringConnectionId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_remote_peering_connection_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/ChangeRemotePeeringConnectionCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2727,14 +2929,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_remote_peering_connection_compartment_details)
+                body=change_remote_peering_connection_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_remote_peering_connection_compartment_details)
+                body=change_remote_peering_connection_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_route_table_compartment(self, rt_id, change_route_table_compartment_details, **kwargs):
         """
@@ -2784,6 +2992,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/routeTables/{rtId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_route_table_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/ChangeRouteTableCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2831,14 +3041,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_route_table_compartment_details)
+                body=change_route_table_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_route_table_compartment_details)
+                body=change_route_table_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_security_list_compartment(self, security_list_id, change_security_list_compartment_details, **kwargs):
         """
@@ -2888,6 +3104,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/securityLists/{securityListId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_security_list_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/ChangeSecurityListCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2935,14 +3153,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_security_list_compartment_details)
+                body=change_security_list_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_security_list_compartment_details)
+                body=change_security_list_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_service_gateway_compartment(self, service_gateway_id, change_service_gateway_compartment_details, **kwargs):
         """
@@ -2992,6 +3216,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/serviceGateways/{serviceGatewayId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_service_gateway_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/ChangeServiceGatewayCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3039,14 +3265,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_service_gateway_compartment_details)
+                body=change_service_gateway_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_service_gateway_compartment_details)
+                body=change_service_gateway_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_subnet_compartment(self, subnet_id, change_subnet_compartment_details, **kwargs):
         """
@@ -3096,6 +3328,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/subnets/{subnetId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_subnet_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/ChangeSubnetCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3143,14 +3377,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_subnet_compartment_details)
+                body=change_subnet_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_subnet_compartment_details)
+                body=change_subnet_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_vcn_compartment(self, vcn_id, change_vcn_compartment_details, **kwargs):
         """
@@ -3200,6 +3440,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/vcns/{vcnId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_vcn_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ChangeVcnCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3247,14 +3489,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_vcn_compartment_details)
+                body=change_vcn_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_vcn_compartment_details)
+                body=change_vcn_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_virtual_circuit_compartment(self, virtual_circuit_id, change_virtual_circuit_compartment_details, **kwargs):
         """
@@ -3304,6 +3552,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/virtualCircuits/{virtualCircuitId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_virtual_circuit_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/ChangeVirtualCircuitCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3353,14 +3603,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_virtual_circuit_compartment_details)
+                body=change_virtual_circuit_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_virtual_circuit_compartment_details)
+                body=change_virtual_circuit_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_vlan_compartment(self, vlan_id, change_vlan_compartment_details, **kwargs):
         """
@@ -3415,6 +3671,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/vlans/{vlanId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_vlan_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/ChangeVlanCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3464,14 +3722,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_vlan_compartment_details)
+                body=change_vlan_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_vlan_compartment_details)
+                body=change_vlan_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_vtap_compartment(self, vtap_id, change_vtap_compartment_details, **kwargs):
         """
@@ -3526,6 +3790,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/vtaps/{vtapId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_vtap_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/ChangeVtapCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3575,14 +3841,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_vtap_compartment_details)
+                body=change_vtap_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_vtap_compartment_details)
+                body=change_vtap_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def connect_local_peering_gateways(self, local_peering_gateway_id, connect_local_peering_gateways_details, **kwargs):
         """
@@ -3626,6 +3898,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/localPeeringGateways/{localPeeringGatewayId}/actions/connect"
         method = "POST"
+        operation_name = "connect_local_peering_gateways"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/ConnectLocalPeeringGateways"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -3663,14 +3937,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=connect_local_peering_gateways_details)
+                body=connect_local_peering_gateways_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=connect_local_peering_gateways_details)
+                body=connect_local_peering_gateways_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def connect_remote_peering_connections(self, remote_peering_connection_id, connect_remote_peering_connections_details, **kwargs):
         """
@@ -3714,6 +3994,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/remotePeeringConnections/{remotePeeringConnectionId}/actions/connect"
         method = "POST"
+        operation_name = "connect_remote_peering_connections"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/ConnectRemotePeeringConnections"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -3753,14 +4035,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=connect_remote_peering_connections_details)
+                body=connect_remote_peering_connections_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=connect_remote_peering_connections_details)
+                body=connect_remote_peering_connections_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_byoip_range(self, create_byoip_range_details, **kwargs):
         """
@@ -3801,6 +4089,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/byoipRanges"
         method = "POST"
+        operation_name = "create_byoip_range"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/CreateByoipRange"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3838,14 +4128,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_byoip_range_details,
-                response_type="ByoipRange")
+                response_type="ByoipRange",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_byoip_range_details,
-                response_type="ByoipRange")
+                response_type="ByoipRange",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_capture_filter(self, create_capture_filter_details, **kwargs):
         """
@@ -3898,6 +4194,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/captureFilters"
         method = "POST"
+        operation_name = "create_capture_filter"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/CreateCaptureFilter"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3935,14 +4233,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_capture_filter_details,
-                response_type="CaptureFilter")
+                response_type="CaptureFilter",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_capture_filter_details,
-                response_type="CaptureFilter")
+                response_type="CaptureFilter",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_cpe(self, create_cpe_details, **kwargs):
         """
@@ -3999,6 +4303,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/cpes"
         method = "POST"
+        operation_name = "create_cpe"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/CreateCpe"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4036,14 +4342,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_cpe_details,
-                response_type="Cpe")
+                response_type="Cpe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_cpe_details,
-                response_type="Cpe")
+                response_type="Cpe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_cross_connect(self, create_cross_connect_details, **kwargs):
         """
@@ -4103,6 +4415,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/crossConnects"
         method = "POST"
+        operation_name = "create_cross_connect"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/CreateCrossConnect"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4140,14 +4454,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_cross_connect_details,
-                response_type="CrossConnect")
+                response_type="CrossConnect",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_cross_connect_details,
-                response_type="CrossConnect")
+                response_type="CrossConnect",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_cross_connect_group(self, create_cross_connect_group_details, **kwargs):
         """
@@ -4203,6 +4523,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/crossConnectGroups"
         method = "POST"
+        operation_name = "create_cross_connect_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/CreateCrossConnectGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4240,14 +4562,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_cross_connect_group_details,
-                response_type="CrossConnectGroup")
+                response_type="CrossConnectGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_cross_connect_group_details,
-                response_type="CrossConnectGroup")
+                response_type="CrossConnectGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_dhcp_options(self, create_dhcp_details, **kwargs):
         """
@@ -4299,6 +4627,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/dhcps"
         method = "POST"
+        operation_name = "create_dhcp_options"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/CreateDhcpOptions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4334,14 +4664,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_dhcp_details,
-                response_type="DhcpOptions")
+                response_type="DhcpOptions",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_dhcp_details,
-                response_type="DhcpOptions")
+                response_type="DhcpOptions",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_drg(self, create_drg_details, **kwargs):
         """
@@ -4394,6 +4730,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgs"
         method = "POST"
+        operation_name = "create_drg"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/CreateDrg"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4429,14 +4767,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_drg_details,
-                response_type="Drg")
+                response_type="Drg",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_drg_details,
-                response_type="Drg")
+                response_type="Drg",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_drg_attachment(self, create_drg_attachment_details, **kwargs):
         """
@@ -4487,6 +4831,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgAttachments"
         method = "POST"
+        operation_name = "create_drg_attachment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/CreateDrgAttachment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4522,14 +4868,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_drg_attachment_details,
-                response_type="DrgAttachment")
+                response_type="DrgAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_drg_attachment_details,
-                response_type="DrgAttachment")
+                response_type="DrgAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_drg_route_distribution(self, create_drg_route_distribution_details, **kwargs):
         """
@@ -4569,6 +4921,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgRouteDistributions"
         method = "POST"
+        operation_name = "create_drg_route_distribution"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/CreateDrgRouteDistribution"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4604,14 +4958,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_drg_route_distribution_details,
-                response_type="DrgRouteDistribution")
+                response_type="DrgRouteDistribution",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_drg_route_distribution_details,
-                response_type="DrgRouteDistribution")
+                response_type="DrgRouteDistribution",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_drg_route_table(self, create_drg_route_table_details, **kwargs):
         """
@@ -4649,6 +5009,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgRouteTables"
         method = "POST"
+        operation_name = "create_drg_route_table"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/CreateDrgRouteTable"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4684,14 +5046,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_drg_route_table_details,
-                response_type="DrgRouteTable")
+                response_type="DrgRouteTable",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_drg_route_table_details,
-                response_type="DrgRouteTable")
+                response_type="DrgRouteTable",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_internet_gateway(self, create_internet_gateway_details, **kwargs):
         """
@@ -4751,6 +5119,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/internetGateways"
         method = "POST"
+        operation_name = "create_internet_gateway"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/CreateInternetGateway"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4786,14 +5156,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_internet_gateway_details,
-                response_type="InternetGateway")
+                response_type="InternetGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_internet_gateway_details,
-                response_type="InternetGateway")
+                response_type="InternetGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_ip_sec_connection(self, create_ip_sec_connection_details, **kwargs):
         """
@@ -4862,6 +5238,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/ipsecConnections"
         method = "POST"
+        operation_name = "create_ip_sec_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/CreateIpSecConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4899,14 +5277,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_ip_sec_connection_details,
-                response_type="IPSecConnection")
+                response_type="IPSecConnection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_ip_sec_connection_details,
-                response_type="IPSecConnection")
+                response_type="IPSecConnection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_ipv6(self, create_ipv6_details, **kwargs):
         """
@@ -4947,6 +5331,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/ipv6"
         method = "POST"
+        operation_name = "create_ipv6"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/CreateIpv6"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4984,14 +5370,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_ipv6_details,
-                response_type="Ipv6")
+                response_type="Ipv6",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_ipv6_details,
-                response_type="Ipv6")
+                response_type="Ipv6",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_local_peering_gateway(self, create_local_peering_gateway_details, **kwargs):
         """
@@ -5028,6 +5420,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/localPeeringGateways"
         method = "POST"
+        operation_name = "create_local_peering_gateway"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/CreateLocalPeeringGateway"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5063,14 +5457,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_local_peering_gateway_details,
-                response_type="LocalPeeringGateway")
+                response_type="LocalPeeringGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_local_peering_gateway_details,
-                response_type="LocalPeeringGateway")
+                response_type="LocalPeeringGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_nat_gateway(self, create_nat_gateway_details, **kwargs):
         """
@@ -5108,6 +5508,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/natGateways"
         method = "POST"
+        operation_name = "create_nat_gateway"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/CreateNatGateway"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5143,14 +5545,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_nat_gateway_details,
-                response_type="NatGateway")
+                response_type="NatGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_nat_gateway_details,
-                response_type="NatGateway")
+                response_type="NatGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_network_security_group(self, create_network_security_group_details, **kwargs):
         """
@@ -5187,6 +5595,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/networkSecurityGroups"
         method = "POST"
+        operation_name = "create_network_security_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/CreateNetworkSecurityGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5222,14 +5632,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_network_security_group_details,
-                response_type="NetworkSecurityGroup")
+                response_type="NetworkSecurityGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_network_security_group_details,
-                response_type="NetworkSecurityGroup")
+                response_type="NetworkSecurityGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_private_ip(self, create_private_ip_details, **kwargs):
         """
@@ -5270,6 +5686,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/privateIps"
         method = "POST"
+        operation_name = "create_private_ip"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/CreatePrivateIp"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5305,14 +5723,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_private_ip_details,
-                response_type="PrivateIp")
+                response_type="PrivateIp",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_private_ip_details,
-                response_type="PrivateIp")
+                response_type="PrivateIp",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_public_ip(self, create_public_ip_details, **kwargs):
         """
@@ -5372,6 +5796,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/publicIps"
         method = "POST"
+        operation_name = "create_public_ip"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/CreatePublicIp"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5407,14 +5833,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_public_ip_details,
-                response_type="PublicIp")
+                response_type="PublicIp",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_public_ip_details,
-                response_type="PublicIp")
+                response_type="PublicIp",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_public_ip_pool(self, create_public_ip_pool_details, **kwargs):
         """
@@ -5455,6 +5887,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/publicIpPools"
         method = "POST"
+        operation_name = "create_public_ip_pool"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/CreatePublicIpPool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5492,14 +5926,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_public_ip_pool_details,
-                response_type="PublicIpPool")
+                response_type="PublicIpPool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_public_ip_pool_details,
-                response_type="PublicIpPool")
+                response_type="PublicIpPool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_remote_peering_connection(self, create_remote_peering_connection_details, **kwargs):
         """
@@ -5536,6 +5976,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/remotePeeringConnections"
         method = "POST"
+        operation_name = "create_remote_peering_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/CreateRemotePeeringConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5573,14 +6015,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_remote_peering_connection_details,
-                response_type="RemotePeeringConnection")
+                response_type="RemotePeeringConnection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_remote_peering_connection_details,
-                response_type="RemotePeeringConnection")
+                response_type="RemotePeeringConnection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_route_table(self, create_route_table_details, **kwargs):
         """
@@ -5637,6 +6085,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/routeTables"
         method = "POST"
+        operation_name = "create_route_table"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/CreateRouteTable"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5672,14 +6122,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_route_table_details,
-                response_type="RouteTable")
+                response_type="RouteTable",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_route_table_details,
-                response_type="RouteTable")
+                response_type="RouteTable",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_security_list(self, create_security_list_details, **kwargs):
         """
@@ -5735,6 +6191,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/securityLists"
         method = "POST"
+        operation_name = "create_security_list"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/CreateSecurityList"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5770,14 +6228,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_security_list_details,
-                response_type="SecurityList")
+                response_type="SecurityList",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_security_list_details,
-                response_type="SecurityList")
+                response_type="SecurityList",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_service_gateway(self, create_service_gateway_details, **kwargs):
         """
@@ -5826,6 +6290,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/serviceGateways"
         method = "POST"
+        operation_name = "create_service_gateway"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/CreateServiceGateway"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5861,14 +6327,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_service_gateway_details,
-                response_type="ServiceGateway")
+                response_type="ServiceGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_service_gateway_details,
-                response_type="ServiceGateway")
+                response_type="ServiceGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_subnet(self, create_subnet_details, **kwargs):
         """
@@ -5945,6 +6417,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/subnets"
         method = "POST"
+        operation_name = "create_subnet"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/CreateSubnet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5980,14 +6454,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_subnet_details,
-                response_type="Subnet")
+                response_type="Subnet",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_subnet_details,
-                response_type="Subnet")
+                response_type="Subnet",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_vcn(self, create_vcn_details, **kwargs):
         """
@@ -6065,6 +6545,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/vcns"
         method = "POST"
+        operation_name = "create_vcn"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/CreateVcn"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6100,14 +6582,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_vcn_details,
-                response_type="Vcn")
+                response_type="Vcn",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_vcn_details,
-                response_type="Vcn")
+                response_type="Vcn",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_virtual_circuit(self, create_virtual_circuit_details, **kwargs):
         """
@@ -6170,6 +6658,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/virtualCircuits"
         method = "POST"
+        operation_name = "create_virtual_circuit"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/CreateVirtualCircuit"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6207,14 +6697,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_virtual_circuit_details,
-                response_type="VirtualCircuit")
+                response_type="VirtualCircuit",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_virtual_circuit_details,
-                response_type="VirtualCircuit")
+                response_type="VirtualCircuit",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_vlan(self, create_vlan_details, **kwargs):
         """
@@ -6255,6 +6751,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/vlans"
         method = "POST"
+        operation_name = "create_vlan"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/CreateVlan"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6292,14 +6790,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_vlan_details,
-                response_type="Vlan")
+                response_type="Vlan",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_vlan_details,
-                response_type="Vlan")
+                response_type="Vlan",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_vtap(self, create_vtap_details, **kwargs):
         """
@@ -6352,6 +6856,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/vtaps"
         method = "POST"
+        operation_name = "create_vtap"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/CreateVtap"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6389,14 +6895,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_vtap_details,
-                response_type="Vtap")
+                response_type="Vtap",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_vtap_details,
-                response_type="Vtap")
+                response_type="Vtap",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_byoip_range(self, byoip_range_id, **kwargs):
         """
@@ -6443,6 +6955,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/byoipRanges/{byoipRangeId}"
         method = "DELETE"
+        operation_name = "delete_byoip_range"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/DeleteByoipRange"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6488,13 +7002,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_capture_filter(self, capture_filter_id, **kwargs):
         """
@@ -6536,6 +7056,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/captureFilters/{captureFilterId}"
         method = "DELETE"
+        operation_name = "delete_capture_filter"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/DeleteCaptureFilter"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6581,13 +7103,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_cpe(self, cpe_id, **kwargs):
         """
@@ -6626,6 +7154,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/cpes/{cpeId}"
         method = "DELETE"
+        operation_name = "delete_cpe"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6671,13 +7201,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_cross_connect(self, cross_connect_id, **kwargs):
         """
@@ -6715,6 +7251,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/crossConnects/{crossConnectId}"
         method = "DELETE"
+        operation_name = "delete_cross_connect"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6760,13 +7298,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_cross_connect_group(self, cross_connect_group_id, **kwargs):
         """
@@ -6805,6 +7349,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/crossConnectGroups/{crossConnectGroupId}"
         method = "DELETE"
+        operation_name = "delete_cross_connect_group"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6850,13 +7396,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_dhcp_options(self, dhcp_id, **kwargs):
         """
@@ -6897,6 +7449,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/dhcps/{dhcpId}"
         method = "DELETE"
+        operation_name = "delete_dhcp_options"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6940,13 +7494,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_drg(self, drg_id, **kwargs):
         """
@@ -6986,6 +7546,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgs/{drgId}"
         method = "DELETE"
+        operation_name = "delete_drg"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7029,13 +7591,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_drg_attachment(self, drg_attachment_id, **kwargs):
         """
@@ -7074,6 +7642,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgAttachments/{drgAttachmentId}"
         method = "DELETE"
+        operation_name = "delete_drg_attachment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7117,13 +7687,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_drg_route_distribution(self, drg_route_distribution_id, **kwargs):
         """
@@ -7162,6 +7738,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgRouteDistributions/{drgRouteDistributionId}"
         method = "DELETE"
+        operation_name = "delete_drg_route_distribution"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/DeleteDrgRouteDistribution"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7205,13 +7783,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_drg_route_table(self, drg_route_table_id, **kwargs):
         """
@@ -7248,6 +7832,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgRouteTables/{drgRouteTableId}"
         method = "DELETE"
+        operation_name = "delete_drg_route_table"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternalPublicIp/DeleteDrgRouteTable"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7291,13 +7877,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_internet_gateway(self, ig_id, **kwargs):
         """
@@ -7338,6 +7930,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/internetGateways/{igId}"
         method = "DELETE"
+        operation_name = "delete_internet_gateway"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7381,13 +7975,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_ip_sec_connection(self, ipsc_id, **kwargs):
         """
@@ -7431,6 +8031,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/ipsecConnections/{ipscId}"
         method = "DELETE"
+        operation_name = "delete_ip_sec_connection"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7476,13 +8078,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_ipv6(self, ipv6_id, **kwargs):
         """
@@ -7526,6 +8134,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/ipv6/{ipv6Id}"
         method = "DELETE"
+        operation_name = "delete_ipv6"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7571,13 +8181,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_local_peering_gateway(self, local_peering_gateway_id, **kwargs):
         """
@@ -7617,6 +8233,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/localPeeringGateways/{localPeeringGatewayId}"
         method = "DELETE"
+        operation_name = "delete_local_peering_gateway"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7660,13 +8278,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_nat_gateway(self, nat_gateway_id, **kwargs):
         """
@@ -7707,6 +8331,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/natGateways/{natGatewayId}"
         method = "DELETE"
+        operation_name = "delete_nat_gateway"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7750,13 +8376,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_network_security_group(self, network_security_group_id, **kwargs):
         """
@@ -7802,6 +8434,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/networkSecurityGroups/{networkSecurityGroupId}"
         method = "DELETE"
+        operation_name = "delete_network_security_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/DeleteNetworkSecurityGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7845,13 +8479,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_private_ip(self, private_ip_id, **kwargs):
         """
@@ -7901,6 +8541,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/privateIps/{privateIpId}"
         method = "DELETE"
+        operation_name = "delete_private_ip"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7944,13 +8586,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_public_ip(self, public_ip_id, **kwargs):
         """
@@ -8003,6 +8651,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/publicIps/{publicIpId}"
         method = "DELETE"
+        operation_name = "delete_public_ip"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8046,13 +8696,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_public_ip_pool(self, public_ip_pool_id, **kwargs):
         """
@@ -8097,6 +8753,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/publicIpPools/{publicIpPoolId}"
         method = "DELETE"
+        operation_name = "delete_public_ip_pool"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/DeletePublicIpPool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8142,13 +8800,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_remote_peering_connection(self, remote_peering_connection_id, **kwargs):
         """
@@ -8188,6 +8852,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/remotePeeringConnections/{remotePeeringConnectionId}"
         method = "DELETE"
+        operation_name = "delete_remote_peering_connection"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8233,13 +8899,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_route_table(self, rt_id, **kwargs):
         """
@@ -8280,6 +8952,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/routeTables/{rtId}"
         method = "DELETE"
+        operation_name = "delete_route_table"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8323,13 +8997,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_security_list(self, security_list_id, **kwargs):
         """
@@ -8370,6 +9050,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/securityLists/{securityListId}"
         method = "DELETE"
+        operation_name = "delete_security_list"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8413,13 +9095,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_service_gateway(self, service_gateway_id, **kwargs):
         """
@@ -8457,6 +9145,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/serviceGateways/{serviceGatewayId}"
         method = "DELETE"
+        operation_name = "delete_service_gateway"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8500,13 +9190,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_subnet(self, subnet_id, **kwargs):
         """
@@ -8545,6 +9241,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/subnets/{subnetId}"
         method = "DELETE"
+        operation_name = "delete_subnet"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8588,13 +9286,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_vcn(self, vcn_id, **kwargs):
         """
@@ -8633,6 +9337,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/vcns/{vcnId}"
         method = "DELETE"
+        operation_name = "delete_vcn"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8676,13 +9382,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_virtual_circuit(self, virtual_circuit_id, **kwargs):
         """
@@ -8723,6 +9435,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/virtualCircuits/{virtualCircuitId}"
         method = "DELETE"
+        operation_name = "delete_virtual_circuit"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8768,13 +9482,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_vlan(self, vlan_id, **kwargs):
         """
@@ -8815,6 +9535,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/vlans/{vlanId}"
         method = "DELETE"
+        operation_name = "delete_vlan"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/DeleteVlan"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8860,13 +9582,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_vtap(self, vtap_id, **kwargs):
         """
@@ -8908,6 +9636,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/vtaps/{vtapId}"
         method = "DELETE"
+        operation_name = "delete_vtap"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/DeleteVtap"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8953,13 +9683,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def detach_service_id(self, service_gateway_id, detach_service_details, **kwargs):
         """
@@ -9010,6 +9746,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/serviceGateways/{serviceGatewayId}/actions/detachService"
         method = "POST"
+        operation_name = "detach_service_id"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/DetachServiceId"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9055,7 +9793,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=detach_service_details,
-                response_type="ServiceGateway")
+                response_type="ServiceGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9063,7 +9804,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=detach_service_details,
-                response_type="ServiceGateway")
+                response_type="ServiceGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_all_drg_attachments(self, drg_id, **kwargs):
         """
@@ -9123,6 +9867,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgs/{drgId}/actions/getAllDrgAttachments"
         method = "POST"
+        operation_name = "get_all_drg_attachments"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/GetAllDrgAttachments"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9187,7 +9933,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DrgAttachmentInfo]")
+                response_type="list[DrgAttachmentInfo]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9195,7 +9944,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DrgAttachmentInfo]")
+                response_type="list[DrgAttachmentInfo]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_allowed_ike_ip_sec_parameters(self, **kwargs):
         """
@@ -9226,6 +9978,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/ipsecAlgorithms"
         method = "GET"
+        operation_name = "get_allowed_ike_ip_sec_parameters"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AllowedIkeIPSecParameters/GetAllowedIkeIpSecParameters"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9261,13 +10015,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                response_type="AllowedIkeIPSecParameters")
+                response_type="AllowedIkeIPSecParameters",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                response_type="AllowedIkeIPSecParameters")
+                response_type="AllowedIkeIPSecParameters",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_byoip_range(self, byoip_range_id, **kwargs):
         """
@@ -9305,6 +10065,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/byoipRanges/{byoipRangeId}"
         method = "GET"
+        operation_name = "get_byoip_range"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/GetByoipRange"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9349,14 +10111,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ByoipRange")
+                response_type="ByoipRange",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ByoipRange")
+                response_type="ByoipRange",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_capture_filter(self, capture_filter_id, **kwargs):
         """
@@ -9392,6 +10160,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/captureFilters/{captureFilterId}"
         method = "GET"
+        operation_name = "get_capture_filter"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/GetCaptureFilter"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9436,14 +10206,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CaptureFilter")
+                response_type="CaptureFilter",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CaptureFilter")
+                response_type="CaptureFilter",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_cpe(self, cpe_id, **kwargs):
         """
@@ -9475,6 +10251,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/cpes/{cpeId}"
         method = "GET"
+        operation_name = "get_cpe"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/GetCpe"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -9514,14 +10292,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Cpe")
+                response_type="Cpe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Cpe")
+                response_type="Cpe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_cpe_device_config_content(self, cpe_id, **kwargs):
         """
@@ -9574,6 +10358,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/cpes/{cpeId}/cpeConfigContent"
         method = "GET"
+        operation_name = "get_cpe_device_config_content"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/GetCpeDeviceConfigContent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9620,14 +10406,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_cpe_device_shape(self, cpe_device_shape_id, **kwargs):
         """
@@ -9671,6 +10463,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/cpeDeviceShapes/{cpeDeviceShapeId}"
         method = "GET"
+        operation_name = "get_cpe_device_shape"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CpeDeviceShapeDetail/GetCpeDeviceShape"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9717,14 +10511,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CpeDeviceShapeDetail")
+                response_type="CpeDeviceShapeDetail",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CpeDeviceShapeDetail")
+                response_type="CpeDeviceShapeDetail",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_cross_connect(self, cross_connect_id, **kwargs):
         """
@@ -9756,6 +10556,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/crossConnects/{crossConnectId}"
         method = "GET"
+        operation_name = "get_cross_connect"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/GetCrossConnect"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -9795,14 +10597,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CrossConnect")
+                response_type="CrossConnect",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CrossConnect")
+                response_type="CrossConnect",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_cross_connect_group(self, cross_connect_group_id, **kwargs):
         """
@@ -9834,6 +10642,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/crossConnectGroups/{crossConnectGroupId}"
         method = "GET"
+        operation_name = "get_cross_connect_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/GetCrossConnectGroup"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -9873,14 +10683,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CrossConnectGroup")
+                response_type="CrossConnectGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CrossConnectGroup")
+                response_type="CrossConnectGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_cross_connect_letter_of_authority(self, cross_connect_id, **kwargs):
         """
@@ -9912,6 +10728,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/crossConnects/{crossConnectId}/letterOfAuthority"
         method = "GET"
+        operation_name = "get_cross_connect_letter_of_authority"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LetterOfAuthority/GetCrossConnectLetterOfAuthority"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -9951,14 +10769,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LetterOfAuthority")
+                response_type="LetterOfAuthority",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LetterOfAuthority")
+                response_type="LetterOfAuthority",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_cross_connect_status(self, cross_connect_id, **kwargs):
         """
@@ -9990,6 +10814,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/crossConnects/{crossConnectId}/status"
         method = "GET"
+        operation_name = "get_cross_connect_status"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectStatus/GetCrossConnectStatus"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -10029,14 +10855,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CrossConnectStatus")
+                response_type="CrossConnectStatus",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CrossConnectStatus")
+                response_type="CrossConnectStatus",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_dhcp_options(self, dhcp_id, **kwargs):
         """
@@ -10068,6 +10900,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/dhcps/{dhcpId}"
         method = "GET"
+        operation_name = "get_dhcp_options"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/GetDhcpOptions"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -10105,14 +10939,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DhcpOptions")
+                response_type="DhcpOptions",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DhcpOptions")
+                response_type="DhcpOptions",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_drg(self, drg_id, **kwargs):
         """
@@ -10144,6 +10984,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgs/{drgId}"
         method = "GET"
+        operation_name = "get_drg"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/GetDrg"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -10181,14 +11023,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Drg")
+                response_type="Drg",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Drg")
+                response_type="Drg",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_drg_attachment(self, drg_attachment_id, **kwargs):
         """
@@ -10220,6 +11068,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgAttachments/{drgAttachmentId}"
         method = "GET"
+        operation_name = "get_drg_attachment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/GetDrgAttachment"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -10257,14 +11107,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DrgAttachment")
+                response_type="DrgAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DrgAttachment")
+                response_type="DrgAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_drg_redundancy_status(self, drg_id, **kwargs):
         """
@@ -10303,6 +11159,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgs/{drgId}/redundancyStatus"
         method = "GET"
+        operation_name = "get_drg_redundancy_status"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRedundancyStatus/GetDrgRedundancyStatus"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10349,14 +11207,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DrgRedundancyStatus")
+                response_type="DrgRedundancyStatus",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DrgRedundancyStatus")
+                response_type="DrgRedundancyStatus",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_drg_route_distribution(self, drg_route_distribution_id, **kwargs):
         """
@@ -10388,6 +11252,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgRouteDistributions/{drgRouteDistributionId}"
         method = "GET"
+        operation_name = "get_drg_route_distribution"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/GetDrgRouteDistribution"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -10425,14 +11291,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DrgRouteDistribution")
+                response_type="DrgRouteDistribution",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DrgRouteDistribution")
+                response_type="DrgRouteDistribution",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_drg_route_table(self, drg_route_table_id, **kwargs):
         """
@@ -10464,6 +11336,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgRouteTables/{drgRouteTableId}"
         method = "GET"
+        operation_name = "get_drg_route_table"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/GetDrgRouteTable"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -10501,14 +11375,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DrgRouteTable")
+                response_type="DrgRouteTable",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DrgRouteTable")
+                response_type="DrgRouteTable",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_fast_connect_provider_service(self, provider_service_id, **kwargs):
         """
@@ -10543,6 +11423,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/fastConnectProviderServices/{providerServiceId}"
         method = "GET"
+        operation_name = "get_fast_connect_provider_service"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderService/GetFastConnectProviderService"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -10582,14 +11464,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="FastConnectProviderService")
+                response_type="FastConnectProviderService",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="FastConnectProviderService")
+                response_type="FastConnectProviderService",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_fast_connect_provider_service_key(self, provider_service_id, provider_service_key_name, **kwargs):
         """
@@ -10628,6 +11516,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/fastConnectProviderServices/{providerServiceId}/providerServiceKeys/{providerServiceKeyName}"
         method = "GET"
+        operation_name = "get_fast_connect_provider_service_key"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderServiceKey/GetFastConnectProviderServiceKey"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -10668,14 +11558,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="FastConnectProviderServiceKey")
+                response_type="FastConnectProviderServiceKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="FastConnectProviderServiceKey")
+                response_type="FastConnectProviderServiceKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_internet_gateway(self, ig_id, **kwargs):
         """
@@ -10707,6 +11603,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/internetGateways/{igId}"
         method = "GET"
+        operation_name = "get_internet_gateway"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/GetInternetGateway"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -10744,14 +11642,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="InternetGateway")
+                response_type="InternetGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="InternetGateway")
+                response_type="InternetGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_ip_sec_connection(self, ipsc_id, **kwargs):
         """
@@ -10785,6 +11689,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/ipsecConnections/{ipscId}"
         method = "GET"
+        operation_name = "get_ip_sec_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/GetIpSecConnection"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -10824,14 +11730,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="IPSecConnection")
+                response_type="IPSecConnection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="IPSecConnection")
+                response_type="IPSecConnection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_ip_sec_connection_device_config(self, ipsc_id, **kwargs):
         """
@@ -10866,6 +11778,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/ipsecConnections/{ipscId}/deviceConfig"
         method = "GET"
+        operation_name = "get_ip_sec_connection_device_config"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionDeviceConfig/GetIpSecConnectionDeviceConfig"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -10905,14 +11819,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="IPSecConnectionDeviceConfig")
+                response_type="IPSecConnectionDeviceConfig",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="IPSecConnectionDeviceConfig")
+                response_type="IPSecConnectionDeviceConfig",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_ip_sec_connection_device_status(self, ipsc_id, **kwargs):
         """
@@ -10945,6 +11865,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/ipsecConnections/{ipscId}/deviceStatus"
         method = "GET"
+        operation_name = "get_ip_sec_connection_device_status"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionDeviceStatus/GetIpSecConnectionDeviceStatus"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -10984,14 +11906,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="IPSecConnectionDeviceStatus")
+                response_type="IPSecConnectionDeviceStatus",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="IPSecConnectionDeviceStatus")
+                response_type="IPSecConnectionDeviceStatus",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_ip_sec_connection_tunnel(self, ipsc_id, tunnel_id, **kwargs):
         """
@@ -11030,6 +11958,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}"
         method = "GET"
+        operation_name = "get_ip_sec_connection_tunnel"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/GetIpSecConnectionTunnel"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -11070,14 +12000,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="IPSecConnectionTunnel")
+                response_type="IPSecConnectionTunnel",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="IPSecConnectionTunnel")
+                response_type="IPSecConnectionTunnel",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_ip_sec_connection_tunnel_error(self, ipsc_id, tunnel_id, **kwargs):
         """
@@ -11114,6 +12050,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}/error"
         method = "GET"
+        operation_name = "get_ip_sec_connection_tunnel_error"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelErrorDetails/GetIpSecConnectionTunnelError"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -11154,14 +12092,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="IPSecConnectionTunnelErrorDetails")
+                response_type="IPSecConnectionTunnelErrorDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="IPSecConnectionTunnelErrorDetails")
+                response_type="IPSecConnectionTunnelErrorDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_ip_sec_connection_tunnel_shared_secret(self, ipsc_id, tunnel_id, **kwargs):
         """
@@ -11199,6 +12143,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}/sharedSecret"
         method = "GET"
+        operation_name = "get_ip_sec_connection_tunnel_shared_secret"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/GetIpSecConnectionTunnelSharedSecret"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -11239,14 +12185,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="IPSecConnectionTunnelSharedSecret")
+                response_type="IPSecConnectionTunnelSharedSecret",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="IPSecConnectionTunnelSharedSecret")
+                response_type="IPSecConnectionTunnelSharedSecret",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_ipsec_cpe_device_config_content(self, ipsc_id, **kwargs):
         """
@@ -11300,6 +12252,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/ipsecConnections/{ipscId}/cpeConfigContent"
         method = "GET"
+        operation_name = "get_ipsec_cpe_device_config_content"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/GetIpsecCpeDeviceConfigContent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11346,14 +12300,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_ipv6(self, ipv6_id, **kwargs):
         """
@@ -11395,6 +12355,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/ipv6/{ipv6Id}"
         method = "GET"
+        operation_name = "get_ipv6"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11439,14 +12401,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Ipv6")
+                response_type="Ipv6",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Ipv6")
+                response_type="Ipv6",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_local_peering_gateway(self, local_peering_gateway_id, **kwargs):
         """
@@ -11478,6 +12446,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/localPeeringGateways/{localPeeringGatewayId}"
         method = "GET"
+        operation_name = "get_local_peering_gateway"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/GetLocalPeeringGateway"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -11515,14 +12485,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LocalPeeringGateway")
+                response_type="LocalPeeringGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LocalPeeringGateway")
+                response_type="LocalPeeringGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_nat_gateway(self, nat_gateway_id, **kwargs):
         """
@@ -11554,6 +12530,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/natGateways/{natGatewayId}"
         method = "GET"
+        operation_name = "get_nat_gateway"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/GetNatGateway"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -11591,14 +12569,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="NatGateway")
+                response_type="NatGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="NatGateway")
+                response_type="NatGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_network_security_group(self, network_security_group_id, **kwargs):
         """
@@ -11636,6 +12620,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/networkSecurityGroups/{networkSecurityGroupId}"
         method = "GET"
+        operation_name = "get_network_security_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/GetNetworkSecurityGroup"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -11673,14 +12659,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="NetworkSecurityGroup")
+                response_type="NetworkSecurityGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="NetworkSecurityGroup")
+                response_type="NetworkSecurityGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_networking_topology(self, compartment_id, **kwargs):
         """
@@ -11744,6 +12736,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/networkingTopology"
         method = "GET"
+        operation_name = "get_networking_topology"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkingTopology/GetNetworkingTopology"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11798,14 +12792,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="NetworkingTopology")
+                response_type="NetworkingTopology",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="NetworkingTopology")
+                response_type="NetworkingTopology",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_private_ip(self, private_ip_id, **kwargs):
         """
@@ -11843,6 +12843,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/privateIps/{privateIpId}"
         method = "GET"
+        operation_name = "get_private_ip"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -11880,14 +12882,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PrivateIp")
+                response_type="PrivateIp",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PrivateIp")
+                response_type="PrivateIp",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_public_ip(self, public_ip_id, **kwargs):
         """
@@ -11933,6 +12941,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/publicIps/{publicIpId}"
         method = "GET"
+        operation_name = "get_public_ip"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIp"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -11970,14 +12980,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PublicIp")
+                response_type="PublicIp",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PublicIp")
+                response_type="PublicIp",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_public_ip_by_ip_address(self, get_public_ip_by_ip_address_details, **kwargs):
         """
@@ -12013,6 +13029,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/publicIps/actions/getByIpAddress"
         method = "POST"
+        operation_name = "get_public_ip_by_ip_address"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByIpAddress"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -12040,14 +13058,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 body=get_public_ip_by_ip_address_details,
-                response_type="PublicIp")
+                response_type="PublicIp",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=get_public_ip_by_ip_address_details,
-                response_type="PublicIp")
+                response_type="PublicIp",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_public_ip_by_private_ip_id(self, get_public_ip_by_private_ip_id_details, **kwargs):
         """
@@ -12091,6 +13115,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/publicIps/actions/getByPrivateIpId"
         method = "POST"
+        operation_name = "get_public_ip_by_private_ip_id"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -12118,14 +13144,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 body=get_public_ip_by_private_ip_id_details,
-                response_type="PublicIp")
+                response_type="PublicIp",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=get_public_ip_by_private_ip_id_details,
-                response_type="PublicIp")
+                response_type="PublicIp",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_public_ip_pool(self, public_ip_pool_id, **kwargs):
         """
@@ -12163,6 +13195,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/publicIpPools/{publicIpPoolId}"
         method = "GET"
+        operation_name = "get_public_ip_pool"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/GetPublicIpPool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12207,14 +13241,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PublicIpPool")
+                response_type="PublicIpPool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PublicIpPool")
+                response_type="PublicIpPool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_remote_peering_connection(self, remote_peering_connection_id, **kwargs):
         """
@@ -12246,6 +13286,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/remotePeeringConnections/{remotePeeringConnectionId}"
         method = "GET"
+        operation_name = "get_remote_peering_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/GetRemotePeeringConnection"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -12285,14 +13327,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="RemotePeeringConnection")
+                response_type="RemotePeeringConnection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="RemotePeeringConnection")
+                response_type="RemotePeeringConnection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_route_table(self, rt_id, **kwargs):
         """
@@ -12324,6 +13372,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/routeTables/{rtId}"
         method = "GET"
+        operation_name = "get_route_table"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/GetRouteTable"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -12361,14 +13411,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="RouteTable")
+                response_type="RouteTable",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="RouteTable")
+                response_type="RouteTable",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_security_list(self, security_list_id, **kwargs):
         """
@@ -12400,6 +13456,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/securityLists/{securityListId}"
         method = "GET"
+        operation_name = "get_security_list"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/GetSecurityList"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -12437,14 +13495,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SecurityList")
+                response_type="SecurityList",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SecurityList")
+                response_type="SecurityList",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_service(self, service_id, **kwargs):
         """
@@ -12476,6 +13540,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/services/{serviceId}"
         method = "GET"
+        operation_name = "get_service"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Service/GetService"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -12513,14 +13579,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Service")
+                response_type="Service",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Service")
+                response_type="Service",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_service_gateway(self, service_gateway_id, **kwargs):
         """
@@ -12552,6 +13624,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/serviceGateways/{serviceGatewayId}"
         method = "GET"
+        operation_name = "get_service_gateway"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/GetServiceGateway"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -12589,14 +13663,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ServiceGateway")
+                response_type="ServiceGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ServiceGateway")
+                response_type="ServiceGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_subnet(self, subnet_id, **kwargs):
         """
@@ -12628,6 +13708,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/subnets/{subnetId}"
         method = "GET"
+        operation_name = "get_subnet"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/GetSubnet"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -12665,14 +13747,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Subnet")
+                response_type="Subnet",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Subnet")
+                response_type="Subnet",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_subnet_topology(self, compartment_id, subnet_id, **kwargs):
         """
@@ -12741,6 +13829,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/subnetTopology"
         method = "GET"
+        operation_name = "get_subnet_topology"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SubnetTopology/GetSubnetTopology"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12796,14 +13886,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SubnetTopology")
+                response_type="SubnetTopology",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SubnetTopology")
+                response_type="SubnetTopology",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_tunnel_cpe_device_config(self, ipsc_id, tunnel_id, **kwargs):
         """
@@ -12848,6 +13944,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}/tunnelDeviceConfig"
         method = "GET"
+        operation_name = "get_tunnel_cpe_device_config"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12895,14 +13993,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TunnelCpeDeviceConfig")
+                response_type="TunnelCpeDeviceConfig",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TunnelCpeDeviceConfig")
+                response_type="TunnelCpeDeviceConfig",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_tunnel_cpe_device_config_content(self, ipsc_id, tunnel_id, **kwargs):
         """
@@ -12960,6 +14064,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}/tunnelDeviceConfig/content"
         method = "GET"
+        operation_name = "get_tunnel_cpe_device_config_content"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13007,14 +14113,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_upgrade_status(self, drg_id, **kwargs):
         """
@@ -13050,6 +14162,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgs/{drgId}/actions/upgradeStatus"
         method = "GET"
+        operation_name = "get_upgrade_status"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/GetUpgradeStatus"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13094,14 +14208,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="UpgradeStatus")
+                response_type="UpgradeStatus",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="UpgradeStatus")
+                response_type="UpgradeStatus",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_vcn(self, vcn_id, **kwargs):
         """
@@ -13133,6 +14253,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/vcns/{vcnId}"
         method = "GET"
+        operation_name = "get_vcn"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/GetVcn"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -13170,14 +14292,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Vcn")
+                response_type="Vcn",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Vcn")
+                response_type="Vcn",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_vcn_dns_resolver_association(self, vcn_id, **kwargs):
         """
@@ -13213,6 +14341,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/vcns/{vcnId}/dnsResolverAssociation"
         method = "GET"
+        operation_name = "get_vcn_dns_resolver_association"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VcnDnsResolverAssociation/GetVcnDnsResolverAssociation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13257,14 +14387,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VcnDnsResolverAssociation")
+                response_type="VcnDnsResolverAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VcnDnsResolverAssociation")
+                response_type="VcnDnsResolverAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_vcn_topology(self, compartment_id, vcn_id, **kwargs):
         """
@@ -13333,6 +14469,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/vcnTopology"
         method = "GET"
+        operation_name = "get_vcn_topology"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VcnTopology/GetVcnTopology"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13388,14 +14526,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="VcnTopology")
+                response_type="VcnTopology",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="VcnTopology")
+                response_type="VcnTopology",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_virtual_circuit(self, virtual_circuit_id, **kwargs):
         """
@@ -13427,6 +14571,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/virtualCircuits/{virtualCircuitId}"
         method = "GET"
+        operation_name = "get_virtual_circuit"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/GetVirtualCircuit"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -13466,14 +14612,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VirtualCircuit")
+                response_type="VirtualCircuit",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VirtualCircuit")
+                response_type="VirtualCircuit",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_vlan(self, vlan_id, **kwargs):
         """
@@ -13509,6 +14661,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/vlans/{vlanId}"
         method = "GET"
+        operation_name = "get_vlan"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/GetVlan"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13553,14 +14707,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Vlan")
+                response_type="Vlan",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Vlan")
+                response_type="Vlan",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_vnic(self, vnic_id, **kwargs):
         """
@@ -13597,6 +14757,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/vnics/{vnicId}"
         method = "GET"
+        operation_name = "get_vnic"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vnic/GetVnic"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -13634,14 +14796,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Vnic")
+                response_type="Vnic",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Vnic")
+                response_type="Vnic",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_vtap(self, vtap_id, **kwargs):
         """
@@ -13677,6 +14845,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/vtaps/{vtapId}"
         method = "GET"
+        operation_name = "get_vtap"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/GetVtap"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13721,14 +14891,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Vtap")
+                response_type="Vtap",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Vtap")
+                response_type="Vtap",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_allowed_peer_regions_for_remote_peering(self, **kwargs):
         """
@@ -13758,6 +14934,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/allowedPeerRegionsForRemotePeering"
         method = "GET"
+        operation_name = "list_allowed_peer_regions_for_remote_peering"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PeerRegionForRemotePeering/ListAllowedPeerRegionsForRemotePeering"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -13786,13 +14964,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                response_type="list[PeerRegionForRemotePeering]")
+                response_type="list[PeerRegionForRemotePeering]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                response_type="list[PeerRegionForRemotePeering]")
+                response_type="list[PeerRegionForRemotePeering]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_byoip_allocated_ranges(self, byoip_range_id, **kwargs):
         """
@@ -13845,6 +15029,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/byoipRanges/{byoipRangeId}/byoipAllocatedRanges"
         method = "GET"
+        operation_name = "list_byoip_allocated_ranges"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipAllocatedRangeSummary/ListByoipAllocatedRanges"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13898,7 +15084,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ByoipAllocatedRangeCollection")
+                response_type="ByoipAllocatedRangeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13906,7 +15095,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ByoipAllocatedRangeCollection")
+                response_type="ByoipAllocatedRangeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_byoip_ranges(self, compartment_id, **kwargs):
         """
@@ -13983,6 +15175,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/byoipRanges"
         method = "GET"
+        operation_name = "list_byoip_ranges"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/ListByoipRanges"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14048,14 +15242,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ByoipRangeCollection")
+                response_type="ByoipRangeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ByoipRangeCollection")
+                response_type="ByoipRangeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_capture_filters(self, compartment_id, **kwargs):
         """
@@ -14134,6 +15334,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/captureFilters"
         method = "GET"
+        operation_name = "list_capture_filters"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/ListCaptureFilters"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14206,14 +15408,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CaptureFilter]")
+                response_type="list[CaptureFilter]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CaptureFilter]")
+                response_type="list[CaptureFilter]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_cpe_device_shapes(self, **kwargs):
         """
@@ -14274,6 +15482,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/cpeDeviceShapes"
         method = "GET"
+        operation_name = "list_cpe_device_shapes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CpeDeviceShapeSummary/ListCpeDeviceShapes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14318,14 +15528,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CpeDeviceShapeSummary]")
+                response_type="list[CpeDeviceShapeSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CpeDeviceShapeSummary]")
+                response_type="list[CpeDeviceShapeSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_cpes(self, compartment_id, **kwargs):
         """
@@ -14373,6 +15589,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/cpes"
         method = "GET"
+        operation_name = "list_cpes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/ListCpes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14415,14 +15633,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Cpe]")
+                response_type="list[Cpe]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Cpe]")
+                response_type="list[Cpe]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_cross_connect_groups(self, compartment_id, **kwargs):
         """
@@ -14497,6 +15721,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/crossConnectGroups"
         method = "GET"
+        operation_name = "list_cross_connect_groups"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/ListCrossConnectGroups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14568,14 +15794,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CrossConnectGroup]")
+                response_type="list[CrossConnectGroup]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CrossConnectGroup]")
+                response_type="list[CrossConnectGroup]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_cross_connect_locations(self, compartment_id, **kwargs):
         """
@@ -14624,6 +15856,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/crossConnectLocations"
         method = "GET"
+        operation_name = "list_cross_connect_locations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectLocation/ListCrossConnectLocations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14666,14 +15900,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CrossConnectLocation]")
+                response_type="list[CrossConnectLocation]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CrossConnectLocation]")
+                response_type="list[CrossConnectLocation]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_cross_connect_mappings(self, virtual_circuit_id, **kwargs):
         """
@@ -14710,6 +15950,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/virtualCircuits/{virtualCircuitId}/crossConnectMappings"
         method = "GET"
+        operation_name = "list_cross_connect_mappings"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectMappingDetailsCollection/ListCrossConnectMappings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14756,14 +15998,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CrossConnectMappingDetailsCollection")
+                response_type="CrossConnectMappingDetailsCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CrossConnectMappingDetailsCollection")
+                response_type="CrossConnectMappingDetailsCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_cross_connects(self, compartment_id, **kwargs):
         """
@@ -14846,6 +16094,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/crossConnects"
         method = "GET"
+        operation_name = "list_cross_connects"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/ListCrossConnects"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14919,14 +16169,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CrossConnect]")
+                response_type="list[CrossConnect]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CrossConnect]")
+                response_type="list[CrossConnect]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_crossconnect_port_speed_shapes(self, compartment_id, **kwargs):
         """
@@ -14976,6 +16232,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/crossConnectPortSpeedShapes"
         method = "GET"
+        operation_name = "list_crossconnect_port_speed_shapes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15018,14 +16276,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CrossConnectPortSpeedShape]")
+                response_type="list[CrossConnectPortSpeedShape]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CrossConnectPortSpeedShape]")
+                response_type="list[CrossConnectPortSpeedShape]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_dhcp_options(self, compartment_id, **kwargs):
         """
@@ -15108,6 +16372,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/dhcps"
         method = "GET"
+        operation_name = "list_dhcp_options"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/ListDhcpOptions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15179,14 +16445,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DhcpOptions]")
+                response_type="list[DhcpOptions]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DhcpOptions]")
+                response_type="list[DhcpOptions]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_drg_attachments(self, compartment_id, **kwargs):
         """
@@ -15291,6 +16563,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgAttachments"
         method = "GET"
+        operation_name = "list_drg_attachments"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/ListDrgAttachments"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15377,14 +16651,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DrgAttachment]")
+                response_type="list[DrgAttachment]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DrgAttachment]")
+                response_type="list[DrgAttachment]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_drg_route_distribution_statements(self, drg_route_distribution_id, **kwargs):
         """
@@ -15443,6 +16723,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgRouteDistributions/{drgRouteDistributionId}/drgRouteDistributionStatements"
         method = "GET"
+        operation_name = "list_drg_route_distribution_statements"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/ListDrgRouteDistributionStatements"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15511,7 +16793,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DrgRouteDistributionStatement]")
+                response_type="list[DrgRouteDistributionStatement]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15519,7 +16804,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DrgRouteDistributionStatement]")
+                response_type="list[DrgRouteDistributionStatement]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_drg_route_distributions(self, drg_id, **kwargs):
         """
@@ -15597,6 +16885,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgRouteDistributions"
         method = "GET"
+        operation_name = "list_drg_route_distributions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/ListDrgRouteDistributions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15666,14 +16956,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DrgRouteDistribution]")
+                response_type="list[DrgRouteDistribution]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DrgRouteDistribution]")
+                response_type="list[DrgRouteDistribution]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_drg_route_rules(self, drg_route_table_id, **kwargs):
         """
@@ -15727,6 +17023,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgRouteTables/{drgRouteTableId}/drgRouteRules"
         method = "GET"
+        operation_name = "list_drg_route_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/ListDrgRouteRules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15786,7 +17084,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DrgRouteRule]")
+                response_type="list[DrgRouteRule]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15794,7 +17095,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DrgRouteRule]")
+                response_type="list[DrgRouteRule]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_drg_route_tables(self, drg_id, **kwargs):
         """
@@ -15876,6 +17180,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgRouteTables"
         method = "GET"
+        operation_name = "list_drg_route_tables"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/ListDrgRouteTables"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15947,14 +17253,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DrgRouteTable]")
+                response_type="list[DrgRouteTable]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DrgRouteTable]")
+                response_type="list[DrgRouteTable]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_drgs(self, compartment_id, **kwargs):
         """
@@ -16002,6 +17314,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgs"
         method = "GET"
+        operation_name = "list_drgs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/ListDrgs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16042,14 +17356,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Drg]")
+                response_type="list[Drg]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Drg]")
+                response_type="list[Drg]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_fast_connect_provider_services(self, compartment_id, **kwargs):
         """
@@ -16106,6 +17426,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/fastConnectProviderServices"
         method = "GET"
+        operation_name = "list_fast_connect_provider_services"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderService/ListFastConnectProviderServices"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16148,14 +17470,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[FastConnectProviderService]")
+                response_type="list[FastConnectProviderService]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[FastConnectProviderService]")
+                response_type="list[FastConnectProviderService]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_fast_connect_provider_virtual_circuit_bandwidth_shapes(self, provider_service_id, **kwargs):
         """
@@ -16208,6 +17536,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/fastConnectProviderServices/{providerServiceId}/virtualCircuitBandwidthShapes"
         method = "GET"
+        operation_name = "list_fast_connect_provider_virtual_circuit_bandwidth_shapes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16260,7 +17590,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VirtualCircuitBandwidthShape]")
+                response_type="list[VirtualCircuitBandwidthShape]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16268,7 +17601,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VirtualCircuitBandwidthShape]")
+                response_type="list[VirtualCircuitBandwidthShape]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_internet_gateways(self, compartment_id, **kwargs):
         """
@@ -16349,6 +17685,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/internetGateways"
         method = "GET"
+        operation_name = "list_internet_gateways"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/ListInternetGateways"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16420,14 +17758,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[InternetGateway]")
+                response_type="list[InternetGateway]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[InternetGateway]")
+                response_type="list[InternetGateway]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_ip_sec_connection_tunnel_routes(self, ipsc_id, tunnel_id, **kwargs):
         """
@@ -16487,6 +17831,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}/routes"
         method = "GET"
+        operation_name = "list_ip_sec_connection_tunnel_routes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelRouteSummary/ListIpSecConnectionTunnelRoutes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16549,7 +17895,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TunnelRouteSummary]")
+                response_type="list[TunnelRouteSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16557,7 +17906,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TunnelRouteSummary]")
+                response_type="list[TunnelRouteSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_ip_sec_connection_tunnel_security_associations(self, ipsc_id, tunnel_id, **kwargs):
         """
@@ -16610,6 +17962,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}/tunnelSecurityAssociations"
         method = "GET"
+        operation_name = "list_ip_sec_connection_tunnel_security_associations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelSecurityAssociationSummary/ListIpSecConnectionTunnelSecurityAssociations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16663,7 +18017,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TunnelSecurityAssociationSummary]")
+                response_type="list[TunnelSecurityAssociationSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16671,7 +18028,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TunnelSecurityAssociationSummary]")
+                response_type="list[TunnelSecurityAssociationSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_ip_sec_connection_tunnels(self, ipsc_id, **kwargs):
         """
@@ -16719,6 +18079,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/ipsecConnections/{ipscId}/tunnels"
         method = "GET"
+        operation_name = "list_ip_sec_connection_tunnels"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/ListIpSecConnectionTunnels"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16771,7 +18133,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[IPSecConnectionTunnel]")
+                response_type="list[IPSecConnectionTunnel]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16779,7 +18144,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[IPSecConnectionTunnel]")
+                response_type="list[IPSecConnectionTunnel]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_ip_sec_connections(self, compartment_id, **kwargs):
         """
@@ -16838,6 +18206,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/ipsecConnections"
         method = "GET"
+        operation_name = "list_ip_sec_connections"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/ListIpSecConnections"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16884,14 +18254,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[IPSecConnection]")
+                response_type="list[IPSecConnection]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[IPSecConnection]")
+                response_type="list[IPSecConnection]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_ipv6s(self, **kwargs):
         """
@@ -16962,6 +18338,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/ipv6"
         method = "GET"
+        operation_name = "list_ipv6s"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/ListIpv6s"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17010,14 +18388,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Ipv6]")
+                response_type="list[Ipv6]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Ipv6]")
+                response_type="list[Ipv6]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_local_peering_gateways(self, compartment_id, **kwargs):
         """
@@ -17071,6 +18455,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/localPeeringGateways"
         method = "GET"
+        operation_name = "list_local_peering_gateways"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/ListLocalPeeringGateways"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17113,14 +18499,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[LocalPeeringGateway]")
+                response_type="list[LocalPeeringGateway]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[LocalPeeringGateway]")
+                response_type="list[LocalPeeringGateway]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_nat_gateways(self, compartment_id, **kwargs):
         """
@@ -17201,6 +18593,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/natGateways"
         method = "GET"
+        operation_name = "list_nat_gateways"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/ListNatGateways"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17272,14 +18666,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[NatGateway]")
+                response_type="list[NatGateway]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[NatGateway]")
+                response_type="list[NatGateway]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_network_security_group_security_rules(self, network_security_group_id, **kwargs):
         """
@@ -17344,6 +18744,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/networkSecurityGroups/{networkSecurityGroupId}/securityRules"
         method = "GET"
+        operation_name = "list_network_security_group_security_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/ListNetworkSecurityGroupSecurityRules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17421,7 +18823,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SecurityRule]")
+                response_type="list[SecurityRule]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17429,7 +18834,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SecurityRule]")
+                response_type="list[SecurityRule]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_network_security_group_vnics(self, network_security_group_id, **kwargs):
         """
@@ -17488,6 +18896,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/networkSecurityGroups/{networkSecurityGroupId}/vnics"
         method = "GET"
+        operation_name = "list_network_security_group_vnics"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroupVnic/ListNetworkSecurityGroupVnics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17556,7 +18966,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[NetworkSecurityGroupVnic]")
+                response_type="list[NetworkSecurityGroupVnic]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17564,7 +18977,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[NetworkSecurityGroupVnic]")
+                response_type="list[NetworkSecurityGroupVnic]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_network_security_groups(self, **kwargs):
         """
@@ -17650,6 +19066,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/networkSecurityGroups"
         method = "GET"
+        operation_name = "list_network_security_groups"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/ListNetworkSecurityGroups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17724,14 +19142,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[NetworkSecurityGroup]")
+                response_type="list[NetworkSecurityGroup]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[NetworkSecurityGroup]")
+                response_type="list[NetworkSecurityGroup]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_private_ips(self, **kwargs):
         """
@@ -17812,6 +19236,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/privateIps"
         method = "GET"
+        operation_name = "list_private_ips"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/ListPrivateIps"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17859,14 +19285,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PrivateIp]")
+                response_type="list[PrivateIp]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PrivateIp]")
+                response_type="list[PrivateIp]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_public_ip_pools(self, compartment_id, **kwargs):
         """
@@ -17943,6 +19375,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/publicIpPools"
         method = "GET"
+        operation_name = "list_public_ip_pools"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/ListPublicIpPools"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18008,14 +19442,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PublicIpPoolCollection")
+                response_type="PublicIpPoolCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PublicIpPoolCollection")
+                response_type="PublicIpPoolCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_public_ips(self, scope, compartment_id, **kwargs):
         """
@@ -18109,6 +19549,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/publicIps"
         method = "GET"
+        operation_name = "list_public_ips"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/ListPublicIps"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18169,14 +19611,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PublicIp]")
+                response_type="list[PublicIp]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PublicIp]")
+                response_type="list[PublicIp]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_remote_peering_connections(self, compartment_id, **kwargs):
         """
@@ -18230,6 +19678,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/remotePeeringConnections"
         method = "GET"
+        operation_name = "list_remote_peering_connections"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/ListRemotePeeringConnections"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18274,14 +19724,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[RemotePeeringConnection]")
+                response_type="list[RemotePeeringConnection]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[RemotePeeringConnection]")
+                response_type="list[RemotePeeringConnection]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_route_tables(self, compartment_id, **kwargs):
         """
@@ -18364,6 +19820,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/routeTables"
         method = "GET"
+        operation_name = "list_route_tables"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/ListRouteTables"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18435,14 +19893,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[RouteTable]")
+                response_type="list[RouteTable]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[RouteTable]")
+                response_type="list[RouteTable]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_security_lists(self, compartment_id, **kwargs):
         """
@@ -18523,6 +19987,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/securityLists"
         method = "GET"
+        operation_name = "list_security_lists"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/ListSecurityLists"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18594,14 +20060,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SecurityList]")
+                response_type="list[SecurityList]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SecurityList]")
+                response_type="list[SecurityList]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_service_gateways(self, compartment_id, **kwargs):
         """
@@ -18679,6 +20151,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/serviceGateways"
         method = "GET"
+        operation_name = "list_service_gateways"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/ListServiceGateways"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18748,14 +20222,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ServiceGateway]")
+                response_type="list[ServiceGateway]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ServiceGateway]")
+                response_type="list[ServiceGateway]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_services(self, **kwargs):
         """
@@ -18799,6 +20279,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/services"
         method = "GET"
+        operation_name = "list_services"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Service/ListServices"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18838,14 +20320,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Service]")
+                response_type="list[Service]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Service]")
+                response_type="list[Service]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_subnets(self, compartment_id, **kwargs):
         """
@@ -18926,6 +20414,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/subnets"
         method = "GET"
+        operation_name = "list_subnets"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/ListSubnets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18997,14 +20487,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Subnet]")
+                response_type="list[Subnet]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Subnet]")
+                response_type="list[Subnet]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_vcns(self, compartment_id, **kwargs):
         """
@@ -19079,6 +20575,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/vcns"
         method = "GET"
+        operation_name = "list_vcns"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ListVcns"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19148,14 +20646,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Vcn]")
+                response_type="list[Vcn]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Vcn]")
+                response_type="list[Vcn]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_virtual_circuit_bandwidth_shapes(self, compartment_id, **kwargs):
         """
@@ -19205,6 +20709,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/virtualCircuitBandwidthShapes"
         method = "GET"
+        operation_name = "list_virtual_circuit_bandwidth_shapes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitBandwidthShape/ListVirtualCircuitBandwidthShapes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19247,14 +20753,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VirtualCircuitBandwidthShape]")
+                response_type="list[VirtualCircuitBandwidthShape]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VirtualCircuitBandwidthShape]")
+                response_type="list[VirtualCircuitBandwidthShape]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_virtual_circuit_public_prefixes(self, virtual_circuit_id, **kwargs):
         """
@@ -19295,6 +20807,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/virtualCircuits/{virtualCircuitId}/publicPrefixes"
         method = "GET"
+        operation_name = "list_virtual_circuit_public_prefixes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitPublicPrefix/ListVirtualCircuitPublicPrefixes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19352,7 +20866,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VirtualCircuitPublicPrefix]")
+                response_type="list[VirtualCircuitPublicPrefix]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -19360,7 +20877,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VirtualCircuitPublicPrefix]")
+                response_type="list[VirtualCircuitPublicPrefix]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_virtual_circuits(self, compartment_id, **kwargs):
         """
@@ -19435,6 +20955,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/virtualCircuits"
         method = "GET"
+        operation_name = "list_virtual_circuits"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/ListVirtualCircuits"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19506,14 +21028,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VirtualCircuit]")
+                response_type="list[VirtualCircuit]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VirtualCircuit]")
+                response_type="list[VirtualCircuit]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_vlans(self, compartment_id, **kwargs):
         """
@@ -19597,6 +21125,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/vlans"
         method = "GET"
+        operation_name = "list_vlans"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/ListVlans"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19671,14 +21201,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Vlan]")
+                response_type="list[Vlan]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Vlan]")
+                response_type="list[Vlan]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_vtaps(self, compartment_id, **kwargs):
         """
@@ -19781,6 +21317,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/vtaps"
         method = "GET"
+        operation_name = "list_vtaps"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/ListVtaps"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19863,14 +21401,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Vtap]")
+                response_type="list[Vtap]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Vtap]")
+                response_type="list[Vtap]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def modify_vcn_cidr(self, vcn_id, modify_vcn_cidr_details, **kwargs):
         """
@@ -19929,6 +21473,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/vcns/{vcnId}/actions/modifyCidr"
         method = "POST"
+        operation_name = "modify_vcn_cidr"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ModifyVcnCidr"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19978,14 +21524,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=modify_vcn_cidr_details)
+                body=modify_vcn_cidr_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=modify_vcn_cidr_details)
+                body=modify_vcn_cidr_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_drg_route_distribution_statements(self, drg_route_distribution_id, remove_drg_route_distribution_statements_details, **kwargs):
         """
@@ -20020,6 +21572,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgRouteDistributions/{drgRouteDistributionId}/actions/removeDrgRouteDistributionStatements"
         method = "POST"
+        operation_name = "remove_drg_route_distribution_statements"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/RemoveDrgRouteDistributionStatements"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -20057,14 +21611,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_drg_route_distribution_statements_details)
+                body=remove_drg_route_distribution_statements_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_drg_route_distribution_statements_details)
+                body=remove_drg_route_distribution_statements_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_drg_route_rules(self, drg_route_table_id, remove_drg_route_rules_details, **kwargs):
         """
@@ -20099,6 +21659,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgRouteTables/{drgRouteTableId}/actions/removeDrgRouteRules"
         method = "POST"
+        operation_name = "remove_drg_route_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/RemoveDrgRouteRules"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -20136,14 +21698,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_drg_route_rules_details)
+                body=remove_drg_route_rules_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_drg_route_rules_details)
+                body=remove_drg_route_rules_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_export_drg_route_distribution(self, drg_attachment_id, **kwargs):
         """
@@ -20184,6 +21752,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgAttachments/{drgAttachmentId}/actions/removeExportDrgRouteDistribution"
         method = "POST"
+        operation_name = "remove_export_drg_route_distribution"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/RemoveExportDrgRouteDistribution"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20230,14 +21800,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DrgAttachment")
+                response_type="DrgAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DrgAttachment")
+                response_type="DrgAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_import_drg_route_distribution(self, drg_route_table_id, **kwargs):
         """
@@ -20279,6 +21855,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgRouteTables/{drgRouteTableId}/actions/removeImportDrgRouteDistribution"
         method = "POST"
+        operation_name = "remove_import_drg_route_distribution"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/RemoveImportDrgRouteDistribution"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20325,14 +21903,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DrgRouteTable")
+                response_type="DrgRouteTable",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DrgRouteTable")
+                response_type="DrgRouteTable",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_ipv6_subnet_cidr(self, subnet_id, remove_subnet_ipv6_cidr_details, **kwargs):
         """
@@ -20383,6 +21967,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/subnets/{subnetId}/actions/removeIpv6Cidr"
         method = "POST"
+        operation_name = "remove_ipv6_subnet_cidr"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/RemoveIpv6SubnetCidr"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20432,14 +22018,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_subnet_ipv6_cidr_details)
+                body=remove_subnet_ipv6_cidr_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_subnet_ipv6_cidr_details)
+                body=remove_subnet_ipv6_cidr_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_ipv6_vcn_cidr(self, vcn_id, **kwargs):
         """
@@ -20490,6 +22082,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/vcns/{vcnId}/actions/removeIpv6Cidr"
         method = "POST"
+        operation_name = "remove_ipv6_vcn_cidr"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/RemoveIpv6VcnCidr"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20540,14 +22134,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=kwargs.get('remove_vcn_ipv6_cidr_details'))
+                body=kwargs.get('remove_vcn_ipv6_cidr_details'),
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=kwargs.get('remove_vcn_ipv6_cidr_details'))
+                body=kwargs.get('remove_vcn_ipv6_cidr_details'),
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_network_security_group_security_rules(self, network_security_group_id, remove_network_security_group_security_rules_details, **kwargs):
         """
@@ -20583,6 +22183,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/networkSecurityGroups/{networkSecurityGroupId}/actions/removeSecurityRules"
         method = "POST"
+        operation_name = "remove_network_security_group_security_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/RemoveNetworkSecurityGroupSecurityRules"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -20620,14 +22222,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_network_security_group_security_rules_details)
+                body=remove_network_security_group_security_rules_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_network_security_group_security_rules_details)
+                body=remove_network_security_group_security_rules_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_public_ip_pool_capacity(self, public_ip_pool_id, remove_public_ip_pool_capacity_details, **kwargs):
         """
@@ -20673,6 +22281,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/publicIpPools/{publicIpPoolId}/actions/removeCapacity"
         method = "POST"
+        operation_name = "remove_public_ip_pool_capacity"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/RemovePublicIpPoolCapacity"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20721,7 +22331,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=remove_public_ip_pool_capacity_details,
-                response_type="PublicIpPool")
+                response_type="PublicIpPool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -20729,7 +22342,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=remove_public_ip_pool_capacity_details,
-                response_type="PublicIpPool")
+                response_type="PublicIpPool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_vcn_cidr(self, vcn_id, remove_vcn_cidr_details, **kwargs):
         """
@@ -20784,6 +22400,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/vcns/{vcnId}/actions/removeCidr"
         method = "POST"
+        operation_name = "remove_vcn_cidr"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/RemoveVcnCidr"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20833,14 +22451,20 @@ class VirtualNetworkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_vcn_cidr_details)
+                body=remove_vcn_cidr_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_vcn_cidr_details)
+                body=remove_vcn_cidr_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_byoip_range(self, byoip_range_id, update_byoip_range_details, **kwargs):
         """
@@ -20884,6 +22508,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/byoipRanges/{byoipRangeId}"
         method = "PUT"
+        operation_name = "update_byoip_range"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/UpdateByoipRange"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20931,7 +22557,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_byoip_range_details,
-                response_type="ByoipRange")
+                response_type="ByoipRange",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -20939,7 +22568,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_byoip_range_details,
-                response_type="ByoipRange")
+                response_type="ByoipRange",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_capture_filter(self, capture_filter_id, update_capture_filter_details, **kwargs):
         """
@@ -20983,6 +22615,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/captureFilters/{captureFilterId}"
         method = "PUT"
+        operation_name = "update_capture_filter"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/UpdateCaptureFilter"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21030,7 +22664,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_capture_filter_details,
-                response_type="CaptureFilter")
+                response_type="CaptureFilter",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21038,7 +22675,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_capture_filter_details,
-                response_type="CaptureFilter")
+                response_type="CaptureFilter",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_cpe(self, cpe_id, update_cpe_details, **kwargs):
         """
@@ -21079,6 +22719,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/cpes/{cpeId}"
         method = "PUT"
+        operation_name = "update_cpe"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/UpdateCpe"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21126,7 +22768,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_cpe_details,
-                response_type="Cpe")
+                response_type="Cpe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21134,7 +22779,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_cpe_details,
-                response_type="Cpe")
+                response_type="Cpe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_cross_connect(self, cross_connect_id, update_cross_connect_details, **kwargs):
         """
@@ -21174,6 +22822,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/crossConnects/{crossConnectId}"
         method = "PUT"
+        operation_name = "update_cross_connect"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/UpdateCrossConnect"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21221,7 +22871,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_cross_connect_details,
-                response_type="CrossConnect")
+                response_type="CrossConnect",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21229,7 +22882,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_cross_connect_details,
-                response_type="CrossConnect")
+                response_type="CrossConnect",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_cross_connect_group(self, cross_connect_group_id, update_cross_connect_group_details, **kwargs):
         """
@@ -21270,6 +22926,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/crossConnectGroups/{crossConnectGroupId}"
         method = "PUT"
+        operation_name = "update_cross_connect_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/UpdateCrossConnectGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21317,7 +22975,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_cross_connect_group_details,
-                response_type="CrossConnectGroup")
+                response_type="CrossConnectGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21325,7 +22986,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_cross_connect_group_details,
-                response_type="CrossConnectGroup")
+                response_type="CrossConnectGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_dhcp_options(self, dhcp_id, update_dhcp_details, **kwargs):
         """
@@ -21368,6 +23032,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/dhcps/{dhcpId}"
         method = "PUT"
+        operation_name = "update_dhcp_options"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/UpdateDhcpOptions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21413,7 +23079,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_dhcp_details,
-                response_type="DhcpOptions")
+                response_type="DhcpOptions",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21421,7 +23090,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_dhcp_details,
-                response_type="DhcpOptions")
+                response_type="DhcpOptions",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_drg(self, drg_id, update_drg_details, **kwargs):
         """
@@ -21461,6 +23133,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgs/{drgId}"
         method = "PUT"
+        operation_name = "update_drg"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/UpdateDrg"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21506,7 +23180,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_drg_details,
-                response_type="Drg")
+                response_type="Drg",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21514,7 +23191,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_drg_details,
-                response_type="Drg")
+                response_type="Drg",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_drg_attachment(self, drg_attachment_id, update_drg_attachment_details, **kwargs):
         """
@@ -21555,6 +23235,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgAttachments/{drgAttachmentId}"
         method = "PUT"
+        operation_name = "update_drg_attachment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/UpdateDrgAttachment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21600,7 +23282,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_drg_attachment_details,
-                response_type="DrgAttachment")
+                response_type="DrgAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21608,7 +23293,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_drg_attachment_details,
-                response_type="DrgAttachment")
+                response_type="DrgAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_drg_route_distribution(self, drg_route_distribution_id, update_drg_route_distribution_details, **kwargs):
         """
@@ -21648,6 +23336,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgRouteDistributions/{drgRouteDistributionId}"
         method = "PUT"
+        operation_name = "update_drg_route_distribution"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/UpdateDrgRouteDistribution"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21693,7 +23383,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_drg_route_distribution_details,
-                response_type="DrgRouteDistribution")
+                response_type="DrgRouteDistribution",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21701,7 +23394,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_drg_route_distribution_details,
-                response_type="DrgRouteDistribution")
+                response_type="DrgRouteDistribution",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_drg_route_distribution_statements(self, drg_route_distribution_id, update_drg_route_distribution_statements_details, **kwargs):
         """
@@ -21736,6 +23432,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgRouteDistributions/{drgRouteDistributionId}/actions/updateDrgRouteDistributionStatements"
         method = "POST"
+        operation_name = "update_drg_route_distribution_statements"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/UpdateDrgRouteDistributionStatements"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -21774,7 +23472,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_drg_route_distribution_statements_details,
-                response_type="list[DrgRouteDistributionStatement]")
+                response_type="list[DrgRouteDistributionStatement]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21782,7 +23483,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_drg_route_distribution_statements_details,
-                response_type="list[DrgRouteDistributionStatement]")
+                response_type="list[DrgRouteDistributionStatement]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_drg_route_rules(self, drg_route_table_id, update_drg_route_rules_details, **kwargs):
         """
@@ -21817,6 +23521,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgRouteTables/{drgRouteTableId}/actions/updateDrgRouteRules"
         method = "POST"
+        operation_name = "update_drg_route_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/UpdateDrgRouteRules"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -21855,7 +23561,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_drg_route_rules_details,
-                response_type="list[DrgRouteRule]")
+                response_type="list[DrgRouteRule]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21863,7 +23572,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_drg_route_rules_details,
-                response_type="list[DrgRouteRule]")
+                response_type="list[DrgRouteRule]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_drg_route_table(self, drg_route_table_id, update_drg_route_table_details, **kwargs):
         """
@@ -21903,6 +23615,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgRouteTables/{drgRouteTableId}"
         method = "PUT"
+        operation_name = "update_drg_route_table"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/UpdateDrgRouteTable"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21948,7 +23662,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_drg_route_table_details,
-                response_type="DrgRouteTable")
+                response_type="DrgRouteTable",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21956,7 +23673,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_drg_route_table_details,
-                response_type="DrgRouteTable")
+                response_type="DrgRouteTable",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_internet_gateway(self, ig_id, update_internet_gateway_details, **kwargs):
         """
@@ -22000,6 +23720,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/internetGateways/{igId}"
         method = "PUT"
+        operation_name = "update_internet_gateway"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/UpdateInternetGateway"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22045,7 +23767,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_internet_gateway_details,
-                response_type="InternetGateway")
+                response_type="InternetGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22053,7 +23778,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_internet_gateway_details,
-                response_type="InternetGateway")
+                response_type="InternetGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_ip_sec_connection(self, ipsc_id, update_ip_sec_connection_details, **kwargs):
         """
@@ -22096,6 +23824,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/ipsecConnections/{ipscId}"
         method = "PUT"
+        operation_name = "update_ip_sec_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/UpdateIpSecConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22143,7 +23873,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_ip_sec_connection_details,
-                response_type="IPSecConnection")
+                response_type="IPSecConnection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22151,7 +23884,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_ip_sec_connection_details,
-                response_type="IPSecConnection")
+                response_type="IPSecConnection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_ip_sec_connection_tunnel(self, ipsc_id, tunnel_id, update_ip_sec_connection_tunnel_details, **kwargs):
         """
@@ -22211,6 +23947,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}"
         method = "PUT"
+        operation_name = "update_ip_sec_connection_tunnel"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/UpdateIpSecConnectionTunnel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22261,7 +23999,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_ip_sec_connection_tunnel_details,
-                response_type="IPSecConnectionTunnel")
+                response_type="IPSecConnectionTunnel",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22269,7 +24010,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_ip_sec_connection_tunnel_details,
-                response_type="IPSecConnectionTunnel")
+                response_type="IPSecConnectionTunnel",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_ip_sec_connection_tunnel_shared_secret(self, ipsc_id, tunnel_id, update_ip_sec_connection_tunnel_shared_secret_details, **kwargs):
         """
@@ -22316,6 +24060,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}/sharedSecret"
         method = "PUT"
+        operation_name = "update_ip_sec_connection_tunnel_shared_secret"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIpSecConnectionTunnelSharedSecret"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22364,7 +24110,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_ip_sec_connection_tunnel_shared_secret_details,
-                response_type="IPSecConnectionTunnelSharedSecret")
+                response_type="IPSecConnectionTunnelSharedSecret",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22372,7 +24121,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_ip_sec_connection_tunnel_shared_secret_details,
-                response_type="IPSecConnectionTunnelSharedSecret")
+                response_type="IPSecConnectionTunnelSharedSecret",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_ipv6(self, ipv6_id, update_ipv6_details, **kwargs):
         """
@@ -22424,6 +24176,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/ipv6/{ipv6Id}"
         method = "PUT"
+        operation_name = "update_ipv6"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/UpdateIpv6"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22471,7 +24225,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_ipv6_details,
-                response_type="Ipv6")
+                response_type="Ipv6",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22479,7 +24236,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_ipv6_details,
-                response_type="Ipv6")
+                response_type="Ipv6",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_local_peering_gateway(self, local_peering_gateway_id, update_local_peering_gateway_details, **kwargs):
         """
@@ -22519,6 +24279,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/localPeeringGateways/{localPeeringGatewayId}"
         method = "PUT"
+        operation_name = "update_local_peering_gateway"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/UpdateLocalPeeringGateway"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22564,7 +24326,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_local_peering_gateway_details,
-                response_type="LocalPeeringGateway")
+                response_type="LocalPeeringGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22572,7 +24337,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_local_peering_gateway_details,
-                response_type="LocalPeeringGateway")
+                response_type="LocalPeeringGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_nat_gateway(self, nat_gateway_id, update_nat_gateway_details, **kwargs):
         """
@@ -22612,6 +24380,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/natGateways/{natGatewayId}"
         method = "PUT"
+        operation_name = "update_nat_gateway"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/UpdateNatGateway"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22657,7 +24427,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_nat_gateway_details,
-                response_type="NatGateway")
+                response_type="NatGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22665,7 +24438,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_nat_gateway_details,
-                response_type="NatGateway")
+                response_type="NatGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_network_security_group(self, network_security_group_id, update_network_security_group_details, **kwargs):
         """
@@ -22721,6 +24497,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/networkSecurityGroups/{networkSecurityGroupId}"
         method = "PUT"
+        operation_name = "update_network_security_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/UpdateNetworkSecurityGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22766,7 +24544,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_network_security_group_details,
-                response_type="NetworkSecurityGroup")
+                response_type="NetworkSecurityGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22774,7 +24555,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_network_security_group_details,
-                response_type="NetworkSecurityGroup")
+                response_type="NetworkSecurityGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_network_security_group_security_rules(self, network_security_group_id, update_network_security_group_security_rules_details, **kwargs):
         """
@@ -22810,6 +24594,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/networkSecurityGroups/{networkSecurityGroupId}/actions/updateSecurityRules"
         method = "POST"
+        operation_name = "update_network_security_group_security_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/UpdateNetworkSecurityGroupSecurityRules"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -22848,7 +24634,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_network_security_group_security_rules_details,
-                response_type="UpdatedNetworkSecurityGroupSecurityRules")
+                response_type="UpdatedNetworkSecurityGroupSecurityRules",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22856,7 +24645,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_network_security_group_security_rules_details,
-                response_type="UpdatedNetworkSecurityGroupSecurityRules")
+                response_type="UpdatedNetworkSecurityGroupSecurityRules",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_private_ip(self, private_ip_id, update_private_ip_details, **kwargs):
         """
@@ -22907,6 +24699,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/privateIps/{privateIpId}"
         method = "PUT"
+        operation_name = "update_private_ip"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22952,7 +24746,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_private_ip_details,
-                response_type="PrivateIp")
+                response_type="PrivateIp",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22960,7 +24757,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_private_ip_details,
-                response_type="PrivateIp")
+                response_type="PrivateIp",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_public_ip(self, public_ip_id, update_public_ip_details, **kwargs):
         """
@@ -23041,6 +24841,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/publicIps/{publicIpId}"
         method = "PUT"
+        operation_name = "update_public_ip"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/UpdatePublicIp"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23086,7 +24888,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_public_ip_details,
-                response_type="PublicIp")
+                response_type="PublicIp",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23094,7 +24899,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_public_ip_details,
-                response_type="PublicIp")
+                response_type="PublicIp",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_public_ip_pool(self, public_ip_pool_id, update_public_ip_pool_details, **kwargs):
         """
@@ -23138,6 +24946,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/publicIpPools/{publicIpPoolId}"
         method = "PUT"
+        operation_name = "update_public_ip_pool"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/UpdatePublicIpPool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23185,7 +24995,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_public_ip_pool_details,
-                response_type="PublicIpPool")
+                response_type="PublicIpPool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23193,7 +25006,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_public_ip_pool_details,
-                response_type="PublicIpPool")
+                response_type="PublicIpPool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_remote_peering_connection(self, remote_peering_connection_id, update_remote_peering_connection_details, **kwargs):
         """
@@ -23233,6 +25049,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/remotePeeringConnections/{remotePeeringConnectionId}"
         method = "PUT"
+        operation_name = "update_remote_peering_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/UpdateRemotePeeringConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23280,7 +25098,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_remote_peering_connection_details,
-                response_type="RemotePeeringConnection")
+                response_type="RemotePeeringConnection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23288,7 +25109,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_remote_peering_connection_details,
-                response_type="RemotePeeringConnection")
+                response_type="RemotePeeringConnection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_route_table(self, rt_id, update_route_table_details, **kwargs):
         """
@@ -23331,6 +25155,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/routeTables/{rtId}"
         method = "PUT"
+        operation_name = "update_route_table"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/UpdateRouteTable"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23376,7 +25202,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_route_table_details,
-                response_type="RouteTable")
+                response_type="RouteTable",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23384,7 +25213,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_route_table_details,
-                response_type="RouteTable")
+                response_type="RouteTable",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_security_list(self, security_list_id, update_security_list_details, **kwargs):
         """
@@ -23428,6 +25260,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/securityLists/{securityListId}"
         method = "PUT"
+        operation_name = "update_security_list"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/UpdateSecurityList"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23473,7 +25307,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_security_list_details,
-                response_type="SecurityList")
+                response_type="SecurityList",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23481,7 +25318,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_security_list_details,
-                response_type="SecurityList")
+                response_type="SecurityList",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_service_gateway(self, service_gateway_id, update_service_gateway_details, **kwargs):
         """
@@ -23522,6 +25362,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/serviceGateways/{serviceGatewayId}"
         method = "PUT"
+        operation_name = "update_service_gateway"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/UpdateServiceGateway"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23567,7 +25409,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_service_gateway_details,
-                response_type="ServiceGateway")
+                response_type="ServiceGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23575,7 +25420,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_service_gateway_details,
-                response_type="ServiceGateway")
+                response_type="ServiceGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_subnet(self, subnet_id, update_subnet_details, **kwargs):
         """
@@ -23615,6 +25463,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/subnets/{subnetId}"
         method = "PUT"
+        operation_name = "update_subnet"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/UpdateSubnet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23660,7 +25510,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_subnet_details,
-                response_type="Subnet")
+                response_type="Subnet",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23668,7 +25521,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_subnet_details,
-                response_type="Subnet")
+                response_type="Subnet",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_tunnel_cpe_device_config(self, ipsc_id, tunnel_id, update_tunnel_cpe_device_config_details, **kwargs):
         """
@@ -23726,6 +25582,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}/tunnelDeviceConfig"
         method = "PUT"
+        operation_name = "update_tunnel_cpe_device_config"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelCpeDeviceConfig/UpdateTunnelCpeDeviceConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23779,7 +25637,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_tunnel_cpe_device_config_details,
-                response_type="TunnelCpeDeviceConfig")
+                response_type="TunnelCpeDeviceConfig",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23787,7 +25648,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_tunnel_cpe_device_config_details,
-                response_type="TunnelCpeDeviceConfig")
+                response_type="TunnelCpeDeviceConfig",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_vcn(self, vcn_id, update_vcn_details, **kwargs):
         """
@@ -23827,6 +25691,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/vcns/{vcnId}"
         method = "PUT"
+        operation_name = "update_vcn"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/UpdateVcn"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23872,7 +25738,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_vcn_details,
-                response_type="Vcn")
+                response_type="Vcn",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -23880,7 +25749,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_vcn_details,
-                response_type="Vcn")
+                response_type="Vcn",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_virtual_circuit(self, virtual_circuit_id, update_virtual_circuit_details, **kwargs):
         """
@@ -23945,6 +25817,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/virtualCircuits/{virtualCircuitId}"
         method = "PUT"
+        operation_name = "update_virtual_circuit"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/UpdateVirtualCircuit"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23992,7 +25866,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_virtual_circuit_details,
-                response_type="VirtualCircuit")
+                response_type="VirtualCircuit",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24000,7 +25877,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_virtual_circuit_details,
-                response_type="VirtualCircuit")
+                response_type="VirtualCircuit",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_vlan(self, vlan_id, update_vlan_details, **kwargs):
         """
@@ -24045,6 +25925,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/vlans/{vlanId}"
         method = "PUT"
+        operation_name = "update_vlan"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/UpdateVlan"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24092,7 +25974,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_vlan_details,
-                response_type="Vlan")
+                response_type="Vlan",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24100,7 +25985,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_vlan_details,
-                response_type="Vlan")
+                response_type="Vlan",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_vnic(self, vnic_id, update_vnic_details, **kwargs):
         """
@@ -24140,6 +26028,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/vnics/{vnicId}"
         method = "PUT"
+        operation_name = "update_vnic"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vnic/UpdateVnic"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24185,7 +26075,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_vnic_details,
-                response_type="Vnic")
+                response_type="Vnic",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24193,7 +26086,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_vnic_details,
-                response_type="Vnic")
+                response_type="Vnic",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_vtap(self, vtap_id, update_vtap_details, **kwargs):
         """
@@ -24237,6 +26133,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/vtaps/{vtapId}"
         method = "PUT"
+        operation_name = "update_vtap"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24284,7 +26182,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_vtap_details,
-                response_type="Vtap")
+                response_type="Vtap",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24292,7 +26193,10 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_vtap_details,
-                response_type="Vtap")
+                response_type="Vtap",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def upgrade_drg(self, drg_id, **kwargs):
         """
@@ -24336,6 +26240,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/drgs/{drgId}/actions/upgrade"
         method = "POST"
+        operation_name = "upgrade_drg"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/UpgradeDrg"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24382,13 +26288,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def validate_byoip_range(self, byoip_range_id, **kwargs):
         """
@@ -24427,6 +26339,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/byoipRanges/{byoipRangeId}/actions/validate"
         method = "POST"
+        operation_name = "validate_byoip_range"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/ValidateByoipRange"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24470,13 +26384,19 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def withdraw_byoip_range(self, byoip_range_id, **kwargs):
         """
@@ -24512,6 +26432,8 @@ class VirtualNetworkClient(object):
         """
         resource_path = "/byoipRanges/{byoipRangeId}/actions/withdraw"
         method = "POST"
+        operation_name = "withdraw_byoip_range"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/WithdrawByoipRange"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24555,10 +26477,16 @@ class VirtualNetworkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

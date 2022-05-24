@@ -9,6 +9,7 @@ from ..federation_client import X509FederationClient
 from .. import auth_utils
 from oci._vendor import requests
 from oci._vendor.requests.exceptions import HTTPError
+from oci._vendor.requests.exceptions import ConnectTimeout
 
 import oci.regions
 import logging
@@ -82,8 +83,8 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
                 retry_strategy=INSTANCE_METADATA_URL_CERTIFICATE_RETRIEVER_RETRY_STRATEGY,
                 headers=self.METADATA_AUTH_HEADERS,
                 log_requests=kwargs.get('log_requests'))
-        except HTTPError as e:
-            if e.response.status_code == 404:
+        except (HTTPError, ConnectTimeout) as e:
+            if e.response and e.response.status_code == 404:
                 InstancePrincipalsSecurityTokenSigner.METADATA_URL_BASE = 'http://169.254.169.254/opc/v1'
                 InstancePrincipalsSecurityTokenSigner.GET_REGION_URL = '{}/instance/region'.format(InstancePrincipalsSecurityTokenSigner.METADATA_URL_BASE)
                 InstancePrincipalsSecurityTokenSigner.LEAF_CERTIFICATE_URL = '{}/identity/cert.pem'.format(InstancePrincipalsSecurityTokenSigner.METADATA_URL_BASE)
@@ -95,6 +96,9 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
                     retry_strategy=INSTANCE_METADATA_URL_CERTIFICATE_RETRIEVER_RETRY_STRATEGY,
                     headers=self.METADATA_AUTH_HEADERS)
             else:
+                if not e.args:
+                    e.args = ('',)
+                e.args = e.args + ("Instance principals authentication can only be used on OCI compute instances. Please confirm this code is running on an OCI compute instance. See https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/callingservicesfrominstances.htm for more info.",)
                 raise e
 
         self.intermediate_certificate_retriever = UrlBasedCertificateRetriever(

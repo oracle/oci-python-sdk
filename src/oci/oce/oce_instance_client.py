@@ -152,6 +152,8 @@ class OceInstanceClient(object):
         """
         resource_path = "/oceInstances/{oceInstanceId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_oce_instance_compartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -203,14 +205,20 @@ class OceInstanceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_oce_instance_compartment_details)
+                body=change_oce_instance_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_oce_instance_compartment_details)
+                body=change_oce_instance_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_oce_instance(self, create_oce_instance_details, **kwargs):
         """
@@ -250,6 +258,8 @@ class OceInstanceClient(object):
         """
         resource_path = "/oceInstances"
         method = "POST"
+        operation_name = "create_oce_instance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -288,13 +298,19 @@ class OceInstanceClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_oce_instance_details)
+                body=create_oce_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_oce_instance_details)
+                body=create_oce_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_oce_instance(self, oce_instance_id, **kwargs):
         """
@@ -334,6 +350,8 @@ class OceInstanceClient(object):
         """
         resource_path = "/oceInstances/{oceInstanceId}"
         method = "DELETE"
+        operation_name = "delete_oce_instance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -381,13 +399,19 @@ class OceInstanceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_oce_instance(self, oce_instance_id, **kwargs):
         """
@@ -420,6 +444,8 @@ class OceInstanceClient(object):
         """
         resource_path = "/oceInstances/{oceInstanceId}"
         method = "GET"
+        operation_name = "get_oce_instance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -466,14 +492,20 @@ class OceInstanceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="OceInstance")
+                response_type="OceInstance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="OceInstance")
+                response_type="OceInstance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -506,6 +538,8 @@ class OceInstanceClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -552,14 +586,20 @@ class OceInstanceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_oce_instances(self, compartment_id, **kwargs):
         """
@@ -621,6 +661,8 @@ class OceInstanceClient(object):
         """
         resource_path = "/oceInstances"
         method = "GET"
+        operation_name = "list_oce_instances"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -697,14 +739,20 @@ class OceInstanceClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[OceInstanceSummary]")
+                response_type="list[OceInstanceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[OceInstanceSummary]")
+                response_type="list[OceInstanceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -743,6 +791,8 @@ class OceInstanceClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -798,7 +848,10 @@ class OceInstanceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -806,7 +859,10 @@ class OceInstanceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -845,6 +901,8 @@ class OceInstanceClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -900,7 +958,10 @@ class OceInstanceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLogEntry]")
+                response_type="list[WorkRequestLogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -908,7 +969,10 @@ class OceInstanceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLogEntry]")
+                response_type="list[WorkRequestLogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -950,6 +1014,8 @@ class OceInstanceClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -997,14 +1063,20 @@ class OceInstanceClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequest]")
+                response_type="list[WorkRequest]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequest]")
+                response_type="list[WorkRequest]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_oce_instance(self, oce_instance_id, update_oce_instance_details, **kwargs):
         """
@@ -1047,6 +1119,8 @@ class OceInstanceClient(object):
         """
         resource_path = "/oceInstances/{oceInstanceId}"
         method = "PUT"
+        operation_name = "update_oce_instance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1095,11 +1169,17 @@ class OceInstanceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_oce_instance_details)
+                body=update_oce_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_oce_instance_details)
+                body=update_oce_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

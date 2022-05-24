@@ -152,6 +152,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/accessPolicies/{accessPolicyId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_access_policy_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/ChangeAccessPolicyCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -201,14 +203,20 @@ class ServiceMeshClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_access_policy_compartment_details)
+                body=change_access_policy_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_access_policy_compartment_details)
+                body=change_access_policy_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_ingress_gateway_compartment(self, ingress_gateway_id, change_ingress_gateway_compartment_details, **kwargs):
         """
@@ -258,6 +266,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/ingressGateways/{ingressGatewayId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_ingress_gateway_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/ChangeIngressGatewayCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -307,14 +317,20 @@ class ServiceMeshClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_ingress_gateway_compartment_details)
+                body=change_ingress_gateway_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_ingress_gateway_compartment_details)
+                body=change_ingress_gateway_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_ingress_gateway_route_table_compartment(self, ingress_gateway_route_table_id, change_ingress_gateway_route_table_compartment_details, **kwargs):
         """
@@ -364,6 +380,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/ingressGatewayRouteTables/{ingressGatewayRouteTableId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_ingress_gateway_route_table_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/ChangeIngressGatewayRouteTableCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -413,14 +431,20 @@ class ServiceMeshClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_ingress_gateway_route_table_compartment_details)
+                body=change_ingress_gateway_route_table_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_ingress_gateway_route_table_compartment_details)
+                body=change_ingress_gateway_route_table_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_mesh_compartment(self, mesh_id, change_mesh_compartment_details, **kwargs):
         """
@@ -470,6 +494,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/meshes/{meshId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_mesh_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/ChangeMeshCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -519,14 +545,20 @@ class ServiceMeshClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_mesh_compartment_details)
+                body=change_mesh_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_mesh_compartment_details)
+                body=change_mesh_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_virtual_deployment_compartment(self, virtual_deployment_id, change_virtual_deployment_compartment_details, **kwargs):
         """
@@ -576,6 +608,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/virtualDeployments/{virtualDeploymentId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_virtual_deployment_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/ChangeVirtualDeploymentCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -625,14 +659,20 @@ class ServiceMeshClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_virtual_deployment_compartment_details)
+                body=change_virtual_deployment_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_virtual_deployment_compartment_details)
+                body=change_virtual_deployment_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_virtual_service_compartment(self, virtual_service_id, change_virtual_service_compartment_details, **kwargs):
         """
@@ -682,6 +722,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/virtualServices/{virtualServiceId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_virtual_service_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/ChangeVirtualServiceCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -731,14 +773,20 @@ class ServiceMeshClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_virtual_service_compartment_details)
+                body=change_virtual_service_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_virtual_service_compartment_details)
+                body=change_virtual_service_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_virtual_service_route_table_compartment(self, virtual_service_route_table_id, change_virtual_service_route_table_compartment_details, **kwargs):
         """
@@ -788,6 +836,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/virtualServiceRouteTables/{virtualServiceRouteTableId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_virtual_service_route_table_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/ChangeVirtualServiceRouteTableCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -837,14 +887,20 @@ class ServiceMeshClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_virtual_service_route_table_compartment_details)
+                body=change_virtual_service_route_table_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_virtual_service_route_table_compartment_details)
+                body=change_virtual_service_route_table_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_access_policy(self, create_access_policy_details, **kwargs):
         """
@@ -884,6 +940,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/accessPolicies"
         method = "POST"
+        operation_name = "create_access_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/CreateAccessPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -921,14 +979,20 @@ class ServiceMeshClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_access_policy_details,
-                response_type="AccessPolicy")
+                response_type="AccessPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_access_policy_details,
-                response_type="AccessPolicy")
+                response_type="AccessPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_ingress_gateway(self, create_ingress_gateway_details, **kwargs):
         """
@@ -968,6 +1032,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/ingressGateways"
         method = "POST"
+        operation_name = "create_ingress_gateway"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/CreateIngressGateway"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1005,14 +1071,20 @@ class ServiceMeshClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_ingress_gateway_details,
-                response_type="IngressGateway")
+                response_type="IngressGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_ingress_gateway_details,
-                response_type="IngressGateway")
+                response_type="IngressGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_ingress_gateway_route_table(self, create_ingress_gateway_route_table_details, **kwargs):
         """
@@ -1052,6 +1124,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/ingressGatewayRouteTables"
         method = "POST"
+        operation_name = "create_ingress_gateway_route_table"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/CreateIngressGatewayRouteTable"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1089,14 +1163,20 @@ class ServiceMeshClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_ingress_gateway_route_table_details,
-                response_type="IngressGatewayRouteTable")
+                response_type="IngressGatewayRouteTable",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_ingress_gateway_route_table_details,
-                response_type="IngressGatewayRouteTable")
+                response_type="IngressGatewayRouteTable",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_mesh(self, create_mesh_details, **kwargs):
         """
@@ -1136,6 +1216,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/meshes"
         method = "POST"
+        operation_name = "create_mesh"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/CreateMesh"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1173,14 +1255,20 @@ class ServiceMeshClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_mesh_details,
-                response_type="Mesh")
+                response_type="Mesh",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_mesh_details,
-                response_type="Mesh")
+                response_type="Mesh",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_virtual_deployment(self, create_virtual_deployment_details, **kwargs):
         """
@@ -1220,6 +1308,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/virtualDeployments"
         method = "POST"
+        operation_name = "create_virtual_deployment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/CreateVirtualDeployment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1257,14 +1347,20 @@ class ServiceMeshClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_virtual_deployment_details,
-                response_type="VirtualDeployment")
+                response_type="VirtualDeployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_virtual_deployment_details,
-                response_type="VirtualDeployment")
+                response_type="VirtualDeployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_virtual_service(self, create_virtual_service_details, **kwargs):
         """
@@ -1304,6 +1400,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/virtualServices"
         method = "POST"
+        operation_name = "create_virtual_service"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/CreateVirtualService"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1341,14 +1439,20 @@ class ServiceMeshClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_virtual_service_details,
-                response_type="VirtualService")
+                response_type="VirtualService",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_virtual_service_details,
-                response_type="VirtualService")
+                response_type="VirtualService",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_virtual_service_route_table(self, create_virtual_service_route_table_details, **kwargs):
         """
@@ -1388,6 +1492,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/virtualServiceRouteTables"
         method = "POST"
+        operation_name = "create_virtual_service_route_table"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/CreateVirtualServiceRouteTable"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1425,14 +1531,20 @@ class ServiceMeshClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_virtual_service_route_table_details,
-                response_type="VirtualServiceRouteTable")
+                response_type="VirtualServiceRouteTable",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_virtual_service_route_table_details,
-                response_type="VirtualServiceRouteTable")
+                response_type="VirtualServiceRouteTable",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_access_policy(self, access_policy_id, **kwargs):
         """
@@ -1472,6 +1584,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/accessPolicies/{accessPolicyId}"
         method = "DELETE"
+        operation_name = "delete_access_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/DeleteAccessPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1517,13 +1631,19 @@ class ServiceMeshClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_ingress_gateway(self, ingress_gateway_id, **kwargs):
         """
@@ -1563,6 +1683,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/ingressGateways/{ingressGatewayId}"
         method = "DELETE"
+        operation_name = "delete_ingress_gateway"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/DeleteIngressGateway"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1608,13 +1730,19 @@ class ServiceMeshClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_ingress_gateway_route_table(self, ingress_gateway_route_table_id, **kwargs):
         """
@@ -1654,6 +1782,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/ingressGatewayRouteTables/{ingressGatewayRouteTableId}"
         method = "DELETE"
+        operation_name = "delete_ingress_gateway_route_table"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/DeleteIngressGatewayRouteTable"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1699,13 +1829,19 @@ class ServiceMeshClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_mesh(self, mesh_id, **kwargs):
         """
@@ -1745,6 +1881,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/meshes/{meshId}"
         method = "DELETE"
+        operation_name = "delete_mesh"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/DeleteMesh"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1790,13 +1928,19 @@ class ServiceMeshClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_virtual_deployment(self, virtual_deployment_id, **kwargs):
         """
@@ -1836,6 +1980,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/virtualDeployments/{virtualDeploymentId}"
         method = "DELETE"
+        operation_name = "delete_virtual_deployment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/DeleteVirtualDeployment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1881,13 +2027,19 @@ class ServiceMeshClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_virtual_service(self, virtual_service_id, **kwargs):
         """
@@ -1927,6 +2079,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/virtualServices/{virtualServiceId}"
         method = "DELETE"
+        operation_name = "delete_virtual_service"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/DeleteVirtualService"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1972,13 +2126,19 @@ class ServiceMeshClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_virtual_service_route_table(self, virtual_service_route_table_id, **kwargs):
         """
@@ -2018,6 +2178,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/virtualServiceRouteTables/{virtualServiceRouteTableId}"
         method = "DELETE"
+        operation_name = "delete_virtual_service_route_table"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/DeleteVirtualServiceRouteTable"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2063,13 +2225,19 @@ class ServiceMeshClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_access_policy(self, access_policy_id, **kwargs):
         """
@@ -2102,6 +2270,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/accessPolicies/{accessPolicyId}"
         method = "GET"
+        operation_name = "get_access_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/GetAccessPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2146,14 +2316,20 @@ class ServiceMeshClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AccessPolicy")
+                response_type="AccessPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AccessPolicy")
+                response_type="AccessPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_ingress_gateway(self, ingress_gateway_id, **kwargs):
         """
@@ -2186,6 +2362,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/ingressGateways/{ingressGatewayId}"
         method = "GET"
+        operation_name = "get_ingress_gateway"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/GetIngressGateway"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2230,14 +2408,20 @@ class ServiceMeshClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="IngressGateway")
+                response_type="IngressGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="IngressGateway")
+                response_type="IngressGateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_ingress_gateway_route_table(self, ingress_gateway_route_table_id, **kwargs):
         """
@@ -2270,6 +2454,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/ingressGatewayRouteTables/{ingressGatewayRouteTableId}"
         method = "GET"
+        operation_name = "get_ingress_gateway_route_table"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/GetIngressGatewayRouteTable"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2314,14 +2500,20 @@ class ServiceMeshClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="IngressGatewayRouteTable")
+                response_type="IngressGatewayRouteTable",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="IngressGatewayRouteTable")
+                response_type="IngressGatewayRouteTable",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_mesh(self, mesh_id, **kwargs):
         """
@@ -2354,6 +2546,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/meshes/{meshId}"
         method = "GET"
+        operation_name = "get_mesh"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/GetMesh"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2398,14 +2592,20 @@ class ServiceMeshClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Mesh")
+                response_type="Mesh",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Mesh")
+                response_type="Mesh",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_proxy_details(self, **kwargs):
         """
@@ -2435,6 +2635,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/proxyDetails"
         method = "GET"
+        operation_name = "get_proxy_details"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/ProxyDetails/GetProxyDetails"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2468,13 +2670,19 @@ class ServiceMeshClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                response_type="ProxyDetails")
+                response_type="ProxyDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                response_type="ProxyDetails")
+                response_type="ProxyDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_virtual_deployment(self, virtual_deployment_id, **kwargs):
         """
@@ -2507,6 +2715,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/virtualDeployments/{virtualDeploymentId}"
         method = "GET"
+        operation_name = "get_virtual_deployment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/GetVirtualDeployment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2551,14 +2761,20 @@ class ServiceMeshClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VirtualDeployment")
+                response_type="VirtualDeployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VirtualDeployment")
+                response_type="VirtualDeployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_virtual_service(self, virtual_service_id, **kwargs):
         """
@@ -2591,6 +2807,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/virtualServices/{virtualServiceId}"
         method = "GET"
+        operation_name = "get_virtual_service"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/GetVirtualService"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2635,14 +2853,20 @@ class ServiceMeshClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VirtualService")
+                response_type="VirtualService",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VirtualService")
+                response_type="VirtualService",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_virtual_service_route_table(self, virtual_service_route_table_id, **kwargs):
         """
@@ -2675,6 +2899,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/virtualServiceRouteTables/{virtualServiceRouteTableId}"
         method = "GET"
+        operation_name = "get_virtual_service_route_table"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/GetVirtualServiceRouteTable"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2719,14 +2945,20 @@ class ServiceMeshClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VirtualServiceRouteTable")
+                response_type="VirtualServiceRouteTable",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VirtualServiceRouteTable")
+                response_type="VirtualServiceRouteTable",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -2759,6 +2991,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2803,14 +3037,20 @@ class ServiceMeshClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_access_policies(self, compartment_id, **kwargs):
         """
@@ -2871,6 +3111,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/accessPolicies"
         method = "GET"
+        operation_name = "list_access_policies"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/ListAccessPolicies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2940,14 +3182,20 @@ class ServiceMeshClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AccessPolicyCollection")
+                response_type="AccessPolicyCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AccessPolicyCollection")
+                response_type="AccessPolicyCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_ingress_gateway_route_tables(self, compartment_id, **kwargs):
         """
@@ -3008,6 +3256,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/ingressGatewayRouteTables"
         method = "GET"
+        operation_name = "list_ingress_gateway_route_tables"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/ListIngressGatewayRouteTables"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3077,14 +3327,20 @@ class ServiceMeshClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="IngressGatewayRouteTableCollection")
+                response_type="IngressGatewayRouteTableCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="IngressGatewayRouteTableCollection")
+                response_type="IngressGatewayRouteTableCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_ingress_gateways(self, compartment_id, **kwargs):
         """
@@ -3145,6 +3401,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/ingressGateways"
         method = "GET"
+        operation_name = "list_ingress_gateways"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/ListIngressGateways"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3214,14 +3472,20 @@ class ServiceMeshClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="IngressGatewayCollection")
+                response_type="IngressGatewayCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="IngressGatewayCollection")
+                response_type="IngressGatewayCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_meshes(self, compartment_id, **kwargs):
         """
@@ -3279,6 +3543,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/meshes"
         method = "GET"
+        operation_name = "list_meshes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/ListMeshes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3346,14 +3612,20 @@ class ServiceMeshClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="MeshCollection")
+                response_type="MeshCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="MeshCollection")
+                response_type="MeshCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_virtual_deployments(self, compartment_id, **kwargs):
         """
@@ -3414,6 +3686,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/virtualDeployments"
         method = "GET"
+        operation_name = "list_virtual_deployments"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/ListVirtualDeployments"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3483,14 +3757,20 @@ class ServiceMeshClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="VirtualDeploymentCollection")
+                response_type="VirtualDeploymentCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="VirtualDeploymentCollection")
+                response_type="VirtualDeploymentCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_virtual_service_route_tables(self, compartment_id, **kwargs):
         """
@@ -3551,6 +3831,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/virtualServiceRouteTables"
         method = "GET"
+        operation_name = "list_virtual_service_route_tables"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/ListVirtualServiceRouteTables"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3620,14 +3902,20 @@ class ServiceMeshClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="VirtualServiceRouteTableCollection")
+                response_type="VirtualServiceRouteTableCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="VirtualServiceRouteTableCollection")
+                response_type="VirtualServiceRouteTableCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_virtual_services(self, compartment_id, **kwargs):
         """
@@ -3688,6 +3976,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/virtualServices"
         method = "GET"
+        operation_name = "list_virtual_services"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/ListVirtualServices"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3757,14 +4047,20 @@ class ServiceMeshClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="VirtualServiceCollection")
+                response_type="VirtualServiceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="VirtualServiceCollection")
+                response_type="VirtualServiceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -3803,6 +4099,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/WorkRequest/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3856,7 +4154,10 @@ class ServiceMeshClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3864,7 +4165,10 @@ class ServiceMeshClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -3903,6 +4207,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/WorkRequest/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3956,7 +4262,10 @@ class ServiceMeshClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3964,7 +4273,10 @@ class ServiceMeshClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -4006,6 +4318,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4051,14 +4365,20 @@ class ServiceMeshClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestCollection")
+                response_type="WorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestCollection")
+                response_type="WorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_access_policy(self, access_policy_id, update_access_policy_details, **kwargs):
         """
@@ -4108,6 +4428,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/accessPolicies/{accessPolicyId}"
         method = "PUT"
+        operation_name = "update_access_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/UpdateAccessPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4157,14 +4479,20 @@ class ServiceMeshClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_access_policy_details)
+                body=update_access_policy_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_access_policy_details)
+                body=update_access_policy_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_ingress_gateway(self, ingress_gateway_id, update_ingress_gateway_details, **kwargs):
         """
@@ -4214,6 +4542,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/ingressGateways/{ingressGatewayId}"
         method = "PUT"
+        operation_name = "update_ingress_gateway"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/UpdateIngressGateway"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4263,14 +4593,20 @@ class ServiceMeshClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_ingress_gateway_details)
+                body=update_ingress_gateway_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_ingress_gateway_details)
+                body=update_ingress_gateway_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_ingress_gateway_route_table(self, ingress_gateway_route_table_id, update_ingress_gateway_route_table_details, **kwargs):
         """
@@ -4320,6 +4656,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/ingressGatewayRouteTables/{ingressGatewayRouteTableId}"
         method = "PUT"
+        operation_name = "update_ingress_gateway_route_table"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/UpdateIngressGatewayRouteTable"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4369,14 +4707,20 @@ class ServiceMeshClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_ingress_gateway_route_table_details)
+                body=update_ingress_gateway_route_table_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_ingress_gateway_route_table_details)
+                body=update_ingress_gateway_route_table_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_mesh(self, mesh_id, update_mesh_details, **kwargs):
         """
@@ -4426,6 +4770,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/meshes/{meshId}"
         method = "PUT"
+        operation_name = "update_mesh"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/UpdateMesh"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4475,14 +4821,20 @@ class ServiceMeshClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_mesh_details)
+                body=update_mesh_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_mesh_details)
+                body=update_mesh_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_virtual_deployment(self, virtual_deployment_id, update_virtual_deployment_details, **kwargs):
         """
@@ -4532,6 +4884,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/virtualDeployments/{virtualDeploymentId}"
         method = "PUT"
+        operation_name = "update_virtual_deployment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/UpdateVirtualDeployment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4581,14 +4935,20 @@ class ServiceMeshClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_virtual_deployment_details)
+                body=update_virtual_deployment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_virtual_deployment_details)
+                body=update_virtual_deployment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_virtual_service(self, virtual_service_id, update_virtual_service_details, **kwargs):
         """
@@ -4638,6 +4998,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/virtualServices/{virtualServiceId}"
         method = "PUT"
+        operation_name = "update_virtual_service"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/UpdateVirtualService"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4687,14 +5049,20 @@ class ServiceMeshClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_virtual_service_details)
+                body=update_virtual_service_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_virtual_service_details)
+                body=update_virtual_service_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_virtual_service_route_table(self, virtual_service_route_table_id, update_virtual_service_route_table_details, **kwargs):
         """
@@ -4744,6 +5112,8 @@ class ServiceMeshClient(object):
         """
         resource_path = "/virtualServiceRouteTables/{virtualServiceRouteTableId}"
         method = "PUT"
+        operation_name = "update_virtual_service_route_table"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/UpdateVirtualServiceRouteTable"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4793,11 +5163,17 @@ class ServiceMeshClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_virtual_service_route_table_details)
+                body=update_virtual_service_route_table_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_virtual_service_route_table_details)
+                body=update_virtual_service_route_table_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

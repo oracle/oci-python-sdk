@@ -160,6 +160,8 @@ class NotificationControlPlaneClient(object):
         """
         resource_path = "/topics/{topicId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_topic_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/notification/20181201/NotificationTopic/ChangeTopicCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -209,14 +211,20 @@ class NotificationControlPlaneClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_topic_compartment_details)
+                body=change_topic_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_topic_compartment_details)
+                body=change_topic_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_topic(self, create_topic_details, **kwargs):
         """
@@ -274,6 +282,8 @@ class NotificationControlPlaneClient(object):
         """
         resource_path = "/topics"
         method = "POST"
+        operation_name = "create_topic"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/notification/20181201/NotificationTopic/CreateTopic"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -311,14 +321,20 @@ class NotificationControlPlaneClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_topic_details,
-                response_type="NotificationTopic")
+                response_type="NotificationTopic",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_topic_details,
-                response_type="NotificationTopic")
+                response_type="NotificationTopic",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_topic(self, topic_id, **kwargs):
         """
@@ -361,6 +377,8 @@ class NotificationControlPlaneClient(object):
         """
         resource_path = "/topics/{topicId}"
         method = "DELETE"
+        operation_name = "delete_topic"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/notification/20181201/NotificationTopic/DeleteTopic"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -406,13 +424,19 @@ class NotificationControlPlaneClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_topic(self, topic_id, **kwargs):
         """
@@ -450,6 +474,8 @@ class NotificationControlPlaneClient(object):
         """
         resource_path = "/topics/{topicId}"
         method = "GET"
+        operation_name = "get_topic"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/notification/20181201/NotificationTopic/GetTopic"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -494,14 +520,20 @@ class NotificationControlPlaneClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="NotificationTopic")
+                response_type="NotificationTopic",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="NotificationTopic")
+                response_type="NotificationTopic",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_topics(self, compartment_id, **kwargs):
         """
@@ -572,6 +604,8 @@ class NotificationControlPlaneClient(object):
         """
         resource_path = "/topics"
         method = "GET"
+        operation_name = "list_topics"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/notification/20181201/NotificationTopic/ListTopics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -646,14 +680,20 @@ class NotificationControlPlaneClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[NotificationTopicSummary]")
+                response_type="list[NotificationTopicSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[NotificationTopicSummary]")
+                response_type="list[NotificationTopicSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_topic(self, topic_id, topic_attributes_details, **kwargs):
         """
@@ -699,6 +739,8 @@ class NotificationControlPlaneClient(object):
         """
         resource_path = "/topics/{topicId}"
         method = "PUT"
+        operation_name = "update_topic"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/notification/20181201/NotificationTopic/UpdateTopic"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -746,7 +788,10 @@ class NotificationControlPlaneClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=topic_attributes_details,
-                response_type="NotificationTopic")
+                response_type="NotificationTopic",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -754,4 +799,7 @@ class NotificationControlPlaneClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=topic_attributes_details,
-                response_type="NotificationTopic")
+                response_type="NotificationTopic",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

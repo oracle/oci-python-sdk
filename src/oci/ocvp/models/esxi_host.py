@@ -155,6 +155,10 @@ class EsxiHost(object):
             The value to assign to the host_ocpu_count property of this EsxiHost.
         :type host_ocpu_count: float
 
+        :param capacity_reservation_id:
+            The value to assign to the capacity_reservation_id property of this EsxiHost.
+        :type capacity_reservation_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this EsxiHost.
         :type freeform_tags: dict(str, str)
@@ -182,6 +186,7 @@ class EsxiHost(object):
             'compute_availability_domain': 'str',
             'host_shape_name': 'str',
             'host_ocpu_count': 'float',
+            'capacity_reservation_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -204,6 +209,7 @@ class EsxiHost(object):
             'compute_availability_domain': 'computeAvailabilityDomain',
             'host_shape_name': 'hostShapeName',
             'host_ocpu_count': 'hostOcpuCount',
+            'capacity_reservation_id': 'capacityReservationId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -225,6 +231,7 @@ class EsxiHost(object):
         self._compute_availability_domain = None
         self._host_shape_name = None
         self._host_ocpu_count = None
+        self._capacity_reservation_id = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -725,6 +732,34 @@ class EsxiHost(object):
         :type: float
         """
         self._host_ocpu_count = host_ocpu_count
+
+    @property
+    def capacity_reservation_id(self):
+        """
+        Gets the capacity_reservation_id of this EsxiHost.
+        The `OCID`__ of the Capacity Reservation.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The capacity_reservation_id of this EsxiHost.
+        :rtype: str
+        """
+        return self._capacity_reservation_id
+
+    @capacity_reservation_id.setter
+    def capacity_reservation_id(self, capacity_reservation_id):
+        """
+        Sets the capacity_reservation_id of this EsxiHost.
+        The `OCID`__ of the Capacity Reservation.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param capacity_reservation_id: The capacity_reservation_id of this EsxiHost.
+        :type: str
+        """
+        self._capacity_reservation_id = capacity_reservation_id
 
     @property
     def freeform_tags(self):

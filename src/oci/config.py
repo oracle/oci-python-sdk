@@ -68,6 +68,7 @@ CONFIG_FILE_BLACKLISTED_KEYS = {
 CONFIG_FILE_PATH_ENV_VAR_NAME = "OCI_CONFIG_FILE"
 REGION_ENV_VAR_NAME = "OCI_REGION"
 REGION_KEY_NAME = "region"
+CONFIG_FILE_DEBUG_INFORMATION_LOG = "For more info about config file and how to get required information, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm"
 
 logger = logging.getLogger(__name__)
 
@@ -106,7 +107,7 @@ def from_file(file_location=DEFAULT_LOCATION, profile_name=DEFAULT_PROFILE):
         raise ConfigFileNotFound("Could not find config file at {}, please follow the instructions in the link to setup the config file https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm".format(expanded_file_location))
 
     if profile_name not in parser:
-        raise ProfileNotFound("Profile '{}' not found in config file {}".format(profile_name, expanded_file_location))
+        raise ProfileNotFound("Profile '{}' not found in config file {} ".format(profile_name, expanded_file_location) + CONFIG_FILE_DEBUG_INFORMATION_LOG)
 
     config = dict(DEFAULT_CONFIG)
     config.update(parser[profile_name])
@@ -114,7 +115,7 @@ def from_file(file_location=DEFAULT_LOCATION, profile_name=DEFAULT_PROFILE):
 
     for key in CONFIG_FILE_BLACKLISTED_KEYS:
         if key in config:
-            raise ValueError("'{}' cannot be specified in a config file for security reasons. To use this key you must add it to the config programmatically.".format(key))
+            raise ValueError("'{}' cannot be specified in a config file for security reasons. To use this key you must add it to the config programmatically. ".format(key) + CONFIG_FILE_DEBUG_INFORMATION_LOG)
 
     invalid_key_file_path_checker(config, expanded_file_location, profile_name)
 
@@ -219,7 +220,7 @@ def invalid_key_file_path_checker(config, expanded_file_location, profile_name):
         if not os.path.isfile(key_file_path):
             line_number = get_linenum_from_file(config.get('key_file'), expanded_file_location, profile_name)
             line_message = " at line {}".format(line_number) if line_number else ""
-            message = "Config file {} is invalid: the key_file's value \'{}\'{} must be a valid file path.".format(expanded_file_location, key_file_path, line_message)
+            message = "Config file {} is invalid: the key_file's value \'{}\'{} must be a valid file path. ".format(expanded_file_location, key_file_path, line_message) + CONFIG_FILE_DEBUG_INFORMATION_LOG
             raise InvalidKeyFilePath(message)
 
 

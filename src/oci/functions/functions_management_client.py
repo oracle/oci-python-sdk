@@ -149,6 +149,8 @@ class FunctionsManagementClient(object):
         """
         resource_path = "/applications/{applicationId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_application_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/ChangeApplicationCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -197,14 +199,20 @@ class FunctionsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_application_compartment_details)
+                body=change_application_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_application_compartment_details)
+                body=change_application_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_application(self, create_application_details, **kwargs):
         """
@@ -238,6 +246,8 @@ class FunctionsManagementClient(object):
         """
         resource_path = "/applications"
         method = "POST"
+        operation_name = "create_application"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/CreateApplication"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -274,14 +284,20 @@ class FunctionsManagementClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_application_details,
-                response_type="Application")
+                response_type="Application",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_application_details,
-                response_type="Application")
+                response_type="Application",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_function(self, create_function_details, **kwargs):
         """
@@ -315,6 +331,8 @@ class FunctionsManagementClient(object):
         """
         resource_path = "/functions"
         method = "POST"
+        operation_name = "create_function"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/CreateFunction"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -351,14 +369,20 @@ class FunctionsManagementClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_function_details,
-                response_type="Function")
+                response_type="Function",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_function_details,
-                response_type="Function")
+                response_type="Function",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_application(self, application_id, **kwargs):
         """
@@ -399,6 +423,8 @@ class FunctionsManagementClient(object):
         """
         resource_path = "/applications/{applicationId}"
         method = "DELETE"
+        operation_name = "delete_application"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/DeleteApplication"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -446,13 +472,19 @@ class FunctionsManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_function(self, function_id, **kwargs):
         """
@@ -493,6 +525,8 @@ class FunctionsManagementClient(object):
         """
         resource_path = "/functions/{functionId}"
         method = "DELETE"
+        operation_name = "delete_function"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/DeleteFunction"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -540,13 +574,19 @@ class FunctionsManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_application(self, application_id, **kwargs):
         """
@@ -582,6 +622,8 @@ class FunctionsManagementClient(object):
         """
         resource_path = "/applications/{applicationId}"
         method = "GET"
+        operation_name = "get_application"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/GetApplication"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -628,14 +670,20 @@ class FunctionsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Application")
+                response_type="Application",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Application")
+                response_type="Application",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_function(self, function_id, **kwargs):
         """
@@ -671,6 +719,8 @@ class FunctionsManagementClient(object):
         """
         resource_path = "/functions/{functionId}"
         method = "GET"
+        operation_name = "get_function"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/GetFunction"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -717,14 +767,20 @@ class FunctionsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Function")
+                response_type="Function",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Function")
+                response_type="Function",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_applications(self, compartment_id, **kwargs):
         """
@@ -799,6 +855,8 @@ class FunctionsManagementClient(object):
         """
         resource_path = "/applications"
         method = "GET"
+        operation_name = "list_applications"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/functions/20181201/ApplicationSummary/ListApplications"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -875,14 +933,20 @@ class FunctionsManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ApplicationSummary]")
+                response_type="list[ApplicationSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ApplicationSummary]")
+                response_type="list[ApplicationSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_functions(self, application_id, **kwargs):
         """
@@ -957,6 +1021,8 @@ class FunctionsManagementClient(object):
         """
         resource_path = "/functions"
         method = "GET"
+        operation_name = "list_functions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/functions/20181201/FunctionSummary/ListFunctions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1033,14 +1099,20 @@ class FunctionsManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[FunctionSummary]")
+                response_type="list[FunctionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[FunctionSummary]")
+                response_type="list[FunctionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_application(self, application_id, update_application_details, **kwargs):
         """
@@ -1084,6 +1156,8 @@ class FunctionsManagementClient(object):
         """
         resource_path = "/applications/{applicationId}"
         method = "PUT"
+        operation_name = "update_application"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Application/UpdateApplication"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1133,7 +1207,10 @@ class FunctionsManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_application_details,
-                response_type="Application")
+                response_type="Application",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1141,7 +1218,10 @@ class FunctionsManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_application_details,
-                response_type="Application")
+                response_type="Application",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_function(self, function_id, update_function_details, **kwargs):
         """
@@ -1185,6 +1265,8 @@ class FunctionsManagementClient(object):
         """
         resource_path = "/functions/{functionId}"
         method = "PUT"
+        operation_name = "update_function"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/UpdateFunction"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1234,7 +1316,10 @@ class FunctionsManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_function_details,
-                response_type="Function")
+                response_type="Function",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1242,4 +1327,7 @@ class FunctionsManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_function_details,
-                response_type="Function")
+                response_type="Function",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

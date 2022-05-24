@@ -145,6 +145,8 @@ class ChannelsClient(object):
         """
         resource_path = "/channels"
         method = "POST"
+        operation_name = "create_channel"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -184,14 +186,20 @@ class ChannelsClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_channel_details,
-                response_type="Channel")
+                response_type="Channel",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_channel_details,
-                response_type="Channel")
+                response_type="Channel",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_channel(self, channel_id, **kwargs):
         """
@@ -235,6 +243,8 @@ class ChannelsClient(object):
         """
         resource_path = "/channels/{channelId}"
         method = "DELETE"
+        operation_name = "delete_channel"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Channel/DeleteChannel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -282,13 +292,19 @@ class ChannelsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_channel(self, channel_id, **kwargs):
         """
@@ -334,6 +350,8 @@ class ChannelsClient(object):
         """
         resource_path = "/channels/{channelId}"
         method = "GET"
+        operation_name = "get_channel"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Channel/GetChannel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -382,14 +400,20 @@ class ChannelsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Channel")
+                response_type="Channel",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Channel")
+                response_type="Channel",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_channels(self, compartment_id, **kwargs):
         """
@@ -469,6 +493,8 @@ class ChannelsClient(object):
         """
         resource_path = "/channels"
         method = "GET"
+        operation_name = "list_channels"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/ChannelSummary/ListChannels"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -549,14 +575,20 @@ class ChannelsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ChannelSummary]")
+                response_type="list[ChannelSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ChannelSummary]")
+                response_type="list[ChannelSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def reset_channel(self, channel_id, **kwargs):
         """
@@ -609,6 +641,8 @@ class ChannelsClient(object):
         """
         resource_path = "/channels/{channelId}/actions/reset"
         method = "POST"
+        operation_name = "reset_channel"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Channel/ResetChannel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -659,13 +693,19 @@ class ChannelsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def resume_channel(self, channel_id, **kwargs):
         """
@@ -719,6 +759,8 @@ class ChannelsClient(object):
         """
         resource_path = "/channels/{channelId}/actions/resume"
         method = "POST"
+        operation_name = "resume_channel"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Channel/ResumeChannel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -769,13 +811,19 @@ class ChannelsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_channel(self, channel_id, update_channel_details, **kwargs):
         """
@@ -833,6 +881,8 @@ class ChannelsClient(object):
         """
         resource_path = "/channels/{channelId}"
         method = "PUT"
+        operation_name = "update_channel"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Channel/UpdateChannel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -884,11 +934,17 @@ class ChannelsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_channel_details)
+                body=update_channel_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_channel_details)
+                body=update_channel_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

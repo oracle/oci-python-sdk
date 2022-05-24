@@ -145,6 +145,8 @@ class PluginClient(object):
         """
         resource_path = "/instanceagents/{instanceagentId}/plugins/{pluginName}"
         method = "GET"
+        operation_name = "get_instance_agent_plugin"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/GetInstanceAgentPlugin"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -196,7 +198,10 @@ class PluginClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="InstanceAgentPlugin")
+                response_type="InstanceAgentPlugin",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -204,7 +209,10 @@ class PluginClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="InstanceAgentPlugin")
+                response_type="InstanceAgentPlugin",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_instance_agent_plugins(self, compartment_id, instanceagent_id, **kwargs):
         """
@@ -282,6 +290,8 @@ class PluginClient(object):
         """
         resource_path = "/instanceagents/{instanceagentId}/plugins"
         method = "GET"
+        operation_name = "list_instance_agent_plugins"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceAgentPlugins"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -365,7 +375,10 @@ class PluginClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[InstanceAgentPluginSummary]")
+                response_type="list[InstanceAgentPluginSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -373,4 +386,7 @@ class PluginClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[InstanceAgentPluginSummary]")
+                response_type="list[InstanceAgentPluginSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

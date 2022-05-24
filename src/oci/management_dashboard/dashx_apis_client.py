@@ -152,6 +152,8 @@ class DashxApisClient(object):
         """
         resource_path = "/managementDashboards/{managementDashboardId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_management_dashboards_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/ChangeManagementDashboardsCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -202,7 +204,10 @@ class DashxApisClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=change_management_dashboards_compartment_details,
-                response_type="ManagementDashboard")
+                response_type="ManagementDashboard",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -210,7 +215,10 @@ class DashxApisClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=change_management_dashboards_compartment_details,
-                response_type="ManagementDashboard")
+                response_type="ManagementDashboard",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_management_saved_searches_compartment(self, management_saved_search_id, change_management_saved_searches_compartment_details, **kwargs):
         """
@@ -260,6 +268,8 @@ class DashxApisClient(object):
         """
         resource_path = "/managementSavedSearches/{managementSavedSearchId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_management_saved_searches_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/ChangeManagementSavedSearchesCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -310,7 +320,10 @@ class DashxApisClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=change_management_saved_searches_compartment_details,
-                response_type="ManagementSavedSearch")
+                response_type="ManagementSavedSearch",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -318,7 +331,10 @@ class DashxApisClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=change_management_saved_searches_compartment_details,
-                response_type="ManagementSavedSearch")
+                response_type="ManagementSavedSearch",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_management_dashboard(self, create_management_dashboard_details, **kwargs):
         """
@@ -361,6 +377,8 @@ class DashxApisClient(object):
         """
         resource_path = "/managementDashboards"
         method = "POST"
+        operation_name = "create_management_dashboard"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/CreateManagementDashboard"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -398,14 +416,20 @@ class DashxApisClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_management_dashboard_details,
-                response_type="ManagementDashboard")
+                response_type="ManagementDashboard",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_management_dashboard_details,
-                response_type="ManagementDashboard")
+                response_type="ManagementDashboard",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_management_saved_search(self, create_management_saved_search_details, **kwargs):
         """
@@ -448,6 +472,8 @@ class DashxApisClient(object):
         """
         resource_path = "/managementSavedSearches"
         method = "POST"
+        operation_name = "create_management_saved_search"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/CreateManagementSavedSearch"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -485,14 +511,20 @@ class DashxApisClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_management_saved_search_details,
-                response_type="ManagementSavedSearch")
+                response_type="ManagementSavedSearch",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_management_saved_search_details,
-                response_type="ManagementSavedSearch")
+                response_type="ManagementSavedSearch",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_management_dashboard(self, management_dashboard_id, **kwargs):
         """
@@ -532,6 +564,8 @@ class DashxApisClient(object):
         """
         resource_path = "/managementDashboards/{managementDashboardId}"
         method = "DELETE"
+        operation_name = "delete_management_dashboard"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/DeleteManagementDashboard"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -577,13 +611,19 @@ class DashxApisClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_management_saved_search(self, management_saved_search_id, **kwargs):
         """
@@ -623,6 +663,8 @@ class DashxApisClient(object):
         """
         resource_path = "/managementSavedSearches/{managementSavedSearchId}"
         method = "DELETE"
+        operation_name = "delete_management_saved_search"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/DeleteManagementSavedSearch"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -668,13 +710,19 @@ class DashxApisClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def export_dashboard(self, export_dashboard_id, **kwargs):
         """
@@ -716,6 +764,8 @@ class DashxApisClient(object):
         """
         resource_path = "/managementDashboards/actions/exportDashboard/{exportDashboardId}"
         method = "GET"
+        operation_name = "export_dashboard"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/ExportDashboard"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -763,14 +813,20 @@ class DashxApisClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ManagementDashboardExportDetails")
+                response_type="ManagementDashboardExportDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ManagementDashboardExportDetails")
+                response_type="ManagementDashboardExportDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_management_dashboard(self, management_dashboard_id, **kwargs):
         """
@@ -810,6 +866,8 @@ class DashxApisClient(object):
         """
         resource_path = "/managementDashboards/{managementDashboardId}"
         method = "GET"
+        operation_name = "get_management_dashboard"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/GetManagementDashboard"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -857,14 +915,20 @@ class DashxApisClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ManagementDashboard")
+                response_type="ManagementDashboard",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ManagementDashboard")
+                response_type="ManagementDashboard",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_management_saved_search(self, management_saved_search_id, **kwargs):
         """
@@ -904,6 +968,8 @@ class DashxApisClient(object):
         """
         resource_path = "/managementSavedSearches/{managementSavedSearchId}"
         method = "GET"
+        operation_name = "get_management_saved_search"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/GetManagementSavedSearch"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -951,14 +1017,20 @@ class DashxApisClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ManagementSavedSearch")
+                response_type="ManagementSavedSearch",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ManagementSavedSearch")
+                response_type="ManagementSavedSearch",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def import_dashboard(self, management_dashboard_import_details, **kwargs):
         """
@@ -1010,6 +1082,8 @@ class DashxApisClient(object):
         """
         resource_path = "/managementDashboards/actions/importDashboard"
         method = "POST"
+        operation_name = "import_dashboard"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/ImportDashboard"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1048,13 +1122,19 @@ class DashxApisClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=management_dashboard_import_details)
+                body=management_dashboard_import_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=management_dashboard_import_details)
+                body=management_dashboard_import_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_management_dashboards(self, compartment_id, **kwargs):
         """
@@ -1106,6 +1186,8 @@ class DashxApisClient(object):
         """
         resource_path = "/managementDashboards"
         method = "GET"
+        operation_name = "list_management_dashboards"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/ListManagementDashboards"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1169,14 +1251,20 @@ class DashxApisClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ManagementDashboardCollection")
+                response_type="ManagementDashboardCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ManagementDashboardCollection")
+                response_type="ManagementDashboardCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_management_saved_searches(self, compartment_id, **kwargs):
         """
@@ -1228,6 +1316,8 @@ class DashxApisClient(object):
         """
         resource_path = "/managementSavedSearches"
         method = "GET"
+        operation_name = "list_management_saved_searches"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/ListManagementSavedSearches"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1291,14 +1381,20 @@ class DashxApisClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ManagementSavedSearchCollection")
+                response_type="ManagementSavedSearchCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ManagementSavedSearchCollection")
+                response_type="ManagementSavedSearchCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_management_dashboard(self, management_dashboard_id, update_management_dashboard_details, **kwargs):
         """
@@ -1348,6 +1444,8 @@ class DashxApisClient(object):
         """
         resource_path = "/managementDashboards/{managementDashboardId}"
         method = "PUT"
+        operation_name = "update_management_dashboard"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementDashboard/UpdateManagementDashboard"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1398,7 +1496,10 @@ class DashxApisClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_management_dashboard_details,
-                response_type="ManagementDashboard")
+                response_type="ManagementDashboard",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1406,7 +1507,10 @@ class DashxApisClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_management_dashboard_details,
-                response_type="ManagementDashboard")
+                response_type="ManagementDashboard",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_management_saved_search(self, management_saved_search_id, update_management_saved_search_details, **kwargs):
         """
@@ -1456,6 +1560,8 @@ class DashxApisClient(object):
         """
         resource_path = "/managementSavedSearches/{managementSavedSearchId}"
         method = "PUT"
+        operation_name = "update_management_saved_search"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/managementdashboard/20200901/ManagementSavedSearch/UpdateManagementSavedSearch"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1506,7 +1612,10 @@ class DashxApisClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_management_saved_search_details,
-                response_type="ManagementSavedSearch")
+                response_type="ManagementSavedSearch",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1514,4 +1623,7 @@ class DashxApisClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_management_saved_search_details,
-                response_type="ManagementSavedSearch")
+                response_type="ManagementSavedSearch",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

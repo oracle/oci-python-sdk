@@ -141,6 +141,8 @@ class AnnouncementsPreferencesClient(object):
         """
         resource_path = "/announcementsPreferences"
         method = "POST"
+        operation_name = "create_announcements_preference"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsPreferencesSummary/CreateAnnouncementsPreference"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -178,14 +180,20 @@ class AnnouncementsPreferencesClient(object):
                 method=method,
                 header_params=header_params,
                 body=announcements_preference_details,
-                response_type="AnnouncementsPreferencesSummary")
+                response_type="AnnouncementsPreferencesSummary",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=announcements_preference_details,
-                response_type="AnnouncementsPreferencesSummary")
+                response_type="AnnouncementsPreferencesSummary",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_announcements_preference(self, preference_id, **kwargs):
         """
@@ -221,6 +229,8 @@ class AnnouncementsPreferencesClient(object):
         """
         resource_path = "/announcementsPreferences/{preferenceId}"
         method = "GET"
+        operation_name = "get_announcements_preference"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsPreferences/GetAnnouncementsPreference"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -265,14 +275,20 @@ class AnnouncementsPreferencesClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AnnouncementsPreferences")
+                response_type="AnnouncementsPreferences",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AnnouncementsPreferences")
+                response_type="AnnouncementsPreferences",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_announcements_preferences(self, compartment_id, **kwargs):
         """
@@ -314,6 +330,8 @@ class AnnouncementsPreferencesClient(object):
         """
         resource_path = "/announcementsPreferences"
         method = "GET"
+        operation_name = "list_announcements_preferences"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsPreferencesSummary/ListAnnouncementsPreferences"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -357,14 +375,20 @@ class AnnouncementsPreferencesClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AnnouncementsPreferencesSummary]")
+                response_type="list[AnnouncementsPreferencesSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AnnouncementsPreferencesSummary]")
+                response_type="list[AnnouncementsPreferencesSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_announcements_preference(self, preference_id, announcements_preference_details, **kwargs):
         """
@@ -406,6 +430,8 @@ class AnnouncementsPreferencesClient(object):
         """
         resource_path = "/announcementsPreferences/{preferenceId}"
         method = "PUT"
+        operation_name = "update_announcements_preference"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementsPreferencesSummary/UpdateAnnouncementsPreference"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -453,7 +479,10 @@ class AnnouncementsPreferencesClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=announcements_preference_details,
-                response_type="AnnouncementsPreferencesSummary")
+                response_type="AnnouncementsPreferencesSummary",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -461,4 +490,7 @@ class AnnouncementsPreferencesClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=announcements_preference_details,
-                response_type="AnnouncementsPreferencesSummary")
+                response_type="AnnouncementsPreferencesSummary",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

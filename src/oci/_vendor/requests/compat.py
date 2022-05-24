@@ -30,8 +30,10 @@ is_py2 = (_ver[0] == 2)
 #: Python 3.x?
 is_py3 = (_ver[0] == 3)
 
+has_simplejson = False
 try:
     import simplejson as json
+    has_simplejson = True
 except ImportError:
     import json
 
@@ -51,13 +53,13 @@ if is_py2:
     # Keep OrderedDict for backwards compatibility.
     from collections import Callable, Mapping, MutableMapping, OrderedDict
 
-
     builtin_str = str
     bytes = str
     str = unicode
     basestring = basestring
     numeric_types = (int, long, float)
     integer_types = (int, long)
+    JSONDecodeError = ValueError
 
 elif is_py3:
     from urllib.parse import urlparse, urlunparse, urljoin, urlsplit, urlencode, quote, unquote, quote_plus, unquote_plus, urldefrag
@@ -68,6 +70,10 @@ elif is_py3:
     # Keep OrderedDict for backwards compatibility.
     from collections import OrderedDict
     from collections.abc import Callable, Mapping, MutableMapping
+    if has_simplejson:
+        from simplejson import JSONDecodeError
+    else:
+        from json import JSONDecodeError
 
     builtin_str = str
     str = str

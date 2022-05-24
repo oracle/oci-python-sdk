@@ -158,6 +158,8 @@ class DbSystemClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/analyticsCluster/actions/add"
         method = "POST"
+        operation_name = "add_analytics_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/AddAnalyticsCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -210,7 +212,10 @@ class DbSystemClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=add_analytics_cluster_details,
-                response_type="AnalyticsCluster")
+                response_type="AnalyticsCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -218,7 +223,10 @@ class DbSystemClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=add_analytics_cluster_details,
-                response_type="AnalyticsCluster")
+                response_type="AnalyticsCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def add_heat_wave_cluster(self, db_system_id, add_heat_wave_cluster_details, **kwargs):
         """
@@ -273,6 +281,8 @@ class DbSystemClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/heatWaveCluster/actions/add"
         method = "POST"
+        operation_name = "add_heat_wave_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/AddHeatWaveCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -325,7 +335,10 @@ class DbSystemClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=add_heat_wave_cluster_details,
-                response_type="HeatWaveCluster")
+                response_type="HeatWaveCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -333,7 +346,10 @@ class DbSystemClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=add_heat_wave_cluster_details,
-                response_type="HeatWaveCluster")
+                response_type="HeatWaveCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_db_system(self, create_db_system_details, **kwargs):
         """
@@ -376,6 +392,8 @@ class DbSystemClient(object):
         """
         resource_path = "/dbSystems"
         method = "POST"
+        operation_name = "create_db_system"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -415,14 +433,20 @@ class DbSystemClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_db_system_details,
-                response_type="DbSystem")
+                response_type="DbSystem",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_db_system_details,
-                response_type="DbSystem")
+                response_type="DbSystem",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_analytics_cluster(self, db_system_id, **kwargs):
         """
@@ -468,6 +492,8 @@ class DbSystemClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/analyticsCluster"
         method = "DELETE"
+        operation_name = "delete_analytics_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/DeleteAnalyticsCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -515,13 +541,19 @@ class DbSystemClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_db_system(self, db_system_id, **kwargs):
         """
@@ -566,6 +598,8 @@ class DbSystemClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}"
         method = "DELETE"
+        operation_name = "delete_db_system"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/DeleteDbSystem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -613,13 +647,19 @@ class DbSystemClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_heat_wave_cluster(self, db_system_id, **kwargs):
         """
@@ -664,6 +704,8 @@ class DbSystemClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/heatWaveCluster"
         method = "DELETE"
+        operation_name = "delete_heat_wave_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/DeleteHeatWaveCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -711,13 +753,19 @@ class DbSystemClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def generate_analytics_cluster_memory_estimate(self, db_system_id, **kwargs):
         """
@@ -763,6 +811,8 @@ class DbSystemClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/analyticsClusterMemoryEstimate/actions/generate"
         method = "POST"
+        operation_name = "generate_analytics_cluster_memory_estimate"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsClusterMemoryEstimate/GenerateAnalyticsClusterMemoryEstimate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -812,14 +862,20 @@ class DbSystemClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AnalyticsClusterMemoryEstimate")
+                response_type="AnalyticsClusterMemoryEstimate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AnalyticsClusterMemoryEstimate")
+                response_type="AnalyticsClusterMemoryEstimate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def generate_heat_wave_cluster_memory_estimate(self, db_system_id, **kwargs):
         """
@@ -864,6 +920,8 @@ class DbSystemClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/heatWaveClusterMemoryEstimate/actions/generate"
         method = "POST"
+        operation_name = "generate_heat_wave_cluster_memory_estimate"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveClusterMemoryEstimate/GenerateHeatWaveClusterMemoryEstimate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -913,14 +971,20 @@ class DbSystemClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="HeatWaveClusterMemoryEstimate")
+                response_type="HeatWaveClusterMemoryEstimate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="HeatWaveClusterMemoryEstimate")
+                response_type="HeatWaveClusterMemoryEstimate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_analytics_cluster(self, db_system_id, **kwargs):
         """
@@ -965,6 +1029,8 @@ class DbSystemClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/analyticsCluster"
         method = "GET"
+        operation_name = "get_analytics_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/GetAnalyticsCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1013,14 +1079,20 @@ class DbSystemClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AnalyticsCluster")
+                response_type="AnalyticsCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AnalyticsCluster")
+                response_type="AnalyticsCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_analytics_cluster_memory_estimate(self, db_system_id, **kwargs):
         """
@@ -1059,6 +1131,8 @@ class DbSystemClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/analyticsClusterMemoryEstimate"
         method = "GET"
+        operation_name = "get_analytics_cluster_memory_estimate"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsClusterMemoryEstimate/GetAnalyticsClusterMemoryEstimate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1105,14 +1179,20 @@ class DbSystemClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AnalyticsClusterMemoryEstimate")
+                response_type="AnalyticsClusterMemoryEstimate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AnalyticsClusterMemoryEstimate")
+                response_type="AnalyticsClusterMemoryEstimate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_db_system(self, db_system_id, **kwargs):
         """
@@ -1156,6 +1236,8 @@ class DbSystemClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}"
         method = "GET"
+        operation_name = "get_db_system"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/GetDbSystem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1204,14 +1286,20 @@ class DbSystemClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DbSystem")
+                response_type="DbSystem",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DbSystem")
+                response_type="DbSystem",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_heat_wave_cluster(self, db_system_id, **kwargs):
         """
@@ -1255,6 +1343,8 @@ class DbSystemClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/heatWaveCluster"
         method = "GET"
+        operation_name = "get_heat_wave_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/GetHeatWaveCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1303,14 +1393,20 @@ class DbSystemClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="HeatWaveCluster")
+                response_type="HeatWaveCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="HeatWaveCluster")
+                response_type="HeatWaveCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_heat_wave_cluster_memory_estimate(self, db_system_id, **kwargs):
         """
@@ -1348,6 +1444,8 @@ class DbSystemClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/heatWaveClusterMemoryEstimate"
         method = "GET"
+        operation_name = "get_heat_wave_cluster_memory_estimate"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveClusterMemoryEstimate/GetHeatWaveClusterMemoryEstimate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1394,14 +1492,20 @@ class DbSystemClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="HeatWaveClusterMemoryEstimate")
+                response_type="HeatWaveClusterMemoryEstimate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="HeatWaveClusterMemoryEstimate")
+                response_type="HeatWaveClusterMemoryEstimate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_db_systems(self, compartment_id, **kwargs):
         """
@@ -1493,6 +1597,8 @@ class DbSystemClient(object):
         """
         resource_path = "/dbSystems"
         method = "GET"
+        operation_name = "list_db_systems"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystemSummary/ListDbSystems"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1577,14 +1683,20 @@ class DbSystemClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DbSystemSummary]")
+                response_type="list[DbSystemSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DbSystemSummary]")
+                response_type="list[DbSystemSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def restart_analytics_cluster(self, db_system_id, **kwargs):
         """
@@ -1637,6 +1749,8 @@ class DbSystemClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/analyticsCluster/actions/restart"
         method = "POST"
+        operation_name = "restart_analytics_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/RestartAnalyticsCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1687,13 +1801,19 @@ class DbSystemClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def restart_db_system(self, db_system_id, restart_db_system_details, **kwargs):
         """
@@ -1748,6 +1868,8 @@ class DbSystemClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/actions/restart"
         method = "POST"
+        operation_name = "restart_db_system"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/RestartDbSystem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1799,14 +1921,20 @@ class DbSystemClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=restart_db_system_details)
+                body=restart_db_system_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=restart_db_system_details)
+                body=restart_db_system_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def restart_heat_wave_cluster(self, db_system_id, **kwargs):
         """
@@ -1858,6 +1986,8 @@ class DbSystemClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/heatWaveCluster/actions/restart"
         method = "POST"
+        operation_name = "restart_heat_wave_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/RestartHeatWaveCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1908,13 +2038,19 @@ class DbSystemClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def start_analytics_cluster(self, db_system_id, **kwargs):
         """
@@ -1967,6 +2103,8 @@ class DbSystemClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/analyticsCluster/actions/start"
         method = "POST"
+        operation_name = "start_analytics_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/StartAnalyticsCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2017,13 +2155,19 @@ class DbSystemClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def start_db_system(self, db_system_id, **kwargs):
         """
@@ -2075,6 +2219,8 @@ class DbSystemClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/actions/start"
         method = "POST"
+        operation_name = "start_db_system"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/StartDbSystem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2125,13 +2271,19 @@ class DbSystemClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def start_heat_wave_cluster(self, db_system_id, **kwargs):
         """
@@ -2183,6 +2335,8 @@ class DbSystemClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/heatWaveCluster/actions/start"
         method = "POST"
+        operation_name = "start_heat_wave_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/StartHeatWaveCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2233,13 +2387,19 @@ class DbSystemClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def stop_analytics_cluster(self, db_system_id, **kwargs):
         """
@@ -2292,6 +2452,8 @@ class DbSystemClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/analyticsCluster/actions/stop"
         method = "POST"
+        operation_name = "stop_analytics_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/StopAnalyticsCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2342,13 +2504,19 @@ class DbSystemClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def stop_db_system(self, db_system_id, stop_db_system_details, **kwargs):
         """
@@ -2405,6 +2573,8 @@ class DbSystemClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/actions/stop"
         method = "POST"
+        operation_name = "stop_db_system"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/StopDbSystem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2456,14 +2626,20 @@ class DbSystemClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=stop_db_system_details)
+                body=stop_db_system_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=stop_db_system_details)
+                body=stop_db_system_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def stop_heat_wave_cluster(self, db_system_id, **kwargs):
         """
@@ -2515,6 +2691,8 @@ class DbSystemClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/heatWaveCluster/actions/stop"
         method = "POST"
+        operation_name = "stop_heat_wave_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/StopHeatWaveCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2565,13 +2743,19 @@ class DbSystemClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_analytics_cluster(self, db_system_id, update_analytics_cluster_details, **kwargs):
         """
@@ -2619,6 +2803,8 @@ class DbSystemClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/analyticsCluster"
         method = "PUT"
+        operation_name = "update_analytics_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/UpdateAnalyticsCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2667,14 +2853,20 @@ class DbSystemClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_analytics_cluster_details)
+                body=update_analytics_cluster_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_analytics_cluster_details)
+                body=update_analytics_cluster_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_db_system(self, db_system_id, update_db_system_details, **kwargs):
         """
@@ -2728,6 +2920,8 @@ class DbSystemClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}"
         method = "PUT"
+        operation_name = "update_db_system"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/UpdateDbSystem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2776,14 +2970,20 @@ class DbSystemClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_db_system_details)
+                body=update_db_system_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_db_system_details)
+                body=update_db_system_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_heat_wave_cluster(self, db_system_id, update_heat_wave_cluster_details, **kwargs):
         """
@@ -2830,6 +3030,8 @@ class DbSystemClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/heatWaveCluster"
         method = "PUT"
+        operation_name = "update_heat_wave_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/UpdateHeatWaveCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2878,11 +3080,17 @@ class DbSystemClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_heat_wave_cluster_details)
+                body=update_heat_wave_cluster_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_heat_wave_cluster_details)
+                body=update_heat_wave_cluster_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

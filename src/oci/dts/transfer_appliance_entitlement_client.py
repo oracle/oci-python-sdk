@@ -143,6 +143,8 @@ class TransferApplianceEntitlementClient(object):
         """
         resource_path = "/transferApplianceEntitlement"
         method = "POST"
+        operation_name = "create_transfer_appliance_entitlement"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -180,14 +182,20 @@ class TransferApplianceEntitlementClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_transfer_appliance_entitlement_details,
-                response_type="TransferApplianceEntitlement")
+                response_type="TransferApplianceEntitlement",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_transfer_appliance_entitlement_details,
-                response_type="TransferApplianceEntitlement")
+                response_type="TransferApplianceEntitlement",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_transfer_appliance_entitlement(self, id, **kwargs):
         """
@@ -228,6 +236,8 @@ class TransferApplianceEntitlementClient(object):
         """
         resource_path = "/transferApplianceEntitlement/{id}"
         method = "GET"
+        operation_name = "get_transfer_appliance_entitlement"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -275,14 +285,20 @@ class TransferApplianceEntitlementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TransferApplianceEntitlement")
+                response_type="TransferApplianceEntitlement",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TransferApplianceEntitlement")
+                response_type="TransferApplianceEntitlement",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_transfer_appliance_entitlement(self, compartment_id, **kwargs):
         """
@@ -322,6 +338,8 @@ class TransferApplianceEntitlementClient(object):
         """
         resource_path = "/transferApplianceEntitlement"
         method = "GET"
+        operation_name = "list_transfer_appliance_entitlement"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -365,11 +383,17 @@ class TransferApplianceEntitlementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TransferApplianceEntitlementSummary]")
+                response_type="list[TransferApplianceEntitlementSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TransferApplianceEntitlementSummary]")
+                response_type="list[TransferApplianceEntitlementSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

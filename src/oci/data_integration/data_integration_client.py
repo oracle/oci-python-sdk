@@ -148,6 +148,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/ChangeCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -197,14 +199,20 @@ class DataIntegrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_compartment_details)
+                body=change_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_compartment_details)
+                body=change_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_dis_application_compartment(self, workspace_id, dis_application_id, change_dis_application_compartment_details, **kwargs):
         """
@@ -253,6 +261,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/disApplications/{disApplicationId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_dis_application_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/ChangeDisApplicationCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -303,14 +313,20 @@ class DataIntegrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_dis_application_compartment_details)
+                body=change_dis_application_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_dis_application_compartment_details)
+                body=change_dis_application_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_application(self, workspace_id, create_application_details, **kwargs):
         """
@@ -351,6 +367,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications"
         method = "POST"
+        operation_name = "create_application"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/CreateApplication"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -399,7 +417,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_application_details,
-                response_type="Application")
+                response_type="Application",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -407,7 +428,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_application_details,
-                response_type="Application")
+                response_type="Application",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_connection(self, workspace_id, create_connection_details, **kwargs):
         """
@@ -448,6 +472,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/connections"
         method = "POST"
+        operation_name = "create_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Connection/CreateConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -496,7 +522,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_connection_details,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -504,7 +533,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_connection_details,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_connection_validation(self, workspace_id, create_connection_validation_details, **kwargs):
         """
@@ -545,6 +577,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/connectionValidations"
         method = "POST"
+        operation_name = "create_connection_validation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ConnectionValidation/CreateConnectionValidation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -593,7 +627,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_connection_validation_details,
-                response_type="ConnectionValidation")
+                response_type="ConnectionValidation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -601,7 +638,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_connection_validation_details,
-                response_type="ConnectionValidation")
+                response_type="ConnectionValidation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_data_asset(self, workspace_id, create_data_asset_details, **kwargs):
         """
@@ -642,6 +682,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/dataAssets"
         method = "POST"
+        operation_name = "create_data_asset"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataAsset/CreateDataAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -690,7 +732,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_data_asset_details,
-                response_type="DataAsset")
+                response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -698,7 +743,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_data_asset_details,
-                response_type="DataAsset")
+                response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_data_flow(self, workspace_id, create_data_flow_details, **kwargs):
         """
@@ -739,6 +787,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/dataFlows"
         method = "POST"
+        operation_name = "create_data_flow"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlow/CreateDataFlow"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -787,7 +837,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_data_flow_details,
-                response_type="DataFlow")
+                response_type="DataFlow",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -795,7 +848,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_data_flow_details,
-                response_type="DataFlow")
+                response_type="DataFlow",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_data_flow_validation(self, workspace_id, create_data_flow_validation_details, **kwargs):
         """
@@ -836,6 +892,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/dataFlowValidations"
         method = "POST"
+        operation_name = "create_data_flow_validation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlowValidation/CreateDataFlowValidation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -884,7 +942,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_data_flow_validation_details,
-                response_type="DataFlowValidation")
+                response_type="DataFlowValidation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -892,7 +953,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_data_flow_validation_details,
-                response_type="DataFlowValidation")
+                response_type="DataFlowValidation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_dis_application(self, workspace_id, create_dis_application_details, **kwargs):
         """
@@ -933,6 +997,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/disApplications"
         method = "POST"
+        operation_name = "create_dis_application"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/CreateDisApplication"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -981,7 +1047,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_dis_application_details,
-                response_type="DisApplication")
+                response_type="DisApplication",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -989,7 +1058,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_dis_application_details,
-                response_type="DisApplication")
+                response_type="DisApplication",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_entity_shape(self, workspace_id, connection_key, schema_resource_name, create_entity_shape_details, **kwargs):
         """
@@ -1041,6 +1113,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/connections/{connectionKey}/schemas/{schemaResourceName}/entityShapes"
         method = "POST"
+        operation_name = "create_entity_shape"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataEntity/CreateEntityShape"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1093,7 +1167,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_entity_shape_details,
-                response_type="EntityShape")
+                response_type="EntityShape",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1101,7 +1178,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_entity_shape_details,
-                response_type="EntityShape")
+                response_type="EntityShape",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_external_publication(self, workspace_id, task_key, create_external_publication_details, **kwargs):
         """
@@ -1145,6 +1225,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublications"
         method = "POST"
+        operation_name = "create_external_publication"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublication/CreateExternalPublication"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1194,7 +1276,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_external_publication_details,
-                response_type="ExternalPublication")
+                response_type="ExternalPublication",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1202,7 +1287,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_external_publication_details,
-                response_type="ExternalPublication")
+                response_type="ExternalPublication",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_external_publication_validation(self, workspace_id, task_key, create_external_publication_validation_details, **kwargs):
         """
@@ -1246,6 +1334,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublicationValidations"
         method = "POST"
+        operation_name = "create_external_publication_validation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublicationValidation/CreateExternalPublicationValidation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1295,7 +1385,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_external_publication_validation_details,
-                response_type="ExternalPublicationValidation")
+                response_type="ExternalPublicationValidation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1303,7 +1396,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_external_publication_validation_details,
-                response_type="ExternalPublicationValidation")
+                response_type="ExternalPublicationValidation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_folder(self, workspace_id, create_folder_details, **kwargs):
         """
@@ -1345,6 +1441,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/folders"
         method = "POST"
+        operation_name = "create_folder"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Folder/CreateFolder"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1393,7 +1491,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_folder_details,
-                response_type="Folder")
+                response_type="Folder",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1401,7 +1502,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_folder_details,
-                response_type="Folder")
+                response_type="Folder",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_function_library(self, workspace_id, create_function_library_details, **kwargs):
         """
@@ -1443,6 +1547,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/functionLibraries"
         method = "POST"
+        operation_name = "create_function_library"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/FunctionLibrary/CreateFunctionLibrary"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1491,7 +1597,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_function_library_details,
-                response_type="FunctionLibrary")
+                response_type="FunctionLibrary",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1499,7 +1608,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_function_library_details,
-                response_type="FunctionLibrary")
+                response_type="FunctionLibrary",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_patch(self, workspace_id, application_key, create_patch_details, **kwargs):
         """
@@ -1543,6 +1655,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/patches"
         method = "POST"
+        operation_name = "create_patch"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/CreatePatch"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1592,7 +1706,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_patch_details,
-                response_type="Patch")
+                response_type="Patch",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1600,7 +1717,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_patch_details,
-                response_type="Patch")
+                response_type="Patch",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_pipeline(self, workspace_id, create_pipeline_details, **kwargs):
         """
@@ -1641,6 +1761,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/pipelines"
         method = "POST"
+        operation_name = "create_pipeline"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Pipeline/CreatePipeline"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1689,7 +1811,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_pipeline_details,
-                response_type="Pipeline")
+                response_type="Pipeline",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1697,7 +1822,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_pipeline_details,
-                response_type="Pipeline")
+                response_type="Pipeline",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_pipeline_validation(self, workspace_id, create_pipeline_validation_details, **kwargs):
         """
@@ -1738,6 +1866,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/pipelineValidations"
         method = "POST"
+        operation_name = "create_pipeline_validation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/PipelineValidation/CreatePipelineValidation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1786,7 +1916,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_pipeline_validation_details,
-                response_type="PipelineValidation")
+                response_type="PipelineValidation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1794,7 +1927,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_pipeline_validation_details,
-                response_type="PipelineValidation")
+                response_type="PipelineValidation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_project(self, workspace_id, create_project_details, **kwargs):
         """
@@ -1835,6 +1971,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/projects"
         method = "POST"
+        operation_name = "create_project"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/CreateProject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1883,7 +2021,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_project_details,
-                response_type="Project")
+                response_type="Project",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1891,7 +2032,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_project_details,
-                response_type="Project")
+                response_type="Project",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_schedule(self, workspace_id, application_key, create_schedule_details, **kwargs):
         """
@@ -1935,6 +2079,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/schedules"
         method = "POST"
+        operation_name = "create_schedule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schedule/CreateSchedule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1984,7 +2130,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_schedule_details,
-                response_type="Schedule")
+                response_type="Schedule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1992,7 +2141,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_schedule_details,
-                response_type="Schedule")
+                response_type="Schedule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_task(self, workspace_id, create_task_details, **kwargs):
         """
@@ -2033,6 +2185,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/tasks"
         method = "POST"
+        operation_name = "create_task"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Task/CreateTask"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2081,7 +2235,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_task_details,
-                response_type="Task")
+                response_type="Task",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2089,7 +2246,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_task_details,
-                response_type="Task")
+                response_type="Task",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_task_run(self, workspace_id, application_key, create_task_run_details, **kwargs):
         """
@@ -2133,6 +2293,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/taskRuns"
         method = "POST"
+        operation_name = "create_task_run"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRun/CreateTaskRun"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2182,7 +2344,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_task_run_details,
-                response_type="TaskRun")
+                response_type="TaskRun",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2190,7 +2355,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_task_run_details,
-                response_type="TaskRun")
+                response_type="TaskRun",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_task_schedule(self, workspace_id, application_key, create_task_schedule_details, **kwargs):
         """
@@ -2234,6 +2402,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/taskSchedules"
         method = "POST"
+        operation_name = "create_task_schedule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskSchedule/CreateTaskSchedule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2283,7 +2453,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_task_schedule_details,
-                response_type="TaskSchedule")
+                response_type="TaskSchedule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2291,7 +2464,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_task_schedule_details,
-                response_type="TaskSchedule")
+                response_type="TaskSchedule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_task_validation(self, workspace_id, create_task_validation_details, **kwargs):
         """
@@ -2332,6 +2508,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/taskValidations"
         method = "POST"
+        operation_name = "create_task_validation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskValidation/CreateTaskValidation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2380,7 +2558,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_task_validation_details,
-                response_type="TaskValidation")
+                response_type="TaskValidation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2388,7 +2569,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_task_validation_details,
-                response_type="TaskValidation")
+                response_type="TaskValidation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_user_defined_function(self, workspace_id, create_user_defined_function_details, **kwargs):
         """
@@ -2429,6 +2613,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/userDefinedFunctions"
         method = "POST"
+        operation_name = "create_user_defined_function"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunction/CreateUserDefinedFunction"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2477,7 +2663,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_user_defined_function_details,
-                response_type="UserDefinedFunction")
+                response_type="UserDefinedFunction",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2485,7 +2674,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_user_defined_function_details,
-                response_type="UserDefinedFunction")
+                response_type="UserDefinedFunction",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_user_defined_function_validation(self, workspace_id, create_user_defined_function_validation_details, **kwargs):
         """
@@ -2526,6 +2718,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/userDefinedFunctionValidations"
         method = "POST"
+        operation_name = "create_user_defined_function_validation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunctionValidation/CreateUserDefinedFunctionValidation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2574,7 +2768,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_user_defined_function_validation_details,
-                response_type="UserDefinedFunctionValidation")
+                response_type="UserDefinedFunctionValidation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2582,7 +2779,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_user_defined_function_validation_details,
-                response_type="UserDefinedFunctionValidation")
+                response_type="UserDefinedFunctionValidation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_workspace(self, create_workspace_details, **kwargs):
         """
@@ -2620,6 +2820,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces"
         method = "POST"
+        operation_name = "create_workspace"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/CreateWorkspace"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2656,13 +2858,19 @@ class DataIntegrationClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_workspace_details)
+                body=create_workspace_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_workspace_details)
+                body=create_workspace_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_application(self, workspace_id, application_key, **kwargs):
         """
@@ -2705,6 +2913,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}"
         method = "DELETE"
+        operation_name = "delete_application"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/DeleteApplication"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2751,13 +2961,19 @@ class DataIntegrationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_connection(self, workspace_id, connection_key, **kwargs):
         """
@@ -2800,6 +3016,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/connections/{connectionKey}"
         method = "DELETE"
+        operation_name = "delete_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Connection/DeleteConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2846,13 +3064,19 @@ class DataIntegrationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_connection_validation(self, workspace_id, connection_validation_key, **kwargs):
         """
@@ -2895,6 +3119,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/connectionValidations/{connectionValidationKey}"
         method = "DELETE"
+        operation_name = "delete_connection_validation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ConnectionValidation/DeleteConnectionValidation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2941,13 +3167,19 @@ class DataIntegrationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_data_asset(self, workspace_id, data_asset_key, **kwargs):
         """
@@ -2990,6 +3222,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/dataAssets/{dataAssetKey}"
         method = "DELETE"
+        operation_name = "delete_data_asset"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataAsset/DeleteDataAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3036,13 +3270,19 @@ class DataIntegrationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_data_flow(self, workspace_id, data_flow_key, **kwargs):
         """
@@ -3085,6 +3325,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/dataFlows/{dataFlowKey}"
         method = "DELETE"
+        operation_name = "delete_data_flow"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlow/DeleteDataFlow"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3131,13 +3373,19 @@ class DataIntegrationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_data_flow_validation(self, workspace_id, data_flow_validation_key, **kwargs):
         """
@@ -3180,6 +3428,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/dataFlowValidations/{dataFlowValidationKey}"
         method = "DELETE"
+        operation_name = "delete_data_flow_validation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlowValidation/DeleteDataFlowValidation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3226,13 +3476,19 @@ class DataIntegrationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_dis_application(self, workspace_id, dis_application_id, **kwargs):
         """
@@ -3275,6 +3531,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/disApplications/{disApplicationId}"
         method = "DELETE"
+        operation_name = "delete_dis_application"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/DeleteDisApplication"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3321,13 +3579,19 @@ class DataIntegrationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_external_publication(self, workspace_id, task_key, external_publications_key, **kwargs):
         """
@@ -3373,6 +3637,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublications/{externalPublicationsKey}"
         method = "DELETE"
+        operation_name = "delete_external_publication"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublication/DeleteExternalPublication"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3420,13 +3686,19 @@ class DataIntegrationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_external_publication_validation(self, workspace_id, task_key, external_publication_validation_key, **kwargs):
         """
@@ -3472,6 +3744,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublicationValidations/{externalPublicationValidationKey}"
         method = "DELETE"
+        operation_name = "delete_external_publication_validation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublicationValidation/DeleteExternalPublicationValidation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3519,13 +3793,19 @@ class DataIntegrationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_folder(self, workspace_id, folder_key, **kwargs):
         """
@@ -3568,6 +3848,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/folders/{folderKey}"
         method = "DELETE"
+        operation_name = "delete_folder"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Folder/DeleteFolder"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3614,13 +3896,19 @@ class DataIntegrationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_function_library(self, workspace_id, function_library_key, **kwargs):
         """
@@ -3663,6 +3951,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/functionLibraries/{functionLibraryKey}"
         method = "DELETE"
+        operation_name = "delete_function_library"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/FunctionLibrary/DeleteFunctionLibrary"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3709,13 +3999,19 @@ class DataIntegrationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_patch(self, workspace_id, application_key, patch_key, **kwargs):
         """
@@ -3761,6 +4057,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/patches/{patchKey}"
         method = "DELETE"
+        operation_name = "delete_patch"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/DeletePatch"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3808,13 +4106,19 @@ class DataIntegrationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_pipeline(self, workspace_id, pipeline_key, **kwargs):
         """
@@ -3857,6 +4161,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/pipelines/{pipelineKey}"
         method = "DELETE"
+        operation_name = "delete_pipeline"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Pipeline/DeletePipeline"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3903,13 +4209,19 @@ class DataIntegrationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_pipeline_validation(self, workspace_id, pipeline_validation_key, **kwargs):
         """
@@ -3952,6 +4264,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/pipelineValidations/{pipelineValidationKey}"
         method = "DELETE"
+        operation_name = "delete_pipeline_validation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/PipelineValidation/DeletePipelineValidation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3998,13 +4312,19 @@ class DataIntegrationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_project(self, workspace_id, project_key, **kwargs):
         """
@@ -4047,6 +4367,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/projects/{projectKey}"
         method = "DELETE"
+        operation_name = "delete_project"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/DeleteProject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4093,13 +4415,19 @@ class DataIntegrationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_schedule(self, workspace_id, application_key, schedule_key, **kwargs):
         """
@@ -4145,6 +4473,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/schedules/{scheduleKey}"
         method = "DELETE"
+        operation_name = "delete_schedule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schedule/DeleteSchedule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4192,13 +4522,19 @@ class DataIntegrationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_task(self, workspace_id, task_key, **kwargs):
         """
@@ -4241,6 +4577,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}"
         method = "DELETE"
+        operation_name = "delete_task"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Task/DeleteTask"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4287,13 +4625,19 @@ class DataIntegrationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_task_run(self, workspace_id, application_key, task_run_key, **kwargs):
         """
@@ -4339,6 +4683,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/taskRuns/{taskRunKey}"
         method = "DELETE"
+        operation_name = "delete_task_run"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRun/DeleteTaskRun"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4386,13 +4732,19 @@ class DataIntegrationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_task_schedule(self, workspace_id, application_key, task_schedule_key, **kwargs):
         """
@@ -4438,6 +4790,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/taskSchedules/{taskScheduleKey}"
         method = "DELETE"
+        operation_name = "delete_task_schedule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskSchedule/DeleteTaskSchedule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4485,13 +4839,19 @@ class DataIntegrationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_task_validation(self, workspace_id, task_validation_key, **kwargs):
         """
@@ -4534,6 +4894,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/taskValidations/{taskValidationKey}"
         method = "DELETE"
+        operation_name = "delete_task_validation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskValidation/DeleteTaskValidation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4580,13 +4942,19 @@ class DataIntegrationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_user_defined_function(self, workspace_id, user_defined_function_key, **kwargs):
         """
@@ -4629,6 +4997,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/userDefinedFunctions/{userDefinedFunctionKey}"
         method = "DELETE"
+        operation_name = "delete_user_defined_function"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunction/DeleteUserDefinedFunction"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4675,13 +5045,19 @@ class DataIntegrationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_user_defined_function_validation(self, workspace_id, user_defined_function_validation_key, **kwargs):
         """
@@ -4724,6 +5100,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/userDefinedFunctionValidations/{userDefinedFunctionValidationKey}"
         method = "DELETE"
+        operation_name = "delete_user_defined_function_validation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunctionValidation/DeleteUserDefinedFunctionValidation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4770,13 +5148,19 @@ class DataIntegrationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_workspace(self, workspace_id, **kwargs):
         """
@@ -4822,6 +5206,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}"
         method = "DELETE"
+        operation_name = "delete_workspace"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/DeleteWorkspace"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4876,14 +5262,20 @@ class DataIntegrationClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_application(self, workspace_id, application_key, **kwargs):
         """
@@ -4921,6 +5313,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}"
         method = "GET"
+        operation_name = "get_application"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/GetApplication"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4966,14 +5360,20 @@ class DataIntegrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Application")
+                response_type="Application",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Application")
+                response_type="Application",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_connection(self, workspace_id, connection_key, **kwargs):
         """
@@ -5011,6 +5411,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/connections/{connectionKey}"
         method = "GET"
+        operation_name = "get_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Connection/GetConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5056,14 +5458,20 @@ class DataIntegrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_connection_validation(self, workspace_id, connection_validation_key, **kwargs):
         """
@@ -5101,6 +5509,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/connectionValidations/{connectionValidationKey}"
         method = "GET"
+        operation_name = "get_connection_validation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ConnectionValidation/GetConnectionValidation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5146,14 +5556,20 @@ class DataIntegrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ConnectionValidation")
+                response_type="ConnectionValidation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ConnectionValidation")
+                response_type="ConnectionValidation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_count_statistic(self, workspace_id, count_statistic_key, **kwargs):
         """
@@ -5192,6 +5608,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/countStatistics/{countStatisticKey}"
         method = "GET"
+        operation_name = "get_count_statistic"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/GetCountStatistic"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5237,14 +5655,20 @@ class DataIntegrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CountStatistic")
+                response_type="CountStatistic",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CountStatistic")
+                response_type="CountStatistic",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_data_asset(self, workspace_id, data_asset_key, **kwargs):
         """
@@ -5282,6 +5706,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/dataAssets/{dataAssetKey}"
         method = "GET"
+        operation_name = "get_data_asset"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataAsset/GetDataAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5327,14 +5753,20 @@ class DataIntegrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DataAsset")
+                response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DataAsset")
+                response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_data_entity(self, workspace_id, connection_key, schema_resource_name, data_entity_key, **kwargs):
         """
@@ -5378,6 +5810,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/connections/{connectionKey}/schemas/{schemaResourceName}/dataEntities/{dataEntityKey}"
         method = "GET"
+        operation_name = "get_data_entity"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataEntity/GetDataEntity"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5425,14 +5859,20 @@ class DataIntegrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DataEntity")
+                response_type="DataEntity",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DataEntity")
+                response_type="DataEntity",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_data_flow(self, workspace_id, data_flow_key, **kwargs):
         """
@@ -5473,6 +5913,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/dataFlows/{dataFlowKey}"
         method = "GET"
+        operation_name = "get_data_flow"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlow/GetDataFlow"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5525,7 +5967,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataFlow")
+                response_type="DataFlow",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5533,7 +5978,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataFlow")
+                response_type="DataFlow",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_data_flow_validation(self, workspace_id, data_flow_validation_key, **kwargs):
         """
@@ -5571,6 +6019,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/dataFlowValidations/{dataFlowValidationKey}"
         method = "GET"
+        operation_name = "get_data_flow_validation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlowValidation/GetDataFlowValidation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5616,14 +6066,20 @@ class DataIntegrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DataFlowValidation")
+                response_type="DataFlowValidation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DataFlowValidation")
+                response_type="DataFlowValidation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_dependent_object(self, workspace_id, application_key, dependent_object_key, **kwargs):
         """
@@ -5664,6 +6120,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/dependentObjects/{dependentObjectKey}"
         method = "GET"
+        operation_name = "get_dependent_object"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/GetDependentObject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5710,14 +6168,20 @@ class DataIntegrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DependentObject")
+                response_type="DependentObject",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DependentObject")
+                response_type="DependentObject",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_dis_application(self, workspace_id, dis_application_id, **kwargs):
         """
@@ -5755,6 +6219,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/disApplications/{disApplicationId}"
         method = "GET"
+        operation_name = "get_dis_application"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/GetDisApplication"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5800,14 +6266,20 @@ class DataIntegrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DisApplication")
+                response_type="DisApplication",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DisApplication")
+                response_type="DisApplication",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_external_publication(self, workspace_id, task_key, external_publications_key, **kwargs):
         """
@@ -5848,6 +6320,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublications/{externalPublicationsKey}"
         method = "GET"
+        operation_name = "get_external_publication"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublication/GetExternalPublication"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5894,14 +6368,20 @@ class DataIntegrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ExternalPublication")
+                response_type="ExternalPublication",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ExternalPublication")
+                response_type="ExternalPublication",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_external_publication_validation(self, workspace_id, task_key, external_publication_validation_key, **kwargs):
         """
@@ -5942,6 +6422,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublicationValidations/{externalPublicationValidationKey}"
         method = "GET"
+        operation_name = "get_external_publication_validation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublicationValidation/GetExternalPublicationValidation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5988,14 +6470,20 @@ class DataIntegrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ExternalPublicationValidation")
+                response_type="ExternalPublicationValidation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ExternalPublicationValidation")
+                response_type="ExternalPublicationValidation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_folder(self, workspace_id, folder_key, **kwargs):
         """
@@ -6038,6 +6526,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/folders/{folderKey}"
         method = "GET"
+        operation_name = "get_folder"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Folder/GetFolder"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6098,7 +6588,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Folder")
+                response_type="Folder",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6106,7 +6599,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Folder")
+                response_type="Folder",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_function_library(self, workspace_id, function_library_key, **kwargs):
         """
@@ -6149,6 +6645,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/functionLibraries/{functionLibraryKey}"
         method = "GET"
+        operation_name = "get_function_library"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/FunctionLibrary/GetFunctionLibrary"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6209,7 +6707,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="FunctionLibrary")
+                response_type="FunctionLibrary",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6217,7 +6718,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="FunctionLibrary")
+                response_type="FunctionLibrary",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_patch(self, workspace_id, application_key, patch_key, **kwargs):
         """
@@ -6258,6 +6762,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/patches/{patchKey}"
         method = "GET"
+        operation_name = "get_patch"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/GetPatch"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6304,14 +6810,20 @@ class DataIntegrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Patch")
+                response_type="Patch",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Patch")
+                response_type="Patch",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_pipeline(self, workspace_id, pipeline_key, **kwargs):
         """
@@ -6352,6 +6864,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/pipelines/{pipelineKey}"
         method = "GET"
+        operation_name = "get_pipeline"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Pipeline/GetPipeline"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6404,7 +6918,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Pipeline")
+                response_type="Pipeline",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6412,7 +6929,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Pipeline")
+                response_type="Pipeline",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_pipeline_validation(self, workspace_id, pipeline_validation_key, **kwargs):
         """
@@ -6450,6 +6970,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/pipelineValidations/{pipelineValidationKey}"
         method = "GET"
+        operation_name = "get_pipeline_validation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/PipelineValidation/GetPipelineValidation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6495,14 +7017,20 @@ class DataIntegrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PipelineValidation")
+                response_type="PipelineValidation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PipelineValidation")
+                response_type="PipelineValidation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_project(self, workspace_id, project_key, **kwargs):
         """
@@ -6545,6 +7073,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/projects/{projectKey}"
         method = "GET"
+        operation_name = "get_project"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/GetProject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6605,7 +7135,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Project")
+                response_type="Project",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6613,7 +7146,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Project")
+                response_type="Project",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_published_object(self, workspace_id, application_key, published_object_key, **kwargs):
         """
@@ -6657,6 +7193,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/publishedObjects/{publishedObjectKey}"
         method = "GET"
+        operation_name = "get_published_object"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/GetPublishedObject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6710,7 +7248,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PublishedObject")
+                response_type="PublishedObject",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6718,7 +7259,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PublishedObject")
+                response_type="PublishedObject",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_reference(self, workspace_id, application_key, reference_key, **kwargs):
         """
@@ -6759,6 +7303,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/references/{referenceKey}"
         method = "GET"
+        operation_name = "get_reference"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Reference/GetReference"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6805,14 +7351,20 @@ class DataIntegrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Reference")
+                response_type="Reference",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Reference")
+                response_type="Reference",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_schedule(self, workspace_id, application_key, schedule_key, **kwargs):
         """
@@ -6853,6 +7405,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/schedules/{scheduleKey}"
         method = "GET"
+        operation_name = "get_schedule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schedule/GetSchedule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6899,14 +7453,20 @@ class DataIntegrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Schedule")
+                response_type="Schedule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Schedule")
+                response_type="Schedule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_schema(self, workspace_id, connection_key, schema_resource_name, **kwargs):
         """
@@ -6947,6 +7507,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/connections/{connectionKey}/schemas/{schemaResourceName}"
         method = "GET"
+        operation_name = "get_schema"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schema/GetSchema"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6993,14 +7555,20 @@ class DataIntegrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Schema")
+                response_type="Schema",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Schema")
+                response_type="Schema",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_task(self, workspace_id, task_key, **kwargs):
         """
@@ -7041,6 +7609,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}"
         method = "GET"
+        operation_name = "get_task"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Task/GetTask"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7093,7 +7663,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Task")
+                response_type="Task",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7101,7 +7674,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Task")
+                response_type="Task",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_task_run(self, workspace_id, application_key, task_run_key, **kwargs):
         """
@@ -7142,6 +7718,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/taskRuns/{taskRunKey}"
         method = "GET"
+        operation_name = "get_task_run"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRun/GetTaskRun"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7188,14 +7766,20 @@ class DataIntegrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TaskRun")
+                response_type="TaskRun",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TaskRun")
+                response_type="TaskRun",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_task_schedule(self, workspace_id, application_key, task_schedule_key, **kwargs):
         """
@@ -7236,6 +7820,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/taskSchedules/{taskScheduleKey}"
         method = "GET"
+        operation_name = "get_task_schedule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskSchedule/GetTaskSchedule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7282,14 +7868,20 @@ class DataIntegrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TaskSchedule")
+                response_type="TaskSchedule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TaskSchedule")
+                response_type="TaskSchedule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_task_validation(self, workspace_id, task_validation_key, **kwargs):
         """
@@ -7327,6 +7919,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/taskValidations/{taskValidationKey}"
         method = "GET"
+        operation_name = "get_task_validation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskValidation/GetTaskValidation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7372,14 +7966,20 @@ class DataIntegrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TaskValidation")
+                response_type="TaskValidation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TaskValidation")
+                response_type="TaskValidation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_user_defined_function(self, workspace_id, user_defined_function_key, **kwargs):
         """
@@ -7417,6 +8017,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/userDefinedFunctions/{userDefinedFunctionKey}"
         method = "GET"
+        operation_name = "get_user_defined_function"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunction/GetUserDefinedFunction"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7462,14 +8064,20 @@ class DataIntegrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="UserDefinedFunction")
+                response_type="UserDefinedFunction",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="UserDefinedFunction")
+                response_type="UserDefinedFunction",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_user_defined_function_validation(self, workspace_id, user_defined_function_validation_key, **kwargs):
         """
@@ -7507,6 +8115,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/userDefinedFunctionValidations/{userDefinedFunctionValidationKey}"
         method = "GET"
+        operation_name = "get_user_defined_function_validation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunctionValidation/GetUserDefinedFunctionValidation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7552,14 +8162,20 @@ class DataIntegrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="UserDefinedFunctionValidation")
+                response_type="UserDefinedFunctionValidation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="UserDefinedFunctionValidation")
+                response_type="UserDefinedFunctionValidation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -7594,6 +8210,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7638,14 +8256,20 @@ class DataIntegrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_workspace(self, workspace_id, **kwargs):
         """
@@ -7680,6 +8304,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}"
         method = "GET"
+        operation_name = "get_workspace"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/GetWorkspace"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7724,14 +8350,20 @@ class DataIntegrationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Workspace")
+                response_type="Workspace",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Workspace")
+                response_type="Workspace",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_applications(self, workspace_id, **kwargs):
         """
@@ -7798,6 +8430,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications"
         method = "GET"
+        operation_name = "list_applications"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/ListApplications"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7877,7 +8511,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ApplicationSummaryCollection")
+                response_type="ApplicationSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7885,7 +8522,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ApplicationSummaryCollection")
+                response_type="ApplicationSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_connection_validations(self, workspace_id, **kwargs):
         """
@@ -7952,6 +8592,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/connectionValidations"
         method = "GET"
+        operation_name = "list_connection_validations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ConnectionValidation/ListConnectionValidations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8031,7 +8673,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ConnectionValidationSummaryCollection")
+                response_type="ConnectionValidationSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8039,7 +8684,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ConnectionValidationSummaryCollection")
+                response_type="ConnectionValidationSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_connections(self, workspace_id, data_asset_key, **kwargs):
         """
@@ -8106,6 +8754,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/connections"
         method = "GET"
+        operation_name = "list_connections"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Connection/ListConnections"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8184,7 +8834,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ConnectionSummaryCollection")
+                response_type="ConnectionSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8192,7 +8845,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ConnectionSummaryCollection")
+                response_type="ConnectionSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_data_assets(self, workspace_id, **kwargs):
         """
@@ -8256,6 +8912,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/dataAssets"
         method = "GET"
+        operation_name = "list_data_assets"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataAsset/ListDataAssets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8333,7 +8991,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataAssetSummaryCollection")
+                response_type="DataAssetSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8341,7 +9002,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataAssetSummaryCollection")
+                response_type="DataAssetSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_data_entities(self, workspace_id, connection_key, schema_resource_name, **kwargs):
         """
@@ -8417,6 +9081,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/connections/{connectionKey}/schemas/{schemaResourceName}/dataEntities"
         method = "GET"
+        operation_name = "list_data_entities"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataEntity/ListDataEntities"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8500,7 +9166,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataEntitySummaryCollection")
+                response_type="DataEntitySummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8508,7 +9177,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataEntitySummaryCollection")
+                response_type="DataEntitySummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_data_flow_validations(self, workspace_id, **kwargs):
         """
@@ -8575,6 +9247,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/dataFlowValidations"
         method = "GET"
+        operation_name = "list_data_flow_validations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlowValidation/ListDataFlowValidations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8654,7 +9328,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataFlowValidationSummaryCollection")
+                response_type="DataFlowValidationSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8662,7 +9339,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataFlowValidationSummaryCollection")
+                response_type="DataFlowValidationSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_data_flows(self, workspace_id, **kwargs):
         """
@@ -8729,6 +9409,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/dataFlows"
         method = "GET"
+        operation_name = "list_data_flows"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlow/ListDataFlows"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8808,7 +9490,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataFlowSummaryCollection")
+                response_type="DataFlowSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8816,7 +9501,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataFlowSummaryCollection")
+                response_type="DataFlowSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_dependent_objects(self, workspace_id, application_key, **kwargs):
         """
@@ -8896,6 +9584,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/dependentObjects"
         method = "GET"
+        operation_name = "list_dependent_objects"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/ListDependentObjects"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8980,7 +9670,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DependentObjectSummaryCollection")
+                response_type="DependentObjectSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8988,7 +9681,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DependentObjectSummaryCollection")
+                response_type="DependentObjectSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_dis_applications(self, workspace_id, compartment_id, **kwargs):
         """
@@ -9058,6 +9754,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/disApplications"
         method = "GET"
+        operation_name = "list_dis_applications"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/ListDisApplications"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9138,7 +9836,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DisApplicationSummaryCollection")
+                response_type="DisApplicationSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9146,7 +9847,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DisApplicationSummaryCollection")
+                response_type="DisApplicationSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_external_publication_validations(self, workspace_id, task_key, **kwargs):
         """
@@ -9213,6 +9917,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublicationValidations"
         method = "GET"
+        operation_name = "list_external_publication_validations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublicationValidation/ListExternalPublicationValidations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9291,7 +9997,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ExternalPublicationValidationSummaryCollection")
+                response_type="ExternalPublicationValidationSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9299,7 +10008,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ExternalPublicationValidationSummaryCollection")
+                response_type="ExternalPublicationValidationSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_external_publications(self, workspace_id, task_key, **kwargs):
         """
@@ -9363,6 +10075,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublications"
         method = "GET"
+        operation_name = "list_external_publications"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublication/ListExternalPublications"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9439,7 +10153,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ExternalPublicationSummaryCollection")
+                response_type="ExternalPublicationSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9447,7 +10164,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ExternalPublicationSummaryCollection")
+                response_type="ExternalPublicationSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_folders(self, workspace_id, **kwargs):
         """
@@ -9517,6 +10237,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/folders"
         method = "GET"
+        operation_name = "list_folders"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Folder/ListFolders"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9598,7 +10320,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="FolderSummaryCollection")
+                response_type="FolderSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9606,7 +10331,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="FolderSummaryCollection")
+                response_type="FolderSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_function_libraries(self, workspace_id, **kwargs):
         """
@@ -9673,6 +10401,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/functionLibraries"
         method = "GET"
+        operation_name = "list_function_libraries"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/FunctionLibrary/ListFunctionLibraries"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9752,7 +10482,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="FunctionLibrarySummaryCollection")
+                response_type="FunctionLibrarySummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9760,7 +10493,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="FunctionLibrarySummaryCollection")
+                response_type="FunctionLibrarySummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_patch_changes(self, workspace_id, application_key, **kwargs):
         """
@@ -9827,6 +10563,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/patchChanges"
         method = "GET"
+        operation_name = "list_patch_changes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/ListPatchChanges"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9905,7 +10643,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PatchChangeSummaryCollection")
+                response_type="PatchChangeSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9913,7 +10654,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PatchChangeSummaryCollection")
+                response_type="PatchChangeSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_patches(self, workspace_id, application_key, **kwargs):
         """
@@ -9980,6 +10724,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/patches"
         method = "GET"
+        operation_name = "list_patches"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/ListPatches"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10058,7 +10804,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PatchSummaryCollection")
+                response_type="PatchSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10066,7 +10815,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PatchSummaryCollection")
+                response_type="PatchSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_pipeline_validations(self, workspace_id, **kwargs):
         """
@@ -10133,6 +10885,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/pipelineValidations"
         method = "GET"
+        operation_name = "list_pipeline_validations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/PipelineValidation/ListPipelineValidations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10212,7 +10966,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PipelineValidationSummaryCollection")
+                response_type="PipelineValidationSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10220,7 +10977,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PipelineValidationSummaryCollection")
+                response_type="PipelineValidationSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_pipelines(self, workspace_id, **kwargs):
         """
@@ -10287,6 +11047,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/pipelines"
         method = "GET"
+        operation_name = "list_pipelines"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Pipeline/ListPipelines"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10366,7 +11128,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PipelineSummaryCollection")
+                response_type="PipelineSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10374,7 +11139,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PipelineSummaryCollection")
+                response_type="PipelineSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_projects(self, workspace_id, **kwargs):
         """
@@ -10441,6 +11209,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/projects"
         method = "GET"
+        operation_name = "list_projects"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/ListProjects"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10520,7 +11290,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProjectSummaryCollection")
+                response_type="ProjectSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10528,7 +11301,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProjectSummaryCollection")
+                response_type="ProjectSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_published_objects(self, workspace_id, application_key, **kwargs):
         """
@@ -10611,6 +11387,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/publishedObjects"
         method = "GET"
+        operation_name = "list_published_objects"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/ListPublishedObjects"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10697,7 +11475,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PublishedObjectSummaryCollection")
+                response_type="PublishedObjectSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10705,7 +11486,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PublishedObjectSummaryCollection")
+                response_type="PublishedObjectSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_references(self, workspace_id, application_key, **kwargs):
         """
@@ -10766,6 +11550,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/references"
         method = "GET"
+        operation_name = "list_references"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Reference/ListReferences"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10840,7 +11626,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ReferenceSummaryCollection")
+                response_type="ReferenceSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10848,7 +11637,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ReferenceSummaryCollection")
+                response_type="ReferenceSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_schedules(self, workspace_id, application_key, **kwargs):
         """
@@ -10918,6 +11710,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/schedules"
         method = "GET"
+        operation_name = "list_schedules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schedule/ListSchedules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10998,7 +11792,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ScheduleSummaryCollection")
+                response_type="ScheduleSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11006,7 +11803,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ScheduleSummaryCollection")
+                response_type="ScheduleSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_schemas(self, workspace_id, connection_key, schema_resource_name, **kwargs):
         """
@@ -11076,6 +11876,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/connections/{connectionKey}/schemas"
         method = "GET"
+        operation_name = "list_schemas"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schema/ListSchemas"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11155,7 +11957,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SchemaSummaryCollection")
+                response_type="SchemaSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11163,7 +11968,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SchemaSummaryCollection")
+                response_type="SchemaSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_task_run_logs(self, workspace_id, application_key, task_run_key, **kwargs):
         """
@@ -11224,6 +12032,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/taskRuns/{taskRunKey}/logs"
         method = "GET"
+        operation_name = "list_task_run_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRunLogSummary/ListTaskRunLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11297,7 +12107,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TaskRunLogSummary]")
+                response_type="list[TaskRunLogSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11305,7 +12118,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TaskRunLogSummary]")
+                response_type="list[TaskRunLogSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_task_runs(self, workspace_id, application_key, **kwargs):
         """
@@ -11384,6 +12200,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/taskRuns"
         method = "GET"
+        operation_name = "list_task_runs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRun/ListTaskRuns"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11470,7 +12288,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TaskRunSummaryCollection")
+                response_type="TaskRunSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11478,7 +12299,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TaskRunSummaryCollection")
+                response_type="TaskRunSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_task_schedules(self, workspace_id, application_key, **kwargs):
         """
@@ -11551,6 +12375,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/taskSchedules"
         method = "GET"
+        operation_name = "list_task_schedules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskSchedule/ListTaskSchedules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11633,7 +12459,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TaskScheduleSummaryCollection")
+                response_type="TaskScheduleSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11641,7 +12470,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TaskScheduleSummaryCollection")
+                response_type="TaskScheduleSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_task_validations(self, workspace_id, **kwargs):
         """
@@ -11708,6 +12540,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/taskValidations"
         method = "GET"
+        operation_name = "list_task_validations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskValidation/ListTaskValidations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11787,7 +12621,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TaskValidationSummaryCollection")
+                response_type="TaskValidationSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11795,7 +12632,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TaskValidationSummaryCollection")
+                response_type="TaskValidationSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_tasks(self, workspace_id, **kwargs):
         """
@@ -11868,6 +12708,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/tasks"
         method = "GET"
+        operation_name = "list_tasks"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Task/ListTasks"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11951,7 +12793,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TaskSummaryCollection")
+                response_type="TaskSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11959,7 +12804,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TaskSummaryCollection")
+                response_type="TaskSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_user_defined_function_validations(self, workspace_id, **kwargs):
         """
@@ -12026,6 +12874,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/userDefinedFunctionValidations"
         method = "GET"
+        operation_name = "list_user_defined_function_validations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunctionValidation/ListUserDefinedFunctionValidations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12105,7 +12955,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="UserDefinedFunctionValidationSummaryCollection")
+                response_type="UserDefinedFunctionValidationSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12113,7 +12966,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="UserDefinedFunctionValidationSummaryCollection")
+                response_type="UserDefinedFunctionValidationSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_user_defined_functions(self, workspace_id, **kwargs):
         """
@@ -12180,6 +13036,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/userDefinedFunctions"
         method = "GET"
+        operation_name = "list_user_defined_functions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunction/ListUserDefinedFunctions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12259,7 +13117,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="UserDefinedFunctionSummaryCollection")
+                response_type="UserDefinedFunctionSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12267,7 +13128,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="UserDefinedFunctionSummaryCollection")
+                response_type="UserDefinedFunctionSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -12322,6 +13186,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/workRequestErrors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/WorkRequest/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12393,7 +13259,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12401,7 +13270,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -12456,6 +13328,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/WorkRequest/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12527,7 +13401,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLogEntry]")
+                response_type="list[WorkRequestLogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12535,7 +13412,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLogEntry]")
+                response_type="list[WorkRequestLogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -12598,6 +13478,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12670,14 +13552,20 @@ class DataIntegrationClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestSummary]")
+                response_type="list[WorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestSummary]")
+                response_type="list[WorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_workspaces(self, compartment_id, **kwargs):
         """
@@ -12740,6 +13628,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces"
         method = "GET"
+        operation_name = "list_workspaces"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/ListWorkspaces"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12812,14 +13702,20 @@ class DataIntegrationClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkspaceSummary]")
+                response_type="list[WorkspaceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkspaceSummary]")
+                response_type="list[WorkspaceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def start_workspace(self, workspace_id, **kwargs):
         """
@@ -12862,6 +13758,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/actions/start"
         method = "POST"
+        operation_name = "start_workspace"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/StartWorkspace"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12910,13 +13808,19 @@ class DataIntegrationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def stop_workspace(self, workspace_id, **kwargs):
         """
@@ -12965,6 +13869,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/actions/stop"
         method = "POST"
+        operation_name = "stop_workspace"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/StopWorkspace"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13022,14 +13928,20 @@ class DataIntegrationClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_application(self, workspace_id, application_key, update_application_details, **kwargs):
         """
@@ -13075,6 +13987,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}"
         method = "PUT"
+        operation_name = "update_application"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Application/UpdateApplication"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13123,7 +14037,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_application_details,
-                response_type="Application")
+                response_type="Application",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13131,7 +14048,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_application_details,
-                response_type="Application")
+                response_type="Application",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_connection(self, workspace_id, connection_key, update_connection_details, **kwargs):
         """
@@ -13177,6 +14097,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/connections/{connectionKey}"
         method = "PUT"
+        operation_name = "update_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Connection/UpdateConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13225,7 +14147,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_connection_details,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13233,7 +14158,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_connection_details,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_data_asset(self, workspace_id, data_asset_key, update_data_asset_details, **kwargs):
         """
@@ -13279,6 +14207,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/dataAssets/{dataAssetKey}"
         method = "PUT"
+        operation_name = "update_data_asset"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataAsset/UpdateDataAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13327,7 +14257,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_data_asset_details,
-                response_type="DataAsset")
+                response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13335,7 +14268,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_data_asset_details,
-                response_type="DataAsset")
+                response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_data_flow(self, workspace_id, data_flow_key, update_data_flow_details, **kwargs):
         """
@@ -13381,6 +14317,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/dataFlows/{dataFlowKey}"
         method = "PUT"
+        operation_name = "update_data_flow"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DataFlow/UpdateDataFlow"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13429,7 +14367,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_data_flow_details,
-                response_type="DataFlow")
+                response_type="DataFlow",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13437,7 +14378,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_data_flow_details,
-                response_type="DataFlow")
+                response_type="DataFlow",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_dis_application(self, workspace_id, dis_application_id, update_dis_application_details, **kwargs):
         """
@@ -13483,6 +14427,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/disApplications/{disApplicationId}"
         method = "PUT"
+        operation_name = "update_dis_application"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/DisApplication/UpdateDisApplication"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13531,7 +14477,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_dis_application_details,
-                response_type="DisApplication")
+                response_type="DisApplication",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13539,7 +14488,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_dis_application_details,
-                response_type="DisApplication")
+                response_type="DisApplication",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_external_publication(self, workspace_id, task_key, external_publications_key, update_external_publication_details, **kwargs):
         """
@@ -13588,6 +14540,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublications/{externalPublicationsKey}"
         method = "PUT"
+        operation_name = "update_external_publication"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExternalPublication/UpdateExternalPublication"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13637,7 +14591,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_external_publication_details,
-                response_type="ExternalPublication")
+                response_type="ExternalPublication",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13645,7 +14602,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_external_publication_details,
-                response_type="ExternalPublication")
+                response_type="ExternalPublication",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_folder(self, workspace_id, folder_key, update_folder_details, **kwargs):
         """
@@ -13691,6 +14651,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/folders/{folderKey}"
         method = "PUT"
+        operation_name = "update_folder"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Folder/UpdateFolder"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13739,7 +14701,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_folder_details,
-                response_type="Folder")
+                response_type="Folder",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13747,7 +14712,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_folder_details,
-                response_type="Folder")
+                response_type="Folder",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_function_library(self, workspace_id, function_library_key, update_function_library_details, **kwargs):
         """
@@ -13793,6 +14761,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/functionLibraries/{functionLibraryKey}"
         method = "PUT"
+        operation_name = "update_function_library"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/FunctionLibrary/UpdateFunctionLibrary"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13841,7 +14811,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_function_library_details,
-                response_type="FunctionLibrary")
+                response_type="FunctionLibrary",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13849,7 +14822,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_function_library_details,
-                response_type="FunctionLibrary")
+                response_type="FunctionLibrary",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_pipeline(self, workspace_id, pipeline_key, update_pipeline_details, **kwargs):
         """
@@ -13895,6 +14871,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/pipelines/{pipelineKey}"
         method = "PUT"
+        operation_name = "update_pipeline"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Pipeline/UpdatePipeline"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13943,7 +14921,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_pipeline_details,
-                response_type="Pipeline")
+                response_type="Pipeline",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13951,7 +14932,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_pipeline_details,
-                response_type="Pipeline")
+                response_type="Pipeline",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_project(self, workspace_id, project_key, update_project_details, **kwargs):
         """
@@ -13997,6 +14981,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/projects/{projectKey}"
         method = "PUT"
+        operation_name = "update_project"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Project/UpdateProject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14045,7 +15031,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_project_details,
-                response_type="Project")
+                response_type="Project",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14053,7 +15042,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_project_details,
-                response_type="Project")
+                response_type="Project",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_reference(self, workspace_id, application_key, reference_key, update_reference_details, **kwargs):
         """
@@ -14105,6 +15097,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/references/{referenceKey}"
         method = "PUT"
+        operation_name = "update_reference"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Reference/UpdateReference"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14157,7 +15151,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_reference_details,
-                response_type="Reference")
+                response_type="Reference",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14165,7 +15162,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_reference_details,
-                response_type="Reference")
+                response_type="Reference",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_schedule(self, workspace_id, application_key, schedule_key, update_schedule_details, **kwargs):
         """
@@ -14214,6 +15214,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/schedules/{scheduleKey}"
         method = "PUT"
+        operation_name = "update_schedule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Schedule/UpdateSchedule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14263,7 +15265,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_schedule_details,
-                response_type="Schedule")
+                response_type="Schedule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14271,7 +15276,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_schedule_details,
-                response_type="Schedule")
+                response_type="Schedule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_task(self, workspace_id, task_key, update_task_details, **kwargs):
         """
@@ -14317,6 +15325,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}"
         method = "PUT"
+        operation_name = "update_task"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Task/UpdateTask"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14365,7 +15375,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_task_details,
-                response_type="Task")
+                response_type="Task",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14373,7 +15386,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_task_details,
-                response_type="Task")
+                response_type="Task",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_task_run(self, workspace_id, application_key, task_run_key, update_task_run_details, **kwargs):
         """
@@ -14422,6 +15438,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/taskRuns/{taskRunKey}"
         method = "PUT"
+        operation_name = "update_task_run"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRun/UpdateTaskRun"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14471,7 +15489,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_task_run_details,
-                response_type="TaskRunDetails")
+                response_type="TaskRunDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14479,7 +15500,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_task_run_details,
-                response_type="TaskRunDetails")
+                response_type="TaskRunDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_task_schedule(self, workspace_id, application_key, task_schedule_key, update_task_schedule_details, **kwargs):
         """
@@ -14528,6 +15552,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/taskSchedules/{taskScheduleKey}"
         method = "PUT"
+        operation_name = "update_task_schedule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskSchedule/UpdateTaskSchedule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14577,7 +15603,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_task_schedule_details,
-                response_type="TaskSchedule")
+                response_type="TaskSchedule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14585,7 +15614,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_task_schedule_details,
-                response_type="TaskSchedule")
+                response_type="TaskSchedule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_user_defined_function(self, workspace_id, user_defined_function_key, update_user_defined_function_details, **kwargs):
         """
@@ -14631,6 +15663,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}/userDefinedFunctions/{userDefinedFunctionKey}"
         method = "PUT"
+        operation_name = "update_user_defined_function"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/UserDefinedFunction/UpdateUserDefinedFunction"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14679,7 +15713,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_user_defined_function_details,
-                response_type="UserDefinedFunction")
+                response_type="UserDefinedFunction",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14687,7 +15724,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_user_defined_function_details,
-                response_type="UserDefinedFunction")
+                response_type="UserDefinedFunction",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_workspace(self, workspace_id, update_workspace_details, **kwargs):
         """
@@ -14730,6 +15770,8 @@ class DataIntegrationClient(object):
         """
         resource_path = "/workspaces/{workspaceId}"
         method = "PUT"
+        operation_name = "update_workspace"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/UpdateWorkspace"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14777,7 +15819,10 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_workspace_details,
-                response_type="Workspace")
+                response_type="Workspace",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14785,4 +15830,7 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_workspace_details,
-                response_type="Workspace")
+                response_type="Workspace",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

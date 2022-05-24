@@ -154,6 +154,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/exadataInsights/{exadataInsightId}/actions/addMembers"
         method = "POST"
+        operation_name = "add_exadata_insight_members"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/AddExadataInsightMembers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -205,14 +207,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=add_exadata_insight_members_details)
+                body=add_exadata_insight_members_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=add_exadata_insight_members_details)
+                body=add_exadata_insight_members_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_database_insight_compartment(self, database_insight_id, change_database_insight_compartment_details, **kwargs):
         """
@@ -262,6 +270,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights/{databaseInsightId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_database_insight_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ChangeDatabaseInsightCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -313,14 +323,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_database_insight_compartment_details)
+                body=change_database_insight_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_database_insight_compartment_details)
+                body=change_database_insight_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_enterprise_manager_bridge_compartment(self, enterprise_manager_bridge_id, change_enterprise_manager_bridge_compartment_details, **kwargs):
         """
@@ -362,6 +378,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/enterpriseManagerBridges/{enterpriseManagerBridgeId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_enterprise_manager_bridge_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/ChangeEnterpriseManagerBridgeCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -410,14 +428,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_enterprise_manager_bridge_compartment_details)
+                body=change_enterprise_manager_bridge_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_enterprise_manager_bridge_compartment_details)
+                body=change_enterprise_manager_bridge_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_exadata_insight_compartment(self, exadata_insight_id, change_exadata_insight_compartment_details, **kwargs):
         """
@@ -467,6 +491,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/exadataInsights/{exadataInsightId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_exadata_insight_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/ChangeExadataInsightCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -518,14 +544,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_exadata_insight_compartment_details)
+                body=change_exadata_insight_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_exadata_insight_compartment_details)
+                body=change_exadata_insight_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_host_insight_compartment(self, host_insight_id, change_host_insight_compartment_details, **kwargs):
         """
@@ -575,6 +607,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/hostInsights/{hostInsightId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_host_insight_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/ChangeHostInsightCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -626,14 +660,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_host_insight_compartment_details)
+                body=change_host_insight_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_host_insight_compartment_details)
+                body=change_host_insight_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_operations_insights_private_endpoint_compartment(self, operations_insights_private_endpoint_id, change_operations_insights_private_endpoint_compartment_details, **kwargs):
         """
@@ -685,6 +725,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/operationsInsightsPrivateEndpoints/{operationsInsightsPrivateEndpointId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_operations_insights_private_endpoint_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpoint/ChangeOperationsInsightsPrivateEndpointCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -736,14 +778,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_operations_insights_private_endpoint_compartment_details)
+                body=change_operations_insights_private_endpoint_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_operations_insights_private_endpoint_compartment_details)
+                body=change_operations_insights_private_endpoint_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_pe_comanaged_database_insight(self, database_insight_id, change_pe_comanaged_database_insight_details, **kwargs):
         """
@@ -793,6 +841,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights/{databaseInsightId}/actions/changePeComanagedDatabaseInsightDetails"
         method = "POST"
+        operation_name = "change_pe_comanaged_database_insight"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ChangePeComanagedDatabaseInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -844,14 +894,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_pe_comanaged_database_insight_details)
+                body=change_pe_comanaged_database_insight_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_pe_comanaged_database_insight_details)
+                body=change_pe_comanaged_database_insight_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_awr_hub(self, create_awr_hub_details, **kwargs):
         """
@@ -894,6 +950,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/awrHubs"
         method = "POST"
+        operation_name = "create_awr_hub"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/CreateAwrHub"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -933,14 +991,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_awr_hub_details,
-                response_type="AwrHub")
+                response_type="AwrHub",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_awr_hub_details,
-                response_type="AwrHub")
+                response_type="AwrHub",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_database_insight(self, create_database_insight_details, **kwargs):
         """
@@ -982,6 +1046,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights"
         method = "POST"
+        operation_name = "create_database_insight"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/CreateDatabaseInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1021,14 +1087,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_database_insight_details,
-                response_type="DatabaseInsight")
+                response_type="DatabaseInsight",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_database_insight_details,
-                response_type="DatabaseInsight")
+                response_type="DatabaseInsight",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_enterprise_manager_bridge(self, create_enterprise_manager_bridge_details, **kwargs):
         """
@@ -1070,6 +1142,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/enterpriseManagerBridges"
         method = "POST"
+        operation_name = "create_enterprise_manager_bridge"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/CreateEnterpriseManagerBridge"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1109,14 +1183,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_enterprise_manager_bridge_details,
-                response_type="EnterpriseManagerBridge")
+                response_type="EnterpriseManagerBridge",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_enterprise_manager_bridge_details,
-                response_type="EnterpriseManagerBridge")
+                response_type="EnterpriseManagerBridge",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_exadata_insight(self, create_exadata_insight_details, **kwargs):
         """
@@ -1158,6 +1238,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/exadataInsights"
         method = "POST"
+        operation_name = "create_exadata_insight"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/CreateExadataInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1197,14 +1279,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_exadata_insight_details,
-                response_type="ExadataInsight")
+                response_type="ExadataInsight",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_exadata_insight_details,
-                response_type="ExadataInsight")
+                response_type="ExadataInsight",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_host_insight(self, create_host_insight_details, **kwargs):
         """
@@ -1246,6 +1334,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/hostInsights"
         method = "POST"
+        operation_name = "create_host_insight"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/CreateHostInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1285,14 +1375,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_host_insight_details,
-                response_type="HostInsight")
+                response_type="HostInsight",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_host_insight_details,
-                response_type="HostInsight")
+                response_type="HostInsight",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_operations_insights_private_endpoint(self, create_operations_insights_private_endpoint_details, **kwargs):
         """
@@ -1335,6 +1431,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/operationsInsightsPrivateEndpoints"
         method = "POST"
+        operation_name = "create_operations_insights_private_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpoint/CreateOperationsInsightsPrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1374,14 +1472,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_operations_insights_private_endpoint_details,
-                response_type="OperationsInsightsPrivateEndpoint")
+                response_type="OperationsInsightsPrivateEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_operations_insights_private_endpoint_details,
-                response_type="OperationsInsightsPrivateEndpoint")
+                response_type="OperationsInsightsPrivateEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_operations_insights_warehouse(self, create_operations_insights_warehouse_details, **kwargs):
         """
@@ -1425,6 +1529,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/operationsInsightsWarehouses"
         method = "POST"
+        operation_name = "create_operations_insights_warehouse"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/CreateOperationsInsightsWarehouse"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1464,14 +1570,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_operations_insights_warehouse_details,
-                response_type="OperationsInsightsWarehouse")
+                response_type="OperationsInsightsWarehouse",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_operations_insights_warehouse_details,
-                response_type="OperationsInsightsWarehouse")
+                response_type="OperationsInsightsWarehouse",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_operations_insights_warehouse_user(self, create_operations_insights_warehouse_user_details, **kwargs):
         """
@@ -1514,6 +1626,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/operationsInsightsWarehouseUsers"
         method = "POST"
+        operation_name = "create_operations_insights_warehouse_user"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouseUsers/CreateOperationsInsightsWarehouseUser"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1553,14 +1667,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_operations_insights_warehouse_user_details,
-                response_type="OperationsInsightsWarehouseUser")
+                response_type="OperationsInsightsWarehouseUser",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_operations_insights_warehouse_user_details,
-                response_type="OperationsInsightsWarehouseUser")
+                response_type="OperationsInsightsWarehouseUser",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_awr_hub(self, awr_hub_id, **kwargs):
         """
@@ -1599,6 +1719,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/awrHubs/{awrHubId}"
         method = "DELETE"
+        operation_name = "delete_awr_hub"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/DeleteAwrHub"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1646,13 +1768,19 @@ class OperationsInsightsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_database_insight(self, database_insight_id, **kwargs):
         """
@@ -1691,6 +1819,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights/{databaseInsightId}"
         method = "DELETE"
+        operation_name = "delete_database_insight"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/DeleteDatabaseInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1738,13 +1868,19 @@ class OperationsInsightsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_enterprise_manager_bridge(self, enterprise_manager_bridge_id, **kwargs):
         """
@@ -1783,6 +1919,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/enterpriseManagerBridges/{enterpriseManagerBridgeId}"
         method = "DELETE"
+        operation_name = "delete_enterprise_manager_bridge"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/DeleteEnterpriseManagerBridge"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1830,13 +1968,19 @@ class OperationsInsightsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_exadata_insight(self, exadata_insight_id, **kwargs):
         """
@@ -1875,6 +2019,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/exadataInsights/{exadataInsightId}"
         method = "DELETE"
+        operation_name = "delete_exadata_insight"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/DeleteExadataInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1922,13 +2068,19 @@ class OperationsInsightsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_host_insight(self, host_insight_id, **kwargs):
         """
@@ -1967,6 +2119,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/hostInsights/{hostInsightId}"
         method = "DELETE"
+        operation_name = "delete_host_insight"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/DeleteHostInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2014,13 +2168,19 @@ class OperationsInsightsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_operations_insights_private_endpoint(self, operations_insights_private_endpoint_id, **kwargs):
         """
@@ -2061,6 +2221,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/operationsInsightsPrivateEndpoints/{operationsInsightsPrivateEndpointId}"
         method = "DELETE"
+        operation_name = "delete_operations_insights_private_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpoint/DeleteOperationsInsightsPrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2108,13 +2270,19 @@ class OperationsInsightsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_operations_insights_warehouse(self, operations_insights_warehouse_id, **kwargs):
         """
@@ -2156,6 +2324,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/operationsInsightsWarehouses/{operationsInsightsWarehouseId}"
         method = "DELETE"
+        operation_name = "delete_operations_insights_warehouse"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/DeleteOperationsInsightsWarehouse"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2203,13 +2373,19 @@ class OperationsInsightsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_operations_insights_warehouse_user(self, operations_insights_warehouse_user_id, **kwargs):
         """
@@ -2248,6 +2424,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/operationsInsightsWarehouseUsers/{operationsInsightsWarehouseUserId}"
         method = "DELETE"
+        operation_name = "delete_operations_insights_warehouse_user"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouseUsers/DeleteOperationsInsightsWarehouseUser"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2295,13 +2473,19 @@ class OperationsInsightsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def disable_database_insight(self, database_insight_id, **kwargs):
         """
@@ -2348,6 +2532,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights/{databaseInsightId}/actions/disable"
         method = "POST"
+        operation_name = "disable_database_insight"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/DisableDatabaseInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2398,13 +2584,19 @@ class OperationsInsightsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def disable_exadata_insight(self, exadata_insight_id, **kwargs):
         """
@@ -2451,6 +2643,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/exadataInsights/{exadataInsightId}/actions/disable"
         method = "POST"
+        operation_name = "disable_exadata_insight"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/DisableExadataInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2501,13 +2695,19 @@ class OperationsInsightsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def disable_host_insight(self, host_insight_id, **kwargs):
         """
@@ -2554,6 +2754,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/hostInsights/{hostInsightId}/actions/disable"
         method = "POST"
+        operation_name = "disable_host_insight"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/DisableHostInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2604,13 +2806,19 @@ class OperationsInsightsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def download_operations_insights_warehouse_wallet(self, operations_insights_warehouse_id, download_operations_insights_warehouse_wallet_details, **kwargs):
         """
@@ -2655,6 +2863,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/operationsInsightsWarehouses/{operationsInsightsWarehouseId}/actions/downloadWarehouseWallet"
         method = "POST"
+        operation_name = "download_operations_insights_warehouse_wallet"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/DownloadOperationsInsightsWarehouseWallet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2705,7 +2915,10 @@ class OperationsInsightsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=download_operations_insights_warehouse_wallet_details,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2713,7 +2926,10 @@ class OperationsInsightsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=download_operations_insights_warehouse_wallet_details,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def enable_database_insight(self, enable_database_insight_details, database_insight_id, **kwargs):
         """
@@ -2763,6 +2979,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights/{databaseInsightId}/actions/enable"
         method = "POST"
+        operation_name = "enable_database_insight"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/EnableDatabaseInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2814,14 +3032,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=enable_database_insight_details)
+                body=enable_database_insight_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=enable_database_insight_details)
+                body=enable_database_insight_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def enable_exadata_insight(self, enable_exadata_insight_details, exadata_insight_id, **kwargs):
         """
@@ -2871,6 +3095,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/exadataInsights/{exadataInsightId}/actions/enable"
         method = "POST"
+        operation_name = "enable_exadata_insight"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/EnableExadataInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2922,14 +3148,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=enable_exadata_insight_details)
+                body=enable_exadata_insight_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=enable_exadata_insight_details)
+                body=enable_exadata_insight_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def enable_host_insight(self, enable_host_insight_details, host_insight_id, **kwargs):
         """
@@ -2979,6 +3211,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/hostInsights/{hostInsightId}/actions/enable"
         method = "POST"
+        operation_name = "enable_host_insight"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/EnableHostInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3030,14 +3264,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=enable_host_insight_details)
+                body=enable_host_insight_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=enable_host_insight_details)
+                body=enable_host_insight_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_awr_hub(self, awr_hub_id, **kwargs):
         """
@@ -3071,6 +3311,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/awrHubs/{awrHubId}"
         method = "GET"
+        operation_name = "get_awr_hub"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/GetAwrHub"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3117,14 +3359,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AwrHub")
+                response_type="AwrHub",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AwrHub")
+                response_type="AwrHub",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_awr_report(self, awr_hub_id, awr_source_database_identifier, **kwargs):
         """
@@ -3182,6 +3430,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/awrHubs/{awrHubId}/awrReport"
         method = "GET"
+        operation_name = "get_awr_report"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/GetAwrReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3253,7 +3503,10 @@ class OperationsInsightsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrReport")
+                response_type="AwrReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3261,7 +3514,10 @@ class OperationsInsightsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrReport")
+                response_type="AwrReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_database_insight(self, database_insight_id, **kwargs):
         """
@@ -3295,6 +3551,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights/{databaseInsightId}"
         method = "GET"
+        operation_name = "get_database_insight"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/GetDatabaseInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3341,14 +3599,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DatabaseInsight")
+                response_type="DatabaseInsight",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DatabaseInsight")
+                response_type="DatabaseInsight",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_enterprise_manager_bridge(self, enterprise_manager_bridge_id, **kwargs):
         """
@@ -3382,6 +3646,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/enterpriseManagerBridges/{enterpriseManagerBridgeId}"
         method = "GET"
+        operation_name = "get_enterprise_manager_bridge"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/GetEnterpriseManagerBridge"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3428,14 +3694,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="EnterpriseManagerBridge")
+                response_type="EnterpriseManagerBridge",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="EnterpriseManagerBridge")
+                response_type="EnterpriseManagerBridge",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_exadata_insight(self, exadata_insight_id, **kwargs):
         """
@@ -3469,6 +3741,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/exadataInsights/{exadataInsightId}"
         method = "GET"
+        operation_name = "get_exadata_insight"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/GetExadataInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3515,14 +3789,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ExadataInsight")
+                response_type="ExadataInsight",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ExadataInsight")
+                response_type="ExadataInsight",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_host_insight(self, host_insight_id, **kwargs):
         """
@@ -3556,6 +3836,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/hostInsights/{hostInsightId}"
         method = "GET"
+        operation_name = "get_host_insight"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/GetHostInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3602,14 +3884,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="HostInsight")
+                response_type="HostInsight",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="HostInsight")
+                response_type="HostInsight",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_operations_insights_private_endpoint(self, operations_insights_private_endpoint_id, **kwargs):
         """
@@ -3645,6 +3933,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/operationsInsightsPrivateEndpoints/{operationsInsightsPrivateEndpointId}"
         method = "GET"
+        operation_name = "get_operations_insights_private_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpoint/GetOperationsInsightsPrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3691,14 +3981,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="OperationsInsightsPrivateEndpoint")
+                response_type="OperationsInsightsPrivateEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="OperationsInsightsPrivateEndpoint")
+                response_type="OperationsInsightsPrivateEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_operations_insights_warehouse(self, operations_insights_warehouse_id, **kwargs):
         """
@@ -3733,6 +4029,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/operationsInsightsWarehouses/{operationsInsightsWarehouseId}"
         method = "GET"
+        operation_name = "get_operations_insights_warehouse"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/GetOperationsInsightsWarehouse"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3779,14 +4077,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="OperationsInsightsWarehouse")
+                response_type="OperationsInsightsWarehouse",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="OperationsInsightsWarehouse")
+                response_type="OperationsInsightsWarehouse",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_operations_insights_warehouse_user(self, operations_insights_warehouse_user_id, **kwargs):
         """
@@ -3820,6 +4124,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/operationsInsightsWarehouseUsers/{operationsInsightsWarehouseUserId}"
         method = "GET"
+        operation_name = "get_operations_insights_warehouse_user"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouseUsers/GetOperationsInsightsWarehouseUser"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3866,14 +4172,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="OperationsInsightsWarehouseUser")
+                response_type="OperationsInsightsWarehouseUser",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="OperationsInsightsWarehouseUser")
+                response_type="OperationsInsightsWarehouseUser",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -3907,6 +4219,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/WorkRequests/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3953,14 +4267,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def ingest_database_configuration(self, ingest_database_configuration_details, **kwargs):
         """
@@ -4017,6 +4337,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights/actions/ingestDatabaseConfiguration"
         method = "POST"
+        operation_name = "ingest_database_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestDatabaseConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4067,7 +4389,10 @@ class OperationsInsightsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=ingest_database_configuration_details,
-                response_type="IngestDatabaseConfigurationResponseDetails")
+                response_type="IngestDatabaseConfigurationResponseDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4075,7 +4400,10 @@ class OperationsInsightsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=ingest_database_configuration_details,
-                response_type="IngestDatabaseConfigurationResponseDetails")
+                response_type="IngestDatabaseConfigurationResponseDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def ingest_host_configuration(self, id, ingest_host_configuration_details, **kwargs):
         """
@@ -4127,6 +4455,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/hostInsights/actions/ingestHostConfiguration"
         method = "POST"
+        operation_name = "ingest_host_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/IngestHostConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4174,7 +4504,10 @@ class OperationsInsightsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=ingest_host_configuration_details,
-                response_type="IngestHostConfigurationResponseDetails")
+                response_type="IngestHostConfigurationResponseDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4182,7 +4515,10 @@ class OperationsInsightsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=ingest_host_configuration_details,
-                response_type="IngestHostConfigurationResponseDetails")
+                response_type="IngestHostConfigurationResponseDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def ingest_host_metrics(self, id, ingest_host_metrics_details, **kwargs):
         """
@@ -4234,6 +4570,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/hostInsights/actions/ingestHostMetrics"
         method = "POST"
+        operation_name = "ingest_host_metrics"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/IngestHostMetrics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4281,7 +4619,10 @@ class OperationsInsightsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=ingest_host_metrics_details,
-                response_type="IngestHostMetricsResponseDetails")
+                response_type="IngestHostMetricsResponseDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4289,7 +4630,10 @@ class OperationsInsightsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=ingest_host_metrics_details,
-                response_type="IngestHostMetricsResponseDetails")
+                response_type="IngestHostMetricsResponseDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def ingest_sql_bucket(self, ingest_sql_bucket_details, **kwargs):
         """
@@ -4352,6 +4696,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights/actions/ingestSqlBucket"
         method = "POST"
+        operation_name = "ingest_sql_bucket"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestSqlBucket"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4404,7 +4750,10 @@ class OperationsInsightsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=ingest_sql_bucket_details,
-                response_type="IngestSqlBucketResponseDetails")
+                response_type="IngestSqlBucketResponseDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4412,7 +4761,10 @@ class OperationsInsightsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=ingest_sql_bucket_details,
-                response_type="IngestSqlBucketResponseDetails")
+                response_type="IngestSqlBucketResponseDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def ingest_sql_plan_lines(self, ingest_sql_plan_lines_details, **kwargs):
         """
@@ -4475,6 +4827,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights/actions/ingestSqlPlanLines"
         method = "POST"
+        operation_name = "ingest_sql_plan_lines"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestSqlPlanLines"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4527,7 +4881,10 @@ class OperationsInsightsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=ingest_sql_plan_lines_details,
-                response_type="IngestSqlPlanLinesResponseDetails")
+                response_type="IngestSqlPlanLinesResponseDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4535,7 +4892,10 @@ class OperationsInsightsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=ingest_sql_plan_lines_details,
-                response_type="IngestSqlPlanLinesResponseDetails")
+                response_type="IngestSqlPlanLinesResponseDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def ingest_sql_stats(self, ingest_sql_stats_details, **kwargs):
         """
@@ -4593,6 +4953,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights/actions/ingestSqlStatsMetric"
         method = "POST"
+        operation_name = "ingest_sql_stats"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestSqlStats"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4643,7 +5005,10 @@ class OperationsInsightsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=ingest_sql_stats_details,
-                response_type="IngestSqlStatsResponseDetails")
+                response_type="IngestSqlStatsResponseDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4651,7 +5016,10 @@ class OperationsInsightsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=ingest_sql_stats_details,
-                response_type="IngestSqlStatsResponseDetails")
+                response_type="IngestSqlStatsResponseDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def ingest_sql_text(self, ingest_sql_text_details, **kwargs):
         """
@@ -4715,6 +5083,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights/actions/ingestSqlText"
         method = "POST"
+        operation_name = "ingest_sql_text"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestSqlText"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4767,7 +5137,10 @@ class OperationsInsightsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=ingest_sql_text_details,
-                response_type="IngestSqlTextResponseDetails")
+                response_type="IngestSqlTextResponseDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4775,7 +5148,10 @@ class OperationsInsightsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=ingest_sql_text_details,
-                response_type="IngestSqlTextResponseDetails")
+                response_type="IngestSqlTextResponseDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_awr_hubs(self, operations_insights_warehouse_id, **kwargs):
         """
@@ -4851,6 +5227,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/awrHubs"
         method = "GET"
+        operation_name = "list_awr_hubs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/ListAwrHubs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4930,14 +5308,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrHubSummaryCollection")
+                response_type="AwrHubSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrHubSummaryCollection")
+                response_type="AwrHubSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_awr_snapshots(self, awr_hub_id, awr_source_database_identifier, **kwargs):
         """
@@ -5007,6 +5391,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/awrHubs/{awrHubId}/awrSnapshots"
         method = "GET"
+        operation_name = "list_awr_snapshots"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/ListAwrSnapshots"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5085,7 +5471,10 @@ class OperationsInsightsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrSnapshotCollection")
+                response_type="AwrSnapshotCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5093,7 +5482,10 @@ class OperationsInsightsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AwrSnapshotCollection")
+                response_type="AwrSnapshotCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_database_configurations(self, **kwargs):
         """
@@ -5214,6 +5606,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights/databaseConfigurations"
         method = "GET"
+        operation_name = "list_database_configurations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListDatabaseConfigurations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5310,14 +5704,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DatabaseConfigurationCollection")
+                response_type="DatabaseConfigurationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DatabaseConfigurationCollection")
+                response_type="DatabaseConfigurationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_database_insights(self, **kwargs):
         """
@@ -5425,6 +5825,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights"
         method = "GET"
+        operation_name = "list_database_insights"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListDatabaseInsights"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5541,14 +5943,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DatabaseInsightsCollection")
+                response_type="DatabaseInsightsCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DatabaseInsightsCollection")
+                response_type="DatabaseInsightsCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_enterprise_manager_bridges(self, **kwargs):
         """
@@ -5625,6 +6033,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/enterpriseManagerBridges"
         method = "GET"
+        operation_name = "list_enterprise_manager_bridges"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/ListEnterpriseManagerBridges"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5705,14 +6115,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="EnterpriseManagerBridgeCollection")
+                response_type="EnterpriseManagerBridgeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="EnterpriseManagerBridgeCollection")
+                response_type="EnterpriseManagerBridgeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_exadata_configurations(self, **kwargs):
         """
@@ -5808,6 +6224,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/exadataInsights/exadataConfigurations"
         method = "GET"
+        operation_name = "list_exadata_configurations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/ListExadataConfigurations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5884,14 +6302,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ExadataConfigurationCollection")
+                response_type="ExadataConfigurationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ExadataConfigurationCollection")
+                response_type="ExadataConfigurationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_exadata_insights(self, **kwargs):
         """
@@ -5979,6 +6403,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/exadataInsights"
         method = "GET"
+        operation_name = "list_exadata_insights"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/ListExadataInsights"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6071,14 +6497,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ExadataInsightSummaryCollection")
+                response_type="ExadataInsightSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ExadataInsightSummaryCollection")
+                response_type="ExadataInsightSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_host_configurations(self, **kwargs):
         """
@@ -6189,6 +6621,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/hostInsights/hostConfigurations"
         method = "GET"
+        operation_name = "list_host_configurations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/ListHostConfigurations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6279,14 +6713,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="HostConfigurationCollection")
+                response_type="HostConfigurationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="HostConfigurationCollection")
+                response_type="HostConfigurationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_host_insights(self, **kwargs):
         """
@@ -6386,6 +6826,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/hostInsights"
         method = "GET"
+        operation_name = "list_host_insights"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/ListHostInsights"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6490,14 +6932,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="HostInsightSummaryCollection")
+                response_type="HostInsightSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="HostInsightSummaryCollection")
+                response_type="HostInsightSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_hosted_entities(self, compartment_id, id, **kwargs):
         """
@@ -6595,6 +7043,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/hostInsights/hostedEntities"
         method = "GET"
+        operation_name = "list_hosted_entities"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/ListHostedEntities"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6677,14 +7127,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="HostedEntityCollection")
+                response_type="HostedEntityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="HostedEntityCollection")
+                response_type="HostedEntityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_importable_agent_entities(self, compartment_id, **kwargs):
         """
@@ -6750,6 +7206,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/importableAgentEntities"
         method = "GET"
+        operation_name = "list_importable_agent_entities"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/ListImportableAgentEntities"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6813,14 +7271,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ImportableAgentEntitySummaryCollection")
+                response_type="ImportableAgentEntitySummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ImportableAgentEntitySummaryCollection")
+                response_type="ImportableAgentEntitySummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_importable_enterprise_manager_entities(self, enterprise_manager_bridge_id, **kwargs):
         """
@@ -6879,6 +7343,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/enterpriseManagerBridges/{enterpriseManagerBridgeId}/importableEnterpriseManagerEntities"
         method = "GET"
+        operation_name = "list_importable_enterprise_manager_entities"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/ListImportableEnterpriseManagerEntities"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6940,7 +7406,10 @@ class OperationsInsightsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ImportableEnterpriseManagerEntityCollection")
+                response_type="ImportableEnterpriseManagerEntityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6948,7 +7417,10 @@ class OperationsInsightsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ImportableEnterpriseManagerEntityCollection")
+                response_type="ImportableEnterpriseManagerEntityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_operations_insights_private_endpoints(self, **kwargs):
         """
@@ -7032,6 +7504,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/operationsInsightsPrivateEndpoints"
         method = "GET"
+        operation_name = "list_operations_insights_private_endpoints"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpointCollection/ListOperationsInsightsPrivateEndpoints"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7116,14 +7590,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="OperationsInsightsPrivateEndpointCollection")
+                response_type="OperationsInsightsPrivateEndpointCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="OperationsInsightsPrivateEndpointCollection")
+                response_type="OperationsInsightsPrivateEndpointCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_operations_insights_warehouse_users(self, operations_insights_warehouse_id, **kwargs):
         """
@@ -7199,6 +7679,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/operationsInsightsWarehouseUsers"
         method = "GET"
+        operation_name = "list_operations_insights_warehouse_users"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouseUsers/ListOperationsInsightsWarehouseUsers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7278,14 +7760,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="OperationsInsightsWarehouseUserSummaryCollection")
+                response_type="OperationsInsightsWarehouseUserSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="OperationsInsightsWarehouseUserSummaryCollection")
+                response_type="OperationsInsightsWarehouseUserSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_operations_insights_warehouses(self, **kwargs):
         """
@@ -7359,6 +7847,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/operationsInsightsWarehouses"
         method = "GET"
+        operation_name = "list_operations_insights_warehouses"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/ListOperationsInsightsWarehouses"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7437,14 +7927,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="OperationsInsightsWarehouseSummaryCollection")
+                response_type="OperationsInsightsWarehouseSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="OperationsInsightsWarehouseSummaryCollection")
+                response_type="OperationsInsightsWarehouseSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_sql_plans(self, compartment_id, sql_identifier, plan_hash, **kwargs):
         """
@@ -7506,6 +8002,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights/sqlPlans"
         method = "GET"
+        operation_name = "list_sql_plans"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListSqlPlans"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7555,14 +8053,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SqlPlanCollection")
+                response_type="SqlPlanCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SqlPlanCollection")
+                response_type="SqlPlanCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_sql_searches(self, compartment_id, sql_identifier, **kwargs):
         """
@@ -7657,6 +8161,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights/sqlSearches"
         method = "GET"
+        operation_name = "list_sql_searches"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListSqlSearches"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7717,14 +8223,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SqlSearchCollection")
+                response_type="SqlSearchCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SqlSearchCollection")
+                response_type="SqlSearchCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_sql_texts(self, compartment_id, sql_identifier, **kwargs):
         """
@@ -7809,6 +8321,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights/sqlTexts"
         method = "GET"
+        operation_name = "list_sql_texts"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListSqlTexts"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7867,14 +8381,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SqlTextCollection")
+                response_type="SqlTextCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SqlTextCollection")
+                response_type="SqlTextCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -7934,6 +8454,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/WorkRequests/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8007,7 +8529,10 @@ class OperationsInsightsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8015,7 +8540,10 @@ class OperationsInsightsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -8075,6 +8603,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/WorkRequests/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8148,7 +8678,10 @@ class OperationsInsightsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8156,7 +8689,10 @@ class OperationsInsightsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, **kwargs):
         """
@@ -8232,6 +8768,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/WorkRequests/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8311,14 +8849,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestCollection")
+                response_type="WorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestCollection")
+                response_type="WorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def rotate_operations_insights_warehouse_wallet(self, operations_insights_warehouse_id, **kwargs):
         """
@@ -8357,6 +8901,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/operationsInsightsWarehouses/{operationsInsightsWarehouseId}/actions/rotateWarehouseWallet"
         method = "POST"
+        operation_name = "rotate_operations_insights_warehouse_wallet"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/RotateOperationsInsightsWarehouseWallet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8404,13 +8950,19 @@ class OperationsInsightsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_awr_sources_summaries(self, awr_hub_id, **kwargs):
         """
@@ -8478,6 +9030,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/awrHubs/{awrHubId}/awrSourcesSummary"
         method = "GET"
+        operation_name = "summarize_awr_sources_summaries"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrSourcesSummaries"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8555,7 +9109,10 @@ class OperationsInsightsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeAwrSourcesSummariesCollection")
+                response_type="SummarizeAwrSourcesSummariesCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8563,7 +9120,10 @@ class OperationsInsightsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeAwrSourcesSummariesCollection")
+                response_type="SummarizeAwrSourcesSummariesCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_database_insight_resource_capacity_trend(self, compartment_id, resource_metric, **kwargs):
         """
@@ -8713,6 +9273,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights/resourceCapacityTrend"
         method = "GET"
+        operation_name = "summarize_database_insight_resource_capacity_trend"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightResourceCapacityTrend"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8824,14 +9386,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection")
+                response_type="SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection")
+                response_type="SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_database_insight_resource_forecast_trend(self, compartment_id, resource_metric, **kwargs):
         """
@@ -8994,6 +9562,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights/resourceForecastTrend"
         method = "GET"
+        operation_name = "summarize_database_insight_resource_forecast_trend"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightResourceForecastTrend"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9109,14 +9679,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeDatabaseInsightResourceForecastTrendAggregation")
+                response_type="SummarizeDatabaseInsightResourceForecastTrendAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeDatabaseInsightResourceForecastTrendAggregation")
+                response_type="SummarizeDatabaseInsightResourceForecastTrendAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_database_insight_resource_statistics(self, compartment_id, resource_metric, **kwargs):
         """
@@ -9273,6 +9849,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights/resourceStatistics"
         method = "GET"
+        operation_name = "summarize_database_insight_resource_statistics"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightResourceStatistics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9381,14 +9959,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeDatabaseInsightResourceStatisticsAggregationCollection")
+                response_type="SummarizeDatabaseInsightResourceStatisticsAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeDatabaseInsightResourceStatisticsAggregationCollection")
+                response_type="SummarizeDatabaseInsightResourceStatisticsAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_database_insight_resource_usage(self, compartment_id, resource_metric, **kwargs):
         """
@@ -9517,6 +10101,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights/resourceUsageSummary"
         method = "GET"
+        operation_name = "summarize_database_insight_resource_usage"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightResourceUsage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9599,14 +10185,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeDatabaseInsightResourceUsageAggregation")
+                response_type="SummarizeDatabaseInsightResourceUsageAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeDatabaseInsightResourceUsageAggregation")
+                response_type="SummarizeDatabaseInsightResourceUsageAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_database_insight_resource_usage_trend(self, compartment_id, resource_metric, **kwargs):
         """
@@ -9741,6 +10333,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights/resourceUsageTrend"
         method = "GET"
+        operation_name = "summarize_database_insight_resource_usage_trend"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightResourceUsageTrend"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9839,14 +10433,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeDatabaseInsightResourceUsageTrendAggregationCollection")
+                response_type="SummarizeDatabaseInsightResourceUsageTrendAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeDatabaseInsightResourceUsageTrendAggregationCollection")
+                response_type="SummarizeDatabaseInsightResourceUsageTrendAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_database_insight_resource_utilization_insight(self, compartment_id, resource_metric, **kwargs):
         """
@@ -9973,6 +10573,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights/resourceUtilizationInsight"
         method = "GET"
+        operation_name = "summarize_database_insight_resource_utilization_insight"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightResourceUtilizationInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10055,14 +10657,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeDatabaseInsightResourceUtilizationInsightAggregation")
+                response_type="SummarizeDatabaseInsightResourceUtilizationInsightAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeDatabaseInsightResourceUtilizationInsightAggregation")
+                response_type="SummarizeDatabaseInsightResourceUtilizationInsightAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_database_insight_tablespace_usage_trend(self, compartment_id, **kwargs):
         """
@@ -10145,6 +10753,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights/tablespaceUsageTrend"
         method = "GET"
+        operation_name = "summarize_database_insight_tablespace_usage_trend"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightTablespaceUsageTrend"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10200,14 +10810,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection")
+                response_type="SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection")
+                response_type="SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_exadata_insight_resource_capacity_trend(self, resource_type, resource_metric, exadata_insight_id, **kwargs):
         """
@@ -10331,6 +10947,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/exadataInsights/resourceCapacityTrend"
         method = "GET"
+        operation_name = "summarize_exadata_insight_resource_capacity_trend"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceCapacityTrend"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10416,14 +11034,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeExadataInsightResourceCapacityTrendCollection")
+                response_type="SummarizeExadataInsightResourceCapacityTrendCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeExadataInsightResourceCapacityTrendCollection")
+                response_type="SummarizeExadataInsightResourceCapacityTrendCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_exadata_insight_resource_capacity_trend_aggregated(self, resource_type, resource_metric, **kwargs):
         """
@@ -10547,6 +11171,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/exadataInsights/resourceCapacityTrendAggregated"
         method = "GET"
+        operation_name = "summarize_exadata_insight_resource_capacity_trend_aggregated"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceCapacityTrendAggregated"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10633,14 +11259,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeExadataInsightResourceCapacityTrendAggregation")
+                response_type="SummarizeExadataInsightResourceCapacityTrendAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeExadataInsightResourceCapacityTrendAggregation")
+                response_type="SummarizeExadataInsightResourceCapacityTrendAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_exadata_insight_resource_forecast_trend(self, resource_type, resource_metric, exadata_insight_id, **kwargs):
         """
@@ -10786,6 +11418,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/exadataInsights/resourceForecastTrend"
         method = "GET"
+        operation_name = "summarize_exadata_insight_resource_forecast_trend"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceForecastTrend"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10893,14 +11527,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeExadataInsightResourceForecastTrendCollection")
+                response_type="SummarizeExadataInsightResourceForecastTrendCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeExadataInsightResourceForecastTrendCollection")
+                response_type="SummarizeExadataInsightResourceForecastTrendCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_exadata_insight_resource_forecast_trend_aggregated(self, resource_type, resource_metric, **kwargs):
         """
@@ -11040,6 +11680,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/exadataInsights/resourceForecastTrendAggregated"
         method = "GET"
+        operation_name = "summarize_exadata_insight_resource_forecast_trend_aggregated"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceForecastTrendAggregated"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11132,14 +11774,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeExadataInsightResourceForecastTrendAggregation")
+                response_type="SummarizeExadataInsightResourceForecastTrendAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeExadataInsightResourceForecastTrendAggregation")
+                response_type="SummarizeExadataInsightResourceForecastTrendAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_exadata_insight_resource_statistics(self, exadata_insight_id, resource_type, resource_metric, **kwargs):
         """
@@ -11245,6 +11893,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/exadataInsights/resourceStatistics"
         method = "GET"
+        operation_name = "summarize_exadata_insight_resource_statistics"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceStatistics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11324,14 +11974,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeExadataInsightResourceStatisticsAggregationCollection")
+                response_type="SummarizeExadataInsightResourceStatisticsAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeExadataInsightResourceStatisticsAggregationCollection")
+                response_type="SummarizeExadataInsightResourceStatisticsAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_exadata_insight_resource_usage(self, compartment_id, resource_type, resource_metric, **kwargs):
         """
@@ -11468,6 +12124,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/exadataInsights/resourceUsageSummary"
         method = "GET"
+        operation_name = "summarize_exadata_insight_resource_usage"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceUsage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11557,14 +12215,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeExadataInsightResourceUsageCollection")
+                response_type="SummarizeExadataInsightResourceUsageCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeExadataInsightResourceUsageCollection")
+                response_type="SummarizeExadataInsightResourceUsageCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_exadata_insight_resource_usage_aggregated(self, compartment_id, resource_type, resource_metric, **kwargs):
         """
@@ -11682,6 +12346,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/exadataInsights/resourceUsageSummaryAggregated"
         method = "GET"
+        operation_name = "summarize_exadata_insight_resource_usage_aggregated"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceUsageAggregated"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11751,14 +12417,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeExadataInsightResourceUsageAggregation")
+                response_type="SummarizeExadataInsightResourceUsageAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeExadataInsightResourceUsageAggregation")
+                response_type="SummarizeExadataInsightResourceUsageAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_exadata_insight_resource_utilization_insight(self, compartment_id, resource_type, resource_metric, **kwargs):
         """
@@ -11883,6 +12555,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/exadataInsights/resourceUtilizationInsight"
         method = "GET"
+        operation_name = "summarize_exadata_insight_resource_utilization_insight"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceUtilizationInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11956,14 +12630,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeExadataInsightResourceUtilizationInsightAggregation")
+                response_type="SummarizeExadataInsightResourceUtilizationInsightAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeExadataInsightResourceUtilizationInsightAggregation")
+                response_type="SummarizeExadataInsightResourceUtilizationInsightAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_exadata_members(self, exadata_insight_id, **kwargs):
         """
@@ -12029,6 +12709,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/exadataInsights/exadataMembers"
         method = "GET"
+        operation_name = "summarize_exadata_members"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataMembers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12094,14 +12776,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ExadataMemberCollection")
+                response_type="ExadataMemberCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ExadataMemberCollection")
+                response_type="ExadataMemberCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_host_insight_resource_capacity_trend(self, compartment_id, resource_metric, **kwargs):
         """
@@ -12233,6 +12921,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/hostInsights/resourceCapacityTrend"
         method = "GET"
+        operation_name = "summarize_host_insight_resource_capacity_trend"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightResourceCapacityTrend"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12334,14 +13024,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeHostInsightResourceCapacityTrendAggregationCollection")
+                response_type="SummarizeHostInsightResourceCapacityTrendAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeHostInsightResourceCapacityTrendAggregationCollection")
+                response_type="SummarizeHostInsightResourceCapacityTrendAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_host_insight_resource_forecast_trend(self, compartment_id, resource_metric, **kwargs):
         """
@@ -12486,6 +13182,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/hostInsights/resourceForecastTrend"
         method = "GET"
+        operation_name = "summarize_host_insight_resource_forecast_trend"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightResourceForecastTrend"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12591,14 +13289,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeHostInsightResourceForecastTrendAggregation")
+                response_type="SummarizeHostInsightResourceForecastTrendAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeHostInsightResourceForecastTrendAggregation")
+                response_type="SummarizeHostInsightResourceForecastTrendAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_host_insight_resource_statistics(self, compartment_id, resource_metric, **kwargs):
         """
@@ -12740,6 +13444,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/hostInsights/resourceStatistics"
         method = "GET"
+        operation_name = "summarize_host_insight_resource_statistics"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightResourceStatistics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12840,14 +13546,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeHostInsightResourceStatisticsAggregationCollection")
+                response_type="SummarizeHostInsightResourceStatisticsAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeHostInsightResourceStatisticsAggregationCollection")
+                response_type="SummarizeHostInsightResourceStatisticsAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_host_insight_resource_usage(self, compartment_id, resource_metric, **kwargs):
         """
@@ -12964,6 +13676,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/hostInsights/resourceUsageSummary"
         method = "GET"
+        operation_name = "summarize_host_insight_resource_usage"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightResourceUsage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13040,14 +13754,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeHostInsightResourceUsageAggregation")
+                response_type="SummarizeHostInsightResourceUsageAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeHostInsightResourceUsageAggregation")
+                response_type="SummarizeHostInsightResourceUsageAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_host_insight_resource_usage_trend(self, compartment_id, resource_metric, **kwargs):
         """
@@ -13170,6 +13890,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/hostInsights/resourceUsageTrend"
         method = "GET"
+        operation_name = "summarize_host_insight_resource_usage_trend"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightResourceUsageTrend"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13262,14 +13984,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeHostInsightResourceUsageTrendAggregationCollection")
+                response_type="SummarizeHostInsightResourceUsageTrendAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeHostInsightResourceUsageTrendAggregationCollection")
+                response_type="SummarizeHostInsightResourceUsageTrendAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_host_insight_resource_utilization_insight(self, compartment_id, resource_metric, **kwargs):
         """
@@ -13384,6 +14112,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/hostInsights/resourceUtilizationInsight"
         method = "GET"
+        operation_name = "summarize_host_insight_resource_utilization_insight"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightResourceUtilizationInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13460,14 +14190,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeHostInsightResourceUtilizationInsightAggregation")
+                response_type="SummarizeHostInsightResourceUtilizationInsightAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeHostInsightResourceUtilizationInsightAggregation")
+                response_type="SummarizeHostInsightResourceUtilizationInsightAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_host_insight_top_processes_usage_trend(self, compartment_id, id, resource_metric, **kwargs):
         """
@@ -13549,6 +14285,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/hostInsights/topProcessesUsageTrend"
         method = "GET"
+        operation_name = "summarize_host_insight_top_processes_usage_trend"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightTopProcessesUsageTrend"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13602,14 +14340,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeHostInsightsTopProcessesUsageTrendCollection")
+                response_type="SummarizeHostInsightsTopProcessesUsageTrendCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SummarizeHostInsightsTopProcessesUsageTrendCollection")
+                response_type="SummarizeHostInsightsTopProcessesUsageTrendCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_operations_insights_warehouse_resource_usage(self, operations_insights_warehouse_id, **kwargs):
         """
@@ -13644,6 +14388,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/operationsInsightsWarehouses/{operationsInsightsWarehouseId}/resourceUsageSummary"
         method = "GET"
+        operation_name = "summarize_operations_insights_warehouse_resource_usage"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/SummarizeOperationsInsightsWarehouseResourceUsage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13690,14 +14436,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SummarizeOperationsInsightsWarehouseResourceUsageAggregation")
+                response_type="SummarizeOperationsInsightsWarehouseResourceUsageAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SummarizeOperationsInsightsWarehouseResourceUsageAggregation")
+                response_type="SummarizeOperationsInsightsWarehouseResourceUsageAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_sql_insights(self, compartment_id, **kwargs):
         """
@@ -13818,6 +14570,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights/sqlInsights"
         method = "GET"
+        operation_name = "summarize_sql_insights"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeSqlInsights"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13899,14 +14653,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SqlInsightAggregationCollection")
+                response_type="SqlInsightAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SqlInsightAggregationCollection")
+                response_type="SqlInsightAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_sql_plan_insights(self, compartment_id, sql_identifier, **kwargs):
         """
@@ -13983,6 +14743,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights/sqlPlanInsights"
         method = "GET"
+        operation_name = "summarize_sql_plan_insights"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeSqlPlanInsights"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14037,14 +14799,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SqlPlanInsightAggregationCollection")
+                response_type="SqlPlanInsightAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SqlPlanInsightAggregationCollection")
+                response_type="SqlPlanInsightAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_sql_response_time_distributions(self, compartment_id, sql_identifier, **kwargs):
         """
@@ -14121,6 +14889,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights/sqlResponseTimeDistributions"
         method = "GET"
+        operation_name = "summarize_sql_response_time_distributions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeSqlResponseTimeDistributions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14175,14 +14945,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SqlResponseTimeDistributionAggregationCollection")
+                response_type="SqlResponseTimeDistributionAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SqlResponseTimeDistributionAggregationCollection")
+                response_type="SqlResponseTimeDistributionAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_sql_statistics(self, compartment_id, **kwargs):
         """
@@ -14332,6 +15108,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights/sqlStatistics"
         method = "GET"
+        operation_name = "summarize_sql_statistics"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeSqlStatistics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14445,14 +15223,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SqlStatisticAggregationCollection")
+                response_type="SqlStatisticAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SqlStatisticAggregationCollection")
+                response_type="SqlStatisticAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_sql_statistics_time_series(self, compartment_id, sql_identifier, **kwargs):
         """
@@ -14568,6 +15352,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights/sqlStatisticsTimeSeries"
         method = "GET"
+        operation_name = "summarize_sql_statistics_time_series"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeSqlStatisticsTimeSeries"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14638,14 +15424,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SqlStatisticsTimeSeriesAggregationCollection")
+                response_type="SqlStatisticsTimeSeriesAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SqlStatisticsTimeSeriesAggregationCollection")
+                response_type="SqlStatisticsTimeSeriesAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_sql_statistics_time_series_by_plan(self, compartment_id, sql_identifier, **kwargs):
         """
@@ -14722,6 +15514,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights/sqlStatisticsTimeSeriesByPlan"
         method = "GET"
+        operation_name = "summarize_sql_statistics_time_series_by_plan"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeSqlStatisticsTimeSeriesByPlan"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14776,14 +15570,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SqlStatisticsTimeSeriesByPlanAggregationCollection")
+                response_type="SqlStatisticsTimeSeriesByPlanAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SqlStatisticsTimeSeriesByPlanAggregationCollection")
+                response_type="SqlStatisticsTimeSeriesByPlanAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_awr_hub(self, awr_hub_id, update_awr_hub_details, **kwargs):
         """
@@ -14825,6 +15625,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/awrHubs/{awrHubId}"
         method = "PUT"
+        operation_name = "update_awr_hub"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/UpdateAwrHub"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14873,14 +15675,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_awr_hub_details)
+                body=update_awr_hub_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_awr_hub_details)
+                body=update_awr_hub_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_database_insight(self, database_insight_id, update_database_insight_details, **kwargs):
         """
@@ -14922,6 +15730,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/databaseInsights/{databaseInsightId}"
         method = "PUT"
+        operation_name = "update_database_insight"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/UpdateDatabaseInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14970,14 +15780,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_database_insight_details)
+                body=update_database_insight_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_database_insight_details)
+                body=update_database_insight_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_enterprise_manager_bridge(self, enterprise_manager_bridge_id, update_enterprise_manager_bridge_details, **kwargs):
         """
@@ -15019,6 +15835,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/enterpriseManagerBridges/{enterpriseManagerBridgeId}"
         method = "PUT"
+        operation_name = "update_enterprise_manager_bridge"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/UpdateEnterpriseManagerBridge"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15067,14 +15885,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_enterprise_manager_bridge_details)
+                body=update_enterprise_manager_bridge_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_enterprise_manager_bridge_details)
+                body=update_enterprise_manager_bridge_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_exadata_insight(self, exadata_insight_id, update_exadata_insight_details, **kwargs):
         """
@@ -15116,6 +15940,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/exadataInsights/{exadataInsightId}"
         method = "PUT"
+        operation_name = "update_exadata_insight"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/UpdateExadataInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15164,14 +15990,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_exadata_insight_details)
+                body=update_exadata_insight_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_exadata_insight_details)
+                body=update_exadata_insight_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_host_insight(self, host_insight_id, update_host_insight_details, **kwargs):
         """
@@ -15213,6 +16045,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/hostInsights/{hostInsightId}"
         method = "PUT"
+        operation_name = "update_host_insight"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/UpdateHostInsight"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15261,14 +16095,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_host_insight_details)
+                body=update_host_insight_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_host_insight_details)
+                body=update_host_insight_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_operations_insights_private_endpoint(self, operations_insights_private_endpoint_id, update_operations_insights_private_endpoint_details, **kwargs):
         """
@@ -15312,6 +16152,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/operationsInsightsPrivateEndpoints/{operationsInsightsPrivateEndpointId}"
         method = "PUT"
+        operation_name = "update_operations_insights_private_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpoint/UpdateOperationsInsightsPrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15360,14 +16202,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_operations_insights_private_endpoint_details)
+                body=update_operations_insights_private_endpoint_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_operations_insights_private_endpoint_details)
+                body=update_operations_insights_private_endpoint_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_operations_insights_warehouse(self, operations_insights_warehouse_id, update_operations_insights_warehouse_details, **kwargs):
         """
@@ -15410,6 +16258,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/operationsInsightsWarehouses/{operationsInsightsWarehouseId}"
         method = "PUT"
+        operation_name = "update_operations_insights_warehouse"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/UpdateOperationsInsightsWarehouse"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15458,14 +16308,20 @@ class OperationsInsightsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_operations_insights_warehouse_details)
+                body=update_operations_insights_warehouse_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_operations_insights_warehouse_details)
+                body=update_operations_insights_warehouse_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_operations_insights_warehouse_user(self, operations_insights_warehouse_user_id, update_operations_insights_warehouse_user_details, **kwargs):
         """
@@ -15507,6 +16363,8 @@ class OperationsInsightsClient(object):
         """
         resource_path = "/operationsInsightsWarehouseUsers/{operationsInsightsWarehouseUserId}"
         method = "PUT"
+        operation_name = "update_operations_insights_warehouse_user"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouseUsers/UpdateOperationsInsightsWarehouseUser"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15555,11 +16413,17 @@ class OperationsInsightsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_operations_insights_warehouse_user_details)
+                body=update_operations_insights_warehouse_user_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_operations_insights_warehouse_user_details)
+                body=update_operations_insights_warehouse_user_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

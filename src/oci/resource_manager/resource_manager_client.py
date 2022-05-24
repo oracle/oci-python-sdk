@@ -156,6 +156,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/jobs/{jobId}"
         method = "DELETE"
+        operation_name = "cancel_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/CancelJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -210,14 +212,20 @@ class ResourceManagerClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_configuration_source_provider_compartment(self, configuration_source_provider_id, change_configuration_source_provider_compartment_details, **kwargs):
         """
@@ -272,6 +280,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/configurationSourceProviders/{configurationSourceProviderId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_configuration_source_provider_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProvider/ChangeConfigurationSourceProviderCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -323,14 +333,20 @@ class ResourceManagerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_configuration_source_provider_compartment_details)
+                body=change_configuration_source_provider_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_configuration_source_provider_compartment_details)
+                body=change_configuration_source_provider_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_stack_compartment(self, stack_id, change_stack_compartment_details, **kwargs):
         """
@@ -381,6 +397,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/stacks/{stackId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_stack_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/ChangeStackCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -432,14 +450,20 @@ class ResourceManagerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_stack_compartment_details)
+                body=change_stack_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_stack_compartment_details)
+                body=change_stack_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_template_compartment(self, template_id, change_template_compartment_details, **kwargs):
         """
@@ -494,6 +518,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/templates/{templateId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_template_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/ChangeTemplateCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -545,14 +571,20 @@ class ResourceManagerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_template_compartment_details)
+                body=change_template_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_template_compartment_details)
+                body=change_template_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_configuration_source_provider(self, create_configuration_source_provider_details, **kwargs):
         """
@@ -597,6 +629,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/configurationSourceProviders"
         method = "POST"
+        operation_name = "create_configuration_source_provider"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProvider/CreateConfigurationSourceProvider"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -636,14 +670,20 @@ class ResourceManagerClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_configuration_source_provider_details,
-                response_type="ConfigurationSourceProvider")
+                response_type="ConfigurationSourceProvider",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_configuration_source_provider_details,
-                response_type="ConfigurationSourceProvider")
+                response_type="ConfigurationSourceProvider",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_job(self, create_job_details, **kwargs):
         """
@@ -684,6 +724,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/jobs"
         method = "POST"
+        operation_name = "create_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/CreateJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -723,14 +765,20 @@ class ResourceManagerClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_job_details,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_job_details,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_stack(self, create_stack_details, **kwargs):
         """
@@ -779,6 +827,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/stacks"
         method = "POST"
+        operation_name = "create_stack"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/CreateStack"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -818,14 +868,20 @@ class ResourceManagerClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_stack_details,
-                response_type="Stack")
+                response_type="Stack",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_stack_details,
-                response_type="Stack")
+                response_type="Stack",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_template(self, create_template_details, **kwargs):
         """
@@ -866,6 +922,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/templates"
         method = "POST"
+        operation_name = "create_template"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/CreateTemplate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -905,14 +963,20 @@ class ResourceManagerClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_template_details,
-                response_type="Template")
+                response_type="Template",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_template_details,
-                response_type="Template")
+                response_type="Template",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_configuration_source_provider(self, configuration_source_provider_id, **kwargs):
         """
@@ -953,6 +1017,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/configurationSourceProviders/{configurationSourceProviderId}"
         method = "DELETE"
+        operation_name = "delete_configuration_source_provider"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProvider/DeleteConfigurationSourceProvider"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1000,13 +1066,19 @@ class ResourceManagerClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_stack(self, stack_id, **kwargs):
         """
@@ -1047,6 +1119,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/stacks/{stackId}"
         method = "DELETE"
+        operation_name = "delete_stack"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/DeleteStack"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1094,13 +1168,19 @@ class ResourceManagerClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_template(self, template_id, **kwargs):
         """
@@ -1141,6 +1221,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/templates/{templateId}"
         method = "DELETE"
+        operation_name = "delete_template"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/DeleteTemplate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1188,13 +1270,19 @@ class ResourceManagerClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def detect_stack_drift(self, stack_id, **kwargs):
         """
@@ -1245,6 +1333,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/stacks/{stackId}/actions/detectDrift"
         method = "POST"
+        operation_name = "detect_stack_drift"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/DetectStackDrift"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1297,14 +1387,20 @@ class ResourceManagerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=kwargs.get('detect_stack_drift_details'))
+                body=kwargs.get('detect_stack_drift_details'),
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=kwargs.get('detect_stack_drift_details'))
+                body=kwargs.get('detect_stack_drift_details'),
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_configuration_source_provider(self, configuration_source_provider_id, **kwargs):
         """
@@ -1340,6 +1436,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/configurationSourceProviders/{configurationSourceProviderId}"
         method = "GET"
+        operation_name = "get_configuration_source_provider"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProvider/GetConfigurationSourceProvider"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1386,14 +1484,20 @@ class ResourceManagerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ConfigurationSourceProvider")
+                response_type="ConfigurationSourceProvider",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ConfigurationSourceProvider")
+                response_type="ConfigurationSourceProvider",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_job(self, job_id, **kwargs):
         """
@@ -1429,6 +1533,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/jobs/{jobId}"
         method = "GET"
+        operation_name = "get_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1475,14 +1581,20 @@ class ResourceManagerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_job_detailed_log_content(self, job_id, **kwargs):
         """
@@ -1520,6 +1632,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/jobs/{jobId}/detailedLogContent"
         method = "GET"
+        operation_name = "get_job_detailed_log_content"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobDetailedLogContent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1566,14 +1680,20 @@ class ResourceManagerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="str")
+                response_type="str",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="str")
+                response_type="str",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_job_logs(self, job_id, **kwargs):
         """
@@ -1644,6 +1764,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/jobs/{jobId}/logs"
         method = "GET"
+        operation_name = "get_job_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1723,7 +1845,10 @@ class ResourceManagerClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[LogEntry]")
+                response_type="list[LogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1731,7 +1856,10 @@ class ResourceManagerClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[LogEntry]")
+                response_type="list[LogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_job_logs_content(self, job_id, **kwargs):
         """
@@ -1767,6 +1895,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/jobs/{jobId}/logs/content"
         method = "GET"
+        operation_name = "get_job_logs_content"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobLogsContent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1813,14 +1943,20 @@ class ResourceManagerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="str")
+                response_type="str",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="str")
+                response_type="str",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_job_tf_config(self, job_id, **kwargs):
         """
@@ -1857,6 +1993,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/jobs/{jobId}/tfConfig"
         method = "GET"
+        operation_name = "get_job_tf_config"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobTfConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1903,14 +2041,20 @@ class ResourceManagerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_job_tf_state(self, job_id, **kwargs):
         """
@@ -1946,6 +2090,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/jobs/{jobId}/tfState"
         method = "GET"
+        operation_name = "get_job_tf_state"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/GetJobTfState"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1992,14 +2138,20 @@ class ResourceManagerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_stack(self, stack_id, **kwargs):
         """
@@ -2035,6 +2187,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/stacks/{stackId}"
         method = "GET"
+        operation_name = "get_stack"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/GetStack"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2081,14 +2235,20 @@ class ResourceManagerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Stack")
+                response_type="Stack",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Stack")
+                response_type="Stack",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_stack_tf_config(self, stack_id, **kwargs):
         """
@@ -2125,6 +2285,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/stacks/{stackId}/tfConfig"
         method = "GET"
+        operation_name = "get_stack_tf_config"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/GetStackTfConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2171,14 +2333,20 @@ class ResourceManagerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_stack_tf_state(self, stack_id, **kwargs):
         """
@@ -2214,6 +2382,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/stacks/{stackId}/tfState"
         method = "GET"
+        operation_name = "get_stack_tf_state"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/GetStackTfState"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2260,14 +2430,20 @@ class ResourceManagerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_template(self, template_id, **kwargs):
         """
@@ -2303,6 +2479,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/templates/{templateId}"
         method = "GET"
+        operation_name = "get_template"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/GetTemplate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2349,14 +2527,20 @@ class ResourceManagerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Template")
+                response_type="Template",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Template")
+                response_type="Template",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_template_logo(self, template_id, **kwargs):
         """
@@ -2393,6 +2577,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/templates/{templateId}/logo"
         method = "GET"
+        operation_name = "get_template_logo"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/GetTemplateLogo"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2439,14 +2625,20 @@ class ResourceManagerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_template_tf_config(self, template_id, **kwargs):
         """
@@ -2483,6 +2675,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/templates/{templateId}/tfConfig"
         method = "GET"
+        operation_name = "get_template_tf_config"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/GetTemplateTfConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2529,14 +2723,20 @@ class ResourceManagerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -2572,6 +2772,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2618,14 +2820,20 @@ class ResourceManagerClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_configuration_source_providers(self, **kwargs):
         """
@@ -2701,6 +2909,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/configurationSourceProviders"
         method = "GET"
+        operation_name = "list_configuration_source_providers"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProviderSummary/ListConfigurationSourceProviders"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2771,14 +2981,20 @@ class ResourceManagerClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ConfigurationSourceProviderCollection")
+                response_type="ConfigurationSourceProviderCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ConfigurationSourceProviderCollection")
+                response_type="ConfigurationSourceProviderCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_jobs(self, **kwargs):
         """
@@ -2876,6 +3092,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/jobs"
         method = "GET"
+        operation_name = "list_jobs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/JobSummary/ListJobs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2955,14 +3173,20 @@ class ResourceManagerClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[JobSummary]")
+                response_type="list[JobSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[JobSummary]")
+                response_type="list[JobSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_resource_discovery_services(self, **kwargs):
         """
@@ -3000,6 +3224,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/resourceDiscoveryServices"
         method = "GET"
+        operation_name = "list_resource_discovery_services"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/ListResourceDiscoveryServices"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3042,14 +3268,20 @@ class ResourceManagerClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResourceDiscoveryServiceCollection")
+                response_type="ResourceDiscoveryServiceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResourceDiscoveryServiceCollection")
+                response_type="ResourceDiscoveryServiceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_stack_resource_drift_details(self, stack_id, **kwargs):
         """
@@ -3114,6 +3346,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/stacks/{stackId}/actions/listResourceDriftDetails"
         method = "POST"
+        operation_name = "list_stack_resource_drift_details"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/StackResourceDriftSummary/ListStackResourceDriftDetails"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3173,7 +3407,10 @@ class ResourceManagerClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="StackResourceDriftCollection")
+                response_type="StackResourceDriftCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3181,7 +3418,10 @@ class ResourceManagerClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="StackResourceDriftCollection")
+                response_type="StackResourceDriftCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_stacks(self, **kwargs):
         """
@@ -3271,6 +3511,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/stacks"
         method = "GET"
+        operation_name = "list_stacks"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/StackSummary/ListStacks"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3348,14 +3590,20 @@ class ResourceManagerClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[StackSummary]")
+                response_type="list[StackSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[StackSummary]")
+                response_type="list[StackSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_template_categories(self, **kwargs):
         """
@@ -3386,6 +3634,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/templateCategories"
         method = "GET"
+        operation_name = "list_template_categories"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/TemplateCategorySummary/ListTemplateCategories"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3421,13 +3671,19 @@ class ResourceManagerClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                response_type="TemplateCategorySummaryCollection")
+                response_type="TemplateCategorySummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                response_type="TemplateCategorySummaryCollection")
+                response_type="TemplateCategorySummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_templates(self, **kwargs):
         """
@@ -3503,6 +3759,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/templates"
         method = "GET"
+        operation_name = "list_templates"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/ListTemplates"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3573,14 +3831,20 @@ class ResourceManagerClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TemplateSummaryCollection")
+                response_type="TemplateSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TemplateSummaryCollection")
+                response_type="TemplateSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_terraform_versions(self, **kwargs):
         """
@@ -3616,6 +3880,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/terraformVersions"
         method = "GET"
+        operation_name = "list_terraform_versions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/ListTerraformVersions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3658,14 +3924,20 @@ class ResourceManagerClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TerraformVersionCollection")
+                response_type="TerraformVersionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TerraformVersionCollection")
+                response_type="TerraformVersionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -3723,6 +3995,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/WorkRequest/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3789,7 +4063,10 @@ class ResourceManagerClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3797,7 +4074,10 @@ class ResourceManagerClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -3855,6 +4135,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/WorkRequest/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3921,7 +4203,10 @@ class ResourceManagerClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLogEntry]")
+                response_type="list[WorkRequestLogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3929,7 +4214,10 @@ class ResourceManagerClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLogEntry]")
+                response_type="list[WorkRequestLogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -3982,6 +4270,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4029,14 +4319,20 @@ class ResourceManagerClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestSummary]")
+                response_type="list[WorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestSummary]")
+                response_type="list[WorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_configuration_source_provider(self, configuration_source_provider_id, update_configuration_source_provider_details, **kwargs):
         """
@@ -4084,6 +4380,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/configurationSourceProviders/{configurationSourceProviderId}"
         method = "PUT"
+        operation_name = "update_configuration_source_provider"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/ConfigurationSourceProvider/UpdateConfigurationSourceProvider"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4133,7 +4431,10 @@ class ResourceManagerClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_configuration_source_provider_details,
-                response_type="ConfigurationSourceProvider")
+                response_type="ConfigurationSourceProvider",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4141,7 +4442,10 @@ class ResourceManagerClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_configuration_source_provider_details,
-                response_type="ConfigurationSourceProvider")
+                response_type="ConfigurationSourceProvider",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_job(self, job_id, update_job_details, **kwargs):
         """
@@ -4185,6 +4489,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/jobs/{jobId}"
         method = "PUT"
+        operation_name = "update_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Job/UpdateJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4234,7 +4540,10 @@ class ResourceManagerClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_job_details,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4242,7 +4551,10 @@ class ResourceManagerClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_job_details,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_stack(self, stack_id, update_stack_details, **kwargs):
         """
@@ -4294,6 +4606,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/stacks/{stackId}"
         method = "PUT"
+        operation_name = "update_stack"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Stack/UpdateStack"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4343,7 +4657,10 @@ class ResourceManagerClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_stack_details,
-                response_type="Stack")
+                response_type="Stack",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4351,7 +4668,10 @@ class ResourceManagerClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_stack_details,
-                response_type="Stack")
+                response_type="Stack",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_template(self, template_id, update_template_details, **kwargs):
         """
@@ -4395,6 +4715,8 @@ class ResourceManagerClient(object):
         """
         resource_path = "/templates/{templateId}"
         method = "PUT"
+        operation_name = "update_template"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/resourcemanager/20180917/Template/UpdateTemplate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4444,7 +4766,10 @@ class ResourceManagerClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_template_details,
-                response_type="Template")
+                response_type="Template",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4452,4 +4777,7 @@ class ResourceManagerClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_template_details,
-                response_type="Template")
+                response_type="Template",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

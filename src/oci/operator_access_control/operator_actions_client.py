@@ -138,6 +138,8 @@ class OperatorActionsClient(object):
         """
         resource_path = "/operatorActions/{operatorActionId}"
         method = "GET"
+        operation_name = "get_operator_action"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorAction/GetOperatorAction"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -182,14 +184,20 @@ class OperatorActionsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="OperatorAction")
+                response_type="OperatorAction",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="OperatorAction")
+                response_type="OperatorAction",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_operator_actions(self, compartment_id, **kwargs):
         """
@@ -249,6 +257,8 @@ class OperatorActionsClient(object):
         """
         resource_path = "/operatorActions"
         method = "GET"
+        operation_name = "list_operator_actions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorAction/ListOperatorActions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -323,11 +333,17 @@ class OperatorActionsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="OperatorActionCollection")
+                response_type="OperatorActionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="OperatorActionCollection")
+                response_type="OperatorActionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

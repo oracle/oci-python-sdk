@@ -35,10 +35,19 @@ from .installed_windows_update_summary import InstalledWindowsUpdateSummary
 from .kernel_crash_event import KernelCrashEvent
 from .kernel_oops_event import KernelOopsEvent
 from .kernel_vm_core_information import KernelVmCoreInformation
+from .manage_module_streams_on_managed_instance_details import ManageModuleStreamsOnManagedInstanceDetails
 from .managed_instance import ManagedInstance
 from .managed_instance_group import ManagedInstanceGroup
 from .managed_instance_group_summary import ManagedInstanceGroupSummary
 from .managed_instance_summary import ManagedInstanceSummary
+from .module_stream import ModuleStream
+from .module_stream_details import ModuleStreamDetails
+from .module_stream_on_managed_instance_summary import ModuleStreamOnManagedInstanceSummary
+from .module_stream_profile import ModuleStreamProfile
+from .module_stream_profile_details import ModuleStreamProfileDetails
+from .module_stream_profile_on_managed_instance_summary import ModuleStreamProfileOnManagedInstanceSummary
+from .module_stream_profile_summary import ModuleStreamProfileSummary
+from .module_stream_summary import ModuleStreamSummary
 from .package_name import PackageName
 from .recurrence import Recurrence
 from .related_event_collection import RelatedEventCollection
@@ -57,6 +66,10 @@ from .software_source_summary import SoftwareSourceSummary
 from .update_event_details import UpdateEventDetails
 from .update_managed_instance_details import UpdateManagedInstanceDetails
 from .update_managed_instance_group_details import UpdateManagedInstanceGroupDetails
+from .update_module_details import UpdateModuleDetails
+from .update_module_stream_details import UpdateModuleStreamDetails
+from .update_module_stream_profile_details import UpdateModuleStreamProfileDetails
+from .update_module_stream_state_details import UpdateModuleStreamStateDetails
 from .update_scheduled_job_details import UpdateScheduledJobDetails
 from .update_software_source_details import UpdateSoftwareSourceDetails
 from .windows_update import WindowsUpdate
@@ -100,10 +113,19 @@ os_management_type_mapping = {
     "KernelCrashEvent": KernelCrashEvent,
     "KernelOopsEvent": KernelOopsEvent,
     "KernelVmCoreInformation": KernelVmCoreInformation,
+    "ManageModuleStreamsOnManagedInstanceDetails": ManageModuleStreamsOnManagedInstanceDetails,
     "ManagedInstance": ManagedInstance,
     "ManagedInstanceGroup": ManagedInstanceGroup,
     "ManagedInstanceGroupSummary": ManagedInstanceGroupSummary,
     "ManagedInstanceSummary": ManagedInstanceSummary,
+    "ModuleStream": ModuleStream,
+    "ModuleStreamDetails": ModuleStreamDetails,
+    "ModuleStreamOnManagedInstanceSummary": ModuleStreamOnManagedInstanceSummary,
+    "ModuleStreamProfile": ModuleStreamProfile,
+    "ModuleStreamProfileDetails": ModuleStreamProfileDetails,
+    "ModuleStreamProfileOnManagedInstanceSummary": ModuleStreamProfileOnManagedInstanceSummary,
+    "ModuleStreamProfileSummary": ModuleStreamProfileSummary,
+    "ModuleStreamSummary": ModuleStreamSummary,
     "PackageName": PackageName,
     "Recurrence": Recurrence,
     "RelatedEventCollection": RelatedEventCollection,
@@ -122,6 +144,10 @@ os_management_type_mapping = {
     "UpdateEventDetails": UpdateEventDetails,
     "UpdateManagedInstanceDetails": UpdateManagedInstanceDetails,
     "UpdateManagedInstanceGroupDetails": UpdateManagedInstanceGroupDetails,
+    "UpdateModuleDetails": UpdateModuleDetails,
+    "UpdateModuleStreamDetails": UpdateModuleStreamDetails,
+    "UpdateModuleStreamProfileDetails": UpdateModuleStreamProfileDetails,
+    "UpdateModuleStreamStateDetails": UpdateModuleStreamStateDetails,
     "UpdateScheduledJobDetails": UpdateScheduledJobDetails,
     "UpdateSoftwareSourceDetails": UpdateSoftwareSourceDetails,
     "WindowsUpdate": WindowsUpdate,

@@ -151,6 +151,8 @@ class ConfigClient(object):
         """
         resource_path = "/configs"
         method = "POST"
+        operation_name = "create_config"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/Config/CreateConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -198,7 +200,10 @@ class ConfigClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_config_details,
-                response_type="Config")
+                response_type="Config",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -206,7 +211,10 @@ class ConfigClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_config_details,
-                response_type="Config")
+                response_type="Config",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_config(self, apm_domain_id, config_id, **kwargs):
         """
@@ -252,6 +260,8 @@ class ConfigClient(object):
         """
         resource_path = "/configs/{configId}"
         method = "DELETE"
+        operation_name = "delete_config"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/Config/DeleteConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -305,14 +315,20 @@ class ConfigClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_config(self, apm_domain_id, config_id, **kwargs):
         """
@@ -351,6 +367,8 @@ class ConfigClient(object):
         """
         resource_path = "/configs/{configId}"
         method = "GET"
+        operation_name = "get_config"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/Config/GetConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -403,7 +421,10 @@ class ConfigClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Config")
+                response_type="Config",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -411,7 +432,10 @@ class ConfigClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Config")
+                response_type="Config",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_configs(self, apm_domain_id, **kwargs):
         """
@@ -474,6 +498,8 @@ class ConfigClient(object):
         """
         resource_path = "/configs"
         method = "GET"
+        operation_name = "list_configs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/ConfigCollection/ListConfigs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -541,14 +567,20 @@ class ConfigClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ConfigCollection")
+                response_type="ConfigCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ConfigCollection")
+                response_type="ConfigCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_config(self, apm_domain_id, config_id, update_config_details, **kwargs):
         """
@@ -601,6 +633,8 @@ class ConfigClient(object):
         """
         resource_path = "/configs/{configId}"
         method = "PUT"
+        operation_name = "update_config"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/Config/UpdateConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -658,7 +692,10 @@ class ConfigClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_config_details,
-                response_type="Config")
+                response_type="Config",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -667,4 +704,7 @@ class ConfigClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_config_details,
-                response_type="Config")
+                response_type="Config",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

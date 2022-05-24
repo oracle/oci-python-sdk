@@ -154,6 +154,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/securityZones/{securityZoneId}/actions/addCompartment"
         method = "POST"
+        operation_name = "add_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityZone/AddCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -204,7 +206,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=add_compartment_details,
-                response_type="SecurityZone")
+                response_type="SecurityZone",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -212,7 +217,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=add_compartment_details,
-                response_type="SecurityZone")
+                response_type="SecurityZone",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_detector_recipe_compartment(self, detector_recipe_id, change_detector_recipe_compartment_details, **kwargs):
         """
@@ -262,6 +270,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/detectorRecipes/{detectorRecipeId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_detector_recipe_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipe/ChangeDetectorRecipeCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -311,14 +321,20 @@ class CloudGuardClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_detector_recipe_compartment_details)
+                body=change_detector_recipe_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_detector_recipe_compartment_details)
+                body=change_detector_recipe_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_managed_list_compartment(self, managed_list_id, change_managed_list_compartment_details, **kwargs):
         """
@@ -368,6 +384,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/managedLists/{managedListId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_managed_list_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ManagedList/ChangeManagedListCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -417,14 +435,20 @@ class CloudGuardClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_managed_list_compartment_details)
+                body=change_managed_list_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_managed_list_compartment_details)
+                body=change_managed_list_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_responder_recipe_compartment(self, responder_recipe_id, change_responder_recipe_compartment_details, **kwargs):
         """
@@ -474,6 +498,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/responderRecipes/{responderRecipeId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_responder_recipe_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipe/ChangeResponderRecipeCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -523,14 +549,20 @@ class CloudGuardClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_responder_recipe_compartment_details)
+                body=change_responder_recipe_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_responder_recipe_compartment_details)
+                body=change_responder_recipe_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_security_recipe_compartment(self, security_recipe_id, change_security_recipe_compartment_details, **kwargs):
         """
@@ -580,6 +612,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/securityRecipes/{securityRecipeId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_security_recipe_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityRecipe/ChangeSecurityRecipeCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -629,14 +663,20 @@ class CloudGuardClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_security_recipe_compartment_details)
+                body=change_security_recipe_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_security_recipe_compartment_details)
+                body=change_security_recipe_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_security_zone_compartment(self, security_zone_id, change_security_zone_compartment_details, **kwargs):
         """
@@ -686,6 +726,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/securityZones/{securityZoneId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_security_zone_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityZone/ChangeSecurityZoneCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -735,14 +777,20 @@ class CloudGuardClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_security_zone_compartment_details)
+                body=change_security_zone_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_security_zone_compartment_details)
+                body=change_security_zone_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_data_mask_rule(self, create_data_mask_rule_details, **kwargs):
         """
@@ -782,6 +830,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/dataMaskRules"
         method = "POST"
+        operation_name = "create_data_mask_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DataMaskRule/CreateDataMaskRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -819,14 +869,20 @@ class CloudGuardClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_data_mask_rule_details,
-                response_type="DataMaskRule")
+                response_type="DataMaskRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_data_mask_rule_details,
-                response_type="DataMaskRule")
+                response_type="DataMaskRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_detector_recipe(self, create_detector_recipe_details, **kwargs):
         """
@@ -866,6 +922,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/detectorRecipes"
         method = "POST"
+        operation_name = "create_detector_recipe"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipe/CreateDetectorRecipe"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -903,14 +961,20 @@ class CloudGuardClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_detector_recipe_details,
-                response_type="DetectorRecipe")
+                response_type="DetectorRecipe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_detector_recipe_details,
-                response_type="DetectorRecipe")
+                response_type="DetectorRecipe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_managed_list(self, create_managed_list_details, **kwargs):
         """
@@ -950,6 +1014,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/managedLists"
         method = "POST"
+        operation_name = "create_managed_list"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ManagedList/CreateManagedList"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -987,14 +1053,20 @@ class CloudGuardClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_managed_list_details,
-                response_type="ManagedList")
+                response_type="ManagedList",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_managed_list_details,
-                response_type="ManagedList")
+                response_type="ManagedList",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_responder_recipe(self, create_responder_recipe_details, **kwargs):
         """
@@ -1034,6 +1106,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/responderRecipes"
         method = "POST"
+        operation_name = "create_responder_recipe"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipe/CreateResponderRecipe"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1071,14 +1145,20 @@ class CloudGuardClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_responder_recipe_details,
-                response_type="ResponderRecipe")
+                response_type="ResponderRecipe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_responder_recipe_details,
-                response_type="ResponderRecipe")
+                response_type="ResponderRecipe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_security_recipe(self, create_security_recipe_details, **kwargs):
         """
@@ -1118,6 +1198,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/securityRecipes"
         method = "POST"
+        operation_name = "create_security_recipe"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityRecipe/CreateSecurityRecipe"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1155,14 +1237,20 @@ class CloudGuardClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_security_recipe_details,
-                response_type="SecurityRecipe")
+                response_type="SecurityRecipe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_security_recipe_details,
-                response_type="SecurityRecipe")
+                response_type="SecurityRecipe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_security_zone(self, create_security_zone_details, **kwargs):
         """
@@ -1202,6 +1290,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/securityZones"
         method = "POST"
+        operation_name = "create_security_zone"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityZone/CreateSecurityZone"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1239,14 +1329,20 @@ class CloudGuardClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_security_zone_details,
-                response_type="SecurityZone")
+                response_type="SecurityZone",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_security_zone_details,
-                response_type="SecurityZone")
+                response_type="SecurityZone",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_target(self, create_target_details, **kwargs):
         """
@@ -1286,6 +1382,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/targets"
         method = "POST"
+        operation_name = "create_target"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Target/CreateTarget"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1323,14 +1421,20 @@ class CloudGuardClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_target_details,
-                response_type="Target")
+                response_type="Target",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_target_details,
-                response_type="Target")
+                response_type="Target",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_target_detector_recipe(self, target_id, attach_target_detector_recipe_details, **kwargs):
         """
@@ -1373,6 +1477,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/targets/{targetId}/targetDetectorRecipes"
         method = "POST"
+        operation_name = "create_target_detector_recipe"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipe/CreateTargetDetectorRecipe"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1421,7 +1527,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=attach_target_detector_recipe_details,
-                response_type="TargetDetectorRecipe")
+                response_type="TargetDetectorRecipe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1429,7 +1538,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=attach_target_detector_recipe_details,
-                response_type="TargetDetectorRecipe")
+                response_type="TargetDetectorRecipe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_target_responder_recipe(self, target_id, attach_target_responder_recipe_details, **kwargs):
         """
@@ -1472,6 +1584,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/targets/{targetId}/targetResponderRecipes"
         method = "POST"
+        operation_name = "create_target_responder_recipe"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipe/CreateTargetResponderRecipe"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1520,7 +1634,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=attach_target_responder_recipe_details,
-                response_type="TargetResponderRecipe")
+                response_type="TargetResponderRecipe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1528,7 +1645,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=attach_target_responder_recipe_details,
-                response_type="TargetResponderRecipe")
+                response_type="TargetResponderRecipe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_data_mask_rule(self, data_mask_rule_id, **kwargs):
         """
@@ -1568,6 +1688,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/dataMaskRules/{dataMaskRuleId}"
         method = "DELETE"
+        operation_name = "delete_data_mask_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DataMaskRule/DeleteDataMaskRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1613,13 +1735,19 @@ class CloudGuardClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_detector_recipe(self, detector_recipe_id, **kwargs):
         """
@@ -1666,6 +1794,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/detectorRecipes/{detectorRecipeId}"
         method = "DELETE"
+        operation_name = "delete_detector_recipe"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipe/DeleteDetectorRecipe"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1714,13 +1844,19 @@ class CloudGuardClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_managed_list(self, managed_list_id, **kwargs):
         """
@@ -1767,6 +1903,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/managedLists/{managedListId}"
         method = "DELETE"
+        operation_name = "delete_managed_list"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ManagedList/DeleteManagedList"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1815,13 +1953,19 @@ class CloudGuardClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_responder_recipe(self, responder_recipe_id, **kwargs):
         """
@@ -1861,6 +2005,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/responderRecipes/{responderRecipeId}"
         method = "DELETE"
+        operation_name = "delete_responder_recipe"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipe/DeleteResponderRecipe"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1906,13 +2052,19 @@ class CloudGuardClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_security_recipe(self, security_recipe_id, **kwargs):
         """
@@ -1952,6 +2104,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/securityRecipes/{securityRecipeId}"
         method = "DELETE"
+        operation_name = "delete_security_recipe"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityRecipe/DeleteSecurityRecipe"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1997,13 +2151,19 @@ class CloudGuardClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_security_zone(self, security_zone_id, **kwargs):
         """
@@ -2043,6 +2203,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/securityZones/{securityZoneId}"
         method = "DELETE"
+        operation_name = "delete_security_zone"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityZone/DeleteSecurityZone"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2088,13 +2250,19 @@ class CloudGuardClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_target(self, target_id, **kwargs):
         """
@@ -2134,6 +2302,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/targets/{targetId}"
         method = "DELETE"
+        operation_name = "delete_target"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Target/DeleteTarget"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2179,13 +2349,19 @@ class CloudGuardClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_target_detector_recipe(self, target_id, target_detector_recipe_id, **kwargs):
         """
@@ -2228,6 +2404,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/targets/{targetId}/targetDetectorRecipes/{targetDetectorRecipeId}"
         method = "DELETE"
+        operation_name = "delete_target_detector_recipe"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipe/DeleteTargetDetectorRecipe"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2274,13 +2452,19 @@ class CloudGuardClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_target_responder_recipe(self, target_id, target_responder_recipe_id, **kwargs):
         """
@@ -2323,6 +2507,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/targets/{targetId}/targetResponderRecipes/{targetResponderRecipeId}"
         method = "DELETE"
+        operation_name = "delete_target_responder_recipe"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipe/DeleteTargetResponderRecipe"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2369,13 +2555,19 @@ class CloudGuardClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def execute_responder_execution(self, responder_execution_id, compartment_id, **kwargs):
         """
@@ -2428,6 +2620,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/responderExecutions/{responderExecutionId}/actions/execute"
         method = "POST"
+        operation_name = "execute_responder_execution"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderExecution/ExecuteResponderExecution"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2484,7 +2678,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=kwargs.get('execute_responder_execution_details'))
+                body=kwargs.get('execute_responder_execution_details'),
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2492,7 +2689,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=kwargs.get('execute_responder_execution_details'))
+                body=kwargs.get('execute_responder_execution_details'),
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_condition_metadata_type(self, condition_metadata_type_id, **kwargs):
         """
@@ -2533,6 +2733,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/conditionMetadataTypes/{conditionMetadataTypeId}"
         method = "GET"
+        operation_name = "get_condition_metadata_type"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ConditionMetadataType/GetConditionMetadataType"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2586,7 +2788,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ConditionMetadataType")
+                response_type="ConditionMetadataType",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2594,7 +2799,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ConditionMetadataType")
+                response_type="ConditionMetadataType",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_configuration(self, compartment_id, **kwargs):
         """
@@ -2627,6 +2835,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/configuration"
         method = "GET"
+        operation_name = "get_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Configuration/GetConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2666,14 +2876,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Configuration")
+                response_type="Configuration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Configuration")
+                response_type="Configuration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_data_mask_rule(self, data_mask_rule_id, **kwargs):
         """
@@ -2706,6 +2922,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/dataMaskRules/{dataMaskRuleId}"
         method = "GET"
+        operation_name = "get_data_mask_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DataMaskRule/GetDataMaskRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2750,14 +2968,20 @@ class CloudGuardClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DataMaskRule")
+                response_type="DataMaskRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DataMaskRule")
+                response_type="DataMaskRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_detector(self, detector_id, **kwargs):
         """
@@ -2790,6 +3014,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/detectors/{detectorId}"
         method = "GET"
+        operation_name = "get_detector"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Detector/GetDetector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2834,14 +3060,20 @@ class CloudGuardClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Detector")
+                response_type="Detector",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Detector")
+                response_type="Detector",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_detector_recipe(self, detector_recipe_id, **kwargs):
         """
@@ -2874,6 +3106,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/detectorRecipes/{detectorRecipeId}"
         method = "GET"
+        operation_name = "get_detector_recipe"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipe/GetDetectorRecipe"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2918,14 +3152,20 @@ class CloudGuardClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DetectorRecipe")
+                response_type="DetectorRecipe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DetectorRecipe")
+                response_type="DetectorRecipe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_detector_recipe_detector_rule(self, detector_recipe_id, detector_rule_id, **kwargs):
         """
@@ -2961,6 +3201,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/detectorRecipes/{detectorRecipeId}/detectorRules/{detectorRuleId}"
         method = "GET"
+        operation_name = "get_detector_recipe_detector_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipeDetectorRule/GetDetectorRecipeDetectorRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3006,14 +3248,20 @@ class CloudGuardClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DetectorRecipeDetectorRule")
+                response_type="DetectorRecipeDetectorRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DetectorRecipeDetectorRule")
+                response_type="DetectorRecipeDetectorRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_detector_rule(self, detector_id, detector_rule_id, **kwargs):
         """
@@ -3049,6 +3297,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/detectors/{detectorId}/detectorRules/{detectorRuleId}"
         method = "GET"
+        operation_name = "get_detector_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRule/GetDetectorRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3094,14 +3344,20 @@ class CloudGuardClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DetectorRule")
+                response_type="DetectorRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DetectorRule")
+                response_type="DetectorRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_managed_list(self, managed_list_id, **kwargs):
         """
@@ -3134,6 +3390,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/managedLists/{managedListId}"
         method = "GET"
+        operation_name = "get_managed_list"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ManagedList/GetManagedList"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3178,14 +3436,20 @@ class CloudGuardClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ManagedList")
+                response_type="ManagedList",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ManagedList")
+                response_type="ManagedList",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_problem(self, problem_id, **kwargs):
         """
@@ -3218,6 +3482,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/problems/{problemId}"
         method = "GET"
+        operation_name = "get_problem"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Problem/GetProblem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3262,14 +3528,20 @@ class CloudGuardClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Problem")
+                response_type="Problem",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Problem")
+                response_type="Problem",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_resource_profile(self, resource_profile_id, **kwargs):
         """
@@ -3302,6 +3574,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/resourceProfiles/{resourceProfileId}"
         method = "GET"
+        operation_name = "get_resource_profile"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceProfile/GetResourceProfile"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3346,14 +3620,20 @@ class CloudGuardClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ResourceProfile")
+                response_type="ResourceProfile",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ResourceProfile")
+                response_type="ResourceProfile",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_responder_execution(self, responder_execution_id, **kwargs):
         """
@@ -3386,6 +3666,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/responderExecutions/{responderExecutionId}"
         method = "GET"
+        operation_name = "get_responder_execution"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderExecution/GetResponderExecution"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3430,14 +3712,20 @@ class CloudGuardClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ResponderExecution")
+                response_type="ResponderExecution",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ResponderExecution")
+                response_type="ResponderExecution",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_responder_recipe(self, responder_recipe_id, **kwargs):
         """
@@ -3470,6 +3758,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/responderRecipes/{responderRecipeId}"
         method = "GET"
+        operation_name = "get_responder_recipe"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipe/GetResponderRecipe"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3514,14 +3804,20 @@ class CloudGuardClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ResponderRecipe")
+                response_type="ResponderRecipe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ResponderRecipe")
+                response_type="ResponderRecipe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_responder_recipe_responder_rule(self, responder_recipe_id, responder_rule_id, **kwargs):
         """
@@ -3557,6 +3853,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/responderRecipes/{responderRecipeId}/responderRules/{responderRuleId}"
         method = "GET"
+        operation_name = "get_responder_recipe_responder_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipeResponderRule/GetResponderRecipeResponderRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3602,14 +3900,20 @@ class CloudGuardClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ResponderRecipeResponderRule")
+                response_type="ResponderRecipeResponderRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ResponderRecipeResponderRule")
+                response_type="ResponderRecipeResponderRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_responder_rule(self, responder_rule_id, **kwargs):
         """
@@ -3642,6 +3946,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/responderRules/{responderRuleId}"
         method = "GET"
+        operation_name = "get_responder_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRule/GetResponderRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3686,14 +3992,20 @@ class CloudGuardClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ResponderRule")
+                response_type="ResponderRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ResponderRule")
+                response_type="ResponderRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_security_policy(self, security_policy_id, **kwargs):
         """
@@ -3726,6 +4038,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/securityPolicies/{securityPolicyId}"
         method = "GET"
+        operation_name = "get_security_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityPolicy/GetSecurityPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3770,14 +4084,20 @@ class CloudGuardClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SecurityPolicy")
+                response_type="SecurityPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SecurityPolicy")
+                response_type="SecurityPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_security_recipe(self, security_recipe_id, **kwargs):
         """
@@ -3810,6 +4130,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/securityRecipes/{securityRecipeId}"
         method = "GET"
+        operation_name = "get_security_recipe"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityRecipe/GetSecurityRecipe"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3854,14 +4176,20 @@ class CloudGuardClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SecurityRecipe")
+                response_type="SecurityRecipe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SecurityRecipe")
+                response_type="SecurityRecipe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_security_zone(self, security_zone_id, **kwargs):
         """
@@ -3894,6 +4222,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/securityZones/{securityZoneId}"
         method = "GET"
+        operation_name = "get_security_zone"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityZone/GetSecurityZone"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3938,14 +4268,20 @@ class CloudGuardClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SecurityZone")
+                response_type="SecurityZone",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SecurityZone")
+                response_type="SecurityZone",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_sighting(self, sighting_id, **kwargs):
         """
@@ -3978,6 +4314,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/sightings/{sightingId}"
         method = "GET"
+        operation_name = "get_sighting"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Sighting/GetSighting"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4022,14 +4360,20 @@ class CloudGuardClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Sighting")
+                response_type="Sighting",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Sighting")
+                response_type="Sighting",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_target(self, target_id, **kwargs):
         """
@@ -4062,6 +4406,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/targets/{targetId}"
         method = "GET"
+        operation_name = "get_target"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Target/GetTarget"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4106,14 +4452,20 @@ class CloudGuardClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Target")
+                response_type="Target",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Target")
+                response_type="Target",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_target_detector_recipe(self, target_id, target_detector_recipe_id, **kwargs):
         """
@@ -4149,6 +4501,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/targets/{targetId}/targetDetectorRecipes/{targetDetectorRecipeId}"
         method = "GET"
+        operation_name = "get_target_detector_recipe"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipe/GetTargetDetectorRecipe"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4194,14 +4548,20 @@ class CloudGuardClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TargetDetectorRecipe")
+                response_type="TargetDetectorRecipe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TargetDetectorRecipe")
+                response_type="TargetDetectorRecipe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_target_detector_recipe_detector_rule(self, target_id, target_detector_recipe_id, detector_rule_id, **kwargs):
         """
@@ -4240,6 +4600,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/targets/{targetId}/targetDetectorRecipes/{targetDetectorRecipeId}/detectorRules/{detectorRuleId}"
         method = "GET"
+        operation_name = "get_target_detector_recipe_detector_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipeDetectorRule/GetTargetDetectorRecipeDetectorRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4286,14 +4648,20 @@ class CloudGuardClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TargetDetectorRecipeDetectorRule")
+                response_type="TargetDetectorRecipeDetectorRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TargetDetectorRecipeDetectorRule")
+                response_type="TargetDetectorRecipeDetectorRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_target_responder_recipe(self, target_id, target_responder_recipe_id, **kwargs):
         """
@@ -4329,6 +4697,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/targets/{targetId}/targetResponderRecipes/{targetResponderRecipeId}"
         method = "GET"
+        operation_name = "get_target_responder_recipe"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipe/GetTargetResponderRecipe"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4374,14 +4744,20 @@ class CloudGuardClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TargetResponderRecipe")
+                response_type="TargetResponderRecipe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TargetResponderRecipe")
+                response_type="TargetResponderRecipe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_target_responder_recipe_responder_rule(self, target_id, target_responder_recipe_id, responder_rule_id, **kwargs):
         """
@@ -4420,6 +4796,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/targets/{targetId}/targetResponderRecipes/{targetResponderRecipeId}/responderRules/{responderRuleId}"
         method = "GET"
+        operation_name = "get_target_responder_recipe_responder_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipeResponderRule/GetTargetResponderRecipeResponderRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4466,14 +4844,20 @@ class CloudGuardClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TargetResponderRecipeResponderRule")
+                response_type="TargetResponderRecipeResponderRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TargetResponderRecipeResponderRule")
+                response_type="TargetResponderRecipeResponderRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_condition_metadata_types(self, compartment_id, **kwargs):
         """
@@ -4527,6 +4911,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/conditionMetadataTypes"
         method = "GET"
+        operation_name = "list_condition_metadata_types"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ConditionMetadataType/ListConditionMetadataTypes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4597,14 +4983,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ConditionMetadataTypeCollection")
+                response_type="ConditionMetadataTypeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ConditionMetadataTypeCollection")
+                response_type="ConditionMetadataTypeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_data_mask_rules(self, compartment_id, **kwargs):
         """
@@ -4684,6 +5076,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/dataMaskRules"
         method = "GET"
+        operation_name = "list_data_mask_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DataMaskRule/ListDataMaskRules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4780,14 +5174,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataMaskRuleCollection")
+                response_type="DataMaskRuleCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataMaskRuleCollection")
+                response_type="DataMaskRuleCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_detector_recipe_detector_rules(self, detector_recipe_id, compartment_id, **kwargs):
         """
@@ -4847,6 +5247,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/detectorRecipes/{detectorRecipeId}/detectorRules"
         method = "GET"
+        operation_name = "list_detector_recipe_detector_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipeDetectorRule/ListDetectorRecipeDetectorRules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4930,7 +5332,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DetectorRecipeDetectorRuleCollection")
+                response_type="DetectorRecipeDetectorRuleCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4938,7 +5343,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DetectorRecipeDetectorRuleCollection")
+                response_type="DetectorRecipeDetectorRuleCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_detector_recipes(self, compartment_id, **kwargs):
         """
@@ -5029,6 +5437,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/detectorRecipes"
         method = "GET"
+        operation_name = "list_detector_recipes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipe/ListDetectorRecipes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5114,14 +5524,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DetectorRecipeCollection")
+                response_type="DetectorRecipeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DetectorRecipeCollection")
+                response_type="DetectorRecipeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_detector_rules(self, detector_id, compartment_id, **kwargs):
         """
@@ -5181,6 +5597,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/detectors/{detectorId}/detectorRules"
         method = "GET"
+        operation_name = "list_detector_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRule/ListDetectorRules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5264,7 +5682,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DetectorRuleCollection")
+                response_type="DetectorRuleCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5272,7 +5693,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DetectorRuleCollection")
+                response_type="DetectorRuleCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_detectors(self, compartment_id, **kwargs):
         """
@@ -5326,6 +5750,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/detectors"
         method = "GET"
+        operation_name = "list_detectors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Detector/ListDetectors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5396,14 +5822,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DetectorCollection")
+                response_type="DetectorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DetectorCollection")
+                response_type="DetectorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_impacted_resources(self, problem_id, **kwargs):
         """
@@ -5452,6 +5884,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/problems/{problemId}/impactedResources"
         method = "GET"
+        operation_name = "list_impacted_resources"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ImpactedResourceSummary/ListImpactedResources"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5523,7 +5957,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ImpactedResourceCollection")
+                response_type="ImpactedResourceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5531,7 +5968,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ImpactedResourceCollection")
+                response_type="ImpactedResourceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_managed_list_types(self, compartment_id, **kwargs):
         """
@@ -5585,6 +6025,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/managedListTypes"
         method = "GET"
+        operation_name = "list_managed_list_types"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ManagedListTypeSummary/ListManagedListTypes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5655,14 +6097,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ManagedListTypeCollection")
+                response_type="ManagedListTypeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ManagedListTypeCollection")
+                response_type="ManagedListTypeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_managed_lists(self, compartment_id, **kwargs):
         """
@@ -5757,6 +6205,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/managedLists"
         method = "GET"
+        operation_name = "list_managed_lists"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ManagedList/ListManagedLists"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5851,14 +6301,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ManagedListCollection")
+                response_type="ManagedListCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ManagedListCollection")
+                response_type="ManagedListCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_policies(self, compartment_id, **kwargs):
         """
@@ -5907,6 +6363,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/policies"
         method = "GET"
+        operation_name = "list_policies"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/PolicySummary/ListPolicies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5968,14 +6426,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PolicyCollection")
+                response_type="PolicyCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PolicyCollection")
+                response_type="PolicyCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_problem_endpoints(self, problem_id, **kwargs):
         """
@@ -6024,6 +6488,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/problems/{problemId}/endpoints"
         method = "GET"
+        operation_name = "list_problem_endpoints"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ProblemEndpointSummary/ListProblemEndpoints"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6095,7 +6561,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProblemEndpointCollection")
+                response_type="ProblemEndpointCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6103,7 +6572,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProblemEndpointCollection")
+                response_type="ProblemEndpointCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_problem_histories(self, compartment_id, problem_id, **kwargs):
         """
@@ -6155,6 +6627,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/problems/{problemId}/histories"
         method = "GET"
+        operation_name = "list_problem_histories"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Problem/ListProblemHistories"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6227,7 +6701,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProblemHistoryCollection")
+                response_type="ProblemHistoryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6235,7 +6712,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProblemHistoryCollection")
+                response_type="ProblemHistoryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_problems(self, compartment_id, **kwargs):
         """
@@ -6375,6 +6855,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/problems"
         method = "GET"
+        operation_name = "list_problems"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Problem/ListProblems"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6511,14 +6993,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProblemCollection")
+                response_type="ProblemCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProblemCollection")
+                response_type="ProblemCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_recommendations(self, compartment_id, **kwargs):
         """
@@ -6595,6 +7083,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/recommendations"
         method = "GET"
+        operation_name = "list_recommendations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/RecommendationSummary/ListRecommendations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6687,14 +7177,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RecommendationSummaryCollection")
+                response_type="RecommendationSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RecommendationSummaryCollection")
+                response_type="RecommendationSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_resource_profile_endpoints(self, resource_profile_id, **kwargs):
         """
@@ -6743,6 +7239,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/resourceProfiles/{resourceProfileId}/endpoints"
         method = "GET"
+        operation_name = "list_resource_profile_endpoints"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceProfileEndpointSummary/ListResourceProfileEndpoints"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6814,7 +7312,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResourceProfileEndpointCollection")
+                response_type="ResourceProfileEndpointCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6822,7 +7323,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResourceProfileEndpointCollection")
+                response_type="ResourceProfileEndpointCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_resource_profile_impacted_resources(self, resource_profile_id, **kwargs):
         """
@@ -6871,6 +7375,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/resourceProfiles/{resourceProfileId}/impactedResources"
         method = "GET"
+        operation_name = "list_resource_profile_impacted_resources"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceProfileImpactedResourceSummary/ListResourceProfileImpactedResources"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6942,7 +7448,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResourceProfileImpactedResourceCollection")
+                response_type="ResourceProfileImpactedResourceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6950,7 +7459,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResourceProfileImpactedResourceCollection")
+                response_type="ResourceProfileImpactedResourceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_resource_profiles(self, compartment_id, **kwargs):
         """
@@ -7054,6 +7566,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/resourceProfiles"
         method = "GET"
+        operation_name = "list_resource_profiles"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceProfileSummary/ListResourceProfiles"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7144,14 +7658,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResourceProfileCollection")
+                response_type="ResourceProfileCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResourceProfileCollection")
+                response_type="ResourceProfileCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_resource_types(self, compartment_id, **kwargs):
         """
@@ -7210,6 +7730,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/resourceTypes"
         method = "GET"
+        operation_name = "list_resource_types"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceTypeSummary/ListResourceTypes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7289,14 +7811,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResourceTypeCollection")
+                response_type="ResourceTypeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResourceTypeCollection")
+                response_type="ResourceTypeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_responder_activities(self, problem_id, **kwargs):
         """
@@ -7345,6 +7873,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/problems/{problemId}/responderActivities"
         method = "GET"
+        operation_name = "list_responder_activities"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderActivitySummary/ListResponderActivities"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7416,7 +7946,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResponderActivityCollection")
+                response_type="ResponderActivityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7424,7 +7957,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResponderActivityCollection")
+                response_type="ResponderActivityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_responder_executions(self, compartment_id, **kwargs):
         """
@@ -7524,6 +8060,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/responderExecutions"
         method = "GET"
+        operation_name = "list_responder_executions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderExecutionSummary/ListResponderExecutions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7637,14 +8175,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResponderExecutionCollection")
+                response_type="ResponderExecutionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResponderExecutionCollection")
+                response_type="ResponderExecutionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_responder_recipe_responder_rules(self, responder_recipe_id, compartment_id, **kwargs):
         """
@@ -7704,6 +8248,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/responderRecipes/{responderRecipeId}/responderRules"
         method = "GET"
+        operation_name = "list_responder_recipe_responder_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipeResponderRule/ListResponderRecipeResponderRules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7787,7 +8333,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResponderRecipeResponderRuleCollection")
+                response_type="ResponderRecipeResponderRuleCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7795,7 +8344,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResponderRecipeResponderRuleCollection")
+                response_type="ResponderRecipeResponderRuleCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_responder_recipes(self, compartment_id, **kwargs):
         """
@@ -7885,6 +8437,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/responderRecipes"
         method = "GET"
+        operation_name = "list_responder_recipes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipe/ListResponderRecipes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7970,14 +8524,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResponderRecipeCollection")
+                response_type="ResponderRecipeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResponderRecipeCollection")
+                response_type="ResponderRecipeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_responder_rules(self, compartment_id, **kwargs):
         """
@@ -8034,6 +8594,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/responderRules"
         method = "GET"
+        operation_name = "list_responder_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRule/ListResponderRules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8106,14 +8668,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResponderRuleCollection")
+                response_type="ResponderRuleCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResponderRuleCollection")
+                response_type="ResponderRuleCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_security_policies(self, compartment_id, **kwargs):
         """
@@ -8173,6 +8741,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/securityPolicies"
         method = "GET"
+        operation_name = "list_security_policies"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityPolicyCollection/ListSecurityPolicies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8247,14 +8817,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SecurityPolicyCollection")
+                response_type="SecurityPolicyCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SecurityPolicyCollection")
+                response_type="SecurityPolicyCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_security_recipes(self, compartment_id, **kwargs):
         """
@@ -8314,6 +8890,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/securityRecipes"
         method = "GET"
+        operation_name = "list_security_recipes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityRecipeCollection/ListSecurityRecipes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8388,14 +8966,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SecurityRecipeCollection")
+                response_type="SecurityRecipeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SecurityRecipeCollection")
+                response_type="SecurityRecipeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_security_zones(self, compartment_id, **kwargs):
         """
@@ -8461,6 +9045,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/securityZones"
         method = "GET"
+        operation_name = "list_security_zones"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityZoneCollection/ListSecurityZones"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8539,14 +9125,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SecurityZoneCollection")
+                response_type="SecurityZoneCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SecurityZoneCollection")
+                response_type="SecurityZoneCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_sighting_endpoints(self, sighting_id, **kwargs):
         """
@@ -8595,6 +9187,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/sightings/{sightingId}/endpoints"
         method = "GET"
+        operation_name = "list_sighting_endpoints"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SightingEndpointSummary/ListSightingEndpoints"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8666,7 +9260,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SightingEndpointCollection")
+                response_type="SightingEndpointCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8674,7 +9271,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SightingEndpointCollection")
+                response_type="SightingEndpointCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_sighting_impacted_resources(self, sighting_id, **kwargs):
         """
@@ -8723,6 +9323,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/sightings/{sightingId}/impactedResources"
         method = "GET"
+        operation_name = "list_sighting_impacted_resources"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SightingImpactedResourceSummary/ListSightingImpactedResources"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8794,7 +9396,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SightingImpactedResourceCollection")
+                response_type="SightingImpactedResourceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8802,7 +9407,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SightingImpactedResourceCollection")
+                response_type="SightingImpactedResourceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_sightings(self, compartment_id, **kwargs):
         """
@@ -8890,6 +9498,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/sightings"
         method = "GET"
+        operation_name = "list_sightings"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SightingSummary/ListSightings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8970,14 +9580,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SightingCollection")
+                response_type="SightingCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SightingCollection")
+                response_type="SightingCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_tactics(self, compartment_id, **kwargs):
         """
@@ -9031,6 +9647,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/tactics"
         method = "GET"
+        operation_name = "list_tactics"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TacticSummary/ListTactics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9101,14 +9719,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TacticCollection")
+                response_type="TacticCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TacticCollection")
+                response_type="TacticCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_target_detector_recipe_detector_rules(self, target_id, target_detector_recipe_id, compartment_id, **kwargs):
         """
@@ -9171,6 +9795,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/targets/{targetId}/targetDetectorRecipes/{targetDetectorRecipeId}/detectorRules"
         method = "GET"
+        operation_name = "list_target_detector_recipe_detector_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipeDetectorRule/ListTargetDetectorRecipeDetectorRules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9255,7 +9881,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TargetDetectorRecipeDetectorRuleCollection")
+                response_type="TargetDetectorRecipeDetectorRuleCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9263,7 +9892,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TargetDetectorRecipeDetectorRuleCollection")
+                response_type="TargetDetectorRecipeDetectorRuleCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_target_detector_recipes(self, target_id, compartment_id, **kwargs):
         """
@@ -9323,6 +9955,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/targets/{targetId}/targetDetectorRecipes"
         method = "GET"
+        operation_name = "list_target_detector_recipes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipe/ListTargetDetectorRecipes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9406,7 +10040,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TargetDetectorRecipeCollection")
+                response_type="TargetDetectorRecipeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9414,7 +10051,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TargetDetectorRecipeCollection")
+                response_type="TargetDetectorRecipeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_target_responder_recipe_responder_rules(self, target_id, target_responder_recipe_id, compartment_id, **kwargs):
         """
@@ -9477,6 +10117,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/targets/{targetId}/targetResponderRecipes/{targetResponderRecipeId}/responderRules"
         method = "GET"
+        operation_name = "list_target_responder_recipe_responder_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipeResponderRule/ListTargetResponderRecipeResponderRules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9561,7 +10203,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TargetResponderRecipeResponderRuleCollection")
+                response_type="TargetResponderRecipeResponderRuleCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9569,7 +10214,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TargetResponderRecipeResponderRuleCollection")
+                response_type="TargetResponderRecipeResponderRuleCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_target_responder_recipes(self, target_id, compartment_id, **kwargs):
         """
@@ -9629,6 +10277,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/targets/{targetId}/targetResponderRecipes"
         method = "GET"
+        operation_name = "list_target_responder_recipes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipe/ListTargetResponderRecipes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9712,7 +10362,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TargetResponderRecipeCollection")
+                response_type="TargetResponderRecipeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9720,7 +10373,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TargetResponderRecipeCollection")
+                response_type="TargetResponderRecipeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_targets(self, compartment_id, **kwargs):
         """
@@ -9810,6 +10466,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/targets"
         method = "GET"
+        operation_name = "list_targets"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Target/ListTargets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9895,14 +10553,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TargetCollection")
+                response_type="TargetCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TargetCollection")
+                response_type="TargetCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_techniques(self, compartment_id, **kwargs):
         """
@@ -9959,6 +10623,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/techniques"
         method = "GET"
+        operation_name = "list_techniques"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TechniqueSummary/ListTechniques"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10031,14 +10697,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TechniqueCollection")
+                response_type="TechniqueCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TechniqueCollection")
+                response_type="TechniqueCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_compartment(self, security_zone_id, remove_compartment_details, **kwargs):
         """
@@ -10088,6 +10760,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/securityZones/{securityZoneId}/actions/removeCompartment"
         method = "POST"
+        operation_name = "remove_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityZone/RemoveCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10138,7 +10812,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=remove_compartment_details,
-                response_type="SecurityZone")
+                response_type="SecurityZone",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10146,7 +10823,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=remove_compartment_details,
-                response_type="SecurityZone")
+                response_type="SecurityZone",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def request_risk_scores(self, compartment_id, **kwargs):
         """
@@ -10185,6 +10865,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/riskScores"
         method = "POST"
+        operation_name = "request_risk_scores"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/RiskScoreAggregation/RequestRiskScores"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10228,14 +10910,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RiskScoreAggregationCollection")
+                response_type="RiskScoreAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RiskScoreAggregationCollection")
+                response_type="RiskScoreAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def request_security_score_summarized_trend(self, compartment_id, **kwargs):
         """
@@ -10281,6 +10969,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/securityScores/actions/summarizeTrend"
         method = "POST"
+        operation_name = "request_security_score_summarized_trend"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityScoreTrendAggregation/RequestSecurityScoreSummarizedTrend"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10328,14 +11018,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SecurityScoreTrendAggregationCollection")
+                response_type="SecurityScoreTrendAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SecurityScoreTrendAggregationCollection")
+                response_type="SecurityScoreTrendAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def request_security_scores(self, compartment_id, **kwargs):
         """
@@ -10374,6 +11070,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/securityScores"
         method = "POST"
+        operation_name = "request_security_scores"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityScoreAggregation/RequestSecurityScores"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10417,14 +11115,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SecurityScoreAggregationCollection")
+                response_type="SecurityScoreAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SecurityScoreAggregationCollection")
+                response_type="SecurityScoreAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def request_summarized_activity_problems(self, compartment_id, **kwargs):
         """
@@ -10497,6 +11201,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/problems/actions/summarizeActivityProblems"
         method = "POST"
+        operation_name = "request_summarized_activity_problems"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ActivityProblemAggregation/RequestSummarizedActivityProblems"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10553,14 +11259,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ActivityProblemAggregationCollection")
+                response_type="ActivityProblemAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ActivityProblemAggregationCollection")
+                response_type="ActivityProblemAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def request_summarized_problems(self, list_dimensions, compartment_id, **kwargs):
         """
@@ -10630,6 +11342,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/problems/actions/summarize"
         method = "POST"
+        operation_name = "request_summarized_problems"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ProblemAggregation/RequestSummarizedProblems"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10692,14 +11406,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProblemAggregationCollection")
+                response_type="ProblemAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProblemAggregationCollection")
+                response_type="ProblemAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def request_summarized_responder_executions(self, responder_executions_dimensions, compartment_id, **kwargs):
         """
@@ -10781,6 +11501,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/responderExecutions/actions/summarize"
         method = "POST"
+        operation_name = "request_summarized_responder_executions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderExecutionAggregation/RequestSummarizedResponderExecutions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10863,14 +11585,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResponderExecutionAggregationCollection")
+                response_type="ResponderExecutionAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResponderExecutionAggregationCollection")
+                response_type="ResponderExecutionAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def request_summarized_risk_scores(self, compartment_id, **kwargs):
         """
@@ -10909,6 +11637,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/problems/actions/summarizeRiskScore"
         method = "POST"
+        operation_name = "request_summarized_risk_scores"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/RiskScoreAggregation/RequestSummarizedRiskScores"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10952,14 +11682,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RiskScoreAggregationCollection")
+                response_type="RiskScoreAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RiskScoreAggregationCollection")
+                response_type="RiskScoreAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def request_summarized_security_scores(self, compartment_id, **kwargs):
         """
@@ -10998,6 +11734,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/problems/actions/summarizeSecurityScore"
         method = "POST"
+        operation_name = "request_summarized_security_scores"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityScoreAggregation/RequestSummarizedSecurityScores"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11041,14 +11779,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SecurityScoreAggregationCollection")
+                response_type="SecurityScoreAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SecurityScoreAggregationCollection")
+                response_type="SecurityScoreAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def request_summarized_top_trend_resource_profile_risk_scores(self, compartment_id, **kwargs):
         """
@@ -11116,6 +11860,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/resourceProfileRiskScores/actions/summarizeTopTrends"
         method = "POST"
+        operation_name = "request_summarized_top_trend_resource_profile_risk_scores"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceProfileRiskScoreAggregationSummary/RequestSummarizedTopTrendResourceProfileRiskScores"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11185,14 +11931,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResourceProfileRiskScoreAggregationSummaryCollection")
+                response_type="ResourceProfileRiskScoreAggregationSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResourceProfileRiskScoreAggregationSummaryCollection")
+                response_type="ResourceProfileRiskScoreAggregationSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def request_summarized_trend_problems(self, compartment_id, **kwargs):
         """
@@ -11263,6 +12015,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/problems/actions/summarizeTrend"
         method = "POST"
+        operation_name = "request_summarized_trend_problems"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ProblemTrendAggregation/RequestSummarizedTrendProblems"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11321,14 +12075,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProblemTrendAggregationCollection")
+                response_type="ProblemTrendAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProblemTrendAggregationCollection")
+                response_type="ProblemTrendAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def request_summarized_trend_resource_risk_scores(self, request_summarized_trend_resource_risk_scores_details, compartment_id, **kwargs):
         """
@@ -11391,6 +12151,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/resourceRiskScores/actions/summarizeTrend"
         method = "POST"
+        operation_name = "request_summarized_trend_resource_risk_scores"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceRiskScoreAggregation/RequestSummarizedTrendResourceRiskScores"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11450,7 +12212,10 @@ class CloudGuardClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=request_summarized_trend_resource_risk_scores_details,
-                response_type="ResourceRiskScoreAggregationCollection")
+                response_type="ResourceRiskScoreAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11458,7 +12223,10 @@ class CloudGuardClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=request_summarized_trend_resource_risk_scores_details,
-                response_type="ResourceRiskScoreAggregationCollection")
+                response_type="ResourceRiskScoreAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def request_summarized_trend_responder_executions(self, compartment_id, **kwargs):
         """
@@ -11529,6 +12297,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/responderExecutions/actions/summarizeTrend"
         method = "POST"
+        operation_name = "request_summarized_trend_responder_executions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderExecutionTrendAggregation/RequestSummarizedTrendResponderExecutions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11587,14 +12357,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResponderExecutionTrendAggregationCollection")
+                response_type="ResponderExecutionTrendAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResponderExecutionTrendAggregationCollection")
+                response_type="ResponderExecutionTrendAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def request_summarized_trend_security_scores(self, compartment_id, **kwargs):
         """
@@ -11639,6 +12415,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/problems/actions/summarizeSecurityScoreTrend"
         method = "POST"
+        operation_name = "request_summarized_trend_security_scores"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityScoreTrendAggregation/RequestSummarizedTrendSecurityScores"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11686,14 +12464,20 @@ class CloudGuardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SecurityScoreTrendAggregationCollection")
+                response_type="SecurityScoreTrendAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SecurityScoreTrendAggregationCollection")
+                response_type="SecurityScoreTrendAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def skip_bulk_responder_execution(self, skip_bulk_responder_execution_details, **kwargs):
         """
@@ -11727,6 +12511,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/responderExecutions/actions/bulkSkip"
         method = "POST"
+        operation_name = "skip_bulk_responder_execution"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderExecution/SkipBulkResponderExecution"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11760,13 +12546,19 @@ class CloudGuardClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=skip_bulk_responder_execution_details)
+                body=skip_bulk_responder_execution_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=skip_bulk_responder_execution_details)
+                body=skip_bulk_responder_execution_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def skip_responder_execution(self, responder_execution_id, compartment_id, **kwargs):
         """
@@ -11816,6 +12608,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/responderExecutions/{responderExecutionId}/actions/skip"
         method = "POST"
+        operation_name = "skip_responder_execution"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderExecution/SkipResponderExecution"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11870,14 +12664,20 @@ class CloudGuardClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def trigger_responder(self, problem_id, trigger_responder_details, **kwargs):
         """
@@ -11927,6 +12727,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/problems/{problemId}/actions/triggerResponder"
         method = "POST"
+        operation_name = "trigger_responder"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Problem/TriggerResponder"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11976,14 +12778,20 @@ class CloudGuardClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=trigger_responder_details)
+                body=trigger_responder_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=trigger_responder_details)
+                body=trigger_responder_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_bulk_problem_status(self, update_bulk_problem_status_details, **kwargs):
         """
@@ -12017,6 +12825,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/problems/actions/bulkUpdateStatus"
         method = "POST"
+        operation_name = "update_bulk_problem_status"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Problem/UpdateBulkProblemStatus"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12050,13 +12860,19 @@ class CloudGuardClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=update_bulk_problem_status_details)
+                body=update_bulk_problem_status_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=update_bulk_problem_status_details)
+                body=update_bulk_problem_status_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_configuration(self, update_configuration_details, compartment_id, **kwargs):
         """
@@ -12106,6 +12922,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/configuration"
         method = "PUT"
+        operation_name = "update_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Configuration/UpdateConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12151,7 +12969,10 @@ class CloudGuardClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_configuration_details,
-                response_type="Configuration")
+                response_type="Configuration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12159,7 +12980,10 @@ class CloudGuardClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_configuration_details,
-                response_type="Configuration")
+                response_type="Configuration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_data_mask_rule(self, data_mask_rule_id, update_data_mask_rule_details, **kwargs):
         """
@@ -12202,6 +13026,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/dataMaskRules/{dataMaskRuleId}"
         method = "PUT"
+        operation_name = "update_data_mask_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DataMaskRule/UpdateDataMaskRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12249,7 +13075,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_data_mask_rule_details,
-                response_type="DataMaskRule")
+                response_type="DataMaskRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12257,7 +13086,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_data_mask_rule_details,
-                response_type="DataMaskRule")
+                response_type="DataMaskRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_detector_recipe(self, detector_recipe_id, update_detector_recipe_details, **kwargs):
         """
@@ -12307,6 +13139,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/detectorRecipes/{detectorRecipeId}"
         method = "PUT"
+        operation_name = "update_detector_recipe"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipe/UpdateDetectorRecipe"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12357,7 +13191,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_detector_recipe_details,
-                response_type="DetectorRecipe")
+                response_type="DetectorRecipe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12365,7 +13202,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_detector_recipe_details,
-                response_type="DetectorRecipe")
+                response_type="DetectorRecipe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_detector_recipe_detector_rule(self, detector_recipe_id, detector_rule_id, update_detector_recipe_detector_rule_details, **kwargs):
         """
@@ -12411,6 +13251,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/detectorRecipes/{detectorRecipeId}/detectorRules/{detectorRuleId}"
         method = "PUT"
+        operation_name = "update_detector_recipe_detector_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/DetectorRecipeDetectorRule/UpdateDetectorRecipeDetectorRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12459,7 +13301,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_detector_recipe_detector_rule_details,
-                response_type="DetectorRecipeDetectorRule")
+                response_type="DetectorRecipeDetectorRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12467,7 +13312,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_detector_recipe_detector_rule_details,
-                response_type="DetectorRecipeDetectorRule")
+                response_type="DetectorRecipeDetectorRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_managed_list(self, managed_list_id, update_managed_list_details, **kwargs):
         """
@@ -12517,6 +13365,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/managedLists/{managedListId}"
         method = "PUT"
+        operation_name = "update_managed_list"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ManagedList/UpdateManagedList"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12567,7 +13417,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_managed_list_details,
-                response_type="ManagedList")
+                response_type="ManagedList",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12575,7 +13428,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_managed_list_details,
-                response_type="ManagedList")
+                response_type="ManagedList",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_problem_status(self, problem_id, update_problem_status_details, **kwargs):
         """
@@ -12625,6 +13481,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/problems/{problemId}/actions/updateStatus"
         method = "POST"
+        operation_name = "update_problem_status"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Problem/UpdateProblemStatus"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12675,7 +13533,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_problem_status_details,
-                response_type="Problem")
+                response_type="Problem",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12683,7 +13544,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_problem_status_details,
-                response_type="Problem")
+                response_type="Problem",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_responder_recipe(self, responder_recipe_id, update_responder_recipe_details, **kwargs):
         """
@@ -12726,6 +13590,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/responderRecipes/{responderRecipeId}"
         method = "PUT"
+        operation_name = "update_responder_recipe"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipe/UpdateResponderRecipe"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12773,7 +13639,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_responder_recipe_details,
-                response_type="ResponderRecipe")
+                response_type="ResponderRecipe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12781,7 +13650,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_responder_recipe_details,
-                response_type="ResponderRecipe")
+                response_type="ResponderRecipe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_responder_recipe_responder_rule(self, responder_recipe_id, responder_rule_id, update_responder_recipe_responder_rule_details, **kwargs):
         """
@@ -12827,6 +13699,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/responderRecipes/{responderRecipeId}/responderRules/{responderRuleId}"
         method = "PUT"
+        operation_name = "update_responder_recipe_responder_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResponderRecipeResponderRule/UpdateResponderRecipeResponderRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12875,7 +13749,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_responder_recipe_responder_rule_details,
-                response_type="ResponderRecipeResponderRule")
+                response_type="ResponderRecipeResponderRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12883,7 +13760,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_responder_recipe_responder_rule_details,
-                response_type="ResponderRecipeResponderRule")
+                response_type="ResponderRecipeResponderRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_security_recipe(self, security_recipe_id, update_security_recipe_details, **kwargs):
         """
@@ -12926,6 +13806,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/securityRecipes/{securityRecipeId}"
         method = "PUT"
+        operation_name = "update_security_recipe"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityRecipe/UpdateSecurityRecipe"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12973,7 +13855,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_security_recipe_details,
-                response_type="SecurityRecipe")
+                response_type="SecurityRecipe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12981,7 +13866,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_security_recipe_details,
-                response_type="SecurityRecipe")
+                response_type="SecurityRecipe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_security_zone(self, security_zone_id, update_security_zone_details, **kwargs):
         """
@@ -13024,6 +13912,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/securityZones/{securityZoneId}"
         method = "PUT"
+        operation_name = "update_security_zone"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SecurityZone/UpdateSecurityZone"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13071,7 +13961,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_security_zone_details,
-                response_type="SecurityZone")
+                response_type="SecurityZone",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13079,7 +13972,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_security_zone_details,
-                response_type="SecurityZone")
+                response_type="SecurityZone",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_target(self, target_id, update_target_details, **kwargs):
         """
@@ -13122,6 +14018,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/targets/{targetId}"
         method = "PUT"
+        operation_name = "update_target"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Target/UpdateTarget"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13169,7 +14067,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_target_details,
-                response_type="Target")
+                response_type="Target",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13177,7 +14078,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_target_details,
-                response_type="Target")
+                response_type="Target",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_target_detector_recipe(self, target_id, target_detector_recipe_id, update_target_detector_recipe_details, **kwargs):
         """
@@ -13223,6 +14127,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/targets/{targetId}/targetDetectorRecipes/{targetDetectorRecipeId}"
         method = "PUT"
+        operation_name = "update_target_detector_recipe"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipe/UpdateTargetDetectorRecipe"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13271,7 +14177,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_target_detector_recipe_details,
-                response_type="TargetDetectorRecipe")
+                response_type="TargetDetectorRecipe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13279,7 +14188,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_target_detector_recipe_details,
-                response_type="TargetDetectorRecipe")
+                response_type="TargetDetectorRecipe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_target_detector_recipe_detector_rule(self, target_id, target_detector_recipe_id, detector_rule_id, update_target_detector_recipe_detector_rule_details, **kwargs):
         """
@@ -13328,6 +14240,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/targets/{targetId}/targetDetectorRecipes/{targetDetectorRecipeId}/detectorRules/{detectorRuleId}"
         method = "PUT"
+        operation_name = "update_target_detector_recipe_detector_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetDetectorRecipeDetectorRule/UpdateTargetDetectorRecipeDetectorRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13377,7 +14291,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_target_detector_recipe_detector_rule_details,
-                response_type="TargetDetectorRecipeDetectorRule")
+                response_type="TargetDetectorRecipeDetectorRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13385,7 +14302,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_target_detector_recipe_detector_rule_details,
-                response_type="TargetDetectorRecipeDetectorRule")
+                response_type="TargetDetectorRecipeDetectorRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_target_responder_recipe(self, target_id, target_responder_recipe_id, update_target_responder_recipe_details, **kwargs):
         """
@@ -13431,6 +14351,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/targets/{targetId}/targetResponderRecipes/{targetResponderRecipeId}"
         method = "PUT"
+        operation_name = "update_target_responder_recipe"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipe/UpdateTargetResponderRecipe"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13479,7 +14401,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_target_responder_recipe_details,
-                response_type="TargetResponderRecipe")
+                response_type="TargetResponderRecipe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13487,7 +14412,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_target_responder_recipe_details,
-                response_type="TargetResponderRecipe")
+                response_type="TargetResponderRecipe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_target_responder_recipe_responder_rule(self, target_id, target_responder_recipe_id, responder_rule_id, update_target_responder_recipe_responder_rule_details, **kwargs):
         """
@@ -13536,6 +14464,8 @@ class CloudGuardClient(object):
         """
         resource_path = "/targets/{targetId}/targetResponderRecipes/{targetResponderRecipeId}/responderRules/{responderRuleId}"
         method = "PUT"
+        operation_name = "update_target_responder_recipe_responder_rule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/TargetResponderRecipeResponderRule/UpdateTargetResponderRecipeResponderRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13585,7 +14515,10 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_target_responder_recipe_responder_rule_details,
-                response_type="TargetResponderRecipeResponderRule")
+                response_type="TargetResponderRecipeResponderRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13593,4 +14526,7 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_target_responder_recipe_responder_rule_details,
-                response_type="TargetResponderRecipeResponderRule")
+                response_type="TargetResponderRecipeResponderRule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

@@ -139,6 +139,8 @@ class AccountClient(object):
         """
         resource_path = "/launchEligibility"
         method = "GET"
+        operation_name = "get_launch_eligibility"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/LaunchEligibility/GetLaunchEligibility"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -181,14 +183,20 @@ class AccountClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LaunchEligibility")
+                response_type="LaunchEligibility",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LaunchEligibility")
+                response_type="LaunchEligibility",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_third_party_paid_listing_eligibility(self, compartment_id, **kwargs):
         """
@@ -222,6 +230,8 @@ class AccountClient(object):
         """
         resource_path = "/thirdPartyPaidListingEligibility"
         method = "GET"
+        operation_name = "get_third_party_paid_listing_eligibility"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/ThirdPartyPaidListingEligibility/GetThirdPartyPaidListingEligibility"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -263,11 +273,17 @@ class AccountClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ThirdPartyPaidListingEligibility")
+                response_type="ThirdPartyPaidListingEligibility",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ThirdPartyPaidListingEligibility")
+                response_type="ThirdPartyPaidListingEligibility",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

@@ -145,6 +145,8 @@ class BastionClient(object):
         """
         resource_path = "/bastions/{bastionId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_bastion_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Bastion/ChangeBastionCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -191,14 +193,20 @@ class BastionClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_bastion_compartment_details)
+                body=change_bastion_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_bastion_compartment_details)
+                body=change_bastion_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_bastion(self, create_bastion_details, **kwargs):
         """
@@ -238,6 +246,8 @@ class BastionClient(object):
         """
         resource_path = "/bastions"
         method = "POST"
+        operation_name = "create_bastion"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Bastion/CreateBastion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -275,14 +285,20 @@ class BastionClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_bastion_details,
-                response_type="Bastion")
+                response_type="Bastion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_bastion_details,
-                response_type="Bastion")
+                response_type="Bastion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_session(self, create_session_details, **kwargs):
         """
@@ -322,6 +338,8 @@ class BastionClient(object):
         """
         resource_path = "/sessions"
         method = "POST"
+        operation_name = "create_session"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Session/CreateSession"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -359,14 +377,20 @@ class BastionClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_session_details,
-                response_type="Session")
+                response_type="Session",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_session_details,
-                response_type="Session")
+                response_type="Session",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_bastion(self, bastion_id, **kwargs):
         """
@@ -406,6 +430,8 @@ class BastionClient(object):
         """
         resource_path = "/bastions/{bastionId}"
         method = "DELETE"
+        operation_name = "delete_bastion"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Bastion/DeleteBastion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -451,13 +477,19 @@ class BastionClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_session(self, session_id, **kwargs):
         """
@@ -497,6 +529,8 @@ class BastionClient(object):
         """
         resource_path = "/sessions/{sessionId}"
         method = "DELETE"
+        operation_name = "delete_session"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Session/DeleteSession"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -542,13 +576,19 @@ class BastionClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_bastion(self, bastion_id, **kwargs):
         """
@@ -581,6 +621,8 @@ class BastionClient(object):
         """
         resource_path = "/bastions/{bastionId}"
         method = "GET"
+        operation_name = "get_bastion"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Bastion/GetBastion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -625,14 +667,20 @@ class BastionClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Bastion")
+                response_type="Bastion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Bastion")
+                response_type="Bastion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_session(self, session_id, **kwargs):
         """
@@ -665,6 +713,8 @@ class BastionClient(object):
         """
         resource_path = "/sessions/{sessionId}"
         method = "GET"
+        operation_name = "get_session"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Session/GetSession"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -709,14 +759,20 @@ class BastionClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Session")
+                response_type="Session",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Session")
+                response_type="Session",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -749,6 +805,8 @@ class BastionClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -793,14 +851,20 @@ class BastionClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_bastions(self, compartment_id, **kwargs):
         """
@@ -860,6 +924,8 @@ class BastionClient(object):
         """
         resource_path = "/bastions"
         method = "GET"
+        operation_name = "list_bastions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Bastion/ListBastions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -934,14 +1000,20 @@ class BastionClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[BastionSummary]")
+                response_type="list[BastionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[BastionSummary]")
+                response_type="list[BastionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_sessions(self, bastion_id, **kwargs):
         """
@@ -1001,6 +1073,8 @@ class BastionClient(object):
         """
         resource_path = "/sessions"
         method = "GET"
+        operation_name = "list_sessions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Session/ListSessions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1075,14 +1149,20 @@ class BastionClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SessionSummary]")
+                response_type="list[SessionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SessionSummary]")
+                response_type="list[SessionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -1121,6 +1201,8 @@ class BastionClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1174,7 +1256,10 @@ class BastionClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1182,7 +1267,10 @@ class BastionClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -1221,6 +1309,8 @@ class BastionClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1274,7 +1364,10 @@ class BastionClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLogEntry]")
+                response_type="list[WorkRequestLogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1282,7 +1375,10 @@ class BastionClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLogEntry]")
+                response_type="list[WorkRequestLogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -1321,6 +1417,8 @@ class BastionClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1364,14 +1462,20 @@ class BastionClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestSummary]")
+                response_type="list[WorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestSummary]")
+                response_type="list[WorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_bastion(self, bastion_id, update_bastion_details, **kwargs):
         """
@@ -1414,6 +1518,8 @@ class BastionClient(object):
         """
         resource_path = "/bastions/{bastionId}"
         method = "PUT"
+        operation_name = "update_bastion"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Bastion/UpdateBastion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1460,14 +1566,20 @@ class BastionClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_bastion_details)
+                body=update_bastion_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_bastion_details)
+                body=update_bastion_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_session(self, session_id, update_session_details, **kwargs):
         """
@@ -1510,6 +1622,8 @@ class BastionClient(object):
         """
         resource_path = "/sessions/{sessionId}"
         method = "PUT"
+        operation_name = "update_session"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bastion/20210331/Session/UpdateSession"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1557,7 +1671,10 @@ class BastionClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_session_details,
-                response_type="Session")
+                response_type="Session",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1565,4 +1682,7 @@ class BastionClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_session_details,
-                response_type="Session")
+                response_type="Session",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

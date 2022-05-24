@@ -153,6 +153,8 @@ class SddcClient(object):
         """
         resource_path = "/sddcs/{sddcId}/actions/cancelDowngradeHcx"
         method = "POST"
+        operation_name = "cancel_downgrade_hcx"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/CancelDowngradeHcx"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -203,13 +205,19 @@ class SddcClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_sddc_compartment(self, sddc_id, change_sddc_compartment_details, **kwargs):
         """
@@ -266,6 +274,8 @@ class SddcClient(object):
         """
         resource_path = "/sddcs/{sddcId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_sddc_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/ChangeSddcCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -317,14 +327,20 @@ class SddcClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_sddc_compartment_details)
+                body=change_sddc_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_sddc_compartment_details)
+                body=change_sddc_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_sddc(self, create_sddc_details, **kwargs):
         """
@@ -372,6 +388,8 @@ class SddcClient(object):
         """
         resource_path = "/sddcs"
         method = "POST"
+        operation_name = "create_sddc"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/CreateSddc"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -410,13 +428,19 @@ class SddcClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_sddc_details)
+                body=create_sddc_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_sddc_details)
+                body=create_sddc_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_sddc(self, sddc_id, **kwargs):
         """
@@ -464,6 +488,8 @@ class SddcClient(object):
         """
         resource_path = "/sddcs/{sddcId}"
         method = "DELETE"
+        operation_name = "delete_sddc"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/DeleteSddc"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -511,13 +537,19 @@ class SddcClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def downgrade_hcx(self, downgrade_hcx_details, sddc_id, **kwargs):
         """
@@ -573,6 +605,8 @@ class SddcClient(object):
         """
         resource_path = "/sddcs/{sddcId}/actions/downgradeHcx"
         method = "POST"
+        operation_name = "downgrade_hcx"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/DowngradeHcx"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -624,14 +658,20 @@ class SddcClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=downgrade_hcx_details)
+                body=downgrade_hcx_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=downgrade_hcx_details)
+                body=downgrade_hcx_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_sddc(self, sddc_id, **kwargs):
         """
@@ -667,6 +707,8 @@ class SddcClient(object):
         """
         resource_path = "/sddcs/{sddcId}"
         method = "GET"
+        operation_name = "get_sddc"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/GetSddc"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -713,14 +755,20 @@ class SddcClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Sddc")
+                response_type="Sddc",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Sddc")
+                response_type="Sddc",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_sddcs(self, compartment_id, **kwargs):
         """
@@ -802,6 +850,8 @@ class SddcClient(object):
         """
         resource_path = "/sddcs"
         method = "GET"
+        operation_name = "list_sddcs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/SddcSummary/ListSddcs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -878,14 +928,20 @@ class SddcClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SddcCollection")
+                response_type="SddcCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SddcCollection")
+                response_type="SddcCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_supported_host_shapes(self, compartment_id, **kwargs):
         """
@@ -943,6 +999,8 @@ class SddcClient(object):
         """
         resource_path = "/supportedHostShapes"
         method = "GET"
+        operation_name = "list_supported_host_shapes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapeSummary/ListSupportedHostShapes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -999,14 +1057,20 @@ class SddcClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SupportedHostShapeCollection")
+                response_type="SupportedHostShapeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SupportedHostShapeCollection")
+                response_type="SupportedHostShapeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_supported_skus(self, compartment_id, **kwargs):
         """
@@ -1056,6 +1120,8 @@ class SddcClient(object):
         """
         resource_path = "/supportedSkus"
         method = "GET"
+        operation_name = "list_supported_skus"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1101,14 +1167,20 @@ class SddcClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SupportedSkuSummaryCollection")
+                response_type="SupportedSkuSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SupportedSkuSummaryCollection")
+                response_type="SupportedSkuSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_supported_vmware_software_versions(self, compartment_id, **kwargs):
         """
@@ -1159,6 +1231,8 @@ class SddcClient(object):
         """
         resource_path = "/supportedVmwareSoftwareVersions"
         method = "GET"
+        operation_name = "list_supported_vmware_software_versions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1204,14 +1278,20 @@ class SddcClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SupportedVmwareSoftwareVersionCollection")
+                response_type="SupportedVmwareSoftwareVersionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SupportedVmwareSoftwareVersionCollection")
+                response_type="SupportedVmwareSoftwareVersionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def refresh_hcx_license_status(self, sddc_id, **kwargs):
         """
@@ -1261,6 +1341,8 @@ class SddcClient(object):
         """
         resource_path = "/sddcs/{sddcId}/actions/refreshHcxLicenses"
         method = "POST"
+        operation_name = "refresh_hcx_license_status"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/RefreshHcxLicenseStatus"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1311,13 +1393,19 @@ class SddcClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_sddc(self, sddc_id, update_sddc_details, **kwargs):
         """
@@ -1368,6 +1456,8 @@ class SddcClient(object):
         """
         resource_path = "/sddcs/{sddcId}"
         method = "PUT"
+        operation_name = "update_sddc"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/UpdateSddc"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1417,7 +1507,10 @@ class SddcClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_sddc_details,
-                response_type="Sddc")
+                response_type="Sddc",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1425,7 +1518,10 @@ class SddcClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_sddc_details,
-                response_type="Sddc")
+                response_type="Sddc",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def upgrade_hcx(self, sddc_id, **kwargs):
         """
@@ -1475,6 +1571,8 @@ class SddcClient(object):
         """
         resource_path = "/sddcs/{sddcId}/actions/upgradeHcx"
         method = "POST"
+        operation_name = "upgrade_hcx"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/UpgradeHcx"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1525,10 +1623,16 @@ class SddcClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

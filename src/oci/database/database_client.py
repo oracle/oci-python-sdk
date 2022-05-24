@@ -149,6 +149,8 @@ class DatabaseClient(object):
         """
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/actions/activate"
         method = "POST"
+        operation_name = "activate_exadata_infrastructure"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/ActivateExadataInfrastructure"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -197,7 +199,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=activate_exadata_infrastructure_details,
-                response_type="ExadataInfrastructure")
+                response_type="ExadataInfrastructure",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -205,7 +210,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=activate_exadata_infrastructure_details,
-                response_type="ExadataInfrastructure")
+                response_type="ExadataInfrastructure",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def add_storage_capacity_exadata_infrastructure(self, exadata_infrastructure_id, **kwargs):
         """
@@ -252,6 +260,8 @@ class DatabaseClient(object):
         """
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/actions/addStorageCapacity"
         method = "POST"
+        operation_name = "add_storage_capacity_exadata_infrastructure"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/AddStorageCapacityExadataInfrastructure"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -301,14 +311,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ExadataInfrastructure")
+                response_type="ExadataInfrastructure",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ExadataInfrastructure")
+                response_type="ExadataInfrastructure",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def add_virtual_machine_to_vm_cluster(self, add_virtual_machine_to_vm_cluster_details, vm_cluster_id, **kwargs):
         """
@@ -358,6 +374,8 @@ class DatabaseClient(object):
         """
         resource_path = "/vmClusters/{vmClusterId}/actions/addVirtualMachine"
         method = "POST"
+        operation_name = "add_virtual_machine_to_vm_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/AddVirtualMachineToVmCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -408,7 +426,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=add_virtual_machine_to_vm_cluster_details,
-                response_type="VmCluster")
+                response_type="VmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -416,7 +437,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=add_virtual_machine_to_vm_cluster_details,
-                response_type="VmCluster")
+                response_type="VmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def autonomous_database_manual_refresh(self, autonomous_database_id, autonomous_database_manual_refresh_details, **kwargs):
         """
@@ -466,6 +490,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/refresh"
         method = "POST"
+        operation_name = "autonomous_database_manual_refresh"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/AutonomousDatabaseManualRefresh"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -516,7 +542,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=autonomous_database_manual_refresh_details,
-                response_type="AutonomousDatabase")
+                response_type="AutonomousDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -524,7 +553,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=autonomous_database_manual_refresh_details,
-                response_type="AutonomousDatabase")
+                response_type="AutonomousDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_autonomous_container_database_compartment(self, change_compartment_details, autonomous_container_database_id, **kwargs):
         """
@@ -578,6 +610,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_autonomous_container_database_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/ChangeAutonomousContainerDatabaseCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -627,14 +661,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_compartment_details)
+                body=change_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_compartment_details)
+                body=change_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_autonomous_database_compartment(self, change_compartment_details, autonomous_database_id, **kwargs):
         """
@@ -688,6 +728,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_autonomous_database_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ChangeAutonomousDatabaseCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -737,14 +779,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_compartment_details)
+                body=change_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_compartment_details)
+                body=change_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_autonomous_exadata_infrastructure_compartment(self, change_compartment_details, autonomous_exadata_infrastructure_id, **kwargs):
         """
@@ -798,6 +846,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousExadataInfrastructures/{autonomousExadataInfrastructureId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_autonomous_exadata_infrastructure_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/ChangeAutonomousExadataInfrastructureCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -847,14 +897,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_compartment_details)
+                body=change_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_compartment_details)
+                body=change_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_autonomous_vm_cluster_compartment(self, change_autonomous_vm_cluster_compartment_details, autonomous_vm_cluster_id, **kwargs):
         """
@@ -904,6 +960,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousVmClusters/{autonomousVmClusterId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_autonomous_vm_cluster_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/ChangeAutonomousVmClusterCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -953,14 +1011,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_autonomous_vm_cluster_compartment_details)
+                body=change_autonomous_vm_cluster_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_autonomous_vm_cluster_compartment_details)
+                body=change_autonomous_vm_cluster_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_backup_destination_compartment(self, change_compartment_details, backup_destination_id, **kwargs):
         """
@@ -1014,6 +1078,8 @@ class DatabaseClient(object):
         """
         resource_path = "/backupDestinations/{backupDestinationId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_backup_destination_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestination/ChangeBackupDestinationCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1063,14 +1129,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_compartment_details)
+                body=change_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_compartment_details)
+                body=change_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_cloud_autonomous_vm_cluster_compartment(self, change_cloud_autonomous_vm_cluster_compartment_details, cloud_autonomous_vm_cluster_id, **kwargs):
         """
@@ -1120,6 +1192,8 @@ class DatabaseClient(object):
         """
         resource_path = "/cloudAutonomousVmClusters/{cloudAutonomousVmClusterId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_cloud_autonomous_vm_cluster_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/ChangeCloudAutonomousVmClusterCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1169,14 +1243,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_cloud_autonomous_vm_cluster_compartment_details)
+                body=change_cloud_autonomous_vm_cluster_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_cloud_autonomous_vm_cluster_compartment_details)
+                body=change_cloud_autonomous_vm_cluster_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_cloud_exadata_infrastructure_compartment(self, change_cloud_exadata_infrastructure_compartment_details, cloud_exadata_infrastructure_id, **kwargs):
         """
@@ -1228,6 +1308,8 @@ class DatabaseClient(object):
         """
         resource_path = "/cloudExadataInfrastructures/{cloudExadataInfrastructureId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_cloud_exadata_infrastructure_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/ChangeCloudExadataInfrastructureCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1277,14 +1359,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_cloud_exadata_infrastructure_compartment_details)
+                body=change_cloud_exadata_infrastructure_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_cloud_exadata_infrastructure_compartment_details)
+                body=change_cloud_exadata_infrastructure_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_cloud_vm_cluster_compartment(self, change_cloud_vm_cluster_compartment_details, cloud_vm_cluster_id, **kwargs):
         """
@@ -1334,6 +1422,8 @@ class DatabaseClient(object):
         """
         resource_path = "/cloudVmClusters/{cloudVmClusterId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_cloud_vm_cluster_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/ChangeCloudVmClusterCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1383,14 +1473,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_cloud_vm_cluster_compartment_details)
+                body=change_cloud_vm_cluster_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_cloud_vm_cluster_compartment_details)
+                body=change_cloud_vm_cluster_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_database_software_image_compartment(self, change_compartment_details, database_software_image_id, **kwargs):
         """
@@ -1444,6 +1540,8 @@ class DatabaseClient(object):
         """
         resource_path = "/databaseSoftwareImages/{databaseSoftwareImageId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_database_software_image_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/ChangeDatabaseSoftwareImageCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1493,14 +1591,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_compartment_details)
+                body=change_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_compartment_details)
+                body=change_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_db_system_compartment(self, change_compartment_details, db_system_id, **kwargs):
         """
@@ -1561,6 +1665,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_db_system_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/ChangeDbSystemCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1610,14 +1716,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_compartment_details)
+                body=change_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_compartment_details)
+                body=change_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_exadata_infrastructure_compartment(self, change_exadata_infrastructure_compartment_details, exadata_infrastructure_id, **kwargs):
         """
@@ -1668,6 +1780,8 @@ class DatabaseClient(object):
         """
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_exadata_infrastructure_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/ChangeExadataInfrastructureCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1717,14 +1831,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_exadata_infrastructure_compartment_details)
+                body=change_exadata_infrastructure_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_exadata_infrastructure_compartment_details)
+                body=change_exadata_infrastructure_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_external_container_database_compartment(self, change_compartment_details, external_container_database_id, **kwargs):
         """
@@ -1779,6 +1899,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalcontainerdatabases/{externalContainerDatabaseId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_external_container_database_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/ChangeExternalContainerDatabaseCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1828,14 +1950,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_compartment_details)
+                body=change_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_compartment_details)
+                body=change_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_external_non_container_database_compartment(self, change_compartment_details, external_non_container_database_id, **kwargs):
         """
@@ -1889,6 +2017,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalnoncontainerdatabases/{externalNonContainerDatabaseId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_external_non_container_database_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/ChangeExternalNonContainerDatabaseCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1938,14 +2068,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_compartment_details)
+                body=change_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_compartment_details)
+                body=change_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_external_pluggable_database_compartment(self, change_compartment_details, external_pluggable_database_id, **kwargs):
         """
@@ -2002,6 +2138,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalpluggabledatabases/{externalPluggableDatabaseId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_external_pluggable_database_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/ChangeExternalPluggableDatabaseCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2051,14 +2189,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_compartment_details)
+                body=change_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_compartment_details)
+                body=change_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_key_store_compartment(self, change_key_store_compartment_details, key_store_id, **kwargs):
         """
@@ -2112,6 +2256,8 @@ class DatabaseClient(object):
         """
         resource_path = "/keyStores/{keyStoreId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_key_store_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/ChangeKeyStoreCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2161,14 +2307,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_key_store_compartment_details)
+                body=change_key_store_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_key_store_compartment_details)
+                body=change_key_store_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_vm_cluster_compartment(self, change_vm_cluster_compartment_details, vm_cluster_id, **kwargs):
         """
@@ -2219,6 +2371,8 @@ class DatabaseClient(object):
         """
         resource_path = "/vmClusters/{vmClusterId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_vm_cluster_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/ChangeVmClusterCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2268,14 +2422,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_vm_cluster_compartment_details)
+                body=change_vm_cluster_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_vm_cluster_compartment_details)
+                body=change_vm_cluster_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def check_external_database_connector_connection_status(self, external_database_connector_id, **kwargs):
         """
@@ -2324,6 +2484,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externaldatabaseconnectors/{externalDatabaseConnectorId}/actions/checkConnectionStatus"
         method = "POST"
+        operation_name = "check_external_database_connector_connection_status"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/CheckExternalDatabaseConnectorConnectionStatus"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2372,13 +2534,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def complete_external_backup_job(self, backup_id, complete_external_backup_job_details, **kwargs):
         """
@@ -2429,6 +2597,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalBackupJobs/{backupId}/actions/complete"
         method = "POST"
+        operation_name = "complete_external_backup_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalBackupJob/CompleteExternalBackupJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2477,7 +2647,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=complete_external_backup_job_details,
-                response_type="ExternalBackupJob")
+                response_type="ExternalBackupJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2485,7 +2658,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=complete_external_backup_job_details,
-                response_type="ExternalBackupJob")
+                response_type="ExternalBackupJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def configure_autonomous_database_vault_key(self, autonomous_database_id, configure_autonomous_database_vault_key_details, **kwargs):
         """
@@ -2539,6 +2715,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/configureAutonomousDatabaseVaultKey"
         method = "POST"
+        operation_name = "configure_autonomous_database_vault_key"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ConfigureAutonomousDatabaseVaultKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2588,14 +2766,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=configure_autonomous_database_vault_key_details)
+                body=configure_autonomous_database_vault_key_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=configure_autonomous_database_vault_key_details)
+                body=configure_autonomous_database_vault_key_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def convert_to_pdb(self, database_id, convert_to_pdb_details, **kwargs):
         """
@@ -2638,6 +2822,8 @@ class DatabaseClient(object):
         """
         resource_path = "/databases/{databaseId}/actions/convertToPdb"
         method = "POST"
+        operation_name = "convert_to_pdb"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ConvertToPdb"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2685,7 +2871,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=convert_to_pdb_details,
-                response_type="Database")
+                response_type="Database",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2693,7 +2882,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=convert_to_pdb_details,
-                response_type="Database")
+                response_type="Database",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_autonomous_container_database(self, create_autonomous_container_database_details, **kwargs):
         """
@@ -2730,6 +2922,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousContainerDatabases"
         method = "POST"
+        operation_name = "create_autonomous_container_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/CreateAutonomousContainerDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2765,14 +2959,20 @@ class DatabaseClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_autonomous_container_database_details,
-                response_type="AutonomousContainerDatabase")
+                response_type="AutonomousContainerDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_autonomous_container_database_details,
-                response_type="AutonomousContainerDatabase")
+                response_type="AutonomousContainerDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_autonomous_database(self, create_autonomous_database_details, **kwargs):
         """
@@ -2812,6 +3012,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabases"
         method = "POST"
+        operation_name = "create_autonomous_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/CreateAutonomousDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2849,14 +3051,20 @@ class DatabaseClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_autonomous_database_details,
-                response_type="AutonomousDatabase")
+                response_type="AutonomousDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_autonomous_database_details,
-                response_type="AutonomousDatabase")
+                response_type="AutonomousDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_autonomous_database_backup(self, create_autonomous_database_backup_details, **kwargs):
         """
@@ -2896,6 +3104,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabaseBackups"
         method = "POST"
+        operation_name = "create_autonomous_database_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseBackup/CreateAutonomousDatabaseBackup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2933,14 +3143,20 @@ class DatabaseClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_autonomous_database_backup_details,
-                response_type="AutonomousDatabaseBackup")
+                response_type="AutonomousDatabaseBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_autonomous_database_backup_details,
-                response_type="AutonomousDatabaseBackup")
+                response_type="AutonomousDatabaseBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_autonomous_vm_cluster(self, create_autonomous_vm_cluster_details, **kwargs):
         """
@@ -2980,6 +3196,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousVmClusters"
         method = "POST"
+        operation_name = "create_autonomous_vm_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/CreateAutonomousVmCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3017,14 +3235,20 @@ class DatabaseClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_autonomous_vm_cluster_details,
-                response_type="AutonomousVmCluster")
+                response_type="AutonomousVmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_autonomous_vm_cluster_details,
-                response_type="AutonomousVmCluster")
+                response_type="AutonomousVmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_backup(self, create_backup_details, **kwargs):
         """
@@ -3061,6 +3285,8 @@ class DatabaseClient(object):
         """
         resource_path = "/backups"
         method = "POST"
+        operation_name = "create_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/Backup/CreateBackup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3096,14 +3322,20 @@ class DatabaseClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_backup_details,
-                response_type="Backup")
+                response_type="Backup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_backup_details,
-                response_type="Backup")
+                response_type="Backup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_backup_destination(self, create_backup_destination_details, **kwargs):
         """
@@ -3143,6 +3375,8 @@ class DatabaseClient(object):
         """
         resource_path = "/backupDestinations"
         method = "POST"
+        operation_name = "create_backup_destination"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestination/CreateBackupDestination"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3180,14 +3414,20 @@ class DatabaseClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_backup_destination_details,
-                response_type="BackupDestination")
+                response_type="BackupDestination",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_backup_destination_details,
-                response_type="BackupDestination")
+                response_type="BackupDestination",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_cloud_autonomous_vm_cluster(self, create_cloud_autonomous_vm_cluster_details, **kwargs):
         """
@@ -3227,6 +3467,8 @@ class DatabaseClient(object):
         """
         resource_path = "/cloudAutonomousVmClusters"
         method = "POST"
+        operation_name = "create_cloud_autonomous_vm_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/CreateCloudAutonomousVmCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3264,14 +3506,20 @@ class DatabaseClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_cloud_autonomous_vm_cluster_details,
-                response_type="CloudAutonomousVmCluster")
+                response_type="CloudAutonomousVmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_cloud_autonomous_vm_cluster_details,
-                response_type="CloudAutonomousVmCluster")
+                response_type="CloudAutonomousVmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_cloud_exadata_infrastructure(self, create_cloud_exadata_infrastructure_details, **kwargs):
         """
@@ -3315,6 +3563,8 @@ class DatabaseClient(object):
         """
         resource_path = "/cloudExadataInfrastructures"
         method = "POST"
+        operation_name = "create_cloud_exadata_infrastructure"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/CreateCloudExadataInfrastructure"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3352,14 +3602,20 @@ class DatabaseClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_cloud_exadata_infrastructure_details,
-                response_type="CloudExadataInfrastructure")
+                response_type="CloudExadataInfrastructure",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_cloud_exadata_infrastructure_details,
-                response_type="CloudExadataInfrastructure")
+                response_type="CloudExadataInfrastructure",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_cloud_vm_cluster(self, create_cloud_vm_cluster_details, **kwargs):
         """
@@ -3401,6 +3657,8 @@ class DatabaseClient(object):
         """
         resource_path = "/cloudVmClusters"
         method = "POST"
+        operation_name = "create_cloud_vm_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/CreateCloudVmCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3438,14 +3696,20 @@ class DatabaseClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_cloud_vm_cluster_details,
-                response_type="CloudVmCluster")
+                response_type="CloudVmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_cloud_vm_cluster_details,
-                response_type="CloudVmCluster")
+                response_type="CloudVmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_console_connection(self, create_console_connection_details, db_node_id, **kwargs):
         """
@@ -3489,6 +3753,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbNodes/{dbNodeId}/consoleConnections"
         method = "POST"
+        operation_name = "create_console_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleConnection/CreateConsoleConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3535,7 +3801,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_console_connection_details,
-                response_type="ConsoleConnection")
+                response_type="ConsoleConnection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3543,7 +3812,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_console_connection_details,
-                response_type="ConsoleConnection")
+                response_type="ConsoleConnection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_data_guard_association(self, database_id, create_data_guard_association_details, **kwargs):
         """
@@ -3595,6 +3867,8 @@ class DatabaseClient(object):
         """
         resource_path = "/databases/{databaseId}/dataGuardAssociations"
         method = "POST"
+        operation_name = "create_data_guard_association"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/CreateDataGuardAssociation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3641,7 +3915,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_data_guard_association_details,
-                response_type="DataGuardAssociation")
+                response_type="DataGuardAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3649,7 +3926,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_data_guard_association_details,
-                response_type="DataGuardAssociation")
+                response_type="DataGuardAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_database(self, create_new_database_details, **kwargs):
         """
@@ -3689,6 +3969,8 @@ class DatabaseClient(object):
         """
         resource_path = "/databases"
         method = "POST"
+        operation_name = "create_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/CreateDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3726,14 +4008,20 @@ class DatabaseClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_new_database_details,
-                response_type="Database")
+                response_type="Database",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_new_database_details,
-                response_type="Database")
+                response_type="Database",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_database_software_image(self, create_database_software_image_details, **kwargs):
         """
@@ -3770,6 +4058,8 @@ class DatabaseClient(object):
         """
         resource_path = "/databaseSoftwareImages"
         method = "POST"
+        operation_name = "create_database_software_image"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/CreateDatabaseSoftwareImage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3805,14 +4095,20 @@ class DatabaseClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_database_software_image_details,
-                response_type="DatabaseSoftwareImage")
+                response_type="DatabaseSoftwareImage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_database_software_image_details,
-                response_type="DatabaseSoftwareImage")
+                response_type="DatabaseSoftwareImage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_db_home(self, create_db_home_with_db_system_id_details, **kwargs):
         """
@@ -3849,6 +4145,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbHomes"
         method = "POST"
+        operation_name = "create_db_home"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbHome/CreateDbHome"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3884,14 +4182,20 @@ class DatabaseClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_db_home_with_db_system_id_details,
-                response_type="DbHome")
+                response_type="DbHome",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_db_home_with_db_system_id_details,
-                response_type="DbHome")
+                response_type="DbHome",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_exadata_infrastructure(self, create_exadata_infrastructure_details, **kwargs):
         """
@@ -3932,6 +4236,8 @@ class DatabaseClient(object):
         """
         resource_path = "/exadataInfrastructures"
         method = "POST"
+        operation_name = "create_exadata_infrastructure"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/CreateExadataInfrastructure"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3969,14 +4275,20 @@ class DatabaseClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_exadata_infrastructure_details,
-                response_type="ExadataInfrastructure")
+                response_type="ExadataInfrastructure",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_exadata_infrastructure_details,
-                response_type="ExadataInfrastructure")
+                response_type="ExadataInfrastructure",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_external_backup_job(self, create_external_backup_job_details, **kwargs):
         """
@@ -4017,6 +4329,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalBackupJobs"
         method = "POST"
+        operation_name = "create_external_backup_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalBackupJob/CreateExternalBackupJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4052,14 +4366,20 @@ class DatabaseClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_external_backup_job_details,
-                response_type="ExternalBackupJob")
+                response_type="ExternalBackupJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_external_backup_job_details,
-                response_type="ExternalBackupJob")
+                response_type="ExternalBackupJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_external_container_database(self, create_external_container_database_details, **kwargs):
         """
@@ -4099,6 +4419,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalcontainerdatabases"
         method = "POST"
+        operation_name = "create_external_container_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/CreateExternalContainerDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4136,14 +4458,20 @@ class DatabaseClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_external_container_database_details,
-                response_type="ExternalContainerDatabase")
+                response_type="ExternalContainerDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_external_container_database_details,
-                response_type="ExternalContainerDatabase")
+                response_type="ExternalContainerDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_external_database_connector(self, create_external_database_connector_details, **kwargs):
         """
@@ -4183,6 +4511,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externaldatabaseconnectors"
         method = "POST"
+        operation_name = "create_external_database_connector"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/CreateExternalDatabaseConnector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4220,14 +4550,20 @@ class DatabaseClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_external_database_connector_details,
-                response_type="ExternalDatabaseConnector")
+                response_type="ExternalDatabaseConnector",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_external_database_connector_details,
-                response_type="ExternalDatabaseConnector")
+                response_type="ExternalDatabaseConnector",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_external_non_container_database(self, create_external_non_container_database_details, **kwargs):
         """
@@ -4267,6 +4603,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalnoncontainerdatabases"
         method = "POST"
+        operation_name = "create_external_non_container_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/CreateExternalNonContainerDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4304,14 +4642,20 @@ class DatabaseClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_external_non_container_database_details,
-                response_type="ExternalNonContainerDatabase")
+                response_type="ExternalNonContainerDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_external_non_container_database_details,
-                response_type="ExternalNonContainerDatabase")
+                response_type="ExternalNonContainerDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_external_pluggable_database(self, create_external_pluggable_database_details, **kwargs):
         """
@@ -4352,6 +4696,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalpluggabledatabases"
         method = "POST"
+        operation_name = "create_external_pluggable_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/CreateExternalPluggableDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4389,14 +4735,20 @@ class DatabaseClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_external_pluggable_database_details,
-                response_type="ExternalPluggableDatabase")
+                response_type="ExternalPluggableDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_external_pluggable_database_details,
-                response_type="ExternalPluggableDatabase")
+                response_type="ExternalPluggableDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_key_store(self, create_key_store_details, **kwargs):
         """
@@ -4436,6 +4788,8 @@ class DatabaseClient(object):
         """
         resource_path = "/keyStores"
         method = "POST"
+        operation_name = "create_key_store"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/CreateKeyStore"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4473,14 +4827,20 @@ class DatabaseClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_key_store_details,
-                response_type="KeyStore")
+                response_type="KeyStore",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_key_store_details,
-                response_type="KeyStore")
+                response_type="KeyStore",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_pluggable_database(self, create_pluggable_database_details, **kwargs):
         """
@@ -4521,6 +4881,8 @@ class DatabaseClient(object):
         """
         resource_path = "/pluggableDatabases"
         method = "POST"
+        operation_name = "create_pluggable_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/CreatePluggableDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4558,14 +4920,20 @@ class DatabaseClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_pluggable_database_details,
-                response_type="PluggableDatabase")
+                response_type="PluggableDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_pluggable_database_details,
-                response_type="PluggableDatabase")
+                response_type="PluggableDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_vm_cluster(self, create_vm_cluster_details, **kwargs):
         """
@@ -4606,6 +4974,8 @@ class DatabaseClient(object):
         """
         resource_path = "/vmClusters"
         method = "POST"
+        operation_name = "create_vm_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/CreateVmCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4643,14 +5013,20 @@ class DatabaseClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_vm_cluster_details,
-                response_type="VmCluster")
+                response_type="VmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_vm_cluster_details,
-                response_type="VmCluster")
+                response_type="VmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_vm_cluster_network(self, exadata_infrastructure_id, vm_cluster_network_details, **kwargs):
         """
@@ -4696,6 +5072,8 @@ class DatabaseClient(object):
         """
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks"
         method = "POST"
+        operation_name = "create_vm_cluster_network"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/CreateVmClusterNetwork"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4744,7 +5122,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=vm_cluster_network_details,
-                response_type="VmClusterNetwork")
+                response_type="VmClusterNetwork",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4752,7 +5133,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=vm_cluster_network_details,
-                response_type="VmClusterNetwork")
+                response_type="VmClusterNetwork",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def db_node_action(self, db_node_id, action, **kwargs):
         """
@@ -4813,6 +5197,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbNodes/{dbNodeId}"
         method = "POST"
+        operation_name = "db_node_action"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbNode/DbNodeAction"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4866,7 +5252,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DbNode")
+                response_type="DbNode",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4874,7 +5263,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DbNode")
+                response_type="DbNode",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_autonomous_database(self, autonomous_database_id, **kwargs):
         """
@@ -4914,6 +5306,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}"
         method = "DELETE"
+        operation_name = "delete_autonomous_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/DeleteAutonomousDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4959,13 +5353,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_autonomous_vm_cluster(self, autonomous_vm_cluster_id, **kwargs):
         """
@@ -5005,6 +5405,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousVmClusters/{autonomousVmClusterId}"
         method = "DELETE"
+        operation_name = "delete_autonomous_vm_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/DeleteAutonomousVmCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5050,13 +5452,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_backup(self, backup_id, **kwargs):
         """
@@ -5093,6 +5501,8 @@ class DatabaseClient(object):
         """
         resource_path = "/backups/{backupId}"
         method = "DELETE"
+        operation_name = "delete_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/Backup/DeleteBackup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5136,13 +5546,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_backup_destination(self, backup_destination_id, **kwargs):
         """
@@ -5182,6 +5598,8 @@ class DatabaseClient(object):
         """
         resource_path = "/backupDestinations/{backupDestinationId}"
         method = "DELETE"
+        operation_name = "delete_backup_destination"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestination/DeleteBackupDestination"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5227,13 +5645,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_cloud_autonomous_vm_cluster(self, cloud_autonomous_vm_cluster_id, **kwargs):
         """
@@ -5273,6 +5697,8 @@ class DatabaseClient(object):
         """
         resource_path = "/cloudAutonomousVmClusters/{cloudAutonomousVmClusterId}"
         method = "DELETE"
+        operation_name = "delete_cloud_autonomous_vm_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/DeleteCloudAutonomousVmCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5318,13 +5744,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_cloud_exadata_infrastructure(self, cloud_exadata_infrastructure_id, **kwargs):
         """
@@ -5367,6 +5799,8 @@ class DatabaseClient(object):
         """
         resource_path = "/cloudExadataInfrastructures/{cloudExadataInfrastructureId}"
         method = "DELETE"
+        operation_name = "delete_cloud_exadata_infrastructure"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/DeleteCloudExadataInfrastructure"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5419,14 +5853,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_cloud_vm_cluster(self, cloud_vm_cluster_id, **kwargs):
         """
@@ -5466,6 +5906,8 @@ class DatabaseClient(object):
         """
         resource_path = "/cloudVmClusters/{cloudVmClusterId}"
         method = "DELETE"
+        operation_name = "delete_cloud_vm_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/DeleteCloudVmCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5511,13 +5953,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_console_connection(self, db_node_id, console_connection_id, **kwargs):
         """
@@ -5557,6 +6005,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbNodes/{dbNodeId}/consoleConnections/{consoleConnectionId}"
         method = "DELETE"
+        operation_name = "delete_console_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleConnection/DeleteConsoleConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5601,13 +6051,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_database(self, database_id, **kwargs):
         """
@@ -5656,6 +6112,8 @@ class DatabaseClient(object):
         """
         resource_path = "/databases/{databaseId}"
         method = "DELETE"
+        operation_name = "delete_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/DeleteDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5708,14 +6166,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_database_software_image(self, database_software_image_id, **kwargs):
         """
@@ -5752,6 +6216,8 @@ class DatabaseClient(object):
         """
         resource_path = "/databaseSoftwareImages/{databaseSoftwareImageId}"
         method = "DELETE"
+        operation_name = "delete_database_software_image"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/DeleteDatabaseSoftwareImage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5795,13 +6261,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_db_home(self, db_home_id, **kwargs):
         """
@@ -5847,6 +6319,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbHomes/{dbHomeId}"
         method = "DELETE"
+        operation_name = "delete_db_home"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbHome/DeleteDbHome"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5897,14 +6371,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_exadata_infrastructure(self, exadata_infrastructure_id, **kwargs):
         """
@@ -5944,6 +6424,8 @@ class DatabaseClient(object):
         """
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}"
         method = "DELETE"
+        operation_name = "delete_exadata_infrastructure"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/DeleteExadataInfrastructure"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5989,13 +6471,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_external_container_database(self, external_container_database_id, **kwargs):
         """
@@ -6037,6 +6525,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalcontainerdatabases/{externalContainerDatabaseId}"
         method = "DELETE"
+        operation_name = "delete_external_container_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/DeleteExternalContainerDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6082,13 +6572,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_external_database_connector(self, external_database_connector_id, **kwargs):
         """
@@ -6131,6 +6627,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externaldatabaseconnectors/{externalDatabaseConnectorId}"
         method = "DELETE"
+        operation_name = "delete_external_database_connector"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/DeleteExternalDatabaseConnector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6176,13 +6674,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_external_non_container_database(self, external_non_container_database_id, **kwargs):
         """
@@ -6222,6 +6726,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalnoncontainerdatabases/{externalNonContainerDatabaseId}"
         method = "DELETE"
+        operation_name = "delete_external_non_container_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/DeleteExternalNonContainerDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6267,13 +6773,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_external_pluggable_database(self, external_pluggable_database_id, **kwargs):
         """
@@ -6314,6 +6826,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalpluggabledatabases/{externalPluggableDatabaseId}"
         method = "DELETE"
+        operation_name = "delete_external_pluggable_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/DeleteExternalPluggableDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6359,13 +6873,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_key_store(self, key_store_id, **kwargs):
         """
@@ -6405,6 +6925,8 @@ class DatabaseClient(object):
         """
         resource_path = "/keyStores/{keyStoreId}"
         method = "DELETE"
+        operation_name = "delete_key_store"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/DeleteKeyStore"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6450,13 +6972,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_pluggable_database(self, pluggable_database_id, **kwargs):
         """
@@ -6496,6 +7024,8 @@ class DatabaseClient(object):
         """
         resource_path = "/pluggableDatabases/{pluggableDatabaseId}"
         method = "DELETE"
+        operation_name = "delete_pluggable_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/DeletePluggableDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6541,13 +7071,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_vm_cluster(self, vm_cluster_id, **kwargs):
         """
@@ -6587,6 +7123,8 @@ class DatabaseClient(object):
         """
         resource_path = "/vmClusters/{vmClusterId}"
         method = "DELETE"
+        operation_name = "delete_vm_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/DeleteVmCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6632,13 +7170,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_vm_cluster_network(self, exadata_infrastructure_id, vm_cluster_network_id, **kwargs):
         """
@@ -6684,6 +7228,8 @@ class DatabaseClient(object):
         """
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/{vmClusterNetworkId}"
         method = "DELETE"
+        operation_name = "delete_vm_cluster_network"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/DeleteVmClusterNetwork"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6730,13 +7276,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def deregister_autonomous_database_data_safe(self, autonomous_database_id, **kwargs):
         """
@@ -6774,6 +7326,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/deregisterDataSafe"
         method = "POST"
+        operation_name = "deregister_autonomous_database_data_safe"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/DeregisterAutonomousDatabaseDataSafe"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6819,14 +7373,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=kwargs.get('deregister_autonomous_database_data_safe_details'))
+                body=kwargs.get('deregister_autonomous_database_data_safe_details'),
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=kwargs.get('deregister_autonomous_database_data_safe_details'))
+                body=kwargs.get('deregister_autonomous_database_data_safe_details'),
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def disable_autonomous_database_management(self, autonomous_database_id, **kwargs):
         """
@@ -6861,6 +7421,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/disableDatabaseManagement"
         method = "POST"
+        operation_name = "disable_autonomous_database_management"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/DisableAutonomousDatabaseManagement"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6904,13 +7466,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def disable_autonomous_database_operations_insights(self, autonomous_database_id, **kwargs):
         """
@@ -6945,6 +7513,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/disableOperationsInsights"
         method = "POST"
+        operation_name = "disable_autonomous_database_operations_insights"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/DisableAutonomousDatabaseOperationsInsights"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6988,13 +7558,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def disable_database_management(self, database_id, **kwargs):
         """
@@ -7041,6 +7617,8 @@ class DatabaseClient(object):
         """
         resource_path = "/databases/{databaseId}/actions/disableDatabaseManagement"
         method = "POST"
+        operation_name = "disable_database_management"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/DisableDatabaseManagement"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7090,14 +7668,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Database")
+                response_type="Database",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Database")
+                response_type="Database",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def disable_external_container_database_database_management(self, external_container_database_id, **kwargs):
         """
@@ -7144,6 +7728,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalcontainerdatabases/{externalContainerDatabaseId}/actions/disableDatabaseManagement"
         method = "POST"
+        operation_name = "disable_external_container_database_database_management"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/DisableExternalContainerDatabaseDatabaseManagement"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7192,13 +7778,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def disable_external_container_database_stack_monitoring(self, external_container_database_id, **kwargs):
         """
@@ -7245,6 +7837,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalcontainerdatabases/{externalContainerDatabaseId}/actions/disableStackMonitoring"
         method = "POST"
+        operation_name = "disable_external_container_database_stack_monitoring"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/DisableExternalContainerDatabaseStackMonitoring"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7293,13 +7887,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def disable_external_non_container_database_database_management(self, external_non_container_database_id, **kwargs):
         """
@@ -7350,6 +7950,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalnoncontainerdatabases/{externalNonContainerDatabaseId}/actions/disableDatabaseManagement"
         method = "POST"
+        operation_name = "disable_external_non_container_database_database_management"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/DisableExternalNonContainerDatabaseDatabaseManagement"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7398,13 +8000,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def disable_external_non_container_database_operations_insights(self, external_non_container_database_id, **kwargs):
         """
@@ -7451,6 +8059,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalnoncontainerdatabases/{externalNonContainerDatabaseId}/actions/disableOperationsInsights"
         method = "POST"
+        operation_name = "disable_external_non_container_database_operations_insights"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/DisableExternalNonContainerDatabaseOperationsInsights"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7499,13 +8109,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def disable_external_non_container_database_stack_monitoring(self, external_non_container_database_id, **kwargs):
         """
@@ -7552,6 +8168,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalnoncontainerdatabases/{externalNonContainerDatabaseId}/actions/disableStackMonitoring"
         method = "POST"
+        operation_name = "disable_external_non_container_database_stack_monitoring"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/DisableExternalNonContainerDatabaseStackMonitoring"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7600,13 +8218,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def disable_external_pluggable_database_database_management(self, external_pluggable_database_id, **kwargs):
         """
@@ -7657,6 +8281,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalpluggabledatabases/{externalPluggableDatabaseId}/actions/disableDatabaseManagement"
         method = "POST"
+        operation_name = "disable_external_pluggable_database_database_management"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/DisableExternalPluggableDatabaseDatabaseManagement"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7705,13 +8331,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def disable_external_pluggable_database_operations_insights(self, external_pluggable_database_id, **kwargs):
         """
@@ -7758,6 +8390,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalpluggabledatabases/{externalPluggableDatabaseId}/actions/disableOperationsInsights"
         method = "POST"
+        operation_name = "disable_external_pluggable_database_operations_insights"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/DisableExternalPluggableDatabaseOperationsInsights"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7806,13 +8440,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def disable_external_pluggable_database_stack_monitoring(self, external_pluggable_database_id, **kwargs):
         """
@@ -7859,6 +8499,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalpluggabledatabases/{externalPluggableDatabaseId}/actions/disableStackMonitoring"
         method = "POST"
+        operation_name = "disable_external_pluggable_database_stack_monitoring"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/DisableExternalPluggableDatabaseStackMonitoring"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7907,13 +8549,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def download_exadata_infrastructure_config_file(self, exadata_infrastructure_id, **kwargs):
         """
@@ -7955,6 +8603,8 @@ class DatabaseClient(object):
         """
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/actions/downloadConfigFile"
         method = "POST"
+        operation_name = "download_exadata_infrastructure_config_file"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/DownloadExadataInfrastructureConfigFile"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8002,14 +8652,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def download_validation_report(self, exadata_infrastructure_id, vm_cluster_network_id, **kwargs):
         """
@@ -8056,6 +8712,8 @@ class DatabaseClient(object):
         """
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/{vmClusterNetworkId}/actions/downloadValidationReport"
         method = "POST"
+        operation_name = "download_validation_report"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/DownloadValidationReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8104,14 +8762,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def download_vm_cluster_network_config_file(self, exadata_infrastructure_id, vm_cluster_network_id, **kwargs):
         """
@@ -8158,6 +8822,8 @@ class DatabaseClient(object):
         """
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/{vmClusterNetworkId}/actions/downloadConfigFile"
         method = "POST"
+        operation_name = "download_vm_cluster_network_config_file"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/DownloadVmClusterNetworkConfigFile"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8206,14 +8872,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def enable_autonomous_database_management(self, autonomous_database_id, **kwargs):
         """
@@ -8248,6 +8920,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/enableDatabaseManagement"
         method = "POST"
+        operation_name = "enable_autonomous_database_management"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/EnableAutonomousDatabaseManagement"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8291,13 +8965,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def enable_autonomous_database_operations_insights(self, autonomous_database_id, **kwargs):
         """
@@ -8332,6 +9012,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/enableOperationsInsights"
         method = "POST"
+        operation_name = "enable_autonomous_database_operations_insights"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/EnableAutonomousDatabaseOperationsInsights"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8375,13 +9057,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def enable_database_management(self, database_id, enable_database_management_details, **kwargs):
         """
@@ -8431,6 +9119,8 @@ class DatabaseClient(object):
         """
         resource_path = "/databases/{databaseId}/actions/enableDatabaseManagement"
         method = "POST"
+        operation_name = "enable_database_management"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/EnableDatabaseManagement"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8481,7 +9171,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=enable_database_management_details,
-                response_type="Database")
+                response_type="Database",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8489,7 +9182,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=enable_database_management_details,
-                response_type="Database")
+                response_type="Database",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def enable_external_container_database_database_management(self, external_container_database_id, enable_external_container_database_database_management_details, **kwargs):
         """
@@ -8543,6 +9239,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalcontainerdatabases/{externalContainerDatabaseId}/actions/enableDatabaseManagement"
         method = "POST"
+        operation_name = "enable_external_container_database_database_management"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/EnableExternalContainerDatabaseDatabaseManagement"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8592,14 +9290,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=enable_external_container_database_database_management_details)
+                body=enable_external_container_database_database_management_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=enable_external_container_database_database_management_details)
+                body=enable_external_container_database_database_management_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def enable_external_container_database_stack_monitoring(self, external_container_database_id, enable_external_container_database_stack_monitoring_details, **kwargs):
         """
@@ -8649,6 +9353,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalcontainerdatabases/{externalContainerDatabaseId}/actions/enableStackMonitoring"
         method = "POST"
+        operation_name = "enable_external_container_database_stack_monitoring"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/EnableExternalContainerDatabaseStackMonitoring"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8698,14 +9404,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=enable_external_container_database_stack_monitoring_details)
+                body=enable_external_container_database_stack_monitoring_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=enable_external_container_database_stack_monitoring_details)
+                body=enable_external_container_database_stack_monitoring_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def enable_external_non_container_database_database_management(self, external_non_container_database_id, enable_external_non_container_database_database_management_details, **kwargs):
         """
@@ -8759,6 +9471,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalnoncontainerdatabases/{externalNonContainerDatabaseId}/actions/enableDatabaseManagement"
         method = "POST"
+        operation_name = "enable_external_non_container_database_database_management"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/EnableExternalNonContainerDatabaseDatabaseManagement"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8808,14 +9522,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=enable_external_non_container_database_database_management_details)
+                body=enable_external_non_container_database_database_management_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=enable_external_non_container_database_database_management_details)
+                body=enable_external_non_container_database_database_management_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def enable_external_non_container_database_operations_insights(self, external_non_container_database_id, enable_external_non_container_database_operations_insights_details, **kwargs):
         """
@@ -8865,6 +9585,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalnoncontainerdatabases/{externalNonContainerDatabaseId}/actions/enableOperationsInsights"
         method = "POST"
+        operation_name = "enable_external_non_container_database_operations_insights"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/EnableExternalNonContainerDatabaseOperationsInsights"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8914,14 +9636,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=enable_external_non_container_database_operations_insights_details)
+                body=enable_external_non_container_database_operations_insights_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=enable_external_non_container_database_operations_insights_details)
+                body=enable_external_non_container_database_operations_insights_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def enable_external_non_container_database_stack_monitoring(self, external_non_container_database_id, enable_external_non_container_database_stack_monitoring_details, **kwargs):
         """
@@ -8971,6 +9699,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalnoncontainerdatabases/{externalNonContainerDatabaseId}/actions/enableStackMonitoring"
         method = "POST"
+        operation_name = "enable_external_non_container_database_stack_monitoring"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/EnableExternalNonContainerDatabaseStackMonitoring"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9020,14 +9750,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=enable_external_non_container_database_stack_monitoring_details)
+                body=enable_external_non_container_database_stack_monitoring_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=enable_external_non_container_database_stack_monitoring_details)
+                body=enable_external_non_container_database_stack_monitoring_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def enable_external_pluggable_database_database_management(self, external_pluggable_database_id, enable_external_pluggable_database_database_management_details, **kwargs):
         """
@@ -9081,6 +9817,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalpluggabledatabases/{externalPluggableDatabaseId}/actions/enableDatabaseManagement"
         method = "POST"
+        operation_name = "enable_external_pluggable_database_database_management"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/EnableExternalPluggableDatabaseDatabaseManagement"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9130,14 +9868,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=enable_external_pluggable_database_database_management_details)
+                body=enable_external_pluggable_database_database_management_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=enable_external_pluggable_database_database_management_details)
+                body=enable_external_pluggable_database_database_management_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def enable_external_pluggable_database_operations_insights(self, external_pluggable_database_id, enable_external_pluggable_database_operations_insights_details, **kwargs):
         """
@@ -9187,6 +9931,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalpluggabledatabases/{externalPluggableDatabaseId}/actions/enableOperationsInsights"
         method = "POST"
+        operation_name = "enable_external_pluggable_database_operations_insights"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/EnableExternalPluggableDatabaseOperationsInsights"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9236,14 +9982,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=enable_external_pluggable_database_operations_insights_details)
+                body=enable_external_pluggable_database_operations_insights_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=enable_external_pluggable_database_operations_insights_details)
+                body=enable_external_pluggable_database_operations_insights_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def enable_external_pluggable_database_stack_monitoring(self, external_pluggable_database_id, enable_external_pluggable_database_stack_monitoring_details, **kwargs):
         """
@@ -9293,6 +10045,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalpluggabledatabases/{externalPluggableDatabaseId}/actions/enableStackMonitoring"
         method = "POST"
+        operation_name = "enable_external_pluggable_database_stack_monitoring"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/EnableExternalPluggableDatabaseStackMonitoring"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9342,14 +10096,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=enable_external_pluggable_database_stack_monitoring_details)
+                body=enable_external_pluggable_database_stack_monitoring_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=enable_external_pluggable_database_stack_monitoring_details)
+                body=enable_external_pluggable_database_stack_monitoring_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def fail_over_autonomous_database(self, autonomous_database_id, **kwargs):
         """
@@ -9403,6 +10163,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/failover"
         method = "POST"
+        operation_name = "fail_over_autonomous_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/FailOverAutonomousDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9459,7 +10221,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AutonomousDatabase")
+                response_type="AutonomousDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9467,7 +10232,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AutonomousDatabase")
+                response_type="AutonomousDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def failover_autonomous_container_database_dataguard_association(self, autonomous_container_database_id, autonomous_container_database_dataguard_association_id, **kwargs):
         """
@@ -9511,6 +10279,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/autonomousContainerDatabaseDataguardAssociations/{autonomousContainerDatabaseDataguardAssociationId}/actions/failover"
         method = "POST"
+        operation_name = "failover_autonomous_container_database_dataguard_association"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/FailoverAutonomousContainerDatabaseDataguardAssociation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9556,14 +10326,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousContainerDatabaseDataguardAssociation")
+                response_type="AutonomousContainerDatabaseDataguardAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousContainerDatabaseDataguardAssociation")
+                response_type="AutonomousContainerDatabaseDataguardAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def failover_data_guard_association(self, database_id, data_guard_association_id, failover_data_guard_association_details, **kwargs):
         """
@@ -9612,6 +10388,8 @@ class DatabaseClient(object):
         """
         resource_path = "/databases/{databaseId}/dataGuardAssociations/{dataGuardAssociationId}/actions/failover"
         method = "POST"
+        operation_name = "failover_data_guard_association"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/FailoverDataGuardAssociation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9658,7 +10436,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=failover_data_guard_association_details,
-                response_type="DataGuardAssociation")
+                response_type="DataGuardAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9666,7 +10447,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=failover_data_guard_association_details,
-                response_type="DataGuardAssociation")
+                response_type="DataGuardAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def generate_autonomous_database_wallet(self, autonomous_database_id, generate_autonomous_database_wallet_details, **kwargs):
         """
@@ -9711,6 +10495,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/generateWallet"
         method = "POST"
+        operation_name = "generate_autonomous_database_wallet"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/GenerateAutonomousDatabaseWallet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9759,7 +10545,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=generate_autonomous_database_wallet_details,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9767,7 +10556,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=generate_autonomous_database_wallet_details,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def generate_recommended_vm_cluster_network(self, exadata_infrastructure_id, generate_recommended_network_details, **kwargs):
         """
@@ -9812,6 +10604,8 @@ class DatabaseClient(object):
         """
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/actions/generateRecommendedNetwork"
         method = "POST"
+        operation_name = "generate_recommended_vm_cluster_network"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/GenerateRecommendedVmClusterNetwork"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9860,7 +10654,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=generate_recommended_network_details,
-                response_type="VmClusterNetworkDetails")
+                response_type="VmClusterNetworkDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9868,7 +10665,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=generate_recommended_network_details,
-                response_type="VmClusterNetworkDetails")
+                response_type="VmClusterNetworkDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_autonomous_container_database(self, autonomous_container_database_id, **kwargs):
         """
@@ -9900,6 +10700,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}"
         method = "GET"
+        operation_name = "get_autonomous_container_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/GetAutonomousContainerDatabase"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -9937,14 +10739,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousContainerDatabase")
+                response_type="AutonomousContainerDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousContainerDatabase")
+                response_type="AutonomousContainerDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_autonomous_container_database_dataguard_association(self, autonomous_container_database_id, autonomous_container_database_dataguard_association_id, **kwargs):
         """
@@ -9981,6 +10789,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/autonomousContainerDatabaseDataguardAssociations/{autonomousContainerDatabaseDataguardAssociationId}"
         method = "GET"
+        operation_name = "get_autonomous_container_database_dataguard_association"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/GetAutonomousContainerDatabaseDataguardAssociation"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -10019,14 +10829,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousContainerDatabaseDataguardAssociation")
+                response_type="AutonomousContainerDatabaseDataguardAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousContainerDatabaseDataguardAssociation")
+                response_type="AutonomousContainerDatabaseDataguardAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_autonomous_database(self, autonomous_database_id, **kwargs):
         """
@@ -10061,6 +10877,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}"
         method = "GET"
+        operation_name = "get_autonomous_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/GetAutonomousDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10105,14 +10923,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousDatabase")
+                response_type="AutonomousDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousDatabase")
+                response_type="AutonomousDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_autonomous_database_backup(self, autonomous_database_backup_id, **kwargs):
         """
@@ -10147,6 +10971,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabaseBackups/{autonomousDatabaseBackupId}"
         method = "GET"
+        operation_name = "get_autonomous_database_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseBackup/GetAutonomousDatabaseBackup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10191,14 +11017,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousDatabaseBackup")
+                response_type="AutonomousDatabaseBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousDatabaseBackup")
+                response_type="AutonomousDatabaseBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_autonomous_database_dataguard_association(self, autonomous_database_id, autonomous_database_dataguard_association_id, **kwargs):
         """
@@ -10238,6 +11070,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/autonomousDatabaseDataguardAssociations/{autonomousDatabaseDataguardAssociationId}"
         method = "GET"
+        operation_name = "get_autonomous_database_dataguard_association"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseDataguardAssociation/GetAutonomousDatabaseDataguardAssociation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10283,14 +11117,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousDatabaseDataguardAssociation")
+                response_type="AutonomousDatabaseDataguardAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousDatabaseDataguardAssociation")
+                response_type="AutonomousDatabaseDataguardAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_autonomous_database_regional_wallet(self, **kwargs):
         """
@@ -10320,6 +11160,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabases/wallet"
         method = "GET"
+        operation_name = "get_autonomous_database_regional_wallet"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseWallet/GetAutonomousDatabaseRegionalWallet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10353,13 +11195,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                response_type="AutonomousDatabaseWallet")
+                response_type="AutonomousDatabaseWallet",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                response_type="AutonomousDatabaseWallet")
+                response_type="AutonomousDatabaseWallet",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_autonomous_database_wallet(self, autonomous_database_id, **kwargs):
         """
@@ -10394,6 +11242,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/wallet"
         method = "GET"
+        operation_name = "get_autonomous_database_wallet"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseWallet/GetAutonomousDatabaseWallet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10438,14 +11288,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousDatabaseWallet")
+                response_type="AutonomousDatabaseWallet",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousDatabaseWallet")
+                response_type="AutonomousDatabaseWallet",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_autonomous_exadata_infrastructure(self, autonomous_exadata_infrastructure_id, **kwargs):
         """
@@ -10477,6 +11333,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousExadataInfrastructures/{autonomousExadataInfrastructureId}"
         method = "GET"
+        operation_name = "get_autonomous_exadata_infrastructure"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/GetAutonomousExadataInfrastructure"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -10514,14 +11372,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousExadataInfrastructure")
+                response_type="AutonomousExadataInfrastructure",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousExadataInfrastructure")
+                response_type="AutonomousExadataInfrastructure",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_autonomous_patch(self, autonomous_patch_id, **kwargs):
         """
@@ -10553,6 +11417,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousPatches/{autonomousPatchId}"
         method = "GET"
+        operation_name = "get_autonomous_patch"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousPatch/GetAutonomousPatch"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -10590,14 +11456,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousPatch")
+                response_type="AutonomousPatch",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousPatch")
+                response_type="AutonomousPatch",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_autonomous_vm_cluster(self, autonomous_vm_cluster_id, **kwargs):
         """
@@ -10632,6 +11504,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousVmClusters/{autonomousVmClusterId}"
         method = "GET"
+        operation_name = "get_autonomous_vm_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/GetAutonomousVmCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10676,14 +11550,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousVmCluster")
+                response_type="AutonomousVmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousVmCluster")
+                response_type="AutonomousVmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_backup(self, backup_id, **kwargs):
         """
@@ -10715,6 +11595,8 @@ class DatabaseClient(object):
         """
         resource_path = "/backups/{backupId}"
         method = "GET"
+        operation_name = "get_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/Backup/GetBackup"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -10752,14 +11634,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Backup")
+                response_type="Backup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Backup")
+                response_type="Backup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_backup_destination(self, backup_destination_id, **kwargs):
         """
@@ -10794,6 +11682,8 @@ class DatabaseClient(object):
         """
         resource_path = "/backupDestinations/{backupDestinationId}"
         method = "GET"
+        operation_name = "get_backup_destination"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestination/GetBackupDestination"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10838,14 +11728,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BackupDestination")
+                response_type="BackupDestination",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BackupDestination")
+                response_type="BackupDestination",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_cloud_autonomous_vm_cluster(self, cloud_autonomous_vm_cluster_id, **kwargs):
         """
@@ -10880,6 +11776,8 @@ class DatabaseClient(object):
         """
         resource_path = "/cloudAutonomousVmClusters/{cloudAutonomousVmClusterId}"
         method = "GET"
+        operation_name = "get_cloud_autonomous_vm_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/GetCloudAutonomousVmCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10924,14 +11822,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CloudAutonomousVmCluster")
+                response_type="CloudAutonomousVmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CloudAutonomousVmCluster")
+                response_type="CloudAutonomousVmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_cloud_exadata_infrastructure(self, cloud_exadata_infrastructure_id, **kwargs):
         """
@@ -10966,6 +11870,8 @@ class DatabaseClient(object):
         """
         resource_path = "/cloudExadataInfrastructures/{cloudExadataInfrastructureId}"
         method = "GET"
+        operation_name = "get_cloud_exadata_infrastructure"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/GetCloudExadataInfrastructure"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11010,14 +11916,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CloudExadataInfrastructure")
+                response_type="CloudExadataInfrastructure",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CloudExadataInfrastructure")
+                response_type="CloudExadataInfrastructure",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_cloud_vm_cluster(self, cloud_vm_cluster_id, **kwargs):
         """
@@ -11052,6 +11964,8 @@ class DatabaseClient(object):
         """
         resource_path = "/cloudVmClusters/{cloudVmClusterId}"
         method = "GET"
+        operation_name = "get_cloud_vm_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/GetCloudVmCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11096,14 +12010,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CloudVmCluster")
+                response_type="CloudVmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CloudVmCluster")
+                response_type="CloudVmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_cloud_vm_cluster_iorm_config(self, cloud_vm_cluster_id, **kwargs):
         """
@@ -11139,6 +12059,8 @@ class DatabaseClient(object):
         """
         resource_path = "/cloudVmClusters/{cloudVmClusterId}/CloudVmClusterIormConfig"
         method = "GET"
+        operation_name = "get_cloud_vm_cluster_iorm_config"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/GetCloudVmClusterIormConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11183,14 +12105,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ExadataIormConfig")
+                response_type="ExadataIormConfig",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ExadataIormConfig")
+                response_type="ExadataIormConfig",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_cloud_vm_cluster_update(self, cloud_vm_cluster_id, update_id, **kwargs):
         """
@@ -11230,6 +12158,8 @@ class DatabaseClient(object):
         """
         resource_path = "/cloudVmClusters/{cloudVmClusterId}/updates/{updateId}"
         method = "GET"
+        operation_name = "get_cloud_vm_cluster_update"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/Update/GetCloudVmClusterUpdate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11275,14 +12205,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Update")
+                response_type="Update",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Update")
+                response_type="Update",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_cloud_vm_cluster_update_history_entry(self, cloud_vm_cluster_id, update_history_entry_id, **kwargs):
         """
@@ -11322,6 +12258,8 @@ class DatabaseClient(object):
         """
         resource_path = "/cloudVmClusters/{cloudVmClusterId}/updateHistoryEntries/{updateHistoryEntryId}"
         method = "GET"
+        operation_name = "get_cloud_vm_cluster_update_history_entry"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/UpdateHistoryEntry/GetCloudVmClusterUpdateHistoryEntry"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11367,14 +12305,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="UpdateHistoryEntry")
+                response_type="UpdateHistoryEntry",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="UpdateHistoryEntry")
+                response_type="UpdateHistoryEntry",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_console_connection(self, db_node_id, console_connection_id, **kwargs):
         """
@@ -11409,6 +12353,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbNodes/{dbNodeId}/consoleConnections/{consoleConnectionId}"
         method = "GET"
+        operation_name = "get_console_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleConnection/GetConsoleConnection"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -11447,14 +12393,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ConsoleConnection")
+                response_type="ConsoleConnection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ConsoleConnection")
+                response_type="ConsoleConnection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_data_guard_association(self, database_id, data_guard_association_id, **kwargs):
         """
@@ -11491,6 +12443,8 @@ class DatabaseClient(object):
         """
         resource_path = "/databases/{databaseId}/dataGuardAssociations/{dataGuardAssociationId}"
         method = "GET"
+        operation_name = "get_data_guard_association"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/GetDataGuardAssociation"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -11529,14 +12483,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DataGuardAssociation")
+                response_type="DataGuardAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DataGuardAssociation")
+                response_type="DataGuardAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_database(self, database_id, **kwargs):
         """
@@ -11568,6 +12528,8 @@ class DatabaseClient(object):
         """
         resource_path = "/databases/{databaseId}"
         method = "GET"
+        operation_name = "get_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/GetDatabase"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -11605,14 +12567,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Database")
+                response_type="Database",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Database")
+                response_type="Database",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_database_software_image(self, database_software_image_id, **kwargs):
         """
@@ -11644,6 +12612,8 @@ class DatabaseClient(object):
         """
         resource_path = "/databaseSoftwareImages/{databaseSoftwareImageId}"
         method = "GET"
+        operation_name = "get_database_software_image"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/GetDatabaseSoftwareImage"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -11681,14 +12651,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DatabaseSoftwareImage")
+                response_type="DatabaseSoftwareImage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DatabaseSoftwareImage")
+                response_type="DatabaseSoftwareImage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_database_upgrade_history_entry(self, database_id, upgrade_history_entry_id, **kwargs):
         """
@@ -11728,6 +12704,8 @@ class DatabaseClient(object):
         """
         resource_path = "/databases/{databaseId}/upgradeHistoryEntries/{upgradeHistoryEntryId}"
         method = "GET"
+        operation_name = "get_database_upgrade_history_entry"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseUpgradeHistoryEntry/GetDatabaseUpgradeHistoryEntry"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11773,14 +12751,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DatabaseUpgradeHistoryEntry")
+                response_type="DatabaseUpgradeHistoryEntry",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DatabaseUpgradeHistoryEntry")
+                response_type="DatabaseUpgradeHistoryEntry",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_db_home(self, db_home_id, **kwargs):
         """
@@ -11812,6 +12796,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbHomes/{dbHomeId}"
         method = "GET"
+        operation_name = "get_db_home"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbHome/GetDbHome"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -11849,14 +12835,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DbHome")
+                response_type="DbHome",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DbHome")
+                response_type="DbHome",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_db_home_patch(self, db_home_id, patch_id, **kwargs):
         """
@@ -11893,6 +12885,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbHomes/{dbHomeId}/patches/{patchId}"
         method = "GET"
+        operation_name = "get_db_home_patch"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/GetDbHomePatch"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -11931,14 +12925,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Patch")
+                response_type="Patch",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Patch")
+                response_type="Patch",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_db_home_patch_history_entry(self, db_home_id, patch_history_entry_id, **kwargs):
         """
@@ -11975,6 +12975,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbHomes/{dbHomeId}/patchHistoryEntries/{patchHistoryEntryId}"
         method = "GET"
+        operation_name = "get_db_home_patch_history_entry"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/GetDbHomePatchHistoryEntry"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -12013,14 +13015,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PatchHistoryEntry")
+                response_type="PatchHistoryEntry",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PatchHistoryEntry")
+                response_type="PatchHistoryEntry",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_db_node(self, db_node_id, **kwargs):
         """
@@ -12052,6 +13060,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbNodes/{dbNodeId}"
         method = "GET"
+        operation_name = "get_db_node"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbNode/GetDbNode"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -12089,14 +13099,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DbNode")
+                response_type="DbNode",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DbNode")
+                response_type="DbNode",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_db_server(self, exadata_infrastructure_id, db_server_id, **kwargs):
         """
@@ -12136,6 +13152,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbServers/{dbServerId}"
         method = "GET"
+        operation_name = "get_db_server"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbServer/GetDbServer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12186,7 +13204,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DbServer")
+                response_type="DbServer",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12194,7 +13215,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DbServer")
+                response_type="DbServer",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_db_system(self, db_system_id, **kwargs):
         """
@@ -12233,6 +13257,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}"
         method = "GET"
+        operation_name = "get_db_system"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/GetDbSystem"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -12270,14 +13296,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DbSystem")
+                response_type="DbSystem",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DbSystem")
+                response_type="DbSystem",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_db_system_patch(self, db_system_id, patch_id, **kwargs):
         """
@@ -12314,6 +13346,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/patches/{patchId}"
         method = "GET"
+        operation_name = "get_db_system_patch"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/GetDbSystemPatch"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -12352,14 +13386,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Patch")
+                response_type="Patch",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Patch")
+                response_type="Patch",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_db_system_patch_history_entry(self, db_system_id, patch_history_entry_id, **kwargs):
         """
@@ -12396,6 +13436,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/patchHistoryEntries/{patchHistoryEntryId}"
         method = "GET"
+        operation_name = "get_db_system_patch_history_entry"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/GetDbSystemPatchHistoryEntry"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -12434,14 +13476,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PatchHistoryEntry")
+                response_type="PatchHistoryEntry",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PatchHistoryEntry")
+                response_type="PatchHistoryEntry",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_db_system_upgrade_history_entry(self, db_system_id, upgrade_history_entry_id, **kwargs):
         """
@@ -12481,6 +13529,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/upgradeHistoryEntries/{upgradeHistoryEntryId}"
         method = "GET"
+        operation_name = "get_db_system_upgrade_history_entry"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemUpgradeHistoryEntry/GetDbSystemUpgradeHistoryEntry"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12526,14 +13576,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DbSystemUpgradeHistoryEntry")
+                response_type="DbSystemUpgradeHistoryEntry",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DbSystemUpgradeHistoryEntry")
+                response_type="DbSystemUpgradeHistoryEntry",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_exadata_infrastructure(self, exadata_infrastructure_id, **kwargs):
         """
@@ -12569,6 +13625,8 @@ class DatabaseClient(object):
         """
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}"
         method = "GET"
+        operation_name = "get_exadata_infrastructure"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/GetExadataInfrastructure"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12613,14 +13671,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ExadataInfrastructure")
+                response_type="ExadataInfrastructure",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ExadataInfrastructure")
+                response_type="ExadataInfrastructure",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_exadata_infrastructure_ocpus(self, autonomous_exadata_infrastructure_id, **kwargs):
         """
@@ -12655,6 +13719,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousExadataInfrastructures/{autonomousExadataInfrastructureId}/ocpus"
         method = "GET"
+        operation_name = "get_exadata_infrastructure_ocpus"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/OCPUs/GetExadataInfrastructureOcpus"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12699,14 +13765,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="OCPUs")
+                response_type="OCPUs",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="OCPUs")
+                response_type="OCPUs",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_exadata_iorm_config(self, db_system_id, **kwargs):
         """
@@ -12752,6 +13824,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/ExadataIormConfig"
         method = "GET"
+        operation_name = "get_exadata_iorm_config"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/GetExadataIormConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12796,14 +13870,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ExadataIormConfig")
+                response_type="ExadataIormConfig",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ExadataIormConfig")
+                response_type="ExadataIormConfig",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_external_backup_job(self, backup_id, **kwargs):
         """
@@ -12839,6 +13919,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalBackupJobs/{backupId}"
         method = "GET"
+        operation_name = "get_external_backup_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalBackupJob/GetExternalBackupJob"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -12876,14 +13958,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ExternalBackupJob")
+                response_type="ExternalBackupJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ExternalBackupJob")
+                response_type="ExternalBackupJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_external_container_database(self, external_container_database_id, **kwargs):
         """
@@ -12918,6 +14006,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalcontainerdatabases/{externalContainerDatabaseId}"
         method = "GET"
+        operation_name = "get_external_container_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/GetExternalContainerDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12962,14 +14052,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ExternalContainerDatabase")
+                response_type="ExternalContainerDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ExternalContainerDatabase")
+                response_type="ExternalContainerDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_external_database_connector(self, external_database_connector_id, **kwargs):
         """
@@ -13005,6 +14101,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externaldatabaseconnectors/{externalDatabaseConnectorId}"
         method = "GET"
+        operation_name = "get_external_database_connector"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/GetExternalDatabaseConnector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13049,14 +14147,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ExternalDatabaseConnector")
+                response_type="ExternalDatabaseConnector",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ExternalDatabaseConnector")
+                response_type="ExternalDatabaseConnector",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_external_non_container_database(self, external_non_container_database_id, **kwargs):
         """
@@ -13091,6 +14195,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalnoncontainerdatabases/{externalNonContainerDatabaseId}"
         method = "GET"
+        operation_name = "get_external_non_container_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/GetExternalNonContainerDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13135,14 +14241,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ExternalNonContainerDatabase")
+                response_type="ExternalNonContainerDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ExternalNonContainerDatabase")
+                response_type="ExternalNonContainerDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_external_pluggable_database(self, external_pluggable_database_id, **kwargs):
         """
@@ -13178,6 +14290,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalpluggabledatabases/{externalPluggableDatabaseId}"
         method = "GET"
+        operation_name = "get_external_pluggable_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/GetExternalPluggableDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13222,14 +14336,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ExternalPluggableDatabase")
+                response_type="ExternalPluggableDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ExternalPluggableDatabase")
+                response_type="ExternalPluggableDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_key_store(self, key_store_id, **kwargs):
         """
@@ -13264,6 +14384,8 @@ class DatabaseClient(object):
         """
         resource_path = "/keyStores/{keyStoreId}"
         method = "GET"
+        operation_name = "get_key_store"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/GetKeyStore"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13308,14 +14430,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="KeyStore")
+                response_type="KeyStore",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="KeyStore")
+                response_type="KeyStore",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_maintenance_run(self, maintenance_run_id, **kwargs):
         """
@@ -13345,6 +14473,8 @@ class DatabaseClient(object):
         """
         resource_path = "/maintenanceRuns/{maintenanceRunId}"
         method = "GET"
+        operation_name = "get_maintenance_run"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/MaintenanceRun/GetMaintenanceRun"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -13382,14 +14512,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="MaintenanceRun")
+                response_type="MaintenanceRun",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="MaintenanceRun")
+                response_type="MaintenanceRun",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_pdb_conversion_history_entry(self, database_id, pdb_conversion_history_entry_id, **kwargs):
         """
@@ -13429,6 +14565,8 @@ class DatabaseClient(object):
         """
         resource_path = "/databases/{databaseId}/pdbConversionHistoryEntries/{pdbConversionHistoryEntryId}"
         method = "GET"
+        operation_name = "get_pdb_conversion_history_entry"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/PdbConversionHistoryEntry/GetPdbConversionHistoryEntry"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13474,14 +14612,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PdbConversionHistoryEntry")
+                response_type="PdbConversionHistoryEntry",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PdbConversionHistoryEntry")
+                response_type="PdbConversionHistoryEntry",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_pluggable_database(self, pluggable_database_id, **kwargs):
         """
@@ -13513,6 +14657,8 @@ class DatabaseClient(object):
         """
         resource_path = "/pluggableDatabases/{pluggableDatabaseId}"
         method = "GET"
+        operation_name = "get_pluggable_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/GetPluggableDatabase"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -13550,14 +14696,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PluggableDatabase")
+                response_type="PluggableDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PluggableDatabase")
+                response_type="PluggableDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_vm_cluster(self, vm_cluster_id, **kwargs):
         """
@@ -13592,6 +14744,8 @@ class DatabaseClient(object):
         """
         resource_path = "/vmClusters/{vmClusterId}"
         method = "GET"
+        operation_name = "get_vm_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/GetVmCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13636,14 +14790,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VmCluster")
+                response_type="VmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VmCluster")
+                response_type="VmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_vm_cluster_network(self, exadata_infrastructure_id, vm_cluster_network_id, **kwargs):
         """
@@ -13684,6 +14844,8 @@ class DatabaseClient(object):
         """
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/{vmClusterNetworkId}"
         method = "GET"
+        operation_name = "get_vm_cluster_network"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/GetVmClusterNetwork"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13729,14 +14891,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VmClusterNetwork")
+                response_type="VmClusterNetwork",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VmClusterNetwork")
+                response_type="VmClusterNetwork",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_vm_cluster_patch(self, vm_cluster_id, patch_id, **kwargs):
         """
@@ -13773,6 +14941,8 @@ class DatabaseClient(object):
         """
         resource_path = "/vmClusters/{vmClusterId}/patches/{patchId}"
         method = "GET"
+        operation_name = "get_vm_cluster_patch"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/GetVmClusterPatch"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -13811,14 +14981,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Patch")
+                response_type="Patch",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Patch")
+                response_type="Patch",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_vm_cluster_patch_history_entry(self, vm_cluster_id, patch_history_entry_id, **kwargs):
         """
@@ -13855,6 +15031,8 @@ class DatabaseClient(object):
         """
         resource_path = "/vmClusters/{vmClusterId}/patchHistoryEntries/{patchHistoryEntryId}"
         method = "GET"
+        operation_name = "get_vm_cluster_patch_history_entry"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/GetVmClusterPatchHistoryEntry"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -13893,14 +15071,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PatchHistoryEntry")
+                response_type="PatchHistoryEntry",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PatchHistoryEntry")
+                response_type="PatchHistoryEntry",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_vm_cluster_update(self, vm_cluster_id, update_id, **kwargs):
         """
@@ -13940,6 +15124,8 @@ class DatabaseClient(object):
         """
         resource_path = "/vmClusters/{vmClusterId}/updates/{updateId}"
         method = "GET"
+        operation_name = "get_vm_cluster_update"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterUpdate/GetVmClusterUpdate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13985,14 +15171,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VmClusterUpdate")
+                response_type="VmClusterUpdate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VmClusterUpdate")
+                response_type="VmClusterUpdate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_vm_cluster_update_history_entry(self, vm_cluster_id, update_history_entry_id, **kwargs):
         """
@@ -14032,6 +15224,8 @@ class DatabaseClient(object):
         """
         resource_path = "/vmClusters/{vmClusterId}/updateHistoryEntries/{updateHistoryEntryId}"
         method = "GET"
+        operation_name = "get_vm_cluster_update_history_entry"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterUpdateHistoryEntry/GetVmClusterUpdateHistoryEntry"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14077,14 +15271,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VmClusterUpdateHistoryEntry")
+                response_type="VmClusterUpdateHistoryEntry",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VmClusterUpdateHistoryEntry")
+                response_type="VmClusterUpdateHistoryEntry",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def launch_autonomous_exadata_infrastructure(self, launch_autonomous_exadata_infrastructure_details, **kwargs):
         """
@@ -14121,6 +15321,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousExadataInfrastructures"
         method = "POST"
+        operation_name = "launch_autonomous_exadata_infrastructure"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/LaunchAutonomousExadataInfrastructure"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14156,14 +15358,20 @@ class DatabaseClient(object):
                 method=method,
                 header_params=header_params,
                 body=launch_autonomous_exadata_infrastructure_details,
-                response_type="AutonomousExadataInfrastructure")
+                response_type="AutonomousExadataInfrastructure",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=launch_autonomous_exadata_infrastructure_details,
-                response_type="AutonomousExadataInfrastructure")
+                response_type="AutonomousExadataInfrastructure",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def launch_db_system(self, launch_db_system_details, **kwargs):
         """
@@ -14221,6 +15429,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbSystems"
         method = "POST"
+        operation_name = "launch_db_system"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/LaunchDbSystem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14256,14 +15466,20 @@ class DatabaseClient(object):
                 method=method,
                 header_params=header_params,
                 body=launch_db_system_details,
-                response_type="DbSystem")
+                response_type="DbSystem",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=launch_db_system_details,
-                response_type="DbSystem")
+                response_type="DbSystem",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_autonomous_container_database_dataguard_associations(self, autonomous_container_database_id, **kwargs):
         """
@@ -14301,6 +15517,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/autonomousContainerDatabaseDataguardAssociations"
         method = "GET"
+        operation_name = "list_autonomous_container_database_dataguard_associations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/ListAutonomousContainerDatabaseDataguardAssociations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14351,7 +15569,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AutonomousContainerDatabaseDataguardAssociation]")
+                response_type="list[AutonomousContainerDatabaseDataguardAssociation]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14359,7 +15580,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AutonomousContainerDatabaseDataguardAssociation]")
+                response_type="list[AutonomousContainerDatabaseDataguardAssociation]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_autonomous_container_databases(self, compartment_id, **kwargs):
         """
@@ -14443,6 +15667,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousContainerDatabases"
         method = "GET"
+        operation_name = "list_autonomous_container_databases"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/ListAutonomousContainerDatabases"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14531,14 +15757,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AutonomousContainerDatabaseSummary]")
+                response_type="list[AutonomousContainerDatabaseSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AutonomousContainerDatabaseSummary]")
+                response_type="list[AutonomousContainerDatabaseSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_autonomous_database_backups(self, **kwargs):
         """
@@ -14604,6 +15836,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabaseBackups"
         method = "GET"
+        operation_name = "list_autonomous_database_backups"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseBackup/ListAutonomousDatabaseBackups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14679,14 +15913,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AutonomousDatabaseBackupSummary]")
+                response_type="list[AutonomousDatabaseBackupSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AutonomousDatabaseBackupSummary]")
+                response_type="list[AutonomousDatabaseBackupSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_autonomous_database_character_sets(self, **kwargs):
         """
@@ -14716,6 +15956,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabaseCharacterSets"
         method = "GET"
+        operation_name = "list_autonomous_database_character_sets"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseCharacterSets/ListAutonomousDatabaseCharacterSets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14749,13 +15991,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                response_type="list[AutonomousDatabaseCharacterSets]")
+                response_type="list[AutonomousDatabaseCharacterSets]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                response_type="list[AutonomousDatabaseCharacterSets]")
+                response_type="list[AutonomousDatabaseCharacterSets]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_autonomous_database_clones(self, compartment_id, autonomous_database_id, **kwargs):
         """
@@ -14826,6 +16074,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/clones"
         method = "GET"
+        operation_name = "list_autonomous_database_clones"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ListAutonomousDatabaseClones"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14918,7 +16168,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AutonomousDatabaseSummary]")
+                response_type="list[AutonomousDatabaseSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14926,7 +16179,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AutonomousDatabaseSummary]")
+                response_type="list[AutonomousDatabaseSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_autonomous_database_dataguard_associations(self, autonomous_database_id, **kwargs):
         """
@@ -14964,6 +16220,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/autonomousDatabaseDataguardAssociations"
         method = "GET"
+        operation_name = "list_autonomous_database_dataguard_associations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseDataguardAssociation/ListAutonomousDatabaseDataguardAssociations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15014,7 +16272,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AutonomousDatabaseDataguardAssociation]")
+                response_type="list[AutonomousDatabaseDataguardAssociation]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15022,7 +16283,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AutonomousDatabaseDataguardAssociation]")
+                response_type="list[AutonomousDatabaseDataguardAssociation]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_autonomous_databases(self, compartment_id, **kwargs):
         """
@@ -15112,6 +16376,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabases"
         method = "GET"
+        operation_name = "list_autonomous_databases"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ListAutonomousDatabases"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15212,14 +16478,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AutonomousDatabaseSummary]")
+                response_type="list[AutonomousDatabaseSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AutonomousDatabaseSummary]")
+                response_type="list[AutonomousDatabaseSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_autonomous_db_preview_versions(self, compartment_id, **kwargs):
         """
@@ -15275,6 +16547,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDbPreviewVersions"
         method = "GET"
+        operation_name = "list_autonomous_db_preview_versions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDbPreviewVersionSummary/ListAutonomousDbPreviewVersions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15336,14 +16610,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AutonomousDbPreviewVersionSummary]")
+                response_type="list[AutonomousDbPreviewVersionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AutonomousDbPreviewVersionSummary]")
+                response_type="list[AutonomousDbPreviewVersionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_autonomous_db_versions(self, compartment_id, **kwargs):
         """
@@ -15394,6 +16674,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDbVersions"
         method = "GET"
+        operation_name = "list_autonomous_db_versions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDbVersionSummary/ListAutonomousDbVersions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15455,14 +16737,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AutonomousDbVersionSummary]")
+                response_type="list[AutonomousDbVersionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AutonomousDbVersionSummary]")
+                response_type="list[AutonomousDbVersionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_autonomous_exadata_infrastructure_shapes(self, availability_domain, compartment_id, **kwargs):
         """
@@ -15506,6 +16794,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousExadataInfrastructureShapes"
         method = "GET"
+        operation_name = "list_autonomous_exadata_infrastructure_shapes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructureShapeSummary/ListAutonomousExadataInfrastructureShapes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15550,14 +16840,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AutonomousExadataInfrastructureShapeSummary]")
+                response_type="list[AutonomousExadataInfrastructureShapeSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AutonomousExadataInfrastructureShapeSummary]")
+                response_type="list[AutonomousExadataInfrastructureShapeSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_autonomous_exadata_infrastructures(self, compartment_id, **kwargs):
         """
@@ -15618,6 +16914,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousExadataInfrastructures"
         method = "GET"
+        operation_name = "list_autonomous_exadata_infrastructures"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/ListAutonomousExadataInfrastructures"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15689,14 +16987,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AutonomousExadataInfrastructureSummary]")
+                response_type="list[AutonomousExadataInfrastructureSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AutonomousExadataInfrastructureSummary]")
+                response_type="list[AutonomousExadataInfrastructureSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_autonomous_vm_clusters(self, compartment_id, **kwargs):
         """
@@ -15758,6 +17062,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousVmClusters"
         method = "GET"
+        operation_name = "list_autonomous_vm_clusters"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/ListAutonomousVmClusters"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15832,14 +17138,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AutonomousVmClusterSummary]")
+                response_type="list[AutonomousVmClusterSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AutonomousVmClusterSummary]")
+                response_type="list[AutonomousVmClusterSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_backup_destination(self, compartment_id, **kwargs):
         """
@@ -15883,6 +17195,8 @@ class DatabaseClient(object):
         """
         resource_path = "/backupDestinations"
         method = "GET"
+        operation_name = "list_backup_destination"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestinationSummary/ListBackupDestination"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15928,14 +17242,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[BackupDestinationSummary]")
+                response_type="list[BackupDestinationSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[BackupDestinationSummary]")
+                response_type="list[BackupDestinationSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_backups(self, **kwargs):
         """
@@ -15978,6 +17298,8 @@ class DatabaseClient(object):
         """
         resource_path = "/backups"
         method = "GET"
+        operation_name = "list_backups"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/Backup/ListBackups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16021,14 +17343,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[BackupSummary]")
+                response_type="list[BackupSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[BackupSummary]")
+                response_type="list[BackupSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_cloud_autonomous_vm_clusters(self, compartment_id, **kwargs):
         """
@@ -16093,6 +17421,8 @@ class DatabaseClient(object):
         """
         resource_path = "/cloudAutonomousVmClusters"
         method = "GET"
+        operation_name = "list_cloud_autonomous_vm_clusters"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/ListCloudAutonomousVmClusters"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16169,14 +17499,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CloudAutonomousVmClusterSummary]")
+                response_type="list[CloudAutonomousVmClusterSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CloudAutonomousVmClusterSummary]")
+                response_type="list[CloudAutonomousVmClusterSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_cloud_exadata_infrastructures(self, compartment_id, **kwargs):
         """
@@ -16235,6 +17571,8 @@ class DatabaseClient(object):
         """
         resource_path = "/cloudExadataInfrastructures"
         method = "GET"
+        operation_name = "list_cloud_exadata_infrastructures"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/ListCloudExadataInfrastructures"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16307,14 +17645,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CloudExadataInfrastructureSummary]")
+                response_type="list[CloudExadataInfrastructureSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CloudExadataInfrastructureSummary]")
+                response_type="list[CloudExadataInfrastructureSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_cloud_vm_cluster_update_history_entries(self, cloud_vm_cluster_id, **kwargs):
         """
@@ -16360,6 +17704,8 @@ class DatabaseClient(object):
         """
         resource_path = "/cloudVmClusters/{cloudVmClusterId}/updateHistoryEntries"
         method = "GET"
+        operation_name = "list_cloud_vm_cluster_update_history_entries"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/UpdateHistoryEntry/ListCloudVmClusterUpdateHistoryEntries"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16422,7 +17768,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[UpdateHistoryEntrySummary]")
+                response_type="list[UpdateHistoryEntrySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16430,7 +17779,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[UpdateHistoryEntrySummary]")
+                response_type="list[UpdateHistoryEntrySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_cloud_vm_cluster_updates(self, cloud_vm_cluster_id, **kwargs):
         """
@@ -16476,6 +17828,8 @@ class DatabaseClient(object):
         """
         resource_path = "/cloudVmClusters/{cloudVmClusterId}/updates"
         method = "GET"
+        operation_name = "list_cloud_vm_cluster_updates"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/Update/ListCloudVmClusterUpdates"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16538,7 +17892,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[UpdateSummary]")
+                response_type="list[UpdateSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16546,7 +17903,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[UpdateSummary]")
+                response_type="list[UpdateSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_cloud_vm_clusters(self, compartment_id, **kwargs):
         """
@@ -16608,6 +17968,8 @@ class DatabaseClient(object):
         """
         resource_path = "/cloudVmClusters"
         method = "GET"
+        operation_name = "list_cloud_vm_clusters"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/ListCloudVmClusters"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16682,14 +18044,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CloudVmClusterSummary]")
+                response_type="list[CloudVmClusterSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CloudVmClusterSummary]")
+                response_type="list[CloudVmClusterSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_console_connections(self, db_node_id, **kwargs):
         """
@@ -16721,6 +18089,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbNodes/{dbNodeId}/consoleConnections"
         method = "GET"
+        operation_name = "list_console_connections"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleConnection/ListConsoleConnections"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -16758,14 +18128,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[ConsoleConnectionSummary]")
+                response_type="list[ConsoleConnectionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[ConsoleConnectionSummary]")
+                response_type="list[ConsoleConnectionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_container_database_patches(self, autonomous_container_database_id, compartment_id, **kwargs):
         """
@@ -16808,6 +18184,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/patches"
         method = "GET"
+        operation_name = "list_container_database_patches"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousPatch/ListContainerDatabasePatches"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16859,7 +18237,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AutonomousPatchSummary]")
+                response_type="list[AutonomousPatchSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16867,7 +18248,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AutonomousPatchSummary]")
+                response_type="list[AutonomousPatchSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_data_guard_associations(self, database_id, **kwargs):
         """
@@ -16905,6 +18289,8 @@ class DatabaseClient(object):
         """
         resource_path = "/databases/{databaseId}/dataGuardAssociations"
         method = "GET"
+        operation_name = "list_data_guard_associations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/ListDataGuardAssociations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16955,7 +18341,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DataGuardAssociationSummary]")
+                response_type="list[DataGuardAssociationSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16963,7 +18352,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DataGuardAssociationSummary]")
+                response_type="list[DataGuardAssociationSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_database_software_images(self, compartment_id, **kwargs):
         """
@@ -17032,6 +18424,8 @@ class DatabaseClient(object):
         """
         resource_path = "/databaseSoftwareImages"
         method = "GET"
+        operation_name = "list_database_software_images"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/ListDatabaseSoftwareImages"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17121,14 +18515,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DatabaseSoftwareImageSummary]")
+                response_type="list[DatabaseSoftwareImageSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DatabaseSoftwareImageSummary]")
+                response_type="list[DatabaseSoftwareImageSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_database_upgrade_history_entries(self, database_id, **kwargs):
         """
@@ -17189,6 +18589,8 @@ class DatabaseClient(object):
         """
         resource_path = "/databases/{databaseId}/upgradeHistoryEntries"
         method = "GET"
+        operation_name = "list_database_upgrade_history_entries"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ListDatabaseUpgradeHistoryEntries"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17278,7 +18680,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DatabaseUpgradeHistoryEntrySummary]")
+                response_type="list[DatabaseUpgradeHistoryEntrySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17286,7 +18691,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DatabaseUpgradeHistoryEntrySummary]")
+                response_type="list[DatabaseUpgradeHistoryEntrySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_databases(self, compartment_id, **kwargs):
         """
@@ -17352,6 +18760,8 @@ class DatabaseClient(object):
         """
         resource_path = "/databases"
         method = "GET"
+        operation_name = "list_databases"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ListDatabases"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17425,14 +18835,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DatabaseSummary]")
+                response_type="list[DatabaseSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DatabaseSummary]")
+                response_type="list[DatabaseSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_db_home_patch_history_entries(self, db_home_id, **kwargs):
         """
@@ -17470,6 +18886,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbHomes/{dbHomeId}/patchHistoryEntries"
         method = "GET"
+        operation_name = "list_db_home_patch_history_entries"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/ListDbHomePatchHistoryEntries"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17520,7 +18938,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PatchHistoryEntrySummary]")
+                response_type="list[PatchHistoryEntrySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17528,7 +18949,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PatchHistoryEntrySummary]")
+                response_type="list[PatchHistoryEntrySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_db_home_patches(self, db_home_id, **kwargs):
         """
@@ -17566,6 +18990,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbHomes/{dbHomeId}/patches"
         method = "GET"
+        operation_name = "list_db_home_patches"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/ListDbHomePatches"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17616,7 +19042,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PatchSummary]")
+                response_type="list[PatchSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17624,7 +19053,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PatchSummary]")
+                response_type="list[PatchSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_db_homes(self, compartment_id, **kwargs):
         """
@@ -17698,6 +19130,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbHomes"
         method = "GET"
+        operation_name = "list_db_homes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbHome/ListDbHomes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17775,14 +19209,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DbHomeSummary]")
+                response_type="list[DbHomeSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DbHomeSummary]")
+                response_type="list[DbHomeSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_db_nodes(self, compartment_id, **kwargs):
         """
@@ -17850,6 +19290,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbNodes"
         method = "GET"
+        operation_name = "list_db_nodes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbNode/ListDbNodes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17923,14 +19365,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DbNodeSummary]")
+                response_type="list[DbNodeSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DbNodeSummary]")
+                response_type="list[DbNodeSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_db_servers(self, compartment_id, exadata_infrastructure_id, **kwargs):
         """
@@ -17994,6 +19442,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbServers"
         method = "GET"
+        operation_name = "list_db_servers"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbServer/ListDbServers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18067,14 +19517,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DbServerSummary]")
+                response_type="list[DbServerSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DbServerSummary]")
+                response_type="list[DbServerSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_db_system_compute_performances(self, **kwargs):
         """
@@ -18107,6 +19563,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbSystemComputePerformance"
         method = "GET"
+        operation_name = "list_db_system_compute_performances"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemComputePerformanceSummary/ListDbSystemComputePerformances"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18147,14 +19605,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DbSystemComputePerformanceSummary]")
+                response_type="list[DbSystemComputePerformanceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DbSystemComputePerformanceSummary]")
+                response_type="list[DbSystemComputePerformanceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_db_system_patch_history_entries(self, db_system_id, **kwargs):
         """
@@ -18192,6 +19656,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/patchHistoryEntries"
         method = "GET"
+        operation_name = "list_db_system_patch_history_entries"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/ListDbSystemPatchHistoryEntries"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18242,7 +19708,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PatchHistoryEntrySummary]")
+                response_type="list[PatchHistoryEntrySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18250,7 +19719,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PatchHistoryEntrySummary]")
+                response_type="list[PatchHistoryEntrySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_db_system_patches(self, db_system_id, **kwargs):
         """
@@ -18288,6 +19760,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/patches"
         method = "GET"
+        operation_name = "list_db_system_patches"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/ListDbSystemPatches"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18338,7 +19812,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PatchSummary]")
+                response_type="list[PatchSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18346,7 +19823,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PatchSummary]")
+                response_type="list[PatchSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_db_system_shapes(self, compartment_id, **kwargs):
         """
@@ -18387,6 +19867,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbSystemShapes"
         method = "GET"
+        operation_name = "list_db_system_shapes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemShapeSummary/ListDbSystemShapes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18429,14 +19911,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DbSystemShapeSummary]")
+                response_type="list[DbSystemShapeSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DbSystemShapeSummary]")
+                response_type="list[DbSystemShapeSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_db_system_storage_performances(self, storage_management, **kwargs):
         """
@@ -18476,6 +19964,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbSystemStoragePerformance"
         method = "GET"
+        operation_name = "list_db_system_storage_performances"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemStoragePerformanceSummary/ListDbSystemStoragePerformances"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18523,14 +20013,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DbSystemStoragePerformanceSummary]")
+                response_type="list[DbSystemStoragePerformanceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DbSystemStoragePerformanceSummary]")
+                response_type="list[DbSystemStoragePerformanceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_db_system_upgrade_history_entries(self, db_system_id, **kwargs):
         """
@@ -18591,6 +20087,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/upgradeHistoryEntries"
         method = "GET"
+        operation_name = "list_db_system_upgrade_history_entries"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystemUpgradeHistoryEntry/ListDbSystemUpgradeHistoryEntries"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18680,7 +20178,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DbSystemUpgradeHistoryEntrySummary]")
+                response_type="list[DbSystemUpgradeHistoryEntrySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -18688,7 +20189,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DbSystemUpgradeHistoryEntrySummary]")
+                response_type="list[DbSystemUpgradeHistoryEntrySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_db_systems(self, compartment_id, **kwargs):
         """
@@ -18761,6 +20265,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbSystems"
         method = "GET"
+        operation_name = "list_db_systems"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/ListDbSystems"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18834,14 +20340,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DbSystemSummary]")
+                response_type="list[DbSystemSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DbSystemSummary]")
+                response_type="list[DbSystemSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_db_versions(self, compartment_id, **kwargs):
         """
@@ -18900,6 +20412,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbVersions"
         method = "GET"
+        operation_name = "list_db_versions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbVersionSummary/ListDbVersions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18957,14 +20471,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DbVersionSummary]")
+                response_type="list[DbVersionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DbVersionSummary]")
+                response_type="list[DbVersionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_exadata_infrastructures(self, compartment_id, **kwargs):
         """
@@ -19024,6 +20544,8 @@ class DatabaseClient(object):
         """
         resource_path = "/exadataInfrastructures"
         method = "GET"
+        operation_name = "list_exadata_infrastructures"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/ListExadataInfrastructures"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19096,14 +20618,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ExadataInfrastructureSummary]")
+                response_type="list[ExadataInfrastructureSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ExadataInfrastructureSummary]")
+                response_type="list[ExadataInfrastructureSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_external_container_databases(self, compartment_id, **kwargs):
         """
@@ -19165,6 +20693,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalcontainerdatabases"
         method = "GET"
+        operation_name = "list_external_container_databases"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/ListExternalContainerDatabases"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19237,14 +20767,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ExternalContainerDatabaseSummary]")
+                response_type="list[ExternalContainerDatabaseSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ExternalContainerDatabaseSummary]")
+                response_type="list[ExternalContainerDatabaseSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_external_database_connectors(self, compartment_id, external_database_id, **kwargs):
         """
@@ -19311,6 +20847,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externaldatabaseconnectors"
         method = "GET"
+        operation_name = "list_external_database_connectors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/ListExternalDatabaseConnectors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19384,14 +20922,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ExternalDatabaseConnectorSummary]")
+                response_type="list[ExternalDatabaseConnectorSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ExternalDatabaseConnectorSummary]")
+                response_type="list[ExternalDatabaseConnectorSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_external_non_container_databases(self, compartment_id, **kwargs):
         """
@@ -19453,6 +20997,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalnoncontainerdatabases"
         method = "GET"
+        operation_name = "list_external_non_container_databases"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/ListExternalNonContainerDatabases"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19525,14 +21071,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ExternalNonContainerDatabaseSummary]")
+                response_type="list[ExternalNonContainerDatabaseSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ExternalNonContainerDatabaseSummary]")
+                response_type="list[ExternalNonContainerDatabaseSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_external_pluggable_databases(self, compartment_id, **kwargs):
         """
@@ -19600,6 +21152,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalpluggabledatabases"
         method = "GET"
+        operation_name = "list_external_pluggable_databases"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/ListExternalPluggableDatabases"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19674,14 +21228,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ExternalPluggableDatabaseSummary]")
+                response_type="list[ExternalPluggableDatabaseSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ExternalPluggableDatabaseSummary]")
+                response_type="list[ExternalPluggableDatabaseSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_flex_components(self, compartment_id, **kwargs):
         """
@@ -19732,6 +21292,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbSystemShapes/flexComponents"
         method = "GET"
+        operation_name = "list_flex_components"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/FlexComponentCollection/ListFlexComponents"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19792,14 +21354,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="FlexComponentCollection")
+                response_type="FlexComponentCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="FlexComponentCollection")
+                response_type="FlexComponentCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_gi_versions(self, compartment_id, **kwargs):
         """
@@ -19845,6 +21413,8 @@ class DatabaseClient(object):
         """
         resource_path = "/giVersions"
         method = "GET"
+        operation_name = "list_gi_versions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/GiVersionSummary/ListGiVersions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19896,14 +21466,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[GiVersionSummary]")
+                response_type="list[GiVersionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[GiVersionSummary]")
+                response_type="list[GiVersionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_key_stores(self, compartment_id, **kwargs):
         """
@@ -19944,6 +21520,8 @@ class DatabaseClient(object):
         """
         resource_path = "/keyStores"
         method = "GET"
+        operation_name = "list_key_stores"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStoreSummary/ListKeyStores"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19987,14 +21565,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[KeyStoreSummary]")
+                response_type="list[KeyStoreSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[KeyStoreSummary]")
+                response_type="list[KeyStoreSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_maintenance_runs(self, compartment_id, **kwargs):
         """
@@ -20065,6 +21649,8 @@ class DatabaseClient(object):
         """
         resource_path = "/maintenanceRuns"
         method = "GET"
+        operation_name = "list_maintenance_runs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/MaintenanceRun/ListMaintenanceRuns"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20154,14 +21740,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[MaintenanceRunSummary]")
+                response_type="list[MaintenanceRunSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[MaintenanceRunSummary]")
+                response_type="list[MaintenanceRunSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_pdb_conversion_history_entries(self, database_id, **kwargs):
         """
@@ -20222,6 +21814,8 @@ class DatabaseClient(object):
         """
         resource_path = "/databases/{databaseId}/pdbConversionHistoryEntries"
         method = "GET"
+        operation_name = "list_pdb_conversion_history_entries"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ListPdbConversionHistoryEntries"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20311,7 +21905,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PdbConversionHistoryEntrySummary]")
+                response_type="list[PdbConversionHistoryEntrySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -20319,7 +21916,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PdbConversionHistoryEntrySummary]")
+                response_type="list[PdbConversionHistoryEntrySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_pluggable_databases(self, **kwargs):
         """
@@ -20380,6 +21980,8 @@ class DatabaseClient(object):
         """
         resource_path = "/pluggableDatabases"
         method = "GET"
+        operation_name = "list_pluggable_databases"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/ListPluggableDatabases"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20452,14 +22054,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PluggableDatabaseSummary]")
+                response_type="list[PluggableDatabaseSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PluggableDatabaseSummary]")
+                response_type="list[PluggableDatabaseSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_vm_cluster_networks(self, exadata_infrastructure_id, compartment_id, **kwargs):
         """
@@ -20523,6 +22131,8 @@ class DatabaseClient(object):
         """
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks"
         method = "GET"
+        operation_name = "list_vm_cluster_networks"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/ListVmClusterNetworks"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20606,7 +22216,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VmClusterNetworkSummary]")
+                response_type="list[VmClusterNetworkSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -20614,7 +22227,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VmClusterNetworkSummary]")
+                response_type="list[VmClusterNetworkSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_vm_cluster_patch_history_entries(self, vm_cluster_id, **kwargs):
         """
@@ -20652,6 +22268,8 @@ class DatabaseClient(object):
         """
         resource_path = "/vmClusters/{vmClusterId}/patchHistoryEntries"
         method = "GET"
+        operation_name = "list_vm_cluster_patch_history_entries"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/PatchHistoryEntry/ListVmClusterPatchHistoryEntries"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20702,7 +22320,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PatchHistoryEntrySummary]")
+                response_type="list[PatchHistoryEntrySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -20710,7 +22331,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PatchHistoryEntrySummary]")
+                response_type="list[PatchHistoryEntrySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_vm_cluster_patches(self, vm_cluster_id, **kwargs):
         """
@@ -20748,6 +22372,8 @@ class DatabaseClient(object):
         """
         resource_path = "/vmClusters/{vmClusterId}/patches"
         method = "GET"
+        operation_name = "list_vm_cluster_patches"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/Patch/ListVmClusterPatches"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20798,7 +22424,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PatchSummary]")
+                response_type="list[PatchSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -20806,7 +22435,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PatchSummary]")
+                response_type="list[PatchSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_vm_cluster_update_history_entries(self, vm_cluster_id, **kwargs):
         """
@@ -20857,6 +22489,8 @@ class DatabaseClient(object):
         """
         resource_path = "/vmClusters/{vmClusterId}/updateHistoryEntries"
         method = "GET"
+        operation_name = "list_vm_cluster_update_history_entries"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterUpdateHistoryEntry/ListVmClusterUpdateHistoryEntries"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20928,7 +22562,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VmClusterUpdateHistoryEntrySummary]")
+                response_type="list[VmClusterUpdateHistoryEntrySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -20936,7 +22573,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VmClusterUpdateHistoryEntrySummary]")
+                response_type="list[VmClusterUpdateHistoryEntrySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_vm_cluster_updates(self, vm_cluster_id, **kwargs):
         """
@@ -20987,6 +22627,8 @@ class DatabaseClient(object):
         """
         resource_path = "/vmClusters/{vmClusterId}/updates"
         method = "GET"
+        operation_name = "list_vm_cluster_updates"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterUpdate/ListVmClusterUpdates"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21058,7 +22700,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VmClusterUpdateSummary]")
+                response_type="list[VmClusterUpdateSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21066,7 +22711,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VmClusterUpdateSummary]")
+                response_type="list[VmClusterUpdateSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_vm_clusters(self, compartment_id, **kwargs):
         """
@@ -21129,6 +22777,8 @@ class DatabaseClient(object):
         """
         resource_path = "/vmClusters"
         method = "GET"
+        operation_name = "list_vm_clusters"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/ListVmClusters"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21203,14 +22853,20 @@ class DatabaseClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VmClusterSummary]")
+                response_type="list[VmClusterSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VmClusterSummary]")
+                response_type="list[VmClusterSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def local_clone_pluggable_database(self, local_clone_pluggable_database_details, pluggable_database_id, **kwargs):
         """
@@ -21260,6 +22916,8 @@ class DatabaseClient(object):
         """
         resource_path = "/pluggableDatabases/{pluggableDatabaseId}/actions/localClone"
         method = "POST"
+        operation_name = "local_clone_pluggable_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/LocalClonePluggableDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21310,7 +22968,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=local_clone_pluggable_database_details,
-                response_type="PluggableDatabase")
+                response_type="PluggableDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21318,7 +22979,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=local_clone_pluggable_database_details,
-                response_type="PluggableDatabase")
+                response_type="PluggableDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def migrate_exadata_db_system_resource_model(self, db_system_id, **kwargs):
         """
@@ -21368,6 +23032,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/actions/migration"
         method = "POST"
+        operation_name = "migrate_exadata_db_system_resource_model"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/MigrateExadataDbSystemResourceModel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21417,14 +23083,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ExadataDbSystemMigration")
+                response_type="ExadataDbSystemMigration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ExadataDbSystemMigration")
+                response_type="ExadataDbSystemMigration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def migrate_vault_key(self, database_id, migrate_vault_key_details, **kwargs):
         """
@@ -21476,6 +23148,8 @@ class DatabaseClient(object):
         """
         resource_path = "/databases/{databaseId}/actions/migrateKey"
         method = "POST"
+        operation_name = "migrate_vault_key"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/MigrateVaultKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21526,7 +23200,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=migrate_vault_key_details,
-                response_type="Database")
+                response_type="Database",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21534,7 +23211,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=migrate_vault_key_details,
-                response_type="Database")
+                response_type="Database",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def modify_database_management(self, database_id, modify_database_management_details, **kwargs):
         """
@@ -21584,6 +23264,8 @@ class DatabaseClient(object):
         """
         resource_path = "/databases/{databaseId}/actions/modifyDatabaseManagement"
         method = "POST"
+        operation_name = "modify_database_management"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ModifyDatabaseManagement"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21634,7 +23316,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=modify_database_management_details,
-                response_type="Database")
+                response_type="Database",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21642,7 +23327,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=modify_database_management_details,
-                response_type="Database")
+                response_type="Database",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def register_autonomous_database_data_safe(self, autonomous_database_id, **kwargs):
         """
@@ -21680,6 +23368,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/registerDataSafe"
         method = "POST"
+        operation_name = "register_autonomous_database_data_safe"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/RegisterAutonomousDatabaseDataSafe"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21725,14 +23415,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=kwargs.get('register_autonomous_database_data_safe_details'))
+                body=kwargs.get('register_autonomous_database_data_safe_details'),
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=kwargs.get('register_autonomous_database_data_safe_details'))
+                body=kwargs.get('register_autonomous_database_data_safe_details'),
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def reinstate_autonomous_container_database_dataguard_association(self, autonomous_container_database_id, autonomous_container_database_dataguard_association_id, **kwargs):
         """
@@ -21774,6 +23470,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/autonomousContainerDatabaseDataguardAssociations/{autonomousContainerDatabaseDataguardAssociationId}/actions/reinstate"
         method = "POST"
+        operation_name = "reinstate_autonomous_container_database_dataguard_association"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/ReinstateAutonomousContainerDatabaseDataguardAssociation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21819,14 +23517,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousContainerDatabaseDataguardAssociation")
+                response_type="AutonomousContainerDatabaseDataguardAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousContainerDatabaseDataguardAssociation")
+                response_type="AutonomousContainerDatabaseDataguardAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def reinstate_data_guard_association(self, database_id, data_guard_association_id, reinstate_data_guard_association_details, **kwargs):
         """
@@ -21871,6 +23575,8 @@ class DatabaseClient(object):
         """
         resource_path = "/databases/{databaseId}/dataGuardAssociations/{dataGuardAssociationId}/actions/reinstate"
         method = "POST"
+        operation_name = "reinstate_data_guard_association"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/ReinstateDataGuardAssociation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21917,7 +23623,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=reinstate_data_guard_association_details,
-                response_type="DataGuardAssociation")
+                response_type="DataGuardAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -21925,7 +23634,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=reinstate_data_guard_association_details,
-                response_type="DataGuardAssociation")
+                response_type="DataGuardAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remote_clone_pluggable_database(self, remote_clone_pluggable_database_details, pluggable_database_id, **kwargs):
         """
@@ -21975,6 +23687,8 @@ class DatabaseClient(object):
         """
         resource_path = "/pluggableDatabases/{pluggableDatabaseId}/actions/remoteClone"
         method = "POST"
+        operation_name = "remote_clone_pluggable_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/RemoteClonePluggableDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22025,7 +23739,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=remote_clone_pluggable_database_details,
-                response_type="PluggableDatabase")
+                response_type="PluggableDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22033,7 +23750,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=remote_clone_pluggable_database_details,
-                response_type="PluggableDatabase")
+                response_type="PluggableDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_virtual_machine_from_vm_cluster(self, remove_virtual_machine_from_vm_cluster_details, vm_cluster_id, **kwargs):
         """
@@ -22083,6 +23803,8 @@ class DatabaseClient(object):
         """
         resource_path = "/vmClusters/{vmClusterId}/actions/removeVirtualMachine"
         method = "POST"
+        operation_name = "remove_virtual_machine_from_vm_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/RemoveVirtualMachineFromVmCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22133,7 +23855,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=remove_virtual_machine_from_vm_cluster_details,
-                response_type="VmCluster")
+                response_type="VmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22141,7 +23866,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=remove_virtual_machine_from_vm_cluster_details,
-                response_type="VmCluster")
+                response_type="VmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def restart_autonomous_container_database(self, autonomous_container_database_id, **kwargs):
         """
@@ -22181,6 +23909,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/actions/restart"
         method = "POST"
+        operation_name = "restart_autonomous_container_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/RestartAutonomousContainerDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22227,14 +23957,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousContainerDatabase")
+                response_type="AutonomousContainerDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousContainerDatabase")
+                response_type="AutonomousContainerDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def restart_autonomous_database(self, autonomous_database_id, **kwargs):
         """
@@ -22271,6 +24007,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/restart"
         method = "POST"
+        operation_name = "restart_autonomous_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/RestartAutonomousDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22315,14 +24053,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousDatabase")
+                response_type="AutonomousDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousDatabase")
+                response_type="AutonomousDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def restore_autonomous_database(self, autonomous_database_id, restore_autonomous_database_details, **kwargs):
         """
@@ -22362,6 +24106,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/restore"
         method = "POST"
+        operation_name = "restore_autonomous_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/RestoreAutonomousDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22407,7 +24153,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=restore_autonomous_database_details,
-                response_type="AutonomousDatabase")
+                response_type="AutonomousDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22415,7 +24164,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=restore_autonomous_database_details,
-                response_type="AutonomousDatabase")
+                response_type="AutonomousDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def restore_database(self, database_id, restore_database_details, **kwargs):
         """
@@ -22455,6 +24207,8 @@ class DatabaseClient(object):
         """
         resource_path = "/databases/{databaseId}/actions/restore"
         method = "POST"
+        operation_name = "restore_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/RestoreDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22500,7 +24254,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=restore_database_details,
-                response_type="Database")
+                response_type="Database",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -22508,7 +24265,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=restore_database_details,
-                response_type="Database")
+                response_type="Database",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def rotate_autonomous_container_database_encryption_key(self, autonomous_container_database_id, **kwargs):
         """
@@ -22557,6 +24317,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/actions/rotateKey"
         method = "POST"
+        operation_name = "rotate_autonomous_container_database_encryption_key"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/RotateAutonomousContainerDatabaseEncryptionKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22606,14 +24368,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousContainerDatabase")
+                response_type="AutonomousContainerDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousContainerDatabase")
+                response_type="AutonomousContainerDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def rotate_autonomous_database_encryption_key(self, autonomous_database_id, **kwargs):
         """
@@ -22662,6 +24430,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/rotateKey"
         method = "POST"
+        operation_name = "rotate_autonomous_database_encryption_key"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/RotateAutonomousDatabaseEncryptionKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22711,14 +24481,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousDatabase")
+                response_type="AutonomousDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousDatabase")
+                response_type="AutonomousDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def rotate_cloud_autonomous_vm_cluster_ords_certs(self, cloud_autonomous_vm_cluster_id, **kwargs):
         """
@@ -22765,6 +24541,8 @@ class DatabaseClient(object):
         """
         resource_path = "/cloudAutonomousVmClusters/{cloudAutonomousVmClusterId}/actions/rotateOrdsCerts"
         method = "POST"
+        operation_name = "rotate_cloud_autonomous_vm_cluster_ords_certs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/RotateCloudAutonomousVmClusterOrdsCerts"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22813,13 +24591,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def rotate_cloud_autonomous_vm_cluster_ssl_certs(self, cloud_autonomous_vm_cluster_id, **kwargs):
         """
@@ -22866,6 +24650,8 @@ class DatabaseClient(object):
         """
         resource_path = "/cloudAutonomousVmClusters/{cloudAutonomousVmClusterId}/actions/rotateSslCerts"
         method = "POST"
+        operation_name = "rotate_cloud_autonomous_vm_cluster_ssl_certs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/RotateCloudAutonomousVmClusterSslCerts"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22914,13 +24700,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def rotate_ords_certs(self, autonomous_exadata_infrastructure_id, **kwargs):
         """
@@ -22967,6 +24759,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousExadataInfrastructures/{autonomousExadataInfrastructureId}/actions/rotateOrdsCerts"
         method = "POST"
+        operation_name = "rotate_ords_certs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/RotateOrdsCerts"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23015,13 +24809,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def rotate_ssl_certs(self, autonomous_exadata_infrastructure_id, **kwargs):
         """
@@ -23068,6 +24868,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousExadataInfrastructures/{autonomousExadataInfrastructureId}/actions/rotateSslCerts"
         method = "POST"
+        operation_name = "rotate_ssl_certs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/RotateSslCerts"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23116,13 +24918,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def rotate_vault_key(self, database_id, **kwargs):
         """
@@ -23171,6 +24979,8 @@ class DatabaseClient(object):
         """
         resource_path = "/databases/{databaseId}/actions/rotateKey"
         method = "POST"
+        operation_name = "rotate_vault_key"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/RotateVaultKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23220,14 +25030,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Database")
+                response_type="Database",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Database")
+                response_type="Database",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def scan_external_container_database_pluggable_databases(self, external_container_database_id, external_database_connector_id, **kwargs):
         """
@@ -23276,6 +25092,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalcontainerdatabases/{externalContainerDatabaseId}/actions/scanPluggableDatabases"
         method = "POST"
+        operation_name = "scan_external_container_database_pluggable_databases"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/ScanExternalContainerDatabasePluggableDatabases"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23328,14 +25146,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def shrink_autonomous_database(self, autonomous_database_id, **kwargs):
         """
@@ -23372,6 +25196,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/shrink"
         method = "POST"
+        operation_name = "shrink_autonomous_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ShrinkAutonomousDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23416,14 +25242,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousDatabase")
+                response_type="AutonomousDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousDatabase")
+                response_type="AutonomousDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def start_autonomous_database(self, autonomous_database_id, **kwargs):
         """
@@ -23460,6 +25292,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/start"
         method = "POST"
+        operation_name = "start_autonomous_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/StartAutonomousDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23504,14 +25338,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousDatabase")
+                response_type="AutonomousDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousDatabase")
+                response_type="AutonomousDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def start_pluggable_database(self, pluggable_database_id, **kwargs):
         """
@@ -23558,6 +25398,8 @@ class DatabaseClient(object):
         """
         resource_path = "/pluggableDatabases/{pluggableDatabaseId}/actions/start"
         method = "POST"
+        operation_name = "start_pluggable_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/StartPluggableDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23607,14 +25449,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PluggableDatabase")
+                response_type="PluggableDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PluggableDatabase")
+                response_type="PluggableDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def stop_autonomous_database(self, autonomous_database_id, **kwargs):
         """
@@ -23654,6 +25502,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/stop"
         method = "POST"
+        operation_name = "stop_autonomous_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/StopAutonomousDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23700,14 +25550,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousDatabase")
+                response_type="AutonomousDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousDatabase")
+                response_type="AutonomousDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def stop_pluggable_database(self, pluggable_database_id, **kwargs):
         """
@@ -23754,6 +25610,8 @@ class DatabaseClient(object):
         """
         resource_path = "/pluggableDatabases/{pluggableDatabaseId}/actions/stop"
         method = "POST"
+        operation_name = "stop_pluggable_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/StopPluggableDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23803,14 +25661,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PluggableDatabase")
+                response_type="PluggableDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PluggableDatabase")
+                response_type="PluggableDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def switchover_autonomous_container_database_dataguard_association(self, autonomous_container_database_id, autonomous_container_database_dataguard_association_id, **kwargs):
         """
@@ -23854,6 +25718,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/autonomousContainerDatabaseDataguardAssociations/{autonomousContainerDatabaseDataguardAssociationId}/actions/switchover"
         method = "POST"
+        operation_name = "switchover_autonomous_container_database_dataguard_association"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/SwitchoverAutonomousContainerDatabaseDataguardAssociation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23899,14 +25765,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousContainerDatabaseDataguardAssociation")
+                response_type="AutonomousContainerDatabaseDataguardAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutonomousContainerDatabaseDataguardAssociation")
+                response_type="AutonomousContainerDatabaseDataguardAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def switchover_autonomous_database(self, autonomous_database_id, **kwargs):
         """
@@ -23960,6 +25832,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/switchover"
         method = "POST"
+        operation_name = "switchover_autonomous_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/SwitchoverAutonomousDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24016,7 +25890,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AutonomousDatabase")
+                response_type="AutonomousDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24024,7 +25901,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AutonomousDatabase")
+                response_type="AutonomousDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def switchover_data_guard_association(self, database_id, data_guard_association_id, switchover_data_guard_association_details, **kwargs):
         """
@@ -24072,6 +25952,8 @@ class DatabaseClient(object):
         """
         resource_path = "/databases/{databaseId}/dataGuardAssociations/{dataGuardAssociationId}/actions/switchover"
         method = "POST"
+        operation_name = "switchover_data_guard_association"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/SwitchoverDataGuardAssociation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24118,7 +26000,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=switchover_data_guard_association_details,
-                response_type="DataGuardAssociation")
+                response_type="DataGuardAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24126,7 +26011,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=switchover_data_guard_association_details,
-                response_type="DataGuardAssociation")
+                response_type="DataGuardAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def terminate_autonomous_container_database(self, autonomous_container_database_id, **kwargs):
         """
@@ -24163,6 +26051,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}"
         method = "DELETE"
+        operation_name = "terminate_autonomous_container_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/TerminateAutonomousContainerDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24206,13 +26096,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def terminate_autonomous_exadata_infrastructure(self, autonomous_exadata_infrastructure_id, **kwargs):
         """
@@ -24249,6 +26145,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousExadataInfrastructures/{autonomousExadataInfrastructureId}"
         method = "DELETE"
+        operation_name = "terminate_autonomous_exadata_infrastructure"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/TerminateAutonomousExadataInfrastructure"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24292,13 +26190,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def terminate_db_system(self, db_system_id, **kwargs):
         """
@@ -24342,6 +26246,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}"
         method = "DELETE"
+        operation_name = "terminate_db_system"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/TerminateDbSystem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24385,13 +26291,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_autonomous_container_database(self, autonomous_container_database_id, update_autonomous_container_database_details, **kwargs):
         """
@@ -24431,6 +26343,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}"
         method = "PUT"
+        operation_name = "update_autonomous_container_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabase/UpdateAutonomousContainerDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24476,7 +26390,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_autonomous_container_database_details,
-                response_type="AutonomousContainerDatabase")
+                response_type="AutonomousContainerDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24484,7 +26401,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_autonomous_container_database_details,
-                response_type="AutonomousContainerDatabase")
+                response_type="AutonomousContainerDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_autonomous_container_database_dataguard_association(self, autonomous_container_database_id, autonomous_container_database_dataguard_association_id, update_autonomous_container_database_data_guard_association_details, **kwargs):
         """
@@ -24532,6 +26452,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/autonomousContainerDatabaseDataguardAssociations/{autonomousContainerDatabaseDataguardAssociationId}"
         method = "PUT"
+        operation_name = "update_autonomous_container_database_dataguard_association"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/UpdateAutonomousContainerDatabaseDataguardAssociation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24580,7 +26502,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_autonomous_container_database_data_guard_association_details,
-                response_type="AutonomousContainerDatabaseDataguardAssociation")
+                response_type="AutonomousContainerDatabaseDataguardAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24588,7 +26513,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_autonomous_container_database_data_guard_association_details,
-                response_type="AutonomousContainerDatabaseDataguardAssociation")
+                response_type="AutonomousContainerDatabaseDataguardAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_autonomous_database(self, autonomous_database_id, update_autonomous_database_details, **kwargs):
         """
@@ -24631,6 +26559,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}"
         method = "PUT"
+        operation_name = "update_autonomous_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/UpdateAutonomousDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24678,7 +26608,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_autonomous_database_details,
-                response_type="AutonomousDatabase")
+                response_type="AutonomousDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24686,7 +26619,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_autonomous_database_details,
-                response_type="AutonomousDatabase")
+                response_type="AutonomousDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_autonomous_database_regional_wallet(self, update_autonomous_database_wallet_details, **kwargs):
         """
@@ -24719,6 +26655,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabases/wallet"
         method = "PUT"
+        operation_name = "update_autonomous_database_regional_wallet"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseWallet/UpdateAutonomousDatabaseRegionalWallet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24752,13 +26690,19 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=update_autonomous_database_wallet_details)
+                body=update_autonomous_database_wallet_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=update_autonomous_database_wallet_details)
+                body=update_autonomous_database_wallet_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_autonomous_database_wallet(self, autonomous_database_id, update_autonomous_database_wallet_details, **kwargs):
         """
@@ -24796,6 +26740,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousDatabases/{autonomousDatabaseId}/wallet"
         method = "PUT"
+        operation_name = "update_autonomous_database_wallet"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseWallet/UpdateAutonomousDatabaseWallet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24840,14 +26786,20 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_autonomous_database_wallet_details)
+                body=update_autonomous_database_wallet_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_autonomous_database_wallet_details)
+                body=update_autonomous_database_wallet_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_autonomous_exadata_infrastructure(self, autonomous_exadata_infrastructure_id, update_autonomous_exadata_infrastructures_details, **kwargs):
         """
@@ -24887,6 +26839,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousExadataInfrastructures/{autonomousExadataInfrastructureId}"
         method = "PUT"
+        operation_name = "update_autonomous_exadata_infrastructure"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousExadataInfrastructure/UpdateAutonomousExadataInfrastructure"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24932,7 +26886,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_autonomous_exadata_infrastructures_details,
-                response_type="AutonomousExadataInfrastructure")
+                response_type="AutonomousExadataInfrastructure",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -24940,7 +26897,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_autonomous_exadata_infrastructures_details,
-                response_type="AutonomousExadataInfrastructure")
+                response_type="AutonomousExadataInfrastructure",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_autonomous_vm_cluster(self, autonomous_vm_cluster_id, update_autonomous_vm_cluster_details, **kwargs):
         """
@@ -24983,6 +26943,8 @@ class DatabaseClient(object):
         """
         resource_path = "/autonomousVmClusters/{autonomousVmClusterId}"
         method = "PUT"
+        operation_name = "update_autonomous_vm_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/UpdateAutonomousVmCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -25030,7 +26992,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_autonomous_vm_cluster_details,
-                response_type="AutonomousVmCluster")
+                response_type="AutonomousVmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25038,7 +27003,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_autonomous_vm_cluster_details,
-                response_type="AutonomousVmCluster")
+                response_type="AutonomousVmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_backup_destination(self, backup_destination_id, update_backup_destination_details, **kwargs):
         """
@@ -25084,6 +27052,8 @@ class DatabaseClient(object):
         """
         resource_path = "/backupDestinations/{backupDestinationId}"
         method = "PUT"
+        operation_name = "update_backup_destination"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/BackupDestination/UpdateBackupDestination"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -25131,7 +27101,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_backup_destination_details,
-                response_type="BackupDestination")
+                response_type="BackupDestination",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25139,7 +27112,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_backup_destination_details,
-                response_type="BackupDestination")
+                response_type="BackupDestination",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_cloud_autonomous_vm_cluster(self, cloud_autonomous_vm_cluster_id, update_cloud_autonomous_vm_cluster_details, **kwargs):
         """
@@ -25182,6 +27158,8 @@ class DatabaseClient(object):
         """
         resource_path = "/cloudAutonomousVmClusters/{cloudAutonomousVmClusterId}"
         method = "PUT"
+        operation_name = "update_cloud_autonomous_vm_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudAutonomousVmCluster/UpdateCloudAutonomousVmCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -25229,7 +27207,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_cloud_autonomous_vm_cluster_details,
-                response_type="CloudAutonomousVmCluster")
+                response_type="CloudAutonomousVmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25237,7 +27218,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_cloud_autonomous_vm_cluster_details,
-                response_type="CloudAutonomousVmCluster")
+                response_type="CloudAutonomousVmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_cloud_exadata_infrastructure(self, cloud_exadata_infrastructure_id, update_cloud_exadata_infrastructure_details, **kwargs):
         """
@@ -25280,6 +27264,8 @@ class DatabaseClient(object):
         """
         resource_path = "/cloudExadataInfrastructures/{cloudExadataInfrastructureId}"
         method = "PUT"
+        operation_name = "update_cloud_exadata_infrastructure"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/UpdateCloudExadataInfrastructure"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -25327,7 +27313,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_cloud_exadata_infrastructure_details,
-                response_type="CloudExadataInfrastructure")
+                response_type="CloudExadataInfrastructure",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25335,7 +27324,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_cloud_exadata_infrastructure_details,
-                response_type="CloudExadataInfrastructure")
+                response_type="CloudExadataInfrastructure",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_cloud_vm_cluster(self, cloud_vm_cluster_id, update_cloud_vm_cluster_details, **kwargs):
         """
@@ -25378,6 +27370,8 @@ class DatabaseClient(object):
         """
         resource_path = "/cloudVmClusters/{cloudVmClusterId}"
         method = "PUT"
+        operation_name = "update_cloud_vm_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/UpdateCloudVmCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -25425,7 +27419,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_cloud_vm_cluster_details,
-                response_type="CloudVmCluster")
+                response_type="CloudVmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25433,7 +27430,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_cloud_vm_cluster_details,
-                response_type="CloudVmCluster")
+                response_type="CloudVmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_cloud_vm_cluster_iorm_config(self, cloud_vm_cluster_id, cloud_vm_cluster_iorm_config_update_details, **kwargs):
         """
@@ -25476,6 +27476,8 @@ class DatabaseClient(object):
         """
         resource_path = "/cloudVmClusters/{cloudVmClusterId}/CloudVmClusterIormConfig"
         method = "PUT"
+        operation_name = "update_cloud_vm_cluster_iorm_config"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/UpdateCloudVmClusterIormConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -25523,7 +27525,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=cloud_vm_cluster_iorm_config_update_details,
-                response_type="ExadataIormConfig")
+                response_type="ExadataIormConfig",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25531,7 +27536,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=cloud_vm_cluster_iorm_config_update_details,
-                response_type="ExadataIormConfig")
+                response_type="ExadataIormConfig",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_data_guard_association(self, database_id, data_guard_association_id, update_data_guard_association_details, **kwargs):
         """
@@ -25579,6 +27587,8 @@ class DatabaseClient(object):
         """
         resource_path = "/databases/{databaseId}/dataGuardAssociations/{dataGuardAssociationId}"
         method = "PUT"
+        operation_name = "update_data_guard_association"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/UpdateDataGuardAssociation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -25627,7 +27637,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_data_guard_association_details,
-                response_type="DataGuardAssociation")
+                response_type="DataGuardAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25635,7 +27648,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_data_guard_association_details,
-                response_type="DataGuardAssociation")
+                response_type="DataGuardAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_database(self, database_id, update_database_details, **kwargs):
         """
@@ -25675,6 +27691,8 @@ class DatabaseClient(object):
         """
         resource_path = "/databases/{databaseId}"
         method = "PUT"
+        operation_name = "update_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/UpdateDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -25720,7 +27738,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_database_details,
-                response_type="Database")
+                response_type="Database",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25728,7 +27749,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_database_details,
-                response_type="Database")
+                response_type="Database",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_database_software_image(self, database_software_image_id, update_database_software_image_details, **kwargs):
         """
@@ -25768,6 +27792,8 @@ class DatabaseClient(object):
         """
         resource_path = "/databaseSoftwareImages/{databaseSoftwareImageId}"
         method = "PUT"
+        operation_name = "update_database_software_image"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DatabaseSoftwareImage/UpdateDatabaseSoftwareImage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -25813,7 +27839,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_database_software_image_details,
-                response_type="DatabaseSoftwareImage")
+                response_type="DatabaseSoftwareImage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25821,7 +27850,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_database_software_image_details,
-                response_type="DatabaseSoftwareImage")
+                response_type="DatabaseSoftwareImage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_db_home(self, db_home_id, update_db_home_details, **kwargs):
         """
@@ -25861,6 +27893,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbHomes/{dbHomeId}"
         method = "PUT"
+        operation_name = "update_db_home"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbHome/UpdateDbHome"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -25906,7 +27940,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_db_home_details,
-                response_type="DbHome")
+                response_type="DbHome",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -25914,7 +27951,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_db_home_details,
-                response_type="DbHome")
+                response_type="DbHome",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_db_system(self, db_system_id, update_db_system_details, **kwargs):
         """
@@ -25961,6 +28001,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}"
         method = "PUT"
+        operation_name = "update_db_system"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/UpdateDbSystem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -26006,7 +28048,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_db_system_details,
-                response_type="DbSystem")
+                response_type="DbSystem",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26014,7 +28059,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_db_system_details,
-                response_type="DbSystem")
+                response_type="DbSystem",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_exadata_infrastructure(self, exadata_infrastructure_id, update_exadata_infrastructure_details, **kwargs):
         """
@@ -26058,6 +28106,8 @@ class DatabaseClient(object):
         """
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}"
         method = "PUT"
+        operation_name = "update_exadata_infrastructure"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/UpdateExadataInfrastructure"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -26105,7 +28155,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_exadata_infrastructure_details,
-                response_type="ExadataInfrastructure")
+                response_type="ExadataInfrastructure",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26113,7 +28166,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_exadata_infrastructure_details,
-                response_type="ExadataInfrastructure")
+                response_type="ExadataInfrastructure",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_exadata_iorm_config(self, db_system_id, exadata_iorm_config_update_details, **kwargs):
         """
@@ -26166,6 +28222,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/ExadataIormConfig"
         method = "PUT"
+        operation_name = "update_exadata_iorm_config"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/UpdateExadataIormConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -26213,7 +28271,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=exadata_iorm_config_update_details,
-                response_type="ExadataIormConfig")
+                response_type="ExadataIormConfig",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26221,7 +28282,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=exadata_iorm_config_update_details,
-                response_type="ExadataIormConfig")
+                response_type="ExadataIormConfig",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_external_container_database(self, external_container_database_id, update_external_container_database_details, **kwargs):
         """
@@ -26267,6 +28331,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalcontainerdatabases/{externalContainerDatabaseId}"
         method = "PUT"
+        operation_name = "update_external_container_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalContainerDatabase/UpdateExternalContainerDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -26314,7 +28380,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_external_container_database_details,
-                response_type="ExternalContainerDatabase")
+                response_type="ExternalContainerDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26322,7 +28391,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_external_container_database_details,
-                response_type="ExternalContainerDatabase")
+                response_type="ExternalContainerDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_external_database_connector(self, external_database_connector_id, update_external_database_connector_details, **kwargs):
         """
@@ -26366,6 +28438,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externaldatabaseconnectors/{externalDatabaseConnectorId}"
         method = "PUT"
+        operation_name = "update_external_database_connector"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalDatabaseConnector/UpdateExternalDatabaseConnector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -26413,7 +28487,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_external_database_connector_details,
-                response_type="ExternalDatabaseConnector")
+                response_type="ExternalDatabaseConnector",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26421,7 +28498,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_external_database_connector_details,
-                response_type="ExternalDatabaseConnector")
+                response_type="ExternalDatabaseConnector",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_external_non_container_database(self, external_non_container_database_id, update_external_non_container_database_details, **kwargs):
         """
@@ -26464,6 +28544,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalnoncontainerdatabases/{externalNonContainerDatabaseId}"
         method = "PUT"
+        operation_name = "update_external_non_container_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalNonContainerDatabase/UpdateExternalNonContainerDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -26511,7 +28593,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_external_non_container_database_details,
-                response_type="ExternalNonContainerDatabase")
+                response_type="ExternalNonContainerDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26519,7 +28604,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_external_non_container_database_details,
-                response_type="ExternalNonContainerDatabase")
+                response_type="ExternalNonContainerDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_external_pluggable_database(self, external_pluggable_database_id, update_external_pluggable_database_details, **kwargs):
         """
@@ -26564,6 +28652,8 @@ class DatabaseClient(object):
         """
         resource_path = "/externalpluggabledatabases/{externalPluggableDatabaseId}"
         method = "PUT"
+        operation_name = "update_external_pluggable_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExternalPluggableDatabase/UpdateExternalPluggableDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -26611,7 +28701,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_external_pluggable_database_details,
-                response_type="ExternalPluggableDatabase")
+                response_type="ExternalPluggableDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26619,7 +28712,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_external_pluggable_database_details,
-                response_type="ExternalPluggableDatabase")
+                response_type="ExternalPluggableDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_key_store(self, key_store_id, update_key_store_details, **kwargs):
         """
@@ -26662,6 +28758,8 @@ class DatabaseClient(object):
         """
         resource_path = "/keyStores/{keyStoreId}"
         method = "PUT"
+        operation_name = "update_key_store"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/UpdateKeyStore"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -26709,7 +28807,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_key_store_details,
-                response_type="KeyStore")
+                response_type="KeyStore",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26717,7 +28818,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_key_store_details,
-                response_type="KeyStore")
+                response_type="KeyStore",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_maintenance_run(self, maintenance_run_id, update_maintenance_run_details, **kwargs):
         """
@@ -26755,6 +28859,8 @@ class DatabaseClient(object):
         """
         resource_path = "/maintenanceRuns/{maintenanceRunId}"
         method = "PUT"
+        operation_name = "update_maintenance_run"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/MaintenanceRun/UpdateMaintenanceRun"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -26800,7 +28906,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_maintenance_run_details,
-                response_type="MaintenanceRun")
+                response_type="MaintenanceRun",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26808,7 +28917,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_maintenance_run_details,
-                response_type="MaintenanceRun")
+                response_type="MaintenanceRun",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_pluggable_database(self, pluggable_database_id, update_pluggable_database_details, **kwargs):
         """
@@ -26848,6 +28960,8 @@ class DatabaseClient(object):
         """
         resource_path = "/pluggableDatabases/{pluggableDatabaseId}"
         method = "PUT"
+        operation_name = "update_pluggable_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/UpdatePluggableDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -26893,7 +29007,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_pluggable_database_details,
-                response_type="PluggableDatabase")
+                response_type="PluggableDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26901,7 +29018,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_pluggable_database_details,
-                response_type="PluggableDatabase")
+                response_type="PluggableDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_vm_cluster(self, vm_cluster_id, update_vm_cluster_details, **kwargs):
         """
@@ -26944,6 +29064,8 @@ class DatabaseClient(object):
         """
         resource_path = "/vmClusters/{vmClusterId}"
         method = "PUT"
+        operation_name = "update_vm_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmCluster/UpdateVmCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -26991,7 +29113,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_vm_cluster_details,
-                response_type="VmCluster")
+                response_type="VmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -26999,7 +29124,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_vm_cluster_details,
-                response_type="VmCluster")
+                response_type="VmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_vm_cluster_network(self, exadata_infrastructure_id, vm_cluster_network_id, update_vm_cluster_network_details, **kwargs):
         """
@@ -27048,6 +29176,8 @@ class DatabaseClient(object):
         """
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/{vmClusterNetworkId}"
         method = "PUT"
+        operation_name = "update_vm_cluster_network"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/UpdateVmClusterNetwork"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -27096,7 +29226,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_vm_cluster_network_details,
-                response_type="VmClusterNetwork")
+                response_type="VmClusterNetwork",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -27104,7 +29237,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_vm_cluster_network_details,
-                response_type="VmClusterNetwork")
+                response_type="VmClusterNetwork",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def upgrade_database(self, database_id, upgrade_database_details, **kwargs):
         """
@@ -27147,6 +29283,8 @@ class DatabaseClient(object):
         """
         resource_path = "/databases/{databaseId}/actions/upgrade"
         method = "POST"
+        operation_name = "upgrade_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/UpgradeDatabase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -27194,7 +29332,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=upgrade_database_details,
-                response_type="Database")
+                response_type="Database",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -27202,7 +29343,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=upgrade_database_details,
-                response_type="Database")
+                response_type="Database",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def upgrade_db_system(self, db_system_id, upgrade_db_system_details, **kwargs):
         """
@@ -27252,6 +29396,8 @@ class DatabaseClient(object):
         """
         resource_path = "/dbSystems/{dbSystemId}/actions/upgrade"
         method = "POST"
+        operation_name = "upgrade_db_system"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/DbSystem/UpgradeDbSystem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -27302,7 +29448,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=upgrade_db_system_details,
-                response_type="DbSystem")
+                response_type="DbSystem",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -27310,7 +29459,10 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=upgrade_db_system_details,
-                response_type="DbSystem")
+                response_type="DbSystem",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def validate_vm_cluster_network(self, exadata_infrastructure_id, vm_cluster_network_id, **kwargs):
         """
@@ -27357,6 +29509,8 @@ class DatabaseClient(object):
         """
         resource_path = "/exadataInfrastructures/{exadataInfrastructureId}/vmClusterNetworks/{vmClusterNetworkId}/actions/validate"
         method = "POST"
+        operation_name = "validate_vm_cluster_network"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/VmClusterNetwork/ValidateVmClusterNetwork"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -27405,11 +29559,17 @@ class DatabaseClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VmClusterNetwork")
+                response_type="VmClusterNetwork",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VmClusterNetwork")
+                response_type="VmClusterNetwork",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

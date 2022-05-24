@@ -163,6 +163,8 @@ class NetworkValidationClient(object):
         """
         resource_path = "/registries/{registryId}/endpoints/{endpointKey}/networkConnectivityStatusCollection"
         method = "GET"
+        operation_name = "get_network_connectivity_status_collection"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -238,7 +240,10 @@ class NetworkValidationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="NetworkConnectivityStatusCollection")
+                response_type="NetworkConnectivityStatusCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -246,4 +251,7 @@ class NetworkValidationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="NetworkConnectivityStatusCollection")
+                response_type="NetworkConnectivityStatusCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

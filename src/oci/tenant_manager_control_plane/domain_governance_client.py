@@ -142,6 +142,8 @@ class DomainGovernanceClient(object):
         """
         resource_path = "/domainGovernances"
         method = "POST"
+        operation_name = "create_domain_governance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/DomainGovernance/CreateDomainGovernance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -179,14 +181,20 @@ class DomainGovernanceClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_domain_governance_details,
-                response_type="DomainGovernance")
+                response_type="DomainGovernance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_domain_governance_details,
-                response_type="DomainGovernance")
+                response_type="DomainGovernance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_domain_governance(self, domain_governance_id, **kwargs):
         """
@@ -226,6 +234,8 @@ class DomainGovernanceClient(object):
         """
         resource_path = "/domainGovernances/{domainGovernanceId}"
         method = "DELETE"
+        operation_name = "delete_domain_governance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/DomainGovernance/DeleteDomainGovernance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -271,13 +281,19 @@ class DomainGovernanceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_domain_governance(self, domain_governance_id, **kwargs):
         """
@@ -310,6 +326,8 @@ class DomainGovernanceClient(object):
         """
         resource_path = "/domainGovernances/{domainGovernanceId}"
         method = "GET"
+        operation_name = "get_domain_governance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/DomainGovernance/GetDomainGovernance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -354,14 +372,20 @@ class DomainGovernanceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DomainGovernance")
+                response_type="DomainGovernance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DomainGovernance")
+                response_type="DomainGovernance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_domain_governances(self, compartment_id, **kwargs):
         """
@@ -427,6 +451,8 @@ class DomainGovernanceClient(object):
         """
         resource_path = "/domainGovernances"
         method = "GET"
+        operation_name = "list_domain_governances"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/DomainGovernance/ListDomainGovernances"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -503,14 +529,20 @@ class DomainGovernanceClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DomainGovernanceCollection")
+                response_type="DomainGovernanceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DomainGovernanceCollection")
+                response_type="DomainGovernanceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_domain_governance(self, domain_governance_id, update_domain_governance_details, **kwargs):
         """
@@ -553,6 +585,8 @@ class DomainGovernanceClient(object):
         """
         resource_path = "/domainGovernances/{domainGovernanceId}"
         method = "PUT"
+        operation_name = "update_domain_governance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/DomainGovernance/UpdateDomainGovernance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -600,7 +634,10 @@ class DomainGovernanceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_domain_governance_details,
-                response_type="DomainGovernance")
+                response_type="DomainGovernance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -608,4 +645,7 @@ class DomainGovernanceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_domain_governance_details,
-                response_type="DomainGovernance")
+                response_type="DomainGovernance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

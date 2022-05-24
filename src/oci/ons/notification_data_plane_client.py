@@ -160,6 +160,8 @@ class NotificationDataPlaneClient(object):
         """
         resource_path = "/subscriptions/{subscriptionId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_subscription_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/ChangeSubscriptionCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -209,14 +211,20 @@ class NotificationDataPlaneClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_subscription_compartment_details)
+                body=change_subscription_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_subscription_compartment_details)
+                body=change_subscription_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_subscription(self, create_subscription_details, **kwargs):
         """
@@ -263,6 +271,8 @@ class NotificationDataPlaneClient(object):
         """
         resource_path = "/subscriptions"
         method = "POST"
+        operation_name = "create_subscription"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/CreateSubscription"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -300,14 +310,20 @@ class NotificationDataPlaneClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_subscription_details,
-                response_type="Subscription")
+                response_type="Subscription",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_subscription_details,
-                response_type="Subscription")
+                response_type="Subscription",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_subscription(self, subscription_id, **kwargs):
         """
@@ -350,6 +366,8 @@ class NotificationDataPlaneClient(object):
         """
         resource_path = "/subscriptions/{subscriptionId}"
         method = "DELETE"
+        operation_name = "delete_subscription"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/DeleteSubscription"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -395,13 +413,19 @@ class NotificationDataPlaneClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_confirm_subscription(self, id, token, protocol, **kwargs):
         """
@@ -459,6 +483,8 @@ class NotificationDataPlaneClient(object):
         """
         resource_path = "/subscriptions/{id}/confirmation"
         method = "GET"
+        operation_name = "get_confirm_subscription"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/GetConfirmSubscription"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -510,7 +536,10 @@ class NotificationDataPlaneClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ConfirmationResult")
+                response_type="ConfirmationResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -518,7 +547,10 @@ class NotificationDataPlaneClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ConfirmationResult")
+                response_type="ConfirmationResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_subscription(self, subscription_id, **kwargs):
         """
@@ -556,6 +588,8 @@ class NotificationDataPlaneClient(object):
         """
         resource_path = "/subscriptions/{subscriptionId}"
         method = "GET"
+        operation_name = "get_subscription"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/GetSubscription"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -600,14 +634,20 @@ class NotificationDataPlaneClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Subscription")
+                response_type="Subscription",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Subscription")
+                response_type="Subscription",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_unsubscription(self, id, token, protocol, **kwargs):
         """
@@ -665,6 +705,8 @@ class NotificationDataPlaneClient(object):
         """
         resource_path = "/subscriptions/{id}/unsubscription"
         method = "GET"
+        operation_name = "get_unsubscription"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/GetUnsubscription"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -716,7 +758,10 @@ class NotificationDataPlaneClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="str")
+                response_type="str",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -724,7 +769,10 @@ class NotificationDataPlaneClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="str")
+                response_type="str",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_subscriptions(self, compartment_id, **kwargs):
         """
@@ -777,6 +825,8 @@ class NotificationDataPlaneClient(object):
         """
         resource_path = "/subscriptions"
         method = "GET"
+        operation_name = "list_subscriptions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/ListSubscriptions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -822,14 +872,20 @@ class NotificationDataPlaneClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SubscriptionSummary]")
+                response_type="list[SubscriptionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SubscriptionSummary]")
+                response_type="list[SubscriptionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def publish_message(self, topic_id, message_details, **kwargs):
         """
@@ -898,6 +954,8 @@ class NotificationDataPlaneClient(object):
         """
         resource_path = "/topics/{topicId}/messages"
         method = "POST"
+        operation_name = "publish_message"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/notification/20181201/NotificationTopic/PublishMessage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -945,7 +1003,10 @@ class NotificationDataPlaneClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=message_details,
-                response_type="PublishResult")
+                response_type="PublishResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -953,7 +1014,10 @@ class NotificationDataPlaneClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=message_details,
-                response_type="PublishResult")
+                response_type="PublishResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def resend_subscription_confirmation(self, id, **kwargs):
         """
@@ -991,6 +1055,8 @@ class NotificationDataPlaneClient(object):
         """
         resource_path = "/subscriptions/{id}/resendConfirmation"
         method = "POST"
+        operation_name = "resend_subscription_confirmation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/ResendSubscriptionConfirmation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1035,14 +1101,20 @@ class NotificationDataPlaneClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Subscription")
+                response_type="Subscription",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Subscription")
+                response_type="Subscription",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_subscription(self, subscription_id, update_subscription_details, **kwargs):
         """
@@ -1088,6 +1160,8 @@ class NotificationDataPlaneClient(object):
         """
         resource_path = "/subscriptions/{subscriptionId}"
         method = "PUT"
+        operation_name = "update_subscription"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/notification/20181201/Subscription/UpdateSubscription"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1135,7 +1209,10 @@ class NotificationDataPlaneClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_subscription_details,
-                response_type="UpdateSubscriptionDetails")
+                response_type="UpdateSubscriptionDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1143,4 +1220,7 @@ class NotificationDataPlaneClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_subscription_details,
-                response_type="UpdateSubscriptionDetails")
+                response_type="UpdateSubscriptionDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

@@ -155,6 +155,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/metastoreConfigs/{metastoreConfigId}/actions/activate"
         method = "POST"
+        operation_name = "activate_bds_metastore_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/ActivateBdsMetastoreConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -205,14 +207,20 @@ class BdsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=activate_bds_metastore_configuration_details)
+                body=activate_bds_metastore_configuration_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=activate_bds_metastore_configuration_details)
+                body=activate_bds_metastore_configuration_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def add_auto_scaling_configuration(self, bds_instance_id, add_auto_scaling_configuration_details, **kwargs):
         """
@@ -262,6 +270,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/autoScalingConfiguration"
         method = "POST"
+        operation_name = "add_auto_scaling_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/AddAutoScalingConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -311,14 +321,20 @@ class BdsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=add_auto_scaling_configuration_details)
+                body=add_auto_scaling_configuration_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=add_auto_scaling_configuration_details)
+                body=add_auto_scaling_configuration_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def add_block_storage(self, bds_instance_id, add_block_storage_details, **kwargs):
         """
@@ -368,6 +384,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/actions/addBlockStorage"
         method = "POST"
+        operation_name = "add_block_storage"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/AddBlockStorage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -417,14 +435,20 @@ class BdsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=add_block_storage_details)
+                body=add_block_storage_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=add_block_storage_details)
+                body=add_block_storage_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def add_cloud_sql(self, bds_instance_id, add_cloud_sql_details, **kwargs):
         """
@@ -474,6 +498,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/actions/addCloudSql"
         method = "POST"
+        operation_name = "add_cloud_sql"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/AddCloudSql"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -523,14 +549,20 @@ class BdsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=add_cloud_sql_details)
+                body=add_cloud_sql_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=add_cloud_sql_details)
+                body=add_cloud_sql_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def add_worker_nodes(self, bds_instance_id, add_worker_nodes_details, **kwargs):
         """
@@ -580,6 +612,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/actions/addWorkerNodes"
         method = "POST"
+        operation_name = "add_worker_nodes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/AddWorkerNodes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -629,14 +663,20 @@ class BdsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=add_worker_nodes_details)
+                body=add_worker_nodes_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=add_worker_nodes_details)
+                body=add_worker_nodes_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_bds_instance_compartment(self, bds_instance_id, change_bds_instance_compartment_details, **kwargs):
         """
@@ -686,6 +726,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_bds_instance_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ChangeBdsInstanceCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -735,14 +777,20 @@ class BdsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_bds_instance_compartment_details)
+                body=change_bds_instance_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_bds_instance_compartment_details)
+                body=change_bds_instance_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_shape(self, bds_instance_id, change_shape_details, **kwargs):
         """
@@ -792,6 +840,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/actions/changeShape"
         method = "POST"
+        operation_name = "change_shape"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ChangeShape"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -841,14 +891,20 @@ class BdsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_shape_details)
+                body=change_shape_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_shape_details)
+                body=change_shape_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_bds_api_key(self, bds_instance_id, create_bds_api_key_details, **kwargs):
         """
@@ -891,6 +947,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/apiKeys"
         method = "POST"
+        operation_name = "create_bds_api_key"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/CreateBdsApiKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -938,14 +996,20 @@ class BdsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_bds_api_key_details)
+                body=create_bds_api_key_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_bds_api_key_details)
+                body=create_bds_api_key_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_bds_instance(self, create_bds_instance_details, **kwargs):
         """
@@ -985,6 +1049,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances"
         method = "POST"
+        operation_name = "create_bds_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/CreateBdsInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1021,13 +1087,19 @@ class BdsClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_bds_instance_details)
+                body=create_bds_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_bds_instance_details)
+                body=create_bds_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_bds_metastore_configuration(self, bds_instance_id, create_bds_metastore_configuration_details, **kwargs):
         """
@@ -1070,6 +1142,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/metastoreConfigs"
         method = "POST"
+        operation_name = "create_bds_metastore_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/CreateBdsMetastoreConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1117,14 +1191,20 @@ class BdsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_bds_metastore_configuration_details)
+                body=create_bds_metastore_configuration_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_bds_metastore_configuration_details)
+                body=create_bds_metastore_configuration_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_bds_api_key(self, bds_instance_id, api_key_id, **kwargs):
         """
@@ -1167,6 +1247,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/apiKeys/{apiKeyId}"
         method = "DELETE"
+        operation_name = "delete_bds_api_key"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/DeleteBdsApiKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1213,13 +1295,19 @@ class BdsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_bds_instance(self, bds_instance_id, **kwargs):
         """
@@ -1259,6 +1347,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}"
         method = "DELETE"
+        operation_name = "delete_bds_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/DeleteBdsInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1304,13 +1394,19 @@ class BdsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_bds_metastore_configuration(self, bds_instance_id, metastore_config_id, **kwargs):
         """
@@ -1353,6 +1449,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/metastoreConfigs/{metastoreConfigId}"
         method = "DELETE"
+        operation_name = "delete_bds_metastore_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/DeleteBdsMetastoreConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1399,13 +1497,19 @@ class BdsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_auto_scaling_configuration(self, bds_instance_id, auto_scaling_configuration_id, **kwargs):
         """
@@ -1441,6 +1545,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/autoScalingConfiguration/{autoScalingConfigurationId}"
         method = "GET"
+        operation_name = "get_auto_scaling_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/GetAutoScalingConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1486,14 +1592,20 @@ class BdsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutoScalingConfiguration")
+                response_type="AutoScalingConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AutoScalingConfiguration")
+                response_type="AutoScalingConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_bds_api_key(self, bds_instance_id, api_key_id, **kwargs):
         """
@@ -1529,6 +1641,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/apiKeys/{apiKeyId}"
         method = "GET"
+        operation_name = "get_bds_api_key"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/GetBdsApiKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1574,14 +1688,20 @@ class BdsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BdsApiKey")
+                response_type="BdsApiKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BdsApiKey")
+                response_type="BdsApiKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_bds_instance(self, bds_instance_id, **kwargs):
         """
@@ -1614,6 +1734,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}"
         method = "GET"
+        operation_name = "get_bds_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/GetBdsInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1658,14 +1780,20 @@ class BdsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BdsInstance")
+                response_type="BdsInstance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BdsInstance")
+                response_type="BdsInstance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_bds_metastore_configuration(self, bds_instance_id, metastore_config_id, **kwargs):
         """
@@ -1701,6 +1829,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/metastoreConfigs/{metastoreConfigId}"
         method = "GET"
+        operation_name = "get_bds_metastore_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/GetBdsMetastoreConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1746,14 +1876,20 @@ class BdsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BdsMetastoreConfiguration")
+                response_type="BdsMetastoreConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BdsMetastoreConfiguration")
+                response_type="BdsMetastoreConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1786,6 +1922,8 @@ class BdsClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1830,14 +1968,20 @@ class BdsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def install_patch(self, bds_instance_id, install_patch_details, **kwargs):
         """
@@ -1887,6 +2031,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/actions/installPatch"
         method = "POST"
+        operation_name = "install_patch"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/InstallPatch"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1936,14 +2082,20 @@ class BdsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=install_patch_details)
+                body=install_patch_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=install_patch_details)
+                body=install_patch_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_auto_scaling_configurations(self, compartment_id, bds_instance_id, **kwargs):
         """
@@ -2003,6 +2155,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/autoScalingConfiguration"
         method = "GET"
+        operation_name = "list_auto_scaling_configurations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ListAutoScalingConfigurations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2086,7 +2240,10 @@ class BdsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AutoScalingConfigurationSummary]")
+                response_type="list[AutoScalingConfigurationSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2094,7 +2251,10 @@ class BdsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AutoScalingConfigurationSummary]")
+                response_type="list[AutoScalingConfigurationSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_bds_api_keys(self, bds_instance_id, **kwargs):
         """
@@ -2154,6 +2314,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/apiKeys"
         method = "GET"
+        operation_name = "list_bds_api_keys"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/ListBdsApiKeys"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2238,7 +2400,10 @@ class BdsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[BdsApiKeySummary]")
+                response_type="list[BdsApiKeySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2246,7 +2411,10 @@ class BdsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[BdsApiKeySummary]")
+                response_type="list[BdsApiKeySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_bds_instances(self, compartment_id, **kwargs):
         """
@@ -2303,6 +2471,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances"
         method = "GET"
+        operation_name = "list_bds_instances"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstanceSummary/ListBdsInstances"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2375,14 +2545,20 @@ class BdsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[BdsInstanceSummary]")
+                response_type="list[BdsInstanceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[BdsInstanceSummary]")
+                response_type="list[BdsInstanceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_bds_metastore_configurations(self, bds_instance_id, **kwargs):
         """
@@ -2450,6 +2626,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/metastoreConfigs"
         method = "GET"
+        operation_name = "list_bds_metastore_configurations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/ListBdsMetastoreConfigurations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2545,7 +2723,10 @@ class BdsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[BdsMetastoreConfigurationSummary]")
+                response_type="list[BdsMetastoreConfigurationSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2553,7 +2734,10 @@ class BdsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[BdsMetastoreConfigurationSummary]")
+                response_type="list[BdsMetastoreConfigurationSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_patch_histories(self, bds_instance_id, **kwargs):
         """
@@ -2610,6 +2794,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/patchHistory"
         method = "GET"
+        operation_name = "list_patch_histories"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ListPatchHistories"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2692,7 +2878,10 @@ class BdsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PatchHistorySummary]")
+                response_type="list[PatchHistorySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2700,7 +2889,10 @@ class BdsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PatchHistorySummary]")
+                response_type="list[PatchHistorySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_patches(self, bds_instance_id, **kwargs):
         """
@@ -2739,6 +2931,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/patches"
         method = "GET"
+        operation_name = "list_patches"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ListPatches"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2792,7 +2986,10 @@ class BdsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PatchSummary]")
+                response_type="list[PatchSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2800,7 +2997,10 @@ class BdsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PatchSummary]")
+                response_type="list[PatchSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -2849,6 +3049,8 @@ class BdsClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2920,7 +3122,10 @@ class BdsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2928,7 +3133,10 @@ class BdsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -2977,6 +3185,8 @@ class BdsClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3048,7 +3258,10 @@ class BdsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLogEntry]")
+                response_type="list[WorkRequestLogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3056,7 +3269,10 @@ class BdsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLogEntry]")
+                response_type="list[WorkRequestLogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -3108,6 +3324,8 @@ class BdsClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3171,14 +3389,20 @@ class BdsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequest]")
+                response_type="list[WorkRequest]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequest]")
+                response_type="list[WorkRequest]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_auto_scaling_configuration(self, bds_instance_id, auto_scaling_configuration_id, remove_auto_scaling_configuration_details, **kwargs):
         """
@@ -3231,6 +3455,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/autoScalingConfiguration/{autoScalingConfigurationId}/actions/remove"
         method = "POST"
+        operation_name = "remove_auto_scaling_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/RemoveAutoScalingConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3281,14 +3507,20 @@ class BdsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_auto_scaling_configuration_details)
+                body=remove_auto_scaling_configuration_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_auto_scaling_configuration_details)
+                body=remove_auto_scaling_configuration_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_cloud_sql(self, bds_instance_id, remove_cloud_sql_details, **kwargs):
         """
@@ -3338,6 +3570,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/actions/removeCloudSql"
         method = "POST"
+        operation_name = "remove_cloud_sql"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/RemoveCloudSql"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3387,14 +3621,20 @@ class BdsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_cloud_sql_details)
+                body=remove_cloud_sql_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_cloud_sql_details)
+                body=remove_cloud_sql_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_node(self, bds_instance_id, remove_node_details, **kwargs):
         """
@@ -3437,6 +3677,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/actions/removeNode"
         method = "POST"
+        operation_name = "remove_node"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/RemoveNode"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3483,14 +3725,20 @@ class BdsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_node_details)
+                body=remove_node_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_node_details)
+                body=remove_node_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def restart_node(self, bds_instance_id, restart_node_details, **kwargs):
         """
@@ -3540,6 +3788,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/actions/restartNode"
         method = "POST"
+        operation_name = "restart_node"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/RestartNode"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3589,14 +3839,20 @@ class BdsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=restart_node_details)
+                body=restart_node_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=restart_node_details)
+                body=restart_node_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def test_bds_metastore_configuration(self, bds_instance_id, metastore_config_id, test_bds_metastore_configuration_details, **kwargs):
         """
@@ -3642,6 +3898,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/metastoreConfigs/{metastoreConfigId}/actions/test"
         method = "POST"
+        operation_name = "test_bds_metastore_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/TestBdsMetastoreConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3689,14 +3947,20 @@ class BdsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=test_bds_metastore_configuration_details)
+                body=test_bds_metastore_configuration_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=test_bds_metastore_configuration_details)
+                body=test_bds_metastore_configuration_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def test_bds_object_storage_connection(self, bds_instance_id, api_key_id, test_bds_object_storage_connection_details, **kwargs):
         """
@@ -3735,6 +3999,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/apiKeys/{apiKeyId}/actions/testObjectStorageConnection"
         method = "POST"
+        operation_name = "test_bds_object_storage_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsApiKey/TestBdsObjectStorageConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3780,14 +4046,20 @@ class BdsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=test_bds_object_storage_connection_details)
+                body=test_bds_object_storage_connection_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=test_bds_object_storage_connection_details)
+                body=test_bds_object_storage_connection_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_auto_scaling_configuration(self, bds_instance_id, auto_scaling_configuration_id, update_auto_scaling_configuration_details, **kwargs):
         """
@@ -3840,6 +4112,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/autoScalingConfiguration/{autoScalingConfigurationId}"
         method = "PUT"
+        operation_name = "update_auto_scaling_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/UpdateAutoScalingConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3890,14 +4164,20 @@ class BdsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_auto_scaling_configuration_details)
+                body=update_auto_scaling_configuration_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_auto_scaling_configuration_details)
+                body=update_auto_scaling_configuration_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_bds_instance(self, bds_instance_id, update_bds_instance_details, **kwargs):
         """
@@ -3940,6 +4220,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}"
         method = "PUT"
+        operation_name = "update_bds_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/UpdateBdsInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3986,14 +4268,20 @@ class BdsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_bds_instance_details)
+                body=update_bds_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_bds_instance_details)
+                body=update_bds_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_bds_metastore_configuration(self, bds_instance_id, metastore_config_id, update_bds_metastore_configuration_details, **kwargs):
         """
@@ -4039,6 +4327,8 @@ class BdsClient(object):
         """
         resource_path = "/bdsInstances/{bdsInstanceId}/metastoreConfigs/{metastoreConfigId}"
         method = "PUT"
+        operation_name = "update_bds_metastore_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsMetastoreConfiguration/UpdateBdsMetastoreConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4086,11 +4376,17 @@ class BdsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_bds_metastore_configuration_details)
+                body=update_bds_metastore_configuration_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_bds_metastore_configuration_details)
+                body=update_bds_metastore_configuration_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

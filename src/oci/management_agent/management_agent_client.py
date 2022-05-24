@@ -143,6 +143,8 @@ class ManagementAgentClient(object):
         """
         resource_path = "/managementAgentInstallKeys"
         method = "POST"
+        operation_name = "create_management_agent_install_key"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/CreateManagementAgentInstallKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -180,14 +182,20 @@ class ManagementAgentClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_management_agent_install_key_details,
-                response_type="ManagementAgentInstallKey")
+                response_type="ManagementAgentInstallKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_management_agent_install_key_details,
-                response_type="ManagementAgentInstallKey")
+                response_type="ManagementAgentInstallKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_management_agent(self, management_agent_id, **kwargs):
         """
@@ -227,6 +235,8 @@ class ManagementAgentClient(object):
         """
         resource_path = "/managementAgents/{managementAgentId}"
         method = "DELETE"
+        operation_name = "delete_management_agent"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/DeleteManagementAgent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -272,13 +282,19 @@ class ManagementAgentClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_management_agent_install_key(self, management_agent_install_key_id, **kwargs):
         """
@@ -318,6 +334,8 @@ class ManagementAgentClient(object):
         """
         resource_path = "/managementAgentInstallKeys/{managementAgentInstallKeyId}"
         method = "DELETE"
+        operation_name = "delete_management_agent_install_key"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/DeleteManagementAgentInstallKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -363,13 +381,19 @@ class ManagementAgentClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_work_request(self, work_request_id, **kwargs):
         """
@@ -409,6 +433,8 @@ class ManagementAgentClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
+        operation_name = "delete_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/WorkRequest/DeleteWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -454,13 +480,19 @@ class ManagementAgentClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def deploy_plugins(self, deploy_plugins_details, **kwargs):
         """
@@ -500,6 +532,8 @@ class ManagementAgentClient(object):
         """
         resource_path = "/managementAgents/actions/deployPlugins"
         method = "POST"
+        operation_name = "deploy_plugins"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/DeployPlugins"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -536,13 +570,19 @@ class ManagementAgentClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=deploy_plugins_details)
+                body=deploy_plugins_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=deploy_plugins_details)
+                body=deploy_plugins_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_auto_upgradable_config(self, compartment_id, **kwargs):
         """
@@ -576,6 +616,8 @@ class ManagementAgentClient(object):
         """
         resource_path = "/managementAgents/actions/getAutoUpgradableConfig"
         method = "GET"
+        operation_name = "get_auto_upgradable_config"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/GetAutoUpgradableConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -615,14 +657,20 @@ class ManagementAgentClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AutoUpgradableConfig")
+                response_type="AutoUpgradableConfig",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AutoUpgradableConfig")
+                response_type="AutoUpgradableConfig",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_management_agent(self, management_agent_id, **kwargs):
         """
@@ -655,6 +703,8 @@ class ManagementAgentClient(object):
         """
         resource_path = "/managementAgents/{managementAgentId}"
         method = "GET"
+        operation_name = "get_management_agent"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/GetManagementAgent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -699,14 +749,20 @@ class ManagementAgentClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ManagementAgent")
+                response_type="ManagementAgent",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ManagementAgent")
+                response_type="ManagementAgent",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_management_agent_install_key(self, management_agent_install_key_id, **kwargs):
         """
@@ -739,6 +795,8 @@ class ManagementAgentClient(object):
         """
         resource_path = "/managementAgentInstallKeys/{managementAgentInstallKeyId}"
         method = "GET"
+        operation_name = "get_management_agent_install_key"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/GetManagementAgentInstallKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -783,14 +841,20 @@ class ManagementAgentClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ManagementAgentInstallKey")
+                response_type="ManagementAgentInstallKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ManagementAgentInstallKey")
+                response_type="ManagementAgentInstallKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_management_agent_install_key_content(self, management_agent_install_key_id, **kwargs):
         """
@@ -826,6 +890,8 @@ class ManagementAgentClient(object):
         """
         resource_path = "/managementAgentInstallKeys/{managementAgentInstallKeyId}/content"
         method = "GET"
+        operation_name = "get_management_agent_install_key_content"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/GetManagementAgentInstallKeyContent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -877,7 +943,10 @@ class ManagementAgentClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -885,7 +954,10 @@ class ManagementAgentClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -918,6 +990,8 @@ class ManagementAgentClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -962,14 +1036,20 @@ class ManagementAgentClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_availability_histories(self, management_agent_id, **kwargs):
         """
@@ -1032,6 +1112,8 @@ class ManagementAgentClient(object):
         """
         resource_path = "/managementAgents/{managementAgentId}/availabilityHistories"
         method = "GET"
+        operation_name = "list_availability_histories"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/ListAvailabilityHistories"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1107,7 +1189,10 @@ class ManagementAgentClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AvailabilityHistorySummary]")
+                response_type="list[AvailabilityHistorySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1115,7 +1200,10 @@ class ManagementAgentClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AvailabilityHistorySummary]")
+                response_type="list[AvailabilityHistorySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_management_agent_images(self, compartment_id, **kwargs):
         """
@@ -1184,6 +1272,8 @@ class ManagementAgentClient(object):
         """
         resource_path = "/managementAgentImages"
         method = "GET"
+        operation_name = "list_management_agent_images"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentImage/ListManagementAgentImages"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1268,14 +1358,20 @@ class ManagementAgentClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ManagementAgentImageSummary]")
+                response_type="list[ManagementAgentImageSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ManagementAgentImageSummary]")
+                response_type="list[ManagementAgentImageSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_management_agent_install_keys(self, compartment_id, **kwargs):
         """
@@ -1335,6 +1431,8 @@ class ManagementAgentClient(object):
         """
         resource_path = "/managementAgentInstallKeys"
         method = "GET"
+        operation_name = "list_management_agent_install_keys"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/ListManagementAgentInstallKeys"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1409,14 +1507,20 @@ class ManagementAgentClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ManagementAgentInstallKeySummary]")
+                response_type="list[ManagementAgentInstallKeySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ManagementAgentInstallKeySummary]")
+                response_type="list[ManagementAgentInstallKeySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_management_agent_plugins(self, compartment_id, **kwargs):
         """
@@ -1478,6 +1582,8 @@ class ManagementAgentClient(object):
         """
         resource_path = "/managementAgentPlugins"
         method = "GET"
+        operation_name = "list_management_agent_plugins"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentPlugin/ListManagementAgentPlugins"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1560,14 +1666,20 @@ class ManagementAgentClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ManagementAgentPluginSummary]")
+                response_type="list[ManagementAgentPluginSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ManagementAgentPluginSummary]")
+                response_type="list[ManagementAgentPluginSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_management_agents(self, compartment_id, **kwargs):
         """
@@ -1652,6 +1764,8 @@ class ManagementAgentClient(object):
         """
         resource_path = "/managementAgents"
         method = "GET"
+        operation_name = "list_management_agents"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/ListManagementAgents"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1760,14 +1874,20 @@ class ManagementAgentClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ManagementAgentSummary]")
+                response_type="list[ManagementAgentSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ManagementAgentSummary]")
+                response_type="list[ManagementAgentSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -1816,6 +1936,8 @@ class ManagementAgentClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1887,7 +2009,10 @@ class ManagementAgentClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1895,7 +2020,10 @@ class ManagementAgentClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -1944,6 +2072,8 @@ class ManagementAgentClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2015,7 +2145,10 @@ class ManagementAgentClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLogEntry]")
+                response_type="list[WorkRequestLogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2023,7 +2156,10 @@ class ManagementAgentClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLogEntry]")
+                response_type="list[WorkRequestLogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -2085,6 +2221,8 @@ class ManagementAgentClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2159,14 +2297,20 @@ class ManagementAgentClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestSummary]")
+                response_type="list[WorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestSummary]")
+                response_type="list[WorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def set_auto_upgradable_config(self, set_auto_upgradable_config_details, **kwargs):
         """
@@ -2207,6 +2351,8 @@ class ManagementAgentClient(object):
         """
         resource_path = "/managementAgents/actions/setAutoUpgradableConfig"
         method = "POST"
+        operation_name = "set_auto_upgradable_config"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/SetAutoUpgradableConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2244,14 +2390,20 @@ class ManagementAgentClient(object):
                 method=method,
                 header_params=header_params,
                 body=set_auto_upgradable_config_details,
-                response_type="AutoUpgradableConfig")
+                response_type="AutoUpgradableConfig",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=set_auto_upgradable_config_details,
-                response_type="AutoUpgradableConfig")
+                response_type="AutoUpgradableConfig",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_management_agent_counts(self, compartment_id, group_by, **kwargs):
         """
@@ -2301,6 +2453,8 @@ class ManagementAgentClient(object):
         """
         resource_path = "/managementAgentCounts"
         method = "GET"
+        operation_name = "summarize_management_agent_counts"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/SummarizeManagementAgentCounts"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2361,14 +2515,20 @@ class ManagementAgentClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ManagementAgentAggregationCollection")
+                response_type="ManagementAgentAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ManagementAgentAggregationCollection")
+                response_type="ManagementAgentAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_management_agent_plugin_counts(self, compartment_id, group_by, **kwargs):
         """
@@ -2410,6 +2570,8 @@ class ManagementAgentClient(object):
         """
         resource_path = "/managementAgentPluginCounts"
         method = "GET"
+        operation_name = "summarize_management_agent_plugin_counts"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/SummarizeManagementAgentPluginCounts"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2458,14 +2620,20 @@ class ManagementAgentClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ManagementAgentPluginAggregationCollection")
+                response_type="ManagementAgentPluginAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ManagementAgentPluginAggregationCollection")
+                response_type="ManagementAgentPluginAggregationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_management_agent(self, management_agent_id, update_management_agent_details, **kwargs):
         """
@@ -2515,6 +2683,8 @@ class ManagementAgentClient(object):
         """
         resource_path = "/managementAgents/{managementAgentId}"
         method = "PUT"
+        operation_name = "update_management_agent"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/UpdateManagementAgent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2565,7 +2735,10 @@ class ManagementAgentClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_management_agent_details,
-                response_type="ManagementAgent")
+                response_type="ManagementAgent",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2573,7 +2746,10 @@ class ManagementAgentClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_management_agent_details,
-                response_type="ManagementAgent")
+                response_type="ManagementAgent",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_management_agent_install_key(self, management_agent_install_key_id, update_management_agent_install_key_details, **kwargs):
         """
@@ -2623,6 +2799,8 @@ class ManagementAgentClient(object):
         """
         resource_path = "/managementAgentInstallKeys/{managementAgentInstallKeyId}"
         method = "PUT"
+        operation_name = "update_management_agent_install_key"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgentInstallKey/UpdateManagementAgentInstallKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2673,7 +2851,10 @@ class ManagementAgentClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_management_agent_install_key_details,
-                response_type="ManagementAgentInstallKey")
+                response_type="ManagementAgentInstallKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2681,4 +2862,7 @@ class ManagementAgentClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_management_agent_install_key_details,
-                response_type="ManagementAgentInstallKey")
+                response_type="ManagementAgentInstallKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

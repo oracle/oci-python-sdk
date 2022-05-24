@@ -25,6 +25,7 @@
 #   -sb source_bucket
 #   -sp source_prefix_include
 #   -sr source_region
+#   -sn source_namespace
 ##########################################################################
 
 import threading
@@ -50,6 +51,7 @@ parser.add_argument('-c', default="", dest='config_file', help="Config File (def
 parser.add_argument('-sb', default="", dest='source_bucket', help='Source Bucket Name')
 parser.add_argument('-sp', default="", dest='source_prefix_include', help='Source Prefix Include')
 parser.add_argument('-sr', default="", dest='source_region', help='Source Region')
+parser.add_argument('-sn', default="", dest='source_namespace', help='Source Namespace (Default current connection)')
 cmd = parser.parse_args()
 
 if len(sys.argv) < 1:
@@ -78,10 +80,10 @@ config_profile = (cmd.config_profile if cmd.config_profile else oci.config.DEFAU
 
 # Global Variables
 object_storage_client = None
-source_namespace = ""
 source_bucket = cmd.source_bucket
 source_prefix = cmd.source_prefix_include
 source_region = cmd.source_region
+source_namespace = cmd.source_namespace
 
 
 ##########################################################################
@@ -280,7 +282,8 @@ def connect_to_object_storage():
             object_storage_client.base_client.session.proxies = {'https': cmd.proxy}
 
         # retrieve namespace from object storage
-        source_namespace = object_storage_client.get_namespace(retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+        if not source_namespace:
+            source_namespace = object_storage_client.get_namespace(retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
         print("Succeed.")
 
     except Exception as e:
@@ -299,23 +302,6 @@ def main():
     # global parameters
     global source_namespace
     global object_storage_client
-
-    # get signer
-    config, signer = create_signer(cmd.config_file, cmd.config_profile, cmd.is_instance_principals, cmd.is_delegation_token)
-
-    try:
-        # connect and fetch namespace
-        print("\nConnecting to Object Storage Service...")
-        object_storage_client = oci.object_storage.ObjectStorageClient(config, signer=signer)
-        if cmd.proxy:
-            object_storage_client.base_client.session.proxies = {'https': cmd.proxy}
-
-        # retrieve namespace from object storage
-        source_namespace = object_storage_client.get_namespace(retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
-        print("Succeed.")
-
-    except Exception as e:
-        raise RuntimeError("\nError extracting namespace - " + str(e))
 
     # command info
     print_command_info()

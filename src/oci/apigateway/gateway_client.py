@@ -154,6 +154,8 @@ class GatewayClient(object):
         """
         resource_path = "/gateways/{gatewayId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_gateway_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Gateway/ChangeGatewayCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -203,14 +205,20 @@ class GatewayClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_gateway_compartment_details)
+                body=change_gateway_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_gateway_compartment_details)
+                body=change_gateway_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_gateway(self, create_gateway_details, **kwargs):
         """
@@ -233,7 +241,7 @@ class GatewayClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -250,6 +258,8 @@ class GatewayClient(object):
         """
         resource_path = "/gateways"
         method = "POST"
+        operation_name = "create_gateway"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -275,6 +285,8 @@ class GatewayClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -287,14 +299,20 @@ class GatewayClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_gateway_details,
-                response_type="Gateway")
+                response_type="Gateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_gateway_details,
-                response_type="Gateway")
+                response_type="Gateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_gateway(self, gateway_id, **kwargs):
         """
@@ -334,6 +352,8 @@ class GatewayClient(object):
         """
         resource_path = "/gateways/{gatewayId}"
         method = "DELETE"
+        operation_name = "delete_gateway"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Gateway/DeleteGateway"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -379,13 +399,19 @@ class GatewayClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_gateway(self, gateway_id, **kwargs):
         """
@@ -401,7 +427,7 @@ class GatewayClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -418,6 +444,8 @@ class GatewayClient(object):
         """
         resource_path = "/gateways/{gatewayId}"
         method = "GET"
+        operation_name = "get_gateway"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Gateway/GetGateway"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -451,6 +479,8 @@ class GatewayClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -462,14 +492,20 @@ class GatewayClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Gateway")
+                response_type="Gateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Gateway")
+                response_type="Gateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_gateways(self, compartment_id, **kwargs):
         """
@@ -519,7 +555,7 @@ class GatewayClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -536,6 +572,8 @@ class GatewayClient(object):
         """
         resource_path = "/gateways"
         method = "GET"
+        operation_name = "list_gateways"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/GatewaySummary/ListGateways"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -599,6 +637,8 @@ class GatewayClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -610,14 +650,20 @@ class GatewayClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="GatewayCollection")
+                response_type="GatewayCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="GatewayCollection")
+                response_type="GatewayCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_gateway(self, gateway_id, update_gateway_details, **kwargs):
         """
@@ -660,6 +706,8 @@ class GatewayClient(object):
         """
         resource_path = "/gateways/{gatewayId}"
         method = "PUT"
+        operation_name = "update_gateway"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Gateway/UpdateGateway"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -706,11 +754,17 @@ class GatewayClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_gateway_details)
+                body=update_gateway_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_gateway_details)
+                body=update_gateway_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

@@ -157,6 +157,8 @@ class NosqlClient(object):
         """
         resource_path = "/tables/{tableNameOrId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_table_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/ChangeTableCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -206,14 +208,20 @@ class NosqlClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_table_compartment_details)
+                body=change_table_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_table_compartment_details)
+                body=change_table_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_index(self, table_name_or_id, create_index_details, **kwargs):
         """
@@ -258,6 +266,8 @@ class NosqlClient(object):
         """
         resource_path = "/tables/{tableNameOrId}/indexes"
         method = "POST"
+        operation_name = "create_index"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Index/CreateIndex"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -305,14 +315,20 @@ class NosqlClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_index_details)
+                body=create_index_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_index_details)
+                body=create_index_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_table(self, create_table_details, **kwargs):
         """
@@ -354,6 +370,8 @@ class NosqlClient(object):
         """
         resource_path = "/tables"
         method = "POST"
+        operation_name = "create_table"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/CreateTable"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -390,13 +408,19 @@ class NosqlClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_table_details)
+                body=create_table_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_table_details)
+                body=create_table_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_index(self, table_name_or_id, index_name, **kwargs):
         """
@@ -447,6 +471,8 @@ class NosqlClient(object):
         """
         resource_path = "/tables/{tableNameOrId}/indexes/{indexName}"
         method = "DELETE"
+        operation_name = "delete_index"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Index/DeleteIndex"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -502,14 +528,20 @@ class NosqlClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_row(self, table_name_or_id, key, **kwargs):
         """
@@ -565,6 +597,8 @@ class NosqlClient(object):
         """
         resource_path = "/tables/{tableNameOrId}/rows"
         method = "DELETE"
+        operation_name = "delete_row"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Row/DeleteRow"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -623,7 +657,10 @@ class NosqlClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DeleteRowResult")
+                response_type="DeleteRowResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -631,7 +668,10 @@ class NosqlClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DeleteRowResult")
+                response_type="DeleteRowResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_table(self, table_name_or_id, **kwargs):
         """
@@ -679,6 +719,8 @@ class NosqlClient(object):
         """
         resource_path = "/tables/{tableNameOrId}"
         method = "DELETE"
+        operation_name = "delete_table"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/DeleteTable"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -733,14 +775,20 @@ class NosqlClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_work_request(self, work_request_id, **kwargs):
         """
@@ -780,6 +828,8 @@ class NosqlClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
+        operation_name = "delete_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/WorkRequest/DeleteWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -825,13 +875,19 @@ class NosqlClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_index(self, table_name_or_id, index_name, **kwargs):
         """
@@ -872,6 +928,8 @@ class NosqlClient(object):
         """
         resource_path = "/tables/{tableNameOrId}/indexes/{indexName}"
         method = "GET"
+        operation_name = "get_index"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Index/GetIndex"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -924,7 +982,10 @@ class NosqlClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Index")
+                response_type="Index",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -932,7 +993,10 @@ class NosqlClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Index")
+                response_type="Index",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_row(self, table_name_or_id, key, **kwargs):
         """
@@ -982,6 +1046,8 @@ class NosqlClient(object):
         """
         resource_path = "/tables/{tableNameOrId}/rows"
         method = "GET"
+        operation_name = "get_row"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Row/GetRow"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1045,7 +1111,10 @@ class NosqlClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Row")
+                response_type="Row",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1053,7 +1122,10 @@ class NosqlClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Row")
+                response_type="Row",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_table(self, table_name_or_id, **kwargs):
         """
@@ -1091,6 +1163,8 @@ class NosqlClient(object):
         """
         resource_path = "/tables/{tableNameOrId}"
         method = "GET"
+        operation_name = "get_table"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/GetTable"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1142,7 +1216,10 @@ class NosqlClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Table")
+                response_type="Table",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1150,7 +1227,10 @@ class NosqlClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Table")
+                response_type="Table",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1183,6 +1263,8 @@ class NosqlClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1227,14 +1309,20 @@ class NosqlClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_indexes(self, table_name_or_id, **kwargs):
         """
@@ -1301,6 +1389,8 @@ class NosqlClient(object):
         """
         resource_path = "/tables/{tableNameOrId}/indexes"
         method = "GET"
+        operation_name = "list_indexes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Index/ListIndexes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1385,7 +1475,10 @@ class NosqlClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="IndexCollection")
+                response_type="IndexCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1393,7 +1486,10 @@ class NosqlClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="IndexCollection")
+                response_type="IndexCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_table_usage(self, table_name_or_id, **kwargs):
         """
@@ -1447,6 +1543,8 @@ class NosqlClient(object):
         """
         resource_path = "/tables/{tableNameOrId}/usage"
         method = "GET"
+        operation_name = "list_table_usage"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/ListTableUsage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1506,7 +1604,10 @@ class NosqlClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TableUsageCollection")
+                response_type="TableUsageCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1514,7 +1615,10 @@ class NosqlClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TableUsageCollection")
+                response_type="TableUsageCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_tables(self, compartment_id, **kwargs):
         """
@@ -1576,6 +1680,8 @@ class NosqlClient(object):
         """
         resource_path = "/tables"
         method = "GET"
+        operation_name = "list_tables"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/ListTables"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1648,14 +1754,20 @@ class NosqlClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TableCollection")
+                response_type="TableCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TableCollection")
+                response_type="TableCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -1696,6 +1808,8 @@ class NosqlClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/WorkRequest/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1749,7 +1863,10 @@ class NosqlClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1757,7 +1874,10 @@ class NosqlClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -1798,6 +1918,8 @@ class NosqlClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/WorkRequest/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1851,7 +1973,10 @@ class NosqlClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1859,7 +1984,10 @@ class NosqlClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -1900,6 +2028,8 @@ class NosqlClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1943,14 +2073,20 @@ class NosqlClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestCollection")
+                response_type="WorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestCollection")
+                response_type="WorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def prepare_statement(self, compartment_id, statement, **kwargs):
         """
@@ -1986,6 +2122,8 @@ class NosqlClient(object):
         """
         resource_path = "/query/prepare"
         method = "GET"
+        operation_name = "prepare_statement"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/QueryResultCollection/PrepareStatement"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2026,14 +2164,20 @@ class NosqlClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PreparedStatement")
+                response_type="PreparedStatement",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PreparedStatement")
+                response_type="PreparedStatement",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def query(self, query_details, **kwargs):
         """
@@ -2074,6 +2218,8 @@ class NosqlClient(object):
         """
         resource_path = "/query"
         method = "POST"
+        operation_name = "query"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/QueryResultCollection/Query"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2117,7 +2263,10 @@ class NosqlClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=query_details,
-                response_type="QueryResultCollection")
+                response_type="QueryResultCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2125,7 +2274,10 @@ class NosqlClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=query_details,
-                response_type="QueryResultCollection")
+                response_type="QueryResultCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_statement(self, compartment_id, statement, **kwargs):
         """
@@ -2161,6 +2313,8 @@ class NosqlClient(object):
         """
         resource_path = "/query/summarize"
         method = "GET"
+        operation_name = "summarize_statement"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/QueryResultCollection/SummarizeStatement"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2201,14 +2355,20 @@ class NosqlClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="StatementSummary")
+                response_type="StatementSummary",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="StatementSummary")
+                response_type="StatementSummary",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_row(self, table_name_or_id, update_row_details, **kwargs):
         """
@@ -2251,6 +2411,8 @@ class NosqlClient(object):
         """
         resource_path = "/tables/{tableNameOrId}/rows"
         method = "PUT"
+        operation_name = "update_row"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Row/UpdateRow"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2298,7 +2460,10 @@ class NosqlClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_row_details,
-                response_type="UpdateRowResult")
+                response_type="UpdateRowResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2306,7 +2471,10 @@ class NosqlClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_row_details,
-                response_type="UpdateRowResult")
+                response_type="UpdateRowResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_table(self, table_name_or_id, update_table_details, **kwargs):
         """
@@ -2350,6 +2518,8 @@ class NosqlClient(object):
         """
         resource_path = "/tables/{tableNameOrId}"
         method = "PUT"
+        operation_name = "update_table"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/UpdateTable"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2396,11 +2566,17 @@ class NosqlClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_table_details)
+                body=update_table_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_table_details)
+                body=update_table_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

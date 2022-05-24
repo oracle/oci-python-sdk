@@ -151,6 +151,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/endpoints/{endpointId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_endpoint_compartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -207,7 +209,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=change_endpoint_compartment_details)
+                body=change_endpoint_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -215,7 +220,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=change_endpoint_compartment_details)
+                body=change_endpoint_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_registry_compartment(self, registry_id, change_registry_compartment_details, **kwargs):
         """
@@ -261,6 +269,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_registry_compartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -310,14 +320,20 @@ class DataConnectivityManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_registry_compartment_details)
+                body=change_registry_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_registry_compartment_details)
+                body=change_registry_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_attach_data_asset(self, registry_id, endpoint_id, create_attach_data_asset_details, **kwargs):
         """
@@ -366,6 +382,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/endpoints/{endpointId}/actions/attachDataAssets"
         method = "POST"
+        operation_name = "create_attach_data_asset"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -417,7 +435,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_attach_data_asset_details,
-                response_type="AttachDataAssetInfo")
+                response_type="AttachDataAssetInfo",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -425,7 +446,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_attach_data_asset_details,
-                response_type="AttachDataAssetInfo")
+                response_type="AttachDataAssetInfo",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_connection(self, registry_id, create_connection_details, **kwargs):
         """
@@ -466,6 +490,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/connections"
         method = "POST"
+        operation_name = "create_connection"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -514,7 +540,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_connection_details,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -522,7 +551,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_connection_details,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_connection_validation(self, registry_id, create_connection_validation_details, **kwargs):
         """
@@ -566,6 +598,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/connectionValidations"
         method = "POST"
+        operation_name = "create_connection_validation"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -621,7 +655,10 @@ class DataConnectivityManagementClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_connection_validation_details,
-                response_type="ConnectionValidation")
+                response_type="ConnectionValidation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -630,7 +667,10 @@ class DataConnectivityManagementClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_connection_validation_details,
-                response_type="ConnectionValidation")
+                response_type="ConnectionValidation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_connectivity_validation(self, registry_id, create_connectivity_validation_details, **kwargs):
         """
@@ -674,6 +714,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/actions/connectivityValidation"
         method = "POST"
+        operation_name = "create_connectivity_validation"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -729,7 +771,10 @@ class DataConnectivityManagementClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_connectivity_validation_details,
-                response_type="ConnectivityValidation")
+                response_type="ConnectivityValidation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -738,7 +783,10 @@ class DataConnectivityManagementClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_connectivity_validation_details,
-                response_type="ConnectivityValidation")
+                response_type="ConnectivityValidation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_data_asset(self, registry_id, create_data_asset_details, **kwargs):
         """
@@ -779,6 +827,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/dataAssets"
         method = "POST"
+        operation_name = "create_data_asset"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -827,7 +877,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_data_asset_details,
-                response_type="DataAsset")
+                response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -835,7 +888,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_data_asset_details,
-                response_type="DataAsset")
+                response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_data_preview(self, registry_id, create_data_preview_details, **kwargs):
         """
@@ -884,6 +940,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/actions/dataPreview"
         method = "POST"
+        operation_name = "create_data_preview"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -941,7 +999,10 @@ class DataConnectivityManagementClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_data_preview_details,
-                response_type="DataPreview")
+                response_type="DataPreview",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -950,7 +1011,10 @@ class DataConnectivityManagementClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_data_preview_details,
-                response_type="DataPreview")
+                response_type="DataPreview",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_data_profile(self, registry_id, create_data_profile_details, **kwargs):
         """
@@ -999,6 +1063,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/actions/dataProfile"
         method = "POST"
+        operation_name = "create_data_profile"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1056,7 +1122,10 @@ class DataConnectivityManagementClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_data_profile_details,
-                response_type="DataProfile")
+                response_type="DataProfile",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1065,7 +1134,10 @@ class DataConnectivityManagementClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_data_profile_details,
-                response_type="DataProfile")
+                response_type="DataProfile",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_de_reference_artifact(self, registry_id, dcms_artifact_id, create_de_reference_artifact_details, **kwargs):
         """
@@ -1114,6 +1186,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/dcmsArtifacts/{dcmsArtifactId}/actions/deReferenceArtifact"
         method = "POST"
+        operation_name = "create_de_reference_artifact"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1165,7 +1239,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_de_reference_artifact_details,
-                response_type="DeReferenceInfo")
+                response_type="DeReferenceInfo",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1173,7 +1250,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_de_reference_artifact_details,
-                response_type="DeReferenceInfo")
+                response_type="DeReferenceInfo",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_detach_data_asset(self, registry_id, endpoint_id, create_detach_data_asset_details, **kwargs):
         """
@@ -1222,6 +1302,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/endpoints/{endpointId}/actions/detachDataAssets"
         method = "POST"
+        operation_name = "create_detach_data_asset"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1273,7 +1355,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_detach_data_asset_details,
-                response_type="DetachDataAssetInfo")
+                response_type="DetachDataAssetInfo",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1281,7 +1366,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_detach_data_asset_details,
-                response_type="DetachDataAssetInfo")
+                response_type="DetachDataAssetInfo",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_endpoint(self, create_endpoint_details, **kwargs):
         """
@@ -1322,6 +1410,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/endpoints"
         method = "POST"
+        operation_name = "create_endpoint"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1365,14 +1455,20 @@ class DataConnectivityManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                body=create_endpoint_details)
+                body=create_endpoint_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                body=create_endpoint_details)
+                body=create_endpoint_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_entity_shape(self, registry_id, connection_key, schema_resource_name, create_entity_shape_details, **kwargs):
         """
@@ -1432,6 +1528,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/connections/{connectionKey}/schemas/{schemaResourceName}/actions/entityShapes"
         method = "POST"
+        operation_name = "create_entity_shape"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1500,7 +1598,10 @@ class DataConnectivityManagementClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_entity_shape_details,
-                response_type="EntityShape")
+                response_type="EntityShape",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1509,7 +1610,10 @@ class DataConnectivityManagementClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_entity_shape_details,
-                response_type="EntityShape")
+                response_type="EntityShape",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_execute_operation_job(self, registry_id, connection_key, schema_resource_name, create_execute_operation_job_details, **kwargs):
         """
@@ -1559,6 +1663,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/connections/{connectionKey}/schemas/{schemaResourceName}/actions/executeOperationJobs"
         method = "POST"
+        operation_name = "create_execute_operation_job"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1616,7 +1722,10 @@ class DataConnectivityManagementClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_execute_operation_job_details,
-                response_type="ExecuteOperationJobDetails")
+                response_type="ExecuteOperationJobDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1625,7 +1734,10 @@ class DataConnectivityManagementClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_execute_operation_job_details,
-                response_type="ExecuteOperationJobDetails")
+                response_type="ExecuteOperationJobDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_folder(self, registry_id, create_folder_details, **kwargs):
         """
@@ -1666,6 +1778,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/folders"
         method = "POST"
+        operation_name = "create_folder"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1714,7 +1828,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_folder_details,
-                response_type="Folder")
+                response_type="Folder",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1722,7 +1839,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_folder_details,
-                response_type="Folder")
+                response_type="Folder",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_full_push_down_task(self, registry_id, create_full_push_down_task_details, **kwargs):
         """
@@ -1771,6 +1891,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/actions/fullPushDownTask"
         method = "POST"
+        operation_name = "create_full_push_down_task"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1828,7 +1950,10 @@ class DataConnectivityManagementClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_full_push_down_task_details,
-                response_type="FullPushDownTaskResponse")
+                response_type="FullPushDownTaskResponse",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1837,7 +1962,10 @@ class DataConnectivityManagementClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_full_push_down_task_details,
-                response_type="FullPushDownTaskResponse")
+                response_type="FullPushDownTaskResponse",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_reference_artifact(self, registry_id, dcms_artifact_id, create_reference_artifact_details, **kwargs):
         """
@@ -1886,6 +2014,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/dcmsArtifacts/{dcmsArtifactId}/actions/referenceArtifact"
         method = "POST"
+        operation_name = "create_reference_artifact"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1937,7 +2067,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_reference_artifact_details,
-                response_type="ReferenceInfo")
+                response_type="ReferenceInfo",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1945,7 +2078,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_reference_artifact_details,
-                response_type="ReferenceInfo")
+                response_type="ReferenceInfo",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_registry(self, create_registry_details, **kwargs):
         """
@@ -1983,6 +2119,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries"
         method = "POST"
+        operation_name = "create_registry"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2019,13 +2157,19 @@ class DataConnectivityManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_registry_details)
+                body=create_registry_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_registry_details)
+                body=create_registry_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_test_network_connectivity(self, registry_id, create_test_network_connectivity_details, **kwargs):
         """
@@ -2074,6 +2218,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/actions/testNetworkConnectivity"
         method = "POST"
+        operation_name = "create_test_network_connectivity"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2131,7 +2277,10 @@ class DataConnectivityManagementClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_test_network_connectivity_details,
-                response_type="TestNetworkConnectivity")
+                response_type="TestNetworkConnectivity",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2140,7 +2289,10 @@ class DataConnectivityManagementClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_test_network_connectivity_details,
-                response_type="TestNetworkConnectivity")
+                response_type="TestNetworkConnectivity",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_connection(self, registry_id, connection_key, **kwargs):
         """
@@ -2183,6 +2335,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/connections/{connectionKey}"
         method = "DELETE"
+        operation_name = "delete_connection"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2229,13 +2383,19 @@ class DataConnectivityManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_connection_validation(self, registry_id, connection_validation_key, **kwargs):
         """
@@ -2281,6 +2441,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/connectionValidations/{connectionValidationKey}"
         method = "DELETE"
+        operation_name = "delete_connection_validation"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2334,14 +2496,20 @@ class DataConnectivityManagementClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_data_asset(self, registry_id, data_asset_key, **kwargs):
         """
@@ -2384,6 +2552,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/dataAssets/{dataAssetKey}"
         method = "DELETE"
+        operation_name = "delete_data_asset"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2430,13 +2600,19 @@ class DataConnectivityManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_endpoint(self, endpoint_id, **kwargs):
         """
@@ -2482,6 +2658,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/endpoints/{endpointId}"
         method = "DELETE"
+        operation_name = "delete_endpoint"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2536,14 +2714,20 @@ class DataConnectivityManagementClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_folder(self, registry_id, folder_key, **kwargs):
         """
@@ -2586,6 +2770,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/folders/{folderKey}"
         method = "DELETE"
+        operation_name = "delete_folder"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2632,13 +2818,19 @@ class DataConnectivityManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_network_connectivity_status(self, registry_id, network_validation_status_key, **kwargs):
         """
@@ -2681,6 +2873,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/networkConnectivityStatus/{networkValidationStatusKey}"
         method = "DELETE"
+        operation_name = "delete_network_connectivity_status"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2727,13 +2921,19 @@ class DataConnectivityManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_registry(self, registry_id, **kwargs):
         """
@@ -2776,6 +2976,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}"
         method = "DELETE"
+        operation_name = "delete_registry"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2828,14 +3030,20 @@ class DataConnectivityManagementClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_connection(self, registry_id, connection_key, **kwargs):
         """
@@ -2873,6 +3081,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/connections/{connectionKey}"
         method = "GET"
+        operation_name = "get_connection"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2918,14 +3128,20 @@ class DataConnectivityManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_connection_validation(self, registry_id, connection_validation_key, **kwargs):
         """
@@ -2966,6 +3182,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/connectionValidations/{connectionValidationKey}"
         method = "GET"
+        operation_name = "get_connection_validation"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3018,7 +3236,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ConnectionValidation")
+                response_type="ConnectionValidation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3026,7 +3247,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ConnectionValidation")
+                response_type="ConnectionValidation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_data_asset(self, registry_id, data_asset_key, **kwargs):
         """
@@ -3064,6 +3288,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/dataAssets/{dataAssetKey}"
         method = "GET"
+        operation_name = "get_data_asset"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3109,14 +3335,20 @@ class DataConnectivityManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DataAsset")
+                response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DataAsset")
+                response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_data_entity(self, registry_id, connection_key, schema_resource_name, data_entity_key, **kwargs):
         """
@@ -3163,6 +3395,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/connections/{connectionKey}/schemas/{schemaResourceName}/dataEntities/{dataEntityKey}"
         method = "GET"
+        operation_name = "get_data_entity"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3217,7 +3451,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataEntity")
+                response_type="DataEntity",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3225,7 +3462,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataEntity")
+                response_type="DataEntity",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_endpoint(self, endpoint_id, **kwargs):
         """
@@ -3263,6 +3503,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/endpoints/{endpointId}"
         method = "GET"
+        operation_name = "get_endpoint"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3314,7 +3556,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Endpoint")
+                response_type="Endpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3322,7 +3567,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Endpoint")
+                response_type="Endpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_execute_operation_job(self, registry_id, connection_key, schema_resource_name, execute_operation_job_key, **kwargs):
         """
@@ -3369,6 +3617,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/connections/{connectionKey}/schemas/{schemaResourceName}/executeOperationJobs/{executeOperationJobKey}"
         method = "GET"
+        operation_name = "get_execute_operation_job"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3423,7 +3673,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ExecuteOperationJob")
+                response_type="ExecuteOperationJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3431,7 +3684,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ExecuteOperationJob")
+                response_type="ExecuteOperationJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_folder(self, registry_id, folder_key, **kwargs):
         """
@@ -3469,6 +3725,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/folders/{folderKey}"
         method = "GET"
+        operation_name = "get_folder"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3514,14 +3772,20 @@ class DataConnectivityManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Folder")
+                response_type="Folder",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Folder")
+                response_type="Folder",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_network_connectivity_status(self, registry_id, data_asset_key, **kwargs):
         """
@@ -3570,6 +3834,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/dataAssets/{dataAssetKey}/networkConnectivityStatus"
         method = "GET"
+        operation_name = "get_network_connectivity_status"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3627,7 +3893,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="NetworkConnectivityStatus")
+                response_type="NetworkConnectivityStatus",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3635,7 +3904,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="NetworkConnectivityStatus")
+                response_type="NetworkConnectivityStatus",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_operation(self, registry_id, connection_key, schema_resource_name, operation_resource_name, **kwargs):
         """
@@ -3682,6 +3954,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/connections/{connectionKey}/schemas/{schemaResourceName}/operations/{operationResourceName}"
         method = "GET"
+        operation_name = "get_operation"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3736,7 +4010,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Operation")
+                response_type="Operation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3744,7 +4021,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Operation")
+                response_type="Operation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_registry(self, registry_id, **kwargs):
         """
@@ -3779,6 +4059,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}"
         method = "GET"
+        operation_name = "get_registry"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3823,14 +4105,20 @@ class DataConnectivityManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Registry")
+                response_type="Registry",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Registry")
+                response_type="Registry",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_schema(self, registry_id, connection_key, schema_resource_name, **kwargs):
         """
@@ -3874,6 +4162,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/connections/{connectionKey}/schemas/{schemaResourceName}"
         method = "GET"
+        operation_name = "get_schema"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3927,7 +4217,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Schema")
+                response_type="Schema",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3935,7 +4228,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Schema")
+                response_type="Schema",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_type(self, registry_id, type_key, **kwargs):
         """
@@ -3976,6 +4272,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/types/{typeKey}"
         method = "GET"
+        operation_name = "get_type"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4028,7 +4326,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Type")
+                response_type="Type",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4036,7 +4337,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Type")
+                response_type="Type",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -4071,6 +4375,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4115,14 +4421,20 @@ class DataConnectivityManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_connection_validations(self, registry_id, **kwargs):
         """
@@ -4192,6 +4504,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/connectionValidations"
         method = "GET"
+        operation_name = "list_connection_validations"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4273,7 +4587,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ConnectionValidationSummaryCollection")
+                response_type="ConnectionValidationSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4281,7 +4598,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ConnectionValidationSummaryCollection")
+                response_type="ConnectionValidationSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_connections(self, registry_id, data_asset_key, **kwargs):
         """
@@ -4353,6 +4673,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/connections"
         method = "GET"
+        operation_name = "list_connections"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4440,7 +4762,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ConnectionSummaryCollection")
+                response_type="ConnectionSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4448,7 +4773,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ConnectionSummaryCollection")
+                response_type="ConnectionSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_data_assets(self, registry_id, **kwargs):
         """
@@ -4529,6 +4857,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/dataAssets"
         method = "GET"
+        operation_name = "list_data_assets"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4623,7 +4953,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataAssetSummaryCollection")
+                response_type="DataAssetSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4631,7 +4964,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataAssetSummaryCollection")
+                response_type="DataAssetSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_data_entities(self, registry_id, connection_key, schema_resource_name, **kwargs):
         """
@@ -4715,6 +5051,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/connections/{connectionKey}/schemas/{schemaResourceName}/dataEntities"
         method = "GET"
+        operation_name = "list_data_entities"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4809,7 +5147,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataEntitySummaryCollection")
+                response_type="DataEntitySummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4817,7 +5158,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataEntitySummaryCollection")
+                response_type="DataEntitySummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_endpoints(self, compartment_id, **kwargs):
         """
@@ -4883,6 +5227,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/endpoints"
         method = "GET"
+        operation_name = "list_endpoints"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4957,14 +5303,20 @@ class DataConnectivityManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="EndpointSummaryCollection")
+                response_type="EndpointSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="EndpointSummaryCollection")
+                response_type="EndpointSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_folders(self, registry_id, **kwargs):
         """
@@ -5033,6 +5385,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/folders"
         method = "GET"
+        operation_name = "list_folders"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5119,7 +5473,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="FolderSummaryCollection")
+                response_type="FolderSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5127,7 +5484,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="FolderSummaryCollection")
+                response_type="FolderSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_operations(self, registry_id, connection_key, schema_resource_name, **kwargs):
         """
@@ -5194,6 +5554,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/connections/{connectionKey}/schemas/{schemaResourceName}/operations"
         method = "GET"
+        operation_name = "list_operations"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5271,7 +5633,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="OperationSummaryCollection")
+                response_type="OperationSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5279,7 +5644,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="OperationSummaryCollection")
+                response_type="OperationSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_reference_artifacts(self, registry_id, dcms_artifact_id, **kwargs):
         """
@@ -5357,6 +5725,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/dcmsArtifacts/{dcmsArtifactId}/referenceArtifacts"
         method = "GET"
+        operation_name = "list_reference_artifacts"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5448,7 +5818,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ReferenceArtifactSummaryCollection")
+                response_type="ReferenceArtifactSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5456,7 +5829,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ReferenceArtifactSummaryCollection")
+                response_type="ReferenceArtifactSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_registries(self, compartment_id, **kwargs):
         """
@@ -5512,6 +5888,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries"
         method = "GET"
+        operation_name = "list_registries"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5568,14 +5946,20 @@ class DataConnectivityManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RegistrySummaryCollection")
+                response_type="RegistrySummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RegistrySummaryCollection")
+                response_type="RegistrySummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_schemas(self, registry_id, connection_key, **kwargs):
         """
@@ -5648,6 +6032,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/connections/{connectionKey}/schemas"
         method = "GET"
+        operation_name = "list_schemas"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5730,7 +6116,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SchemaSummaryCollection")
+                response_type="SchemaSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5738,7 +6127,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SchemaSummaryCollection")
+                response_type="SchemaSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_types(self, registry_id, **kwargs):
         """
@@ -5799,6 +6191,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/types"
         method = "GET"
+        operation_name = "list_types"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5874,7 +6268,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TypesSummaryCollection")
+                response_type="TypesSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5882,7 +6279,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TypesSummaryCollection")
+                response_type="TypesSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -5927,6 +6327,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/workRequestErrors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5980,7 +6382,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5988,7 +6393,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -6033,6 +6441,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6086,7 +6496,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogCollection")
+                response_type="WorkRequestLogCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6094,7 +6507,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogCollection")
+                response_type="WorkRequestLogCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -6147,6 +6563,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6201,14 +6619,20 @@ class DataConnectivityManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestSummaryCollection")
+                response_type="WorkRequestSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestSummaryCollection")
+                response_type="WorkRequestSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_connection(self, registry_id, connection_key, update_connection_details, **kwargs):
         """
@@ -6254,6 +6678,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/connections/{connectionKey}"
         method = "PUT"
+        operation_name = "update_connection"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6302,7 +6728,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_connection_details,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6310,7 +6739,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_connection_details,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_data_asset(self, registry_id, data_asset_key, update_data_asset_details, **kwargs):
         """
@@ -6356,6 +6788,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/dataAssets/{dataAssetKey}"
         method = "PUT"
+        operation_name = "update_data_asset"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6404,7 +6838,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_data_asset_details,
-                response_type="DataAsset")
+                response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6412,7 +6849,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_data_asset_details,
-                response_type="DataAsset")
+                response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_endpoint(self, endpoint_id, update_endpoint_details, **kwargs):
         """
@@ -6458,6 +6898,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/endpoints/{endpointId}"
         method = "PUT"
+        operation_name = "update_endpoint"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6512,7 +6954,10 @@ class DataConnectivityManagementClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_endpoint_details,
-                response_type="Endpoint")
+                response_type="Endpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6521,7 +6966,10 @@ class DataConnectivityManagementClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_endpoint_details,
-                response_type="Endpoint")
+                response_type="Endpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_folder(self, registry_id, folder_key, update_folder_details, **kwargs):
         """
@@ -6567,6 +7015,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}/folders/{folderKey}"
         method = "PUT"
+        operation_name = "update_folder"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6615,7 +7065,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_folder_details,
-                response_type="Folder")
+                response_type="Folder",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6623,7 +7076,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_folder_details,
-                response_type="Folder")
+                response_type="Folder",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_registry(self, registry_id, update_registry_details, **kwargs):
         """
@@ -6666,6 +7122,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/registries/{registryId}"
         method = "PUT"
+        operation_name = "update_registry"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6713,7 +7171,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_registry_details,
-                response_type="Registry")
+                response_type="Registry",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6721,7 +7182,10 @@ class DataConnectivityManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_registry_details,
-                response_type="Registry")
+                response_type="Registry",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def validate_data_asset_network_reachablity(self, endpoint_id, **kwargs):
         """
@@ -6767,6 +7231,8 @@ class DataConnectivityManagementClient(object):
         """
         resource_path = "/endpoints/{endpointId}/actions/validateDataAssetNetworkReachablity"
         method = "POST"
+        operation_name = "validate_data_asset_network_reachablity"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6822,11 +7288,17 @@ class DataConnectivityManagementClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

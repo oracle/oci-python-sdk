@@ -152,6 +152,8 @@ class BlockchainPlatformClient(object):
         """
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_blockchain_platform_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/ChangeBlockchainPlatformCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -201,14 +203,20 @@ class BlockchainPlatformClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_blockchain_platform_compartment_details)
+                body=change_blockchain_platform_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_blockchain_platform_compartment_details)
+                body=change_blockchain_platform_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_blockchain_platform(self, create_blockchain_platform_details, **kwargs):
         """
@@ -248,6 +256,8 @@ class BlockchainPlatformClient(object):
         """
         resource_path = "/blockchainPlatforms"
         method = "POST"
+        operation_name = "create_blockchain_platform"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/CreateBlockchainPlatform"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -284,13 +294,19 @@ class BlockchainPlatformClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_blockchain_platform_details)
+                body=create_blockchain_platform_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_blockchain_platform_details)
+                body=create_blockchain_platform_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_osn(self, blockchain_platform_id, create_osn_details, **kwargs):
         """
@@ -340,6 +356,8 @@ class BlockchainPlatformClient(object):
         """
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/osns"
         method = "POST"
+        operation_name = "create_osn"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/CreateOsn"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -389,14 +407,20 @@ class BlockchainPlatformClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_osn_details)
+                body=create_osn_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_osn_details)
+                body=create_osn_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_peer(self, blockchain_platform_id, create_peer_details, **kwargs):
         """
@@ -439,6 +463,8 @@ class BlockchainPlatformClient(object):
         """
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/peers"
         method = "POST"
+        operation_name = "create_peer"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/CreatePeer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -486,14 +512,20 @@ class BlockchainPlatformClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_peer_details)
+                body=create_peer_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_peer_details)
+                body=create_peer_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_blockchain_platform(self, blockchain_platform_id, **kwargs):
         """
@@ -540,6 +572,8 @@ class BlockchainPlatformClient(object):
         """
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}"
         method = "DELETE"
+        operation_name = "delete_blockchain_platform"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/DeleteBlockchainPlatform"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -588,13 +622,19 @@ class BlockchainPlatformClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_osn(self, blockchain_platform_id, osn_id, **kwargs):
         """
@@ -637,6 +677,8 @@ class BlockchainPlatformClient(object):
         """
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/osns/{osnId}"
         method = "DELETE"
+        operation_name = "delete_osn"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/DeleteOsn"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -683,13 +725,19 @@ class BlockchainPlatformClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_peer(self, blockchain_platform_id, peer_id, **kwargs):
         """
@@ -739,6 +787,8 @@ class BlockchainPlatformClient(object):
         """
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/peers/{peerId}"
         method = "DELETE"
+        operation_name = "delete_peer"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/DeletePeer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -788,13 +838,19 @@ class BlockchainPlatformClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_work_request(self, work_request_id, **kwargs):
         """
@@ -834,6 +890,8 @@ class BlockchainPlatformClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
+        operation_name = "delete_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/WorkRequest/DeleteWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -879,13 +937,19 @@ class BlockchainPlatformClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_blockchain_platform(self, blockchain_platform_id, **kwargs):
         """
@@ -918,6 +982,8 @@ class BlockchainPlatformClient(object):
         """
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}"
         method = "GET"
+        operation_name = "get_blockchain_platform"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/GetBlockchainPlatform"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -962,14 +1028,20 @@ class BlockchainPlatformClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BlockchainPlatform")
+                response_type="BlockchainPlatform",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BlockchainPlatform")
+                response_type="BlockchainPlatform",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_osn(self, blockchain_platform_id, osn_id, **kwargs):
         """
@@ -1005,6 +1077,8 @@ class BlockchainPlatformClient(object):
         """
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/osns/{osnId}"
         method = "GET"
+        operation_name = "get_osn"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/Osn/GetOsn"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1050,14 +1124,20 @@ class BlockchainPlatformClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Osn")
+                response_type="Osn",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Osn")
+                response_type="Osn",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_peer(self, blockchain_platform_id, peer_id, **kwargs):
         """
@@ -1093,6 +1173,8 @@ class BlockchainPlatformClient(object):
         """
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/peers/{peerId}"
         method = "GET"
+        operation_name = "get_peer"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/Peer/GetPeer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1138,14 +1220,20 @@ class BlockchainPlatformClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Peer")
+                response_type="Peer",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Peer")
+                response_type="Peer",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1178,6 +1266,8 @@ class BlockchainPlatformClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1222,14 +1312,20 @@ class BlockchainPlatformClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_blockchain_platform_patches(self, blockchain_platform_id, **kwargs):
         """
@@ -1268,6 +1364,8 @@ class BlockchainPlatformClient(object):
         """
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/patches"
         method = "GET"
+        operation_name = "list_blockchain_platform_patches"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/ListBlockchainPlatformPatches"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1321,7 +1419,10 @@ class BlockchainPlatformClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="BlockchainPlatformPatchCollection")
+                response_type="BlockchainPlatformPatchCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1329,7 +1430,10 @@ class BlockchainPlatformClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="BlockchainPlatformPatchCollection")
+                response_type="BlockchainPlatformPatchCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_blockchain_platforms(self, compartment_id, **kwargs):
         """
@@ -1388,6 +1492,8 @@ class BlockchainPlatformClient(object):
         """
         resource_path = "/blockchainPlatforms"
         method = "GET"
+        operation_name = "list_blockchain_platforms"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/ListBlockchainPlatforms"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1460,14 +1566,20 @@ class BlockchainPlatformClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="BlockchainPlatformCollection")
+                response_type="BlockchainPlatformCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="BlockchainPlatformCollection")
+                response_type="BlockchainPlatformCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_osns(self, blockchain_platform_id, **kwargs):
         """
@@ -1527,6 +1639,8 @@ class BlockchainPlatformClient(object):
         """
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/osns"
         method = "GET"
+        operation_name = "list_osns"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/Osn/ListOsns"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1603,7 +1717,10 @@ class BlockchainPlatformClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="OsnCollection")
+                response_type="OsnCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1611,7 +1728,10 @@ class BlockchainPlatformClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="OsnCollection")
+                response_type="OsnCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_peers(self, blockchain_platform_id, **kwargs):
         """
@@ -1671,6 +1791,8 @@ class BlockchainPlatformClient(object):
         """
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/peers"
         method = "GET"
+        operation_name = "list_peers"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/Peer/ListPeers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1747,7 +1869,10 @@ class BlockchainPlatformClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PeerCollection")
+                response_type="PeerCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1755,7 +1880,10 @@ class BlockchainPlatformClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PeerCollection")
+                response_type="PeerCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -1794,6 +1922,8 @@ class BlockchainPlatformClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1847,7 +1977,10 @@ class BlockchainPlatformClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1855,7 +1988,10 @@ class BlockchainPlatformClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -1894,6 +2030,8 @@ class BlockchainPlatformClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1947,7 +2085,10 @@ class BlockchainPlatformClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1955,7 +2096,10 @@ class BlockchainPlatformClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, blockchain_platform_id, **kwargs):
         """
@@ -2007,6 +2151,8 @@ class BlockchainPlatformClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2069,14 +2215,20 @@ class BlockchainPlatformClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestCollection")
+                response_type="WorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestCollection")
+                response_type="WorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def preview_scale_blockchain_platform(self, blockchain_platform_id, scale_blockchain_platform_details, **kwargs):
         """
@@ -2112,6 +2264,8 @@ class BlockchainPlatformClient(object):
         """
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/actions/scale/preview"
         method = "POST"
+        operation_name = "preview_scale_blockchain_platform"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/PreviewScaleBlockchainPlatform"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2157,7 +2311,10 @@ class BlockchainPlatformClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=scale_blockchain_platform_details,
-                response_type="ScaledBlockchainPlatformPreview")
+                response_type="ScaledBlockchainPlatformPreview",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2165,7 +2322,10 @@ class BlockchainPlatformClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=scale_blockchain_platform_details,
-                response_type="ScaledBlockchainPlatformPreview")
+                response_type="ScaledBlockchainPlatformPreview",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def scale_blockchain_platform(self, blockchain_platform_id, scale_blockchain_platform_details, **kwargs):
         """
@@ -2215,6 +2375,8 @@ class BlockchainPlatformClient(object):
         """
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/actions/scale"
         method = "POST"
+        operation_name = "scale_blockchain_platform"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/ScaleBlockchainPlatform"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2264,14 +2426,20 @@ class BlockchainPlatformClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=scale_blockchain_platform_details)
+                body=scale_blockchain_platform_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=scale_blockchain_platform_details)
+                body=scale_blockchain_platform_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def start_blockchain_platform(self, blockchain_platform_id, **kwargs):
         """
@@ -2318,6 +2486,8 @@ class BlockchainPlatformClient(object):
         """
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/actions/start"
         method = "POST"
+        operation_name = "start_blockchain_platform"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/StartBlockchainPlatform"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2366,13 +2536,19 @@ class BlockchainPlatformClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def stop_blockchain_platform(self, blockchain_platform_id, **kwargs):
         """
@@ -2419,6 +2595,8 @@ class BlockchainPlatformClient(object):
         """
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/actions/stop"
         method = "POST"
+        operation_name = "stop_blockchain_platform"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/StopBlockchainPlatform"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2467,13 +2645,19 @@ class BlockchainPlatformClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_blockchain_platform(self, update_blockchain_platform_details, blockchain_platform_id, **kwargs):
         """
@@ -2523,6 +2707,8 @@ class BlockchainPlatformClient(object):
         """
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}"
         method = "PUT"
+        operation_name = "update_blockchain_platform"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/UpdateBlockchainPlatform"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2572,14 +2758,20 @@ class BlockchainPlatformClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_blockchain_platform_details)
+                body=update_blockchain_platform_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_blockchain_platform_details)
+                body=update_blockchain_platform_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_osn(self, blockchain_platform_id, osn_id, update_osn_details, **kwargs):
         """
@@ -2632,6 +2824,8 @@ class BlockchainPlatformClient(object):
         """
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/osns/{osnId}"
         method = "PUT"
+        operation_name = "update_osn"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/UpdateOsn"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2682,14 +2876,20 @@ class BlockchainPlatformClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_osn_details)
+                body=update_osn_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_osn_details)
+                body=update_osn_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_peer(self, blockchain_platform_id, peer_id, update_peer_details, **kwargs):
         """
@@ -2742,6 +2942,8 @@ class BlockchainPlatformClient(object):
         """
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/peers/{peerId}"
         method = "PUT"
+        operation_name = "update_peer"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/UpdatePeer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2792,14 +2994,20 @@ class BlockchainPlatformClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_peer_details)
+                body=update_peer_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_peer_details)
+                body=update_peer_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def upgrade_blockchain_platform(self, upgrade_blockchain_platform_details, blockchain_platform_id, **kwargs):
         """
@@ -2849,6 +3057,8 @@ class BlockchainPlatformClient(object):
         """
         resource_path = "/blockchainPlatforms/{blockchainPlatformId}/actions/upgrade"
         method = "POST"
+        operation_name = "upgrade_blockchain_platform"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/blockchain/20191010/BlockchainPlatform/UpgradeBlockchainPlatform"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2898,11 +3108,17 @@ class BlockchainPlatformClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=upgrade_blockchain_platform_details)
+                body=upgrade_blockchain_platform_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=upgrade_blockchain_platform_details)
+                body=upgrade_blockchain_platform_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

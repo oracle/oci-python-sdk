@@ -155,6 +155,8 @@ class AccessRequestsClient(object):
         """
         resource_path = "/accessRequests/{accessRequestId}/action/approve"
         method = "POST"
+        operation_name = "approve_access_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ApproveAccessRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -204,14 +206,20 @@ class AccessRequestsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=approve_access_request_details)
+                body=approve_access_request_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=approve_access_request_details)
+                body=approve_access_request_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_access_request(self, access_request_id, **kwargs):
         """
@@ -244,6 +252,8 @@ class AccessRequestsClient(object):
         """
         resource_path = "/accessRequests/{accessRequestId}"
         method = "GET"
+        operation_name = "get_access_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/GetAccessRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -288,14 +298,20 @@ class AccessRequestsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AccessRequest")
+                response_type="AccessRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AccessRequest")
+                response_type="AccessRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def interaction_request(self, access_request_id, interaction_request_details, **kwargs):
         """
@@ -345,6 +361,8 @@ class AccessRequestsClient(object):
         """
         resource_path = "/accessRequests/{accessRequestId}/action/interactionRequest"
         method = "POST"
+        operation_name = "interaction_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/InteractionRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -395,7 +413,10 @@ class AccessRequestsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=interaction_request_details,
-                response_type="AccessRequest")
+                response_type="AccessRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -403,7 +424,10 @@ class AccessRequestsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=interaction_request_details,
-                response_type="AccessRequest")
+                response_type="AccessRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_access_request_histories(self, access_request_id, **kwargs):
         """
@@ -442,6 +466,8 @@ class AccessRequestsClient(object):
         """
         resource_path = "/accessRequests/{accessRequestId}/history"
         method = "GET"
+        operation_name = "list_access_request_histories"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ListAccessRequestHistories"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -495,7 +521,10 @@ class AccessRequestsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AccessRequestHistoryCollection")
+                response_type="AccessRequestHistoryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -503,7 +532,10 @@ class AccessRequestsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AccessRequestHistoryCollection")
+                response_type="AccessRequestHistoryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_access_requests(self, compartment_id, **kwargs):
         """
@@ -573,6 +605,8 @@ class AccessRequestsClient(object):
         """
         resource_path = "/accessRequests"
         method = "GET"
+        operation_name = "list_access_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ListAccessRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -651,14 +685,20 @@ class AccessRequestsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AccessRequestCollection")
+                response_type="AccessRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AccessRequestCollection")
+                response_type="AccessRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_interactions(self, access_request_id, **kwargs):
         """
@@ -697,6 +737,8 @@ class AccessRequestsClient(object):
         """
         resource_path = "/accessRequests/{accessRequestId}/interactions"
         method = "GET"
+        operation_name = "list_interactions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ListInteractions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -750,7 +792,10 @@ class AccessRequestsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="InteractionCollection")
+                response_type="InteractionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -758,7 +803,10 @@ class AccessRequestsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="InteractionCollection")
+                response_type="InteractionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def reject_access_request(self, access_request_id, reject_access_request_details, **kwargs):
         """
@@ -808,6 +856,8 @@ class AccessRequestsClient(object):
         """
         resource_path = "/accessRequests/{accessRequestId}/action/reject"
         method = "POST"
+        operation_name = "reject_access_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/RejectAccessRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -857,14 +907,20 @@ class AccessRequestsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=reject_access_request_details)
+                body=reject_access_request_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=reject_access_request_details)
+                body=reject_access_request_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def review_access_request(self, access_request_id, review_access_request_details, **kwargs):
         """
@@ -914,6 +970,8 @@ class AccessRequestsClient(object):
         """
         resource_path = "/accessRequests/{accessRequestId}/action/review"
         method = "POST"
+        operation_name = "review_access_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/ReviewAccessRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -964,7 +1022,10 @@ class AccessRequestsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=review_access_request_details,
-                response_type="AccessRequest")
+                response_type="AccessRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -972,7 +1033,10 @@ class AccessRequestsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=review_access_request_details,
-                response_type="AccessRequest")
+                response_type="AccessRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def revoke_access_request(self, access_request_id, revoke_access_request_details, **kwargs):
         """
@@ -1022,6 +1086,8 @@ class AccessRequestsClient(object):
         """
         resource_path = "/accessRequests/{accessRequestId}/action/revoke"
         method = "POST"
+        operation_name = "revoke_access_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AccessRequest/RevokeAccessRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1071,11 +1137,17 @@ class AccessRequestsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=revoke_access_request_details)
+                body=revoke_access_request_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=revoke_access_request_details)
+                body=revoke_access_request_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

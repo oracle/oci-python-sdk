@@ -4,4 +4,4 @@
 # Copyright 2008-2016 Andrey Petrov and contributors
 
 # This file is protected via CODEOWNERS
-__version__ = "1.26.4"
+__version__ = "1.26.9"

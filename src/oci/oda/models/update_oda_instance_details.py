@@ -106,8 +106,7 @@ class UpdateOdaInstanceDetails(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this UpdateOdaInstanceDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-        cross-compatibility only.
+        Simple key-value pair that is applied without any predefined name, type, or scope.
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -120,8 +119,7 @@ class UpdateOdaInstanceDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this UpdateOdaInstanceDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-        cross-compatibility only.
+        Simple key-value pair that is applied without any predefined name, type, or scope.
         Example: `{\"bar-key\": \"value\"}`
 
 

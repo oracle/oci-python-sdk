@@ -324,7 +324,7 @@ class Deployment(object):
     @property
     def specification(self):
         """
-        Gets the specification of this Deployment.
+        **[Required]** Gets the specification of this Deployment.
 
         :return: The specification of this Deployment.
         :rtype: oci.apigateway.models.ApiSpecification

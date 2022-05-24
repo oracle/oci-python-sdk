@@ -184,6 +184,8 @@ class PluginconfigClient(object):
         """
         resource_path = "/instanceagent/availablePlugins"
         method = "GET"
+        operation_name = "list_instanceagent_available_plugins"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -249,11 +251,17 @@ class PluginconfigClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AvailablePluginSummary]")
+                response_type="list[AvailablePluginSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AvailablePluginSummary]")
+                response_type="list[AvailablePluginSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

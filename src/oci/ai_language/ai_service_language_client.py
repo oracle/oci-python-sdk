@@ -137,6 +137,8 @@ class AIServiceLanguageClient(object):
         """
         resource_path = "/actions/batchDetectDominantLanguage"
         method = "POST"
+        operation_name = "batch_detect_dominant_language"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectDominantLanguage/BatchDetectDominantLanguage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -171,14 +173,20 @@ class AIServiceLanguageClient(object):
                 method=method,
                 header_params=header_params,
                 body=batch_detect_dominant_language_details,
-                response_type="BatchDetectDominantLanguageResult")
+                response_type="BatchDetectDominantLanguageResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=batch_detect_dominant_language_details,
-                response_type="BatchDetectDominantLanguageResult")
+                response_type="BatchDetectDominantLanguageResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def batch_detect_language_entities(self, batch_detect_language_entities_details, **kwargs):
         """
@@ -211,6 +219,8 @@ class AIServiceLanguageClient(object):
         """
         resource_path = "/actions/batchDetectLanguageEntities"
         method = "POST"
+        operation_name = "batch_detect_language_entities"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectLanguageEntities/BatchDetectLanguageEntities"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -245,14 +255,20 @@ class AIServiceLanguageClient(object):
                 method=method,
                 header_params=header_params,
                 body=batch_detect_language_entities_details,
-                response_type="BatchDetectLanguageEntitiesResult")
+                response_type="BatchDetectLanguageEntitiesResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=batch_detect_language_entities_details,
-                response_type="BatchDetectLanguageEntitiesResult")
+                response_type="BatchDetectLanguageEntitiesResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def batch_detect_language_key_phrases(self, batch_detect_language_key_phrases_details, **kwargs):
         """
@@ -285,6 +301,8 @@ class AIServiceLanguageClient(object):
         """
         resource_path = "/actions/batchDetectLanguageKeyPhrases"
         method = "POST"
+        operation_name = "batch_detect_language_key_phrases"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectLanguageKeyPhrases/BatchDetectLanguageKeyPhrases"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -319,14 +337,20 @@ class AIServiceLanguageClient(object):
                 method=method,
                 header_params=header_params,
                 body=batch_detect_language_key_phrases_details,
-                response_type="BatchDetectLanguageKeyPhrasesResult")
+                response_type="BatchDetectLanguageKeyPhrasesResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=batch_detect_language_key_phrases_details,
-                response_type="BatchDetectLanguageKeyPhrasesResult")
+                response_type="BatchDetectLanguageKeyPhrasesResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def batch_detect_language_sentiments(self, batch_detect_language_sentiments_details, **kwargs):
         """
@@ -367,6 +391,8 @@ class AIServiceLanguageClient(object):
         """
         resource_path = "/actions/batchDetectLanguageSentiments"
         method = "POST"
+        operation_name = "batch_detect_language_sentiments"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectLanguageSentiments/BatchDetectLanguageSentiments"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -416,7 +442,10 @@ class AIServiceLanguageClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=batch_detect_language_sentiments_details,
-                response_type="BatchDetectLanguageSentimentsResult")
+                response_type="BatchDetectLanguageSentimentsResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -424,7 +453,10 @@ class AIServiceLanguageClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=batch_detect_language_sentiments_details,
-                response_type="BatchDetectLanguageSentimentsResult")
+                response_type="BatchDetectLanguageSentimentsResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def batch_detect_language_text_classification(self, batch_detect_language_text_classification_details, **kwargs):
         """
@@ -457,6 +489,8 @@ class AIServiceLanguageClient(object):
         """
         resource_path = "/actions/batchDetectLanguageTextClassification"
         method = "POST"
+        operation_name = "batch_detect_language_text_classification"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectLanguageTextClassification/BatchDetectLanguageTextClassification"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -491,14 +525,20 @@ class AIServiceLanguageClient(object):
                 method=method,
                 header_params=header_params,
                 body=batch_detect_language_text_classification_details,
-                response_type="BatchDetectLanguageTextClassificationResult")
+                response_type="BatchDetectLanguageTextClassificationResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=batch_detect_language_text_classification_details,
-                response_type="BatchDetectLanguageTextClassificationResult")
+                response_type="BatchDetectLanguageTextClassificationResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def detect_dominant_language(self, detect_dominant_language_details, **kwargs):
         """
@@ -531,6 +571,8 @@ class AIServiceLanguageClient(object):
         """
         resource_path = "/actions/detectDominantLanguage"
         method = "POST"
+        operation_name = "detect_dominant_language"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectDominantLanguage/DetectDominantLanguage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -565,14 +607,20 @@ class AIServiceLanguageClient(object):
                 method=method,
                 header_params=header_params,
                 body=detect_dominant_language_details,
-                response_type="DetectDominantLanguageResult")
+                response_type="DetectDominantLanguageResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=detect_dominant_language_details,
-                response_type="DetectDominantLanguageResult")
+                response_type="DetectDominantLanguageResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def detect_language_entities(self, detect_language_entities_details, **kwargs):
         """
@@ -614,6 +662,8 @@ class AIServiceLanguageClient(object):
         """
         resource_path = "/actions/detectLanguageEntities"
         method = "POST"
+        operation_name = "detect_language_entities"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectLanguageEntities/DetectLanguageEntities"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -664,7 +714,10 @@ class AIServiceLanguageClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=detect_language_entities_details,
-                response_type="DetectLanguageEntitiesResult")
+                response_type="DetectLanguageEntitiesResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -672,7 +725,10 @@ class AIServiceLanguageClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=detect_language_entities_details,
-                response_type="DetectLanguageEntitiesResult")
+                response_type="DetectLanguageEntitiesResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def detect_language_key_phrases(self, detect_language_key_phrases_details, **kwargs):
         """
@@ -705,6 +761,8 @@ class AIServiceLanguageClient(object):
         """
         resource_path = "/actions/detectLanguageKeyPhrases"
         method = "POST"
+        operation_name = "detect_language_key_phrases"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectLanguageKeyPhrases/DetectLanguageKeyPhrases"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -739,14 +797,20 @@ class AIServiceLanguageClient(object):
                 method=method,
                 header_params=header_params,
                 body=detect_language_key_phrases_details,
-                response_type="DetectLanguageKeyPhrasesResult")
+                response_type="DetectLanguageKeyPhrasesResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=detect_language_key_phrases_details,
-                response_type="DetectLanguageKeyPhrasesResult")
+                response_type="DetectLanguageKeyPhrasesResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def detect_language_sentiments(self, detect_language_sentiments_details, **kwargs):
         """
@@ -779,6 +843,8 @@ class AIServiceLanguageClient(object):
         """
         resource_path = "/actions/detectLanguageSentiments"
         method = "POST"
+        operation_name = "detect_language_sentiments"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectLanguageSentiments/DetectLanguageSentiments"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -813,14 +879,20 @@ class AIServiceLanguageClient(object):
                 method=method,
                 header_params=header_params,
                 body=detect_language_sentiments_details,
-                response_type="DetectLanguageSentimentsResult")
+                response_type="DetectLanguageSentimentsResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=detect_language_sentiments_details,
-                response_type="DetectLanguageSentimentsResult")
+                response_type="DetectLanguageSentimentsResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def detect_language_text_classification(self, detect_language_text_classification_details, **kwargs):
         """
@@ -853,6 +925,8 @@ class AIServiceLanguageClient(object):
         """
         resource_path = "/actions/detectLanguageTextClassification"
         method = "POST"
+        operation_name = "detect_language_text_classification"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectLanguageTextClassification/DetectLanguageTextClassification"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -887,11 +961,17 @@ class AIServiceLanguageClient(object):
                 method=method,
                 header_params=header_params,
                 body=detect_language_text_classification_details,
-                response_type="DetectLanguageTextClassificationResult")
+                response_type="DetectLanguageTextClassificationResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=detect_language_text_classification_details,
-                response_type="DetectLanguageTextClassificationResult")
+                response_type="DetectLanguageTextClassificationResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

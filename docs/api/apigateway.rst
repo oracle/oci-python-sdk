@@ -9,10 +9,14 @@ Apigateway
     oci.apigateway.ApiGatewayClient
     oci.apigateway.DeploymentClient
     oci.apigateway.GatewayClient
+    oci.apigateway.SubscribersClient
+    oci.apigateway.UsagePlansClient
     oci.apigateway.WorkRequestsClient
     oci.apigateway.ApiGatewayClientCompositeOperations
     oci.apigateway.DeploymentClientCompositeOperations
     oci.apigateway.GatewayClientCompositeOperations
+    oci.apigateway.SubscribersClientCompositeOperations
+    oci.apigateway.UsagePlansClientCompositeOperations
     oci.apigateway.WorkRequestsClientCompositeOperations
 
 --------
@@ -54,6 +58,10 @@ Apigateway
     oci.apigateway.models.ChangeCertificateCompartmentDetails
     oci.apigateway.models.ChangeDeploymentCompartmentDetails
     oci.apigateway.models.ChangeGatewayCompartmentDetails
+    oci.apigateway.models.ChangeSubscriberCompartmentDetails
+    oci.apigateway.models.ChangeUsagePlanCompartmentDetails
+    oci.apigateway.models.Client
+    oci.apigateway.models.ClientSummary
     oci.apigateway.models.ContentValidation
     oci.apigateway.models.CorsPolicy
     oci.apigateway.models.CreateApiDetails
@@ -61,10 +69,15 @@ Apigateway
     oci.apigateway.models.CreateDeploymentDetails
     oci.apigateway.models.CreateGatewayDetails
     oci.apigateway.models.CreateSdkDetails
+    oci.apigateway.models.CreateSubscriberDetails
+    oci.apigateway.models.CreateUsagePlanDetails
     oci.apigateway.models.CustomAuthenticationPolicy
     oci.apigateway.models.Deployment
     oci.apigateway.models.DeploymentCollection
     oci.apigateway.models.DeploymentSummary
+    oci.apigateway.models.Entitlement
+    oci.apigateway.models.EntitlementSummary
+    oci.apigateway.models.EntitlementTarget
     oci.apigateway.models.ExecutionLogPolicy
     oci.apigateway.models.ExternalRespCache
     oci.apigateway.models.FilterHeaderPolicy
@@ -93,6 +106,8 @@ Apigateway
     oci.apigateway.models.QueryParameterTransformationPolicy
     oci.apigateway.models.QueryParameterValidationItem
     oci.apigateway.models.QueryParameterValidationRequestPolicy
+    oci.apigateway.models.Quota
+    oci.apigateway.models.RateLimit
     oci.apigateway.models.RateLimitingPolicy
     oci.apigateway.models.RemoteJsonWebKeySet
     oci.apigateway.models.RenameHeaderPolicy
@@ -121,11 +136,20 @@ Apigateway
     oci.apigateway.models.StaticPublicKey
     oci.apigateway.models.StaticPublicKeySet
     oci.apigateway.models.StockResponseBackend
+    oci.apigateway.models.Subscriber
+    oci.apigateway.models.SubscriberCollection
+    oci.apigateway.models.SubscriberSummary
     oci.apigateway.models.UpdateApiDetails
     oci.apigateway.models.UpdateCertificateDetails
     oci.apigateway.models.UpdateDeploymentDetails
     oci.apigateway.models.UpdateGatewayDetails
     oci.apigateway.models.UpdateSdkDetails
+    oci.apigateway.models.UpdateSubscriberDetails
+    oci.apigateway.models.UpdateUsagePlanDetails
+    oci.apigateway.models.UsagePlan
+    oci.apigateway.models.UsagePlanCollection
+    oci.apigateway.models.UsagePlanSummary
+    oci.apigateway.models.UsagePlansPolicy
     oci.apigateway.models.ValidationRequestPolicy
     oci.apigateway.models.WorkRequest
     oci.apigateway.models.WorkRequestCollection

@@ -152,6 +152,8 @@ class RoverNodeClient(object):
         """
         resource_path = "/roverNodes/{roverNodeId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_rover_node_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverNode/ChangeRoverNodeCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -203,14 +205,20 @@ class RoverNodeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_rover_node_compartment_details)
+                body=change_rover_node_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_rover_node_compartment_details)
+                body=change_rover_node_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_rover_node(self, create_rover_node_details, **kwargs):
         """
@@ -250,6 +258,8 @@ class RoverNodeClient(object):
         """
         resource_path = "/roverNodes"
         method = "POST"
+        operation_name = "create_rover_node"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverNode/CreateRoverNode"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -289,14 +299,20 @@ class RoverNodeClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_rover_node_details,
-                response_type="RoverNode")
+                response_type="RoverNode",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_rover_node_details,
-                response_type="RoverNode")
+                response_type="RoverNode",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_rover_node(self, rover_node_id, **kwargs):
         """
@@ -343,6 +359,8 @@ class RoverNodeClient(object):
         """
         resource_path = "/roverNodes/{roverNodeId}"
         method = "DELETE"
+        operation_name = "delete_rover_node"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverNode/DeleteRoverNode"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -393,13 +411,19 @@ class RoverNodeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_rover_node(self, rover_node_id, **kwargs):
         """
@@ -432,6 +456,8 @@ class RoverNodeClient(object):
         """
         resource_path = "/roverNodes/{roverNodeId}"
         method = "GET"
+        operation_name = "get_rover_node"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverNode/GetRoverNode"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -478,14 +504,20 @@ class RoverNodeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="RoverNode")
+                response_type="RoverNode",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="RoverNode")
+                response_type="RoverNode",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_rover_node_certificate(self, rover_node_id, **kwargs):
         """
@@ -518,6 +550,8 @@ class RoverNodeClient(object):
         """
         resource_path = "/roverNodes/{roverNodeId}/certificate"
         method = "GET"
+        operation_name = "get_rover_node_certificate"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverNodeCertificate/GetRoverNodeCertificate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -564,14 +598,20 @@ class RoverNodeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="RoverNodeCertificate")
+                response_type="RoverNodeCertificate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="RoverNodeCertificate")
+                response_type="RoverNodeCertificate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_rover_node_encryption_key(self, rover_node_id, **kwargs):
         """
@@ -604,6 +644,8 @@ class RoverNodeClient(object):
         """
         resource_path = "/roverNodes/{roverNodeId}/encryptionKey"
         method = "GET"
+        operation_name = "get_rover_node_encryption_key"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverNodeEncryptionKey/GetRoverNodeEncryptionKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -650,14 +692,20 @@ class RoverNodeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="RoverNodeEncryptionKey")
+                response_type="RoverNodeEncryptionKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="RoverNodeEncryptionKey")
+                response_type="RoverNodeEncryptionKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_rover_node_get_rpt(self, rover_node_id, jwt, **kwargs):
         """
@@ -694,6 +742,8 @@ class RoverNodeClient(object):
         """
         resource_path = "/roverNodes/{roverNodeId}/getRpt"
         method = "GET"
+        operation_name = "get_rover_node_get_rpt"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverNodeGetRpt/GetRoverNodeGetRpt"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -741,14 +791,20 @@ class RoverNodeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="RoverNodeGetRpt")
+                response_type="RoverNodeGetRpt",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="RoverNodeGetRpt")
+                response_type="RoverNodeGetRpt",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_rover_nodes(self, compartment_id, **kwargs):
         """
@@ -813,6 +869,8 @@ class RoverNodeClient(object):
         """
         resource_path = "/roverNodes"
         method = "GET"
+        operation_name = "list_rover_nodes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverNode/ListRoverNodes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -898,14 +956,20 @@ class RoverNodeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RoverNodeCollection")
+                response_type="RoverNodeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RoverNodeCollection")
+                response_type="RoverNodeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def rover_node_action_set_key(self, rover_node_id, jwt, rover_node_action_set_key_details, **kwargs):
         """
@@ -959,6 +1023,8 @@ class RoverNodeClient(object):
         """
         resource_path = "/roverNodes/{roverNodeId}/actions/setKey"
         method = "POST"
+        operation_name = "rover_node_action_set_key"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverNodeSetKey/RoverNodeActionSetKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1012,7 +1078,10 @@ class RoverNodeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=rover_node_action_set_key_details,
-                response_type="RoverNodeSetKey")
+                response_type="RoverNodeSetKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1020,7 +1089,10 @@ class RoverNodeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=rover_node_action_set_key_details,
-                response_type="RoverNodeSetKey")
+                response_type="RoverNodeSetKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_rover_node(self, rover_node_id, update_rover_node_details, **kwargs):
         """
@@ -1063,6 +1135,8 @@ class RoverNodeClient(object):
         """
         resource_path = "/roverNodes/{roverNodeId}"
         method = "PUT"
+        operation_name = "update_rover_node"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverNode/UpdateRoverNode"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1112,7 +1186,10 @@ class RoverNodeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_rover_node_details,
-                response_type="RoverNode")
+                response_type="RoverNode",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1120,4 +1197,7 @@ class RoverNodeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_rover_node_details,
-                response_type="RoverNode")
+                response_type="RoverNode",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

@@ -107,7 +107,7 @@ import datetime
 import contextlib
 import os
 
-version = "22.03.29"
+version = "22.05.24"
 
 ##########################################################################
 # check OCI version
@@ -342,7 +342,9 @@ def set_parser_arguments(argsList=[]):
                 result = parser.parse_args(args=argsList)
                 return result
             except Exception:
-                return None
+                return False
+
+    result = parser.parse_args()
 
     if len(sys.argv) < 2:
         parser.print_help()

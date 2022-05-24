@@ -144,6 +144,8 @@ class QueryClient(object):
         """
         resource_path = "/queries/quickPicks"
         method = "GET"
+        operation_name = "list_quick_picks"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/QuickPickSummary/ListQuickPicks"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -187,14 +189,20 @@ class QueryClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[QuickPickSummary]")
+                response_type="list[QuickPickSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[QuickPickSummary]")
+                response_type="list[QuickPickSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def query(self, apm_domain_id, time_span_started_greater_than_or_equal_to, time_span_started_less_than, query_details, **kwargs):
         """
@@ -248,6 +256,8 @@ class QueryClient(object):
         """
         resource_path = "/queries/actions/runQuery"
         method = "POST"
+        operation_name = "query"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/QueryResultResponse/Query"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -294,7 +304,10 @@ class QueryClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=query_details,
-                response_type="QueryResultResponse")
+                response_type="QueryResultResponse",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -302,4 +315,7 @@ class QueryClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=query_details,
-                response_type="QueryResultResponse")
+                response_type="QueryResultResponse",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

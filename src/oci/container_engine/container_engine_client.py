@@ -146,6 +146,8 @@ class ContainerEngineClient(object):
         """
         resource_path = "/clusters/{clusterId}/actions/migrateToNativeVcn"
         method = "POST"
+        operation_name = "cluster_migrate_to_native_vcn"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/ClusterMigrateToNativeVcn"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -194,14 +196,20 @@ class ContainerEngineClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=cluster_migrate_to_native_vcn_details)
+                body=cluster_migrate_to_native_vcn_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=cluster_migrate_to_native_vcn_details)
+                body=cluster_migrate_to_native_vcn_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_cluster(self, create_cluster_details, **kwargs):
         """
@@ -239,6 +247,8 @@ class ContainerEngineClient(object):
         """
         resource_path = "/clusters"
         method = "POST"
+        operation_name = "create_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/CreateCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -277,13 +287,19 @@ class ContainerEngineClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_cluster_details)
+                body=create_cluster_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_cluster_details)
+                body=create_cluster_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_kubeconfig(self, cluster_id, **kwargs):
         """
@@ -320,6 +336,8 @@ class ContainerEngineClient(object):
         """
         resource_path = "/clusters/{clusterId}/kubeconfig/content"
         method = "POST"
+        operation_name = "create_kubeconfig"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/CreateKubeconfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -368,7 +386,10 @@ class ContainerEngineClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=kwargs.get('create_cluster_kubeconfig_content_details'),
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -376,7 +397,10 @@ class ContainerEngineClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=kwargs.get('create_cluster_kubeconfig_content_details'),
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_node_pool(self, create_node_pool_details, **kwargs):
         """
@@ -414,6 +438,8 @@ class ContainerEngineClient(object):
         """
         resource_path = "/nodePools"
         method = "POST"
+        operation_name = "create_node_pool"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/CreateNodePool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -452,13 +478,19 @@ class ContainerEngineClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_node_pool_details)
+                body=create_node_pool_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_node_pool_details)
+                body=create_node_pool_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_cluster(self, cluster_id, **kwargs):
         """
@@ -497,6 +529,8 @@ class ContainerEngineClient(object):
         """
         resource_path = "/clusters/{clusterId}"
         method = "DELETE"
+        operation_name = "delete_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/DeleteCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -544,13 +578,19 @@ class ContainerEngineClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_node_pool(self, node_pool_id, **kwargs):
         """
@@ -589,6 +629,8 @@ class ContainerEngineClient(object):
         """
         resource_path = "/nodePools/{nodePoolId}"
         method = "DELETE"
+        operation_name = "delete_node_pool"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/DeleteNodePool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -636,13 +678,19 @@ class ContainerEngineClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_work_request(self, work_request_id, **kwargs):
         """
@@ -681,6 +729,8 @@ class ContainerEngineClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
+        operation_name = "delete_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequest/DeleteWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -728,13 +778,19 @@ class ContainerEngineClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_cluster(self, cluster_id, **kwargs):
         """
@@ -768,6 +824,8 @@ class ContainerEngineClient(object):
         """
         resource_path = "/clusters/{clusterId}"
         method = "GET"
+        operation_name = "get_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/GetCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -814,14 +872,20 @@ class ContainerEngineClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Cluster")
+                response_type="Cluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Cluster")
+                response_type="Cluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_cluster_migrate_to_native_vcn_status(self, cluster_id, **kwargs):
         """
@@ -855,6 +919,8 @@ class ContainerEngineClient(object):
         """
         resource_path = "/clusters/{clusterId}/migrateToNativeVcnStatus"
         method = "GET"
+        operation_name = "get_cluster_migrate_to_native_vcn_status"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/ClusterMigrateToNativeVcnStatus/GetClusterMigrateToNativeVcnStatus"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -901,14 +967,20 @@ class ContainerEngineClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ClusterMigrateToNativeVcnStatus")
+                response_type="ClusterMigrateToNativeVcnStatus",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ClusterMigrateToNativeVcnStatus")
+                response_type="ClusterMigrateToNativeVcnStatus",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_cluster_options(self, cluster_option_id, **kwargs):
         """
@@ -945,6 +1017,8 @@ class ContainerEngineClient(object):
         """
         resource_path = "/clusterOptions/{clusterOptionId}"
         method = "GET"
+        operation_name = "get_cluster_options"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/ClusterOptions/GetClusterOptions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -998,7 +1072,10 @@ class ContainerEngineClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ClusterOptions")
+                response_type="ClusterOptions",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1006,7 +1083,10 @@ class ContainerEngineClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ClusterOptions")
+                response_type="ClusterOptions",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_node_pool(self, node_pool_id, **kwargs):
         """
@@ -1040,6 +1120,8 @@ class ContainerEngineClient(object):
         """
         resource_path = "/nodePools/{nodePoolId}"
         method = "GET"
+        operation_name = "get_node_pool"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/GetNodePool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1086,14 +1168,20 @@ class ContainerEngineClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="NodePool")
+                response_type="NodePool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="NodePool")
+                response_type="NodePool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_node_pool_options(self, node_pool_option_id, **kwargs):
         """
@@ -1130,6 +1218,8 @@ class ContainerEngineClient(object):
         """
         resource_path = "/nodePoolOptions/{nodePoolOptionId}"
         method = "GET"
+        operation_name = "get_node_pool_options"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePoolOptions/GetNodePoolOptions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1183,7 +1273,10 @@ class ContainerEngineClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="NodePoolOptions")
+                response_type="NodePoolOptions",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1191,7 +1284,10 @@ class ContainerEngineClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="NodePoolOptions")
+                response_type="NodePoolOptions",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1225,6 +1321,8 @@ class ContainerEngineClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1271,14 +1369,20 @@ class ContainerEngineClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_clusters(self, compartment_id, **kwargs):
         """
@@ -1343,6 +1447,8 @@ class ContainerEngineClient(object):
         """
         resource_path = "/clusters"
         method = "GET"
+        operation_name = "list_clusters"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/ClusterSummary/ListClusters"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1418,14 +1524,20 @@ class ContainerEngineClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ClusterSummary]")
+                response_type="list[ClusterSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ClusterSummary]")
+                response_type="list[ClusterSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_node_pools(self, compartment_id, **kwargs):
         """
@@ -1488,6 +1600,8 @@ class ContainerEngineClient(object):
         """
         resource_path = "/nodePools"
         method = "GET"
+        operation_name = "list_node_pools"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePoolSummary/ListNodePools"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1555,14 +1669,20 @@ class ContainerEngineClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[NodePoolSummary]")
+                response_type="list[NodePoolSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[NodePoolSummary]")
+                response_type="list[NodePoolSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, compartment_id, work_request_id, **kwargs):
         """
@@ -1599,6 +1719,8 @@ class ContainerEngineClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1651,7 +1773,10 @@ class ContainerEngineClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1659,7 +1784,10 @@ class ContainerEngineClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, compartment_id, work_request_id, **kwargs):
         """
@@ -1696,6 +1824,8 @@ class ContainerEngineClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1748,7 +1878,10 @@ class ContainerEngineClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLogEntry]")
+                response_type="list[WorkRequestLogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1756,7 +1889,10 @@ class ContainerEngineClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLogEntry]")
+                response_type="list[WorkRequestLogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -1827,6 +1963,8 @@ class ContainerEngineClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequestSummary/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1905,14 +2043,20 @@ class ContainerEngineClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestSummary]")
+                response_type="list[WorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestSummary]")
+                response_type="list[WorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_cluster(self, cluster_id, update_cluster_details, **kwargs):
         """
@@ -1954,6 +2098,8 @@ class ContainerEngineClient(object):
         """
         resource_path = "/clusters/{clusterId}"
         method = "PUT"
+        operation_name = "update_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/UpdateCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2002,14 +2148,20 @@ class ContainerEngineClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_cluster_details)
+                body=update_cluster_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_cluster_details)
+                body=update_cluster_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_cluster_endpoint_config(self, cluster_id, update_cluster_endpoint_config_details, **kwargs):
         """
@@ -2051,6 +2203,8 @@ class ContainerEngineClient(object):
         """
         resource_path = "/clusters/{clusterId}/actions/updateEndpointConfig"
         method = "POST"
+        operation_name = "update_cluster_endpoint_config"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/UpdateClusterEndpointConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2099,14 +2253,20 @@ class ContainerEngineClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_cluster_endpoint_config_details)
+                body=update_cluster_endpoint_config_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_cluster_endpoint_config_details)
+                body=update_cluster_endpoint_config_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_node_pool(self, node_pool_id, update_node_pool_details, **kwargs):
         """
@@ -2148,6 +2308,8 @@ class ContainerEngineClient(object):
         """
         resource_path = "/nodePools/{nodePoolId}"
         method = "PUT"
+        operation_name = "update_node_pool"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/UpdateNodePool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2196,11 +2358,17 @@ class ContainerEngineClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_node_pool_details)
+                body=update_node_pool_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_node_pool_details)
+                body=update_node_pool_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

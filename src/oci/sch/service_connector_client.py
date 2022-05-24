@@ -162,6 +162,8 @@ class ServiceConnectorClient(object):
         """
         resource_path = "/serviceConnectors/{serviceConnectorId}/actions/activate"
         method = "POST"
+        operation_name = "activate_service_connector"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/ActivateServiceConnector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -210,13 +212,19 @@ class ServiceConnectorClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_service_connector_compartment(self, service_connector_id, change_service_connector_compartment_details, **kwargs):
         """
@@ -268,6 +276,8 @@ class ServiceConnectorClient(object):
         """
         resource_path = "/serviceConnectors/{serviceConnectorId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_service_connector_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/ChangeServiceConnectorCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -314,14 +324,20 @@ class ServiceConnectorClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_service_connector_compartment_details)
+                body=change_service_connector_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_service_connector_compartment_details)
+                body=change_service_connector_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_service_connector(self, create_service_connector_details, **kwargs):
         """
@@ -387,6 +403,8 @@ class ServiceConnectorClient(object):
         """
         resource_path = "/serviceConnectors"
         method = "POST"
+        operation_name = "create_service_connector"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/CreateServiceConnector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -423,13 +441,19 @@ class ServiceConnectorClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_service_connector_details)
+                body=create_service_connector_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_service_connector_details)
+                body=create_service_connector_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def deactivate_service_connector(self, service_connector_id, **kwargs):
         """
@@ -486,6 +510,8 @@ class ServiceConnectorClient(object):
         """
         resource_path = "/serviceConnectors/{serviceConnectorId}/actions/deactivate"
         method = "POST"
+        operation_name = "deactivate_service_connector"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/DeactivateServiceConnector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -534,13 +560,19 @@ class ServiceConnectorClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_service_connector(self, service_connector_id, **kwargs):
         """
@@ -586,6 +618,8 @@ class ServiceConnectorClient(object):
         """
         resource_path = "/serviceConnectors/{serviceConnectorId}"
         method = "DELETE"
+        operation_name = "delete_service_connector"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/DeleteServiceConnector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -631,13 +665,19 @@ class ServiceConnectorClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_service_connector(self, service_connector_id, **kwargs):
         """
@@ -673,6 +713,8 @@ class ServiceConnectorClient(object):
         """
         resource_path = "/serviceConnectors/{serviceConnectorId}"
         method = "GET"
+        operation_name = "get_service_connector"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/GetServiceConnector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -717,14 +759,20 @@ class ServiceConnectorClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ServiceConnector")
+                response_type="ServiceConnector",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ServiceConnector")
+                response_type="ServiceConnector",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -760,6 +808,8 @@ class ServiceConnectorClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -804,14 +854,20 @@ class ServiceConnectorClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_service_connectors(self, compartment_id, **kwargs):
         """
@@ -884,6 +940,8 @@ class ServiceConnectorClient(object):
         """
         resource_path = "/serviceConnectors"
         method = "GET"
+        operation_name = "list_service_connectors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/ListServiceConnectors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -956,14 +1014,20 @@ class ServiceConnectorClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ServiceConnectorCollection")
+                response_type="ServiceConnectorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ServiceConnectorCollection")
+                response_type="ServiceConnectorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -1013,6 +1077,8 @@ class ServiceConnectorClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1066,7 +1132,10 @@ class ServiceConnectorClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1074,7 +1143,10 @@ class ServiceConnectorClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -1124,6 +1196,8 @@ class ServiceConnectorClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1177,7 +1251,10 @@ class ServiceConnectorClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1185,7 +1262,10 @@ class ServiceConnectorClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -1235,6 +1315,8 @@ class ServiceConnectorClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1278,14 +1360,20 @@ class ServiceConnectorClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestCollection")
+                response_type="WorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestCollection")
+                response_type="WorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_service_connector(self, service_connector_id, update_service_connector_details, **kwargs):
         """
@@ -1335,6 +1423,8 @@ class ServiceConnectorClient(object):
         """
         resource_path = "/serviceConnectors/{serviceConnectorId}"
         method = "PUT"
+        operation_name = "update_service_connector"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/UpdateServiceConnector"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1381,11 +1471,17 @@ class ServiceConnectorClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_service_connector_details)
+                body=update_service_connector_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_service_connector_details)
+                body=update_service_connector_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

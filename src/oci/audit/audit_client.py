@@ -135,6 +135,8 @@ class AuditClient(object):
         """
         resource_path = "/configuration"
         method = "GET"
+        operation_name = "get_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/audit/20190901/Configuration/GetConfiguration"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -167,14 +169,20 @@ class AuditClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Configuration")
+                response_type="Configuration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Configuration")
+                response_type="Configuration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_events(self, compartment_id, start_time, end_time, **kwargs):
         """
@@ -240,6 +248,8 @@ class AuditClient(object):
         """
         resource_path = "/auditEvents"
         method = "GET"
+        operation_name = "list_events"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/audit/20190901/AuditEvent/ListEvents"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -283,14 +293,20 @@ class AuditClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AuditEvent]")
+                response_type="list[AuditEvent]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AuditEvent]")
+                response_type="list[AuditEvent]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_configuration(self, compartment_id, update_configuration_details, **kwargs):
         """
@@ -323,6 +339,8 @@ class AuditClient(object):
         """
         resource_path = "/configuration"
         method = "PUT"
+        operation_name = "update_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/audit/20190901/Configuration/UpdateConfiguration"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -355,11 +373,17 @@ class AuditClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                body=update_configuration_details)
+                body=update_configuration_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                body=update_configuration_details)
+                body=update_configuration_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

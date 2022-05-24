@@ -156,6 +156,8 @@ class HealthChecksClient(object):
         """
         resource_path = "/httpMonitors/{monitorId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_http_monitor_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpMonitor/ChangeHttpMonitorCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -205,14 +207,20 @@ class HealthChecksClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_http_monitor_compartment_details)
+                body=change_http_monitor_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_http_monitor_compartment_details)
+                body=change_http_monitor_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_ping_monitor_compartment(self, monitor_id, change_ping_monitor_compartment_details, **kwargs):
         """
@@ -264,6 +272,8 @@ class HealthChecksClient(object):
         """
         resource_path = "/pingMonitors/{monitorId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_ping_monitor_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingMonitor/ChangePingMonitorCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -313,14 +323,20 @@ class HealthChecksClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_ping_monitor_compartment_details)
+                body=change_ping_monitor_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_ping_monitor_compartment_details)
+                body=change_ping_monitor_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_http_monitor(self, create_http_monitor_details, **kwargs):
         """
@@ -364,6 +380,8 @@ class HealthChecksClient(object):
         """
         resource_path = "/httpMonitors"
         method = "POST"
+        operation_name = "create_http_monitor"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpMonitor/CreateHttpMonitor"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -401,14 +419,20 @@ class HealthChecksClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_http_monitor_details,
-                response_type="HttpMonitor")
+                response_type="HttpMonitor",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_http_monitor_details,
-                response_type="HttpMonitor")
+                response_type="HttpMonitor",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_on_demand_http_probe(self, create_on_demand_http_probe_details, **kwargs):
         """
@@ -445,6 +469,8 @@ class HealthChecksClient(object):
         """
         resource_path = "/httpProbeResults"
         method = "POST"
+        operation_name = "create_on_demand_http_probe"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpProbe/CreateOnDemandHttpProbe"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -479,14 +505,20 @@ class HealthChecksClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_on_demand_http_probe_details,
-                response_type="HttpProbe")
+                response_type="HttpProbe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_on_demand_http_probe_details,
-                response_type="HttpProbe")
+                response_type="HttpProbe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_on_demand_ping_probe(self, create_on_demand_ping_probe_details, **kwargs):
         """
@@ -523,6 +555,8 @@ class HealthChecksClient(object):
         """
         resource_path = "/pingProbeResults"
         method = "POST"
+        operation_name = "create_on_demand_ping_probe"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingProbe/CreateOnDemandPingProbe"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -557,14 +591,20 @@ class HealthChecksClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_on_demand_ping_probe_details,
-                response_type="PingProbe")
+                response_type="PingProbe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_on_demand_ping_probe_details,
-                response_type="PingProbe")
+                response_type="PingProbe",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_ping_monitor(self, create_ping_monitor_details, **kwargs):
         """
@@ -608,6 +648,8 @@ class HealthChecksClient(object):
         """
         resource_path = "/pingMonitors"
         method = "POST"
+        operation_name = "create_ping_monitor"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingMonitor/CreatePingMonitor"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -645,14 +687,20 @@ class HealthChecksClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_ping_monitor_details,
-                response_type="PingMonitor")
+                response_type="PingMonitor",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_ping_monitor_details,
-                response_type="PingMonitor")
+                response_type="PingMonitor",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_http_monitor(self, monitor_id, **kwargs):
         """
@@ -693,6 +741,8 @@ class HealthChecksClient(object):
         """
         resource_path = "/httpMonitors/{monitorId}"
         method = "DELETE"
+        operation_name = "delete_http_monitor"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpMonitor/DeleteHttpMonitor"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -738,13 +788,19 @@ class HealthChecksClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_ping_monitor(self, monitor_id, **kwargs):
         """
@@ -785,6 +841,8 @@ class HealthChecksClient(object):
         """
         resource_path = "/pingMonitors/{monitorId}"
         method = "DELETE"
+        operation_name = "delete_ping_monitor"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingMonitor/DeletePingMonitor"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -830,13 +888,19 @@ class HealthChecksClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_http_monitor(self, monitor_id, **kwargs):
         """
@@ -876,6 +940,8 @@ class HealthChecksClient(object):
         """
         resource_path = "/httpMonitors/{monitorId}"
         method = "GET"
+        operation_name = "get_http_monitor"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpMonitor/GetHttpMonitor"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -922,14 +988,20 @@ class HealthChecksClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="HttpMonitor")
+                response_type="HttpMonitor",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="HttpMonitor")
+                response_type="HttpMonitor",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_ping_monitor(self, monitor_id, **kwargs):
         """
@@ -969,6 +1041,8 @@ class HealthChecksClient(object):
         """
         resource_path = "/pingMonitors/{monitorId}"
         method = "GET"
+        operation_name = "get_ping_monitor"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingMonitor/GetPingMonitor"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1015,14 +1089,20 @@ class HealthChecksClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PingMonitor")
+                response_type="PingMonitor",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PingMonitor")
+                response_type="PingMonitor",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_health_checks_vantage_points(self, **kwargs):
         """
@@ -1076,6 +1156,8 @@ class HealthChecksClient(object):
         """
         resource_path = "/vantagePoints"
         method = "GET"
+        operation_name = "list_health_checks_vantage_points"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HealthChecksVantagePointSummary/ListHealthChecksVantagePoints"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1140,14 +1222,20 @@ class HealthChecksClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[HealthChecksVantagePointSummary]")
+                response_type="list[HealthChecksVantagePointSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[HealthChecksVantagePointSummary]")
+                response_type="list[HealthChecksVantagePointSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_http_monitors(self, compartment_id, **kwargs):
         """
@@ -1204,6 +1292,8 @@ class HealthChecksClient(object):
         """
         resource_path = "/httpMonitors"
         method = "GET"
+        operation_name = "list_http_monitors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpMonitorSummary/ListHttpMonitors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1269,14 +1359,20 @@ class HealthChecksClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[HttpMonitorSummary]")
+                response_type="list[HttpMonitorSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[HttpMonitorSummary]")
+                response_type="list[HttpMonitorSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_http_probe_results(self, probe_configuration_id, **kwargs):
         """
@@ -1333,6 +1429,8 @@ class HealthChecksClient(object):
         """
         resource_path = "/httpProbeResults/{probeConfigurationId}"
         method = "GET"
+        operation_name = "list_http_probe_results"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpProbeResultSummary/ListHttpProbeResults"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1401,7 +1499,10 @@ class HealthChecksClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[HttpProbeResultSummary]")
+                response_type="list[HttpProbeResultSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1409,7 +1510,10 @@ class HealthChecksClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[HttpProbeResultSummary]")
+                response_type="list[HttpProbeResultSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_ping_monitors(self, compartment_id, **kwargs):
         """
@@ -1469,6 +1573,8 @@ class HealthChecksClient(object):
         """
         resource_path = "/pingMonitors"
         method = "GET"
+        operation_name = "list_ping_monitors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingMonitorSummary/ListPingMonitors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1534,14 +1640,20 @@ class HealthChecksClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PingMonitorSummary]")
+                response_type="list[PingMonitorSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PingMonitorSummary]")
+                response_type="list[PingMonitorSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_ping_probe_results(self, probe_configuration_id, **kwargs):
         """
@@ -1602,6 +1714,8 @@ class HealthChecksClient(object):
         """
         resource_path = "/pingProbeResults/{probeConfigurationId}"
         method = "GET"
+        operation_name = "list_ping_probe_results"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingProbeResultSummary/ListPingProbeResults"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1670,7 +1784,10 @@ class HealthChecksClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PingProbeResultSummary]")
+                response_type="list[PingProbeResultSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1678,7 +1795,10 @@ class HealthChecksClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[PingProbeResultSummary]")
+                response_type="list[PingProbeResultSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_http_monitor(self, monitor_id, update_http_monitor_details, **kwargs):
         """
@@ -1723,6 +1843,8 @@ class HealthChecksClient(object):
         """
         resource_path = "/httpMonitors/{monitorId}"
         method = "PUT"
+        operation_name = "update_http_monitor"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/HttpMonitor/UpdateHttpMonitor"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1770,7 +1892,10 @@ class HealthChecksClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_http_monitor_details,
-                response_type="HttpMonitor")
+                response_type="HttpMonitor",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1778,7 +1903,10 @@ class HealthChecksClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_http_monitor_details,
-                response_type="HttpMonitor")
+                response_type="HttpMonitor",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_ping_monitor(self, monitor_id, update_ping_monitor_details, **kwargs):
         """
@@ -1823,6 +1951,8 @@ class HealthChecksClient(object):
         """
         resource_path = "/pingMonitors/{monitorId}"
         method = "PUT"
+        operation_name = "update_ping_monitor"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/healthchecks/20180501/PingMonitor/UpdatePingMonitor"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1870,7 +2000,10 @@ class HealthChecksClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_ping_monitor_details,
-                response_type="PingMonitor")
+                response_type="PingMonitor",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1878,4 +2011,7 @@ class HealthChecksClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_ping_monitor_details,
-                response_type="PingMonitor")
+                response_type="PingMonitor",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

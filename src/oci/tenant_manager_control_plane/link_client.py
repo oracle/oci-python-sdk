@@ -142,6 +142,8 @@ class LinkClient(object):
         """
         resource_path = "/links/{linkId}"
         method = "DELETE"
+        operation_name = "delete_link"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Link/DeleteLink"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -187,13 +189,19 @@ class LinkClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_link(self, link_id, **kwargs):
         """
@@ -226,6 +234,8 @@ class LinkClient(object):
         """
         resource_path = "/links/{linkId}"
         method = "GET"
+        operation_name = "get_link"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Link/GetLink"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -270,14 +280,20 @@ class LinkClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Link")
+                response_type="Link",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Link")
+                response_type="Link",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_links(self, **kwargs):
         """
@@ -329,6 +345,8 @@ class LinkClient(object):
         """
         resource_path = "/links"
         method = "GET"
+        operation_name = "list_links"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Link/ListLinks"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -393,11 +411,17 @@ class LinkClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LinkCollection")
+                response_type="LinkCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LinkCollection")
+                response_type="LinkCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
