@@ -64,6 +64,10 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
             Allowed values for this property are: "NONE", "BM_ENCRYPTION_IN_TRANSIT"
         :type encryption_in_transit_type: str
 
+        :param is_agent_auto_iscsi_login_enabled:
+            The value to assign to the is_agent_auto_iscsi_login_enabled property of this AttachIScsiVolumeDetails.
+        :type is_agent_auto_iscsi_login_enabled: bool
+
         """
         self.swagger_types = {
             'device': 'str',
@@ -74,7 +78,8 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
             'type': 'str',
             'volume_id': 'str',
             'use_chap': 'bool',
-            'encryption_in_transit_type': 'str'
+            'encryption_in_transit_type': 'str',
+            'is_agent_auto_iscsi_login_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -86,7 +91,8 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
             'type': 'type',
             'volume_id': 'volumeId',
             'use_chap': 'useChap',
-            'encryption_in_transit_type': 'encryptionInTransitType'
+            'encryption_in_transit_type': 'encryptionInTransitType',
+            'is_agent_auto_iscsi_login_enabled': 'isAgentAutoIscsiLoginEnabled'
         }
 
         self._device = None
@@ -98,6 +104,7 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
         self._volume_id = None
         self._use_chap = None
         self._encryption_in_transit_type = None
+        self._is_agent_auto_iscsi_login_enabled = None
         self._type = 'iscsi'
 
     @property
@@ -157,6 +164,30 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
                 .format(allowed_values)
             )
         self._encryption_in_transit_type = encryption_in_transit_type
+
+    @property
+    def is_agent_auto_iscsi_login_enabled(self):
+        """
+        Gets the is_agent_auto_iscsi_login_enabled of this AttachIScsiVolumeDetails.
+        Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+
+
+        :return: The is_agent_auto_iscsi_login_enabled of this AttachIScsiVolumeDetails.
+        :rtype: bool
+        """
+        return self._is_agent_auto_iscsi_login_enabled
+
+    @is_agent_auto_iscsi_login_enabled.setter
+    def is_agent_auto_iscsi_login_enabled(self, is_agent_auto_iscsi_login_enabled):
+        """
+        Sets the is_agent_auto_iscsi_login_enabled of this AttachIScsiVolumeDetails.
+        Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
+
+
+        :param is_agent_auto_iscsi_login_enabled: The is_agent_auto_iscsi_login_enabled of this AttachIScsiVolumeDetails.
+        :type: bool
+        """
+        self._is_agent_auto_iscsi_login_enabled = is_agent_auto_iscsi_login_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

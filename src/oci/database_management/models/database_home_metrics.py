@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DatabaseHomeMetrics(object):
     """
-    The response containing the metric collection for a specific database.
+    The response containing the metric collection for a specific Managed Database.
     """
 
     def __init__(self, **kwargs):

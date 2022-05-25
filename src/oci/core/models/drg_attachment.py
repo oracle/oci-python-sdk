@@ -153,7 +153,7 @@ class DrgAttachment(object):
         **[Required]** Gets the compartment_id of this DrgAttachment.
         The `OCID`__ of the compartment containing the DRG attachment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DrgAttachment.
@@ -167,7 +167,7 @@ class DrgAttachment(object):
         Sets the compartment_id of this DrgAttachment.
         The `OCID`__ of the compartment containing the DRG attachment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DrgAttachment.
@@ -207,7 +207,7 @@ class DrgAttachment(object):
         **[Required]** Gets the drg_id of this DrgAttachment.
         The `OCID`__ of the DRG.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The drg_id of this DrgAttachment.
@@ -221,7 +221,7 @@ class DrgAttachment(object):
         Sets the drg_id of this DrgAttachment.
         The `OCID`__ of the DRG.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param drg_id: The drg_id of this DrgAttachment.
@@ -235,7 +235,7 @@ class DrgAttachment(object):
         **[Required]** Gets the id of this DrgAttachment.
         The DRG attachment's Oracle ID (`OCID`__).
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DrgAttachment.
@@ -249,7 +249,7 @@ class DrgAttachment(object):
         Sets the id of this DrgAttachment.
         The DRG attachment's Oracle ID (`OCID`__).
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DrgAttachment.
@@ -455,7 +455,7 @@ class DrgAttachment(object):
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The route_table_id of this DrgAttachment.
@@ -479,7 +479,7 @@ class DrgAttachment(object):
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param route_table_id: The route_table_id of this DrgAttachment.
@@ -494,8 +494,8 @@ class DrgAttachment(object):
         The `OCID`__ of the VCN.
         This field is deprecated. Instead, use the `networkDetails` field to view the `OCID`__ of the attached resource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this DrgAttachment.
@@ -510,8 +510,8 @@ class DrgAttachment(object):
         The `OCID`__ of the VCN.
         This field is deprecated. Instead, use the `networkDetails` field to view the `OCID`__ of the attached resource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this DrgAttachment.
@@ -527,7 +527,7 @@ class DrgAttachment(object):
         are advertised to the attachment.
         If this value is null, no routes are advertised through this attachment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The export_drg_route_distribution_id of this DrgAttachment.
@@ -543,7 +543,7 @@ class DrgAttachment(object):
         are advertised to the attachment.
         If this value is null, no routes are advertised through this attachment.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param export_drg_route_distribution_id: The export_drg_route_distribution_id of this DrgAttachment.

@@ -935,9 +935,9 @@ class BlockstorageClient(object):
     def copy_volume_group_backup(self, volume_group_backup_id, copy_volume_group_backup_details, **kwargs):
         """
         Creates a volume group backup copy in specified region. For general information about volume group backups,
-        see `Overview of Block Volume Service Backups`__
+        see `Overview of Block Volume Backups`__.
 
-        __ https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumebackups.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumebackups.htm
 
 
         :param str volume_group_backup_id: (required)

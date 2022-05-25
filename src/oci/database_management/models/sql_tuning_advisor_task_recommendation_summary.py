@@ -84,6 +84,10 @@ class SqlTuningAdvisorTaskRecommendationSummary(object):
             The value to assign to the implement_action_sql property of this SqlTuningAdvisorTaskRecommendationSummary.
         :type implement_action_sql: str
 
+        :param is_parallel_execution:
+            The value to assign to the is_parallel_execution property of this SqlTuningAdvisorTaskRecommendationSummary.
+        :type is_parallel_execution: bool
+
         """
         self.swagger_types = {
             'sql_tuning_advisor_task_id': 'int',
@@ -94,7 +98,8 @@ class SqlTuningAdvisorTaskRecommendationSummary(object):
             'recommendation': 'str',
             'rationale': 'str',
             'benefit': 'float',
-            'implement_action_sql': 'str'
+            'implement_action_sql': 'str',
+            'is_parallel_execution': 'bool'
         }
 
         self.attribute_map = {
@@ -106,7 +111,8 @@ class SqlTuningAdvisorTaskRecommendationSummary(object):
             'recommendation': 'recommendation',
             'rationale': 'rationale',
             'benefit': 'benefit',
-            'implement_action_sql': 'implementActionSql'
+            'implement_action_sql': 'implementActionSql',
+            'is_parallel_execution': 'isParallelExecution'
         }
 
         self._sql_tuning_advisor_task_id = None
@@ -118,6 +124,7 @@ class SqlTuningAdvisorTaskRecommendationSummary(object):
         self._rationale = None
         self._benefit = None
         self._implement_action_sql = None
+        self._is_parallel_execution = None
 
     @property
     def sql_tuning_advisor_task_id(self):
@@ -348,6 +355,30 @@ class SqlTuningAdvisorTaskRecommendationSummary(object):
         :type: str
         """
         self._implement_action_sql = implement_action_sql
+
+    @property
+    def is_parallel_execution(self):
+        """
+        Gets the is_parallel_execution of this SqlTuningAdvisorTaskRecommendationSummary.
+        Indicates whether a SQL Profile recommendation uses parallel execution.
+
+
+        :return: The is_parallel_execution of this SqlTuningAdvisorTaskRecommendationSummary.
+        :rtype: bool
+        """
+        return self._is_parallel_execution
+
+    @is_parallel_execution.setter
+    def is_parallel_execution(self, is_parallel_execution):
+        """
+        Sets the is_parallel_execution of this SqlTuningAdvisorTaskRecommendationSummary.
+        Indicates whether a SQL Profile recommendation uses parallel execution.
+
+
+        :param is_parallel_execution: The is_parallel_execution of this SqlTuningAdvisorTaskRecommendationSummary.
+        :type: bool
+        """
+        self._is_parallel_execution = is_parallel_execution
 
     def __repr__(self):
         return formatted_flat_dict(self)

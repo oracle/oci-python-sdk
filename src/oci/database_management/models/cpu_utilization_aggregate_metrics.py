@@ -22,16 +22,23 @@ class CpuUtilizationAggregateMetrics(object):
             The value to assign to the cpu_utilization property of this CpuUtilizationAggregateMetrics.
         :type cpu_utilization: oci.database_management.models.MetricDataPoint
 
+        :param cpu_statistics:
+            The value to assign to the cpu_statistics property of this CpuUtilizationAggregateMetrics.
+        :type cpu_statistics: oci.database_management.models.MetricStatisticsDefinition
+
         """
         self.swagger_types = {
-            'cpu_utilization': 'MetricDataPoint'
+            'cpu_utilization': 'MetricDataPoint',
+            'cpu_statistics': 'MetricStatisticsDefinition'
         }
 
         self.attribute_map = {
-            'cpu_utilization': 'cpuUtilization'
+            'cpu_utilization': 'cpuUtilization',
+            'cpu_statistics': 'cpuStatistics'
         }
 
         self._cpu_utilization = None
+        self._cpu_statistics = None
 
     @property
     def cpu_utilization(self):
@@ -52,6 +59,26 @@ class CpuUtilizationAggregateMetrics(object):
         :type: oci.database_management.models.MetricDataPoint
         """
         self._cpu_utilization = cpu_utilization
+
+    @property
+    def cpu_statistics(self):
+        """
+        Gets the cpu_statistics of this CpuUtilizationAggregateMetrics.
+
+        :return: The cpu_statistics of this CpuUtilizationAggregateMetrics.
+        :rtype: oci.database_management.models.MetricStatisticsDefinition
+        """
+        return self._cpu_statistics
+
+    @cpu_statistics.setter
+    def cpu_statistics(self, cpu_statistics):
+        """
+        Sets the cpu_statistics of this CpuUtilizationAggregateMetrics.
+
+        :param cpu_statistics: The cpu_statistics of this CpuUtilizationAggregateMetrics.
+        :type: oci.database_management.models.MetricStatisticsDefinition
+        """
+        self._cpu_statistics = cpu_statistics
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -11,7 +11,7 @@ from oci.decorators import init_model_state_from_kwargs
 class TimeSeriesMetricDefinition(object):
     """
     The response object representing time series metric details
-    for a specific database at a particular time.
+    for a specific Managed Database at a particular time.
     """
 
     def __init__(self, **kwargs):

@@ -30,22 +30,29 @@ class NodePoolPlacementConfigDetails(object):
             The value to assign to the capacity_reservation_id property of this NodePoolPlacementConfigDetails.
         :type capacity_reservation_id: str
 
+        :param fault_domains:
+            The value to assign to the fault_domains property of this NodePoolPlacementConfigDetails.
+        :type fault_domains: list[str]
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
             'subnet_id': 'str',
-            'capacity_reservation_id': 'str'
+            'capacity_reservation_id': 'str',
+            'fault_domains': 'list[str]'
         }
 
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'subnet_id': 'subnetId',
-            'capacity_reservation_id': 'capacityReservationId'
+            'capacity_reservation_id': 'capacityReservationId',
+            'fault_domains': 'faultDomains'
         }
 
         self._availability_domain = None
         self._subnet_id = None
         self._capacity_reservation_id = None
+        self._fault_domains = None
 
     @property
     def availability_domain(self):
@@ -120,6 +127,30 @@ class NodePoolPlacementConfigDetails(object):
         :type: str
         """
         self._capacity_reservation_id = capacity_reservation_id
+
+    @property
+    def fault_domains(self):
+        """
+        Gets the fault_domains of this NodePoolPlacementConfigDetails.
+        A list of fault domains in which to place nodes.
+
+
+        :return: The fault_domains of this NodePoolPlacementConfigDetails.
+        :rtype: list[str]
+        """
+        return self._fault_domains
+
+    @fault_domains.setter
+    def fault_domains(self, fault_domains):
+        """
+        Sets the fault_domains of this NodePoolPlacementConfigDetails.
+        A list of fault domains in which to place nodes.
+
+
+        :param fault_domains: The fault_domains of this NodePoolPlacementConfigDetails.
+        :type: list[str]
+        """
+        self._fault_domains = fault_domains
 
     def __repr__(self):
         return formatted_flat_dict(self)

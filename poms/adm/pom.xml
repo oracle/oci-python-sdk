@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.amw</groupId>
         <artifactId>amw-sdk-client</artifactId>
-        <version>1.0.5</version>
+        <version>1.0.12</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

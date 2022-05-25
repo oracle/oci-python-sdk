@@ -35,7 +35,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str subnet_id: (required)
             The `OCID`__ of the subnet.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.AddSubnetIpv6CidrDetails add_subnet_ipv6_cidr_details: (required)
             Details object for adding an IPv6 CIDR to a subnet.
@@ -238,7 +238,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str capture_filter_id: (required)
             The `OCID`__ of the capture filter.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeCaptureFilterCompartmentDetails change_capture_filter_compartment_details: (required)
             Request to change the compartment of a VTAP.
@@ -278,7 +278,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str drg_id: (required)
             The `OCID`__ of the DRG.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeDrgCompartmentDetails change_drg_compartment_details: (required)
             Request to change the compartment of a DRG.
@@ -318,7 +318,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str subnet_id: (required)
             The `OCID`__ of the subnet.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeSubnetCompartmentDetails change_subnet_compartment_details: (required)
             Request to change the compartment of a given subnet.
@@ -438,7 +438,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str vtap_id: (required)
             The `OCID`__ of the VTAP.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.ChangeVtapCompartmentDetails change_vtap_compartment_details: (required)
             Request to change the compartment that contains a VTAP.
@@ -1503,7 +1503,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str capture_filter_id: (required)
             The `OCID`__ of the capture filter.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.CaptureFilter.lifecycle_state`
@@ -1552,7 +1552,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str cross_connect_id: (required)
             The `OCID`__ of the cross-connect.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.CrossConnect.lifecycle_state`
@@ -1601,7 +1601,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str cross_connect_group_id: (required)
             The `OCID`__ of the cross-connect group.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.CrossConnectGroup.lifecycle_state`
@@ -1650,7 +1650,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str dhcp_id: (required)
             The `OCID`__ for the set of DHCP options.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.DhcpOptions.lifecycle_state`
@@ -1699,7 +1699,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str drg_id: (required)
             The `OCID`__ of the DRG.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.Drg.lifecycle_state`
@@ -1895,7 +1895,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str ig_id: (required)
             The `OCID`__ of the internet gateway.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.InternetGateway.lifecycle_state`
@@ -1944,7 +1944,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str ipsc_id: (required)
             The `OCID`__ of the IPSec connection.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.IPSecConnection.lifecycle_state`
@@ -2042,7 +2042,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str local_peering_gateway_id: (required)
             The `OCID`__ of the local peering gateway.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.LocalPeeringGateway.lifecycle_state`
@@ -2189,7 +2189,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str public_ip_id: (required)
             The `OCID`__ of the public IP.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.PublicIp.lifecycle_state`
@@ -2287,7 +2287,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str remote_peering_connection_id: (required)
             The `OCID`__ of the remote peering connection (RPC).
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.RemotePeeringConnection.lifecycle_state`
@@ -2336,7 +2336,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str rt_id: (required)
             The `OCID`__ of the route table.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.RouteTable.lifecycle_state`
@@ -2385,7 +2385,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str security_list_id: (required)
             The `OCID`__ of the security list.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.SecurityList.lifecycle_state`
@@ -2483,7 +2483,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str subnet_id: (required)
             The `OCID`__ of the subnet.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.Subnet.lifecycle_state`
@@ -2581,7 +2581,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str virtual_circuit_id: (required)
             The `OCID`__ of the virtual circuit.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.VirtualCircuit.lifecycle_state`
@@ -2679,7 +2679,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str vtap_id: (required)
             The `OCID`__ of the VTAP.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -2879,7 +2879,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str subnet_id: (required)
             The `OCID`__ of the subnet.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.RemoveSubnetIpv6CidrDetails remove_subnet_ipv6_cidr_details: (required)
             Details object for removing an IPv6 SUBNET CIDR.
@@ -3082,7 +3082,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str capture_filter_id: (required)
             The `OCID`__ of the capture filter.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateCaptureFilterDetails update_capture_filter_details: (required)
             Details object for updating a VTAP.
@@ -3125,7 +3125,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str cross_connect_id: (required)
             The `OCID`__ of the cross-connect.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateCrossConnectDetails update_cross_connect_details: (required)
             Update CrossConnect fields.
@@ -3168,7 +3168,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str cross_connect_group_id: (required)
             The `OCID`__ of the cross-connect group.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateCrossConnectGroupDetails update_cross_connect_group_details: (required)
             Update CrossConnectGroup fields
@@ -3211,7 +3211,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str dhcp_id: (required)
             The `OCID`__ for the set of DHCP options.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateDhcpDetails update_dhcp_details: (required)
             Request object for updating a set of DHCP options.
@@ -3254,7 +3254,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str drg_id: (required)
             The `OCID`__ of the DRG.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateDrgDetails update_drg_details: (required)
             Details object for updating a DRG.
@@ -3426,7 +3426,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str ig_id: (required)
             The `OCID`__ of the internet gateway.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateInternetGatewayDetails update_internet_gateway_details: (required)
             Details for updating the internet gateway.
@@ -3469,7 +3469,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str ipsc_id: (required)
             The `OCID`__ of the IPSec connection.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateIPSecConnectionDetails update_ip_sec_connection_details: (required)
             Details object for updating an IPSec connection.
@@ -3512,7 +3512,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str ipsc_id: (required)
             The `OCID`__ of the IPSec connection.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str tunnel_id: (required)
             The `OCID`__ of the tunnel.
@@ -3603,7 +3603,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str local_peering_gateway_id: (required)
             The `OCID`__ of the local peering gateway.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateLocalPeeringGatewayDetails update_local_peering_gateway_details: (required)
             Details object for updating a local peering gateway.
@@ -3732,7 +3732,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str public_ip_id: (required)
             The `OCID`__ of the public IP.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdatePublicIpDetails update_public_ip_details: (required)
             Public IP details.
@@ -3818,7 +3818,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str remote_peering_connection_id: (required)
             The `OCID`__ of the remote peering connection (RPC).
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateRemotePeeringConnectionDetails update_remote_peering_connection_details: (required)
             Request to the update the peering connection to remote region
@@ -3861,7 +3861,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str rt_id: (required)
             The `OCID`__ of the route table.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateRouteTableDetails update_route_table_details: (required)
             Details object for updating a route table.
@@ -3904,7 +3904,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str security_list_id: (required)
             The `OCID`__ of the security list.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateSecurityListDetails update_security_list_details: (required)
             Updated details for the security list.
@@ -3990,7 +3990,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str subnet_id: (required)
             The `OCID`__ of the subnet.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateSubnetDetails update_subnet_details: (required)
             Details object for updating a subnet.
@@ -4076,7 +4076,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str virtual_circuit_id: (required)
             The `OCID`__ of the virtual circuit.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateVirtualCircuitDetails update_virtual_circuit_details: (required)
             Update VirtualCircuit fields.
@@ -4162,7 +4162,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str vnic_id: (required)
             The `OCID`__ of the VNIC.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateVnicDetails update_vnic_details: (required)
             Details object for updating a VNIC.
@@ -4205,7 +4205,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str vtap_id: (required)
             The `OCID`__ of the VTAP.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateVtapDetails update_vtap_details: (required)
             Details object for updating a VTAP.
@@ -4245,7 +4245,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str vtap_id: (required)
             The `OCID`__ of the VTAP.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateVtapDetails update_vtap_details: (required)
             Details object for updating a VTAP.
@@ -4288,7 +4288,7 @@ class VirtualNetworkClientCompositeOperations(object):
         :param str drg_id: (required)
             The `OCID`__ of the DRG.
 
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`

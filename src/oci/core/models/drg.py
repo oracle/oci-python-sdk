@@ -14,14 +14,14 @@ class Drg(object):
     network traffic between networks. You use it with other Networking
     Service components to create a connection to your on-premises network using `Site-to-Site VPN`__ or a connection that uses
     `FastConnect`__. For more information, see
-    `Overview of the Networking Service`__.
+    `Networking Overview`__.
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingIPsec.htm
-    __ https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPsec.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
     __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm
     __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
@@ -126,7 +126,7 @@ class Drg(object):
         **[Required]** Gets the compartment_id of this Drg.
         The `OCID`__ of the compartment containing the DRG.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Drg.
@@ -140,7 +140,7 @@ class Drg(object):
         Sets the compartment_id of this Drg.
         The `OCID`__ of the compartment containing the DRG.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Drg.
@@ -248,7 +248,7 @@ class Drg(object):
         **[Required]** Gets the id of this Drg.
         The DRG's Oracle ID (`OCID`__).
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Drg.
@@ -262,7 +262,7 @@ class Drg(object):
         Sets the id of this Drg.
         The DRG's Oracle ID (`OCID`__).
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Drg.
@@ -358,7 +358,7 @@ class Drg(object):
         Gets the default_export_drg_route_distribution_id of this Drg.
         The `OCID`__ of this DRG's default export route distribution for the DRG attachments.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The default_export_drg_route_distribution_id of this Drg.
@@ -372,7 +372,7 @@ class Drg(object):
         Sets the default_export_drg_route_distribution_id of this Drg.
         The `OCID`__ of this DRG's default export route distribution for the DRG attachments.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param default_export_drg_route_distribution_id: The default_export_drg_route_distribution_id of this Drg.

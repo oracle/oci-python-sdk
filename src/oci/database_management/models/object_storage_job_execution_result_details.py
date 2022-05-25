@@ -141,7 +141,7 @@ class ObjectStorageJobExecutionResultDetails(JobExecutionResultDetails):
     def row_count(self):
         """
         Gets the row_count of this ObjectStorageJobExecutionResultDetails.
-        The number of rows returned in the result. Only applicable for QUERY SqlType.
+        The number of rows returned in the result for the Query SqlType.
 
 
         :return: The row_count of this ObjectStorageJobExecutionResultDetails.
@@ -153,7 +153,7 @@ class ObjectStorageJobExecutionResultDetails(JobExecutionResultDetails):
     def row_count(self, row_count):
         """
         Sets the row_count of this ObjectStorageJobExecutionResultDetails.
-        The number of rows returned in the result. Only applicable for QUERY SqlType.
+        The number of rows returned in the result for the Query SqlType.
 
 
         :param row_count: The row_count of this ObjectStorageJobExecutionResultDetails.

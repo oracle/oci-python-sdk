@@ -104,6 +104,10 @@ class UserSummary(object):
             The value to assign to the time_created property of this UserSummary.
         :type time_created: datetime
 
+        :param time_locked:
+            The value to assign to the time_locked property of this UserSummary.
+        :type time_locked: datetime
+
         :param profile:
             The value to assign to the profile property of this UserSummary.
         :type profile: str
@@ -116,6 +120,7 @@ class UserSummary(object):
             'default_tablespace': 'str',
             'temp_tablespace': 'str',
             'time_created': 'datetime',
+            'time_locked': 'datetime',
             'profile': 'str'
         }
 
@@ -126,6 +131,7 @@ class UserSummary(object):
             'default_tablespace': 'defaultTablespace',
             'temp_tablespace': 'tempTablespace',
             'time_created': 'timeCreated',
+            'time_locked': 'timeLocked',
             'profile': 'profile'
         }
 
@@ -135,6 +141,7 @@ class UserSummary(object):
         self._default_tablespace = None
         self._temp_tablespace = None
         self._time_created = None
+        self._time_locked = None
         self._profile = None
 
     @property
@@ -288,10 +295,34 @@ class UserSummary(object):
         self._time_created = time_created
 
     @property
+    def time_locked(self):
+        """
+        Gets the time_locked of this UserSummary.
+        The date the account was locked, if the status of the account is LOCKED.
+
+
+        :return: The time_locked of this UserSummary.
+        :rtype: datetime
+        """
+        return self._time_locked
+
+    @time_locked.setter
+    def time_locked(self, time_locked):
+        """
+        Sets the time_locked of this UserSummary.
+        The date the account was locked, if the status of the account is LOCKED.
+
+
+        :param time_locked: The time_locked of this UserSummary.
+        :type: datetime
+        """
+        self._time_locked = time_locked
+
+    @property
     def profile(self):
         """
         **[Required]** Gets the profile of this UserSummary.
-        The User resource profile name.
+        The profile name of the user.
 
 
         :return: The profile of this UserSummary.
@@ -303,7 +334,7 @@ class UserSummary(object):
     def profile(self, profile):
         """
         Sets the profile of this UserSummary.
-        The User resource profile name.
+        The profile name of the user.
 
 
         :param profile: The profile of this UserSummary.

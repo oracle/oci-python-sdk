@@ -98,13 +98,17 @@ from .job_schedule_details import JobScheduleDetails
 from .job_summary import JobSummary
 from .managed_database import ManagedDatabase
 from .managed_database_collection import ManagedDatabaseCollection
+from .managed_database_credential import ManagedDatabaseCredential
 from .managed_database_group import ManagedDatabaseGroup
 from .managed_database_group_collection import ManagedDatabaseGroupCollection
 from .managed_database_group_summary import ManagedDatabaseGroupSummary
+from .managed_database_password_credential import ManagedDatabasePasswordCredential
+from .managed_database_secret_credential import ManagedDatabaseSecretCredential
 from .managed_database_summary import ManagedDatabaseSummary
 from .memory_aggregate_metrics import MemoryAggregateMetrics
 from .metric_data_point import MetricDataPoint
 from .metric_dimension_definition import MetricDimensionDefinition
+from .metric_statistics_definition import MetricStatisticsDefinition
 from .object_privilege_collection import ObjectPrivilegeCollection
 from .object_privilege_summary import ObjectPrivilegeSummary
 from .object_storage_job_execution_result_details import ObjectStorageJobExecutionResultDetails
@@ -273,13 +277,17 @@ database_management_type_mapping = {
     "JobSummary": JobSummary,
     "ManagedDatabase": ManagedDatabase,
     "ManagedDatabaseCollection": ManagedDatabaseCollection,
+    "ManagedDatabaseCredential": ManagedDatabaseCredential,
     "ManagedDatabaseGroup": ManagedDatabaseGroup,
     "ManagedDatabaseGroupCollection": ManagedDatabaseGroupCollection,
     "ManagedDatabaseGroupSummary": ManagedDatabaseGroupSummary,
+    "ManagedDatabasePasswordCredential": ManagedDatabasePasswordCredential,
+    "ManagedDatabaseSecretCredential": ManagedDatabaseSecretCredential,
     "ManagedDatabaseSummary": ManagedDatabaseSummary,
     "MemoryAggregateMetrics": MemoryAggregateMetrics,
     "MetricDataPoint": MetricDataPoint,
     "MetricDimensionDefinition": MetricDimensionDefinition,
+    "MetricStatisticsDefinition": MetricStatisticsDefinition,
     "ObjectPrivilegeCollection": ObjectPrivilegeCollection,
     "ObjectPrivilegeSummary": ObjectPrivilegeSummary,
     "ObjectStorageJobExecutionResultDetails": ObjectStorageJobExecutionResultDetails,

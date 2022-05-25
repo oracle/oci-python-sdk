@@ -91,7 +91,7 @@ class DatabaseStorageAggregateMetrics(object):
     def storage_used_by_table_space(self):
         """
         Gets the storage_used_by_table_space of this DatabaseStorageAggregateMetrics.
-        A list of the storage metrics grouped by TableSpace for a specific database.
+        A list of the storage metrics grouped by TableSpace for a specific Managed Database.
 
 
         :return: The storage_used_by_table_space of this DatabaseStorageAggregateMetrics.
@@ -103,7 +103,7 @@ class DatabaseStorageAggregateMetrics(object):
     def storage_used_by_table_space(self, storage_used_by_table_space):
         """
         Sets the storage_used_by_table_space of this DatabaseStorageAggregateMetrics.
-        A list of the storage metrics grouped by TableSpace for a specific database.
+        A list of the storage metrics grouped by TableSpace for a specific Managed Database.
 
 
         :param storage_used_by_table_space: The storage_used_by_table_space of this DatabaseStorageAggregateMetrics.

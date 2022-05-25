@@ -277,7 +277,7 @@ class Vtap(object):
         **[Required]** Gets the compartment_id of this Vtap.
         The `OCID`__ of the compartment containing the `Vtap` resource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Vtap.
@@ -291,7 +291,7 @@ class Vtap(object):
         Sets the compartment_id of this Vtap.
         The `OCID`__ of the compartment containing the `Vtap` resource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Vtap.
@@ -305,7 +305,7 @@ class Vtap(object):
         **[Required]** Gets the vcn_id of this Vtap.
         The `OCID`__ of the VCN containing the `Vtap` resource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this Vtap.
@@ -319,7 +319,7 @@ class Vtap(object):
         Sets the vcn_id of this Vtap.
         The `OCID`__ of the VCN containing the `Vtap` resource.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this Vtap.
@@ -427,7 +427,7 @@ class Vtap(object):
         **[Required]** Gets the id of this Vtap.
         The VTAP's Oracle ID (`OCID`__).
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Vtap.
@@ -441,7 +441,7 @@ class Vtap(object):
         Sets the id of this Vtap.
         The VTAP's Oracle ID (`OCID`__).
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Vtap.
@@ -547,7 +547,7 @@ class Vtap(object):
         **[Required]** Gets the source_id of this Vtap.
         The `OCID`__ of the source point where packets are captured.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The source_id of this Vtap.
@@ -561,7 +561,7 @@ class Vtap(object):
         Sets the source_id of this Vtap.
         The `OCID`__ of the source point where packets are captured.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param source_id: The source_id of this Vtap.
@@ -575,7 +575,7 @@ class Vtap(object):
         Gets the target_id of this Vtap.
         The `OCID`__ of the destination resource where mirrored packets are sent.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The target_id of this Vtap.
@@ -589,7 +589,7 @@ class Vtap(object):
         Sets the target_id of this Vtap.
         The `OCID`__ of the destination resource where mirrored packets are sent.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param target_id: The target_id of this Vtap.
@@ -627,7 +627,7 @@ class Vtap(object):
         **[Required]** Gets the capture_filter_id of this Vtap.
         The capture filter's Oracle ID (`OCID`__).
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The capture_filter_id of this Vtap.
@@ -641,7 +641,7 @@ class Vtap(object):
         Sets the capture_filter_id of this Vtap.
         The capture filter's Oracle ID (`OCID`__).
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param capture_filter_id: The capture_filter_id of this Vtap.
@@ -877,7 +877,7 @@ class Vtap(object):
         Gets the source_private_endpoint_subnet_id of this Vtap.
         The `OCID`__ of the subnet that source private endpoint belongs to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The source_private_endpoint_subnet_id of this Vtap.
@@ -891,7 +891,7 @@ class Vtap(object):
         Sets the source_private_endpoint_subnet_id of this Vtap.
         The `OCID`__ of the subnet that source private endpoint belongs to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param source_private_endpoint_subnet_id: The source_private_endpoint_subnet_id of this Vtap.

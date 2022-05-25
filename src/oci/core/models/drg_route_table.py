@@ -161,7 +161,7 @@ class DrgRouteTable(object):
         The `OCID`__ of the compartment the DRG is in. The DRG route table
         is always in the same compartment as the DRG.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DrgRouteTable.
@@ -176,7 +176,7 @@ class DrgRouteTable(object):
         The `OCID`__ of the compartment the DRG is in. The DRG route table
         is always in the same compartment as the DRG.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DrgRouteTable.
@@ -190,7 +190,7 @@ class DrgRouteTable(object):
         **[Required]** Gets the drg_id of this DrgRouteTable.
         The `OCID`__ of the DRG the DRG that contains this route table.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The drg_id of this DrgRouteTable.
@@ -204,7 +204,7 @@ class DrgRouteTable(object):
         Sets the drg_id of this DrgRouteTable.
         The `OCID`__ of the DRG the DRG that contains this route table.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param drg_id: The drg_id of this DrgRouteTable.
@@ -375,7 +375,7 @@ class DrgRouteTable(object):
         The `OCID`__ of the import route distribution used to specify how incoming route advertisements from
         referenced attachments are inserted into the DRG route table.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The import_drg_route_distribution_id of this DrgRouteTable.
@@ -390,7 +390,7 @@ class DrgRouteTable(object):
         The `OCID`__ of the import route distribution used to specify how incoming route advertisements from
         referenced attachments are inserted into the DRG route table.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param import_drg_route_distribution_id: The import_drg_route_distribution_id of this DrgRouteTable.

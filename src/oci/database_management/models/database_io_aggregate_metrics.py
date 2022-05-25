@@ -26,25 +26,39 @@ class DatabaseIOAggregateMetrics(object):
             The value to assign to the io_throughput property of this DatabaseIOAggregateMetrics.
         :type io_throughput: list[oci.database_management.models.MetricDataPoint]
 
+        :param iops_statistics:
+            The value to assign to the iops_statistics property of this DatabaseIOAggregateMetrics.
+        :type iops_statistics: list[oci.database_management.models.MetricStatisticsDefinition]
+
+        :param io_throughput_statistics:
+            The value to assign to the io_throughput_statistics property of this DatabaseIOAggregateMetrics.
+        :type io_throughput_statistics: list[oci.database_management.models.MetricStatisticsDefinition]
+
         """
         self.swagger_types = {
             'iops': 'list[MetricDataPoint]',
-            'io_throughput': 'list[MetricDataPoint]'
+            'io_throughput': 'list[MetricDataPoint]',
+            'iops_statistics': 'list[MetricStatisticsDefinition]',
+            'io_throughput_statistics': 'list[MetricStatisticsDefinition]'
         }
 
         self.attribute_map = {
             'iops': 'iops',
-            'io_throughput': 'ioThroughput'
+            'io_throughput': 'ioThroughput',
+            'iops_statistics': 'iopsStatistics',
+            'io_throughput_statistics': 'ioThroughputStatistics'
         }
 
         self._iops = None
         self._io_throughput = None
+        self._iops_statistics = None
+        self._io_throughput_statistics = None
 
     @property
     def iops(self):
         """
         Gets the iops of this DatabaseIOAggregateMetrics.
-        A list of the Input/Output Operations Per Second metrics grouped by IOType for a specific database.
+        The Input/Output Operations Per Second metrics grouped by IOType for a specific Managed Database.
 
 
         :return: The iops of this DatabaseIOAggregateMetrics.
@@ -56,7 +70,7 @@ class DatabaseIOAggregateMetrics(object):
     def iops(self, iops):
         """
         Sets the iops of this DatabaseIOAggregateMetrics.
-        A list of the Input/Output Operations Per Second metrics grouped by IOType for a specific database.
+        The Input/Output Operations Per Second metrics grouped by IOType for a specific Managed Database.
 
 
         :param iops: The iops of this DatabaseIOAggregateMetrics.
@@ -68,7 +82,7 @@ class DatabaseIOAggregateMetrics(object):
     def io_throughput(self):
         """
         Gets the io_throughput of this DatabaseIOAggregateMetrics.
-        A list of the IOThroughput metrics grouped for a specific database.
+        The IOThroughput metrics grouped by IOType for a specific Managed Database.
 
 
         :return: The io_throughput of this DatabaseIOAggregateMetrics.
@@ -80,13 +94,61 @@ class DatabaseIOAggregateMetrics(object):
     def io_throughput(self, io_throughput):
         """
         Sets the io_throughput of this DatabaseIOAggregateMetrics.
-        A list of the IOThroughput metrics grouped for a specific database.
+        The IOThroughput metrics grouped by IOType for a specific Managed Database.
 
 
         :param io_throughput: The io_throughput of this DatabaseIOAggregateMetrics.
         :type: list[oci.database_management.models.MetricDataPoint]
         """
         self._io_throughput = io_throughput
+
+    @property
+    def iops_statistics(self):
+        """
+        Gets the iops_statistics of this DatabaseIOAggregateMetrics.
+        The Input/Output metric statistics such as min, max, mean, lowerQuartile, and upperQuartile.
+
+
+        :return: The iops_statistics of this DatabaseIOAggregateMetrics.
+        :rtype: list[oci.database_management.models.MetricStatisticsDefinition]
+        """
+        return self._iops_statistics
+
+    @iops_statistics.setter
+    def iops_statistics(self, iops_statistics):
+        """
+        Sets the iops_statistics of this DatabaseIOAggregateMetrics.
+        The Input/Output metric statistics such as min, max, mean, lowerQuartile, and upperQuartile.
+
+
+        :param iops_statistics: The iops_statistics of this DatabaseIOAggregateMetrics.
+        :type: list[oci.database_management.models.MetricStatisticsDefinition]
+        """
+        self._iops_statistics = iops_statistics
+
+    @property
+    def io_throughput_statistics(self):
+        """
+        Gets the io_throughput_statistics of this DatabaseIOAggregateMetrics.
+        The IOThroughput metric statistics such as min, max, mean, lowerQuartile, and upperQuartile.
+
+
+        :return: The io_throughput_statistics of this DatabaseIOAggregateMetrics.
+        :rtype: list[oci.database_management.models.MetricStatisticsDefinition]
+        """
+        return self._io_throughput_statistics
+
+    @io_throughput_statistics.setter
+    def io_throughput_statistics(self, io_throughput_statistics):
+        """
+        Sets the io_throughput_statistics of this DatabaseIOAggregateMetrics.
+        The IOThroughput metric statistics such as min, max, mean, lowerQuartile, and upperQuartile.
+
+
+        :param io_throughput_statistics: The io_throughput_statistics of this DatabaseIOAggregateMetrics.
+        :type: list[oci.database_management.models.MetricStatisticsDefinition]
+        """
+        self._io_throughput_statistics = io_throughput_statistics
 
     def __repr__(self):
         return formatted_flat_dict(self)

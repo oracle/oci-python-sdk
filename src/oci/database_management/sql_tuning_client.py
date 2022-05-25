@@ -465,7 +465,7 @@ class SqlTuningClient(object):
         :param str attribute: (required)
             The attribute of the SQL execution plan.
 
-            Allowed values are: "ORIGINAL", "ORIGINAL_WITH_ADJUSTED_COST", "USING_SQL_PROFILE", "USING_NEW_INDICES"
+            Allowed values are: "ORIGINAL", "ORIGINAL_WITH_ADJUSTED_COST", "USING_SQL_PROFILE", "USING_NEW_INDICES", "USING_PARALLEL_EXECUTION"
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -515,7 +515,7 @@ class SqlTuningClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
-        attribute_allowed_values = ["ORIGINAL", "ORIGINAL_WITH_ADJUSTED_COST", "USING_SQL_PROFILE", "USING_NEW_INDICES"]
+        attribute_allowed_values = ["ORIGINAL", "ORIGINAL_WITH_ADJUSTED_COST", "USING_SQL_PROFILE", "USING_NEW_INDICES", "USING_PARALLEL_EXECUTION"]
         if attribute not in attribute_allowed_values:
             raise ValueError(
                 "Invalid value for `attribute`, must be one of {0}".format(attribute_allowed_values)
