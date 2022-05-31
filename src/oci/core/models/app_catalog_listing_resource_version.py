@@ -220,12 +220,12 @@ class AppCatalogListingResourceVersion(object):
         Gets the available_regions of this AppCatalogListingResourceVersion.
         List of regions that this listing resource version is available.
 
-        For information about Regions, see
-        `Regions`__.
+        For information about regions, see
+        `Regions and Availability Domains`__.
 
         Example: `[\"us-ashburn-1\", \"us-phoenix-1\"]`
 
-        __ https://docs.cloud.oracle.com/#General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm
 
 
         :return: The available_regions of this AppCatalogListingResourceVersion.
@@ -239,12 +239,12 @@ class AppCatalogListingResourceVersion(object):
         Sets the available_regions of this AppCatalogListingResourceVersion.
         List of regions that this listing resource version is available.
 
-        For information about Regions, see
-        `Regions`__.
+        For information about regions, see
+        `Regions and Availability Domains`__.
 
         Example: `[\"us-ashburn-1\", \"us-phoenix-1\"]`
 
-        __ https://docs.cloud.oracle.com/#General/Concepts/regions.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm
 
 
         :param available_regions: The available_regions of this AppCatalogListingResourceVersion.
@@ -258,7 +258,7 @@ class AppCatalogListingResourceVersion(object):
         Gets the compatible_shapes of this AppCatalogListingResourceVersion.
         Array of shapes compatible with this resource.
 
-        You may enumerate all available shapes by calling :func:`list_shapes`.
+        You can enumerate all available shapes by calling :func:`list_shapes`.
 
         Example: `[\"VM.Standard1.1\", \"VM.Standard1.2\"]`
 
@@ -274,7 +274,7 @@ class AppCatalogListingResourceVersion(object):
         Sets the compatible_shapes of this AppCatalogListingResourceVersion.
         Array of shapes compatible with this resource.
 
-        You may enumerate all available shapes by calling :func:`list_shapes`.
+        You can enumerate all available shapes by calling :func:`list_shapes`.
 
         Example: `[\"VM.Standard1.1\", \"VM.Standard1.2\"]`
 

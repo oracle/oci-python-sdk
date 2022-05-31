@@ -66,7 +66,7 @@ class DefaultDrgRouteTables(object):
         The `OCID`__ of the default DRG route table to be assigned to DRG attachments
         of type VCN on creation.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn of this DefaultDrgRouteTables.
@@ -81,7 +81,7 @@ class DefaultDrgRouteTables(object):
         The `OCID`__ of the default DRG route table to be assigned to DRG attachments
         of type VCN on creation.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcn: The vcn of this DefaultDrgRouteTables.

@@ -218,7 +218,7 @@ class DrgRouteRule(object):
 
         A value of `BLACKHOLE` means traffic for this route is discarded without notification.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The next_hop_drg_attachment_id of this DrgRouteRule.
@@ -235,7 +235,7 @@ class DrgRouteRule(object):
 
         A value of `BLACKHOLE` means traffic for this route is discarded without notification.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param next_hop_drg_attachment_id: The next_hop_drg_attachment_id of this DrgRouteRule.

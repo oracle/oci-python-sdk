@@ -19,6 +19,7 @@ from .private_endpoint_summary import PrivateEndpointSummary
 from .run import Run
 from .run_log_summary import RunLogSummary
 from .run_summary import RunSummary
+from .shape_config import ShapeConfig
 from .update_application_details import UpdateApplicationDetails
 from .update_private_endpoint_details import UpdatePrivateEndpointDetails
 from .update_run_details import UpdateRunDetails
@@ -48,6 +49,7 @@ data_flow_type_mapping = {
     "Run": Run,
     "RunLogSummary": RunLogSummary,
     "RunSummary": RunSummary,
+    "ShapeConfig": ShapeConfig,
     "UpdateApplicationDetails": UpdateApplicationDetails,
     "UpdatePrivateEndpointDetails": UpdatePrivateEndpointDetails,
     "UpdateRunDetails": UpdateRunDetails,

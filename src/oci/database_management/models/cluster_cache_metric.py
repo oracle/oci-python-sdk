@@ -38,7 +38,7 @@ class ClusterCacheMetric(object):
     def cluster_cache_metrics(self):
         """
         **[Required]** Gets the cluster_cache_metrics of this ClusterCacheMetric.
-        A list of cluster cache metrics for a specific database.
+        A list of cluster cache metrics for a specific Managed Database.
 
 
         :return: The cluster_cache_metrics of this ClusterCacheMetric.
@@ -50,7 +50,7 @@ class ClusterCacheMetric(object):
     def cluster_cache_metrics(self, cluster_cache_metrics):
         """
         Sets the cluster_cache_metrics of this ClusterCacheMetric.
-        A list of cluster cache metrics for a specific database.
+        A list of cluster cache metrics for a specific Managed Database.
 
 
         :param cluster_cache_metrics: The cluster_cache_metrics of this ClusterCacheMetric.

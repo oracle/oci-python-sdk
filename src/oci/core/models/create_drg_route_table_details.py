@@ -197,7 +197,7 @@ class CreateDrgRouteTableDetails(object):
         The `OCID`__ of the import route distribution used to specify how incoming route advertisements through
         referenced attachments are inserted into the DRG route table.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The import_drg_route_distribution_id of this CreateDrgRouteTableDetails.
@@ -212,7 +212,7 @@ class CreateDrgRouteTableDetails(object):
         The `OCID`__ of the import route distribution used to specify how incoming route advertisements through
         referenced attachments are inserted into the DRG route table.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param import_drg_route_distribution_id: The import_drg_route_distribution_id of this CreateDrgRouteTableDetails.

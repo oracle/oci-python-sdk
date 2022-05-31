@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AsmPropertyCollection(object):
     """
-    A collection of ASM properties for a specific database.
+    A collection of ASM properties for a specific Managed Database.
     """
 
     def __init__(self, **kwargs):

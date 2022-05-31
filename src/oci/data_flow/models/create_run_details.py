@@ -90,6 +90,10 @@ class CreateRunDetails(object):
             The value to assign to the driver_shape property of this CreateRunDetails.
         :type driver_shape: str
 
+        :param driver_shape_config:
+            The value to assign to the driver_shape_config property of this CreateRunDetails.
+        :type driver_shape_config: oci.data_flow.models.ShapeConfig
+
         :param execute:
             The value to assign to the execute property of this CreateRunDetails.
         :type execute: str
@@ -97,6 +101,10 @@ class CreateRunDetails(object):
         :param executor_shape:
             The value to assign to the executor_shape property of this CreateRunDetails.
         :type executor_shape: str
+
+        :param executor_shape_config:
+            The value to assign to the executor_shape_config property of this CreateRunDetails.
+        :type executor_shape_config: oci.data_flow.models.ShapeConfig
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateRunDetails.
@@ -141,8 +149,10 @@ class CreateRunDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'driver_shape': 'str',
+            'driver_shape_config': 'ShapeConfig',
             'execute': 'str',
             'executor_shape': 'str',
+            'executor_shape_config': 'ShapeConfig',
             'freeform_tags': 'dict(str, str)',
             'logs_bucket_uri': 'str',
             'metastore_id': 'str',
@@ -162,8 +172,10 @@ class CreateRunDetails(object):
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'driver_shape': 'driverShape',
+            'driver_shape_config': 'driverShapeConfig',
             'execute': 'execute',
             'executor_shape': 'executorShape',
+            'executor_shape_config': 'executorShapeConfig',
             'freeform_tags': 'freeformTags',
             'logs_bucket_uri': 'logsBucketUri',
             'metastore_id': 'metastoreId',
@@ -182,8 +194,10 @@ class CreateRunDetails(object):
         self._defined_tags = None
         self._display_name = None
         self._driver_shape = None
+        self._driver_shape_config = None
         self._execute = None
         self._executor_shape = None
+        self._executor_shape_config = None
         self._freeform_tags = None
         self._logs_bucket_uri = None
         self._metastore_id = None
@@ -416,6 +430,26 @@ class CreateRunDetails(object):
         self._driver_shape = driver_shape
 
     @property
+    def driver_shape_config(self):
+        """
+        Gets the driver_shape_config of this CreateRunDetails.
+
+        :return: The driver_shape_config of this CreateRunDetails.
+        :rtype: oci.data_flow.models.ShapeConfig
+        """
+        return self._driver_shape_config
+
+    @driver_shape_config.setter
+    def driver_shape_config(self, driver_shape_config):
+        """
+        Sets the driver_shape_config of this CreateRunDetails.
+
+        :param driver_shape_config: The driver_shape_config of this CreateRunDetails.
+        :type: oci.data_flow.models.ShapeConfig
+        """
+        self._driver_shape_config = driver_shape_config
+
+    @property
     def execute(self):
         """
         Gets the execute of this CreateRunDetails.
@@ -470,6 +504,26 @@ class CreateRunDetails(object):
         :type: str
         """
         self._executor_shape = executor_shape
+
+    @property
+    def executor_shape_config(self):
+        """
+        Gets the executor_shape_config of this CreateRunDetails.
+
+        :return: The executor_shape_config of this CreateRunDetails.
+        :rtype: oci.data_flow.models.ShapeConfig
+        """
+        return self._executor_shape_config
+
+    @executor_shape_config.setter
+    def executor_shape_config(self, executor_shape_config):
+        """
+        Sets the executor_shape_config of this CreateRunDetails.
+
+        :param executor_shape_config: The executor_shape_config of this CreateRunDetails.
+        :type: oci.data_flow.models.ShapeConfig
+        """
+        self._executor_shape_config = executor_shape_config
 
     @property
     def freeform_tags(self):

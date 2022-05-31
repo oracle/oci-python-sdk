@@ -21,6 +21,10 @@ class DatabaseFleetHealthMetrics(object):
     #: This constant has a value of "DAY"
     COMPARE_TYPE_DAY = "DAY"
 
+    #: A constant which can be used with the compare_type property of a DatabaseFleetHealthMetrics.
+    #: This constant has a value of "WEEK"
+    COMPARE_TYPE_WEEK = "WEEK"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DatabaseFleetHealthMetrics object with values from keyword arguments.
@@ -36,7 +40,7 @@ class DatabaseFleetHealthMetrics(object):
 
         :param compare_type:
             The value to assign to the compare_type property of this DatabaseFleetHealthMetrics.
-            Allowed values for this property are: "HOUR", "DAY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "HOUR", "DAY", "WEEK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type compare_type: str
 
@@ -131,7 +135,7 @@ class DatabaseFleetHealthMetrics(object):
         Gets the compare_type of this DatabaseFleetHealthMetrics.
         The time window used for metrics comparison.
 
-        Allowed values for this property are: "HOUR", "DAY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "HOUR", "DAY", "WEEK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -150,7 +154,7 @@ class DatabaseFleetHealthMetrics(object):
         :param compare_type: The compare_type of this DatabaseFleetHealthMetrics.
         :type: str
         """
-        allowed_values = ["HOUR", "DAY"]
+        allowed_values = ["HOUR", "DAY", "WEEK"]
         if not value_allowed_none_or_none_sentinel(compare_type, allowed_values):
             compare_type = 'UNKNOWN_ENUM_VALUE'
         self._compare_type = compare_type

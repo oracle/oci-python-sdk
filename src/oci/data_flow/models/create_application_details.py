@@ -78,6 +78,10 @@ class CreateApplicationDetails(object):
             The value to assign to the driver_shape property of this CreateApplicationDetails.
         :type driver_shape: str
 
+        :param driver_shape_config:
+            The value to assign to the driver_shape_config property of this CreateApplicationDetails.
+        :type driver_shape_config: oci.data_flow.models.ShapeConfig
+
         :param execute:
             The value to assign to the execute property of this CreateApplicationDetails.
         :type execute: str
@@ -85,6 +89,10 @@ class CreateApplicationDetails(object):
         :param executor_shape:
             The value to assign to the executor_shape property of this CreateApplicationDetails.
         :type executor_shape: str
+
+        :param executor_shape_config:
+            The value to assign to the executor_shape_config property of this CreateApplicationDetails.
+        :type executor_shape_config: oci.data_flow.models.ShapeConfig
 
         :param file_uri:
             The value to assign to the file_uri property of this CreateApplicationDetails.
@@ -143,8 +151,10 @@ class CreateApplicationDetails(object):
             'description': 'str',
             'display_name': 'str',
             'driver_shape': 'str',
+            'driver_shape_config': 'ShapeConfig',
             'execute': 'str',
             'executor_shape': 'str',
+            'executor_shape_config': 'ShapeConfig',
             'file_uri': 'str',
             'freeform_tags': 'dict(str, str)',
             'language': 'str',
@@ -168,8 +178,10 @@ class CreateApplicationDetails(object):
             'description': 'description',
             'display_name': 'displayName',
             'driver_shape': 'driverShape',
+            'driver_shape_config': 'driverShapeConfig',
             'execute': 'execute',
             'executor_shape': 'executorShape',
+            'executor_shape_config': 'executorShapeConfig',
             'file_uri': 'fileUri',
             'freeform_tags': 'freeformTags',
             'language': 'language',
@@ -192,8 +204,10 @@ class CreateApplicationDetails(object):
         self._description = None
         self._display_name = None
         self._driver_shape = None
+        self._driver_shape_config = None
         self._execute = None
         self._executor_shape = None
+        self._executor_shape_config = None
         self._file_uri = None
         self._freeform_tags = None
         self._language = None
@@ -453,6 +467,26 @@ class CreateApplicationDetails(object):
         self._driver_shape = driver_shape
 
     @property
+    def driver_shape_config(self):
+        """
+        Gets the driver_shape_config of this CreateApplicationDetails.
+
+        :return: The driver_shape_config of this CreateApplicationDetails.
+        :rtype: oci.data_flow.models.ShapeConfig
+        """
+        return self._driver_shape_config
+
+    @driver_shape_config.setter
+    def driver_shape_config(self, driver_shape_config):
+        """
+        Sets the driver_shape_config of this CreateApplicationDetails.
+
+        :param driver_shape_config: The driver_shape_config of this CreateApplicationDetails.
+        :type: oci.data_flow.models.ShapeConfig
+        """
+        self._driver_shape_config = driver_shape_config
+
+    @property
     def execute(self):
         """
         Gets the execute of this CreateApplicationDetails.
@@ -507,6 +541,26 @@ class CreateApplicationDetails(object):
         :type: str
         """
         self._executor_shape = executor_shape
+
+    @property
+    def executor_shape_config(self):
+        """
+        Gets the executor_shape_config of this CreateApplicationDetails.
+
+        :return: The executor_shape_config of this CreateApplicationDetails.
+        :rtype: oci.data_flow.models.ShapeConfig
+        """
+        return self._executor_shape_config
+
+    @executor_shape_config.setter
+    def executor_shape_config(self, executor_shape_config):
+        """
+        Sets the executor_shape_config of this CreateApplicationDetails.
+
+        :param executor_shape_config: The executor_shape_config of this CreateApplicationDetails.
+        :type: oci.data_flow.models.ShapeConfig
+        """
+        self._executor_shape_config = executor_shape_config
 
     @property
     def file_uri(self):

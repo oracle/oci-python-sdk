@@ -37,7 +37,7 @@ class MemoryAggregateMetrics(object):
     def memory_usage(self):
         """
         Gets the memory_usage of this MemoryAggregateMetrics.
-        A list of the memory usage metrics grouped by memorypool for a specific database.
+        The Memory Usage metrics grouped by memorypool for a specific Managed Database.
 
 
         :return: The memory_usage of this MemoryAggregateMetrics.
@@ -49,7 +49,7 @@ class MemoryAggregateMetrics(object):
     def memory_usage(self, memory_usage):
         """
         Sets the memory_usage of this MemoryAggregateMetrics.
-        A list of the memory usage metrics grouped by memorypool for a specific database.
+        The Memory Usage metrics grouped by memorypool for a specific Managed Database.
 
 
         :param memory_usage: The memory_usage of this MemoryAggregateMetrics.

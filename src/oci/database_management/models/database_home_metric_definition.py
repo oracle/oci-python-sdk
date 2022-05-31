@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DatabaseHomeMetricDefinition(object):
     """
-    The response containing the CPU, Storage, Wait, DB Time, and Memory metrics for a specific database.
+    The response containing the CPU, Storage, Wait, DB Time, and Memory metrics for a specific Managed Database.
     """
 
     def __init__(self, **kwargs):
@@ -86,7 +86,7 @@ class DatabaseHomeMetricDefinition(object):
     def activity_time_series_metrics(self):
         """
         **[Required]** Gets the activity_time_series_metrics of this DatabaseHomeMetricDefinition.
-        A list of the active session metrics for CPU and Wait time for a specific database.
+        A list of the active session metrics for CPU and Wait time for a specific Managed Database.
 
 
         :return: The activity_time_series_metrics of this DatabaseHomeMetricDefinition.
@@ -98,7 +98,7 @@ class DatabaseHomeMetricDefinition(object):
     def activity_time_series_metrics(self, activity_time_series_metrics):
         """
         Sets the activity_time_series_metrics of this DatabaseHomeMetricDefinition.
-        A list of the active session metrics for CPU and Wait time for a specific database.
+        A list of the active session metrics for CPU and Wait time for a specific Managed Database.
 
 
         :param activity_time_series_metrics: The activity_time_series_metrics of this DatabaseHomeMetricDefinition.
