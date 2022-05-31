@@ -2086,7 +2086,7 @@ class DbManagementClient(object):
         :param str compare_type: (optional)
             The time window used for metrics comparison.
 
-            Allowed values are: "HOUR", "DAY"
+            Allowed values are: "HOUR", "DAY", "WEEK"
 
         :param str filter_by_metric_names: (optional)
             The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.
@@ -2146,7 +2146,7 @@ class DbManagementClient(object):
                 "get_database_fleet_health_metrics got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'compare_type' in kwargs:
-            compare_type_allowed_values = ["HOUR", "DAY"]
+            compare_type_allowed_values = ["HOUR", "DAY", "WEEK"]
             if kwargs['compare_type'] not in compare_type_allowed_values:
                 raise ValueError(
                     "Invalid value for `compare_type`, must be one of {0}".format(compare_type_allowed_values)
@@ -2892,7 +2892,7 @@ class DbManagementClient(object):
         :param str compare_type: (optional)
             The time window used for metrics comparison.
 
-            Allowed values are: "HOUR", "DAY"
+            Allowed values are: "HOUR", "DAY", "WEEK"
 
         :param str filter_by_metric_names: (optional)
             The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.
@@ -2945,7 +2945,7 @@ class DbManagementClient(object):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         if 'compare_type' in kwargs:
-            compare_type_allowed_values = ["HOUR", "DAY"]
+            compare_type_allowed_values = ["HOUR", "DAY", "WEEK"]
             if kwargs['compare_type'] not in compare_type_allowed_values:
                 raise ValueError(
                     "Invalid value for `compare_type`, must be one of {0}".format(compare_type_allowed_values)

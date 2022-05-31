@@ -213,7 +213,7 @@ class CreateNodePoolDetails(object):
     @property
     def kubernetes_version(self):
         """
-        **[Required]** Gets the kubernetes_version of this CreateNodePoolDetails.
+        Gets the kubernetes_version of this CreateNodePoolDetails.
         The version of Kubernetes to install on the nodes in the node pool.
 
 

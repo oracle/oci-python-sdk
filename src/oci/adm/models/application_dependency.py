@@ -51,7 +51,7 @@ class ApplicationDependency(object):
     def gav(self):
         """
         **[Required]** Gets the gav of this ApplicationDependency.
-        Unique Group Artifact Version (GAV) identifier (Group:Artifact:Version).
+        Unique Group Artifact Version (GAV) identifier (Group:Artifact:Version), e.g. org.graalvm.nativeimage:svm:21.1.0.
 
 
         :return: The gav of this ApplicationDependency.
@@ -63,7 +63,7 @@ class ApplicationDependency(object):
     def gav(self, gav):
         """
         Sets the gav of this ApplicationDependency.
-        Unique Group Artifact Version (GAV) identifier (Group:Artifact:Version).
+        Unique Group Artifact Version (GAV) identifier (Group:Artifact:Version), e.g. org.graalvm.nativeimage:svm:21.1.0.
 
 
         :param gav: The gav of this ApplicationDependency.
@@ -75,7 +75,7 @@ class ApplicationDependency(object):
     def node_id(self):
         """
         **[Required]** Gets the node_id of this ApplicationDependency.
-        Unique identifier of an Application Dependency node.
+        Unique identifier of an Application Dependency node, e.g. nodeId1.
 
 
         :return: The node_id of this ApplicationDependency.
@@ -87,7 +87,7 @@ class ApplicationDependency(object):
     def node_id(self, node_id):
         """
         Sets the node_id of this ApplicationDependency.
-        Unique identifier of an Application Dependency node.
+        Unique identifier of an Application Dependency node, e.g. nodeId1.
 
 
         :param node_id: The node_id of this ApplicationDependency.

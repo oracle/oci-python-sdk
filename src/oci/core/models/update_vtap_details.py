@@ -290,7 +290,7 @@ class UpdateVtapDetails(object):
         Gets the source_id of this UpdateVtapDetails.
         The `OCID`__ of the source point where packets are captured.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The source_id of this UpdateVtapDetails.
@@ -304,7 +304,7 @@ class UpdateVtapDetails(object):
         Sets the source_id of this UpdateVtapDetails.
         The `OCID`__ of the source point where packets are captured.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param source_id: The source_id of this UpdateVtapDetails.
@@ -318,7 +318,7 @@ class UpdateVtapDetails(object):
         Gets the target_id of this UpdateVtapDetails.
         The `OCID`__ of the destination resource where mirrored packets are sent.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The target_id of this UpdateVtapDetails.
@@ -332,7 +332,7 @@ class UpdateVtapDetails(object):
         Sets the target_id of this UpdateVtapDetails.
         The `OCID`__ of the destination resource where mirrored packets are sent.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param target_id: The target_id of this UpdateVtapDetails.
@@ -370,7 +370,7 @@ class UpdateVtapDetails(object):
         Gets the capture_filter_id of this UpdateVtapDetails.
         The capture filter's Oracle ID (`OCID`__).
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The capture_filter_id of this UpdateVtapDetails.
@@ -384,7 +384,7 @@ class UpdateVtapDetails(object):
         Sets the capture_filter_id of this UpdateVtapDetails.
         The capture filter's Oracle ID (`OCID`__).
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param capture_filter_id: The capture_filter_id of this UpdateVtapDetails.
@@ -564,7 +564,7 @@ class UpdateVtapDetails(object):
         Gets the source_private_endpoint_subnet_id of this UpdateVtapDetails.
         The `OCID`__ of the subnet that source private endpoint belongs to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The source_private_endpoint_subnet_id of this UpdateVtapDetails.
@@ -578,7 +578,7 @@ class UpdateVtapDetails(object):
         Sets the source_private_endpoint_subnet_id of this UpdateVtapDetails.
         The `OCID`__ of the subnet that source private endpoint belongs to.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param source_private_endpoint_subnet_id: The source_private_endpoint_subnet_id of this UpdateVtapDetails.

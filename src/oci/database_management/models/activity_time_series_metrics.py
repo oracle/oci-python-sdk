@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ActivityTimeSeriesMetrics(object):
     """
-    The response object representing activityMetric details for a specific database at a particular time.
+    The response object representing activityMetric details for a specific Managed Database at a particular time.
     """
 
     def __init__(self, **kwargs):

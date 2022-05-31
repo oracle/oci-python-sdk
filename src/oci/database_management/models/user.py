@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class User(object):
     """
-    The summary of a specific User.
+    The summary of a specific user resource.
     """
 
     #: A constant which can be used with the status property of a User.
@@ -412,7 +412,7 @@ class User(object):
     def time_locked(self):
         """
         Gets the time_locked of this User.
-        The date the account was locked if account status was LOCKED.
+        The date the account was locked, if the status of the account is LOCKED.
 
 
         :return: The time_locked of this User.
@@ -424,7 +424,7 @@ class User(object):
     def time_locked(self, time_locked):
         """
         Sets the time_locked of this User.
-        The date the account was locked if account status was LOCKED.
+        The date the account was locked, if the status of the account is LOCKED.
 
 
         :param time_locked: The time_locked of this User.
@@ -556,7 +556,7 @@ class User(object):
     def profile(self):
         """
         **[Required]** Gets the profile of this User.
-        The User resource profile name.
+        The profile name of the user.
 
 
         :return: The profile of this User.
@@ -568,7 +568,7 @@ class User(object):
     def profile(self, profile):
         """
         Sets the profile of this User.
-        The User resource profile name.
+        The profile name of the user.
 
 
         :param profile: The profile of this User.

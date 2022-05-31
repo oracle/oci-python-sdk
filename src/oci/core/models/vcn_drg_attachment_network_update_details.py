@@ -61,7 +61,7 @@ class VcnDrgAttachmentNetworkUpdateDetails(DrgAttachmentNetworkUpdateDetails):
           * `Transit Routing: Access to Multiple VCNs in Same Region`__
           * `Transit Routing: Private Access to Oracle Services`__
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
 
@@ -82,7 +82,7 @@ class VcnDrgAttachmentNetworkUpdateDetails(DrgAttachmentNetworkUpdateDetails):
           * `Transit Routing: Access to Multiple VCNs in Same Region`__
           * `Transit Routing: Private Access to Oracle Services`__
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
 

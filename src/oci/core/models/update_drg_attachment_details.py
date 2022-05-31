@@ -112,7 +112,7 @@ class UpdateDrgAttachmentDetails(object):
         You can't remove a DRG route table from a DRG attachment, but you can reassign which
         DRG route table it uses.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The drg_route_table_id of this UpdateDrgAttachmentDetails.
@@ -131,7 +131,7 @@ class UpdateDrgAttachmentDetails(object):
         You can't remove a DRG route table from a DRG attachment, but you can reassign which
         DRG route table it uses.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param drg_route_table_id: The drg_route_table_id of this UpdateDrgAttachmentDetails.
@@ -270,7 +270,7 @@ class UpdateDrgAttachmentDetails(object):
           * `Transit Routing: Access to Multiple VCNs in Same Region`__
           * `Transit Routing: Private Access to Oracle Services`__
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
 
@@ -291,7 +291,7 @@ class UpdateDrgAttachmentDetails(object):
           * `Transit Routing: Access to Multiple VCNs in Same Region`__
           * `Transit Routing: Private Access to Oracle Services`__
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
 

@@ -33,6 +33,7 @@ Data Flow
     oci.data_flow.models.Run
     oci.data_flow.models.RunLogSummary
     oci.data_flow.models.RunSummary
+    oci.data_flow.models.ShapeConfig
     oci.data_flow.models.UpdateApplicationDetails
     oci.data_flow.models.UpdatePrivateEndpointDetails
     oci.data_flow.models.UpdateRunDetails

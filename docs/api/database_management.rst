@@ -114,13 +114,17 @@ Database Management
     oci.database_management.models.JobSummary
     oci.database_management.models.ManagedDatabase
     oci.database_management.models.ManagedDatabaseCollection
+    oci.database_management.models.ManagedDatabaseCredential
     oci.database_management.models.ManagedDatabaseGroup
     oci.database_management.models.ManagedDatabaseGroupCollection
     oci.database_management.models.ManagedDatabaseGroupSummary
+    oci.database_management.models.ManagedDatabasePasswordCredential
+    oci.database_management.models.ManagedDatabaseSecretCredential
     oci.database_management.models.ManagedDatabaseSummary
     oci.database_management.models.MemoryAggregateMetrics
     oci.database_management.models.MetricDataPoint
     oci.database_management.models.MetricDimensionDefinition
+    oci.database_management.models.MetricStatisticsDefinition
     oci.database_management.models.ObjectPrivilegeCollection
     oci.database_management.models.ObjectPrivilegeSummary
     oci.database_management.models.ObjectStorageJobExecutionResultDetails
