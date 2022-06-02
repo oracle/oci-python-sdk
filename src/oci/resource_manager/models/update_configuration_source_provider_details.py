@@ -35,6 +35,10 @@ class UpdateConfigurationSourceProviderDetails(object):
             The value to assign to the config_source_provider_type property of this UpdateConfigurationSourceProviderDetails.
         :type config_source_provider_type: str
 
+        :param private_server_config_details:
+            The value to assign to the private_server_config_details property of this UpdateConfigurationSourceProviderDetails.
+        :type private_server_config_details: oci.resource_manager.models.PrivateServerConfigDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateConfigurationSourceProviderDetails.
         :type freeform_tags: dict(str, str)
@@ -48,6 +52,7 @@ class UpdateConfigurationSourceProviderDetails(object):
             'display_name': 'str',
             'description': 'str',
             'config_source_provider_type': 'str',
+            'private_server_config_details': 'PrivateServerConfigDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -56,6 +61,7 @@ class UpdateConfigurationSourceProviderDetails(object):
             'display_name': 'displayName',
             'description': 'description',
             'config_source_provider_type': 'configSourceProviderType',
+            'private_server_config_details': 'privateServerConfigDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -63,6 +69,7 @@ class UpdateConfigurationSourceProviderDetails(object):
         self._display_name = None
         self._description = None
         self._config_source_provider_type = None
+        self._private_server_config_details = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -157,6 +164,26 @@ class UpdateConfigurationSourceProviderDetails(object):
         :type: str
         """
         self._config_source_provider_type = config_source_provider_type
+
+    @property
+    def private_server_config_details(self):
+        """
+        Gets the private_server_config_details of this UpdateConfigurationSourceProviderDetails.
+
+        :return: The private_server_config_details of this UpdateConfigurationSourceProviderDetails.
+        :rtype: oci.resource_manager.models.PrivateServerConfigDetails
+        """
+        return self._private_server_config_details
+
+    @private_server_config_details.setter
+    def private_server_config_details(self, private_server_config_details):
+        """
+        Sets the private_server_config_details of this UpdateConfigurationSourceProviderDetails.
+
+        :param private_server_config_details: The private_server_config_details of this UpdateConfigurationSourceProviderDetails.
+        :type: oci.resource_manager.models.PrivateServerConfigDetails
+        """
+        self._private_server_config_details = private_server_config_details
 
     @property
     def freeform_tags(self):

@@ -136,7 +136,7 @@
       <dependency>
         <groupId>com.oracle.pic.orchestration.orm</groupId>
         <artifactId>maestro-spec</artifactId>
-        <version>0.1.39</version>
+        <version>0.1.57</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

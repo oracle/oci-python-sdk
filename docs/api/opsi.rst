@@ -58,6 +58,20 @@ Opsi
     oci.opsi.models.DBExternalInstance
     oci.opsi.models.DBExternalProperties
     oci.opsi.models.DBOSConfigInstance
+    oci.opsi.models.DataObjectColumnMetadata
+    oci.opsi.models.DataObjectColumnUnit
+    oci.opsi.models.DataObjectCoreColumnUnit
+    oci.opsi.models.DataObjectCustomColumnUnit
+    oci.opsi.models.DataObjectDataSizeColumnUnit
+    oci.opsi.models.DataObjectFrequencyColumnUnit
+    oci.opsi.models.DataObjectOtherStandardColumnUnit
+    oci.opsi.models.DataObjectPowerColumnUnit
+    oci.opsi.models.DataObjectQuery
+    oci.opsi.models.DataObjectQueryTimeFilters
+    oci.opsi.models.DataObjectRateColumnUnit
+    oci.opsi.models.DataObjectTemperatureColumnUnit
+    oci.opsi.models.DataObjectTemplatizedQuery
+    oci.opsi.models.DataObjectTimeColumnUnit
     oci.opsi.models.DatabaseConfigurationCollection
     oci.opsi.models.DatabaseConfigurationMetricGroup
     oci.opsi.models.DatabaseConfigurationSummary
@@ -66,6 +80,8 @@ Opsi
     oci.opsi.models.DatabaseInsightSummary
     oci.opsi.models.DatabaseInsights
     oci.opsi.models.DatabaseInsightsCollection
+    oci.opsi.models.DatabaseInsightsDataObject
+    oci.opsi.models.DatabaseInsightsDataObjectSummary
     oci.opsi.models.DiskGroupDetails
     oci.opsi.models.DownloadOperationsInsightsWarehouseWalletDetails
     oci.opsi.models.EmManagedExternalDatabaseConfigurationSummary
@@ -105,6 +121,8 @@ Opsi
     oci.opsi.models.ExadataInsightSummary
     oci.opsi.models.ExadataInsightSummaryCollection
     oci.opsi.models.ExadataInsights
+    oci.opsi.models.ExadataInsightsDataObject
+    oci.opsi.models.ExadataInsightsDataObjectSummary
     oci.opsi.models.ExadataMemberCollection
     oci.opsi.models.ExadataMemberSummary
     oci.opsi.models.ExadataStorageServerStatisticsSummary
@@ -124,6 +142,8 @@ Opsi
     oci.opsi.models.HostInsightSummary
     oci.opsi.models.HostInsightSummaryCollection
     oci.opsi.models.HostInsights
+    oci.opsi.models.HostInsightsDataObject
+    oci.opsi.models.HostInsightsDataObjectSummary
     oci.opsi.models.HostInstanceMap
     oci.opsi.models.HostMemoryConfiguration
     oci.opsi.models.HostMemoryStatistics
@@ -174,13 +194,22 @@ Opsi
     oci.opsi.models.OperationsInsightsWarehouseUserSummaryCollection
     oci.opsi.models.OperationsInsightsWarehouseUsers
     oci.opsi.models.OperationsInsightsWarehouses
+    oci.opsi.models.OpsiDataObject
+    oci.opsi.models.OpsiDataObjectSummary
+    oci.opsi.models.OpsiDataObjects
+    oci.opsi.models.OpsiDataObjectsCollection
     oci.opsi.models.PeComanagedDatabaseConnectionDetails
     oci.opsi.models.PeComanagedDatabaseHostDetails
     oci.opsi.models.PeComanagedDatabaseInsight
     oci.opsi.models.PeComanagedDatabaseInsightSummary
     oci.opsi.models.PeComanagedManagedExternalDatabaseConfigurationSummary
     oci.opsi.models.ProjectedDataItem
+    oci.opsi.models.QueryDataObjectJsonResultSetRowsCollection
+    oci.opsi.models.QueryDataObjectResultSetColumnMetadata
+    oci.opsi.models.QueryDataObjectResultSetRowsCollection
+    oci.opsi.models.QueryOpsiDataObjectDataDetails
     oci.opsi.models.ResourceCapacityTrendAggregation
+    oci.opsi.models.ResourceFilters
     oci.opsi.models.ResourceInsightCurrentUtilization
     oci.opsi.models.ResourceInsightProjectedUtilization
     oci.opsi.models.ResourceInsightProjectedUtilizationItem

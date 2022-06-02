@@ -44,6 +44,20 @@ from .credentials_by_source import CredentialsBySource
 from .db_external_instance import DBExternalInstance
 from .db_external_properties import DBExternalProperties
 from .dbos_config_instance import DBOSConfigInstance
+from .data_object_column_metadata import DataObjectColumnMetadata
+from .data_object_column_unit import DataObjectColumnUnit
+from .data_object_core_column_unit import DataObjectCoreColumnUnit
+from .data_object_custom_column_unit import DataObjectCustomColumnUnit
+from .data_object_data_size_column_unit import DataObjectDataSizeColumnUnit
+from .data_object_frequency_column_unit import DataObjectFrequencyColumnUnit
+from .data_object_other_standard_column_unit import DataObjectOtherStandardColumnUnit
+from .data_object_power_column_unit import DataObjectPowerColumnUnit
+from .data_object_query import DataObjectQuery
+from .data_object_query_time_filters import DataObjectQueryTimeFilters
+from .data_object_rate_column_unit import DataObjectRateColumnUnit
+from .data_object_temperature_column_unit import DataObjectTemperatureColumnUnit
+from .data_object_templatized_query import DataObjectTemplatizedQuery
+from .data_object_time_column_unit import DataObjectTimeColumnUnit
 from .database_configuration_collection import DatabaseConfigurationCollection
 from .database_configuration_metric_group import DatabaseConfigurationMetricGroup
 from .database_configuration_summary import DatabaseConfigurationSummary
@@ -52,6 +66,8 @@ from .database_insight import DatabaseInsight
 from .database_insight_summary import DatabaseInsightSummary
 from .database_insights import DatabaseInsights
 from .database_insights_collection import DatabaseInsightsCollection
+from .database_insights_data_object import DatabaseInsightsDataObject
+from .database_insights_data_object_summary import DatabaseInsightsDataObjectSummary
 from .disk_group_details import DiskGroupDetails
 from .download_operations_insights_warehouse_wallet_details import DownloadOperationsInsightsWarehouseWalletDetails
 from .em_managed_external_database_configuration_summary import EmManagedExternalDatabaseConfigurationSummary
@@ -91,6 +107,8 @@ from .exadata_insight_resource_statistics_aggregation import ExadataInsightResou
 from .exadata_insight_summary import ExadataInsightSummary
 from .exadata_insight_summary_collection import ExadataInsightSummaryCollection
 from .exadata_insights import ExadataInsights
+from .exadata_insights_data_object import ExadataInsightsDataObject
+from .exadata_insights_data_object_summary import ExadataInsightsDataObjectSummary
 from .exadata_member_collection import ExadataMemberCollection
 from .exadata_member_summary import ExadataMemberSummary
 from .exadata_storage_server_statistics_summary import ExadataStorageServerStatisticsSummary
@@ -110,6 +128,8 @@ from .host_insight_resource_statistics_aggregation import HostInsightResourceSta
 from .host_insight_summary import HostInsightSummary
 from .host_insight_summary_collection import HostInsightSummaryCollection
 from .host_insights import HostInsights
+from .host_insights_data_object import HostInsightsDataObject
+from .host_insights_data_object_summary import HostInsightsDataObjectSummary
 from .host_instance_map import HostInstanceMap
 from .host_memory_configuration import HostMemoryConfiguration
 from .host_memory_statistics import HostMemoryStatistics
@@ -160,13 +180,22 @@ from .operations_insights_warehouse_user_summary import OperationsInsightsWareho
 from .operations_insights_warehouse_user_summary_collection import OperationsInsightsWarehouseUserSummaryCollection
 from .operations_insights_warehouse_users import OperationsInsightsWarehouseUsers
 from .operations_insights_warehouses import OperationsInsightsWarehouses
+from .opsi_data_object import OpsiDataObject
+from .opsi_data_object_summary import OpsiDataObjectSummary
+from .opsi_data_objects import OpsiDataObjects
+from .opsi_data_objects_collection import OpsiDataObjectsCollection
 from .pe_comanaged_database_connection_details import PeComanagedDatabaseConnectionDetails
 from .pe_comanaged_database_host_details import PeComanagedDatabaseHostDetails
 from .pe_comanaged_database_insight import PeComanagedDatabaseInsight
 from .pe_comanaged_database_insight_summary import PeComanagedDatabaseInsightSummary
 from .pe_comanaged_managed_external_database_configuration_summary import PeComanagedManagedExternalDatabaseConfigurationSummary
 from .projected_data_item import ProjectedDataItem
+from .query_data_object_json_result_set_rows_collection import QueryDataObjectJsonResultSetRowsCollection
+from .query_data_object_result_set_column_metadata import QueryDataObjectResultSetColumnMetadata
+from .query_data_object_result_set_rows_collection import QueryDataObjectResultSetRowsCollection
+from .query_opsi_data_object_data_details import QueryOpsiDataObjectDataDetails
 from .resource_capacity_trend_aggregation import ResourceCapacityTrendAggregation
+from .resource_filters import ResourceFilters
 from .resource_insight_current_utilization import ResourceInsightCurrentUtilization
 from .resource_insight_projected_utilization import ResourceInsightProjectedUtilization
 from .resource_insight_projected_utilization_item import ResourceInsightProjectedUtilizationItem
@@ -297,6 +326,20 @@ opsi_type_mapping = {
     "DBExternalInstance": DBExternalInstance,
     "DBExternalProperties": DBExternalProperties,
     "DBOSConfigInstance": DBOSConfigInstance,
+    "DataObjectColumnMetadata": DataObjectColumnMetadata,
+    "DataObjectColumnUnit": DataObjectColumnUnit,
+    "DataObjectCoreColumnUnit": DataObjectCoreColumnUnit,
+    "DataObjectCustomColumnUnit": DataObjectCustomColumnUnit,
+    "DataObjectDataSizeColumnUnit": DataObjectDataSizeColumnUnit,
+    "DataObjectFrequencyColumnUnit": DataObjectFrequencyColumnUnit,
+    "DataObjectOtherStandardColumnUnit": DataObjectOtherStandardColumnUnit,
+    "DataObjectPowerColumnUnit": DataObjectPowerColumnUnit,
+    "DataObjectQuery": DataObjectQuery,
+    "DataObjectQueryTimeFilters": DataObjectQueryTimeFilters,
+    "DataObjectRateColumnUnit": DataObjectRateColumnUnit,
+    "DataObjectTemperatureColumnUnit": DataObjectTemperatureColumnUnit,
+    "DataObjectTemplatizedQuery": DataObjectTemplatizedQuery,
+    "DataObjectTimeColumnUnit": DataObjectTimeColumnUnit,
     "DatabaseConfigurationCollection": DatabaseConfigurationCollection,
     "DatabaseConfigurationMetricGroup": DatabaseConfigurationMetricGroup,
     "DatabaseConfigurationSummary": DatabaseConfigurationSummary,
@@ -305,6 +348,8 @@ opsi_type_mapping = {
     "DatabaseInsightSummary": DatabaseInsightSummary,
     "DatabaseInsights": DatabaseInsights,
     "DatabaseInsightsCollection": DatabaseInsightsCollection,
+    "DatabaseInsightsDataObject": DatabaseInsightsDataObject,
+    "DatabaseInsightsDataObjectSummary": DatabaseInsightsDataObjectSummary,
     "DiskGroupDetails": DiskGroupDetails,
     "DownloadOperationsInsightsWarehouseWalletDetails": DownloadOperationsInsightsWarehouseWalletDetails,
     "EmManagedExternalDatabaseConfigurationSummary": EmManagedExternalDatabaseConfigurationSummary,
@@ -344,6 +389,8 @@ opsi_type_mapping = {
     "ExadataInsightSummary": ExadataInsightSummary,
     "ExadataInsightSummaryCollection": ExadataInsightSummaryCollection,
     "ExadataInsights": ExadataInsights,
+    "ExadataInsightsDataObject": ExadataInsightsDataObject,
+    "ExadataInsightsDataObjectSummary": ExadataInsightsDataObjectSummary,
     "ExadataMemberCollection": ExadataMemberCollection,
     "ExadataMemberSummary": ExadataMemberSummary,
     "ExadataStorageServerStatisticsSummary": ExadataStorageServerStatisticsSummary,
@@ -363,6 +410,8 @@ opsi_type_mapping = {
     "HostInsightSummary": HostInsightSummary,
     "HostInsightSummaryCollection": HostInsightSummaryCollection,
     "HostInsights": HostInsights,
+    "HostInsightsDataObject": HostInsightsDataObject,
+    "HostInsightsDataObjectSummary": HostInsightsDataObjectSummary,
     "HostInstanceMap": HostInstanceMap,
     "HostMemoryConfiguration": HostMemoryConfiguration,
     "HostMemoryStatistics": HostMemoryStatistics,
@@ -413,13 +462,22 @@ opsi_type_mapping = {
     "OperationsInsightsWarehouseUserSummaryCollection": OperationsInsightsWarehouseUserSummaryCollection,
     "OperationsInsightsWarehouseUsers": OperationsInsightsWarehouseUsers,
     "OperationsInsightsWarehouses": OperationsInsightsWarehouses,
+    "OpsiDataObject": OpsiDataObject,
+    "OpsiDataObjectSummary": OpsiDataObjectSummary,
+    "OpsiDataObjects": OpsiDataObjects,
+    "OpsiDataObjectsCollection": OpsiDataObjectsCollection,
     "PeComanagedDatabaseConnectionDetails": PeComanagedDatabaseConnectionDetails,
     "PeComanagedDatabaseHostDetails": PeComanagedDatabaseHostDetails,
     "PeComanagedDatabaseInsight": PeComanagedDatabaseInsight,
     "PeComanagedDatabaseInsightSummary": PeComanagedDatabaseInsightSummary,
     "PeComanagedManagedExternalDatabaseConfigurationSummary": PeComanagedManagedExternalDatabaseConfigurationSummary,
     "ProjectedDataItem": ProjectedDataItem,
+    "QueryDataObjectJsonResultSetRowsCollection": QueryDataObjectJsonResultSetRowsCollection,
+    "QueryDataObjectResultSetColumnMetadata": QueryDataObjectResultSetColumnMetadata,
+    "QueryDataObjectResultSetRowsCollection": QueryDataObjectResultSetRowsCollection,
+    "QueryOpsiDataObjectDataDetails": QueryOpsiDataObjectDataDetails,
     "ResourceCapacityTrendAggregation": ResourceCapacityTrendAggregation,
+    "ResourceFilters": ResourceFilters,
     "ResourceInsightCurrentUtilization": ResourceInsightCurrentUtilization,
     "ResourceInsightProjectedUtilization": ResourceInsightProjectedUtilization,
     "ResourceInsightProjectedUtilizationItem": ResourceInsightProjectedUtilizationItem,

@@ -33,7 +33,7 @@ def vcr_fixture(request):
             yield
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_cancel_job(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'CancelJob'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -74,7 +74,7 @@ def test_cancel_job(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_change_configuration_source_provider_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'ChangeConfigurationSourceProviderCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -116,7 +116,49 @@ def test_change_configuration_source_provider_compartment(testing_service_client
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
+def test_change_private_endpoint_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('resource_manager', 'ChangePrivateEndpointCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'ChangePrivateEndpointCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='ChangePrivateEndpointCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
+            response = client.change_private_endpoint_compartment(
+                private_endpoint_id=request.pop(util.camelize('privateEndpointId')),
+                change_private_endpoint_compartment_details=request.pop(util.camelize('ChangePrivateEndpointCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'resource_manager',
+            'ChangePrivateEndpointCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_private_endpoint_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_change_stack_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'ChangeStackCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -158,7 +200,7 @@ def test_change_stack_compartment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_change_template_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'ChangeTemplateCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -200,7 +242,7 @@ def test_change_template_compartment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_create_configuration_source_provider(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'CreateConfigurationSourceProvider'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -241,7 +283,7 @@ def test_create_configuration_source_provider(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_create_job(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'CreateJob'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -282,7 +324,48 @@ def test_create_job(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
+def test_create_private_endpoint(testing_service_client):
+    if not testing_service_client.is_api_enabled('resource_manager', 'CreatePrivateEndpoint'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'CreatePrivateEndpoint')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='CreatePrivateEndpoint')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
+            response = client.create_private_endpoint(
+                create_private_endpoint_details=request.pop(util.camelize('CreatePrivateEndpointDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'resource_manager',
+            'CreatePrivateEndpoint',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'privateEndpoint',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_create_stack(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'CreateStack'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -323,7 +406,7 @@ def test_create_stack(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_create_template(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'CreateTemplate'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -364,7 +447,7 @@ def test_create_template(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_delete_configuration_source_provider(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'DeleteConfigurationSourceProvider'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -405,7 +488,48 @@ def test_delete_configuration_source_provider(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
+def test_delete_private_endpoint(testing_service_client):
+    if not testing_service_client.is_api_enabled('resource_manager', 'DeletePrivateEndpoint'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'DeletePrivateEndpoint')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='DeletePrivateEndpoint')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
+            response = client.delete_private_endpoint(
+                private_endpoint_id=request.pop(util.camelize('privateEndpointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'resource_manager',
+            'DeletePrivateEndpoint',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_private_endpoint',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_delete_stack(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'DeleteStack'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -446,7 +570,7 @@ def test_delete_stack(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_delete_template(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'DeleteTemplate'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -487,7 +611,7 @@ def test_delete_template(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_detect_stack_drift(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'DetectStackDrift'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -528,7 +652,7 @@ def test_detect_stack_drift(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_get_configuration_source_provider(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'GetConfigurationSourceProvider'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -569,7 +693,7 @@ def test_get_configuration_source_provider(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_get_job(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'GetJob'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -610,7 +734,7 @@ def test_get_job(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_get_job_detailed_log_content(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'GetJobDetailedLogContent'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -651,7 +775,7 @@ def test_get_job_detailed_log_content(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_get_job_logs(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'GetJobLogs'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -714,7 +838,7 @@ def test_get_job_logs(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_get_job_logs_content(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'GetJobLogsContent'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -755,7 +879,7 @@ def test_get_job_logs_content(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_get_job_tf_config(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'GetJobTfConfig'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -796,7 +920,48 @@ def test_get_job_tf_config(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
+def test_get_job_tf_plan(testing_service_client):
+    if not testing_service_client.is_api_enabled('resource_manager', 'GetJobTfPlan'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'GetJobTfPlan')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='GetJobTfPlan')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
+            response = client.get_job_tf_plan(
+                job_id=request.pop(util.camelize('jobId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'resource_manager',
+            'GetJobTfPlan',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'stream',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_get_job_tf_state(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'GetJobTfState'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -837,7 +1002,90 @@ def test_get_job_tf_state(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
+def test_get_private_endpoint(testing_service_client):
+    if not testing_service_client.is_api_enabled('resource_manager', 'GetPrivateEndpoint'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'GetPrivateEndpoint')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='GetPrivateEndpoint')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
+            response = client.get_private_endpoint(
+                private_endpoint_id=request.pop(util.camelize('privateEndpointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'resource_manager',
+            'GetPrivateEndpoint',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'privateEndpoint',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
+def test_get_reachable_ip(testing_service_client):
+    if not testing_service_client.is_api_enabled('resource_manager', 'GetReachableIp'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'GetReachableIp')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='GetReachableIp')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
+            response = client.get_reachable_ip(
+                private_ip=request.pop(util.camelize('privateIp')),
+                private_endpoint_id=request.pop(util.camelize('privateEndpointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'resource_manager',
+            'GetReachableIp',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'reachableIp',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_get_stack(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'GetStack'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -878,7 +1126,7 @@ def test_get_stack(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_get_stack_tf_config(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'GetStackTfConfig'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -919,7 +1167,7 @@ def test_get_stack_tf_config(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_get_stack_tf_state(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'GetStackTfState'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -960,7 +1208,7 @@ def test_get_stack_tf_state(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_get_template(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'GetTemplate'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1001,7 +1249,7 @@ def test_get_template(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_get_template_logo(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'GetTemplateLogo'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1042,7 +1290,7 @@ def test_get_template_logo(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_get_template_tf_config(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'GetTemplateTfConfig'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1083,7 +1331,7 @@ def test_get_template_tf_config(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_get_work_request(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'GetWorkRequest'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1124,7 +1372,7 @@ def test_get_work_request(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_list_configuration_source_providers(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'ListConfigurationSourceProviders'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1184,7 +1432,7 @@ def test_list_configuration_source_providers(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_list_jobs(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'ListJobs'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1244,7 +1492,67 @@ def test_list_jobs(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
+def test_list_private_endpoints(testing_service_client):
+    if not testing_service_client.is_api_enabled('resource_manager', 'ListPrivateEndpoints'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'ListPrivateEndpoints')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='ListPrivateEndpoints')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
+            response = client.list_private_endpoints(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_private_endpoints(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_private_endpoints(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'resource_manager',
+            'ListPrivateEndpoints',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'privateEndpointCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_list_resource_discovery_services(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'ListResourceDiscoveryServices'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1284,7 +1592,7 @@ def test_list_resource_discovery_services(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_list_stack_resource_drift_details(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'ListStackResourceDriftDetails'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1347,7 +1655,7 @@ def test_list_stack_resource_drift_details(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_list_stacks(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'ListStacks'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1407,7 +1715,7 @@ def test_list_stacks(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_list_template_categories(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'ListTemplateCategories'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1447,7 +1755,7 @@ def test_list_template_categories(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_list_templates(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'ListTemplates'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1507,7 +1815,7 @@ def test_list_templates(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_list_terraform_versions(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'ListTerraformVersions'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1547,7 +1855,7 @@ def test_list_terraform_versions(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_list_work_request_errors(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'ListWorkRequestErrors'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1610,7 +1918,7 @@ def test_list_work_request_errors(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_list_work_request_logs(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'ListWorkRequestLogs'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1673,7 +1981,7 @@ def test_list_work_request_logs(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_list_work_requests(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'ListWorkRequests'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1736,7 +2044,7 @@ def test_list_work_requests(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_update_configuration_source_provider(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'UpdateConfigurationSourceProvider'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1778,7 +2086,7 @@ def test_update_configuration_source_provider(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_update_job(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'UpdateJob'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1820,7 +2128,49 @@ def test_update_job(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
+def test_update_private_endpoint(testing_service_client):
+    if not testing_service_client.is_api_enabled('resource_manager', 'UpdatePrivateEndpoint'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'UpdatePrivateEndpoint')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='UpdatePrivateEndpoint')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
+            response = client.update_private_endpoint(
+                private_endpoint_id=request.pop(util.camelize('privateEndpointId')),
+                update_private_endpoint_details=request.pop(util.camelize('UpdatePrivateEndpointDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'resource_manager',
+            'UpdatePrivateEndpoint',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'privateEndpoint',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_update_stack(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'UpdateStack'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1862,7 +2212,7 @@ def test_update_stack(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="RMS"
 def test_update_template(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'UpdateTemplate'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

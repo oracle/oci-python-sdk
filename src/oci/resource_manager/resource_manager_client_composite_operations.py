@@ -191,6 +191,44 @@ class ResourceManagerClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def create_private_endpoint_and_wait_for_state(self, create_private_endpoint_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.resource_manager.ResourceManagerClient.create_private_endpoint` and waits for the :py:class:`~oci.resource_manager.models.PrivateEndpoint` acted upon
+        to enter the given state(s).
+
+        :param oci.resource_manager.models.CreatePrivateEndpointDetails create_private_endpoint_details: (required)
+            Creation details for a private endpoint.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.resource_manager.models.PrivateEndpoint.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.resource_manager.ResourceManagerClient.create_private_endpoint`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_private_endpoint(create_private_endpoint_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_private_endpoint(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def create_stack_and_wait_for_state(self, create_stack_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.resource_manager.ResourceManagerClient.create_stack` and waits for the :py:class:`~oci.resource_manager.models.WorkRequest`
@@ -291,6 +329,55 @@ class ResourceManagerClientCompositeOperations(object):
         operation_result = None
         try:
             operation_result = self.client.delete_configuration_source_provider(configuration_source_provider_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                initial_get_result,
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                succeed_on_not_found=True,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def delete_private_endpoint_and_wait_for_state(self, private_endpoint_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.resource_manager.ResourceManagerClient.delete_private_endpoint` and waits for the :py:class:`~oci.resource_manager.models.PrivateEndpoint` acted upon
+        to enter the given state(s).
+
+        :param str private_endpoint_id: (required)
+            The `OCID`__ of the private endpoint.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.resource_manager.models.PrivateEndpoint.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.resource_manager.ResourceManagerClient.delete_private_endpoint`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        initial_get_result = self.client.get_private_endpoint(private_endpoint_id)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_private_endpoint(private_endpoint_id, **operation_kwargs)
         except oci.exceptions.ServiceError as e:
             if e.status == 404:
                 return WAIT_RESOURCE_NOT_FOUND
@@ -531,6 +618,49 @@ class ResourceManagerClientCompositeOperations(object):
             waiter_result = oci.wait_until(
                 self.client,
                 self.client.get_job(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_private_endpoint_and_wait_for_state(self, private_endpoint_id, update_private_endpoint_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.resource_manager.ResourceManagerClient.update_private_endpoint` and waits for the :py:class:`~oci.resource_manager.models.PrivateEndpoint` acted upon
+        to enter the given state(s).
+
+        :param str private_endpoint_id: (required)
+            The `OCID`__ of the private endpoint.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.resource_manager.models.UpdatePrivateEndpointDetails update_private_endpoint_details: (required)
+            Update details for a private endpoint.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.resource_manager.models.PrivateEndpoint.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.resource_manager.ResourceManagerClient.update_private_endpoint`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_private_endpoint(private_endpoint_id, update_private_endpoint_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_private_endpoint(wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
