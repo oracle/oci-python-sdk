@@ -570,9 +570,9 @@ class AutonomousDatabaseSummary(object):
             The value to assign to the is_local_data_guard_enabled property of this AutonomousDatabaseSummary.
         :type is_local_data_guard_enabled: bool
 
-        :param is_remote_data_gauard_enabled:
-            The value to assign to the is_remote_data_gauard_enabled property of this AutonomousDatabaseSummary.
-        :type is_remote_data_gauard_enabled: bool
+        :param is_remote_data_guard_enabled:
+            The value to assign to the is_remote_data_guard_enabled property of this AutonomousDatabaseSummary.
+        :type is_remote_data_guard_enabled: bool
 
         :param local_standby_db:
             The value to assign to the local_standby_db property of this AutonomousDatabaseSummary.
@@ -737,7 +737,7 @@ class AutonomousDatabaseSummary(object):
             'failed_data_recovery_in_seconds': 'int',
             'standby_db': 'AutonomousDatabaseStandbySummary',
             'is_local_data_guard_enabled': 'bool',
-            'is_remote_data_gauard_enabled': 'bool',
+            'is_remote_data_guard_enabled': 'bool',
             'local_standby_db': 'AutonomousDatabaseStandbySummary',
             'role': 'str',
             'available_upgrade_versions': 'list[str]',
@@ -831,7 +831,7 @@ class AutonomousDatabaseSummary(object):
             'failed_data_recovery_in_seconds': 'failedDataRecoveryInSeconds',
             'standby_db': 'standbyDb',
             'is_local_data_guard_enabled': 'isLocalDataGuardEnabled',
-            'is_remote_data_gauard_enabled': 'isRemoteDataGauardEnabled',
+            'is_remote_data_guard_enabled': 'isRemoteDataGuardEnabled',
             'local_standby_db': 'localStandbyDb',
             'role': 'role',
             'available_upgrade_versions': 'availableUpgradeVersions',
@@ -924,7 +924,7 @@ class AutonomousDatabaseSummary(object):
         self._failed_data_recovery_in_seconds = None
         self._standby_db = None
         self._is_local_data_guard_enabled = None
-        self._is_remote_data_gauard_enabled = None
+        self._is_remote_data_guard_enabled = None
         self._local_standby_db = None
         self._role = None
         self._available_upgrade_versions = None
@@ -2858,28 +2858,28 @@ class AutonomousDatabaseSummary(object):
         self._is_local_data_guard_enabled = is_local_data_guard_enabled
 
     @property
-    def is_remote_data_gauard_enabled(self):
+    def is_remote_data_guard_enabled(self):
         """
-        Gets the is_remote_data_gauard_enabled of this AutonomousDatabaseSummary.
+        Gets the is_remote_data_guard_enabled of this AutonomousDatabaseSummary.
         Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 
 
-        :return: The is_remote_data_gauard_enabled of this AutonomousDatabaseSummary.
+        :return: The is_remote_data_guard_enabled of this AutonomousDatabaseSummary.
         :rtype: bool
         """
-        return self._is_remote_data_gauard_enabled
+        return self._is_remote_data_guard_enabled
 
-    @is_remote_data_gauard_enabled.setter
-    def is_remote_data_gauard_enabled(self, is_remote_data_gauard_enabled):
+    @is_remote_data_guard_enabled.setter
+    def is_remote_data_guard_enabled(self, is_remote_data_guard_enabled):
         """
-        Sets the is_remote_data_gauard_enabled of this AutonomousDatabaseSummary.
+        Sets the is_remote_data_guard_enabled of this AutonomousDatabaseSummary.
         Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 
 
-        :param is_remote_data_gauard_enabled: The is_remote_data_gauard_enabled of this AutonomousDatabaseSummary.
+        :param is_remote_data_guard_enabled: The is_remote_data_guard_enabled of this AutonomousDatabaseSummary.
         :type: bool
         """
-        self._is_remote_data_gauard_enabled = is_remote_data_gauard_enabled
+        self._is_remote_data_guard_enabled = is_remote_data_guard_enabled
 
     @property
     def local_standby_db(self):

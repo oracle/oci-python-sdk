@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataCollectionOptions(object):
     """
-    Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster.
+    Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class DataCollectionOptions(object):
     def is_diagnostics_events_enabled(self):
         """
         Gets the is_diagnostics_events_enabled of this DataCollectionOptions.
-        Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+        Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
 
 
         :return: The is_diagnostics_events_enabled of this DataCollectionOptions.
@@ -49,7 +49,7 @@ class DataCollectionOptions(object):
     def is_diagnostics_events_enabled(self, is_diagnostics_events_enabled):
         """
         Sets the is_diagnostics_events_enabled of this DataCollectionOptions.
-        Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+        Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
 
 
         :param is_diagnostics_events_enabled: The is_diagnostics_events_enabled of this DataCollectionOptions.
