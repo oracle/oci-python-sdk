@@ -23,6 +23,7 @@ Resource Manager
     oci.resource_manager.models.ApplyJobPlanResolution
     oci.resource_manager.models.CancellationDetails
     oci.resource_manager.models.ChangeConfigurationSourceProviderCompartmentDetails
+    oci.resource_manager.models.ChangePrivateEndpointCompartmentDetails
     oci.resource_manager.models.ChangeStackCompartmentDetails
     oci.resource_manager.models.ChangeTemplateCompartmentDetails
     oci.resource_manager.models.CompartmentConfigSource
@@ -44,6 +45,7 @@ Resource Manager
     oci.resource_manager.models.CreateJobOperationDetails
     oci.resource_manager.models.CreateObjectStorageConfigSourceDetails
     oci.resource_manager.models.CreatePlanJobOperationDetails
+    oci.resource_manager.models.CreatePrivateEndpointDetails
     oci.resource_manager.models.CreateStackDetails
     oci.resource_manager.models.CreateStackTemplateConfigSourceDetails
     oci.resource_manager.models.CreateTemplateConfigSourceDetails
@@ -71,6 +73,11 @@ Resource Manager
     oci.resource_manager.models.ObjectStorageConfigSourceRecord
     oci.resource_manager.models.PlanJobOperationDetails
     oci.resource_manager.models.PlanJobOperationDetailsSummary
+    oci.resource_manager.models.PrivateEndpoint
+    oci.resource_manager.models.PrivateEndpointCollection
+    oci.resource_manager.models.PrivateEndpointSummary
+    oci.resource_manager.models.PrivateServerConfigDetails
+    oci.resource_manager.models.ReachableIp
     oci.resource_manager.models.ResourceDiscoveryServiceCollection
     oci.resource_manager.models.ResourceDiscoveryServiceSummary
     oci.resource_manager.models.Stack
@@ -94,6 +101,7 @@ Resource Manager
     oci.resource_manager.models.UpdateGitlabAccessTokenConfigurationSourceProviderDetails
     oci.resource_manager.models.UpdateJobDetails
     oci.resource_manager.models.UpdateObjectStorageConfigSourceDetails
+    oci.resource_manager.models.UpdatePrivateEndpointDetails
     oci.resource_manager.models.UpdateStackDetails
     oci.resource_manager.models.UpdateTemplateConfigSourceDetails
     oci.resource_manager.models.UpdateTemplateDetails

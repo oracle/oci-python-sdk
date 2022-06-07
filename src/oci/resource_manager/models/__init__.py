@@ -9,6 +9,7 @@ from .apply_job_operation_details_summary import ApplyJobOperationDetailsSummary
 from .apply_job_plan_resolution import ApplyJobPlanResolution
 from .cancellation_details import CancellationDetails
 from .change_configuration_source_provider_compartment_details import ChangeConfigurationSourceProviderCompartmentDetails
+from .change_private_endpoint_compartment_details import ChangePrivateEndpointCompartmentDetails
 from .change_stack_compartment_details import ChangeStackCompartmentDetails
 from .change_template_compartment_details import ChangeTemplateCompartmentDetails
 from .compartment_config_source import CompartmentConfigSource
@@ -30,6 +31,7 @@ from .create_job_details import CreateJobDetails
 from .create_job_operation_details import CreateJobOperationDetails
 from .create_object_storage_config_source_details import CreateObjectStorageConfigSourceDetails
 from .create_plan_job_operation_details import CreatePlanJobOperationDetails
+from .create_private_endpoint_details import CreatePrivateEndpointDetails
 from .create_stack_details import CreateStackDetails
 from .create_stack_template_config_source_details import CreateStackTemplateConfigSourceDetails
 from .create_template_config_source_details import CreateTemplateConfigSourceDetails
@@ -57,6 +59,11 @@ from .object_storage_config_source import ObjectStorageConfigSource
 from .object_storage_config_source_record import ObjectStorageConfigSourceRecord
 from .plan_job_operation_details import PlanJobOperationDetails
 from .plan_job_operation_details_summary import PlanJobOperationDetailsSummary
+from .private_endpoint import PrivateEndpoint
+from .private_endpoint_collection import PrivateEndpointCollection
+from .private_endpoint_summary import PrivateEndpointSummary
+from .private_server_config_details import PrivateServerConfigDetails
+from .reachable_ip import ReachableIp
 from .resource_discovery_service_collection import ResourceDiscoveryServiceCollection
 from .resource_discovery_service_summary import ResourceDiscoveryServiceSummary
 from .stack import Stack
@@ -80,6 +87,7 @@ from .update_github_access_token_configuration_source_provider_details import Up
 from .update_gitlab_access_token_configuration_source_provider_details import UpdateGitlabAccessTokenConfigurationSourceProviderDetails
 from .update_job_details import UpdateJobDetails
 from .update_object_storage_config_source_details import UpdateObjectStorageConfigSourceDetails
+from .update_private_endpoint_details import UpdatePrivateEndpointDetails
 from .update_stack_details import UpdateStackDetails
 from .update_template_config_source_details import UpdateTemplateConfigSourceDetails
 from .update_template_details import UpdateTemplateDetails
@@ -100,6 +108,7 @@ resource_manager_type_mapping = {
     "ApplyJobPlanResolution": ApplyJobPlanResolution,
     "CancellationDetails": CancellationDetails,
     "ChangeConfigurationSourceProviderCompartmentDetails": ChangeConfigurationSourceProviderCompartmentDetails,
+    "ChangePrivateEndpointCompartmentDetails": ChangePrivateEndpointCompartmentDetails,
     "ChangeStackCompartmentDetails": ChangeStackCompartmentDetails,
     "ChangeTemplateCompartmentDetails": ChangeTemplateCompartmentDetails,
     "CompartmentConfigSource": CompartmentConfigSource,
@@ -121,6 +130,7 @@ resource_manager_type_mapping = {
     "CreateJobOperationDetails": CreateJobOperationDetails,
     "CreateObjectStorageConfigSourceDetails": CreateObjectStorageConfigSourceDetails,
     "CreatePlanJobOperationDetails": CreatePlanJobOperationDetails,
+    "CreatePrivateEndpointDetails": CreatePrivateEndpointDetails,
     "CreateStackDetails": CreateStackDetails,
     "CreateStackTemplateConfigSourceDetails": CreateStackTemplateConfigSourceDetails,
     "CreateTemplateConfigSourceDetails": CreateTemplateConfigSourceDetails,
@@ -148,6 +158,11 @@ resource_manager_type_mapping = {
     "ObjectStorageConfigSourceRecord": ObjectStorageConfigSourceRecord,
     "PlanJobOperationDetails": PlanJobOperationDetails,
     "PlanJobOperationDetailsSummary": PlanJobOperationDetailsSummary,
+    "PrivateEndpoint": PrivateEndpoint,
+    "PrivateEndpointCollection": PrivateEndpointCollection,
+    "PrivateEndpointSummary": PrivateEndpointSummary,
+    "PrivateServerConfigDetails": PrivateServerConfigDetails,
+    "ReachableIp": ReachableIp,
     "ResourceDiscoveryServiceCollection": ResourceDiscoveryServiceCollection,
     "ResourceDiscoveryServiceSummary": ResourceDiscoveryServiceSummary,
     "Stack": Stack,
@@ -171,6 +186,7 @@ resource_manager_type_mapping = {
     "UpdateGitlabAccessTokenConfigurationSourceProviderDetails": UpdateGitlabAccessTokenConfigurationSourceProviderDetails,
     "UpdateJobDetails": UpdateJobDetails,
     "UpdateObjectStorageConfigSourceDetails": UpdateObjectStorageConfigSourceDetails,
+    "UpdatePrivateEndpointDetails": UpdatePrivateEndpointDetails,
     "UpdateStackDetails": UpdateStackDetails,
     "UpdateTemplateConfigSourceDetails": UpdateTemplateConfigSourceDetails,
     "UpdateTemplateDetails": UpdateTemplateDetails,

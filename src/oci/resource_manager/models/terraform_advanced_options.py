@@ -136,7 +136,6 @@ class TerraformAdvancedOptions(object):
         """
         Gets the detailed_log_level of this TerraformAdvancedOptions.
         Enables detailed logs at the specified verbosity for running the job (operation).
-        Used with the following operations: `PLAN`, `APPLY`, `DESTROY`.
 
         Allowed values for this property are: "ERROR", "WARN", "INFO", "DEBUG", "TRACE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -152,7 +151,6 @@ class TerraformAdvancedOptions(object):
         """
         Sets the detailed_log_level of this TerraformAdvancedOptions.
         Enables detailed logs at the specified verbosity for running the job (operation).
-        Used with the following operations: `PLAN`, `APPLY`, `DESTROY`.
 
 
         :param detailed_log_level: The detailed_log_level of this TerraformAdvancedOptions.

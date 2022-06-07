@@ -50,6 +50,10 @@ class GithubAccessTokenConfigurationSourceProvider(ConfigurationSourceProvider):
             Allowed values for this property are: "GITLAB_ACCESS_TOKEN", "GITHUB_ACCESS_TOKEN"
         :type config_source_provider_type: str
 
+        :param private_server_config_details:
+            The value to assign to the private_server_config_details property of this GithubAccessTokenConfigurationSourceProvider.
+        :type private_server_config_details: oci.resource_manager.models.PrivateServerConfigDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this GithubAccessTokenConfigurationSourceProvider.
         :type freeform_tags: dict(str, str)
@@ -71,6 +75,7 @@ class GithubAccessTokenConfigurationSourceProvider(ConfigurationSourceProvider):
             'time_created': 'datetime',
             'lifecycle_state': 'str',
             'config_source_provider_type': 'str',
+            'private_server_config_details': 'PrivateServerConfigDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'api_endpoint': 'str'
@@ -84,6 +89,7 @@ class GithubAccessTokenConfigurationSourceProvider(ConfigurationSourceProvider):
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState',
             'config_source_provider_type': 'configSourceProviderType',
+            'private_server_config_details': 'privateServerConfigDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'api_endpoint': 'apiEndpoint'
@@ -96,6 +102,7 @@ class GithubAccessTokenConfigurationSourceProvider(ConfigurationSourceProvider):
         self._time_created = None
         self._lifecycle_state = None
         self._config_source_provider_type = None
+        self._private_server_config_details = None
         self._freeform_tags = None
         self._defined_tags = None
         self._api_endpoint = None
