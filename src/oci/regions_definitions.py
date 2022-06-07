@@ -33,6 +33,7 @@ REGIONS_SHORT_NAMES = {
     'lin': 'eu-milan-1',
     'arn': 'eu-stockholm-1',
     'jnb': 'af-johannesburg-1',
+    'cdg': 'eu-paris-1',
     'lfi': 'us-langley-1',
     'luf': 'us-luke-1',
     'ric': 'us-gov-ashburn-1',
@@ -76,6 +77,7 @@ REGION_REALMS = {
     'eu-milan-1': 'oc1',
     'eu-stockholm-1': 'oc1',
     'af-johannesburg-1': 'oc1',
+    'eu-paris-1': 'oc1',
 
     'us-langley-1': 'oc2',
     'us-luke-1': 'oc2',
@@ -134,6 +136,7 @@ REGIONS = [
     'eu-milan-1',
     'eu-stockholm-1',
     'af-johannesburg-1',
+    'eu-paris-1',
     'us-langley-1',
     'us-luke-1',
     'us-gov-ashburn-1',
