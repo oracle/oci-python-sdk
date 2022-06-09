@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DatabaseToolsPrivateEndpointCollection(object):
     """
-    List of DatabaseToolsPrivateEndpointSummary items.
+    List of `DatabaseToolsPrivateEndpointSummary` items.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class DatabaseToolsPrivateEndpointCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this DatabaseToolsPrivateEndpointCollection.
-        Array of DatabaseToolsPrivateEndpointSummary.
+        Array of `DatabaseToolsPrivateEndpointSummary` items.
 
 
         :return: The items of this DatabaseToolsPrivateEndpointCollection.
@@ -49,7 +49,7 @@ class DatabaseToolsPrivateEndpointCollection(object):
     def items(self, items):
         """
         Sets the items of this DatabaseToolsPrivateEndpointCollection.
-        Array of DatabaseToolsPrivateEndpointSummary.
+        Array of `DatabaseToolsPrivateEndpointSummary` items.
 
 
         :param items: The items of this DatabaseToolsPrivateEndpointCollection.

@@ -1,0 +1,11 @@
+DatabaseToolsKeyStoreContentSecretIdMySqlDetails
+================================================
+
+.. currentmodule:: oci.database_tools.models
+
+.. autoclass:: DatabaseToolsKeyStoreContentSecretIdMySqlDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

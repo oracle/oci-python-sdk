@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.pic.dbtools</groupId>
         <artifactId>dbtools-service-api-spec</artifactId>
-        <version>0.2.434</version>
+        <version>0.2.903</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

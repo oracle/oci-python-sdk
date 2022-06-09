@@ -223,6 +223,89 @@ def test_list_configs(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="hgiessel_org_ww@oracle.com" jiraProject="APM" opsJiraProject="APMSDC"
+def test_retrieve_namespace_metrics(testing_service_client):
+    if not testing_service_client.is_api_enabled('apm_config', 'RetrieveNamespaceMetrics'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('apm_config', util.camelize('config'), 'RetrieveNamespaceMetrics')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='apm_config', api_name='RetrieveNamespaceMetrics')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.apm_config.ConfigClient(config, service_endpoint=service_endpoint)
+            response = client.retrieve_namespace_metrics(
+                apm_domain_id=request.pop(util.camelize('apmDomainId')),
+                retrieve_namespace_metrics_details=request.pop(util.camelize('RetrieveNamespaceMetricsDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'apm_config',
+            'RetrieveNamespaceMetrics',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'namespaceMetricCollection',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="hgiessel_org_ww@oracle.com" jiraProject="APM" opsJiraProject="APMSDC"
+def test_retrieve_namespaces(testing_service_client):
+    if not testing_service_client.is_api_enabled('apm_config', 'RetrieveNamespaces'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('apm_config', util.camelize('config'), 'RetrieveNamespaces')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='apm_config', api_name='RetrieveNamespaces')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.apm_config.ConfigClient(config, service_endpoint=service_endpoint)
+            response = client.retrieve_namespaces(
+                apm_domain_id=request.pop(util.camelize('apmDomainId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'apm_config',
+            'RetrieveNamespaces',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'namespaceCollection',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="hgiessel_org_ww@oracle.com" jiraProject="APM" opsJiraProject="APMSDC"
 def test_update_config(testing_service_client):
     if not testing_service_client.is_api_enabled('apm_config', 'UpdateConfig'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -260,6 +343,48 @@ def test_update_config(testing_service_client):
             result,
             service_error,
             'config',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="hgiessel_org_ww@oracle.com" jiraProject="APM" opsJiraProject="APMSDC"
+def test_validate_span_filter_pattern(testing_service_client):
+    if not testing_service_client.is_api_enabled('apm_config', 'ValidateSpanFilterPattern'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('apm_config', util.camelize('config'), 'ValidateSpanFilterPattern')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='apm_config', api_name='ValidateSpanFilterPattern')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.apm_config.ConfigClient(config, service_endpoint=service_endpoint)
+            response = client.validate_span_filter_pattern(
+                apm_domain_id=request.pop(util.camelize('apmDomainId')),
+                validate_span_filter_pattern_details=request.pop(util.camelize('ValidateSpanFilterPatternDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'apm_config',
+            'ValidateSpanFilterPattern',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'validate_span_filter_pattern',
             False,
             False
         )

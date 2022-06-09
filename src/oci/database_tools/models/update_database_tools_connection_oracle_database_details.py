@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDatabaseToolsConnectionOracleDatabaseDetails(UpdateDatabaseToolsConnectionDetails):
     """
-    The information about new DatabaseToolsConnection for an Oracle Database.
+    The update details for a Database Tools Oracle Database connection.
     """
 
     def __init__(self, **kwargs):
@@ -33,7 +33,7 @@ class UpdateDatabaseToolsConnectionOracleDatabaseDetails(UpdateDatabaseToolsConn
 
         :param type:
             The value to assign to the type property of this UpdateDatabaseToolsConnectionOracleDatabaseDetails.
-            Allowed values for this property are: "ORACLE_DATABASE"
+            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL"
         :type type: str
 
         :param related_resource:
@@ -130,7 +130,7 @@ class UpdateDatabaseToolsConnectionOracleDatabaseDetails(UpdateDatabaseToolsConn
     def connection_string(self):
         """
         Gets the connection_string of this UpdateDatabaseToolsConnectionOracleDatabaseDetails.
-        Connect descriptor or Easy Connect Naming method to connect to the database.
+        The connect descriptor or Easy Connect Naming method used to connect to the database.
 
 
         :return: The connection_string of this UpdateDatabaseToolsConnectionOracleDatabaseDetails.
@@ -142,7 +142,7 @@ class UpdateDatabaseToolsConnectionOracleDatabaseDetails(UpdateDatabaseToolsConn
     def connection_string(self, connection_string):
         """
         Sets the connection_string of this UpdateDatabaseToolsConnectionOracleDatabaseDetails.
-        Connect descriptor or Easy Connect Naming method to connect to the database.
+        The connect descriptor or Easy Connect Naming method used to connect to the database.
 
 
         :param connection_string: The connection_string of this UpdateDatabaseToolsConnectionOracleDatabaseDetails.
@@ -154,7 +154,7 @@ class UpdateDatabaseToolsConnectionOracleDatabaseDetails(UpdateDatabaseToolsConn
     def user_name(self):
         """
         Gets the user_name of this UpdateDatabaseToolsConnectionOracleDatabaseDetails.
-        Database user name.
+        The database user name.
 
 
         :return: The user_name of this UpdateDatabaseToolsConnectionOracleDatabaseDetails.
@@ -166,7 +166,7 @@ class UpdateDatabaseToolsConnectionOracleDatabaseDetails(UpdateDatabaseToolsConn
     def user_name(self, user_name):
         """
         Sets the user_name of this UpdateDatabaseToolsConnectionOracleDatabaseDetails.
-        Database user name.
+        The database user name.
 
 
         :param user_name: The user_name of this UpdateDatabaseToolsConnectionOracleDatabaseDetails.
@@ -198,7 +198,7 @@ class UpdateDatabaseToolsConnectionOracleDatabaseDetails(UpdateDatabaseToolsConn
     def advanced_properties(self):
         """
         Gets the advanced_properties of this UpdateDatabaseToolsConnectionOracleDatabaseDetails.
-        Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+        The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
 
 
         :return: The advanced_properties of this UpdateDatabaseToolsConnectionOracleDatabaseDetails.
@@ -210,7 +210,7 @@ class UpdateDatabaseToolsConnectionOracleDatabaseDetails(UpdateDatabaseToolsConn
     def advanced_properties(self, advanced_properties):
         """
         Sets the advanced_properties of this UpdateDatabaseToolsConnectionOracleDatabaseDetails.
-        Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+        The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
 
 
         :param advanced_properties: The advanced_properties of this UpdateDatabaseToolsConnectionOracleDatabaseDetails.

@@ -46,6 +46,10 @@ class CreateCloudAutonomousVmClusterDetails(object):
             The value to assign to the cloud_exadata_infrastructure_id property of this CreateCloudAutonomousVmClusterDetails.
         :type cloud_exadata_infrastructure_id: str
 
+        :param cluster_time_zone:
+            The value to assign to the cluster_time_zone property of this CreateCloudAutonomousVmClusterDetails.
+        :type cluster_time_zone: str
+
         :param license_model:
             The value to assign to the license_model property of this CreateCloudAutonomousVmClusterDetails.
             Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
@@ -70,6 +74,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
             'subnet_id': 'str',
             'display_name': 'str',
             'cloud_exadata_infrastructure_id': 'str',
+            'cluster_time_zone': 'str',
             'license_model': 'str',
             'nsg_ids': 'list[str]',
             'freeform_tags': 'dict(str, str)',
@@ -82,6 +87,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
             'subnet_id': 'subnetId',
             'display_name': 'displayName',
             'cloud_exadata_infrastructure_id': 'cloudExadataInfrastructureId',
+            'cluster_time_zone': 'clusterTimeZone',
             'license_model': 'licenseModel',
             'nsg_ids': 'nsgIds',
             'freeform_tags': 'freeformTags',
@@ -93,6 +99,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
         self._subnet_id = None
         self._display_name = None
         self._cloud_exadata_infrastructure_id = None
+        self._cluster_time_zone = None
         self._license_model = None
         self._nsg_ids = None
         self._freeform_tags = None
@@ -229,6 +236,34 @@ class CreateCloudAutonomousVmClusterDetails(object):
         :type: str
         """
         self._cloud_exadata_infrastructure_id = cloud_exadata_infrastructure_id
+
+    @property
+    def cluster_time_zone(self):
+        """
+        Gets the cluster_time_zone of this CreateCloudAutonomousVmClusterDetails.
+        The time zone to use for the Cloud Autonomous VM cluster. For details, see `DB System Time Zones`__.
+
+        __ https://docs.cloud.oracle.com/Content/Database/References/timezones.htm
+
+
+        :return: The cluster_time_zone of this CreateCloudAutonomousVmClusterDetails.
+        :rtype: str
+        """
+        return self._cluster_time_zone
+
+    @cluster_time_zone.setter
+    def cluster_time_zone(self, cluster_time_zone):
+        """
+        Sets the cluster_time_zone of this CreateCloudAutonomousVmClusterDetails.
+        The time zone to use for the Cloud Autonomous VM cluster. For details, see `DB System Time Zones`__.
+
+        __ https://docs.cloud.oracle.com/Content/Database/References/timezones.htm
+
+
+        :param cluster_time_zone: The cluster_time_zone of this CreateCloudAutonomousVmClusterDetails.
+        :type: str
+        """
+        self._cluster_time_zone = cluster_time_zone
 
     @property
     def license_model(self):

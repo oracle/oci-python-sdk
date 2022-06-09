@@ -100,6 +100,10 @@ class CloudAutonomousVmCluster(object):
             The value to assign to the time_updated property of this CloudAutonomousVmCluster.
         :type time_updated: datetime
 
+        :param cluster_time_zone:
+            The value to assign to the cluster_time_zone property of this CloudAutonomousVmCluster.
+        :type cluster_time_zone: str
+
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this CloudAutonomousVmCluster.
         :type lifecycle_details: str
@@ -211,6 +215,7 @@ class CloudAutonomousVmCluster(object):
             'display_name': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'cluster_time_zone': 'str',
             'lifecycle_details': 'str',
             'hostname': 'str',
             'domain': 'str',
@@ -249,6 +254,7 @@ class CloudAutonomousVmCluster(object):
             'display_name': 'displayName',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'cluster_time_zone': 'clusterTimeZone',
             'lifecycle_details': 'lifecycleDetails',
             'hostname': 'hostname',
             'domain': 'domain',
@@ -286,6 +292,7 @@ class CloudAutonomousVmCluster(object):
         self._display_name = None
         self._time_created = None
         self._time_updated = None
+        self._cluster_time_zone = None
         self._lifecycle_details = None
         self._hostname = None
         self._domain = None
@@ -620,6 +627,30 @@ class CloudAutonomousVmCluster(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def cluster_time_zone(self):
+        """
+        Gets the cluster_time_zone of this CloudAutonomousVmCluster.
+        The time zone of the Cloud Autonomous VM Cluster.
+
+
+        :return: The cluster_time_zone of this CloudAutonomousVmCluster.
+        :rtype: str
+        """
+        return self._cluster_time_zone
+
+    @cluster_time_zone.setter
+    def cluster_time_zone(self, cluster_time_zone):
+        """
+        Sets the cluster_time_zone of this CloudAutonomousVmCluster.
+        The time zone of the Cloud Autonomous VM Cluster.
+
+
+        :param cluster_time_zone: The cluster_time_zone of this CloudAutonomousVmCluster.
+        :type: str
+        """
+        self._cluster_time_zone = cluster_time_zone
 
     @property
     def lifecycle_details(self):

@@ -297,7 +297,7 @@ def test_update_backup(testing_service_client):
             request_containers[i]['request'],
             result,
             service_error,
-            'update_backup',
+            'backup',
             False,
             False
         )

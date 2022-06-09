@@ -21,7 +21,7 @@ class ValidateDatabaseToolsConnectionOracleDatabaseResult(ValidateDatabaseToolsC
 
         :param type:
             The value to assign to the type property of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
-            Allowed values for this property are: "ORACLE_DATABASE"
+            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL"
         :type type: str
 
         :param code:

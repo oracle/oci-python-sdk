@@ -13,17 +13,27 @@ from .config_summary import ConfigSummary
 from .create_apdex_rules_details import CreateApdexRulesDetails
 from .create_config_details import CreateConfigDetails
 from .create_metric_group_details import CreateMetricGroupDetails
+from .create_options_details import CreateOptionsDetails
 from .create_span_filter_details import CreateSpanFilterDetails
 from .dimension import Dimension
 from .metric import Metric
 from .metric_group import MetricGroup
 from .metric_group_summary import MetricGroupSummary
+from .namespace import Namespace
+from .namespace_collection import NamespaceCollection
+from .namespace_metric import NamespaceMetric
+from .namespace_metric_collection import NamespaceMetricCollection
+from .options import Options
+from .options_summary import OptionsSummary
+from .retrieve_namespace_metrics_details import RetrieveNamespaceMetricsDetails
 from .span_filter import SpanFilter
 from .span_filter_summary import SpanFilterSummary
 from .update_apdex_rules_details import UpdateApdexRulesDetails
 from .update_config_details import UpdateConfigDetails
 from .update_metric_group_details import UpdateMetricGroupDetails
+from .update_options_details import UpdateOptionsDetails
 from .update_span_filter_details import UpdateSpanFilterDetails
+from .validate_span_filter_pattern_details import ValidateSpanFilterPatternDetails
 
 # Maps type names to classes for apm_config services.
 apm_config_type_mapping = {
@@ -36,15 +46,25 @@ apm_config_type_mapping = {
     "CreateApdexRulesDetails": CreateApdexRulesDetails,
     "CreateConfigDetails": CreateConfigDetails,
     "CreateMetricGroupDetails": CreateMetricGroupDetails,
+    "CreateOptionsDetails": CreateOptionsDetails,
     "CreateSpanFilterDetails": CreateSpanFilterDetails,
     "Dimension": Dimension,
     "Metric": Metric,
     "MetricGroup": MetricGroup,
     "MetricGroupSummary": MetricGroupSummary,
+    "Namespace": Namespace,
+    "NamespaceCollection": NamespaceCollection,
+    "NamespaceMetric": NamespaceMetric,
+    "NamespaceMetricCollection": NamespaceMetricCollection,
+    "Options": Options,
+    "OptionsSummary": OptionsSummary,
+    "RetrieveNamespaceMetricsDetails": RetrieveNamespaceMetricsDetails,
     "SpanFilter": SpanFilter,
     "SpanFilterSummary": SpanFilterSummary,
     "UpdateApdexRulesDetails": UpdateApdexRulesDetails,
     "UpdateConfigDetails": UpdateConfigDetails,
     "UpdateMetricGroupDetails": UpdateMetricGroupDetails,
-    "UpdateSpanFilterDetails": UpdateSpanFilterDetails
+    "UpdateOptionsDetails": UpdateOptionsDetails,
+    "UpdateSpanFilterDetails": UpdateSpanFilterDetails,
+    "ValidateSpanFilterPatternDetails": ValidateSpanFilterPatternDetails
 }

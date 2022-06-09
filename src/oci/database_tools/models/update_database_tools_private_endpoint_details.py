@@ -141,7 +141,7 @@ class UpdateDatabaseToolsPrivateEndpointDetails(object):
     def description(self):
         """
         Gets the description of this UpdateDatabaseToolsPrivateEndpointDetails.
-        A description of the DatabaseToolsPrivateEndpoint.
+        A description of the Database Tools private endpoint.
 
 
         :return: The description of this UpdateDatabaseToolsPrivateEndpointDetails.
@@ -153,7 +153,7 @@ class UpdateDatabaseToolsPrivateEndpointDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateDatabaseToolsPrivateEndpointDetails.
-        A description of the DatabaseToolsPrivateEndpoint.
+        A description of the Database Tools private endpoint.
 
 
         :param description: The description of this UpdateDatabaseToolsPrivateEndpointDetails.

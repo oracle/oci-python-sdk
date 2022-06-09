@@ -10,18 +10,23 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDatabaseToolsConnectionDetails(object):
     """
-    The information about new DatabaseToolsConnection.
+    Details for the new Database Tools connection.
     """
 
     #: A constant which can be used with the type property of a CreateDatabaseToolsConnectionDetails.
     #: This constant has a value of "ORACLE_DATABASE"
     TYPE_ORACLE_DATABASE = "ORACLE_DATABASE"
 
+    #: A constant which can be used with the type property of a CreateDatabaseToolsConnectionDetails.
+    #: This constant has a value of "MYSQL"
+    TYPE_MYSQL = "MYSQL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateDatabaseToolsConnectionDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.database_tools.models.CreateDatabaseToolsConnectionMySqlDetails`
         * :class:`~oci.database_tools.models.CreateDatabaseToolsConnectionOracleDatabaseDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -44,7 +49,7 @@ class CreateDatabaseToolsConnectionDetails(object):
 
         :param type:
             The value to assign to the type property of this CreateDatabaseToolsConnectionDetails.
-            Allowed values for this property are: "ORACLE_DATABASE"
+            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL"
         :type type: str
 
         """
@@ -77,6 +82,9 @@ class CreateDatabaseToolsConnectionDetails(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['type']
+
+        if type == 'MYSQL':
+            return 'CreateDatabaseToolsConnectionMySqlDetails'
 
         if type == 'ORACLE_DATABASE':
             return 'CreateDatabaseToolsConnectionOracleDatabaseDetails'
@@ -111,7 +119,7 @@ class CreateDatabaseToolsConnectionDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateDatabaseToolsConnectionDetails.
-        The `OCID`__ of the containing Compartment.
+        The `OCID`__ of the compartment containing the Database Tools connection.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -125,7 +133,7 @@ class CreateDatabaseToolsConnectionDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateDatabaseToolsConnectionDetails.
-        The `OCID`__ of the containing Compartment.
+        The `OCID`__ of the compartment containing the Database Tools connection.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -193,7 +201,7 @@ class CreateDatabaseToolsConnectionDetails(object):
         **[Required]** Gets the type of this CreateDatabaseToolsConnectionDetails.
         The DatabaseToolsConnection type.
 
-        Allowed values for this property are: "ORACLE_DATABASE"
+        Allowed values for this property are: "ORACLE_DATABASE", "MYSQL"
 
 
         :return: The type of this CreateDatabaseToolsConnectionDetails.
@@ -211,7 +219,7 @@ class CreateDatabaseToolsConnectionDetails(object):
         :param type: The type of this CreateDatabaseToolsConnectionDetails.
         :type: str
         """
-        allowed_values = ["ORACLE_DATABASE"]
+        allowed_values = ["ORACLE_DATABASE", "MYSQL"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 "Invalid value for `type`, must be None or one of {0}"

@@ -34,6 +34,48 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="default" email="platform_limits_grp@oracle.com" jiraProject="LIM" opsJiraProject="LIM"
+def test_add_quota_lock(testing_service_client):
+    if not testing_service_client.is_api_enabled('limits', 'AddQuotaLock'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('limits', util.camelize('quotas'), 'AddQuotaLock')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='limits', api_name='AddQuotaLock')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.limits.QuotasClient(config, service_endpoint=service_endpoint)
+            response = client.add_quota_lock(
+                quota_id=request.pop(util.camelize('quotaId')),
+                add_lock_details=request.pop(util.camelize('AddLockDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'limits',
+            'AddQuotaLock',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'quota',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="platform_limits_grp@oracle.com" jiraProject="LIM" opsJiraProject="LIM"
 def test_create_quota(testing_service_client):
     if not testing_service_client.is_api_enabled('limits', 'CreateQuota'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -216,6 +258,48 @@ def test_list_quotas(testing_service_client):
             'quotaSummary',
             False,
             True
+        )
+
+
+# IssueRoutingInfo tag="default" email="platform_limits_grp@oracle.com" jiraProject="LIM" opsJiraProject="LIM"
+def test_remove_quota_lock(testing_service_client):
+    if not testing_service_client.is_api_enabled('limits', 'RemoveQuotaLock'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('limits', util.camelize('quotas'), 'RemoveQuotaLock')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='limits', api_name='RemoveQuotaLock')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.limits.QuotasClient(config, service_endpoint=service_endpoint)
+            response = client.remove_quota_lock(
+                quota_id=request.pop(util.camelize('quotaId')),
+                remove_lock_details=request.pop(util.camelize('RemoveLockDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'limits',
+            'RemoveQuotaLock',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'quota',
+            False,
+            False
         )
 
 

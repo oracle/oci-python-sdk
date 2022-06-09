@@ -72,6 +72,10 @@ class TagDefault(object):
             The value to assign to the is_required property of this TagDefault.
         :type is_required: bool
 
+        :param locks:
+            The value to assign to the locks property of this TagDefault.
+        :type locks: list[oci.identity.models.ResourceLock]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -82,7 +86,8 @@ class TagDefault(object):
             'value': 'str',
             'time_created': 'datetime',
             'lifecycle_state': 'str',
-            'is_required': 'bool'
+            'is_required': 'bool',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
@@ -94,7 +99,8 @@ class TagDefault(object):
             'value': 'value',
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState',
-            'is_required': 'isRequired'
+            'is_required': 'isRequired',
+            'locks': 'locks'
         }
 
         self._id = None
@@ -106,6 +112,7 @@ class TagDefault(object):
         self._time_created = None
         self._lifecycle_state = None
         self._is_required = None
+        self._locks = None
 
     @property
     def id(self):
@@ -348,6 +355,30 @@ class TagDefault(object):
         :type: bool
         """
         self._is_required = is_required
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this TagDefault.
+        Locks associated with this resource.
+
+
+        :return: The locks of this TagDefault.
+        :rtype: list[oci.identity.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this TagDefault.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this TagDefault.
+        :type: list[oci.identity.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

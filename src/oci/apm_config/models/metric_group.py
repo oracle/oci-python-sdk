@@ -26,7 +26,7 @@ class MetricGroup(Config):
 
         :param config_type:
             The value to assign to the config_type property of this MetricGroup.
-            Allowed values for this property are: "SPAN_FILTER", "METRIC_GROUP", "APDEX"
+            Allowed values for this property are: "SPAN_FILTER", "METRIC_GROUP", "APDEX", "OPTIONS"
         :type config_type: str
 
         :param time_created:
@@ -111,7 +111,7 @@ class MetricGroup(Config):
     def display_name(self):
         """
         Gets the display_name of this MetricGroup.
-        The name of the metric group.
+        The name by which a configuration entity is displayed to the end user.
 
 
         :return: The display_name of this MetricGroup.
@@ -123,7 +123,7 @@ class MetricGroup(Config):
     def display_name(self, display_name):
         """
         Sets the display_name of this MetricGroup.
-        The name of the metric group.
+        The name by which a configuration entity is displayed to the end user.
 
 
         :param display_name: The display_name of this MetricGroup.

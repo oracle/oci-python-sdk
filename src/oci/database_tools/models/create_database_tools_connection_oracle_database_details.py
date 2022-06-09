@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDatabaseToolsConnectionOracleDatabaseDetails(CreateDatabaseToolsConnectionDetails):
     """
-    The information about new DatabaseToolsConnection for an Oracle Database
+    Details of the new Database Tools connection for an Oracle Database.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class CreateDatabaseToolsConnectionOracleDatabaseDetails(CreateDatabaseToolsConn
 
         :param type:
             The value to assign to the type property of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
-            Allowed values for this property are: "ORACLE_DATABASE"
+            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL"
         :type type: str
 
         :param related_resource:
@@ -137,7 +137,7 @@ class CreateDatabaseToolsConnectionOracleDatabaseDetails(CreateDatabaseToolsConn
     def connection_string(self):
         """
         Gets the connection_string of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
-        Connect descriptor or Easy Connect Naming method to connect to the database.
+        The connect descriptor or Easy Connect Naming method use to connect to the database.
 
 
         :return: The connection_string of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
@@ -149,7 +149,7 @@ class CreateDatabaseToolsConnectionOracleDatabaseDetails(CreateDatabaseToolsConn
     def connection_string(self, connection_string):
         """
         Sets the connection_string of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
-        Connect descriptor or Easy Connect Naming method to connect to the database.
+        The connect descriptor or Easy Connect Naming method use to connect to the database.
 
 
         :param connection_string: The connection_string of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
@@ -161,7 +161,7 @@ class CreateDatabaseToolsConnectionOracleDatabaseDetails(CreateDatabaseToolsConn
     def user_name(self):
         """
         Gets the user_name of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
-        Database user name.
+        The database user name.
 
 
         :return: The user_name of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
@@ -173,7 +173,7 @@ class CreateDatabaseToolsConnectionOracleDatabaseDetails(CreateDatabaseToolsConn
     def user_name(self, user_name):
         """
         Sets the user_name of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
-        Database user name.
+        The database user name.
 
 
         :param user_name: The user_name of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
@@ -205,7 +205,7 @@ class CreateDatabaseToolsConnectionOracleDatabaseDetails(CreateDatabaseToolsConn
     def advanced_properties(self):
         """
         Gets the advanced_properties of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
-        Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+        The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
 
 
         :return: The advanced_properties of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
@@ -217,7 +217,7 @@ class CreateDatabaseToolsConnectionOracleDatabaseDetails(CreateDatabaseToolsConn
     def advanced_properties(self, advanced_properties):
         """
         Sets the advanced_properties of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
-        Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+        The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
 
 
         :param advanced_properties: The advanced_properties of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
@@ -255,7 +255,7 @@ class CreateDatabaseToolsConnectionOracleDatabaseDetails(CreateDatabaseToolsConn
     def private_endpoint_id(self):
         """
         Gets the private_endpoint_id of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
-        The `OCID`__ of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+        The `OCID`__ of the Database Tools private endpoint used to access the database in the customer VCN.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -269,7 +269,7 @@ class CreateDatabaseToolsConnectionOracleDatabaseDetails(CreateDatabaseToolsConn
     def private_endpoint_id(self, private_endpoint_id):
         """
         Sets the private_endpoint_id of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
-        The `OCID`__ of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+        The `OCID`__ of the Database Tools private endpoint used to access the database in the customer VCN.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

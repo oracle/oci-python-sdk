@@ -46,7 +46,7 @@ class DatabaseToolsUserPasswordSecretIdDetails(DatabaseToolsUserPasswordDetails)
     @property
     def secret_id(self):
         """
-        Gets the secret_id of this DatabaseToolsUserPasswordSecretIdDetails.
+        **[Required]** Gets the secret_id of this DatabaseToolsUserPasswordSecretIdDetails.
         The `OCID`__ of the secret containing the user password.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm

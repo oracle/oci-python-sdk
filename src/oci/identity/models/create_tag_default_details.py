@@ -34,25 +34,32 @@ class CreateTagDefaultDetails(object):
             The value to assign to the is_required property of this CreateTagDefaultDetails.
         :type is_required: bool
 
+        :param locks:
+            The value to assign to the locks property of this CreateTagDefaultDetails.
+        :type locks: list[oci.identity.models.AddLockDetails]
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
             'tag_definition_id': 'str',
             'value': 'str',
-            'is_required': 'bool'
+            'is_required': 'bool',
+            'locks': 'list[AddLockDetails]'
         }
 
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'tag_definition_id': 'tagDefinitionId',
             'value': 'value',
-            'is_required': 'isRequired'
+            'is_required': 'isRequired',
+            'locks': 'locks'
         }
 
         self._compartment_id = None
         self._tag_definition_id = None
         self._value = None
         self._is_required = None
+        self._locks = None
 
     @property
     def compartment_id(self):
@@ -163,6 +170,30 @@ class CreateTagDefaultDetails(object):
         :type: bool
         """
         self._is_required = is_required
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this CreateTagDefaultDetails.
+        Locks associated with this resource.
+
+
+        :return: The locks of this CreateTagDefaultDetails.
+        :rtype: list[oci.identity.models.AddLockDetails]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this CreateTagDefaultDetails.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this CreateTagDefaultDetails.
+        :type: list[oci.identity.models.AddLockDetails]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

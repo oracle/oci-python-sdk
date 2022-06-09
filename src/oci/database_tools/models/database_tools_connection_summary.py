@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DatabaseToolsConnectionSummary(object):
     """
-    Summary of the DatabaseToolsConnection.
+    Summary of the Database Tools connection.
     """
 
     #: A constant which can be used with the lifecycle_state property of a DatabaseToolsConnectionSummary.
@@ -41,12 +41,17 @@ class DatabaseToolsConnectionSummary(object):
     #: This constant has a value of "ORACLE_DATABASE"
     TYPE_ORACLE_DATABASE = "ORACLE_DATABASE"
 
+    #: A constant which can be used with the type property of a DatabaseToolsConnectionSummary.
+    #: This constant has a value of "MYSQL"
+    TYPE_MYSQL = "MYSQL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DatabaseToolsConnectionSummary object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.database_tools.models.DatabaseToolsConnectionOracleDatabaseSummary`
+        * :class:`~oci.database_tools.models.DatabaseToolsConnectionMySqlSummary`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -94,7 +99,7 @@ class DatabaseToolsConnectionSummary(object):
 
         :param type:
             The value to assign to the type property of this DatabaseToolsConnectionSummary.
-            Allowed values for this property are: "ORACLE_DATABASE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -149,6 +154,9 @@ class DatabaseToolsConnectionSummary(object):
 
         if type == 'ORACLE_DATABASE':
             return 'DatabaseToolsConnectionOracleDatabaseSummary'
+
+        if type == 'MYSQL':
+            return 'DatabaseToolsConnectionMySqlSummary'
         else:
             return 'DatabaseToolsConnectionSummary'
 
@@ -156,7 +164,7 @@ class DatabaseToolsConnectionSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this DatabaseToolsConnectionSummary.
-        The `OCID`__ of the DatabaseToolsConnection.
+        The `OCID`__ of the `DatabaseToolsConnection`.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -170,7 +178,7 @@ class DatabaseToolsConnectionSummary(object):
     def id(self, id):
         """
         Sets the id of this DatabaseToolsConnectionSummary.
-        The `OCID`__ of the DatabaseToolsConnection.
+        The `OCID`__ of the `DatabaseToolsConnection`.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -208,7 +216,7 @@ class DatabaseToolsConnectionSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this DatabaseToolsConnectionSummary.
-        The `OCID`__ of the containing Compartment.
+        The `OCID`__ of the compartment containing the Database Tools connection.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -222,7 +230,7 @@ class DatabaseToolsConnectionSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this DatabaseToolsConnectionSummary.
-        The `OCID`__ of the containing Compartment.
+        The `OCID`__ of the compartment containing the Database Tools connection.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -236,7 +244,7 @@ class DatabaseToolsConnectionSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this DatabaseToolsConnectionSummary.
-        The current state of the DatabaseToolsConnection.
+        The current state of the Database Tools connection.
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -251,7 +259,7 @@ class DatabaseToolsConnectionSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this DatabaseToolsConnectionSummary.
-        The current state of the DatabaseToolsConnection.
+        The current state of the Database Tools connection.
 
 
         :param lifecycle_state: The lifecycle_state of this DatabaseToolsConnectionSummary.
@@ -290,7 +298,7 @@ class DatabaseToolsConnectionSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this DatabaseToolsConnectionSummary.
-        The time the DatabaseToolsConnection was created. An RFC3339 formatted datetime string
+        The time the Database Tools connection was created. An RFC3339 formatted datetime string.
 
 
         :return: The time_created of this DatabaseToolsConnectionSummary.
@@ -302,7 +310,7 @@ class DatabaseToolsConnectionSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this DatabaseToolsConnectionSummary.
-        The time the DatabaseToolsConnection was created. An RFC3339 formatted datetime string
+        The time the Database Tools connection was created. An RFC3339 formatted datetime string.
 
 
         :param time_created: The time_created of this DatabaseToolsConnectionSummary.
@@ -314,7 +322,7 @@ class DatabaseToolsConnectionSummary(object):
     def time_updated(self):
         """
         **[Required]** Gets the time_updated of this DatabaseToolsConnectionSummary.
-        The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string
+        The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
 
 
         :return: The time_updated of this DatabaseToolsConnectionSummary.
@@ -326,7 +334,7 @@ class DatabaseToolsConnectionSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this DatabaseToolsConnectionSummary.
-        The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string
+        The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
 
 
         :param time_updated: The time_updated of this DatabaseToolsConnectionSummary.
@@ -416,9 +424,9 @@ class DatabaseToolsConnectionSummary(object):
     def type(self):
         """
         **[Required]** Gets the type of this DatabaseToolsConnectionSummary.
-        The DatabaseToolsConnection type.
+        The Database Tools connection type.
 
-        Allowed values for this property are: "ORACLE_DATABASE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE_DATABASE", "MYSQL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -431,13 +439,13 @@ class DatabaseToolsConnectionSummary(object):
     def type(self, type):
         """
         Sets the type of this DatabaseToolsConnectionSummary.
-        The DatabaseToolsConnection type.
+        The Database Tools connection type.
 
 
         :param type: The type of this DatabaseToolsConnectionSummary.
         :type: str
         """
-        allowed_values = ["ORACLE_DATABASE"]
+        allowed_values = ["ORACLE_DATABASE", "MYSQL"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

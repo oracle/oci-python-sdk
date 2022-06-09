@@ -118,6 +118,90 @@ def test_activate_mfa_totp_device(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_add_tag_default_lock(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity', 'AddTagDefaultLock'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'AddTagDefaultLock')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='AddTagDefaultLock')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
+            response = client.add_tag_default_lock(
+                tag_default_id=request.pop(util.camelize('tagDefaultId')),
+                add_lock_details=request.pop(util.camelize('AddLockDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'AddTagDefaultLock',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'tagDefault',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_add_tag_namespace_lock(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity', 'AddTagNamespaceLock'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'AddTagNamespaceLock')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='AddTagNamespaceLock')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
+            response = client.add_tag_namespace_lock(
+                tag_namespace_id=request.pop(util.camelize('tagNamespaceId')),
+                add_lock_details=request.pop(util.camelize('AddLockDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'AddTagNamespaceLock',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'tagNamespace',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
 def test_add_user_to_group(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'AddUserToGroup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5509,6 +5593,90 @@ def test_recover_compartment(testing_service_client):
             result,
             service_error,
             'compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_remove_tag_default_lock(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity', 'RemoveTagDefaultLock'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'RemoveTagDefaultLock')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='RemoveTagDefaultLock')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
+            response = client.remove_tag_default_lock(
+                tag_default_id=request.pop(util.camelize('tagDefaultId')),
+                remove_lock_details=request.pop(util.camelize('RemoveLockDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'RemoveTagDefaultLock',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'tagDefault',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_remove_tag_namespace_lock(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity', 'RemoveTagNamespaceLock'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'RemoveTagNamespaceLock')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='RemoveTagNamespaceLock')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
+            response = client.remove_tag_namespace_lock(
+                tag_namespace_id=request.pop(util.camelize('tagNamespaceId')),
+                remove_lock_details=request.pop(util.camelize('RemoveLockDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'RemoveTagNamespaceLock',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'tagNamespace',
             False,
             False
         )

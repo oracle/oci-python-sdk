@@ -104,6 +104,110 @@ class QuotasClient(object):
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
 
+    def add_quota_lock(self, quota_id, add_lock_details, **kwargs):
+        """
+        Adds a lock to a resource.
+
+
+        :param str quota_id: (required)
+            The OCID of the quota.
+
+        :param oci.limits.models.AddLockDetails add_lock_details: (required)
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            is updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.limits.models.Quota`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/limits/add_quota_lock.py.html>`__ to see an example of how to use add_quota_lock API.
+        """
+        resource_path = "/20181025/quotas/{quotaId}/actions/addLock"
+        method = "POST"
+        operation_name = "add_quota_lock"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/AddQuotaLock"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "add_quota_lock got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "quotaId": quota_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_lock_details,
+                response_type="Quota",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_lock_details,
+                response_type="Quota",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
     def create_quota(self, create_quota_details, **kwargs):
         """
         Creates a new quota with the details supplied.
@@ -214,6 +318,9 @@ class QuotasClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
             is updated or deleted only if the etag you provide matches the resource's current etag value.
 
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -242,7 +349,8 @@ class QuotasClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
-            "if_match"
+            "if_match",
+            "is_lock_override"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -258,6 +366,11 @@ class QuotasClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -281,6 +394,7 @@ class QuotasClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -290,6 +404,7 @@ class QuotasClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -533,16 +648,15 @@ class QuotasClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
-    def update_quota(self, quota_id, update_quota_details, **kwargs):
+    def remove_quota_lock(self, quota_id, remove_lock_details, **kwargs):
         """
-        Updates the quota corresponding to given OCID with the details supplied.
+        Remove a lock from a resource.
 
 
         :param str quota_id: (required)
             The OCID of the quota.
 
-        :param oci.limits.models.UpdateQuotaDetails update_quota_details: (required)
-            Request object for updating a quota.
+        :param oci.limits.models.RemoveLockDetails remove_lock_details: (required)
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -569,12 +683,12 @@ class QuotasClient(object):
         :rtype: :class:`~oci.response.Response`
 
         :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/limits/update_quota.py.html>`__ to see an example of how to use update_quota API.
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/limits/remove_quota_lock.py.html>`__ to see an example of how to use remove_quota_lock API.
         """
-        resource_path = "/20181025/quotas/{quotaId}"
-        method = "PUT"
-        operation_name = "update_quota"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/UpdateQuota"
+        resource_path = "/20181025/quotas/{quotaId}/actions/removeLock"
+        method = "POST"
+        operation_name = "remove_quota_lock"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/RemoveQuotaLock"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -586,7 +700,7 @@ class QuotasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_quota got unknown kwargs: {!r}".format(extra_kwargs))
+                "remove_quota_lock got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "quotaId": quota_id
@@ -621,6 +735,121 @@ class QuotasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
+                body=remove_lock_details,
+                response_type="Quota",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=remove_lock_details,
+                response_type="Quota",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def update_quota(self, quota_id, update_quota_details, **kwargs):
+        """
+        Updates the quota corresponding to given OCID with the details supplied.
+
+
+        :param str quota_id: (required)
+            The OCID of the quota.
+
+        :param oci.limits.models.UpdateQuotaDetails update_quota_details: (required)
+            Request object for updating a quota.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            is updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param bool is_lock_override: (optional)
+            Whether to override locks (if any exist).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.limits.models.Quota`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/limits/update_quota.py.html>`__ to see an example of how to use update_quota API.
+        """
+        resource_path = "/20181025/quotas/{quotaId}"
+        method = "PUT"
+        operation_name = "update_quota"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/UpdateQuota"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match",
+            "is_lock_override"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_quota got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "quotaId": quota_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "isLockOverride": kwargs.get("is_lock_override", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
                 body=update_quota_details,
                 response_type="Quota",
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -631,6 +860,7 @@ class QuotasClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 body=update_quota_details,
                 response_type="Quota",

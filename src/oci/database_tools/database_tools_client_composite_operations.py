@@ -29,7 +29,7 @@ class DatabaseToolsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str database_tools_connection_id: (required)
-            The `OCID`__ of a DatabaseToolsConnection.
+            The `OCID`__ of a Database Tools connection.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -72,7 +72,7 @@ class DatabaseToolsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str database_tools_private_endpoint_id: (required)
-            The `OCID`__ of a DatabaseToolsPrivateEndpoint.
+            The `OCID`__ of a Database Tools private endpoint.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -115,7 +115,7 @@ class DatabaseToolsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.database_tools.models.CreateDatabaseToolsConnectionDetails create_database_tools_connection_details: (required)
-            Details for the new DatabaseToolsConnection.
+            Details for the new `DatabaseToolsConnection`.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_tools.models.WorkRequest.status`
@@ -191,7 +191,7 @@ class DatabaseToolsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str database_tools_connection_id: (required)
-            The `OCID`__ of a DatabaseToolsConnection.
+            The `OCID`__ of a Database Tools connection.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -239,7 +239,7 @@ class DatabaseToolsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str database_tools_private_endpoint_id: (required)
-            The `OCID`__ of a DatabaseToolsPrivateEndpoint.
+            The `OCID`__ of a Database Tools private endpoint.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -287,7 +287,7 @@ class DatabaseToolsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str database_tools_connection_id: (required)
-            The `OCID`__ of a DatabaseToolsConnection.
+            The `OCID`__ of a Database Tools connection.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -330,7 +330,7 @@ class DatabaseToolsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str database_tools_private_endpoint_id: (required)
-            The `OCID`__ of a DatabaseToolsPrivateEndpoint.
+            The `OCID`__ of a Database Tools private endpoint.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
