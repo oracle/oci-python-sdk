@@ -78,6 +78,10 @@ class TagNamespace(object):
             The value to assign to the time_created property of this TagNamespace.
         :type time_created: datetime
 
+        :param locks:
+            The value to assign to the locks property of this TagNamespace.
+        :type locks: list[oci.identity.models.ResourceLock]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -88,7 +92,8 @@ class TagNamespace(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'is_retired': 'bool',
             'lifecycle_state': 'str',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
@@ -100,7 +105,8 @@ class TagNamespace(object):
             'defined_tags': 'definedTags',
             'is_retired': 'isRetired',
             'lifecycle_state': 'lifecycleState',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'locks': 'locks'
         }
 
         self._id = None
@@ -112,6 +118,7 @@ class TagNamespace(object):
         self._is_retired = None
         self._lifecycle_state = None
         self._time_created = None
+        self._locks = None
 
     @property
     def id(self):
@@ -358,6 +365,30 @@ class TagNamespace(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this TagNamespace.
+        Locks associated with this resource.
+
+
+        :return: The locks of this TagNamespace.
+        :rtype: list[oci.identity.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this TagNamespace.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this TagNamespace.
+        :type: list[oci.identity.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

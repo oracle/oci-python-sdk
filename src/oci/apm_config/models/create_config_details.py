@@ -26,6 +26,10 @@ class CreateConfigDetails(object):
     #: This constant has a value of "APDEX"
     CONFIG_TYPE_APDEX = "APDEX"
 
+    #: A constant which can be used with the config_type property of a CreateConfigDetails.
+    #: This constant has a value of "OPTIONS"
+    CONFIG_TYPE_OPTIONS = "OPTIONS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateConfigDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -33,13 +37,14 @@ class CreateConfigDetails(object):
 
         * :class:`~oci.apm_config.models.CreateSpanFilterDetails`
         * :class:`~oci.apm_config.models.CreateMetricGroupDetails`
+        * :class:`~oci.apm_config.models.CreateOptionsDetails`
         * :class:`~oci.apm_config.models.CreateApdexRulesDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param config_type:
             The value to assign to the config_type property of this CreateConfigDetails.
-            Allowed values for this property are: "SPAN_FILTER", "METRIC_GROUP", "APDEX"
+            Allowed values for this property are: "SPAN_FILTER", "METRIC_GROUP", "APDEX", "OPTIONS"
         :type config_type: str
 
         :param freeform_tags:
@@ -81,6 +86,9 @@ class CreateConfigDetails(object):
         if type == 'METRIC_GROUP':
             return 'CreateMetricGroupDetails'
 
+        if type == 'OPTIONS':
+            return 'CreateOptionsDetails'
+
         if type == 'APDEX':
             return 'CreateApdexRulesDetails'
         else:
@@ -92,7 +100,7 @@ class CreateConfigDetails(object):
         **[Required]** Gets the config_type of this CreateConfigDetails.
         The type of configuration item.
 
-        Allowed values for this property are: "SPAN_FILTER", "METRIC_GROUP", "APDEX"
+        Allowed values for this property are: "SPAN_FILTER", "METRIC_GROUP", "APDEX", "OPTIONS"
 
 
         :return: The config_type of this CreateConfigDetails.
@@ -110,7 +118,7 @@ class CreateConfigDetails(object):
         :param config_type: The config_type of this CreateConfigDetails.
         :type: str
         """
-        allowed_values = ["SPAN_FILTER", "METRIC_GROUP", "APDEX"]
+        allowed_values = ["SPAN_FILTER", "METRIC_GROUP", "APDEX", "OPTIONS"]
         if not value_allowed_none_or_none_sentinel(config_type, allowed_values):
             raise ValueError(
                 "Invalid value for `config_type`, must be None or one of {0}"

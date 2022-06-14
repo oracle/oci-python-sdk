@@ -164,7 +164,7 @@ class WorkRequestResource(object):
     def entity_uri(self):
         """
         Gets the entity_uri of this WorkRequestResource.
-        The URI path that the user can do a GET on to access the resource metadata
+        The URI path that the user can use for a GET operation to access the resource metadata.
 
 
         :return: The entity_uri of this WorkRequestResource.
@@ -176,7 +176,7 @@ class WorkRequestResource(object):
     def entity_uri(self, entity_uri):
         """
         Sets the entity_uri of this WorkRequestResource.
-        The URI path that the user can do a GET on to access the resource metadata
+        The URI path that the user can use for a GET operation to access the resource metadata.
 
 
         :param entity_uri: The entity_uri of this WorkRequestResource.

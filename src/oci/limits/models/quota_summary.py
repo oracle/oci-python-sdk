@@ -43,6 +43,10 @@ class QuotaSummary(object):
             The value to assign to the time_created property of this QuotaSummary.
         :type time_created: datetime
 
+        :param locks:
+            The value to assign to the locks property of this QuotaSummary.
+        :type locks: list[oci.limits.models.ResourceLock]
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this QuotaSummary.
             Allowed values for this property are: "ACTIVE", 'UNKNOWN_ENUM_VALUE'.
@@ -64,6 +68,7 @@ class QuotaSummary(object):
             'name': 'str',
             'description': 'str',
             'time_created': 'datetime',
+            'locks': 'list[ResourceLock]',
             'lifecycle_state': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -75,6 +80,7 @@ class QuotaSummary(object):
             'name': 'name',
             'description': 'description',
             'time_created': 'timeCreated',
+            'locks': 'locks',
             'lifecycle_state': 'lifecycleState',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -85,6 +91,7 @@ class QuotaSummary(object):
         self._name = None
         self._description = None
         self._time_created = None
+        self._locks = None
         self._lifecycle_state = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -212,6 +219,30 @@ class QuotaSummary(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this QuotaSummary.
+        Locks associated with this resource.
+
+
+        :return: The locks of this QuotaSummary.
+        :rtype: list[oci.limits.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this QuotaSummary.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this QuotaSummary.
+        :type: list[oci.limits.models.ResourceLock]
+        """
+        self._locks = locks
 
     @property
     def lifecycle_state(self):

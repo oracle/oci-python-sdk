@@ -4,6 +4,7 @@
 
 from __future__ import absolute_import
 
+from .add_lock_details import AddLockDetails
 from .add_user_to_group_details import AddUserToGroupDetails
 from .allowed_domain_license_type_summary import AllowedDomainLicenseTypeSummary
 from .api_key import ApiKey
@@ -86,7 +87,9 @@ from .password_policy import PasswordPolicy
 from .policy import Policy
 from .region import Region
 from .region_subscription import RegionSubscription
+from .remove_lock_details import RemoveLockDetails
 from .replicated_region_details import ReplicatedRegionDetails
+from .resource_lock import ResourceLock
 from .saml2_identity_provider import Saml2IdentityProvider
 from .scim_client_credentials import ScimClientCredentials
 from .smtp_credential import SmtpCredential
@@ -140,6 +143,7 @@ from .work_request_summary import WorkRequestSummary
 
 # Maps type names to classes for identity services.
 identity_type_mapping = {
+    "AddLockDetails": AddLockDetails,
     "AddUserToGroupDetails": AddUserToGroupDetails,
     "AllowedDomainLicenseTypeSummary": AllowedDomainLicenseTypeSummary,
     "ApiKey": ApiKey,
@@ -222,7 +226,9 @@ identity_type_mapping = {
     "Policy": Policy,
     "Region": Region,
     "RegionSubscription": RegionSubscription,
+    "RemoveLockDetails": RemoveLockDetails,
     "ReplicatedRegionDetails": ReplicatedRegionDetails,
+    "ResourceLock": ResourceLock,
     "Saml2IdentityProvider": Saml2IdentityProvider,
     "ScimClientCredentials": ScimClientCredentials,
     "SmtpCredential": SmtpCredential,

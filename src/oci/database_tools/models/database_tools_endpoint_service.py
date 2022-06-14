@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DatabaseToolsEndpointService(object):
     """
-    Description of DatabaseToolsEndpointService.
+    Description of Database Tools Endpoint Service.
     """
 
     #: A constant which can be used with the lifecycle_state property of a DatabaseToolsEndpointService.
@@ -140,7 +140,7 @@ class DatabaseToolsEndpointService(object):
     def id(self):
         """
         **[Required]** Gets the id of this DatabaseToolsEndpointService.
-        The `OCID`__ of the DatabaseToolsEndpointService.
+        The `OCID`__ of the Database Tools Endpoint Service.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -154,7 +154,7 @@ class DatabaseToolsEndpointService(object):
     def id(self, id):
         """
         Sets the id of this DatabaseToolsEndpointService.
-        The `OCID`__ of the DatabaseToolsEndpointService.
+        The `OCID`__ of the Database Tools Endpoint Service.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -216,7 +216,7 @@ class DatabaseToolsEndpointService(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this DatabaseToolsEndpointService.
-        The `OCID`__ of the containing Compartment.
+        The `OCID`__ of the compartment containing the Database Tools Endpoint Service.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -230,7 +230,7 @@ class DatabaseToolsEndpointService(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this DatabaseToolsEndpointService.
-        The `OCID`__ of the containing Compartment.
+        The `OCID`__ of the compartment containing the Database Tools Endpoint Service.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -322,7 +322,7 @@ class DatabaseToolsEndpointService(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this DatabaseToolsEndpointService.
-        The time the DatabaseToolsEndpointService was created. An RFC3339 formatted datetime string
+        The time the Database Tools Endpoint Service was created. An RFC3339 formatted datetime string
 
 
         :return: The time_created of this DatabaseToolsEndpointService.
@@ -334,7 +334,7 @@ class DatabaseToolsEndpointService(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this DatabaseToolsEndpointService.
-        The time the DatabaseToolsEndpointService was created. An RFC3339 formatted datetime string
+        The time the Database Tools Endpoint Service was created. An RFC3339 formatted datetime string
 
 
         :param time_created: The time_created of this DatabaseToolsEndpointService.
@@ -346,7 +346,7 @@ class DatabaseToolsEndpointService(object):
     def time_updated(self):
         """
         Gets the time_updated of this DatabaseToolsEndpointService.
-        The time the DatabaseToolsEndpointService was updated. An RFC3339 formatted datetime string
+        The time the Database Tools Endpoint Service was updated. An RFC3339 formatted datetime string
 
 
         :return: The time_updated of this DatabaseToolsEndpointService.
@@ -358,7 +358,7 @@ class DatabaseToolsEndpointService(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this DatabaseToolsEndpointService.
-        The time the DatabaseToolsEndpointService was updated. An RFC3339 formatted datetime string
+        The time the Database Tools Endpoint Service was updated. An RFC3339 formatted datetime string
 
 
         :param time_updated: The time_updated of this DatabaseToolsEndpointService.
@@ -370,7 +370,7 @@ class DatabaseToolsEndpointService(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this DatabaseToolsEndpointService.
-        The current state of the DatabaseToolsEndpointService.
+        The current state of the Database Tools Endpoint Service.
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -385,7 +385,7 @@ class DatabaseToolsEndpointService(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this DatabaseToolsEndpointService.
-        The current state of the DatabaseToolsEndpointService.
+        The current state of the Database Tools Endpoint Service.
 
 
         :param lifecycle_state: The lifecycle_state of this DatabaseToolsEndpointService.
@@ -424,7 +424,7 @@ class DatabaseToolsEndpointService(object):
     def description(self):
         """
         Gets the description of this DatabaseToolsEndpointService.
-        A description of the DatabaseToolsEndpointService.
+        A description of the Database Tools Endpoint Service.
 
 
         :return: The description of this DatabaseToolsEndpointService.
@@ -436,7 +436,7 @@ class DatabaseToolsEndpointService(object):
     def description(self, description):
         """
         Sets the description of this DatabaseToolsEndpointService.
-        A description of the DatabaseToolsEndpointService.
+        A description of the Database Tools Endpoint Service.
 
 
         :param description: The description of this DatabaseToolsEndpointService.

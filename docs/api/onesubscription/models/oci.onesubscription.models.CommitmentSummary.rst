@@ -1,0 +1,11 @@
+CommitmentSummary
+=================
+
+.. currentmodule:: oci.onesubscription.models
+
+.. autoclass:: CommitmentSummary
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

@@ -22,7 +22,7 @@ class UpdateMetricGroupDetails(UpdateConfigDetails):
 
         :param config_type:
             The value to assign to the config_type property of this UpdateMetricGroupDetails.
-            Allowed values for this property are: "SPAN_FILTER", "METRIC_GROUP", "APDEX"
+            Allowed values for this property are: "SPAN_FILTER", "METRIC_GROUP", "APDEX", "OPTIONS"
         :type config_type: str
 
         :param freeform_tags:
@@ -90,7 +90,7 @@ class UpdateMetricGroupDetails(UpdateConfigDetails):
     def display_name(self):
         """
         Gets the display_name of this UpdateMetricGroupDetails.
-        The name of the metric group.
+        The name by which a configuration entity is displayed to the end user.
 
 
         :return: The display_name of this UpdateMetricGroupDetails.
@@ -102,7 +102,7 @@ class UpdateMetricGroupDetails(UpdateConfigDetails):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateMetricGroupDetails.
-        The name of the metric group.
+        The name by which a configuration entity is displayed to the end user.
 
 
         :param display_name: The display_name of this UpdateMetricGroupDetails.

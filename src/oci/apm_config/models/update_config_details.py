@@ -25,6 +25,10 @@ class UpdateConfigDetails(object):
     #: This constant has a value of "APDEX"
     CONFIG_TYPE_APDEX = "APDEX"
 
+    #: A constant which can be used with the config_type property of a UpdateConfigDetails.
+    #: This constant has a value of "OPTIONS"
+    CONFIG_TYPE_OPTIONS = "OPTIONS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateConfigDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -33,12 +37,13 @@ class UpdateConfigDetails(object):
         * :class:`~oci.apm_config.models.UpdateMetricGroupDetails`
         * :class:`~oci.apm_config.models.UpdateApdexRulesDetails`
         * :class:`~oci.apm_config.models.UpdateSpanFilterDetails`
+        * :class:`~oci.apm_config.models.UpdateOptionsDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param config_type:
             The value to assign to the config_type property of this UpdateConfigDetails.
-            Allowed values for this property are: "SPAN_FILTER", "METRIC_GROUP", "APDEX"
+            Allowed values for this property are: "SPAN_FILTER", "METRIC_GROUP", "APDEX", "OPTIONS"
         :type config_type: str
 
         :param freeform_tags:
@@ -82,6 +87,9 @@ class UpdateConfigDetails(object):
 
         if type == 'SPAN_FILTER':
             return 'UpdateSpanFilterDetails'
+
+        if type == 'OPTIONS':
+            return 'UpdateOptionsDetails'
         else:
             return 'UpdateConfigDetails'
 
@@ -91,7 +99,7 @@ class UpdateConfigDetails(object):
         **[Required]** Gets the config_type of this UpdateConfigDetails.
         The type of configuration item.
 
-        Allowed values for this property are: "SPAN_FILTER", "METRIC_GROUP", "APDEX"
+        Allowed values for this property are: "SPAN_FILTER", "METRIC_GROUP", "APDEX", "OPTIONS"
 
 
         :return: The config_type of this UpdateConfigDetails.
@@ -109,7 +117,7 @@ class UpdateConfigDetails(object):
         :param config_type: The config_type of this UpdateConfigDetails.
         :type: str
         """
-        allowed_values = ["SPAN_FILTER", "METRIC_GROUP", "APDEX"]
+        allowed_values = ["SPAN_FILTER", "METRIC_GROUP", "APDEX", "OPTIONS"]
         if not value_allowed_none_or_none_sentinel(config_type, allowed_values):
             raise ValueError(
                 "Invalid value for `config_type`, must be None or one of {0}"

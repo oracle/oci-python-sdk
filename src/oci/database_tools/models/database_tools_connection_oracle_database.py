@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DatabaseToolsConnectionOracleDatabase(DatabaseToolsConnection):
     """
-    DatabaseToolsConnection of an Oracle Database.
+    Database Tools connection of an Oracle Database.
     """
 
     def __init__(self, **kwargs):
@@ -62,7 +62,7 @@ class DatabaseToolsConnectionOracleDatabase(DatabaseToolsConnection):
 
         :param type:
             The value to assign to the type property of this DatabaseToolsConnectionOracleDatabase.
-            Allowed values for this property are: "ORACLE_DATABASE"
+            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL"
         :type type: str
 
         :param related_resource:
@@ -180,7 +180,7 @@ class DatabaseToolsConnectionOracleDatabase(DatabaseToolsConnection):
     def connection_string(self):
         """
         Gets the connection_string of this DatabaseToolsConnectionOracleDatabase.
-        Connect descriptor or Easy Connect Naming method to connect to the database.
+        The connect descriptor or Easy Connect Naming method used to connect to the database.
 
 
         :return: The connection_string of this DatabaseToolsConnectionOracleDatabase.
@@ -192,7 +192,7 @@ class DatabaseToolsConnectionOracleDatabase(DatabaseToolsConnection):
     def connection_string(self, connection_string):
         """
         Sets the connection_string of this DatabaseToolsConnectionOracleDatabase.
-        Connect descriptor or Easy Connect Naming method to connect to the database.
+        The connect descriptor or Easy Connect Naming method used to connect to the database.
 
 
         :param connection_string: The connection_string of this DatabaseToolsConnectionOracleDatabase.
@@ -204,7 +204,7 @@ class DatabaseToolsConnectionOracleDatabase(DatabaseToolsConnection):
     def user_name(self):
         """
         Gets the user_name of this DatabaseToolsConnectionOracleDatabase.
-        Database user name.
+        The database user name.
 
 
         :return: The user_name of this DatabaseToolsConnectionOracleDatabase.
@@ -216,7 +216,7 @@ class DatabaseToolsConnectionOracleDatabase(DatabaseToolsConnection):
     def user_name(self, user_name):
         """
         Sets the user_name of this DatabaseToolsConnectionOracleDatabase.
-        Database user name.
+        The database user name.
 
 
         :param user_name: The user_name of this DatabaseToolsConnectionOracleDatabase.
@@ -248,7 +248,7 @@ class DatabaseToolsConnectionOracleDatabase(DatabaseToolsConnection):
     def advanced_properties(self):
         """
         Gets the advanced_properties of this DatabaseToolsConnectionOracleDatabase.
-        Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+        The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
 
 
         :return: The advanced_properties of this DatabaseToolsConnectionOracleDatabase.
@@ -260,7 +260,7 @@ class DatabaseToolsConnectionOracleDatabase(DatabaseToolsConnection):
     def advanced_properties(self, advanced_properties):
         """
         Sets the advanced_properties of this DatabaseToolsConnectionOracleDatabase.
-        Advanced connection properties key-value pair (e.g., oracle.net.ssl_server_dn_match).
+        The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
 
 
         :param advanced_properties: The advanced_properties of this DatabaseToolsConnectionOracleDatabase.
@@ -272,7 +272,7 @@ class DatabaseToolsConnectionOracleDatabase(DatabaseToolsConnection):
     def key_stores(self):
         """
         Gets the key_stores of this DatabaseToolsConnectionOracleDatabase.
-        Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and
+        The Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and
         the client private key and associated certificates required for client authentication.
 
 
@@ -285,7 +285,7 @@ class DatabaseToolsConnectionOracleDatabase(DatabaseToolsConnection):
     def key_stores(self, key_stores):
         """
         Sets the key_stores of this DatabaseToolsConnectionOracleDatabase.
-        Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and
+        The Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and
         the client private key and associated certificates required for client authentication.
 
 
@@ -298,7 +298,7 @@ class DatabaseToolsConnectionOracleDatabase(DatabaseToolsConnection):
     def private_endpoint_id(self):
         """
         Gets the private_endpoint_id of this DatabaseToolsConnectionOracleDatabase.
-        The `OCID`__ of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+        The `OCID`__ of the Database Tools private endpoint used to access the database in the customer VCN.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -312,7 +312,7 @@ class DatabaseToolsConnectionOracleDatabase(DatabaseToolsConnection):
     def private_endpoint_id(self, private_endpoint_id):
         """
         Sets the private_endpoint_id of this DatabaseToolsConnectionOracleDatabase.
-        The `OCID`__ of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+        The `OCID`__ of the Database Tools private endpoint used to access the database in the customer VCN.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

@@ -25,7 +25,7 @@ class ApdexRulesSummary(ConfigSummary):
 
         :param config_type:
             The value to assign to the config_type property of this ApdexRulesSummary.
-            Allowed values for this property are: "SPAN_FILTER", "METRIC_GROUP", "APDEX"
+            Allowed values for this property are: "SPAN_FILTER", "METRIC_GROUP", "APDEX", "OPTIONS"
         :type config_type: str
 
         :param time_created:
@@ -109,7 +109,7 @@ class ApdexRulesSummary(ConfigSummary):
     def display_name(self):
         """
         Gets the display_name of this ApdexRulesSummary.
-        The name by which the rule set is displayed to the end user.
+        The name by which a configuration entity is displayed to the end user.
 
 
         :return: The display_name of this ApdexRulesSummary.
@@ -121,7 +121,7 @@ class ApdexRulesSummary(ConfigSummary):
     def display_name(self, display_name):
         """
         Sets the display_name of this ApdexRulesSummary.
-        The name by which the rule set is displayed to the end user.
+        The name by which a configuration entity is displayed to the end user.
 
 
         :param display_name: The display_name of this ApdexRulesSummary.

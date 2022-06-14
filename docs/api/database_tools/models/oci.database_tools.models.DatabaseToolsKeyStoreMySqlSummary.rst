@@ -1,9 +1,9 @@
-DatabaseToolsAllowedNetworkSources
-==================================
+DatabaseToolsKeyStoreMySqlSummary
+=================================
 
 .. currentmodule:: oci.database_tools.models
 
-.. autoclass:: DatabaseToolsAllowedNetworkSources
+.. autoclass:: DatabaseToolsKeyStoreMySqlSummary
     :show-inheritance:
     :special-members: __init__
     :members:

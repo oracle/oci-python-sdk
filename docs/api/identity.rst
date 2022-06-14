@@ -18,6 +18,7 @@ Identity
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.identity.models.AddLockDetails
     oci.identity.models.AddUserToGroupDetails
     oci.identity.models.AllowedDomainLicenseTypeSummary
     oci.identity.models.ApiKey
@@ -100,7 +101,9 @@ Identity
     oci.identity.models.Policy
     oci.identity.models.Region
     oci.identity.models.RegionSubscription
+    oci.identity.models.RemoveLockDetails
     oci.identity.models.ReplicatedRegionDetails
+    oci.identity.models.ResourceLock
     oci.identity.models.Saml2IdentityProvider
     oci.identity.models.ScimClientCredentials
     oci.identity.models.SmtpCredential

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DatabaseToolsEndpointServiceCollection(object):
     """
-    List of DatabaseToolsEndpointServiceSummary items.
+    List of `DatabaseToolsEndpointServiceSummary` items.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class DatabaseToolsEndpointServiceCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this DatabaseToolsEndpointServiceCollection.
-        Array of DatabaseToolsEndpointServiceSummary.
+        Array of `DatabaseToolsEndpointServiceSummary` items.
 
 
         :return: The items of this DatabaseToolsEndpointServiceCollection.
@@ -49,7 +49,7 @@ class DatabaseToolsEndpointServiceCollection(object):
     def items(self, items):
         """
         Sets the items of this DatabaseToolsEndpointServiceCollection.
-        Array of DatabaseToolsEndpointServiceSummary.
+        Array of `DatabaseToolsEndpointServiceSummary` items.
 
 
         :param items: The items of this DatabaseToolsEndpointServiceCollection.

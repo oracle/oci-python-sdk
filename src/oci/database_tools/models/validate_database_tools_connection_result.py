@@ -17,18 +17,23 @@ class ValidateDatabaseToolsConnectionResult(object):
     #: This constant has a value of "ORACLE_DATABASE"
     TYPE_ORACLE_DATABASE = "ORACLE_DATABASE"
 
+    #: A constant which can be used with the type property of a ValidateDatabaseToolsConnectionResult.
+    #: This constant has a value of "MYSQL"
+    TYPE_MYSQL = "MYSQL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ValidateDatabaseToolsConnectionResult object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.database_tools.models.ValidateDatabaseToolsConnectionOracleDatabaseResult`
+        * :class:`~oci.database_tools.models.ValidateDatabaseToolsConnectionMySqlResult`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param type:
             The value to assign to the type property of this ValidateDatabaseToolsConnectionResult.
-            Allowed values for this property are: "ORACLE_DATABASE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -81,6 +86,9 @@ class ValidateDatabaseToolsConnectionResult(object):
 
         if type == 'ORACLE_DATABASE':
             return 'ValidateDatabaseToolsConnectionOracleDatabaseResult'
+
+        if type == 'MYSQL':
+            return 'ValidateDatabaseToolsConnectionMySqlResult'
         else:
             return 'ValidateDatabaseToolsConnectionResult'
 
@@ -88,9 +96,9 @@ class ValidateDatabaseToolsConnectionResult(object):
     def type(self):
         """
         **[Required]** Gets the type of this ValidateDatabaseToolsConnectionResult.
-        The DatabaseToolsConnection type.
+        The Database Tools connection type.
 
-        Allowed values for this property are: "ORACLE_DATABASE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE_DATABASE", "MYSQL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -103,13 +111,13 @@ class ValidateDatabaseToolsConnectionResult(object):
     def type(self, type):
         """
         Sets the type of this ValidateDatabaseToolsConnectionResult.
-        The DatabaseToolsConnection type.
+        The Database Tools connection type.
 
 
         :param type: The type of this ValidateDatabaseToolsConnectionResult.
         :type: str
         """
-        allowed_values = ["ORACLE_DATABASE"]
+        allowed_values = ["ORACLE_DATABASE", "MYSQL"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
@@ -118,7 +126,7 @@ class ValidateDatabaseToolsConnectionResult(object):
     def code(self):
         """
         **[Required]** Gets the code of this ValidateDatabaseToolsConnectionResult.
-        A short code that defines the result of the validation, meant for programmatic parsing.
+        A short code that defines the result of the validation, meant for programmatic parsing. The value OK indicates that the validation was successful.
 
 
         :return: The code of this ValidateDatabaseToolsConnectionResult.
@@ -130,7 +138,7 @@ class ValidateDatabaseToolsConnectionResult(object):
     def code(self, code):
         """
         Sets the code of this ValidateDatabaseToolsConnectionResult.
-        A short code that defines the result of the validation, meant for programmatic parsing.
+        A short code that defines the result of the validation, meant for programmatic parsing. The value OK indicates that the validation was successful.
 
 
         :param code: The code of this ValidateDatabaseToolsConnectionResult.

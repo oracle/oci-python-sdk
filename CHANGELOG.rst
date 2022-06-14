@@ -4,6 +4,28 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.71.0 - 2022-06-14
+====================
+
+Added
+-----
+* Support for the Web Application Acceleration (WAA) service
+* Support for the Governance Rules service
+* Support for the OneSubscription service
+* Support for resource locking in the Identity service
+* Support for quota resource locking in the Limits service
+* Support for returning the backup with the requested changes in the MySQL Database service
+* Support for time zone in Cloud Autonomous VM (CAVM) clusters in the Database service
+* Support for configuration options in the Application Performance Monitoring service
+* Support for MySQL connections in the Database Tools service
+
+Breaking
+--------
+* The models `DatabaseToolsAllowedNetworkSources`, `DatabaseToolsVirtualSource`, and `ServiceCapability` are removed from the Database Tools service
+* The property `SecretId` is made a required property in the `DatabaseToolsUserPasswordSecretIdDetails` model in the Database Tools service
+* Response type for operation `update_backup` is changed to `oci.mysql.models.Backup` from `None` in the `DbBackupsClient` of the MySQL service
+
+====================
 2.70.1 - 2022-06-07
 ====================
 
