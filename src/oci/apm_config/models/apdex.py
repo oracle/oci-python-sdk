@@ -252,7 +252,7 @@ class Apdex(object):
     def display_name(self):
         """
         Gets the display_name of this Apdex.
-        A user-friendly name that provides a short description of this rule.
+        The name by which a configuration entity is displayed to the end user.
 
 
         :return: The display_name of this Apdex.
@@ -264,7 +264,7 @@ class Apdex(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Apdex.
-        A user-friendly name that provides a short description of this rule.
+        The name by which a configuration entity is displayed to the end user.
 
 
         :param display_name: The display_name of this Apdex.

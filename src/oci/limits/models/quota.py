@@ -43,6 +43,10 @@ class Quota(object):
             The value to assign to the statements property of this Quota.
         :type statements: list[str]
 
+        :param locks:
+            The value to assign to the locks property of this Quota.
+        :type locks: list[oci.limits.models.ResourceLock]
+
         :param description:
             The value to assign to the description property of this Quota.
         :type description: str
@@ -71,6 +75,7 @@ class Quota(object):
             'compartment_id': 'str',
             'name': 'str',
             'statements': 'list[str]',
+            'locks': 'list[ResourceLock]',
             'description': 'str',
             'time_created': 'datetime',
             'lifecycle_state': 'str',
@@ -83,6 +88,7 @@ class Quota(object):
             'compartment_id': 'compartmentId',
             'name': 'name',
             'statements': 'statements',
+            'locks': 'locks',
             'description': 'description',
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState',
@@ -94,6 +100,7 @@ class Quota(object):
         self._compartment_id = None
         self._name = None
         self._statements = None
+        self._locks = None
         self._description = None
         self._time_created = None
         self._lifecycle_state = None
@@ -197,6 +204,30 @@ class Quota(object):
         :type: list[str]
         """
         self._statements = statements
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this Quota.
+        Locks associated with this resource.
+
+
+        :return: The locks of this Quota.
+        :rtype: list[oci.limits.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this Quota.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this Quota.
+        :type: list[oci.limits.models.ResourceLock]
+        """
+        self._locks = locks
 
     @property
     def description(self):

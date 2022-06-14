@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDatabaseToolsPrivateEndpointDetails(object):
     """
-    The information about new DatabaseToolsPrivateEndpoint.
+    The details for the new Database Tools private endpoint.
     """
 
     def __init__(self, **kwargs):
@@ -93,7 +93,7 @@ class CreateDatabaseToolsPrivateEndpointDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateDatabaseToolsPrivateEndpointDetails.
-        The `OCID`__ of the containing Compartment.
+        The `OCID`__ of the compartment containing the Database Tools private endpoint.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -107,7 +107,7 @@ class CreateDatabaseToolsPrivateEndpointDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateDatabaseToolsPrivateEndpointDetails.
-        The `OCID`__ of the containing Compartment.
+        The `OCID`__ of the compartment containing the Database Tools private endpoint.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -197,7 +197,7 @@ class CreateDatabaseToolsPrivateEndpointDetails(object):
     def description(self):
         """
         Gets the description of this CreateDatabaseToolsPrivateEndpointDetails.
-        A description of the DatabaseToolsPrivateEndpoint.
+        A description of the Database Tools private endpoint.
 
 
         :return: The description of this CreateDatabaseToolsPrivateEndpointDetails.
@@ -209,7 +209,7 @@ class CreateDatabaseToolsPrivateEndpointDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateDatabaseToolsPrivateEndpointDetails.
-        A description of the DatabaseToolsPrivateEndpoint.
+        A description of the Database Tools private endpoint.
 
 
         :param description: The description of this CreateDatabaseToolsPrivateEndpointDetails.
@@ -221,7 +221,7 @@ class CreateDatabaseToolsPrivateEndpointDetails(object):
     def endpoint_service_id(self):
         """
         **[Required]** Gets the endpoint_service_id of this CreateDatabaseToolsPrivateEndpointDetails.
-        The `OCID`__ of the DatabaseToolsEndpointService.
+        The `OCID`__ of the `DatabaseToolsEndpointService`.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -235,7 +235,7 @@ class CreateDatabaseToolsPrivateEndpointDetails(object):
     def endpoint_service_id(self, endpoint_service_id):
         """
         Sets the endpoint_service_id of this CreateDatabaseToolsPrivateEndpointDetails.
-        The `OCID`__ of the DatabaseToolsEndpointService.
+        The `OCID`__ of the `DatabaseToolsEndpointService`.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

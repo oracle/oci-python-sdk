@@ -17,18 +17,23 @@ class ValidateDatabaseToolsConnectionDetails(object):
     #: This constant has a value of "ORACLE_DATABASE"
     TYPE_ORACLE_DATABASE = "ORACLE_DATABASE"
 
+    #: A constant which can be used with the type property of a ValidateDatabaseToolsConnectionDetails.
+    #: This constant has a value of "MYSQL"
+    TYPE_MYSQL = "MYSQL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ValidateDatabaseToolsConnectionDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.database_tools.models.ValidateDatabaseToolsConnectionOracleDatabaseDetails`
+        * :class:`~oci.database_tools.models.ValidateDatabaseToolsConnectionMySqlDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param type:
             The value to assign to the type property of this ValidateDatabaseToolsConnectionDetails.
-            Allowed values for this property are: "ORACLE_DATABASE"
+            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL"
         :type type: str
 
         """
@@ -52,6 +57,9 @@ class ValidateDatabaseToolsConnectionDetails(object):
 
         if type == 'ORACLE_DATABASE':
             return 'ValidateDatabaseToolsConnectionOracleDatabaseDetails'
+
+        if type == 'MYSQL':
+            return 'ValidateDatabaseToolsConnectionMySqlDetails'
         else:
             return 'ValidateDatabaseToolsConnectionDetails'
 
@@ -59,9 +67,9 @@ class ValidateDatabaseToolsConnectionDetails(object):
     def type(self):
         """
         **[Required]** Gets the type of this ValidateDatabaseToolsConnectionDetails.
-        The DatabaseToolsConnection type.
+        The `DatabaseToolsConnection` type.
 
-        Allowed values for this property are: "ORACLE_DATABASE"
+        Allowed values for this property are: "ORACLE_DATABASE", "MYSQL"
 
 
         :return: The type of this ValidateDatabaseToolsConnectionDetails.
@@ -73,13 +81,13 @@ class ValidateDatabaseToolsConnectionDetails(object):
     def type(self, type):
         """
         Sets the type of this ValidateDatabaseToolsConnectionDetails.
-        The DatabaseToolsConnection type.
+        The `DatabaseToolsConnection` type.
 
 
         :param type: The type of this ValidateDatabaseToolsConnectionDetails.
         :type: str
         """
-        allowed_values = ["ORACLE_DATABASE"]
+        allowed_values = ["ORACLE_DATABASE", "MYSQL"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 "Invalid value for `type`, must be None or one of {0}"

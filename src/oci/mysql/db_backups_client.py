@@ -745,7 +745,7 @@ class DbBackupsClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
-        :return: A :class:`~oci.response.Response` object with data of type None
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.mysql.models.Backup`
         :rtype: :class:`~oci.response.Response`
 
         :example:
@@ -804,6 +804,7 @@ class DbBackupsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_backup_details,
+                response_type="Backup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
@@ -814,6 +815,7 @@ class DbBackupsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_backup_details,
+                response_type="Backup",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ValidateDatabaseToolsConnectionOracleDatabaseDetails(ValidateDatabaseToolsConnectionDetails):
     """
-    Connection validation details for Oracle Database.
+    Connection validation details for the Oracle Database.
     """
 
     def __init__(self, **kwargs):
@@ -21,7 +21,7 @@ class ValidateDatabaseToolsConnectionOracleDatabaseDetails(ValidateDatabaseTools
 
         :param type:
             The value to assign to the type property of this ValidateDatabaseToolsConnectionOracleDatabaseDetails.
-            Allowed values for this property are: "ORACLE_DATABASE"
+            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL"
         :type type: str
 
         """

@@ -186,9 +186,7 @@ class CreateNetworkSourceDetails(object):
     def services(self):
         """
         Gets the services of this CreateNetworkSourceDetails.
-        A list of services allowed to make on-behalf-of requests. These requests can have different source IP addresses
-        than those listed in the network source.
-        Currently, only `all` and `none` are supported. The default is `all`.
+        -- The services attribute has no effect and is reserved for use by Oracle. --
 
 
         :return: The services of this CreateNetworkSourceDetails.
@@ -200,9 +198,7 @@ class CreateNetworkSourceDetails(object):
     def services(self, services):
         """
         Sets the services of this CreateNetworkSourceDetails.
-        A list of services allowed to make on-behalf-of requests. These requests can have different source IP addresses
-        than those listed in the network source.
-        Currently, only `all` and `none` are supported. The default is `all`.
+        -- The services attribute has no effect and is reserved for use by Oracle. --
 
 
         :param services: The services of this CreateNetworkSourceDetails.

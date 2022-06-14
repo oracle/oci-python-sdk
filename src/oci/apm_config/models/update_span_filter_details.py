@@ -21,7 +21,7 @@ class UpdateSpanFilterDetails(UpdateConfigDetails):
 
         :param config_type:
             The value to assign to the config_type property of this UpdateSpanFilterDetails.
-            Allowed values for this property are: "SPAN_FILTER", "METRIC_GROUP", "APDEX"
+            Allowed values for this property are: "SPAN_FILTER", "METRIC_GROUP", "APDEX", "OPTIONS"
         :type config_type: str
 
         :param freeform_tags:
@@ -75,7 +75,7 @@ class UpdateSpanFilterDetails(UpdateConfigDetails):
     def display_name(self):
         """
         Gets the display_name of this UpdateSpanFilterDetails.
-        The name by which the span filter can be displayed in the UI.
+        The name by which a configuration entity is displayed to the end user.
 
 
         :return: The display_name of this UpdateSpanFilterDetails.
@@ -87,7 +87,7 @@ class UpdateSpanFilterDetails(UpdateConfigDetails):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateSpanFilterDetails.
-        The name by which the span filter can be displayed in the UI.
+        The name by which a configuration entity is displayed to the end user.
 
 
         :param display_name: The display_name of this UpdateSpanFilterDetails.

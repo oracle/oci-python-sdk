@@ -20,11 +20,14 @@ Limits
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.limits.models.AddLockDetails
     oci.limits.models.CreateQuotaDetails
     oci.limits.models.LimitDefinitionSummary
     oci.limits.models.LimitValueSummary
     oci.limits.models.Quota
     oci.limits.models.QuotaSummary
+    oci.limits.models.RemoveLockDetails
     oci.limits.models.ResourceAvailability
+    oci.limits.models.ResourceLock
     oci.limits.models.ServiceSummary
     oci.limits.models.UpdateQuotaDetails

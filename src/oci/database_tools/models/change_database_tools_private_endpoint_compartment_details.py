@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeDatabaseToolsPrivateEndpointCompartmentDetails(object):
     """
-    Contains the details for the compartment to move the DatabaseToolsPrivateEndpoint to.
+    Contains the details for the compartment to move the Database Tools private endpoint to.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class ChangeDatabaseToolsPrivateEndpointCompartmentDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ChangeDatabaseToolsPrivateEndpointCompartmentDetails.
-        The `OCID`__ of the compartment to move the DatabaseConnectionProfile to.
+        The `OCID`__ of the compartment to move the `DatabaseConnectionProfile` to.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -51,7 +51,7 @@ class ChangeDatabaseToolsPrivateEndpointCompartmentDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ChangeDatabaseToolsPrivateEndpointCompartmentDetails.
-        The `OCID`__ of the compartment to move the DatabaseConnectionProfile to.
+        The `OCID`__ of the compartment to move the `DatabaseConnectionProfile` to.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

@@ -34,6 +34,10 @@ class CreateQuotaDetails(object):
             The value to assign to the statements property of this CreateQuotaDetails.
         :type statements: list[str]
 
+        :param locks:
+            The value to assign to the locks property of this CreateQuotaDetails.
+        :type locks: list[oci.limits.models.AddLockDetails]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateQuotaDetails.
         :type freeform_tags: dict(str, str)
@@ -48,6 +52,7 @@ class CreateQuotaDetails(object):
             'description': 'str',
             'name': 'str',
             'statements': 'list[str]',
+            'locks': 'list[AddLockDetails]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -57,6 +62,7 @@ class CreateQuotaDetails(object):
             'description': 'description',
             'name': 'name',
             'statements': 'statements',
+            'locks': 'locks',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -65,6 +71,7 @@ class CreateQuotaDetails(object):
         self._description = None
         self._name = None
         self._statements = None
+        self._locks = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -165,6 +172,30 @@ class CreateQuotaDetails(object):
         :type: list[str]
         """
         self._statements = statements
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this CreateQuotaDetails.
+        Locks associated with this resource.
+
+
+        :return: The locks of this CreateQuotaDetails.
+        :rtype: list[oci.limits.models.AddLockDetails]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this CreateQuotaDetails.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this CreateQuotaDetails.
+        :type: list[oci.limits.models.AddLockDetails]
+        """
+        self._locks = locks
 
     @property
     def freeform_tags(self):

@@ -1,9 +1,9 @@
-DatabaseToolsVirtualSource
-==========================
+ValidateDatabaseToolsConnectionMySqlDetails
+===========================================
 
 .. currentmodule:: oci.database_tools.models
 
-.. autoclass:: DatabaseToolsVirtualSource
+.. autoclass:: ValidateDatabaseToolsConnectionMySqlDetails
     :show-inheritance:
     :special-members: __init__
     :members:

@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class DatabaseToolsClient(object):
     """
-    Database Tools APIs to manage Connections and Private Endpoints.
+    Use the Database Tools API to manage connections, private endpoints, and work requests in the Database Tools service.
     """
 
     def __init__(self, config, **kwargs):
@@ -106,7 +106,7 @@ class DatabaseToolsClient(object):
 
     def change_database_tools_connection_compartment(self, database_tools_connection_id, change_database_tools_connection_compartment_details, **kwargs):
         """
-        Moves a DatabaseToolsConnection into a different compartment within the same tenancy.
+        Moves the specified Database Tools connection to a different compartment in the same tenancy.
         For information about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
 
@@ -114,7 +114,7 @@ class DatabaseToolsClient(object):
 
 
         :param str database_tools_connection_id: (required)
-            The `OCID`__ of a DatabaseToolsConnection.
+            The `OCID`__ of a Database Tools connection.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -226,7 +226,7 @@ class DatabaseToolsClient(object):
 
     def change_database_tools_private_endpoint_compartment(self, database_tools_private_endpoint_id, change_database_tools_private_endpoint_compartment_details, **kwargs):
         """
-        Moves a DatabaseToolsPrivateEndpoint into a different compartment within the same tenancy.
+        Moves a Database Tools private endpoint into a different compartment in the same tenancy.
         For information about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
 
@@ -234,7 +234,7 @@ class DatabaseToolsClient(object):
 
 
         :param str database_tools_private_endpoint_id: (required)
-            The `OCID`__ of a DatabaseToolsPrivateEndpoint.
+            The `OCID`__ of a Database Tools private endpoint.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -346,11 +346,11 @@ class DatabaseToolsClient(object):
 
     def create_database_tools_connection(self, create_database_tools_connection_details, **kwargs):
         """
-        Creates a new DatabaseToolsConnection.
+        Creates a new Database Tools connection.
 
 
         :param oci.database_tools.models.CreateDatabaseToolsConnectionDetails create_database_tools_connection_details: (required)
-            Details for the new DatabaseToolsConnection.
+            Details for the new `DatabaseToolsConnection`.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -438,7 +438,7 @@ class DatabaseToolsClient(object):
 
     def create_database_tools_private_endpoint(self, create_database_tools_private_endpoint_details, **kwargs):
         """
-        Creates a new DatabaseToolsPrivateEndpoint.
+        Creates a new Database Tools private endpoint.
 
 
         :param oci.database_tools.models.CreateDatabaseToolsPrivateEndpointDetails create_database_tools_private_endpoint_details: (required)
@@ -530,11 +530,11 @@ class DatabaseToolsClient(object):
 
     def delete_database_tools_connection(self, database_tools_connection_id, **kwargs):
         """
-        Deletes a DatabaseToolsConnection resource by identifier
+        Deletes the specified Database Tools connection resource.
 
 
         :param str database_tools_connection_id: (required)
-            The `OCID`__ of a DatabaseToolsConnection.
+            The `OCID`__ of a Database Tools connection.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -631,11 +631,11 @@ class DatabaseToolsClient(object):
 
     def delete_database_tools_private_endpoint(self, database_tools_private_endpoint_id, **kwargs):
         """
-        Deletes a DatabaseToolsPrivateEndpoint resource by identifier
+        Deletes the specified Database Tools private endpoint.
 
 
         :param str database_tools_private_endpoint_id: (required)
-            The `OCID`__ of a DatabaseToolsPrivateEndpoint.
+            The `OCID`__ of a Database Tools private endpoint.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -732,11 +732,11 @@ class DatabaseToolsClient(object):
 
     def get_database_tools_connection(self, database_tools_connection_id, **kwargs):
         """
-        Gets a DatabaseToolsConnection by identifier
+        Gets details of the specified Database Tools connection.
 
 
         :param str database_tools_connection_id: (required)
-            The `OCID`__ of a DatabaseToolsConnection.
+            The `OCID`__ of a Database Tools connection.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -746,7 +746,7 @@ class DatabaseToolsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -798,6 +798,8 @@ class DatabaseToolsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -826,11 +828,11 @@ class DatabaseToolsClient(object):
 
     def get_database_tools_endpoint_service(self, database_tools_endpoint_service_id, **kwargs):
         """
-        Gets a DatabaseToolsEndpointService by identifier
+        Gets details for the specified Database Tools endpoint service.
 
 
         :param str database_tools_endpoint_service_id: (required)
-            The `OCID`__ of a DatabaseToolsEndpointService.
+            The `OCID`__ of a Database Tools Endpoint Service.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -840,7 +842,7 @@ class DatabaseToolsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -892,6 +894,8 @@ class DatabaseToolsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -920,11 +924,11 @@ class DatabaseToolsClient(object):
 
     def get_database_tools_private_endpoint(self, database_tools_private_endpoint_id, **kwargs):
         """
-        Gets a DatabaseToolsPrivateEndpoint by identifier
+        Gets details of a specified Database Tools private endpoint.
 
 
         :param str database_tools_private_endpoint_id: (required)
-            The `OCID`__ of a DatabaseToolsPrivateEndpoint.
+            The `OCID`__ of a Database Tools private endpoint.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -934,7 +938,7 @@ class DatabaseToolsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -986,6 +990,8 @@ class DatabaseToolsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -1014,7 +1020,7 @@ class DatabaseToolsClient(object):
 
     def get_work_request(self, work_request_id, **kwargs):
         """
-        Gets the status of the work request with the given ID.
+        Gets the status of the specified work request.
 
 
         :param str work_request_id: (required)
@@ -1026,7 +1032,7 @@ class DatabaseToolsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -1078,6 +1084,8 @@ class DatabaseToolsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -1106,24 +1114,24 @@ class DatabaseToolsClient(object):
 
     def list_database_tools_connections(self, compartment_id, **kwargs):
         """
-        Returns a list of DatabaseToolsConnections.
+        Returns a list of Database Tools connections.
 
 
         :param str compartment_id: (required)
             The ID of the compartment in which to list resources.
 
         :param str lifecycle_state: (optional)
-            A filter to return only resources their lifecycleState matches the given lifecycleState.
+            A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param str display_name: (optional)
-            A filter to return only resources that match the entire display name given.
+            A filter to return only resources that match the entire specified display name.
 
         :param list[str] type: (optional)
-            A filter to return only resources their endpointServiceId matches the given endpointServiceId.
+            A filter to return only resources their type matches the specified type.
 
-            Allowed values are: "ORACLE_DATABASE"
+            Allowed values are: "ORACLE_DATABASE", "MYSQL"
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1147,7 +1155,7 @@ class DatabaseToolsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -1193,7 +1201,7 @@ class DatabaseToolsClient(object):
                 )
 
         if 'type' in kwargs:
-            type_allowed_values = ["ORACLE_DATABASE"]
+            type_allowed_values = ["ORACLE_DATABASE", "MYSQL"]
             for type_item in kwargs['type']:
                 if type_item not in type_allowed_values:
                     raise ValueError(
@@ -1237,6 +1245,8 @@ class DatabaseToolsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -1265,7 +1275,7 @@ class DatabaseToolsClient(object):
 
     def list_database_tools_endpoint_services(self, compartment_id, **kwargs):
         """
-        Returns a list of DatabaseToolsEndpointServices.
+        Returns a list of Database Tools endpoint services.
 
 
         :param str compartment_id: (required)
@@ -1291,20 +1301,20 @@ class DatabaseToolsClient(object):
             The client request ID for tracing.
 
         :param str lifecycle_state: (optional)
-            A filter to return only resources their lifecycleState matches the given lifecycleState.
+            A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param str display_name: (optional)
-            A filter to return only resources that match the entire display name given.
+            A filter to return only resources that match the entire specified display name.
 
         :param str name: (optional)
-            A filter to return only resources that match the entire name given.
+            A filter to return only resources that match the entire specified name.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -1386,6 +1396,8 @@ class DatabaseToolsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -1414,14 +1426,14 @@ class DatabaseToolsClient(object):
 
     def list_database_tools_private_endpoints(self, compartment_id, **kwargs):
         """
-        Returns a list of DatabaseToolsPrivateEndpoints.
+        Returns a list of Database Tools private endpoints.
 
 
         :param str compartment_id: (required)
             The ID of the compartment in which to list resources.
 
         :param str subnet_id: (optional)
-            A filter to return only resources their subnetId matches the given subnetId.
+            A filter to return only resources their `subnetId` matches the specified `subnetId`.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1443,20 +1455,20 @@ class DatabaseToolsClient(object):
             The client request ID for tracing.
 
         :param str endpoint_service_id: (optional)
-            A filter to return only resources their type matches the given type.
+            A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
 
         :param str lifecycle_state: (optional)
-            A filter to return only resources their lifecycleState matches the given lifecycleState.
+            A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param str display_name: (optional)
-            A filter to return only resources that match the entire display name given.
+            A filter to return only resources that match the entire specified display name.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -1540,6 +1552,8 @@ class DatabaseToolsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -1568,7 +1582,7 @@ class DatabaseToolsClient(object):
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
-        Return a (paginated) list of errors for a given work request.
+        Returns a paginated list of errors for the specified work request.
 
 
         :param str work_request_id: (required)
@@ -1596,7 +1610,7 @@ class DatabaseToolsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -1674,6 +1688,8 @@ class DatabaseToolsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -1704,7 +1720,7 @@ class DatabaseToolsClient(object):
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
-        Return a (paginated) list of logs for a given work request.
+        Returns a paginated list of logs for the specified work request.
 
 
         :param str work_request_id: (required)
@@ -1732,7 +1748,7 @@ class DatabaseToolsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -1810,6 +1826,8 @@ class DatabaseToolsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -1873,7 +1891,7 @@ class DatabaseToolsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -1944,6 +1962,8 @@ class DatabaseToolsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -1972,11 +1992,11 @@ class DatabaseToolsClient(object):
 
     def update_database_tools_connection(self, database_tools_connection_id, update_database_tools_connection_details, **kwargs):
         """
-        Updates the DatabaseToolsConnection
+        Updates the specified Database Tools connection.
 
 
         :param str database_tools_connection_id: (required)
-            The `OCID`__ of a DatabaseToolsConnection.
+            The `OCID`__ of a Database Tools connection.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -2078,11 +2098,11 @@ class DatabaseToolsClient(object):
 
     def update_database_tools_private_endpoint(self, database_tools_private_endpoint_id, update_database_tools_private_endpoint_details, **kwargs):
         """
-        Updates the DatabaseToolsPrivateEndpoint
+        Updates the specified Database Tools private endpoint.
 
 
         :param str database_tools_private_endpoint_id: (required)
-            The `OCID`__ of a DatabaseToolsPrivateEndpoint.
+            The `OCID`__ of a Database Tools private endpoint.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -2184,11 +2204,11 @@ class DatabaseToolsClient(object):
 
     def validate_database_tools_connection(self, database_tools_connection_id, validate_database_tools_connection_details, **kwargs):
         """
-        Validate the DatabaseToolsConnection information details by establishing a connection to the database.
+        Validates the Database Tools connection details by establishing a connection to the database.
 
 
         :param str database_tools_connection_id: (required)
-            The `OCID`__ of a DatabaseToolsConnection.
+            The `OCID`__ of a Database Tools connection.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

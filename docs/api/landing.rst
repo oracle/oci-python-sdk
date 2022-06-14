@@ -77,6 +77,8 @@ API Reference
 * :doc:`Functions Management <functions/client/oci.functions.FunctionsManagementClient>`
 * :doc:`Generic Artifacts Content <generic_artifacts_content/client/oci.generic_artifacts_content.GenericArtifactsContentClient>`
 * :doc:`Golden Gate <golden_gate/client/oci.golden_gate.GoldenGateClient>`
+* :doc:`Governance Rule <governance_rules_control_plane/client/oci.governance_rules_control_plane.GovernanceRuleClient>`
+* :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
 * :doc:`Health Checks <healthchecks/client/oci.healthchecks.HealthChecksClient>`
 * :doc:`Identity <identity/client/oci.identity.IdentityClient>`
 * :doc:`Dataplane <identity_data_plane/client/oci.identity_data_plane.DataplaneClient>`
@@ -113,6 +115,14 @@ API Reference
 * :doc:`Management <oda/client/oci.oda.ManagementClient>`
 * :doc:`Oda <oda/client/oci.oda.OdaClient>`
 * :doc:`Odapackage <oda/client/oci.oda.OdapackageClient>`
+* :doc:`Billing Schedule <osub_billing_schedule/client/oci.osub_billing_schedule.BillingScheduleClient>`
+* :doc:`Commitment <osub_subscription/client/oci.osub_subscription.CommitmentClient>`
+* :doc:`Computed Usage <osub_usage/client/oci.osub_usage.ComputedUsageClient>`
+* :doc:`Invoice Summary <onesubscription/client/oci.onesubscription.InvoiceSummaryClient>`
+* :doc:`Organization Subscription <osub_organization_subscription/client/oci.osub_organization_subscription.OrganizationSubscriptionClient>`
+* :doc:`Ratecard <osub_subscription/client/oci.osub_subscription.RatecardClient>`
+* :doc:`Subscribed Service <onesubscription/client/oci.onesubscription.SubscribedServiceClient>`
+* :doc:`Subscription <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.SubscriptionClient>`
 * :doc:`Notification Control Plane <ons/client/oci.ons.NotificationControlPlaneClient>`
 * :doc:`Notification Data Plane <ons/client/oci.ons.NotificationDataPlaneClient>`
 * :doc:`Access Requests <operator_access_control/client/oci.operator_access_control.AccessRequestsClient>`
@@ -160,6 +170,8 @@ API Reference
 * :doc:`Vaults <vault/client/oci.vault.VaultsClient>`
 * :doc:`Vb Instance <visual_builder/client/oci.visual_builder.VbInstanceClient>`
 * :doc:`Vulnerability Scanning <vulnerability_scanning/client/oci.vulnerability_scanning.VulnerabilityScanningClient>`
+* :doc:`Waa <waa/client/oci.waa.WaaClient>`
+* :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
 * :doc:`Redirect <waas/client/oci.waas.RedirectClient>`
 * :doc:`Waas <waas/client/oci.waas.WaasClient>`
 * :doc:`Waf <waf/client/oci.waf.WafClient>`
@@ -233,6 +245,7 @@ API Reference
     functions
     generic_artifacts_content
     golden_gate
+    governance_rules_control_plane
     healthchecks
     identity
     identity_data_plane
@@ -257,6 +270,7 @@ API Reference
     oce
     ocvp
     oda
+    onesubscription
     ons
     operator_access_control
     opsi
@@ -284,6 +298,7 @@ API Reference
     vault
     visual_builder
     vulnerability_scanning
+    waa
     waas
     waf
     work_requests
