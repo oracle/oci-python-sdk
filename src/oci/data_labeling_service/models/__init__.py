@@ -15,6 +15,7 @@ from .dataset_collection import DatasetCollection
 from .dataset_format_details import DatasetFormatDetails
 from .dataset_source_details import DatasetSourceDetails
 from .dataset_summary import DatasetSummary
+from .delimited_file_type_metadata import DelimitedFileTypeMetadata
 from .document_dataset_format_details import DocumentDatasetFormatDetails
 from .export_format import ExportFormat
 from .generate_dataset_records_details import GenerateDatasetRecordsDetails
@@ -29,6 +30,7 @@ from .rename_dataset_labels_details import RenameDatasetLabelsDetails
 from .snapshot_dataset_details import SnapshotDatasetDetails
 from .snapshot_export_details import SnapshotExportDetails
 from .text_dataset_format_details import TextDatasetFormatDetails
+from .text_file_type_metadata import TextFileTypeMetadata
 from .update_dataset_details import UpdateDatasetDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
@@ -52,6 +54,7 @@ data_labeling_service_type_mapping = {
     "DatasetFormatDetails": DatasetFormatDetails,
     "DatasetSourceDetails": DatasetSourceDetails,
     "DatasetSummary": DatasetSummary,
+    "DelimitedFileTypeMetadata": DelimitedFileTypeMetadata,
     "DocumentDatasetFormatDetails": DocumentDatasetFormatDetails,
     "ExportFormat": ExportFormat,
     "GenerateDatasetRecordsDetails": GenerateDatasetRecordsDetails,
@@ -66,6 +69,7 @@ data_labeling_service_type_mapping = {
     "SnapshotDatasetDetails": SnapshotDatasetDetails,
     "SnapshotExportDetails": SnapshotExportDetails,
     "TextDatasetFormatDetails": TextDatasetFormatDetails,
+    "TextFileTypeMetadata": TextFileTypeMetadata,
     "UpdateDatasetDetails": UpdateDatasetDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,

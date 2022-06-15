@@ -7,8 +7,10 @@ from __future__ import absolute_import
 
 from .db_management_client import DbManagementClient
 from .db_management_client_composite_operations import DbManagementClientCompositeOperations
+from .diagnosability_client import DiagnosabilityClient
+from .diagnosability_client_composite_operations import DiagnosabilityClientCompositeOperations
 from .sql_tuning_client import SqlTuningClient
 from .sql_tuning_client_composite_operations import SqlTuningClientCompositeOperations
 from . import models
 
-__all__ = ["DbManagementClient", "DbManagementClientCompositeOperations", "SqlTuningClient", "SqlTuningClientCompositeOperations", "models"]
+__all__ = ["DbManagementClient", "DbManagementClientCompositeOperations", "DiagnosabilityClient", "DiagnosabilityClientCompositeOperations", "SqlTuningClient", "SqlTuningClientCompositeOperations", "models"]

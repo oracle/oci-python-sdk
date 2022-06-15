@@ -7,8 +7,10 @@ Database Management
     :template: autosummary/service_client.rst
 
     oci.database_management.DbManagementClient
+    oci.database_management.DiagnosabilityClient
     oci.database_management.SqlTuningClient
     oci.database_management.DbManagementClientCompositeOperations
+    oci.database_management.DiagnosabilityClientCompositeOperations
     oci.database_management.SqlTuningClientCompositeOperations
 
 --------
@@ -23,12 +25,22 @@ Database Management
     oci.database_management.models.ActivityTimeSeriesMetrics
     oci.database_management.models.AddDataFilesDetails
     oci.database_management.models.AddManagedDatabaseToManagedDatabaseGroupDetails
+    oci.database_management.models.AddmTaskSummary
+    oci.database_management.models.AddmTasksCollection
+    oci.database_management.models.AlertLogCollection
+    oci.database_management.models.AlertLogCountSummary
+    oci.database_management.models.AlertLogCountsCollection
+    oci.database_management.models.AlertLogSummary
     oci.database_management.models.AllowedParameterValue
     oci.database_management.models.AsmProperty
     oci.database_management.models.AsmPropertyCollection
     oci.database_management.models.AsmPropertySummary
     oci.database_management.models.AssociatedDatabaseCollection
     oci.database_management.models.AssociatedDatabaseSummary
+    oci.database_management.models.AttentionLogCollection
+    oci.database_management.models.AttentionLogCountSummary
+    oci.database_management.models.AttentionLogCountsCollection
+    oci.database_management.models.AttentionLogSummary
     oci.database_management.models.AwrDbCollection
     oci.database_management.models.AwrDbCpuUsageCollection
     oci.database_management.models.AwrDbCpuUsageSummary
@@ -96,6 +108,7 @@ Database Management
     oci.database_management.models.FleetMetricSummaryDefinition
     oci.database_management.models.FleetStatusByCategory
     oci.database_management.models.FleetSummary
+    oci.database_management.models.HistoricAddmResult
     oci.database_management.models.InstanceDetails
     oci.database_management.models.Job
     oci.database_management.models.JobCollection
@@ -142,6 +155,8 @@ Database Management
     oci.database_management.models.ResizeDataFileDetails
     oci.database_management.models.RoleCollection
     oci.database_management.models.RoleSummary
+    oci.database_management.models.RunHistoricAddmDetails
+    oci.database_management.models.SnapshotDetails
     oci.database_management.models.SqlJob
     oci.database_management.models.SqlTuningAdvisorTaskCollection
     oci.database_management.models.SqlTuningAdvisorTaskFindingCollection
@@ -158,6 +173,9 @@ Database Management
     oci.database_management.models.SqlTuningAdvisorTaskSummaryReportStatementCounts
     oci.database_management.models.SqlTuningAdvisorTaskSummaryReportStatistics
     oci.database_management.models.SqlTuningAdvisorTaskSummaryReportTaskInfo
+    oci.database_management.models.SqlTuningSetCollection
+    oci.database_management.models.SqlTuningSetInput
+    oci.database_management.models.SqlTuningSetSummary
     oci.database_management.models.SqlTuningTaskCredentialDetails
     oci.database_management.models.SqlTuningTaskPasswordCredentialDetails
     oci.database_management.models.SqlTuningTaskPlanStats

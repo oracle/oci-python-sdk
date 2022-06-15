@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TextDatasetFormatDetails(DatasetFormatDetails):
     """
-    Indicates the dataset is comprised of txt files.
+    It indicates the dataset is comprised of TXT files.
     """
 
     def __init__(self, **kwargs):
@@ -24,17 +24,44 @@ class TextDatasetFormatDetails(DatasetFormatDetails):
             Allowed values for this property are: "DOCUMENT", "IMAGE", "TEXT"
         :type format_type: str
 
+        :param text_file_type_metadata:
+            The value to assign to the text_file_type_metadata property of this TextDatasetFormatDetails.
+        :type text_file_type_metadata: oci.data_labeling_service.models.TextFileTypeMetadata
+
         """
         self.swagger_types = {
-            'format_type': 'str'
+            'format_type': 'str',
+            'text_file_type_metadata': 'TextFileTypeMetadata'
         }
 
         self.attribute_map = {
-            'format_type': 'formatType'
+            'format_type': 'formatType',
+            'text_file_type_metadata': 'textFileTypeMetadata'
         }
 
         self._format_type = None
+        self._text_file_type_metadata = None
         self._format_type = 'TEXT'
+
+    @property
+    def text_file_type_metadata(self):
+        """
+        Gets the text_file_type_metadata of this TextDatasetFormatDetails.
+
+        :return: The text_file_type_metadata of this TextDatasetFormatDetails.
+        :rtype: oci.data_labeling_service.models.TextFileTypeMetadata
+        """
+        return self._text_file_type_metadata
+
+    @text_file_type_metadata.setter
+    def text_file_type_metadata(self, text_file_type_metadata):
+        """
+        Sets the text_file_type_metadata of this TextDatasetFormatDetails.
+
+        :param text_file_type_metadata: The text_file_type_metadata of this TextDatasetFormatDetails.
+        :type: oci.data_labeling_service.models.TextFileTypeMetadata
+        """
+        self._text_file_type_metadata = text_file_type_metadata
 
     def __repr__(self):
         return formatted_flat_dict(self)

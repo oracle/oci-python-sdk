@@ -51,6 +51,10 @@ class StartSqlTuningTaskDetails(object):
             The value to assign to the statement_time_limit_in_minutes property of this StartSqlTuningTaskDetails.
         :type statement_time_limit_in_minutes: int
 
+        :param sql_tuning_set:
+            The value to assign to the sql_tuning_set property of this StartSqlTuningTaskDetails.
+        :type sql_tuning_set: oci.database_management.models.SqlTuningSetInput
+
         :param sql_details:
             The value to assign to the sql_details property of this StartSqlTuningTaskDetails.
         :type sql_details: list[oci.database_management.models.SqlTuningTaskSqlDetail]
@@ -71,6 +75,7 @@ class StartSqlTuningTaskDetails(object):
             'total_time_limit_in_minutes': 'int',
             'scope': 'str',
             'statement_time_limit_in_minutes': 'int',
+            'sql_tuning_set': 'SqlTuningSetInput',
             'sql_details': 'list[SqlTuningTaskSqlDetail]',
             'time_started': 'datetime',
             'time_ended': 'datetime'
@@ -83,6 +88,7 @@ class StartSqlTuningTaskDetails(object):
             'total_time_limit_in_minutes': 'totalTimeLimitInMinutes',
             'scope': 'scope',
             'statement_time_limit_in_minutes': 'statementTimeLimitInMinutes',
+            'sql_tuning_set': 'sqlTuningSet',
             'sql_details': 'sqlDetails',
             'time_started': 'timeStarted',
             'time_ended': 'timeEnded'
@@ -94,6 +100,7 @@ class StartSqlTuningTaskDetails(object):
         self._total_time_limit_in_minutes = None
         self._scope = None
         self._statement_time_limit_in_minutes = None
+        self._sql_tuning_set = None
         self._sql_details = None
         self._time_started = None
         self._time_ended = None
@@ -253,10 +260,32 @@ class StartSqlTuningTaskDetails(object):
         self._statement_time_limit_in_minutes = statement_time_limit_in_minutes
 
     @property
+    def sql_tuning_set(self):
+        """
+        Gets the sql_tuning_set of this StartSqlTuningTaskDetails.
+
+        :return: The sql_tuning_set of this StartSqlTuningTaskDetails.
+        :rtype: oci.database_management.models.SqlTuningSetInput
+        """
+        return self._sql_tuning_set
+
+    @sql_tuning_set.setter
+    def sql_tuning_set(self, sql_tuning_set):
+        """
+        Sets the sql_tuning_set of this StartSqlTuningTaskDetails.
+
+        :param sql_tuning_set: The sql_tuning_set of this StartSqlTuningTaskDetails.
+        :type: oci.database_management.models.SqlTuningSetInput
+        """
+        self._sql_tuning_set = sql_tuning_set
+
+    @property
     def sql_details(self):
         """
-        **[Required]** Gets the sql_details of this StartSqlTuningTaskDetails.
-        The array of the details of SQL statement on which tuning is performed.
+        Gets the sql_details of this StartSqlTuningTaskDetails.
+        The details of the SQL statement on which tuning is performed.
+        To obtain the details of the SQL statement, you must provide either the sqlTuningSet
+        or the tuple of sqlDetails/timeStarted/timeEnded.
 
 
         :return: The sql_details of this StartSqlTuningTaskDetails.
@@ -268,7 +297,9 @@ class StartSqlTuningTaskDetails(object):
     def sql_details(self, sql_details):
         """
         Sets the sql_details of this StartSqlTuningTaskDetails.
-        The array of the details of SQL statement on which tuning is performed.
+        The details of the SQL statement on which tuning is performed.
+        To obtain the details of the SQL statement, you must provide either the sqlTuningSet
+        or the tuple of sqlDetails/timeStarted/timeEnded.
 
 
         :param sql_details: The sql_details of this StartSqlTuningTaskDetails.
@@ -279,7 +310,7 @@ class StartSqlTuningTaskDetails(object):
     @property
     def time_started(self):
         """
-        **[Required]** Gets the time_started of this StartSqlTuningTaskDetails.
+        Gets the time_started of this StartSqlTuningTaskDetails.
         The start time of the period in which SQL statements are running.
 
 
@@ -303,7 +334,7 @@ class StartSqlTuningTaskDetails(object):
     @property
     def time_ended(self):
         """
-        **[Required]** Gets the time_ended of this StartSqlTuningTaskDetails.
+        Gets the time_ended of this StartSqlTuningTaskDetails.
         The end time of the period in which SQL statements are running.
 
 

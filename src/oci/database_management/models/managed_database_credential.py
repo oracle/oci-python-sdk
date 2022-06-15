@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagedDatabaseCredential(object):
     """
-    The credential to connect to the managed database in order to get optimizer statistics gathering & advisor task details.
+    The credential used to connect to the Managed Database and obtain the details of the optimizer statistics tasks.
     """
 
     #: A constant which can be used with the credential_type property of a ManagedDatabaseCredential.
@@ -90,7 +90,7 @@ class ManagedDatabaseCredential(object):
     def credential_type(self):
         """
         **[Required]** Gets the credential_type of this ManagedDatabaseCredential.
-        The type of the credential has access to retrieve optimizer statistics gathering & advisor task details.
+        Indicates the type of credential required to retrieve the details of the optimizer statistics tasks.
 
         Allowed values for this property are: "SECRET", "PASSWORD"
 
@@ -104,7 +104,7 @@ class ManagedDatabaseCredential(object):
     def credential_type(self, credential_type):
         """
         Sets the credential_type of this ManagedDatabaseCredential.
-        The type of the credential has access to retrieve optimizer statistics gathering & advisor task details.
+        Indicates the type of credential required to retrieve the details of the optimizer statistics tasks.
 
 
         :param credential_type: The credential_type of this ManagedDatabaseCredential.
@@ -122,7 +122,7 @@ class ManagedDatabaseCredential(object):
     def username(self):
         """
         **[Required]** Gets the username of this ManagedDatabaseCredential.
-        The user to connect to the database.
+        The user name used to connect to the database.
 
 
         :return: The username of this ManagedDatabaseCredential.
@@ -134,7 +134,7 @@ class ManagedDatabaseCredential(object):
     def username(self, username):
         """
         Sets the username of this ManagedDatabaseCredential.
-        The user to connect to the database.
+        The user name used to connect to the database.
 
 
         :param username: The username of this ManagedDatabaseCredential.

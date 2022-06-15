@@ -152,3 +152,4 @@
 ^src/oci/onesubscription/.*\.py$
 ^src/oci/governance_rules_control_plane/.*\.py$
 ^src/oci/waa/.*\.py$
+^src/oci/network_firewall/.*\.py$

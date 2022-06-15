@@ -7,12 +7,22 @@ from __future__ import absolute_import
 from .activity_time_series_metrics import ActivityTimeSeriesMetrics
 from .add_data_files_details import AddDataFilesDetails
 from .add_managed_database_to_managed_database_group_details import AddManagedDatabaseToManagedDatabaseGroupDetails
+from .addm_task_summary import AddmTaskSummary
+from .addm_tasks_collection import AddmTasksCollection
+from .alert_log_collection import AlertLogCollection
+from .alert_log_count_summary import AlertLogCountSummary
+from .alert_log_counts_collection import AlertLogCountsCollection
+from .alert_log_summary import AlertLogSummary
 from .allowed_parameter_value import AllowedParameterValue
 from .asm_property import AsmProperty
 from .asm_property_collection import AsmPropertyCollection
 from .asm_property_summary import AsmPropertySummary
 from .associated_database_collection import AssociatedDatabaseCollection
 from .associated_database_summary import AssociatedDatabaseSummary
+from .attention_log_collection import AttentionLogCollection
+from .attention_log_count_summary import AttentionLogCountSummary
+from .attention_log_counts_collection import AttentionLogCountsCollection
+from .attention_log_summary import AttentionLogSummary
 from .awr_db_collection import AwrDbCollection
 from .awr_db_cpu_usage_collection import AwrDbCpuUsageCollection
 from .awr_db_cpu_usage_summary import AwrDbCpuUsageSummary
@@ -80,6 +90,7 @@ from .fleet_metric_definition import FleetMetricDefinition
 from .fleet_metric_summary_definition import FleetMetricSummaryDefinition
 from .fleet_status_by_category import FleetStatusByCategory
 from .fleet_summary import FleetSummary
+from .historic_addm_result import HistoricAddmResult
 from .instance_details import InstanceDetails
 from .job import Job
 from .job_collection import JobCollection
@@ -126,6 +137,8 @@ from .reset_database_parameters_details import ResetDatabaseParametersDetails
 from .resize_data_file_details import ResizeDataFileDetails
 from .role_collection import RoleCollection
 from .role_summary import RoleSummary
+from .run_historic_addm_details import RunHistoricAddmDetails
+from .snapshot_details import SnapshotDetails
 from .sql_job import SqlJob
 from .sql_tuning_advisor_task_collection import SqlTuningAdvisorTaskCollection
 from .sql_tuning_advisor_task_finding_collection import SqlTuningAdvisorTaskFindingCollection
@@ -142,6 +155,9 @@ from .sql_tuning_advisor_task_summary_report_object_stat_finding_summary import 
 from .sql_tuning_advisor_task_summary_report_statement_counts import SqlTuningAdvisorTaskSummaryReportStatementCounts
 from .sql_tuning_advisor_task_summary_report_statistics import SqlTuningAdvisorTaskSummaryReportStatistics
 from .sql_tuning_advisor_task_summary_report_task_info import SqlTuningAdvisorTaskSummaryReportTaskInfo
+from .sql_tuning_set_collection import SqlTuningSetCollection
+from .sql_tuning_set_input import SqlTuningSetInput
+from .sql_tuning_set_summary import SqlTuningSetSummary
 from .sql_tuning_task_credential_details import SqlTuningTaskCredentialDetails
 from .sql_tuning_task_password_credential_details import SqlTuningTaskPasswordCredentialDetails
 from .sql_tuning_task_plan_stats import SqlTuningTaskPlanStats
@@ -186,12 +202,22 @@ database_management_type_mapping = {
     "ActivityTimeSeriesMetrics": ActivityTimeSeriesMetrics,
     "AddDataFilesDetails": AddDataFilesDetails,
     "AddManagedDatabaseToManagedDatabaseGroupDetails": AddManagedDatabaseToManagedDatabaseGroupDetails,
+    "AddmTaskSummary": AddmTaskSummary,
+    "AddmTasksCollection": AddmTasksCollection,
+    "AlertLogCollection": AlertLogCollection,
+    "AlertLogCountSummary": AlertLogCountSummary,
+    "AlertLogCountsCollection": AlertLogCountsCollection,
+    "AlertLogSummary": AlertLogSummary,
     "AllowedParameterValue": AllowedParameterValue,
     "AsmProperty": AsmProperty,
     "AsmPropertyCollection": AsmPropertyCollection,
     "AsmPropertySummary": AsmPropertySummary,
     "AssociatedDatabaseCollection": AssociatedDatabaseCollection,
     "AssociatedDatabaseSummary": AssociatedDatabaseSummary,
+    "AttentionLogCollection": AttentionLogCollection,
+    "AttentionLogCountSummary": AttentionLogCountSummary,
+    "AttentionLogCountsCollection": AttentionLogCountsCollection,
+    "AttentionLogSummary": AttentionLogSummary,
     "AwrDbCollection": AwrDbCollection,
     "AwrDbCpuUsageCollection": AwrDbCpuUsageCollection,
     "AwrDbCpuUsageSummary": AwrDbCpuUsageSummary,
@@ -259,6 +285,7 @@ database_management_type_mapping = {
     "FleetMetricSummaryDefinition": FleetMetricSummaryDefinition,
     "FleetStatusByCategory": FleetStatusByCategory,
     "FleetSummary": FleetSummary,
+    "HistoricAddmResult": HistoricAddmResult,
     "InstanceDetails": InstanceDetails,
     "Job": Job,
     "JobCollection": JobCollection,
@@ -305,6 +332,8 @@ database_management_type_mapping = {
     "ResizeDataFileDetails": ResizeDataFileDetails,
     "RoleCollection": RoleCollection,
     "RoleSummary": RoleSummary,
+    "RunHistoricAddmDetails": RunHistoricAddmDetails,
+    "SnapshotDetails": SnapshotDetails,
     "SqlJob": SqlJob,
     "SqlTuningAdvisorTaskCollection": SqlTuningAdvisorTaskCollection,
     "SqlTuningAdvisorTaskFindingCollection": SqlTuningAdvisorTaskFindingCollection,
@@ -321,6 +350,9 @@ database_management_type_mapping = {
     "SqlTuningAdvisorTaskSummaryReportStatementCounts": SqlTuningAdvisorTaskSummaryReportStatementCounts,
     "SqlTuningAdvisorTaskSummaryReportStatistics": SqlTuningAdvisorTaskSummaryReportStatistics,
     "SqlTuningAdvisorTaskSummaryReportTaskInfo": SqlTuningAdvisorTaskSummaryReportTaskInfo,
+    "SqlTuningSetCollection": SqlTuningSetCollection,
+    "SqlTuningSetInput": SqlTuningSetInput,
+    "SqlTuningSetSummary": SqlTuningSetSummary,
     "SqlTuningTaskCredentialDetails": SqlTuningTaskCredentialDetails,
     "SqlTuningTaskPasswordCredentialDetails": SqlTuningTaskPasswordCredentialDetails,
     "SqlTuningTaskPlanStats": SqlTuningTaskPlanStats,

@@ -63,6 +63,7 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/network_firewall/pom.xml</module>
     <module>poms/waa/pom.xml</module>
     <module>poms/governance_rules_control_plane/pom.xml</module>
     <module>poms/onesubscription/pom.xml</module>
