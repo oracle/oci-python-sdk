@@ -4,13 +4,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.71.1 - TBD
+2.72.0 - 2022-06-21
 ====================
 
 Added
 -----
-* TBD
-
+* Support for the Network Firewall service
+* Support for smaller and larger HeatWave cluster nodes in the MySQL Database service
+* Support for CSV file type datasets for text labeling and JSONL in the Data Labeling service
+* Support for diagnostics in the Database Management service
+ 
+Breaking
+--------
+* Support for retries by default on operations of the Network Firewall service
+* Support for retries by default on the createAnnotation operation of the Data Labeling service
+ 
 ====================
 2.71.0 - 2022-06-14
 ====================
