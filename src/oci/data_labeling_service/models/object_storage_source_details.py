@@ -61,7 +61,7 @@ class ObjectStorageSourceDetails(DatasetSourceDetails):
     def namespace(self):
         """
         **[Required]** Gets the namespace of this ObjectStorageSourceDetails.
-        Namespace of the bucket that contains the dataset data source
+        The namespace of the bucket that contains the dataset data source.
 
 
         :return: The namespace of this ObjectStorageSourceDetails.
@@ -73,7 +73,7 @@ class ObjectStorageSourceDetails(DatasetSourceDetails):
     def namespace(self, namespace):
         """
         Sets the namespace of this ObjectStorageSourceDetails.
-        Namespace of the bucket that contains the dataset data source
+        The namespace of the bucket that contains the dataset data source.
 
 
         :param namespace: The namespace of this ObjectStorageSourceDetails.
@@ -85,7 +85,7 @@ class ObjectStorageSourceDetails(DatasetSourceDetails):
     def bucket(self):
         """
         **[Required]** Gets the bucket of this ObjectStorageSourceDetails.
-        The object storage bucket that contains the dataset data source
+        The object storage bucket that contains the dataset data source.
 
 
         :return: The bucket of this ObjectStorageSourceDetails.
@@ -97,7 +97,7 @@ class ObjectStorageSourceDetails(DatasetSourceDetails):
     def bucket(self, bucket):
         """
         Sets the bucket of this ObjectStorageSourceDetails.
-        The object storage bucket that contains the dataset data source
+        The object storage bucket that contains the dataset data source.
 
 
         :param bucket: The bucket of this ObjectStorageSourceDetails.
@@ -109,7 +109,7 @@ class ObjectStorageSourceDetails(DatasetSourceDetails):
     def prefix(self):
         """
         Gets the prefix of this ObjectStorageSourceDetails.
-        A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+        A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
 
 
         :return: The prefix of this ObjectStorageSourceDetails.
@@ -121,7 +121,7 @@ class ObjectStorageSourceDetails(DatasetSourceDetails):
     def prefix(self, prefix):
         """
         Sets the prefix of this ObjectStorageSourceDetails.
-        A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
+        A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
 
 
         :param prefix: The prefix of this ObjectStorageSourceDetails.

@@ -179,7 +179,7 @@ class Dataset(object):
     def id(self):
         """
         **[Required]** Gets the id of this Dataset.
-        The OCID of the dataset.
+        The OCID of the Dataset.
 
 
         :return: The id of this Dataset.
@@ -191,7 +191,7 @@ class Dataset(object):
     def id(self, id):
         """
         Sets the id of this Dataset.
-        The OCID of the dataset.
+        The OCID of the Dataset.
 
 
         :param id: The id of this Dataset.
@@ -251,7 +251,7 @@ class Dataset(object):
     def description(self):
         """
         Gets the description of this Dataset.
-        A user-provided description of the dataset
+        A user provided description of the dataset
 
 
         :return: The description of this Dataset.
@@ -263,7 +263,7 @@ class Dataset(object):
     def description(self, description):
         """
         Sets the description of this Dataset.
-        A user-provided description of the dataset
+        A user provided description of the dataset
 
 
         :param description: The description of this Dataset.
@@ -299,7 +299,7 @@ class Dataset(object):
     def time_updated(self):
         """
         **[Required]** Gets the time_updated of this Dataset.
-        The date and time the resource was updated, in the timestamp format defined by RFC3339.
+        The date and time the resource was last updated, in the timestamp format defined by RFC3339.
 
 
         :return: The time_updated of this Dataset.
@@ -311,7 +311,7 @@ class Dataset(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this Dataset.
-        The date and time the resource was updated, in the timestamp format defined by RFC3339.
+        The date and time the resource was last updated, in the timestamp format defined by RFC3339.
 
 
         :param time_updated: The time_updated of this Dataset.
@@ -324,10 +324,10 @@ class Dataset(object):
         """
         **[Required]** Gets the lifecycle_state of this Dataset.
         The state of a dataset.
-        CREATING - The dataset is being created.  It transitions to ACTIVE when it is ready for labeling.
+        CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling.
         ACTIVE   - The dataset is ready for labeling.
-        UPDATING - The dataset is being updated.  It, and its related resources, might be unavailable for other updates until it returns to ACTIVE.
-        NEEDS_ATTENTION - A dataset updaten operation has failed due to validation or other errors, and needs attention.
+        UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE.
+        NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention.
         DELETING - The dataset and its related resources are being deleted.
         DELETED  - The dataset has been deleted and is no longer available.
         FAILED   - The dataset has failed due to validation or other errors.
@@ -346,10 +346,10 @@ class Dataset(object):
         """
         Sets the lifecycle_state of this Dataset.
         The state of a dataset.
-        CREATING - The dataset is being created.  It transitions to ACTIVE when it is ready for labeling.
+        CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling.
         ACTIVE   - The dataset is ready for labeling.
-        UPDATING - The dataset is being updated.  It, and its related resources, might be unavailable for other updates until it returns to ACTIVE.
-        NEEDS_ATTENTION - A dataset updaten operation has failed due to validation or other errors, and needs attention.
+        UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE.
+        NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention.
         DELETING - The dataset and its related resources are being deleted.
         DELETED  - The dataset has been deleted and is no longer available.
         FAILED   - The dataset has failed due to validation or other errors.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DocumentDatasetFormatDetails(DatasetFormatDetails):
     """
-    Allows the user to specify that the dataset is comprised of document files (e.g. PDFs, DOCs, etc.).  It is open for further configurability.
+    It indicates the dataset is comprised of document files.  It is open for further configurability.
     """
 
     def __init__(self, **kwargs):

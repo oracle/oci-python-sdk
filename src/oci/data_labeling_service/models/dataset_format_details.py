@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DatasetFormatDetails(object):
     """
-    Specifies how to process the data. Supported formats include DOCUMENT, IMAGE and TEXT.
+    It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
     """
 
     #: A constant which can be used with the format_type property of a DatasetFormatDetails.
@@ -76,7 +76,7 @@ class DatasetFormatDetails(object):
     def format_type(self):
         """
         **[Required]** Gets the format_type of this DatasetFormatDetails.
-        Format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are txt files.
+        The format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are TXT files.
 
         Allowed values for this property are: "DOCUMENT", "IMAGE", "TEXT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -91,7 +91,7 @@ class DatasetFormatDetails(object):
     def format_type(self, format_type):
         """
         Sets the format_type of this DatasetFormatDetails.
-        Format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are txt files.
+        The format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are TXT files.
 
 
         :param format_type: The format_type of this DatasetFormatDetails.

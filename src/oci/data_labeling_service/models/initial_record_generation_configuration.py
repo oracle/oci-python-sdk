@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InitialRecordGenerationConfiguration(object):
     """
-    Initial Generate Records configuration, generates records from the Dataset's source.
+    The initial generate records configuration. It generates records from the dataset's source.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class InitialRecordGenerationConfiguration(object):
     def limit(self):
         """
         Gets the limit of this InitialRecordGenerationConfiguration.
-        the maximum number of records to generate.
+        The maximum number of records to generate.
 
 
         :return: The limit of this InitialRecordGenerationConfiguration.
@@ -49,7 +49,7 @@ class InitialRecordGenerationConfiguration(object):
     def limit(self, limit):
         """
         Sets the limit of this InitialRecordGenerationConfiguration.
-        the maximum number of records to generate.
+        The maximum number of records to generate.
 
 
         :param limit: The limit of this InitialRecordGenerationConfiguration.

@@ -60,7 +60,7 @@ class DatasetSourceDetails(object):
     def source_type(self):
         """
         **[Required]** Gets the source_type of this DatasetSourceDetails.
-        The source type.  OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
+        The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
 
         Allowed values for this property are: "OBJECT_STORAGE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -75,7 +75,7 @@ class DatasetSourceDetails(object):
     def source_type(self, source_type):
         """
         Sets the source_type of this DatasetSourceDetails.
-        The source type.  OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
+        The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
 
 
         :param source_type: The source_type of this DatasetSourceDetails.

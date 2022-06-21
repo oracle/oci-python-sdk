@@ -58,6 +58,7 @@ API Reference
 * :doc:`Data Science <data_science/client/oci.data_science.DataScienceClient>`
 * :doc:`Database <database/client/oci.database.DatabaseClient>`
 * :doc:`Db Management <database_management/client/oci.database_management.DbManagementClient>`
+* :doc:`Diagnosability <database_management/client/oci.database_management.DiagnosabilityClient>`
 * :doc:`Sql Tuning <database_management/client/oci.database_management.SqlTuningClient>`
 * :doc:`Database Migration <database_migration/client/oci.database_migration.DatabaseMigrationClient>`
 * :doc:`Database Tools <database_tools/client/oci.database_tools.DatabaseToolsClient>`
@@ -105,6 +106,7 @@ API Reference
 * :doc:`Db System <mysql/client/oci.mysql.DbSystemClient>`
 * :doc:`Mysqlaas <mysql/client/oci.mysql.MysqlaasClient>`
 * :doc:`Work Requests <mysql/client/oci.mysql.WorkRequestsClient>`
+* :doc:`Network Firewall <network_firewall/client/oci.network_firewall.NetworkFirewallClient>`
 * :doc:`Network Load Balancer <network_load_balancer/client/oci.network_load_balancer.NetworkLoadBalancerClient>`
 * :doc:`Nosql <nosql/client/oci.nosql.NosqlClient>`
 * :doc:`Object Storage <object_storage/client/oci.object_storage.ObjectStorageClient>`
@@ -264,6 +266,7 @@ API Reference
     marketplace
     monitoring
     mysql
+    network_firewall
     network_load_balancer
     nosql
     object_storage

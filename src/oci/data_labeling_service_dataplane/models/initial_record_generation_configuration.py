@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InitialRecordGenerationConfiguration(object):
     """
-    The initial generate records configuration It generates records from the dataset's source.
+    The initial generate records configuration. It generates records from the dataset's source.
     """
 
     def __init__(self, **kwargs):
