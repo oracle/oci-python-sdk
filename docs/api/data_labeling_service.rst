@@ -29,6 +29,7 @@ Data Labeling Service
     oci.data_labeling_service.models.DatasetFormatDetails
     oci.data_labeling_service.models.DatasetSourceDetails
     oci.data_labeling_service.models.DatasetSummary
+    oci.data_labeling_service.models.DelimitedFileTypeMetadata
     oci.data_labeling_service.models.DocumentDatasetFormatDetails
     oci.data_labeling_service.models.ExportFormat
     oci.data_labeling_service.models.GenerateDatasetRecordsDetails
@@ -43,6 +44,7 @@ Data Labeling Service
     oci.data_labeling_service.models.SnapshotDatasetDetails
     oci.data_labeling_service.models.SnapshotExportDetails
     oci.data_labeling_service.models.TextDatasetFormatDetails
+    oci.data_labeling_service.models.TextFileTypeMetadata
     oci.data_labeling_service.models.UpdateDatasetDetails
     oci.data_labeling_service.models.WorkRequest
     oci.data_labeling_service.models.WorkRequestError

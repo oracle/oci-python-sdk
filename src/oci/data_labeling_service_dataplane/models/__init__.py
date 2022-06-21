@@ -18,6 +18,7 @@ from .create_source_details import CreateSourceDetails
 from .dataset import Dataset
 from .dataset_format_details import DatasetFormatDetails
 from .dataset_source_details import DatasetSourceDetails
+from .delimited_file_type_metadata import DelimitedFileTypeMetadata
 from .document_dataset_format_details import DocumentDatasetFormatDetails
 from .document_metadata import DocumentMetadata
 from .entity import Entity
@@ -41,6 +42,7 @@ from .record_metadata import RecordMetadata
 from .record_summary import RecordSummary
 from .source_details import SourceDetails
 from .text_dataset_format_details import TextDatasetFormatDetails
+from .text_file_type_metadata import TextFileTypeMetadata
 from .text_metadata import TextMetadata
 from .text_selection_entity import TextSelectionEntity
 from .text_span import TextSpan
@@ -63,6 +65,7 @@ data_labeling_service_dataplane_type_mapping = {
     "Dataset": Dataset,
     "DatasetFormatDetails": DatasetFormatDetails,
     "DatasetSourceDetails": DatasetSourceDetails,
+    "DelimitedFileTypeMetadata": DelimitedFileTypeMetadata,
     "DocumentDatasetFormatDetails": DocumentDatasetFormatDetails,
     "DocumentMetadata": DocumentMetadata,
     "Entity": Entity,
@@ -86,6 +89,7 @@ data_labeling_service_dataplane_type_mapping = {
     "RecordSummary": RecordSummary,
     "SourceDetails": SourceDetails,
     "TextDatasetFormatDetails": TextDatasetFormatDetails,
+    "TextFileTypeMetadata": TextFileTypeMetadata,
     "TextMetadata": TextMetadata,
     "TextSelectionEntity": TextSelectionEntity,
     "TextSpan": TextSpan,

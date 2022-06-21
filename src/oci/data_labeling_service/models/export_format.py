@@ -41,6 +41,10 @@ class ExportFormat(object):
     #: This constant has a value of "PASCAL_VOC"
     NAME_PASCAL_VOC = "PASCAL_VOC"
 
+    #: A constant which can be used with the name property of a ExportFormat.
+    #: This constant has a value of "JSONL_COMPACT_PLUS_CONTENT"
+    NAME_JSONL_COMPACT_PLUS_CONTENT = "JSONL_COMPACT_PLUS_CONTENT"
+
     #: A constant which can be used with the version property of a ExportFormat.
     #: This constant has a value of "V2003"
     VERSION_V2003 = "V2003"
@@ -56,7 +60,7 @@ class ExportFormat(object):
 
         :param name:
             The value to assign to the name property of this ExportFormat.
-            Allowed values for this property are: "JSONL", "JSONL_CONSOLIDATED", "CONLL", "SPACY", "COCO", "YOLO", "PASCAL_VOC"
+            Allowed values for this property are: "JSONL", "JSONL_CONSOLIDATED", "CONLL", "SPACY", "COCO", "YOLO", "PASCAL_VOC", "JSONL_COMPACT_PLUS_CONTENT"
         :type name: str
 
         :param version:
@@ -84,7 +88,7 @@ class ExportFormat(object):
         Gets the name of this ExportFormat.
         Name of export format.
 
-        Allowed values for this property are: "JSONL", "JSONL_CONSOLIDATED", "CONLL", "SPACY", "COCO", "YOLO", "PASCAL_VOC"
+        Allowed values for this property are: "JSONL", "JSONL_CONSOLIDATED", "CONLL", "SPACY", "COCO", "YOLO", "PASCAL_VOC", "JSONL_COMPACT_PLUS_CONTENT"
 
 
         :return: The name of this ExportFormat.
@@ -102,7 +106,7 @@ class ExportFormat(object):
         :param name: The name of this ExportFormat.
         :type: str
         """
-        allowed_values = ["JSONL", "JSONL_CONSOLIDATED", "CONLL", "SPACY", "COCO", "YOLO", "PASCAL_VOC"]
+        allowed_values = ["JSONL", "JSONL_CONSOLIDATED", "CONLL", "SPACY", "COCO", "YOLO", "PASCAL_VOC", "JSONL_COMPACT_PLUS_CONTENT"]
         if not value_allowed_none_or_none_sentinel(name, allowed_values):
             raise ValueError(
                 "Invalid value for `name`, must be None or one of {0}"

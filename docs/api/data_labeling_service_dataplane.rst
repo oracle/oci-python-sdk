@@ -32,6 +32,7 @@ Data Labeling Service Dataplane
     oci.data_labeling_service_dataplane.models.Dataset
     oci.data_labeling_service_dataplane.models.DatasetFormatDetails
     oci.data_labeling_service_dataplane.models.DatasetSourceDetails
+    oci.data_labeling_service_dataplane.models.DelimitedFileTypeMetadata
     oci.data_labeling_service_dataplane.models.DocumentDatasetFormatDetails
     oci.data_labeling_service_dataplane.models.DocumentMetadata
     oci.data_labeling_service_dataplane.models.Entity
@@ -55,6 +56,7 @@ Data Labeling Service Dataplane
     oci.data_labeling_service_dataplane.models.RecordSummary
     oci.data_labeling_service_dataplane.models.SourceDetails
     oci.data_labeling_service_dataplane.models.TextDatasetFormatDetails
+    oci.data_labeling_service_dataplane.models.TextFileTypeMetadata
     oci.data_labeling_service_dataplane.models.TextMetadata
     oci.data_labeling_service_dataplane.models.TextSelectionEntity
     oci.data_labeling_service_dataplane.models.TextSpan
