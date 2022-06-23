@@ -71,6 +71,7 @@ API Reference
 * :doc:`Transfer Device <dts/client/oci.dts.TransferDeviceClient>`
 * :doc:`Transfer Job <dts/client/oci.dts.TransferJobClient>`
 * :doc:`Transfer Package <dts/client/oci.dts.TransferPackageClient>`
+* :doc:`Em Data Lake <em_warehouse/client/oci.em_warehouse.EmDataLakeClient>`
 * :doc:`Email <email/client/oci.email.EmailClient>`
 * :doc:`Events <events/client/oci.events.EventsClient>`
 * :doc:`File Storage <file_storage/client/oci.file_storage.FileStorageClient>`
@@ -171,6 +172,7 @@ API Reference
 * :doc:`Usageapi <usage_api/client/oci.usage_api.UsageapiClient>`
 * :doc:`Vaults <vault/client/oci.vault.VaultsClient>`
 * :doc:`Vb Instance <visual_builder/client/oci.visual_builder.VbInstanceClient>`
+* :doc:`Vn Monitoring <vn_monitoring/client/oci.vn_monitoring.VnMonitoringClient>`
 * :doc:`Vulnerability Scanning <vulnerability_scanning/client/oci.vulnerability_scanning.VulnerabilityScanningClient>`
 * :doc:`Waa <waa/client/oci.waa.WaaClient>`
 * :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
@@ -241,6 +243,7 @@ API Reference
     devops
     dns
     dts
+    em_warehouse
     email
     events
     file_storage
@@ -300,6 +303,7 @@ API Reference
     usage_api
     vault
     visual_builder
+    vn_monitoring
     vulnerability_scanning
     waa
     waas

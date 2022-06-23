@@ -15936,6 +15936,14 @@ class DatabaseClient(object):
         :param str opc_request_id: (optional)
             Unique identifier for the request.
 
+        :param bool is_shared: (optional)
+            Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+
+        :param str character_set_type: (optional)
+            Specifies whether this request pertains to database character sets or national character sets.
+
+            Allowed values are: "DATABASE", "NATIONAL"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -15963,12 +15971,27 @@ class DatabaseClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "is_shared",
+            "character_set_type"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_autonomous_database_character_sets got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'character_set_type' in kwargs:
+            character_set_type_allowed_values = ["DATABASE", "NATIONAL"]
+            if kwargs['character_set_type'] not in character_set_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `character_set_type`, must be one of {0}".format(character_set_type_allowed_values)
+                )
+
+        query_params = {
+            "isShared": kwargs.get("is_shared", missing),
+            "characterSetType": kwargs.get("character_set_type", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -15990,6 +16013,7 @@ class DatabaseClient(object):
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="list[AutonomousDatabaseCharacterSets]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -15999,6 +16023,7 @@ class DatabaseClient(object):
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="list[AutonomousDatabaseCharacterSets]",
                 allow_control_chars=kwargs.get('allow_control_chars'),

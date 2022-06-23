@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.accmgmt.tenantmgr.controlplane</groupId>
         <artifactId>tenant-manager-spec</artifactId>
-        <version>0.1.1211</version>
+        <version>0.1.1296</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

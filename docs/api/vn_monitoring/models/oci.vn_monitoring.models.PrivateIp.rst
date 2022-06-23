@@ -1,0 +1,11 @@
+PrivateIp
+=========
+
+.. currentmodule:: oci.vn_monitoring.models
+
+.. autoclass:: PrivateIp
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

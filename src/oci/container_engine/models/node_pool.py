@@ -13,6 +13,38 @@ class NodePool(object):
     A pool of compute nodes attached to a cluster. Avoid entering confidential information.
     """
 
+    #: A constant which can be used with the lifecycle_state property of a NodePool.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
+
+    #: A constant which can be used with the lifecycle_state property of a NodePool.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a NodePool.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a NodePool.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
+    #: A constant which can be used with the lifecycle_state property of a NodePool.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a NodePool.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
+
+    #: A constant which can be used with the lifecycle_state property of a NodePool.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a NodePool.
+    #: This constant has a value of "NEEDS_ATTENTION"
+    LIFECYCLE_STATE_NEEDS_ATTENTION = "NEEDS_ATTENTION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new NodePool object with values from keyword arguments.
@@ -21,6 +53,16 @@ class NodePool(object):
         :param id:
             The value to assign to the id property of this NodePool.
         :type id: str
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this NodePool.
+            Allowed values for this property are: "DELETED", "CREATING", "ACTIVE", "UPDATING", "DELETING", "FAILED", "INACTIVE", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this NodePool.
+        :type lifecycle_details: str
 
         :param compartment_id:
             The value to assign to the compartment_id property of this NodePool.
@@ -102,9 +144,15 @@ class NodePool(object):
             The value to assign to the system_tags property of this NodePool.
         :type system_tags: dict(str, dict(str, object))
 
+        :param node_eviction_node_pool_settings:
+            The value to assign to the node_eviction_node_pool_settings property of this NodePool.
+        :type node_eviction_node_pool_settings: oci.container_engine.models.NodeEvictionNodePoolSettings
+
         """
         self.swagger_types = {
             'id': 'str',
+            'lifecycle_state': 'str',
+            'lifecycle_details': 'str',
             'compartment_id': 'str',
             'cluster_id': 'str',
             'name': 'str',
@@ -124,11 +172,14 @@ class NodePool(object):
             'node_config_details': 'NodePoolNodeConfigDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'node_eviction_node_pool_settings': 'NodeEvictionNodePoolSettings'
         }
 
         self.attribute_map = {
             'id': 'id',
+            'lifecycle_state': 'lifecycleState',
+            'lifecycle_details': 'lifecycleDetails',
             'compartment_id': 'compartmentId',
             'cluster_id': 'clusterId',
             'name': 'name',
@@ -148,10 +199,13 @@ class NodePool(object):
             'node_config_details': 'nodeConfigDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'node_eviction_node_pool_settings': 'nodeEvictionNodePoolSettings'
         }
 
         self._id = None
+        self._lifecycle_state = None
+        self._lifecycle_details = None
         self._compartment_id = None
         self._cluster_id = None
         self._name = None
@@ -172,6 +226,7 @@ class NodePool(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._node_eviction_node_pool_settings = None
 
     @property
     def id(self):
@@ -196,6 +251,60 @@ class NodePool(object):
         :type: str
         """
         self._id = id
+
+    @property
+    def lifecycle_state(self):
+        """
+        Gets the lifecycle_state of this NodePool.
+        The state of the nodepool.
+
+        Allowed values for this property are: "DELETED", "CREATING", "ACTIVE", "UPDATING", "DELETING", "FAILED", "INACTIVE", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The lifecycle_state of this NodePool.
+        :rtype: str
+        """
+        return self._lifecycle_state
+
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
+        """
+        Sets the lifecycle_state of this NodePool.
+        The state of the nodepool.
+
+
+        :param lifecycle_state: The lifecycle_state of this NodePool.
+        :type: str
+        """
+        allowed_values = ["DELETED", "CREATING", "ACTIVE", "UPDATING", "DELETING", "FAILED", "INACTIVE", "NEEDS_ATTENTION"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
+        self._lifecycle_state = lifecycle_state
+
+    @property
+    def lifecycle_details(self):
+        """
+        Gets the lifecycle_details of this NodePool.
+        Details about the state of the nodepool.
+
+
+        :return: The lifecycle_details of this NodePool.
+        :rtype: str
+        """
+        return self._lifecycle_details
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
+        """
+        Sets the lifecycle_details of this NodePool.
+        Details about the state of the nodepool.
+
+
+        :param lifecycle_details: The lifecycle_details of this NodePool.
+        :type: str
+        """
+        self._lifecycle_details = lifecycle_details
 
     @property
     def compartment_id(self):
@@ -694,6 +803,26 @@ class NodePool(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def node_eviction_node_pool_settings(self):
+        """
+        Gets the node_eviction_node_pool_settings of this NodePool.
+
+        :return: The node_eviction_node_pool_settings of this NodePool.
+        :rtype: oci.container_engine.models.NodeEvictionNodePoolSettings
+        """
+        return self._node_eviction_node_pool_settings
+
+    @node_eviction_node_pool_settings.setter
+    def node_eviction_node_pool_settings(self, node_eviction_node_pool_settings):
+        """
+        Sets the node_eviction_node_pool_settings of this NodePool.
+
+        :param node_eviction_node_pool_settings: The node_eviction_node_pool_settings of this NodePool.
+        :type: oci.container_engine.models.NodeEvictionNodePoolSettings
+        """
+        self._node_eviction_node_pool_settings = node_eviction_node_pool_settings
 
     def __repr__(self):
         return formatted_flat_dict(self)

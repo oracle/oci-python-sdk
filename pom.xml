@@ -63,6 +63,8 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/em_warehouse/pom.xml</module>
+    <module>poms/vn_monitoring/pom.xml</module>
     <module>poms/network_firewall/pom.xml</module>
     <module>poms/waa/pom.xml</module>
     <module>poms/governance_rules_control_plane/pom.xml</module>

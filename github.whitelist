@@ -153,3 +153,5 @@
 ^src/oci/governance_rules_control_plane/.*\.py$
 ^src/oci/waa/.*\.py$
 ^src/oci/network_firewall/.*\.py$
+^src/oci/vn_monitoring/.*\.py$
+^src/oci/em_warehouse/.*\.py$

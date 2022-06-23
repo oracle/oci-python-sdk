@@ -61,6 +61,7 @@ Tenant Manager Control Plane
     oci.tenant_manager_control_plane.models.OrganizationTenancy
     oci.tenant_manager_control_plane.models.OrganizationTenancyCollection
     oci.tenant_manager_control_plane.models.OrganizationTenancySummary
+    oci.tenant_manager_control_plane.models.Promotion
     oci.tenant_manager_control_plane.models.RecipientInvitation
     oci.tenant_manager_control_plane.models.RecipientInvitationCollection
     oci.tenant_manager_control_plane.models.RecipientInvitationSummary

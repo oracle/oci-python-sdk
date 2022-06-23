@@ -31,22 +31,29 @@ class InstanceConfigurationInstanceSourceViaImageDetails(InstanceConfigurationIn
             The value to assign to the image_id property of this InstanceConfigurationInstanceSourceViaImageDetails.
         :type image_id: str
 
+        :param boot_volume_vpus_per_gb:
+            The value to assign to the boot_volume_vpus_per_gb property of this InstanceConfigurationInstanceSourceViaImageDetails.
+        :type boot_volume_vpus_per_gb: int
+
         """
         self.swagger_types = {
             'source_type': 'str',
             'boot_volume_size_in_gbs': 'int',
-            'image_id': 'str'
+            'image_id': 'str',
+            'boot_volume_vpus_per_gb': 'int'
         }
 
         self.attribute_map = {
             'source_type': 'sourceType',
             'boot_volume_size_in_gbs': 'bootVolumeSizeInGBs',
-            'image_id': 'imageId'
+            'image_id': 'imageId',
+            'boot_volume_vpus_per_gb': 'bootVolumeVpusPerGB'
         }
 
         self._source_type = None
         self._boot_volume_size_in_gbs = None
         self._image_id = None
+        self._boot_volume_vpus_per_gb = None
         self._source_type = 'image'
 
     @property
@@ -98,6 +105,54 @@ class InstanceConfigurationInstanceSourceViaImageDetails(InstanceConfigurationIn
         :type: str
         """
         self._image_id = image_id
+
+    @property
+    def boot_volume_vpus_per_gb(self):
+        """
+        Gets the boot_volume_vpus_per_gb of this InstanceConfigurationInstanceSourceViaImageDetails.
+        The number of volume performance units (VPUs) that will be applied to this volume per GB,
+        representing the Block Volume service's elastic performance options.
+        See `Block Volume Performance Levels`__ for more information.
+
+        Allowed values:
+
+          * `10`: Represents Balanced option.
+
+          * `20`: Represents Higher Performance option.
+
+          * `30`-`120`: Represents the Ultra High Performance option.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
+
+
+        :return: The boot_volume_vpus_per_gb of this InstanceConfigurationInstanceSourceViaImageDetails.
+        :rtype: int
+        """
+        return self._boot_volume_vpus_per_gb
+
+    @boot_volume_vpus_per_gb.setter
+    def boot_volume_vpus_per_gb(self, boot_volume_vpus_per_gb):
+        """
+        Sets the boot_volume_vpus_per_gb of this InstanceConfigurationInstanceSourceViaImageDetails.
+        The number of volume performance units (VPUs) that will be applied to this volume per GB,
+        representing the Block Volume service's elastic performance options.
+        See `Block Volume Performance Levels`__ for more information.
+
+        Allowed values:
+
+          * `10`: Represents Balanced option.
+
+          * `20`: Represents Higher Performance option.
+
+          * `30`-`120`: Represents the Ultra High Performance option.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
+
+
+        :param boot_volume_vpus_per_gb: The boot_volume_vpus_per_gb of this InstanceConfigurationInstanceSourceViaImageDetails.
+        :type: int
+        """
+        self._boot_volume_vpus_per_gb = boot_volume_vpus_per_gb
 
     def __repr__(self):
         return formatted_flat_dict(self)

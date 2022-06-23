@@ -111,6 +111,7 @@ from .change_vtap_compartment_details import ChangeVtapCompartmentDetails
 from .cluster_network import ClusterNetwork
 from .cluster_network_placement_configuration_details import ClusterNetworkPlacementConfigurationDetails
 from .cluster_network_summary import ClusterNetworkSummary
+from .compartment_internal import CompartmentInternal
 from .compute_capacity_reservation import ComputeCapacityReservation
 from .compute_capacity_reservation_instance_shape_summary import ComputeCapacityReservationInstanceShapeSummary
 from .compute_capacity_reservation_summary import ComputeCapacityReservationSummary
@@ -625,6 +626,7 @@ core_type_mapping = {
     "ClusterNetwork": ClusterNetwork,
     "ClusterNetworkPlacementConfigurationDetails": ClusterNetworkPlacementConfigurationDetails,
     "ClusterNetworkSummary": ClusterNetworkSummary,
+    "CompartmentInternal": CompartmentInternal,
     "ComputeCapacityReservation": ComputeCapacityReservation,
     "ComputeCapacityReservationInstanceShapeSummary": ComputeCapacityReservationInstanceShapeSummary,
     "ComputeCapacityReservationSummary": ComputeCapacityReservationSummary,
