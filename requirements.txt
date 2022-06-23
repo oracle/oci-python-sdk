@@ -2,10 +2,10 @@ autodocsumm==0.1.11
 certifi
 configparser==4.0.2; python_version < '3'
 coverage==4.5.2
-cryptography>=3.2.1,<=3.4.7
+cryptography>=3.2.1,<=37.0.2
 flake8>=3.6.0
 mock==2.0.0
-pyOpenSSL==19.1.0
+pyOpenSSL>=17.5.0,<=22.0.0
 pytest==4.1.0
 pytest-cov==2.6.1
 attrs==19.1.0
