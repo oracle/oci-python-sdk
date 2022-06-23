@@ -3,6 +3,7 @@
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 import platform
+import oci.util
 from .version import __version__
 from oci._vendor.requests.exceptions import RequestException as BaseRequestException
 from oci._vendor.requests.exceptions import ConnectTimeout as BaseConnectTimeout
@@ -51,6 +52,14 @@ class ServiceError(Exception):
             error_details['troubleshooting_tips'] = "{} Also see {} for details on this operation's requirements. {}".format(api_errors_info, self.api_reference_link, contact_info)
         else:
             error_details['troubleshooting_tips'] = "{} {}".format(api_errors_info, contact_info)
+
+        if isinstance(kwargs.get('deserialized_data'), dict):
+            # convert the Keys of the dictionary to snake case
+            deserialized_data = oci.util.camel_to_snake_keys(kwargs.get('deserialized_data'))
+            for key, value in deserialized_data.items():
+                # Skip adding duplicate keys in error_details
+                if key not in (error_details):
+                    error_details[key] = value
 
         super(ServiceError, self).__init__(error_details)
 

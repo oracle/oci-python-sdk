@@ -606,14 +606,15 @@ class BaseClient(object):
             request_endpoint = request.method + " " + request.url
             client_version = USER_INFO
             timestamp = datetime.now().isoformat()
-            service_code, message = self.get_deserialized_service_code_and_message(response, allow_control_chars)
+
+            service_code, message, deserialized_data = self.get_deserialized_service_code_and_message(response, allow_control_chars)
             if isinstance(self.circuit_breaker_strategy, CircuitBreakerStrategy) and self.circuit_breaker_strategy.is_transient_error(response.status_code, service_code):
                 new_circuit_breaker_state = CircuitBreakerMonitor.get(self.circuit_breaker_name).state
                 if initial_circuit_breaker_state != new_circuit_breaker_state:
                     self.logger.warning("Circuit Breaker state changed from {} to {}".format(initial_circuit_breaker_state, new_circuit_breaker_state))
-                self.raise_transient_service_error(request, response, service_code, message, operation_name, api_reference_link, target_service, request_endpoint, client_version, timestamp)
+                self.raise_transient_service_error(request, response, service_code, message, operation_name, api_reference_link, target_service, request_endpoint, client_version, timestamp, deserialized_data)
             else:
-                self.raise_service_error(request, response, service_code, message, operation_name, api_reference_link, target_service, request_endpoint, client_version, timestamp)
+                self.raise_service_error(request, response, service_code, message, operation_name, api_reference_link, target_service, request_endpoint, client_version, timestamp, deserialized_data)
 
         if stream:
             # Don't unpack a streaming response body
@@ -769,7 +770,7 @@ class BaseClient(object):
 
         return result
 
-    def raise_service_error(self, request, response, service_code, message, operation_name=None, api_reference_link=None, target_service=None, request_endpoint=None, client_version=None, timestamp=None):
+    def raise_service_error(self, request, response, service_code, message, operation_name=None, api_reference_link=None, target_service=None, request_endpoint=None, client_version=None, timestamp=None, deserialized_data=None):
         raise exceptions.ServiceError(
             response.status_code,
             service_code,
@@ -781,9 +782,10 @@ class BaseClient(object):
             target_service=target_service,
             request_endpoint=request_endpoint,
             client_version=client_version,
-            timestamp=timestamp)
+            timestamp=timestamp,
+            deserialized_data=deserialized_data)
 
-    def raise_transient_service_error(self, request, response, service_code, message, operation_name=None, api_reference_link=None, target_service=None, request_endpoint=None, client_version=None, timestamp=None):
+    def raise_transient_service_error(self, request, response, service_code, message, operation_name=None, api_reference_link=None, target_service=None, request_endpoint=None, client_version=None, timestamp=None, deserialized_data=None):
         raise exceptions.TransientServiceError(
             response.status_code,
             service_code,
@@ -795,7 +797,8 @@ class BaseClient(object):
             target_service=target_service,
             request_endpoint=request_endpoint,
             client_version=client_version,
-            timestamp=timestamp)
+            timestamp=timestamp,
+            deserialized_data=deserialized_data)
 
     def get_deserialized_service_code_and_message(self, response, allow_control_chars=None):
         deserialized_data = self.deserialize_response_data(response.content, 'object', allow_control_chars)
@@ -811,7 +814,7 @@ class BaseClient(object):
             # of black holing the message, just put it in the error
             message = deserialized_data
 
-        return service_code, message
+        return service_code, message, deserialized_data
 
     def deserialize_response_data(self, response_data, response_type, allow_control_chars=None):
         """

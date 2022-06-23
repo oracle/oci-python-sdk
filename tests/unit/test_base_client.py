@@ -6,6 +6,7 @@ import oci
 import pytest
 from oci._vendor import six
 from oci.exceptions import ConnectTimeout, RequestException
+from datetime import datetime
 
 
 # Note: the identity client is passed here because I'm too lazy to create a new signer
@@ -156,3 +157,95 @@ def test_get_preferred_retry_strategy(config):
     retry_strategy = client.base_client.get_preferred_retry_strategy(operation_retry_strategy=operation_retry_strategy,
                                                                      client_retry_strategy=client_retry_strategy)
     assert isinstance(retry_strategy, oci.retry.ExponentialBackoffWithFullJitterEqualForThrottlesRetryStrategy)
+
+
+def test_compute_out_of_capacity_error(config):
+    json_raw = r'{"code": "InternalServerError","message": "Out of host capacity.","originalMessage": "Out of capacity for shape VM.Standard2.1 in dedicated pool vmidp_stress_test.","originalMessageTemplate": "Out of capacity for shape {shape} in dedicated pool {dedicatedPool}.","messageArguments": {"problemType": "OUT_OF_CAPACITY","shape": "VM.Standard2.1","dedicatedPool": "vmidp_stress_test"}}'
+    mock_response = MockResponse(content=json_raw, status_code=501, headers={'opc-request-id': 1234})
+
+    # Default case
+    client = oci.identity.IdentityClient(config)
+    deserialized_data = client.base_client.deserialize_response_data(mock_response, 'object')
+    assert deserialized_data['code'] == 'InternalServerError'
+    with pytest.raises(oci.exceptions.ServiceError) as service_error:
+        raise oci.exceptions.ServiceError(
+            mock_response.status_code,
+            deserialized_data['code'],
+            mock_response.headers,
+            deserialized_data['message'],
+            deserialized_data=deserialized_data,
+            target_service='Compute',
+            operation_name='mock_api',
+            timestamp=datetime.now().isoformat(),
+            client_version='1',
+            request_endpoint='www.foo.bar'
+        )
+    error_info = str(service_error)
+    assert 'original_message' in error_info
+    assert 'original_message_template' in error_info
+    assert 'message_arguments' in error_info
+
+
+def test_partial_compute_out_of_capacity_error(config):
+    json_raw = r'{"code": "InternalServerError","message": "Out of host capacity.","messageArguments": {"problemType": "OUT_OF_CAPACITY","shape": "VM.Standard2.1","dedicatedPool": "vmidp_stress_test"}}'
+    mock_response = MockResponse(content=json_raw, status_code=501, headers={'opc-request-id': 1234})
+
+    # Default case
+    client = oci.identity.IdentityClient(config)
+    deserialized_data = client.base_client.deserialize_response_data(mock_response, 'object')
+    assert deserialized_data['code'] == 'InternalServerError'
+    with pytest.raises(oci.exceptions.ServiceError) as service_error:
+        raise oci.exceptions.ServiceError(
+            mock_response.status_code,
+            deserialized_data['code'],
+            mock_response.headers,
+            deserialized_data['message'],
+            deserialized_data=deserialized_data,
+            target_service='Compute',
+            operation_name='mock_api',
+            timestamp=datetime.now().isoformat(),
+            client_version='1',
+            request_endpoint='www.foo.bar'
+        )
+    error_info = str(service_error)
+    assert 'original_message' not in error_info
+    assert 'original_message_template' not in error_info
+    assert 'message_arguments' in error_info
+
+
+def test_original_compute_out_of_capacity_error(config):
+    json_raw = r'{"code": "InternalServerError","message": "Out of host capacity."}'
+    mock_response = MockResponse(content=json_raw, status_code=501, headers={'opc-request-id': 1234})
+
+    # Default case
+    client = oci.identity.IdentityClient(config)
+    deserialized_data = client.base_client.deserialize_response_data(mock_response, 'object')
+    assert deserialized_data['code'] == 'InternalServerError'
+    with pytest.raises(oci.exceptions.ServiceError) as service_error:
+        raise oci.exceptions.ServiceError(
+            mock_response.status_code,
+            deserialized_data['code'],
+            mock_response.headers,
+            deserialized_data['message'],
+            deserialized_data=deserialized_data,
+            target_service='Compute',
+            operation_name='mock_api',
+            timestamp=datetime.now().isoformat(),
+            client_version='1',
+            request_endpoint='www.foo.bar'
+        )
+    error_info = str(service_error)
+    assert 'code' in error_info
+    assert 'original_message' not in error_info
+    assert 'original_message_template' not in error_info
+    assert 'message_arguments' not in error_info
+
+
+class MockResponse:
+    def __init__(self, content, status_code, headers):
+        self.content = content
+        self.status_code = status_code
+        self.headers = headers
+
+    def decode(self, format):
+        return self.content
