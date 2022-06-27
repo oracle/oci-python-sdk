@@ -62,7 +62,7 @@ if [ $TEST_ENABLE = "false" ]; then
 else
   pip install virtualenv==16.7.9
   pip install tox==3.14.3
-  tox -e flake8,py27,py38 -- --vcr-record-mode=none
+  tox -e flake8,py38 -- --vcr-record-mode=none
 fi
 
 echo installing Wheel
