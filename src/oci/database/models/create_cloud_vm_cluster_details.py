@@ -119,6 +119,10 @@ class CreateCloudVmClusterDetails(object):
             The value to assign to the defined_tags property of this CreateCloudVmClusterDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param data_collection_options:
+            The value to assign to the data_collection_options property of this CreateCloudVmClusterDetails.
+        :type data_collection_options: oci.database.models.DataCollectionOptions
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -143,7 +147,8 @@ class CreateCloudVmClusterDetails(object):
             'backup_network_nsg_ids': 'list[str]',
             'gi_version': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'data_collection_options': 'DataCollectionOptions'
         }
 
         self.attribute_map = {
@@ -169,7 +174,8 @@ class CreateCloudVmClusterDetails(object):
             'backup_network_nsg_ids': 'backupNetworkNsgIds',
             'gi_version': 'giVersion',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'data_collection_options': 'dataCollectionOptions'
         }
 
         self._compartment_id = None
@@ -195,6 +201,7 @@ class CreateCloudVmClusterDetails(object):
         self._gi_version = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._data_collection_options = None
 
     @property
     def compartment_id(self):
@@ -847,6 +854,26 @@ class CreateCloudVmClusterDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def data_collection_options(self):
+        """
+        Gets the data_collection_options of this CreateCloudVmClusterDetails.
+
+        :return: The data_collection_options of this CreateCloudVmClusterDetails.
+        :rtype: oci.database.models.DataCollectionOptions
+        """
+        return self._data_collection_options
+
+    @data_collection_options.setter
+    def data_collection_options(self, data_collection_options):
+        """
+        Sets the data_collection_options of this CreateCloudVmClusterDetails.
+
+        :param data_collection_options: The data_collection_options of this CreateCloudVmClusterDetails.
+        :type: oci.database.models.DataCollectionOptions
+        """
+        self._data_collection_options = data_collection_options
 
     def __repr__(self):
         return formatted_flat_dict(self)

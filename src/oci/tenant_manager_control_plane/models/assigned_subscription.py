@@ -84,6 +84,38 @@ class AssignedSubscription(object):
             The value to assign to the order_ids property of this AssignedSubscription.
         :type order_ids: list[str]
 
+        :param program_type:
+            The value to assign to the program_type property of this AssignedSubscription.
+        :type program_type: str
+
+        :param customer_country_code:
+            The value to assign to the customer_country_code property of this AssignedSubscription.
+        :type customer_country_code: str
+
+        :param cloud_amount_currency:
+            The value to assign to the cloud_amount_currency property of this AssignedSubscription.
+        :type cloud_amount_currency: str
+
+        :param csi_number:
+            The value to assign to the csi_number property of this AssignedSubscription.
+        :type csi_number: str
+
+        :param subscription_tier:
+            The value to assign to the subscription_tier property of this AssignedSubscription.
+        :type subscription_tier: str
+
+        :param is_government_subscription:
+            The value to assign to the is_government_subscription property of this AssignedSubscription.
+        :type is_government_subscription: bool
+
+        :param promotion:
+            The value to assign to the promotion property of this AssignedSubscription.
+        :type promotion: list[oci.tenant_manager_control_plane.models.Promotion]
+
+        :param purchase_entitlement_id:
+            The value to assign to the purchase_entitlement_id property of this AssignedSubscription.
+        :type purchase_entitlement_id: str
+
         :param start_date:
             The value to assign to the start_date property of this AssignedSubscription.
         :type start_date: datetime
@@ -111,6 +143,14 @@ class AssignedSubscription(object):
             'lifecycle_state': 'str',
             'skus': 'list[SubscriptionSku]',
             'order_ids': 'list[str]',
+            'program_type': 'str',
+            'customer_country_code': 'str',
+            'cloud_amount_currency': 'str',
+            'csi_number': 'str',
+            'subscription_tier': 'str',
+            'is_government_subscription': 'bool',
+            'promotion': 'list[Promotion]',
+            'purchase_entitlement_id': 'str',
             'start_date': 'datetime',
             'end_date': 'datetime',
             'time_updated': 'datetime',
@@ -127,6 +167,14 @@ class AssignedSubscription(object):
             'lifecycle_state': 'lifecycleState',
             'skus': 'skus',
             'order_ids': 'orderIds',
+            'program_type': 'programType',
+            'customer_country_code': 'customerCountryCode',
+            'cloud_amount_currency': 'cloudAmountCurrency',
+            'csi_number': 'csiNumber',
+            'subscription_tier': 'subscriptionTier',
+            'is_government_subscription': 'isGovernmentSubscription',
+            'promotion': 'promotion',
+            'purchase_entitlement_id': 'purchaseEntitlementId',
             'start_date': 'startDate',
             'end_date': 'endDate',
             'time_updated': 'timeUpdated',
@@ -142,6 +190,14 @@ class AssignedSubscription(object):
         self._lifecycle_state = None
         self._skus = None
         self._order_ids = None
+        self._program_type = None
+        self._customer_country_code = None
+        self._cloud_amount_currency = None
+        self._csi_number = None
+        self._subscription_tier = None
+        self._is_government_subscription = None
+        self._promotion = None
+        self._purchase_entitlement_id = None
         self._start_date = None
         self._end_date = None
         self._time_updated = None
@@ -368,6 +424,198 @@ class AssignedSubscription(object):
         :type: list[str]
         """
         self._order_ids = order_ids
+
+    @property
+    def program_type(self):
+        """
+        Gets the program_type of this AssignedSubscription.
+        Denotes any program that is associated with the subscription.
+
+
+        :return: The program_type of this AssignedSubscription.
+        :rtype: str
+        """
+        return self._program_type
+
+    @program_type.setter
+    def program_type(self, program_type):
+        """
+        Sets the program_type of this AssignedSubscription.
+        Denotes any program that is associated with the subscription.
+
+
+        :param program_type: The program_type of this AssignedSubscription.
+        :type: str
+        """
+        self._program_type = program_type
+
+    @property
+    def customer_country_code(self):
+        """
+        Gets the customer_country_code of this AssignedSubscription.
+        The country code for the customer associated with the subscription.
+
+
+        :return: The customer_country_code of this AssignedSubscription.
+        :rtype: str
+        """
+        return self._customer_country_code
+
+    @customer_country_code.setter
+    def customer_country_code(self, customer_country_code):
+        """
+        Sets the customer_country_code of this AssignedSubscription.
+        The country code for the customer associated with the subscription.
+
+
+        :param customer_country_code: The customer_country_code of this AssignedSubscription.
+        :type: str
+        """
+        self._customer_country_code = customer_country_code
+
+    @property
+    def cloud_amount_currency(self):
+        """
+        Gets the cloud_amount_currency of this AssignedSubscription.
+        The currency code for the customer associated with the subscription.
+
+
+        :return: The cloud_amount_currency of this AssignedSubscription.
+        :rtype: str
+        """
+        return self._cloud_amount_currency
+
+    @cloud_amount_currency.setter
+    def cloud_amount_currency(self, cloud_amount_currency):
+        """
+        Sets the cloud_amount_currency of this AssignedSubscription.
+        The currency code for the customer associated with the subscription.
+
+
+        :param cloud_amount_currency: The cloud_amount_currency of this AssignedSubscription.
+        :type: str
+        """
+        self._cloud_amount_currency = cloud_amount_currency
+
+    @property
+    def csi_number(self):
+        """
+        Gets the csi_number of this AssignedSubscription.
+        Customer service identifier for the customer associated with the subscription.
+
+
+        :return: The csi_number of this AssignedSubscription.
+        :rtype: str
+        """
+        return self._csi_number
+
+    @csi_number.setter
+    def csi_number(self, csi_number):
+        """
+        Sets the csi_number of this AssignedSubscription.
+        Customer service identifier for the customer associated with the subscription.
+
+
+        :param csi_number: The csi_number of this AssignedSubscription.
+        :type: str
+        """
+        self._csi_number = csi_number
+
+    @property
+    def subscription_tier(self):
+        """
+        Gets the subscription_tier of this AssignedSubscription.
+        Tier for the subscription, such as if it is a free promotion subscription or a paid subscription.
+
+
+        :return: The subscription_tier of this AssignedSubscription.
+        :rtype: str
+        """
+        return self._subscription_tier
+
+    @subscription_tier.setter
+    def subscription_tier(self, subscription_tier):
+        """
+        Sets the subscription_tier of this AssignedSubscription.
+        Tier for the subscription, such as if it is a free promotion subscription or a paid subscription.
+
+
+        :param subscription_tier: The subscription_tier of this AssignedSubscription.
+        :type: str
+        """
+        self._subscription_tier = subscription_tier
+
+    @property
+    def is_government_subscription(self):
+        """
+        Gets the is_government_subscription of this AssignedSubscription.
+        Denotes if the subscription is a government subscription or not.
+
+
+        :return: The is_government_subscription of this AssignedSubscription.
+        :rtype: bool
+        """
+        return self._is_government_subscription
+
+    @is_government_subscription.setter
+    def is_government_subscription(self, is_government_subscription):
+        """
+        Sets the is_government_subscription of this AssignedSubscription.
+        Denotes if the subscription is a government subscription or not.
+
+
+        :param is_government_subscription: The is_government_subscription of this AssignedSubscription.
+        :type: bool
+        """
+        self._is_government_subscription = is_government_subscription
+
+    @property
+    def promotion(self):
+        """
+        Gets the promotion of this AssignedSubscription.
+        List of promotions related to the subscription.
+
+
+        :return: The promotion of this AssignedSubscription.
+        :rtype: list[oci.tenant_manager_control_plane.models.Promotion]
+        """
+        return self._promotion
+
+    @promotion.setter
+    def promotion(self, promotion):
+        """
+        Sets the promotion of this AssignedSubscription.
+        List of promotions related to the subscription.
+
+
+        :param promotion: The promotion of this AssignedSubscription.
+        :type: list[oci.tenant_manager_control_plane.models.Promotion]
+        """
+        self._promotion = promotion
+
+    @property
+    def purchase_entitlement_id(self):
+        """
+        Gets the purchase_entitlement_id of this AssignedSubscription.
+        Purchase entitlement id associated with the subscription.
+
+
+        :return: The purchase_entitlement_id of this AssignedSubscription.
+        :rtype: str
+        """
+        return self._purchase_entitlement_id
+
+    @purchase_entitlement_id.setter
+    def purchase_entitlement_id(self, purchase_entitlement_id):
+        """
+        Sets the purchase_entitlement_id of this AssignedSubscription.
+        Purchase entitlement id associated with the subscription.
+
+
+        :param purchase_entitlement_id: The purchase_entitlement_id of this AssignedSubscription.
+        :type: str
+        """
+        self._purchase_entitlement_id = purchase_entitlement_id
 
     @property
     def start_date(self):

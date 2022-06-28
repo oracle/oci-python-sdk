@@ -1187,7 +1187,7 @@ class AutonomousContainerDatabase(object):
     def available_cpus(self):
         """
         Gets the available_cpus of this AutonomousContainerDatabase.
-        Sum of OCPUs available on the Autonomous VM Cluster + Sum of Fractional OCPUs available in the Autonomous Container Database.
+        Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
 
 
         :return: The available_cpus of this AutonomousContainerDatabase.
@@ -1199,7 +1199,7 @@ class AutonomousContainerDatabase(object):
     def available_cpus(self, available_cpus):
         """
         Sets the available_cpus of this AutonomousContainerDatabase.
-        Sum of OCPUs available on the Autonomous VM Cluster + Sum of Fractional OCPUs available in the Autonomous Container Database.
+        Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
 
 
         :param available_cpus: The available_cpus of this AutonomousContainerDatabase.
@@ -1235,7 +1235,7 @@ class AutonomousContainerDatabase(object):
     def reclaimable_cpus(self):
         """
         Gets the reclaimable_cpus of this AutonomousContainerDatabase.
-        CPU cores that are not released to available pool after an Autonomous Database is terminated (Requires Autonomous Container Database restart).
+        CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
 
 
         :return: The reclaimable_cpus of this AutonomousContainerDatabase.
@@ -1247,7 +1247,7 @@ class AutonomousContainerDatabase(object):
     def reclaimable_cpus(self, reclaimable_cpus):
         """
         Sets the reclaimable_cpus of this AutonomousContainerDatabase.
-        CPU cores that are not released to available pool after an Autonomous Database is terminated (Requires Autonomous Container Database restart).
+        CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
 
 
         :param reclaimable_cpus: The reclaimable_cpus of this AutonomousContainerDatabase.

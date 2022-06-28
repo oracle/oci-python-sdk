@@ -82,6 +82,10 @@ class CreateNodePoolDetails(object):
             The value to assign to the defined_tags property of this CreateNodePoolDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param node_eviction_node_pool_settings:
+            The value to assign to the node_eviction_node_pool_settings property of this CreateNodePoolDetails.
+        :type node_eviction_node_pool_settings: oci.container_engine.models.NodeEvictionNodePoolSettings
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -99,7 +103,8 @@ class CreateNodePoolDetails(object):
             'subnet_ids': 'list[str]',
             'node_config_details': 'CreateNodePoolNodeConfigDetails',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'node_eviction_node_pool_settings': 'NodeEvictionNodePoolSettings'
         }
 
         self.attribute_map = {
@@ -118,7 +123,8 @@ class CreateNodePoolDetails(object):
             'subnet_ids': 'subnetIds',
             'node_config_details': 'nodeConfigDetails',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'node_eviction_node_pool_settings': 'nodeEvictionNodePoolSettings'
         }
 
         self._compartment_id = None
@@ -137,6 +143,7 @@ class CreateNodePoolDetails(object):
         self._node_config_details = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._node_eviction_node_pool_settings = None
 
     @property
     def compartment_id(self):
@@ -549,6 +556,26 @@ class CreateNodePoolDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def node_eviction_node_pool_settings(self):
+        """
+        Gets the node_eviction_node_pool_settings of this CreateNodePoolDetails.
+
+        :return: The node_eviction_node_pool_settings of this CreateNodePoolDetails.
+        :rtype: oci.container_engine.models.NodeEvictionNodePoolSettings
+        """
+        return self._node_eviction_node_pool_settings
+
+    @node_eviction_node_pool_settings.setter
+    def node_eviction_node_pool_settings(self, node_eviction_node_pool_settings):
+        """
+        Sets the node_eviction_node_pool_settings of this CreateNodePoolDetails.
+
+        :param node_eviction_node_pool_settings: The node_eviction_node_pool_settings of this CreateNodePoolDetails.
+        :type: oci.container_engine.models.NodeEvictionNodePoolSettings
+        """
+        self._node_eviction_node_pool_settings = node_eviction_node_pool_settings
 
     def __repr__(self):
         return formatted_flat_dict(self)

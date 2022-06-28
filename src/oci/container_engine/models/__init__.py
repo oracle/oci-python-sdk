@@ -28,6 +28,7 @@ from .key_value import KeyValue
 from .kubernetes_network_config import KubernetesNetworkConfig
 from .node import Node
 from .node_error import NodeError
+from .node_eviction_node_pool_settings import NodeEvictionNodePoolSettings
 from .node_pool import NodePool
 from .node_pool_node_config_details import NodePoolNodeConfigDetails
 from .node_pool_options import NodePoolOptions
@@ -79,6 +80,7 @@ container_engine_type_mapping = {
     "KubernetesNetworkConfig": KubernetesNetworkConfig,
     "Node": Node,
     "NodeError": NodeError,
+    "NodeEvictionNodePoolSettings": NodeEvictionNodePoolSettings,
     "NodePool": NodePool,
     "NodePoolNodeConfigDetails": NodePoolNodeConfigDetails,
     "NodePoolOptions": NodePoolOptions,

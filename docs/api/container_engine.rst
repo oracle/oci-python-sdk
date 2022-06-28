@@ -42,6 +42,7 @@ Container Engine
     oci.container_engine.models.KubernetesNetworkConfig
     oci.container_engine.models.Node
     oci.container_engine.models.NodeError
+    oci.container_engine.models.NodeEvictionNodePoolSettings
     oci.container_engine.models.NodePool
     oci.container_engine.models.NodePoolNodeConfigDetails
     oci.container_engine.models.NodePoolOptions

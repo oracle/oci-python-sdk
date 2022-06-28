@@ -893,7 +893,7 @@ class AutonomousVmCluster(object):
     def available_data_storage_size_in_tbs(self):
         """
         Gets the available_data_storage_size_in_tbs of this AutonomousVmCluster.
-        **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases data storage available, in TBs.
+        **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
 
 
         :return: The available_data_storage_size_in_tbs of this AutonomousVmCluster.
@@ -905,7 +905,7 @@ class AutonomousVmCluster(object):
     def available_data_storage_size_in_tbs(self, available_data_storage_size_in_tbs):
         """
         Sets the available_data_storage_size_in_tbs of this AutonomousVmCluster.
-        **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases data storage available, in TBs.
+        **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
 
 
         :param available_data_storage_size_in_tbs: The available_data_storage_size_in_tbs of this AutonomousVmCluster.
@@ -1011,7 +1011,7 @@ class AutonomousVmCluster(object):
     def reclaimable_cpus(self):
         """
         Gets the reclaimable_cpus of this AutonomousVmCluster.
-        CPU cores that are not released to available pool after an Autonomous Database is terminated (Requires Autonomous Container Database restart).
+        CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
 
 
         :return: The reclaimable_cpus of this AutonomousVmCluster.
@@ -1023,7 +1023,7 @@ class AutonomousVmCluster(object):
     def reclaimable_cpus(self, reclaimable_cpus):
         """
         Sets the reclaimable_cpus of this AutonomousVmCluster.
-        CPU cores that are not released to available pool after an Autonomous Database is terminated (Requires Autonomous Container Database restart).
+        CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
 
 
         :param reclaimable_cpus: The reclaimable_cpus of this AutonomousVmCluster.

@@ -70,6 +70,10 @@ class UpdateNodePoolDetails(object):
             The value to assign to the defined_tags property of this UpdateNodePoolDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param node_eviction_node_pool_settings:
+            The value to assign to the node_eviction_node_pool_settings property of this UpdateNodePoolDetails.
+        :type node_eviction_node_pool_settings: oci.container_engine.models.NodeEvictionNodePoolSettings
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -84,7 +88,8 @@ class UpdateNodePoolDetails(object):
             'node_shape': 'str',
             'node_shape_config': 'UpdateNodeShapeConfigDetails',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'node_eviction_node_pool_settings': 'NodeEvictionNodePoolSettings'
         }
 
         self.attribute_map = {
@@ -100,7 +105,8 @@ class UpdateNodePoolDetails(object):
             'node_shape': 'nodeShape',
             'node_shape_config': 'nodeShapeConfig',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'node_eviction_node_pool_settings': 'nodeEvictionNodePoolSettings'
         }
 
         self._name = None
@@ -116,6 +122,7 @@ class UpdateNodePoolDetails(object):
         self._node_shape_config = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._node_eviction_node_pool_settings = None
 
     @property
     def name(self):
@@ -462,6 +469,26 @@ class UpdateNodePoolDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def node_eviction_node_pool_settings(self):
+        """
+        Gets the node_eviction_node_pool_settings of this UpdateNodePoolDetails.
+
+        :return: The node_eviction_node_pool_settings of this UpdateNodePoolDetails.
+        :rtype: oci.container_engine.models.NodeEvictionNodePoolSettings
+        """
+        return self._node_eviction_node_pool_settings
+
+    @node_eviction_node_pool_settings.setter
+    def node_eviction_node_pool_settings(self, node_eviction_node_pool_settings):
+        """
+        Sets the node_eviction_node_pool_settings of this UpdateNodePoolDetails.
+
+        :param node_eviction_node_pool_settings: The node_eviction_node_pool_settings of this UpdateNodePoolDetails.
+        :type: oci.container_engine.models.NodeEvictionNodePoolSettings
+        """
+        self._node_eviction_node_pool_settings = node_eviction_node_pool_settings
 
     def __repr__(self):
         return formatted_flat_dict(self)
