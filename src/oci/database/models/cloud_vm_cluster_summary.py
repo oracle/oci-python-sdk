@@ -228,6 +228,10 @@ class CloudVmClusterSummary(object):
             The value to assign to the scan_listener_port_tcp_ssl property of this CloudVmClusterSummary.
         :type scan_listener_port_tcp_ssl: int
 
+        :param data_collection_options:
+            The value to assign to the data_collection_options property of this CloudVmClusterSummary.
+        :type data_collection_options: oci.database.models.DataCollectionOptions
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -269,7 +273,8 @@ class CloudVmClusterSummary(object):
             'scan_dns_name': 'str',
             'zone_id': 'str',
             'scan_listener_port_tcp': 'int',
-            'scan_listener_port_tcp_ssl': 'int'
+            'scan_listener_port_tcp_ssl': 'int',
+            'data_collection_options': 'DataCollectionOptions'
         }
 
         self.attribute_map = {
@@ -312,7 +317,8 @@ class CloudVmClusterSummary(object):
             'scan_dns_name': 'scanDnsName',
             'zone_id': 'zoneId',
             'scan_listener_port_tcp': 'scanListenerPortTcp',
-            'scan_listener_port_tcp_ssl': 'scanListenerPortTcpSsl'
+            'scan_listener_port_tcp_ssl': 'scanListenerPortTcpSsl',
+            'data_collection_options': 'dataCollectionOptions'
         }
 
         self._id = None
@@ -355,6 +361,7 @@ class CloudVmClusterSummary(object):
         self._zone_id = None
         self._scan_listener_port_tcp = None
         self._scan_listener_port_tcp_ssl = None
+        self._data_collection_options = None
 
     @property
     def id(self):
@@ -1449,6 +1456,26 @@ class CloudVmClusterSummary(object):
         :type: int
         """
         self._scan_listener_port_tcp_ssl = scan_listener_port_tcp_ssl
+
+    @property
+    def data_collection_options(self):
+        """
+        Gets the data_collection_options of this CloudVmClusterSummary.
+
+        :return: The data_collection_options of this CloudVmClusterSummary.
+        :rtype: oci.database.models.DataCollectionOptions
+        """
+        return self._data_collection_options
+
+    @data_collection_options.setter
+    def data_collection_options(self, data_collection_options):
+        """
+        Sets the data_collection_options of this CloudVmClusterSummary.
+
+        :param data_collection_options: The data_collection_options of this CloudVmClusterSummary.
+        :type: oci.database.models.DataCollectionOptions
+        """
+        self._data_collection_options = data_collection_options
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -25,6 +25,10 @@ class Topology(object):
     #: This constant has a value of "SUBNET"
     TYPE_SUBNET = "SUBNET"
 
+    #: A constant which can be used with the type property of a Topology.
+    #: This constant has a value of "PATH"
+    TYPE_PATH = "PATH"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Topology object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -38,7 +42,7 @@ class Topology(object):
 
         :param type:
             The value to assign to the type property of this Topology.
-            Allowed values for this property are: "NETWORKING", "VCN", "SUBNET"
+            Allowed values for this property are: "NETWORKING", "VCN", "SUBNET", "PATH"
         :type type: str
 
         :param entities:
@@ -98,7 +102,7 @@ class Topology(object):
         **[Required]** Gets the type of this Topology.
         Type of the topology object.
 
-        Allowed values for this property are: "NETWORKING", "VCN", "SUBNET"
+        Allowed values for this property are: "NETWORKING", "VCN", "SUBNET", "PATH"
 
 
         :return: The type of this Topology.
@@ -116,7 +120,7 @@ class Topology(object):
         :param type: The type of this Topology.
         :type: str
         """
-        allowed_values = ["NETWORKING", "VCN", "SUBNET"]
+        allowed_values = ["NETWORKING", "VCN", "SUBNET", "PATH"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 "Invalid value for `type`, must be None or one of {0}"

@@ -31,6 +31,7 @@ from .organization_summary import OrganizationSummary
 from .organization_tenancy import OrganizationTenancy
 from .organization_tenancy_collection import OrganizationTenancyCollection
 from .organization_tenancy_summary import OrganizationTenancySummary
+from .promotion import Promotion
 from .recipient_invitation import RecipientInvitation
 from .recipient_invitation_collection import RecipientInvitationCollection
 from .recipient_invitation_summary import RecipientInvitationSummary
@@ -89,6 +90,7 @@ tenant_manager_control_plane_type_mapping = {
     "OrganizationTenancy": OrganizationTenancy,
     "OrganizationTenancyCollection": OrganizationTenancyCollection,
     "OrganizationTenancySummary": OrganizationTenancySummary,
+    "Promotion": Promotion,
     "RecipientInvitation": RecipientInvitation,
     "RecipientInvitationCollection": RecipientInvitationCollection,
     "RecipientInvitationSummary": RecipientInvitationSummary,

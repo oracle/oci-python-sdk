@@ -131,6 +131,7 @@ Core Services
     oci.core.models.ClusterNetwork
     oci.core.models.ClusterNetworkPlacementConfigurationDetails
     oci.core.models.ClusterNetworkSummary
+    oci.core.models.CompartmentInternal
     oci.core.models.ComputeCapacityReservation
     oci.core.models.ComputeCapacityReservationInstanceShapeSummary
     oci.core.models.ComputeCapacityReservationSummary

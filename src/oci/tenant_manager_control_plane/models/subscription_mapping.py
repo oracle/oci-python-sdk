@@ -212,7 +212,7 @@ class SubscriptionMapping(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this SubscriptionMapping.
-        Lifecycle state of the subscription mapping.
+        Lifecycle state of the subscriptionMapping.
 
         Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -227,7 +227,7 @@ class SubscriptionMapping(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this SubscriptionMapping.
-        Lifecycle state of the subscription mapping.
+        Lifecycle state of the subscriptionMapping.
 
 
         :param lifecycle_state: The lifecycle_state of this SubscriptionMapping.
