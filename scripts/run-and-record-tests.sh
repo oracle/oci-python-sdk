@@ -29,17 +29,11 @@ if [ $TEST_ENABLE = "false" ]; then
 else
   pip install tox
 
-  echo "Removing mocked responses before Python 2.7 test run"
+  echo "Removing mocked responses before Python 3.6 test run"
   rm tests/fixtures/cassettes/*.yml
 
-  echo "Running Python 2.7 tests"
-  tox -e py27 -- --vcr-record-mode=all
-
-  echo "Removing mocked responses before Python 3.5 test run"
-  rm tests/fixtures/cassettes/*.yml
-
-  echo "Running Python 3.5 tests"
-  tox -e py35 -- --vcr-record-mode=all
+  echo "Running Python 3.6 tests"
+  tox -e py36 -- --vcr-record-mode=all
 
   echo "Removing mocked responses before Python 3.6 test run"
   rm tests/fixtures/cassettes/*.yml
