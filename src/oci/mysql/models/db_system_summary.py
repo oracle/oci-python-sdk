@@ -106,6 +106,14 @@ class DbSystemSummary(object):
             The value to assign to the defined_tags property of this DbSystemSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param backup_policy:
+            The value to assign to the backup_policy property of this DbSystemSummary.
+        :type backup_policy: oci.mysql.models.BackupPolicy
+
+        :param shape_name:
+            The value to assign to the shape_name property of this DbSystemSummary.
+        :type shape_name: str
+
         :param crash_recovery:
             The value to assign to the crash_recovery property of this DbSystemSummary.
             Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
@@ -134,6 +142,8 @@ class DbSystemSummary(object):
             'deletion_policy': 'DeletionPolicyDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'backup_policy': 'BackupPolicy',
+            'shape_name': 'str',
             'crash_recovery': 'str'
         }
 
@@ -158,6 +168,8 @@ class DbSystemSummary(object):
             'deletion_policy': 'deletionPolicy',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'backup_policy': 'backupPolicy',
+            'shape_name': 'shapeName',
             'crash_recovery': 'crashRecovery'
         }
 
@@ -181,6 +193,8 @@ class DbSystemSummary(object):
         self._deletion_policy = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._backup_policy = None
+        self._shape_name = None
         self._crash_recovery = None
 
     @property
@@ -676,6 +690,58 @@ class DbSystemSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def backup_policy(self):
+        """
+        Gets the backup_policy of this DbSystemSummary.
+
+        :return: The backup_policy of this DbSystemSummary.
+        :rtype: oci.mysql.models.BackupPolicy
+        """
+        return self._backup_policy
+
+    @backup_policy.setter
+    def backup_policy(self, backup_policy):
+        """
+        Sets the backup_policy of this DbSystemSummary.
+
+        :param backup_policy: The backup_policy of this DbSystemSummary.
+        :type: oci.mysql.models.BackupPolicy
+        """
+        self._backup_policy = backup_policy
+
+    @property
+    def shape_name(self):
+        """
+        Gets the shape_name of this DbSystemSummary.
+        The shape of the primary instances of the DB System. The shape
+        determines resources allocated to a DB System - CPU cores
+        and memory for VM shapes; CPU cores, memory and storage for non-VM
+        (or bare metal) shapes. To get a list of shapes, use (the
+        :func:`list_shapes` operation.
+
+
+        :return: The shape_name of this DbSystemSummary.
+        :rtype: str
+        """
+        return self._shape_name
+
+    @shape_name.setter
+    def shape_name(self, shape_name):
+        """
+        Sets the shape_name of this DbSystemSummary.
+        The shape of the primary instances of the DB System. The shape
+        determines resources allocated to a DB System - CPU cores
+        and memory for VM shapes; CPU cores, memory and storage for non-VM
+        (or bare metal) shapes. To get a list of shapes, use (the
+        :func:`list_shapes` operation.
+
+
+        :param shape_name: The shape_name of this DbSystemSummary.
+        :type: str
+        """
+        self._shape_name = shape_name
 
     @property
     def crash_recovery(self):
