@@ -36,6 +36,11 @@ Before you start, see `common build problems`_ to grab the necessary dependencie
 .. _pyenv-virtualenv: https://github.com/yyuu/pyenv-virtualenv#installation
 .. _common build problems: https://github.com/yyuu/pyenv/wiki/Common-build-problems
 
+Make sure you disable the Expect-100 header
+::
+	# Disable expect 100 continue feature for integ tests.
+	export OCI_PYSDK_USING_EXPECT_HEADER=FALSE
+
 Make sure to set up auto completion for both pyenv and pyenv-virtualenv.
 
 ::
