@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.74.0 - 2022-07-05
+====================
+
+Added
+-----
+* Support for backup policies returned as part of the database system list operation in the MySQL Database service
+ 
+Breaking
+--------
+* Support for retries by default on some operations of the Bastion service
+ 
+====================
 2.73.0 - 2022-06-27
 ====================
 
