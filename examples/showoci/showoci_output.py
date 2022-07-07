@@ -2065,6 +2065,18 @@ class ShowOCIOutput(object):
                         print(self.tabs + "Pod: " + str(pod['name']) + " (" + str(pod['version']) + ") ")
                     print("")
 
+            # VB
+            if 'vb' in paas_services:
+                self.print_header("Visual Builder", 2)
+                for val in paas_services['vb']:
+                    print(self.taba + val['display_name'] + ", Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + "), " + val['consumption_model'] + ", Enabled = " + val['is_visual_builder_enabled'] + ", Nodes = " + val['node_count'])
+                    print(self.tabs + "URL: " + val['instance_url'])
+                    if val['custom_endpoint']:
+                        print(self.tabs + "   : Custom Endpoint: " + str(pod['custom_endpoint']))
+                    if val['alternate_custom_endpoints']:
+                        print(self.tabs + "   : Alt    Endpoint: " + str(pod['alternate_custom_endpoints']))
+                    print("")
+
             # OCVS
             if 'ocvs' in paas_services:
                 self.print_header("OCVS VMWare", 2)
@@ -2771,6 +2783,8 @@ class ShowOCISummary(object):
                 self.__summary_core_size(paas_services['oce'])
             if 'ocvs' in paas_services:
                 self.__summary_core_size(paas_services['ocvs'])
+            if 'vb' in paas_services:
+                self.__summary_core_size(paas_services['vb'])
 
         except Exception as e:
             self.__print_error("__summary_paas_services_main", e)
@@ -3466,6 +3480,7 @@ class ShowOCICSV(object):
     csv_paas_oic = []
     csv_paas_ocvs = []
     csv_paas_oce = []
+    csv_paas_vb = []
     csv_data_ai_oda = []
     csv_data_ai_bds = []
     csv_data_science = []
@@ -3474,6 +3489,7 @@ class ShowOCICSV(object):
     csv_data_integration = []
     start_time = ""
     csv_add_date_field = True
+    csv_columns = []
 
     ############################################
     # Init
@@ -3485,9 +3501,10 @@ class ShowOCICSV(object):
     ##########################################################################
     # generate_csv
     ##########################################################################
-    def generate_csv(self, data, csv_file_header, add_date_field=True):
+    def generate_csv(self, data, csv_file_header, add_date_field=True, csv_columns=""):
         self.csv_add_date_field = add_date_field
         self.csv_file_header = csv_file_header
+        self.csv_columns = str(csv_columns).split(",")
         try:
             for d in data:
                 if 'type' in d:
@@ -3549,6 +3566,7 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("paas_oic", self.csv_paas_oic)
             self.__export_to_csv_file("paas_ocvs_vmware", self.csv_paas_ocvs)
             self.__export_to_csv_file("paas_oce", self.csv_paas_oce)
+            self.__export_to_csv_file("paas_visualbuilder", self.csv_paas_vb)
             self.__export_to_csv_file("data_science", self.csv_data_science)
             self.__export_to_csv_file("data_flow", self.csv_data_flow)
             self.__export_to_csv_file("data_catalog", self.csv_data_catalog)
@@ -3636,6 +3654,29 @@ class ShowOCICSV(object):
 
         except Exception as e:
             self.__print_error("__get_defined_tags", e)
+
+    ##########################################################################
+    # extract defined tags value
+    ##########################################################################
+    def __get_defined_tags_key_value(self, defined_tags, namespace_and_key):
+
+        try:
+            if not defined_tags or '.' not in namespace_and_key:
+                return ""
+
+            namespace = namespace_and_key.split(".")[0]
+            key = namespace_and_key.split(".")[1]
+
+            if namespace not in defined_tags.keys():
+                return ""
+
+            if key not in defined_tags[namespace].keys():
+                return ""
+
+            return defined_tags[namespace][key]
+
+        except Exception as e:
+            self.__print_error("__get_defined_tags_key_value", e)
 
     ##########################################################################
     # extract freeform tags
@@ -3788,6 +3829,7 @@ class ShowOCICSV(object):
                         'vcn_cidr': vcn['cidr_block'],
                         'vcn_cidrs': vcn['cidr_blocks'],
                         'vcn_compartment': vcn['compartment_name'],
+                        'vcn_compartment_path': vcn['compartment_path'],
                         'internet_gateway': igw,
                         'service_gateway': sgw,
                         'nat': nat,
@@ -3797,6 +3839,7 @@ class ShowOCICSV(object):
                         'subnet_cidr': subnet['cidr_block'],
                         'availability_domain': subnet['availability_domain'],
                         'subnet_compartment': subnet['compartment_name'],
+                        'subnet_compartment_path': subnet['compartment_path'],
                         'public_private': subnet['public_private'],
                         'dhcp_options': subnet['dhcp_options'],
                         'route': subnet['route'],
@@ -3823,8 +3866,10 @@ class ShowOCICSV(object):
                             'vcn_name': vcn['display_name'],
                             'vcn_cidr': vcn['cidr_block'],
                             'vcn_compartment': vcn['compartment_name'],
+                            'vcn_compartment_path': vcn['compartment_path'],
                             'sec_name': sl['name'],
                             'sec_compartment': sl['compartment_name'],
+                            'sec_compartment_path': sl['compartment_path'],
                             'sec_protocol': "",
                             'is_stateless': "",
                             'sec_rules': "Empty",
@@ -3840,8 +3885,10 @@ class ShowOCICSV(object):
                                 'vcn_name': vcn['display_name'],
                                 'vcn_cidr': vcn['cidr_block'],
                                 'vcn_compartment': vcn['compartment_name'],
+                                'vcn_compartment_path': vcn['compartment_path'],
                                 'sec_name': sl['name'],
                                 'sec_compartment': sl['compartment_name'],
+                                'sec_compartment_path': sl['compartment_path'],
                                 'sec_protocol': slr['protocol_name'],
                                 'is_stateless': slr['is_stateless'],
                                 'sec_rules': slr['desc'],
@@ -3866,6 +3913,7 @@ class ShowOCICSV(object):
                 data = {
                     'region_name': region_name,
                     'compartment_name': drg['compartment_name'],
+                    'compartment_path': drg['compartment_path'],
                     'name': drg['name'],
                     'redundancy': drg['redundancy'],
                     'time_created': drg['time_created'][0:16],
@@ -3894,6 +3942,7 @@ class ShowOCICSV(object):
                     data = {
                         'region_name': region_name,
                         'compartment_name': arr['compartment_name'],
+                        'compartment_path': arr['compartment_path'],
                         'tunnel_name': tun['display_name'],
                         'status': tun['status'],
                         'routing': tun['routing'],
@@ -3930,6 +3979,7 @@ class ShowOCICSV(object):
                 data = {
                     'region_name': region_name,
                     'compartment_name': arr['compartment_name'],
+                    'compartment_path': arr['compartment_path'],
                     'name': arr['name'],
                     'bandwidth_shape_name': arr['bandwidth_shape_name'],
                     'bgp_management': arr['bgp_management'],
@@ -3970,8 +4020,10 @@ class ShowOCICSV(object):
                             'vcn_name': vcn['display_name'],
                             'vcn_cidr': vcn['cidr_block'],
                             'vcn_compartment': vcn['compartment_name'],
+                            'vcn_compartment_path': vcn['compartment_path'],
                             'sec_name': sl['name'],
                             'sec_compartment': sl['compartment_name'],
+                            'sec_compartment_path': sl['compartment_path'],
                             'sec_protocol': "",
                             'is_stateless': "",
                             'sec_rules': "Empty",
@@ -3987,8 +4039,10 @@ class ShowOCICSV(object):
                                 'vcn_name': vcn['display_name'],
                                 'vcn_cidr': vcn['cidr_block'],
                                 'vcn_compartment': vcn['compartment_name'],
+                                'vcn_compartment_path': vcn['compartment_path'],
                                 'sec_name': sl['name'],
                                 'sec_compartment': sl['compartment_name'],
+                                'sec_compartment_path': sl['compartment_path'],
                                 'sec_protocol': slr['protocol_name'],
                                 'is_stateless': slr['is_stateless'],
                                 'sec_rules': slr['desc'],
@@ -4012,10 +4066,12 @@ class ShowOCICSV(object):
                         'vcn_name': vcn['display_name'],
                         'vcn_cidr': vcn['cidr_block'],
                         'vcn_compartment': vcn['compartment_name'],
+                        'vcn_compartment_path': vcn['compartment_path'],
                         'dhcp_name': dhcp['name'],
                         'option_1': "",
                         'option_2': "",
                         'dhcp_compartment': dhcp['compartment_name'],
+                        'dhcp_compartment_path': dhcp['compartment_path'],
                         'time_created': dhcp['time_created'][0:16],
                         'vcn_id': vcn['id'],
                         'dhcp_id': dhcp['id']
@@ -4047,8 +4103,10 @@ class ShowOCICSV(object):
                             'vcn_name': vcn['display_name'],
                             'vcn_cidr': vcn['cidr_block'],
                             'vcn_compartment': vcn['compartment_name'],
+                            'vcn_compartment_path': vcn['compartment_path'],
                             'route_name': rt['name'],
                             'route_compartment': rt['compartment_name'],
+                            'route_compartment_path': rt['compartment_path'],
                             'destination': "",
                             'route': "Empty",
                             'time_created': rt['time_created'][0:16],
@@ -4063,8 +4121,10 @@ class ShowOCICSV(object):
                                 'vcn_name': vcn['display_name'],
                                 'vcn_cidr': vcn['cidr_block'],
                                 'vcn_compartment': vcn['compartment_name'],
+                                'vcn_compartment_path': vcn['compartment_path'],
                                 'route_name': rt['name'],
                                 'route_compartment': rt['compartment_name'],
+                                'route_compartment_path': rt['compartment_path'],
                                 'destination': rl['destination'],
                                 'route': rl['desc'],
                                 'time_created': rt['time_created'][0:16],
@@ -4162,6 +4222,7 @@ class ShowOCICSV(object):
                 dbsd = {'region_name': region_name,
                         'availability_domain': dbs['availability_domain'],
                         'compartment_name': dbs['compartment_name'],
+                        'compartment_path': dbs['compartment_path'],
                         'status': dbs['lifecycle_state'],
                         'type': "DB System",
                         'name': dbs['display_name'],
@@ -4210,6 +4271,7 @@ class ShowOCICSV(object):
                             'region_name': region_name,
                             'availability_domain': dbs['availability_domain'],
                             'compartment_name': dbs['compartment_name'],
+                            'compartment_path': dbs['compartment_path'],
                             'status': dbs['lifecycle_state'],
                             'type': "DB System",
                             'name': dbs['display_name'],
@@ -4249,6 +4311,7 @@ class ShowOCICSV(object):
                                 data = {
                                     'region_name': region_name,
                                     'compartment_name': dbs['compartment_name'],
+                                    'compartment_path': dbs['compartment_path'],
                                     'dbs_name': dbs['display_name'],
                                     'database': db['db_name'],
                                     'shape': dbs['shape'],
@@ -4273,6 +4336,7 @@ class ShowOCICSV(object):
                 infs = {'region_name': region_name,
                         'availability_domain': dbs['availability_domain'],
                         'compartment_name': dbs['compartment_name'],
+                        'compartment_path': dbs['compartment_path'],
                         'status': dbs['lifecycle_state'],
                         'type': "ExaCS",
                         'name': dbs['display_name'],
@@ -4297,6 +4361,7 @@ class ShowOCICSV(object):
                         'csi_number': "",
                         'node_count': "",
                         'db_servers': "",
+                        'db_servers_ids': "",
                         'cluster_count': len(dbs['vm_clusters']),
                         'cluster_names': str(', '.join(x['display_name'] for x in dbs['vm_clusters'])),
                         'time_created': dbs['time_created'],
@@ -4314,6 +4379,7 @@ class ShowOCICSV(object):
                     dbsd = {'region_name': region_name,
                             'availability_domain': dbs['availability_domain'],
                             'compartment_name': vm['compartment_name'],
+                            'compartment_path': vm['compartment_path'],
                             'status': dbs['lifecycle_state'],
                             'type': "ExaCS",
                             'name': dbs['display_name'],
@@ -4361,6 +4427,7 @@ class ShowOCICSV(object):
                             data = {'region_name': region_name,
                                     'availability_domain': dbs['availability_domain'],
                                     'compartment_name': dbs['compartment_name'],
+                                    'compartment_path': dbs['compartment_path'],
                                     'status': dbs['lifecycle_state'],
                                     'type': "ExaCS",
                                     'name': dbs['display_name'],
@@ -4400,6 +4467,7 @@ class ShowOCICSV(object):
                                     data = {
                                         'region_name': region_name,
                                         'compartment_name': dbs['compartment_name'],
+                                        'compartment_path': dbs['compartment_path'],
                                         'dbs_name': dbs['display_name'],
                                         'database': db['db_name'],
                                         'shape': dbs['shape'],
@@ -4424,6 +4492,7 @@ class ShowOCICSV(object):
                 infs = {'region_name': region_name,
                         'availability_domain': 'ExaCC',
                         'compartment_name': dbs['compartment_name'],
+                        'compartment_path': dbs['compartment_path'],
                         'status': dbs['lifecycle_state'],
                         'type': "ExaCC",
                         'name': dbs['display_name'],
@@ -4448,6 +4517,7 @@ class ShowOCICSV(object):
                         'csi_number': dbs['csi_number'],
                         'node_count': len(dbs['db_servers']),
                         'db_servers': str(', '.join(x['desc'] for x in dbs['db_servers'])),
+                        'db_servers_ids': str(', '.join(x['id'] for x in dbs['db_servers'])),
                         'cluster_count': len(dbs['vm_clusters']),
                         'cluster_names': str(', '.join(x['display_name'] for x in dbs['vm_clusters'])),
                         'time_created': dbs['time_created'],
@@ -4466,6 +4536,7 @@ class ShowOCICSV(object):
                     dbsd = {'region_name': region_name,
                             'availability_domain': 'ExaCC',
                             'compartment_name': vm['compartment_name'],
+                            'compartment_path': vm['compartment_path'],
                             'status': dbs['lifecycle_state'],
                             'type': "ExaCC",
                             'name': dbs['display_name'],
@@ -4513,6 +4584,7 @@ class ShowOCICSV(object):
                             data = {'region_name': region_name,
                                     'availability_domain': "ExaCC",
                                     'compartment_name': dbs['compartment_name'],
+                                    'compartment_path': dbs['compartment_path'],
                                     'status': dbs['lifecycle_state'],
                                     'type': "ExaCC",
                                     'name': dbs['display_name'],
@@ -4552,6 +4624,7 @@ class ShowOCICSV(object):
                                     data = {
                                         'region_name': region_name,
                                         'compartment_name': dbs['compartment_name'],
+                                        'compartment_path': dbs['compartment_path'],
                                         'dbs_name': dbs['display_name'],
                                         'database': db['db_name'],
                                         'shape': dbs['shape'],
@@ -4575,6 +4648,7 @@ class ShowOCICSV(object):
                 data = {'region_name': region_name,
                         'availability_domain': "",
                         'compartment_name': dbs['compartment_name'],
+                        'compartment_path': dbs['compartment_path'],
                         'status': dbs['lifecycle_state'],
                         'type': "Autonomous " + dbs['db_workload'],
                         'name': dbs['display_name'], 'shape': "",
@@ -4609,6 +4683,7 @@ class ShowOCICSV(object):
                 # for autonomous only
                 dadb = {'region_name': region_name,
                         'compartment_name': dbs['compartment_name'],
+                        'compartment_path': dbs['compartment_path'],
                         'status': dbs['lifecycle_state'],
                         'type': "Autonomous " + dbs['db_workload'],
                         'name': dbs['display_name'],
@@ -4645,6 +4720,7 @@ class ShowOCICSV(object):
                         data = {
                             'region_name': region_name,
                             'compartment_name': dbs['compartment_name'],
+                            'compartment_path': dbs['compartment_path'],
                             'dbs_name': dbs['display_name'],
                             'database': dbs['db_name'],
                             'shape': 'Autononous',
@@ -4723,6 +4799,7 @@ class ShowOCICSV(object):
                 data = {'region_name': region_name,
                         'availability_domain': instance['availability_domain'],
                         'compartment_name': instance['compartment_name'],
+                        'compartment_path': instance['compartment_path'],
                         'server_name': instance['display_name'],
                         'Status': instance['lifecycle_state'],
                         'Type': instance['image_os'],
@@ -4750,6 +4827,10 @@ class ShowOCICSV(object):
                         'defined_tags': self.__get_defined_tags(instance['defined_tags']),
                         'instance_id': instance['id']
                         }
+
+                # add columns for csvcol parameter
+                for csvcol in self.csv_columns:
+                    data[csvcol] = self.__get_defined_tags_key_value(instance['defined_tags'], csvcol)
 
                 # go over the vnics
                 if 'vnic' in instance:
@@ -4802,6 +4883,7 @@ class ShowOCICSV(object):
                             'region_name': region_name,
                             'availability_domain': instance['availability_domain'],
                             'compartment_name': bv['compartment_name'],
+                            'compartment_path': bv['compartment_path'],
                             'id': bv['id'],
                             'display_name': bv['display_name'],
                             'size': bv['size'],
@@ -4820,6 +4902,7 @@ class ShowOCICSV(object):
                             'region_name': region_name,
                             'availability_domain': instance['availability_domain'],
                             'compartment_name': bv['compartment_name'],
+                            'compartment_path': bv['compartment_path'],
                             'id': bv['id'],
                             'display_name': bv['display_name'],
                             'size': bv['size'],
@@ -4848,6 +4931,7 @@ class ShowOCICSV(object):
                 val = {
                     'region_name': region_name,
                     'compartment_name': ct['compartment_name'],
+                    'compartment_path': ct['compartment_path'],
                     'compartment_id': ct['compartment_id'],
                     'id': ct['id'],
                     'display_name': ct['display_name'],
@@ -4881,6 +4965,7 @@ class ShowOCICSV(object):
                     'region_name': region_name,
                     'availability_domain': bv['availability_domain'],
                     'compartment_name': bv['compartment_name'],
+                    'compartment_path': bv['compartment_path'],
                     'id': bv['id'],
                     'display_name': bv['display_name'],
                     'size': bv['size'],
@@ -4909,6 +4994,7 @@ class ShowOCICSV(object):
                 data = {
                     'region_name': region_name,
                     'compartment_name': bv['compartment_name'],
+                    'compartment_path': bv['compartment_path'],
                     'desc': bv['desc'],
                     'volume_type': bv['volume_type'],
                     'backup_type': bv['backup_type'],
@@ -4983,6 +5069,7 @@ class ShowOCICSV(object):
                 if not lb['listeners']:
                     data = {'region_name': region_name,
                             'compartment_name': lb['compartment_name'],
+                            'compartment_path': lb['compartment_path'],
                             'name': lb['display_name'],
                             'status': lb['status'],
                             'shape': lb['shape_name'],
@@ -5006,6 +5093,7 @@ class ShowOCICSV(object):
                 for listener in lb['listeners']:
                     data = {'region_name': region_name,
                             'compartment_name': lb['compartment_name'],
+                            'compartment_path': lb['compartment_path'],
                             'name': lb['display_name'],
                             'status': lb['status'],
                             'shape': lb['shape_name'],
@@ -5047,6 +5135,7 @@ class ShowOCICSV(object):
 
                     data = {'region_name': region_name,
                             'compartment_name': dp['compartment_name'],
+                            'compartment_path': dp['compartment_path'],
                             'gw_name': api['display_name'],
                             'gw_endpoint_type': api['endpoint_type'],
                             'gw_hostname': api['hostname'],
@@ -5093,6 +5182,7 @@ class ShowOCICSV(object):
 
                         data = {'region_name': region_name,
                                 'compartment_name': lb['compartment_name'],
+                                'compartment_path': lb['compartment_path'],
                                 'name': lb['display_name'],
                                 'status': lb['status'],
                                 'shape': lb['shape_name'],
@@ -5160,6 +5250,7 @@ class ShowOCICSV(object):
 
                     data = {'region_name': region_name,
                             'compartment_name': fs['compartment_name'],
+                            'compartment_path': fs['compartment_path'],
                             'availability_domain': fs['availability_domain'],
                             'display_name': fs['display_name'],
                             'size_gb': fs['size_gb'],
@@ -5189,6 +5280,7 @@ class ShowOCICSV(object):
                         'namespace_name': ar['namespace_name'],
                         'region_name': region_name,
                         'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
                         'bucket_name': ar['name'],
                         'objects': ar['objects'],
                         'size': ar['size'],
@@ -5250,6 +5342,7 @@ class ShowOCICSV(object):
                     data = {
                         'region_name': region_name,
                         'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
                         'name': ar['name'],
                         'target_vcn_name': ar['target_vcn_name'],
                         'target_subnet_name': ar['target_subnet_name'],
@@ -5282,6 +5375,7 @@ class ShowOCICSV(object):
                     data = {
                         'region_name': region_name,
                         'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
                         'name': ar['display_name'],
                         'target_resource_type': ar['target_resource_type'],
                         'target_resource_id': ar['target_resource_id'],
@@ -5312,6 +5406,7 @@ class ShowOCICSV(object):
                     data = {
                         'region_name': region_name,
                         'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
                         'name': ar['name'],
                         'crypto_endpoint': ar['crypto_endpoint'],
                         'management_endpoint': ar['management_endpoint'],
@@ -5347,6 +5442,7 @@ class ShowOCICSV(object):
                         data = {
                             'region_name': region_name,
                             'compartment_name': ar['compartment_name'],
+                            'compartment_path': ar['compartment_path'],
                             'log_group': ar['display_name'],
                             'log_group_description': ar['description'],
                             'log_group_time_last_modified': ar['time_last_modified'][0:16],
@@ -5388,6 +5484,7 @@ class ShowOCICSV(object):
                     data = {
                         'region_name': region_name,
                         'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
                         'name': ar['name'],
                         'lifecycle_state': ar['lifecycle_state'],
                         'kubernetes_version': ar['kubernetes_version'],
@@ -5406,6 +5503,7 @@ class ShowOCICSV(object):
                         data = {
                             'region_name': region_name,
                             'compartment_name': ar['compartment_name'],
+                            'compartment_path': ar['compartment_path'],
                             'container_name': ar['name'],
                             'node_name': nd['name'],
                             'node_image_name': nd['node_image_name'],
@@ -5461,6 +5559,7 @@ class ShowOCICSV(object):
                     data = {
                         'region_name': region_name,
                         'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
                         'name': ar['display_name'],
                         'domain': ar['domain'],
                         'lifecycle_state': ar['lifecycle_state'],
@@ -5489,6 +5588,7 @@ class ShowOCICSV(object):
                     data = {
                         'region_name': region_name,
                         'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
                         'name': ar['display_name'],
                         'ttl': ar['ttl'],
                         'template': ar['template'],
@@ -5514,6 +5614,7 @@ class ShowOCICSV(object):
                     data = {
                         'region_name': region_name,
                         'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
                         'display_name': ar['display_name'],
                         'type': 'http',
                         'results_url': ar['results_url'],
@@ -5538,6 +5639,7 @@ class ShowOCICSV(object):
                     data = {
                         'region_name': region_name,
                         'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
                         'display_name': ar['display_name'],
                         'type': 'ping',
                         'results_url': ar['results_url'],
@@ -5574,6 +5676,7 @@ class ShowOCICSV(object):
                     data = {
                         'region_name': region_name,
                         'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
                         'name': ar['display_name'],
                         'time_created': ar['time_created'][0:16],
                         'lifecycle_state': ar['lifecycle_state'],
@@ -5607,6 +5710,7 @@ class ShowOCICSV(object):
                     data = {
                         'region_name': region_name,
                         'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
                         'name': ar['name'],
                         'time_created': ar['time_created'][0:16],
                         'lifecycle_state': ar['lifecycle_state'],
@@ -5644,6 +5748,7 @@ class ShowOCICSV(object):
                     data = {
                         'region_name': region_name,
                         'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
                         'name': ar['name'],
                         'description': ar['description'],
                         'guid': ar['guid'],
@@ -5665,6 +5770,43 @@ class ShowOCICSV(object):
             self.__print_error("__csv_paas_oce", e)
 
     ##########################################################################
+    # Paas VB
+    ##########################################################################
+    def __csv_paas_visualbuilder(self, region_name, services):
+        try:
+
+            if len(services) == 0:
+                return
+
+            if services:
+                for ar in services:
+
+                    data = {
+                        'region_name': region_name,
+                        'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
+                        'display_name': ar['display_name'],
+                        'time_created': ar['time_created'][0:16],
+                        'time_updated': ar['time_updated'][0:16],
+                        'lifecycle_state': ar['lifecycle_state'],
+                        'state_message': ar['state_message'],
+                        'instance_url': ar['instance_url'],
+                        'node_count': ar['node_count'],
+                        'is_visual_builder_enabled': ar['is_visual_builder_enabled'],
+                        'custom_endpoint': ar['custom_endpoint'],
+                        'alternate_custom_endpoints': ar['alternate_custom_endpoints'],
+                        'consumption_model': ar['consumption_model'],
+                        'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(ar['defined_tags']),
+                        'id': ar['id']
+                    }
+
+                    self.csv_paas_vb.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_paas_visualbuilder", e)
+
+    ##########################################################################
     # Paas OCVS
     ##########################################################################
     def __csv_paas_ocvs(self, region_name, services):
@@ -5679,6 +5821,7 @@ class ShowOCICSV(object):
                     data = {
                         'region_name': region_name,
                         'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
                         'name': ar['display_name'],
                         'compute_availability_domain': ar['compute_availability_domain'],
                         'instance_display_name_prefix': ar['instance_display_name_prefix'],
@@ -5732,6 +5875,9 @@ class ShowOCICSV(object):
             if 'oce' in data:
                 self.__csv_paas_oce(region_name, data['oce'])
 
+            if 'vb' in data:
+                self.__csv_paas_visualbuilder(region_name, data['vb'])
+
             if 'ocvs' in data:
                 self.__csv_paas_ocvs(region_name, data['ocvs'])
 
@@ -5783,6 +5929,7 @@ class ShowOCICSV(object):
                     data = {
                         'region_name': region_name,
                         'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
                         'name': ar['display_name'],
                         'description': ar['description'],
                         'shape_name': ar['shape_name'],
@@ -5813,6 +5960,7 @@ class ShowOCICSV(object):
                     data = {
                         'region_name': region_name,
                         'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
                         'name': ar['display_name'],
                         'number_of_nodes': ar['number_of_nodes'],
                         'is_high_availability': ar['is_high_availability'],
@@ -5846,6 +5994,7 @@ class ShowOCICSV(object):
                     data = {
                         'region_name': region_name,
                         'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
                         'name': ar['display_name'],
                         'language': ar['language'],
                         'lifecycle_state': ar['lifecycle_state'],
@@ -5877,6 +6026,7 @@ class ShowOCICSV(object):
                     data = {
                         'region_name': region_name,
                         'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
                         'name': ar['display_name'],
                         'time_created': ar['time_created'][0:16],
                         'number_of_objects': ar['number_of_objects'],
@@ -5906,6 +6056,7 @@ class ShowOCICSV(object):
                     data = {
                         'region_name': region_name,
                         'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
                         'name': ar['display_name'],
                         'description': ar['description'],
                         'time_created': ar['time_created'][0:16],
@@ -5934,6 +6085,7 @@ class ShowOCICSV(object):
                     data = {
                         'region_name': region_name,
                         'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
                         'name': ar['display_name'],
                         'description': ar['description'],
                         'time_created': ar['time_created'][0:16],
