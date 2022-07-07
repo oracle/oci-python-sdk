@@ -149,7 +149,7 @@ class WaaClient(object):
         resource_path = "/webAppAccelerations/{webAppAccelerationId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_web_app_acceleration_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAcceleration/ChangeWebAppAccelerationCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -254,7 +254,7 @@ class WaaClient(object):
         resource_path = "/webAppAccelerationPolicies/{webAppAccelerationPolicyId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_web_app_acceleration_policy_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAccelerationPolicy/ChangeWebAppAccelerationPolicyCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -354,7 +354,7 @@ class WaaClient(object):
         resource_path = "/webAppAccelerations"
         method = "POST"
         operation_name = "create_web_app_acceleration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAcceleration/CreateWebAppAcceleration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -445,7 +445,7 @@ class WaaClient(object):
         resource_path = "/webAppAccelerationPolicies"
         method = "POST"
         operation_name = "create_web_app_acceleration_policy"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAccelerationPolicy/CreateWebAppAccelerationPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -537,7 +537,7 @@ class WaaClient(object):
         resource_path = "/webAppAccelerations/{webAppAccelerationId}"
         method = "DELETE"
         operation_name = "delete_web_app_acceleration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAcceleration/DeleteWebAppAcceleration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -636,7 +636,7 @@ class WaaClient(object):
         resource_path = "/webAppAccelerationPolicies/{webAppAccelerationPolicyId}"
         method = "DELETE"
         operation_name = "delete_web_app_acceleration_policy"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAccelerationPolicy/DeleteWebAppAccelerationPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -730,7 +730,7 @@ class WaaClient(object):
         resource_path = "/webAppAccelerations/{webAppAccelerationId}"
         method = "GET"
         operation_name = "get_web_app_acceleration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAcceleration/GetWebAppAcceleration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -824,7 +824,7 @@ class WaaClient(object):
         resource_path = "/webAppAccelerationPolicies/{webAppAccelerationPolicyId}"
         method = "GET"
         operation_name = "get_web_app_acceleration_policy"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAccelerationPolicy/GetWebAppAccelerationPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -949,7 +949,7 @@ class WaaClient(object):
         resource_path = "/webAppAccelerationPolicies"
         method = "GET"
         operation_name = "list_web_app_acceleration_policies"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAccelerationPolicy/ListWebAppAccelerationPolicies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1103,7 +1103,7 @@ class WaaClient(object):
         resource_path = "/webAppAccelerations"
         method = "GET"
         operation_name = "list_web_app_accelerations"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAcceleration/ListWebAppAccelerations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1226,7 +1226,7 @@ class WaaClient(object):
         resource_path = "/webAppAccelerations/{webAppAccelerationId}/actions/purgeCache"
         method = "POST"
         operation_name = "purge_web_app_acceleration_cache"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAcceleration/PurgeWebAppAccelerationCache"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1328,7 +1328,7 @@ class WaaClient(object):
         resource_path = "/webAppAccelerations/{webAppAccelerationId}"
         method = "PUT"
         operation_name = "update_web_app_acceleration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAcceleration/UpdateWebAppAcceleration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1432,7 +1432,7 @@ class WaaClient(object):
         resource_path = "/webAppAccelerationPolicies/{webAppAccelerationPolicyId}"
         method = "PUT"
         operation_name = "update_web_app_acceleration_policy"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/waa/20211230/WebAppAccelerationPolicy/UpdateWebAppAccelerationPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

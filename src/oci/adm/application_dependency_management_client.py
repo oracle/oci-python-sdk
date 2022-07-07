@@ -145,7 +145,7 @@ class ApplicationDependencyManagementClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/adm/20220421/WorkRequest/CancelWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -258,7 +258,7 @@ class ApplicationDependencyManagementClient(object):
         resource_path = "/knowledgeBases/{knowledgeBaseId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_knowledge_base_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/adm/20220421/KnowledgeBase/ChangeKnowledgeBaseCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -374,7 +374,7 @@ class ApplicationDependencyManagementClient(object):
         resource_path = "/vulnerabilityAudits/{vulnerabilityAuditId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_vulnerability_audit_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/adm/20220421/VulnerabilityAudit/ChangeVulnerabilityAuditCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -480,7 +480,7 @@ class ApplicationDependencyManagementClient(object):
         resource_path = "/knowledgeBases"
         method = "POST"
         operation_name = "create_knowledge_base"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/adm/20220421/KnowledgeBase/CreateKnowledgeBase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -579,7 +579,7 @@ class ApplicationDependencyManagementClient(object):
         resource_path = "/vulnerabilityAudits"
         method = "POST"
         operation_name = "create_vulnerability_audit"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/adm/20220421/VulnerabilityAudit/CreateVulnerabilityAudit"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -677,7 +677,7 @@ class ApplicationDependencyManagementClient(object):
         resource_path = "/knowledgeBases/{knowledgeBaseId}"
         method = "DELETE"
         operation_name = "delete_knowledge_base"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/adm/20220421/KnowledgeBase/DeleteKnowledgeBase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -778,7 +778,7 @@ class ApplicationDependencyManagementClient(object):
         resource_path = "/vulnerabilityAudits/{vulnerabilityAuditId}"
         method = "DELETE"
         operation_name = "delete_vulnerability_audit"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/adm/20220421/VulnerabilityAudit/DeleteVulnerabilityAudit"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -874,7 +874,7 @@ class ApplicationDependencyManagementClient(object):
         resource_path = "/knowledgeBases/{knowledgeBaseId}"
         method = "GET"
         operation_name = "get_knowledge_base"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/adm/20220421/KnowledgeBase/GetKnowledgeBase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -968,7 +968,7 @@ class ApplicationDependencyManagementClient(object):
         resource_path = "/vulnerabilityAudits/{vulnerabilityAuditId}"
         method = "GET"
         operation_name = "get_vulnerability_audit"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/adm/20220421/VulnerabilityAudit/GetVulnerabilityAudit"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1064,7 +1064,7 @@ class ApplicationDependencyManagementClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/adm/20220421/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1188,7 +1188,7 @@ class ApplicationDependencyManagementClient(object):
         resource_path = "/vulnerabilityAudits/{vulnerabilityAuditId}/applicationDependencyVulnerabilities"
         method = "GET"
         operation_name = "list_application_dependency_vulnerabilities"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/adm/20220421/VulnerabilityAudit/ListApplicationDependencyVulnerabilities"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1349,7 +1349,7 @@ class ApplicationDependencyManagementClient(object):
         resource_path = "/knowledgeBases"
         method = "GET"
         operation_name = "list_knowledge_bases"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/adm/20220421/KnowledgeBase/ListKnowledgeBases"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1512,7 +1512,7 @@ class ApplicationDependencyManagementClient(object):
         resource_path = "/vulnerabilityAudits"
         method = "GET"
         operation_name = "list_vulnerability_audits"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/adm/20220421/VulnerabilityAudit/ListVulnerabilityAudits"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1659,7 +1659,7 @@ class ApplicationDependencyManagementClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/adm/20220421/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1799,7 +1799,7 @@ class ApplicationDependencyManagementClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/adm/20220421/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1950,7 +1950,7 @@ class ApplicationDependencyManagementClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/adm/20220421/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2087,7 +2087,7 @@ class ApplicationDependencyManagementClient(object):
         resource_path = "/knowledgeBases/{knowledgeBaseId}"
         method = "PUT"
         operation_name = "update_knowledge_base"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/adm/20220421/KnowledgeBase/UpdateKnowledgeBase"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2193,7 +2193,7 @@ class ApplicationDependencyManagementClient(object):
         resource_path = "/vulnerabilityAudits/{vulnerabilityAuditId}"
         method = "PUT"
         operation_name = "update_vulnerability_audit"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/adm/20220421/VulnerabilityAudit/UpdateVulnerabilityAudit"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

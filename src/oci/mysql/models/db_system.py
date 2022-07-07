@@ -194,6 +194,10 @@ class DbSystem(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type crash_recovery: str
 
+        :param point_in_time_recovery_details:
+            The value to assign to the point_in_time_recovery_details property of this DbSystem.
+        :type point_in_time_recovery_details: oci.mysql.models.PointInTimeRecoveryDetails
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -229,7 +233,8 @@ class DbSystem(object):
             'time_updated': 'datetime',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'crash_recovery': 'str'
+            'crash_recovery': 'str',
+            'point_in_time_recovery_details': 'PointInTimeRecoveryDetails'
         }
 
         self.attribute_map = {
@@ -266,7 +271,8 @@ class DbSystem(object):
             'time_updated': 'timeUpdated',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'crash_recovery': 'crashRecovery'
+            'crash_recovery': 'crashRecovery',
+            'point_in_time_recovery_details': 'pointInTimeRecoveryDetails'
         }
 
         self._id = None
@@ -303,6 +309,7 @@ class DbSystem(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._crash_recovery = None
+        self._point_in_time_recovery_details = None
 
     @property
     def id(self):
@@ -1155,6 +1162,26 @@ class DbSystem(object):
         if not value_allowed_none_or_none_sentinel(crash_recovery, allowed_values):
             crash_recovery = 'UNKNOWN_ENUM_VALUE'
         self._crash_recovery = crash_recovery
+
+    @property
+    def point_in_time_recovery_details(self):
+        """
+        Gets the point_in_time_recovery_details of this DbSystem.
+
+        :return: The point_in_time_recovery_details of this DbSystem.
+        :rtype: oci.mysql.models.PointInTimeRecoveryDetails
+        """
+        return self._point_in_time_recovery_details
+
+    @point_in_time_recovery_details.setter
+    def point_in_time_recovery_details(self, point_in_time_recovery_details):
+        """
+        Sets the point_in_time_recovery_details of this DbSystem.
+
+        :param point_in_time_recovery_details: The point_in_time_recovery_details of this DbSystem.
+        :type: oci.mysql.models.PointInTimeRecoveryDetails
+        """
+        self._point_in_time_recovery_details = point_in_time_recovery_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

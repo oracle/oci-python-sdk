@@ -21,6 +21,10 @@ class HostInsightSummary(object):
     #: This constant has a value of "EM_MANAGED_EXTERNAL_HOST"
     ENTITY_SOURCE_EM_MANAGED_EXTERNAL_HOST = "EM_MANAGED_EXTERNAL_HOST"
 
+    #: A constant which can be used with the entity_source property of a HostInsightSummary.
+    #: This constant has a value of "PE_COMANAGED_HOST"
+    ENTITY_SOURCE_PE_COMANAGED_HOST = "PE_COMANAGED_HOST"
+
     #: A constant which can be used with the status property of a HostInsightSummary.
     #: This constant has a value of "DISABLED"
     STATUS_DISABLED = "DISABLED"
@@ -73,7 +77,7 @@ class HostInsightSummary(object):
 
         :param entity_source:
             The value to assign to the entity_source property of this HostInsightSummary.
-            Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST", "PE_COMANAGED_HOST", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type entity_source: str
 
@@ -113,6 +117,10 @@ class HostInsightSummary(object):
             The value to assign to the system_tags property of this HostInsightSummary.
         :type system_tags: dict(str, dict(str, object))
 
+        :param opsi_private_endpoint_id:
+            The value to assign to the opsi_private_endpoint_id property of this HostInsightSummary.
+        :type opsi_private_endpoint_id: str
+
         :param status:
             The value to assign to the status property of this HostInsightSummary.
             Allowed values for this property are: "DISABLED", "ENABLED", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
@@ -149,6 +157,7 @@ class HostInsightSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
+            'opsi_private_endpoint_id': 'str',
             'status': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
@@ -167,6 +176,7 @@ class HostInsightSummary(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
+            'opsi_private_endpoint_id': 'opsiPrivateEndpointId',
             'status': 'status',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
@@ -184,6 +194,7 @@ class HostInsightSummary(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._opsi_private_endpoint_id = None
         self._status = None
         self._time_created = None
         self._time_updated = None
@@ -212,7 +223,7 @@ class HostInsightSummary(object):
         **[Required]** Gets the entity_source of this HostInsightSummary.
         Source of the host entity.
 
-        Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST", "PE_COMANAGED_HOST", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -231,7 +242,7 @@ class HostInsightSummary(object):
         :param entity_source: The entity_source of this HostInsightSummary.
         :type: str
         """
-        allowed_values = ["MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST"]
+        allowed_values = ["MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST", "PE_COMANAGED_HOST"]
         if not value_allowed_none_or_none_sentinel(entity_source, allowed_values):
             entity_source = 'UNKNOWN_ENUM_VALUE'
         self._entity_source = entity_source
@@ -465,6 +476,34 @@ class HostInsightSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def opsi_private_endpoint_id(self):
+        """
+        Gets the opsi_private_endpoint_id of this HostInsightSummary.
+        The `OCID`__ of the OPSI private endpoint
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The opsi_private_endpoint_id of this HostInsightSummary.
+        :rtype: str
+        """
+        return self._opsi_private_endpoint_id
+
+    @opsi_private_endpoint_id.setter
+    def opsi_private_endpoint_id(self, opsi_private_endpoint_id):
+        """
+        Sets the opsi_private_endpoint_id of this HostInsightSummary.
+        The `OCID`__ of the OPSI private endpoint
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param opsi_private_endpoint_id: The opsi_private_endpoint_id of this HostInsightSummary.
+        :type: str
+        """
+        self._opsi_private_endpoint_id = opsi_private_endpoint_id
 
     @property
     def status(self):

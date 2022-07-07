@@ -90,6 +90,10 @@ class SummarizeExadataInsightResourceStatisticsAggregationCollection(object):
             The value to assign to the exadata_insight_id property of this SummarizeExadataInsightResourceStatisticsAggregationCollection.
         :type exadata_insight_id: str
 
+        :param exadata_display_name:
+            The value to assign to the exadata_display_name property of this SummarizeExadataInsightResourceStatisticsAggregationCollection.
+        :type exadata_display_name: str
+
         """
         self.swagger_types = {
             'time_interval_start': 'datetime',
@@ -97,7 +101,8 @@ class SummarizeExadataInsightResourceStatisticsAggregationCollection(object):
             'items': 'list[ExadataInsightResourceStatisticsAggregation]',
             'usage_unit': 'str',
             'exadata_resource_metric': 'str',
-            'exadata_insight_id': 'str'
+            'exadata_insight_id': 'str',
+            'exadata_display_name': 'str'
         }
 
         self.attribute_map = {
@@ -106,7 +111,8 @@ class SummarizeExadataInsightResourceStatisticsAggregationCollection(object):
             'items': 'items',
             'usage_unit': 'usageUnit',
             'exadata_resource_metric': 'exadataResourceMetric',
-            'exadata_insight_id': 'exadataInsightId'
+            'exadata_insight_id': 'exadataInsightId',
+            'exadata_display_name': 'exadataDisplayName'
         }
 
         self._time_interval_start = None
@@ -115,6 +121,7 @@ class SummarizeExadataInsightResourceStatisticsAggregationCollection(object):
         self._usage_unit = None
         self._exadata_resource_metric = None
         self._exadata_insight_id = None
+        self._exadata_display_name = None
 
     @property
     def time_interval_start(self):
@@ -275,6 +282,30 @@ class SummarizeExadataInsightResourceStatisticsAggregationCollection(object):
         :type: str
         """
         self._exadata_insight_id = exadata_insight_id
+
+    @property
+    def exadata_display_name(self):
+        """
+        Gets the exadata_display_name of this SummarizeExadataInsightResourceStatisticsAggregationCollection.
+        The user-friendly name for the Exadata system. The name does not have to be unique.
+
+
+        :return: The exadata_display_name of this SummarizeExadataInsightResourceStatisticsAggregationCollection.
+        :rtype: str
+        """
+        return self._exadata_display_name
+
+    @exadata_display_name.setter
+    def exadata_display_name(self, exadata_display_name):
+        """
+        Sets the exadata_display_name of this SummarizeExadataInsightResourceStatisticsAggregationCollection.
+        The user-friendly name for the Exadata system. The name does not have to be unique.
+
+
+        :param exadata_display_name: The exadata_display_name of this SummarizeExadataInsightResourceStatisticsAggregationCollection.
+        :type: str
+        """
+        self._exadata_display_name = exadata_display_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

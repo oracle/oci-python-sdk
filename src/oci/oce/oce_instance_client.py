@@ -153,7 +153,7 @@ class OceInstanceClient(object):
         resource_path = "/oceInstances/{oceInstanceId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_oce_instance_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/oce/20190912/OceInstance/ChangeOceInstanceCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -259,7 +259,7 @@ class OceInstanceClient(object):
         resource_path = "/oceInstances"
         method = "POST"
         operation_name = "create_oce_instance"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/oce/20190912/OceInstance/CreateOceInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -351,7 +351,7 @@ class OceInstanceClient(object):
         resource_path = "/oceInstances/{oceInstanceId}"
         method = "DELETE"
         operation_name = "delete_oce_instance"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/oce/20190912/OceInstance/DeleteOceInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -445,7 +445,7 @@ class OceInstanceClient(object):
         resource_path = "/oceInstances/{oceInstanceId}"
         method = "GET"
         operation_name = "get_oce_instance"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/oce/20190912/OceInstance/GetOceInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -539,7 +539,7 @@ class OceInstanceClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/oce/20190912/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -662,7 +662,7 @@ class OceInstanceClient(object):
         resource_path = "/oceInstances"
         method = "GET"
         operation_name = "list_oce_instances"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/oce/20190912/OceInstanceSummary/ListOceInstances"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -792,7 +792,7 @@ class OceInstanceClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/oce/20190912/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -902,7 +902,7 @@ class OceInstanceClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/oce/20190912/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1015,7 +1015,7 @@ class OceInstanceClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/oce/20190912/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1120,7 +1120,7 @@ class OceInstanceClient(object):
         resource_path = "/oceInstances/{oceInstanceId}"
         method = "PUT"
         operation_name = "update_oce_instance"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/oce/20190912/OceInstance/UpdateOceInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

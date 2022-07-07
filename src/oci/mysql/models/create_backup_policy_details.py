@@ -38,13 +38,18 @@ class CreateBackupPolicyDetails(object):
             The value to assign to the defined_tags property of this CreateBackupPolicyDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param pitr_policy:
+            The value to assign to the pitr_policy property of this CreateBackupPolicyDetails.
+        :type pitr_policy: oci.mysql.models.PitrPolicy
+
         """
         self.swagger_types = {
             'is_enabled': 'bool',
             'window_start_time': 'str',
             'retention_in_days': 'int',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'pitr_policy': 'PitrPolicy'
         }
 
         self.attribute_map = {
@@ -52,7 +57,8 @@ class CreateBackupPolicyDetails(object):
             'window_start_time': 'windowStartTime',
             'retention_in_days': 'retentionInDays',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'pitr_policy': 'pitrPolicy'
         }
 
         self._is_enabled = None
@@ -60,6 +66,7 @@ class CreateBackupPolicyDetails(object):
         self._retention_in_days = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._pitr_policy = None
 
     @property
     def is_enabled(self):
@@ -204,6 +211,26 @@ class CreateBackupPolicyDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def pitr_policy(self):
+        """
+        Gets the pitr_policy of this CreateBackupPolicyDetails.
+
+        :return: The pitr_policy of this CreateBackupPolicyDetails.
+        :rtype: oci.mysql.models.PitrPolicy
+        """
+        return self._pitr_policy
+
+    @pitr_policy.setter
+    def pitr_policy(self, pitr_policy):
+        """
+        Sets the pitr_policy of this CreateBackupPolicyDetails.
+
+        :param pitr_policy: The pitr_policy of this CreateBackupPolicyDetails.
+        :type: oci.mysql.models.PitrPolicy
+        """
+        self._pitr_policy = pitr_policy
 
     def __repr__(self):
         return formatted_flat_dict(self)

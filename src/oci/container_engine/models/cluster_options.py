@@ -22,16 +22,23 @@ class ClusterOptions(object):
             The value to assign to the kubernetes_versions property of this ClusterOptions.
         :type kubernetes_versions: list[str]
 
+        :param cluster_pod_network_options:
+            The value to assign to the cluster_pod_network_options property of this ClusterOptions.
+        :type cluster_pod_network_options: list[oci.container_engine.models.ClusterPodNetworkOptionDetails]
+
         """
         self.swagger_types = {
-            'kubernetes_versions': 'list[str]'
+            'kubernetes_versions': 'list[str]',
+            'cluster_pod_network_options': 'list[ClusterPodNetworkOptionDetails]'
         }
 
         self.attribute_map = {
-            'kubernetes_versions': 'kubernetesVersions'
+            'kubernetes_versions': 'kubernetesVersions',
+            'cluster_pod_network_options': 'clusterPodNetworkOptions'
         }
 
         self._kubernetes_versions = None
+        self._cluster_pod_network_options = None
 
     @property
     def kubernetes_versions(self):
@@ -56,6 +63,30 @@ class ClusterOptions(object):
         :type: list[str]
         """
         self._kubernetes_versions = kubernetes_versions
+
+    @property
+    def cluster_pod_network_options(self):
+        """
+        Gets the cluster_pod_network_options of this ClusterOptions.
+        Available CNIs and network options for existing and new node pools of the cluster
+
+
+        :return: The cluster_pod_network_options of this ClusterOptions.
+        :rtype: list[oci.container_engine.models.ClusterPodNetworkOptionDetails]
+        """
+        return self._cluster_pod_network_options
+
+    @cluster_pod_network_options.setter
+    def cluster_pod_network_options(self, cluster_pod_network_options):
+        """
+        Sets the cluster_pod_network_options of this ClusterOptions.
+        Available CNIs and network options for existing and new node pools of the cluster
+
+
+        :param cluster_pod_network_options: The cluster_pod_network_options of this ClusterOptions.
+        :type: list[oci.container_engine.models.ClusterPodNetworkOptionDetails]
+        """
+        self._cluster_pod_network_options = cluster_pod_network_options
 
     def __repr__(self):
         return formatted_flat_dict(self)
