@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreatePeComanagedDatabaseInsightDetails(CreateDatabaseInsightDetails):
     """
-    The information about database to be analyzed.
+    The information about database to be analyzed. Either an opsiPrivateEndpointId or dbmPrivateEndpointId must be specified. If the dbmPrivateEndpointId is specified, a new Operations Insights private endpoint will be created.
     """
 
     #: A constant which can be used with the deployment_type property of a CreatePeComanagedDatabaseInsightDetails.
@@ -60,6 +60,10 @@ class CreatePeComanagedDatabaseInsightDetails(CreateDatabaseInsightDetails):
             The value to assign to the opsi_private_endpoint_id property of this CreatePeComanagedDatabaseInsightDetails.
         :type opsi_private_endpoint_id: str
 
+        :param dbm_private_endpoint_id:
+            The value to assign to the dbm_private_endpoint_id property of this CreatePeComanagedDatabaseInsightDetails.
+        :type dbm_private_endpoint_id: str
+
         :param service_name:
             The value to assign to the service_name property of this CreatePeComanagedDatabaseInsightDetails.
         :type service_name: str
@@ -86,6 +90,7 @@ class CreatePeComanagedDatabaseInsightDetails(CreateDatabaseInsightDetails):
             'database_id': 'str',
             'database_resource_type': 'str',
             'opsi_private_endpoint_id': 'str',
+            'dbm_private_endpoint_id': 'str',
             'service_name': 'str',
             'credential_details': 'CredentialDetails',
             'deployment_type': 'str',
@@ -100,6 +105,7 @@ class CreatePeComanagedDatabaseInsightDetails(CreateDatabaseInsightDetails):
             'database_id': 'databaseId',
             'database_resource_type': 'databaseResourceType',
             'opsi_private_endpoint_id': 'opsiPrivateEndpointId',
+            'dbm_private_endpoint_id': 'dbmPrivateEndpointId',
             'service_name': 'serviceName',
             'credential_details': 'credentialDetails',
             'deployment_type': 'deploymentType',
@@ -113,6 +119,7 @@ class CreatePeComanagedDatabaseInsightDetails(CreateDatabaseInsightDetails):
         self._database_id = None
         self._database_resource_type = None
         self._opsi_private_endpoint_id = None
+        self._dbm_private_endpoint_id = None
         self._service_name = None
         self._credential_details = None
         self._deployment_type = None
@@ -174,7 +181,7 @@ class CreatePeComanagedDatabaseInsightDetails(CreateDatabaseInsightDetails):
     @property
     def opsi_private_endpoint_id(self):
         """
-        **[Required]** Gets the opsi_private_endpoint_id of this CreatePeComanagedDatabaseInsightDetails.
+        Gets the opsi_private_endpoint_id of this CreatePeComanagedDatabaseInsightDetails.
         The `OCID`__ of the OPSI private endpoint
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
@@ -198,6 +205,34 @@ class CreatePeComanagedDatabaseInsightDetails(CreateDatabaseInsightDetails):
         :type: str
         """
         self._opsi_private_endpoint_id = opsi_private_endpoint_id
+
+    @property
+    def dbm_private_endpoint_id(self):
+        """
+        Gets the dbm_private_endpoint_id of this CreatePeComanagedDatabaseInsightDetails.
+        The `OCID`__ of the Database Management private endpoint
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The dbm_private_endpoint_id of this CreatePeComanagedDatabaseInsightDetails.
+        :rtype: str
+        """
+        return self._dbm_private_endpoint_id
+
+    @dbm_private_endpoint_id.setter
+    def dbm_private_endpoint_id(self, dbm_private_endpoint_id):
+        """
+        Sets the dbm_private_endpoint_id of this CreatePeComanagedDatabaseInsightDetails.
+        The `OCID`__ of the Database Management private endpoint
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param dbm_private_endpoint_id: The dbm_private_endpoint_id of this CreatePeComanagedDatabaseInsightDetails.
+        :type: str
+        """
+        self._dbm_private_endpoint_id = dbm_private_endpoint_id
 
     @property
     def service_name(self):

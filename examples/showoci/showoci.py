@@ -74,6 +74,7 @@
 # - oci.bastion.BastionClient
 # - oci.key_management.KmsVaultClient
 # - oci.data_integration.DataIntegrationClient
+# - oci.visual_builder.VbInstanceClient
 #
 # Modules Not Yet Covered:
 # - oci.blockchain.BlockchainPlatformClient
@@ -92,7 +93,6 @@
 # - oci.data_safe.DataSafeClient
 # - oci.devops.DevopsClient
 # - oci.jms.JavaManagementServiceClient
-# - oci.visual_builder.VbInstanceClient
 
 ##########################################################################
 from __future__ import print_function
@@ -107,7 +107,7 @@ import datetime
 import contextlib
 import os
 
-version = "22.05.24"
+version = "22.06.21"
 
 ##########################################################################
 # check OCI version
@@ -230,7 +230,7 @@ def execute_extract():
         # if print to CSV
         ############################################
         if cmd.csv:
-            csv.generate_csv(extracted_data, cmd.csv, not cmd.csv_nodate)
+            csv.generate_csv(extracted_data, cmd.csv, not cmd.csv_nodate, cmd.csvcol)
 
     ############################################
     # print completion
@@ -326,6 +326,7 @@ def set_parser_arguments(argsList=[]):
     parser.add_argument('-tenantid', default="", dest='tenantid', help='Override confile file tenancy_id')
     parser.add_argument('-cf', type=argparse.FileType('r'), dest='config', help="Config File (~/.oci/config)")
     parser.add_argument('-csv', default="", dest='csv', help="Output to CSV files, Input as file header")
+    parser.add_argument('-csvcol', default="", dest='csvcol', help="Extract define tags as columns for Compute in CSV")
     parser.add_argument('-csv_nodate', action='store_true', default=False, dest='csv_nodate', help='Do not add date field to the csv')
     parser.add_argument('-jf', type=argparse.FileType('w'), dest='joutfile', help="Output to file   (JSON format)")
     parser.add_argument('-js', action='store_true', default=False, dest='joutscr', help="Output to screen (JSON format)")

@@ -14,14 +14,14 @@ Resource Principals Signer
 ===========================
 
 On an instance that has Resource Principals enabled, a signer can be retrieved
-using oci.auth.signer.get_resource_principals_signer. The returned resource
+using `oci.auth.signers.get_resource_principals_signer`. The returned resource
 principals signer can then be used when initializing a client. If the instance
 is not configured for Resource Principals this call will raise an
 EnvironmentError exception.
 
 .. code-block:: python
 
-    resource_principals_signer = oci.auth.signer.get_resource_principals_signer()
+    resource_principals_signer = oci.auth.signers.get_resource_principals_signer()
     # A populated config is not needed when using a Resource Principals signer
     db_client = oci.database.DatabaseClient({}, signer=resource_principals_signer)
 

@@ -28,6 +28,7 @@ Container Engine
     oci.container_engine.models.ClusterMigrateToNativeVcnDetails
     oci.container_engine.models.ClusterMigrateToNativeVcnStatus
     oci.container_engine.models.ClusterOptions
+    oci.container_engine.models.ClusterPodNetworkOptionDetails
     oci.container_engine.models.ClusterSummary
     oci.container_engine.models.CreateClusterDetails
     oci.container_engine.models.CreateClusterEndpointConfigDetails
@@ -36,6 +37,8 @@ Container Engine
     oci.container_engine.models.CreateNodePoolDetails
     oci.container_engine.models.CreateNodePoolNodeConfigDetails
     oci.container_engine.models.CreateNodeShapeConfigDetails
+    oci.container_engine.models.FlannelOverlayClusterPodNetworkOptionDetails
+    oci.container_engine.models.FlannelOverlayNodePoolPodNetworkOptionDetails
     oci.container_engine.models.ImagePolicyConfig
     oci.container_engine.models.KeyDetails
     oci.container_engine.models.KeyValue
@@ -47,12 +50,15 @@ Container Engine
     oci.container_engine.models.NodePoolNodeConfigDetails
     oci.container_engine.models.NodePoolOptions
     oci.container_engine.models.NodePoolPlacementConfigDetails
+    oci.container_engine.models.NodePoolPodNetworkOptionDetails
     oci.container_engine.models.NodePoolSummary
     oci.container_engine.models.NodeShapeConfig
     oci.container_engine.models.NodeSourceDetails
     oci.container_engine.models.NodeSourceOption
     oci.container_engine.models.NodeSourceViaImageDetails
     oci.container_engine.models.NodeSourceViaImageOption
+    oci.container_engine.models.OciVcnIpNativeClusterPodNetworkOptionDetails
+    oci.container_engine.models.OciVcnIpNativeNodePoolPodNetworkOptionDetails
     oci.container_engine.models.PersistentVolumeConfigDetails
     oci.container_engine.models.ServiceLbConfigDetails
     oci.container_engine.models.UpdateClusterDetails

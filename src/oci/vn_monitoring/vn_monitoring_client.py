@@ -148,7 +148,7 @@ class VnMonitoringClient(object):
         resource_path = "/pathAnalyzerTests/{pathAnalyzerTestId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_path_analyzer_test_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/NetMonitor/20160918/PathAnalyzerTest/ChangePathAnalyzerTestCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -250,7 +250,7 @@ class VnMonitoringClient(object):
         resource_path = "/pathAnalyzerTests"
         method = "POST"
         operation_name = "create_path_analyzer_test"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/NetMonitor/20160918/PathAnalyzerTest/CreatePathAnalyzerTest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -343,7 +343,7 @@ class VnMonitoringClient(object):
         resource_path = "/pathAnalyzerTests/{pathAnalyzerTestId}"
         method = "DELETE"
         operation_name = "delete_path_analyzer_test"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/NetMonitor/20160918/PathAnalyzerTest/DeletePathAnalyzerTest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -456,7 +456,7 @@ class VnMonitoringClient(object):
         resource_path = "/pathAnalysis"
         method = "POST"
         operation_name = "get_path_analysis"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/NetMonitor/20160918/PathAnalysisWorkRequestResult/GetPathAnalysis"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -544,7 +544,7 @@ class VnMonitoringClient(object):
         resource_path = "/pathAnalyzerTests/{pathAnalyzerTestId}"
         method = "GET"
         operation_name = "get_path_analyzer_test"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/NetMonitor/20160918/PathAnalyzerTest/GetPathAnalyzerTest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -639,7 +639,7 @@ class VnMonitoringClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/NetMonitor/20160918/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -776,7 +776,7 @@ class VnMonitoringClient(object):
         resource_path = "/pathAnalyzerTests"
         method = "GET"
         operation_name = "list_path_analyzer_tests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/NetMonitor/20160918/PathAnalyzerTestCollection/ListPathAnalyzerTests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -926,7 +926,7 @@ class VnMonitoringClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/NetMonitor/20160918/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1076,7 +1076,7 @@ class VnMonitoringClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/NetMonitor/20160918/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1221,7 +1221,7 @@ class VnMonitoringClient(object):
         resource_path = "/workRequests/{workRequestId}/results"
         method = "GET"
         operation_name = "list_work_request_results"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/NetMonitor/20160918/WorkRequestResult/ListWorkRequestResults"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1373,7 +1373,7 @@ class VnMonitoringClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/NetMonitor/20160918/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1513,7 +1513,7 @@ class VnMonitoringClient(object):
         resource_path = "/pathAnalyzerTests/{pathAnalyzerTestId}"
         method = "PUT"
         operation_name = "update_path_analyzer_test"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/NetMonitor/20160918/PathAnalyzerTest/UpdatePathAnalyzerTest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

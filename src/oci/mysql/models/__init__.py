@@ -38,6 +38,7 @@ from .create_db_system_details import CreateDbSystemDetails
 from .create_db_system_source_details import CreateDbSystemSourceDetails
 from .create_db_system_source_from_backup_details import CreateDbSystemSourceFromBackupDetails
 from .create_db_system_source_from_none_details import CreateDbSystemSourceFromNoneDetails
+from .create_db_system_source_from_pitr_details import CreateDbSystemSourceFromPitrDetails
 from .create_db_system_source_import_from_url_details import CreateDbSystemSourceImportFromUrlDetails
 from .create_deletion_policy_details import CreateDeletionPolicyDetails
 from .create_maintenance_details import CreateMaintenanceDetails
@@ -48,6 +49,7 @@ from .db_system_snapshot import DbSystemSnapshot
 from .db_system_source import DbSystemSource
 from .db_system_source_from_backup import DbSystemSourceFromBackup
 from .db_system_source_from_none import DbSystemSourceFromNone
+from .db_system_source_from_pitr import DbSystemSourceFromPitr
 from .db_system_source_import_from_url import DbSystemSourceImportFromUrl
 from .db_system_summary import DbSystemSummary
 from .deletion_policy_details import DeletionPolicyDetails
@@ -59,6 +61,8 @@ from .heat_wave_cluster_table_memory_estimate import HeatWaveClusterTableMemoryE
 from .heat_wave_node import HeatWaveNode
 from .maintenance_details import MaintenanceDetails
 from .pem_ca_certificate import PemCaCertificate
+from .pitr_policy import PitrPolicy
+from .point_in_time_recovery_details import PointInTimeRecoveryDetails
 from .restart_db_system_details import RestartDbSystemDetails
 from .shape_summary import ShapeSummary
 from .stop_db_system_details import StopDbSystemDetails
@@ -119,6 +123,7 @@ mysql_type_mapping = {
     "CreateDbSystemSourceDetails": CreateDbSystemSourceDetails,
     "CreateDbSystemSourceFromBackupDetails": CreateDbSystemSourceFromBackupDetails,
     "CreateDbSystemSourceFromNoneDetails": CreateDbSystemSourceFromNoneDetails,
+    "CreateDbSystemSourceFromPitrDetails": CreateDbSystemSourceFromPitrDetails,
     "CreateDbSystemSourceImportFromUrlDetails": CreateDbSystemSourceImportFromUrlDetails,
     "CreateDeletionPolicyDetails": CreateDeletionPolicyDetails,
     "CreateMaintenanceDetails": CreateMaintenanceDetails,
@@ -129,6 +134,7 @@ mysql_type_mapping = {
     "DbSystemSource": DbSystemSource,
     "DbSystemSourceFromBackup": DbSystemSourceFromBackup,
     "DbSystemSourceFromNone": DbSystemSourceFromNone,
+    "DbSystemSourceFromPitr": DbSystemSourceFromPitr,
     "DbSystemSourceImportFromUrl": DbSystemSourceImportFromUrl,
     "DbSystemSummary": DbSystemSummary,
     "DeletionPolicyDetails": DeletionPolicyDetails,
@@ -140,6 +146,8 @@ mysql_type_mapping = {
     "HeatWaveNode": HeatWaveNode,
     "MaintenanceDetails": MaintenanceDetails,
     "PemCaCertificate": PemCaCertificate,
+    "PitrPolicy": PitrPolicy,
+    "PointInTimeRecoveryDetails": PointInTimeRecoveryDetails,
     "RestartDbSystemDetails": RestartDbSystemDetails,
     "ShapeSummary": ShapeSummary,
     "StopDbSystemDetails": StopDbSystemDetails,

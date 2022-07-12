@@ -37,7 +37,7 @@ class MacsManagedExternalHostInsightSummary(HostInsightSummary):
 
         :param entity_source:
             The value to assign to the entity_source property of this MacsManagedExternalHostInsightSummary.
-            Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST", "PE_COMANAGED_HOST", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type entity_source: str
 
@@ -76,6 +76,10 @@ class MacsManagedExternalHostInsightSummary(HostInsightSummary):
         :param system_tags:
             The value to assign to the system_tags property of this MacsManagedExternalHostInsightSummary.
         :type system_tags: dict(str, dict(str, object))
+
+        :param opsi_private_endpoint_id:
+            The value to assign to the opsi_private_endpoint_id property of this MacsManagedExternalHostInsightSummary.
+        :type opsi_private_endpoint_id: str
 
         :param status:
             The value to assign to the status property of this MacsManagedExternalHostInsightSummary.
@@ -123,6 +127,7 @@ class MacsManagedExternalHostInsightSummary(HostInsightSummary):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
+            'opsi_private_endpoint_id': 'str',
             'status': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
@@ -143,6 +148,7 @@ class MacsManagedExternalHostInsightSummary(HostInsightSummary):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
+            'opsi_private_endpoint_id': 'opsiPrivateEndpointId',
             'status': 'status',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
@@ -162,6 +168,7 @@ class MacsManagedExternalHostInsightSummary(HostInsightSummary):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._opsi_private_endpoint_id = None
         self._status = None
         self._time_created = None
         self._time_updated = None

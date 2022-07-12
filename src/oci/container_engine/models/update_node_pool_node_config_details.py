@@ -46,6 +46,10 @@ class UpdateNodePoolNodeConfigDetails(object):
             The value to assign to the placement_configs property of this UpdateNodePoolNodeConfigDetails.
         :type placement_configs: list[oci.container_engine.models.NodePoolPlacementConfigDetails]
 
+        :param node_pool_pod_network_option_details:
+            The value to assign to the node_pool_pod_network_option_details property of this UpdateNodePoolNodeConfigDetails.
+        :type node_pool_pod_network_option_details: oci.container_engine.models.NodePoolPodNetworkOptionDetails
+
         """
         self.swagger_types = {
             'size': 'int',
@@ -54,7 +58,8 @@ class UpdateNodePoolNodeConfigDetails(object):
             'is_pv_encryption_in_transit_enabled': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'placement_configs': 'list[NodePoolPlacementConfigDetails]'
+            'placement_configs': 'list[NodePoolPlacementConfigDetails]',
+            'node_pool_pod_network_option_details': 'NodePoolPodNetworkOptionDetails'
         }
 
         self.attribute_map = {
@@ -64,7 +69,8 @@ class UpdateNodePoolNodeConfigDetails(object):
             'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'placement_configs': 'placementConfigs'
+            'placement_configs': 'placementConfigs',
+            'node_pool_pod_network_option_details': 'nodePoolPodNetworkOptionDetails'
         }
 
         self._size = None
@@ -74,6 +80,7 @@ class UpdateNodePoolNodeConfigDetails(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._placement_configs = None
+        self._node_pool_pod_network_option_details = None
 
     @property
     def size(self):
@@ -268,6 +275,30 @@ class UpdateNodePoolNodeConfigDetails(object):
         :type: list[oci.container_engine.models.NodePoolPlacementConfigDetails]
         """
         self._placement_configs = placement_configs
+
+    @property
+    def node_pool_pod_network_option_details(self):
+        """
+        Gets the node_pool_pod_network_option_details of this UpdateNodePoolNodeConfigDetails.
+        The CNI related configuration of pods in the node pool.
+
+
+        :return: The node_pool_pod_network_option_details of this UpdateNodePoolNodeConfigDetails.
+        :rtype: oci.container_engine.models.NodePoolPodNetworkOptionDetails
+        """
+        return self._node_pool_pod_network_option_details
+
+    @node_pool_pod_network_option_details.setter
+    def node_pool_pod_network_option_details(self, node_pool_pod_network_option_details):
+        """
+        Sets the node_pool_pod_network_option_details of this UpdateNodePoolNodeConfigDetails.
+        The CNI related configuration of pods in the node pool.
+
+
+        :param node_pool_pod_network_option_details: The node_pool_pod_network_option_details of this UpdateNodePoolNodeConfigDetails.
+        :type: oci.container_engine.models.NodePoolPodNetworkOptionDetails
+        """
+        self._node_pool_pod_network_option_details = node_pool_pod_network_option_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

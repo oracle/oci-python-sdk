@@ -10,9 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SoftResetActionDetails(InstancePowerActionDetails):
     """
-    Parameters for the softReset `instance action`__. If omitted, default values are used.
-
-    __ https://docs.cloud.oracle.com/iaas/latest/Instance/InstanceAction
+    Parameters for the softReset :func:`instance_action`. If omitted, default values are used.
     """
 
     def __init__(self, **kwargs):
@@ -48,7 +46,21 @@ class SoftResetActionDetails(InstancePowerActionDetails):
     def allow_dense_reboot_migration(self):
         """
         Gets the allow_dense_reboot_migration of this SoftResetActionDetails.
-        For instances with a date in the Maintenance reboot field, the flag denoting whether reboot migration is enabled for instances that use the DenseIO shape. The default value is 'false'.
+        For instances that use a DenseIO shape, the flag denoting whether
+        `reboot migration`__
+        is performed for the instance. The default value is `false`.
+
+        If the instance has a date in the Maintenance reboot field and you do nothing (or set this flag to `false`), the instance
+        will be rebuilt at the scheduled maintenance time. The instance will experience 2-6 hours of downtime during the
+        maintenance process. The local NVMe-based SSD will be preserved.
+
+        If you want to minimize downtime and can delete the SSD, you can set this flag to `true` and proactively reboot the
+        instance before the scheduled maintenance time. The instance will be reboot migrated to a healthy host and the SSD will be
+        deleted. A short downtime occurs during the migration.
+
+        **Caution:** When `true`, the SSD is permanently deleted. We recommend that you create a backup of the SSD before proceeding.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm#reboot
 
 
         :return: The allow_dense_reboot_migration of this SoftResetActionDetails.
@@ -60,7 +72,21 @@ class SoftResetActionDetails(InstancePowerActionDetails):
     def allow_dense_reboot_migration(self, allow_dense_reboot_migration):
         """
         Sets the allow_dense_reboot_migration of this SoftResetActionDetails.
-        For instances with a date in the Maintenance reboot field, the flag denoting whether reboot migration is enabled for instances that use the DenseIO shape. The default value is 'false'.
+        For instances that use a DenseIO shape, the flag denoting whether
+        `reboot migration`__
+        is performed for the instance. The default value is `false`.
+
+        If the instance has a date in the Maintenance reboot field and you do nothing (or set this flag to `false`), the instance
+        will be rebuilt at the scheduled maintenance time. The instance will experience 2-6 hours of downtime during the
+        maintenance process. The local NVMe-based SSD will be preserved.
+
+        If you want to minimize downtime and can delete the SSD, you can set this flag to `true` and proactively reboot the
+        instance before the scheduled maintenance time. The instance will be reboot migrated to a healthy host and the SSD will be
+        deleted. A short downtime occurs during the migration.
+
+        **Caution:** When `true`, the SSD is permanently deleted. We recommend that you create a backup of the SSD before proceeding.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm#reboot
 
 
         :param allow_dense_reboot_migration: The allow_dense_reboot_migration of this SoftResetActionDetails.

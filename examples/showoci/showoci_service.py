@@ -135,7 +135,7 @@ class ShowOCIFlags(object):
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.54.0"
+    oci_compatible_version = "2.69.0"
 
     ##########################################################################
     # Global Constants
@@ -299,6 +299,7 @@ class ShowOCIService(object):
     C_PAAS_NATIVE_OAC = "oac"
     C_PAAS_NATIVE_OCE = "oce"
     C_PAAS_NATIVE_OCVS = "ocvs"
+    C_PAAS_NATIVE_VB = "vb"
 
     # function
     C_FUNCTION = "functions"
@@ -2202,6 +2203,7 @@ class ShowOCIService(object):
                            'time_created': str(vcn.time_created),
                            'vcn_domain_name': str(vcn.vcn_domain_name),
                            'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'defined_tags': [] if vcn.defined_tags is None else vcn.defined_tags,
                            'freeform_tags': [] if vcn.freeform_tags is None else vcn.freeform_tags,
                            'compartment_id': str(compartment['id']),
@@ -2270,6 +2272,7 @@ class ShowOCIService(object):
                            'route_table_id': str(vlan.route_table_id),
                            'vcn_id': str(vlan.vcn_id),
                            'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
                            'defined_tags': [] if vlan.defined_tags is None else vlan.defined_tags,
                            'freeform_tags': [] if vlan.freeform_tags is None else vlan.freeform_tags,
@@ -2326,6 +2329,7 @@ class ShowOCIService(object):
                            'name': str(igw.display_name),
                            'time_created': str(igw.time_created),
                            'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
                            'region_name': str(self.config['region'])
                            }
@@ -2394,6 +2398,7 @@ class ShowOCIService(object):
                            'peer_id': str(lpg.peer_id),
                            'peering_status_details': str(lpg.peering_status_details),
                            'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
                            'defined_tags': [] if lpg.defined_tags is None else lpg.defined_tags,
                            'freeform_tags': [] if lpg.freeform_tags is None else lpg.freeform_tags,
@@ -2456,6 +2461,7 @@ class ShowOCIService(object):
                            'is_cross_tenancy_peering': str(rpc.is_cross_tenancy_peering),
                            'peer_region_name': str(rpc.peer_region_name), 'peer_tenancy_id': str(rpc.peer_tenancy_id),
                            'peering_status': str(rpc.peering_status), 'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']), 'region_name': str(self.config['region']),
                            'drg_route_table_id': "",
                            'drg_route_table': ""
@@ -2528,6 +2534,7 @@ class ShowOCIService(object):
                                    'destination_type': str(es.destination_type)
                                } for es in rt.route_rules],
                            'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'defined_tags': [] if rt.defined_tags is None else rt.defined_tags,
                            'freeform_tags': [] if rt.freeform_tags is None else rt.freeform_tags,
                            'compartment_id': str(compartment['id']), 'region_name': str(self.config['region'])}
@@ -2622,6 +2629,7 @@ class ShowOCIService(object):
                     val = {'id': str(dhcp.id), 'vcn_id': str(dhcp.vcn_id), 'name': str(dhcp.display_name),
                            'time_created': str(dhcp.time_created), 'options': dhcp_opt,
                            'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                           'compartment_path': str(compartment['path']),
                            'defined_tags': [] if dhcp.defined_tags is None else dhcp.defined_tags,
                            'freeform_tags': [] if dhcp.freeform_tags is None else dhcp.freeform_tags,
                            'region_name': str(self.config['region'])}
@@ -2842,6 +2850,7 @@ class ShowOCIService(object):
                            'time_created': str(sl.time_created),
                            'sec_rules': sec_rules,
                            'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
                            'defined_tags': [] if sl.defined_tags is None else sl.defined_tags,
                            'freeform_tags': [] if sl.freeform_tags is None else sl.freeform_tags,
@@ -3075,6 +3084,7 @@ class ShowOCIService(object):
                            'vcn_id': str(arr.vcn_id),
                            'time_created': str(arr.time_created),
                            'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                            'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
                            'compartment_id': str(compartment['id']),
@@ -3174,6 +3184,7 @@ class ShowOCIService(object):
                            'defined_tags': [] if subnet.defined_tags is None else subnet.defined_tags,
                            'freeform_tags': [] if subnet.freeform_tags is None else subnet.freeform_tags,
                            'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                           'compartment_path': str(compartment['path']),
                            'region_name': str(self.config['region'])
                            }
 
@@ -3244,6 +3255,7 @@ class ShowOCIService(object):
                            'route_table_id': str(sgw.route_table_id),
                            'services': str(', '.join(x.service_name for x in sgw.services)),
                            'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
                            'defined_tags': [] if sgw.defined_tags is None else sgw.defined_tags,
                            'freeform_tags': [] if sgw.freeform_tags is None else sgw.freeform_tags,
@@ -3312,7 +3324,9 @@ class ShowOCIService(object):
                            'display_name': str(nat.display_name),
                            'defined_tags': [] if nat.defined_tags is None else nat.defined_tags,
                            'freeform_tags': [] if nat.freeform_tags is None else nat.freeform_tags,
-                           'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']), 'region_name': str(self.config['region'])}
+                           'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
+                           'compartment_id': str(compartment['id']), 'region_name': str(self.config['region'])}
 
                     if nat.block_traffic:
                         val['name'] += " - Blocked"
@@ -3380,6 +3394,7 @@ class ShowOCIService(object):
                             'drg_route_table_id': str(arr.drg_route_table_id),
                             'route_table_id': "" if str(arr.route_table_id) == "None" else str(arr.route_table_id),
                             'compartment_name': str(compartment['name']),
+                            'compartment_path': str(compartment['path']),
                             'compartment_id': str(compartment['id']),
                             'region_name': str(self.config['region']),
                             'ipsec_id': "",
@@ -3459,6 +3474,7 @@ class ShowOCIService(object):
                                'redundancy': "",
                                'drg_route_tables': [],
                                'compartment_name': str(compartment['name']),
+                               'compartment_path': str(compartment['path']),
                                'compartment_id': str(compartment['id']),
                                'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                                'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
@@ -3615,6 +3631,7 @@ class ShowOCIService(object):
                            'ip_address': str(arr.ip_address),
                            'time_created': str(arr.time_created),
                            'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                            'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
                            'compartment_id': str(compartment['id']),
@@ -3804,6 +3821,7 @@ class ShowOCIService(object):
                            'service_type': str(arr.service_type), 'cross_connect_mappings': data_cc,
                            'type': str(arr.type), 'time_created': str(arr.time_created),
                            'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                           'compartment_path': str(compartment['path']),
                            'region_name': str(self.config['region']),
                            'drg_route_table_id': "",
                            'drg_route_table': ""
@@ -3910,6 +3928,7 @@ class ShowOCIService(object):
                                'cpe_local_identifier_type': str(arr.cpe_local_identifier_type),
                                'cpe_id': str(arr.cpe_id), 'time_created': str(arr.time_created),
                                'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                               'compartment_path': str(compartment['path']),
                                'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                                'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
                                'region_name': str(self.config['region']),
@@ -4096,7 +4115,9 @@ class ShowOCIService(object):
                            'availability_domain': str(arr.availability_domain), 'fault_domain': str(arr.fault_domain),
                            'time_created': str(arr.time_created),
                            'time_maintenance_reboot_due': str(arr.time_maintenance_reboot_due),
-                           'image_id': str(arr.image_id), 'compartment_name': str(compartment['name']),
+                           'image_id': str(arr.image_id),
+                           'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']), 'region_name': str(self.config['region']),
                            'console_id': "", 'console': "", 'console_connection_string': "",
                            'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
@@ -4229,6 +4250,7 @@ class ShowOCIService(object):
                            'operating_system': str(arr.operating_system),
                            'size_in_gbs': str(round(arr.size_in_mbs / 1024)),
                            'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                           'compartment_path': str(compartment['path']),
                            'region_name': str(self.config['region']),
                            'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                            'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
@@ -4301,6 +4323,7 @@ class ShowOCIService(object):
                         'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                         'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
                         'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
                         'compartment_id': str(compartment['id']),
                         'region_name': str(self.config['region'])
                     })
@@ -4409,6 +4432,7 @@ class ShowOCIService(object):
                            'is_enabled': auto.is_enabled,
                            'time_created': str(auto.time_created),
                            'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                           'compartment_path': str(compartment['path']),
                            'region_name': str(self.config['region']),
                            'resource_id': "",
                            'resource_type': "",
@@ -4724,6 +4748,7 @@ class ShowOCIService(object):
                                'boot_volume_id': str(arr.boot_volume_id), 'instance_id': str(arr.instance_id),
                                'lifecycle_state': str(arr.lifecycle_state), 'time_created': str(arr.time_created),
                                'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                               'compartment_path': str(compartment['path']),
                                'region_name': str(self.config['region'])}
                         data.append(val)
                         cnt += 1
@@ -4779,6 +4804,7 @@ class ShowOCIService(object):
                            'instance_id': str(arr.instance_id), 'lifecycle_state': str(arr.lifecycle_state),
                            'time_created': str(arr.time_created), 'attachment_type': str(arr.attachment_type),
                            'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                           'compartment_path': str(compartment['path']),
                            'region_name': str(self.config['region'])}
                     data.append(val)
                     cnt += 1
@@ -4925,6 +4951,7 @@ class ShowOCIService(object):
                            'instance_id': str(arr.instance_id), 'time_created': str(arr.time_created),
                            'nic_index': str(arr.nic_index), 'subnet_id': str(arr.subnet_id),
                            'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                           'compartment_path': str(compartment['path']),
                            'region_name': str(self.config['region'])}
                     data.append(val)
                     cnt += 1
@@ -5020,6 +5047,7 @@ class ShowOCIService(object):
                                'volume_group_id': str(arr.volume_group_id),
                                'volume_group_name': "", 'availability_domain': str(arr.availability_domain),
                                'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                               'compartment_path': str(compartment['path']),
                                'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                                'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
                                'region_name': str(self.config['region']),
@@ -5094,6 +5122,7 @@ class ShowOCIService(object):
                            'volume_group_id': str(arr.volume_group_id),
                            'volume_group_name': "", 'availability_domain': str(arr.availability_domain),
                            'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
                            'vpus_per_gb': str(arr.vpus_per_gb),
                            'is_hydrated': str(arr.is_hydrated),
@@ -5172,6 +5201,7 @@ class ShowOCIService(object):
                     val = {'id': str(arr.id), 'display_name': str(arr.display_name),
                            'size_in_gbs': str(arr.size_in_gbs), 'time_created': str(arr.time_created),
                            'volume_ids': [str(a) for a in arr.volume_ids], 'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                            'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
                            'lifecycle_state': arr.lifecycle_state,
@@ -5241,6 +5271,7 @@ class ShowOCIService(object):
                            'size_in_gbs': str(arr.size_in_gbs),
                            'unique_size_in_gbs': str(arr.unique_size_in_gbs),
                            'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
                            'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                            'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
@@ -5325,6 +5356,7 @@ class ShowOCIService(object):
                            'size_in_gbs': str(arr.size_in_gbs),
                            'unique_size_in_gbs': str(arr.unique_size_in_gbs),
                            'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
                            'region_name': str(self.config['region']),
                            'backup_lifecycle_state': "",
@@ -5404,6 +5436,7 @@ class ShowOCIService(object):
                            'size_in_gbs': str(arr.size_in_gbs),
                            'unique_size_in_gbs': str(arr.unique_size_in_gbs),
                            'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
                            'region_name': str(self.config['region']),
                            'backup_lifecycle_state': "",
@@ -5542,6 +5575,7 @@ class ShowOCIService(object):
                            'status': str(status),
                            'ip_addresses': [(str(ip.ip_address) + " - " + ("Public" if ip.is_public else "Private") + (" Reserved" if ip.reserved_ip else "")) for ip in arr.ip_addresses],
                            'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
                            'nsg_ids': [],
                            'nsg_names': "",
@@ -5703,6 +5737,7 @@ class ShowOCIService(object):
                            'status': str(status),
                            'ip_addresses': [(str(ip.ip_address) + " - " + ("Public" if ip.is_public else "Private") + (" Reserved" if ip.reserved_ip else "")) for ip in arr.ip_addresses],
                            'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
                            'nsg_ids': [],
                            'nsg_names': "",
@@ -6207,6 +6242,7 @@ class ShowOCIService(object):
                                 'name': str(arr.name),
                                 'time_created': str(arr.time_created),
                                 'compartment_name': str(compartment['name']),
+                                'compartment_path': str(compartment['path']),
                                 'compartment_id': str(compartment['id']),
                                 'region_name': str(self.config['region']),
                                 'public_access_type': str(bucket.public_access_type),
@@ -6361,6 +6397,7 @@ class ShowOCIService(object):
                 for stack in stacks:
                     val = {'id': str(stack.id), 'display_name': str(stack.display_name),
                            'description': str(stack.description), 'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']), 'region_name': str(self.config['region']),
                            'defined_tags': [] if stack.defined_tags is None else stack.defined_tags,
                            'freeform_tags': [] if stack.freeform_tags is None else stack.freeform_tags,
@@ -6488,6 +6525,7 @@ class ShowOCIService(object):
                     val = {'id': str(sender.id), 'email_address': str(sender.email_address),
                            'lifecycle_state': str(sender.lifecycle_state), 'time_created': str(sender.time_created),
                            'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                           'compartment_path': str(compartment['path']),
                            'defined_tags': [] if sender.defined_tags is None else sender.defined_tags,
                            'freeform_tags': [] if sender.freeform_tags is None else sender.freeform_tags,
                            'region_name': str(self.config['region'])}
@@ -6549,6 +6587,7 @@ class ShowOCIService(object):
                     val = {'id': str(supp.id), 'email_address': str(supp.email_address),
                            'time_created': str(supp.time_created), 'reason': str(supp.reason),
                            'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                           'compartment_path': str(compartment['path']),
                            'region_name': str(self.config['region'])}
 
                     # add the data
@@ -6660,6 +6699,7 @@ class ShowOCIService(object):
                                'size_gb': str(round(int(fs.metered_bytes) / 1024 / 1024 / 1024, 1)),
                                'metered_bytes': str(fs.metered_bytes), 'snapshots': [],
                                'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                               'compartment_path': str(compartment['path']),
                                'region_name': str(self.config['region'])}
 
                         # add snapshots to the file systems
@@ -6739,6 +6779,7 @@ class ShowOCIService(object):
                                'export_set_id': str(mt.export_set_id), 'time_created': str(mt.time_created),
                                'availability_domain': str(mt.availability_domain), 'private_ip_ids': [],
                                'subnet_id': str(mt.subnet_id), 'compartment_name': str(compartment['name']),
+                               'compartment_path': str(compartment['path']),
                                'compartment_id': str(compartment['id']), 'region_name': str(self.config['region'])}
 
                         # get private ips
@@ -7136,6 +7177,7 @@ class ShowOCIService(object):
                              'freeform_tags': [] if dbs.freeform_tags is None else dbs.freeform_tags,
                              'contacts': "" if dbs.contacts is None else str(', '.join(x.name for x in dbs.contacts)),
                              'compartment_name': str(compartment['name']),
+                             'compartment_path': str(compartment['path']),
                              'compartment_id': str(compartment['id']),
                              'region_name': str(self.config['region']),
                              'vm_clusters': [],
@@ -7227,6 +7269,7 @@ class ShowOCIService(object):
                         'db_nodes': self.__load_database_dbsystems_dbnodes(database_client, virtual_network, compartment, arr.id, exa=True),
                         'patches': [],
                         'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
                         'compartment_id': str(compartment['id']),
                         'region_name': str(self.config['region'])
                     }
@@ -7382,6 +7425,7 @@ class ShowOCIService(object):
                              'total_storage_size_in_gbs': str(dbs.total_storage_size_in_gbs),
                              'available_storage_size_in_gbs': str(dbs.available_storage_size_in_gbs),
                              'compartment_name': str(compartment['name']),
+                             'compartment_path': str(compartment['path']),
                              'compartment_id': str(compartment['id']),
                              'time_created': str(dbs.time_created),
                              'last_maintenance_run': self.__load_database_maintatance(database_client, dbs.last_maintenance_run_id, str(dbs.display_name) + " - " + str(dbs.shape)),
@@ -7514,6 +7558,7 @@ class ShowOCIService(object):
                         'scan_dns_name': str(arr.scan_dns_name),
                         'zone_id': str(arr.zone_id),
                         'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
                         'compartment_id': str(compartment['id'])
                     }
 
@@ -7628,6 +7673,7 @@ class ShowOCIService(object):
                         'time_created': str(db_home.time_created),
                         'compartment_id': str(db_home.compartment_id),
                         'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
                         'defined_tags': [] if db_home.defined_tags is None else db_home.defined_tags,
                         'freeform_tags': [] if db_home.freeform_tags is None else db_home.freeform_tags,
                         'databases': self.__load_database_dbsystems_dbhomes_databases(database_client, db_home.id, compartment),
@@ -7759,6 +7805,7 @@ class ShowOCIService(object):
                              'cluster_name': "" if dbs.cluster_name is None else str(dbs.cluster_name),
                              'database_edition': str(dbs.database_edition),
                              'compartment_name': str(compartment['name']),
+                             'compartment_path': str(compartment['path']),
                              'compartment_id': str(compartment['id']),
                              'time_created': str(dbs.time_created),
                              'storage_management': "",
@@ -8325,6 +8372,7 @@ class ShowOCIService(object):
                              'defined_tags': [] if dbs.defined_tags is None else dbs.defined_tags,
                              'freeform_tags': [] if dbs.freeform_tags is None else dbs.freeform_tags,
                              'compartment_name': str(compartment['name']),
+                             'compartment_path': str(compartment['path']),
                              'compartment_id': str(compartment['id']),
                              'region_name': str(self.config['region']),
                              'containers': self.__load_database_adb_d_containers(database_client, dbs.id, compartment)
@@ -8487,6 +8535,7 @@ class ShowOCIService(object):
                              'connection_urls': str(dbs.connection_urls),
                              'time_created': str(dbs.time_created),
                              'compartment_name': str(compartment['name']),
+                             'compartment_path': str(compartment['path']),
                              'compartment_id': str(compartment['id']),
                              'defined_tags': [] if dbs.defined_tags is None else dbs.defined_tags,
                              'freeform_tags': [] if dbs.freeform_tags is None else dbs.freeform_tags,
@@ -8641,6 +8690,7 @@ class ShowOCIService(object):
                              'database_management_connection_id': "" if dbs.database_management_config is None else str(dbs.database_management_config.database_management_connection_id),
                              'database_management_license_model': "" if dbs.database_management_config is None else str(dbs.database_management_config.license_model),
                              'compartment_name': str(compartment['name']),
+                             'compartment_path': str(compartment['path']),
                              'compartment_id': str(compartment['id']),
                              'defined_tags': [] if dbs.defined_tags is None else dbs.defined_tags,
                              'freeform_tags': [] if dbs.freeform_tags is None else dbs.freeform_tags,
@@ -8738,6 +8788,7 @@ class ShowOCIService(object):
                              'database_management_connection_id': "" if dbs.database_management_config is None else str(dbs.database_management_config.database_management_connection_id),
                              'database_management_license_model': manage_license,
                              'compartment_name': str(compartment['name']),
+                             'compartment_path': str(compartment['path']),
                              'compartment_id': str(compartment['id']),
                              'defined_tags': [] if dbs.defined_tags is None else dbs.defined_tags,
                              'freeform_tags': [] if dbs.freeform_tags is None else dbs.freeform_tags,
@@ -8832,6 +8883,7 @@ class ShowOCIService(object):
                              'database_management_connection_id': "" if dbs.database_management_config is None else str(dbs.database_management_config.database_management_connection_id),
                              'database_management_license_model': "" if dbs.database_management_config is None else str(dbs.database_management_config.license_model),
                              'compartment_name': str(compartment['name']),
+                             'compartment_path': str(compartment['path']),
                              'compartment_id': str(compartment['id']),
                              'defined_tags': [] if dbs.defined_tags is None else dbs.defined_tags,
                              'freeform_tags': [] if dbs.freeform_tags is None else dbs.freeform_tags,
@@ -8911,6 +8963,7 @@ class ShowOCIService(object):
                              'max_write_units': str(tab.table_limits.max_write_units),
                              'max_storage_in_g_bs': str(tab.table_limits.max_storage_in_g_bs),
                              'compartment_name': str(compartment['name']),
+                             'compartment_path': str(compartment['path']),
                              'compartment_id': str(compartment['id']),
                              'defined_tags': [] if tab.defined_tags is None else tab.defined_tags,
                              'freeform_tags': [] if tab.freeform_tags is None else tab.freeform_tags,
@@ -9006,6 +9059,7 @@ class ShowOCIService(object):
                                  'sum_info_storage': 'Database - Storage (GB)',
                                  'sum_size_gb': str(mysql.data_storage_size_in_gbs),
                                  'compartment_name': str(compartment['name']),
+                                 'compartment_path': str(compartment['path']),
                                  'compartment_id': str(compartment['id']),
                                  'defined_tags': [] if mysql.defined_tags is None else mysql.defined_tags,
                                  'freeform_tags': [] if mysql.freeform_tags is None else mysql.freeform_tags,
@@ -9114,6 +9168,7 @@ class ShowOCIService(object):
                              'database_software_image_included_patches': array.database_software_image_included_patches,
                              'database_software_image_one_off_patches': array.database_software_image_one_off_patches,
                              'compartment_name': str(compartment['name']),
+                             'compartment_path': str(compartment['path']),
                              'compartment_id': str(compartment['id']),
                              'defined_tags': [] if array.defined_tags is None else array.defined_tags,
                              'freeform_tags': [] if array.freeform_tags is None else array.freeform_tags,
@@ -9200,6 +9255,7 @@ class ShowOCIService(object):
                              'is_latest_version': str(array.is_latest_version),
                              'deployment_type': str(array.deployment_type),
                              'compartment_name': str(compartment['name']),
+                             'compartment_path': str(compartment['path']),
                              'compartment_id': str(compartment['id']),
                              'sum_info': "Golden Gate - " + "BYOL" if array.license_model == "BRING_YOUR_OWN_LICENSE" else "INCL",
                              'sum_size_gb': str(array.cpu_core_count),
@@ -9285,6 +9341,7 @@ class ShowOCIService(object):
                              'alias_name': str(array.alias_name),
                              'secret_id': str(array.secret_id),
                              'compartment_name': str(compartment['name']),
+                             'compartment_path': str(compartment['path']),
                              'compartment_id': str(compartment['id']),
                              'system_tags': [] if array.system_tags is None else array.system_tags,
                              'defined_tags': [] if array.defined_tags is None else array.defined_tags,
@@ -9438,6 +9495,7 @@ class ShowOCIService(object):
                            'quantity_per_subnet': str(arr.quantity_per_subnet),
                            'subnet_ids': [subnets for subnets in arr.subnet_ids],
                            'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
                            'region_name': str(self.config['region'])}
 
@@ -9500,6 +9558,7 @@ class ShowOCIService(object):
                            'vcn_id': str(arr.vcn_id),
                            'kubernetes_version': str(arr.kubernetes_version),
                            'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
                            'region_name': str(self.config['region'])}
 
@@ -9596,6 +9655,7 @@ class ShowOCIService(object):
                     val = {'id': str(stream.id), 'name': str(stream.name),
                            'partitions': str(stream.partitions), 'time_created': str(stream.time_created),
                            'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                           'compartment_path': str(compartment['path']),
                            'messages_endpoint': str(stream.messages_endpoint),
                            'defined_tags': [] if stream.defined_tags is None else stream.defined_tags,
                            'freeform_tags': [] if stream.freeform_tags is None else stream.freeform_tags,
@@ -9711,6 +9771,7 @@ class ShowOCIService(object):
                            'time_created': str(apig.time_created),
                            'time_updated': str(apig.time_updated),
                            'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                           'compartment_path': str(compartment['path']),
                            'defined_tags': [] if apig.defined_tags is None else apig.defined_tags,
                            'freeform_tags': [] if apig.freeform_tags is None else apig.freeform_tags,
                            'region_name': str(self.config['region']),
@@ -9781,6 +9842,7 @@ class ShowOCIService(object):
                            'time_created': str(apid.time_created),
                            'time_updated': str(apid.time_updated),
                            'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
                            'defined_tags': [] if apid.defined_tags is None else apid.defined_tags,
                            'freeform_tags': [] if apid.freeform_tags is None else apid.freeform_tags,
@@ -9886,6 +9948,7 @@ class ShowOCIService(object):
                     val = {'id': str(app.id), 'display_name': str(app.display_name),
                            'subnet_ids': app.subnet_ids, 'time_created': str(app.time_created),
                            'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                           'compartment_path': str(compartment['path']),
                            'defined_tags': [] if app.defined_tags is None else app.defined_tags,
                            'freeform_tags': [] if app.freeform_tags is None else app.freeform_tags,
                            'region_name': str(self.config['region'])}
@@ -10143,6 +10206,7 @@ class ShowOCIService(object):
                            'is_enabled': str(event.is_enabled),
                            'time_created': str(event.time_created),
                            'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
                            'defined_tags': [] if event.defined_tags is None else event.defined_tags,
                            'freeform_tags': [] if event.freeform_tags is None else event.freeform_tags,
@@ -10221,6 +10285,7 @@ class ShowOCIService(object):
                            'lifecycle_state': str(agent.lifecycle_state),
                            'lifecycle_details': str(agent.lifecycle_details),
                            'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
                            'defined_tags': [] if agent.defined_tags is None else agent.defined_tags,
                            'freeform_tags': [] if agent.freeform_tags is None else agent.freeform_tags,
@@ -10291,6 +10356,7 @@ class ShowOCIService(object):
                            'parent_container_id': str(agent.parent_container_id),
                            'time_created': str(agent.time_created),
                            'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
                            'region_name': str(self.config['region'])
                            }
@@ -10361,6 +10427,7 @@ class ShowOCIService(object):
                            'destinations': alarm.destinations,
                            'is_enabled': alarm.is_enabled,
                            'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
                            'defined_tags': [] if alarm.defined_tags is None else alarm.defined_tags,
                            'freeform_tags': [] if alarm.freeform_tags is None else alarm.freeform_tags,
@@ -10430,6 +10497,7 @@ class ShowOCIService(object):
                            'etag': str(topic.etag),
                            'api_endpoint': str(topic.api_endpoint),
                            'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
                            'defined_tags': [] if topic.defined_tags is None else topic.defined_tags,
                            'freeform_tags': [] if topic.freeform_tags is None else topic.freeform_tags,
@@ -10500,6 +10568,7 @@ class ShowOCIService(object):
                            'created_time': str(sub.created_time),
                            'etag': str(sub.etag),
                            'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
                            'defined_tags': [] if sub.defined_tags is None else sub.defined_tags,
                            'freeform_tags': [] if sub.freeform_tags is None else sub.freeform_tags,
@@ -10642,6 +10711,7 @@ class ShowOCIService(object):
                            'is_enabled': health.is_enabled,
                            'protocol': str(health.protocol),
                            'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
                            'defined_tags': [] if health.defined_tags is None else health.defined_tags,
                            'freeform_tags': [] if health.freeform_tags is None else health.freeform_tags,
@@ -10728,6 +10798,7 @@ class ShowOCIService(object):
                            'vantage_point_names': str(', '.join(x for x in health.vantage_point_names)),
                            'headers': health.headers,
                            'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
                            'defined_tags': [] if health.defined_tags is None else health.defined_tags,
                            'freeform_tags': [] if health.freeform_tags is None else health.freeform_tags,
@@ -10801,6 +10872,7 @@ class ShowOCIService(object):
                            'version': str(arr.version),
                            'serial': str(arr.serial),
                            'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
                            'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                            'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
@@ -10872,6 +10944,7 @@ class ShowOCIService(object):
                            'template': str(arr.template),
                            'time_created': str(arr.time_created),
                            'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
                            'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                            'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
@@ -10938,8 +11011,14 @@ class ShowOCIService(object):
                 # arr = oci.dns.models.ResolverSummary
                 for arrsummary in array:
 
-                    # get the resolver model
-                    arr = dns_client.get_resolver(arrsummary.id, scope="PRIVATE", retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+                    arr = []
+                    try:
+                        # get the resolver model
+                        arr = dns_client.get_resolver(arrsummary.id, scope="PRIVATE", retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+                    except oci.exceptions.ServiceError as e:
+                        if self.__check_service_error(e.code):
+                            self.__load_print_auth_warning()
+                        continue
 
                     val = {'id': str(arr.id),
                            'display_name': str(arr.display_name),
@@ -10952,6 +11031,7 @@ class ShowOCIService(object):
                            'endpoints': [],
                            'rules': [],
                            'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
                            'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                            'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
@@ -11055,6 +11135,7 @@ class ShowOCIService(object):
                            'time_created': str(arr.time_created),
                            'lifecycle_state': str(arr.lifecycle_state),
                            'compartment_name': str(compartment['name']),
+                           'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
                            'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                            'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
@@ -11193,6 +11274,7 @@ class ShowOCIService(object):
                                'sum_info': "Data Catalog",
                                'sum_size_gb': str("1"),
                                'compartment_name': str(compartment['name']),
+                               'compartment_path': str(compartment['path']),
                                'compartment_id': str(compartment['id']),
                                'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                                'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
@@ -11267,6 +11349,7 @@ class ShowOCIService(object):
                                'sum_info': "Data Science",
                                'sum_size_gb': str("1"),
                                'compartment_name': str(compartment['name']),
+                               'compartment_path': str(compartment['path']),
                                'compartment_id': str(compartment['id']),
                                'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                                'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
@@ -11343,6 +11426,7 @@ class ShowOCIService(object):
                                'sum_info': "Data Flow",
                                'sum_size_gb': str("1"),
                                'compartment_name': str(compartment['name']),
+                               'compartment_path': str(compartment['path']),
                                'compartment_id': str(compartment['id']),
                                'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                                'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
@@ -11418,6 +11502,7 @@ class ShowOCIService(object):
                                'sum_info': "Digital Assistant " + str(oda.shape_name),
                                'sum_size_gb': str("1"),
                                'compartment_name': str(compartment['name']),
+                               'compartment_path': str(compartment['path']),
                                'compartment_id': str(compartment['id']),
                                'defined_tags': [] if oda.defined_tags is None else oda.defined_tags,
                                'freeform_tags': [] if oda.freeform_tags is None else oda.freeform_tags,
@@ -11491,6 +11576,7 @@ class ShowOCIService(object):
                                'is_cloud_sql_configured': str(bds.is_cloud_sql_configured),
                                'time_created': str(bds.time_created),
                                'compartment_name': str(compartment['name']),
+                               'compartment_path': str(compartment['path']),
                                'compartment_id': str(compartment['id']),
                                'sum_info': "Big Data Service (Nodes)",
                                'sum_size_gb': str(bds.number_of_nodes),
@@ -11562,6 +11648,7 @@ class ShowOCIService(object):
                                'time_created': str(di.time_created),
                                'time_updated': str(di.time_updated),
                                'compartment_name': str(compartment['name']),
+                               'compartment_path': str(compartment['path']),
                                'compartment_id': str(compartment['id']),
                                'sum_info': "Data Integration (Workspaces)",
                                'sum_size_gb': str(1),
@@ -11606,6 +11693,7 @@ class ShowOCIService(object):
             oce_client = oci.oce.OceInstanceClient(self.config, signer=self.signer, timeout=(2, 2))
             ocvs_client = oci.ocvp.SddcClient(self.config, signer=self.signer, timeout=(3, 3))
             esxi_client = oci.ocvp.EsxiHostClient(self.config, signer=self.signer, timeout=(3, 3))
+            vb_client = oci.visual_builder.VbInstanceClient(self.config, signer=self.signer, timeout=(3, 3))
             virtual_network = oci.core.VirtualNetworkClient(self.config, signer=self.signer)
 
             if self.flags.proxy:
@@ -11613,6 +11701,7 @@ class ShowOCIService(object):
                 oac_client.base_client.session.proxies = {'https': self.flags.proxy}
                 oce_client.base_client.session.proxies = {'https': self.flags.proxy}
                 ocvs_client.base_client.session.proxies = {'https': self.flags.proxy}
+                vb_client.base_client.session.proxies = {'https': self.flags.proxy}
                 esxi_client.base_client.session.proxies = {'https': self.flags.proxy}
                 virtual_network.base_client.session.proxies = {'https': self.flags.proxy}
 
@@ -11624,6 +11713,7 @@ class ShowOCIService(object):
             self.__initialize_data_key(self.C_PAAS_NATIVE, self.C_PAAS_NATIVE_OIC)
             self.__initialize_data_key(self.C_PAAS_NATIVE, self.C_PAAS_NATIVE_OCE)
             self.__initialize_data_key(self.C_PAAS_NATIVE, self.C_PAAS_NATIVE_OCVS)
+            self.__initialize_data_key(self.C_PAAS_NATIVE, self.C_PAAS_NATIVE_VB)
 
             # reference to paas
             paas = self.data[self.C_PAAS_NATIVE]
@@ -11633,6 +11723,7 @@ class ShowOCIService(object):
             paas[self.C_PAAS_NATIVE_OIC] += self.__load_paas_oic(oic_client, compartments)
             paas[self.C_PAAS_NATIVE_OCE] += self.__load_paas_oce(oce_client, compartments)
             paas[self.C_PAAS_NATIVE_OAC] += self.__load_paas_oac(oac_client, compartments)
+            paas[self.C_PAAS_NATIVE_VB] += self.__load_paas_visualbuilder(vb_client, compartments)
             print("")
 
         except oci.exceptions.RequestException:
@@ -11703,6 +11794,7 @@ class ShowOCIService(object):
                                'defined_tags': [],
                                'freeform_tags': [],
                                'compartment_name': str(compartment['name']),
+                               'compartment_path': str(compartment['path']),
                                'compartment_id': str(compartment['id']),
                                'region_name': str(self.config['region'])}
 
@@ -11817,6 +11909,7 @@ class ShowOCIService(object):
                                'sum_info': "PaaS OCVS VMWare ESXi Servers",
                                'sum_size_gb': str(vmware.esxi_hosts_count),
                                'compartment_name': str(compartment['name']),
+                               'compartment_path': str(compartment['path']),
                                'compartment_id': str(compartment['id']),
                                'defined_tags': [] if vmware.defined_tags is None else vmware.defined_tags,
                                'freeform_tags': [] if vmware.freeform_tags is None else vmware.freeform_tags,
@@ -11939,6 +12032,7 @@ class ShowOCIService(object):
                                'defined_tags': [],
                                'freeform_tags': [],
                                'compartment_name': str(compartment['name']),
+                               'compartment_path': str(compartment['path']),
                                'compartment_id': str(compartment['id']),
                                'region_name': str(self.config['region'])}
 
@@ -12028,6 +12122,7 @@ class ShowOCIService(object):
                                'sum_info': "PaaS OCE Native",
                                'sum_size_gb': str("1"),
                                'compartment_name': str(compartment['name']),
+                               'compartment_path': str(compartment['path']),
                                'compartment_id': str(compartment['id']),
                                'defined_tags': [] if oce.defined_tags is None else oce.defined_tags,
                                'freeform_tags': [] if oce.freeform_tags is None else oce.freeform_tags,
@@ -12046,6 +12141,86 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_paas_oce", e)
+            return data
+
+    ##########################################################################
+    # __load_paas_visualbuilder
+    ##########################################################################
+    def __load_paas_visualbuilder(self, vb_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("Visual Builder")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                vbs = []
+                try:
+                    vbs = oci.pagination.list_call_get_all_results(
+                        vb_client.list_vb_instances,
+                        compartment['id'],
+                        sort_by="displayName",
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning()
+                    continue
+
+                print(".", end="")
+
+                # vbs = oci.visual_builder.models.VbInstanceSummary
+                for vb in vbs:
+                    if vb.lifecycle_state == 'ACTIVE' or vb.lifecycle_state == 'UPDATING':
+                        val = {'id': str(vb.id),
+                               'display_name': str(vb.display_name),
+                               'time_created': str(vb.time_created),
+                               'time_updated': str(vb.time_updated),
+                               'lifecycle_state': str(vb.lifecycle_state),
+                               'state_message': str(vb.state_message),
+                               'instance_url': str(vb.instance_url),
+                               'node_count': str(vb.node_count),
+                               'is_visual_builder_enabled': str(vb.is_visual_builder_enabled),
+                               'custom_endpoint': str(vb.custom_endpoint.hostname) if vb.custom_endpoint else "",
+                               'alternate_custom_endpoints': str(vb.alternate_custom_endpoints.hostname) if vb.alternate_custom_endpoints else "",
+                               'consumption_model': str(vb.consumption_model),
+                               'sum_info': "PaaS Visual Builder",
+                               'sum_size_gb': str(vb.node_count),
+                               'compartment_name': str(compartment['name']),
+                               'compartment_path': str(compartment['path']),
+                               'compartment_id': str(compartment['id']),
+                               'defined_tags': [] if vb.defined_tags is None else vb.defined_tags,
+                               'system_tags': [] if vb.system_tags is None else vb.system_tags,
+                               'freeform_tags': [] if vb.freeform_tags is None else vb.freeform_tags,
+                               'region_name': str(self.config['region'])}
+
+                        # add the data
+                        cnt += 1
+                        data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_paas_visualbuilder", e)
             return data
 
     ##########################################################################
@@ -12355,6 +12530,7 @@ class ShowOCIService(object):
                             'statements': [],
                             'time_created': str(arr.time_created),
                             'compartment_name': str(compartment['name']),
+                            'compartment_path': str(compartment['path']),
                             'compartment_id': str(compartment['id']),
                             'region_name': str(self.config['region']),
                             'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
@@ -12538,6 +12714,7 @@ class ShowOCIService(object):
                                'defined_tags': [] if item.defined_tags is None else item.defined_tags,
                                'freeform_tags': [] if item.freeform_tags is None else item.freeform_tags,
                                'compartment_name': str(compartment['name']),
+                               'compartment_path': str(compartment['path']),
                                'compartment_id': str(compartment['id']),
                                'region_name': str(self.config['region'])}
 
@@ -12614,6 +12791,7 @@ class ShowOCIService(object):
                                'defined_tags': [] if item.defined_tags is None else item.defined_tags,
                                'freeform_tags': [] if item.freeform_tags is None else item.freeform_tags,
                                'compartment_name': str(compartment['name']),
+                               'compartment_path': str(compartment['path']),
                                'key_count': "0",
                                'key_version_count': "0",
                                'software_key_count': "0",
@@ -12816,6 +12994,7 @@ class ShowOCIService(object):
                         'defined_tags': [] if item.defined_tags is None else item.defined_tags,
                         'freeform_tags': [] if item.freeform_tags is None else item.freeform_tags,
                         'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
                         'compartment_id': str(compartment['id']),
                         'region_name': str(self.config['region'])
                     }
@@ -12865,6 +13044,7 @@ class ShowOCIService(object):
                             'retention_duration': str(log_item.retention_duration),
                             'time_last_modified': str(log_item.time_last_modified),
                             'compartment_name': str(compartment['name']),
+                            'compartment_path': str(compartment['path']),
                             'compartment_id': str(compartment['id']),
                             'region_name': str(self.config['region'])
                         }
@@ -12965,6 +13145,7 @@ class ShowOCIService(object):
                             'sum_info': "Bastions",
                             'sum_size_gb': str(1),
                             'compartment_name': str(compartment['name']),
+                            'compartment_path': str(compartment['path']),
                             'compartment_id': str(compartment['id']),
                             'region_name': str(self.config['region'])
                         }

@@ -397,6 +397,7 @@ class ShowOCIData(object):
                          'display_name': arr['display_name'],
                          'nat_ip': arr['nat_ip'],
                          'compartment_name': arr['compartment_name'],
+                         'compartment_path': arr['compartment_path'],
                          'compartment_id': arr['compartment_id'],
                          'time_created': arr['time_created'],
                          'block_traffic': arr['block_traffic'],
@@ -422,6 +423,7 @@ class ShowOCIData(object):
                 value = {'id': arr['id'],
                          'name': arr['name'],
                          'compartment_name': arr['compartment_name'],
+                         'compartment_path': arr['compartment_path'],
                          'compartment_id': arr['compartment_id'],
                          'time_created': arr['time_created']}
                 data.append(value)
@@ -445,6 +447,7 @@ class ShowOCIData(object):
                          'name': arr['name'],
                          'services': arr['services'],
                          'compartment_name': arr['compartment_name'],
+                         'compartment_path': arr['compartment_path'],
                          'compartment_id': arr['compartment_id'],
                          'route_table_id': arr['route_table_id'],
                          'route_table': "",
@@ -530,6 +533,7 @@ class ShowOCIData(object):
                          'export_drg_route_distribution_id': da['export_drg_route_distribution_id'],
                          'name': val,
                          'compartment_name': da['compartment_name'],
+                         'compartment_path': da['compartment_path'],
                          'compartment_id': da['compartment_id'],
                          'time_created': da['time_created']}
                 data.append(value)
@@ -558,6 +562,7 @@ class ShowOCIData(object):
                          'display_name': (lpg['display_name']),
                          'compartment_id': lpg['compartment_id'],
                          'compartment_name': lpg['compartment_name'],
+                         'compartment_path': lpg['compartment_path'],
                          'time_created': lpg['time_created'],
                          'route_table_id': lpg['route_table_id'],
                          'route_table_name': route_table,
@@ -620,6 +625,7 @@ class ShowOCIData(object):
                     'public_private': subnet['public_private'],
                     'dns': subnet['dns_label'],
                     'compartment_name': subnet['compartment_name'],
+                    'compartment_path': subnet['compartment_path'],
                     'compartment_id': subnet['compartment_id'],
                     'dhcp_options': dhcp_options,
                     'dhcp_options_id': subnet['dhcp_options_id'],
@@ -684,6 +690,7 @@ class ShowOCIData(object):
                     'time_created': vlan['time_created'],
                     'lifecycle_state': vlan['lifecycle_state'],
                     'compartment_name': vlan['compartment_name'],
+                    'compartment_path': vlan['compartment_path'],
                     'compartment_id': vlan['compartment_id'],
                     'nsg': nsgs,
                     'nsg_ids': vlan['nsg_ids'],
@@ -714,6 +721,7 @@ class ShowOCIData(object):
                     'id': sl['id'],
                     'name': sl['name'],
                     'compartment_name': sl['compartment_name'],
+                    'compartment_path': sl['compartment_path'],
                     'compartment_id': sl['compartment_id'],
                     'sec_rules': sl['sec_rules'],
                     'time_created': sl['time_created'],
@@ -740,6 +748,7 @@ class ShowOCIData(object):
                     'id': nsg['id'],
                     'name': nsg['name'],
                     'compartment_name': nsg['compartment_name'],
+                    'compartment_path': nsg['compartment_path'],
                     'compartment_id': nsg['compartment_id'],
                     'sec_rules': [],
                     'time_created': nsg['time_created'],
@@ -888,6 +897,7 @@ class ShowOCIData(object):
                 val = {'id': rt['id'],
                        'name': rt['name'],
                        'compartment_name': rt['compartment_name'],
+                       'compartment_path': rt['compartment_path'],
                        'compartment_id': rt['compartment_id'],
                        'time_created': rt['time_created'],
                        'route_rules': route_rules}
@@ -912,6 +922,7 @@ class ShowOCIData(object):
                     'id': dhcp['id'],
                     'name': dhcp['name'],
                     'compartment_name': dhcp['compartment_name'],
+                    'compartment_path': dhcp['compartment_path'],
                     'compartment_id': dhcp['compartment_id'],
                     'time_created': dhcp['time_created'],
                     'opt': dhcp['options']
@@ -956,6 +967,7 @@ class ShowOCIData(object):
                     'cidr_block': vcn['cidr_block'],
                     'cidr_blocks': vcn['cidr_blocks'],
                     'compartment_name': str(compartment['name']),
+                    'compartment_path': str(compartment['path']),
                     'compartment_id': str(compartment['id']),
                     'drg_route_table_id': "",
                     'drg_route_name': "",
@@ -1007,6 +1019,7 @@ class ShowOCIData(object):
                     'time_created': drg['time_created'],
                     'redundancy': drg['redundancy'],
                     'compartment_name': drg['compartment_name'],
+                    'compartment_path': drg['compartment_path'],
                     'compartment_id': drg['compartment_id'],
                     'defined_tags': drg['defined_tags'],
                     'freeform_tags': drg['freeform_tags'],
@@ -1147,6 +1160,7 @@ class ShowOCIData(object):
                     'peering_status': rpc['peering_status'],
                     'compartment_id': rpc['compartment_id'],
                     'compartment_name': rpc['compartment_name'],
+                    'compartment_path': rpc['compartment_path'],
                     'region_name': rpc['region_name'],
                     'drg_route_table_id': rpc['drg_route_table_id'],
                     'drg_route_table': rpc['drg_route_table']
@@ -1187,6 +1201,7 @@ class ShowOCIData(object):
                     'freeform_tags': ips['freeform_tags'],
                     'compartment_id': ips['compartment_id'],
                     'compartment_name': ips['compartment_name'],
+                    'compartment_path': ips['compartment_path'],
                     'region_name': ips['region_name'],
                     'drg_route_table_id': ips['drg_route_table_id'],
                     'drg_route_table': ips['drg_route_table']
@@ -1232,6 +1247,7 @@ class ShowOCIData(object):
                     'type': str(vc['type']),
                     'compartment_id': vc['compartment_id'],
                     'compartment_name': vc['compartment_name'],
+                    'compartment_path': vc['compartment_path'],
                     'region_name': vc['region_name'],
                     'drg_route_table_id': vc['drg_route_table_id'],
                     'drg_route_table': vc['drg_route_table']
@@ -1381,6 +1397,7 @@ class ShowOCIData(object):
                     'vpus_per_gb': bv['vpus_per_gb'],
                     'volume_group_name': bv['volume_group_name'],
                     'compartment_name': bv['compartment_name'],
+                    'compartment_path': bv['compartment_path'],
                     'is_hydrated': bv['is_hydrated'],
                     'time_created': bv['time_created'],
                     'display_name': bv['display_name'],
@@ -1420,6 +1437,7 @@ class ShowOCIData(object):
                     'desc': (str(bv['size_in_gbs']) + "GB - " + str(bv['display_name']) + " (" + bv['vpus_per_gb'] + " vpus) " + bv['backup_policy'] + volume_group + comp_text),
                     'time_created': bv['time_created'],
                     'compartment_name': bv['compartment_name'],
+                    'compartment_path': bv['compartment_path'],
                     'compartment_id': bv['compartment_id'],
                     'backup_policy': "None" if bv['backup_policy'] == "" else bv['backup_policy'],
                     'display_name': bv['display_name'],
@@ -1467,6 +1485,7 @@ class ShowOCIData(object):
                 value['unique_size_in_gbs'] = backup['unique_size_in_gbs']
                 value['size_in_gbs'] = backup['size_in_gbs']
                 value['compartment_name'] = backup['compartment_name']
+                value['compartment_path'] = backup['compartment_path']
                 value['id'] = backup['id']
 
                 data.append(value)
@@ -1514,6 +1533,7 @@ class ShowOCIData(object):
                         'size': vol['size_in_gbs'],
                         'backup_policy': vol['backup_policy'],
                         'compartment_name': compartment['name'],
+                        'compartment_path': compartment['path'],
                         'volume_group_name': vol['volume_group_name'],
                         'vpus_per_gb': vol['vpus_per_gb'],
                         'sum_info': 'Compute - Block Storage (GB)',
@@ -1564,6 +1584,7 @@ class ShowOCIData(object):
                         'backup_policy': vol['backup_policy'],
                         'vpus_per_gb': vol['vpus_per_gb'],
                         'compartment_name': compartment['name'],
+                        'compartment_path': compartment['path'],
                         'volume_group_name': vol['volume_group_name'],
                         'sum_info': 'Compute - Block Storage (GB)',
                         'sum_size_gb': vol['size_in_gbs'],
@@ -1589,7 +1610,9 @@ class ShowOCIData(object):
 
             for vplgrp in volgroups:
                 value = {'id': vplgrp['id'], 'name': vplgrp['display_name'], 'size_in_gbs': vplgrp['size_in_gbs'],
-                         'compartment_name': str(vplgrp['compartment_name']), 'volumes': [],
+                         'compartment_name': str(vplgrp['compartment_name']),
+                         'compartment_path': str(vplgrp['compartment_path']),
+                         'volumes': [],
                          'time_created': vplgrp['time_created'],
                          'defined_tags': vplgrp['defined_tags'],
                          'freeform_tags': vplgrp['freeform_tags']}
@@ -1665,6 +1688,7 @@ class ShowOCIData(object):
                         'shape_processor_description': instance['shape_processor_description'],
                         'display_name': instance['display_name'],
                         'compartment_name': instance['compartment_name'],
+                        'compartment_path': instance['compartment_path'],
                         'compartment_id': instance['compartment_id'],
                         'lifecycle_state': instance['lifecycle_state'],
                         'console_id': instance['console_id'], 'console': instance['console'],
@@ -1757,6 +1781,7 @@ class ShowOCIData(object):
                          'defined_tags': image['defined_tags'],
                          'freeform_tags': image['freeform_tags'],
                          'compartment_name': image['compartment_name'],
+                         'compartment_path': image['compartment_path'],
                          'compartment_id': image['compartment_id']
                          }
                 data.append(value)
@@ -1791,6 +1816,7 @@ class ShowOCIData(object):
                          'defined_tags': arr['defined_tags'],
                          'freeform_tags': arr['freeform_tags'],
                          'compartment_name': arr['compartment_name'],
+                         'compartment_path': arr['compartment_path'],
                          'compartment_id': arr['compartment_id']
                          }
                 data.append(value)
@@ -1870,6 +1896,7 @@ class ShowOCIData(object):
                          'name': str(auto['display_name']) + " (" + ("ENABLED" if auto['is_enabled'] else "DISABLED") + ")",
                          'time_created': auto['time_created'],
                          'compartment_name': auto['compartment_name'],
+                         'compartment_path': auto['compartment_path'],
                          'compartment_id': auto['compartment_id'],
                          'resource_id': auto['resource_id'],
                          'resource_name': auto['resource_name'],
@@ -2238,6 +2265,7 @@ class ShowOCIData(object):
                     'total_storage_size_in_gbs': dbs['total_storage_size_in_gbs'],
                     'available_storage_size_in_gbs': dbs['available_storage_size_in_gbs'],
                     'compartment_name': dbs['compartment_name'],
+                    'compartment_path': dbs['compartment_path'],
                     'compartment_id': dbs['compartment_id'],
                     'time_created': dbs['time_created'],
                     'last_maintenance_run': dbs['last_maintenance_run'],
@@ -2308,6 +2336,7 @@ class ShowOCIData(object):
                             'zone_id': vm['zone_id'],
                             'scan_dns_name': vm['scan_dns_name'],
                             'compartment_name': vm['compartment_name'],
+                            'compartment_path': vm['compartment_path'],
                             'region_name': vm['region_name']
                         }
                         value['vm_clusters'].append(valvm)
@@ -2367,6 +2396,7 @@ class ShowOCIData(object):
                     'freeform_tags': dbs['freeform_tags'],
                     'contacts': dbs['contacts'],
                     'compartment_name': dbs['compartment_name'],
+                    'compartment_path': dbs['compartment_path'],
                     'compartment_id': dbs['compartment_id'],
                     'region_name': dbs['region_name'],
                     'sum_info': 'Database ExaCC - ' + dbs['shape'],
@@ -2412,6 +2442,7 @@ class ShowOCIData(object):
                             'db_homes': self.__get_database_db_homes(vm['db_homes']),
                             'db_nodes': [] if not db_nodes else sorted(db_nodes, key=lambda i: i['desc']),
                             'compartment_name': vm['compartment_name'],
+                            'compartment_path': vm['compartment_path'],
                             'compartment_id': vm['compartment_id'],
                             'region_name': vm['region_name']
                         }
@@ -2471,6 +2502,7 @@ class ShowOCIData(object):
                          'zone_id': dbs['zone_id'],
                          'scan_dns_name': dbs['scan_dns_name'],
                          'compartment_name': dbs['compartment_name'],
+                         'compartment_path': dbs['compartment_path'],
                          'compartment_id': dbs['compartment_id'],
                          'cluster_name': dbs['cluster_name'],
                          'time_created': dbs['time_created'],
@@ -2541,6 +2573,7 @@ class ShowOCIData(object):
                 'data_storage_size_in_tbs': str(dbs['data_storage_size_in_tbs']),
                 'db_name': str(dbs['db_name']),
                 'compartment_name': str(dbs['compartment_name']),
+                'compartment_path': str(dbs['compartment_path']),
                 'compartment_id': str(dbs['compartment_id']),
                 'service_console_url': str(dbs['service_console_url']),
                 'time_created': str(dbs['time_created'])[0:16],
@@ -2668,6 +2701,7 @@ class ShowOCIData(object):
                          'defined_tags': infra['defined_tags'],
                          'freeform_tags': infra['freeform_tags'],
                          'compartment_name': infra['compartment_name'],
+                         'compartment_path': infra['compartment_path'],
                          'compartment_id': infra['compartment_id'],
                          'region_name': infra['region_name'],
                          'containers': [],
@@ -2996,6 +3030,7 @@ class ShowOCIData(object):
                            'sum_size_gb': fs['size_gb'],
                            'snapshots': [e['name'] + " - " + e['time_created'][0:16] for e in fs['snapshots']],
                            'compartment_name': fs['compartment_name'],
+                           'compartment_path': fs['compartment_path'],
                            'compartment_id': fs['compartment_id'],
                            'region_name': region_name,
                            'exports': self.__get_file_storage_exports(fs['id'])}
@@ -3032,6 +3067,7 @@ class ShowOCIData(object):
                          'object_lifecycle': bucket['object_lifecycle'],
                          'compartment_id': bucket['compartment_id'],
                          'compartment_name': bucket['compartment_name'],
+                         'compartment_path': bucket['compartment_path'],
                          'region_name': bucket['region_name'],
                          'namespace_name': bucket['namespace_name'],
                          'public_access_type': bucket['public_access_type'],
@@ -3155,6 +3191,7 @@ class ShowOCIData(object):
             data['hostnames'] = [x['desc'] for x in lb['hostnames']]
             data['rule_sets'] = lb['rule_sets']
             data['compartment_name'] = lb['compartment_name']
+            data['compartment_path'] = lb['compartment_path']
             data['compartment_id'] = lb['compartment_id']
             data['subnet_ids'] = lb['subnet_ids']
             data['defined_tags'] = lb['defined_tags']
@@ -3266,6 +3303,7 @@ class ShowOCIData(object):
             data['nsg_ids'] = lb['nsg_ids']
             data['nsg_names'] = lb['nsg_names']
             data['compartment_name'] = lb['compartment_name']
+            data['compartment_path'] = lb['compartment_path']
             data['compartment_id'] = lb['compartment_id']
             data['subnet_id'] = lb['subnet_id']
             data['subnet_name'] = lb['subnet_name']
@@ -3326,6 +3364,7 @@ class ShowOCIData(object):
                            'jobs': stack['jobs'],
                            'compartment_id': stack['compartment_id'],
                            'compartment_name': stack['compartment_name'],
+                           'compartment_path': stack['compartment_path'],
                            'region_name': stack['region_name'],
                            'time_created': stack['time_created'],
                            'defined_tags': stack['defined_tags'],
@@ -3368,6 +3407,7 @@ class ShowOCIData(object):
 
             # add compartment details
             data['compartment_name'] = compartment['name']
+            data['compartment_path'] = compartment['path']
             data['compartment_id'] = compartment['id']
             data['region_name'] = region_name
 
@@ -3392,6 +3432,7 @@ class ShowOCIData(object):
                            'lifecycle_state': container['lifecycle_state'],
                            'kubernetes_version': container['kubernetes_version'],
                            'compartment_name': container['compartment_name'],
+                           'compartment_path': container['compartment_path'],
                            'compartment_id': container['compartment_id'],
                            'region_name': container['region_name'],
                            'vcn_id': container['vcn_id'],
@@ -3405,6 +3446,7 @@ class ShowOCIData(object):
                                 'kubernetes_version': np['kubernetes_version'], 'node_shape': np['node_shape'],
                                 'quantity_per_subnet': np['quantity_per_subnet'],
                                 'compartment_name': np['compartment_name'],
+                                'compartment_path': np['compartment_path'],
                                 'compartment_id': np['compartment_id'],
                                 'subnets': [], 'subnet_ids': np['subnet_ids']}
 
@@ -3438,6 +3480,7 @@ class ShowOCIData(object):
                            'defined_tags': stream['defined_tags'],
                            'freeform_tags': stream['freeform_tags'],
                            'compartment_name': stream['compartment_name'],
+                           'compartment_path': stream['compartment_path'],
                            'compartment_id': stream['compartment_id'],
                            'region_name': stream['region_name']
                            }
@@ -3467,6 +3510,7 @@ class ShowOCIData(object):
                            'defined_tags': fn['defined_tags'],
                            'freeform_tags': fn['freeform_tags'],
                            'compartment_name': fn['compartment_name'],
+                           'compartment_path': fn['compartment_path'],
                            'compartment_id': fn['compartment_id'],
                            'region_name': fn['region_name']
                            }
@@ -3577,6 +3621,7 @@ class ShowOCIData(object):
                            'defined_tags': topic['defined_tags'],
                            'freeform_tags': topic['freeform_tags'],
                            'compartment_name': topic['compartment_name'],
+                           'compartment_path': topic['compartment_path'],
                            'compartment_id': topic['compartment_id'],
                            'region_name': topic['region_name'],
                            'subscriptions': self.service.search_multi_items(self.service.C_NOTIFICATIONS, self.service.C_NOTIFICATIONS_SUBSCRIPTIONS, 'topic_id', topic['topic_id'])
@@ -3672,6 +3717,11 @@ class ShowOCIData(object):
             oce = self.service.search_multi_items(self.service.C_PAAS_NATIVE, self.service.C_PAAS_NATIVE_OCE, 'region_name', region_name, 'compartment_id', compartment['id'])
             if oce:
                 paas_services['oce'] = oce
+
+            # oce
+            vb = self.service.search_multi_items(self.service.C_PAAS_NATIVE, self.service.C_PAAS_NATIVE_VB, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if vb:
+                paas_services['vb'] = vb
 
             # ocvs
             ocvs = self.service.search_multi_items(self.service.C_PAAS_NATIVE, self.service.C_PAAS_NATIVE_OCVS, 'region_name', region_name, 'compartment_id', compartment['id'])

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstancePowerActionDetails(object):
     """
-    A base object for all types of Instance Power Action requests.
+    A base object for all types of instance power action requests.
     """
 
     def __init__(self, **kwargs):
@@ -19,6 +19,7 @@ class InstancePowerActionDetails(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.core.models.ResetActionDetails`
+        * :class:`~oci.core.models.RebootMigrateActionDetails`
         * :class:`~oci.core.models.SoftResetActionDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -48,6 +49,9 @@ class InstancePowerActionDetails(object):
 
         if type == 'reset':
             return 'ResetActionDetails'
+
+        if type == 'rebootMigrate':
+            return 'RebootMigrateActionDetails'
 
         if type == 'softreset':
             return 'SoftResetActionDetails'

@@ -21,7 +21,7 @@ class CreateEmManagedExternalHostInsightDetails(CreateHostInsightDetails):
 
         :param entity_source:
             The value to assign to the entity_source property of this CreateEmManagedExternalHostInsightDetails.
-            Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST"
+            Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST", "PE_COMANAGED_HOST"
         :type entity_source: str
 
         :param compartment_id:

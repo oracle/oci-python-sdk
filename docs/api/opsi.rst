@@ -202,6 +202,7 @@ Opsi
     oci.opsi.models.PeComanagedDatabaseHostDetails
     oci.opsi.models.PeComanagedDatabaseInsight
     oci.opsi.models.PeComanagedDatabaseInsightSummary
+    oci.opsi.models.PeComanagedHostConfigurationSummary
     oci.opsi.models.PeComanagedManagedExternalDatabaseConfigurationSummary
     oci.opsi.models.ProjectedDataItem
     oci.opsi.models.QueryDataObjectJsonResultSetRowsCollection

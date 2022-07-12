@@ -14,6 +14,7 @@ from .cluster_metadata import ClusterMetadata
 from .cluster_migrate_to_native_vcn_details import ClusterMigrateToNativeVcnDetails
 from .cluster_migrate_to_native_vcn_status import ClusterMigrateToNativeVcnStatus
 from .cluster_options import ClusterOptions
+from .cluster_pod_network_option_details import ClusterPodNetworkOptionDetails
 from .cluster_summary import ClusterSummary
 from .create_cluster_details import CreateClusterDetails
 from .create_cluster_endpoint_config_details import CreateClusterEndpointConfigDetails
@@ -22,6 +23,8 @@ from .create_image_policy_config_details import CreateImagePolicyConfigDetails
 from .create_node_pool_details import CreateNodePoolDetails
 from .create_node_pool_node_config_details import CreateNodePoolNodeConfigDetails
 from .create_node_shape_config_details import CreateNodeShapeConfigDetails
+from .flannel_overlay_cluster_pod_network_option_details import FlannelOverlayClusterPodNetworkOptionDetails
+from .flannel_overlay_node_pool_pod_network_option_details import FlannelOverlayNodePoolPodNetworkOptionDetails
 from .image_policy_config import ImagePolicyConfig
 from .key_details import KeyDetails
 from .key_value import KeyValue
@@ -33,12 +36,15 @@ from .node_pool import NodePool
 from .node_pool_node_config_details import NodePoolNodeConfigDetails
 from .node_pool_options import NodePoolOptions
 from .node_pool_placement_config_details import NodePoolPlacementConfigDetails
+from .node_pool_pod_network_option_details import NodePoolPodNetworkOptionDetails
 from .node_pool_summary import NodePoolSummary
 from .node_shape_config import NodeShapeConfig
 from .node_source_details import NodeSourceDetails
 from .node_source_option import NodeSourceOption
 from .node_source_via_image_details import NodeSourceViaImageDetails
 from .node_source_via_image_option import NodeSourceViaImageOption
+from .oci_vcn_ip_native_cluster_pod_network_option_details import OciVcnIpNativeClusterPodNetworkOptionDetails
+from .oci_vcn_ip_native_node_pool_pod_network_option_details import OciVcnIpNativeNodePoolPodNetworkOptionDetails
 from .persistent_volume_config_details import PersistentVolumeConfigDetails
 from .service_lb_config_details import ServiceLbConfigDetails
 from .update_cluster_details import UpdateClusterDetails
@@ -66,6 +72,7 @@ container_engine_type_mapping = {
     "ClusterMigrateToNativeVcnDetails": ClusterMigrateToNativeVcnDetails,
     "ClusterMigrateToNativeVcnStatus": ClusterMigrateToNativeVcnStatus,
     "ClusterOptions": ClusterOptions,
+    "ClusterPodNetworkOptionDetails": ClusterPodNetworkOptionDetails,
     "ClusterSummary": ClusterSummary,
     "CreateClusterDetails": CreateClusterDetails,
     "CreateClusterEndpointConfigDetails": CreateClusterEndpointConfigDetails,
@@ -74,6 +81,8 @@ container_engine_type_mapping = {
     "CreateNodePoolDetails": CreateNodePoolDetails,
     "CreateNodePoolNodeConfigDetails": CreateNodePoolNodeConfigDetails,
     "CreateNodeShapeConfigDetails": CreateNodeShapeConfigDetails,
+    "FlannelOverlayClusterPodNetworkOptionDetails": FlannelOverlayClusterPodNetworkOptionDetails,
+    "FlannelOverlayNodePoolPodNetworkOptionDetails": FlannelOverlayNodePoolPodNetworkOptionDetails,
     "ImagePolicyConfig": ImagePolicyConfig,
     "KeyDetails": KeyDetails,
     "KeyValue": KeyValue,
@@ -85,12 +94,15 @@ container_engine_type_mapping = {
     "NodePoolNodeConfigDetails": NodePoolNodeConfigDetails,
     "NodePoolOptions": NodePoolOptions,
     "NodePoolPlacementConfigDetails": NodePoolPlacementConfigDetails,
+    "NodePoolPodNetworkOptionDetails": NodePoolPodNetworkOptionDetails,
     "NodePoolSummary": NodePoolSummary,
     "NodeShapeConfig": NodeShapeConfig,
     "NodeSourceDetails": NodeSourceDetails,
     "NodeSourceOption": NodeSourceOption,
     "NodeSourceViaImageDetails": NodeSourceViaImageDetails,
     "NodeSourceViaImageOption": NodeSourceViaImageOption,
+    "OciVcnIpNativeClusterPodNetworkOptionDetails": OciVcnIpNativeClusterPodNetworkOptionDetails,
+    "OciVcnIpNativeNodePoolPodNetworkOptionDetails": OciVcnIpNativeNodePoolPodNetworkOptionDetails,
     "PersistentVolumeConfigDetails": PersistentVolumeConfigDetails,
     "ServiceLbConfigDetails": ServiceLbConfigDetails,
     "UpdateClusterDetails": UpdateClusterDetails,
