@@ -21,6 +21,10 @@ class UpdateHostInsightDetails(object):
     #: This constant has a value of "EM_MANAGED_EXTERNAL_HOST"
     ENTITY_SOURCE_EM_MANAGED_EXTERNAL_HOST = "EM_MANAGED_EXTERNAL_HOST"
 
+    #: A constant which can be used with the entity_source property of a UpdateHostInsightDetails.
+    #: This constant has a value of "PE_COMANAGED_HOST"
+    ENTITY_SOURCE_PE_COMANAGED_HOST = "PE_COMANAGED_HOST"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateHostInsightDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -33,7 +37,7 @@ class UpdateHostInsightDetails(object):
 
         :param entity_source:
             The value to assign to the entity_source property of this UpdateHostInsightDetails.
-            Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST"
+            Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST", "PE_COMANAGED_HOST"
         :type entity_source: str
 
         :param freeform_tags:
@@ -83,7 +87,7 @@ class UpdateHostInsightDetails(object):
         **[Required]** Gets the entity_source of this UpdateHostInsightDetails.
         Source of the host entity.
 
-        Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST"
+        Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST", "PE_COMANAGED_HOST"
 
 
         :return: The entity_source of this UpdateHostInsightDetails.
@@ -101,7 +105,7 @@ class UpdateHostInsightDetails(object):
         :param entity_source: The entity_source of this UpdateHostInsightDetails.
         :type: str
         """
-        allowed_values = ["MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST"]
+        allowed_values = ["MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST", "PE_COMANAGED_HOST"]
         if not value_allowed_none_or_none_sentinel(entity_source, allowed_values):
             raise ValueError(
                 "Invalid value for `entity_source`, must be None or one of {0}"

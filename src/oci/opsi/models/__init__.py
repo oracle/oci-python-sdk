@@ -188,6 +188,7 @@ from .pe_comanaged_database_connection_details import PeComanagedDatabaseConnect
 from .pe_comanaged_database_host_details import PeComanagedDatabaseHostDetails
 from .pe_comanaged_database_insight import PeComanagedDatabaseInsight
 from .pe_comanaged_database_insight_summary import PeComanagedDatabaseInsightSummary
+from .pe_comanaged_host_configuration_summary import PeComanagedHostConfigurationSummary
 from .pe_comanaged_managed_external_database_configuration_summary import PeComanagedManagedExternalDatabaseConfigurationSummary
 from .projected_data_item import ProjectedDataItem
 from .query_data_object_json_result_set_rows_collection import QueryDataObjectJsonResultSetRowsCollection
@@ -470,6 +471,7 @@ opsi_type_mapping = {
     "PeComanagedDatabaseHostDetails": PeComanagedDatabaseHostDetails,
     "PeComanagedDatabaseInsight": PeComanagedDatabaseInsight,
     "PeComanagedDatabaseInsightSummary": PeComanagedDatabaseInsightSummary,
+    "PeComanagedHostConfigurationSummary": PeComanagedHostConfigurationSummary,
     "PeComanagedManagedExternalDatabaseConfigurationSummary": PeComanagedManagedExternalDatabaseConfigurationSummary,
     "ProjectedDataItem": ProjectedDataItem,
     "QueryDataObjectJsonResultSetRowsCollection": QueryDataObjectJsonResultSetRowsCollection,

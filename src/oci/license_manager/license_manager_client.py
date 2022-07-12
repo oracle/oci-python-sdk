@@ -137,7 +137,7 @@ class LicenseManagerClient(object):
         resource_path = "/licenses/actions/bulkUpload"
         method = "POST"
         operation_name = "bulk_upload_license_records"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/BulkUploadLicenseRecordsDetails/BulkUploadLicenseRecords"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -231,7 +231,7 @@ class LicenseManagerClient(object):
         resource_path = "/licenseRecords"
         method = "POST"
         operation_name = "create_license_record"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/LicenseRecord/CreateLicenseRecord"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -332,7 +332,7 @@ class LicenseManagerClient(object):
         resource_path = "/productLicenses"
         method = "POST"
         operation_name = "create_product_license"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/ProductLicense/CreateProductLicense"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -425,7 +425,7 @@ class LicenseManagerClient(object):
         resource_path = "/licenseRecords/{licenseRecordId}"
         method = "DELETE"
         operation_name = "delete_license_record"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/LicenseRecord/DeleteLicenseRecord"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -525,7 +525,7 @@ class LicenseManagerClient(object):
         resource_path = "/productLicenses/{productLicenseId}"
         method = "DELETE"
         operation_name = "delete_product_license"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/ProductLicense/DeleteProductLicense"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -617,7 +617,7 @@ class LicenseManagerClient(object):
         resource_path = "/licenses/actions/bulkUploadTemplate"
         method = "GET"
         operation_name = "get_bulk_upload_template"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/BulkUploadTemplate/GetBulkUploadTemplate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -702,7 +702,7 @@ class LicenseManagerClient(object):
         resource_path = "/configuration"
         method = "GET"
         operation_name = "get_configuration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/Configuration/GetConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -797,7 +797,7 @@ class LicenseManagerClient(object):
         resource_path = "/licenseMetrics"
         method = "GET"
         operation_name = "get_license_metric"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/LicenseMetric/GetLicenseMetric"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -889,7 +889,7 @@ class LicenseManagerClient(object):
         resource_path = "/licenseRecords/{licenseRecordId}"
         method = "GET"
         operation_name = "get_license_record"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/LicenseRecord/GetLicenseRecord"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -984,7 +984,7 @@ class LicenseManagerClient(object):
         resource_path = "/productLicenses/{productLicenseId}"
         method = "GET"
         operation_name = "get_product_license"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/ProductLicense/GetProductLicense"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1099,7 +1099,7 @@ class LicenseManagerClient(object):
         resource_path = "/licenseRecords"
         method = "GET"
         operation_name = "list_license_records"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/LicenseRecordCollection/ListLicenseRecords"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1239,7 +1239,7 @@ class LicenseManagerClient(object):
         resource_path = "/productLicenseConsumers"
         method = "GET"
         operation_name = "list_product_license_consumers"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/ProductLicenseConsumerCollection/ListProductLicenseConsumers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1379,7 +1379,7 @@ class LicenseManagerClient(object):
         resource_path = "/productLicenses"
         method = "GET"
         operation_name = "list_product_licenses"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/ProductLicenseCollection/ListProductLicenses"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1518,7 +1518,7 @@ class LicenseManagerClient(object):
         resource_path = "/topUtilizedProductLicenses"
         method = "GET"
         operation_name = "list_top_utilized_product_licenses"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/TopUtilizedProductLicenseCollection/ListTopUtilizedProductLicenses"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1662,7 +1662,7 @@ class LicenseManagerClient(object):
         resource_path = "/topUtilizedResources"
         method = "GET"
         operation_name = "list_top_utilized_resources"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/TopUtilizedResourceCollection/ListTopUtilizedResources"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1795,7 +1795,7 @@ class LicenseManagerClient(object):
         resource_path = "/configuration"
         method = "PUT"
         operation_name = "update_configuration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/Configuration/UpdateConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1897,7 +1897,7 @@ class LicenseManagerClient(object):
         resource_path = "/licenseRecords/{licenseRecordId}"
         method = "PUT"
         operation_name = "update_license_record"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/LicenseRecord/UpdateLicenseRecord"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2004,7 +2004,7 @@ class LicenseManagerClient(object):
         resource_path = "/productLicenses/{productLicenseId}"
         method = "PUT"
         operation_name = "update_product_license"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/licensemanager/20220430/ProductLicense/UpdateProductLicense"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

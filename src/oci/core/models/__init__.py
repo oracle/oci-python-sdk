@@ -357,6 +357,7 @@ from .public_ip import PublicIp
 from .public_ip_pool import PublicIpPool
 from .public_ip_pool_collection import PublicIpPoolCollection
 from .public_ip_pool_summary import PublicIpPoolSummary
+from .reboot_migrate_action_details import RebootMigrateActionDetails
 from .remote_peering_connection import RemotePeeringConnection
 from .remote_peering_connection_drg_attachment_network_details import RemotePeeringConnectionDrgAttachmentNetworkDetails
 from .remove_drg_route_distribution_statements_details import RemoveDrgRouteDistributionStatementsDetails
@@ -872,6 +873,7 @@ core_type_mapping = {
     "PublicIpPool": PublicIpPool,
     "PublicIpPoolCollection": PublicIpPoolCollection,
     "PublicIpPoolSummary": PublicIpPoolSummary,
+    "RebootMigrateActionDetails": RebootMigrateActionDetails,
     "RemotePeeringConnection": RemotePeeringConnection,
     "RemotePeeringConnectionDrgAttachmentNetworkDetails": RemotePeeringConnectionDrgAttachmentNetworkDetails,
     "RemoveDrgRouteDistributionStatementsDetails": RemoveDrgRouteDistributionStatementsDetails,

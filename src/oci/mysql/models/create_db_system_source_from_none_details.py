@@ -21,7 +21,7 @@ class CreateDbSystemSourceFromNoneDetails(CreateDbSystemSourceDetails):
 
         :param source_type:
             The value to assign to the source_type property of this CreateDbSystemSourceFromNoneDetails.
-            Allowed values for this property are: "NONE", "BACKUP", "IMPORTURL"
+            Allowed values for this property are: "NONE", "BACKUP", "PITR", "IMPORTURL"
         :type source_type: str
 
         """

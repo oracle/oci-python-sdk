@@ -22,6 +22,10 @@ class ResourceUsageSummary(object):
             The value to assign to the exadata_insight_id property of this ResourceUsageSummary.
         :type exadata_insight_id: str
 
+        :param exadata_display_name:
+            The value to assign to the exadata_display_name property of this ResourceUsageSummary.
+        :type exadata_display_name: str
+
         :param usage:
             The value to assign to the usage property of this ResourceUsageSummary.
         :type usage: float
@@ -41,6 +45,7 @@ class ResourceUsageSummary(object):
         """
         self.swagger_types = {
             'exadata_insight_id': 'str',
+            'exadata_display_name': 'str',
             'usage': 'float',
             'capacity': 'float',
             'utilization_percent': 'float',
@@ -49,6 +54,7 @@ class ResourceUsageSummary(object):
 
         self.attribute_map = {
             'exadata_insight_id': 'exadataInsightId',
+            'exadata_display_name': 'exadataDisplayName',
             'usage': 'usage',
             'capacity': 'capacity',
             'utilization_percent': 'utilizationPercent',
@@ -56,6 +62,7 @@ class ResourceUsageSummary(object):
         }
 
         self._exadata_insight_id = None
+        self._exadata_display_name = None
         self._usage = None
         self._capacity = None
         self._utilization_percent = None
@@ -88,6 +95,30 @@ class ResourceUsageSummary(object):
         :type: str
         """
         self._exadata_insight_id = exadata_insight_id
+
+    @property
+    def exadata_display_name(self):
+        """
+        Gets the exadata_display_name of this ResourceUsageSummary.
+        The user-friendly name for the Exadata system. The name does not have to be unique.
+
+
+        :return: The exadata_display_name of this ResourceUsageSummary.
+        :rtype: str
+        """
+        return self._exadata_display_name
+
+    @exadata_display_name.setter
+    def exadata_display_name(self, exadata_display_name):
+        """
+        Sets the exadata_display_name of this ResourceUsageSummary.
+        The user-friendly name for the Exadata system. The name does not have to be unique.
+
+
+        :param exadata_display_name: The exadata_display_name of this ResourceUsageSummary.
+        :type: str
+        """
+        self._exadata_display_name = exadata_display_name
 
     @property
     def usage(self):

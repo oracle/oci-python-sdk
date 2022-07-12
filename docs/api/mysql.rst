@@ -60,6 +60,7 @@ Mysql
     oci.mysql.models.CreateDbSystemSourceDetails
     oci.mysql.models.CreateDbSystemSourceFromBackupDetails
     oci.mysql.models.CreateDbSystemSourceFromNoneDetails
+    oci.mysql.models.CreateDbSystemSourceFromPitrDetails
     oci.mysql.models.CreateDbSystemSourceImportFromUrlDetails
     oci.mysql.models.CreateDeletionPolicyDetails
     oci.mysql.models.CreateMaintenanceDetails
@@ -70,6 +71,7 @@ Mysql
     oci.mysql.models.DbSystemSource
     oci.mysql.models.DbSystemSourceFromBackup
     oci.mysql.models.DbSystemSourceFromNone
+    oci.mysql.models.DbSystemSourceFromPitr
     oci.mysql.models.DbSystemSourceImportFromUrl
     oci.mysql.models.DbSystemSummary
     oci.mysql.models.DeletionPolicyDetails
@@ -81,6 +83,8 @@ Mysql
     oci.mysql.models.HeatWaveNode
     oci.mysql.models.MaintenanceDetails
     oci.mysql.models.PemCaCertificate
+    oci.mysql.models.PitrPolicy
+    oci.mysql.models.PointInTimeRecoveryDetails
     oci.mysql.models.RestartDbSystemDetails
     oci.mysql.models.ShapeSummary
     oci.mysql.models.StopDbSystemDetails

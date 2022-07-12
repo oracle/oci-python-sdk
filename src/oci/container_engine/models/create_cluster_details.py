@@ -58,6 +58,10 @@ class CreateClusterDetails(object):
             The value to assign to the image_policy_config property of this CreateClusterDetails.
         :type image_policy_config: oci.container_engine.models.CreateImagePolicyConfigDetails
 
+        :param cluster_pod_network_options:
+            The value to assign to the cluster_pod_network_options property of this CreateClusterDetails.
+        :type cluster_pod_network_options: list[oci.container_engine.models.ClusterPodNetworkOptionDetails]
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -69,7 +73,8 @@ class CreateClusterDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'options': 'ClusterCreateOptions',
-            'image_policy_config': 'CreateImagePolicyConfigDetails'
+            'image_policy_config': 'CreateImagePolicyConfigDetails',
+            'cluster_pod_network_options': 'list[ClusterPodNetworkOptionDetails]'
         }
 
         self.attribute_map = {
@@ -82,7 +87,8 @@ class CreateClusterDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'options': 'options',
-            'image_policy_config': 'imagePolicyConfig'
+            'image_policy_config': 'imagePolicyConfig',
+            'cluster_pod_network_options': 'clusterPodNetworkOptions'
         }
 
         self._name = None
@@ -95,6 +101,7 @@ class CreateClusterDetails(object):
         self._defined_tags = None
         self._options = None
         self._image_policy_config = None
+        self._cluster_pod_network_options = None
 
     @property
     def name(self):
@@ -357,6 +364,30 @@ class CreateClusterDetails(object):
         :type: oci.container_engine.models.CreateImagePolicyConfigDetails
         """
         self._image_policy_config = image_policy_config
+
+    @property
+    def cluster_pod_network_options(self):
+        """
+        Gets the cluster_pod_network_options of this CreateClusterDetails.
+        Available CNIs and network options for existing and new node pools of the cluster
+
+
+        :return: The cluster_pod_network_options of this CreateClusterDetails.
+        :rtype: list[oci.container_engine.models.ClusterPodNetworkOptionDetails]
+        """
+        return self._cluster_pod_network_options
+
+    @cluster_pod_network_options.setter
+    def cluster_pod_network_options(self, cluster_pod_network_options):
+        """
+        Sets the cluster_pod_network_options of this CreateClusterDetails.
+        Available CNIs and network options for existing and new node pools of the cluster
+
+
+        :param cluster_pod_network_options: The cluster_pod_network_options of this CreateClusterDetails.
+        :type: list[oci.container_engine.models.ClusterPodNetworkOptionDetails]
+        """
+        self._cluster_pod_network_options = cluster_pod_network_options
 
     def __repr__(self):
         return formatted_flat_dict(self)

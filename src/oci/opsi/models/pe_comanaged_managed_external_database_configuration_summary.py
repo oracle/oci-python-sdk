@@ -68,9 +68,17 @@ class PeComanagedManagedExternalDatabaseConfigurationSummary(DatabaseConfigurati
             The value to assign to the database_id property of this PeComanagedManagedExternalDatabaseConfigurationSummary.
         :type database_id: str
 
+        :param parent_id:
+            The value to assign to the parent_id property of this PeComanagedManagedExternalDatabaseConfigurationSummary.
+        :type parent_id: str
+
         :param opsi_private_endpoint_id:
             The value to assign to the opsi_private_endpoint_id property of this PeComanagedManagedExternalDatabaseConfigurationSummary.
         :type opsi_private_endpoint_id: str
+
+        :param instances:
+            The value to assign to the instances property of this PeComanagedManagedExternalDatabaseConfigurationSummary.
+        :type instances: list[oci.opsi.models.HostInstanceMap]
 
         """
         self.swagger_types = {
@@ -86,7 +94,9 @@ class PeComanagedManagedExternalDatabaseConfigurationSummary(DatabaseConfigurati
             'freeform_tags': 'dict(str, str)',
             'processor_count': 'int',
             'database_id': 'str',
-            'opsi_private_endpoint_id': 'str'
+            'parent_id': 'str',
+            'opsi_private_endpoint_id': 'str',
+            'instances': 'list[HostInstanceMap]'
         }
 
         self.attribute_map = {
@@ -102,7 +112,9 @@ class PeComanagedManagedExternalDatabaseConfigurationSummary(DatabaseConfigurati
             'freeform_tags': 'freeformTags',
             'processor_count': 'processorCount',
             'database_id': 'databaseId',
-            'opsi_private_endpoint_id': 'opsiPrivateEndpointId'
+            'parent_id': 'parentId',
+            'opsi_private_endpoint_id': 'opsiPrivateEndpointId',
+            'instances': 'instances'
         }
 
         self._database_insight_id = None
@@ -117,7 +129,9 @@ class PeComanagedManagedExternalDatabaseConfigurationSummary(DatabaseConfigurati
         self._freeform_tags = None
         self._processor_count = None
         self._database_id = None
+        self._parent_id = None
         self._opsi_private_endpoint_id = None
+        self._instances = None
         self._entity_source = 'PE_COMANAGED_DATABASE'
 
     @property
@@ -149,6 +163,34 @@ class PeComanagedManagedExternalDatabaseConfigurationSummary(DatabaseConfigurati
         self._database_id = database_id
 
     @property
+    def parent_id(self):
+        """
+        **[Required]** Gets the parent_id of this PeComanagedManagedExternalDatabaseConfigurationSummary.
+        The `OCID`__ of the database.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The parent_id of this PeComanagedManagedExternalDatabaseConfigurationSummary.
+        :rtype: str
+        """
+        return self._parent_id
+
+    @parent_id.setter
+    def parent_id(self, parent_id):
+        """
+        Sets the parent_id of this PeComanagedManagedExternalDatabaseConfigurationSummary.
+        The `OCID`__ of the database.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param parent_id: The parent_id of this PeComanagedManagedExternalDatabaseConfigurationSummary.
+        :type: str
+        """
+        self._parent_id = parent_id
+
+    @property
     def opsi_private_endpoint_id(self):
         """
         **[Required]** Gets the opsi_private_endpoint_id of this PeComanagedManagedExternalDatabaseConfigurationSummary.
@@ -175,6 +217,30 @@ class PeComanagedManagedExternalDatabaseConfigurationSummary(DatabaseConfigurati
         :type: str
         """
         self._opsi_private_endpoint_id = opsi_private_endpoint_id
+
+    @property
+    def instances(self):
+        """
+        **[Required]** Gets the instances of this PeComanagedManagedExternalDatabaseConfigurationSummary.
+        Array of hostname and instance name.
+
+
+        :return: The instances of this PeComanagedManagedExternalDatabaseConfigurationSummary.
+        :rtype: list[oci.opsi.models.HostInstanceMap]
+        """
+        return self._instances
+
+    @instances.setter
+    def instances(self, instances):
+        """
+        Sets the instances of this PeComanagedManagedExternalDatabaseConfigurationSummary.
+        Array of hostname and instance name.
+
+
+        :param instances: The instances of this PeComanagedManagedExternalDatabaseConfigurationSummary.
+        :type: list[oci.opsi.models.HostInstanceMap]
+        """
+        self._instances = instances
 
     def __repr__(self):
         return formatted_flat_dict(self)

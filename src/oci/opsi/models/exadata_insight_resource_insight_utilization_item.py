@@ -22,6 +22,10 @@ class ExadataInsightResourceInsightUtilizationItem(object):
             The value to assign to the exadata_insight_id property of this ExadataInsightResourceInsightUtilizationItem.
         :type exadata_insight_id: str
 
+        :param exadata_display_name:
+            The value to assign to the exadata_display_name property of this ExadataInsightResourceInsightUtilizationItem.
+        :type exadata_display_name: str
+
         :param current_utilization:
             The value to assign to the current_utilization property of this ExadataInsightResourceInsightUtilizationItem.
         :type current_utilization: float
@@ -41,6 +45,7 @@ class ExadataInsightResourceInsightUtilizationItem(object):
         """
         self.swagger_types = {
             'exadata_insight_id': 'str',
+            'exadata_display_name': 'str',
             'current_utilization': 'float',
             'projected_utilization': 'float',
             'days_to_reach_high_utilization': 'int',
@@ -49,6 +54,7 @@ class ExadataInsightResourceInsightUtilizationItem(object):
 
         self.attribute_map = {
             'exadata_insight_id': 'exadataInsightId',
+            'exadata_display_name': 'exadataDisplayName',
             'current_utilization': 'currentUtilization',
             'projected_utilization': 'projectedUtilization',
             'days_to_reach_high_utilization': 'daysToReachHighUtilization',
@@ -56,6 +62,7 @@ class ExadataInsightResourceInsightUtilizationItem(object):
         }
 
         self._exadata_insight_id = None
+        self._exadata_display_name = None
         self._current_utilization = None
         self._projected_utilization = None
         self._days_to_reach_high_utilization = None
@@ -88,6 +95,30 @@ class ExadataInsightResourceInsightUtilizationItem(object):
         :type: str
         """
         self._exadata_insight_id = exadata_insight_id
+
+    @property
+    def exadata_display_name(self):
+        """
+        Gets the exadata_display_name of this ExadataInsightResourceInsightUtilizationItem.
+        The user-friendly name for the Exadata system. The name does not have to be unique.
+
+
+        :return: The exadata_display_name of this ExadataInsightResourceInsightUtilizationItem.
+        :rtype: str
+        """
+        return self._exadata_display_name
+
+    @exadata_display_name.setter
+    def exadata_display_name(self, exadata_display_name):
+        """
+        Sets the exadata_display_name of this ExadataInsightResourceInsightUtilizationItem.
+        The user-friendly name for the Exadata system. The name does not have to be unique.
+
+
+        :param exadata_display_name: The exadata_display_name of this ExadataInsightResourceInsightUtilizationItem.
+        :type: str
+        """
+        self._exadata_display_name = exadata_display_name
 
     @property
     def current_utilization(self):

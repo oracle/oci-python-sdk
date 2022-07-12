@@ -377,6 +377,7 @@ Core Services
     oci.core.models.PublicIpPool
     oci.core.models.PublicIpPoolCollection
     oci.core.models.PublicIpPoolSummary
+    oci.core.models.RebootMigrateActionDetails
     oci.core.models.RemotePeeringConnection
     oci.core.models.RemotePeeringConnectionDrgAttachmentNetworkDetails
     oci.core.models.RemoveDrgRouteDistributionStatementsDetails

@@ -4610,7 +4610,7 @@ class ComputeClient(object):
         then powered back on.
 
 
-        - **SENDDIAGNOSTICINTERRUPT** - For advanced users. **Warning: Sending a diagnostic interrupt to a live system can
+        - **SENDDIAGNOSTICINTERRUPT** - For advanced users. **Caution: Sending a diagnostic interrupt to a live system can
         cause data corruption or system failure.** Sends a diagnostic interrupt that causes the instance's
         OS to crash and then reboot. Before you send a diagnostic interrupt, you must configure the instance to generate a
         crash dump file when it crashes. The crash dump captures information about the state of the OS at the time of
@@ -4619,11 +4619,15 @@ class ComputeClient(object):
 
 
 
-        - **DIAGNOSTICREBOOT** - Powers off the instance, rebuilds it on the physical host, and then powers it back on.
+        - **DIAGNOSTICREBOOT** - Powers off the instance, rebuilds it, and then powers it back on.
         Before you send a diagnostic reboot, restart the instance's OS, confirm that the instance and networking settings are configured
         correctly, and try other `troubleshooting steps`__.
         Use diagnostic reboot as a final attempt to troubleshoot an unreachable instance. For virtual machine (VM) instances only.
         For more information, see `Performing a Diagnostic Reboot`__.
+
+
+        - **REBOOTMIGRATE** - Powers off the instance, moves it to new hardware, and then powers it back on.
+
 
         For more information about managing instance lifecycle states, see
         `Stopping and Starting an Instance`__.
@@ -4642,7 +4646,7 @@ class ComputeClient(object):
         :param str action: (required)
             The action to perform on the instance.
 
-            Allowed values are: "STOP", "START", "SOFTRESET", "RESET", "SOFTSTOP", "SENDDIAGNOSTICINTERRUPT", "DIAGNOSTICREBOOT"
+            Allowed values are: "STOP", "START", "SOFTRESET", "RESET", "SOFTSTOP", "SENDDIAGNOSTICINTERRUPT", "DIAGNOSTICREBOOT", "REBOOTMIGRATE"
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -8342,9 +8346,6 @@ class ComputeClient(object):
         To preserve the boot volume associated with the instance, specify `true` for `PreserveBootVolumeQueryParam`.
         To delete the boot volume when the instance is deleted, specify `false` or do not specify a value for `PreserveBootVolumeQueryParam`.
 
-        To preserve data volumes created with the instance, specify `true` for `PreserveDataVolumesQueryParam`.
-        To delete the data volumes when the instance itself is deleted, specify `false` or do not specify a value for `PreserveDataVolumesQueryParam`.
-
         This is an asynchronous operation. The instance's `lifecycleState` will change to TERMINATING temporarily
         until the instance is completely removed.
 
@@ -8361,10 +8362,6 @@ class ComputeClient(object):
 
         :param bool preserve_boot_volume: (optional)
             Specifies whether to delete or preserve the boot volume when terminating an instance.
-            When set to `true`, the boot volume is preserved. The default value is `false`.
-
-        :param bool preserve_data_volumes: (optional)
-            Specifies whether to delete or preserve the data volumes when terminating an instance.
             When set to `true`, the boot volume is preserved. The default value is `false`.
 
         :param obj retry_strategy: (optional)
@@ -8395,8 +8392,7 @@ class ComputeClient(object):
             "allow_control_chars",
             "retry_strategy",
             "if_match",
-            "preserve_boot_volume",
-            "preserve_data_volumes"
+            "preserve_boot_volume"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -8414,8 +8410,7 @@ class ComputeClient(object):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         query_params = {
-            "preserveBootVolume": kwargs.get("preserve_boot_volume", missing),
-            "preserveDataVolumes": kwargs.get("preserve_data_volumes", missing)
+            "preserveBootVolume": kwargs.get("preserve_boot_volume", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

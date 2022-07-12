@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.75.0 - 2022-07-12
+====================
+
+Added
+-----
+* Support for DBCS databases in the Operations Insights service
+* Support for point-in-time recovery for non-highly-available database systems in the MySQL Database service
+* Support for triggering reboot migration on instances with pending maintenance in the Compute service
+* Support for native pod networking in the Container Engine for Kubernetes service
+* Support for creating Data Guard associations with new database systems in the Database service
+ 
+Breaking
+--------
+* Parameter `host_type` in operation `list_host_insights` in the Operations Insights service has strict value checking for allowed values. `ValueError` is raised if an invalid value is provided.
+* Parameter `preserve_data_volumes` is removed from operation `terminate_instance` in the Compute service.
+ 
+=====================
 2.74.0 - 2022-07-05
 ====================
 

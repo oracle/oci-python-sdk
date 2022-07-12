@@ -6865,6 +6865,8 @@ class OperationsInsightsClient(object):
             Filter by one or more host types.
             Possible value is EXTERNAL-HOST.
 
+            Allowed values are: "EXTERNAL-HOST"
+
         :param list[str] platform_type: (optional)
             Filter by one or more platform types.
             Supported platformType(s) for MACS-managed external host insight: [LINUX].
@@ -6974,6 +6976,14 @@ class OperationsInsightsClient(object):
                 if lifecycle_state_item not in lifecycle_state_allowed_values:
                     raise ValueError(
                         "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    )
+
+        if 'host_type' in kwargs:
+            host_type_allowed_values = ["EXTERNAL-HOST"]
+            for host_type_item in kwargs['host_type']:
+                if host_type_item not in host_type_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `host_type`, must be one of {0}".format(host_type_allowed_values)
                     )
 
         if 'platform_type' in kwargs:
