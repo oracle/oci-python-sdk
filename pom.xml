@@ -63,6 +63,10 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/opa/pom.xml</module>
+    <module>poms/media_services/pom.xml</module>
+    <module>poms/fusion_apps/pom.xml</module>
+    <module>poms/lockbox/pom.xml</module>
     <module>poms/em_warehouse/pom.xml</module>
     <module>poms/vn_monitoring/pom.xml</module>
     <module>poms/network_firewall/pom.xml</module>

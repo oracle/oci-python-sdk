@@ -155,3 +155,7 @@
 ^src/oci/network_firewall/.*\.py$
 ^src/oci/vn_monitoring/.*\.py$
 ^src/oci/em_warehouse/.*\.py$
+^src/oci/lockbox/.*\.py$
+^src/oci/fusion_apps/.*\.py$
+^src/oci/media_services/.*\.py$
+^src/oci/opa/.*\.py$

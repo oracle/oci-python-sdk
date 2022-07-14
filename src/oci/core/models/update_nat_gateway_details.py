@@ -34,25 +34,32 @@ class UpdateNatGatewayDetails(object):
             The value to assign to the block_traffic property of this UpdateNatGatewayDetails.
         :type block_traffic: bool
 
+        :param route_table_id:
+            The value to assign to the route_table_id property of this UpdateNatGatewayDetails.
+        :type route_table_id: str
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
-            'block_traffic': 'bool'
+            'block_traffic': 'bool',
+            'route_table_id': 'str'
         }
 
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
-            'block_traffic': 'blockTraffic'
+            'block_traffic': 'blockTraffic',
+            'route_table_id': 'routeTableId'
         }
 
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
         self._block_traffic = None
+        self._route_table_id = None
 
     @property
     def defined_tags(self):
@@ -175,6 +182,42 @@ class UpdateNatGatewayDetails(object):
         :type: bool
         """
         self._block_traffic = block_traffic
+
+    @property
+    def route_table_id(self):
+        """
+        Gets the route_table_id of this UpdateNatGatewayDetails.
+        The `OCID`__ of the route table used by the NAT gateway.
+
+        If you don't specify a route table here, the NAT gateway is created without an associated route
+        table. The Networking service does NOT automatically associate the attached VCN's default route
+        table with the NAT gateway.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The route_table_id of this UpdateNatGatewayDetails.
+        :rtype: str
+        """
+        return self._route_table_id
+
+    @route_table_id.setter
+    def route_table_id(self, route_table_id):
+        """
+        Sets the route_table_id of this UpdateNatGatewayDetails.
+        The `OCID`__ of the route table used by the NAT gateway.
+
+        If you don't specify a route table here, the NAT gateway is created without an associated route
+        table. The Networking service does NOT automatically associate the attached VCN's default route
+        table with the NAT gateway.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param route_table_id: The route_table_id of this UpdateNatGatewayDetails.
+        :type: str
+        """
+        self._route_table_id = route_table_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

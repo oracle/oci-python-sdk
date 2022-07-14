@@ -41,6 +41,10 @@ class WorkRequestSummary(object):
     #: This constant has a value of "ADD_SOURCES_TO_AGENT"
     OPERATION_TYPE_ADD_SOURCES_TO_AGENT = "ADD_SOURCES_TO_AGENT"
 
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "BULK_ADD_RESOURCES"
+    OPERATION_TYPE_BULK_ADD_RESOURCES = "BULK_ADD_RESOURCES"
+
     #: A constant which can be used with the status property of a WorkRequestSummary.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -76,7 +80,7 @@ class WorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequestSummary.
-            Allowed values for this property are: "CREATE_RESOURCES", "UPDATE_RESOURCES", "DELETE_RESOURCES", "MOVE_RESOURCES", "ENABLE_EXTERNAL_DATABASE", "DISABLE_EXTERNAL_DATABASE", "ADD_SOURCES_TO_AGENT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_RESOURCES", "UPDATE_RESOURCES", "DELETE_RESOURCES", "MOVE_RESOURCES", "ENABLE_EXTERNAL_DATABASE", "DISABLE_EXTERNAL_DATABASE", "ADD_SOURCES_TO_AGENT", "BULK_ADD_RESOURCES", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -155,7 +159,7 @@ class WorkRequestSummary(object):
         **[Required]** Gets the operation_type of this WorkRequestSummary.
         Type of the work request
 
-        Allowed values for this property are: "CREATE_RESOURCES", "UPDATE_RESOURCES", "DELETE_RESOURCES", "MOVE_RESOURCES", "ENABLE_EXTERNAL_DATABASE", "DISABLE_EXTERNAL_DATABASE", "ADD_SOURCES_TO_AGENT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_RESOURCES", "UPDATE_RESOURCES", "DELETE_RESOURCES", "MOVE_RESOURCES", "ENABLE_EXTERNAL_DATABASE", "DISABLE_EXTERNAL_DATABASE", "ADD_SOURCES_TO_AGENT", "BULK_ADD_RESOURCES", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -174,7 +178,7 @@ class WorkRequestSummary(object):
         :param operation_type: The operation_type of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["CREATE_RESOURCES", "UPDATE_RESOURCES", "DELETE_RESOURCES", "MOVE_RESOURCES", "ENABLE_EXTERNAL_DATABASE", "DISABLE_EXTERNAL_DATABASE", "ADD_SOURCES_TO_AGENT"]
+        allowed_values = ["CREATE_RESOURCES", "UPDATE_RESOURCES", "DELETE_RESOURCES", "MOVE_RESOURCES", "ENABLE_EXTERNAL_DATABASE", "DISABLE_EXTERNAL_DATABASE", "ADD_SOURCES_TO_AGENT", "BULK_ADD_RESOURCES"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
