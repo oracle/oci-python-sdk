@@ -4,13 +4,26 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.75.1 - TBD
+2.75.1 - 2022-07-19
 ====================
 
 Added
 -----
-* TBD
-
+* Support for calling Oracle Cloud Infrastructure services in the mx-queretaro-1 region
+* Support for the Process Automation service
+* Support for the Managed Access service
+* Support for extending maintenance reboot due dates on virtual machines in the Compute service
+* Support for ingress routing tables on NAT gateways and internet gateways in the Networking service
+* Support for container database and pluggable database discovery in the Stack Monitoring service
+* Support for displaying rack serial numbers for Exadata infrastructure resources in the Database service
+* Support for grace periods for wallet rotation on autonomous databases in the Database service
+* Support for hosting models on flexible compute shapes with customizable OCPUs and memory in the Data Science service
+ 
+Changed
+-------
+* The upper bound for `pyOpenSSL` dependency has changed from `19.1.0` to `22.0.0`
+* The upper bound for `cryptography` dependency has changed from `3.4.7` to `37.0.2`
+ 
 ====================
 2.75.0 - 2022-07-12
 ====================
