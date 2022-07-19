@@ -22,16 +22,23 @@ class InstanceConfiguration(object):
             The value to assign to the instance_shape_name property of this InstanceConfiguration.
         :type instance_shape_name: str
 
+        :param model_deployment_instance_shape_config_details:
+            The value to assign to the model_deployment_instance_shape_config_details property of this InstanceConfiguration.
+        :type model_deployment_instance_shape_config_details: oci.data_science.models.ModelDeploymentInstanceShapeConfigDetails
+
         """
         self.swagger_types = {
-            'instance_shape_name': 'str'
+            'instance_shape_name': 'str',
+            'model_deployment_instance_shape_config_details': 'ModelDeploymentInstanceShapeConfigDetails'
         }
 
         self.attribute_map = {
-            'instance_shape_name': 'instanceShapeName'
+            'instance_shape_name': 'instanceShapeName',
+            'model_deployment_instance_shape_config_details': 'modelDeploymentInstanceShapeConfigDetails'
         }
 
         self._instance_shape_name = None
+        self._model_deployment_instance_shape_config_details = None
 
     @property
     def instance_shape_name(self):
@@ -56,6 +63,26 @@ class InstanceConfiguration(object):
         :type: str
         """
         self._instance_shape_name = instance_shape_name
+
+    @property
+    def model_deployment_instance_shape_config_details(self):
+        """
+        Gets the model_deployment_instance_shape_config_details of this InstanceConfiguration.
+
+        :return: The model_deployment_instance_shape_config_details of this InstanceConfiguration.
+        :rtype: oci.data_science.models.ModelDeploymentInstanceShapeConfigDetails
+        """
+        return self._model_deployment_instance_shape_config_details
+
+    @model_deployment_instance_shape_config_details.setter
+    def model_deployment_instance_shape_config_details(self, model_deployment_instance_shape_config_details):
+        """
+        Sets the model_deployment_instance_shape_config_details of this InstanceConfiguration.
+
+        :param model_deployment_instance_shape_config_details: The model_deployment_instance_shape_config_details of this InstanceConfiguration.
+        :type: oci.data_science.models.ModelDeploymentInstanceShapeConfigDetails
+        """
+        self._model_deployment_instance_shape_config_details = model_deployment_instance_shape_config_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -128,6 +128,10 @@ class ExadataInfrastructure(object):
             The value to assign to the max_data_storage_in_t_bs property of this ExadataInfrastructure.
         :type max_data_storage_in_t_bs: float
 
+        :param rack_serial_number:
+            The value to assign to the rack_serial_number property of this ExadataInfrastructure.
+        :type rack_serial_number: str
+
         :param storage_count:
             The value to assign to the storage_count property of this ExadataInfrastructure.
         :type storage_count: int
@@ -250,6 +254,7 @@ class ExadataInfrastructure(object):
             'max_db_node_storage_in_g_bs': 'int',
             'data_storage_size_in_tbs': 'float',
             'max_data_storage_in_t_bs': 'float',
+            'rack_serial_number': 'str',
             'storage_count': 'int',
             'additional_storage_count': 'int',
             'activated_storage_count': 'int',
@@ -293,6 +298,7 @@ class ExadataInfrastructure(object):
             'max_db_node_storage_in_g_bs': 'maxDbNodeStorageInGBs',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
             'max_data_storage_in_t_bs': 'maxDataStorageInTBs',
+            'rack_serial_number': 'rackSerialNumber',
             'storage_count': 'storageCount',
             'additional_storage_count': 'additionalStorageCount',
             'activated_storage_count': 'activatedStorageCount',
@@ -335,6 +341,7 @@ class ExadataInfrastructure(object):
         self._max_db_node_storage_in_g_bs = None
         self._data_storage_size_in_tbs = None
         self._max_data_storage_in_t_bs = None
+        self._rack_serial_number = None
         self._storage_count = None
         self._additional_storage_count = None
         self._activated_storage_count = None
@@ -715,6 +722,30 @@ class ExadataInfrastructure(object):
         :type: float
         """
         self._max_data_storage_in_t_bs = max_data_storage_in_t_bs
+
+    @property
+    def rack_serial_number(self):
+        """
+        Gets the rack_serial_number of this ExadataInfrastructure.
+        The serial number for the Exadata infrastructure.
+
+
+        :return: The rack_serial_number of this ExadataInfrastructure.
+        :rtype: str
+        """
+        return self._rack_serial_number
+
+    @rack_serial_number.setter
+    def rack_serial_number(self, rack_serial_number):
+        """
+        Sets the rack_serial_number of this ExadataInfrastructure.
+        The serial number for the Exadata infrastructure.
+
+
+        :param rack_serial_number: The rack_serial_number of this ExadataInfrastructure.
+        :type: str
+        """
+        self._rack_serial_number = rack_serial_number
 
     @property
     def storage_count(self):

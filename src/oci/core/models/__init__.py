@@ -297,6 +297,7 @@ from .instance_configuration_volume_source_from_volume_backup_details import Ins
 from .instance_configuration_volume_source_from_volume_details import InstanceConfigurationVolumeSourceFromVolumeDetails
 from .instance_console_connection import InstanceConsoleConnection
 from .instance_credentials import InstanceCredentials
+from .instance_maintenance_reboot import InstanceMaintenanceReboot
 from .instance_options import InstanceOptions
 from .instance_pool import InstancePool
 from .instance_pool_instance import InstancePoolInstance
@@ -813,6 +814,7 @@ core_type_mapping = {
     "InstanceConfigurationVolumeSourceFromVolumeDetails": InstanceConfigurationVolumeSourceFromVolumeDetails,
     "InstanceConsoleConnection": InstanceConsoleConnection,
     "InstanceCredentials": InstanceCredentials,
+    "InstanceMaintenanceReboot": InstanceMaintenanceReboot,
     "InstanceOptions": InstanceOptions,
     "InstancePool": InstancePool,
     "InstancePoolInstance": InstancePoolInstance,

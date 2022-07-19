@@ -77,6 +77,12 @@ API Reference
 * :doc:`File Storage <file_storage/client/oci.file_storage.FileStorageClient>`
 * :doc:`Functions Invoke <functions/client/oci.functions.FunctionsInvokeClient>`
 * :doc:`Functions Management <functions/client/oci.functions.FunctionsManagementClient>`
+* :doc:`Data Masking Activity <fusion_apps/client/oci.fusion_apps.DataMaskingActivityClient>`
+* :doc:`Fusion Environment <fusion_apps/client/oci.fusion_apps.FusionEnvironmentClient>`
+* :doc:`Fusion Environment Family <fusion_apps/client/oci.fusion_apps.FusionEnvironmentFamilyClient>`
+* :doc:`Refresh Activity <fusion_apps/client/oci.fusion_apps.RefreshActivityClient>`
+* :doc:`Scheduled Activity <fusion_apps/client/oci.fusion_apps.ScheduledActivityClient>`
+* :doc:`Service Attachment <fusion_apps/client/oci.fusion_apps.ServiceAttachmentClient>`
 * :doc:`Generic Artifacts Content <generic_artifacts_content/client/oci.generic_artifacts_content.GenericArtifactsContentClient>`
 * :doc:`Golden Gate <golden_gate/client/oci.golden_gate.GoldenGateClient>`
 * :doc:`Governance Rule <governance_rules_control_plane/client/oci.governance_rules_control_plane.GovernanceRuleClient>`
@@ -93,6 +99,7 @@ API Reference
 * :doc:`Limits <limits/client/oci.limits.LimitsClient>`
 * :doc:`Quotas <limits/client/oci.limits.QuotasClient>`
 * :doc:`Load Balancer <load_balancer/client/oci.load_balancer.LoadBalancerClient>`
+* :doc:`Lockbox <lockbox/client/oci.lockbox.LockboxClient>`
 * :doc:`Log Analytics <log_analytics/client/oci.log_analytics.LogAnalyticsClient>`
 * :doc:`Logging Management <logging/client/oci.logging.LoggingManagementClient>`
 * :doc:`Logging <loggingingestion/client/oci.loggingingestion.LoggingClient>`
@@ -101,6 +108,7 @@ API Reference
 * :doc:`Dashx Apis <management_dashboard/client/oci.management_dashboard.DashxApisClient>`
 * :doc:`Account <marketplace/client/oci.marketplace.AccountClient>`
 * :doc:`Marketplace <marketplace/client/oci.marketplace.MarketplaceClient>`
+* :doc:`Media Services <media_services/client/oci.media_services.MediaServicesClient>`
 * :doc:`Monitoring <monitoring/client/oci.monitoring.MonitoringClient>`
 * :doc:`Channels <mysql/client/oci.mysql.ChannelsClient>`
 * :doc:`Db Backups <mysql/client/oci.mysql.DbBackupsClient>`
@@ -128,6 +136,7 @@ API Reference
 * :doc:`Subscription <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.SubscriptionClient>`
 * :doc:`Notification Control Plane <ons/client/oci.ons.NotificationControlPlaneClient>`
 * :doc:`Notification Data Plane <ons/client/oci.ons.NotificationDataPlaneClient>`
+* :doc:`Opa Instance <opa/client/oci.opa.OpaInstanceClient>`
 * :doc:`Access Requests <operator_access_control/client/oci.operator_access_control.AccessRequestsClient>`
 * :doc:`Operator Actions <operator_access_control/client/oci.operator_access_control.OperatorActionsClient>`
 * :doc:`Operator Control Assignment <operator_access_control/client/oci.operator_access_control.OperatorControlAssignmentClient>`
@@ -248,6 +257,7 @@ API Reference
     events
     file_storage
     functions
+    fusion_apps
     generic_artifacts_content
     golden_gate
     governance_rules_control_plane
@@ -260,6 +270,7 @@ API Reference
     license_manager
     limits
     load_balancer
+    lockbox
     log_analytics
     logging
     loggingingestion
@@ -267,6 +278,7 @@ API Reference
     management_agent
     management_dashboard
     marketplace
+    media_services
     monitoring
     mysql
     network_firewall
@@ -278,6 +290,7 @@ API Reference
     oda
     onesubscription
     ons
+    opa
     operator_access_control
     opsi
     optimizer

@@ -52,6 +52,7 @@ Data Science
     oci.data_science.models.ModelConfigurationDetails
     oci.data_science.models.ModelDeployment
     oci.data_science.models.ModelDeploymentConfigurationDetails
+    oci.data_science.models.ModelDeploymentInstanceShapeConfigDetails
     oci.data_science.models.ModelDeploymentShapeSummary
     oci.data_science.models.ModelDeploymentSummary
     oci.data_science.models.ModelProvenance

@@ -70,6 +70,10 @@ class UpdateInstanceDetails(object):
             The value to assign to the availability_config property of this UpdateInstanceDetails.
         :type availability_config: oci.core.models.UpdateInstanceAvailabilityConfigDetails
 
+        :param time_maintenance_reboot_due:
+            The value to assign to the time_maintenance_reboot_due property of this UpdateInstanceDetails.
+        :type time_maintenance_reboot_due: datetime
+
         """
         self.swagger_types = {
             'capacity_reservation_id': 'str',
@@ -84,7 +88,8 @@ class UpdateInstanceDetails(object):
             'instance_options': 'InstanceOptions',
             'fault_domain': 'str',
             'launch_options': 'UpdateLaunchOptions',
-            'availability_config': 'UpdateInstanceAvailabilityConfigDetails'
+            'availability_config': 'UpdateInstanceAvailabilityConfigDetails',
+            'time_maintenance_reboot_due': 'datetime'
         }
 
         self.attribute_map = {
@@ -100,7 +105,8 @@ class UpdateInstanceDetails(object):
             'instance_options': 'instanceOptions',
             'fault_domain': 'faultDomain',
             'launch_options': 'launchOptions',
-            'availability_config': 'availabilityConfig'
+            'availability_config': 'availabilityConfig',
+            'time_maintenance_reboot_due': 'timeMaintenanceRebootDue'
         }
 
         self._capacity_reservation_id = None
@@ -116,6 +122,7 @@ class UpdateInstanceDetails(object):
         self._fault_domain = None
         self._launch_options = None
         self._availability_config = None
+        self._time_maintenance_reboot_due = None
 
     @property
     def capacity_reservation_id(self):
@@ -536,6 +543,48 @@ class UpdateInstanceDetails(object):
         :type: oci.core.models.UpdateInstanceAvailabilityConfigDetails
         """
         self._availability_config = availability_config
+
+    @property
+    def time_maintenance_reboot_due(self):
+        """
+        Gets the time_maintenance_reboot_due of this UpdateInstanceDetails.
+        The date and time the instance is expected to be stopped and restarted, in the format defined by
+        `RFC3339`__.
+        If the instance hasn't been rebooted after this date, Oracle reboots the instance within 24 hours of the time
+        and date that maintenance is due.
+        Regardless of how the instance is stopped, this flag is reset to empty as soon as the instance reaches
+        Stopped state.
+
+        Example: `2018-05-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_maintenance_reboot_due of this UpdateInstanceDetails.
+        :rtype: datetime
+        """
+        return self._time_maintenance_reboot_due
+
+    @time_maintenance_reboot_due.setter
+    def time_maintenance_reboot_due(self, time_maintenance_reboot_due):
+        """
+        Sets the time_maintenance_reboot_due of this UpdateInstanceDetails.
+        The date and time the instance is expected to be stopped and restarted, in the format defined by
+        `RFC3339`__.
+        If the instance hasn't been rebooted after this date, Oracle reboots the instance within 24 hours of the time
+        and date that maintenance is due.
+        Regardless of how the instance is stopped, this flag is reset to empty as soon as the instance reaches
+        Stopped state.
+
+        Example: `2018-05-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_maintenance_reboot_due: The time_maintenance_reboot_due of this UpdateInstanceDetails.
+        :type: datetime
+        """
+        self._time_maintenance_reboot_due = time_maintenance_reboot_due
 
     def __repr__(self):
         return formatted_flat_dict(self)

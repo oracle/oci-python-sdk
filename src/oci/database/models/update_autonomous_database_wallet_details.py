@@ -22,16 +22,23 @@ class UpdateAutonomousDatabaseWalletDetails(object):
             The value to assign to the should_rotate property of this UpdateAutonomousDatabaseWalletDetails.
         :type should_rotate: bool
 
+        :param grace_period:
+            The value to assign to the grace_period property of this UpdateAutonomousDatabaseWalletDetails.
+        :type grace_period: int
+
         """
         self.swagger_types = {
-            'should_rotate': 'bool'
+            'should_rotate': 'bool',
+            'grace_period': 'int'
         }
 
         self.attribute_map = {
-            'should_rotate': 'shouldRotate'
+            'should_rotate': 'shouldRotate',
+            'grace_period': 'gracePeriod'
         }
 
         self._should_rotate = None
+        self._grace_period = None
 
     @property
     def should_rotate(self):
@@ -56,6 +63,30 @@ class UpdateAutonomousDatabaseWalletDetails(object):
         :type: bool
         """
         self._should_rotate = should_rotate
+
+    @property
+    def grace_period(self):
+        """
+        Gets the grace_period of this UpdateAutonomousDatabaseWalletDetails.
+        Grace period in hours to keep the existing wallet valid after rotation.
+
+
+        :return: The grace_period of this UpdateAutonomousDatabaseWalletDetails.
+        :rtype: int
+        """
+        return self._grace_period
+
+    @grace_period.setter
+    def grace_period(self, grace_period):
+        """
+        Sets the grace_period of this UpdateAutonomousDatabaseWalletDetails.
+        Grace period in hours to keep the existing wallet valid after rotation.
+
+
+        :param grace_period: The grace_period of this UpdateAutonomousDatabaseWalletDetails.
+        :type: int
+        """
+        self._grace_period = grace_period
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -471,11 +471,9 @@ class CreateAutonomousDatabaseBase(object):
     def ncharacter_set(self):
         """
         Gets the ncharacter_set of this CreateAutonomousDatabaseBase.
-        The character set for the Autonomous Database.  The default is AL32UTF8. Use `List Autonomous Database Character Sets`__ to list the allowed values for an Autonomous Database on shared Exadata infrastructure.
+        The character set for the Autonomous Database.  The default is AL32UTF8. Use :func:`list_autonomous_database_character_sets` to list the allowed values for an Autonomous Database on shared Exadata infrastructure.
         For an Autonomous Database on dedicated Exadata infrastructure, the allowed values are:
         AL16UTF16 or UTF8.
-
-        __ https://docs.cloud.oracle.com/autonomousDatabaseCharacterSets
 
 
         :return: The ncharacter_set of this CreateAutonomousDatabaseBase.
@@ -487,11 +485,9 @@ class CreateAutonomousDatabaseBase(object):
     def ncharacter_set(self, ncharacter_set):
         """
         Sets the ncharacter_set of this CreateAutonomousDatabaseBase.
-        The character set for the Autonomous Database.  The default is AL32UTF8. Use `List Autonomous Database Character Sets`__ to list the allowed values for an Autonomous Database on shared Exadata infrastructure.
+        The character set for the Autonomous Database.  The default is AL32UTF8. Use :func:`list_autonomous_database_character_sets` to list the allowed values for an Autonomous Database on shared Exadata infrastructure.
         For an Autonomous Database on dedicated Exadata infrastructure, the allowed values are:
         AL16UTF16 or UTF8.
-
-        __ https://docs.cloud.oracle.com/autonomousDatabaseCharacterSets
 
 
         :param ncharacter_set: The ncharacter_set of this CreateAutonomousDatabaseBase.
