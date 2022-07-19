@@ -317,6 +317,7 @@ Core Services
     oci.core.models.InstanceConfigurationVolumeSourceFromVolumeDetails
     oci.core.models.InstanceConsoleConnection
     oci.core.models.InstanceCredentials
+    oci.core.models.InstanceMaintenanceReboot
     oci.core.models.InstanceOptions
     oci.core.models.InstancePool
     oci.core.models.InstancePoolInstance

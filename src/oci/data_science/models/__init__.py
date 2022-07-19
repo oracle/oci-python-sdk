@@ -38,6 +38,7 @@ from .model import Model
 from .model_configuration_details import ModelConfigurationDetails
 from .model_deployment import ModelDeployment
 from .model_deployment_configuration_details import ModelDeploymentConfigurationDetails
+from .model_deployment_instance_shape_config_details import ModelDeploymentInstanceShapeConfigDetails
 from .model_deployment_shape_summary import ModelDeploymentShapeSummary
 from .model_deployment_summary import ModelDeploymentSummary
 from .model_provenance import ModelProvenance
@@ -106,6 +107,7 @@ data_science_type_mapping = {
     "ModelConfigurationDetails": ModelConfigurationDetails,
     "ModelDeployment": ModelDeployment,
     "ModelDeploymentConfigurationDetails": ModelDeploymentConfigurationDetails,
+    "ModelDeploymentInstanceShapeConfigDetails": ModelDeploymentInstanceShapeConfigDetails,
     "ModelDeploymentShapeSummary": ModelDeploymentShapeSummary,
     "ModelDeploymentSummary": ModelDeploymentSummary,
     "ModelProvenance": ModelProvenance,

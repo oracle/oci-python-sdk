@@ -1,0 +1,11 @@
+MediaAsset
+==========
+
+.. currentmodule:: oci.media_services.models
+
+.. autoclass:: MediaAsset
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:
