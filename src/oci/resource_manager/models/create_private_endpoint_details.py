@@ -100,7 +100,7 @@ class CreatePrivateEndpointDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreatePrivateEndpointDetails.
-        The `OCID`__ of the compartment containing this private endpoint details.
+        The `OCID`__ of the compartment containing this private endpoint.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -114,7 +114,7 @@ class CreatePrivateEndpointDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreatePrivateEndpointDetails.
-        The `OCID`__ of the compartment containing this private endpoint details.
+        The `OCID`__ of the compartment containing this private endpoint.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -256,9 +256,13 @@ class CreatePrivateEndpointDetails(object):
     def nsg_id_list(self):
         """
         Gets the nsg_id_list of this CreatePrivateEndpointDetails.
-        An array of network security group (NSG) `OCIDs`__ for the private endpoint. Order does not matter.
+        The `OCIDs`__ of
+        `network security groups (NSGs)`__
+        for the private endpoint.
+        Order does not matter.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm
 
 
         :return: The nsg_id_list of this CreatePrivateEndpointDetails.
@@ -270,9 +274,13 @@ class CreatePrivateEndpointDetails(object):
     def nsg_id_list(self, nsg_id_list):
         """
         Sets the nsg_id_list of this CreatePrivateEndpointDetails.
-        An array of network security group (NSG) `OCIDs`__ for the private endpoint. Order does not matter.
+        The `OCIDs`__ of
+        `network security groups (NSGs)`__
+        for the private endpoint.
+        Order does not matter.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm
 
 
         :param nsg_id_list: The nsg_id_list of this CreatePrivateEndpointDetails.

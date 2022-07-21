@@ -23,10 +23,35 @@ Opsi
     oci.opsi.models.AutonomousDatabaseConfigurationSummary
     oci.opsi.models.AutonomousDatabaseInsight
     oci.opsi.models.AutonomousDatabaseInsightSummary
+    oci.opsi.models.AwrDatabaseCollection
+    oci.opsi.models.AwrDatabaseCpuUsageCollection
+    oci.opsi.models.AwrDatabaseCpuUsageSummary
+    oci.opsi.models.AwrDatabaseMetricCollection
+    oci.opsi.models.AwrDatabaseMetricSummary
+    oci.opsi.models.AwrDatabaseParameterChangeCollection
+    oci.opsi.models.AwrDatabaseParameterChangeSummary
+    oci.opsi.models.AwrDatabaseParameterCollection
+    oci.opsi.models.AwrDatabaseParameterSummary
+    oci.opsi.models.AwrDatabaseReport
+    oci.opsi.models.AwrDatabaseSnapshotCollection
+    oci.opsi.models.AwrDatabaseSnapshotRangeCollection
+    oci.opsi.models.AwrDatabaseSnapshotRangeSummary
+    oci.opsi.models.AwrDatabaseSnapshotSummary
+    oci.opsi.models.AwrDatabaseSqlReport
+    oci.opsi.models.AwrDatabaseSummary
+    oci.opsi.models.AwrDatabaseSysstatCollection
+    oci.opsi.models.AwrDatabaseSysstatSummary
+    oci.opsi.models.AwrDatabaseTopWaitEventCollection
+    oci.opsi.models.AwrDatabaseTopWaitEventSummary
+    oci.opsi.models.AwrDatabaseWaitEventBucketCollection
+    oci.opsi.models.AwrDatabaseWaitEventBucketSummary
+    oci.opsi.models.AwrDatabaseWaitEventCollection
+    oci.opsi.models.AwrDatabaseWaitEventSummary
     oci.opsi.models.AwrHub
     oci.opsi.models.AwrHubSummary
     oci.opsi.models.AwrHubSummaryCollection
     oci.opsi.models.AwrHubs
+    oci.opsi.models.AwrQueryResult
     oci.opsi.models.AwrReport
     oci.opsi.models.AwrSnapshotCollection
     oci.opsi.models.AwrSnapshotSummary

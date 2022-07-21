@@ -33,6 +33,10 @@ class AccessRequest(object):
     #: This constant has a value of "AUTONOMOUSVMCLUSTER"
     RESOURCE_TYPE_AUTONOMOUSVMCLUSTER = "AUTONOMOUSVMCLUSTER"
 
+    #: A constant which can be used with the resource_type property of a AccessRequest.
+    #: This constant has a value of "CLOUDAUTONOMOUSVMCLUSTER"
+    RESOURCE_TYPE_CLOUDAUTONOMOUSVMCLUSTER = "CLOUDAUTONOMOUSVMCLUSTER"
+
     #: A constant which can be used with the severity property of a AccessRequest.
     #: This constant has a value of "S1"
     SEVERITY_S1 = "S1"
@@ -176,7 +180,7 @@ class AccessRequest(object):
 
         :param resource_type:
             The value to assign to the resource_type property of this AccessRequest.
-            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_type: str
 
@@ -215,6 +219,10 @@ class AccessRequest(object):
             Allowed values for this property are: "CREATED", "APPROVALWAITING", "PREAPPROVED", "APPROVED", "MOREINFO", "REJECTED", "DEPLOYED", "DEPLOYFAILED", "UNDEPLOYED", "UNDEPLOYFAILED", "CLOSEFAILED", "REVOKEFAILED", "EXPIRYFAILED", "REVOKING", "REVOKED", "EXTENDING", "EXTENDED", "EXTENSIONREJECTED", "COMPLETING", "COMPLETED", "EXPIRED", "APPROVEDFORFUTURE", "INREVIEW", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
+
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this AccessRequest.
+        :type lifecycle_details: str
 
         :param time_of_creation:
             The value to assign to the time_of_creation property of this AccessRequest.
@@ -286,6 +294,7 @@ class AccessRequest(object):
             'workflow_id': 'list[str]',
             'is_auto_approved': 'bool',
             'lifecycle_state': 'str',
+            'lifecycle_details': 'str',
             'time_of_creation': 'datetime',
             'time_of_modification': 'datetime',
             'time_of_user_creation': 'datetime',
@@ -318,6 +327,7 @@ class AccessRequest(object):
             'workflow_id': 'workflowId',
             'is_auto_approved': 'isAutoApproved',
             'lifecycle_state': 'lifecycleState',
+            'lifecycle_details': 'lifecycleDetails',
             'time_of_creation': 'timeOfCreation',
             'time_of_modification': 'timeOfModification',
             'time_of_user_creation': 'timeOfUserCreation',
@@ -349,6 +359,7 @@ class AccessRequest(object):
         self._workflow_id = None
         self._is_auto_approved = None
         self._lifecycle_state = None
+        self._lifecycle_details = None
         self._time_of_creation = None
         self._time_of_modification = None
         self._time_of_user_creation = None
@@ -541,7 +552,7 @@ class AccessRequest(object):
         Gets the resource_type of this AccessRequest.
         resourceType for which the AccessRequest is applicable
 
-        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -560,7 +571,7 @@ class AccessRequest(object):
         :param resource_type: The resource_type of this AccessRequest.
         :type: str
         """
-        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER"]
+        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER"]
         if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
             resource_type = 'UNKNOWN_ENUM_VALUE'
         self._resource_type = resource_type
@@ -770,6 +781,30 @@ class AccessRequest(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def lifecycle_details(self):
+        """
+        Gets the lifecycle_details of this AccessRequest.
+        more in detail about the lifeCycleState.
+
+
+        :return: The lifecycle_details of this AccessRequest.
+        :rtype: str
+        """
+        return self._lifecycle_details
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
+        """
+        Sets the lifecycle_details of this AccessRequest.
+        more in detail about the lifeCycleState.
+
+
+        :param lifecycle_details: The lifecycle_details of this AccessRequest.
+        :type: str
+        """
+        self._lifecycle_details = lifecycle_details
 
     @property
     def time_of_creation(self):

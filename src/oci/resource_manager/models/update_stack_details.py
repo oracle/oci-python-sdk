@@ -30,6 +30,14 @@ class UpdateStackDetails(object):
             The value to assign to the config_source property of this UpdateStackDetails.
         :type config_source: oci.resource_manager.models.UpdateConfigSourceDetails
 
+        :param custom_terraform_provider:
+            The value to assign to the custom_terraform_provider property of this UpdateStackDetails.
+        :type custom_terraform_provider: oci.resource_manager.models.CustomTerraformProvider
+
+        :param is_third_party_provider_experience_enabled:
+            The value to assign to the is_third_party_provider_experience_enabled property of this UpdateStackDetails.
+        :type is_third_party_provider_experience_enabled: bool
+
         :param variables:
             The value to assign to the variables property of this UpdateStackDetails.
         :type variables: dict(str, str)
@@ -51,6 +59,8 @@ class UpdateStackDetails(object):
             'display_name': 'str',
             'description': 'str',
             'config_source': 'UpdateConfigSourceDetails',
+            'custom_terraform_provider': 'CustomTerraformProvider',
+            'is_third_party_provider_experience_enabled': 'bool',
             'variables': 'dict(str, str)',
             'terraform_version': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -61,6 +71,8 @@ class UpdateStackDetails(object):
             'display_name': 'displayName',
             'description': 'description',
             'config_source': 'configSource',
+            'custom_terraform_provider': 'customTerraformProvider',
+            'is_third_party_provider_experience_enabled': 'isThirdPartyProviderExperienceEnabled',
             'variables': 'variables',
             'terraform_version': 'terraformVersion',
             'freeform_tags': 'freeformTags',
@@ -70,6 +82,8 @@ class UpdateStackDetails(object):
         self._display_name = None
         self._description = None
         self._config_source = None
+        self._custom_terraform_provider = None
+        self._is_third_party_provider_experience_enabled = None
         self._variables = None
         self._terraform_version = None
         self._freeform_tags = None
@@ -142,6 +156,70 @@ class UpdateStackDetails(object):
         :type: oci.resource_manager.models.UpdateConfigSourceDetails
         """
         self._config_source = config_source
+
+    @property
+    def custom_terraform_provider(self):
+        """
+        Gets the custom_terraform_provider of this UpdateStackDetails.
+
+        :return: The custom_terraform_provider of this UpdateStackDetails.
+        :rtype: oci.resource_manager.models.CustomTerraformProvider
+        """
+        return self._custom_terraform_provider
+
+    @custom_terraform_provider.setter
+    def custom_terraform_provider(self, custom_terraform_provider):
+        """
+        Sets the custom_terraform_provider of this UpdateStackDetails.
+
+        :param custom_terraform_provider: The custom_terraform_provider of this UpdateStackDetails.
+        :type: oci.resource_manager.models.CustomTerraformProvider
+        """
+        self._custom_terraform_provider = custom_terraform_provider
+
+    @property
+    def is_third_party_provider_experience_enabled(self):
+        """
+        Gets the is_third_party_provider_experience_enabled of this UpdateStackDetails.
+        When `true`, changes the stack's sourcing of third-party Terraform providers to
+        `Terraform Registry`__ and allows
+        :func:`custom_terraform_provider`.
+        Applies to older stacks that use Terraform version 0.12.x and 0.13.x only.
+        (Older stacks that use other Terraform versions are automatically updated.)
+        Once set to `true`, cannot be reverted.
+        For more information about stack sourcing of third-party Terraform providers, see
+        `Third-party Provider Configuration`__.
+
+        __ https://registry.terraform.io/browse/providers
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers
+
+
+        :return: The is_third_party_provider_experience_enabled of this UpdateStackDetails.
+        :rtype: bool
+        """
+        return self._is_third_party_provider_experience_enabled
+
+    @is_third_party_provider_experience_enabled.setter
+    def is_third_party_provider_experience_enabled(self, is_third_party_provider_experience_enabled):
+        """
+        Sets the is_third_party_provider_experience_enabled of this UpdateStackDetails.
+        When `true`, changes the stack's sourcing of third-party Terraform providers to
+        `Terraform Registry`__ and allows
+        :func:`custom_terraform_provider`.
+        Applies to older stacks that use Terraform version 0.12.x and 0.13.x only.
+        (Older stacks that use other Terraform versions are automatically updated.)
+        Once set to `true`, cannot be reverted.
+        For more information about stack sourcing of third-party Terraform providers, see
+        `Third-party Provider Configuration`__.
+
+        __ https://registry.terraform.io/browse/providers
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers
+
+
+        :param is_third_party_provider_experience_enabled: The is_third_party_provider_experience_enabled of this UpdateStackDetails.
+        :type: bool
+        """
+        self._is_third_party_provider_experience_enabled = is_third_party_provider_experience_enabled
 
     @property
     def variables(self):

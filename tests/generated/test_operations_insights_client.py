@@ -1274,6 +1274,91 @@ def test_enable_host_insight(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="sqlWarehouse" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_get_awr_database_report(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'GetAwrDatabaseReport'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'GetAwrDatabaseReport')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='GetAwrDatabaseReport')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.get_awr_database_report(
+                awr_hub_id=request.pop(util.camelize('awrHubId')),
+                awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'GetAwrDatabaseReport',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrDatabaseReport',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="sqlWarehouse" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_get_awr_database_sql_report(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'GetAwrDatabaseSqlReport'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'GetAwrDatabaseSqlReport')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='GetAwrDatabaseSqlReport')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.get_awr_database_sql_report(
+                awr_hub_id=request.pop(util.camelize('awrHubId')),
+                awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                sql_id=request.pop(util.camelize('sqlId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'GetAwrDatabaseSqlReport',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrDatabaseSqlReport',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
 def test_get_awr_hub(testing_service_client):
     if not testing_service_client.is_api_enabled('opsi', 'GetAwrHub'):
@@ -2013,6 +2098,135 @@ def test_ingest_sql_text(testing_service_client):
             'ingestSqlTextResponseDetails',
             False,
             False
+        )
+
+
+# IssueRoutingInfo tag="sqlWarehouse" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_list_awr_database_snapshots(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'ListAwrDatabaseSnapshots'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'ListAwrDatabaseSnapshots')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='ListAwrDatabaseSnapshots')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.list_awr_database_snapshots(
+                awr_hub_id=request.pop(util.camelize('awrHubId')),
+                awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_awr_database_snapshots(
+                    awr_hub_id=request.pop(util.camelize('awrHubId')),
+                    awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_awr_database_snapshots(
+                        awr_hub_id=request.pop(util.camelize('awrHubId')),
+                        awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'ListAwrDatabaseSnapshots',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrDatabaseSnapshotCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="sqlWarehouse" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_list_awr_databases(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'ListAwrDatabases'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'ListAwrDatabases')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='ListAwrDatabases')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.list_awr_databases(
+                awr_hub_id=request.pop(util.camelize('awrHubId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_awr_databases(
+                    awr_hub_id=request.pop(util.camelize('awrHubId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_awr_databases(
+                        awr_hub_id=request.pop(util.camelize('awrHubId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'ListAwrDatabases',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrDatabaseCollection',
+            False,
+            True
         )
 
 
@@ -3494,6 +3708,585 @@ def test_rotate_operations_insights_warehouse_wallet(testing_service_client):
             'rotate_operations_insights_warehouse_wallet',
             False,
             False
+        )
+
+
+# IssueRoutingInfo tag="sqlWarehouse" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_summarize_awr_database_cpu_usages(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'SummarizeAwrDatabaseCpuUsages'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'SummarizeAwrDatabaseCpuUsages')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='SummarizeAwrDatabaseCpuUsages')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_awr_database_cpu_usages(
+                awr_hub_id=request.pop(util.camelize('awrHubId')),
+                awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_awr_database_cpu_usages(
+                    awr_hub_id=request.pop(util.camelize('awrHubId')),
+                    awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_awr_database_cpu_usages(
+                        awr_hub_id=request.pop(util.camelize('awrHubId')),
+                        awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'SummarizeAwrDatabaseCpuUsages',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrDatabaseCpuUsageCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="sqlWarehouse" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_summarize_awr_database_metrics(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'SummarizeAwrDatabaseMetrics'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'SummarizeAwrDatabaseMetrics')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='SummarizeAwrDatabaseMetrics')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_awr_database_metrics(
+                awr_hub_id=request.pop(util.camelize('awrHubId')),
+                awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                name=request.pop(util.camelize('name')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_awr_database_metrics(
+                    awr_hub_id=request.pop(util.camelize('awrHubId')),
+                    awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                    name=request.pop(util.camelize('name')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_awr_database_metrics(
+                        awr_hub_id=request.pop(util.camelize('awrHubId')),
+                        awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                        name=request.pop(util.camelize('name')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'SummarizeAwrDatabaseMetrics',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrDatabaseMetricCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="sqlWarehouse" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_summarize_awr_database_parameter_changes(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'SummarizeAwrDatabaseParameterChanges'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'SummarizeAwrDatabaseParameterChanges')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='SummarizeAwrDatabaseParameterChanges')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_awr_database_parameter_changes(
+                awr_hub_id=request.pop(util.camelize('awrHubId')),
+                awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                name=request.pop(util.camelize('name')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_awr_database_parameter_changes(
+                    awr_hub_id=request.pop(util.camelize('awrHubId')),
+                    awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                    name=request.pop(util.camelize('name')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_awr_database_parameter_changes(
+                        awr_hub_id=request.pop(util.camelize('awrHubId')),
+                        awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                        name=request.pop(util.camelize('name')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'SummarizeAwrDatabaseParameterChanges',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrDatabaseParameterChangeCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="sqlWarehouse" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_summarize_awr_database_parameters(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'SummarizeAwrDatabaseParameters'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'SummarizeAwrDatabaseParameters')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='SummarizeAwrDatabaseParameters')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_awr_database_parameters(
+                awr_hub_id=request.pop(util.camelize('awrHubId')),
+                awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_awr_database_parameters(
+                    awr_hub_id=request.pop(util.camelize('awrHubId')),
+                    awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_awr_database_parameters(
+                        awr_hub_id=request.pop(util.camelize('awrHubId')),
+                        awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'SummarizeAwrDatabaseParameters',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrDatabaseParameterCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="sqlWarehouse" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_summarize_awr_database_snapshot_ranges(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'SummarizeAwrDatabaseSnapshotRanges'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'SummarizeAwrDatabaseSnapshotRanges')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='SummarizeAwrDatabaseSnapshotRanges')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_awr_database_snapshot_ranges(
+                awr_hub_id=request.pop(util.camelize('awrHubId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_awr_database_snapshot_ranges(
+                    awr_hub_id=request.pop(util.camelize('awrHubId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_awr_database_snapshot_ranges(
+                        awr_hub_id=request.pop(util.camelize('awrHubId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'SummarizeAwrDatabaseSnapshotRanges',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrDatabaseSnapshotRangeCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="sqlWarehouse" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_summarize_awr_database_sysstats(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'SummarizeAwrDatabaseSysstats'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'SummarizeAwrDatabaseSysstats')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='SummarizeAwrDatabaseSysstats')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_awr_database_sysstats(
+                awr_hub_id=request.pop(util.camelize('awrHubId')),
+                awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                name=request.pop(util.camelize('name')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_awr_database_sysstats(
+                    awr_hub_id=request.pop(util.camelize('awrHubId')),
+                    awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                    name=request.pop(util.camelize('name')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_awr_database_sysstats(
+                        awr_hub_id=request.pop(util.camelize('awrHubId')),
+                        awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                        name=request.pop(util.camelize('name')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'SummarizeAwrDatabaseSysstats',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrDatabaseSysstatCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="sqlWarehouse" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_summarize_awr_database_top_wait_events(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'SummarizeAwrDatabaseTopWaitEvents'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'SummarizeAwrDatabaseTopWaitEvents')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='SummarizeAwrDatabaseTopWaitEvents')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_awr_database_top_wait_events(
+                awr_hub_id=request.pop(util.camelize('awrHubId')),
+                awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'SummarizeAwrDatabaseTopWaitEvents',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrDatabaseTopWaitEventCollection',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="sqlWarehouse" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_summarize_awr_database_wait_event_buckets(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'SummarizeAwrDatabaseWaitEventBuckets'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'SummarizeAwrDatabaseWaitEventBuckets')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='SummarizeAwrDatabaseWaitEventBuckets')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_awr_database_wait_event_buckets(
+                awr_hub_id=request.pop(util.camelize('awrHubId')),
+                awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                name=request.pop(util.camelize('name')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_awr_database_wait_event_buckets(
+                    awr_hub_id=request.pop(util.camelize('awrHubId')),
+                    awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                    name=request.pop(util.camelize('name')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_awr_database_wait_event_buckets(
+                        awr_hub_id=request.pop(util.camelize('awrHubId')),
+                        awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                        name=request.pop(util.camelize('name')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'SummarizeAwrDatabaseWaitEventBuckets',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrDatabaseWaitEventBucketCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="sqlWarehouse" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_summarize_awr_database_wait_events(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'SummarizeAwrDatabaseWaitEvents'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'SummarizeAwrDatabaseWaitEvents')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='SummarizeAwrDatabaseWaitEvents')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_awr_database_wait_events(
+                awr_hub_id=request.pop(util.camelize('awrHubId')),
+                awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_awr_database_wait_events(
+                    awr_hub_id=request.pop(util.camelize('awrHubId')),
+                    awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_awr_database_wait_events(
+                        awr_hub_id=request.pop(util.camelize('awrHubId')),
+                        awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'SummarizeAwrDatabaseWaitEvents',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrDatabaseWaitEventCollection',
+            False,
+            True
         )
 
 

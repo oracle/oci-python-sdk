@@ -52,6 +52,18 @@ class WorkRequestResource(object):
             The value to assign to the identifier property of this WorkRequestResource.
         :type identifier: str
 
+        :param source_id:
+            The value to assign to the source_id property of this WorkRequestResource.
+        :type source_id: str
+
+        :param source_name:
+            The value to assign to the source_name property of this WorkRequestResource.
+        :type source_name: str
+
+        :param source_version:
+            The value to assign to the source_version property of this WorkRequestResource.
+        :type source_version: str
+
         :param entity_uri:
             The value to assign to the entity_uri property of this WorkRequestResource.
         :type entity_uri: str
@@ -77,6 +89,9 @@ class WorkRequestResource(object):
             'entity_type': 'str',
             'action_type': 'str',
             'identifier': 'str',
+            'source_id': 'str',
+            'source_name': 'str',
+            'source_version': 'str',
             'entity_uri': 'str',
             'time_accepted': 'datetime',
             'time_started': 'datetime',
@@ -88,6 +103,9 @@ class WorkRequestResource(object):
             'entity_type': 'entityType',
             'action_type': 'actionType',
             'identifier': 'identifier',
+            'source_id': 'sourceId',
+            'source_name': 'sourceName',
+            'source_version': 'sourceVersion',
             'entity_uri': 'entityUri',
             'time_accepted': 'timeAccepted',
             'time_started': 'timeStarted',
@@ -98,6 +116,9 @@ class WorkRequestResource(object):
         self._entity_type = None
         self._action_type = None
         self._identifier = None
+        self._source_id = None
+        self._source_name = None
+        self._source_version = None
         self._entity_uri = None
         self._time_accepted = None
         self._time_started = None
@@ -187,6 +208,78 @@ class WorkRequestResource(object):
         :type: str
         """
         self._identifier = identifier
+
+    @property
+    def source_id(self):
+        """
+        Gets the source_id of this WorkRequestResource.
+        The identifier of the source the work request is requesting.
+
+
+        :return: The source_id of this WorkRequestResource.
+        :rtype: str
+        """
+        return self._source_id
+
+    @source_id.setter
+    def source_id(self, source_id):
+        """
+        Sets the source_id of this WorkRequestResource.
+        The identifier of the source the work request is requesting.
+
+
+        :param source_id: The source_id of this WorkRequestResource.
+        :type: str
+        """
+        self._source_id = source_id
+
+    @property
+    def source_name(self):
+        """
+        Gets the source_name of this WorkRequestResource.
+        The name of the source the work request is requesting.
+
+
+        :return: The source_name of this WorkRequestResource.
+        :rtype: str
+        """
+        return self._source_name
+
+    @source_name.setter
+    def source_name(self, source_name):
+        """
+        Sets the source_name of this WorkRequestResource.
+        The name of the source the work request is requesting.
+
+
+        :param source_name: The source_name of this WorkRequestResource.
+        :type: str
+        """
+        self._source_name = source_name
+
+    @property
+    def source_version(self):
+        """
+        Gets the source_version of this WorkRequestResource.
+        The version of the source the work request is requesting.
+
+
+        :return: The source_version of this WorkRequestResource.
+        :rtype: str
+        """
+        return self._source_version
+
+    @source_version.setter
+    def source_version(self, source_version):
+        """
+        Sets the source_version of this WorkRequestResource.
+        The version of the source the work request is requesting.
+
+
+        :param source_version: The source_version of this WorkRequestResource.
+        :type: str
+        """
+        self._source_version = source_version
 
     @property
     def entity_uri(self):

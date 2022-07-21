@@ -38,6 +38,7 @@ from .create_template_config_source_details import CreateTemplateConfigSourceDet
 from .create_template_details import CreateTemplateDetails
 from .create_template_zip_upload_config_source_details import CreateTemplateZipUploadConfigSourceDetails
 from .create_zip_upload_config_source_details import CreateZipUploadConfigSourceDetails
+from .custom_terraform_provider import CustomTerraformProvider
 from .destroy_job_operation_details import DestroyJobOperationDetails
 from .destroy_job_operation_details_summary import DestroyJobOperationDetailsSummary
 from .detect_stack_drift_details import DetectStackDriftDetails
@@ -137,6 +138,7 @@ resource_manager_type_mapping = {
     "CreateTemplateDetails": CreateTemplateDetails,
     "CreateTemplateZipUploadConfigSourceDetails": CreateTemplateZipUploadConfigSourceDetails,
     "CreateZipUploadConfigSourceDetails": CreateZipUploadConfigSourceDetails,
+    "CustomTerraformProvider": CustomTerraformProvider,
     "DestroyJobOperationDetails": DestroyJobOperationDetails,
     "DestroyJobOperationDetailsSummary": DestroyJobOperationDetailsSummary,
     "DetectStackDriftDetails": DetectStackDriftDetails,

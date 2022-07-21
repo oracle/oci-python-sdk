@@ -6,18 +6,8 @@ Fusion Apps
     :nosignatures:
     :template: autosummary/service_client.rst
 
-    oci.fusion_apps.DataMaskingActivityClient
-    oci.fusion_apps.FusionEnvironmentClient
-    oci.fusion_apps.FusionEnvironmentFamilyClient
-    oci.fusion_apps.RefreshActivityClient
-    oci.fusion_apps.ScheduledActivityClient
-    oci.fusion_apps.ServiceAttachmentClient
-    oci.fusion_apps.DataMaskingActivityClientCompositeOperations
-    oci.fusion_apps.FusionEnvironmentClientCompositeOperations
-    oci.fusion_apps.FusionEnvironmentFamilyClientCompositeOperations
-    oci.fusion_apps.RefreshActivityClientCompositeOperations
-    oci.fusion_apps.ScheduledActivityClientCompositeOperations
-    oci.fusion_apps.ServiceAttachmentClientCompositeOperations
+    oci.fusion_apps.FusionApplicationsClient
+    oci.fusion_apps.FusionApplicationsClientCompositeOperations
 
 --------
  Models

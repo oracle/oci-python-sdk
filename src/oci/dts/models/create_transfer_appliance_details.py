@@ -22,16 +22,23 @@ class CreateTransferApplianceDetails(object):
             The value to assign to the customer_shipping_address property of this CreateTransferApplianceDetails.
         :type customer_shipping_address: oci.dts.models.ShippingAddress
 
+        :param minimum_storage_capacity_in_terabytes:
+            The value to assign to the minimum_storage_capacity_in_terabytes property of this CreateTransferApplianceDetails.
+        :type minimum_storage_capacity_in_terabytes: int
+
         """
         self.swagger_types = {
-            'customer_shipping_address': 'ShippingAddress'
+            'customer_shipping_address': 'ShippingAddress',
+            'minimum_storage_capacity_in_terabytes': 'int'
         }
 
         self.attribute_map = {
-            'customer_shipping_address': 'customerShippingAddress'
+            'customer_shipping_address': 'customerShippingAddress',
+            'minimum_storage_capacity_in_terabytes': 'minimumStorageCapacityInTerabytes'
         }
 
         self._customer_shipping_address = None
+        self._minimum_storage_capacity_in_terabytes = None
 
     @property
     def customer_shipping_address(self):
@@ -52,6 +59,30 @@ class CreateTransferApplianceDetails(object):
         :type: oci.dts.models.ShippingAddress
         """
         self._customer_shipping_address = customer_shipping_address
+
+    @property
+    def minimum_storage_capacity_in_terabytes(self):
+        """
+        Gets the minimum_storage_capacity_in_terabytes of this CreateTransferApplianceDetails.
+        Minimum storage capacity of the device, in terabytes. Valid options are 50, 95 and 150.
+
+
+        :return: The minimum_storage_capacity_in_terabytes of this CreateTransferApplianceDetails.
+        :rtype: int
+        """
+        return self._minimum_storage_capacity_in_terabytes
+
+    @minimum_storage_capacity_in_terabytes.setter
+    def minimum_storage_capacity_in_terabytes(self, minimum_storage_capacity_in_terabytes):
+        """
+        Sets the minimum_storage_capacity_in_terabytes of this CreateTransferApplianceDetails.
+        Minimum storage capacity of the device, in terabytes. Valid options are 50, 95 and 150.
+
+
+        :param minimum_storage_capacity_in_terabytes: The minimum_storage_capacity_in_terabytes of this CreateTransferApplianceDetails.
+        :type: int
+        """
+        self._minimum_storage_capacity_in_terabytes = minimum_storage_capacity_in_terabytes
 
     def __repr__(self):
         return formatted_flat_dict(self)

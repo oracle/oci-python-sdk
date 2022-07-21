@@ -20,9 +20,7 @@ class MediaServicesClient(object):
     """
     Media Services (includes Media Flow and Media Streams) is a fully managed service for processing media (video) source content. Use Media Flow and Media Streams to transcode and package digital video using configurable workflows and stream video outputs.
 
-    Use the Media Services API to configure media workflows and run Media Flow jobs, create distribution channels, ingest assets, create Preview URLs and play assets. For more information, see [Media Flow](/iaas/Content/dms-mediaflow/home.htm) and Media Streams [Media Streams](/iaas/Content/dms-mediastream/home.htm).
-
-    Use the table of contents and search tool to explore the Media Flow API and Media Streams API.
+    Use the Media Services API to configure media workflows and run Media Flow jobs, create distribution channels, ingest assets, create Preview URLs and play assets. For more information, see [Media Flow](/iaas/Content/dms-mediaflow/home.htm) and [Media Streams](/iaas/Content/dms-mediastream/home.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -157,7 +155,7 @@ class MediaServicesClient(object):
         resource_path = "/mediaAssets/{mediaAssetId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_media_asset_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/ChangeMediaAssetCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -273,7 +271,7 @@ class MediaServicesClient(object):
         resource_path = "/mediaWorkflows/{mediaWorkflowId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_media_workflow_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/ChangeMediaWorkflowCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -389,7 +387,7 @@ class MediaServicesClient(object):
         resource_path = "/mediaWorkflowConfigurations/{mediaWorkflowConfigurationId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_media_workflow_configuration_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/ChangeMediaWorkflowConfigurationCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -505,7 +503,7 @@ class MediaServicesClient(object):
         resource_path = "/mediaWorkflowJobs/{mediaWorkflowJobId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_media_workflow_job_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/ChangeMediaWorkflowJobCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -621,7 +619,7 @@ class MediaServicesClient(object):
         resource_path = "/streamDistributionChannels/{streamDistributionChannelId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_stream_distribution_channel_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/ChangeStreamDistributionChannelCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -727,7 +725,7 @@ class MediaServicesClient(object):
         resource_path = "/mediaAssets"
         method = "POST"
         operation_name = "create_media_asset"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/CreateMediaAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -821,7 +819,7 @@ class MediaServicesClient(object):
         resource_path = "/mediaWorkflows"
         method = "POST"
         operation_name = "create_media_workflow"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/CreateMediaWorkflow"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -915,7 +913,7 @@ class MediaServicesClient(object):
         resource_path = "/mediaWorkflowConfigurations"
         method = "POST"
         operation_name = "create_media_workflow_configuration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/CreateMediaWorkflowConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1009,7 +1007,7 @@ class MediaServicesClient(object):
         resource_path = "/mediaWorkflowJobs"
         method = "POST"
         operation_name = "create_media_workflow_job"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/CreateMediaWorkflowJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1103,7 +1101,7 @@ class MediaServicesClient(object):
         resource_path = "/streamCdnConfigs"
         method = "POST"
         operation_name = "create_stream_cdn_config"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/CreateStreamCdnConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1197,7 +1195,7 @@ class MediaServicesClient(object):
         resource_path = "/streamDistributionChannels"
         method = "POST"
         operation_name = "create_stream_distribution_channel"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/CreateStreamDistributionChannel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1291,7 +1289,7 @@ class MediaServicesClient(object):
         resource_path = "/streamPackagingConfigs"
         method = "POST"
         operation_name = "create_stream_packaging_config"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/CreateStreamPackagingConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1390,7 +1388,7 @@ class MediaServicesClient(object):
         resource_path = "/mediaAssets/{mediaAssetId}"
         method = "DELETE"
         operation_name = "delete_media_asset"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/DeleteMediaAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1512,7 +1510,7 @@ class MediaServicesClient(object):
         resource_path = "/mediaAssets/{mediaAssetId}/distributionChannelAttachments/{distributionChannelId}"
         method = "DELETE"
         operation_name = "delete_media_asset_distribution_channel_attachment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAssetDistributionChannelAttachment/DeleteMediaAssetDistributionChannelAttachment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1622,7 +1620,7 @@ class MediaServicesClient(object):
         resource_path = "/mediaWorkflows/{mediaWorkflowId}"
         method = "DELETE"
         operation_name = "delete_media_workflow"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/DeleteMediaWorkflow"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1723,7 +1721,7 @@ class MediaServicesClient(object):
         resource_path = "/mediaWorkflowConfigurations/{mediaWorkflowConfigurationId}"
         method = "DELETE"
         operation_name = "delete_media_workflow_configuration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/DeleteMediaWorkflowConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1824,7 +1822,7 @@ class MediaServicesClient(object):
         resource_path = "/mediaWorkflowJobs/{mediaWorkflowJobId}"
         method = "DELETE"
         operation_name = "delete_media_workflow_job"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/DeleteMediaWorkflowJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1925,7 +1923,7 @@ class MediaServicesClient(object):
         resource_path = "/streamCdnConfigs/{streamCdnConfigId}"
         method = "DELETE"
         operation_name = "delete_stream_cdn_config"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/DeleteStreamCdnConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2026,7 +2024,7 @@ class MediaServicesClient(object):
         resource_path = "/streamDistributionChannels/{streamDistributionChannelId}"
         method = "DELETE"
         operation_name = "delete_stream_distribution_channel"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/DeleteStreamDistributionChannel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2127,7 +2125,7 @@ class MediaServicesClient(object):
         resource_path = "/streamPackagingConfigs/{streamPackagingConfigId}"
         method = "DELETE"
         operation_name = "delete_stream_packaging_config"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/DeleteStreamPackagingConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2221,7 +2219,7 @@ class MediaServicesClient(object):
         resource_path = "/mediaAssets/{mediaAssetId}"
         method = "GET"
         operation_name = "get_media_asset"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/GetMediaAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2321,7 +2319,7 @@ class MediaServicesClient(object):
         resource_path = "/mediaAssets/{mediaAssetId}/distributionChannelAttachments/{distributionChannelId}"
         method = "GET"
         operation_name = "get_media_asset_distribution_channel_attachment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAssetDistributionChannelAttachment/GetMediaAssetDistributionChannelAttachment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2424,7 +2422,7 @@ class MediaServicesClient(object):
         resource_path = "/mediaWorkflows/{mediaWorkflowId}"
         method = "GET"
         operation_name = "get_media_workflow"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/GetMediaWorkflow"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2518,7 +2516,7 @@ class MediaServicesClient(object):
         resource_path = "/mediaWorkflowConfigurations/{mediaWorkflowConfigurationId}"
         method = "GET"
         operation_name = "get_media_workflow_configuration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/GetMediaWorkflowConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2612,7 +2610,7 @@ class MediaServicesClient(object):
         resource_path = "/mediaWorkflowJobs/{mediaWorkflowJobId}"
         method = "GET"
         operation_name = "get_media_workflow_job"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/GetMediaWorkflowJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2709,7 +2707,7 @@ class MediaServicesClient(object):
         resource_path = "/mediaWorkflowJobs/{mediaWorkflowJobId}/facts/{key}"
         method = "GET"
         operation_name = "get_media_workflow_job_fact"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJobFact/GetMediaWorkflowJobFact"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2804,7 +2802,7 @@ class MediaServicesClient(object):
         resource_path = "/streamCdnConfigs/{streamCdnConfigId}"
         method = "GET"
         operation_name = "get_stream_cdn_config"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/GetStreamCdnConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2898,7 +2896,7 @@ class MediaServicesClient(object):
         resource_path = "/streamDistributionChannels/{streamDistributionChannelId}"
         method = "GET"
         operation_name = "get_stream_distribution_channel"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/GetStreamDistributionChannel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2992,7 +2990,7 @@ class MediaServicesClient(object):
         resource_path = "/streamPackagingConfigs/{streamPackagingConfigId}"
         method = "GET"
         operation_name = "get_stream_packaging_config"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/GetStreamPackagingConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3096,7 +3094,7 @@ class MediaServicesClient(object):
         resource_path = "/streamDistributionChannels/{streamDistributionChannelId}/actions/ingest"
         method = "POST"
         operation_name = "ingest_stream_distribution_channel"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/IngestStreamDistributionChannel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3218,7 +3216,7 @@ class MediaServicesClient(object):
         resource_path = "/mediaAssets/{mediaAssetId}/distributionChannelAttachments"
         method = "GET"
         operation_name = "list_media_asset_distribution_channel_attachments"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAssetDistributionChannelAttachmentCollection/ListMediaAssetDistributionChannelAttachments"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3398,7 +3396,7 @@ class MediaServicesClient(object):
         resource_path = "/mediaAssets"
         method = "GET"
         operation_name = "list_media_assets"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/ListMediaAssets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3575,7 +3573,7 @@ class MediaServicesClient(object):
         resource_path = "/mediaWorkflowConfigurations"
         method = "GET"
         operation_name = "list_media_workflow_configurations"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfigurationCollection/ListMediaWorkflowConfigurations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3725,7 +3723,7 @@ class MediaServicesClient(object):
         resource_path = "/mediaWorkflowJobs/{mediaWorkflowJobId}/facts"
         method = "GET"
         operation_name = "list_media_workflow_job_facts"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJobFact/ListMediaWorkflowJobFacts"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3889,7 +3887,7 @@ class MediaServicesClient(object):
         resource_path = "/mediaWorkflowJobs"
         method = "GET"
         operation_name = "list_media_workflow_jobs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/ListMediaWorkflowJobs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4042,7 +4040,7 @@ class MediaServicesClient(object):
         resource_path = "/mediaWorkflowTaskDeclarations"
         method = "GET"
         operation_name = "list_media_workflow_task_declarations"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowTaskDeclarationCollection/ListMediaWorkflowTaskDeclarations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4189,7 +4187,7 @@ class MediaServicesClient(object):
         resource_path = "/mediaWorkflows"
         method = "GET"
         operation_name = "list_media_workflows"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/ListMediaWorkflows"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4343,7 +4341,7 @@ class MediaServicesClient(object):
         resource_path = "/streamCdnConfigs"
         method = "GET"
         operation_name = "list_stream_cdn_configs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/ListStreamCdnConfigs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4496,7 +4494,7 @@ class MediaServicesClient(object):
         resource_path = "/streamDistributionChannels"
         method = "GET"
         operation_name = "list_stream_distribution_channels"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/ListStreamDistributionChannels"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4650,7 +4648,7 @@ class MediaServicesClient(object):
         resource_path = "/streamPackagingConfigs"
         method = "GET"
         operation_name = "list_stream_packaging_configs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/ListStreamPackagingConfigs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4789,7 +4787,7 @@ class MediaServicesClient(object):
         resource_path = "/systemMediaWorkflows"
         method = "GET"
         operation_name = "list_system_media_workflows"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/ListSystemMediaWorkflows"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4904,7 +4902,7 @@ class MediaServicesClient(object):
         resource_path = "/mediaAssets/{mediaAssetId}"
         method = "PUT"
         operation_name = "update_media_asset"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/UpdateMediaAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5012,7 +5010,7 @@ class MediaServicesClient(object):
         resource_path = "/mediaWorkflows/{mediaWorkflowId}"
         method = "PUT"
         operation_name = "update_media_workflow"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/UpdateMediaWorkflow"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5120,7 +5118,7 @@ class MediaServicesClient(object):
         resource_path = "/mediaWorkflowConfigurations/{mediaWorkflowConfigurationId}"
         method = "PUT"
         operation_name = "update_media_workflow_configuration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/UpdateMediaWorkflowConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5228,7 +5226,7 @@ class MediaServicesClient(object):
         resource_path = "/mediaWorkflowJobs/{mediaWorkflowJobId}"
         method = "PUT"
         operation_name = "update_media_workflow_job"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/UpdateMediaWorkflowJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5336,7 +5334,7 @@ class MediaServicesClient(object):
         resource_path = "/streamCdnConfigs/{streamCdnConfigId}"
         method = "PUT"
         operation_name = "update_stream_cdn_config"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/UpdateStreamCdnConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5444,7 +5442,7 @@ class MediaServicesClient(object):
         resource_path = "/streamDistributionChannels/{streamDistributionChannelId}"
         method = "PUT"
         operation_name = "update_stream_distribution_channel"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/UpdateStreamDistributionChannel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5552,7 +5550,7 @@ class MediaServicesClient(object):
         resource_path = "/streamPackagingConfigs/{streamPackagingConfigId}"
         method = "PUT"
         operation_name = "update_stream_packaging_config"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/UpdateStreamPackagingConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

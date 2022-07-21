@@ -60,6 +60,9 @@ Data Science
     oci.data_science.models.NotebookSession
     oci.data_science.models.NotebookSessionConfigDetails
     oci.data_science.models.NotebookSessionConfigurationDetails
+    oci.data_science.models.NotebookSessionGitConfigDetails
+    oci.data_science.models.NotebookSessionGitRepoConfigDetails
+    oci.data_science.models.NotebookSessionRuntimeConfigDetails
     oci.data_science.models.NotebookSessionShapeConfigDetails
     oci.data_science.models.NotebookSessionShapeSummary
     oci.data_science.models.NotebookSessionSummary

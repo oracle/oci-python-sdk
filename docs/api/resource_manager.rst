@@ -52,6 +52,7 @@ Resource Manager
     oci.resource_manager.models.CreateTemplateDetails
     oci.resource_manager.models.CreateTemplateZipUploadConfigSourceDetails
     oci.resource_manager.models.CreateZipUploadConfigSourceDetails
+    oci.resource_manager.models.CustomTerraformProvider
     oci.resource_manager.models.DestroyJobOperationDetails
     oci.resource_manager.models.DestroyJobOperationDetailsSummary
     oci.resource_manager.models.DetectStackDriftDetails

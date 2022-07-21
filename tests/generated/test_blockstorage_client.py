@@ -1766,8 +1766,6 @@ def test_list_block_volume_replicas(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.list_block_volume_replicas(
-                availability_domain=request.pop(util.camelize('availabilityDomain')),
-                compartment_id=request.pop(util.camelize('compartmentId')),
                 retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
@@ -1776,8 +1774,6 @@ def test_list_block_volume_replicas(testing_service_client):
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_block_volume_replicas(
-                    availability_domain=request.pop(util.camelize('availabilityDomain')),
-                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
@@ -1788,8 +1784,6 @@ def test_list_block_volume_replicas(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_block_volume_replicas(
-                        availability_domain=request.pop(util.camelize('availabilityDomain')),
-                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
@@ -1895,8 +1889,6 @@ def test_list_boot_volume_replicas(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.list_boot_volume_replicas(
-                availability_domain=request.pop(util.camelize('availabilityDomain')),
-                compartment_id=request.pop(util.camelize('compartmentId')),
                 retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
@@ -1905,8 +1897,6 @@ def test_list_boot_volume_replicas(testing_service_client):
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_boot_volume_replicas(
-                    availability_domain=request.pop(util.camelize('availabilityDomain')),
-                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
@@ -1917,8 +1907,6 @@ def test_list_boot_volume_replicas(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_boot_volume_replicas(
-                        availability_domain=request.pop(util.camelize('availabilityDomain')),
-                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
@@ -1961,8 +1949,6 @@ def test_list_boot_volumes(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.list_boot_volumes(
-                availability_domain=request.pop(util.camelize('availabilityDomain')),
-                compartment_id=request.pop(util.camelize('compartmentId')),
                 retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
@@ -1971,8 +1957,6 @@ def test_list_boot_volumes(testing_service_client):
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_boot_volumes(
-                    availability_domain=request.pop(util.camelize('availabilityDomain')),
-                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
@@ -1983,8 +1967,6 @@ def test_list_boot_volumes(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_boot_volumes(
-                        availability_domain=request.pop(util.camelize('availabilityDomain')),
-                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
@@ -2342,7 +2324,6 @@ def test_list_volumes(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.list_volumes(
-                compartment_id=request.pop(util.camelize('compartmentId')),
                 retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
@@ -2351,7 +2332,6 @@ def test_list_volumes(testing_service_client):
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_volumes(
-                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
@@ -2362,7 +2342,6 @@ def test_list_volumes(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_volumes(
-                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))

@@ -21654,6 +21654,11 @@ class DatabaseClient(object):
         :param str availability_domain: (optional)
             A filter to return only resources that match the given availability domain exactly.
 
+        :param str maintenance_subtype: (optional)
+            The sub-type of the maintenance run.
+
+            Allowed values are: "QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -21689,7 +21694,8 @@ class DatabaseClient(object):
             "sort_by",
             "sort_order",
             "lifecycle_state",
-            "availability_domain"
+            "availability_domain",
+            "maintenance_subtype"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -21731,6 +21737,13 @@ class DatabaseClient(object):
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
                 )
 
+        if 'maintenance_subtype' in kwargs:
+            maintenance_subtype_allowed_values = ["QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY"]
+            if kwargs['maintenance_subtype'] not in maintenance_subtype_allowed_values:
+                raise ValueError(
+                    "Invalid value for `maintenance_subtype`, must be one of {0}".format(maintenance_subtype_allowed_values)
+                )
+
         query_params = {
             "compartmentId": compartment_id,
             "targetResourceId": kwargs.get("target_resource_id", missing),
@@ -21741,7 +21754,8 @@ class DatabaseClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
-            "availabilityDomain": kwargs.get("availability_domain", missing)
+            "availabilityDomain": kwargs.get("availability_domain", missing),
+            "maintenanceSubtype": kwargs.get("maintenance_subtype", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

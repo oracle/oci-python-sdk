@@ -39,6 +39,10 @@ class VolumeGroup(object):
     #: This constant has a value of "FAULTY"
     LIFECYCLE_STATE_FAULTY = "FAULTY"
 
+    #: A constant which can be used with the lifecycle_state property of a VolumeGroup.
+    #: This constant has a value of "UPDATE_PENDING"
+    LIFECYCLE_STATE_UPDATE_PENDING = "UPDATE_PENDING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new VolumeGroup object with values from keyword arguments.
@@ -70,7 +74,7 @@ class VolumeGroup(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this VolumeGroup.
-            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY", "UPDATE_PENDING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -324,7 +328,7 @@ class VolumeGroup(object):
         **[Required]** Gets the lifecycle_state of this VolumeGroup.
         The current state of a volume group.
 
-        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY", "UPDATE_PENDING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -343,7 +347,7 @@ class VolumeGroup(object):
         :param lifecycle_state: The lifecycle_state of this VolumeGroup.
         :type: str
         """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY"]
+        allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY", "UPDATE_PENDING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

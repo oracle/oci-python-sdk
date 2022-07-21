@@ -1562,6 +1562,9 @@ class ManagementAgentClient(object):
 
             Allowed values are: "LINUX", "WINDOWS", "SOLARIS"
 
+        :param str agent_id: (optional)
+            The ManagementAgentID of the agent from which the Management Agents to be filtered.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1596,7 +1599,8 @@ class ManagementAgentClient(object):
             "sort_by",
             "opc_request_id",
             "lifecycle_state",
-            "platform_type"
+            "platform_type",
+            "agent_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1640,7 +1644,8 @@ class ManagementAgentClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
-            "platformType": self.base_client.generate_collection_format_param(kwargs.get("platform_type", missing), 'multi')
+            "platformType": self.base_client.generate_collection_format_param(kwargs.get("platform_type", missing), 'multi'),
+            "agentId": kwargs.get("agent_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -1684,7 +1689,8 @@ class ManagementAgentClient(object):
     def list_management_agents(self, compartment_id, **kwargs):
         """
         Returns a list of Management Agents.
-        If no explicit page size limit is specified, it will default to 5000.
+        If no explicit page size limit is specified, it will default to 1000 when compartmentIdInSubtree is true and 5000 otherwise.
+        The response is limited to maximum 1000 records when compartmentIdInSubtree is true.
 
 
         :param str compartment_id: (required)
@@ -1744,6 +1750,12 @@ class ManagementAgentClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param bool compartment_id_in_subtree: (optional)
+            if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
+
+        :param str access_level: (optional)
+            When the value is \"ACCESSIBLE\", insufficient permissions for a compartment will filter out resources in that compartment without rejecting the request.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1784,7 +1796,9 @@ class ManagementAgentClient(object):
             "page",
             "sort_order",
             "sort_by",
-            "opc_request_id"
+            "opc_request_id",
+            "compartment_id_in_subtree",
+            "access_level"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1848,7 +1862,9 @@ class ManagementAgentClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
-            "sortBy": kwargs.get("sort_by", missing)
+            "sortBy": kwargs.get("sort_by", missing),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "accessLevel": kwargs.get("access_level", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -2186,6 +2202,11 @@ class ManagementAgentClient(object):
 
             Allowed values are: "CREATED", "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"
 
+        :param str type: (optional)
+            The OperationType of the workRequest
+
+            Allowed values are: "DEPLOY_PLUGIN", "UPGRADE_PLUGIN", "CREATE_UPGRADE_PLUGINS", "AGENTIMAGE_UPGRADE"
+
         :param datetime time_created_greater_than_or_equal_to: (optional)
             Filter for items with timeCreated greater or equal to provided value.
             given `timeCreatedGreaterThanOrEqualTo` to the current time, in \"YYYY-MM-ddThh:mmZ\" format with a
@@ -2233,6 +2254,7 @@ class ManagementAgentClient(object):
             "page",
             "limit",
             "status",
+            "type",
             "time_created_greater_than_or_equal_to",
             "sort_order",
             "sort_by"
@@ -2247,6 +2269,13 @@ class ManagementAgentClient(object):
             if kwargs['status'] not in status_allowed_values:
                 raise ValueError(
                     "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                )
+
+        if 'type' in kwargs:
+            type_allowed_values = ["DEPLOY_PLUGIN", "UPGRADE_PLUGIN", "CREATE_UPGRADE_PLUGINS", "AGENTIMAGE_UPGRADE"]
+            if kwargs['type'] not in type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `type`, must be one of {0}".format(type_allowed_values)
                 )
 
         if 'sort_order' in kwargs:
@@ -2269,6 +2298,7 @@ class ManagementAgentClient(object):
             "page": kwargs.get("page", missing),
             "limit": kwargs.get("limit", missing),
             "status": kwargs.get("status", missing),
+            "type": kwargs.get("type", missing),
             "timeCreatedGreaterThanOrEqualTo": kwargs.get("time_created_greater_than_or_equal_to", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing)

@@ -148,6 +148,22 @@ class ApplianceExportJob(object):
             The value to assign to the bucket_access_policies property of this ApplianceExportJob.
         :type bucket_access_policies: list[str]
 
+        :param return_shipping_label_uri:
+            The value to assign to the return_shipping_label_uri property of this ApplianceExportJob.
+        :type return_shipping_label_uri: str
+
+        :param expected_return_date:
+            The value to assign to the expected_return_date property of this ApplianceExportJob.
+        :type expected_return_date: datetime
+
+        :param pickup_window_start_time:
+            The value to assign to the pickup_window_start_time property of this ApplianceExportJob.
+        :type pickup_window_start_time: datetime
+
+        :param pickup_window_end_time:
+            The value to assign to the pickup_window_end_time property of this ApplianceExportJob.
+        :type pickup_window_end_time: datetime
+
         :param customer_shipping_address:
             The value to assign to the customer_shipping_address property of this ApplianceExportJob.
         :type customer_shipping_address: oci.dts.models.ShippingAddress
@@ -187,6 +203,10 @@ class ApplianceExportJob(object):
             'manifest_file': 'str',
             'manifest_md5': 'str',
             'bucket_access_policies': 'list[str]',
+            'return_shipping_label_uri': 'str',
+            'expected_return_date': 'datetime',
+            'pickup_window_start_time': 'datetime',
+            'pickup_window_end_time': 'datetime',
             'customer_shipping_address': 'ShippingAddress',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -218,6 +238,10 @@ class ApplianceExportJob(object):
             'manifest_file': 'manifestFile',
             'manifest_md5': 'manifestMd5',
             'bucket_access_policies': 'bucketAccessPolicies',
+            'return_shipping_label_uri': 'returnShippingLabelUri',
+            'expected_return_date': 'expectedReturnDate',
+            'pickup_window_start_time': 'pickupWindowStartTime',
+            'pickup_window_end_time': 'pickupWindowEndTime',
             'customer_shipping_address': 'customerShippingAddress',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -248,6 +272,10 @@ class ApplianceExportJob(object):
         self._manifest_file = None
         self._manifest_md5 = None
         self._bucket_access_policies = None
+        self._return_shipping_label_uri = None
+        self._expected_return_date = None
+        self._pickup_window_start_time = None
+        self._pickup_window_end_time = None
         self._customer_shipping_address = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -833,6 +861,98 @@ class ApplianceExportJob(object):
         :type: list[str]
         """
         self._bucket_access_policies = bucket_access_policies
+
+    @property
+    def return_shipping_label_uri(self):
+        """
+        Gets the return_shipping_label_uri of this ApplianceExportJob.
+
+        :return: The return_shipping_label_uri of this ApplianceExportJob.
+        :rtype: str
+        """
+        return self._return_shipping_label_uri
+
+    @return_shipping_label_uri.setter
+    def return_shipping_label_uri(self, return_shipping_label_uri):
+        """
+        Sets the return_shipping_label_uri of this ApplianceExportJob.
+
+        :param return_shipping_label_uri: The return_shipping_label_uri of this ApplianceExportJob.
+        :type: str
+        """
+        self._return_shipping_label_uri = return_shipping_label_uri
+
+    @property
+    def expected_return_date(self):
+        """
+        Gets the expected_return_date of this ApplianceExportJob.
+        Expected return date from customer for the device, time portion should be zero.
+
+
+        :return: The expected_return_date of this ApplianceExportJob.
+        :rtype: datetime
+        """
+        return self._expected_return_date
+
+    @expected_return_date.setter
+    def expected_return_date(self, expected_return_date):
+        """
+        Sets the expected_return_date of this ApplianceExportJob.
+        Expected return date from customer for the device, time portion should be zero.
+
+
+        :param expected_return_date: The expected_return_date of this ApplianceExportJob.
+        :type: datetime
+        """
+        self._expected_return_date = expected_return_date
+
+    @property
+    def pickup_window_start_time(self):
+        """
+        Gets the pickup_window_start_time of this ApplianceExportJob.
+        Start time for the window to pickup the device from customer.
+
+
+        :return: The pickup_window_start_time of this ApplianceExportJob.
+        :rtype: datetime
+        """
+        return self._pickup_window_start_time
+
+    @pickup_window_start_time.setter
+    def pickup_window_start_time(self, pickup_window_start_time):
+        """
+        Sets the pickup_window_start_time of this ApplianceExportJob.
+        Start time for the window to pickup the device from customer.
+
+
+        :param pickup_window_start_time: The pickup_window_start_time of this ApplianceExportJob.
+        :type: datetime
+        """
+        self._pickup_window_start_time = pickup_window_start_time
+
+    @property
+    def pickup_window_end_time(self):
+        """
+        Gets the pickup_window_end_time of this ApplianceExportJob.
+        End time for the window to pickup the device from customer.
+
+
+        :return: The pickup_window_end_time of this ApplianceExportJob.
+        :rtype: datetime
+        """
+        return self._pickup_window_end_time
+
+    @pickup_window_end_time.setter
+    def pickup_window_end_time(self, pickup_window_end_time):
+        """
+        Sets the pickup_window_end_time of this ApplianceExportJob.
+        End time for the window to pickup the device from customer.
+
+
+        :param pickup_window_end_time: The pickup_window_end_time of this ApplianceExportJob.
+        :type: datetime
+        """
+        self._pickup_window_end_time = pickup_window_end_time
 
     @property
     def customer_shipping_address(self):

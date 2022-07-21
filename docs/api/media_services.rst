@@ -7,7 +7,9 @@ Media Services
     :template: autosummary/service_client.rst
 
     oci.media_services.MediaServicesClient
+    oci.media_services.MediaStreamClient
     oci.media_services.MediaServicesClientCompositeOperations
+    oci.media_services.MediaStreamClientCompositeOperations
 
 --------
  Models
@@ -36,6 +38,7 @@ Media Services
     oci.media_services.models.CreateStreamPackagingConfigDetails
     oci.media_services.models.DashStreamPackagingConfig
     oci.media_services.models.EdgeStreamCdnConfig
+    oci.media_services.models.GenerateSessionTokenDetails
     oci.media_services.models.HlsStreamPackagingConfig
     oci.media_services.models.IngestStreamDistributionChannelDetails
     oci.media_services.models.IngestStreamDistributionChannelResult
@@ -64,6 +67,7 @@ Media Services
     oci.media_services.models.MediaWorkflowTaskDeclarationCollection
     oci.media_services.models.MediaWorkflowTaskState
     oci.media_services.models.Metadata
+    oci.media_services.models.SessionToken
     oci.media_services.models.StreamCdnConfig
     oci.media_services.models.StreamCdnConfigCollection
     oci.media_services.models.StreamCdnConfigSection

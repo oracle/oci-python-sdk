@@ -65,7 +65,7 @@ class CreateMediaWorkflowConfigurationDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateMediaWorkflowConfigurationDetails.
-        MediaWorkflowConfiguration identifier.
+        MediaWorkflowConfiguration identifier. Avoid entering confidential information.
 
 
         :return: The display_name of this CreateMediaWorkflowConfigurationDetails.
@@ -77,7 +77,7 @@ class CreateMediaWorkflowConfigurationDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateMediaWorkflowConfigurationDetails.
-        MediaWorkflowConfiguration identifier.
+        MediaWorkflowConfiguration identifier. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateMediaWorkflowConfigurationDetails.

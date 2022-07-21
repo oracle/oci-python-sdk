@@ -29,6 +29,10 @@ class CreateOperatorControlDetails(object):
     #: This constant has a value of "AUTONOMOUSVMCLUSTER"
     RESOURCE_TYPE_AUTONOMOUSVMCLUSTER = "AUTONOMOUSVMCLUSTER"
 
+    #: A constant which can be used with the resource_type property of a CreateOperatorControlDetails.
+    #: This constant has a value of "CLOUDAUTONOMOUSVMCLUSTER"
+    RESOURCE_TYPE_CLOUDAUTONOMOUSVMCLUSTER = "CLOUDAUTONOMOUSVMCLUSTER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateOperatorControlDetails object with values from keyword arguments.
@@ -60,7 +64,7 @@ class CreateOperatorControlDetails(object):
 
         :param resource_type:
             The value to assign to the resource_type property of this CreateOperatorControlDetails.
-            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER"
+            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER"
         :type resource_type: str
 
         :param email_id_list:
@@ -281,7 +285,7 @@ class CreateOperatorControlDetails(object):
         **[Required]** Gets the resource_type of this CreateOperatorControlDetails.
         resourceType for which the OperatorControl is applicable
 
-        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER"
+        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER"
 
 
         :return: The resource_type of this CreateOperatorControlDetails.
@@ -299,7 +303,7 @@ class CreateOperatorControlDetails(object):
         :param resource_type: The resource_type of this CreateOperatorControlDetails.
         :type: str
         """
-        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER"]
+        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER"]
         if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
             raise ValueError(
                 "Invalid value for `resource_type`, must be None or one of {0}"
