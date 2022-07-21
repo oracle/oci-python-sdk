@@ -52,7 +52,7 @@ class TestBlockStorage:
         result = block_storage.get_volume(volume_id)
         util.validate_response(result)
 
-        result = block_storage.list_volumes(util.COMPARTMENT_ID)
+        result = block_storage.list_volumes(compartment_id=util.COMPARTMENT_ID)
         util.validate_response(result)
 
         volume_name = create_volume_details.display_name + "_UPDATED"
