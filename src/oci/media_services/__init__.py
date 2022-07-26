@@ -7,6 +7,8 @@ from __future__ import absolute_import
 
 from .media_services_client import MediaServicesClient
 from .media_services_client_composite_operations import MediaServicesClientCompositeOperations
+from .media_stream_client import MediaStreamClient
+from .media_stream_client_composite_operations import MediaStreamClientCompositeOperations
 from . import models
 
-__all__ = ["MediaServicesClient", "MediaServicesClientCompositeOperations", "models"]
+__all__ = ["MediaServicesClient", "MediaServicesClientCompositeOperations", "MediaStreamClient", "MediaStreamClientCompositeOperations", "models"]

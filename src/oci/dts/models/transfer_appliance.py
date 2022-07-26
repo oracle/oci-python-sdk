@@ -38,6 +38,18 @@ class TransferAppliance(object):
     LIFECYCLE_STATE_FINALIZED = "FINALIZED"
 
     #: A constant which can be used with the lifecycle_state property of a TransferAppliance.
+    #: This constant has a value of "RETURN_LABEL_REQUESTED"
+    LIFECYCLE_STATE_RETURN_LABEL_REQUESTED = "RETURN_LABEL_REQUESTED"
+
+    #: A constant which can be used with the lifecycle_state property of a TransferAppliance.
+    #: This constant has a value of "RETURN_LABEL_GENERATING"
+    LIFECYCLE_STATE_RETURN_LABEL_GENERATING = "RETURN_LABEL_GENERATING"
+
+    #: A constant which can be used with the lifecycle_state property of a TransferAppliance.
+    #: This constant has a value of "RETURN_LABEL_AVAILABLE"
+    LIFECYCLE_STATE_RETURN_LABEL_AVAILABLE = "RETURN_LABEL_AVAILABLE"
+
+    #: A constant which can be used with the lifecycle_state property of a TransferAppliance.
     #: This constant has a value of "RETURN_DELAYED"
     LIFECYCLE_STATE_RETURN_DELAYED = "RETURN_DELAYED"
 
@@ -104,7 +116,7 @@ class TransferAppliance(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this TransferAppliance.
-            Allowed values for this property are: "REQUESTED", "ORACLE_PREPARING", "SHIPPING", "DELIVERED", "PREPARING", "FINALIZED", "RETURN_DELAYED", "RETURN_SHIPPED", "RETURN_SHIPPED_CANCELLED", "ORACLE_RECEIVED", "ORACLE_RECEIVED_CANCELLED", "PROCESSING", "COMPLETE", "CUSTOMER_NEVER_RECEIVED", "ORACLE_NEVER_RECEIVED", "CUSTOMER_LOST", "CANCELLED", "DELETED", "REJECTED", "ERROR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "REQUESTED", "ORACLE_PREPARING", "SHIPPING", "DELIVERED", "PREPARING", "FINALIZED", "RETURN_LABEL_REQUESTED", "RETURN_LABEL_GENERATING", "RETURN_LABEL_AVAILABLE", "RETURN_DELAYED", "RETURN_SHIPPED", "RETURN_SHIPPED_CANCELLED", "ORACLE_RECEIVED", "ORACLE_RECEIVED_CANCELLED", "PROCESSING", "COMPLETE", "CUSTOMER_NEVER_RECEIVED", "ORACLE_NEVER_RECEIVED", "CUSTOMER_LOST", "CANCELLED", "DELETED", "REJECTED", "ERROR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -160,6 +172,26 @@ class TransferAppliance(object):
             The value to assign to the upload_status_log_uri property of this TransferAppliance.
         :type upload_status_log_uri: str
 
+        :param return_shipping_label_uri:
+            The value to assign to the return_shipping_label_uri property of this TransferAppliance.
+        :type return_shipping_label_uri: str
+
+        :param expected_return_date:
+            The value to assign to the expected_return_date property of this TransferAppliance.
+        :type expected_return_date: datetime
+
+        :param pickup_window_start_time:
+            The value to assign to the pickup_window_start_time property of this TransferAppliance.
+        :type pickup_window_start_time: datetime
+
+        :param pickup_window_end_time:
+            The value to assign to the pickup_window_end_time property of this TransferAppliance.
+        :type pickup_window_end_time: datetime
+
+        :param minimum_storage_capacity_in_terabytes:
+            The value to assign to the minimum_storage_capacity_in_terabytes property of this TransferAppliance.
+        :type minimum_storage_capacity_in_terabytes: int
+
         """
         self.swagger_types = {
             'label': 'str',
@@ -176,7 +208,12 @@ class TransferAppliance(object):
             'appliance_return_delivery_tracking_number': 'str',
             'appliance_delivery_vendor': 'str',
             'customer_shipping_address': 'ShippingAddress',
-            'upload_status_log_uri': 'str'
+            'upload_status_log_uri': 'str',
+            'return_shipping_label_uri': 'str',
+            'expected_return_date': 'datetime',
+            'pickup_window_start_time': 'datetime',
+            'pickup_window_end_time': 'datetime',
+            'minimum_storage_capacity_in_terabytes': 'int'
         }
 
         self.attribute_map = {
@@ -194,7 +231,12 @@ class TransferAppliance(object):
             'appliance_return_delivery_tracking_number': 'applianceReturnDeliveryTrackingNumber',
             'appliance_delivery_vendor': 'applianceDeliveryVendor',
             'customer_shipping_address': 'customerShippingAddress',
-            'upload_status_log_uri': 'uploadStatusLogUri'
+            'upload_status_log_uri': 'uploadStatusLogUri',
+            'return_shipping_label_uri': 'returnShippingLabelUri',
+            'expected_return_date': 'expectedReturnDate',
+            'pickup_window_start_time': 'pickupWindowStartTime',
+            'pickup_window_end_time': 'pickupWindowEndTime',
+            'minimum_storage_capacity_in_terabytes': 'minimumStorageCapacityInTerabytes'
         }
 
         self._label = None
@@ -212,6 +254,11 @@ class TransferAppliance(object):
         self._appliance_delivery_vendor = None
         self._customer_shipping_address = None
         self._upload_status_log_uri = None
+        self._return_shipping_label_uri = None
+        self._expected_return_date = None
+        self._pickup_window_start_time = None
+        self._pickup_window_end_time = None
+        self._minimum_storage_capacity_in_terabytes = None
 
     @property
     def label(self):
@@ -241,7 +288,7 @@ class TransferAppliance(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this TransferAppliance.
-        Allowed values for this property are: "REQUESTED", "ORACLE_PREPARING", "SHIPPING", "DELIVERED", "PREPARING", "FINALIZED", "RETURN_DELAYED", "RETURN_SHIPPED", "RETURN_SHIPPED_CANCELLED", "ORACLE_RECEIVED", "ORACLE_RECEIVED_CANCELLED", "PROCESSING", "COMPLETE", "CUSTOMER_NEVER_RECEIVED", "ORACLE_NEVER_RECEIVED", "CUSTOMER_LOST", "CANCELLED", "DELETED", "REJECTED", "ERROR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "REQUESTED", "ORACLE_PREPARING", "SHIPPING", "DELIVERED", "PREPARING", "FINALIZED", "RETURN_LABEL_REQUESTED", "RETURN_LABEL_GENERATING", "RETURN_LABEL_AVAILABLE", "RETURN_DELAYED", "RETURN_SHIPPED", "RETURN_SHIPPED_CANCELLED", "ORACLE_RECEIVED", "ORACLE_RECEIVED_CANCELLED", "PROCESSING", "COMPLETE", "CUSTOMER_NEVER_RECEIVED", "ORACLE_NEVER_RECEIVED", "CUSTOMER_LOST", "CANCELLED", "DELETED", "REJECTED", "ERROR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -258,7 +305,7 @@ class TransferAppliance(object):
         :param lifecycle_state: The lifecycle_state of this TransferAppliance.
         :type: str
         """
-        allowed_values = ["REQUESTED", "ORACLE_PREPARING", "SHIPPING", "DELIVERED", "PREPARING", "FINALIZED", "RETURN_DELAYED", "RETURN_SHIPPED", "RETURN_SHIPPED_CANCELLED", "ORACLE_RECEIVED", "ORACLE_RECEIVED_CANCELLED", "PROCESSING", "COMPLETE", "CUSTOMER_NEVER_RECEIVED", "ORACLE_NEVER_RECEIVED", "CUSTOMER_LOST", "CANCELLED", "DELETED", "REJECTED", "ERROR"]
+        allowed_values = ["REQUESTED", "ORACLE_PREPARING", "SHIPPING", "DELIVERED", "PREPARING", "FINALIZED", "RETURN_LABEL_REQUESTED", "RETURN_LABEL_GENERATING", "RETURN_LABEL_AVAILABLE", "RETURN_DELAYED", "RETURN_SHIPPED", "RETURN_SHIPPED_CANCELLED", "ORACLE_RECEIVED", "ORACLE_RECEIVED_CANCELLED", "PROCESSING", "COMPLETE", "CUSTOMER_NEVER_RECEIVED", "ORACLE_NEVER_RECEIVED", "CUSTOMER_LOST", "CANCELLED", "DELETED", "REJECTED", "ERROR"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -522,6 +569,122 @@ class TransferAppliance(object):
         :type: str
         """
         self._upload_status_log_uri = upload_status_log_uri
+
+    @property
+    def return_shipping_label_uri(self):
+        """
+        Gets the return_shipping_label_uri of this TransferAppliance.
+
+        :return: The return_shipping_label_uri of this TransferAppliance.
+        :rtype: str
+        """
+        return self._return_shipping_label_uri
+
+    @return_shipping_label_uri.setter
+    def return_shipping_label_uri(self, return_shipping_label_uri):
+        """
+        Sets the return_shipping_label_uri of this TransferAppliance.
+
+        :param return_shipping_label_uri: The return_shipping_label_uri of this TransferAppliance.
+        :type: str
+        """
+        self._return_shipping_label_uri = return_shipping_label_uri
+
+    @property
+    def expected_return_date(self):
+        """
+        Gets the expected_return_date of this TransferAppliance.
+        Expected return date from customer for the device, time portion should be zero.
+
+
+        :return: The expected_return_date of this TransferAppliance.
+        :rtype: datetime
+        """
+        return self._expected_return_date
+
+    @expected_return_date.setter
+    def expected_return_date(self, expected_return_date):
+        """
+        Sets the expected_return_date of this TransferAppliance.
+        Expected return date from customer for the device, time portion should be zero.
+
+
+        :param expected_return_date: The expected_return_date of this TransferAppliance.
+        :type: datetime
+        """
+        self._expected_return_date = expected_return_date
+
+    @property
+    def pickup_window_start_time(self):
+        """
+        Gets the pickup_window_start_time of this TransferAppliance.
+        Start time for the window to pickup the device from customer.
+
+
+        :return: The pickup_window_start_time of this TransferAppliance.
+        :rtype: datetime
+        """
+        return self._pickup_window_start_time
+
+    @pickup_window_start_time.setter
+    def pickup_window_start_time(self, pickup_window_start_time):
+        """
+        Sets the pickup_window_start_time of this TransferAppliance.
+        Start time for the window to pickup the device from customer.
+
+
+        :param pickup_window_start_time: The pickup_window_start_time of this TransferAppliance.
+        :type: datetime
+        """
+        self._pickup_window_start_time = pickup_window_start_time
+
+    @property
+    def pickup_window_end_time(self):
+        """
+        Gets the pickup_window_end_time of this TransferAppliance.
+        End time for the window to pickup the device from customer.
+
+
+        :return: The pickup_window_end_time of this TransferAppliance.
+        :rtype: datetime
+        """
+        return self._pickup_window_end_time
+
+    @pickup_window_end_time.setter
+    def pickup_window_end_time(self, pickup_window_end_time):
+        """
+        Sets the pickup_window_end_time of this TransferAppliance.
+        End time for the window to pickup the device from customer.
+
+
+        :param pickup_window_end_time: The pickup_window_end_time of this TransferAppliance.
+        :type: datetime
+        """
+        self._pickup_window_end_time = pickup_window_end_time
+
+    @property
+    def minimum_storage_capacity_in_terabytes(self):
+        """
+        Gets the minimum_storage_capacity_in_terabytes of this TransferAppliance.
+        Minimum storage capacity of the device, in terabytes. Valid options are 50, 95 and 150.
+
+
+        :return: The minimum_storage_capacity_in_terabytes of this TransferAppliance.
+        :rtype: int
+        """
+        return self._minimum_storage_capacity_in_terabytes
+
+    @minimum_storage_capacity_in_terabytes.setter
+    def minimum_storage_capacity_in_terabytes(self, minimum_storage_capacity_in_terabytes):
+        """
+        Sets the minimum_storage_capacity_in_terabytes of this TransferAppliance.
+        Minimum storage capacity of the device, in terabytes. Valid options are 50, 95 and 150.
+
+
+        :param minimum_storage_capacity_in_terabytes: The minimum_storage_capacity_in_terabytes of this TransferAppliance.
+        :type: int
+        """
+        self._minimum_storage_capacity_in_terabytes = minimum_storage_capacity_in_terabytes
 
     def __repr__(self):
         return formatted_flat_dict(self)

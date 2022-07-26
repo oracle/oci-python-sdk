@@ -41,6 +41,10 @@ class ManagementAgentImage(object):
     #: This constant has a value of "SPARC"
     PACKAGE_ARCHITECTURE_TYPE_SPARC = "SPARC"
 
+    #: A constant which can be used with the package_architecture_type property of a ManagementAgentImage.
+    #: This constant has a value of "X86"
+    PACKAGE_ARCHITECTURE_TYPE_X86 = "X86"
+
     #: A constant which can be used with the lifecycle_state property of a ManagementAgentImage.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -98,7 +102,7 @@ class ManagementAgentImage(object):
 
         :param package_architecture_type:
             The value to assign to the package_architecture_type property of this ManagementAgentImage.
-            Allowed values for this property are: "X86_64", "SPARC"
+            Allowed values for this property are: "X86_64", "SPARC", "X86"
         :type package_architecture_type: str
 
         :param version:
@@ -278,7 +282,7 @@ class ManagementAgentImage(object):
         Gets the package_architecture_type of this ManagementAgentImage.
         The installation package target architecture type
 
-        Allowed values for this property are: "X86_64", "SPARC"
+        Allowed values for this property are: "X86_64", "SPARC", "X86"
 
 
         :return: The package_architecture_type of this ManagementAgentImage.
@@ -296,7 +300,7 @@ class ManagementAgentImage(object):
         :param package_architecture_type: The package_architecture_type of this ManagementAgentImage.
         :type: str
         """
-        allowed_values = ["X86_64", "SPARC"]
+        allowed_values = ["X86_64", "SPARC", "X86"]
         if not value_allowed_none_or_none_sentinel(package_architecture_type, allowed_values):
             raise ValueError(
                 "Invalid value for `package_architecture_type`, must be None or one of {0}"

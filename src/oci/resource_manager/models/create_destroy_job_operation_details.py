@@ -23,6 +23,10 @@ class CreateDestroyJobOperationDetails(CreateJobOperationDetails):
             The value to assign to the operation property of this CreateDestroyJobOperationDetails.
         :type operation: str
 
+        :param is_provider_upgrade_required:
+            The value to assign to the is_provider_upgrade_required property of this CreateDestroyJobOperationDetails.
+        :type is_provider_upgrade_required: bool
+
         :param terraform_advanced_options:
             The value to assign to the terraform_advanced_options property of this CreateDestroyJobOperationDetails.
         :type terraform_advanced_options: oci.resource_manager.models.TerraformAdvancedOptions
@@ -34,17 +38,20 @@ class CreateDestroyJobOperationDetails(CreateJobOperationDetails):
         """
         self.swagger_types = {
             'operation': 'str',
+            'is_provider_upgrade_required': 'bool',
             'terraform_advanced_options': 'TerraformAdvancedOptions',
             'execution_plan_strategy': 'str'
         }
 
         self.attribute_map = {
             'operation': 'operation',
+            'is_provider_upgrade_required': 'isProviderUpgradeRequired',
             'terraform_advanced_options': 'terraformAdvancedOptions',
             'execution_plan_strategy': 'executionPlanStrategy'
         }
 
         self._operation = None
+        self._is_provider_upgrade_required = None
         self._terraform_advanced_options = None
         self._execution_plan_strategy = None
         self._operation = 'DESTROY'

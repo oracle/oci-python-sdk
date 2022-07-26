@@ -138,7 +138,7 @@ class StreamDistributionChannel(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this StreamDistributionChannel.
-        Stream Distribution Channel display name.
+        Stream Distribution Channel display name. Avoid entering confidential information.
 
 
         :return: The display_name of this StreamDistributionChannel.
@@ -150,7 +150,7 @@ class StreamDistributionChannel(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this StreamDistributionChannel.
-        Stream Distribution Channel display name.
+        Stream Distribution Channel display name. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this StreamDistributionChannel.

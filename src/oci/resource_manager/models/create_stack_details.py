@@ -34,6 +34,10 @@ class CreateStackDetails(object):
             The value to assign to the config_source property of this CreateStackDetails.
         :type config_source: oci.resource_manager.models.CreateConfigSourceDetails
 
+        :param custom_terraform_provider:
+            The value to assign to the custom_terraform_provider property of this CreateStackDetails.
+        :type custom_terraform_provider: oci.resource_manager.models.CustomTerraformProvider
+
         :param variables:
             The value to assign to the variables property of this CreateStackDetails.
         :type variables: dict(str, str)
@@ -56,6 +60,7 @@ class CreateStackDetails(object):
             'display_name': 'str',
             'description': 'str',
             'config_source': 'CreateConfigSourceDetails',
+            'custom_terraform_provider': 'CustomTerraformProvider',
             'variables': 'dict(str, str)',
             'terraform_version': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -67,6 +72,7 @@ class CreateStackDetails(object):
             'display_name': 'displayName',
             'description': 'description',
             'config_source': 'configSource',
+            'custom_terraform_provider': 'customTerraformProvider',
             'variables': 'variables',
             'terraform_version': 'terraformVersion',
             'freeform_tags': 'freeformTags',
@@ -77,6 +83,7 @@ class CreateStackDetails(object):
         self._display_name = None
         self._description = None
         self._config_source = None
+        self._custom_terraform_provider = None
         self._variables = None
         self._terraform_version = None
         self._freeform_tags = None
@@ -177,6 +184,26 @@ class CreateStackDetails(object):
         :type: oci.resource_manager.models.CreateConfigSourceDetails
         """
         self._config_source = config_source
+
+    @property
+    def custom_terraform_provider(self):
+        """
+        Gets the custom_terraform_provider of this CreateStackDetails.
+
+        :return: The custom_terraform_provider of this CreateStackDetails.
+        :rtype: oci.resource_manager.models.CustomTerraformProvider
+        """
+        return self._custom_terraform_provider
+
+    @custom_terraform_provider.setter
+    def custom_terraform_provider(self, custom_terraform_provider):
+        """
+        Sets the custom_terraform_provider of this CreateStackDetails.
+
+        :param custom_terraform_provider: The custom_terraform_provider of this CreateStackDetails.
+        :type: oci.resource_manager.models.CustomTerraformProvider
+        """
+        self._custom_terraform_provider = custom_terraform_provider
 
     @property
     def variables(self):

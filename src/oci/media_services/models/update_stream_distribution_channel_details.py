@@ -51,7 +51,7 @@ class UpdateStreamDistributionChannelDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateStreamDistributionChannelDetails.
-        Stream Distribution channel display name.
+        Stream Distribution channel display name. Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateStreamDistributionChannelDetails.
@@ -63,7 +63,7 @@ class UpdateStreamDistributionChannelDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateStreamDistributionChannelDetails.
-        Stream Distribution channel display name.
+        Stream Distribution channel display name. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateStreamDistributionChannelDetails.

@@ -22,6 +22,7 @@ from .create_stream_distribution_channel_details import CreateStreamDistribution
 from .create_stream_packaging_config_details import CreateStreamPackagingConfigDetails
 from .dash_stream_packaging_config import DashStreamPackagingConfig
 from .edge_stream_cdn_config import EdgeStreamCdnConfig
+from .generate_session_token_details import GenerateSessionTokenDetails
 from .hls_stream_packaging_config import HlsStreamPackagingConfig
 from .ingest_stream_distribution_channel_details import IngestStreamDistributionChannelDetails
 from .ingest_stream_distribution_channel_result import IngestStreamDistributionChannelResult
@@ -50,6 +51,7 @@ from .media_workflow_task_declaration import MediaWorkflowTaskDeclaration
 from .media_workflow_task_declaration_collection import MediaWorkflowTaskDeclarationCollection
 from .media_workflow_task_state import MediaWorkflowTaskState
 from .metadata import Metadata
+from .session_token import SessionToken
 from .stream_cdn_config import StreamCdnConfig
 from .stream_cdn_config_collection import StreamCdnConfigCollection
 from .stream_cdn_config_section import StreamCdnConfigSection
@@ -93,6 +95,7 @@ media_services_type_mapping = {
     "CreateStreamPackagingConfigDetails": CreateStreamPackagingConfigDetails,
     "DashStreamPackagingConfig": DashStreamPackagingConfig,
     "EdgeStreamCdnConfig": EdgeStreamCdnConfig,
+    "GenerateSessionTokenDetails": GenerateSessionTokenDetails,
     "HlsStreamPackagingConfig": HlsStreamPackagingConfig,
     "IngestStreamDistributionChannelDetails": IngestStreamDistributionChannelDetails,
     "IngestStreamDistributionChannelResult": IngestStreamDistributionChannelResult,
@@ -121,6 +124,7 @@ media_services_type_mapping = {
     "MediaWorkflowTaskDeclarationCollection": MediaWorkflowTaskDeclarationCollection,
     "MediaWorkflowTaskState": MediaWorkflowTaskState,
     "Metadata": Metadata,
+    "SessionToken": SessionToken,
     "StreamCdnConfig": StreamCdnConfig,
     "StreamCdnConfigCollection": StreamCdnConfigCollection,
     "StreamCdnConfigSection": StreamCdnConfigSection,

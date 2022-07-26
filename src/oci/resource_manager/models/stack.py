@@ -81,6 +81,14 @@ class Stack(object):
             The value to assign to the config_source property of this Stack.
         :type config_source: oci.resource_manager.models.ConfigSource
 
+        :param custom_terraform_provider:
+            The value to assign to the custom_terraform_provider property of this Stack.
+        :type custom_terraform_provider: oci.resource_manager.models.CustomTerraformProvider
+
+        :param is_third_party_provider_experience_enabled:
+            The value to assign to the is_third_party_provider_experience_enabled property of this Stack.
+        :type is_third_party_provider_experience_enabled: bool
+
         :param variables:
             The value to assign to the variables property of this Stack.
         :type variables: dict(str, str)
@@ -116,6 +124,8 @@ class Stack(object):
             'time_created': 'datetime',
             'lifecycle_state': 'str',
             'config_source': 'ConfigSource',
+            'custom_terraform_provider': 'CustomTerraformProvider',
+            'is_third_party_provider_experience_enabled': 'bool',
             'variables': 'dict(str, str)',
             'terraform_version': 'str',
             'stack_drift_status': 'str',
@@ -132,6 +142,8 @@ class Stack(object):
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState',
             'config_source': 'configSource',
+            'custom_terraform_provider': 'customTerraformProvider',
+            'is_third_party_provider_experience_enabled': 'isThirdPartyProviderExperienceEnabled',
             'variables': 'variables',
             'terraform_version': 'terraformVersion',
             'stack_drift_status': 'stackDriftStatus',
@@ -147,6 +159,8 @@ class Stack(object):
         self._time_created = None
         self._lifecycle_state = None
         self._config_source = None
+        self._custom_terraform_provider = None
+        self._is_third_party_provider_experience_enabled = None
         self._variables = None
         self._terraform_version = None
         self._stack_drift_status = None
@@ -343,6 +357,64 @@ class Stack(object):
         :type: oci.resource_manager.models.ConfigSource
         """
         self._config_source = config_source
+
+    @property
+    def custom_terraform_provider(self):
+        """
+        Gets the custom_terraform_provider of this Stack.
+
+        :return: The custom_terraform_provider of this Stack.
+        :rtype: oci.resource_manager.models.CustomTerraformProvider
+        """
+        return self._custom_terraform_provider
+
+    @custom_terraform_provider.setter
+    def custom_terraform_provider(self, custom_terraform_provider):
+        """
+        Sets the custom_terraform_provider of this Stack.
+
+        :param custom_terraform_provider: The custom_terraform_provider of this Stack.
+        :type: oci.resource_manager.models.CustomTerraformProvider
+        """
+        self._custom_terraform_provider = custom_terraform_provider
+
+    @property
+    def is_third_party_provider_experience_enabled(self):
+        """
+        Gets the is_third_party_provider_experience_enabled of this Stack.
+        When `true`, the stack sources third-party Terraform providers from
+        `Terraform Registry`__ and allows
+        :func:`custom_terraform_provider`.
+        For more information about stack sourcing of third-party Terraform providers, see
+        `Third-party Provider Configuration`__.
+
+        __ https://registry.terraform.io/browse/providers
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers
+
+
+        :return: The is_third_party_provider_experience_enabled of this Stack.
+        :rtype: bool
+        """
+        return self._is_third_party_provider_experience_enabled
+
+    @is_third_party_provider_experience_enabled.setter
+    def is_third_party_provider_experience_enabled(self, is_third_party_provider_experience_enabled):
+        """
+        Sets the is_third_party_provider_experience_enabled of this Stack.
+        When `true`, the stack sources third-party Terraform providers from
+        `Terraform Registry`__ and allows
+        :func:`custom_terraform_provider`.
+        For more information about stack sourcing of third-party Terraform providers, see
+        `Third-party Provider Configuration`__.
+
+        __ https://registry.terraform.io/browse/providers
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers
+
+
+        :param is_third_party_provider_experience_enabled: The is_third_party_provider_experience_enabled of this Stack.
+        :type: bool
+        """
+        self._is_third_party_provider_experience_enabled = is_third_party_provider_experience_enabled
 
     @property
     def variables(self):

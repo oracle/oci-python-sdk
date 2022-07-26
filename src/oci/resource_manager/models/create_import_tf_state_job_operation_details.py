@@ -23,6 +23,10 @@ class CreateImportTfStateJobOperationDetails(CreateJobOperationDetails):
             The value to assign to the operation property of this CreateImportTfStateJobOperationDetails.
         :type operation: str
 
+        :param is_provider_upgrade_required:
+            The value to assign to the is_provider_upgrade_required property of this CreateImportTfStateJobOperationDetails.
+        :type is_provider_upgrade_required: bool
+
         :param tf_state_base64_encoded:
             The value to assign to the tf_state_base64_encoded property of this CreateImportTfStateJobOperationDetails.
         :type tf_state_base64_encoded: str
@@ -30,15 +34,18 @@ class CreateImportTfStateJobOperationDetails(CreateJobOperationDetails):
         """
         self.swagger_types = {
             'operation': 'str',
+            'is_provider_upgrade_required': 'bool',
             'tf_state_base64_encoded': 'str'
         }
 
         self.attribute_map = {
             'operation': 'operation',
+            'is_provider_upgrade_required': 'isProviderUpgradeRequired',
             'tf_state_base64_encoded': 'tfStateBase64Encoded'
         }
 
         self._operation = None
+        self._is_provider_upgrade_required = None
         self._tf_state_base64_encoded = None
         self._operation = 'IMPORT_TF_STATE'
 

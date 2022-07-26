@@ -13,6 +13,22 @@ class ManagementAgentPluginDetails(object):
     The information about the current management agent plugins that agent is having.
     """
 
+    #: A constant which can be used with the plugin_status property of a ManagementAgentPluginDetails.
+    #: This constant has a value of "RUNNING"
+    PLUGIN_STATUS_RUNNING = "RUNNING"
+
+    #: A constant which can be used with the plugin_status property of a ManagementAgentPluginDetails.
+    #: This constant has a value of "STOPPED"
+    PLUGIN_STATUS_STOPPED = "STOPPED"
+
+    #: A constant which can be used with the plugin_status property of a ManagementAgentPluginDetails.
+    #: This constant has a value of "INVALID"
+    PLUGIN_STATUS_INVALID = "INVALID"
+
+    #: A constant which can be used with the plugin_status property of a ManagementAgentPluginDetails.
+    #: This constant has a value of "FAILED"
+    PLUGIN_STATUS_FAILED = "FAILED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ManagementAgentPluginDetails object with values from keyword arguments.
@@ -34,6 +50,16 @@ class ManagementAgentPluginDetails(object):
             The value to assign to the plugin_version property of this ManagementAgentPluginDetails.
         :type plugin_version: str
 
+        :param plugin_status:
+            The value to assign to the plugin_status property of this ManagementAgentPluginDetails.
+            Allowed values for this property are: "RUNNING", "STOPPED", "INVALID", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type plugin_status: str
+
+        :param plugin_status_message:
+            The value to assign to the plugin_status_message property of this ManagementAgentPluginDetails.
+        :type plugin_status_message: str
+
         :param is_enabled:
             The value to assign to the is_enabled property of this ManagementAgentPluginDetails.
         :type is_enabled: bool
@@ -44,6 +70,8 @@ class ManagementAgentPluginDetails(object):
             'plugin_name': 'str',
             'plugin_display_name': 'str',
             'plugin_version': 'str',
+            'plugin_status': 'str',
+            'plugin_status_message': 'str',
             'is_enabled': 'bool'
         }
 
@@ -52,6 +80,8 @@ class ManagementAgentPluginDetails(object):
             'plugin_name': 'pluginName',
             'plugin_display_name': 'pluginDisplayName',
             'plugin_version': 'pluginVersion',
+            'plugin_status': 'pluginStatus',
+            'plugin_status_message': 'pluginStatusMessage',
             'is_enabled': 'isEnabled'
         }
 
@@ -59,6 +89,8 @@ class ManagementAgentPluginDetails(object):
         self._plugin_name = None
         self._plugin_display_name = None
         self._plugin_version = None
+        self._plugin_status = None
+        self._plugin_status_message = None
         self._is_enabled = None
 
     @property
@@ -156,6 +188,60 @@ class ManagementAgentPluginDetails(object):
         :type: str
         """
         self._plugin_version = plugin_version
+
+    @property
+    def plugin_status(self):
+        """
+        Gets the plugin_status of this ManagementAgentPluginDetails.
+        Plugin Status
+
+        Allowed values for this property are: "RUNNING", "STOPPED", "INVALID", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The plugin_status of this ManagementAgentPluginDetails.
+        :rtype: str
+        """
+        return self._plugin_status
+
+    @plugin_status.setter
+    def plugin_status(self, plugin_status):
+        """
+        Sets the plugin_status of this ManagementAgentPluginDetails.
+        Plugin Status
+
+
+        :param plugin_status: The plugin_status of this ManagementAgentPluginDetails.
+        :type: str
+        """
+        allowed_values = ["RUNNING", "STOPPED", "INVALID", "FAILED"]
+        if not value_allowed_none_or_none_sentinel(plugin_status, allowed_values):
+            plugin_status = 'UNKNOWN_ENUM_VALUE'
+        self._plugin_status = plugin_status
+
+    @property
+    def plugin_status_message(self):
+        """
+        Gets the plugin_status_message of this ManagementAgentPluginDetails.
+        Status message of the Plugin
+
+
+        :return: The plugin_status_message of this ManagementAgentPluginDetails.
+        :rtype: str
+        """
+        return self._plugin_status_message
+
+    @plugin_status_message.setter
+    def plugin_status_message(self, plugin_status_message):
+        """
+        Sets the plugin_status_message of this ManagementAgentPluginDetails.
+        Status message of the Plugin
+
+
+        :param plugin_status_message: The plugin_status_message of this ManagementAgentPluginDetails.
+        :type: str
+        """
+        self._plugin_status_message = plugin_status_message
 
     @property
     def is_enabled(self):

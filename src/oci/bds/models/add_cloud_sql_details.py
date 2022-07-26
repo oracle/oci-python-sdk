@@ -22,6 +22,10 @@ class AddCloudSqlDetails(object):
             The value to assign to the shape property of this AddCloudSqlDetails.
         :type shape: str
 
+        :param shape_config:
+            The value to assign to the shape_config property of this AddCloudSqlDetails.
+        :type shape_config: oci.bds.models.ShapeConfigDetails
+
         :param block_volume_size_in_gbs:
             The value to assign to the block_volume_size_in_gbs property of this AddCloudSqlDetails.
         :type block_volume_size_in_gbs: int
@@ -33,17 +37,20 @@ class AddCloudSqlDetails(object):
         """
         self.swagger_types = {
             'shape': 'str',
+            'shape_config': 'ShapeConfigDetails',
             'block_volume_size_in_gbs': 'int',
             'cluster_admin_password': 'str'
         }
 
         self.attribute_map = {
             'shape': 'shape',
+            'shape_config': 'shapeConfig',
             'block_volume_size_in_gbs': 'blockVolumeSizeInGBs',
             'cluster_admin_password': 'clusterAdminPassword'
         }
 
         self._shape = None
+        self._shape_config = None
         self._block_volume_size_in_gbs = None
         self._cluster_admin_password = None
 
@@ -70,6 +77,26 @@ class AddCloudSqlDetails(object):
         :type: str
         """
         self._shape = shape
+
+    @property
+    def shape_config(self):
+        """
+        Gets the shape_config of this AddCloudSqlDetails.
+
+        :return: The shape_config of this AddCloudSqlDetails.
+        :rtype: oci.bds.models.ShapeConfigDetails
+        """
+        return self._shape_config
+
+    @shape_config.setter
+    def shape_config(self, shape_config):
+        """
+        Sets the shape_config of this AddCloudSqlDetails.
+
+        :param shape_config: The shape_config of this AddCloudSqlDetails.
+        :type: oci.bds.models.ShapeConfigDetails
+        """
+        self._shape_config = shape_config
 
     @property
     def block_volume_size_in_gbs(self):

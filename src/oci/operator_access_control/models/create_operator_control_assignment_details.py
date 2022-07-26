@@ -26,6 +26,10 @@ class CreateOperatorControlAssignmentDetails(object):
     #: This constant has a value of "AUTONOMOUSVMCLUSTER"
     RESOURCE_TYPE_AUTONOMOUSVMCLUSTER = "AUTONOMOUSVMCLUSTER"
 
+    #: A constant which can be used with the resource_type property of a CreateOperatorControlAssignmentDetails.
+    #: This constant has a value of "CLOUDAUTONOMOUSVMCLUSTER"
+    RESOURCE_TYPE_CLOUDAUTONOMOUSVMCLUSTER = "CLOUDAUTONOMOUSVMCLUSTER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateOperatorControlAssignmentDetails object with values from keyword arguments.
@@ -45,7 +49,7 @@ class CreateOperatorControlAssignmentDetails(object):
 
         :param resource_type:
             The value to assign to the resource_type property of this CreateOperatorControlAssignmentDetails.
-            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER"
+            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER"
         :type resource_type: str
 
         :param resource_compartment_id:
@@ -237,7 +241,7 @@ class CreateOperatorControlAssignmentDetails(object):
         **[Required]** Gets the resource_type of this CreateOperatorControlAssignmentDetails.
         Type of the target resource.
 
-        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER"
+        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER"
 
 
         :return: The resource_type of this CreateOperatorControlAssignmentDetails.
@@ -255,7 +259,7 @@ class CreateOperatorControlAssignmentDetails(object):
         :param resource_type: The resource_type of this CreateOperatorControlAssignmentDetails.
         :type: str
         """
-        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER"]
+        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER"]
         if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
             raise ValueError(
                 "Invalid value for `resource_type`, must be None or one of {0}"

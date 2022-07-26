@@ -3929,20 +3929,23 @@ class BlockstorageClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
-    def list_block_volume_replicas(self, availability_domain, compartment_id, **kwargs):
+    def list_block_volume_replicas(self, **kwargs):
         """
         Lists the block volume replicas in the specified compartment and availability domain.
 
 
-        :param str availability_domain: (required)
+        :param str availability_domain: (optional)
             The name of the availability domain.
 
             Example: `Uocm:PHX-AD-1`
 
-        :param str compartment_id: (required)
+        :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str volume_group_replica_id: (optional)
+            The OCID of the volume group replica.
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -4013,6 +4016,9 @@ class BlockstorageClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "availability_domain",
+            "compartment_id",
+            "volume_group_replica_id",
             "limit",
             "page",
             "display_name",
@@ -4047,8 +4053,9 @@ class BlockstorageClient(object):
                 )
 
         query_params = {
-            "availabilityDomain": availability_domain,
-            "compartmentId": compartment_id,
+            "availabilityDomain": kwargs.get("availability_domain", missing),
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "volumeGroupReplicaId": kwargs.get("volume_group_replica_id", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "displayName": kwargs.get("display_name", missing),
@@ -4262,20 +4269,23 @@ class BlockstorageClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
-    def list_boot_volume_replicas(self, availability_domain, compartment_id, **kwargs):
+    def list_boot_volume_replicas(self, **kwargs):
         """
         Lists the boot volume replicas in the specified compartment and availability domain.
 
 
-        :param str availability_domain: (required)
+        :param str availability_domain: (optional)
             The name of the availability domain.
 
             Example: `Uocm:PHX-AD-1`
 
-        :param str compartment_id: (required)
+        :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str volume_group_replica_id: (optional)
+            The OCID of the volume group replica.
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -4346,6 +4356,9 @@ class BlockstorageClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "availability_domain",
+            "compartment_id",
+            "volume_group_replica_id",
             "limit",
             "page",
             "display_name",
@@ -4380,8 +4393,9 @@ class BlockstorageClient(object):
                 )
 
         query_params = {
-            "availabilityDomain": availability_domain,
-            "compartmentId": compartment_id,
+            "availabilityDomain": kwargs.get("availability_domain", missing),
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "volumeGroupReplicaId": kwargs.get("volume_group_replica_id", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "displayName": kwargs.get("display_name", missing),
@@ -4426,17 +4440,17 @@ class BlockstorageClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
-    def list_boot_volumes(self, availability_domain, compartment_id, **kwargs):
+    def list_boot_volumes(self, **kwargs):
         """
         Lists the boot volumes in the specified compartment and availability domain.
 
 
-        :param str availability_domain: (required)
+        :param str availability_domain: (optional)
             The name of the availability domain.
 
             Example: `Uocm:PHX-AD-1`
 
-        :param str compartment_id: (required)
+        :param str compartment_id: (optional)
             The `OCID`__ of the compartment.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
@@ -4487,6 +4501,8 @@ class BlockstorageClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "availability_domain",
+            "compartment_id",
             "limit",
             "page",
             "volume_group_id"
@@ -4497,8 +4513,8 @@ class BlockstorageClient(object):
                 "list_boot_volumes got unknown kwargs: {!r}".format(extra_kwargs))
 
         query_params = {
-            "availabilityDomain": availability_domain,
-            "compartmentId": compartment_id,
+            "availabilityDomain": kwargs.get("availability_domain", missing),
+            "compartmentId": kwargs.get("compartment_id", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "volumeGroupId": kwargs.get("volume_group_id", missing)
@@ -5195,7 +5211,7 @@ class BlockstorageClient(object):
             A filter to only return resources that match the given lifecycle
             state. The state value is case-insensitive.
 
-            Allowed values are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY"
+            Allowed values are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY", "UPDATE_PENDING"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -5252,7 +5268,7 @@ class BlockstorageClient(object):
                 )
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY"]
+            lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY", "UPDATE_PENDING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
@@ -5305,20 +5321,20 @@ class BlockstorageClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
-    def list_volumes(self, compartment_id, **kwargs):
+    def list_volumes(self, **kwargs):
         """
         Lists the volumes in the specified compartment and availability domain.
 
-
-        :param str compartment_id: (required)
-            The `OCID`__ of the compartment.
-
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
 
             Example: `Uocm:PHX-AD-1`
+
+        :param str compartment_id: (optional)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -5394,6 +5410,7 @@ class BlockstorageClient(object):
             "allow_control_chars",
             "retry_strategy",
             "availability_domain",
+            "compartment_id",
             "limit",
             "page",
             "display_name",
@@ -5430,7 +5447,7 @@ class BlockstorageClient(object):
 
         query_params = {
             "availabilityDomain": kwargs.get("availability_domain", missing),
-            "compartmentId": compartment_id,
+            "compartmentId": kwargs.get("compartment_id", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "displayName": kwargs.get("display_name", missing),

@@ -903,7 +903,7 @@ class ResourceManagerClient(object):
 
     def create_private_endpoint(self, create_private_endpoint_details, **kwargs):
         """
-        Creates a a private endpoint in the specified compartment.
+        Creates a private endpoint in the specified compartment.
 
 
         :param oci.resource_manager.models.CreatePrivateEndpointDetails create_private_endpoint_details: (required)
@@ -2691,7 +2691,8 @@ class ResourceManagerClient(object):
 
     def get_reachable_ip(self, private_ip, private_endpoint_id, **kwargs):
         """
-        Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
+        Gets the reachable, or alternative, IP address for a nonpublic IP address that is associated with the private endpoint.
+        Resource Manager uses this IP address to connect to nonpublic resources through the associated private endpoint.
 
 
         :param str private_ip: (required)
@@ -3844,7 +3845,7 @@ class ResourceManagerClient(object):
     def list_private_endpoints(self, **kwargs):
         """
         Lists private endpoints according to the specified filter.
-        - For `compartmentId`, lists all private endpoint in the matching compartment.
+        - For `compartmentId`, lists all private endpoints in the matching compartment.
         - For `privateEndpointId`, lists the matching private endpoint.
 
 
