@@ -35,25 +35,32 @@ class UpdateNotebookSessionDetails(object):
             The value to assign to the defined_tags property of this UpdateNotebookSessionDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param notebook_session_runtime_config_details:
+            The value to assign to the notebook_session_runtime_config_details property of this UpdateNotebookSessionDetails.
+        :type notebook_session_runtime_config_details: oci.data_science.models.NotebookSessionRuntimeConfigDetails
+
         """
         self.swagger_types = {
             'display_name': 'str',
             'notebook_session_configuration_details': 'NotebookSessionConfigurationDetails',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'notebook_session_runtime_config_details': 'NotebookSessionRuntimeConfigDetails'
         }
 
         self.attribute_map = {
             'display_name': 'displayName',
             'notebook_session_configuration_details': 'notebookSessionConfigurationDetails',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'notebook_session_runtime_config_details': 'notebookSessionRuntimeConfigDetails'
         }
 
         self._display_name = None
         self._notebook_session_configuration_details = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._notebook_session_runtime_config_details = None
 
     @property
     def display_name(self):
@@ -160,6 +167,26 @@ class UpdateNotebookSessionDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def notebook_session_runtime_config_details(self):
+        """
+        Gets the notebook_session_runtime_config_details of this UpdateNotebookSessionDetails.
+
+        :return: The notebook_session_runtime_config_details of this UpdateNotebookSessionDetails.
+        :rtype: oci.data_science.models.NotebookSessionRuntimeConfigDetails
+        """
+        return self._notebook_session_runtime_config_details
+
+    @notebook_session_runtime_config_details.setter
+    def notebook_session_runtime_config_details(self, notebook_session_runtime_config_details):
+        """
+        Sets the notebook_session_runtime_config_details of this UpdateNotebookSessionDetails.
+
+        :param notebook_session_runtime_config_details: The notebook_session_runtime_config_details of this UpdateNotebookSessionDetails.
+        :type: oci.data_science.models.NotebookSessionRuntimeConfigDetails
+        """
+        self._notebook_session_runtime_config_details = notebook_session_runtime_config_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

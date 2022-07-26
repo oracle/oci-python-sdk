@@ -172,7 +172,7 @@ class StreamPackagingConfigSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this StreamPackagingConfigSummary.
-        Stream Packaging Configuration display name.
+        Stream Packaging Configuration display name. Avoid entering confidential information.
 
 
         :return: The display_name of this StreamPackagingConfigSummary.
@@ -184,7 +184,7 @@ class StreamPackagingConfigSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this StreamPackagingConfigSummary.
-        Stream Packaging Configuration display name.
+        Stream Packaging Configuration display name. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this StreamPackagingConfigSummary.

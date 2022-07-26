@@ -103,6 +103,18 @@ class UpdateApplianceExportJobDetails(object):
             The value to assign to the next_object property of this UpdateApplianceExportJobDetails.
         :type next_object: str
 
+        :param expected_return_date:
+            The value to assign to the expected_return_date property of this UpdateApplianceExportJobDetails.
+        :type expected_return_date: datetime
+
+        :param pickup_window_start_time:
+            The value to assign to the pickup_window_start_time property of this UpdateApplianceExportJobDetails.
+        :type pickup_window_start_time: datetime
+
+        :param pickup_window_end_time:
+            The value to assign to the pickup_window_end_time property of this UpdateApplianceExportJobDetails.
+        :type pickup_window_end_time: datetime
+
         :param customer_shipping_address:
             The value to assign to the customer_shipping_address property of this UpdateApplianceExportJobDetails.
         :type customer_shipping_address: oci.dts.models.ShippingAddress
@@ -131,6 +143,9 @@ class UpdateApplianceExportJobDetails(object):
             'first_object': 'str',
             'last_object': 'str',
             'next_object': 'str',
+            'expected_return_date': 'datetime',
+            'pickup_window_start_time': 'datetime',
+            'pickup_window_end_time': 'datetime',
             'customer_shipping_address': 'ShippingAddress',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -151,6 +166,9 @@ class UpdateApplianceExportJobDetails(object):
             'first_object': 'firstObject',
             'last_object': 'lastObject',
             'next_object': 'nextObject',
+            'expected_return_date': 'expectedReturnDate',
+            'pickup_window_start_time': 'pickupWindowStartTime',
+            'pickup_window_end_time': 'pickupWindowEndTime',
             'customer_shipping_address': 'customerShippingAddress',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -170,6 +188,9 @@ class UpdateApplianceExportJobDetails(object):
         self._first_object = None
         self._last_object = None
         self._next_object = None
+        self._expected_return_date = None
+        self._pickup_window_start_time = None
+        self._pickup_window_end_time = None
         self._customer_shipping_address = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -505,6 +526,78 @@ class UpdateApplianceExportJobDetails(object):
         :type: str
         """
         self._next_object = next_object
+
+    @property
+    def expected_return_date(self):
+        """
+        Gets the expected_return_date of this UpdateApplianceExportJobDetails.
+        Expected return date from customer for the device, time portion should be zero.
+
+
+        :return: The expected_return_date of this UpdateApplianceExportJobDetails.
+        :rtype: datetime
+        """
+        return self._expected_return_date
+
+    @expected_return_date.setter
+    def expected_return_date(self, expected_return_date):
+        """
+        Sets the expected_return_date of this UpdateApplianceExportJobDetails.
+        Expected return date from customer for the device, time portion should be zero.
+
+
+        :param expected_return_date: The expected_return_date of this UpdateApplianceExportJobDetails.
+        :type: datetime
+        """
+        self._expected_return_date = expected_return_date
+
+    @property
+    def pickup_window_start_time(self):
+        """
+        Gets the pickup_window_start_time of this UpdateApplianceExportJobDetails.
+        Start time for the window to pickup the device from customer.
+
+
+        :return: The pickup_window_start_time of this UpdateApplianceExportJobDetails.
+        :rtype: datetime
+        """
+        return self._pickup_window_start_time
+
+    @pickup_window_start_time.setter
+    def pickup_window_start_time(self, pickup_window_start_time):
+        """
+        Sets the pickup_window_start_time of this UpdateApplianceExportJobDetails.
+        Start time for the window to pickup the device from customer.
+
+
+        :param pickup_window_start_time: The pickup_window_start_time of this UpdateApplianceExportJobDetails.
+        :type: datetime
+        """
+        self._pickup_window_start_time = pickup_window_start_time
+
+    @property
+    def pickup_window_end_time(self):
+        """
+        Gets the pickup_window_end_time of this UpdateApplianceExportJobDetails.
+        End time for the window to pickup the device from customer.
+
+
+        :return: The pickup_window_end_time of this UpdateApplianceExportJobDetails.
+        :rtype: datetime
+        """
+        return self._pickup_window_end_time
+
+    @pickup_window_end_time.setter
+    def pickup_window_end_time(self, pickup_window_end_time):
+        """
+        Sets the pickup_window_end_time of this UpdateApplianceExportJobDetails.
+        End time for the window to pickup the device from customer.
+
+
+        :param pickup_window_end_time: The pickup_window_end_time of this UpdateApplianceExportJobDetails.
+        :type: datetime
+        """
+        self._pickup_window_end_time = pickup_window_end_time
 
     @property
     def customer_shipping_address(self):

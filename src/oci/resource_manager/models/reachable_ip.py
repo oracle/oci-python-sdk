@@ -10,7 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ReachableIp(object):
     """
-    A reachableIp ip address used by Resource Manager Service to connect to the private resource.
+    The reachable, or alternative, IP address for a nonpublic IP address that is associated with the private endpoint.
+    Resource Manager uses this IP address to connect to nonpublic resources through the associated private endpoint.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +38,7 @@ class ReachableIp(object):
     def ip_address(self):
         """
         **[Required]** Gets the ip_address of this ReachableIp.
-        An IP address for the Resource Manager service to use for connection to the private resource.
+        Reachable IP address associated with the private endpoint.
 
 
         :return: The ip_address of this ReachableIp.
@@ -49,7 +50,7 @@ class ReachableIp(object):
     def ip_address(self, ip_address):
         """
         Sets the ip_address of this ReachableIp.
-        An IP address for the Resource Manager service to use for connection to the private resource.
+        Reachable IP address associated with the private endpoint.
 
 
         :param ip_address: The ip_address of this ReachableIp.

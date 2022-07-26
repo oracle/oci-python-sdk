@@ -14,20 +14,20 @@ class ConfigSource(object):
     """
 
     #: A constant which can be used with the config_source_type property of a ConfigSource.
-    #: This constant has a value of "ZIP_UPLOAD"
-    CONFIG_SOURCE_TYPE_ZIP_UPLOAD = "ZIP_UPLOAD"
+    #: This constant has a value of "COMPARTMENT_CONFIG_SOURCE"
+    CONFIG_SOURCE_TYPE_COMPARTMENT_CONFIG_SOURCE = "COMPARTMENT_CONFIG_SOURCE"
 
     #: A constant which can be used with the config_source_type property of a ConfigSource.
     #: This constant has a value of "GIT_CONFIG_SOURCE"
     CONFIG_SOURCE_TYPE_GIT_CONFIG_SOURCE = "GIT_CONFIG_SOURCE"
 
     #: A constant which can be used with the config_source_type property of a ConfigSource.
-    #: This constant has a value of "COMPARTMENT_CONFIG_SOURCE"
-    CONFIG_SOURCE_TYPE_COMPARTMENT_CONFIG_SOURCE = "COMPARTMENT_CONFIG_SOURCE"
-
-    #: A constant which can be used with the config_source_type property of a ConfigSource.
     #: This constant has a value of "OBJECT_STORAGE_CONFIG_SOURCE"
     CONFIG_SOURCE_TYPE_OBJECT_STORAGE_CONFIG_SOURCE = "OBJECT_STORAGE_CONFIG_SOURCE"
+
+    #: A constant which can be used with the config_source_type property of a ConfigSource.
+    #: This constant has a value of "ZIP_UPLOAD"
+    CONFIG_SOURCE_TYPE_ZIP_UPLOAD = "ZIP_UPLOAD"
 
     def __init__(self, **kwargs):
         """
@@ -43,7 +43,7 @@ class ConfigSource(object):
 
         :param config_source_type:
             The value to assign to the config_source_type property of this ConfigSource.
-            Allowed values for this property are: "ZIP_UPLOAD", "GIT_CONFIG_SOURCE", "COMPARTMENT_CONFIG_SOURCE", "OBJECT_STORAGE_CONFIG_SOURCE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "COMPARTMENT_CONFIG_SOURCE", "GIT_CONFIG_SOURCE", "OBJECT_STORAGE_CONFIG_SOURCE", "ZIP_UPLOAD", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type config_source_type: str
 
@@ -93,7 +93,7 @@ class ConfigSource(object):
         **[Required]** Gets the config_source_type of this ConfigSource.
         The type of configuration source to use for the Terraform configuration.
 
-        Allowed values for this property are: "ZIP_UPLOAD", "GIT_CONFIG_SOURCE", "COMPARTMENT_CONFIG_SOURCE", "OBJECT_STORAGE_CONFIG_SOURCE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "COMPARTMENT_CONFIG_SOURCE", "GIT_CONFIG_SOURCE", "OBJECT_STORAGE_CONFIG_SOURCE", "ZIP_UPLOAD", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -112,7 +112,7 @@ class ConfigSource(object):
         :param config_source_type: The config_source_type of this ConfigSource.
         :type: str
         """
-        allowed_values = ["ZIP_UPLOAD", "GIT_CONFIG_SOURCE", "COMPARTMENT_CONFIG_SOURCE", "OBJECT_STORAGE_CONFIG_SOURCE"]
+        allowed_values = ["COMPARTMENT_CONFIG_SOURCE", "GIT_CONFIG_SOURCE", "OBJECT_STORAGE_CONFIG_SOURCE", "ZIP_UPLOAD"]
         if not value_allowed_none_or_none_sentinel(config_source_type, allowed_values):
             config_source_type = 'UNKNOWN_ENUM_VALUE'
         self._config_source_type = config_source_type

@@ -88,6 +88,10 @@ class Job(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation: str
 
+        :param is_provider_upgrade_required:
+            The value to assign to the is_provider_upgrade_required property of this Job.
+        :type is_provider_upgrade_required: bool
+
         :param job_operation_details:
             The value to assign to the job_operation_details property of this Job.
         :type job_operation_details: oci.resource_manager.models.JobOperationDetails
@@ -149,6 +153,7 @@ class Job(object):
             'compartment_id': 'str',
             'display_name': 'str',
             'operation': 'str',
+            'is_provider_upgrade_required': 'bool',
             'job_operation_details': 'JobOperationDetails',
             'apply_job_plan_resolution': 'ApplyJobPlanResolution',
             'resolved_plan_job_id': 'str',
@@ -170,6 +175,7 @@ class Job(object):
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'operation': 'operation',
+            'is_provider_upgrade_required': 'isProviderUpgradeRequired',
             'job_operation_details': 'jobOperationDetails',
             'apply_job_plan_resolution': 'applyJobPlanResolution',
             'resolved_plan_job_id': 'resolvedPlanJobId',
@@ -190,6 +196,7 @@ class Job(object):
         self._compartment_id = None
         self._display_name = None
         self._operation = None
+        self._is_provider_upgrade_required = None
         self._job_operation_details = None
         self._apply_job_plan_resolution = None
         self._resolved_plan_job_id = None
@@ -341,6 +348,38 @@ class Job(object):
         if not value_allowed_none_or_none_sentinel(operation, allowed_values):
             operation = 'UNKNOWN_ENUM_VALUE'
         self._operation = operation
+
+    @property
+    def is_provider_upgrade_required(self):
+        """
+        Gets the is_provider_upgrade_required of this Job.
+        Specifies whether or not to upgrade provider versions.
+        Within the version constraints of your Terraform configuration, use the latest versions available from the source of Terraform providers.
+        For more information about this option, see `Dependency Lock File (terraform.io)`__.
+
+        __ https://www.terraform.io/language/files/dependency-lock
+
+
+        :return: The is_provider_upgrade_required of this Job.
+        :rtype: bool
+        """
+        return self._is_provider_upgrade_required
+
+    @is_provider_upgrade_required.setter
+    def is_provider_upgrade_required(self, is_provider_upgrade_required):
+        """
+        Sets the is_provider_upgrade_required of this Job.
+        Specifies whether or not to upgrade provider versions.
+        Within the version constraints of your Terraform configuration, use the latest versions available from the source of Terraform providers.
+        For more information about this option, see `Dependency Lock File (terraform.io)`__.
+
+        __ https://www.terraform.io/language/files/dependency-lock
+
+
+        :param is_provider_upgrade_required: The is_provider_upgrade_required of this Job.
+        :type: bool
+        """
+        self._is_provider_upgrade_required = is_provider_upgrade_required
 
     @property
     def job_operation_details(self):

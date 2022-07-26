@@ -219,6 +219,10 @@ class ExadataInfrastructureSummary(object):
             The value to assign to the db_server_version property of this ExadataInfrastructureSummary.
         :type db_server_version: str
 
+        :param monthly_db_server_version:
+            The value to assign to the monthly_db_server_version property of this ExadataInfrastructureSummary.
+        :type monthly_db_server_version: str
+
         :param last_maintenance_run_id:
             The value to assign to the last_maintenance_run_id property of this ExadataInfrastructureSummary.
         :type last_maintenance_run_id: str
@@ -277,6 +281,7 @@ class ExadataInfrastructureSummary(object):
             'maintenance_window': 'MaintenanceWindow',
             'storage_server_version': 'str',
             'db_server_version': 'str',
+            'monthly_db_server_version': 'str',
             'last_maintenance_run_id': 'str',
             'next_maintenance_run_id': 'str',
             'is_cps_offline_report_enabled': 'bool',
@@ -321,6 +326,7 @@ class ExadataInfrastructureSummary(object):
             'maintenance_window': 'maintenanceWindow',
             'storage_server_version': 'storageServerVersion',
             'db_server_version': 'dbServerVersion',
+            'monthly_db_server_version': 'monthlyDbServerVersion',
             'last_maintenance_run_id': 'lastMaintenanceRunId',
             'next_maintenance_run_id': 'nextMaintenanceRunId',
             'is_cps_offline_report_enabled': 'isCpsOfflineReportEnabled',
@@ -364,6 +370,7 @@ class ExadataInfrastructureSummary(object):
         self._maintenance_window = None
         self._storage_server_version = None
         self._db_server_version = None
+        self._monthly_db_server_version = None
         self._last_maintenance_run_id = None
         self._next_maintenance_run_id = None
         self._is_cps_offline_report_enabled = None
@@ -1253,6 +1260,30 @@ class ExadataInfrastructureSummary(object):
         :type: str
         """
         self._db_server_version = db_server_version
+
+    @property
+    def monthly_db_server_version(self):
+        """
+        Gets the monthly_db_server_version of this ExadataInfrastructureSummary.
+        The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+
+
+        :return: The monthly_db_server_version of this ExadataInfrastructureSummary.
+        :rtype: str
+        """
+        return self._monthly_db_server_version
+
+    @monthly_db_server_version.setter
+    def monthly_db_server_version(self, monthly_db_server_version):
+        """
+        Sets the monthly_db_server_version of this ExadataInfrastructureSummary.
+        The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+
+
+        :param monthly_db_server_version: The monthly_db_server_version of this ExadataInfrastructureSummary.
+        :type: str
+        """
+        self._monthly_db_server_version = monthly_db_server_version
 
     @property
     def last_maintenance_run_id(self):

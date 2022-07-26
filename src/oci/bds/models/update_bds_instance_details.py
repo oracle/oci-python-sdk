@@ -34,25 +34,32 @@ class UpdateBdsInstanceDetails(object):
             The value to assign to the defined_tags property of this UpdateBdsInstanceDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this UpdateBdsInstanceDetails.
+        :type kms_key_id: str
+
         """
         self.swagger_types = {
             'display_name': 'str',
             'bootstrap_script_url': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'kms_key_id': 'str'
         }
 
         self.attribute_map = {
             'display_name': 'displayName',
             'bootstrap_script_url': 'bootstrapScriptUrl',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'kms_key_id': 'kmsKeyId'
         }
 
         self._display_name = None
         self._bootstrap_script_url = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._kms_key_id = None
 
     @property
     def display_name(self):
@@ -153,6 +160,30 @@ class UpdateBdsInstanceDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this UpdateBdsInstanceDetails.
+        The OCID of the Key Management master encryption key.
+
+
+        :return: The kms_key_id of this UpdateBdsInstanceDetails.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this UpdateBdsInstanceDetails.
+        The OCID of the Key Management master encryption key.
+
+
+        :param kms_key_id: The kms_key_id of this UpdateBdsInstanceDetails.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

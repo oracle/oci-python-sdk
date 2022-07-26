@@ -4,6 +4,36 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.76.0 - 2022-07-27
+====================
+
+Added
+-----
+* Support for the Fusion Apps as a Service service
+* Support for the Digital Media service
+* Support for accessing all Terraform providers from Hashicorp Registry, as well as bringing your own providers, in the Resource Manager service
+* Support for runtime configurations in notebook sessions in the Data Science service
+* Support for compartmentIdInSubtree and accessLevel filters when listing management agents in the Management Agent Cloud service
+* Support for filtering by type when listing work requests in the Management Agent Cloud service
+* Support for filtering by agent id when listing management agent plugins in the Management Agent Cloud service
+* Support for specifying size preference when requesting a data transfer appliance in the Data Transfer service
+* Support for encryption of boot and block volumes associated with a cluster using customer-specified KMS keys in the Big Data service
+* Support for the VM.Standard.E4.Flex shape for Cloud SQL (CSQL) nodes in the Big Data service
+* Support for listing block and boot volumes, as well as block and boot volume replicas, within a volume group in the Block Volume service
+* Support for dedicated autonomous databases in the Operator Access Control service
+* Support for viewing automatic workload repository (AWR) data for databases added to AWRHub in the Operations Insights service
+* Support for ports, protocols, roles, and SSL secrets when enabling or modifying database management in the Database service
+* Support for monthly security maintenance runs in the Database service
+* Support for monthly infrastructure patching for Exadata Cloud at Customer resources in the Database service
+ 
+Breaking
+--------
+* `DataMaskingActivityClient`,`FusionEnvironmentClient`, `FusionEnvironmentFamilyClient`, `RefreshActivityClient`,`ScheduledActivityClient`, and `ServiceAttachmentClient` clients were merged into a single client `FusionApplicationsClient` for the Fusion Apps as a Service service
+* Properties `addressee`, `address1`, `cityOrLocality`, `stateOrRegion`, `zipcode`, `country` are changed from optional to required for `ShippingAddress` model in Data Transfer Service
+* Parameter `compartment_id` changed from required to optional in the `list_volumes` operation in `BlockstorageClient` in the Block Storage service
+* Parameters `availability_domain` and `compartment_id` changed from required to optional in operations `list_boot_volumes`, `list_boot_volume_replicas`, `list_block_volume_replicas` in `BlockstorageClient` in the Block Storage service
+ 
+====================
 2.75.1 - 2022-07-19
 ====================
 

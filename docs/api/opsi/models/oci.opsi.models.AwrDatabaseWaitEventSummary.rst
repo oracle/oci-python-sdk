@@ -1,0 +1,11 @@
+AwrDatabaseWaitEventSummary
+===========================
+
+.. currentmodule:: oci.opsi.models
+
+.. autoclass:: AwrDatabaseWaitEventSummary
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

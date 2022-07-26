@@ -25,6 +25,10 @@ class AccessRequestSummary(object):
     #: This constant has a value of "AUTONOMOUSVMCLUSTER"
     RESOURCE_TYPE_AUTONOMOUSVMCLUSTER = "AUTONOMOUSVMCLUSTER"
 
+    #: A constant which can be used with the resource_type property of a AccessRequestSummary.
+    #: This constant has a value of "CLOUDAUTONOMOUSVMCLUSTER"
+    RESOURCE_TYPE_CLOUDAUTONOMOUSVMCLUSTER = "CLOUDAUTONOMOUSVMCLUSTER"
+
     #: A constant which can be used with the lifecycle_state property of a AccessRequestSummary.
     #: This constant has a value of "CREATED"
     LIFECYCLE_STATE_CREATED = "CREATED"
@@ -164,7 +168,7 @@ class AccessRequestSummary(object):
 
         :param resource_type:
             The value to assign to the resource_type property of this AccessRequestSummary.
-            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_type: str
 
@@ -173,6 +177,10 @@ class AccessRequestSummary(object):
             Allowed values for this property are: "CREATED", "APPROVALWAITING", "PREAPPROVED", "APPROVED", "MOREINFO", "REJECTED", "DEPLOYED", "DEPLOYFAILED", "UNDEPLOYED", "UNDEPLOYFAILED", "CLOSEFAILED", "REVOKEFAILED", "EXPIRYFAILED", "REVOKING", "REVOKED", "EXTENDING", "EXTENDED", "EXTENSIONREJECTED", "COMPLETING", "COMPLETED", "EXPIRED", "APPROVEDFORFUTURE", "INREVIEW", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
+
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this AccessRequestSummary.
+        :type lifecycle_details: str
 
         :param time_of_creation:
             The value to assign to the time_of_creation property of this AccessRequestSummary.
@@ -222,6 +230,7 @@ class AccessRequestSummary(object):
             'resource_name': 'str',
             'resource_type': 'str',
             'lifecycle_state': 'str',
+            'lifecycle_details': 'str',
             'time_of_creation': 'datetime',
             'time_of_modification': 'datetime',
             'time_of_user_creation': 'datetime',
@@ -242,6 +251,7 @@ class AccessRequestSummary(object):
             'resource_name': 'resourceName',
             'resource_type': 'resourceType',
             'lifecycle_state': 'lifecycleState',
+            'lifecycle_details': 'lifecycleDetails',
             'time_of_creation': 'timeOfCreation',
             'time_of_modification': 'timeOfModification',
             'time_of_user_creation': 'timeOfUserCreation',
@@ -261,6 +271,7 @@ class AccessRequestSummary(object):
         self._resource_name = None
         self._resource_type = None
         self._lifecycle_state = None
+        self._lifecycle_details = None
         self._time_of_creation = None
         self._time_of_modification = None
         self._time_of_user_creation = None
@@ -423,7 +434,7 @@ class AccessRequestSummary(object):
         Gets the resource_type of this AccessRequestSummary.
         resourceType for which the AccessRequest is applicable
 
-        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -442,7 +453,7 @@ class AccessRequestSummary(object):
         :param resource_type: The resource_type of this AccessRequestSummary.
         :type: str
         """
-        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER"]
+        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER"]
         if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
             resource_type = 'UNKNOWN_ENUM_VALUE'
         self._resource_type = resource_type
@@ -476,6 +487,30 @@ class AccessRequestSummary(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def lifecycle_details(self):
+        """
+        Gets the lifecycle_details of this AccessRequestSummary.
+        More in detail about the lifeCycleState.
+
+
+        :return: The lifecycle_details of this AccessRequestSummary.
+        :rtype: str
+        """
+        return self._lifecycle_details
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
+        """
+        Sets the lifecycle_details of this AccessRequestSummary.
+        More in detail about the lifeCycleState.
+
+
+        :param lifecycle_details: The lifecycle_details of this AccessRequestSummary.
+        :type: str
+        """
+        self._lifecycle_details = lifecycle_details
 
     @property
     def time_of_creation(self):

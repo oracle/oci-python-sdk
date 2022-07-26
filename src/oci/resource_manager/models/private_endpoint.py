@@ -10,9 +10,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PrivateEndpoint(object):
     """
-    A private endpoint. For more information about private endpoints, see `About Private Endpoints`__.
+    A private endpoint allowing Resource Manager to access nonpublic cloud resources. For more information about private endpoints, see `Private Endpoint Management`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/privateaccess.htm#private-endpoints
+    __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/private-endpoints.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a PrivateEndpoint.
@@ -152,7 +152,7 @@ class PrivateEndpoint(object):
     def id(self):
         """
         **[Required]** Gets the id of this PrivateEndpoint.
-        Unique identifier (`OCID`__) of the private endpoint details.
+        The `OCID`__ of the private endpoint.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -166,7 +166,7 @@ class PrivateEndpoint(object):
     def id(self, id):
         """
         Sets the id of this PrivateEndpoint.
-        Unique identifier (`OCID`__) of the private endpoint details.
+        The `OCID`__ of the private endpoint.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -180,7 +180,7 @@ class PrivateEndpoint(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this PrivateEndpoint.
-        The `OCID`__ of the compartment containing this private endpoint details.
+        The `OCID`__ of the compartment containing this private endpoint.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -194,7 +194,7 @@ class PrivateEndpoint(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this PrivateEndpoint.
-        The `OCID`__ of the compartment containing this private endpoint details.
+        The `OCID`__ of the compartment containing this private endpoint.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -312,7 +312,7 @@ class PrivateEndpoint(object):
     def source_ips(self):
         """
         Gets the source_ips of this PrivateEndpoint.
-        The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+        The source IP addresses that Resource Manager uses to connect to your network. Automatically assigned by Resource Manager.
 
 
         :return: The source_ips of this PrivateEndpoint.
@@ -324,7 +324,7 @@ class PrivateEndpoint(object):
     def source_ips(self, source_ips):
         """
         Sets the source_ips of this PrivateEndpoint.
-        The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+        The source IP addresses that Resource Manager uses to connect to your network. Automatically assigned by Resource Manager.
 
 
         :param source_ips: The source_ips of this PrivateEndpoint.
@@ -336,7 +336,13 @@ class PrivateEndpoint(object):
     def nsg_id_list(self):
         """
         Gets the nsg_id_list of this PrivateEndpoint.
-        An array of network security groups (NSG) that the customer can optionally provide.
+        The `OCIDs`__ of
+        `network security groups (NSGs)`__
+        for the private endpoint.
+        Order does not matter.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm
 
 
         :return: The nsg_id_list of this PrivateEndpoint.
@@ -348,7 +354,13 @@ class PrivateEndpoint(object):
     def nsg_id_list(self, nsg_id_list):
         """
         Sets the nsg_id_list of this PrivateEndpoint.
-        An array of network security groups (NSG) that the customer can optionally provide.
+        The `OCIDs`__ of
+        `network security groups (NSGs)`__
+        for the private endpoint.
+        Order does not matter.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm
 
 
         :param nsg_id_list: The nsg_id_list of this PrivateEndpoint.
@@ -384,7 +396,14 @@ class PrivateEndpoint(object):
     def dns_zones(self):
         """
         Gets the dns_zones of this PrivateEndpoint.
-        DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
+        DNS zones to use for accessing private Git servers.
+        For private Git server instructions, see
+        `Private Git Server`__.
+        Specify DNS fully qualified domain names (FQDNs); DNS Proxy forwards related DNS FQDN queries to the consumer DNS resolver.
+        For DNS FQDNs not specified, queries go to service provider VCN resolver.
+        Example: `abc.oraclevcn.com`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/private-endpoints.htm#private-git
 
 
         :return: The dns_zones of this PrivateEndpoint.
@@ -396,7 +415,14 @@ class PrivateEndpoint(object):
     def dns_zones(self, dns_zones):
         """
         Sets the dns_zones of this PrivateEndpoint.
-        DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
+        DNS zones to use for accessing private Git servers.
+        For private Git server instructions, see
+        `Private Git Server`__.
+        Specify DNS fully qualified domain names (FQDNs); DNS Proxy forwards related DNS FQDN queries to the consumer DNS resolver.
+        For DNS FQDNs not specified, queries go to service provider VCN resolver.
+        Example: `abc.oraclevcn.com`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/private-endpoints.htm#private-git
 
 
         :param dns_zones: The dns_zones of this PrivateEndpoint.

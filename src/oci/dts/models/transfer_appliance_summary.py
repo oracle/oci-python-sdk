@@ -38,6 +38,18 @@ class TransferApplianceSummary(object):
     LIFECYCLE_STATE_FINALIZED = "FINALIZED"
 
     #: A constant which can be used with the lifecycle_state property of a TransferApplianceSummary.
+    #: This constant has a value of "RETURN_LABEL_REQUESTED"
+    LIFECYCLE_STATE_RETURN_LABEL_REQUESTED = "RETURN_LABEL_REQUESTED"
+
+    #: A constant which can be used with the lifecycle_state property of a TransferApplianceSummary.
+    #: This constant has a value of "RETURN_LABEL_GENERATING"
+    LIFECYCLE_STATE_RETURN_LABEL_GENERATING = "RETURN_LABEL_GENERATING"
+
+    #: A constant which can be used with the lifecycle_state property of a TransferApplianceSummary.
+    #: This constant has a value of "RETURN_LABEL_AVAILABLE"
+    LIFECYCLE_STATE_RETURN_LABEL_AVAILABLE = "RETURN_LABEL_AVAILABLE"
+
+    #: A constant which can be used with the lifecycle_state property of a TransferApplianceSummary.
     #: This constant has a value of "RETURN_DELAYED"
     LIFECYCLE_STATE_RETURN_DELAYED = "RETURN_DELAYED"
 
@@ -104,7 +116,7 @@ class TransferApplianceSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this TransferApplianceSummary.
-            Allowed values for this property are: "REQUESTED", "ORACLE_PREPARING", "SHIPPING", "DELIVERED", "PREPARING", "FINALIZED", "RETURN_DELAYED", "RETURN_SHIPPED", "RETURN_SHIPPED_CANCELLED", "ORACLE_RECEIVED", "ORACLE_RECEIVED_CANCELLED", "PROCESSING", "COMPLETE", "CUSTOMER_NEVER_RECEIVED", "ORACLE_NEVER_RECEIVED", "CUSTOMER_LOST", "CANCELLED", "DELETED", "REJECTED", "ERROR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "REQUESTED", "ORACLE_PREPARING", "SHIPPING", "DELIVERED", "PREPARING", "FINALIZED", "RETURN_LABEL_REQUESTED", "RETURN_LABEL_GENERATING", "RETURN_LABEL_AVAILABLE", "RETURN_DELAYED", "RETURN_SHIPPED", "RETURN_SHIPPED_CANCELLED", "ORACLE_RECEIVED", "ORACLE_RECEIVED_CANCELLED", "PROCESSING", "COMPLETE", "CUSTOMER_NEVER_RECEIVED", "ORACLE_NEVER_RECEIVED", "CUSTOMER_LOST", "CANCELLED", "DELETED", "REJECTED", "ERROR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -160,7 +172,7 @@ class TransferApplianceSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this TransferApplianceSummary.
-        Allowed values for this property are: "REQUESTED", "ORACLE_PREPARING", "SHIPPING", "DELIVERED", "PREPARING", "FINALIZED", "RETURN_DELAYED", "RETURN_SHIPPED", "RETURN_SHIPPED_CANCELLED", "ORACLE_RECEIVED", "ORACLE_RECEIVED_CANCELLED", "PROCESSING", "COMPLETE", "CUSTOMER_NEVER_RECEIVED", "ORACLE_NEVER_RECEIVED", "CUSTOMER_LOST", "CANCELLED", "DELETED", "REJECTED", "ERROR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "REQUESTED", "ORACLE_PREPARING", "SHIPPING", "DELIVERED", "PREPARING", "FINALIZED", "RETURN_LABEL_REQUESTED", "RETURN_LABEL_GENERATING", "RETURN_LABEL_AVAILABLE", "RETURN_DELAYED", "RETURN_SHIPPED", "RETURN_SHIPPED_CANCELLED", "ORACLE_RECEIVED", "ORACLE_RECEIVED_CANCELLED", "PROCESSING", "COMPLETE", "CUSTOMER_NEVER_RECEIVED", "ORACLE_NEVER_RECEIVED", "CUSTOMER_LOST", "CANCELLED", "DELETED", "REJECTED", "ERROR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -177,7 +189,7 @@ class TransferApplianceSummary(object):
         :param lifecycle_state: The lifecycle_state of this TransferApplianceSummary.
         :type: str
         """
-        allowed_values = ["REQUESTED", "ORACLE_PREPARING", "SHIPPING", "DELIVERED", "PREPARING", "FINALIZED", "RETURN_DELAYED", "RETURN_SHIPPED", "RETURN_SHIPPED_CANCELLED", "ORACLE_RECEIVED", "ORACLE_RECEIVED_CANCELLED", "PROCESSING", "COMPLETE", "CUSTOMER_NEVER_RECEIVED", "ORACLE_NEVER_RECEIVED", "CUSTOMER_LOST", "CANCELLED", "DELETED", "REJECTED", "ERROR"]
+        allowed_values = ["REQUESTED", "ORACLE_PREPARING", "SHIPPING", "DELIVERED", "PREPARING", "FINALIZED", "RETURN_LABEL_REQUESTED", "RETURN_LABEL_GENERATING", "RETURN_LABEL_AVAILABLE", "RETURN_DELAYED", "RETURN_SHIPPED", "RETURN_SHIPPED_CANCELLED", "ORACLE_RECEIVED", "ORACLE_RECEIVED_CANCELLED", "PROCESSING", "COMPLETE", "CUSTOMER_NEVER_RECEIVED", "ORACLE_NEVER_RECEIVED", "CUSTOMER_LOST", "CANCELLED", "DELETED", "REJECTED", "ERROR"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

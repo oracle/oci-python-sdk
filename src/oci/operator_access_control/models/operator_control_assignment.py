@@ -26,6 +26,10 @@ class OperatorControlAssignment(object):
     #: This constant has a value of "AUTONOMOUSVMCLUSTER"
     RESOURCE_TYPE_AUTONOMOUSVMCLUSTER = "AUTONOMOUSVMCLUSTER"
 
+    #: A constant which can be used with the resource_type property of a OperatorControlAssignment.
+    #: This constant has a value of "CLOUDAUTONOMOUSVMCLUSTER"
+    RESOURCE_TYPE_CLOUDAUTONOMOUSVMCLUSTER = "CLOUDAUTONOMOUSVMCLUSTER"
+
     #: A constant which can be used with the lifecycle_state property of a OperatorControlAssignment.
     #: This constant has a value of "CREATED"
     LIFECYCLE_STATE_CREATED = "CREATED"
@@ -85,7 +89,7 @@ class OperatorControlAssignment(object):
 
         :param resource_type:
             The value to assign to the resource_type property of this OperatorControlAssignment.
-            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_type: str
 
@@ -106,6 +110,10 @@ class OperatorControlAssignment(object):
             Allowed values for this property are: "CREATED", "APPLIED", "APPLYFAILED", "UPDATING", "DELETING", "DELETED", "DELETIONFAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
+
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this OperatorControlAssignment.
+        :type lifecycle_details: str
 
         :param assigner_id:
             The value to assign to the assigner_id property of this OperatorControlAssignment.
@@ -180,6 +188,7 @@ class OperatorControlAssignment(object):
             'time_assignment_to': 'datetime',
             'is_enforced_always': 'bool',
             'lifecycle_state': 'str',
+            'lifecycle_details': 'str',
             'assigner_id': 'str',
             'time_of_assignment': 'datetime',
             'comment': 'str',
@@ -209,6 +218,7 @@ class OperatorControlAssignment(object):
             'time_assignment_to': 'timeAssignmentTo',
             'is_enforced_always': 'isEnforcedAlways',
             'lifecycle_state': 'lifecycleState',
+            'lifecycle_details': 'lifecycleDetails',
             'assigner_id': 'assignerId',
             'time_of_assignment': 'timeOfAssignment',
             'comment': 'comment',
@@ -237,6 +247,7 @@ class OperatorControlAssignment(object):
         self._time_assignment_to = None
         self._is_enforced_always = None
         self._lifecycle_state = None
+        self._lifecycle_details = None
         self._assigner_id = None
         self._time_of_assignment = None
         self._comment = None
@@ -403,7 +414,7 @@ class OperatorControlAssignment(object):
         Gets the resource_type of this OperatorControlAssignment.
         resourceType for which the OperatorControlAssignment is applicable
 
-        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -422,7 +433,7 @@ class OperatorControlAssignment(object):
         :param resource_type: The resource_type of this OperatorControlAssignment.
         :type: str
         """
-        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER"]
+        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER"]
         if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
             resource_type = 'UNKNOWN_ENUM_VALUE'
         self._resource_type = resource_type
@@ -540,6 +551,30 @@ class OperatorControlAssignment(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def lifecycle_details(self):
+        """
+        Gets the lifecycle_details of this OperatorControlAssignment.
+        More in detail about the lifeCycleState.
+
+
+        :return: The lifecycle_details of this OperatorControlAssignment.
+        :rtype: str
+        """
+        return self._lifecycle_details
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
+        """
+        Sets the lifecycle_details of this OperatorControlAssignment.
+        More in detail about the lifeCycleState.
+
+
+        :param lifecycle_details: The lifecycle_details of this OperatorControlAssignment.
+        :type: str
+        """
+        self._lifecycle_details = lifecycle_details
 
     @property
     def assigner_id(self):

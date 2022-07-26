@@ -124,7 +124,7 @@ class MediaWorkflowConfigurationSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this MediaWorkflowConfigurationSummary.
-        Name of the MediaWorkflowConfiguration.
+        Name of the MediaWorkflowConfiguration. Avoid entering confidential information.
 
 
         :return: The display_name of this MediaWorkflowConfigurationSummary.
@@ -136,7 +136,7 @@ class MediaWorkflowConfigurationSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this MediaWorkflowConfigurationSummary.
-        Name of the MediaWorkflowConfiguration.
+        Name of the MediaWorkflowConfiguration. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this MediaWorkflowConfigurationSummary.

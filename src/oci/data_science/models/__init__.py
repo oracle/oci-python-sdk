@@ -46,6 +46,9 @@ from .model_summary import ModelSummary
 from .notebook_session import NotebookSession
 from .notebook_session_config_details import NotebookSessionConfigDetails
 from .notebook_session_configuration_details import NotebookSessionConfigurationDetails
+from .notebook_session_git_config_details import NotebookSessionGitConfigDetails
+from .notebook_session_git_repo_config_details import NotebookSessionGitRepoConfigDetails
+from .notebook_session_runtime_config_details import NotebookSessionRuntimeConfigDetails
 from .notebook_session_shape_config_details import NotebookSessionShapeConfigDetails
 from .notebook_session_shape_summary import NotebookSessionShapeSummary
 from .notebook_session_summary import NotebookSessionSummary
@@ -115,6 +118,9 @@ data_science_type_mapping = {
     "NotebookSession": NotebookSession,
     "NotebookSessionConfigDetails": NotebookSessionConfigDetails,
     "NotebookSessionConfigurationDetails": NotebookSessionConfigurationDetails,
+    "NotebookSessionGitConfigDetails": NotebookSessionGitConfigDetails,
+    "NotebookSessionGitRepoConfigDetails": NotebookSessionGitRepoConfigDetails,
+    "NotebookSessionRuntimeConfigDetails": NotebookSessionRuntimeConfigDetails,
     "NotebookSessionShapeConfigDetails": NotebookSessionShapeConfigDetails,
     "NotebookSessionShapeSummary": NotebookSessionShapeSummary,
     "NotebookSessionSummary": NotebookSessionSummary,

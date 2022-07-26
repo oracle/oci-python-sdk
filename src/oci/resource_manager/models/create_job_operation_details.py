@@ -29,16 +29,23 @@ class CreateJobOperationDetails(object):
             The value to assign to the operation property of this CreateJobOperationDetails.
         :type operation: str
 
+        :param is_provider_upgrade_required:
+            The value to assign to the is_provider_upgrade_required property of this CreateJobOperationDetails.
+        :type is_provider_upgrade_required: bool
+
         """
         self.swagger_types = {
-            'operation': 'str'
+            'operation': 'str',
+            'is_provider_upgrade_required': 'bool'
         }
 
         self.attribute_map = {
-            'operation': 'operation'
+            'operation': 'operation',
+            'is_provider_upgrade_required': 'isProviderUpgradeRequired'
         }
 
         self._operation = None
+        self._is_provider_upgrade_required = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -85,6 +92,38 @@ class CreateJobOperationDetails(object):
         :type: str
         """
         self._operation = operation
+
+    @property
+    def is_provider_upgrade_required(self):
+        """
+        Gets the is_provider_upgrade_required of this CreateJobOperationDetails.
+        Specifies whether or not to upgrade provider versions.
+        Within the version constraints of your Terraform configuration, use the latest versions available from the source of Terraform providers.
+        For more information about this option, see `Dependency Lock File (terraform.io)`__.
+
+        __ https://www.terraform.io/language/files/dependency-lock
+
+
+        :return: The is_provider_upgrade_required of this CreateJobOperationDetails.
+        :rtype: bool
+        """
+        return self._is_provider_upgrade_required
+
+    @is_provider_upgrade_required.setter
+    def is_provider_upgrade_required(self, is_provider_upgrade_required):
+        """
+        Sets the is_provider_upgrade_required of this CreateJobOperationDetails.
+        Specifies whether or not to upgrade provider versions.
+        Within the version constraints of your Terraform configuration, use the latest versions available from the source of Terraform providers.
+        For more information about this option, see `Dependency Lock File (terraform.io)`__.
+
+        __ https://www.terraform.io/language/files/dependency-lock
+
+
+        :param is_provider_upgrade_required: The is_provider_upgrade_required of this CreateJobOperationDetails.
+        :type: bool
+        """
+        self._is_provider_upgrade_required = is_provider_upgrade_required
 
     def __repr__(self):
         return formatted_flat_dict(self)

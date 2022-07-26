@@ -238,7 +238,7 @@ class StreamPackagingConfig(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this StreamPackagingConfig.
-        The name of the stream packaging configuration.
+        The name of the stream packaging configuration. Avoid entering confidential information.
 
 
         :return: The display_name of this StreamPackagingConfig.
@@ -250,7 +250,7 @@ class StreamPackagingConfig(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this StreamPackagingConfig.
-        The name of the stream packaging configuration.
+        The name of the stream packaging configuration. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this StreamPackagingConfig.

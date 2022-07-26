@@ -77,12 +77,7 @@ API Reference
 * :doc:`File Storage <file_storage/client/oci.file_storage.FileStorageClient>`
 * :doc:`Functions Invoke <functions/client/oci.functions.FunctionsInvokeClient>`
 * :doc:`Functions Management <functions/client/oci.functions.FunctionsManagementClient>`
-* :doc:`Data Masking Activity <fusion_apps/client/oci.fusion_apps.DataMaskingActivityClient>`
-* :doc:`Fusion Environment <fusion_apps/client/oci.fusion_apps.FusionEnvironmentClient>`
-* :doc:`Fusion Environment Family <fusion_apps/client/oci.fusion_apps.FusionEnvironmentFamilyClient>`
-* :doc:`Refresh Activity <fusion_apps/client/oci.fusion_apps.RefreshActivityClient>`
-* :doc:`Scheduled Activity <fusion_apps/client/oci.fusion_apps.ScheduledActivityClient>`
-* :doc:`Service Attachment <fusion_apps/client/oci.fusion_apps.ServiceAttachmentClient>`
+* :doc:`Fusion Applications <fusion_apps/client/oci.fusion_apps.FusionApplicationsClient>`
 * :doc:`Generic Artifacts Content <generic_artifacts_content/client/oci.generic_artifacts_content.GenericArtifactsContentClient>`
 * :doc:`Golden Gate <golden_gate/client/oci.golden_gate.GoldenGateClient>`
 * :doc:`Governance Rule <governance_rules_control_plane/client/oci.governance_rules_control_plane.GovernanceRuleClient>`
@@ -109,6 +104,7 @@ API Reference
 * :doc:`Account <marketplace/client/oci.marketplace.AccountClient>`
 * :doc:`Marketplace <marketplace/client/oci.marketplace.MarketplaceClient>`
 * :doc:`Media Services <media_services/client/oci.media_services.MediaServicesClient>`
+* :doc:`Media Stream <media_services/client/oci.media_services.MediaStreamClient>`
 * :doc:`Monitoring <monitoring/client/oci.monitoring.MonitoringClient>`
 * :doc:`Channels <mysql/client/oci.mysql.ChannelsClient>`
 * :doc:`Db Backups <mysql/client/oci.mysql.DbBackupsClient>`

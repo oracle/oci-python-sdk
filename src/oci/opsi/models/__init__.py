@@ -9,10 +9,35 @@ from .add_exadata_insight_members_details import AddExadataInsightMembersDetails
 from .autonomous_database_configuration_summary import AutonomousDatabaseConfigurationSummary
 from .autonomous_database_insight import AutonomousDatabaseInsight
 from .autonomous_database_insight_summary import AutonomousDatabaseInsightSummary
+from .awr_database_collection import AwrDatabaseCollection
+from .awr_database_cpu_usage_collection import AwrDatabaseCpuUsageCollection
+from .awr_database_cpu_usage_summary import AwrDatabaseCpuUsageSummary
+from .awr_database_metric_collection import AwrDatabaseMetricCollection
+from .awr_database_metric_summary import AwrDatabaseMetricSummary
+from .awr_database_parameter_change_collection import AwrDatabaseParameterChangeCollection
+from .awr_database_parameter_change_summary import AwrDatabaseParameterChangeSummary
+from .awr_database_parameter_collection import AwrDatabaseParameterCollection
+from .awr_database_parameter_summary import AwrDatabaseParameterSummary
+from .awr_database_report import AwrDatabaseReport
+from .awr_database_snapshot_collection import AwrDatabaseSnapshotCollection
+from .awr_database_snapshot_range_collection import AwrDatabaseSnapshotRangeCollection
+from .awr_database_snapshot_range_summary import AwrDatabaseSnapshotRangeSummary
+from .awr_database_snapshot_summary import AwrDatabaseSnapshotSummary
+from .awr_database_sql_report import AwrDatabaseSqlReport
+from .awr_database_summary import AwrDatabaseSummary
+from .awr_database_sysstat_collection import AwrDatabaseSysstatCollection
+from .awr_database_sysstat_summary import AwrDatabaseSysstatSummary
+from .awr_database_top_wait_event_collection import AwrDatabaseTopWaitEventCollection
+from .awr_database_top_wait_event_summary import AwrDatabaseTopWaitEventSummary
+from .awr_database_wait_event_bucket_collection import AwrDatabaseWaitEventBucketCollection
+from .awr_database_wait_event_bucket_summary import AwrDatabaseWaitEventBucketSummary
+from .awr_database_wait_event_collection import AwrDatabaseWaitEventCollection
+from .awr_database_wait_event_summary import AwrDatabaseWaitEventSummary
 from .awr_hub import AwrHub
 from .awr_hub_summary import AwrHubSummary
 from .awr_hub_summary_collection import AwrHubSummaryCollection
 from .awr_hubs import AwrHubs
+from .awr_query_result import AwrQueryResult
 from .awr_report import AwrReport
 from .awr_snapshot_collection import AwrSnapshotCollection
 from .awr_snapshot_summary import AwrSnapshotSummary
@@ -292,10 +317,35 @@ opsi_type_mapping = {
     "AutonomousDatabaseConfigurationSummary": AutonomousDatabaseConfigurationSummary,
     "AutonomousDatabaseInsight": AutonomousDatabaseInsight,
     "AutonomousDatabaseInsightSummary": AutonomousDatabaseInsightSummary,
+    "AwrDatabaseCollection": AwrDatabaseCollection,
+    "AwrDatabaseCpuUsageCollection": AwrDatabaseCpuUsageCollection,
+    "AwrDatabaseCpuUsageSummary": AwrDatabaseCpuUsageSummary,
+    "AwrDatabaseMetricCollection": AwrDatabaseMetricCollection,
+    "AwrDatabaseMetricSummary": AwrDatabaseMetricSummary,
+    "AwrDatabaseParameterChangeCollection": AwrDatabaseParameterChangeCollection,
+    "AwrDatabaseParameterChangeSummary": AwrDatabaseParameterChangeSummary,
+    "AwrDatabaseParameterCollection": AwrDatabaseParameterCollection,
+    "AwrDatabaseParameterSummary": AwrDatabaseParameterSummary,
+    "AwrDatabaseReport": AwrDatabaseReport,
+    "AwrDatabaseSnapshotCollection": AwrDatabaseSnapshotCollection,
+    "AwrDatabaseSnapshotRangeCollection": AwrDatabaseSnapshotRangeCollection,
+    "AwrDatabaseSnapshotRangeSummary": AwrDatabaseSnapshotRangeSummary,
+    "AwrDatabaseSnapshotSummary": AwrDatabaseSnapshotSummary,
+    "AwrDatabaseSqlReport": AwrDatabaseSqlReport,
+    "AwrDatabaseSummary": AwrDatabaseSummary,
+    "AwrDatabaseSysstatCollection": AwrDatabaseSysstatCollection,
+    "AwrDatabaseSysstatSummary": AwrDatabaseSysstatSummary,
+    "AwrDatabaseTopWaitEventCollection": AwrDatabaseTopWaitEventCollection,
+    "AwrDatabaseTopWaitEventSummary": AwrDatabaseTopWaitEventSummary,
+    "AwrDatabaseWaitEventBucketCollection": AwrDatabaseWaitEventBucketCollection,
+    "AwrDatabaseWaitEventBucketSummary": AwrDatabaseWaitEventBucketSummary,
+    "AwrDatabaseWaitEventCollection": AwrDatabaseWaitEventCollection,
+    "AwrDatabaseWaitEventSummary": AwrDatabaseWaitEventSummary,
     "AwrHub": AwrHub,
     "AwrHubSummary": AwrHubSummary,
     "AwrHubSummaryCollection": AwrHubSummaryCollection,
     "AwrHubs": AwrHubs,
+    "AwrQueryResult": AwrQueryResult,
     "AwrReport": AwrReport,
     "AwrSnapshotCollection": AwrSnapshotCollection,
     "AwrSnapshotSummary": AwrSnapshotSummary,

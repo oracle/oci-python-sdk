@@ -113,7 +113,7 @@ class ShippingAddress(object):
     @property
     def addressee(self):
         """
-        Gets the addressee of this ShippingAddress.
+        **[Required]** Gets the addressee of this ShippingAddress.
 
         :return: The addressee of this ShippingAddress.
         :rtype: str
@@ -153,7 +153,7 @@ class ShippingAddress(object):
     @property
     def address1(self):
         """
-        Gets the address1 of this ShippingAddress.
+        **[Required]** Gets the address1 of this ShippingAddress.
 
         :return: The address1 of this ShippingAddress.
         :rtype: str
@@ -233,7 +233,7 @@ class ShippingAddress(object):
     @property
     def city_or_locality(self):
         """
-        Gets the city_or_locality of this ShippingAddress.
+        **[Required]** Gets the city_or_locality of this ShippingAddress.
 
         :return: The city_or_locality of this ShippingAddress.
         :rtype: str
@@ -253,7 +253,7 @@ class ShippingAddress(object):
     @property
     def state_or_region(self):
         """
-        Gets the state_or_region of this ShippingAddress.
+        **[Required]** Gets the state_or_region of this ShippingAddress.
 
         :return: The state_or_region of this ShippingAddress.
         :rtype: str
@@ -273,7 +273,7 @@ class ShippingAddress(object):
     @property
     def zipcode(self):
         """
-        Gets the zipcode of this ShippingAddress.
+        **[Required]** Gets the zipcode of this ShippingAddress.
 
         :return: The zipcode of this ShippingAddress.
         :rtype: str
@@ -293,7 +293,7 @@ class ShippingAddress(object):
     @property
     def country(self):
         """
-        Gets the country of this ShippingAddress.
+        **[Required]** Gets the country of this ShippingAddress.
 
         :return: The country of this ShippingAddress.
         :rtype: str

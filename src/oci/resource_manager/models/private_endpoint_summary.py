@@ -107,7 +107,7 @@ class PrivateEndpointSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this PrivateEndpointSummary.
-        Unique identifier (`OCID`__) of the private endpoint.
+        The `OCID`__ of the private endpoint.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -121,7 +121,7 @@ class PrivateEndpointSummary(object):
     def id(self, id):
         """
         Sets the id of this PrivateEndpointSummary.
-        Unique identifier (`OCID`__) of the private endpoint.
+        The `OCID`__ of the private endpoint.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -135,7 +135,7 @@ class PrivateEndpointSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this PrivateEndpointSummary.
-        The `OCID`__ of the compartment containing this private endpoint details.
+        The `OCID`__ of the compartment containing this private endpoint.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -149,7 +149,7 @@ class PrivateEndpointSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this PrivateEndpointSummary.
-        The `OCID`__ of the compartment containing this private endpoint details.
+        The `OCID`__ of the compartment containing this private endpoint.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -187,7 +187,7 @@ class PrivateEndpointSummary(object):
     def description(self):
         """
         Gets the description of this PrivateEndpointSummary.
-        General description of the private endpoint.
+        Description of the private endpoint. Avoid entering confidential information.
 
 
         :return: The description of this PrivateEndpointSummary.
@@ -199,7 +199,7 @@ class PrivateEndpointSummary(object):
     def description(self, description):
         """
         Sets the description of this PrivateEndpointSummary.
-        General description of the private endpoint.
+        Description of the private endpoint. Avoid entering confidential information.
 
 
         :param description: The description of this PrivateEndpointSummary.
@@ -263,7 +263,12 @@ class PrivateEndpointSummary(object):
     def dns_zones(self):
         """
         Gets the dns_zones of this PrivateEndpointSummary.
+        DNS zones to use for accessing private Git servers.
+        For private Git server instructions, see
+        `Private Git Server`__.
         DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/private-endpoints.htm#private-git
 
 
         :return: The dns_zones of this PrivateEndpointSummary.
@@ -275,7 +280,12 @@ class PrivateEndpointSummary(object):
     def dns_zones(self, dns_zones):
         """
         Sets the dns_zones of this PrivateEndpointSummary.
+        DNS zones to use for accessing private Git servers.
+        For private Git server instructions, see
+        `Private Git Server`__.
         DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/private-endpoints.htm#private-git
 
 
         :param dns_zones: The dns_zones of this PrivateEndpointSummary.
