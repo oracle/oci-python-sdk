@@ -1,0 +1,11 @@
+TlsVerifyConfig
+===============
+
+.. currentmodule:: oci.devops.models
+
+.. autoclass:: TlsVerifyConfig
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

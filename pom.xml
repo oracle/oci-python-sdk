@@ -63,6 +63,7 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/opensearch/pom.xml</module>
     <module>poms/opa/pom.xml</module>
     <module>poms/media_services/pom.xml</module>
     <module>poms/fusion_apps/pom.xml</module>

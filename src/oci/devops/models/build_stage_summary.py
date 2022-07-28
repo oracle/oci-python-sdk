@@ -99,6 +99,10 @@ class BuildStageSummary(BuildPipelineStageSummary):
             The value to assign to the primary_build_source property of this BuildStageSummary.
         :type primary_build_source: str
 
+        :param private_access_config:
+            The value to assign to the private_access_config property of this BuildStageSummary.
+        :type private_access_config: oci.devops.models.NetworkChannel
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -120,7 +124,8 @@ class BuildStageSummary(BuildPipelineStageSummary):
             'build_spec_file': 'str',
             'stage_execution_timeout_in_seconds': 'int',
             'build_source_collection': 'BuildSourceCollection',
-            'primary_build_source': 'str'
+            'primary_build_source': 'str',
+            'private_access_config': 'NetworkChannel'
         }
 
         self.attribute_map = {
@@ -143,7 +148,8 @@ class BuildStageSummary(BuildPipelineStageSummary):
             'build_spec_file': 'buildSpecFile',
             'stage_execution_timeout_in_seconds': 'stageExecutionTimeoutInSeconds',
             'build_source_collection': 'buildSourceCollection',
-            'primary_build_source': 'primaryBuildSource'
+            'primary_build_source': 'primaryBuildSource',
+            'private_access_config': 'privateAccessConfig'
         }
 
         self._id = None
@@ -166,6 +172,7 @@ class BuildStageSummary(BuildPipelineStageSummary):
         self._stage_execution_timeout_in_seconds = None
         self._build_source_collection = None
         self._primary_build_source = None
+        self._private_access_config = None
         self._build_pipeline_stage_type = 'BUILD'
 
     @property
@@ -283,6 +290,26 @@ class BuildStageSummary(BuildPipelineStageSummary):
         :type: str
         """
         self._primary_build_source = primary_build_source
+
+    @property
+    def private_access_config(self):
+        """
+        Gets the private_access_config of this BuildStageSummary.
+
+        :return: The private_access_config of this BuildStageSummary.
+        :rtype: oci.devops.models.NetworkChannel
+        """
+        return self._private_access_config
+
+    @private_access_config.setter
+    def private_access_config(self, private_access_config):
+        """
+        Sets the private_access_config of this BuildStageSummary.
+
+        :param private_access_config: The private_access_config of this BuildStageSummary.
+        :type: oci.devops.models.NetworkChannel
+        """
+        self._private_access_config = private_access_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

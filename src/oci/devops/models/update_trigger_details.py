@@ -18,6 +18,8 @@ class UpdateTriggerDetails(object):
         Initializes a new UpdateTriggerDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.devops.models.UpdateBitbucketServerTriggerDetails`
+        * :class:`~oci.devops.models.UpdateGitlabServerTriggerDetails`
         * :class:`~oci.devops.models.UpdateDevopsCodeRepositoryTriggerDetails`
         * :class:`~oci.devops.models.UpdateGithubTriggerDetails`
         * :class:`~oci.devops.models.UpdateGitlabTriggerDetails`
@@ -82,6 +84,12 @@ class UpdateTriggerDetails(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['triggerSource']
+
+        if type == 'BITBUCKET_SERVER':
+            return 'UpdateBitbucketServerTriggerDetails'
+
+        if type == 'GITLAB_SERVER':
+            return 'UpdateGitlabServerTriggerDetails'
 
         if type == 'DEVOPS_CODE_REPOSITORY':
             return 'UpdateDevopsCodeRepositoryTriggerDetails'

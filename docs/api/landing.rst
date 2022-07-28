@@ -133,6 +133,8 @@ API Reference
 * :doc:`Notification Control Plane <ons/client/oci.ons.NotificationControlPlaneClient>`
 * :doc:`Notification Data Plane <ons/client/oci.ons.NotificationDataPlaneClient>`
 * :doc:`Opa Instance <opa/client/oci.opa.OpaInstanceClient>`
+* :doc:`Opensearch Cluster Backup <opensearch/client/oci.opensearch.OpensearchClusterBackupClient>`
+* :doc:`Opensearch Cluster <opensearch/client/oci.opensearch.OpensearchClusterClient>`
 * :doc:`Access Requests <operator_access_control/client/oci.operator_access_control.AccessRequestsClient>`
 * :doc:`Operator Actions <operator_access_control/client/oci.operator_access_control.OperatorActionsClient>`
 * :doc:`Operator Control Assignment <operator_access_control/client/oci.operator_access_control.OperatorControlAssignmentClient>`
@@ -287,6 +289,7 @@ API Reference
     onesubscription
     ons
     opa
+    opensearch
     operator_access_control
     opsi
     optimizer

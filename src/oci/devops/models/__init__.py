@@ -21,6 +21,15 @@ from .bitbucket_cloud_filter_attributes import BitbucketCloudFilterAttributes
 from .bitbucket_cloud_trigger import BitbucketCloudTrigger
 from .bitbucket_cloud_trigger_create_result import BitbucketCloudTriggerCreateResult
 from .bitbucket_cloud_trigger_summary import BitbucketCloudTriggerSummary
+from .bitbucket_server_access_token_connection import BitbucketServerAccessTokenConnection
+from .bitbucket_server_build_run_source import BitbucketServerBuildRunSource
+from .bitbucket_server_build_source import BitbucketServerBuildSource
+from .bitbucket_server_filter import BitbucketServerFilter
+from .bitbucket_server_filter_attributes import BitbucketServerFilterAttributes
+from .bitbucket_server_token_connection_summary import BitbucketServerTokenConnectionSummary
+from .bitbucket_server_trigger import BitbucketServerTrigger
+from .bitbucket_server_trigger_create_result import BitbucketServerTriggerCreateResult
+from .bitbucket_server_trigger_summary import BitbucketServerTriggerSummary
 from .build_outputs import BuildOutputs
 from .build_pipeline import BuildPipeline
 from .build_pipeline_collection import BuildPipelineCollection
@@ -47,6 +56,7 @@ from .build_stage import BuildStage
 from .build_stage_run_progress import BuildStageRunProgress
 from .build_stage_run_step import BuildStageRunStep
 from .build_stage_summary import BuildStageSummary
+from .ca_cert_verify import CaCertVerify
 from .cancel_build_run_details import CancelBuildRunDetails
 from .cancel_deployment_details import CancelDeploymentDetails
 from .change_project_compartment_details import ChangeProjectCompartmentDetails
@@ -89,6 +99,8 @@ from .count_based_approval_policy import CountBasedApprovalPolicy
 from .create_absolute_wait_criteria_details import CreateAbsoluteWaitCriteriaDetails
 from .create_bitbucket_cloud_app_password_connection_details import CreateBitbucketCloudAppPasswordConnectionDetails
 from .create_bitbucket_cloud_trigger_details import CreateBitbucketCloudTriggerDetails
+from .create_bitbucket_server_access_token_connection_details import CreateBitbucketServerAccessTokenConnectionDetails
+from .create_bitbucket_server_trigger_details import CreateBitbucketServerTriggerDetails
 from .create_build_pipeline_details import CreateBuildPipelineDetails
 from .create_build_pipeline_stage_details import CreateBuildPipelineStageDetails
 from .create_build_run_details import CreateBuildRunDetails
@@ -115,6 +127,8 @@ from .create_function_deploy_stage_details import CreateFunctionDeployStageDetai
 from .create_github_access_token_connection_details import CreateGithubAccessTokenConnectionDetails
 from .create_github_trigger_details import CreateGithubTriggerDetails
 from .create_gitlab_access_token_connection_details import CreateGitlabAccessTokenConnectionDetails
+from .create_gitlab_server_access_token_connection_details import CreateGitlabServerAccessTokenConnectionDetails
+from .create_gitlab_server_trigger_details import CreateGitlabServerTriggerDetails
 from .create_gitlab_trigger_details import CreateGitlabTriggerDetails
 from .create_invoke_function_deploy_stage_details import CreateInvokeFunctionDeployStageDetails
 from .create_load_balancer_traffic_shift_deploy_stage_details import CreateLoadBalancerTrafficShiftDeployStageDetails
@@ -223,6 +237,15 @@ from .gitlab_build_run_source import GitlabBuildRunSource
 from .gitlab_build_source import GitlabBuildSource
 from .gitlab_filter import GitlabFilter
 from .gitlab_filter_attributes import GitlabFilterAttributes
+from .gitlab_server_access_token_connection import GitlabServerAccessTokenConnection
+from .gitlab_server_access_token_connection_summary import GitlabServerAccessTokenConnectionSummary
+from .gitlab_server_build_run_source import GitlabServerBuildRunSource
+from .gitlab_server_build_source import GitlabServerBuildSource
+from .gitlab_server_filter import GitlabServerFilter
+from .gitlab_server_filter_attributes import GitlabServerFilterAttributes
+from .gitlab_server_trigger import GitlabServerTrigger
+from .gitlab_server_trigger_create_result import GitlabServerTriggerCreateResult
+from .gitlab_server_trigger_summary import GitlabServerTriggerSummary
 from .gitlab_trigger import GitlabTrigger
 from .gitlab_trigger_create_result import GitlabTriggerCreateResult
 from .gitlab_trigger_summary import GitlabTriggerSummary
@@ -301,10 +324,12 @@ from .repository_ref_summary import RepositoryRefSummary
 from .repository_summary import RepositorySummary
 from .repository_tag import RepositoryTag
 from .repository_tag_summary import RepositoryTagSummary
+from .service_vnic_channel import ServiceVnicChannel
 from .single_deploy_stage_deployment import SingleDeployStageDeployment
 from .single_deploy_stage_deployment_summary import SingleDeployStageDeploymentSummary
 from .single_deploy_stage_redeployment import SingleDeployStageRedeployment
 from .single_deploy_stage_redeployment_summary import SingleDeployStageRedeploymentSummary
+from .tls_verify_config import TlsVerifyConfig
 from .trigger import Trigger
 from .trigger_action import TriggerAction
 from .trigger_build_pipeline_action import TriggerBuildPipelineAction
@@ -319,6 +344,8 @@ from .trigger_summary import TriggerSummary
 from .update_absolute_wait_criteria_details import UpdateAbsoluteWaitCriteriaDetails
 from .update_bitbucket_cloud_app_password_connection_details import UpdateBitbucketCloudAppPasswordConnectionDetails
 from .update_bitbucket_cloud_trigger_details import UpdateBitbucketCloudTriggerDetails
+from .update_bitbucket_server_access_token_connection_details import UpdateBitbucketServerAccessTokenConnectionDetails
+from .update_bitbucket_server_trigger_details import UpdateBitbucketServerTriggerDetails
 from .update_build_pipeline_details import UpdateBuildPipelineDetails
 from .update_build_pipeline_stage_details import UpdateBuildPipelineStageDetails
 from .update_build_run_details import UpdateBuildRunDetails
@@ -345,6 +372,8 @@ from .update_function_deploy_stage_details import UpdateFunctionDeployStageDetai
 from .update_github_access_token_connection_details import UpdateGithubAccessTokenConnectionDetails
 from .update_github_trigger_details import UpdateGithubTriggerDetails
 from .update_gitlab_access_token_connection_details import UpdateGitlabAccessTokenConnectionDetails
+from .update_gitlab_server_access_token_connection_details import UpdateGitlabServerAccessTokenConnectionDetails
+from .update_gitlab_server_trigger_details import UpdateGitlabServerTriggerDetails
 from .update_gitlab_trigger_details import UpdateGitlabTriggerDetails
 from .update_invoke_function_deploy_stage_details import UpdateInvokeFunctionDeployStageDetails
 from .update_load_balancer_traffic_shift_deploy_stage_details import UpdateLoadBalancerTrafficShiftDeployStageDetails
@@ -404,6 +433,15 @@ devops_type_mapping = {
     "BitbucketCloudTrigger": BitbucketCloudTrigger,
     "BitbucketCloudTriggerCreateResult": BitbucketCloudTriggerCreateResult,
     "BitbucketCloudTriggerSummary": BitbucketCloudTriggerSummary,
+    "BitbucketServerAccessTokenConnection": BitbucketServerAccessTokenConnection,
+    "BitbucketServerBuildRunSource": BitbucketServerBuildRunSource,
+    "BitbucketServerBuildSource": BitbucketServerBuildSource,
+    "BitbucketServerFilter": BitbucketServerFilter,
+    "BitbucketServerFilterAttributes": BitbucketServerFilterAttributes,
+    "BitbucketServerTokenConnectionSummary": BitbucketServerTokenConnectionSummary,
+    "BitbucketServerTrigger": BitbucketServerTrigger,
+    "BitbucketServerTriggerCreateResult": BitbucketServerTriggerCreateResult,
+    "BitbucketServerTriggerSummary": BitbucketServerTriggerSummary,
     "BuildOutputs": BuildOutputs,
     "BuildPipeline": BuildPipeline,
     "BuildPipelineCollection": BuildPipelineCollection,
@@ -430,6 +468,7 @@ devops_type_mapping = {
     "BuildStageRunProgress": BuildStageRunProgress,
     "BuildStageRunStep": BuildStageRunStep,
     "BuildStageSummary": BuildStageSummary,
+    "CaCertVerify": CaCertVerify,
     "CancelBuildRunDetails": CancelBuildRunDetails,
     "CancelDeploymentDetails": CancelDeploymentDetails,
     "ChangeProjectCompartmentDetails": ChangeProjectCompartmentDetails,
@@ -472,6 +511,8 @@ devops_type_mapping = {
     "CreateAbsoluteWaitCriteriaDetails": CreateAbsoluteWaitCriteriaDetails,
     "CreateBitbucketCloudAppPasswordConnectionDetails": CreateBitbucketCloudAppPasswordConnectionDetails,
     "CreateBitbucketCloudTriggerDetails": CreateBitbucketCloudTriggerDetails,
+    "CreateBitbucketServerAccessTokenConnectionDetails": CreateBitbucketServerAccessTokenConnectionDetails,
+    "CreateBitbucketServerTriggerDetails": CreateBitbucketServerTriggerDetails,
     "CreateBuildPipelineDetails": CreateBuildPipelineDetails,
     "CreateBuildPipelineStageDetails": CreateBuildPipelineStageDetails,
     "CreateBuildRunDetails": CreateBuildRunDetails,
@@ -498,6 +539,8 @@ devops_type_mapping = {
     "CreateGithubAccessTokenConnectionDetails": CreateGithubAccessTokenConnectionDetails,
     "CreateGithubTriggerDetails": CreateGithubTriggerDetails,
     "CreateGitlabAccessTokenConnectionDetails": CreateGitlabAccessTokenConnectionDetails,
+    "CreateGitlabServerAccessTokenConnectionDetails": CreateGitlabServerAccessTokenConnectionDetails,
+    "CreateGitlabServerTriggerDetails": CreateGitlabServerTriggerDetails,
     "CreateGitlabTriggerDetails": CreateGitlabTriggerDetails,
     "CreateInvokeFunctionDeployStageDetails": CreateInvokeFunctionDeployStageDetails,
     "CreateLoadBalancerTrafficShiftDeployStageDetails": CreateLoadBalancerTrafficShiftDeployStageDetails,
@@ -606,6 +649,15 @@ devops_type_mapping = {
     "GitlabBuildSource": GitlabBuildSource,
     "GitlabFilter": GitlabFilter,
     "GitlabFilterAttributes": GitlabFilterAttributes,
+    "GitlabServerAccessTokenConnection": GitlabServerAccessTokenConnection,
+    "GitlabServerAccessTokenConnectionSummary": GitlabServerAccessTokenConnectionSummary,
+    "GitlabServerBuildRunSource": GitlabServerBuildRunSource,
+    "GitlabServerBuildSource": GitlabServerBuildSource,
+    "GitlabServerFilter": GitlabServerFilter,
+    "GitlabServerFilterAttributes": GitlabServerFilterAttributes,
+    "GitlabServerTrigger": GitlabServerTrigger,
+    "GitlabServerTriggerCreateResult": GitlabServerTriggerCreateResult,
+    "GitlabServerTriggerSummary": GitlabServerTriggerSummary,
     "GitlabTrigger": GitlabTrigger,
     "GitlabTriggerCreateResult": GitlabTriggerCreateResult,
     "GitlabTriggerSummary": GitlabTriggerSummary,
@@ -684,10 +736,12 @@ devops_type_mapping = {
     "RepositorySummary": RepositorySummary,
     "RepositoryTag": RepositoryTag,
     "RepositoryTagSummary": RepositoryTagSummary,
+    "ServiceVnicChannel": ServiceVnicChannel,
     "SingleDeployStageDeployment": SingleDeployStageDeployment,
     "SingleDeployStageDeploymentSummary": SingleDeployStageDeploymentSummary,
     "SingleDeployStageRedeployment": SingleDeployStageRedeployment,
     "SingleDeployStageRedeploymentSummary": SingleDeployStageRedeploymentSummary,
+    "TlsVerifyConfig": TlsVerifyConfig,
     "Trigger": Trigger,
     "TriggerAction": TriggerAction,
     "TriggerBuildPipelineAction": TriggerBuildPipelineAction,
@@ -702,6 +756,8 @@ devops_type_mapping = {
     "UpdateAbsoluteWaitCriteriaDetails": UpdateAbsoluteWaitCriteriaDetails,
     "UpdateBitbucketCloudAppPasswordConnectionDetails": UpdateBitbucketCloudAppPasswordConnectionDetails,
     "UpdateBitbucketCloudTriggerDetails": UpdateBitbucketCloudTriggerDetails,
+    "UpdateBitbucketServerAccessTokenConnectionDetails": UpdateBitbucketServerAccessTokenConnectionDetails,
+    "UpdateBitbucketServerTriggerDetails": UpdateBitbucketServerTriggerDetails,
     "UpdateBuildPipelineDetails": UpdateBuildPipelineDetails,
     "UpdateBuildPipelineStageDetails": UpdateBuildPipelineStageDetails,
     "UpdateBuildRunDetails": UpdateBuildRunDetails,
@@ -728,6 +784,8 @@ devops_type_mapping = {
     "UpdateGithubAccessTokenConnectionDetails": UpdateGithubAccessTokenConnectionDetails,
     "UpdateGithubTriggerDetails": UpdateGithubTriggerDetails,
     "UpdateGitlabAccessTokenConnectionDetails": UpdateGitlabAccessTokenConnectionDetails,
+    "UpdateGitlabServerAccessTokenConnectionDetails": UpdateGitlabServerAccessTokenConnectionDetails,
+    "UpdateGitlabServerTriggerDetails": UpdateGitlabServerTriggerDetails,
     "UpdateGitlabTriggerDetails": UpdateGitlabTriggerDetails,
     "UpdateInvokeFunctionDeployStageDetails": UpdateInvokeFunctionDeployStageDetails,
     "UpdateLoadBalancerTrafficShiftDeployStageDetails": UpdateLoadBalancerTrafficShiftDeployStageDetails,

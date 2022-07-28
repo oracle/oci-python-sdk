@@ -159,3 +159,4 @@
 ^src/oci/fusion_apps/.*\.py$
 ^src/oci/media_services/.*\.py$
 ^src/oci/opa/.*\.py$
+^src/oci/opensearch/.*\.py$

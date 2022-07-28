@@ -35,6 +35,15 @@ Devops
     oci.devops.models.BitbucketCloudTrigger
     oci.devops.models.BitbucketCloudTriggerCreateResult
     oci.devops.models.BitbucketCloudTriggerSummary
+    oci.devops.models.BitbucketServerAccessTokenConnection
+    oci.devops.models.BitbucketServerBuildRunSource
+    oci.devops.models.BitbucketServerBuildSource
+    oci.devops.models.BitbucketServerFilter
+    oci.devops.models.BitbucketServerFilterAttributes
+    oci.devops.models.BitbucketServerTokenConnectionSummary
+    oci.devops.models.BitbucketServerTrigger
+    oci.devops.models.BitbucketServerTriggerCreateResult
+    oci.devops.models.BitbucketServerTriggerSummary
     oci.devops.models.BuildOutputs
     oci.devops.models.BuildPipeline
     oci.devops.models.BuildPipelineCollection
@@ -61,6 +70,7 @@ Devops
     oci.devops.models.BuildStageRunProgress
     oci.devops.models.BuildStageRunStep
     oci.devops.models.BuildStageSummary
+    oci.devops.models.CaCertVerify
     oci.devops.models.CancelBuildRunDetails
     oci.devops.models.CancelDeploymentDetails
     oci.devops.models.ChangeProjectCompartmentDetails
@@ -103,6 +113,8 @@ Devops
     oci.devops.models.CreateAbsoluteWaitCriteriaDetails
     oci.devops.models.CreateBitbucketCloudAppPasswordConnectionDetails
     oci.devops.models.CreateBitbucketCloudTriggerDetails
+    oci.devops.models.CreateBitbucketServerAccessTokenConnectionDetails
+    oci.devops.models.CreateBitbucketServerTriggerDetails
     oci.devops.models.CreateBuildPipelineDetails
     oci.devops.models.CreateBuildPipelineStageDetails
     oci.devops.models.CreateBuildRunDetails
@@ -129,6 +141,8 @@ Devops
     oci.devops.models.CreateGithubAccessTokenConnectionDetails
     oci.devops.models.CreateGithubTriggerDetails
     oci.devops.models.CreateGitlabAccessTokenConnectionDetails
+    oci.devops.models.CreateGitlabServerAccessTokenConnectionDetails
+    oci.devops.models.CreateGitlabServerTriggerDetails
     oci.devops.models.CreateGitlabTriggerDetails
     oci.devops.models.CreateInvokeFunctionDeployStageDetails
     oci.devops.models.CreateLoadBalancerTrafficShiftDeployStageDetails
@@ -237,6 +251,15 @@ Devops
     oci.devops.models.GitlabBuildSource
     oci.devops.models.GitlabFilter
     oci.devops.models.GitlabFilterAttributes
+    oci.devops.models.GitlabServerAccessTokenConnection
+    oci.devops.models.GitlabServerAccessTokenConnectionSummary
+    oci.devops.models.GitlabServerBuildRunSource
+    oci.devops.models.GitlabServerBuildSource
+    oci.devops.models.GitlabServerFilter
+    oci.devops.models.GitlabServerFilterAttributes
+    oci.devops.models.GitlabServerTrigger
+    oci.devops.models.GitlabServerTriggerCreateResult
+    oci.devops.models.GitlabServerTriggerSummary
     oci.devops.models.GitlabTrigger
     oci.devops.models.GitlabTriggerCreateResult
     oci.devops.models.GitlabTriggerSummary
@@ -315,10 +338,12 @@ Devops
     oci.devops.models.RepositorySummary
     oci.devops.models.RepositoryTag
     oci.devops.models.RepositoryTagSummary
+    oci.devops.models.ServiceVnicChannel
     oci.devops.models.SingleDeployStageDeployment
     oci.devops.models.SingleDeployStageDeploymentSummary
     oci.devops.models.SingleDeployStageRedeployment
     oci.devops.models.SingleDeployStageRedeploymentSummary
+    oci.devops.models.TlsVerifyConfig
     oci.devops.models.Trigger
     oci.devops.models.TriggerAction
     oci.devops.models.TriggerBuildPipelineAction
@@ -333,6 +358,8 @@ Devops
     oci.devops.models.UpdateAbsoluteWaitCriteriaDetails
     oci.devops.models.UpdateBitbucketCloudAppPasswordConnectionDetails
     oci.devops.models.UpdateBitbucketCloudTriggerDetails
+    oci.devops.models.UpdateBitbucketServerAccessTokenConnectionDetails
+    oci.devops.models.UpdateBitbucketServerTriggerDetails
     oci.devops.models.UpdateBuildPipelineDetails
     oci.devops.models.UpdateBuildPipelineStageDetails
     oci.devops.models.UpdateBuildRunDetails
@@ -359,6 +386,8 @@ Devops
     oci.devops.models.UpdateGithubAccessTokenConnectionDetails
     oci.devops.models.UpdateGithubTriggerDetails
     oci.devops.models.UpdateGitlabAccessTokenConnectionDetails
+    oci.devops.models.UpdateGitlabServerAccessTokenConnectionDetails
+    oci.devops.models.UpdateGitlabServerTriggerDetails
     oci.devops.models.UpdateGitlabTriggerDetails
     oci.devops.models.UpdateInvokeFunctionDeployStageDetails
     oci.devops.models.UpdateLoadBalancerTrafficShiftDeployStageDetails

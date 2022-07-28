@@ -21,7 +21,7 @@ class ManualBuildRunSource(BuildRunSource):
 
         :param source_type:
             The value to assign to the source_type property of this ManualBuildRunSource.
-            Allowed values for this property are: "MANUAL", "GITHUB", "GITLAB", "BITBUCKET_CLOUD", "DEVOPS_CODE_REPOSITORY"
+            Allowed values for this property are: "MANUAL", "GITHUB", "GITLAB", "GITLAB_SERVER", "BITBUCKET_CLOUD", "BITBUCKET_SERVER", "DEVOPS_CODE_REPOSITORY"
         :type source_type: str
 
         """

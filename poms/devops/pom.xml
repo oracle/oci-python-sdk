@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.pic.dlc</groupId>
         <artifactId>devops-service-spec</artifactId>
-        <version>0.3.63</version>
+        <version>0.3.86</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

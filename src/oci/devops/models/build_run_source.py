@@ -26,8 +26,16 @@ class BuildRunSource(object):
     SOURCE_TYPE_GITLAB = "GITLAB"
 
     #: A constant which can be used with the source_type property of a BuildRunSource.
+    #: This constant has a value of "GITLAB_SERVER"
+    SOURCE_TYPE_GITLAB_SERVER = "GITLAB_SERVER"
+
+    #: A constant which can be used with the source_type property of a BuildRunSource.
     #: This constant has a value of "BITBUCKET_CLOUD"
     SOURCE_TYPE_BITBUCKET_CLOUD = "BITBUCKET_CLOUD"
+
+    #: A constant which can be used with the source_type property of a BuildRunSource.
+    #: This constant has a value of "BITBUCKET_SERVER"
+    SOURCE_TYPE_BITBUCKET_SERVER = "BITBUCKET_SERVER"
 
     #: A constant which can be used with the source_type property of a BuildRunSource.
     #: This constant has a value of "DEVOPS_CODE_REPOSITORY"
@@ -38,6 +46,8 @@ class BuildRunSource(object):
         Initializes a new BuildRunSource object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.devops.models.GitlabServerBuildRunSource`
+        * :class:`~oci.devops.models.BitbucketServerBuildRunSource`
         * :class:`~oci.devops.models.GithubBuildRunSource`
         * :class:`~oci.devops.models.DevopsCodeRepositoryBuildRunSource`
         * :class:`~oci.devops.models.ManualBuildRunSource`
@@ -48,7 +58,7 @@ class BuildRunSource(object):
 
         :param source_type:
             The value to assign to the source_type property of this BuildRunSource.
-            Allowed values for this property are: "MANUAL", "GITHUB", "GITLAB", "BITBUCKET_CLOUD", "DEVOPS_CODE_REPOSITORY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "MANUAL", "GITHUB", "GITLAB", "GITLAB_SERVER", "BITBUCKET_CLOUD", "BITBUCKET_SERVER", "DEVOPS_CODE_REPOSITORY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type source_type: str
 
@@ -70,6 +80,12 @@ class BuildRunSource(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['sourceType']
+
+        if type == 'GITLAB_SERVER':
+            return 'GitlabServerBuildRunSource'
+
+        if type == 'BITBUCKET_SERVER':
+            return 'BitbucketServerBuildRunSource'
 
         if type == 'GITHUB':
             return 'GithubBuildRunSource'
@@ -94,7 +110,7 @@ class BuildRunSource(object):
         **[Required]** Gets the source_type of this BuildRunSource.
         The source from which the build run is triggered.
 
-        Allowed values for this property are: "MANUAL", "GITHUB", "GITLAB", "BITBUCKET_CLOUD", "DEVOPS_CODE_REPOSITORY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "MANUAL", "GITHUB", "GITLAB", "GITLAB_SERVER", "BITBUCKET_CLOUD", "BITBUCKET_SERVER", "DEVOPS_CODE_REPOSITORY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -113,7 +129,7 @@ class BuildRunSource(object):
         :param source_type: The source_type of this BuildRunSource.
         :type: str
         """
-        allowed_values = ["MANUAL", "GITHUB", "GITLAB", "BITBUCKET_CLOUD", "DEVOPS_CODE_REPOSITORY"]
+        allowed_values = ["MANUAL", "GITHUB", "GITLAB", "GITLAB_SERVER", "BITBUCKET_CLOUD", "BITBUCKET_SERVER", "DEVOPS_CODE_REPOSITORY"]
         if not value_allowed_none_or_none_sentinel(source_type, allowed_values):
             source_type = 'UNKNOWN_ENUM_VALUE'
         self._source_type = source_type
