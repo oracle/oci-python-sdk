@@ -4,13 +4,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.76.1 - TBD
+2.77.0 - 2022-08-02
 ====================
 
 Added
 -----
-* TBD
-
+* Support for OpenSearch in the Search service
+* Support for child tables in the NoSQL Database Cloud service
+* Support for private repositories in the DevOps service
+ 
+Breaking
+--------
+* Support for retries by default on operations of the Quotas service
+ 
 ====================
 2.76.0 - 2022-07-27
 ====================
