@@ -143,7 +143,7 @@ class NetworkFirewallClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/WorkRequest/CancelWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -249,7 +249,7 @@ class NetworkFirewallClient(object):
         resource_path = "/networkFirewalls/{networkFirewallId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_network_firewall_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewall/ChangeNetworkFirewallCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -362,7 +362,7 @@ class NetworkFirewallClient(object):
         resource_path = "/networkFirewallPolicies/{networkFirewallPolicyId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_network_firewall_policy_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewallPolicy/ChangeNetworkFirewallPolicyCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -468,7 +468,7 @@ class NetworkFirewallClient(object):
         resource_path = "/networkFirewalls"
         method = "POST"
         operation_name = "create_network_firewall"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewall/CreateNetworkFirewall"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -562,7 +562,7 @@ class NetworkFirewallClient(object):
         resource_path = "/networkFirewallPolicies"
         method = "POST"
         operation_name = "create_network_firewall_policy"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewallPolicy/CreateNetworkFirewallPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -658,7 +658,7 @@ class NetworkFirewallClient(object):
         resource_path = "/networkFirewalls/{networkFirewallId}"
         method = "DELETE"
         operation_name = "delete_network_firewall"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewall/DeleteNetworkFirewall"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -759,7 +759,7 @@ class NetworkFirewallClient(object):
         resource_path = "/networkFirewallPolicies/{networkFirewallPolicyId}"
         method = "DELETE"
         operation_name = "delete_network_firewall_policy"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewallPolicy/DeleteNetworkFirewallPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -855,7 +855,7 @@ class NetworkFirewallClient(object):
         resource_path = "/networkFirewalls/{networkFirewallId}"
         method = "GET"
         operation_name = "get_network_firewall"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewall/GetNetworkFirewall"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -949,7 +949,7 @@ class NetworkFirewallClient(object):
         resource_path = "/networkFirewallPolicies/{networkFirewallPolicyId}"
         method = "GET"
         operation_name = "get_network_firewall_policy"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewallPolicy/GetNetworkFirewallPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1043,7 +1043,7 @@ class NetworkFirewallClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1164,7 +1164,7 @@ class NetworkFirewallClient(object):
         resource_path = "/networkFirewallPolicies"
         method = "GET"
         operation_name = "list_network_firewall_policies"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewallPolicy/ListNetworkFirewallPolicies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1325,7 +1325,7 @@ class NetworkFirewallClient(object):
         resource_path = "/networkFirewalls"
         method = "GET"
         operation_name = "list_network_firewalls"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewall/ListNetworkFirewalls"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1469,7 +1469,7 @@ class NetworkFirewallClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1607,7 +1607,7 @@ class NetworkFirewallClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1756,7 +1756,7 @@ class NetworkFirewallClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1892,7 +1892,7 @@ class NetworkFirewallClient(object):
         resource_path = "/networkFirewalls/{networkFirewallId}"
         method = "PUT"
         operation_name = "update_network_firewall"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewall/UpdateNetworkFirewall"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1998,7 +1998,7 @@ class NetworkFirewallClient(object):
         resource_path = "/networkFirewallPolicies/{networkFirewallPolicyId}"
         method = "PUT"
         operation_name = "update_network_firewall_policy"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewallPolicy/UpdateNetworkFirewallPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

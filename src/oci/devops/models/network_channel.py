@@ -18,18 +18,23 @@ class NetworkChannel(object):
     #: This constant has a value of "PRIVATE_ENDPOINT_CHANNEL"
     NETWORK_CHANNEL_TYPE_PRIVATE_ENDPOINT_CHANNEL = "PRIVATE_ENDPOINT_CHANNEL"
 
+    #: A constant which can be used with the network_channel_type property of a NetworkChannel.
+    #: This constant has a value of "SERVICE_VNIC_CHANNEL"
+    NETWORK_CHANNEL_TYPE_SERVICE_VNIC_CHANNEL = "SERVICE_VNIC_CHANNEL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new NetworkChannel object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.devops.models.ServiceVnicChannel`
         * :class:`~oci.devops.models.PrivateEndpointChannel`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param network_channel_type:
             The value to assign to the network_channel_type property of this NetworkChannel.
-            Allowed values for this property are: "PRIVATE_ENDPOINT_CHANNEL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PRIVATE_ENDPOINT_CHANNEL", "SERVICE_VNIC_CHANNEL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type network_channel_type: str
 
@@ -52,6 +57,9 @@ class NetworkChannel(object):
         """
         type = object_dictionary['networkChannelType']
 
+        if type == 'SERVICE_VNIC_CHANNEL':
+            return 'ServiceVnicChannel'
+
         if type == 'PRIVATE_ENDPOINT_CHANNEL':
             return 'PrivateEndpointChannel'
         else:
@@ -63,7 +71,7 @@ class NetworkChannel(object):
         **[Required]** Gets the network_channel_type of this NetworkChannel.
         Network channel type.
 
-        Allowed values for this property are: "PRIVATE_ENDPOINT_CHANNEL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PRIVATE_ENDPOINT_CHANNEL", "SERVICE_VNIC_CHANNEL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -82,7 +90,7 @@ class NetworkChannel(object):
         :param network_channel_type: The network_channel_type of this NetworkChannel.
         :type: str
         """
-        allowed_values = ["PRIVATE_ENDPOINT_CHANNEL"]
+        allowed_values = ["PRIVATE_ENDPOINT_CHANNEL", "SERVICE_VNIC_CHANNEL"]
         if not value_allowed_none_or_none_sentinel(network_channel_type, allowed_values):
             network_channel_type = 'UNKNOWN_ENUM_VALUE'
         self._network_channel_type = network_channel_type

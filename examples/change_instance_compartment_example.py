@@ -154,7 +154,7 @@ def getInstanceResponse():
 
 
 def waitForMoveCompletion(response):
-    if('opc-work-request-id' in response.headers.keys()):
+    if 'opc-work-request-id' in response.headers.keys():
         opc_work_request_id = response.headers['opc-work-request-id']
         info('   opc-work-request-id ' + opc_work_request_id)
         info('   Querying the status of move operation using opc-work-request-id')

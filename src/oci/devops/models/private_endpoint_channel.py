@@ -21,7 +21,7 @@ class PrivateEndpointChannel(NetworkChannel):
 
         :param network_channel_type:
             The value to assign to the network_channel_type property of this PrivateEndpointChannel.
-            Allowed values for this property are: "PRIVATE_ENDPOINT_CHANNEL"
+            Allowed values for this property are: "PRIVATE_ENDPOINT_CHANNEL", "SERVICE_VNIC_CHANNEL"
         :type network_channel_type: str
 
         :param subnet_id:

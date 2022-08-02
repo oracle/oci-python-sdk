@@ -19,8 +19,10 @@ class UpdateConnectionDetails(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.devops.models.UpdateGithubAccessTokenConnectionDetails`
+        * :class:`~oci.devops.models.UpdateBitbucketServerAccessTokenConnectionDetails`
         * :class:`~oci.devops.models.UpdateGitlabAccessTokenConnectionDetails`
         * :class:`~oci.devops.models.UpdateBitbucketCloudAppPasswordConnectionDetails`
+        * :class:`~oci.devops.models.UpdateGitlabServerAccessTokenConnectionDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -78,11 +80,17 @@ class UpdateConnectionDetails(object):
         if type == 'GITHUB_ACCESS_TOKEN':
             return 'UpdateGithubAccessTokenConnectionDetails'
 
+        if type == 'BITBUCKET_SERVER_ACCESS_TOKEN':
+            return 'UpdateBitbucketServerAccessTokenConnectionDetails'
+
         if type == 'GITLAB_ACCESS_TOKEN':
             return 'UpdateGitlabAccessTokenConnectionDetails'
 
         if type == 'BITBUCKET_CLOUD_APP_PASSWORD':
             return 'UpdateBitbucketCloudAppPasswordConnectionDetails'
+
+        if type == 'GITLAB_SERVER_ACCESS_TOKEN':
+            return 'UpdateGitlabServerAccessTokenConnectionDetails'
         else:
             return 'UpdateConnectionDetails'
 

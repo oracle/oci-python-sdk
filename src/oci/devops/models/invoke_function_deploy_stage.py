@@ -191,7 +191,8 @@ class InvokeFunctionDeployStage(DeployStage):
     def deploy_artifact_id(self):
         """
         Gets the deploy_artifact_id of this InvokeFunctionDeployStage.
-        Optional binary artifact OCID user may provide to this stage.
+        Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution.
+        If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
 
 
         :return: The deploy_artifact_id of this InvokeFunctionDeployStage.
@@ -203,7 +204,8 @@ class InvokeFunctionDeployStage(DeployStage):
     def deploy_artifact_id(self, deploy_artifact_id):
         """
         Sets the deploy_artifact_id of this InvokeFunctionDeployStage.
-        Optional binary artifact OCID user may provide to this stage.
+        Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution.
+        If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
 
 
         :param deploy_artifact_id: The deploy_artifact_id of this InvokeFunctionDeployStage.
