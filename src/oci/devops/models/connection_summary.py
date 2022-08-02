@@ -21,6 +21,8 @@ class ConnectionSummary(object):
         * :class:`~oci.devops.models.BitbucketCloudAppPasswordConnectionSummary`
         * :class:`~oci.devops.models.GithubAccessTokenConnectionSummary`
         * :class:`~oci.devops.models.GitlabAccessTokenConnectionSummary`
+        * :class:`~oci.devops.models.BitbucketServerTokenConnectionSummary`
+        * :class:`~oci.devops.models.GitlabServerAccessTokenConnectionSummary`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -132,6 +134,12 @@ class ConnectionSummary(object):
 
         if type == 'GITLAB_ACCESS_TOKEN':
             return 'GitlabAccessTokenConnectionSummary'
+
+        if type == 'BITBUCKET_SERVER_ACCESS_TOKEN':
+            return 'BitbucketServerTokenConnectionSummary'
+
+        if type == 'GITLAB_SERVER_ACCESS_TOKEN':
+            return 'GitlabServerAccessTokenConnectionSummary'
         else:
             return 'ConnectionSummary'
 

@@ -91,6 +91,10 @@ class BuildStageRunProgress(BuildPipelineStageRunProgress):
             The value to assign to the exported_variables property of this BuildStageRunProgress.
         :type exported_variables: oci.devops.models.ExportedVariableCollection
 
+        :param private_access_config:
+            The value to assign to the private_access_config property of this BuildStageRunProgress.
+        :type private_access_config: oci.devops.models.NetworkChannel
+
         """
         self.swagger_types = {
             'stage_display_name': 'str',
@@ -108,7 +112,8 @@ class BuildStageRunProgress(BuildPipelineStageRunProgress):
             'build_source_collection': 'BuildSourceCollection',
             'primary_build_source': 'str',
             'steps': 'list[BuildStageRunStep]',
-            'exported_variables': 'ExportedVariableCollection'
+            'exported_variables': 'ExportedVariableCollection',
+            'private_access_config': 'NetworkChannel'
         }
 
         self.attribute_map = {
@@ -127,7 +132,8 @@ class BuildStageRunProgress(BuildPipelineStageRunProgress):
             'build_source_collection': 'buildSourceCollection',
             'primary_build_source': 'primaryBuildSource',
             'steps': 'steps',
-            'exported_variables': 'exportedVariables'
+            'exported_variables': 'exportedVariables',
+            'private_access_config': 'privateAccessConfig'
         }
 
         self._stage_display_name = None
@@ -146,6 +152,7 @@ class BuildStageRunProgress(BuildPipelineStageRunProgress):
         self._primary_build_source = None
         self._steps = None
         self._exported_variables = None
+        self._private_access_config = None
         self._build_pipeline_stage_type = 'BUILD'
 
     @property
@@ -357,6 +364,26 @@ class BuildStageRunProgress(BuildPipelineStageRunProgress):
         :type: oci.devops.models.ExportedVariableCollection
         """
         self._exported_variables = exported_variables
+
+    @property
+    def private_access_config(self):
+        """
+        Gets the private_access_config of this BuildStageRunProgress.
+
+        :return: The private_access_config of this BuildStageRunProgress.
+        :rtype: oci.devops.models.NetworkChannel
+        """
+        return self._private_access_config
+
+    @private_access_config.setter
+    def private_access_config(self, private_access_config):
+        """
+        Sets the private_access_config of this BuildStageRunProgress.
+
+        :param private_access_config: The private_access_config of this BuildStageRunProgress.
+        :type: oci.devops.models.NetworkChannel
+        """
+        self._private_access_config = private_access_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

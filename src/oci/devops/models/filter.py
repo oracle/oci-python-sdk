@@ -20,8 +20,10 @@ class Filter(object):
 
         * :class:`~oci.devops.models.DevopsCodeRepositoryFilter`
         * :class:`~oci.devops.models.BitbucketCloudFilter`
+        * :class:`~oci.devops.models.BitbucketServerFilter`
         * :class:`~oci.devops.models.GitlabFilter`
         * :class:`~oci.devops.models.GithubFilter`
+        * :class:`~oci.devops.models.GitlabServerFilter`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -54,11 +56,17 @@ class Filter(object):
         if type == 'BITBUCKET_CLOUD':
             return 'BitbucketCloudFilter'
 
+        if type == 'BITBUCKET_SERVER':
+            return 'BitbucketServerFilter'
+
         if type == 'GITLAB':
             return 'GitlabFilter'
 
         if type == 'GITHUB':
             return 'GithubFilter'
+
+        if type == 'GITLAB_SERVER':
+            return 'GitlabServerFilter'
         else:
             return 'Filter'
 

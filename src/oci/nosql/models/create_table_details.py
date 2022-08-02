@@ -150,7 +150,7 @@ class CreateTableDetails(object):
     @property
     def table_limits(self):
         """
-        **[Required]** Gets the table_limits of this CreateTableDetails.
+        Gets the table_limits of this CreateTableDetails.
 
         :return: The table_limits of this CreateTableDetails.
         :rtype: oci.nosql.models.TableLimits

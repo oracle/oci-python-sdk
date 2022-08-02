@@ -20,8 +20,10 @@ class TriggerSummary(object):
 
         * :class:`~oci.devops.models.BitbucketCloudTriggerSummary`
         * :class:`~oci.devops.models.GitlabTriggerSummary`
+        * :class:`~oci.devops.models.GitlabServerTriggerSummary`
         * :class:`~oci.devops.models.GithubTriggerSummary`
         * :class:`~oci.devops.models.DevopsCodeRepositoryTriggerSummary`
+        * :class:`~oci.devops.models.BitbucketServerTriggerSummary`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -138,11 +140,17 @@ class TriggerSummary(object):
         if type == 'GITLAB':
             return 'GitlabTriggerSummary'
 
+        if type == 'GITLAB_SERVER':
+            return 'GitlabServerTriggerSummary'
+
         if type == 'GITHUB':
             return 'GithubTriggerSummary'
 
         if type == 'DEVOPS_CODE_REPOSITORY':
             return 'DevopsCodeRepositoryTriggerSummary'
+
+        if type == 'BITBUCKET_SERVER':
+            return 'BitbucketServerTriggerSummary'
         else:
             return 'TriggerSummary'
 

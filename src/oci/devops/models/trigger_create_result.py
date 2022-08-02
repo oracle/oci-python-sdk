@@ -18,10 +18,12 @@ class TriggerCreateResult(object):
         Initializes a new TriggerCreateResult object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.devops.models.GitlabServerTriggerCreateResult`
         * :class:`~oci.devops.models.GithubTriggerCreateResult`
         * :class:`~oci.devops.models.GitlabTriggerCreateResult`
         * :class:`~oci.devops.models.DevopsCodeRepositoryTriggerCreateResult`
         * :class:`~oci.devops.models.BitbucketCloudTriggerCreateResult`
+        * :class:`~oci.devops.models.BitbucketServerTriggerCreateResult`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -139,6 +141,9 @@ class TriggerCreateResult(object):
         """
         type = object_dictionary['triggerSource']
 
+        if type == 'GITLAB_SERVER':
+            return 'GitlabServerTriggerCreateResult'
+
         if type == 'GITHUB':
             return 'GithubTriggerCreateResult'
 
@@ -150,6 +155,9 @@ class TriggerCreateResult(object):
 
         if type == 'BITBUCKET_CLOUD':
             return 'BitbucketCloudTriggerCreateResult'
+
+        if type == 'BITBUCKET_SERVER':
+            return 'BitbucketServerTriggerCreateResult'
         else:
             return 'TriggerCreateResult'
 

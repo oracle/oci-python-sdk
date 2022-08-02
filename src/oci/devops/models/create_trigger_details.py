@@ -21,7 +21,9 @@ class CreateTriggerDetails(object):
         * :class:`~oci.devops.models.CreateGithubTriggerDetails`
         * :class:`~oci.devops.models.CreateDevopsCodeRepositoryTriggerDetails`
         * :class:`~oci.devops.models.CreateBitbucketCloudTriggerDetails`
+        * :class:`~oci.devops.models.CreateGitlabServerTriggerDetails`
         * :class:`~oci.devops.models.CreateGitlabTriggerDetails`
+        * :class:`~oci.devops.models.CreateBitbucketServerTriggerDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -99,8 +101,14 @@ class CreateTriggerDetails(object):
         if type == 'BITBUCKET_CLOUD':
             return 'CreateBitbucketCloudTriggerDetails'
 
+        if type == 'GITLAB_SERVER':
+            return 'CreateGitlabServerTriggerDetails'
+
         if type == 'GITLAB':
             return 'CreateGitlabTriggerDetails'
+
+        if type == 'BITBUCKET_SERVER':
+            return 'CreateBitbucketServerTriggerDetails'
         else:
             return 'CreateTriggerDetails'
 
