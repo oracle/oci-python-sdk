@@ -86,6 +86,10 @@ class Fleet(object):
             The value to assign to the operation_log property of this Fleet.
         :type operation_log: oci.jms.models.CustomLog
 
+        :param is_advanced_features_enabled:
+            The value to assign to the is_advanced_features_enabled property of this Fleet.
+        :type is_advanced_features_enabled: bool
+
         :param time_created:
             The value to assign to the time_created property of this Fleet.
         :type time_created: datetime
@@ -120,6 +124,7 @@ class Fleet(object):
             'approximate_managed_instance_count': 'int',
             'inventory_log': 'CustomLog',
             'operation_log': 'CustomLog',
+            'is_advanced_features_enabled': 'bool',
             'time_created': 'datetime',
             'lifecycle_state': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -138,6 +143,7 @@ class Fleet(object):
             'approximate_managed_instance_count': 'approximateManagedInstanceCount',
             'inventory_log': 'inventoryLog',
             'operation_log': 'operationLog',
+            'is_advanced_features_enabled': 'isAdvancedFeaturesEnabled',
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState',
             'defined_tags': 'definedTags',
@@ -155,6 +161,7 @@ class Fleet(object):
         self._approximate_managed_instance_count = None
         self._inventory_log = None
         self._operation_log = None
+        self._is_advanced_features_enabled = None
         self._time_created = None
         self._lifecycle_state = None
         self._defined_tags = None
@@ -408,6 +415,30 @@ class Fleet(object):
         :type: oci.jms.models.CustomLog
         """
         self._operation_log = operation_log
+
+    @property
+    def is_advanced_features_enabled(self):
+        """
+        Gets the is_advanced_features_enabled of this Fleet.
+        Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+
+
+        :return: The is_advanced_features_enabled of this Fleet.
+        :rtype: bool
+        """
+        return self._is_advanced_features_enabled
+
+    @is_advanced_features_enabled.setter
+    def is_advanced_features_enabled(self, is_advanced_features_enabled):
+        """
+        Sets the is_advanced_features_enabled of this Fleet.
+        Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+
+
+        :param is_advanced_features_enabled: The is_advanced_features_enabled of this Fleet.
+        :type: bool
+        """
+        self._is_advanced_features_enabled = is_advanced_features_enabled
 
     @property
     def time_created(self):

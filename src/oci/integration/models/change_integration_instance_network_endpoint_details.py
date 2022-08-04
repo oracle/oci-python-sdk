@@ -11,6 +11,12 @@ from oci.decorators import init_model_state_from_kwargs
 class ChangeIntegrationInstanceNetworkEndpointDetails(object):
     """
     Input payload to update an Integration instance endpoint details. An empty payload will clear out any existing configuration.
+
+    Some actions may not be applicable to specific integration types,
+    see `Differences in Instance Management`__
+    for details.
+
+    __ https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/application-integration&id=INTOO-GUID-931B5E33-4FE6-4997-93E5-8748516F46AA__GUID-176E43D5-4116-4828-8120-B929DF2A6B5E
     """
 
     def __init__(self, **kwargs):

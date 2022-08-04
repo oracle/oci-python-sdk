@@ -1,0 +1,11 @@
+CloudImportableComputeEntitySummary
+===================================
+
+.. currentmodule:: oci.opsi.models
+
+.. autoclass:: CloudImportableComputeEntitySummary
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

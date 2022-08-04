@@ -11,6 +11,12 @@ from oci.decorators import init_model_state_from_kwargs
 class UpdateIntegrationInstanceDetails(object):
     """
     The information to be updated.
+
+    Some properties may not be applicable to specific integration types,
+    see `Differences in Instance Management`__
+    for details.
+
+    __ https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/application-integration&id=INTOO-GUID-931B5E33-4FE6-4997-93E5-8748516F46AA__GUID-176E43D5-4116-4828-8120-B929DF2A6B5E
     """
 
     #: A constant which can be used with the integration_instance_type property of a UpdateIntegrationInstanceDetails.
@@ -20,6 +26,14 @@ class UpdateIntegrationInstanceDetails(object):
     #: A constant which can be used with the integration_instance_type property of a UpdateIntegrationInstanceDetails.
     #: This constant has a value of "ENTERPRISE"
     INTEGRATION_INSTANCE_TYPE_ENTERPRISE = "ENTERPRISE"
+
+    #: A constant which can be used with the integration_instance_type property of a UpdateIntegrationInstanceDetails.
+    #: This constant has a value of "STANDARDX"
+    INTEGRATION_INSTANCE_TYPE_STANDARDX = "STANDARDX"
+
+    #: A constant which can be used with the integration_instance_type property of a UpdateIntegrationInstanceDetails.
+    #: This constant has a value of "ENTERPRISEX"
+    INTEGRATION_INSTANCE_TYPE_ENTERPRISEX = "ENTERPRISEX"
 
     def __init__(self, **kwargs):
         """
@@ -32,7 +46,7 @@ class UpdateIntegrationInstanceDetails(object):
 
         :param integration_instance_type:
             The value to assign to the integration_instance_type property of this UpdateIntegrationInstanceDetails.
-            Allowed values for this property are: "STANDARD", "ENTERPRISE"
+            Allowed values for this property are: "STANDARD", "ENTERPRISE", "STANDARDX", "ENTERPRISEX"
         :type integration_instance_type: str
 
         :param freeform_tags:
@@ -133,9 +147,11 @@ class UpdateIntegrationInstanceDetails(object):
     def integration_instance_type(self):
         """
         Gets the integration_instance_type of this UpdateIntegrationInstanceDetails.
-        Standard or Enterprise type
+        Standard or Enterprise type,
+        Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
+        Oracle Integration 3 uses ENTERPRISEX and STANDARDX
 
-        Allowed values for this property are: "STANDARD", "ENTERPRISE"
+        Allowed values for this property are: "STANDARD", "ENTERPRISE", "STANDARDX", "ENTERPRISEX"
 
 
         :return: The integration_instance_type of this UpdateIntegrationInstanceDetails.
@@ -147,13 +163,15 @@ class UpdateIntegrationInstanceDetails(object):
     def integration_instance_type(self, integration_instance_type):
         """
         Sets the integration_instance_type of this UpdateIntegrationInstanceDetails.
-        Standard or Enterprise type
+        Standard or Enterprise type,
+        Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
+        Oracle Integration 3 uses ENTERPRISEX and STANDARDX
 
 
         :param integration_instance_type: The integration_instance_type of this UpdateIntegrationInstanceDetails.
         :type: str
         """
-        allowed_values = ["STANDARD", "ENTERPRISE"]
+        allowed_values = ["STANDARD", "ENTERPRISE", "STANDARDX", "ENTERPRISEX"]
         if not value_allowed_none_or_none_sentinel(integration_instance_type, allowed_values):
             raise ValueError(
                 "Invalid value for `integration_instance_type`, must be None or one of {0}"

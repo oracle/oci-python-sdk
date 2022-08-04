@@ -181,7 +181,7 @@ class CreateTranscriptionJobDetails(object):
     def additional_transcription_formats(self):
         """
         Gets the additional_transcription_formats of this CreateTranscriptionJobDetails.
-        Transcription Format. By default JSON format will be considered.
+        Transcription Format. By default, the JSON format is used.
 
         Allowed values for items in this list are: "SRT"
 
@@ -195,7 +195,7 @@ class CreateTranscriptionJobDetails(object):
     def additional_transcription_formats(self, additional_transcription_formats):
         """
         Sets the additional_transcription_formats of this CreateTranscriptionJobDetails.
-        Transcription Format. By default JSON format will be considered.
+        Transcription Format. By default, the JSON format is used.
 
 
         :param additional_transcription_formats: The additional_transcription_formats of this CreateTranscriptionJobDetails.

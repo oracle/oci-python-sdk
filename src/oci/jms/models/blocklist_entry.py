@@ -37,6 +37,10 @@ class BlocklistEntry(object):
     #: This constant has a value of "DELETE_JAVA_INSTALLATION"
     OPERATION_DELETE_JAVA_INSTALLATION = "DELETE_JAVA_INSTALLATION"
 
+    #: A constant which can be used with the operation property of a BlocklistEntry.
+    #: This constant has a value of "CREATE_JAVA_INSTALLATION"
+    OPERATION_CREATE_JAVA_INSTALLATION = "CREATE_JAVA_INSTALLATION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new BlocklistEntry object with values from keyword arguments.
@@ -44,7 +48,7 @@ class BlocklistEntry(object):
 
         :param operation:
             The value to assign to the operation property of this BlocklistEntry.
-            Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation: str
 
@@ -72,7 +76,7 @@ class BlocklistEntry(object):
         **[Required]** Gets the operation of this BlocklistEntry.
         The operation type.
 
-        Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -91,7 +95,7 @@ class BlocklistEntry(object):
         :param operation: The operation of this BlocklistEntry.
         :type: str
         """
-        allowed_values = ["CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION"]
+        allowed_values = ["CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION"]
         if not value_allowed_none_or_none_sentinel(operation, allowed_values):
             operation = 'UNKNOWN_ENUM_VALUE'
         self._operation = operation

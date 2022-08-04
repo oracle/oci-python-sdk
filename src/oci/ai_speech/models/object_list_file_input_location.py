@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ObjectListFileInputLocation(InputLocation):
     """
-    An object in Object Storage that contains a list of input files.
+    Use this locationType when passing the location of the object storage in the request (where the WAV file is stored).
     """
 
     def __init__(self, **kwargs):

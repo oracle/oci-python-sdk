@@ -25,6 +25,18 @@ class UpdateMonitorDetails(object):
     #: This constant has a value of "INVALID"
     STATUS_INVALID = "INVALID"
 
+    #: A constant which can be used with the scheduling_policy property of a UpdateMonitorDetails.
+    #: This constant has a value of "ALL"
+    SCHEDULING_POLICY_ALL = "ALL"
+
+    #: A constant which can be used with the scheduling_policy property of a UpdateMonitorDetails.
+    #: This constant has a value of "ROUND_ROBIN"
+    SCHEDULING_POLICY_ROUND_ROBIN = "ROUND_ROBIN"
+
+    #: A constant which can be used with the scheduling_policy property of a UpdateMonitorDetails.
+    #: This constant has a value of "BATCHED_ROUND_ROBIN"
+    SCHEDULING_POLICY_BATCHED_ROUND_ROBIN = "BATCHED_ROUND_ROBIN"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateMonitorDetails object with values from keyword arguments.
@@ -79,6 +91,19 @@ class UpdateMonitorDetails(object):
             The value to assign to the defined_tags property of this UpdateMonitorDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param is_run_now:
+            The value to assign to the is_run_now property of this UpdateMonitorDetails.
+        :type is_run_now: bool
+
+        :param scheduling_policy:
+            The value to assign to the scheduling_policy property of this UpdateMonitorDetails.
+            Allowed values for this property are: "ALL", "ROUND_ROBIN", "BATCHED_ROUND_ROBIN"
+        :type scheduling_policy: str
+
+        :param batch_interval_in_seconds:
+            The value to assign to the batch_interval_in_seconds property of this UpdateMonitorDetails.
+        :type batch_interval_in_seconds: int
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -92,7 +117,10 @@ class UpdateMonitorDetails(object):
             'script_parameters': 'list[MonitorScriptParameter]',
             'configuration': 'MonitorConfiguration',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'is_run_now': 'bool',
+            'scheduling_policy': 'str',
+            'batch_interval_in_seconds': 'int'
         }
 
         self.attribute_map = {
@@ -107,7 +135,10 @@ class UpdateMonitorDetails(object):
             'script_parameters': 'scriptParameters',
             'configuration': 'configuration',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'is_run_now': 'isRunNow',
+            'scheduling_policy': 'schedulingPolicy',
+            'batch_interval_in_seconds': 'batchIntervalInSeconds'
         }
 
         self._display_name = None
@@ -122,6 +153,9 @@ class UpdateMonitorDetails(object):
         self._configuration = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._is_run_now = None
+        self._scheduling_policy = None
+        self._batch_interval_in_seconds = None
 
     @property
     def display_name(self):
@@ -442,6 +476,86 @@ class UpdateMonitorDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def is_run_now(self):
+        """
+        Gets the is_run_now of this UpdateMonitorDetails.
+        If isRunNow is enabled, then the monitor will run now.
+
+
+        :return: The is_run_now of this UpdateMonitorDetails.
+        :rtype: bool
+        """
+        return self._is_run_now
+
+    @is_run_now.setter
+    def is_run_now(self, is_run_now):
+        """
+        Sets the is_run_now of this UpdateMonitorDetails.
+        If isRunNow is enabled, then the monitor will run now.
+
+
+        :param is_run_now: The is_run_now of this UpdateMonitorDetails.
+        :type: bool
+        """
+        self._is_run_now = is_run_now
+
+    @property
+    def scheduling_policy(self):
+        """
+        Gets the scheduling_policy of this UpdateMonitorDetails.
+        Scheduling policy on Vantage points.
+
+        Allowed values for this property are: "ALL", "ROUND_ROBIN", "BATCHED_ROUND_ROBIN"
+
+
+        :return: The scheduling_policy of this UpdateMonitorDetails.
+        :rtype: str
+        """
+        return self._scheduling_policy
+
+    @scheduling_policy.setter
+    def scheduling_policy(self, scheduling_policy):
+        """
+        Sets the scheduling_policy of this UpdateMonitorDetails.
+        Scheduling policy on Vantage points.
+
+
+        :param scheduling_policy: The scheduling_policy of this UpdateMonitorDetails.
+        :type: str
+        """
+        allowed_values = ["ALL", "ROUND_ROBIN", "BATCHED_ROUND_ROBIN"]
+        if not value_allowed_none_or_none_sentinel(scheduling_policy, allowed_values):
+            raise ValueError(
+                "Invalid value for `scheduling_policy`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._scheduling_policy = scheduling_policy
+
+    @property
+    def batch_interval_in_seconds(self):
+        """
+        Gets the batch_interval_in_seconds of this UpdateMonitorDetails.
+        Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+
+
+        :return: The batch_interval_in_seconds of this UpdateMonitorDetails.
+        :rtype: int
+        """
+        return self._batch_interval_in_seconds
+
+    @batch_interval_in_seconds.setter
+    def batch_interval_in_seconds(self, batch_interval_in_seconds):
+        """
+        Sets the batch_interval_in_seconds of this UpdateMonitorDetails.
+        Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+
+
+        :param batch_interval_in_seconds: The batch_interval_in_seconds of this UpdateMonitorDetails.
+        :type: int
+        """
+        self._batch_interval_in_seconds = batch_interval_in_seconds
 
     def __repr__(self):
         return formatted_flat_dict(self)

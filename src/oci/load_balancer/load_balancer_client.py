@@ -133,9 +133,14 @@ class LoadBalancerClient(object):
             may be rejected).
 
         :param str if_match: (optional)
-            For optimistic concurrency control. Set the if-match parameter to the value of the ETag from a
-            previous GET or POST response for that resource. The resource is moved only if the ETag you
-            provide matches the resource's current ETag value.
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
 
             Example: `example-etag`
 
@@ -247,6 +252,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
@@ -282,6 +299,7 @@ class LoadBalancerClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
+            "if_match",
             "opc_retry_token"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -304,6 +322,7 @@ class LoadBalancerClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
@@ -363,6 +382,18 @@ class LoadBalancerClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -391,7 +422,8 @@ class LoadBalancerClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -412,7 +444,8 @@ class LoadBalancerClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -471,6 +504,18 @@ class LoadBalancerClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -499,7 +544,8 @@ class LoadBalancerClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -520,7 +566,8 @@ class LoadBalancerClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -575,6 +622,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
@@ -610,6 +669,7 @@ class LoadBalancerClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
+            "if_match",
             "opc_retry_token"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -631,6 +691,7 @@ class LoadBalancerClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
@@ -690,6 +751,18 @@ class LoadBalancerClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -718,7 +791,8 @@ class LoadBalancerClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -739,7 +813,8 @@ class LoadBalancerClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -923,6 +998,18 @@ class LoadBalancerClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -951,7 +1038,8 @@ class LoadBalancerClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -972,7 +1060,8 @@ class LoadBalancerClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -1034,6 +1123,18 @@ class LoadBalancerClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1062,7 +1163,8 @@ class LoadBalancerClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1083,7 +1185,8 @@ class LoadBalancerClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -1138,6 +1241,25 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1165,7 +1287,9 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_retry_token",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1185,7 +1309,9 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -1196,6 +1322,7 @@ class LoadBalancerClient(object):
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
                 self.base_client.add_opc_client_retries_header(header_params)
                 retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
             return retry_strategy.make_retrying_call(
@@ -1243,6 +1370,18 @@ class LoadBalancerClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1271,7 +1410,8 @@ class LoadBalancerClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1292,7 +1432,8 @@ class LoadBalancerClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -1351,6 +1492,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1378,7 +1531,8 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1400,7 +1554,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -1453,6 +1608,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1480,7 +1647,8 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1501,7 +1669,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -1553,6 +1722,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1580,7 +1761,8 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1601,7 +1783,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -1652,6 +1835,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1679,7 +1874,8 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1700,7 +1896,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -1751,6 +1948,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1778,7 +1987,8 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1799,7 +2009,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -1845,6 +2056,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1872,7 +2095,8 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1892,7 +2116,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -1946,6 +2171,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1973,7 +2210,8 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1994,7 +2232,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -2048,6 +2287,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2075,7 +2326,8 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2096,7 +2348,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -2150,6 +2403,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2177,7 +2442,8 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2198,7 +2464,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -2249,6 +2516,18 @@ class LoadBalancerClient(object):
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
             a particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2276,7 +2555,8 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2297,7 +2577,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -2353,6 +2634,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2380,7 +2673,8 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2402,7 +2696,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -2460,6 +2755,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2487,7 +2794,8 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2509,7 +2817,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -2562,6 +2871,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2589,7 +2910,8 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2610,7 +2932,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -2663,6 +2986,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2690,7 +3025,8 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2711,7 +3047,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -2764,6 +3101,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2791,7 +3140,8 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2812,7 +3162,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -2865,6 +3216,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2892,7 +3255,8 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2913,7 +3277,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -2961,6 +3326,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2988,7 +3365,8 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -3008,7 +3386,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -3056,6 +3435,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -3083,7 +3474,8 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -3103,7 +3495,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -3156,6 +3549,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -3183,7 +3588,8 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -3204,7 +3610,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -3257,6 +3664,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -3284,7 +3703,8 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -3305,7 +3725,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -3358,6 +3779,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -3385,7 +3818,8 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -3406,7 +3840,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -3459,6 +3894,18 @@ class LoadBalancerClient(object):
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
             a particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -3486,7 +3933,8 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -3507,7 +3955,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -3650,6 +4099,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -3677,7 +4138,8 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -3697,7 +4159,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -3750,6 +4213,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -3777,7 +4252,8 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -3798,7 +4274,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -3847,6 +4324,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -3874,7 +4363,8 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -3894,7 +4384,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -3943,6 +4434,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -3970,7 +4473,8 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -3990,7 +4494,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -4047,6 +4552,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -4074,7 +4591,8 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -4095,7 +4613,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -4423,6 +4942,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -4450,7 +4981,8 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -4470,7 +5002,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -4754,6 +5287,18 @@ class LoadBalancerClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -4783,7 +5328,8 @@ class LoadBalancerClient(object):
             "retry_strategy",
             "opc_request_id",
             "limit",
-            "page"
+            "page",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -4809,7 +5355,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -4859,6 +5406,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -4886,7 +5445,8 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -4906,7 +5466,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -5064,6 +5625,18 @@ class LoadBalancerClient(object):
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
             a particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -5091,7 +5664,8 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -5111,7 +5685,8 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -5300,6 +5875,18 @@ class LoadBalancerClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -5328,7 +5915,8 @@ class LoadBalancerClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -5351,7 +5939,8 @@ class LoadBalancerClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -5415,6 +6004,18 @@ class LoadBalancerClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -5443,7 +6044,8 @@ class LoadBalancerClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -5465,7 +6067,8 @@ class LoadBalancerClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -5529,6 +6132,18 @@ class LoadBalancerClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -5557,7 +6172,8 @@ class LoadBalancerClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -5579,7 +6195,8 @@ class LoadBalancerClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -5638,6 +6255,25 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -5665,7 +6301,9 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_retry_token",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -5686,7 +6324,9 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -5697,6 +6337,7 @@ class LoadBalancerClient(object):
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
                 self.base_client.add_opc_client_retries_header(header_params)
                 retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
             return retry_strategy.make_retrying_call(
@@ -5749,6 +6390,18 @@ class LoadBalancerClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -5777,7 +6430,8 @@ class LoadBalancerClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -5799,7 +6453,8 @@ class LoadBalancerClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -5851,6 +6506,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
@@ -5886,6 +6553,7 @@ class LoadBalancerClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
+            "if_match",
             "opc_retry_token"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -5907,6 +6575,7 @@ class LoadBalancerClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
@@ -5971,6 +6640,18 @@ class LoadBalancerClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -5999,7 +6680,8 @@ class LoadBalancerClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -6020,7 +6702,8 @@ class LoadBalancerClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -6079,6 +6762,18 @@ class LoadBalancerClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -6107,7 +6802,8 @@ class LoadBalancerClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -6128,7 +6824,8 @@ class LoadBalancerClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -6190,6 +6887,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
@@ -6225,6 +6934,7 @@ class LoadBalancerClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
+            "if_match",
             "opc_retry_token"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -6247,6 +6957,7 @@ class LoadBalancerClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
@@ -6307,6 +7018,18 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
             server error without risk of executing that same action again. Retry tokens expire after 24
@@ -6342,6 +7065,7 @@ class LoadBalancerClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
+            "if_match",
             "opc_retry_token"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -6364,6 +7088,7 @@ class LoadBalancerClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
@@ -6424,6 +7149,25 @@ class LoadBalancerClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -6451,7 +7195,9 @@ class LoadBalancerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "opc_retry_token",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -6472,7 +7218,9 @@ class LoadBalancerClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -6483,6 +7231,7 @@ class LoadBalancerClient(object):
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
                 self.base_client.add_opc_client_retries_header(header_params)
                 retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
             return retry_strategy.make_retrying_call(
@@ -6535,6 +7284,18 @@ class LoadBalancerClient(object):
             has been deleted and purged from the system, then a retry of the original creation request
             may be rejected).
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match
+            parameter to the value of the ETag for the load balancer. This value can be obtained from a GET
+            or POST response for any resource of that load balancer.
+
+            For example, the eTag returned by getListener can be specified as the ifMatch for updateRuleSets.
+
+            The resource is updated or deleted only if the ETag you provide matches the resource's current
+            ETag value.
+
+            Example: `example-etag`
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -6563,7 +7324,8 @@ class LoadBalancerClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "if_match"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -6585,7 +7347,8 @@ class LoadBalancerClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 

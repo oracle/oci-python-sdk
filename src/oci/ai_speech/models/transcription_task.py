@@ -78,6 +78,10 @@ class TranscriptionTask(object):
             The value to assign to the file_duration_in_seconds property of this TranscriptionTask.
         :type file_duration_in_seconds: int
 
+        :param processing_duration_in_seconds:
+            The value to assign to the processing_duration_in_seconds property of this TranscriptionTask.
+        :type processing_duration_in_seconds: int
+
         :param input_location:
             The value to assign to the input_location property of this TranscriptionTask.
         :type input_location: oci.ai_speech.models.ObjectLocation
@@ -108,6 +112,7 @@ class TranscriptionTask(object):
             'audio_format_details': 'AudioFormatDetails',
             'file_size_in_bytes': 'int',
             'file_duration_in_seconds': 'int',
+            'processing_duration_in_seconds': 'int',
             'input_location': 'ObjectLocation',
             'output_location': 'ObjectLocation',
             'lifecycle_state': 'str',
@@ -125,6 +130,7 @@ class TranscriptionTask(object):
             'audio_format_details': 'audioFormatDetails',
             'file_size_in_bytes': 'fileSizeInBytes',
             'file_duration_in_seconds': 'fileDurationInSeconds',
+            'processing_duration_in_seconds': 'processingDurationInSeconds',
             'input_location': 'inputLocation',
             'output_location': 'outputLocation',
             'lifecycle_state': 'lifecycleState',
@@ -141,6 +147,7 @@ class TranscriptionTask(object):
         self._audio_format_details = None
         self._file_size_in_bytes = None
         self._file_duration_in_seconds = None
+        self._processing_duration_in_seconds = None
         self._input_location = None
         self._output_location = None
         self._lifecycle_state = None
@@ -381,6 +388,30 @@ class TranscriptionTask(object):
         :type: int
         """
         self._file_duration_in_seconds = file_duration_in_seconds
+
+    @property
+    def processing_duration_in_seconds(self):
+        """
+        Gets the processing_duration_in_seconds of this TranscriptionTask.
+        Task proccessing duration, which excludes waiting time in the system.
+
+
+        :return: The processing_duration_in_seconds of this TranscriptionTask.
+        :rtype: int
+        """
+        return self._processing_duration_in_seconds
+
+    @processing_duration_in_seconds.setter
+    def processing_duration_in_seconds(self, processing_duration_in_seconds):
+        """
+        Sets the processing_duration_in_seconds of this TranscriptionTask.
+        Task proccessing duration, which excludes waiting time in the system.
+
+
+        :param processing_duration_in_seconds: The processing_duration_in_seconds of this TranscriptionTask.
+        :type: int
+        """
+        self._processing_duration_in_seconds = processing_duration_in_seconds
 
     @property
     def input_location(self):

@@ -34,6 +34,10 @@ class UpdateFleetDetails(object):
             The value to assign to the operation_log property of this UpdateFleetDetails.
         :type operation_log: oci.jms.models.CustomLog
 
+        :param is_advanced_features_enabled:
+            The value to assign to the is_advanced_features_enabled property of this UpdateFleetDetails.
+        :type is_advanced_features_enabled: bool
+
         :param defined_tags:
             The value to assign to the defined_tags property of this UpdateFleetDetails.
         :type defined_tags: dict(str, dict(str, object))
@@ -48,6 +52,7 @@ class UpdateFleetDetails(object):
             'description': 'str',
             'inventory_log': 'CustomLog',
             'operation_log': 'CustomLog',
+            'is_advanced_features_enabled': 'bool',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
@@ -57,6 +62,7 @@ class UpdateFleetDetails(object):
             'description': 'description',
             'inventory_log': 'inventoryLog',
             'operation_log': 'operationLog',
+            'is_advanced_features_enabled': 'isAdvancedFeaturesEnabled',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
@@ -65,6 +71,7 @@ class UpdateFleetDetails(object):
         self._description = None
         self._inventory_log = None
         self._operation_log = None
+        self._is_advanced_features_enabled = None
         self._defined_tags = None
         self._freeform_tags = None
 
@@ -155,6 +162,30 @@ class UpdateFleetDetails(object):
         :type: oci.jms.models.CustomLog
         """
         self._operation_log = operation_log
+
+    @property
+    def is_advanced_features_enabled(self):
+        """
+        Gets the is_advanced_features_enabled of this UpdateFleetDetails.
+        Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+
+
+        :return: The is_advanced_features_enabled of this UpdateFleetDetails.
+        :rtype: bool
+        """
+        return self._is_advanced_features_enabled
+
+    @is_advanced_features_enabled.setter
+    def is_advanced_features_enabled(self, is_advanced_features_enabled):
+        """
+        Sets the is_advanced_features_enabled of this UpdateFleetDetails.
+        Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+
+
+        :param is_advanced_features_enabled: The is_advanced_features_enabled of this UpdateFleetDetails.
+        :type: bool
+        """
+        self._is_advanced_features_enabled = is_advanced_features_enabled
 
     @property
     def defined_tags(self):

@@ -38,6 +38,10 @@ class TranscriptionTaskSummary(object):
             The value to assign to the file_duration_in_seconds property of this TranscriptionTaskSummary.
         :type file_duration_in_seconds: int
 
+        :param processing_duration_in_seconds:
+            The value to assign to the processing_duration_in_seconds property of this TranscriptionTaskSummary.
+        :type processing_duration_in_seconds: int
+
         :param time_started:
             The value to assign to the time_started property of this TranscriptionTaskSummary.
         :type time_started: datetime
@@ -61,6 +65,7 @@ class TranscriptionTaskSummary(object):
             'percent_complete': 'int',
             'file_size_in_bytes': 'int',
             'file_duration_in_seconds': 'int',
+            'processing_duration_in_seconds': 'int',
             'time_started': 'datetime',
             'time_finished': 'datetime',
             'lifecycle_state': 'str',
@@ -73,6 +78,7 @@ class TranscriptionTaskSummary(object):
             'percent_complete': 'percentComplete',
             'file_size_in_bytes': 'fileSizeInBytes',
             'file_duration_in_seconds': 'fileDurationInSeconds',
+            'processing_duration_in_seconds': 'processingDurationInSeconds',
             'time_started': 'timeStarted',
             'time_finished': 'timeFinished',
             'lifecycle_state': 'lifecycleState',
@@ -84,6 +90,7 @@ class TranscriptionTaskSummary(object):
         self._percent_complete = None
         self._file_size_in_bytes = None
         self._file_duration_in_seconds = None
+        self._processing_duration_in_seconds = None
         self._time_started = None
         self._time_finished = None
         self._lifecycle_state = None
@@ -212,6 +219,30 @@ class TranscriptionTaskSummary(object):
         :type: int
         """
         self._file_duration_in_seconds = file_duration_in_seconds
+
+    @property
+    def processing_duration_in_seconds(self):
+        """
+        Gets the processing_duration_in_seconds of this TranscriptionTaskSummary.
+        Task proccessing duration, which excludes waiting time in the system.
+
+
+        :return: The processing_duration_in_seconds of this TranscriptionTaskSummary.
+        :rtype: int
+        """
+        return self._processing_duration_in_seconds
+
+    @processing_duration_in_seconds.setter
+    def processing_duration_in_seconds(self, processing_duration_in_seconds):
+        """
+        Sets the processing_duration_in_seconds of this TranscriptionTaskSummary.
+        Task proccessing duration, which excludes waiting time in the system.
+
+
+        :param processing_duration_in_seconds: The processing_duration_in_seconds of this TranscriptionTaskSummary.
+        :type: int
+        """
+        self._processing_duration_in_seconds = processing_duration_in_seconds
 
     @property
     def time_started(self):

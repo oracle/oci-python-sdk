@@ -34,6 +34,48 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="default" email="team_oci_csi_us_grp@oracle.com" jiraProject="CSI" opsJiraProject="CDSS"
+def test_change_dashboard_group(testing_service_client):
+    if not testing_service_client.is_api_enabled('dashboard_service', 'ChangeDashboardGroup'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dashboard_service', util.camelize('dashboard'), 'ChangeDashboardGroup')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='dashboard_service', api_name='ChangeDashboardGroup')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.dashboard_service.DashboardClient(config, service_endpoint=service_endpoint)
+            response = client.change_dashboard_group(
+                dashboard_id=request.pop(util.camelize('dashboardId')),
+                change_dashboard_group_details=request.pop(util.camelize('ChangeDashboardGroupDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dashboard_service',
+            'ChangeDashboardGroup',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_dashboard_group',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="team_oci_csi_us_grp@oracle.com" jiraProject="CSI" opsJiraProject="CDSS"
 def test_create_dashboard(testing_service_client):
     if not testing_service_client.is_api_enabled('dashboard_service', 'CreateDashboard'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

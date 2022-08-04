@@ -1187,6 +1187,134 @@ def test_get_managed_database_group(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_get_optimizer_statistics_advisor_execution(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'GetOptimizerStatisticsAdvisorExecution'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'GetOptimizerStatisticsAdvisorExecution')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='GetOptimizerStatisticsAdvisorExecution')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_optimizer_statistics_advisor_execution(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                execution_name=request.pop(util.camelize('executionName')),
+                task_name=request.pop(util.camelize('taskName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'GetOptimizerStatisticsAdvisorExecution',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'optimizerStatisticsAdvisorExecution',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_get_optimizer_statistics_advisor_execution_script(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'GetOptimizerStatisticsAdvisorExecutionScript'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'GetOptimizerStatisticsAdvisorExecutionScript')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='GetOptimizerStatisticsAdvisorExecutionScript')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_optimizer_statistics_advisor_execution_script(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                execution_name=request.pop(util.camelize('executionName')),
+                task_name=request.pop(util.camelize('taskName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'GetOptimizerStatisticsAdvisorExecutionScript',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'optimizerStatisticsAdvisorExecutionScript',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_get_optimizer_statistics_collection_operation(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'GetOptimizerStatisticsCollectionOperation'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'GetOptimizerStatisticsCollectionOperation')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='GetOptimizerStatisticsCollectionOperation')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_optimizer_statistics_collection_operation(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                optimizer_statistics_collection_operation_id=request.pop(util.camelize('optimizerStatisticsCollectionOperationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'GetOptimizerStatisticsCollectionOperation',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'optimizerStatisticsCollectionOperation',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
 def test_get_pdb_metrics(testing_service_client):
     if not testing_service_client.is_api_enabled('database_management', 'GetPdbMetrics'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1349,6 +1477,49 @@ def test_get_work_request(testing_service_client):
             result,
             service_error,
             'workRequest',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_implement_optimizer_statistics_advisor_recommendations(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ImplementOptimizerStatisticsAdvisorRecommendations'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ImplementOptimizerStatisticsAdvisorRecommendations')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ImplementOptimizerStatisticsAdvisorRecommendations')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.implement_optimizer_statistics_advisor_recommendations(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                execution_name=request.pop(util.camelize('executionName')),
+                implement_optimizer_statistics_advisor_recommendations_details=request.pop(util.camelize('ImplementOptimizerStatisticsAdvisorRecommendationsDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ImplementOptimizerStatisticsAdvisorRecommendations',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'job',
             False,
             False
         )
@@ -2230,6 +2401,176 @@ def test_list_object_privileges(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_list_optimizer_statistics_advisor_executions(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ListOptimizerStatisticsAdvisorExecutions'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ListOptimizerStatisticsAdvisorExecutions')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ListOptimizerStatisticsAdvisorExecutions')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_optimizer_statistics_advisor_executions(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ListOptimizerStatisticsAdvisorExecutions',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'optimizerStatisticsAdvisorExecutionsCollection',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_list_optimizer_statistics_collection_aggregations(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ListOptimizerStatisticsCollectionAggregations'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ListOptimizerStatisticsCollectionAggregations')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ListOptimizerStatisticsCollectionAggregations')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_optimizer_statistics_collection_aggregations(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                group_type=request.pop(util.camelize('groupType')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_optimizer_statistics_collection_aggregations(
+                    managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                    group_type=request.pop(util.camelize('groupType')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_optimizer_statistics_collection_aggregations(
+                        managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                        group_type=request.pop(util.camelize('groupType')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ListOptimizerStatisticsCollectionAggregations',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'optimizerStatisticsCollectionAggregationsCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_list_optimizer_statistics_collection_operations(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ListOptimizerStatisticsCollectionOperations'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ListOptimizerStatisticsCollectionOperations')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ListOptimizerStatisticsCollectionOperations')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_optimizer_statistics_collection_operations(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_optimizer_statistics_collection_operations(
+                    managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_optimizer_statistics_collection_operations(
+                        managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ListOptimizerStatisticsCollectionOperations',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'optimizerStatisticsCollectionOperationsCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
 def test_list_proxied_for_users(testing_service_client):
     if not testing_service_client.is_api_enabled('database_management', 'ListProxiedForUsers'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2490,6 +2831,47 @@ def test_list_system_privileges(testing_service_client):
             'systemPrivilegeCollection',
             False,
             True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_list_table_statistics(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ListTableStatistics'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ListTableStatistics')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ListTableStatistics')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_table_statistics(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ListTableStatistics',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'tableStatisticsCollection',
+            False,
+            False
         )
 
 

@@ -78,7 +78,7 @@ class ShapeDetails(object):
         achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps
         parameter.
 
-        The values must be between minimumBandwidthInMbps and 8192 (8Gbps).
+        The values must be between minimumBandwidthInMbps and 8000 (8Gbps).
 
         Example: `1500`
 
@@ -96,7 +96,7 @@ class ShapeDetails(object):
         achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps
         parameter.
 
-        The values must be between minimumBandwidthInMbps and 8192 (8Gbps).
+        The values must be between minimumBandwidthInMbps and 8000 (8Gbps).
 
         Example: `1500`
 

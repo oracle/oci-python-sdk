@@ -165,6 +165,7 @@ Database
     oci.database.models.DbNodeSummary
     oci.database.models.DbServer
     oci.database.models.DbServerDetails
+    oci.database.models.DbServerHistorySummary
     oci.database.models.DbServerPatchingDetails
     oci.database.models.DbServerSummary
     oci.database.models.DbSystem
@@ -230,6 +231,8 @@ Database
     oci.database.models.LaunchDbSystemFromDbSystemDetails
     oci.database.models.LocalClonePluggableDatabaseDetails
     oci.database.models.MaintenanceRun
+    oci.database.models.MaintenanceRunHistory
+    oci.database.models.MaintenanceRunHistorySummary
     oci.database.models.MaintenanceRunSummary
     oci.database.models.MaintenanceWindow
     oci.database.models.MigrateVaultKeyDetails

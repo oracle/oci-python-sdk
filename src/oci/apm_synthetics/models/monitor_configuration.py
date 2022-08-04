@@ -51,19 +51,26 @@ class MonitorConfiguration(object):
             The value to assign to the is_failure_retried property of this MonitorConfiguration.
         :type is_failure_retried: bool
 
+        :param dns_configuration:
+            The value to assign to the dns_configuration property of this MonitorConfiguration.
+        :type dns_configuration: oci.apm_synthetics.models.DnsConfiguration
+
         """
         self.swagger_types = {
             'config_type': 'str',
-            'is_failure_retried': 'bool'
+            'is_failure_retried': 'bool',
+            'dns_configuration': 'DnsConfiguration'
         }
 
         self.attribute_map = {
             'config_type': 'configType',
-            'is_failure_retried': 'isFailureRetried'
+            'is_failure_retried': 'isFailureRetried',
+            'dns_configuration': 'dnsConfiguration'
         }
 
         self._config_type = None
         self._is_failure_retried = None
+        self._dns_configuration = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -140,6 +147,26 @@ class MonitorConfiguration(object):
         :type: bool
         """
         self._is_failure_retried = is_failure_retried
+
+    @property
+    def dns_configuration(self):
+        """
+        Gets the dns_configuration of this MonitorConfiguration.
+
+        :return: The dns_configuration of this MonitorConfiguration.
+        :rtype: oci.apm_synthetics.models.DnsConfiguration
+        """
+        return self._dns_configuration
+
+    @dns_configuration.setter
+    def dns_configuration(self, dns_configuration):
+        """
+        Sets the dns_configuration of this MonitorConfiguration.
+
+        :param dns_configuration: The dns_configuration of this MonitorConfiguration.
+        :type: oci.apm_synthetics.models.DnsConfiguration
+        """
+        self._dns_configuration = dns_configuration
 
     def __repr__(self):
         return formatted_flat_dict(self)

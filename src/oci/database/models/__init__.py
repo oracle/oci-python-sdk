@@ -151,6 +151,7 @@ from .db_node import DbNode
 from .db_node_summary import DbNodeSummary
 from .db_server import DbServer
 from .db_server_details import DbServerDetails
+from .db_server_history_summary import DbServerHistorySummary
 from .db_server_patching_details import DbServerPatchingDetails
 from .db_server_summary import DbServerSummary
 from .db_system import DbSystem
@@ -216,6 +217,8 @@ from .launch_db_system_from_database_details import LaunchDbSystemFromDatabaseDe
 from .launch_db_system_from_db_system_details import LaunchDbSystemFromDbSystemDetails
 from .local_clone_pluggable_database_details import LocalClonePluggableDatabaseDetails
 from .maintenance_run import MaintenanceRun
+from .maintenance_run_history import MaintenanceRunHistory
+from .maintenance_run_history_summary import MaintenanceRunHistorySummary
 from .maintenance_run_summary import MaintenanceRunSummary
 from .maintenance_window import MaintenanceWindow
 from .migrate_vault_key_details import MigrateVaultKeyDetails
@@ -445,6 +448,7 @@ database_type_mapping = {
     "DbNodeSummary": DbNodeSummary,
     "DbServer": DbServer,
     "DbServerDetails": DbServerDetails,
+    "DbServerHistorySummary": DbServerHistorySummary,
     "DbServerPatchingDetails": DbServerPatchingDetails,
     "DbServerSummary": DbServerSummary,
     "DbSystem": DbSystem,
@@ -510,6 +514,8 @@ database_type_mapping = {
     "LaunchDbSystemFromDbSystemDetails": LaunchDbSystemFromDbSystemDetails,
     "LocalClonePluggableDatabaseDetails": LocalClonePluggableDatabaseDetails,
     "MaintenanceRun": MaintenanceRun,
+    "MaintenanceRunHistory": MaintenanceRunHistory,
+    "MaintenanceRunHistorySummary": MaintenanceRunHistorySummary,
     "MaintenanceRunSummary": MaintenanceRunSummary,
     "MaintenanceWindow": MaintenanceWindow,
     "MigrateVaultKeyDetails": MigrateVaultKeyDetails,

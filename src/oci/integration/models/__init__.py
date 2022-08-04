@@ -4,11 +4,13 @@
 
 from __future__ import absolute_import
 
+from .attachment_details import AttachmentDetails
 from .change_integration_instance_compartment_details import ChangeIntegrationInstanceCompartmentDetails
 from .change_integration_instance_network_endpoint_details import ChangeIntegrationInstanceNetworkEndpointDetails
 from .create_custom_endpoint_details import CreateCustomEndpointDetails
 from .create_integration_instance_details import CreateIntegrationInstanceDetails
 from .custom_endpoint_details import CustomEndpointDetails
+from .idcs_info_details import IdcsInfoDetails
 from .integration_instance import IntegrationInstance
 from .integration_instance_summary import IntegrationInstanceSummary
 from .network_endpoint_details import NetworkEndpointDetails
@@ -24,11 +26,13 @@ from .work_request_summary import WorkRequestSummary
 
 # Maps type names to classes for integration services.
 integration_type_mapping = {
+    "AttachmentDetails": AttachmentDetails,
     "ChangeIntegrationInstanceCompartmentDetails": ChangeIntegrationInstanceCompartmentDetails,
     "ChangeIntegrationInstanceNetworkEndpointDetails": ChangeIntegrationInstanceNetworkEndpointDetails,
     "CreateCustomEndpointDetails": CreateCustomEndpointDetails,
     "CreateIntegrationInstanceDetails": CreateIntegrationInstanceDetails,
     "CustomEndpointDetails": CustomEndpointDetails,
+    "IdcsInfoDetails": IdcsInfoDetails,
     "IntegrationInstance": IntegrationInstance,
     "IntegrationInstanceSummary": IntegrationInstanceSummary,
     "NetworkEndpointDetails": NetworkEndpointDetails,

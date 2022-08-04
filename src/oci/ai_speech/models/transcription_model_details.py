@@ -29,6 +29,34 @@ class TranscriptionModelDetails(object):
     #: This constant has a value of "pt-BR"
     LANGUAGE_CODE_PT_BR = "pt-BR"
 
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "en-GB"
+    LANGUAGE_CODE_EN_GB = "en-GB"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "en-AU"
+    LANGUAGE_CODE_EN_AU = "en-AU"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "en-IN"
+    LANGUAGE_CODE_EN_IN = "en-IN"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "hi-IN"
+    LANGUAGE_CODE_HI_IN = "hi-IN"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "fr-FR"
+    LANGUAGE_CODE_FR_FR = "fr-FR"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "de-DE"
+    LANGUAGE_CODE_DE_DE = "de-DE"
+
+    #: A constant which can be used with the language_code property of a TranscriptionModelDetails.
+    #: This constant has a value of "it-IT"
+    LANGUAGE_CODE_IT_IT = "it-IT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new TranscriptionModelDetails object with values from keyword arguments.
@@ -42,7 +70,7 @@ class TranscriptionModelDetails(object):
 
         :param language_code:
             The value to assign to the language_code property of this TranscriptionModelDetails.
-            Allowed values for this property are: "en-US", "es-ES", "pt-BR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "en-US", "es-ES", "pt-BR", "en-GB", "en-AU", "en-IN", "hi-IN", "fr-FR", "de-DE", "it-IT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type language_code: str
 
@@ -95,8 +123,18 @@ class TranscriptionModelDetails(object):
         """
         Gets the language_code of this TranscriptionModelDetails.
         Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646].
+        - en-US: English - United States
+        - es-ES: Spanish - Spain
+        - pt-BR: Portuguese - Brazil
+        - en-GB: English - Great Britain
+        - en-AU: English - Australia
+        - en-IN: English - India
+        - hi-IN: Hindi - India
+        - fr-FR: French - France
+        - de-DE: German - Germany
+        - it-IT: Italian - Italy
 
-        Allowed values for this property are: "en-US", "es-ES", "pt-BR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "en-US", "es-ES", "pt-BR", "en-GB", "en-AU", "en-IN", "hi-IN", "fr-FR", "de-DE", "it-IT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -110,12 +148,22 @@ class TranscriptionModelDetails(object):
         """
         Sets the language_code of this TranscriptionModelDetails.
         Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646].
+        - en-US: English - United States
+        - es-ES: Spanish - Spain
+        - pt-BR: Portuguese - Brazil
+        - en-GB: English - Great Britain
+        - en-AU: English - Australia
+        - en-IN: English - India
+        - hi-IN: Hindi - India
+        - fr-FR: French - France
+        - de-DE: German - Germany
+        - it-IT: Italian - Italy
 
 
         :param language_code: The language_code of this TranscriptionModelDetails.
         :type: str
         """
-        allowed_values = ["en-US", "es-ES", "pt-BR"]
+        allowed_values = ["en-US", "es-ES", "pt-BR", "en-GB", "en-AU", "en-IN", "hi-IN", "fr-FR", "de-DE", "it-IT"]
         if not value_allowed_none_or_none_sentinel(language_code, allowed_values):
             language_code = 'UNKNOWN_ENUM_VALUE'
         self._language_code = language_code

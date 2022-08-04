@@ -4,6 +4,9 @@
 
 from __future__ import absolute_import
 
+from .aggregate_network_data_details import AggregateNetworkDataDetails
+from .aggregated_network_data import AggregatedNetworkData
+from .aggregated_network_data_result import AggregatedNetworkDataResult
 from .browser_monitor_configuration import BrowserMonitorConfiguration
 from .create_dedicated_vantage_point_details import CreateDedicatedVantagePointDetails
 from .create_monitor_details import CreateMonitorDetails
@@ -11,9 +14,11 @@ from .create_script_details import CreateScriptDetails
 from .dedicated_vantage_point import DedicatedVantagePoint
 from .dedicated_vantage_point_collection import DedicatedVantagePointCollection
 from .dedicated_vantage_point_summary import DedicatedVantagePointSummary
+from .dns_configuration import DnsConfiguration
 from .dvp_stack_details import DvpStackDetails
 from .geo_summary import GeoSummary
 from .header import Header
+from .link import Link
 from .monitor import Monitor
 from .monitor_collection import MonitorCollection
 from .monitor_configuration import MonitorConfiguration
@@ -24,6 +29,7 @@ from .monitor_script_parameter_info import MonitorScriptParameterInfo
 from .monitor_status_count_map import MonitorStatusCountMap
 from .monitor_summary import MonitorSummary
 from .network_configuration import NetworkConfiguration
+from .node import Node
 from .oracle_rm_stack import OracleRMStack
 from .public_vantage_point_collection import PublicVantagePointCollection
 from .public_vantage_point_summary import PublicVantagePointSummary
@@ -40,11 +46,16 @@ from .scripted_rest_monitor_configuration import ScriptedRestMonitorConfiguratio
 from .update_dedicated_vantage_point_details import UpdateDedicatedVantagePointDetails
 from .update_monitor_details import UpdateMonitorDetails
 from .update_script_details import UpdateScriptDetails
+from .vantage_point_execution import VantagePointExecution
 from .vantage_point_info import VantagePointInfo
+from .vantage_point_node import VantagePointNode
 from .verify_text import VerifyText
 
 # Maps type names to classes for apm_synthetics services.
 apm_synthetics_type_mapping = {
+    "AggregateNetworkDataDetails": AggregateNetworkDataDetails,
+    "AggregatedNetworkData": AggregatedNetworkData,
+    "AggregatedNetworkDataResult": AggregatedNetworkDataResult,
     "BrowserMonitorConfiguration": BrowserMonitorConfiguration,
     "CreateDedicatedVantagePointDetails": CreateDedicatedVantagePointDetails,
     "CreateMonitorDetails": CreateMonitorDetails,
@@ -52,9 +63,11 @@ apm_synthetics_type_mapping = {
     "DedicatedVantagePoint": DedicatedVantagePoint,
     "DedicatedVantagePointCollection": DedicatedVantagePointCollection,
     "DedicatedVantagePointSummary": DedicatedVantagePointSummary,
+    "DnsConfiguration": DnsConfiguration,
     "DvpStackDetails": DvpStackDetails,
     "GeoSummary": GeoSummary,
     "Header": Header,
+    "Link": Link,
     "Monitor": Monitor,
     "MonitorCollection": MonitorCollection,
     "MonitorConfiguration": MonitorConfiguration,
@@ -65,6 +78,7 @@ apm_synthetics_type_mapping = {
     "MonitorStatusCountMap": MonitorStatusCountMap,
     "MonitorSummary": MonitorSummary,
     "NetworkConfiguration": NetworkConfiguration,
+    "Node": Node,
     "OracleRMStack": OracleRMStack,
     "PublicVantagePointCollection": PublicVantagePointCollection,
     "PublicVantagePointSummary": PublicVantagePointSummary,
@@ -81,6 +95,8 @@ apm_synthetics_type_mapping = {
     "UpdateDedicatedVantagePointDetails": UpdateDedicatedVantagePointDetails,
     "UpdateMonitorDetails": UpdateMonitorDetails,
     "UpdateScriptDetails": UpdateScriptDetails,
+    "VantagePointExecution": VantagePointExecution,
     "VantagePointInfo": VantagePointInfo,
+    "VantagePointNode": VantagePointNode,
     "VerifyText": VerifyText
 }
