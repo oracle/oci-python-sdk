@@ -44,7 +44,7 @@ class TranscriptionNormalization(object):
     def is_punctuation_enabled(self):
         """
         Gets the is_punctuation_enabled of this TranscriptionNormalization.
-        Whether to add punctuation in generated transcription. By default it is enabled.
+        Whether to add punctuation in the generated transcription. Enabled by default.
 
 
         :return: The is_punctuation_enabled of this TranscriptionNormalization.
@@ -56,7 +56,7 @@ class TranscriptionNormalization(object):
     def is_punctuation_enabled(self, is_punctuation_enabled):
         """
         Sets the is_punctuation_enabled of this TranscriptionNormalization.
-        Whether to add punctuation in generated transcription. By default it is enabled.
+        Whether to add punctuation in the generated transcription. Enabled by default.
 
 
         :param is_punctuation_enabled: The is_punctuation_enabled of this TranscriptionNormalization.

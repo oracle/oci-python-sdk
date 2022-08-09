@@ -62,6 +62,7 @@ Opsi
     oci.opsi.models.ChangeHostInsightCompartmentDetails
     oci.opsi.models.ChangeOperationsInsightsPrivateEndpointCompartmentDetails
     oci.opsi.models.ChangePeComanagedDatabaseInsightDetails
+    oci.opsi.models.CloudImportableComputeEntitySummary
     oci.opsi.models.ConnectionDetails
     oci.opsi.models.CreateAwrHubDetails
     oci.opsi.models.CreateDatabaseInsightDetails
@@ -72,6 +73,7 @@ Opsi
     oci.opsi.models.CreateEnterpriseManagerBridgeDetails
     oci.opsi.models.CreateExadataInsightDetails
     oci.opsi.models.CreateHostInsightDetails
+    oci.opsi.models.CreateMacsManagedCloudHostInsightDetails
     oci.opsi.models.CreateMacsManagedExternalHostInsightDetails
     oci.opsi.models.CreateOperationsInsightsPrivateEndpointDetails
     oci.opsi.models.CreateOperationsInsightsWarehouseDetails
@@ -123,6 +125,7 @@ Opsi
     oci.opsi.models.EnableEmManagedExternalHostInsightDetails
     oci.opsi.models.EnableExadataInsightDetails
     oci.opsi.models.EnableHostInsightDetails
+    oci.opsi.models.EnableMacsManagedCloudHostInsightDetails
     oci.opsi.models.EnableMacsManagedExternalHostInsightDetails
     oci.opsi.models.EnablePeComanagedDatabaseInsightDetails
     oci.opsi.models.EnterpriseManagerBridge
@@ -185,6 +188,8 @@ Opsi
     oci.opsi.models.HostedEntitySummary
     oci.opsi.models.ImportableAgentEntitySummary
     oci.opsi.models.ImportableAgentEntitySummaryCollection
+    oci.opsi.models.ImportableComputeEntitySummary
+    oci.opsi.models.ImportableComputeEntitySummaryCollection
     oci.opsi.models.ImportableEnterpriseManagerEntity
     oci.opsi.models.ImportableEnterpriseManagerEntityCollection
     oci.opsi.models.IngestDatabaseConfigurationDetails
@@ -202,6 +207,8 @@ Opsi
     oci.opsi.models.IngestSqlTextDetails
     oci.opsi.models.IngestSqlTextResponseDetails
     oci.opsi.models.InstanceMetrics
+    oci.opsi.models.MacsManagedCloudHostInsight
+    oci.opsi.models.MacsManagedCloudHostInsightSummary
     oci.opsi.models.MacsManagedExternalDatabaseConfigurationSummary
     oci.opsi.models.MacsManagedExternalDatabaseInsight
     oci.opsi.models.MacsManagedExternalDatabaseInsightSummary
@@ -309,6 +316,7 @@ Opsi
     oci.opsi.models.UpdateEnterpriseManagerBridgeDetails
     oci.opsi.models.UpdateExadataInsightDetails
     oci.opsi.models.UpdateHostInsightDetails
+    oci.opsi.models.UpdateMacsManagedCloudHostInsightDetails
     oci.opsi.models.UpdateMacsManagedExternalDatabaseInsightDetails
     oci.opsi.models.UpdateMacsManagedExternalHostInsightDetails
     oci.opsi.models.UpdateOperationsInsightsPrivateEndpointDetails

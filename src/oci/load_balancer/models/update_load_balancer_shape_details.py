@@ -53,7 +53,10 @@ class UpdateLoadBalancerShapeDetails(object):
           *  8000Mbps
           *  Flexible
 
-          Example: `Flexible`
+          Example: `flexible`
+
+          * NOTE: Fixed shapes 10Mbps, 100Mbps, 400Mbps, 8000Mbps will be deprecated from May 2023. This api
+          * will only support `Flexible` shape after that date.
 
 
         :return: The shape_name of this UpdateLoadBalancerShapeDetails.
@@ -74,7 +77,10 @@ class UpdateLoadBalancerShapeDetails(object):
           *  8000Mbps
           *  Flexible
 
-          Example: `Flexible`
+          Example: `flexible`
+
+          * NOTE: Fixed shapes 10Mbps, 100Mbps, 400Mbps, 8000Mbps will be deprecated from May 2023. This api
+          * will only support `Flexible` shape after that date.
 
 
         :param shape_name: The shape_name of this UpdateLoadBalancerShapeDetails.

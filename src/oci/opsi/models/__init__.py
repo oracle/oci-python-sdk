@@ -48,6 +48,7 @@ from .change_exadata_insight_compartment_details import ChangeExadataInsightComp
 from .change_host_insight_compartment_details import ChangeHostInsightCompartmentDetails
 from .change_operations_insights_private_endpoint_compartment_details import ChangeOperationsInsightsPrivateEndpointCompartmentDetails
 from .change_pe_comanaged_database_insight_details import ChangePeComanagedDatabaseInsightDetails
+from .cloud_importable_compute_entity_summary import CloudImportableComputeEntitySummary
 from .connection_details import ConnectionDetails
 from .create_awr_hub_details import CreateAwrHubDetails
 from .create_database_insight_details import CreateDatabaseInsightDetails
@@ -58,6 +59,7 @@ from .create_em_managed_external_host_insight_details import CreateEmManagedExte
 from .create_enterprise_manager_bridge_details import CreateEnterpriseManagerBridgeDetails
 from .create_exadata_insight_details import CreateExadataInsightDetails
 from .create_host_insight_details import CreateHostInsightDetails
+from .create_macs_managed_cloud_host_insight_details import CreateMacsManagedCloudHostInsightDetails
 from .create_macs_managed_external_host_insight_details import CreateMacsManagedExternalHostInsightDetails
 from .create_operations_insights_private_endpoint_details import CreateOperationsInsightsPrivateEndpointDetails
 from .create_operations_insights_warehouse_details import CreateOperationsInsightsWarehouseDetails
@@ -109,6 +111,7 @@ from .enable_em_managed_external_exadata_insight_details import EnableEmManagedE
 from .enable_em_managed_external_host_insight_details import EnableEmManagedExternalHostInsightDetails
 from .enable_exadata_insight_details import EnableExadataInsightDetails
 from .enable_host_insight_details import EnableHostInsightDetails
+from .enable_macs_managed_cloud_host_insight_details import EnableMacsManagedCloudHostInsightDetails
 from .enable_macs_managed_external_host_insight_details import EnableMacsManagedExternalHostInsightDetails
 from .enable_pe_comanaged_database_insight_details import EnablePeComanagedDatabaseInsightDetails
 from .enterprise_manager_bridge import EnterpriseManagerBridge
@@ -171,6 +174,8 @@ from .hosted_entity_collection import HostedEntityCollection
 from .hosted_entity_summary import HostedEntitySummary
 from .importable_agent_entity_summary import ImportableAgentEntitySummary
 from .importable_agent_entity_summary_collection import ImportableAgentEntitySummaryCollection
+from .importable_compute_entity_summary import ImportableComputeEntitySummary
+from .importable_compute_entity_summary_collection import ImportableComputeEntitySummaryCollection
 from .importable_enterprise_manager_entity import ImportableEnterpriseManagerEntity
 from .importable_enterprise_manager_entity_collection import ImportableEnterpriseManagerEntityCollection
 from .ingest_database_configuration_details import IngestDatabaseConfigurationDetails
@@ -188,6 +193,8 @@ from .ingest_sql_stats_response_details import IngestSqlStatsResponseDetails
 from .ingest_sql_text_details import IngestSqlTextDetails
 from .ingest_sql_text_response_details import IngestSqlTextResponseDetails
 from .instance_metrics import InstanceMetrics
+from .macs_managed_cloud_host_insight import MacsManagedCloudHostInsight
+from .macs_managed_cloud_host_insight_summary import MacsManagedCloudHostInsightSummary
 from .macs_managed_external_database_configuration_summary import MacsManagedExternalDatabaseConfigurationSummary
 from .macs_managed_external_database_insight import MacsManagedExternalDatabaseInsight
 from .macs_managed_external_database_insight_summary import MacsManagedExternalDatabaseInsightSummary
@@ -295,6 +302,7 @@ from .update_em_managed_external_host_insight_details import UpdateEmManagedExte
 from .update_enterprise_manager_bridge_details import UpdateEnterpriseManagerBridgeDetails
 from .update_exadata_insight_details import UpdateExadataInsightDetails
 from .update_host_insight_details import UpdateHostInsightDetails
+from .update_macs_managed_cloud_host_insight_details import UpdateMacsManagedCloudHostInsightDetails
 from .update_macs_managed_external_database_insight_details import UpdateMacsManagedExternalDatabaseInsightDetails
 from .update_macs_managed_external_host_insight_details import UpdateMacsManagedExternalHostInsightDetails
 from .update_operations_insights_private_endpoint_details import UpdateOperationsInsightsPrivateEndpointDetails
@@ -356,6 +364,7 @@ opsi_type_mapping = {
     "ChangeHostInsightCompartmentDetails": ChangeHostInsightCompartmentDetails,
     "ChangeOperationsInsightsPrivateEndpointCompartmentDetails": ChangeOperationsInsightsPrivateEndpointCompartmentDetails,
     "ChangePeComanagedDatabaseInsightDetails": ChangePeComanagedDatabaseInsightDetails,
+    "CloudImportableComputeEntitySummary": CloudImportableComputeEntitySummary,
     "ConnectionDetails": ConnectionDetails,
     "CreateAwrHubDetails": CreateAwrHubDetails,
     "CreateDatabaseInsightDetails": CreateDatabaseInsightDetails,
@@ -366,6 +375,7 @@ opsi_type_mapping = {
     "CreateEnterpriseManagerBridgeDetails": CreateEnterpriseManagerBridgeDetails,
     "CreateExadataInsightDetails": CreateExadataInsightDetails,
     "CreateHostInsightDetails": CreateHostInsightDetails,
+    "CreateMacsManagedCloudHostInsightDetails": CreateMacsManagedCloudHostInsightDetails,
     "CreateMacsManagedExternalHostInsightDetails": CreateMacsManagedExternalHostInsightDetails,
     "CreateOperationsInsightsPrivateEndpointDetails": CreateOperationsInsightsPrivateEndpointDetails,
     "CreateOperationsInsightsWarehouseDetails": CreateOperationsInsightsWarehouseDetails,
@@ -417,6 +427,7 @@ opsi_type_mapping = {
     "EnableEmManagedExternalHostInsightDetails": EnableEmManagedExternalHostInsightDetails,
     "EnableExadataInsightDetails": EnableExadataInsightDetails,
     "EnableHostInsightDetails": EnableHostInsightDetails,
+    "EnableMacsManagedCloudHostInsightDetails": EnableMacsManagedCloudHostInsightDetails,
     "EnableMacsManagedExternalHostInsightDetails": EnableMacsManagedExternalHostInsightDetails,
     "EnablePeComanagedDatabaseInsightDetails": EnablePeComanagedDatabaseInsightDetails,
     "EnterpriseManagerBridge": EnterpriseManagerBridge,
@@ -479,6 +490,8 @@ opsi_type_mapping = {
     "HostedEntitySummary": HostedEntitySummary,
     "ImportableAgentEntitySummary": ImportableAgentEntitySummary,
     "ImportableAgentEntitySummaryCollection": ImportableAgentEntitySummaryCollection,
+    "ImportableComputeEntitySummary": ImportableComputeEntitySummary,
+    "ImportableComputeEntitySummaryCollection": ImportableComputeEntitySummaryCollection,
     "ImportableEnterpriseManagerEntity": ImportableEnterpriseManagerEntity,
     "ImportableEnterpriseManagerEntityCollection": ImportableEnterpriseManagerEntityCollection,
     "IngestDatabaseConfigurationDetails": IngestDatabaseConfigurationDetails,
@@ -496,6 +509,8 @@ opsi_type_mapping = {
     "IngestSqlTextDetails": IngestSqlTextDetails,
     "IngestSqlTextResponseDetails": IngestSqlTextResponseDetails,
     "InstanceMetrics": InstanceMetrics,
+    "MacsManagedCloudHostInsight": MacsManagedCloudHostInsight,
+    "MacsManagedCloudHostInsightSummary": MacsManagedCloudHostInsightSummary,
     "MacsManagedExternalDatabaseConfigurationSummary": MacsManagedExternalDatabaseConfigurationSummary,
     "MacsManagedExternalDatabaseInsight": MacsManagedExternalDatabaseInsight,
     "MacsManagedExternalDatabaseInsightSummary": MacsManagedExternalDatabaseInsightSummary,
@@ -603,6 +618,7 @@ opsi_type_mapping = {
     "UpdateEnterpriseManagerBridgeDetails": UpdateEnterpriseManagerBridgeDetails,
     "UpdateExadataInsightDetails": UpdateExadataInsightDetails,
     "UpdateHostInsightDetails": UpdateHostInsightDetails,
+    "UpdateMacsManagedCloudHostInsightDetails": UpdateMacsManagedCloudHostInsightDetails,
     "UpdateMacsManagedExternalDatabaseInsightDetails": UpdateMacsManagedExternalDatabaseInsightDetails,
     "UpdateMacsManagedExternalHostInsightDetails": UpdateMacsManagedExternalHostInsightDetails,
     "UpdateOperationsInsightsPrivateEndpointDetails": UpdateOperationsInsightsPrivateEndpointDetails,

@@ -19,6 +19,10 @@ class InstallationUsage(object):
         Initializes a new InstallationUsage object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param installation_key:
+            The value to assign to the installation_key property of this InstallationUsage.
+        :type installation_key: str
+
         :param jre_vendor:
             The value to assign to the jre_vendor property of this InstallationUsage.
         :type jre_vendor: str
@@ -73,6 +77,7 @@ class InstallationUsage(object):
 
         """
         self.swagger_types = {
+            'installation_key': 'str',
             'jre_vendor': 'str',
             'jre_distribution': 'str',
             'jre_version': 'str',
@@ -89,6 +94,7 @@ class InstallationUsage(object):
         }
 
         self.attribute_map = {
+            'installation_key': 'installationKey',
             'jre_vendor': 'jreVendor',
             'jre_distribution': 'jreDistribution',
             'jre_version': 'jreVersion',
@@ -104,6 +110,7 @@ class InstallationUsage(object):
             'time_last_seen': 'timeLastSeen'
         }
 
+        self._installation_key = None
         self._jre_vendor = None
         self._jre_distribution = None
         self._jre_version = None
@@ -117,6 +124,30 @@ class InstallationUsage(object):
         self._time_end = None
         self._time_first_seen = None
         self._time_last_seen = None
+
+    @property
+    def installation_key(self):
+        """
+        Gets the installation_key of this InstallationUsage.
+        The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
+
+
+        :return: The installation_key of this InstallationUsage.
+        :rtype: str
+        """
+        return self._installation_key
+
+    @installation_key.setter
+    def installation_key(self, installation_key):
+        """
+        Sets the installation_key of this InstallationUsage.
+        The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
+
+
+        :param installation_key: The installation_key of this InstallationUsage.
+        :type: str
+        """
+        self._installation_key = installation_key
 
     @property
     def jre_vendor(self):

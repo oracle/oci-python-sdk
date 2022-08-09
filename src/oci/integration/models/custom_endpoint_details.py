@@ -30,22 +30,29 @@ class CustomEndpointDetails(object):
             The value to assign to the certificate_secret_version property of this CustomEndpointDetails.
         :type certificate_secret_version: int
 
+        :param alias:
+            The value to assign to the alias property of this CustomEndpointDetails.
+        :type alias: str
+
         """
         self.swagger_types = {
             'hostname': 'str',
             'certificate_secret_id': 'str',
-            'certificate_secret_version': 'int'
+            'certificate_secret_version': 'int',
+            'alias': 'str'
         }
 
         self.attribute_map = {
             'hostname': 'hostname',
             'certificate_secret_id': 'certificateSecretId',
-            'certificate_secret_version': 'certificateSecretVersion'
+            'certificate_secret_version': 'certificateSecretVersion',
+            'alias': 'alias'
         }
 
         self._hostname = None
         self._certificate_secret_id = None
         self._certificate_secret_version = None
+        self._alias = None
 
     @property
     def hostname(self):
@@ -118,6 +125,30 @@ class CustomEndpointDetails(object):
         :type: int
         """
         self._certificate_secret_version = certificate_secret_version
+
+    @property
+    def alias(self):
+        """
+        Gets the alias of this CustomEndpointDetails.
+        When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
+
+
+        :return: The alias of this CustomEndpointDetails.
+        :rtype: str
+        """
+        return self._alias
+
+    @alias.setter
+    def alias(self, alias):
+        """
+        Sets the alias of this CustomEndpointDetails.
+        When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
+
+
+        :param alias: The alias of this CustomEndpointDetails.
+        :type: str
+        """
+        self._alias = alias
 
     def __repr__(self):
         return formatted_flat_dict(self)

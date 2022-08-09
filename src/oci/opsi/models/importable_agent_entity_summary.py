@@ -17,6 +17,10 @@ class ImportableAgentEntitySummary(object):
     #: This constant has a value of "MACS_MANAGED_EXTERNAL_HOST"
     ENTITY_SOURCE_MACS_MANAGED_EXTERNAL_HOST = "MACS_MANAGED_EXTERNAL_HOST"
 
+    #: A constant which can be used with the entity_source property of a ImportableAgentEntitySummary.
+    #: This constant has a value of "MACS_MANAGED_CLOUD_HOST"
+    ENTITY_SOURCE_MACS_MANAGED_CLOUD_HOST = "MACS_MANAGED_CLOUD_HOST"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ImportableAgentEntitySummary object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -28,7 +32,7 @@ class ImportableAgentEntitySummary(object):
 
         :param entity_source:
             The value to assign to the entity_source property of this ImportableAgentEntitySummary.
-            Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "MACS_MANAGED_CLOUD_HOST", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type entity_source: str
 
@@ -76,7 +80,7 @@ class ImportableAgentEntitySummary(object):
         **[Required]** Gets the entity_source of this ImportableAgentEntitySummary.
         Source of the importable agent entity.
 
-        Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "MACS_MANAGED_CLOUD_HOST", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -95,7 +99,7 @@ class ImportableAgentEntitySummary(object):
         :param entity_source: The entity_source of this ImportableAgentEntitySummary.
         :type: str
         """
-        allowed_values = ["MACS_MANAGED_EXTERNAL_HOST"]
+        allowed_values = ["MACS_MANAGED_EXTERNAL_HOST", "MACS_MANAGED_CLOUD_HOST"]
         if not value_allowed_none_or_none_sentinel(entity_source, allowed_values):
             entity_source = 'UNKNOWN_ENUM_VALUE'
         self._entity_source = entity_source

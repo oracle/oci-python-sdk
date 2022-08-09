@@ -53,6 +53,10 @@ class RestMonitorConfiguration(MonitorConfiguration):
             The value to assign to the is_failure_retried property of this RestMonitorConfiguration.
         :type is_failure_retried: bool
 
+        :param dns_configuration:
+            The value to assign to the dns_configuration property of this RestMonitorConfiguration.
+        :type dns_configuration: oci.apm_synthetics.models.DnsConfiguration
+
         :param is_redirection_enabled:
             The value to assign to the is_redirection_enabled property of this RestMonitorConfiguration.
         :type is_redirection_enabled: bool
@@ -105,6 +109,7 @@ class RestMonitorConfiguration(MonitorConfiguration):
         self.swagger_types = {
             'config_type': 'str',
             'is_failure_retried': 'bool',
+            'dns_configuration': 'DnsConfiguration',
             'is_redirection_enabled': 'bool',
             'is_certificate_validation_enabled': 'bool',
             'request_method': 'str',
@@ -121,6 +126,7 @@ class RestMonitorConfiguration(MonitorConfiguration):
         self.attribute_map = {
             'config_type': 'configType',
             'is_failure_retried': 'isFailureRetried',
+            'dns_configuration': 'dnsConfiguration',
             'is_redirection_enabled': 'isRedirectionEnabled',
             'is_certificate_validation_enabled': 'isCertificateValidationEnabled',
             'request_method': 'requestMethod',
@@ -136,6 +142,7 @@ class RestMonitorConfiguration(MonitorConfiguration):
 
         self._config_type = None
         self._is_failure_retried = None
+        self._dns_configuration = None
         self._is_redirection_enabled = None
         self._is_certificate_validation_enabled = None
         self._request_method = None

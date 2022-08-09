@@ -22,6 +22,10 @@ class HostConfigurationSummary(object):
     ENTITY_SOURCE_EM_MANAGED_EXTERNAL_HOST = "EM_MANAGED_EXTERNAL_HOST"
 
     #: A constant which can be used with the entity_source property of a HostConfigurationSummary.
+    #: This constant has a value of "MACS_MANAGED_CLOUD_HOST"
+    ENTITY_SOURCE_MACS_MANAGED_CLOUD_HOST = "MACS_MANAGED_CLOUD_HOST"
+
+    #: A constant which can be used with the entity_source property of a HostConfigurationSummary.
     #: This constant has a value of "PE_COMANAGED_HOST"
     ENTITY_SOURCE_PE_COMANAGED_HOST = "PE_COMANAGED_HOST"
 
@@ -58,7 +62,7 @@ class HostConfigurationSummary(object):
 
         :param entity_source:
             The value to assign to the entity_source property of this HostConfigurationSummary.
-            Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST", "PE_COMANAGED_HOST", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST", "MACS_MANAGED_CLOUD_HOST", "PE_COMANAGED_HOST", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type entity_source: str
 
@@ -257,7 +261,7 @@ class HostConfigurationSummary(object):
         **[Required]** Gets the entity_source of this HostConfigurationSummary.
         Source of the host entity.
 
-        Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST", "PE_COMANAGED_HOST", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST", "MACS_MANAGED_CLOUD_HOST", "PE_COMANAGED_HOST", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -276,7 +280,7 @@ class HostConfigurationSummary(object):
         :param entity_source: The entity_source of this HostConfigurationSummary.
         :type: str
         """
-        allowed_values = ["MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST", "PE_COMANAGED_HOST"]
+        allowed_values = ["MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST", "MACS_MANAGED_CLOUD_HOST", "PE_COMANAGED_HOST"]
         if not value_allowed_none_or_none_sentinel(entity_source, allowed_values):
             entity_source = 'UNKNOWN_ENUM_VALUE'
         self._entity_source = entity_source

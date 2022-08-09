@@ -108,6 +108,10 @@ class SddcSummary(object):
             The value to assign to the initial_host_ocpu_count property of this SddcSummary.
         :type initial_host_ocpu_count: float
 
+        :param is_single_host_sddc:
+            The value to assign to the is_single_host_sddc property of this SddcSummary.
+        :type is_single_host_sddc: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this SddcSummary.
         :type freeform_tags: dict(str, str)
@@ -134,6 +138,7 @@ class SddcSummary(object):
             'is_shielded_instance_enabled': 'bool',
             'initial_host_shape_name': 'str',
             'initial_host_ocpu_count': 'float',
+            'is_single_host_sddc': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -155,6 +160,7 @@ class SddcSummary(object):
             'is_shielded_instance_enabled': 'isShieldedInstanceEnabled',
             'initial_host_shape_name': 'initialHostShapeName',
             'initial_host_ocpu_count': 'initialHostOcpuCount',
+            'is_single_host_sddc': 'isSingleHostSddc',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -175,6 +181,7 @@ class SddcSummary(object):
         self._is_shielded_instance_enabled = None
         self._initial_host_shape_name = None
         self._initial_host_ocpu_count = None
+        self._is_single_host_sddc = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -635,6 +642,30 @@ class SddcSummary(object):
         :type: float
         """
         self._initial_host_ocpu_count = initial_host_ocpu_count
+
+    @property
+    def is_single_host_sddc(self):
+        """
+        Gets the is_single_host_sddc of this SddcSummary.
+        Indicates whether this SDDC is designated for only single ESXi host.
+
+
+        :return: The is_single_host_sddc of this SddcSummary.
+        :rtype: bool
+        """
+        return self._is_single_host_sddc
+
+    @is_single_host_sddc.setter
+    def is_single_host_sddc(self, is_single_host_sddc):
+        """
+        Sets the is_single_host_sddc of this SddcSummary.
+        Indicates whether this SDDC is designated for only single ESXi host.
+
+
+        :param is_single_host_sddc: The is_single_host_sddc of this SddcSummary.
+        :type: bool
+        """
+        self._is_single_host_sddc = is_single_host_sddc
 
     @property
     def freeform_tags(self):

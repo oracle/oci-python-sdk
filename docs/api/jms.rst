@@ -18,6 +18,7 @@ Jms
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.jms.models.AddFleetInstallationSitesDetails
     oci.jms.models.ApplicationUsage
     oci.jms.models.ApplicationUsageCollection
     oci.jms.models.Blocklist
@@ -34,16 +35,26 @@ Jms
     oci.jms.models.FleetAgentOsConfiguration
     oci.jms.models.FleetCollection
     oci.jms.models.FleetSummary
+    oci.jms.models.GenerateAgentDeployScriptDetails
     oci.jms.models.InstallationSite
     oci.jms.models.InstallationSiteCollection
     oci.jms.models.InstallationSiteSummary
     oci.jms.models.InstallationUsage
     oci.jms.models.InstallationUsageCollection
+    oci.jms.models.JavaArtifact
+    oci.jms.models.JavaFamily
+    oci.jms.models.JavaFamilyCollection
+    oci.jms.models.JavaFamilySummary
+    oci.jms.models.JavaLicense
+    oci.jms.models.JavaRelease
+    oci.jms.models.JavaReleaseCollection
+    oci.jms.models.JavaReleaseSummary
     oci.jms.models.JavaRuntimeId
     oci.jms.models.JreUsage
     oci.jms.models.JreUsageCollection
     oci.jms.models.ManagedInstanceUsage
     oci.jms.models.ManagedInstanceUsageCollection
+    oci.jms.models.NewInstallationSite
     oci.jms.models.OperatingSystem
     oci.jms.models.Principal
     oci.jms.models.RemoveFleetInstallationSitesDetails

@@ -27,6 +27,7 @@ Database Management
     oci.database_management.models.AddManagedDatabaseToManagedDatabaseGroupDetails
     oci.database_management.models.AddmTaskSummary
     oci.database_management.models.AddmTasksCollection
+    oci.database_management.models.AdvisorRule
     oci.database_management.models.AlertLogCollection
     oci.database_management.models.AlertLogCountSummary
     oci.database_management.models.AlertLogCountsCollection
@@ -104,11 +105,14 @@ Database Management
     oci.database_management.models.DropTablespaceDetails
     oci.database_management.models.ExecutionPlanStatsComparision
     oci.database_management.models.FailedConnectionsAggregateMetrics
+    oci.database_management.models.FindingSchemaOrOperation
     oci.database_management.models.FleetMetricDefinition
     oci.database_management.models.FleetMetricSummaryDefinition
     oci.database_management.models.FleetStatusByCategory
     oci.database_management.models.FleetSummary
     oci.database_management.models.HistoricAddmResult
+    oci.database_management.models.ImplementOptimizerStatisticsAdvisorRecommendationsDetails
+    oci.database_management.models.ImplementOptimizerStatisticsAdvisorRecommendationsJob
     oci.database_management.models.InstanceDetails
     oci.database_management.models.Job
     oci.database_management.models.JobCollection
@@ -142,6 +146,18 @@ Database Management
     oci.database_management.models.ObjectPrivilegeSummary
     oci.database_management.models.ObjectStorageJobExecutionResultDetails
     oci.database_management.models.ObjectStorageJobExecutionResultLocation
+    oci.database_management.models.OptimizerDatabase
+    oci.database_management.models.OptimizerStatisticsAdvisorExecution
+    oci.database_management.models.OptimizerStatisticsAdvisorExecutionReport
+    oci.database_management.models.OptimizerStatisticsAdvisorExecutionScript
+    oci.database_management.models.OptimizerStatisticsAdvisorExecutionSummary
+    oci.database_management.models.OptimizerStatisticsAdvisorExecutionsCollection
+    oci.database_management.models.OptimizerStatisticsCollectionAggregationSummary
+    oci.database_management.models.OptimizerStatisticsCollectionAggregationsCollection
+    oci.database_management.models.OptimizerStatisticsCollectionOperation
+    oci.database_management.models.OptimizerStatisticsCollectionOperationSummary
+    oci.database_management.models.OptimizerStatisticsCollectionOperationsCollection
+    oci.database_management.models.OptimizerStatisticsOperationTask
     oci.database_management.models.ParentGroup
     oci.database_management.models.PdbMetrics
     oci.database_management.models.PdbStatusDetails
@@ -149,13 +165,19 @@ Database Management
     oci.database_management.models.ProxiedForUserSummary
     oci.database_management.models.ProxyUserCollection
     oci.database_management.models.ProxyUserSummary
+    oci.database_management.models.Recommendation
+    oci.database_management.models.RecommendationExample
+    oci.database_management.models.RecommendationExampleLine
+    oci.database_management.models.RecommendationRationale
     oci.database_management.models.RemoveDataFileDetails
     oci.database_management.models.RemoveManagedDatabaseFromManagedDatabaseGroupDetails
     oci.database_management.models.ResetDatabaseParametersDetails
     oci.database_management.models.ResizeDataFileDetails
     oci.database_management.models.RoleCollection
     oci.database_management.models.RoleSummary
+    oci.database_management.models.RuleFinding
     oci.database_management.models.RunHistoricAddmDetails
+    oci.database_management.models.SchemaDefinition
     oci.database_management.models.SnapshotDetails
     oci.database_management.models.SqlJob
     oci.database_management.models.SqlTuningAdvisorTaskCollection
@@ -187,6 +209,8 @@ Database Management
     oci.database_management.models.StatementsAggregateMetrics
     oci.database_management.models.SystemPrivilegeCollection
     oci.database_management.models.SystemPrivilegeSummary
+    oci.database_management.models.TableStatisticSummary
+    oci.database_management.models.TableStatisticsCollection
     oci.database_management.models.Tablespace
     oci.database_management.models.TablespaceAdminCredentialDetails
     oci.database_management.models.TablespaceAdminPasswordCredentialDetails

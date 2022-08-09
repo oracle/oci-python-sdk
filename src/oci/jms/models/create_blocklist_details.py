@@ -37,6 +37,10 @@ class CreateBlocklistDetails(object):
     #: This constant has a value of "DELETE_JAVA_INSTALLATION"
     OPERATION_DELETE_JAVA_INSTALLATION = "DELETE_JAVA_INSTALLATION"
 
+    #: A constant which can be used with the operation property of a CreateBlocklistDetails.
+    #: This constant has a value of "CREATE_JAVA_INSTALLATION"
+    OPERATION_CREATE_JAVA_INSTALLATION = "CREATE_JAVA_INSTALLATION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateBlocklistDetails object with values from keyword arguments.
@@ -48,7 +52,7 @@ class CreateBlocklistDetails(object):
 
         :param operation:
             The value to assign to the operation property of this CreateBlocklistDetails.
-            Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION"
+            Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION"
         :type operation: str
 
         :param reason:
@@ -98,7 +102,7 @@ class CreateBlocklistDetails(object):
         **[Required]** Gets the operation of this CreateBlocklistDetails.
         The operation type
 
-        Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION"
+        Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION"
 
 
         :return: The operation of this CreateBlocklistDetails.
@@ -116,7 +120,7 @@ class CreateBlocklistDetails(object):
         :param operation: The operation of this CreateBlocklistDetails.
         :type: str
         """
-        allowed_values = ["CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION"]
+        allowed_values = ["CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION"]
         if not value_allowed_none_or_none_sentinel(operation, allowed_values):
             raise ValueError(
                 "Invalid value for `operation`, must be None or one of {0}"

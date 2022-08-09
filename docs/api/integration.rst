@@ -18,11 +18,13 @@ Integration
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.integration.models.AttachmentDetails
     oci.integration.models.ChangeIntegrationInstanceCompartmentDetails
     oci.integration.models.ChangeIntegrationInstanceNetworkEndpointDetails
     oci.integration.models.CreateCustomEndpointDetails
     oci.integration.models.CreateIntegrationInstanceDetails
     oci.integration.models.CustomEndpointDetails
+    oci.integration.models.IdcsInfoDetails
     oci.integration.models.IntegrationInstance
     oci.integration.models.IntegrationInstanceSummary
     oci.integration.models.NetworkEndpointDetails

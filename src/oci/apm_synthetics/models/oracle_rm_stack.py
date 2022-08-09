@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OracleRMStack(DvpStackDetails):
     """
-    DVP details of Oracle RM stack.
+    Details of the Oracle Resource Manager stack, which is a subtype of the Dedicated Vantage Point stack.
     """
 
     def __init__(self, **kwargs):
@@ -61,7 +61,7 @@ class OracleRMStack(DvpStackDetails):
     def dvp_stack_id(self):
         """
         **[Required]** Gets the dvp_stack_id of this OracleRMStack.
-        Stack `OCID`__ of DVP RM stack.
+        Stack `OCID`__ of the Resource Manager stack for dedicated vantage point.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -75,7 +75,7 @@ class OracleRMStack(DvpStackDetails):
     def dvp_stack_id(self, dvp_stack_id):
         """
         Sets the dvp_stack_id of this OracleRMStack.
-        Stack `OCID`__ of DVP RM stack.
+        Stack `OCID`__ of the Resource Manager stack for dedicated vantage point.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -89,7 +89,7 @@ class OracleRMStack(DvpStackDetails):
     def dvp_stream_id(self):
         """
         **[Required]** Gets the dvp_stream_id of this OracleRMStack.
-        Stream `OCID`__ of DVP RM stack.
+        Stream `OCID`__ of the Resource Manager stack for dedicated vantage point.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -103,7 +103,7 @@ class OracleRMStack(DvpStackDetails):
     def dvp_stream_id(self, dvp_stream_id):
         """
         Sets the dvp_stream_id of this OracleRMStack.
-        Stream `OCID`__ of DVP RM stack.
+        Stream `OCID`__ of the Resource Manager stack for dedicated vantage point.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

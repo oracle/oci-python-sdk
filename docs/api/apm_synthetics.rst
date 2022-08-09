@@ -18,6 +18,9 @@ Apm Synthetics
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.apm_synthetics.models.AggregateNetworkDataDetails
+    oci.apm_synthetics.models.AggregatedNetworkData
+    oci.apm_synthetics.models.AggregatedNetworkDataResult
     oci.apm_synthetics.models.BrowserMonitorConfiguration
     oci.apm_synthetics.models.CreateDedicatedVantagePointDetails
     oci.apm_synthetics.models.CreateMonitorDetails
@@ -25,9 +28,11 @@ Apm Synthetics
     oci.apm_synthetics.models.DedicatedVantagePoint
     oci.apm_synthetics.models.DedicatedVantagePointCollection
     oci.apm_synthetics.models.DedicatedVantagePointSummary
+    oci.apm_synthetics.models.DnsConfiguration
     oci.apm_synthetics.models.DvpStackDetails
     oci.apm_synthetics.models.GeoSummary
     oci.apm_synthetics.models.Header
+    oci.apm_synthetics.models.Link
     oci.apm_synthetics.models.Monitor
     oci.apm_synthetics.models.MonitorCollection
     oci.apm_synthetics.models.MonitorConfiguration
@@ -38,6 +43,7 @@ Apm Synthetics
     oci.apm_synthetics.models.MonitorStatusCountMap
     oci.apm_synthetics.models.MonitorSummary
     oci.apm_synthetics.models.NetworkConfiguration
+    oci.apm_synthetics.models.Node
     oci.apm_synthetics.models.OracleRMStack
     oci.apm_synthetics.models.PublicVantagePointCollection
     oci.apm_synthetics.models.PublicVantagePointSummary
@@ -54,5 +60,7 @@ Apm Synthetics
     oci.apm_synthetics.models.UpdateDedicatedVantagePointDetails
     oci.apm_synthetics.models.UpdateMonitorDetails
     oci.apm_synthetics.models.UpdateScriptDetails
+    oci.apm_synthetics.models.VantagePointExecution
     oci.apm_synthetics.models.VantagePointInfo
+    oci.apm_synthetics.models.VantagePointNode
     oci.apm_synthetics.models.VerifyText

@@ -22,6 +22,10 @@ class UpdateHostInsightDetails(object):
     ENTITY_SOURCE_EM_MANAGED_EXTERNAL_HOST = "EM_MANAGED_EXTERNAL_HOST"
 
     #: A constant which can be used with the entity_source property of a UpdateHostInsightDetails.
+    #: This constant has a value of "MACS_MANAGED_CLOUD_HOST"
+    ENTITY_SOURCE_MACS_MANAGED_CLOUD_HOST = "MACS_MANAGED_CLOUD_HOST"
+
+    #: A constant which can be used with the entity_source property of a UpdateHostInsightDetails.
     #: This constant has a value of "PE_COMANAGED_HOST"
     ENTITY_SOURCE_PE_COMANAGED_HOST = "PE_COMANAGED_HOST"
 
@@ -32,12 +36,13 @@ class UpdateHostInsightDetails(object):
 
         * :class:`~oci.opsi.models.UpdateEmManagedExternalHostInsightDetails`
         * :class:`~oci.opsi.models.UpdateMacsManagedExternalHostInsightDetails`
+        * :class:`~oci.opsi.models.UpdateMacsManagedCloudHostInsightDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param entity_source:
             The value to assign to the entity_source property of this UpdateHostInsightDetails.
-            Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST", "PE_COMANAGED_HOST"
+            Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST", "MACS_MANAGED_CLOUD_HOST", "PE_COMANAGED_HOST"
         :type entity_source: str
 
         :param freeform_tags:
@@ -78,6 +83,9 @@ class UpdateHostInsightDetails(object):
 
         if type == 'MACS_MANAGED_EXTERNAL_HOST':
             return 'UpdateMacsManagedExternalHostInsightDetails'
+
+        if type == 'MACS_MANAGED_CLOUD_HOST':
+            return 'UpdateMacsManagedCloudHostInsightDetails'
         else:
             return 'UpdateHostInsightDetails'
 
@@ -87,7 +95,7 @@ class UpdateHostInsightDetails(object):
         **[Required]** Gets the entity_source of this UpdateHostInsightDetails.
         Source of the host entity.
 
-        Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST", "PE_COMANAGED_HOST"
+        Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST", "MACS_MANAGED_CLOUD_HOST", "PE_COMANAGED_HOST"
 
 
         :return: The entity_source of this UpdateHostInsightDetails.
@@ -105,7 +113,7 @@ class UpdateHostInsightDetails(object):
         :param entity_source: The entity_source of this UpdateHostInsightDetails.
         :type: str
         """
-        allowed_values = ["MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST", "PE_COMANAGED_HOST"]
+        allowed_values = ["MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST", "MACS_MANAGED_CLOUD_HOST", "PE_COMANAGED_HOST"]
         if not value_allowed_none_or_none_sentinel(entity_source, allowed_values):
             raise ValueError(
                 "Invalid value for `entity_source`, must be None or one of {0}"
