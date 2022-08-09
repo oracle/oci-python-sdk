@@ -678,6 +678,25 @@ class ShowOCIService(object):
         return []
 
     ##########################################################################
+    # return certificate info for load balancer
+    ##########################################################################
+    def __get_certificate_info(self, cert_array):
+
+        val = ""
+        try:
+            if cert_array:
+                # loop on certificates and extract ca and public
+                for key in cert_array.keys():
+                    if cert_array[key]:
+                        cert = cert_array[key]
+                        val += ("," if val else "") + key + "=" + ('ca_certificate' if cert.ca_certificate else "") + (":" if cert.ca_certificate and cert.public_certificate else "") + ("public_certificate" if cert.public_certificate else "")
+
+            return val
+
+        except Exception as e:
+            self.__print_error("__get_certificate_info", e)
+
+    ##########################################################################
     # return announcement data
     ##########################################################################
     def get_announcement(self):
@@ -5582,12 +5601,17 @@ class ShowOCIService(object):
                            'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                            'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
                            'region_name': str(self.config['region']),
-                           'subnet_ids': []}
+                           'subnet_ids': [],
+                           'certificates': ''}
 
                     # Flexible Shapes
                     if arr.shape_details:
                         val['shape_min_mbps'] = str(arr.shape_details.minimum_bandwidth_in_mbps)
                         val['shape_max_mbps'] = str(arr.shape_details.maximum_bandwidth_in_mbps)
+
+                    # certificates
+                    if arr.certificates:
+                        val['certificates'] = self.__get_certificate_info(arr.certificates)
 
                     # subnets
                     if arr.subnet_ids:

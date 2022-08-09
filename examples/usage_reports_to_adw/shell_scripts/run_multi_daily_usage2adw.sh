@@ -29,7 +29,8 @@ cd $APPDIR
 export DATABASE_USER=`grep "^DATABASE_USER" $CREDFILE | awk -F= '{ print $2 }'`
 export DATABASE_PASS=`grep "^DATABASE_PASS" $CREDFILE | awk -F= '{ print $2 }'`
 export DATABASE_NAME=`grep "^DATABASE_NAME" $CREDFILE | awk -F= '{ print $2 }'`
-export TAG_SPECIAL=`grep "^TAG_SPECIAL" $CREDFILE | awk -F= '{ print $2 }'`
+export TAG1_SPECIAL=`grep "^TAG_SPECIAL" $CREDFILE | awk -F= '{ print $2 }'`
+export TAG2_SPECIAL=`grep "^TAG2_SPECIAL" $CREDFILE | awk -F= '{ print $2 }'`
 export MIN_DATE=`grep "^EXTRACT_DATE" $CREDFILE | awk -F= '{ print $2 }'`
 
 # Fixed variables
@@ -55,16 +56,22 @@ run_report()
 
     if [ -z "${2}" ]
     then
-        TAG=$TAG_SPECIAL
+        TAG1=$TAG1_SPECIAL
     else
-        TAG=$2
+        TAG1=$2
     fi
 
+    if [ -z "${3}" ]
+    then
+        TAG2=$TAG2_SPECIAL
+    else
+        TAG2=$3
+    fi
     DIR=${REPORT_DIR}/$NAME
     OUTPUT_FILE=${DIR}/${DATE}_${NAME}.txt
     mkdir -p $DIR
     echo "Running $NAME... to $OUTPUT_FILE "
-    python3 $APPDIR/usage2adw.py $TENANT -du $DATABASE_USER -dp $DATABASE_PASS -dn $DATABASE_NAME -d $MIN_DATE -ts "${TAG}" |tee -a $OUTPUT_FILE
+    python3 $APPDIR/usage2adw.py $TENANT -du $DATABASE_USER -dp $DATABASE_PASS -dn $DATABASE_NAME -d $MIN_DATE -ts "${TAG1}" -ts2 "${TAG2}" |tee -a $OUTPUT_FILE
     grep -i "Error" $OUTPUT_FILE
 
     ERROR=""
@@ -83,7 +90,7 @@ run_report()
 echo "Start running at `date`..."
 
 run_report local 
-run_report tenant_name_1 tagspacial
+run_report tenant_name_1 tagspacial1 tagspacial2
 run_report tenant_name_2 
 
 echo "Completed at `date`.."

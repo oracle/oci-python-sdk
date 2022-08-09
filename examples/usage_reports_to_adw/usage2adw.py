@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 ##########################################################################
-# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 #
 # DISCLAIMER This is not an official Oracle application,  It does not supported by Oracle Support,
@@ -73,7 +73,7 @@ import requests
 import time
 
 
-version = "22.02.22"
+version = "22.08.12"
 usage_report_namespace = "bling"
 work_report_dir = os.curdir + "/work_report_dir"
 
@@ -211,7 +211,8 @@ def set_parser_arguments():
     parser.add_argument('-c', type=argparse.FileType('r'), dest='config', help="Config File")
     parser.add_argument('-t', default="", dest='profile', help='Config file section to use (tenancy profile)')
     parser.add_argument('-f', default="", dest='fileid', help='File Id to load')
-    parser.add_argument('-ts', default="", dest='tagspecial', help='tag special key to load the data to TAG_SPECIAL column')
+    parser.add_argument('-ts', default="", dest='tagspecial', help='tag special key 1 to load the data to TAG_SPECIAL column')
+    parser.add_argument('-ts2', default="", dest='tagspecial2', help='tag special key 2 to load the data to TAG_SPECIAL2 column')
     parser.add_argument('-d', default="", dest='filedate', help='Minimum File Date to load (i.e. yyyy-mm-dd)')
     parser.add_argument('-p', default="", dest='proxy', help='Set Proxy (i.e. www-proxy-server.com:80) ')
     parser.add_argument('-su', action='store_true', default=False, dest='skip_usage', help='Skip Load Usage Files')
@@ -269,7 +270,8 @@ def check_database_table_structure_usage(connection, tenant_name):
             sql += "    USG_CONSUMED_MEASURE    VARCHAR2(100),"
             sql += "    IS_CORRECTION           VARCHAR2(10),"
             sql += "    TAGS_DATA               VARCHAR2(4000),"
-            sql += "    TAG_SPECIAL             VARCHAR2(4000)"
+            sql += "    TAG_SPECIAL             VARCHAR2(4000),"
+            sql += "    TAG_SPECIAL2            VARCHAR2(4000)"
             sql += ") COMPRESS"
             cursor.execute(sql)
             print("   Table OCI_USAGE created")
@@ -281,7 +283,7 @@ def check_database_table_structure_usage(connection, tenant_name):
         cursor.execute(sql)
         val, = cursor.fetchone()
 
-        # if columns not exist, create it
+        # if columns TAGS_DATA not exist, create it
         if val == 0:
             print("   Column TAGS_DATA does not exist in the table OCI_USAGE, adding...")
             sql = "alter table OCI_USAGE add (TAGS_DATA VARCHAR2(4000))"
@@ -292,7 +294,7 @@ def check_database_table_structure_usage(connection, tenant_name):
         cursor.execute(sql)
         val, = cursor.fetchone()
 
-        # if columns not exist, create it
+        # if columns TENANT_ID not exist, create it
         if val == 0:
             print("   Column TENANT_ID does not exist in the table OCI_USAGE, adding...")
             sql = "alter table OCI_USAGE add (TENANT_ID VARCHAR2(100))"
@@ -303,10 +305,21 @@ def check_database_table_structure_usage(connection, tenant_name):
         cursor.execute(sql)
         val, = cursor.fetchone()
 
-        # if columns not exist, create it
+        # if columns TAG_SPECIAL not exist, create it
         if val == 0:
             print("   Column TAG_SPECIAL does not exist in the table OCI_USAGE, adding...")
             sql = "alter table OCI_USAGE add (TAG_SPECIAL VARCHAR2(4000))"
+            cursor.execute(sql)
+
+        # check if TAG_SPECIAL2 columns exist in OCI_USAGE table, if not create
+        sql = "select count(*) from user_tab_columns where table_name = 'OCI_USAGE' and column_name='TAG_SPECIAL2'"
+        cursor.execute(sql)
+        val, = cursor.fetchone()
+
+        # if columns TAG_SPECIAL2 not exist, create it
+        if val == 0:
+            print("   Column TAG_SPECIAL2 does not exist in the table OCI_USAGE, adding...")
+            sql = "alter table OCI_USAGE add (TAG_SPECIAL2 VARCHAR2(4000))"
             cursor.execute(sql)
 
         # check if OCI_USAGE_TAG_KEYS table exist, if not create
@@ -314,7 +327,7 @@ def check_database_table_structure_usage(connection, tenant_name):
         cursor.execute(sql)
         val, = cursor.fetchone()
 
-        # if table not exist, create it
+        # if table OCI_USAGE_TAG_KEYS not exist, create it
         if val == 0:
             print("   Table OCI_USAGE_TAG_KEYS was not exist, creating")
             sql = "CREATE TABLE OCI_USAGE_TAG_KEYS (TENANT_NAME VARCHAR2(100), TAG_KEY VARCHAR2(100), "
@@ -330,7 +343,7 @@ def check_database_table_structure_usage(connection, tenant_name):
         cursor.execute(sql)
         val, = cursor.fetchone()
 
-        # if table not exist, create it
+        # if table OCI_USAGE_STATS not exist, create it
         if val == 0:
             print("   Table OCI_USAGE_STATS was not exist, creating")
             sql = "CREATE TABLE OCI_USAGE_STATS ( "
@@ -532,7 +545,7 @@ def update_price_list(connection, tenant_name):
 ##########################################################################
 # update_cost_reference
 ##########################################################################
-def update_cost_reference(connection, tag_special_key, tenant_name):
+def update_cost_reference(connection, tag_special_key, tag_special_key2, tenant_name):
     try:
         # open cursor
         cursor = connection.cursor()
@@ -566,6 +579,8 @@ def update_cost_reference(connection, tag_special_key, tenant_name):
         sql += "        union all "
         sql += "        select /*+ parallel(oci_cost,4) full(oci_cost) */ distinct TENANT_NAME, 'TAG_SPECIAL' as REF_TYPE, TAG_SPECIAL as ref_name from OCI_COST  where :tenant_name = TENANT_NAME "
         sql += "        union all "
+        sql += "        select /*+ parallel(oci_cost,4) full(oci_cost) */ distinct TENANT_NAME, 'TAG_SPECIAL2' as REF_TYPE, TAG_SPECIAL2 as ref_name from OCI_COST  where :tenant_name = TENANT_NAME "
+        sql += "        union all "
         sql += "        select /*+ parallel(oci_cost,4) full(oci_cost) */ distinct TENANT_NAME, 'COST_PRODUCT_SKU' as REF_TYPE, COST_PRODUCT_SKU || ' '||min(PRD_DESCRIPTION) as ref_name from OCI_COST  where :tenant_name = TENANT_NAME  "
         sql += "        group by TENANT_NAME, COST_PRODUCT_SKU "
         sql += "    ) where ref_name is not null "
@@ -597,6 +612,25 @@ def update_cost_reference(connection, tag_special_key, tenant_name):
             connection.commit()
             print("   Merge Completed, " + str(cursor.rowcount) + " rows merged")
 
+        if tag_special_key2:
+
+            # run merge to OCI_COST_REFERENCE for the tag special key
+            print("   Handling Tag Special Key '" + tag_special_key2 + "'")
+
+            sql = "merge into OCI_COST_REFERENCE a "
+            sql += "using "
+            sql += "( "
+            sql += "        select :tenant_name as TENANT_NAME, 'TAG_SPECIAL_KEY2' as REF_TYPE, :tag_special_key2 as ref_name from DUAL "
+            sql += ") b "
+            sql += "on (a.TENANT_NAME=b.TENANT_NAME and a.REF_TYPE=b.REF_TYPE) "
+            sql += "when matched then update set a.ref_name = b.ref_name  "
+            sql += "when not matched then insert (TENANT_NAME,REF_TYPE,REF_NAME)  "
+            sql += "values (b.TENANT_NAME,b.REF_TYPE,b.REF_NAME)"
+
+            cursor.execute(sql, {"tenant_name": tenant_name, "tag_special_key2": tag_special_key2})
+            connection.commit()
+            print("   Merge Completed, " + str(cursor.rowcount) + " rows merged")
+
         cursor.close()
 
     except cx_Oracle.DatabaseError as e:
@@ -610,7 +644,7 @@ def update_cost_reference(connection, tag_special_key, tenant_name):
 ##########################################################################
 # update_usage_reference
 ##########################################################################
-def update_usage_reference(connection, tag_special_key, tenant_name):
+def update_usage_reference(connection, tag_special_key, tag_special_key2, tenant_name):
     try:
         # open cursor
         cursor = connection.cursor()
@@ -643,6 +677,8 @@ def update_usage_reference(connection, tag_special_key, tenant_name):
         sql += "        select /*+ parallel(OCI_USAGE,4) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_PRD_RESOURCE' as REF_TYPE, PRD_RESOURCE as ref_name from OCI_USAGE  where :tenant_name = TENANT_NAME "
         sql += "        union all "
         sql += "        select /*+ parallel(OCI_USAGE,4) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_TAG_SPECIAL' as REF_TYPE, TAG_SPECIAL as ref_name from OCI_USAGE  where :tenant_name = TENANT_NAME "
+        sql += "        union all "
+        sql += "        select /*+ parallel(OCI_USAGE,4) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_TAG_SPECIAL2' as REF_TYPE, TAG_SPECIAL2 as ref_name from OCI_USAGE  where :tenant_name = TENANT_NAME "
         sql += "    ) where ref_name is not null "
         sql += ") b "
         sql += "on (a.TENANT_NAME=b.TENANT_NAME and a.REF_TYPE=b.REF_TYPE and a.REF_NAME=b.REF_NAME) "
@@ -669,6 +705,25 @@ def update_usage_reference(connection, tag_special_key, tenant_name):
             sql += "values (b.TENANT_NAME,b.REF_TYPE,b.REF_NAME)"
 
             cursor.execute(sql, {"tenant_name": tenant_name, "tag_special_key": tag_special_key})
+            connection.commit()
+            print("   Merge Completed, " + str(cursor.rowcount) + " rows merged")
+
+        if tag_special_key2:
+
+            # run merge to OCI_COST_REFERENCE for the tag special key
+            print("   Handling Tag Special Key '" + tag_special_key2 + "'")
+
+            sql = "merge into OCI_COST_REFERENCE a "
+            sql += "using "
+            sql += "( "
+            sql += "        select :tenant_name as TENANT_NAME, 'TAG_SPECIAL_KEY2' as REF_TYPE, :tag_special_key2 as ref_name from DUAL "
+            sql += ") b "
+            sql += "on (a.TENANT_NAME=b.TENANT_NAME and a.REF_TYPE=b.REF_TYPE) "
+            sql += "when matched then update set a.ref_name = b.ref_name  "
+            sql += "when not matched then insert (TENANT_NAME,REF_TYPE,REF_NAME)  "
+            sql += "values (b.TENANT_NAME,b.REF_TYPE,b.REF_NAME)"
+
+            cursor.execute(sql, {"tenant_name": tenant_name, "tag_special_key2": tag_special_key2})
             connection.commit()
             print("   Merge Completed, " + str(cursor.rowcount) + " rows merged")
 
@@ -907,7 +962,8 @@ def check_database_table_structure_cost(connection, tag_special_key, tenant_name
             sql += "    COST_OVERAGE_FLAG       VARCHAR2(10),"
             sql += "    IS_CORRECTION           VARCHAR2(10),"
             sql += "    TAGS_DATA               VARCHAR2(4000),"
-            sql += "    TAG_SPECIAL             VARCHAR2(4000)"
+            sql += "    TAG_SPECIAL             VARCHAR2(4000),"
+            sql += "    TAG_SPECIAL2            VARCHAR2(4000)"
             sql += ") COMPRESS"
             cursor.execute(sql)
             print("   Table OCI_COST created")
@@ -919,7 +975,7 @@ def check_database_table_structure_cost(connection, tag_special_key, tenant_name
         cursor.execute(sql)
         val, = cursor.fetchone()
 
-        # if columns not exist, create it
+        # if columns TENANT_ID not exist, create it
         if val == 0:
             print("   Column TENANT_ID does not exist in the table OCI_COST, adding...")
             sql = "alter table OCI_COST add (TENANT_ID VARCHAR2(100))"
@@ -930,10 +986,21 @@ def check_database_table_structure_cost(connection, tag_special_key, tenant_name
         cursor.execute(sql)
         val, = cursor.fetchone()
 
-        # if column not exist, create it
+        # if column TAG_SPECIAL not exist, create it
         if val == 0:
             print("   Column TAG_SPECIAL does not exist in the table OCI_COST, adding...")
             sql = "alter table OCI_COST add (TAG_SPECIAL VARCHAR2(4000))"
+            cursor.execute(sql)
+
+        # check if TAG_SPECIAL2 column exist in OCI_COST table, if not create
+        sql = "select count(*) from user_tab_columns where table_name = 'OCI_COST' and column_name='TAG_SPECIAL2'"
+        cursor.execute(sql)
+        val, = cursor.fetchone()
+
+        # if column TAG_SPECIAL2 not exist, create it
+        if val == 0:
+            print("   Column TAG_SPECIAL2 does not exist in the table OCI_COST, adding...")
+            sql = "alter table OCI_COST add (TAG_SPECIAL2 VARCHAR2(4000))"
             cursor.execute(sql)
 
         # check if OCI_COST_TAG_KEYS table exist, if not create
@@ -941,7 +1008,7 @@ def check_database_table_structure_cost(connection, tag_special_key, tenant_name
         cursor.execute(sql)
         val, = cursor.fetchone()
 
-        # if table not exist, create it
+        # if table OCI_COST_TAG_KEYS not exist, create it
         if val == 0:
             print("   Table OCI_COST_TAG_KEYS was not exist, creating")
             sql = "CREATE TABLE OCI_COST_TAG_KEYS (TENANT_NAME VARCHAR2(100), TAG_KEY VARCHAR2(100), "
@@ -957,7 +1024,7 @@ def check_database_table_structure_cost(connection, tag_special_key, tenant_name
         cursor.execute(sql)
         val, = cursor.fetchone()
 
-        # if table not exist, create it
+        # if table OCI_COST_STATS not exist, create it
         if val == 0:
             print("   Table OCI_COST_STATS was not exist, creating")
             sql = "CREATE TABLE OCI_COST_STATS ( "
@@ -984,7 +1051,7 @@ def check_database_table_structure_cost(connection, tag_special_key, tenant_name
         cursor.execute(sql)
         val, = cursor.fetchone()
 
-        # if columns not exist, create them
+        # if columns COST_MY_COST_OVERAGE not exist, create them
         if val == 0:
             print("   Column COST_MY_COST_OVERAGE does not exist in the table OCI_COST_STATS, adding...")
             sql = "alter table OCI_COST_STATS add (COST_MY_COST_OVERAGE NUMBER, COST_CURRENCY_CODE VARCHAR2(10))"
@@ -995,7 +1062,7 @@ def check_database_table_structure_cost(connection, tag_special_key, tenant_name
         cursor.execute(sql)
         val, = cursor.fetchone()
 
-        # if table not exist, create it
+        # if table OCI_COST_REFERENCE not exist, create it
         if val == 0:
             print("   Table OCI_COST_REFERENCE was not exist, creating")
             sql = "CREATE TABLE OCI_COST_REFERENCE ("
@@ -1016,7 +1083,7 @@ def check_database_table_structure_cost(connection, tag_special_key, tenant_name
         cursor.execute(sql)
         val, = cursor.fetchone()
 
-        # if table not exist, create it
+        # if table OCI_INTERNAL_COST not exist, create it
         if val == 0:
             print("   Table OCI_INTERNAL_COST was not exist, creating")
             sql = "CREATE TABLE OCI_INTERNAL_COST ("
@@ -1191,13 +1258,14 @@ def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, te
             sql += "IS_CORRECTION, "
             sql += "TAGS_DATA, "
             sql += "TENANT_ID, "
-            sql += "TAG_SPECIAL "
+            sql += "TAG_SPECIAL, "
+            sql += "TAG_SPECIAL2 "
             sql += ") VALUES ("
             sql += ":1, :2, to_date(:3,'YYYY-MM-DD HH24:MI'), to_date(:4,'YYYY-MM-DD HH24:MI'), :5,  "
             sql += ":6, :7, :8, :9, :10, "
             sql += ":11, to_number(:12), to_number(:13) ,:14, :15, "
             sql += ":16, to_number(:17), to_number(:18), to_number(:19), to_number(:20), "
-            sql += ":21, :22, :23, :24, :25, :26, :27"
+            sql += ":21, :22, :23, :24, :25, :26, :27, :28"
             sql += ") "
 
             # insert bulk to database
@@ -1217,6 +1285,7 @@ def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, te
 
                 # Handle Tags up to 4000 chars with # seperator
                 tag_special = ""
+                tag_special2 = ""
                 tags_data = ""
                 for (key, value) in row.items():
                     if 'tags' in key and len(value) > 0:
@@ -1232,6 +1301,14 @@ def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, te
                                     tag_special = valueadj
                                     # remove oracle idcs from the e-mail
                                     tag_special = tag_special.replace("oracleidentitycloudservice/", "")
+
+                        # if tagspecial2
+                        if cmd.tagspecial2:
+                            if keyadj == cmd.tagspecial2:
+                                if len(valueadj) < 4000:
+                                    tag_special2 = valueadj
+                                    # remove oracle idcs from the e-mail
+                                    tag_special2 = tag_special2.replace("oracleidentitycloudservice/", "")
 
                         # check if length < 4000 to avoid overflow database column
                         if len(tags_data) + len(keyadj) + len(valueadj) + 2 < 4000:
@@ -1270,16 +1347,8 @@ def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, te
                 else:
                     cost_billingUnitReadable = get_column_value_from_array('cost/billingUnitReadable', row)
 
-                # Fix OCI Data for missing product description
-                if cost_productSku == "B88285" and product_Description == "":
-                    product_Description = "Object Storage Classic"
-                    cost_billingUnitReadable = "Gigabyte Storage Capacity per Month"
-
-                elif cost_productSku == "B88272" and product_Description == "":
-                    product_Description = "Compute Classic - Unassociated Static IP"
-                    cost_billingUnitReadable = "IPs"
-
-                elif cost_productSku == "B88166" and product_Description == "":
+                # Fix OCI Data for missing product description for old SKUs
+                if cost_productSku == "B88166" and product_Description == "":
                     product_Description = "Oracle Identity Cloud - Standard"
                     cost_billingUnitReadable = "Active User per Hour"
 
@@ -1290,34 +1359,6 @@ def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, te
                 elif cost_productSku == "B88168" and product_Description == "":
                     product_Description = "Oracle Identity Cloud - Basic - Consumer User"
                     cost_billingUnitReadable = "Active User per Hour"
-
-                elif cost_productSku == "B88274" and product_Description == "":
-                    product_Description = "Block Storage Classic"
-                    cost_billingUnitReadable = "Gigabyte Storage Capacity per Month"
-
-                elif cost_productSku == "B89164" and product_Description == "":
-                    product_Description = "Oracle Security Monitoring and Compliance Edition"
-                    cost_billingUnitReadable = "100 Entities Per Hour"
-
-                elif cost_productSku == "B88269" and product_Description == "":
-                    product_Description = "Compute Classic"
-                    cost_billingUnitReadable = "OCPU Per Hour "
-
-                elif cost_productSku == "B88269" and product_Description == "":
-                    product_Description = "Compute Classic"
-                    cost_billingUnitReadable = "OCPU Per Hour"
-
-                elif cost_productSku == "B88275" and product_Description == "":
-                    product_Description = "Block Storage Classic - High I/O"
-                    cost_billingUnitReadable = "Gigabyte Storage Per Month"
-
-                elif cost_productSku == "B88283" and product_Description == "":
-                    product_Description = "Object Storage Classic - GET and all other Requests"
-                    cost_billingUnitReadable = "10,000 Requests Per Month"
-
-                elif cost_productSku == "B88284" and product_Description == "":
-                    product_Description = "Object Storage Classic - PUT, COPY, POST or LIST Requests"
-                    cost_billingUnitReadable = "10,000 Requests Per Month"
 
                 # create array
                 row_data = (
@@ -1347,7 +1388,8 @@ def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, te
                     lineItem_isCorrection,
                     tags_data,
                     lineItem_tenantId[-6:],
-                    tag_special
+                    tag_special,
+                    tag_special2
                 )
                 data.append(row_data)
                 num_rows += 1
@@ -1449,11 +1491,11 @@ def load_usage_file(connection, object_storage, object_file, max_file_id, cmd, t
             # sql statement
             sql = "INSERT INTO OCI_USAGE (TENANT_NAME, FILE_ID, USAGE_INTERVAL_START, USAGE_INTERVAL_END, PRD_SERVICE, PRD_RESOURCE, "
             sql += "PRD_COMPARTMENT_ID, PRD_COMPARTMENT_NAME, PRD_COMPARTMENT_PATH, PRD_REGION, PRD_AVAILABILITY_DOMAIN, USG_RESOURCE_ID, "
-            sql += "USG_BILLED_QUANTITY, USG_CONSUMED_QUANTITY, USG_CONSUMED_UNITS, USG_CONSUMED_MEASURE, IS_CORRECTION, TAGS_DATA, TENANT_ID, TAG_SPECIAL "
+            sql += "USG_BILLED_QUANTITY, USG_CONSUMED_QUANTITY, USG_CONSUMED_UNITS, USG_CONSUMED_MEASURE, IS_CORRECTION, TAGS_DATA, TENANT_ID, TAG_SPECIAL, TAG_SPECIAL2 "
             sql += ") VALUES ("
             sql += ":1, :2, to_date(:3,'YYYY-MM-DD HH24:MI'), to_date(:4,'YYYY-MM-DD HH24:MI'), :5, :6, "
             sql += ":7, :8, :9, :10, :11, :12, "
-            sql += "to_number(:13), to_number(:14), :15, :16, :17 ,:18, :19, :20 "
+            sql += "to_number(:13), to_number(:14), :15, :16, :17 ,:18, :19, :20, :21 "
             sql += ") "
 
             # Adjust the batch size to meet memory and performance requirements
@@ -1478,6 +1520,7 @@ def load_usage_file(connection, object_storage, object_file, max_file_id, cmd, t
                 # Handle Tags up to 3500 chars with # seperator
                 tags_data = ""
                 tag_special = ""
+                tag_special2 = ""
                 for (key, value) in row.items():
                     if 'tags' in key and len(value) > 0:
 
@@ -1492,6 +1535,14 @@ def load_usage_file(connection, object_storage, object_file, max_file_id, cmd, t
                                     tag_special = valueadj
                                     # remove oracle idcs from the e-mail
                                     tag_special = tag_special.replace("oracleidentitycloudservice/", "")
+
+                        # if tagspecial2
+                        if cmd.tagspecial2:
+                            if keyadj == cmd.tagspecial2:
+                                if len(valueadj) < 4000:
+                                    tag_special2 = valueadj
+                                    # remove oracle idcs from the e-mail
+                                    tag_special2 = tag_special2.replace("oracleidentitycloudservice/", "")
 
                         # check if length < 3500 to avoid overflow database column
                         if len(tags_data) + len(keyadj) + len(valueadj) + 2 < 3500:
@@ -1539,7 +1590,8 @@ def load_usage_file(connection, object_storage, object_file, max_file_id, cmd, t
                     lineItem_isCorrection,
                     tags_data,
                     lineItem_tenantId[-6:],
-                    tag_special
+                    tag_special,
+                    tag_special2
                 )
                 data.append(row_data)
                 num_rows += 1
@@ -1741,12 +1793,12 @@ def main_process():
         # Update oci_usage_stats and oci_cost_stats if there were files
         if usage_num > 0:
             update_usage_stats(connection, tenancy.name)
-            update_usage_reference(connection, cmd.tagspecial, tenancy.name)
+            update_usage_reference(connection, cmd.tagspecial, cmd.tagspecial2, tenancy.name)
 
         if cost_num > 0:
             update_cost_stats(connection, tenancy.name)
             update_price_list(connection, tenancy.name)
-            update_cost_reference(connection, cmd.tagspecial, tenancy.name)
+            update_cost_reference(connection, cmd.tagspecial, cmd.tagspecial2, tenancy.name)
             if not cmd.skip_rate:
                 update_public_rates(connection, tenancy.name)
             update_tenant_id_if_null(connection, tenancy.name, short_tenant_id)

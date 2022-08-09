@@ -1,6 +1,6 @@
 #!/bin/bash
 #############################################################################################################################
-# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 #
 # Setup for usage2adw
@@ -9,7 +9,7 @@
 #
 # If script fail, please add the policies and re-run
 #
-# Version 2020-10-22
+# Version 2022-08-12
 #
 #########################################################################################################################
 # Required Instant Principle Policy which includes the below:
@@ -22,6 +22,7 @@
 #  2. Create new Policy: UsageDownloadPolicy with Statements:
 #     define tenancy usage-report as ocid1.tenancy.oc1..aaaaaaaaned4fkpkisbwjlr56u7cj63lf3wffbilvqknstgtvzub7vhqkggq
 #     endorse dynamic-group UsageDownloadGroup to read objects in tenancy usage-report
+#     Allow dynamic-group UsageDownloadGroup to read autonomous-database in compartment XXXX
 #     Allow dynamic-group UsageDownloadGroup to inspect compartments in tenancy
 #     Allow dynamic-group UsageDownloadGroup to inspect tenancies in tenancy
 #########################################################################################################################
@@ -52,6 +53,7 @@ db_app_password=`grep "^DATABASE_PASS" $CREDFILE | awk -F= '{ print $2 }'`
 db_admin_password=`grep "^DATABASE_ADMIN" $CREDFILE| awk -F= '{ print $2 }'`
 extract_from_date=`grep "^EXTRACT_DATE" $CREDFILE | awk -F= '{ print $2 }'`
 extract_tag_special_key=`grep "^TAG_SPECIAL" $CREDFILE | awk -F= '{ print $2 }'`
+extract_tag2_special_key=`grep "^TAG2_SPECIAL" $CREDFILE | awk -F= '{ print $2 }'`
 
 ###########################################
 # Extract Wallet from wallet.zip
@@ -165,10 +167,12 @@ echo "###############################################################" | tee -a 
 echo "# Running Initial usage2adw.py extract" | tee -a $LOG
 echo "###############################################################" | tee -a $LOG
 echo "   Command line: " | tee -a $LOG
-echo "   python3 usage2adw.py -ip -du USAGE -dp ${db_app_password} -dn ${db_db_name} -d ${extract_from_date}" -ts "${extract_tag_special_key}" | tee -a $LOG
+echo "   python3 usage2adw.py -ip -du USAGE -dp ${db_app_password} -dn ${db_db_name} -d ${extract_from_date} -ts ${extract_tag_special_key} -ts2 ${extract_tag2_special_key}" | tee -a $LOG
 echo "" | tee -a $LOG | tee -a $LOG
+
 cd $APPDIR
-python3 usage2adw.py -ip -du USAGE -dp ${db_app_password} -dn ${db_db_name} -d ${extract_from_date} -ts "${extract_tag_special_key}" | tee -a $LOG
+python3 usage2adw.py -ip -du USAGE -dp ${db_app_password} -dn ${db_db_name} -d ${extract_from_date} -ts "${extract_tag_special_key}" -ts2 "${extract_tag2_special_key}" | tee -a $LOG
+
 echo "" | tee -a $LOG
 
 echo "############################################################################################" | tee -a $LOG

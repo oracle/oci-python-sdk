@@ -78,7 +78,8 @@ else
    printf "   Please Enter Database Name     : "; read DATABASE_NAME
    printf "   Please Enter ADB Admin Password: "; read DATABASE_ADMIN
    printf "   Please Enter ADB App  Password : "; read DATABASE_PASS
-   printf "   Please Enter Tag Key to extract as Special Tag (Oracle-Tags.CreatedBy): "; read TAG_SPECIAL
+   printf "   Please Enter Tag Key 1 to extract as Special Tag (Oracle-Tags.CreatedBy): "; read TAG_SPECIAL
+   printf "   Please Enter Tag Key 2 to extract as Special Tag (Oracle-Tags.Program): "; read TAG2_SPECIAL
 
    if [ -z "$TAG_SPECIAL" ]; then
        TAG_SPECIAL="Oracle-Tags.CreatedBy"
@@ -88,8 +89,9 @@ else
    echo "DATABASE_NAME=${DATABASE_NAME}_low" >> $CREDFILE
    echo "DATABASE_PASS=${DATABASE_PASS}" >> $CREDFILE 
    echo "DATABASE_ADMIN=${DATABASE_ADMIN}" >> $CREDFILE
-   echo "EXTRACT_DATE=2021-04" >> $CREDFILE
+   echo "EXTRACT_DATE=2022-07" >> $CREDFILE
    echo "TAG_SPECIAL=${TAG_SPECIAL}" >> $CREDFILE
+   echo "TAG2_SPECIAL=${TAG2_SPECIAL}" >> $CREDFILE
    echo "File Created." | tee -a $LOG
 fi
 
