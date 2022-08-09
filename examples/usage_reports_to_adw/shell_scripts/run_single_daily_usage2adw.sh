@@ -26,7 +26,8 @@ cd $APPDIR
 export DATABASE_USER=`grep "^DATABASE_USER" $CREDFILE | awk -F= '{ print $2 }'`
 export DATABASE_PASS=`grep "^DATABASE_PASS" $CREDFILE | awk -F= '{ print $2 }'`
 export DATABASE_NAME=`grep "^DATABASE_NAME" $CREDFILE | awk -F= '{ print $2 }'`
-export TAG_SPECIAL=`grep "^TAG_SPECIAL" $CREDFILE | awk -F= '{ print $2 }'`
+export TAG1_SPECIAL=`grep "^TAG_SPECIAL" $CREDFILE | awk -F= '{ print $2 }'`
+export TAG2_SPECIAL=`grep "^TAG2_SPECIAL" $CREDFILE | awk -F= '{ print $2 }'`
 export MIN_DATE=`grep "^EXTRACT_DATE" $CREDFILE | awk -F= '{ print $2 }'`
 
 # Fixed variables
@@ -38,7 +39,7 @@ export OUTPUT_FILE=${REPORT_DIR}/${DATE}.txt
 # execute using instance principles
 echo "Running ... to $OUTPUT_FILE and screen"
 
-python3 $APPDIR/usage2adw.py -ip -du $DATABASE_USER -dp $DATABASE_PASS -dn $DATABASE_NAME -d $MIN_DATE -ts "${TAG_SPECIAL}" | tee -a $OUTPUT_FILE
+python3 $APPDIR/usage2adw.py -ip -du $DATABASE_USER -dp $DATABASE_PASS -dn $DATABASE_NAME -d $MIN_DATE -ts "${TAG1_SPECIAL} -ts2 "${TAG2_SPECIAL}" | tee -a $OUTPUT_FILE
 
 grep -i "Error" $OUTPUT_FILE
 echo "Finished at `date`  "

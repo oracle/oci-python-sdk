@@ -3196,6 +3196,7 @@ class ShowOCIData(object):
             data['subnet_ids'] = lb['subnet_ids']
             data['defined_tags'] = lb['defined_tags']
             data['freeform_tags'] = lb['freeform_tags']
+            data['certificates'] = lb['certificates']
 
             # subnets
             datasub = []

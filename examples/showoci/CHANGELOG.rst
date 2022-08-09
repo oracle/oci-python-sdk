@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+22.07.26 - 22.07.26
+=====================
+* Added Certificates indicator to load balancer
+
+=====================
 22.06.21 - 22.06.21
 =====================
 * Added dbservers id to exadata csv
