@@ -68,7 +68,8 @@ class VirtualCloudNetwork(object):
     def allowlisted_ips(self):
         """
         Gets the allowlisted_ips of this VirtualCloudNetwork.
-        Source IP addresses or IP address ranges ingress rules.
+        Source IP addresses or IP address ranges ingress rules. (ex: \"168.122.59.5\", \"10.20.30.0/26\")
+        An invalid IP or CIDR block will result in a 400 response.
 
 
         :return: The allowlisted_ips of this VirtualCloudNetwork.
@@ -80,7 +81,8 @@ class VirtualCloudNetwork(object):
     def allowlisted_ips(self, allowlisted_ips):
         """
         Sets the allowlisted_ips of this VirtualCloudNetwork.
-        Source IP addresses or IP address ranges ingress rules.
+        Source IP addresses or IP address ranges ingress rules. (ex: \"168.122.59.5\", \"10.20.30.0/26\")
+        An invalid IP or CIDR block will result in a 400 response.
 
 
         :param allowlisted_ips: The allowlisted_ips of this VirtualCloudNetwork.

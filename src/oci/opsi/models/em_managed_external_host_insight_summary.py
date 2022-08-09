@@ -37,7 +37,7 @@ class EmManagedExternalHostInsightSummary(HostInsightSummary):
 
         :param entity_source:
             The value to assign to the entity_source property of this EmManagedExternalHostInsightSummary.
-            Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST", "PE_COMANAGED_HOST", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST", "MACS_MANAGED_CLOUD_HOST", "PE_COMANAGED_HOST", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type entity_source: str
 

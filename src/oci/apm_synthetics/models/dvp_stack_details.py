@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DvpStackDetails(object):
     """
-    Details of DVP Stack.
+    Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
     """
 
     #: A constant which can be used with the dvp_stack_type property of a DvpStackDetails.
@@ -97,7 +97,7 @@ class DvpStackDetails(object):
     def dvp_version(self):
         """
         **[Required]** Gets the dvp_version of this DvpStackDetails.
-        Version of DVP.
+        Version of the dedicated vantage point.
 
 
         :return: The dvp_version of this DvpStackDetails.
@@ -109,7 +109,7 @@ class DvpStackDetails(object):
     def dvp_version(self, dvp_version):
         """
         Sets the dvp_version of this DvpStackDetails.
-        Version of DVP.
+        Version of the dedicated vantage point.
 
 
         :param dvp_version: The dvp_version of this DvpStackDetails.

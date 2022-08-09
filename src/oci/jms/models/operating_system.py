@@ -52,25 +52,32 @@ class OperatingSystem(object):
             The value to assign to the architecture property of this OperatingSystem.
         :type architecture: str
 
+        :param managed_instance_count:
+            The value to assign to the managed_instance_count property of this OperatingSystem.
+        :type managed_instance_count: int
+
         """
         self.swagger_types = {
             'family': 'str',
             'name': 'str',
             'version': 'str',
-            'architecture': 'str'
+            'architecture': 'str',
+            'managed_instance_count': 'int'
         }
 
         self.attribute_map = {
             'family': 'family',
             'name': 'name',
             'version': 'version',
-            'architecture': 'architecture'
+            'architecture': 'architecture',
+            'managed_instance_count': 'managedInstanceCount'
         }
 
         self._family = None
         self._name = None
         self._version = None
         self._architecture = None
+        self._managed_instance_count = None
 
     @property
     def family(self):
@@ -173,6 +180,30 @@ class OperatingSystem(object):
         :type: str
         """
         self._architecture = architecture
+
+    @property
+    def managed_instance_count(self):
+        """
+        Gets the managed_instance_count of this OperatingSystem.
+        Number of instances running the operating system
+
+
+        :return: The managed_instance_count of this OperatingSystem.
+        :rtype: int
+        """
+        return self._managed_instance_count
+
+    @managed_instance_count.setter
+    def managed_instance_count(self, managed_instance_count):
+        """
+        Sets the managed_instance_count of this OperatingSystem.
+        Number of instances running the operating system
+
+
+        :param managed_instance_count: The managed_instance_count of this OperatingSystem.
+        :type: int
+        """
+        self._managed_instance_count = managed_instance_count
 
     def __repr__(self):
         return formatted_flat_dict(self)

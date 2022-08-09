@@ -38,6 +38,10 @@ class CreateFleetDetails(object):
             The value to assign to the operation_log property of this CreateFleetDetails.
         :type operation_log: oci.jms.models.CustomLog
 
+        :param is_advanced_features_enabled:
+            The value to assign to the is_advanced_features_enabled property of this CreateFleetDetails.
+        :type is_advanced_features_enabled: bool
+
         :param defined_tags:
             The value to assign to the defined_tags property of this CreateFleetDetails.
         :type defined_tags: dict(str, dict(str, object))
@@ -53,6 +57,7 @@ class CreateFleetDetails(object):
             'description': 'str',
             'inventory_log': 'CustomLog',
             'operation_log': 'CustomLog',
+            'is_advanced_features_enabled': 'bool',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
@@ -63,6 +68,7 @@ class CreateFleetDetails(object):
             'description': 'description',
             'inventory_log': 'inventoryLog',
             'operation_log': 'operationLog',
+            'is_advanced_features_enabled': 'isAdvancedFeaturesEnabled',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
@@ -72,6 +78,7 @@ class CreateFleetDetails(object):
         self._description = None
         self._inventory_log = None
         self._operation_log = None
+        self._is_advanced_features_enabled = None
         self._defined_tags = None
         self._freeform_tags = None
 
@@ -154,7 +161,7 @@ class CreateFleetDetails(object):
     @property
     def inventory_log(self):
         """
-        Gets the inventory_log of this CreateFleetDetails.
+        **[Required]** Gets the inventory_log of this CreateFleetDetails.
 
         :return: The inventory_log of this CreateFleetDetails.
         :rtype: oci.jms.models.CustomLog
@@ -190,6 +197,30 @@ class CreateFleetDetails(object):
         :type: oci.jms.models.CustomLog
         """
         self._operation_log = operation_log
+
+    @property
+    def is_advanced_features_enabled(self):
+        """
+        Gets the is_advanced_features_enabled of this CreateFleetDetails.
+        Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+
+
+        :return: The is_advanced_features_enabled of this CreateFleetDetails.
+        :rtype: bool
+        """
+        return self._is_advanced_features_enabled
+
+    @is_advanced_features_enabled.setter
+    def is_advanced_features_enabled(self, is_advanced_features_enabled):
+        """
+        Sets the is_advanced_features_enabled of this CreateFleetDetails.
+        Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+
+
+        :param is_advanced_features_enabled: The is_advanced_features_enabled of this CreateFleetDetails.
+        :type: bool
+        """
+        self._is_advanced_features_enabled = is_advanced_features_enabled
 
     @property
     def defined_tags(self):

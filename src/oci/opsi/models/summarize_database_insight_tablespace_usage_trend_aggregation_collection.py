@@ -135,7 +135,7 @@ class SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection(object):
     def usage_unit(self):
         """
         **[Required]** Gets the usage_unit of this SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection.
-        Displays usage unit ( CORES, GB)
+        Displays usage unit ( CORES, GB , PERCENT, MBPS)
 
         Allowed values for this property are: "CORES", "GB", "MBPS", "IOPS", "PERCENT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -150,7 +150,7 @@ class SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection(object):
     def usage_unit(self, usage_unit):
         """
         Sets the usage_unit of this SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection.
-        Displays usage unit ( CORES, GB)
+        Displays usage unit ( CORES, GB , PERCENT, MBPS)
 
 
         :param usage_unit: The usage_unit of this SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection.

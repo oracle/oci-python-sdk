@@ -4,6 +4,8 @@
 
 from __future__ import absolute_import
 
+from .change_dashboard_group_compartment_details import ChangeDashboardGroupCompartmentDetails
+from .change_dashboard_group_details import ChangeDashboardGroupDetails
 from .create_dashboard_details import CreateDashboardDetails
 from .create_dashboard_group_details import CreateDashboardGroupDetails
 from .create_v1_dashboard_details import CreateV1DashboardDetails
@@ -20,6 +22,8 @@ from .v1_dashboard import V1Dashboard
 
 # Maps type names to classes for dashboard_service services.
 dashboard_service_type_mapping = {
+    "ChangeDashboardGroupCompartmentDetails": ChangeDashboardGroupCompartmentDetails,
+    "ChangeDashboardGroupDetails": ChangeDashboardGroupDetails,
     "CreateDashboardDetails": CreateDashboardDetails,
     "CreateDashboardGroupDetails": CreateDashboardGroupDetails,
     "CreateV1DashboardDetails": CreateV1DashboardDetails,

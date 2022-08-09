@@ -20,6 +20,8 @@ Dashboard Service
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.dashboard_service.models.ChangeDashboardGroupCompartmentDetails
+    oci.dashboard_service.models.ChangeDashboardGroupDetails
     oci.dashboard_service.models.CreateDashboardDetails
     oci.dashboard_service.models.CreateDashboardGroupDetails
     oci.dashboard_service.models.CreateV1DashboardDetails

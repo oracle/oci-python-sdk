@@ -229,7 +229,9 @@ class CreateLoadBalancerDetails(object):
         To get a list of available shapes, use the :func:`list_shapes`
         operation.
 
-        Example: `100Mbps`
+        Example: `flexible`
+        NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape
+              allowed would be `Flexible`
 
 
         :return: The shape_name of this CreateLoadBalancerDetails.
@@ -245,7 +247,9 @@ class CreateLoadBalancerDetails(object):
         To get a list of available shapes, use the :func:`list_shapes`
         operation.
 
-        Example: `100Mbps`
+        Example: `flexible`
+        NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape
+              allowed would be `Flexible`
 
 
         :param shape_name: The shape_name of this CreateLoadBalancerDetails.

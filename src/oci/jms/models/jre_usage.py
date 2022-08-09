@@ -72,6 +72,10 @@ class JreUsage(object):
             The value to assign to the version property of this JreUsage.
         :type version: str
 
+        :param days_under_security_baseline:
+            The value to assign to the days_under_security_baseline property of this JreUsage.
+        :type days_under_security_baseline: int
+
         :param operating_systems:
             The value to assign to the operating_systems property of this JreUsage.
         :type operating_systems: list[oci.jms.models.OperatingSystem]
@@ -119,6 +123,7 @@ class JreUsage(object):
             'vendor': 'str',
             'distribution': 'str',
             'version': 'str',
+            'days_under_security_baseline': 'int',
             'operating_systems': 'list[OperatingSystem]',
             'approximate_installation_count': 'int',
             'approximate_application_count': 'int',
@@ -140,6 +145,7 @@ class JreUsage(object):
             'vendor': 'vendor',
             'distribution': 'distribution',
             'version': 'version',
+            'days_under_security_baseline': 'daysUnderSecurityBaseline',
             'operating_systems': 'operatingSystems',
             'approximate_installation_count': 'approximateInstallationCount',
             'approximate_application_count': 'approximateApplicationCount',
@@ -160,6 +166,7 @@ class JreUsage(object):
         self._vendor = None
         self._distribution = None
         self._version = None
+        self._days_under_security_baseline = None
         self._operating_systems = None
         self._approximate_installation_count = None
         self._approximate_application_count = None
@@ -198,7 +205,7 @@ class JreUsage(object):
     def fleet_id(self):
         """
         Gets the fleet_id of this JreUsage.
-        The `OCID`__ of the related fleet.  This property value is present only for /actions/listJreUsage.
+        The `OCID`__ of the related fleet.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -212,7 +219,7 @@ class JreUsage(object):
     def fleet_id(self, fleet_id):
         """
         Sets the fleet_id of this JreUsage.
-        The `OCID`__ of the related fleet.  This property value is present only for /actions/listJreUsage.
+        The `OCID`__ of the related fleet.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -226,7 +233,7 @@ class JreUsage(object):
     def managed_instance_id(self):
         """
         Gets the managed_instance_id of this JreUsage.
-        The `OCID`__ of the related managed instance. This property value is present only for /actions/listJreUsage.
+        The `OCID`__ of the related managed instance. This property value is present only for /listJreUsage.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -240,7 +247,7 @@ class JreUsage(object):
     def managed_instance_id(self, managed_instance_id):
         """
         Sets the managed_instance_id of this JreUsage.
-        The `OCID`__ of the related managed instance. This property value is present only for /actions/listJreUsage.
+        The `OCID`__ of the related managed instance. This property value is present only for /listJreUsage.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -407,6 +414,30 @@ class JreUsage(object):
         :type: str
         """
         self._version = version
+
+    @property
+    def days_under_security_baseline(self):
+        """
+        Gets the days_under_security_baseline of this JreUsage.
+        The number of days since this release has been under the security baseline.
+
+
+        :return: The days_under_security_baseline of this JreUsage.
+        :rtype: int
+        """
+        return self._days_under_security_baseline
+
+    @days_under_security_baseline.setter
+    def days_under_security_baseline(self, days_under_security_baseline):
+        """
+        Sets the days_under_security_baseline of this JreUsage.
+        The number of days since this release has been under the security baseline.
+
+
+        :param days_under_security_baseline: The days_under_security_baseline of this JreUsage.
+        :type: int
+        """
+        self._days_under_security_baseline = days_under_security_baseline
 
     @property
     def operating_systems(self):

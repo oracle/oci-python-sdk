@@ -234,6 +234,10 @@ class Sddc(object):
             The value to assign to the time_hcx_license_status_updated property of this Sddc.
         :type time_hcx_license_status_updated: datetime
 
+        :param is_single_host_sddc:
+            The value to assign to the is_single_host_sddc property of this Sddc.
+        :type is_single_host_sddc: bool
+
         :param time_created:
             The value to assign to the time_created property of this Sddc.
         :type time_created: datetime
@@ -315,6 +319,7 @@ class Sddc(object):
             'hcx_on_prem_licenses': 'list[HcxLicenseSummary]',
             'time_hcx_billing_cycle_end': 'datetime',
             'time_hcx_license_status_updated': 'datetime',
+            'is_single_host_sddc': 'bool',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
@@ -368,6 +373,7 @@ class Sddc(object):
             'hcx_on_prem_licenses': 'hcxOnPremLicenses',
             'time_hcx_billing_cycle_end': 'timeHcxBillingCycleEnd',
             'time_hcx_license_status_updated': 'timeHcxLicenseStatusUpdated',
+            'is_single_host_sddc': 'isSingleHostSddc',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
@@ -420,6 +426,7 @@ class Sddc(object):
         self._hcx_on_prem_licenses = None
         self._time_hcx_billing_cycle_end = None
         self._time_hcx_license_status_updated = None
+        self._is_single_host_sddc = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
@@ -1821,6 +1828,30 @@ class Sddc(object):
         :type: datetime
         """
         self._time_hcx_license_status_updated = time_hcx_license_status_updated
+
+    @property
+    def is_single_host_sddc(self):
+        """
+        Gets the is_single_host_sddc of this Sddc.
+        Indicates whether this SDDC is designated for only single ESXi host.
+
+
+        :return: The is_single_host_sddc of this Sddc.
+        :rtype: bool
+        """
+        return self._is_single_host_sddc
+
+    @is_single_host_sddc.setter
+    def is_single_host_sddc(self, is_single_host_sddc):
+        """
+        Sets the is_single_host_sddc of this Sddc.
+        Indicates whether this SDDC is designated for only single ESXi host.
+
+
+        :param is_single_host_sddc: The is_single_host_sddc of this Sddc.
+        :type: bool
+        """
+        self._is_single_host_sddc = is_single_host_sddc
 
     @property
     def time_created(self):

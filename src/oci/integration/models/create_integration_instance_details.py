@@ -11,6 +11,11 @@ from oci.decorators import init_model_state_from_kwargs
 class CreateIntegrationInstanceDetails(object):
     """
     The information about new IntegrationInstance.
+    Some properties may not be applicable to specific integration types,
+    see `Differences in Instance Management`__
+    for details.
+
+    __ https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/application-integration&id=INTOO-GUID-931B5E33-4FE6-4997-93E5-8748516F46AA__GUID-176E43D5-4116-4828-8120-B929DF2A6B5E
     """
 
     #: A constant which can be used with the integration_instance_type property of a CreateIntegrationInstanceDetails.
@@ -20,6 +25,14 @@ class CreateIntegrationInstanceDetails(object):
     #: A constant which can be used with the integration_instance_type property of a CreateIntegrationInstanceDetails.
     #: This constant has a value of "ENTERPRISE"
     INTEGRATION_INSTANCE_TYPE_ENTERPRISE = "ENTERPRISE"
+
+    #: A constant which can be used with the integration_instance_type property of a CreateIntegrationInstanceDetails.
+    #: This constant has a value of "STANDARDX"
+    INTEGRATION_INSTANCE_TYPE_STANDARDX = "STANDARDX"
+
+    #: A constant which can be used with the integration_instance_type property of a CreateIntegrationInstanceDetails.
+    #: This constant has a value of "ENTERPRISEX"
+    INTEGRATION_INSTANCE_TYPE_ENTERPRISEX = "ENTERPRISEX"
 
     #: A constant which can be used with the consumption_model property of a CreateIntegrationInstanceDetails.
     #: This constant has a value of "UCM"
@@ -32,6 +45,14 @@ class CreateIntegrationInstanceDetails(object):
     #: A constant which can be used with the consumption_model property of a CreateIntegrationInstanceDetails.
     #: This constant has a value of "OIC4SAAS"
     CONSUMPTION_MODEL_OIC4_SAAS = "OIC4SAAS"
+
+    #: A constant which can be used with the shape property of a CreateIntegrationInstanceDetails.
+    #: This constant has a value of "DEVELOPMENT"
+    SHAPE_DEVELOPMENT = "DEVELOPMENT"
+
+    #: A constant which can be used with the shape property of a CreateIntegrationInstanceDetails.
+    #: This constant has a value of "PRODUCTION"
+    SHAPE_PRODUCTION = "PRODUCTION"
 
     def __init__(self, **kwargs):
         """
@@ -48,7 +69,7 @@ class CreateIntegrationInstanceDetails(object):
 
         :param integration_instance_type:
             The value to assign to the integration_instance_type property of this CreateIntegrationInstanceDetails.
-            Allowed values for this property are: "STANDARD", "ENTERPRISE"
+            Allowed values for this property are: "STANDARD", "ENTERPRISE", "STANDARDX", "ENTERPRISEX"
         :type integration_instance_type: str
 
         :param freeform_tags:
@@ -96,6 +117,11 @@ class CreateIntegrationInstanceDetails(object):
             The value to assign to the network_endpoint_details property of this CreateIntegrationInstanceDetails.
         :type network_endpoint_details: oci.integration.models.NetworkEndpointDetails
 
+        :param shape:
+            The value to assign to the shape property of this CreateIntegrationInstanceDetails.
+            Allowed values for this property are: "DEVELOPMENT", "PRODUCTION"
+        :type shape: str
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -111,7 +137,8 @@ class CreateIntegrationInstanceDetails(object):
             'alternate_custom_endpoints': 'list[CreateCustomEndpointDetails]',
             'consumption_model': 'str',
             'is_file_server_enabled': 'bool',
-            'network_endpoint_details': 'NetworkEndpointDetails'
+            'network_endpoint_details': 'NetworkEndpointDetails',
+            'shape': 'str'
         }
 
         self.attribute_map = {
@@ -128,7 +155,8 @@ class CreateIntegrationInstanceDetails(object):
             'alternate_custom_endpoints': 'alternateCustomEndpoints',
             'consumption_model': 'consumptionModel',
             'is_file_server_enabled': 'isFileServerEnabled',
-            'network_endpoint_details': 'networkEndpointDetails'
+            'network_endpoint_details': 'networkEndpointDetails',
+            'shape': 'shape'
         }
 
         self._display_name = None
@@ -145,6 +173,7 @@ class CreateIntegrationInstanceDetails(object):
         self._consumption_model = None
         self._is_file_server_enabled = None
         self._network_endpoint_details = None
+        self._shape = None
 
     @property
     def display_name(self):
@@ -198,9 +227,11 @@ class CreateIntegrationInstanceDetails(object):
     def integration_instance_type(self):
         """
         **[Required]** Gets the integration_instance_type of this CreateIntegrationInstanceDetails.
-        Standard or Enterprise type
+        Standard or Enterprise type,
+        Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
+        Oracle Integration 3 uses ENTERPRISEX and STANDARDX
 
-        Allowed values for this property are: "STANDARD", "ENTERPRISE"
+        Allowed values for this property are: "STANDARD", "ENTERPRISE", "STANDARDX", "ENTERPRISEX"
 
 
         :return: The integration_instance_type of this CreateIntegrationInstanceDetails.
@@ -212,13 +243,15 @@ class CreateIntegrationInstanceDetails(object):
     def integration_instance_type(self, integration_instance_type):
         """
         Sets the integration_instance_type of this CreateIntegrationInstanceDetails.
-        Standard or Enterprise type
+        Standard or Enterprise type,
+        Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
+        Oracle Integration 3 uses ENTERPRISEX and STANDARDX
 
 
         :param integration_instance_type: The integration_instance_type of this CreateIntegrationInstanceDetails.
         :type: str
         """
-        allowed_values = ["STANDARD", "ENTERPRISE"]
+        allowed_values = ["STANDARD", "ENTERPRISE", "STANDARDX", "ENTERPRISEX"]
         if not value_allowed_none_or_none_sentinel(integration_instance_type, allowed_values):
             raise ValueError(
                 "Invalid value for `integration_instance_type`, must be None or one of {0}"
@@ -499,6 +532,38 @@ class CreateIntegrationInstanceDetails(object):
         :type: oci.integration.models.NetworkEndpointDetails
         """
         self._network_endpoint_details = network_endpoint_details
+
+    @property
+    def shape(self):
+        """
+        Gets the shape of this CreateIntegrationInstanceDetails.
+        Shape
+
+        Allowed values for this property are: "DEVELOPMENT", "PRODUCTION"
+
+
+        :return: The shape of this CreateIntegrationInstanceDetails.
+        :rtype: str
+        """
+        return self._shape
+
+    @shape.setter
+    def shape(self, shape):
+        """
+        Sets the shape of this CreateIntegrationInstanceDetails.
+        Shape
+
+
+        :param shape: The shape of this CreateIntegrationInstanceDetails.
+        :type: str
+        """
+        allowed_values = ["DEVELOPMENT", "PRODUCTION"]
+        if not value_allowed_none_or_none_sentinel(shape, allowed_values):
+            raise ValueError(
+                "Invalid value for `shape`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._shape = shape
 
     def __repr__(self):
         return formatted_flat_dict(self)

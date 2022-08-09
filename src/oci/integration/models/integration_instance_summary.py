@@ -21,6 +21,14 @@ class IntegrationInstanceSummary(object):
     #: This constant has a value of "ENTERPRISE"
     INTEGRATION_INSTANCE_TYPE_ENTERPRISE = "ENTERPRISE"
 
+    #: A constant which can be used with the integration_instance_type property of a IntegrationInstanceSummary.
+    #: This constant has a value of "STANDARDX"
+    INTEGRATION_INSTANCE_TYPE_STANDARDX = "STANDARDX"
+
+    #: A constant which can be used with the integration_instance_type property of a IntegrationInstanceSummary.
+    #: This constant has a value of "ENTERPRISEX"
+    INTEGRATION_INSTANCE_TYPE_ENTERPRISEX = "ENTERPRISEX"
+
     #: A constant which can be used with the lifecycle_state property of a IntegrationInstanceSummary.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -61,6 +69,14 @@ class IntegrationInstanceSummary(object):
     #: This constant has a value of "OIC4SAAS"
     CONSUMPTION_MODEL_OIC4_SAAS = "OIC4SAAS"
 
+    #: A constant which can be used with the shape property of a IntegrationInstanceSummary.
+    #: This constant has a value of "DEVELOPMENT"
+    SHAPE_DEVELOPMENT = "DEVELOPMENT"
+
+    #: A constant which can be used with the shape property of a IntegrationInstanceSummary.
+    #: This constant has a value of "PRODUCTION"
+    SHAPE_PRODUCTION = "PRODUCTION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new IntegrationInstanceSummary object with values from keyword arguments.
@@ -80,7 +96,7 @@ class IntegrationInstanceSummary(object):
 
         :param integration_instance_type:
             The value to assign to the integration_instance_type property of this IntegrationInstanceSummary.
-            Allowed values for this property are: "STANDARD", "ENTERPRISE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "STANDARD", "ENTERPRISE", "STANDARDX", "ENTERPRISEX", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type integration_instance_type: str
 
@@ -140,6 +156,20 @@ class IntegrationInstanceSummary(object):
             The value to assign to the network_endpoint_details property of this IntegrationInstanceSummary.
         :type network_endpoint_details: oci.integration.models.NetworkEndpointDetails
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this IntegrationInstanceSummary.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this IntegrationInstanceSummary.
+        :type defined_tags: dict(str, dict(str, object))
+
+        :param shape:
+            The value to assign to the shape property of this IntegrationInstanceSummary.
+            Allowed values for this property are: "DEVELOPMENT", "PRODUCTION", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type shape: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -158,7 +188,10 @@ class IntegrationInstanceSummary(object):
             'custom_endpoint': 'CustomEndpointDetails',
             'alternate_custom_endpoints': 'list[CustomEndpointDetails]',
             'consumption_model': 'str',
-            'network_endpoint_details': 'NetworkEndpointDetails'
+            'network_endpoint_details': 'NetworkEndpointDetails',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))',
+            'shape': 'str'
         }
 
         self.attribute_map = {
@@ -178,7 +211,10 @@ class IntegrationInstanceSummary(object):
             'custom_endpoint': 'customEndpoint',
             'alternate_custom_endpoints': 'alternateCustomEndpoints',
             'consumption_model': 'consumptionModel',
-            'network_endpoint_details': 'networkEndpointDetails'
+            'network_endpoint_details': 'networkEndpointDetails',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags',
+            'shape': 'shape'
         }
 
         self._id = None
@@ -198,6 +234,9 @@ class IntegrationInstanceSummary(object):
         self._alternate_custom_endpoints = None
         self._consumption_model = None
         self._network_endpoint_details = None
+        self._freeform_tags = None
+        self._defined_tags = None
+        self._shape = None
 
     @property
     def id(self):
@@ -275,9 +314,11 @@ class IntegrationInstanceSummary(object):
     def integration_instance_type(self):
         """
         **[Required]** Gets the integration_instance_type of this IntegrationInstanceSummary.
-        Standard or Enterprise type
+        Standard or Enterprise type,
+        Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
+        Oracle Integration 3 uses ENTERPRISEX and STANDARDX
 
-        Allowed values for this property are: "STANDARD", "ENTERPRISE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "STANDARD", "ENTERPRISE", "STANDARDX", "ENTERPRISEX", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -290,13 +331,15 @@ class IntegrationInstanceSummary(object):
     def integration_instance_type(self, integration_instance_type):
         """
         Sets the integration_instance_type of this IntegrationInstanceSummary.
-        Standard or Enterprise type
+        Standard or Enterprise type,
+        Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
+        Oracle Integration 3 uses ENTERPRISEX and STANDARDX
 
 
         :param integration_instance_type: The integration_instance_type of this IntegrationInstanceSummary.
         :type: str
         """
-        allowed_values = ["STANDARD", "ENTERPRISE"]
+        allowed_values = ["STANDARD", "ENTERPRISE", "STANDARDX", "ENTERPRISEX"]
         if not value_allowed_none_or_none_sentinel(integration_instance_type, allowed_values):
             integration_instance_type = 'UNKNOWN_ENUM_VALUE'
         self._integration_instance_type = integration_instance_type
@@ -616,6 +659,92 @@ class IntegrationInstanceSummary(object):
         :type: oci.integration.models.NetworkEndpointDetails
         """
         self._network_endpoint_details = network_endpoint_details
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this IntegrationInstanceSummary.
+        Simple key-value pair that is applied without any predefined name,
+        type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :return: The freeform_tags of this IntegrationInstanceSummary.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this IntegrationInstanceSummary.
+        Simple key-value pair that is applied without any predefined name,
+        type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :param freeform_tags: The freeform_tags of this IntegrationInstanceSummary.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this IntegrationInstanceSummary.
+        Usage of predefined tag keys. These predefined keys are scoped to
+        namespaces.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :return: The defined_tags of this IntegrationInstanceSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this IntegrationInstanceSummary.
+        Usage of predefined tag keys. These predefined keys are scoped to
+        namespaces.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :param defined_tags: The defined_tags of this IntegrationInstanceSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
+    def shape(self):
+        """
+        Gets the shape of this IntegrationInstanceSummary.
+        Shape
+
+        Allowed values for this property are: "DEVELOPMENT", "PRODUCTION", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The shape of this IntegrationInstanceSummary.
+        :rtype: str
+        """
+        return self._shape
+
+    @shape.setter
+    def shape(self, shape):
+        """
+        Sets the shape of this IntegrationInstanceSummary.
+        Shape
+
+
+        :param shape: The shape of this IntegrationInstanceSummary.
+        :type: str
+        """
+        allowed_values = ["DEVELOPMENT", "PRODUCTION"]
+        if not value_allowed_none_or_none_sentinel(shape, allowed_values):
+            shape = 'UNKNOWN_ENUM_VALUE'
+        self._shape = shape
 
     def __repr__(self):
         return formatted_flat_dict(self)

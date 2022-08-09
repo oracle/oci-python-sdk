@@ -104,6 +104,126 @@ class ApmSyntheticClient(object):
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
 
+    def aggregate_network_data(self, apm_domain_id, monitor_id, aggregate_network_data_details, **kwargs):
+        """
+        Gets aggregated network data for given executions.
+
+
+        :param str apm_domain_id: (required)
+            The APM domain ID the request is intended for.
+
+        :param str monitor_id: (required)
+            The OCID of the monitor.
+
+        :param oci.apm_synthetics.models.AggregateNetworkDataDetails aggregate_network_data_details: (required)
+            Details of the vantage point and corresponding execution times.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.apm_synthetics.models.AggregatedNetworkDataResult`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmsynthetics/aggregate_network_data.py.html>`__ to see an example of how to use aggregate_network_data API.
+        """
+        resource_path = "/monitors/{monitorId}/actions/aggregateNetworkData"
+        method = "POST"
+        operation_name = "aggregate_network_data"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/AggregatedNetworkDataResult/AggregateNetworkData"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "aggregate_network_data got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "monitorId": monitor_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "apmDomainId": apm_domain_id
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=aggregate_network_data_details,
+                response_type="AggregatedNetworkDataResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=aggregate_network_data_details,
+                response_type="AggregatedNetworkDataResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
     def create_dedicated_vantage_point(self, apm_domain_id, create_dedicated_vantage_point_details, **kwargs):
         """
         Registers a new dedicated vantage point.
@@ -1203,8 +1323,8 @@ class ApmSyntheticClient(object):
             The maximum number of items to return.
 
         :param str page: (optional)
-            For list pagination. The maximum number of results per page, or items to return in a paginated
-            \"List\" call. For important details about how pagination works, see
+            The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For information on how pagination works, see
             `List Pagination`__.
 
             Example: `50`
@@ -1220,7 +1340,7 @@ class ApmSyntheticClient(object):
             The field to sort by. Only one sort order may be provided.
             Default order of displayName is ascending.
             Default order of timeCreated and timeUpdated is descending.
-            The displayName sort by is case sensitive.
+            The displayName sort by is case-sensitive.
 
             Allowed values are: "displayName", "name", "timeCreated", "timeUpdated", "status"
 
@@ -1382,8 +1502,8 @@ class ApmSyntheticClient(object):
             The maximum number of items to return.
 
         :param str page: (optional)
-            For list pagination. The maximum number of results per page, or items to return in a paginated
-            \"List\" call. For important details about how pagination works, see
+            The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For information on how pagination works, see
             `List Pagination`__.
 
             Example: `50`
@@ -1536,8 +1656,8 @@ class ApmSyntheticClient(object):
             The maximum number of items to return.
 
         :param str page: (optional)
-            For list pagination. The maximum number of results per page, or items to return in a paginated
-            \"List\" call. For important details about how pagination works, see
+            The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For information on how pagination works, see
             `List Pagination`__.
 
             Example: `50`
@@ -1691,8 +1811,8 @@ class ApmSyntheticClient(object):
             The maximum number of items to return.
 
         :param str page: (optional)
-            For list pagination. The maximum number of results per page, or items to return in a paginated
-            \"List\" call. For important details about how pagination works, see
+            The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For information on how pagination works, see
             `List Pagination`__.
 
             Example: `50`

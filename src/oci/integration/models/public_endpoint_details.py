@@ -61,7 +61,8 @@ class PublicEndpointDetails(NetworkEndpointDetails):
     def allowlisted_http_ips(self):
         """
         Gets the allowlisted_http_ips of this PublicEndpointDetails.
-        Source IP addresses or IP address ranges ingress rules.
+        Source IP addresses or IP address ranges ingress rules. (ex: \"168.122.59.5\", \"10.20.30.0/26\")
+        An invalid IP or CIDR block will result in a 400 response.
 
 
         :return: The allowlisted_http_ips of this PublicEndpointDetails.
@@ -73,7 +74,8 @@ class PublicEndpointDetails(NetworkEndpointDetails):
     def allowlisted_http_ips(self, allowlisted_http_ips):
         """
         Sets the allowlisted_http_ips of this PublicEndpointDetails.
-        Source IP addresses or IP address ranges ingress rules.
+        Source IP addresses or IP address ranges ingress rules. (ex: \"168.122.59.5\", \"10.20.30.0/26\")
+        An invalid IP or CIDR block will result in a 400 response.
 
 
         :param allowlisted_http_ips: The allowlisted_http_ips of this PublicEndpointDetails.

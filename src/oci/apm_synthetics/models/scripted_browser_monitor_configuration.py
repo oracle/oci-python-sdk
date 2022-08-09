@@ -28,6 +28,10 @@ class ScriptedBrowserMonitorConfiguration(MonitorConfiguration):
             The value to assign to the is_failure_retried property of this ScriptedBrowserMonitorConfiguration.
         :type is_failure_retried: bool
 
+        :param dns_configuration:
+            The value to assign to the dns_configuration property of this ScriptedBrowserMonitorConfiguration.
+        :type dns_configuration: oci.apm_synthetics.models.DnsConfiguration
+
         :param is_certificate_validation_enabled:
             The value to assign to the is_certificate_validation_enabled property of this ScriptedBrowserMonitorConfiguration.
         :type is_certificate_validation_enabled: bool
@@ -40,6 +44,7 @@ class ScriptedBrowserMonitorConfiguration(MonitorConfiguration):
         self.swagger_types = {
             'config_type': 'str',
             'is_failure_retried': 'bool',
+            'dns_configuration': 'DnsConfiguration',
             'is_certificate_validation_enabled': 'bool',
             'network_configuration': 'NetworkConfiguration'
         }
@@ -47,12 +52,14 @@ class ScriptedBrowserMonitorConfiguration(MonitorConfiguration):
         self.attribute_map = {
             'config_type': 'configType',
             'is_failure_retried': 'isFailureRetried',
+            'dns_configuration': 'dnsConfiguration',
             'is_certificate_validation_enabled': 'isCertificateValidationEnabled',
             'network_configuration': 'networkConfiguration'
         }
 
         self._config_type = None
         self._is_failure_retried = None
+        self._dns_configuration = None
         self._is_certificate_validation_enabled = None
         self._network_configuration = None
         self._config_type = 'SCRIPTED_BROWSER_CONFIG'

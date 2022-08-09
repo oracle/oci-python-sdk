@@ -9,6 +9,7 @@ from .add_data_files_details import AddDataFilesDetails
 from .add_managed_database_to_managed_database_group_details import AddManagedDatabaseToManagedDatabaseGroupDetails
 from .addm_task_summary import AddmTaskSummary
 from .addm_tasks_collection import AddmTasksCollection
+from .advisor_rule import AdvisorRule
 from .alert_log_collection import AlertLogCollection
 from .alert_log_count_summary import AlertLogCountSummary
 from .alert_log_counts_collection import AlertLogCountsCollection
@@ -86,11 +87,14 @@ from .drop_sql_tuning_task_details import DropSqlTuningTaskDetails
 from .drop_tablespace_details import DropTablespaceDetails
 from .execution_plan_stats_comparision import ExecutionPlanStatsComparision
 from .failed_connections_aggregate_metrics import FailedConnectionsAggregateMetrics
+from .finding_schema_or_operation import FindingSchemaOrOperation
 from .fleet_metric_definition import FleetMetricDefinition
 from .fleet_metric_summary_definition import FleetMetricSummaryDefinition
 from .fleet_status_by_category import FleetStatusByCategory
 from .fleet_summary import FleetSummary
 from .historic_addm_result import HistoricAddmResult
+from .implement_optimizer_statistics_advisor_recommendations_details import ImplementOptimizerStatisticsAdvisorRecommendationsDetails
+from .implement_optimizer_statistics_advisor_recommendations_job import ImplementOptimizerStatisticsAdvisorRecommendationsJob
 from .instance_details import InstanceDetails
 from .job import Job
 from .job_collection import JobCollection
@@ -124,6 +128,18 @@ from .object_privilege_collection import ObjectPrivilegeCollection
 from .object_privilege_summary import ObjectPrivilegeSummary
 from .object_storage_job_execution_result_details import ObjectStorageJobExecutionResultDetails
 from .object_storage_job_execution_result_location import ObjectStorageJobExecutionResultLocation
+from .optimizer_database import OptimizerDatabase
+from .optimizer_statistics_advisor_execution import OptimizerStatisticsAdvisorExecution
+from .optimizer_statistics_advisor_execution_report import OptimizerStatisticsAdvisorExecutionReport
+from .optimizer_statistics_advisor_execution_script import OptimizerStatisticsAdvisorExecutionScript
+from .optimizer_statistics_advisor_execution_summary import OptimizerStatisticsAdvisorExecutionSummary
+from .optimizer_statistics_advisor_executions_collection import OptimizerStatisticsAdvisorExecutionsCollection
+from .optimizer_statistics_collection_aggregation_summary import OptimizerStatisticsCollectionAggregationSummary
+from .optimizer_statistics_collection_aggregations_collection import OptimizerStatisticsCollectionAggregationsCollection
+from .optimizer_statistics_collection_operation import OptimizerStatisticsCollectionOperation
+from .optimizer_statistics_collection_operation_summary import OptimizerStatisticsCollectionOperationSummary
+from .optimizer_statistics_collection_operations_collection import OptimizerStatisticsCollectionOperationsCollection
+from .optimizer_statistics_operation_task import OptimizerStatisticsOperationTask
 from .parent_group import ParentGroup
 from .pdb_metrics import PdbMetrics
 from .pdb_status_details import PdbStatusDetails
@@ -131,13 +147,19 @@ from .proxied_for_user_collection import ProxiedForUserCollection
 from .proxied_for_user_summary import ProxiedForUserSummary
 from .proxy_user_collection import ProxyUserCollection
 from .proxy_user_summary import ProxyUserSummary
+from .recommendation import Recommendation
+from .recommendation_example import RecommendationExample
+from .recommendation_example_line import RecommendationExampleLine
+from .recommendation_rationale import RecommendationRationale
 from .remove_data_file_details import RemoveDataFileDetails
 from .remove_managed_database_from_managed_database_group_details import RemoveManagedDatabaseFromManagedDatabaseGroupDetails
 from .reset_database_parameters_details import ResetDatabaseParametersDetails
 from .resize_data_file_details import ResizeDataFileDetails
 from .role_collection import RoleCollection
 from .role_summary import RoleSummary
+from .rule_finding import RuleFinding
 from .run_historic_addm_details import RunHistoricAddmDetails
+from .schema_definition import SchemaDefinition
 from .snapshot_details import SnapshotDetails
 from .sql_job import SqlJob
 from .sql_tuning_advisor_task_collection import SqlTuningAdvisorTaskCollection
@@ -169,6 +191,8 @@ from .start_sql_tuning_task_details import StartSqlTuningTaskDetails
 from .statements_aggregate_metrics import StatementsAggregateMetrics
 from .system_privilege_collection import SystemPrivilegeCollection
 from .system_privilege_summary import SystemPrivilegeSummary
+from .table_statistic_summary import TableStatisticSummary
+from .table_statistics_collection import TableStatisticsCollection
 from .tablespace import Tablespace
 from .tablespace_admin_credential_details import TablespaceAdminCredentialDetails
 from .tablespace_admin_password_credential_details import TablespaceAdminPasswordCredentialDetails
@@ -204,6 +228,7 @@ database_management_type_mapping = {
     "AddManagedDatabaseToManagedDatabaseGroupDetails": AddManagedDatabaseToManagedDatabaseGroupDetails,
     "AddmTaskSummary": AddmTaskSummary,
     "AddmTasksCollection": AddmTasksCollection,
+    "AdvisorRule": AdvisorRule,
     "AlertLogCollection": AlertLogCollection,
     "AlertLogCountSummary": AlertLogCountSummary,
     "AlertLogCountsCollection": AlertLogCountsCollection,
@@ -281,11 +306,14 @@ database_management_type_mapping = {
     "DropTablespaceDetails": DropTablespaceDetails,
     "ExecutionPlanStatsComparision": ExecutionPlanStatsComparision,
     "FailedConnectionsAggregateMetrics": FailedConnectionsAggregateMetrics,
+    "FindingSchemaOrOperation": FindingSchemaOrOperation,
     "FleetMetricDefinition": FleetMetricDefinition,
     "FleetMetricSummaryDefinition": FleetMetricSummaryDefinition,
     "FleetStatusByCategory": FleetStatusByCategory,
     "FleetSummary": FleetSummary,
     "HistoricAddmResult": HistoricAddmResult,
+    "ImplementOptimizerStatisticsAdvisorRecommendationsDetails": ImplementOptimizerStatisticsAdvisorRecommendationsDetails,
+    "ImplementOptimizerStatisticsAdvisorRecommendationsJob": ImplementOptimizerStatisticsAdvisorRecommendationsJob,
     "InstanceDetails": InstanceDetails,
     "Job": Job,
     "JobCollection": JobCollection,
@@ -319,6 +347,18 @@ database_management_type_mapping = {
     "ObjectPrivilegeSummary": ObjectPrivilegeSummary,
     "ObjectStorageJobExecutionResultDetails": ObjectStorageJobExecutionResultDetails,
     "ObjectStorageJobExecutionResultLocation": ObjectStorageJobExecutionResultLocation,
+    "OptimizerDatabase": OptimizerDatabase,
+    "OptimizerStatisticsAdvisorExecution": OptimizerStatisticsAdvisorExecution,
+    "OptimizerStatisticsAdvisorExecutionReport": OptimizerStatisticsAdvisorExecutionReport,
+    "OptimizerStatisticsAdvisorExecutionScript": OptimizerStatisticsAdvisorExecutionScript,
+    "OptimizerStatisticsAdvisorExecutionSummary": OptimizerStatisticsAdvisorExecutionSummary,
+    "OptimizerStatisticsAdvisorExecutionsCollection": OptimizerStatisticsAdvisorExecutionsCollection,
+    "OptimizerStatisticsCollectionAggregationSummary": OptimizerStatisticsCollectionAggregationSummary,
+    "OptimizerStatisticsCollectionAggregationsCollection": OptimizerStatisticsCollectionAggregationsCollection,
+    "OptimizerStatisticsCollectionOperation": OptimizerStatisticsCollectionOperation,
+    "OptimizerStatisticsCollectionOperationSummary": OptimizerStatisticsCollectionOperationSummary,
+    "OptimizerStatisticsCollectionOperationsCollection": OptimizerStatisticsCollectionOperationsCollection,
+    "OptimizerStatisticsOperationTask": OptimizerStatisticsOperationTask,
     "ParentGroup": ParentGroup,
     "PdbMetrics": PdbMetrics,
     "PdbStatusDetails": PdbStatusDetails,
@@ -326,13 +366,19 @@ database_management_type_mapping = {
     "ProxiedForUserSummary": ProxiedForUserSummary,
     "ProxyUserCollection": ProxyUserCollection,
     "ProxyUserSummary": ProxyUserSummary,
+    "Recommendation": Recommendation,
+    "RecommendationExample": RecommendationExample,
+    "RecommendationExampleLine": RecommendationExampleLine,
+    "RecommendationRationale": RecommendationRationale,
     "RemoveDataFileDetails": RemoveDataFileDetails,
     "RemoveManagedDatabaseFromManagedDatabaseGroupDetails": RemoveManagedDatabaseFromManagedDatabaseGroupDetails,
     "ResetDatabaseParametersDetails": ResetDatabaseParametersDetails,
     "ResizeDataFileDetails": ResizeDataFileDetails,
     "RoleCollection": RoleCollection,
     "RoleSummary": RoleSummary,
+    "RuleFinding": RuleFinding,
     "RunHistoricAddmDetails": RunHistoricAddmDetails,
+    "SchemaDefinition": SchemaDefinition,
     "SnapshotDetails": SnapshotDetails,
     "SqlJob": SqlJob,
     "SqlTuningAdvisorTaskCollection": SqlTuningAdvisorTaskCollection,
@@ -364,6 +410,8 @@ database_management_type_mapping = {
     "StatementsAggregateMetrics": StatementsAggregateMetrics,
     "SystemPrivilegeCollection": SystemPrivilegeCollection,
     "SystemPrivilegeSummary": SystemPrivilegeSummary,
+    "TableStatisticSummary": TableStatisticSummary,
+    "TableStatisticsCollection": TableStatisticsCollection,
     "Tablespace": Tablespace,
     "TablespaceAdminCredentialDetails": TablespaceAdminCredentialDetails,
     "TablespaceAdminPasswordCredentialDetails": TablespaceAdminPasswordCredentialDetails,

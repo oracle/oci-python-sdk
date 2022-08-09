@@ -41,6 +41,18 @@ class MonitorSummary(object):
     #: This constant has a value of "INVALID"
     STATUS_INVALID = "INVALID"
 
+    #: A constant which can be used with the scheduling_policy property of a MonitorSummary.
+    #: This constant has a value of "ALL"
+    SCHEDULING_POLICY_ALL = "ALL"
+
+    #: A constant which can be used with the scheduling_policy property of a MonitorSummary.
+    #: This constant has a value of "ROUND_ROBIN"
+    SCHEDULING_POLICY_ROUND_ROBIN = "ROUND_ROBIN"
+
+    #: A constant which can be used with the scheduling_policy property of a MonitorSummary.
+    #: This constant has a value of "BATCHED_ROUND_ROBIN"
+    SCHEDULING_POLICY_BATCHED_ROUND_ROBIN = "BATCHED_ROUND_ROBIN"
+
     def __init__(self, **kwargs):
         """
         Initializes a new MonitorSummary object with values from keyword arguments.
@@ -114,6 +126,20 @@ class MonitorSummary(object):
             The value to assign to the defined_tags property of this MonitorSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param is_run_now:
+            The value to assign to the is_run_now property of this MonitorSummary.
+        :type is_run_now: bool
+
+        :param scheduling_policy:
+            The value to assign to the scheduling_policy property of this MonitorSummary.
+            Allowed values for this property are: "ALL", "ROUND_ROBIN", "BATCHED_ROUND_ROBIN", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type scheduling_policy: str
+
+        :param batch_interval_in_seconds:
+            The value to assign to the batch_interval_in_seconds property of this MonitorSummary.
+        :type batch_interval_in_seconds: int
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -131,7 +157,10 @@ class MonitorSummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'is_run_now': 'bool',
+            'scheduling_policy': 'str',
+            'batch_interval_in_seconds': 'int'
         }
 
         self.attribute_map = {
@@ -150,7 +179,10 @@ class MonitorSummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'is_run_now': 'isRunNow',
+            'scheduling_policy': 'schedulingPolicy',
+            'batch_interval_in_seconds': 'batchIntervalInSeconds'
         }
 
         self._id = None
@@ -169,6 +201,9 @@ class MonitorSummary(object):
         self._time_updated = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._is_run_now = None
+        self._scheduling_policy = None
+        self._batch_interval_in_seconds = None
 
     @property
     def id(self):
@@ -607,6 +642,84 @@ class MonitorSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def is_run_now(self):
+        """
+        **[Required]** Gets the is_run_now of this MonitorSummary.
+        If isRunNow is enabled, then the monitor will run now.
+
+
+        :return: The is_run_now of this MonitorSummary.
+        :rtype: bool
+        """
+        return self._is_run_now
+
+    @is_run_now.setter
+    def is_run_now(self, is_run_now):
+        """
+        Sets the is_run_now of this MonitorSummary.
+        If isRunNow is enabled, then the monitor will run now.
+
+
+        :param is_run_now: The is_run_now of this MonitorSummary.
+        :type: bool
+        """
+        self._is_run_now = is_run_now
+
+    @property
+    def scheduling_policy(self):
+        """
+        **[Required]** Gets the scheduling_policy of this MonitorSummary.
+        Scheduling policy on Vantage points.
+
+        Allowed values for this property are: "ALL", "ROUND_ROBIN", "BATCHED_ROUND_ROBIN", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The scheduling_policy of this MonitorSummary.
+        :rtype: str
+        """
+        return self._scheduling_policy
+
+    @scheduling_policy.setter
+    def scheduling_policy(self, scheduling_policy):
+        """
+        Sets the scheduling_policy of this MonitorSummary.
+        Scheduling policy on Vantage points.
+
+
+        :param scheduling_policy: The scheduling_policy of this MonitorSummary.
+        :type: str
+        """
+        allowed_values = ["ALL", "ROUND_ROBIN", "BATCHED_ROUND_ROBIN"]
+        if not value_allowed_none_or_none_sentinel(scheduling_policy, allowed_values):
+            scheduling_policy = 'UNKNOWN_ENUM_VALUE'
+        self._scheduling_policy = scheduling_policy
+
+    @property
+    def batch_interval_in_seconds(self):
+        """
+        **[Required]** Gets the batch_interval_in_seconds of this MonitorSummary.
+        Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+
+
+        :return: The batch_interval_in_seconds of this MonitorSummary.
+        :rtype: int
+        """
+        return self._batch_interval_in_seconds
+
+    @batch_interval_in_seconds.setter
+    def batch_interval_in_seconds(self, batch_interval_in_seconds):
+        """
+        Sets the batch_interval_in_seconds of this MonitorSummary.
+        Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+
+
+        :param batch_interval_in_seconds: The batch_interval_in_seconds of this MonitorSummary.
+        :type: int
+        """
+        self._batch_interval_in_seconds = batch_interval_in_seconds
 
     def __repr__(self):
         return formatted_flat_dict(self)

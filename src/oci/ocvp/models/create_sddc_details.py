@@ -75,6 +75,10 @@ class CreateSddcDetails(object):
             The value to assign to the is_hcx_enterprise_enabled property of this CreateSddcDetails.
         :type is_hcx_enterprise_enabled: bool
 
+        :param is_single_host_sddc:
+            The value to assign to the is_single_host_sddc property of this CreateSddcDetails.
+        :type is_single_host_sddc: bool
+
         :param ssh_authorized_keys:
             The value to assign to the ssh_authorized_keys property of this CreateSddcDetails.
         :type ssh_authorized_keys: str
@@ -159,6 +163,7 @@ class CreateSddcDetails(object):
             'is_hcx_enabled': 'bool',
             'hcx_vlan_id': 'str',
             'is_hcx_enterprise_enabled': 'bool',
+            'is_single_host_sddc': 'bool',
             'ssh_authorized_keys': 'str',
             'workload_network_cidr': 'str',
             'provisioning_subnet_id': 'str',
@@ -190,6 +195,7 @@ class CreateSddcDetails(object):
             'is_hcx_enabled': 'isHcxEnabled',
             'hcx_vlan_id': 'hcxVlanId',
             'is_hcx_enterprise_enabled': 'isHcxEnterpriseEnabled',
+            'is_single_host_sddc': 'isSingleHostSddc',
             'ssh_authorized_keys': 'sshAuthorizedKeys',
             'workload_network_cidr': 'workloadNetworkCidr',
             'provisioning_subnet_id': 'provisioningSubnetId',
@@ -220,6 +226,7 @@ class CreateSddcDetails(object):
         self._is_hcx_enabled = None
         self._hcx_vlan_id = None
         self._is_hcx_enterprise_enabled = None
+        self._is_single_host_sddc = None
         self._ssh_authorized_keys = None
         self._workload_network_cidr = None
         self._provisioning_subnet_id = None
@@ -384,10 +391,11 @@ class CreateSddcDetails(object):
         """
         **[Required]** Gets the esxi_hosts_count of this CreateSddcDetails.
         The number of ESXi hosts to create in the SDDC. You can add more hosts later
-        (see :func:`create_esxi_host`).
+        (see :func:`create_esxi_host`). Creating
+        a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
 
-        **Note:** If you later delete EXSi hosts from the SDDC to total less than 3,
-        you are still billed for the 3 minimum recommended ESXi hosts. Also,
+        **Note:** If you later delete EXSi hosts from a production SDDC to total less
+        than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also,
         you cannot add more VMware workloads to the SDDC until it again has at least
         3 ESXi hosts.
 
@@ -402,10 +410,11 @@ class CreateSddcDetails(object):
         """
         Sets the esxi_hosts_count of this CreateSddcDetails.
         The number of ESXi hosts to create in the SDDC. You can add more hosts later
-        (see :func:`create_esxi_host`).
+        (see :func:`create_esxi_host`). Creating
+        a SDDC with a ESXi host count of 1 will be considered a single ESXi host SDDC.
 
-        **Note:** If you later delete EXSi hosts from the SDDC to total less than 3,
-        you are still billed for the 3 minimum recommended ESXi hosts. Also,
+        **Note:** If you later delete EXSi hosts from a production SDDC to total less
+        than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also,
         you cannot add more VMware workloads to the SDDC until it again has at least
         3 ESXi hosts.
 
@@ -526,6 +535,30 @@ class CreateSddcDetails(object):
         :type: bool
         """
         self._is_hcx_enterprise_enabled = is_hcx_enterprise_enabled
+
+    @property
+    def is_single_host_sddc(self):
+        """
+        Gets the is_single_host_sddc of this CreateSddcDetails.
+        Indicates whether this SDDC is designated for only single ESXi host.
+
+
+        :return: The is_single_host_sddc of this CreateSddcDetails.
+        :rtype: bool
+        """
+        return self._is_single_host_sddc
+
+    @is_single_host_sddc.setter
+    def is_single_host_sddc(self, is_single_host_sddc):
+        """
+        Sets the is_single_host_sddc of this CreateSddcDetails.
+        Indicates whether this SDDC is designated for only single ESXi host.
+
+
+        :param is_single_host_sddc: The is_single_host_sddc of this CreateSddcDetails.
+        :type: bool
+        """
+        self._is_single_host_sddc = is_single_host_sddc
 
     @property
     def ssh_authorized_keys(self):

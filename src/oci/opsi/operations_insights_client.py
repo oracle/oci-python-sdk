@@ -7368,6 +7368,15 @@ class OperationsInsightsClient(object):
         :param bool compartment_id_in_subtree: (optional)
             A flag to search all resources within a given compartment and all sub-compartments.
 
+        :param list[str] host_type: (optional)
+            Filter by one or more host types.
+            Possible values are CLOUD-HOST, EXTERNAL-HOST
+
+        :param str host_id: (optional)
+            Optional `OCID`__ of the host (Compute Id)
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -7409,7 +7418,9 @@ class OperationsInsightsClient(object):
             "freeform_tag_equals",
             "defined_tag_exists",
             "freeform_tag_exists",
-            "compartment_id_in_subtree"
+            "compartment_id_in_subtree",
+            "host_type",
+            "host_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -7452,7 +7463,9 @@ class OperationsInsightsClient(object):
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
             "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
-            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "hostType": self.base_client.generate_collection_format_param(kwargs.get("host_type", missing), 'multi'),
+            "hostId": kwargs.get("host_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -7523,9 +7536,7 @@ class OperationsInsightsClient(object):
 
         :param list[str] host_type: (optional)
             Filter by one or more host types.
-            Possible value is EXTERNAL-HOST.
-
-            Allowed values are: "EXTERNAL-HOST"
+            Possible values are CLOUD-HOST, EXTERNAL-HOST
 
         :param list[str] platform_type: (optional)
             Filter by one or more platform types.
@@ -7636,14 +7647,6 @@ class OperationsInsightsClient(object):
                 if lifecycle_state_item not in lifecycle_state_allowed_values:
                     raise ValueError(
                         "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
-                    )
-
-        if 'host_type' in kwargs:
-            host_type_allowed_values = ["EXTERNAL-HOST"]
-            for host_type_item in kwargs['host_type']:
-                if host_type_item not in host_type_allowed_values:
-                    raise ValueError(
-                        "Invalid value for `host_type`, must be one of {0}".format(host_type_allowed_values)
                     )
 
         if 'platform_type' in kwargs:
@@ -7800,6 +7803,15 @@ class OperationsInsightsClient(object):
             Unique Oracle-assigned identifier for the request. If you need to contact
             Oracle about a particular request, please provide the request ID.
 
+        :param list[str] host_type: (optional)
+            Filter by one or more host types.
+            Possible values are CLOUD-HOST, EXTERNAL-HOST
+
+        :param str host_id: (optional)
+            Optional `OCID`__ of the host (Compute Id)
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -7836,7 +7848,9 @@ class OperationsInsightsClient(object):
             "page",
             "sort_order",
             "sort_by",
-            "opc_request_id"
+            "opc_request_id",
+            "host_type",
+            "host_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -7876,7 +7890,9 @@ class OperationsInsightsClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
-            "sortBy": kwargs.get("sort_by", missing)
+            "sortBy": kwargs.get("sort_by", missing),
+            "hostType": self.base_client.generate_collection_format_param(kwargs.get("host_type", missing), 'multi'),
+            "hostId": kwargs.get("host_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -8059,6 +8075,152 @@ class OperationsInsightsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="ImportableAgentEntitySummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def list_importable_compute_entities(self, compartment_id, **kwargs):
+        """
+        Gets a list of available compute intances running cloud agent to add a new hostInsight.  An Compute entity is \"available\"
+        and will be shown if all the following conditions are true:
+           1. Compute is running OCA
+           2. OCI Management Agent is not enabled or If OCI Management Agent is enabled
+              2.1 The agent OCID is not already being used for an existing hostInsight.
+              2.2 The agent availabilityStatus = 'ACTIVE'
+              2.3 The agent lifecycleState = 'ACTIVE'
+
+
+        :param str compartment_id: (required)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to
+            return in a paginated \"List\" call.
+            For important details about how pagination works, see
+            `List Pagination`__.
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from
+            the previous \"List\" call. For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            Compute entity list sort options.
+
+            Allowed values are: "computeId", "computeDisplayName", "platformType", "hostName"
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.opsi.models.ImportableComputeEntitySummaryCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/list_importable_compute_entities.py.html>`__ to see an example of how to use list_importable_compute_entities API.
+        """
+        resource_path = "/importableComputeEntities"
+        method = "GET"
+        operation_name = "list_importable_compute_entities"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/ListImportableComputeEntities"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_importable_compute_entities got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["computeId", "computeDisplayName", "platformType", "hostName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ImportableComputeEntitySummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ImportableComputeEntitySummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
@@ -15709,6 +15871,15 @@ class OperationsInsightsClient(object):
         :param bool compartment_id_in_subtree: (optional)
             A flag to search all resources within a given compartment and all sub-compartments.
 
+        :param list[str] host_type: (optional)
+            Filter by one or more host types.
+            Possible values are CLOUD-HOST, EXTERNAL-HOST
+
+        :param str host_id: (optional)
+            Optional `OCID`__ of the host (Compute Id)
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -15751,7 +15922,9 @@ class OperationsInsightsClient(object):
             "freeform_tag_equals",
             "defined_tag_exists",
             "freeform_tag_exists",
-            "compartment_id_in_subtree"
+            "compartment_id_in_subtree",
+            "host_type",
+            "host_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -15804,7 +15977,9 @@ class OperationsInsightsClient(object):
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
             "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
-            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "hostType": self.base_client.generate_collection_format_param(kwargs.get("host_type", missing), 'multi'),
+            "hostId": kwargs.get("host_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -15970,6 +16145,15 @@ class OperationsInsightsClient(object):
         :param bool compartment_id_in_subtree: (optional)
             A flag to search all resources within a given compartment and all sub-compartments.
 
+        :param list[str] host_type: (optional)
+            Filter by one or more host types.
+            Possible values are CLOUD-HOST, EXTERNAL-HOST
+
+        :param str host_id: (optional)
+            Optional `OCID`__ of the host (Compute Id)
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -16014,7 +16198,9 @@ class OperationsInsightsClient(object):
             "freeform_tag_equals",
             "defined_tag_exists",
             "freeform_tag_exists",
-            "compartment_id_in_subtree"
+            "compartment_id_in_subtree",
+            "host_type",
+            "host_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -16069,7 +16255,9 @@ class OperationsInsightsClient(object):
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
             "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
-            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "hostType": self.base_client.generate_collection_format_param(kwargs.get("host_type", missing), 'multi'),
+            "hostId": kwargs.get("host_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -16232,6 +16420,15 @@ class OperationsInsightsClient(object):
         :param bool compartment_id_in_subtree: (optional)
             A flag to search all resources within a given compartment and all sub-compartments.
 
+        :param list[str] host_type: (optional)
+            Filter by one or more host types.
+            Possible values are CLOUD-HOST, EXTERNAL-HOST
+
+        :param str host_id: (optional)
+            Optional `OCID`__ of the host (Compute Id)
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -16277,7 +16474,9 @@ class OperationsInsightsClient(object):
             "freeform_tag_equals",
             "defined_tag_exists",
             "freeform_tag_exists",
-            "compartment_id_in_subtree"
+            "compartment_id_in_subtree",
+            "host_type",
+            "host_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -16326,7 +16525,9 @@ class OperationsInsightsClient(object):
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
             "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
-            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "hostType": self.base_client.generate_collection_format_param(kwargs.get("host_type", missing), 'multi'),
+            "hostId": kwargs.get("host_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -16464,6 +16665,15 @@ class OperationsInsightsClient(object):
         :param bool compartment_id_in_subtree: (optional)
             A flag to search all resources within a given compartment and all sub-compartments.
 
+        :param list[str] host_type: (optional)
+            Filter by one or more host types.
+            Possible values are CLOUD-HOST, EXTERNAL-HOST
+
+        :param str host_id: (optional)
+            Optional `OCID`__ of the host (Compute Id)
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -16504,7 +16714,9 @@ class OperationsInsightsClient(object):
             "freeform_tag_equals",
             "defined_tag_exists",
             "freeform_tag_exists",
-            "compartment_id_in_subtree"
+            "compartment_id_in_subtree",
+            "host_type",
+            "host_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -16534,7 +16746,9 @@ class OperationsInsightsClient(object):
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
             "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
-            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "hostType": self.base_client.generate_collection_format_param(kwargs.get("host_type", missing), 'multi'),
+            "hostId": kwargs.get("host_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -16678,6 +16892,15 @@ class OperationsInsightsClient(object):
         :param bool compartment_id_in_subtree: (optional)
             A flag to search all resources within a given compartment and all sub-compartments.
 
+        :param list[str] host_type: (optional)
+            Filter by one or more host types.
+            Possible values are CLOUD-HOST, EXTERNAL-HOST
+
+        :param str host_id: (optional)
+            Optional `OCID`__ of the host (Compute Id)
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -16719,7 +16942,9 @@ class OperationsInsightsClient(object):
             "freeform_tag_equals",
             "defined_tag_exists",
             "freeform_tag_exists",
-            "compartment_id_in_subtree"
+            "compartment_id_in_subtree",
+            "host_type",
+            "host_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -16764,7 +16989,9 @@ class OperationsInsightsClient(object):
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
             "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
-            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "hostType": self.base_client.generate_collection_format_param(kwargs.get("host_type", missing), 'multi'),
+            "hostId": kwargs.get("host_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -16900,6 +17127,15 @@ class OperationsInsightsClient(object):
         :param bool compartment_id_in_subtree: (optional)
             A flag to search all resources within a given compartment and all sub-compartments.
 
+        :param list[str] host_type: (optional)
+            Filter by one or more host types.
+            Possible values are CLOUD-HOST, EXTERNAL-HOST
+
+        :param str host_id: (optional)
+            Optional `OCID`__ of the host (Compute Id)
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -16940,7 +17176,9 @@ class OperationsInsightsClient(object):
             "freeform_tag_equals",
             "defined_tag_exists",
             "freeform_tag_exists",
-            "compartment_id_in_subtree"
+            "compartment_id_in_subtree",
+            "host_type",
+            "host_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -16970,7 +17208,9 @@ class OperationsInsightsClient(object):
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
             "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
-            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "hostType": self.base_client.generate_collection_format_param(kwargs.get("host_type", missing), 'multi'),
+            "hostId": kwargs.get("host_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -17073,6 +17313,15 @@ class OperationsInsightsClient(object):
             Unique Oracle-assigned identifier for the request. If you need to contact
             Oracle about a particular request, please provide the request ID.
 
+        :param list[str] host_type: (optional)
+            Filter by one or more host types.
+            Possible values are CLOUD-HOST, EXTERNAL-HOST
+
+        :param str host_id: (optional)
+            Optional `OCID`__ of the host (Compute Id)
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -17105,7 +17354,9 @@ class OperationsInsightsClient(object):
             "time_interval_end",
             "page",
             "limit",
-            "opc_request_id"
+            "opc_request_id",
+            "host_type",
+            "host_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -17120,7 +17371,9 @@ class OperationsInsightsClient(object):
             "timeIntervalStart": kwargs.get("time_interval_start", missing),
             "timeIntervalEnd": kwargs.get("time_interval_end", missing),
             "page": kwargs.get("page", missing),
-            "limit": kwargs.get("limit", missing)
+            "limit": kwargs.get("limit", missing),
+            "hostType": self.base_client.generate_collection_format_param(kwargs.get("host_type", missing), 'multi'),
+            "hostId": kwargs.get("host_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

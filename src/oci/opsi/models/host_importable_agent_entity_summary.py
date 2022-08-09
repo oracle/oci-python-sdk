@@ -37,7 +37,7 @@ class HostImportableAgentEntitySummary(ImportableAgentEntitySummary):
 
         :param entity_source:
             The value to assign to the entity_source property of this HostImportableAgentEntitySummary.
-            Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "MACS_MANAGED_CLOUD_HOST", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type entity_source: str
 

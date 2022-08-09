@@ -21,6 +21,14 @@ class IntegrationInstance(object):
     #: This constant has a value of "ENTERPRISE"
     INTEGRATION_INSTANCE_TYPE_ENTERPRISE = "ENTERPRISE"
 
+    #: A constant which can be used with the integration_instance_type property of a IntegrationInstance.
+    #: This constant has a value of "STANDARDX"
+    INTEGRATION_INSTANCE_TYPE_STANDARDX = "STANDARDX"
+
+    #: A constant which can be used with the integration_instance_type property of a IntegrationInstance.
+    #: This constant has a value of "ENTERPRISEX"
+    INTEGRATION_INSTANCE_TYPE_ENTERPRISEX = "ENTERPRISEX"
+
     #: A constant which can be used with the lifecycle_state property of a IntegrationInstance.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -61,6 +69,14 @@ class IntegrationInstance(object):
     #: This constant has a value of "OIC4SAAS"
     CONSUMPTION_MODEL_OIC4_SAAS = "OIC4SAAS"
 
+    #: A constant which can be used with the shape property of a IntegrationInstance.
+    #: This constant has a value of "DEVELOPMENT"
+    SHAPE_DEVELOPMENT = "DEVELOPMENT"
+
+    #: A constant which can be used with the shape property of a IntegrationInstance.
+    #: This constant has a value of "PRODUCTION"
+    SHAPE_PRODUCTION = "PRODUCTION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new IntegrationInstance object with values from keyword arguments.
@@ -80,7 +96,7 @@ class IntegrationInstance(object):
 
         :param integration_instance_type:
             The value to assign to the integration_instance_type property of this IntegrationInstance.
-            Allowed values for this property are: "STANDARD", "ENTERPRISE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "STANDARD", "ENTERPRISE", "STANDARDX", "ENTERPRISEX", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type integration_instance_type: str
 
@@ -148,6 +164,20 @@ class IntegrationInstance(object):
             The value to assign to the network_endpoint_details property of this IntegrationInstance.
         :type network_endpoint_details: oci.integration.models.NetworkEndpointDetails
 
+        :param idcs_info:
+            The value to assign to the idcs_info property of this IntegrationInstance.
+        :type idcs_info: oci.integration.models.IdcsInfoDetails
+
+        :param attachments:
+            The value to assign to the attachments property of this IntegrationInstance.
+        :type attachments: list[oci.integration.models.AttachmentDetails]
+
+        :param shape:
+            The value to assign to the shape property of this IntegrationInstance.
+            Allowed values for this property are: "DEVELOPMENT", "PRODUCTION", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type shape: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -168,7 +198,10 @@ class IntegrationInstance(object):
             'custom_endpoint': 'CustomEndpointDetails',
             'alternate_custom_endpoints': 'list[CustomEndpointDetails]',
             'consumption_model': 'str',
-            'network_endpoint_details': 'NetworkEndpointDetails'
+            'network_endpoint_details': 'NetworkEndpointDetails',
+            'idcs_info': 'IdcsInfoDetails',
+            'attachments': 'list[AttachmentDetails]',
+            'shape': 'str'
         }
 
         self.attribute_map = {
@@ -190,7 +223,10 @@ class IntegrationInstance(object):
             'custom_endpoint': 'customEndpoint',
             'alternate_custom_endpoints': 'alternateCustomEndpoints',
             'consumption_model': 'consumptionModel',
-            'network_endpoint_details': 'networkEndpointDetails'
+            'network_endpoint_details': 'networkEndpointDetails',
+            'idcs_info': 'idcsInfo',
+            'attachments': 'attachments',
+            'shape': 'shape'
         }
 
         self._id = None
@@ -212,6 +248,9 @@ class IntegrationInstance(object):
         self._alternate_custom_endpoints = None
         self._consumption_model = None
         self._network_endpoint_details = None
+        self._idcs_info = None
+        self._attachments = None
+        self._shape = None
 
     @property
     def id(self):
@@ -289,9 +328,11 @@ class IntegrationInstance(object):
     def integration_instance_type(self):
         """
         **[Required]** Gets the integration_instance_type of this IntegrationInstance.
-        Standard or Enterprise type
+        Standard or Enterprise type,
+        Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
+        Oracle Integration 3 uses ENTERPRISEX and STANDARDX
 
-        Allowed values for this property are: "STANDARD", "ENTERPRISE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "STANDARD", "ENTERPRISE", "STANDARDX", "ENTERPRISEX", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -304,13 +345,15 @@ class IntegrationInstance(object):
     def integration_instance_type(self, integration_instance_type):
         """
         Sets the integration_instance_type of this IntegrationInstance.
-        Standard or Enterprise type
+        Standard or Enterprise type,
+        Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
+        Oracle Integration 3 uses ENTERPRISEX and STANDARDX
 
 
         :param integration_instance_type: The integration_instance_type of this IntegrationInstance.
         :type: str
         """
-        allowed_values = ["STANDARD", "ENTERPRISE"]
+        allowed_values = ["STANDARD", "ENTERPRISE", "STANDARDX", "ENTERPRISEX"]
         if not value_allowed_none_or_none_sentinel(integration_instance_type, allowed_values):
             integration_instance_type = 'UNKNOWN_ENUM_VALUE'
         self._integration_instance_type = integration_instance_type
@@ -686,6 +729,80 @@ class IntegrationInstance(object):
         :type: oci.integration.models.NetworkEndpointDetails
         """
         self._network_endpoint_details = network_endpoint_details
+
+    @property
+    def idcs_info(self):
+        """
+        Gets the idcs_info of this IntegrationInstance.
+
+        :return: The idcs_info of this IntegrationInstance.
+        :rtype: oci.integration.models.IdcsInfoDetails
+        """
+        return self._idcs_info
+
+    @idcs_info.setter
+    def idcs_info(self, idcs_info):
+        """
+        Sets the idcs_info of this IntegrationInstance.
+
+        :param idcs_info: The idcs_info of this IntegrationInstance.
+        :type: oci.integration.models.IdcsInfoDetails
+        """
+        self._idcs_info = idcs_info
+
+    @property
+    def attachments(self):
+        """
+        Gets the attachments of this IntegrationInstance.
+        A list of associated attachments to other services
+
+
+        :return: The attachments of this IntegrationInstance.
+        :rtype: list[oci.integration.models.AttachmentDetails]
+        """
+        return self._attachments
+
+    @attachments.setter
+    def attachments(self, attachments):
+        """
+        Sets the attachments of this IntegrationInstance.
+        A list of associated attachments to other services
+
+
+        :param attachments: The attachments of this IntegrationInstance.
+        :type: list[oci.integration.models.AttachmentDetails]
+        """
+        self._attachments = attachments
+
+    @property
+    def shape(self):
+        """
+        Gets the shape of this IntegrationInstance.
+        Shape
+
+        Allowed values for this property are: "DEVELOPMENT", "PRODUCTION", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The shape of this IntegrationInstance.
+        :rtype: str
+        """
+        return self._shape
+
+    @shape.setter
+    def shape(self, shape):
+        """
+        Sets the shape of this IntegrationInstance.
+        Shape
+
+
+        :param shape: The shape of this IntegrationInstance.
+        :type: str
+        """
+        allowed_values = ["DEVELOPMENT", "PRODUCTION"]
+        if not value_allowed_none_or_none_sentinel(shape, allowed_values):
+            shape = 'UNKNOWN_ENUM_VALUE'
+        self._shape = shape
 
     def __repr__(self):
         return formatted_flat_dict(self)
