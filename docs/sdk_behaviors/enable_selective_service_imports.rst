@@ -1,5 +1,14 @@
 .. _sdk-enable-selective-service-imports
 
+.. raw:: html
+
+    <script type='text/javascript'>
+        var oldDocsHost = 'oracle-cloud-infrastructure-python-sdk';
+        if (window.location.href.indexOf(oldDocsHost) != -1) {
+            window.location.href = 'https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/deprecation-notice.html';
+        }
+    </script>
+
 Enable Selective Service Imports
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 If users experience slowdowns in their applications/scripts while importing the ``oci`` module for python SDK, then, they can

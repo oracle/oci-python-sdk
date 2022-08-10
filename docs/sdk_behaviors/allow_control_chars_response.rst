@@ -1,5 +1,14 @@
 .. _sdk-allow_control_chars_response:
 
+.. raw:: html
+
+    <script type='text/javascript'>
+        var oldDocsHost = 'oracle-cloud-infrastructure-python-sdk';
+        if (window.location.href.indexOf(oldDocsHost) != -1) {
+            window.location.href = 'https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/deprecation-notice.html';
+        }
+    </script>
+
 Allow control characters in response
 ~~~~~~~~
 The SDK helps deserialize any response object that is coming in from an API call. The deserialization uses the json library 

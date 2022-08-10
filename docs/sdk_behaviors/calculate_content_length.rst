@@ -1,5 +1,14 @@
 .. _sdk-calculate-content-length:
 
+.. raw:: html
+
+    <script type='text/javascript'>
+        var oldDocsHost = 'oracle-cloud-infrastructure-python-sdk';
+        if (window.location.href.indexOf(oldDocsHost) != -1) {
+            window.location.href = 'https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/deprecation-notice.html';
+        }
+    </script>
+
 Request body content length
 ~~~~~~~~
 By default, any requests that takes in an optional content length in the SDK will try calculate body's content length if the content length is not provided. 

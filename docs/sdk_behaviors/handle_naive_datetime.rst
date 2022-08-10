@@ -1,5 +1,14 @@
 .. _handle-naive-datetime:
 
+.. raw:: html
+
+    <script type='text/javascript'>
+        var oldDocsHost = 'oracle-cloud-infrastructure-python-sdk';
+        if (window.location.href.indexOf(oldDocsHost) != -1) {
+            window.location.href = 'https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/deprecation-notice.html';
+        }
+    </script>
+
 Handling naive datetimes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 For operations and models which accept a `datetime <https://docs.python.org/3.6/library/datetime.html>`__ object, if a naive

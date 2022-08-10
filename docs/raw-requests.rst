@@ -1,9 +1,9 @@
 .. raw:: html
 
     <script type='text/javascript'>
-        var oldDocsHost = 'oracle-bare-metal-cloud-services-python-sdk';
+        var oldDocsHost = 'oracle-cloud-infrastructure-python-sdk';
         if (window.location.href.indexOf(oldDocsHost) != -1) {
-            window.location.href = 'https://oracle-bare-metal-cloud-services-python-sdk.readthedocs.io/en/latest/deprecation-notice.html';
+            window.location.href = 'https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/deprecation-notice.html';
         }
     </script>
 

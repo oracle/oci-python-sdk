@@ -136,6 +136,8 @@ html_sidebars = {
 
 html_search_language = language
 
+html_baseurl = "https://docs.oracle.com/iaas/tools/python/latest/"
+
 # A dictionary with options for the search language support, empty by default.
 # 'ja' uses this config value.
 # 'zh' user can custom change `jieba` dictionary path.
