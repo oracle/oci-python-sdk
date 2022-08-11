@@ -1,11 +1,13 @@
+.. raw:: html
+
+    <script type='text/javascript'>
+        var oldDocsHost = 'oracle-cloud-infrastructure-python-sdk';
+        if (window.location.href.indexOf(oldDocsHost) != -1) {
+            window.location.href = 'https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/deprecation-notice.html';
+        }
+    </script>
+
 MultiSearchCommandDescriptor
 ============================
 
 .. currentmodule:: oci.log_analytics.models
-
-.. autoclass:: MultiSearchCommandDescriptor
-    :show-inheritance:
-    :special-members: __init__
-    :members:
-    :undoc-members:
-    :inherited-members:
