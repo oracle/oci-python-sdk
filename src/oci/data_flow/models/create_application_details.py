@@ -50,6 +50,10 @@ class CreateApplicationDetails(object):
             The value to assign to the arguments property of this CreateApplicationDetails.
         :type arguments: list[str]
 
+        :param application_log_config:
+            The value to assign to the application_log_config property of this CreateApplicationDetails.
+        :type application_log_config: oci.data_flow.models.ApplicationLogConfig
+
         :param class_name:
             The value to assign to the class_name property of this CreateApplicationDetails.
         :type class_name: str
@@ -144,6 +148,7 @@ class CreateApplicationDetails(object):
         self.swagger_types = {
             'archive_uri': 'str',
             'arguments': 'list[str]',
+            'application_log_config': 'ApplicationLogConfig',
             'class_name': 'str',
             'compartment_id': 'str',
             'configuration': 'dict(str, str)',
@@ -171,6 +176,7 @@ class CreateApplicationDetails(object):
         self.attribute_map = {
             'archive_uri': 'archiveUri',
             'arguments': 'arguments',
+            'application_log_config': 'applicationLogConfig',
             'class_name': 'className',
             'compartment_id': 'compartmentId',
             'configuration': 'configuration',
@@ -197,6 +203,7 @@ class CreateApplicationDetails(object):
 
         self._archive_uri = None
         self._arguments = None
+        self._application_log_config = None
         self._class_name = None
         self._compartment_id = None
         self._configuration = None
@@ -283,6 +290,26 @@ class CreateApplicationDetails(object):
         :type: list[str]
         """
         self._arguments = arguments
+
+    @property
+    def application_log_config(self):
+        """
+        Gets the application_log_config of this CreateApplicationDetails.
+
+        :return: The application_log_config of this CreateApplicationDetails.
+        :rtype: oci.data_flow.models.ApplicationLogConfig
+        """
+        return self._application_log_config
+
+    @application_log_config.setter
+    def application_log_config(self, application_log_config):
+        """
+        Sets the application_log_config of this CreateApplicationDetails.
+
+        :param application_log_config: The application_log_config of this CreateApplicationDetails.
+        :type: oci.data_flow.models.ApplicationLogConfig
+        """
+        self._application_log_config = application_log_config
 
     @property
     def class_name(self):

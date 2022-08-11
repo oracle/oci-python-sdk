@@ -29,6 +29,7 @@ from .job_log_configuration_details import JobLogConfigurationDetails
 from .job_run import JobRun
 from .job_run_log_details import JobRunLogDetails
 from .job_run_summary import JobRunSummary
+from .job_shape_config_details import JobShapeConfigDetails
 from .job_shape_summary import JobShapeSummary
 from .job_summary import JobSummary
 from .log_details import LogDetails
@@ -101,6 +102,7 @@ data_science_type_mapping = {
     "JobRun": JobRun,
     "JobRunLogDetails": JobRunLogDetails,
     "JobRunSummary": JobRunSummary,
+    "JobShapeConfigDetails": JobShapeConfigDetails,
     "JobShapeSummary": JobShapeSummary,
     "JobSummary": JobSummary,
     "LogDetails": LogDetails,

@@ -18,6 +18,7 @@ Cloud Guard
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.cloud_guard.models.AbsoluteTimeStartPolicy
     oci.cloud_guard.models.ActivityProblemAggregation
     oci.cloud_guard.models.ActivityProblemAggregationCollection
     oci.cloud_guard.models.AddCompartmentDetails
@@ -25,6 +26,7 @@ Cloud Guard
     oci.cloud_guard.models.AttachTargetDetectorRecipeDetails
     oci.cloud_guard.models.AttachTargetResponderRecipeDetails
     oci.cloud_guard.models.CandidateResponderRule
+    oci.cloud_guard.models.ChangeDataSourceCompartmentDetails
     oci.cloud_guard.models.ChangeDetectorRecipeCompartmentDetails
     oci.cloud_guard.models.ChangeManagedListCompartmentDetails
     oci.cloud_guard.models.ChangeResponderRecipeCompartmentDetails
@@ -40,8 +42,12 @@ Cloud Guard
     oci.cloud_guard.models.ConditionOperator
     oci.cloud_guard.models.ConfigValue
     oci.cloud_guard.models.Configuration
+    oci.cloud_guard.models.ContinuousQueryStartPolicy
     oci.cloud_guard.models.CreateDataMaskRuleDetails
+    oci.cloud_guard.models.CreateDataSourceDetails
     oci.cloud_guard.models.CreateDetectorRecipeDetails
+    oci.cloud_guard.models.CreateDetectorRecipeDetectorRuleDetails
+    oci.cloud_guard.models.CreateDetectorRuleDetails
     oci.cloud_guard.models.CreateManagedListDetails
     oci.cloud_guard.models.CreateResponderRecipeDetails
     oci.cloud_guard.models.CreateSecurityPolicyDetails
@@ -53,6 +59,15 @@ Cloud Guard
     oci.cloud_guard.models.DataMaskRule
     oci.cloud_guard.models.DataMaskRuleCollection
     oci.cloud_guard.models.DataMaskRuleSummary
+    oci.cloud_guard.models.DataSource
+    oci.cloud_guard.models.DataSourceCollection
+    oci.cloud_guard.models.DataSourceDetails
+    oci.cloud_guard.models.DataSourceEventCollection
+    oci.cloud_guard.models.DataSourceEventInfo
+    oci.cloud_guard.models.DataSourceEventSummary
+    oci.cloud_guard.models.DataSourceMappingInfo
+    oci.cloud_guard.models.DataSourceSummary
+    oci.cloud_guard.models.DataSourceSummaryDetails
     oci.cloud_guard.models.Detector
     oci.cloud_guard.models.DetectorCollection
     oci.cloud_guard.models.DetectorConfiguration
@@ -67,15 +82,23 @@ Cloud Guard
     oci.cloud_guard.models.DetectorRuleCollection
     oci.cloud_guard.models.DetectorRuleSummary
     oci.cloud_guard.models.DetectorSummary
+    oci.cloud_guard.models.EntitiesMapping
+    oci.cloud_guard.models.EntityDetails
     oci.cloud_guard.models.ExecuteResponderExecutionDetails
     oci.cloud_guard.models.GeographicalLocation
     oci.cloud_guard.models.ImpactedResourceCollection
     oci.cloud_guard.models.ImpactedResourceSummary
+    oci.cloud_guard.models.InsightTypeLoggingQueryDetails
+    oci.cloud_guard.models.LoggingEventInfo
+    oci.cloud_guard.models.LoggingQueryDataSourceDetails
+    oci.cloud_guard.models.LoggingQueryDataSourceSummaryDetails
+    oci.cloud_guard.models.LoggingQueryDetails
     oci.cloud_guard.models.ManagedList
     oci.cloud_guard.models.ManagedListCollection
     oci.cloud_guard.models.ManagedListSummary
     oci.cloud_guard.models.ManagedListTypeCollection
     oci.cloud_guard.models.ManagedListTypeSummary
+    oci.cloud_guard.models.NoDelayStartPolicy
     oci.cloud_guard.models.OperatorSummary
     oci.cloud_guard.models.PolicyCollection
     oci.cloud_guard.models.PolicySummary
@@ -86,6 +109,8 @@ Cloud Guard
     oci.cloud_guard.models.ProblemCollection
     oci.cloud_guard.models.ProblemEndpointCollection
     oci.cloud_guard.models.ProblemEndpointSummary
+    oci.cloud_guard.models.ProblemEntityCollection
+    oci.cloud_guard.models.ProblemEntitySummary
     oci.cloud_guard.models.ProblemHistoryCollection
     oci.cloud_guard.models.ProblemHistorySummary
     oci.cloud_guard.models.ProblemSummary
@@ -93,6 +118,7 @@ Cloud Guard
     oci.cloud_guard.models.ProblemTrendAggregationCollection
     oci.cloud_guard.models.RecommendationSummary
     oci.cloud_guard.models.RecommendationSummaryCollection
+    oci.cloud_guard.models.RegionStatusDetail
     oci.cloud_guard.models.RemoveCompartmentDetails
     oci.cloud_guard.models.RequestSummarizedTrendResourceRiskScoresDetails
     oci.cloud_guard.models.ResourceProfile
@@ -185,6 +211,7 @@ Cloud Guard
     oci.cloud_guard.models.UpdateBulkProblemStatusDetails
     oci.cloud_guard.models.UpdateConfigurationDetails
     oci.cloud_guard.models.UpdateDataMaskRuleDetails
+    oci.cloud_guard.models.UpdateDataSourceDetails
     oci.cloud_guard.models.UpdateDetectorRecipeDetails
     oci.cloud_guard.models.UpdateDetectorRecipeDetectorRule
     oci.cloud_guard.models.UpdateDetectorRecipeDetectorRuleDetails
@@ -209,3 +236,11 @@ Cloud Guard
     oci.cloud_guard.models.UpdateTargetResponderRecipeDetails
     oci.cloud_guard.models.UpdateTargetResponderRecipeResponderRuleDetails
     oci.cloud_guard.models.UpdateTargetResponderRuleDetails
+    oci.cloud_guard.models.WorkRequest
+    oci.cloud_guard.models.WorkRequestError
+    oci.cloud_guard.models.WorkRequestErrorCollection
+    oci.cloud_guard.models.WorkRequestLogEntry
+    oci.cloud_guard.models.WorkRequestLogEntryCollection
+    oci.cloud_guard.models.WorkRequestResource
+    oci.cloud_guard.models.WorkRequestSummary
+    oci.cloud_guard.models.WorkRequestSummaryCollection

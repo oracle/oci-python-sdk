@@ -51,6 +51,10 @@ class UpdateApplicationDetails(object):
             Allowed values for this property are: "SCALA", "JAVA", "PYTHON", "SQL"
         :type language: str
 
+        :param application_log_config:
+            The value to assign to the application_log_config property of this UpdateApplicationDetails.
+        :type application_log_config: oci.data_flow.models.ApplicationLogConfig
+
         :param archive_uri:
             The value to assign to the archive_uri property of this UpdateApplicationDetails.
         :type archive_uri: str
@@ -129,6 +133,7 @@ class UpdateApplicationDetails(object):
             'file_uri': 'str',
             'spark_version': 'str',
             'language': 'str',
+            'application_log_config': 'ApplicationLogConfig',
             'archive_uri': 'str',
             'arguments': 'list[str]',
             'configuration': 'dict(str, str)',
@@ -154,6 +159,7 @@ class UpdateApplicationDetails(object):
             'file_uri': 'fileUri',
             'spark_version': 'sparkVersion',
             'language': 'language',
+            'application_log_config': 'applicationLogConfig',
             'archive_uri': 'archiveUri',
             'arguments': 'arguments',
             'configuration': 'configuration',
@@ -178,6 +184,7 @@ class UpdateApplicationDetails(object):
         self._file_uri = None
         self._spark_version = None
         self._language = None
+        self._application_log_config = None
         self._archive_uri = None
         self._arguments = None
         self._configuration = None
@@ -302,6 +309,26 @@ class UpdateApplicationDetails(object):
                 .format(allowed_values)
             )
         self._language = language
+
+    @property
+    def application_log_config(self):
+        """
+        Gets the application_log_config of this UpdateApplicationDetails.
+
+        :return: The application_log_config of this UpdateApplicationDetails.
+        :rtype: oci.data_flow.models.ApplicationLogConfig
+        """
+        return self._application_log_config
+
+    @application_log_config.setter
+    def application_log_config(self, application_log_config):
+        """
+        Sets the application_log_config of this UpdateApplicationDetails.
+
+        :param application_log_config: The application_log_config of this UpdateApplicationDetails.
+        :type: oci.data_flow.models.ApplicationLogConfig
+        """
+        self._application_log_config = application_log_config
 
     @property
     def archive_uri(self):

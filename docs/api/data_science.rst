@@ -43,6 +43,7 @@ Data Science
     oci.data_science.models.JobRun
     oci.data_science.models.JobRunLogDetails
     oci.data_science.models.JobRunSummary
+    oci.data_science.models.JobShapeConfigDetails
     oci.data_science.models.JobShapeSummary
     oci.data_science.models.JobSummary
     oci.data_science.models.LogDetails

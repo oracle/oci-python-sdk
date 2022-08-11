@@ -76,6 +76,89 @@ def test_add_compartment(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
+def test_cancel_work_request(testing_service_client):
+    if not testing_service_client.is_api_enabled('cloud_guard', 'CancelWorkRequest'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('cloud_guard', util.camelize('cloud_guard'), 'CancelWorkRequest')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='cloud_guard', api_name='CancelWorkRequest')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
+            response = client.cancel_work_request(
+                work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'cloud_guard',
+            'CancelWorkRequest',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'cancel_work_request',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
+def test_change_data_source_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('cloud_guard', 'ChangeDataSourceCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('cloud_guard', util.camelize('cloud_guard'), 'ChangeDataSourceCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='cloud_guard', api_name='ChangeDataSourceCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
+            response = client.change_data_source_compartment(
+                data_source_id=request.pop(util.camelize('dataSourceId')),
+                change_data_source_compartment_details=request.pop(util.camelize('ChangeDataSourceCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'cloud_guard',
+            'ChangeDataSourceCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_data_source_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_change_detector_recipe_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'ChangeDetectorRecipeCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -327,6 +410,47 @@ def test_create_data_mask_rule(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
+def test_create_data_source(testing_service_client):
+    if not testing_service_client.is_api_enabled('cloud_guard', 'CreateDataSource'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('cloud_guard', util.camelize('cloud_guard'), 'CreateDataSource')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='cloud_guard', api_name='CreateDataSource')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
+            response = client.create_data_source(
+                create_data_source_details=request.pop(util.camelize('CreateDataSourceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'cloud_guard',
+            'CreateDataSource',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'create_data_source',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_create_detector_recipe(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'CreateDetectorRecipe'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -362,6 +486,48 @@ def test_create_detector_recipe(testing_service_client):
             result,
             service_error,
             'detectorRecipe',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
+def test_create_detector_recipe_detector_rule(testing_service_client):
+    if not testing_service_client.is_api_enabled('cloud_guard', 'CreateDetectorRecipeDetectorRule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('cloud_guard', util.camelize('cloud_guard'), 'CreateDetectorRecipeDetectorRule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='cloud_guard', api_name='CreateDetectorRecipeDetectorRule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
+            response = client.create_detector_recipe_detector_rule(
+                detector_recipe_id=request.pop(util.camelize('detectorRecipeId')),
+                create_detector_recipe_detector_rule_details=request.pop(util.camelize('CreateDetectorRecipeDetectorRuleDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'cloud_guard',
+            'CreateDetectorRecipeDetectorRule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'detectorRecipeDetectorRule',
             False,
             False
         )
@@ -698,6 +864,47 @@ def test_delete_data_mask_rule(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
+def test_delete_data_source(testing_service_client):
+    if not testing_service_client.is_api_enabled('cloud_guard', 'DeleteDataSource'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('cloud_guard', util.camelize('cloud_guard'), 'DeleteDataSource')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='cloud_guard', api_name='DeleteDataSource')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
+            response = client.delete_data_source(
+                data_source_id=request.pop(util.camelize('dataSourceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'cloud_guard',
+            'DeleteDataSource',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_data_source',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_delete_detector_recipe(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'DeleteDetectorRecipe'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -733,6 +940,91 @@ def test_delete_detector_recipe(testing_service_client):
             result,
             service_error,
             'delete_detector_recipe',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
+def test_delete_detector_recipe_detector_rule(testing_service_client):
+    if not testing_service_client.is_api_enabled('cloud_guard', 'DeleteDetectorRecipeDetectorRule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('cloud_guard', util.camelize('cloud_guard'), 'DeleteDetectorRecipeDetectorRule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='cloud_guard', api_name='DeleteDetectorRecipeDetectorRule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
+            response = client.delete_detector_recipe_detector_rule(
+                detector_recipe_id=request.pop(util.camelize('detectorRecipeId')),
+                detector_rule_id=request.pop(util.camelize('detectorRuleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'cloud_guard',
+            'DeleteDetectorRecipeDetectorRule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_detector_recipe_detector_rule',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
+def test_delete_detector_recipe_detector_rule_data_source(testing_service_client):
+    if not testing_service_client.is_api_enabled('cloud_guard', 'DeleteDetectorRecipeDetectorRuleDataSource'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('cloud_guard', util.camelize('cloud_guard'), 'DeleteDetectorRecipeDetectorRuleDataSource')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='cloud_guard', api_name='DeleteDetectorRecipeDetectorRuleDataSource')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
+            response = client.delete_detector_recipe_detector_rule_data_source(
+                detector_recipe_id=request.pop(util.camelize('detectorRecipeId')),
+                detector_rule_id=request.pop(util.camelize('detectorRuleId')),
+                data_source_id=request.pop(util.camelize('dataSourceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'cloud_guard',
+            'DeleteDetectorRecipeDetectorRuleDataSource',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_detector_recipe_detector_rule_data_source',
             True,
             False
         )
@@ -1187,6 +1479,47 @@ def test_get_data_mask_rule(testing_service_client):
             result,
             service_error,
             'dataMaskRule',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
+def test_get_data_source(testing_service_client):
+    if not testing_service_client.is_api_enabled('cloud_guard', 'GetDataSource'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('cloud_guard', util.camelize('cloud_guard'), 'GetDataSource')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='cloud_guard', api_name='GetDataSource')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
+            response = client.get_data_source(
+                data_source_id=request.pop(util.camelize('dataSourceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'cloud_guard',
+            'GetDataSource',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dataSource',
             False,
             False
         )
@@ -2022,6 +2355,47 @@ def test_get_target_responder_recipe_responder_rule(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
+def test_get_work_request(testing_service_client):
+    if not testing_service_client.is_api_enabled('cloud_guard', 'GetWorkRequest'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('cloud_guard', util.camelize('cloud_guard'), 'GetWorkRequest')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='cloud_guard', api_name='GetWorkRequest')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
+            response = client.get_work_request(
+                work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'cloud_guard',
+            'GetWorkRequest',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'workRequest',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_list_condition_metadata_types(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'ListConditionMetadataTypes'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2142,6 +2516,132 @@ def test_list_data_mask_rules(testing_service_client):
             result,
             service_error,
             'dataMaskRuleCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
+def test_list_data_source_events(testing_service_client):
+    if not testing_service_client.is_api_enabled('cloud_guard', 'ListDataSourceEvents'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('cloud_guard', util.camelize('cloud_guard'), 'ListDataSourceEvents')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='cloud_guard', api_name='ListDataSourceEvents')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
+            response = client.list_data_source_events(
+                data_source_id=request.pop(util.camelize('dataSourceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_data_source_events(
+                    data_source_id=request.pop(util.camelize('dataSourceId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_data_source_events(
+                        data_source_id=request.pop(util.camelize('dataSourceId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'cloud_guard',
+            'ListDataSourceEvents',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dataSourceEventCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
+def test_list_data_sources(testing_service_client):
+    if not testing_service_client.is_api_enabled('cloud_guard', 'ListDataSources'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('cloud_guard', util.camelize('cloud_guard'), 'ListDataSources')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='cloud_guard', api_name='ListDataSources')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
+            response = client.list_data_sources(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_data_sources(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_data_sources(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'cloud_guard',
+            'ListDataSources',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dataSourceCollection',
             False,
             True
         )
@@ -2715,6 +3215,69 @@ def test_list_problem_endpoints(testing_service_client):
             result,
             service_error,
             'problemEndpointCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
+def test_list_problem_entities(testing_service_client):
+    if not testing_service_client.is_api_enabled('cloud_guard', 'ListProblemEntities'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('cloud_guard', util.camelize('cloud_guard'), 'ListProblemEntities')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='cloud_guard', api_name='ListProblemEntities')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
+            response = client.list_problem_entities(
+                problem_id=request.pop(util.camelize('problemId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_problem_entities(
+                    problem_id=request.pop(util.camelize('problemId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_problem_entities(
+                        problem_id=request.pop(util.camelize('problemId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'cloud_guard',
+            'ListProblemEntities',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'problemEntityCollection',
             False,
             True
         )
@@ -4320,6 +4883,195 @@ def test_list_techniques(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
+def test_list_work_request_errors(testing_service_client):
+    if not testing_service_client.is_api_enabled('cloud_guard', 'ListWorkRequestErrors'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('cloud_guard', util.camelize('cloud_guard'), 'ListWorkRequestErrors')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='cloud_guard', api_name='ListWorkRequestErrors')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
+            response = client.list_work_request_errors(
+                work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_work_request_errors(
+                    work_request_id=request.pop(util.camelize('workRequestId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_work_request_errors(
+                        work_request_id=request.pop(util.camelize('workRequestId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'cloud_guard',
+            'ListWorkRequestErrors',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'workRequestErrorCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
+def test_list_work_request_logs(testing_service_client):
+    if not testing_service_client.is_api_enabled('cloud_guard', 'ListWorkRequestLogs'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('cloud_guard', util.camelize('cloud_guard'), 'ListWorkRequestLogs')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='cloud_guard', api_name='ListWorkRequestLogs')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
+            response = client.list_work_request_logs(
+                work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_work_request_logs(
+                    work_request_id=request.pop(util.camelize('workRequestId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_work_request_logs(
+                        work_request_id=request.pop(util.camelize('workRequestId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'cloud_guard',
+            'ListWorkRequestLogs',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'workRequestLogEntryCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
+def test_list_work_requests(testing_service_client):
+    if not testing_service_client.is_api_enabled('cloud_guard', 'ListWorkRequests'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('cloud_guard', util.camelize('cloud_guard'), 'ListWorkRequests')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='cloud_guard', api_name='ListWorkRequests')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
+            response = client.list_work_requests(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_work_requests(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_work_requests(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'cloud_guard',
+            'ListWorkRequests',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'workRequestSummaryCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
 def test_remove_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('cloud_guard', 'RemoveCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5434,6 +6186,48 @@ def test_update_data_mask_rule(testing_service_client):
             result,
             service_error,
             'dataMaskRule',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="seccen-engg_ww_grp@oracle.com" jiraProject="SECCEN" opsJiraProject="SECCENOPS"
+def test_update_data_source(testing_service_client):
+    if not testing_service_client.is_api_enabled('cloud_guard', 'UpdateDataSource'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('cloud_guard', util.camelize('cloud_guard'), 'UpdateDataSource')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='cloud_guard', api_name='UpdateDataSource')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.cloud_guard.CloudGuardClient(config, service_endpoint=service_endpoint)
+            response = client.update_data_source(
+                data_source_id=request.pop(util.camelize('dataSourceId')),
+                update_data_source_details=request.pop(util.camelize('UpdateDataSourceDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'cloud_guard',
+            'UpdateDataSource',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_data_source',
             False,
             False
         )

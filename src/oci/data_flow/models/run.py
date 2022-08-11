@@ -86,6 +86,10 @@ class Run(object):
             The value to assign to the application_id property of this Run.
         :type application_id: str
 
+        :param application_log_config:
+            The value to assign to the application_log_config property of this Run.
+        :type application_log_config: oci.data_flow.models.ApplicationLogConfig
+
         :param class_name:
             The value to assign to the class_name property of this Run.
         :type class_name: str
@@ -245,6 +249,7 @@ class Run(object):
             'archive_uri': 'str',
             'arguments': 'list[str]',
             'application_id': 'str',
+            'application_log_config': 'ApplicationLogConfig',
             'class_name': 'str',
             'compartment_id': 'str',
             'configuration': 'dict(str, str)',
@@ -288,6 +293,7 @@ class Run(object):
             'archive_uri': 'archiveUri',
             'arguments': 'arguments',
             'application_id': 'applicationId',
+            'application_log_config': 'applicationLogConfig',
             'class_name': 'className',
             'compartment_id': 'compartmentId',
             'configuration': 'configuration',
@@ -330,6 +336,7 @@ class Run(object):
         self._archive_uri = None
         self._arguments = None
         self._application_id = None
+        self._application_log_config = None
         self._class_name = None
         self._compartment_id = None
         self._configuration = None
@@ -455,6 +462,26 @@ class Run(object):
         :type: str
         """
         self._application_id = application_id
+
+    @property
+    def application_log_config(self):
+        """
+        Gets the application_log_config of this Run.
+
+        :return: The application_log_config of this Run.
+        :rtype: oci.data_flow.models.ApplicationLogConfig
+        """
+        return self._application_log_config
+
+    @application_log_config.setter
+    def application_log_config(self, application_log_config):
+        """
+        Sets the application_log_config of this Run.
+
+        :param application_log_config: The application_log_config of this Run.
+        :type: oci.data_flow.models.ApplicationLogConfig
+        """
+        self._application_log_config = application_log_config
 
     @property
     def class_name(self):
