@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+22.08.16 - 22.08.16
+=====================
+* Fix block volume list for oci 2.78.0 breaking
+
+=====================
 22.07.26 - 22.07.26
 =====================
 * Added Certificates indicator to load balancer

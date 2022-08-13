@@ -135,7 +135,7 @@ class ShowOCIFlags(object):
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.69.0"
+    oci_compatible_version = "2.78.0"
 
     ##########################################################################
     # Global Constants
@@ -5042,8 +5042,8 @@ class ShowOCIService(object):
                     try:
                         boot_volumes = oci.pagination.list_call_get_all_results(
                             block_storage.list_boot_volumes,
-                            ad['name'],
-                            compartment['id'],
+                            availability_domain=ad['name'],
+                            compartment_id=compartment['id'],
                             retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
                         ).data
 
@@ -5117,7 +5117,8 @@ class ShowOCIService(object):
                 arrs = []
                 try:
                     arrs = oci.pagination.list_call_get_all_results(
-                        block_storage.list_volumes, compartment['id'],
+                        block_storage.list_volumes,
+                        compartment_id=compartment['id'],
                         sort_by="DISPLAYNAME",
                         retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
                     ).data
