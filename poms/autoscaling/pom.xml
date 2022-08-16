@@ -105,7 +105,7 @@
               <additionalProperties>
                 <specName>autoscaling</specName>
                 <generateInitFile>true</generateInitFile>
-                <endpoint>None</endpoint>
+                <endpoint>https://autoscaling.{domain}</endpoint>
               </additionalProperties>
               <featureIdConfigFile>${feature-id-file}</featureIdConfigFile>
               <featureIdConfigDir>${feature-id-dir}</featureIdConfigDir>
