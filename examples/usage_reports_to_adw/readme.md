@@ -140,7 +140,7 @@ Execute
 ```
 $ ./usage2adw.py  
 
-usage: usage2adw.py [-h] [-c CONFIG] [-t PROFILE] [-f FILEID] [-ts TAGSPECIAL]
+usage: usage2adw.py [-h] [-c CONFIG] [-t PROFILE] [-f FILEID] [-ts TAGSPECIAL] [-ts2 TAGSPECIAL2]
                     [-d FILEDATE] [-p PROXY] [-su] [-sc] [-sr] [-ip]
                     [-du DUSER] [-dp DPASS] [-dn DNAME] [--version]
 
@@ -149,7 +149,8 @@ optional arguments:
   -c CONFIG       Config File
   -t PROFILE      Config file section to use (tenancy profile)
   -f FILEID       File Id to load
-  -ts TAGSPECIAL  tag special key to load the data to TAG_SPECIAL column
+  -ts TAGSPECIAL  tag special key 1 to load the data to TAG_SPECIAL column
+  -ts2 TAGSPECIAL tag special key 2 to load the data to TAG_SPECIAL column
   -d FILEDATE     Minimum File Date to load (i.e. yyyy-mm-dd)
   -p PROXY        Set Proxy (i.e. www-proxy-server.com:80)
   -su             Skip Load Usage Files
@@ -219,6 +220,6 @@ Completed at 2020-04-21 12:05:46
 
 ## License
 
-Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
 This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl
 or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.

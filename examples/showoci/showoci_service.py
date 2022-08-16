@@ -135,7 +135,7 @@ class ShowOCIFlags(object):
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.69.0"
+    oci_compatible_version = "2.78.0"
 
     ##########################################################################
     # Global Constants
@@ -676,6 +676,25 @@ class ShowOCIService(object):
             if self.C_BUDGETS_BUDGETS in self.data[self.C_BUDGETS]:
                 return self.data[self.C_BUDGETS][self.C_BUDGETS_BUDGETS]
         return []
+
+    ##########################################################################
+    # return certificate info for load balancer
+    ##########################################################################
+    def __get_certificate_info(self, cert_array):
+
+        val = ""
+        try:
+            if cert_array:
+                # loop on certificates and extract ca and public
+                for key in cert_array.keys():
+                    if cert_array[key]:
+                        cert = cert_array[key]
+                        val += ("," if val else "") + key + "=" + ('ca_certificate' if cert.ca_certificate else "") + (":" if cert.ca_certificate and cert.public_certificate else "") + ("public_certificate" if cert.public_certificate else "")
+
+            return val
+
+        except Exception as e:
+            self.__print_error("__get_certificate_info", e)
 
     ##########################################################################
     # return announcement data
@@ -5023,8 +5042,8 @@ class ShowOCIService(object):
                     try:
                         boot_volumes = oci.pagination.list_call_get_all_results(
                             block_storage.list_boot_volumes,
-                            ad['name'],
-                            compartment['id'],
+                            availability_domain=ad['name'],
+                            compartment_id=compartment['id'],
                             retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
                         ).data
 
@@ -5098,7 +5117,8 @@ class ShowOCIService(object):
                 arrs = []
                 try:
                     arrs = oci.pagination.list_call_get_all_results(
-                        block_storage.list_volumes, compartment['id'],
+                        block_storage.list_volumes,
+                        compartment_id=compartment['id'],
                         sort_by="DISPLAYNAME",
                         retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
                     ).data
@@ -5582,12 +5602,17 @@ class ShowOCIService(object):
                            'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                            'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
                            'region_name': str(self.config['region']),
-                           'subnet_ids': []}
+                           'subnet_ids': [],
+                           'certificates': ''}
 
                     # Flexible Shapes
                     if arr.shape_details:
                         val['shape_min_mbps'] = str(arr.shape_details.minimum_bandwidth_in_mbps)
                         val['shape_max_mbps'] = str(arr.shape_details.maximum_bandwidth_in_mbps)
+
+                    # certificates
+                    if arr.certificates:
+                        val['certificates'] = self.__get_certificate_info(arr.certificates)
 
                     # subnets
                     if arr.subnet_ids:

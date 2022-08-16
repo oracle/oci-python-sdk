@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.79.0 - 2022-08-16
+====================
+
+Added
+-----
+* Support for Logging Analytics as a streaming source target in the Service Connector Hub service
+* Support for data sources for logging query registration in the Cloud Guard service
+* Support for custom detector rules on insight detector recipes in the Cloud Guard service
+* Support for fetching data source events and problem entities in the Cloud Guard service
+* Support for E3, E4, Standard3, and Optimized3 flexible compute shapes on notebooks, model deployment, and jobs in the Data Science service
+* Support for streaming application logs to the Logging service in the Data Flow service
+ 
+Breaking
+--------
+* Support for retries by default on operations of the Dataflow service
+ 
+====================
 2.78.0 - 2022-08-09
 ====================
 

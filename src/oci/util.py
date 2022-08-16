@@ -7,13 +7,14 @@ from __future__ import absolute_import
 import base64
 import datetime
 import json
+import re
 import os
 import os.path
 
 import pytz
 
 from oci._vendor import six
-from oci.exceptions import InvalidConfig
+import oci.exceptions
 
 try:
     from urllib.parse import urlparse
@@ -170,16 +171,16 @@ def _get_signer_from_delegation_token_instance_principal(config):
     delegation_token_file_path = config.get(DELEGATION_TOKEN_FILE_FIELD_NAME)
 
     if delegation_token_file_path is None:
-        raise InvalidConfig('ERROR: {} was not provided.'.format(DELEGATION_TOKEN_FILE_FIELD_NAME))
+        raise oci.exceptions.InvalidConfig('ERROR: {} was not provided.'.format(DELEGATION_TOKEN_FILE_FIELD_NAME))
 
     expanded_delegation_token_file_path = os.path.expanduser(delegation_token_file_path)
     if not os.path.isfile(expanded_delegation_token_file_path):
-        raise InvalidConfig('ERROR: delegation token file not found at {}'.format(expanded_delegation_token_file_path))
+        raise oci.exceptions.InvalidConfig('ERROR: delegation token file not found at {}'.format(expanded_delegation_token_file_path))
 
     with open(expanded_delegation_token_file_path, mode="r") as f:
         delegation_token = f.read().strip()
     if delegation_token is None:
-        raise InvalidConfig('ERROR: delegation_token was not provided.')
+        raise oci.exceptions.InvalidConfig('ERROR: delegation_token was not provided.')
     signer_kwargs['delegation_token'] = delegation_token
     # Return signer with delegation token
     return InstancePrincipalsDelegationTokenSigner(**signer_kwargs)
@@ -218,9 +219,9 @@ def get_authentication_type_from_config(config):
         if DELEGATION_TOKEN_FILE_FIELD_NAME in config:
             return DELEGATION_TOKEN_WITH_INSTANCE_PRINCIPAL_AUTHENTICATION_TYPE
         else:
-            raise InvalidConfig("The authentication type {} requires config values for the keys {}".format(DELEGATION_TOKEN_WITH_INSTANCE_PRINCIPAL_AUTHENTICATION_TYPE, DELEGATION_TOKEN_FILE_FIELD_NAME))
+            raise oci.exceptions.InvalidConfig("The authentication type {} requires config values for the keys {}".format(DELEGATION_TOKEN_WITH_INSTANCE_PRINCIPAL_AUTHENTICATION_TYPE, DELEGATION_TOKEN_FILE_FIELD_NAME))
     else:
-        raise InvalidConfig("The authentication type {} is not supported".format(auth_type))
+        raise oci.exceptions.InvalidConfig("The authentication type {} is not supported".format(auth_type))
 
 
 def back_up_body_calculate_stream_content_length(stream, buffer_limit=DEFAULT_BUFFER_SIZE):
@@ -335,3 +336,15 @@ def read_stream_for_signing(signing_algorithm, body):
         logger.warning("Unable to read stream body for signing")
         bytes_read = -1
     return bytes_read
+
+
+def camel_to_snake(name):
+    s1 = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', name)
+    return re.sub('([a-z0-9])([A-Z])', r'\1_\2', s1).lower()
+
+
+def camel_to_snake_keys(dictionary):
+    outdict = {}
+    for k, v in dictionary.items():
+        outdict[camel_to_snake(k)] = v
+    return outdict

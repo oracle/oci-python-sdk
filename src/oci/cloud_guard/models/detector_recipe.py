@@ -33,6 +33,10 @@ class DetectorRecipe(object):
     #: This constant has a value of "IAAS_THREAT_DETECTOR"
     DETECTOR_IAAS_THREAT_DETECTOR = "IAAS_THREAT_DETECTOR"
 
+    #: A constant which can be used with the detector property of a DetectorRecipe.
+    #: This constant has a value of "IAAS_LOG_INSIGHT_DETECTOR"
+    DETECTOR_IAAS_LOG_INSIGHT_DETECTOR = "IAAS_LOG_INSIGHT_DETECTOR"
+
     #: A constant which can be used with the lifecycle_state property of a DetectorRecipe.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -94,7 +98,7 @@ class DetectorRecipe(object):
 
         :param detector:
             The value to assign to the detector property of this DetectorRecipe.
-            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type detector: str
 
@@ -136,6 +140,10 @@ class DetectorRecipe(object):
             The value to assign to the system_tags property of this DetectorRecipe.
         :type system_tags: dict(str, dict(str, object))
 
+        :param target_ids:
+            The value to assign to the target_ids property of this DetectorRecipe.
+        :type target_ids: list[str]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -153,7 +161,8 @@ class DetectorRecipe(object):
             'source_data_retention': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'target_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -172,7 +181,8 @@ class DetectorRecipe(object):
             'source_data_retention': 'sourceDataRetention',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'target_ids': 'targetIds'
         }
 
         self._id = None
@@ -191,6 +201,7 @@ class DetectorRecipe(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._target_ids = None
 
     @property
     def id(self):
@@ -348,7 +359,7 @@ class DetectorRecipe(object):
         **[Required]** Gets the detector of this DetectorRecipe.
         Type of detector
 
-        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -367,7 +378,7 @@ class DetectorRecipe(object):
         :param detector: The detector of this DetectorRecipe.
         :type: str
         """
-        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR"]
+        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR"]
         if not value_allowed_none_or_none_sentinel(detector, allowed_values):
             detector = 'UNKNOWN_ENUM_VALUE'
         self._detector = detector
@@ -613,6 +624,30 @@ class DetectorRecipe(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def target_ids(self):
+        """
+        Gets the target_ids of this DetectorRecipe.
+        The recipe attached to targets
+
+
+        :return: The target_ids of this DetectorRecipe.
+        :rtype: list[str]
+        """
+        return self._target_ids
+
+    @target_ids.setter
+    def target_ids(self, target_ids):
+        """
+        Sets the target_ids of this DetectorRecipe.
+        The recipe attached to targets
+
+
+        :param target_ids: The target_ids of this DetectorRecipe.
+        :type: list[str]
+        """
+        self._target_ids = target_ids
 
     def __repr__(self):
         return formatted_flat_dict(self)

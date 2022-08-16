@@ -54,6 +54,10 @@ class Application(object):
         Initializes a new Application object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param application_log_config:
+            The value to assign to the application_log_config property of this Application.
+        :type application_log_config: oci.data_flow.models.ApplicationLogConfig
+
         :param archive_uri:
             The value to assign to the archive_uri property of this Application.
         :type archive_uri: str
@@ -182,6 +186,7 @@ class Application(object):
 
         """
         self.swagger_types = {
+            'application_log_config': 'ApplicationLogConfig',
             'archive_uri': 'str',
             'arguments': 'list[str]',
             'class_name': 'str',
@@ -215,6 +220,7 @@ class Application(object):
         }
 
         self.attribute_map = {
+            'application_log_config': 'applicationLogConfig',
             'archive_uri': 'archiveUri',
             'arguments': 'arguments',
             'class_name': 'className',
@@ -247,6 +253,7 @@ class Application(object):
             'warehouse_bucket_uri': 'warehouseBucketUri'
         }
 
+        self._application_log_config = None
         self._archive_uri = None
         self._arguments = None
         self._class_name = None
@@ -277,6 +284,26 @@ class Application(object):
         self._time_updated = None
         self._type = None
         self._warehouse_bucket_uri = None
+
+    @property
+    def application_log_config(self):
+        """
+        Gets the application_log_config of this Application.
+
+        :return: The application_log_config of this Application.
+        :rtype: oci.data_flow.models.ApplicationLogConfig
+        """
+        return self._application_log_config
+
+    @application_log_config.setter
+    def application_log_config(self, application_log_config):
+        """
+        Sets the application_log_config of this Application.
+
+        :param application_log_config: The application_log_config of this Application.
+        :type: oci.data_flow.models.ApplicationLogConfig
+        """
+        self._application_log_config = application_log_config
 
     @property
     def archive_uri(self):

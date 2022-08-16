@@ -79,7 +79,7 @@ It is generally the location that you have access to build the compute node and 
          endorse dynamic-group UsageDownloadGroup to read objects in tenancy usage-report
          Allow dynamic-group UsageDownloadGroup to inspect compartments in tenancy
          Allow dynamic-group UsageDownloadGroup to inspect tenancies in tenancy
-         Allow dynamic-group UsageDownloadGroup to read autonomoud-database in compartment {APPCOMP}
+         Allow dynamic-group UsageDownloadGroup to read autonomous-database in compartment {APPCOMP}
          *** Please don't change the usage report tenant OCID, it is fixed.
      
 ```

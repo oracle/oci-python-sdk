@@ -9,7 +9,7 @@ Oracle Application Express (APEX) will be used for reporting.
 [cost analysis](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/costanalysisoverview.htm) 
 and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/usagereportsoverview.htm) features should be used instead.**
 
-**Developed by Adi Zohar, 2020-2021**
+**Developed by Adi Zohar, 2020-2022**
 
 ## 1. Deploy VM Compute instance to run the python script
 ```

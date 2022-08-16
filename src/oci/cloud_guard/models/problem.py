@@ -69,6 +69,10 @@ class Problem(object):
     #: This constant has a value of "IAAS_THREAT_DETECTOR"
     DETECTOR_ID_IAAS_THREAT_DETECTOR = "IAAS_THREAT_DETECTOR"
 
+    #: A constant which can be used with the detector_id property of a Problem.
+    #: This constant has a value of "IAAS_LOG_INSIGHT_DETECTOR"
+    DETECTOR_ID_IAAS_LOG_INSIGHT_DETECTOR = "IAAS_LOG_INSIGHT_DETECTOR"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Problem object with values from keyword arguments.
@@ -158,7 +162,7 @@ class Problem(object):
 
         :param detector_id:
             The value to assign to the detector_id property of this Problem.
-            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type detector_id: str
 
@@ -181,6 +185,18 @@ class Problem(object):
         :param comment:
             The value to assign to the comment property of this Problem.
         :type comment: str
+
+        :param impacted_resource_id:
+            The value to assign to the impacted_resource_id property of this Problem.
+        :type impacted_resource_id: str
+
+        :param impacted_resource_name:
+            The value to assign to the impacted_resource_name property of this Problem.
+        :type impacted_resource_name: str
+
+        :param impacted_resource_type:
+            The value to assign to the impacted_resource_type property of this Problem.
+        :type impacted_resource_type: str
 
         """
         self.swagger_types = {
@@ -208,7 +224,10 @@ class Problem(object):
             'additional_details': 'dict(str, str)',
             'description': 'str',
             'recommendation': 'str',
-            'comment': 'str'
+            'comment': 'str',
+            'impacted_resource_id': 'str',
+            'impacted_resource_name': 'str',
+            'impacted_resource_type': 'str'
         }
 
         self.attribute_map = {
@@ -236,7 +255,10 @@ class Problem(object):
             'additional_details': 'additionalDetails',
             'description': 'description',
             'recommendation': 'recommendation',
-            'comment': 'comment'
+            'comment': 'comment',
+            'impacted_resource_id': 'impactedResourceId',
+            'impacted_resource_name': 'impactedResourceName',
+            'impacted_resource_type': 'impactedResourceType'
         }
 
         self._id = None
@@ -264,6 +286,9 @@ class Problem(object):
         self._description = None
         self._recommendation = None
         self._comment = None
+        self._impacted_resource_id = None
+        self._impacted_resource_name = None
+        self._impacted_resource_type = None
 
     @property
     def id(self):
@@ -745,7 +770,7 @@ class Problem(object):
         Gets the detector_id of this Problem.
         Id of the detector associated with the Problem.
 
-        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -764,7 +789,7 @@ class Problem(object):
         :param detector_id: The detector_id of this Problem.
         :type: str
         """
-        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR"]
+        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR"]
         if not value_allowed_none_or_none_sentinel(detector_id, allowed_values):
             detector_id = 'UNKNOWN_ENUM_VALUE'
         self._detector_id = detector_id
@@ -888,6 +913,78 @@ class Problem(object):
         :type: str
         """
         self._comment = comment
+
+    @property
+    def impacted_resource_id(self):
+        """
+        Gets the impacted_resource_id of this Problem.
+        Identifier of the impacted Resource
+
+
+        :return: The impacted_resource_id of this Problem.
+        :rtype: str
+        """
+        return self._impacted_resource_id
+
+    @impacted_resource_id.setter
+    def impacted_resource_id(self, impacted_resource_id):
+        """
+        Sets the impacted_resource_id of this Problem.
+        Identifier of the impacted Resource
+
+
+        :param impacted_resource_id: The impacted_resource_id of this Problem.
+        :type: str
+        """
+        self._impacted_resource_id = impacted_resource_id
+
+    @property
+    def impacted_resource_name(self):
+        """
+        Gets the impacted_resource_name of this Problem.
+        DisplayName of the impacted  Resource
+
+
+        :return: The impacted_resource_name of this Problem.
+        :rtype: str
+        """
+        return self._impacted_resource_name
+
+    @impacted_resource_name.setter
+    def impacted_resource_name(self, impacted_resource_name):
+        """
+        Sets the impacted_resource_name of this Problem.
+        DisplayName of the impacted  Resource
+
+
+        :param impacted_resource_name: The impacted_resource_name of this Problem.
+        :type: str
+        """
+        self._impacted_resource_name = impacted_resource_name
+
+    @property
+    def impacted_resource_type(self):
+        """
+        Gets the impacted_resource_type of this Problem.
+        Type of the impacted Resource
+
+
+        :return: The impacted_resource_type of this Problem.
+        :rtype: str
+        """
+        return self._impacted_resource_type
+
+    @impacted_resource_type.setter
+    def impacted_resource_type(self, impacted_resource_type):
+        """
+        Sets the impacted_resource_type of this Problem.
+        Type of the impacted Resource
+
+
+        :param impacted_resource_type: The impacted_resource_type of this Problem.
+        :type: str
+        """
+        self._impacted_resource_type = impacted_resource_type
 
     def __repr__(self):
         return formatted_flat_dict(self)
