@@ -14,6 +14,7 @@ class CreateRunDetails(object):
     set in the associated application:
     - applicationId
     - archiveUri
+    - applicationLogConfig
     - arguments
     - configuration
     - definedTags
@@ -57,6 +58,10 @@ class CreateRunDetails(object):
         """
         Initializes a new CreateRunDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
+
+        :param application_log_config:
+            The value to assign to the application_log_config property of this CreateRunDetails.
+        :type application_log_config: oci.data_flow.models.ApplicationLogConfig
 
         :param application_id:
             The value to assign to the application_id property of this CreateRunDetails.
@@ -141,6 +146,7 @@ class CreateRunDetails(object):
 
         """
         self.swagger_types = {
+            'application_log_config': 'ApplicationLogConfig',
             'application_id': 'str',
             'archive_uri': 'str',
             'arguments': 'list[str]',
@@ -164,6 +170,7 @@ class CreateRunDetails(object):
         }
 
         self.attribute_map = {
+            'application_log_config': 'applicationLogConfig',
             'application_id': 'applicationId',
             'archive_uri': 'archiveUri',
             'arguments': 'arguments',
@@ -186,6 +193,7 @@ class CreateRunDetails(object):
             'warehouse_bucket_uri': 'warehouseBucketUri'
         }
 
+        self._application_log_config = None
         self._application_id = None
         self._archive_uri = None
         self._arguments = None
@@ -206,6 +214,26 @@ class CreateRunDetails(object):
         self._spark_version = None
         self._type = None
         self._warehouse_bucket_uri = None
+
+    @property
+    def application_log_config(self):
+        """
+        Gets the application_log_config of this CreateRunDetails.
+
+        :return: The application_log_config of this CreateRunDetails.
+        :rtype: oci.data_flow.models.ApplicationLogConfig
+        """
+        return self._application_log_config
+
+    @application_log_config.setter
+    def application_log_config(self, application_log_config):
+        """
+        Sets the application_log_config of this CreateRunDetails.
+
+        :param application_log_config: The application_log_config of this CreateRunDetails.
+        :type: oci.data_flow.models.ApplicationLogConfig
+        """
+        self._application_log_config = application_log_config
 
     @property
     def application_id(self):

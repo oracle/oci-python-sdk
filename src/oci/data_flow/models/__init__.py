@@ -5,6 +5,7 @@
 from __future__ import absolute_import
 
 from .application import Application
+from .application_log_config import ApplicationLogConfig
 from .application_parameter import ApplicationParameter
 from .application_summary import ApplicationSummary
 from .change_application_compartment_details import ChangeApplicationCompartmentDetails
@@ -35,6 +36,7 @@ from .work_request_summary import WorkRequestSummary
 # Maps type names to classes for data_flow services.
 data_flow_type_mapping = {
     "Application": Application,
+    "ApplicationLogConfig": ApplicationLogConfig,
     "ApplicationParameter": ApplicationParameter,
     "ApplicationSummary": ApplicationSummary,
     "ChangeApplicationCompartmentDetails": ChangeApplicationCompartmentDetails,

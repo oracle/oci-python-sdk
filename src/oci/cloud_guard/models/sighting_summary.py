@@ -14,20 +14,20 @@ class SightingSummary(object):
     """
 
     #: A constant which can be used with the classification_status property of a SightingSummary.
-    #: This constant has a value of "FALSE_POSITIVE"
-    CLASSIFICATION_STATUS_FALSE_POSITIVE = "FALSE_POSITIVE"
-
-    #: A constant which can be used with the classification_status property of a SightingSummary.
     #: This constant has a value of "FALSE_NEGATIVE"
     CLASSIFICATION_STATUS_FALSE_NEGATIVE = "FALSE_NEGATIVE"
 
     #: A constant which can be used with the classification_status property of a SightingSummary.
-    #: This constant has a value of "TRUE_POSITIVE"
-    CLASSIFICATION_STATUS_TRUE_POSITIVE = "TRUE_POSITIVE"
-
-    #: A constant which can be used with the classification_status property of a SightingSummary.
     #: This constant has a value of "TRUE_NEGATIVE"
     CLASSIFICATION_STATUS_TRUE_NEGATIVE = "TRUE_NEGATIVE"
+
+    #: A constant which can be used with the classification_status property of a SightingSummary.
+    #: This constant has a value of "FALSE_POSITIVE"
+    CLASSIFICATION_STATUS_FALSE_POSITIVE = "FALSE_POSITIVE"
+
+    #: A constant which can be used with the classification_status property of a SightingSummary.
+    #: This constant has a value of "TRUE_POSITIVE"
+    CLASSIFICATION_STATUS_TRUE_POSITIVE = "TRUE_POSITIVE"
 
     #: A constant which can be used with the classification_status property of a SightingSummary.
     #: This constant has a value of "NOT_CLASSIFIED"
@@ -108,7 +108,7 @@ class SightingSummary(object):
 
         :param classification_status:
             The value to assign to the classification_status property of this SightingSummary.
-            Allowed values for this property are: "FALSE_POSITIVE", "FALSE_NEGATIVE", "TRUE_POSITIVE", "TRUE_NEGATIVE", "NOT_CLASSIFIED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "FALSE_NEGATIVE", "TRUE_NEGATIVE", "FALSE_POSITIVE", "TRUE_POSITIVE", "NOT_CLASSIFIED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type classification_status: str
 
@@ -392,7 +392,7 @@ class SightingSummary(object):
         **[Required]** Gets the classification_status of this SightingSummary.
         ClassificationStatus of the sighting event
 
-        Allowed values for this property are: "FALSE_POSITIVE", "FALSE_NEGATIVE", "TRUE_POSITIVE", "TRUE_NEGATIVE", "NOT_CLASSIFIED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "FALSE_NEGATIVE", "TRUE_NEGATIVE", "FALSE_POSITIVE", "TRUE_POSITIVE", "NOT_CLASSIFIED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -411,7 +411,7 @@ class SightingSummary(object):
         :param classification_status: The classification_status of this SightingSummary.
         :type: str
         """
-        allowed_values = ["FALSE_POSITIVE", "FALSE_NEGATIVE", "TRUE_POSITIVE", "TRUE_NEGATIVE", "NOT_CLASSIFIED"]
+        allowed_values = ["FALSE_NEGATIVE", "TRUE_NEGATIVE", "FALSE_POSITIVE", "TRUE_POSITIVE", "NOT_CLASSIFIED"]
         if not value_allowed_none_or_none_sentinel(classification_status, allowed_values):
             classification_status = 'UNKNOWN_ENUM_VALUE'
         self._classification_status = classification_status

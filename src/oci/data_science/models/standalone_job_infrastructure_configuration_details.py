@@ -36,25 +36,32 @@ class StandaloneJobInfrastructureConfigurationDetails(JobInfrastructureConfigura
             The value to assign to the block_storage_size_in_gbs property of this StandaloneJobInfrastructureConfigurationDetails.
         :type block_storage_size_in_gbs: int
 
+        :param job_shape_config_details:
+            The value to assign to the job_shape_config_details property of this StandaloneJobInfrastructureConfigurationDetails.
+        :type job_shape_config_details: oci.data_science.models.JobShapeConfigDetails
+
         """
         self.swagger_types = {
             'job_infrastructure_type': 'str',
             'shape_name': 'str',
             'subnet_id': 'str',
-            'block_storage_size_in_gbs': 'int'
+            'block_storage_size_in_gbs': 'int',
+            'job_shape_config_details': 'JobShapeConfigDetails'
         }
 
         self.attribute_map = {
             'job_infrastructure_type': 'jobInfrastructureType',
             'shape_name': 'shapeName',
             'subnet_id': 'subnetId',
-            'block_storage_size_in_gbs': 'blockStorageSizeInGBs'
+            'block_storage_size_in_gbs': 'blockStorageSizeInGBs',
+            'job_shape_config_details': 'jobShapeConfigDetails'
         }
 
         self._job_infrastructure_type = None
         self._shape_name = None
         self._subnet_id = None
         self._block_storage_size_in_gbs = None
+        self._job_shape_config_details = None
         self._job_infrastructure_type = 'STANDALONE'
 
     @property
@@ -128,6 +135,26 @@ class StandaloneJobInfrastructureConfigurationDetails(JobInfrastructureConfigura
         :type: int
         """
         self._block_storage_size_in_gbs = block_storage_size_in_gbs
+
+    @property
+    def job_shape_config_details(self):
+        """
+        Gets the job_shape_config_details of this StandaloneJobInfrastructureConfigurationDetails.
+
+        :return: The job_shape_config_details of this StandaloneJobInfrastructureConfigurationDetails.
+        :rtype: oci.data_science.models.JobShapeConfigDetails
+        """
+        return self._job_shape_config_details
+
+    @job_shape_config_details.setter
+    def job_shape_config_details(self, job_shape_config_details):
+        """
+        Sets the job_shape_config_details of this StandaloneJobInfrastructureConfigurationDetails.
+
+        :param job_shape_config_details: The job_shape_config_details of this StandaloneJobInfrastructureConfigurationDetails.
+        :type: oci.data_science.models.JobShapeConfigDetails
+        """
+        self._job_shape_config_details = job_shape_config_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

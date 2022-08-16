@@ -13,6 +13,22 @@ class CreateDetectorRecipeDetails(object):
     Create of Detector recipe.
     """
 
+    #: A constant which can be used with the detector property of a CreateDetectorRecipeDetails.
+    #: This constant has a value of "IAAS_ACTIVITY_DETECTOR"
+    DETECTOR_IAAS_ACTIVITY_DETECTOR = "IAAS_ACTIVITY_DETECTOR"
+
+    #: A constant which can be used with the detector property of a CreateDetectorRecipeDetails.
+    #: This constant has a value of "IAAS_CONFIGURATION_DETECTOR"
+    DETECTOR_IAAS_CONFIGURATION_DETECTOR = "IAAS_CONFIGURATION_DETECTOR"
+
+    #: A constant which can be used with the detector property of a CreateDetectorRecipeDetails.
+    #: This constant has a value of "IAAS_THREAT_DETECTOR"
+    DETECTOR_IAAS_THREAT_DETECTOR = "IAAS_THREAT_DETECTOR"
+
+    #: A constant which can be used with the detector property of a CreateDetectorRecipeDetails.
+    #: This constant has a value of "IAAS_LOG_INSIGHT_DETECTOR"
+    DETECTOR_IAAS_LOG_INSIGHT_DETECTOR = "IAAS_LOG_INSIGHT_DETECTOR"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateDetectorRecipeDetails object with values from keyword arguments.
@@ -25,6 +41,11 @@ class CreateDetectorRecipeDetails(object):
         :param description:
             The value to assign to the description property of this CreateDetectorRecipeDetails.
         :type description: str
+
+        :param detector:
+            The value to assign to the detector property of this CreateDetectorRecipeDetails.
+            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR"
+        :type detector: str
 
         :param source_detector_recipe_id:
             The value to assign to the source_detector_recipe_id property of this CreateDetectorRecipeDetails.
@@ -50,6 +71,7 @@ class CreateDetectorRecipeDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'description': 'str',
+            'detector': 'str',
             'source_detector_recipe_id': 'str',
             'compartment_id': 'str',
             'detector_rules': 'list[UpdateDetectorRecipeDetectorRule]',
@@ -60,6 +82,7 @@ class CreateDetectorRecipeDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
+            'detector': 'detector',
             'source_detector_recipe_id': 'sourceDetectorRecipeId',
             'compartment_id': 'compartmentId',
             'detector_rules': 'detectorRules',
@@ -69,6 +92,7 @@ class CreateDetectorRecipeDetails(object):
 
         self._display_name = None
         self._description = None
+        self._detector = None
         self._source_detector_recipe_id = None
         self._compartment_id = None
         self._detector_rules = None
@@ -132,9 +156,41 @@ class CreateDetectorRecipeDetails(object):
         self._description = description
 
     @property
+    def detector(self):
+        """
+        Gets the detector of this CreateDetectorRecipeDetails.
+        detector for the rule
+
+        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR"
+
+
+        :return: The detector of this CreateDetectorRecipeDetails.
+        :rtype: str
+        """
+        return self._detector
+
+    @detector.setter
+    def detector(self, detector):
+        """
+        Sets the detector of this CreateDetectorRecipeDetails.
+        detector for the rule
+
+
+        :param detector: The detector of this CreateDetectorRecipeDetails.
+        :type: str
+        """
+        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR"]
+        if not value_allowed_none_or_none_sentinel(detector, allowed_values):
+            raise ValueError(
+                "Invalid value for `detector`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._detector = detector
+
+    @property
     def source_detector_recipe_id(self):
         """
-        **[Required]** Gets the source_detector_recipe_id of this CreateDetectorRecipeDetails.
+        Gets the source_detector_recipe_id of this CreateDetectorRecipeDetails.
         The id of the source detector recipe.
 
 

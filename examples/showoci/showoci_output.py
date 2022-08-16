@@ -3442,6 +3442,7 @@ class ShowOCICSV(object):
     csv_identity_users = []
     csv_identity_policies = []
     csv_compute = []
+    csv_block_volumes_not_attached = []
     csv_block_volumes = []
     csv_block_volumes_backups = []
     csv_compute_reservations = []
@@ -5085,6 +5086,7 @@ class ShowOCICSV(object):
                             'listener_path': "",
                             'listener_rule': "",
                             'listener_host': "",
+                            'lb_certificates': lb['certificates'],
                             'loadbalancer_id': lb['id']
                             }
                     self.csv_load_balancer.append(data)
@@ -5109,6 +5111,7 @@ class ShowOCICSV(object):
                             'listener_host': str(', '.join(x for x in listener['hostname_names'])),
                             'listener_path': listener['path_route_set_name'],
                             'listener_rule': str(', '.join(x for x in listener['rule_set_names'])),
+                            'lb_certificates': lb['certificates'],
                             'loadbalancer_id': lb['id']
                             }
                     self.csv_load_balancer.append(data)

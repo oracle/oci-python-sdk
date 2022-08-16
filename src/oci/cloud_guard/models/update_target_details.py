@@ -101,7 +101,7 @@ class UpdateTargetDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateTargetDetails.
-        DetectorTemplate identifier.
+        Display name of a target.
 
         Avoid entering confidential information.
 
@@ -115,7 +115,7 @@ class UpdateTargetDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateTargetDetails.
-        DetectorTemplate identifier.
+        Display name of a target.
 
         Avoid entering confidential information.
 

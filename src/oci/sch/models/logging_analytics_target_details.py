@@ -32,19 +32,26 @@ class LoggingAnalyticsTargetDetails(TargetDetails):
             The value to assign to the log_group_id property of this LoggingAnalyticsTargetDetails.
         :type log_group_id: str
 
+        :param log_source_identifier:
+            The value to assign to the log_source_identifier property of this LoggingAnalyticsTargetDetails.
+        :type log_source_identifier: str
+
         """
         self.swagger_types = {
             'kind': 'str',
-            'log_group_id': 'str'
+            'log_group_id': 'str',
+            'log_source_identifier': 'str'
         }
 
         self.attribute_map = {
             'kind': 'kind',
-            'log_group_id': 'logGroupId'
+            'log_group_id': 'logGroupId',
+            'log_source_identifier': 'logSourceIdentifier'
         }
 
         self._kind = None
         self._log_group_id = None
+        self._log_source_identifier = None
         self._kind = 'loggingAnalytics'
 
     @property
@@ -74,6 +81,34 @@ class LoggingAnalyticsTargetDetails(TargetDetails):
         :type: str
         """
         self._log_group_id = log_group_id
+
+    @property
+    def log_source_identifier(self):
+        """
+        Gets the log_source_identifier of this LoggingAnalyticsTargetDetails.
+        Identifier of the log source that you want to use for processing data received from the service connector source.
+        Applies to `StreamingSource` only.
+        Equivalent to `name` at :class:`LogAnalyticsSource`.
+
+
+        :return: The log_source_identifier of this LoggingAnalyticsTargetDetails.
+        :rtype: str
+        """
+        return self._log_source_identifier
+
+    @log_source_identifier.setter
+    def log_source_identifier(self, log_source_identifier):
+        """
+        Sets the log_source_identifier of this LoggingAnalyticsTargetDetails.
+        Identifier of the log source that you want to use for processing data received from the service connector source.
+        Applies to `StreamingSource` only.
+        Equivalent to `name` at :class:`LogAnalyticsSource`.
+
+
+        :param log_source_identifier: The log_source_identifier of this LoggingAnalyticsTargetDetails.
+        :type: str
+        """
+        self._log_source_identifier = log_source_identifier
 
     def __repr__(self):
         return formatted_flat_dict(self)

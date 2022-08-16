@@ -25,6 +25,10 @@ class TargetDetectorRecipeDetectorRuleSummary(object):
     #: This constant has a value of "IAAS_THREAT_DETECTOR"
     DETECTOR_IAAS_THREAT_DETECTOR = "IAAS_THREAT_DETECTOR"
 
+    #: A constant which can be used with the detector property of a TargetDetectorRecipeDetectorRuleSummary.
+    #: This constant has a value of "IAAS_LOG_INSIGHT_DETECTOR"
+    DETECTOR_IAAS_LOG_INSIGHT_DETECTOR = "IAAS_LOG_INSIGHT_DETECTOR"
+
     #: A constant which can be used with the managed_list_types property of a TargetDetectorRecipeDetectorRuleSummary.
     #: This constant has a value of "CIDR_BLOCK"
     MANAGED_LIST_TYPES_CIDR_BLOCK = "CIDR_BLOCK"
@@ -124,7 +128,7 @@ class TargetDetectorRecipeDetectorRuleSummary(object):
 
         :param detector:
             The value to assign to the detector property of this TargetDetectorRecipeDetectorRuleSummary.
-            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type detector: str
 
@@ -164,6 +168,14 @@ class TargetDetectorRecipeDetectorRuleSummary(object):
             The value to assign to the lifecycle_details property of this TargetDetectorRecipeDetectorRuleSummary.
         :type lifecycle_details: str
 
+        :param data_source_id:
+            The value to assign to the data_source_id property of this TargetDetectorRecipeDetectorRuleSummary.
+        :type data_source_id: str
+
+        :param entities_mappings:
+            The value to assign to the entities_mappings property of this TargetDetectorRecipeDetectorRuleSummary.
+        :type entities_mappings: list[oci.cloud_guard.models.EntitiesMapping]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -178,7 +190,9 @@ class TargetDetectorRecipeDetectorRuleSummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
-            'lifecycle_details': 'str'
+            'lifecycle_details': 'str',
+            'data_source_id': 'str',
+            'entities_mappings': 'list[EntitiesMapping]'
         }
 
         self.attribute_map = {
@@ -194,7 +208,9 @@ class TargetDetectorRecipeDetectorRuleSummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
-            'lifecycle_details': 'lifecycleDetails'
+            'lifecycle_details': 'lifecycleDetails',
+            'data_source_id': 'dataSourceId',
+            'entities_mappings': 'entitiesMappings'
         }
 
         self._id = None
@@ -210,6 +226,8 @@ class TargetDetectorRecipeDetectorRuleSummary(object):
         self._time_updated = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._data_source_id = None
+        self._entities_mappings = None
 
     @property
     def id(self):
@@ -313,7 +331,7 @@ class TargetDetectorRecipeDetectorRuleSummary(object):
         **[Required]** Gets the detector of this TargetDetectorRecipeDetectorRuleSummary.
         possible type of detectors
 
-        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -332,7 +350,7 @@ class TargetDetectorRecipeDetectorRuleSummary(object):
         :param detector: The detector of this TargetDetectorRecipeDetectorRuleSummary.
         :type: str
         """
-        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR"]
+        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR"]
         if not value_allowed_none_or_none_sentinel(detector, allowed_values):
             detector = 'UNKNOWN_ENUM_VALUE'
         self._detector = detector
@@ -536,6 +554,54 @@ class TargetDetectorRecipeDetectorRuleSummary(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def data_source_id(self):
+        """
+        Gets the data_source_id of this TargetDetectorRecipeDetectorRuleSummary.
+        The id of the attached DataSource.
+
+
+        :return: The data_source_id of this TargetDetectorRecipeDetectorRuleSummary.
+        :rtype: str
+        """
+        return self._data_source_id
+
+    @data_source_id.setter
+    def data_source_id(self, data_source_id):
+        """
+        Sets the data_source_id of this TargetDetectorRecipeDetectorRuleSummary.
+        The id of the attached DataSource.
+
+
+        :param data_source_id: The data_source_id of this TargetDetectorRecipeDetectorRuleSummary.
+        :type: str
+        """
+        self._data_source_id = data_source_id
+
+    @property
+    def entities_mappings(self):
+        """
+        Gets the entities_mappings of this TargetDetectorRecipeDetectorRuleSummary.
+        Data Source entities mapping for a Detector Rule
+
+
+        :return: The entities_mappings of this TargetDetectorRecipeDetectorRuleSummary.
+        :rtype: list[oci.cloud_guard.models.EntitiesMapping]
+        """
+        return self._entities_mappings
+
+    @entities_mappings.setter
+    def entities_mappings(self, entities_mappings):
+        """
+        Sets the entities_mappings of this TargetDetectorRecipeDetectorRuleSummary.
+        Data Source entities mapping for a Detector Rule
+
+
+        :param entities_mappings: The entities_mappings of this TargetDetectorRecipeDetectorRuleSummary.
+        :type: list[oci.cloud_guard.models.EntitiesMapping]
+        """
+        self._entities_mappings = entities_mappings
 
     def __repr__(self):
         return formatted_flat_dict(self)

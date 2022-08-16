@@ -37,7 +37,7 @@ class RemoveCompartmentDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this RemoveCompartmentDetails.
-        The `OCID`__ of the compartment to be removed from the security zone.
+        The `OCID`__ of the compartment to be removed from SecurityZone.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -51,7 +51,7 @@ class RemoveCompartmentDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this RemoveCompartmentDetails.
-        The `OCID`__ of the compartment to be removed from the security zone.
+        The `OCID`__ of the compartment to be removed from SecurityZone.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

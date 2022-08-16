@@ -19,6 +19,7 @@ Data Flow
     :template: autosummary/model_class.rst
 
     oci.data_flow.models.Application
+    oci.data_flow.models.ApplicationLogConfig
     oci.data_flow.models.ApplicationParameter
     oci.data_flow.models.ApplicationSummary
     oci.data_flow.models.ChangeApplicationCompartmentDetails

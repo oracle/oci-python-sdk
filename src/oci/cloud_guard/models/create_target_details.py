@@ -226,7 +226,7 @@ class CreateTargetDetails(object):
     def target_resource_type(self):
         """
         **[Required]** Gets the target_resource_type of this CreateTargetDetails.
-        possible type of targets(compartment/HCMCloud/ERPCloud)
+        possible type of targets(COMPARTMENT/FACLOUD)
 
         Allowed values for this property are: "COMPARTMENT", "ERPCLOUD", "HCMCLOUD", "SECURITY_ZONE"
 
@@ -240,7 +240,7 @@ class CreateTargetDetails(object):
     def target_resource_type(self, target_resource_type):
         """
         Sets the target_resource_type of this CreateTargetDetails.
-        possible type of targets(compartment/HCMCloud/ERPCloud)
+        possible type of targets(COMPARTMENT/FACLOUD)
 
 
         :param target_resource_type: The target_resource_type of this CreateTargetDetails.
