@@ -180,7 +180,6 @@ def test_filter_resource_actions(testing_service_client):
             response = client.filter_resource_actions(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 compartment_id_in_subtree=request.pop(util.camelize('compartmentIdInSubtree')),
-                recommendation_id=request.pop(util.camelize('recommendationId')),
                 query_details=request.pop(util.camelize('QueryDetails')),
                 retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
@@ -192,7 +191,6 @@ def test_filter_resource_actions(testing_service_client):
                 next_response = client.filter_resource_actions(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     compartment_id_in_subtree=request.pop(util.camelize('compartmentIdInSubtree')),
-                    recommendation_id=request.pop(util.camelize('recommendationId')),
                     query_details=request.pop(util.camelize('QueryDetails')),
                     page=next_page,
                     retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -206,7 +204,6 @@ def test_filter_resource_actions(testing_service_client):
                     prev_response = client.filter_resource_actions(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         compartment_id_in_subtree=request.pop(util.camelize('compartmentIdInSubtree')),
-                        recommendation_id=request.pop(util.camelize('recommendationId')),
                         query_details=request.pop(util.camelize('QueryDetails')),
                         page=next_response.headers[prev_page],
                         retry_strategy=oci.retry.NoneRetryStrategy(),
@@ -888,7 +885,6 @@ def test_list_recommendations(testing_service_client):
             response = client.list_recommendations(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 compartment_id_in_subtree=request.pop(util.camelize('compartmentIdInSubtree')),
-                category_id=request.pop(util.camelize('categoryId')),
                 retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
@@ -899,7 +895,6 @@ def test_list_recommendations(testing_service_client):
                 next_response = client.list_recommendations(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     compartment_id_in_subtree=request.pop(util.camelize('compartmentIdInSubtree')),
-                    category_id=request.pop(util.camelize('categoryId')),
                     page=next_page,
                     retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
@@ -912,7 +907,6 @@ def test_list_recommendations(testing_service_client):
                     prev_response = client.list_recommendations(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         compartment_id_in_subtree=request.pop(util.camelize('compartmentIdInSubtree')),
-                        category_id=request.pop(util.camelize('categoryId')),
                         page=next_response.headers[prev_page],
                         retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))
@@ -1023,7 +1017,6 @@ def test_list_resource_actions(testing_service_client):
             response = client.list_resource_actions(
                 compartment_id=request.pop(util.camelize('compartmentId')),
                 compartment_id_in_subtree=request.pop(util.camelize('compartmentIdInSubtree')),
-                recommendation_id=request.pop(util.camelize('recommendationId')),
                 retry_strategy=oci.retry.NoneRetryStrategy(),
                 **(util.camel_to_snake_keys(request))
             )
@@ -1034,7 +1027,6 @@ def test_list_resource_actions(testing_service_client):
                 next_response = client.list_resource_actions(
                     compartment_id=request.pop(util.camelize('compartmentId')),
                     compartment_id_in_subtree=request.pop(util.camelize('compartmentIdInSubtree')),
-                    recommendation_id=request.pop(util.camelize('recommendationId')),
                     page=next_page,
                     retry_strategy=oci.retry.NoneRetryStrategy(),
                     **(util.camel_to_snake_keys(request))
@@ -1047,7 +1039,6 @@ def test_list_resource_actions(testing_service_client):
                     prev_response = client.list_resource_actions(
                         compartment_id=request.pop(util.camelize('compartmentId')),
                         compartment_id_in_subtree=request.pop(util.camelize('compartmentIdInSubtree')),
-                        recommendation_id=request.pop(util.camelize('recommendationId')),
                         page=next_response.headers[prev_page],
                         retry_strategy=oci.retry.NoneRetryStrategy(),
                         **(util.camel_to_snake_keys(request))

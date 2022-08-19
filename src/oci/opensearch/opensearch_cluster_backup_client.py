@@ -143,7 +143,7 @@ class OpensearchClusterBackupClient(object):
         resource_path = "/opensearchClusterBackups/{opensearchClusterBackupId}"
         method = "DELETE"
         operation_name = "delete_opensearch_cluster_backup"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchClusterBackup/DeleteOpensearchClusterBackup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -235,7 +235,7 @@ class OpensearchClusterBackupClient(object):
         resource_path = "/opensearchClusterBackups/{opensearchClusterBackupId}"
         method = "GET"
         operation_name = "get_opensearch_cluster_backup"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchClusterBackup/GetOpensearchClusterBackup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -357,7 +357,7 @@ class OpensearchClusterBackupClient(object):
         resource_path = "/opensearchClusterBackups"
         method = "GET"
         operation_name = "list_opensearch_cluster_backups"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchClusterBackupCollection/ListOpensearchClusterBackups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -491,7 +491,7 @@ class OpensearchClusterBackupClient(object):
         resource_path = "/opensearchClusterBackups/{opensearchClusterBackupId}"
         method = "PUT"
         operation_name = "update_opensearch_cluster_backup"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchClusterBackup/UpdateOpensearchClusterBackup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

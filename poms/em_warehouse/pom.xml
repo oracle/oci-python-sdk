@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.emdw</groupId>
         <artifactId>emdw-control-plane-spec</artifactId>
-        <version>0.12.29</version>
+        <version>0.14.9</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

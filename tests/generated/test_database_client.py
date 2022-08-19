@@ -5829,6 +5829,47 @@ def test_get_external_pluggable_database(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_infrastructure_target_versions(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'GetInfrastructureTargetVersions'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetInfrastructureTargetVersions')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='GetInfrastructureTargetVersions')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.get_infrastructure_target_versions(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'GetInfrastructureTargetVersions',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'infrastructureTargetVersion',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_get_key_store(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetKeyStore'):

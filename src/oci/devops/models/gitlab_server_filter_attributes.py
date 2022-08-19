@@ -26,19 +26,26 @@ class GitlabServerFilterAttributes(object):
             The value to assign to the base_ref property of this GitlabServerFilterAttributes.
         :type base_ref: str
 
+        :param file_filter:
+            The value to assign to the file_filter property of this GitlabServerFilterAttributes.
+        :type file_filter: oci.devops.models.FileFilter
+
         """
         self.swagger_types = {
             'head_ref': 'str',
-            'base_ref': 'str'
+            'base_ref': 'str',
+            'file_filter': 'FileFilter'
         }
 
         self.attribute_map = {
             'head_ref': 'headRef',
-            'base_ref': 'baseRef'
+            'base_ref': 'baseRef',
+            'file_filter': 'fileFilter'
         }
 
         self._head_ref = None
         self._base_ref = None
+        self._file_filter = None
 
     @property
     def head_ref(self):
@@ -87,6 +94,26 @@ class GitlabServerFilterAttributes(object):
         :type: str
         """
         self._base_ref = base_ref
+
+    @property
+    def file_filter(self):
+        """
+        Gets the file_filter of this GitlabServerFilterAttributes.
+
+        :return: The file_filter of this GitlabServerFilterAttributes.
+        :rtype: oci.devops.models.FileFilter
+        """
+        return self._file_filter
+
+    @file_filter.setter
+    def file_filter(self, file_filter):
+        """
+        Sets the file_filter of this GitlabServerFilterAttributes.
+
+        :param file_filter: The file_filter of this GitlabServerFilterAttributes.
+        :type: oci.devops.models.FileFilter
+        """
+        self._file_filter = file_filter
 
     def __repr__(self):
         return formatted_flat_dict(self)

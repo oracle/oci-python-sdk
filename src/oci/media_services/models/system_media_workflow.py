@@ -28,7 +28,7 @@ class SystemMediaWorkflow(object):
 
         :param parameters:
             The value to assign to the parameters property of this SystemMediaWorkflow.
-        :type parameters: dict(str, str)
+        :type parameters: dict(str, object)
 
         :param tasks:
             The value to assign to the tasks property of this SystemMediaWorkflow.
@@ -38,7 +38,7 @@ class SystemMediaWorkflow(object):
         self.swagger_types = {
             'name': 'str',
             'description': 'str',
-            'parameters': 'dict(str, str)',
+            'parameters': 'dict(str, object)',
             'tasks': 'list[MediaWorkflowTask]'
         }
 
@@ -114,7 +114,7 @@ class SystemMediaWorkflow(object):
 
 
         :return: The parameters of this SystemMediaWorkflow.
-        :rtype: dict(str, str)
+        :rtype: dict(str, object)
         """
         return self._parameters
 
@@ -128,7 +128,7 @@ class SystemMediaWorkflow(object):
 
 
         :param parameters: The parameters of this SystemMediaWorkflow.
-        :type: dict(str, str)
+        :type: dict(str, object)
         """
         self._parameters = parameters
 

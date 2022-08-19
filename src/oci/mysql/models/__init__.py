@@ -59,6 +59,7 @@ from .heat_wave_cluster_schema_memory_estimate import HeatWaveClusterSchemaMemor
 from .heat_wave_cluster_summary import HeatWaveClusterSummary
 from .heat_wave_cluster_table_memory_estimate import HeatWaveClusterTableMemoryEstimate
 from .heat_wave_node import HeatWaveNode
+from .initialization_variables import InitializationVariables
 from .maintenance_details import MaintenanceDetails
 from .pem_ca_certificate import PemCaCertificate
 from .pitr_policy import PitrPolicy
@@ -144,6 +145,7 @@ mysql_type_mapping = {
     "HeatWaveClusterSummary": HeatWaveClusterSummary,
     "HeatWaveClusterTableMemoryEstimate": HeatWaveClusterTableMemoryEstimate,
     "HeatWaveNode": HeatWaveNode,
+    "InitializationVariables": InitializationVariables,
     "MaintenanceDetails": MaintenanceDetails,
     "PemCaCertificate": PemCaCertificate,
     "PitrPolicy": PitrPolicy,

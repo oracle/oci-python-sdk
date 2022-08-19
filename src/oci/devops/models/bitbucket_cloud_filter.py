@@ -49,22 +49,29 @@ class BitbucketCloudFilter(Filter):
             The value to assign to the include property of this BitbucketCloudFilter.
         :type include: oci.devops.models.BitbucketCloudFilterAttributes
 
+        :param exclude:
+            The value to assign to the exclude property of this BitbucketCloudFilter.
+        :type exclude: oci.devops.models.BitbucketCloudFilterExclusionAttributes
+
         """
         self.swagger_types = {
             'trigger_source': 'str',
             'events': 'list[str]',
-            'include': 'BitbucketCloudFilterAttributes'
+            'include': 'BitbucketCloudFilterAttributes',
+            'exclude': 'BitbucketCloudFilterExclusionAttributes'
         }
 
         self.attribute_map = {
             'trigger_source': 'triggerSource',
             'events': 'events',
-            'include': 'include'
+            'include': 'include',
+            'exclude': 'exclude'
         }
 
         self._trigger_source = None
         self._events = None
         self._include = None
+        self._exclude = None
         self._trigger_source = 'BITBUCKET_CLOUD'
 
     @property
@@ -116,6 +123,26 @@ class BitbucketCloudFilter(Filter):
         :type: oci.devops.models.BitbucketCloudFilterAttributes
         """
         self._include = include
+
+    @property
+    def exclude(self):
+        """
+        Gets the exclude of this BitbucketCloudFilter.
+
+        :return: The exclude of this BitbucketCloudFilter.
+        :rtype: oci.devops.models.BitbucketCloudFilterExclusionAttributes
+        """
+        return self._exclude
+
+    @exclude.setter
+    def exclude(self, exclude):
+        """
+        Sets the exclude of this BitbucketCloudFilter.
+
+        :param exclude: The exclude of this BitbucketCloudFilter.
+        :type: oci.devops.models.BitbucketCloudFilterExclusionAttributes
+        """
+        self._exclude = exclude
 
     def __repr__(self):
         return formatted_flat_dict(self)

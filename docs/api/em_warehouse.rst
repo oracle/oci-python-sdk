@@ -6,8 +6,8 @@ Em Warehouse
     :nosignatures:
     :template: autosummary/service_client.rst
 
-    oci.em_warehouse.EmDataLakeClient
-    oci.em_warehouse.EmDataLakeClientCompositeOperations
+    oci.em_warehouse.EmWarehouseClient
+    oci.em_warehouse.EmWarehouseClientCompositeOperations
 
 --------
  Models

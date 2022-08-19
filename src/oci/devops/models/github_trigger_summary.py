@@ -71,6 +71,10 @@ class GithubTriggerSummary(TriggerSummary):
             The value to assign to the system_tags property of this GithubTriggerSummary.
         :type system_tags: dict(str, dict(str, object))
 
+        :param connection_id:
+            The value to assign to the connection_id property of this GithubTriggerSummary.
+        :type connection_id: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -85,7 +89,8 @@ class GithubTriggerSummary(TriggerSummary):
             'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'connection_id': 'str'
         }
 
         self.attribute_map = {
@@ -101,7 +106,8 @@ class GithubTriggerSummary(TriggerSummary):
             'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'connection_id': 'connectionId'
         }
 
         self._id = None
@@ -117,7 +123,32 @@ class GithubTriggerSummary(TriggerSummary):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._connection_id = None
         self._trigger_source = 'GITHUB'
+
+    @property
+    def connection_id(self):
+        """
+        Gets the connection_id of this GithubTriggerSummary.
+        The OCID of the connection resource used to get details for triggered events.
+
+
+        :return: The connection_id of this GithubTriggerSummary.
+        :rtype: str
+        """
+        return self._connection_id
+
+    @connection_id.setter
+    def connection_id(self, connection_id):
+        """
+        Sets the connection_id of this GithubTriggerSummary.
+        The OCID of the connection resource used to get details for triggered events.
+
+
+        :param connection_id: The connection_id of this GithubTriggerSummary.
+        :type: str
+        """
+        self._connection_id = connection_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

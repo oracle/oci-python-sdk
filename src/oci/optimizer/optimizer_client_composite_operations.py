@@ -240,7 +240,7 @@ class OptimizerClientCompositeOperations(object):
             The unique OCID associated with the recommendation.
 
         :param oci.optimizer.models.UpdateRecommendationDetails update_recommendation_details: (required)
-            The request object for udpating the recommendation details.
+            The request object for updating the recommendation details.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.optimizer.models.Recommendation.lifecycle_state`

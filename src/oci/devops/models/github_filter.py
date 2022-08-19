@@ -53,22 +53,29 @@ class GithubFilter(Filter):
             The value to assign to the include property of this GithubFilter.
         :type include: oci.devops.models.GithubFilterAttributes
 
+        :param exclude:
+            The value to assign to the exclude property of this GithubFilter.
+        :type exclude: oci.devops.models.GithubFilterExclusionAttributes
+
         """
         self.swagger_types = {
             'trigger_source': 'str',
             'events': 'list[str]',
-            'include': 'GithubFilterAttributes'
+            'include': 'GithubFilterAttributes',
+            'exclude': 'GithubFilterExclusionAttributes'
         }
 
         self.attribute_map = {
             'trigger_source': 'triggerSource',
             'events': 'events',
-            'include': 'include'
+            'include': 'include',
+            'exclude': 'exclude'
         }
 
         self._trigger_source = None
         self._events = None
         self._include = None
+        self._exclude = None
         self._trigger_source = 'GITHUB'
 
     @property
@@ -120,6 +127,26 @@ class GithubFilter(Filter):
         :type: oci.devops.models.GithubFilterAttributes
         """
         self._include = include
+
+    @property
+    def exclude(self):
+        """
+        Gets the exclude of this GithubFilter.
+
+        :return: The exclude of this GithubFilter.
+        :rtype: oci.devops.models.GithubFilterExclusionAttributes
+        """
+        return self._exclude
+
+    @exclude.setter
+    def exclude(self, exclude):
+        """
+        Sets the exclude of this GithubFilter.
+
+        :param exclude: The exclude of this GithubFilter.
+        :type: oci.devops.models.GithubFilterExclusionAttributes
+        """
+        self._exclude = exclude
 
     def __repr__(self):
         return formatted_flat_dict(self)

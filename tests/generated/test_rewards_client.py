@@ -255,6 +255,72 @@ def test_list_redeemable_users(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_metering_team_us_grp@oracle.com" jiraProject="METER" opsJiraProject="MTRC"
+def test_list_redemptions(testing_service_client):
+    if not testing_service_client.is_api_enabled('usage', 'ListRedemptions'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('usage', util.camelize('rewards'), 'ListRedemptions')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='usage', api_name='ListRedemptions')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.usage.RewardsClient(config, service_endpoint=service_endpoint)
+            response = client.list_redemptions(
+                tenancy_id=request.pop(util.camelize('tenancyId')),
+                subscription_id=request.pop(util.camelize('subscriptionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_redemptions(
+                    tenancy_id=request.pop(util.camelize('tenancyId')),
+                    subscription_id=request.pop(util.camelize('subscriptionId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_redemptions(
+                        tenancy_id=request.pop(util.camelize('tenancyId')),
+                        subscription_id=request.pop(util.camelize('subscriptionId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'usage',
+            'ListRedemptions',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'redemptionCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_metering_team_us_grp@oracle.com" jiraProject="METER" opsJiraProject="MTRC"
 def test_list_rewards(testing_service_client):
     if not testing_service_client.is_api_enabled('usage', 'ListRewards'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

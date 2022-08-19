@@ -40,7 +40,7 @@ class MediaWorkflowConfiguration(object):
 
         :param parameters:
             The value to assign to the parameters property of this MediaWorkflowConfiguration.
-        :type parameters: dict(str, str)
+        :type parameters: dict(str, object)
 
         :param time_created:
             The value to assign to the time_created property of this MediaWorkflowConfiguration.
@@ -77,7 +77,7 @@ class MediaWorkflowConfiguration(object):
             'id': 'str',
             'display_name': 'str',
             'compartment_id': 'str',
-            'parameters': 'dict(str, str)',
+            'parameters': 'dict(str, object)',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
@@ -196,7 +196,7 @@ class MediaWorkflowConfiguration(object):
 
 
         :return: The parameters of this MediaWorkflowConfiguration.
-        :rtype: dict(str, str)
+        :rtype: dict(str, object)
         """
         return self._parameters
 
@@ -211,7 +211,7 @@ class MediaWorkflowConfiguration(object):
 
 
         :param parameters: The parameters of this MediaWorkflowConfiguration.
-        :type: dict(str, str)
+        :type: dict(str, object)
         """
         self._parameters = parameters
 

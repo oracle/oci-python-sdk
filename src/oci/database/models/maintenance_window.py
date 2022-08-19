@@ -54,6 +54,10 @@ class MaintenanceWindow(object):
             The value to assign to the custom_action_timeout_in_mins property of this MaintenanceWindow.
         :type custom_action_timeout_in_mins: int
 
+        :param is_monthly_patching_enabled:
+            The value to assign to the is_monthly_patching_enabled property of this MaintenanceWindow.
+        :type is_monthly_patching_enabled: bool
+
         :param months:
             The value to assign to the months property of this MaintenanceWindow.
         :type months: list[oci.database.models.Month]
@@ -80,6 +84,7 @@ class MaintenanceWindow(object):
             'patching_mode': 'str',
             'is_custom_action_timeout_enabled': 'bool',
             'custom_action_timeout_in_mins': 'int',
+            'is_monthly_patching_enabled': 'bool',
             'months': 'list[Month]',
             'weeks_of_month': 'list[int]',
             'days_of_week': 'list[DayOfWeek]',
@@ -92,6 +97,7 @@ class MaintenanceWindow(object):
             'patching_mode': 'patchingMode',
             'is_custom_action_timeout_enabled': 'isCustomActionTimeoutEnabled',
             'custom_action_timeout_in_mins': 'customActionTimeoutInMins',
+            'is_monthly_patching_enabled': 'isMonthlyPatchingEnabled',
             'months': 'months',
             'weeks_of_month': 'weeksOfMonth',
             'days_of_week': 'daysOfWeek',
@@ -103,6 +109,7 @@ class MaintenanceWindow(object):
         self._patching_mode = None
         self._is_custom_action_timeout_enabled = None
         self._custom_action_timeout_in_mins = None
+        self._is_monthly_patching_enabled = None
         self._months = None
         self._weeks_of_month = None
         self._days_of_week = None
@@ -226,6 +233,30 @@ class MaintenanceWindow(object):
         :type: int
         """
         self._custom_action_timeout_in_mins = custom_action_timeout_in_mins
+
+    @property
+    def is_monthly_patching_enabled(self):
+        """
+        Gets the is_monthly_patching_enabled of this MaintenanceWindow.
+        If true, enables the monthly patching option.
+
+
+        :return: The is_monthly_patching_enabled of this MaintenanceWindow.
+        :rtype: bool
+        """
+        return self._is_monthly_patching_enabled
+
+    @is_monthly_patching_enabled.setter
+    def is_monthly_patching_enabled(self, is_monthly_patching_enabled):
+        """
+        Sets the is_monthly_patching_enabled of this MaintenanceWindow.
+        If true, enables the monthly patching option.
+
+
+        :param is_monthly_patching_enabled: The is_monthly_patching_enabled of this MaintenanceWindow.
+        :type: bool
+        """
+        self._is_monthly_patching_enabled = is_monthly_patching_enabled
 
     @property
     def months(self):

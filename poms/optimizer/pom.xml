@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.oci.optimizer</groupId>
         <artifactId>optimizer-spec</artifactId>
-        <version>0.1.514</version>
+        <version>0.1.576</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
