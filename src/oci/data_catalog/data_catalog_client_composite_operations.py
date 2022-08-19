@@ -52,18 +52,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_data_asset(wait_for_resource_id),
+                self.client.get_data_asset(catalog_id, data_asset_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -96,18 +101,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_type(wait_for_resource_id),
+                self.client.get_type(catalog_id, type_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -307,18 +317,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_attribute(wait_for_resource_id),
+                self.client.get_attribute(catalog_id, data_asset_key, entity_key, attribute_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -357,18 +372,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_attribute_tag(wait_for_resource_id),
+                self.client.get_attribute_tag(catalog_id, data_asset_key, entity_key, attribute_key, tag_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -477,18 +497,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_connection(wait_for_resource_id),
+                self.client.get_connection(catalog_id, data_asset_key, connection_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -521,18 +546,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_custom_property(wait_for_resource_id),
+                self.client.get_custom_property(catalog_id, namespace_id, custom_property_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -562,18 +592,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_data_asset(wait_for_resource_id),
+                self.client.get_data_asset(catalog_id, data_asset_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -606,18 +641,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_data_asset_tag(wait_for_resource_id),
+                self.client.get_data_asset_tag(catalog_id, data_asset_key, tag_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -650,18 +690,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_entity(wait_for_resource_id),
+                self.client.get_entity(catalog_id, data_asset_key, entity_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -697,18 +742,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_entity_tag(wait_for_resource_id),
+                self.client.get_entity_tag(catalog_id, data_asset_key, entity_key, tag_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -741,18 +791,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_folder(wait_for_resource_id),
+                self.client.get_folder(catalog_id, data_asset_key, folder_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -788,18 +843,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_folder_tag(wait_for_resource_id),
+                self.client.get_folder_tag(catalog_id, data_asset_key, folder_key, tag_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -829,18 +889,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_glossary(wait_for_resource_id),
+                self.client.get_glossary(catalog_id, glossary_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -870,18 +935,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_job(wait_for_resource_id),
+                self.client.get_job(catalog_id, job_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -911,18 +981,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_job_definition(wait_for_resource_id),
+                self.client.get_job_definition(catalog_id, job_definition_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -955,18 +1030,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_job_execution(wait_for_resource_id),
+                self.client.get_job_execution(catalog_id, job_key, job_execution_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1034,18 +1114,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        namespace_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_namespace(wait_for_resource_id),
+                self.client.get_namespace(catalog_id, namespace_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1075,18 +1160,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_pattern(wait_for_resource_id),
+                self.client.get_pattern(catalog_id, pattern_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1119,18 +1209,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_term(wait_for_resource_id),
+                self.client.get_term(catalog_id, glossary_key, term_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1166,18 +1261,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_term_relationship(wait_for_resource_id),
+                self.client.get_term_relationship(catalog_id, glossary_key, term_key, term_relationship_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1389,18 +1489,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_type(wait_for_resource_id),
+                self.client.get_type(catalog_id, type_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1433,18 +1538,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_data_asset(wait_for_resource_id),
+                self.client.get_data_asset(catalog_id, data_asset_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1483,18 +1593,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_attribute(wait_for_resource_id),
+                self.client.get_attribute(catalog_id, data_asset_key, entity_key, attribute_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1524,18 +1639,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_catalog(wait_for_resource_id),
+                self.client.get_catalog(catalog_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1612,18 +1732,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_connection(wait_for_resource_id),
+                self.client.get_connection(catalog_id, data_asset_key, connection_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1659,18 +1784,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_custom_property(wait_for_resource_id),
+                self.client.get_custom_property(catalog_id, namespace_id, custom_property_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1703,18 +1833,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_data_asset(wait_for_resource_id),
+                self.client.get_data_asset(catalog_id, data_asset_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1750,18 +1885,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_entity(wait_for_resource_id),
+                self.client.get_entity(catalog_id, data_asset_key, entity_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1797,18 +1937,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_folder(wait_for_resource_id),
+                self.client.get_folder(catalog_id, data_asset_key, folder_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1841,18 +1986,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_glossary(wait_for_resource_id),
+                self.client.get_glossary(catalog_id, glossary_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1885,18 +2035,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_job(wait_for_resource_id),
+                self.client.get_job(catalog_id, job_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1929,18 +2084,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_job_definition(wait_for_resource_id),
+                self.client.get_job_definition(catalog_id, job_definition_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1970,18 +2130,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        metastore_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_metastore(wait_for_resource_id),
+                self.client.get_metastore(metastore_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -2014,18 +2179,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        namespace_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_namespace(wait_for_resource_id),
+                self.client.get_namespace(catalog_id, namespace_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -2058,18 +2228,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_pattern(wait_for_resource_id),
+                self.client.get_pattern(catalog_id, pattern_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -2105,18 +2280,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_term(wait_for_resource_id),
+                self.client.get_term(catalog_id, glossary_key, term_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -2155,18 +2335,23 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_term_relationship(wait_for_resource_id),
+                self.client.get_term_relationship(catalog_id, glossary_key, term_key, term_relationship_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -2202,17 +2387,22 @@ class DataCatalogClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        catalog_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_connection(wait_for_resource_id),
+                self.client.get_connection(catalog_id, data_asset_key, connection_key),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)

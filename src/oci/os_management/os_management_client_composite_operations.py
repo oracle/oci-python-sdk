@@ -46,18 +46,23 @@ class OsManagementClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        managed_instance_group_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_managed_instance_group(wait_for_resource_id),
+                self.client.get_managed_instance_group(managed_instance_group_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -84,18 +89,23 @@ class OsManagementClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        scheduled_job_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_scheduled_job(wait_for_resource_id),
+                self.client.get_scheduled_job(scheduled_job_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -122,18 +132,23 @@ class OsManagementClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        software_source_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_software_source(wait_for_resource_id),
+                self.client.get_software_source(software_source_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -173,7 +188,7 @@ class OsManagementClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                initial_get_result,
+                initial_get_result,  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 succeed_on_not_found=True,
                 **waiter_kwargs
@@ -181,6 +196,11 @@ class OsManagementClientCompositeOperations(object):
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -220,7 +240,7 @@ class OsManagementClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                initial_get_result,
+                initial_get_result,  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 succeed_on_not_found=True,
                 **waiter_kwargs
@@ -228,6 +248,11 @@ class OsManagementClientCompositeOperations(object):
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -267,7 +292,7 @@ class OsManagementClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                initial_get_result,
+                initial_get_result,  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 succeed_on_not_found=True,
                 **waiter_kwargs
@@ -275,6 +300,11 @@ class OsManagementClientCompositeOperations(object):
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1073,18 +1103,23 @@ class OsManagementClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        managed_instance_group_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_managed_instance_group(wait_for_resource_id),
+                self.client.get_managed_instance_group(managed_instance_group_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1114,18 +1149,23 @@ class OsManagementClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        scheduled_job_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_scheduled_job(wait_for_resource_id),
+                self.client.get_scheduled_job(scheduled_job_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1155,17 +1195,22 @@ class OsManagementClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        software_source_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_software_source(wait_for_resource_id),
+                self.client.get_software_source(software_source_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
