@@ -8,13 +8,10 @@ Several utilities to help with producing reports from OCI
 
 ## Executing using Cloud Shell:
 ```
-    1. install oci sdk package
-       pip3 install --user oci
-
-    2. clone the oci sdk repo
+    1. clone the oci sdk repo
        git clone https://github.com/oracle/oci-python-sdk
 
-    3. Execute
+    2. Execute
        cd $HOME/oci-python-sdk/examples/list_resources_in_tenancy
        python3 list_all_ipsec_tunnels_in_tenancy.py -dt
        python3 list_all_virtual_circuits_in_tenancy.py -dt
@@ -22,8 +19,9 @@ Several utilities to help with producing reports from OCI
        python3 list_dbsystem_with_maintenance_in_tenancy.py -dt
        python3 list_bv_backups_in_tenancy.py -dt
        python3 list_limits_per_compartments.py -dt
+       python3 list_databases_shapes_in_tenancy.py -dt -csv output.csv
 
-    4. Help with --help
+    3. Help with --help
 ```
 
 ## list_all_ipsec_tunnels_in_tenancy.py
@@ -114,13 +112,14 @@ optional arguments:
   -t CONFIG_PROFILE   Config Profile inside the config file
   -p PROXY            Set Proxy (i.e. www-proxy-server.com:80)
   -rg FILTER_REGION   filter by region (i.e. us-ashburn-1)
-  -cp FILTER_COMP     filter by compartment (i.e. production)
+  -cp FILTER_COMP     filter by compartment (i.e. production or root)
   -sr FILTER_SERVICE  filter by service (i.e. compute)
   -sc FILTER_SCOPE    filter by scope (i.e. AD,REGION,GLOBAL)
   -ip                 Use Instance Principals for Authentication
   -dt                 Use Delegation Token for Authentication
   -js                 print in JSON format
   -csv CSV            Output to CSV files, Input as file header
+  -all                show all limits without filter those with zero
 
 ```
 
@@ -170,4 +169,30 @@ optional arguments:
   -rg FILTER_REGION     filter by Region
   -js                   print in JSON format
   -csv CSV              Output to CSV files, Input as file header
+```
+
+## list_databases_shapes_in_tenancy.py
+Produce list of databases in tenancy with shape information
+
+```
+usage: list_databases_shapes_in_tenancy.py [-h] [-c CONFIG_FILE]
+                                           [-t CONFIG_PROFILE] [-p PROXY]
+                                           [-ip] [-is] [-dt]
+                                           [-rg FILTER_REGION]
+                                           [-cp FILTER_COMPN]
+                                           [-cr FILTER_COMPR] [-js] [-csv CSV]
+
+optional arguments:
+  -h, --help         show this help message and exit
+  -c CONFIG_FILE     OCI CLI Config file
+  -t CONFIG_PROFILE  Config file section to use (tenancy profile)
+  -p PROXY           Set Proxy (i.e. www-proxy-server.com:80)
+  -ip                Use Instance Principals for Authentication
+  -is                Use Security Token for Authentication
+  -dt                Use Delegation Token for Authentication
+  -rg FILTER_REGION  filter by region (i.e. us-ashburn-1)
+  -cp FILTER_COMPN   filter by compartment Name or Id
+  -cr FILTER_COMPR   filter by compartment Path
+  -js                print in JSON format
+  -csv CSV           Output to CSV file, Input as file name
 ```
