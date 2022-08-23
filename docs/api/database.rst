@@ -218,6 +218,8 @@ Database
     oci.database.models.GenerateRecommendedNetworkDetails
     oci.database.models.GiVersionSummary
     oci.database.models.InfoForNetworkGenDetails
+    oci.database.models.InfrastructureTargetVersion
+    oci.database.models.InfrastructureTargetVersionSummary
     oci.database.models.KeyStore
     oci.database.models.KeyStoreAssociatedDatabaseDetails
     oci.database.models.KeyStoreSummary

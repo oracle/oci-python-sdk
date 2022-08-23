@@ -153,7 +153,7 @@ class OpensearchClusterClient(object):
         resource_path = "/opensearchClusters/{opensearchClusterId}/actions/backup"
         method = "POST"
         operation_name = "backup_opensearch_cluster"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchCluster/BackupOpensearchCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -257,7 +257,7 @@ class OpensearchClusterClient(object):
         resource_path = "/opensearchClusters"
         method = "POST"
         operation_name = "create_opensearch_cluster"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchCluster/CreateOpensearchCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -347,7 +347,7 @@ class OpensearchClusterClient(object):
         resource_path = "/opensearchClusters/{opensearchClusterId}"
         method = "DELETE"
         operation_name = "delete_opensearch_cluster"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchCluster/DeleteOpensearchCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -439,7 +439,7 @@ class OpensearchClusterClient(object):
         resource_path = "/opensearchClusters/{opensearchClusterId}"
         method = "GET"
         operation_name = "get_opensearch_cluster"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchCluster/GetOpensearchCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -531,7 +531,7 @@ class OpensearchClusterClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -650,7 +650,7 @@ class OpensearchClusterClient(object):
         resource_path = "/opensearchClusters"
         method = "GET"
         operation_name = "list_opensearch_clusters"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchClusterCollection/ListOpensearchClusters"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -775,7 +775,7 @@ class OpensearchClusterClient(object):
         resource_path = "/opensearch/versions"
         method = "GET"
         operation_name = "list_opensearch_versions"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchVersionsCollection/ListOpensearchVersions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -869,7 +869,7 @@ class OpensearchClusterClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/WorkRequestErrorCollection/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -977,7 +977,7 @@ class OpensearchClusterClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/WorkRequestLogEntryCollection/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1091,7 +1091,7 @@ class OpensearchClusterClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/WorkRequestCollection/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1203,7 +1203,7 @@ class OpensearchClusterClient(object):
         resource_path = "/opensearchClusters/{opensearchClusterId}/actions/restore"
         method = "POST"
         operation_name = "opensearch_cluster_restore"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchCluster/OpensearchClusterRestore"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1317,7 +1317,7 @@ class OpensearchClusterClient(object):
         resource_path = "/opensearchClusters/{opensearchClusterId}/actions/resizeHorizontal"
         method = "POST"
         operation_name = "resize_opensearch_cluster_horizontal"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchCluster/ResizeOpensearchClusterHorizontal"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1431,7 +1431,7 @@ class OpensearchClusterClient(object):
         resource_path = "/opensearchClusters/{opensearchClusterId}/actions/resizeVertical"
         method = "POST"
         operation_name = "resize_opensearch_cluster_vertical"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchCluster/ResizeOpensearchClusterVertical"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1538,7 +1538,7 @@ class OpensearchClusterClient(object):
         resource_path = "/opensearchClusters/{opensearchClusterId}"
         method = "PUT"
         operation_name = "update_opensearch_cluster"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchCluster/UpdateOpensearchCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

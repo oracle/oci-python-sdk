@@ -82,7 +82,7 @@ class MediaWorkflowJob(object):
 
         :param parameters:
             The value to assign to the parameters property of this MediaWorkflowJob.
-        :type parameters: dict(str, str)
+        :type parameters: dict(str, object)
 
         :param time_created:
             The value to assign to the time_created property of this MediaWorkflowJob.
@@ -94,7 +94,7 @@ class MediaWorkflowJob(object):
 
         :param runnable:
             The value to assign to the runnable property of this MediaWorkflowJob.
-        :type runnable: dict(str, str)
+        :type runnable: dict(str, object)
 
         :param outputs:
             The value to assign to the outputs property of this MediaWorkflowJob.
@@ -130,10 +130,10 @@ class MediaWorkflowJob(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'task_lifecycle_state': 'list[MediaWorkflowTaskState]',
-            'parameters': 'dict(str, str)',
+            'parameters': 'dict(str, object)',
             'time_created': 'datetime',
             'time_updated': 'datetime',
-            'runnable': 'dict(str, str)',
+            'runnable': 'dict(str, object)',
             'outputs': 'list[JobOutput]',
             'time_started': 'datetime',
             'time_ended': 'datetime',
@@ -392,7 +392,7 @@ class MediaWorkflowJob(object):
 
 
         :return: The parameters of this MediaWorkflowJob.
-        :rtype: dict(str, str)
+        :rtype: dict(str, object)
         """
         return self._parameters
 
@@ -408,7 +408,7 @@ class MediaWorkflowJob(object):
 
 
         :param parameters: The parameters of this MediaWorkflowJob.
-        :type: dict(str, str)
+        :type: dict(str, object)
         """
         self._parameters = parameters
 
@@ -469,7 +469,7 @@ class MediaWorkflowJob(object):
 
 
         :return: The runnable of this MediaWorkflowJob.
-        :rtype: dict(str, str)
+        :rtype: dict(str, object)
         """
         return self._runnable
 
@@ -482,7 +482,7 @@ class MediaWorkflowJob(object):
 
 
         :param runnable: The runnable of this MediaWorkflowJob.
-        :type: dict(str, str)
+        :type: dict(str, object)
         """
         self._runnable = runnable
 

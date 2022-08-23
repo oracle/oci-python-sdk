@@ -37,22 +37,29 @@ class DevopsCodeRepositoryFilter(Filter):
             The value to assign to the include property of this DevopsCodeRepositoryFilter.
         :type include: oci.devops.models.DevopsCodeRepositoryFilterAttributes
 
+        :param exclude:
+            The value to assign to the exclude property of this DevopsCodeRepositoryFilter.
+        :type exclude: oci.devops.models.DevopsCodeRepositoryFilterExclusionAttributes
+
         """
         self.swagger_types = {
             'trigger_source': 'str',
             'events': 'list[str]',
-            'include': 'DevopsCodeRepositoryFilterAttributes'
+            'include': 'DevopsCodeRepositoryFilterAttributes',
+            'exclude': 'DevopsCodeRepositoryFilterExclusionAttributes'
         }
 
         self.attribute_map = {
             'trigger_source': 'triggerSource',
             'events': 'events',
-            'include': 'include'
+            'include': 'include',
+            'exclude': 'exclude'
         }
 
         self._trigger_source = None
         self._events = None
         self._include = None
+        self._exclude = None
         self._trigger_source = 'DEVOPS_CODE_REPOSITORY'
 
     @property
@@ -104,6 +111,26 @@ class DevopsCodeRepositoryFilter(Filter):
         :type: oci.devops.models.DevopsCodeRepositoryFilterAttributes
         """
         self._include = include
+
+    @property
+    def exclude(self):
+        """
+        Gets the exclude of this DevopsCodeRepositoryFilter.
+
+        :return: The exclude of this DevopsCodeRepositoryFilter.
+        :rtype: oci.devops.models.DevopsCodeRepositoryFilterExclusionAttributes
+        """
+        return self._exclude
+
+    @exclude.setter
+    def exclude(self, exclude):
+        """
+        Sets the exclude of this DevopsCodeRepositoryFilter.
+
+        :param exclude: The exclude of this DevopsCodeRepositoryFilter.
+        :type: oci.devops.models.DevopsCodeRepositoryFilterExclusionAttributes
+        """
+        self._exclude = exclude
 
     def __repr__(self):
         return formatted_flat_dict(self)

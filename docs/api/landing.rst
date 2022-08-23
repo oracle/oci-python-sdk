@@ -71,7 +71,7 @@ API Reference
 * :doc:`Transfer Device <dts/client/oci.dts.TransferDeviceClient>`
 * :doc:`Transfer Job <dts/client/oci.dts.TransferJobClient>`
 * :doc:`Transfer Package <dts/client/oci.dts.TransferPackageClient>`
-* :doc:`Em Data Lake <em_warehouse/client/oci.em_warehouse.EmDataLakeClient>`
+* :doc:`Em Warehouse <em_warehouse/client/oci.em_warehouse.EmWarehouseClient>`
 * :doc:`Email <email/client/oci.email.EmailClient>`
 * :doc:`Events <events/client/oci.events.EventsClient>`
 * :doc:`File Storage <file_storage/client/oci.file_storage.FileStorageClient>`

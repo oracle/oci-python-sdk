@@ -38,7 +38,7 @@ class MediaWorkflowJobFact(object):
 
         :param detail:
             The value to assign to the detail property of this MediaWorkflowJobFact.
-        :type detail: dict(str, str)
+        :type detail: dict(str, object)
 
         """
         self.swagger_types = {
@@ -46,7 +46,7 @@ class MediaWorkflowJobFact(object):
             'key': 'int',
             'name': 'str',
             'type': 'str',
-            'detail': 'dict(str, str)'
+            'detail': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -167,7 +167,7 @@ class MediaWorkflowJobFact(object):
 
 
         :return: The detail of this MediaWorkflowJobFact.
-        :rtype: dict(str, str)
+        :rtype: dict(str, object)
         """
         return self._detail
 
@@ -179,7 +179,7 @@ class MediaWorkflowJobFact(object):
 
 
         :param detail: The detail of this MediaWorkflowJobFact.
-        :type: dict(str, str)
+        :type: dict(str, object)
         """
         self._detail = detail
 

@@ -32,6 +32,7 @@ Devops
     oci.devops.models.BitbucketCloudBuildSource
     oci.devops.models.BitbucketCloudFilter
     oci.devops.models.BitbucketCloudFilterAttributes
+    oci.devops.models.BitbucketCloudFilterExclusionAttributes
     oci.devops.models.BitbucketCloudTrigger
     oci.devops.models.BitbucketCloudTriggerCreateResult
     oci.devops.models.BitbucketCloudTriggerSummary
@@ -214,6 +215,7 @@ Devops
     oci.devops.models.DevopsCodeRepositoryBuildSource
     oci.devops.models.DevopsCodeRepositoryFilter
     oci.devops.models.DevopsCodeRepositoryFilterAttributes
+    oci.devops.models.DevopsCodeRepositoryFilterExclusionAttributes
     oci.devops.models.DevopsCodeRepositoryTrigger
     oci.devops.models.DevopsCodeRepositoryTriggerCreateResult
     oci.devops.models.DevopsCodeRepositoryTriggerSummary
@@ -227,6 +229,7 @@ Devops
     oci.devops.models.ExportedVariable
     oci.devops.models.ExportedVariableCollection
     oci.devops.models.FileDiffResponse
+    oci.devops.models.FileFilter
     oci.devops.models.FileLineDetails
     oci.devops.models.Filter
     oci.devops.models.FunctionDeployEnvironment
@@ -242,6 +245,7 @@ Devops
     oci.devops.models.GithubBuildSource
     oci.devops.models.GithubFilter
     oci.devops.models.GithubFilterAttributes
+    oci.devops.models.GithubFilterExclusionAttributes
     oci.devops.models.GithubTrigger
     oci.devops.models.GithubTriggerCreateResult
     oci.devops.models.GithubTriggerSummary
@@ -251,12 +255,14 @@ Devops
     oci.devops.models.GitlabBuildSource
     oci.devops.models.GitlabFilter
     oci.devops.models.GitlabFilterAttributes
+    oci.devops.models.GitlabFilterExclusionAttributes
     oci.devops.models.GitlabServerAccessTokenConnection
     oci.devops.models.GitlabServerAccessTokenConnectionSummary
     oci.devops.models.GitlabServerBuildRunSource
     oci.devops.models.GitlabServerBuildSource
     oci.devops.models.GitlabServerFilter
     oci.devops.models.GitlabServerFilterAttributes
+    oci.devops.models.GitlabServerFilterExclusionAttributes
     oci.devops.models.GitlabServerTrigger
     oci.devops.models.GitlabServerTriggerCreateResult
     oci.devops.models.GitlabServerTriggerSummary

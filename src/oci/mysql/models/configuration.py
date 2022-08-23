@@ -74,6 +74,10 @@ class Configuration(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param init_variables:
+            The value to assign to the init_variables property of this Configuration.
+        :type init_variables: oci.mysql.models.InitializationVariables
+
         :param variables:
             The value to assign to the variables property of this Configuration.
         :type variables: oci.mysql.models.ConfigurationVariables
@@ -101,6 +105,7 @@ class Configuration(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
+            'init_variables': 'InitializationVariables',
             'variables': 'ConfigurationVariables',
             'parent_configuration_id': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -117,6 +122,7 @@ class Configuration(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
+            'init_variables': 'initVariables',
             'variables': 'variables',
             'parent_configuration_id': 'parentConfigurationId',
             'freeform_tags': 'freeformTags',
@@ -132,6 +138,7 @@ class Configuration(object):
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
+        self._init_variables = None
         self._variables = None
         self._parent_configuration_id = None
         self._freeform_tags = None
@@ -372,6 +379,26 @@ class Configuration(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def init_variables(self):
+        """
+        Gets the init_variables of this Configuration.
+
+        :return: The init_variables of this Configuration.
+        :rtype: oci.mysql.models.InitializationVariables
+        """
+        return self._init_variables
+
+    @init_variables.setter
+    def init_variables(self, init_variables):
+        """
+        Sets the init_variables of this Configuration.
+
+        :param init_variables: The init_variables of this Configuration.
+        :type: oci.mysql.models.InitializationVariables
+        """
+        self._init_variables = init_variables
 
     @property
     def variables(self):

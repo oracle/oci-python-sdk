@@ -5,8 +5,8 @@
 from __future__ import absolute_import
 
 
-from .em_data_lake_client import EmDataLakeClient
-from .em_data_lake_client_composite_operations import EmDataLakeClientCompositeOperations
+from .em_warehouse_client import EmWarehouseClient
+from .em_warehouse_client_composite_operations import EmWarehouseClientCompositeOperations
 from . import models
 
-__all__ = ["EmDataLakeClient", "EmDataLakeClientCompositeOperations", "models"]
+__all__ = ["EmWarehouseClient", "EmWarehouseClientCompositeOperations", "models"]

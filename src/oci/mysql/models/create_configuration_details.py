@@ -34,6 +34,10 @@ class CreateConfigurationDetails(object):
             The value to assign to the shape_name property of this CreateConfigurationDetails.
         :type shape_name: str
 
+        :param init_variables:
+            The value to assign to the init_variables property of this CreateConfigurationDetails.
+        :type init_variables: oci.mysql.models.InitializationVariables
+
         :param variables:
             The value to assign to the variables property of this CreateConfigurationDetails.
         :type variables: oci.mysql.models.ConfigurationVariables
@@ -56,6 +60,7 @@ class CreateConfigurationDetails(object):
             'description': 'str',
             'display_name': 'str',
             'shape_name': 'str',
+            'init_variables': 'InitializationVariables',
             'variables': 'ConfigurationVariables',
             'parent_configuration_id': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -67,6 +72,7 @@ class CreateConfigurationDetails(object):
             'description': 'description',
             'display_name': 'displayName',
             'shape_name': 'shapeName',
+            'init_variables': 'initVariables',
             'variables': 'variables',
             'parent_configuration_id': 'parentConfigurationId',
             'freeform_tags': 'freeformTags',
@@ -77,6 +83,7 @@ class CreateConfigurationDetails(object):
         self._description = None
         self._display_name = None
         self._shape_name = None
+        self._init_variables = None
         self._variables = None
         self._parent_configuration_id = None
         self._freeform_tags = None
@@ -177,6 +184,26 @@ class CreateConfigurationDetails(object):
         :type: str
         """
         self._shape_name = shape_name
+
+    @property
+    def init_variables(self):
+        """
+        Gets the init_variables of this CreateConfigurationDetails.
+
+        :return: The init_variables of this CreateConfigurationDetails.
+        :rtype: oci.mysql.models.InitializationVariables
+        """
+        return self._init_variables
+
+    @init_variables.setter
+    def init_variables(self, init_variables):
+        """
+        Sets the init_variables of this CreateConfigurationDetails.
+
+        :param init_variables: The init_variables of this CreateConfigurationDetails.
+        :type: oci.mysql.models.InitializationVariables
+        """
+        self._init_variables = init_variables
 
     @property
     def variables(self):

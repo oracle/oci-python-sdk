@@ -17,7 +17,7 @@ import uuid
 # This was added to address thread safety issues with datetime.strptime
 # See https://bugs.python.org/issue7980.
 import _strptime  # noqa: F401
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 from timeit import default_timer as timer
 from ._vendor import requests, six, urllib3
 from dateutil.parser import parse
@@ -605,7 +605,7 @@ class BaseClient(object):
             target_service = self.service
             request_endpoint = request.method + " " + request.url
             client_version = USER_INFO
-            timestamp = datetime.now().isoformat()
+            timestamp = datetime.now(timezone.utc).isoformat()
 
             service_code, message, deserialized_data = self.get_deserialized_service_code_and_message(response, allow_control_chars)
             if isinstance(self.circuit_breaker_strategy, CircuitBreakerStrategy) and self.circuit_breaker_strategy.is_transient_error(response.status_code, service_code):

@@ -62,6 +62,10 @@ class CategorySummary(object):
             The value to assign to the compartment_id property of this CategorySummary.
         :type compartment_id: str
 
+        :param compartment_name:
+            The value to assign to the compartment_name property of this CategorySummary.
+        :type compartment_name: str
+
         :param name:
             The value to assign to the name property of this CategorySummary.
         :type name: str
@@ -104,6 +108,7 @@ class CategorySummary(object):
         self.swagger_types = {
             'id': 'str',
             'compartment_id': 'str',
+            'compartment_name': 'str',
             'name': 'str',
             'description': 'str',
             'recommendation_counts': 'list[RecommendationCount]',
@@ -118,6 +123,7 @@ class CategorySummary(object):
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
+            'compartment_name': 'compartmentName',
             'name': 'name',
             'description': 'description',
             'recommendation_counts': 'recommendationCounts',
@@ -131,6 +137,7 @@ class CategorySummary(object):
 
         self._id = None
         self._compartment_id = None
+        self._compartment_name = None
         self._name = None
         self._description = None
         self._recommendation_counts = None
@@ -188,6 +195,30 @@ class CategorySummary(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def compartment_name(self):
+        """
+        **[Required]** Gets the compartment_name of this CategorySummary.
+        The name associated with the compartment.
+
+
+        :return: The compartment_name of this CategorySummary.
+        :rtype: str
+        """
+        return self._compartment_name
+
+    @compartment_name.setter
+    def compartment_name(self, compartment_name):
+        """
+        Sets the compartment_name of this CategorySummary.
+        The name associated with the compartment.
+
+
+        :param compartment_name: The compartment_name of this CategorySummary.
+        :type: str
+        """
+        self._compartment_name = compartment_name
 
     @property
     def name(self):

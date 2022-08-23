@@ -81,6 +81,7 @@ Mysql
     oci.mysql.models.HeatWaveClusterSummary
     oci.mysql.models.HeatWaveClusterTableMemoryEstimate
     oci.mysql.models.HeatWaveNode
+    oci.mysql.models.InitializationVariables
     oci.mysql.models.MaintenanceDetails
     oci.mysql.models.PemCaCertificate
     oci.mysql.models.PitrPolicy
