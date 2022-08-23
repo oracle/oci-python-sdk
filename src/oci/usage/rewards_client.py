@@ -106,11 +106,11 @@ class RewardsClient(object):
 
     def create_redeemable_user(self, create_redeemable_user_details, tenancy_id, subscription_id, **kwargs):
         """
-        Adds the list of redeemable user email IDs for a subscription ID.
+        Adds the list of redeemable user summary for a subscription ID.
 
 
         :param oci.usage.models.CreateRedeemableUserDetails create_redeemable_user_details: (required)
-            CreateRedeemableUserDetails inforamtion.
+            CreateRedeemableUserDetails information.
 
         :param str tenancy_id: (required)
             The OCID of the tenancy.
@@ -237,7 +237,7 @@ class RewardsClient(object):
 
     def delete_redeemable_user(self, email_id, tenancy_id, subscription_id, **kwargs):
         """
-        Deletes the list of redeemable user email IDs for a subscription ID.
+        Deletes the list of redeemable user email ID for a subscription ID.
 
 
         :param str email_id: (required)
@@ -508,7 +508,7 @@ class RewardsClient(object):
 
     def list_redeemable_users(self, tenancy_id, subscription_id, **kwargs):
         """
-        Provides the email IDs of users that can redeem rewards for the given subscription ID.
+        Provides the list of user summary that can redeem rewards for the given subscription ID.
 
 
         :param str tenancy_id: (required)
@@ -642,6 +642,156 @@ class RewardsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="RedeemableUserCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def list_redemptions(self, tenancy_id, subscription_id, **kwargs):
+        """
+        Returns the list of redemption for the subscription ID.
+
+
+        :param str tenancy_id: (required)
+            The OCID of the tenancy.
+
+        :param str subscription_id: (required)
+            The subscription ID for which rewards information is requested for.
+
+        :param datetime time_redeemed_greater_than_or_equal_to: (optional)
+            The starting redeemed date filter for the redemption history.
+
+        :param datetime time_redeemed_less_than: (optional)
+            The ending redeemed date filter for the redemption history.
+
+        :param str opc_request_id: (optional)
+            Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str page: (optional)
+            The value of the 'opc-next-page' response header from the previous call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in the paginated response.
+
+        :param str sort_order: (optional)
+            The sort order to use, which can be ascending (ASC) or descending (DESC).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to be used only for list redemptions API. Supports one sort order.
+
+            Allowed values are: "TIMEREDEEMED"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.usage.models.RedemptionCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/usage/list_redemptions.py.html>`__ to see an example of how to use list_redemptions API.
+        """
+        resource_path = "/subscriptions/{subscriptionId}/redemptions"
+        method = "GET"
+        operation_name = "list_redemptions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/usage-proxy/20190111/RedemptionSummary/ListRedemptions"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "time_redeemed_greater_than_or_equal_to",
+            "time_redeemed_less_than",
+            "opc_request_id",
+            "page",
+            "limit",
+            "sort_order",
+            "sort_by"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_redemptions got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "subscriptionId": subscription_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMEREDEEMED"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "tenancyId": tenancy_id,
+            "timeRedeemedGreaterThanOrEqualTo": kwargs.get("time_redeemed_greater_than_or_equal_to", missing),
+            "timeRedeemedLessThan": kwargs.get("time_redeemed_less_than", missing),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="RedemptionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="RedemptionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)

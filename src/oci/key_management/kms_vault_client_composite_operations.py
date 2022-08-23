@@ -46,18 +46,23 @@ class KmsVaultClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        vault_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_vault(wait_for_resource_id),
+                self.client.get_vault(vault_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -84,18 +89,23 @@ class KmsVaultClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        vault_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_vault(wait_for_resource_id),
+                self.client.get_vault(vault_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -122,18 +132,23 @@ class KmsVaultClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        vault_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_vault(wait_for_resource_id),
+                self.client.get_vault(vault_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -163,18 +178,23 @@ class KmsVaultClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        vault_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_vault(wait_for_resource_id),
+                self.client.get_vault(vault_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -204,17 +224,22 @@ class KmsVaultClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        vault_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_vault(wait_for_resource_id),
+                self.client.get_vault(vault_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)

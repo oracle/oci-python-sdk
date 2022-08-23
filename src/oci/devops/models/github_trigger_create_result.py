@@ -83,6 +83,10 @@ class GithubTriggerCreateResult(TriggerCreateResult):
             The value to assign to the trigger_url property of this GithubTriggerCreateResult.
         :type trigger_url: str
 
+        :param connection_id:
+            The value to assign to the connection_id property of this GithubTriggerCreateResult.
+        :type connection_id: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -100,7 +104,8 @@ class GithubTriggerCreateResult(TriggerCreateResult):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
             'secret': 'str',
-            'trigger_url': 'str'
+            'trigger_url': 'str',
+            'connection_id': 'str'
         }
 
         self.attribute_map = {
@@ -119,7 +124,8 @@ class GithubTriggerCreateResult(TriggerCreateResult):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
             'secret': 'secret',
-            'trigger_url': 'triggerUrl'
+            'trigger_url': 'triggerUrl',
+            'connection_id': 'connectionId'
         }
 
         self._id = None
@@ -138,6 +144,7 @@ class GithubTriggerCreateResult(TriggerCreateResult):
         self._system_tags = None
         self._secret = None
         self._trigger_url = None
+        self._connection_id = None
         self._trigger_source = 'GITHUB'
 
     @property
@@ -187,6 +194,30 @@ class GithubTriggerCreateResult(TriggerCreateResult):
         :type: str
         """
         self._trigger_url = trigger_url
+
+    @property
+    def connection_id(self):
+        """
+        Gets the connection_id of this GithubTriggerCreateResult.
+        The OCID of the connection resource used to get details for triggered events.
+
+
+        :return: The connection_id of this GithubTriggerCreateResult.
+        :rtype: str
+        """
+        return self._connection_id
+
+    @connection_id.setter
+    def connection_id(self, connection_id):
+        """
+        Sets the connection_id of this GithubTriggerCreateResult.
+        The OCID of the connection resource used to get details for triggered events.
+
+
+        :param connection_id: The connection_id of this GithubTriggerCreateResult.
+        :type: str
+        """
+        self._connection_id = connection_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

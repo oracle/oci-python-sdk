@@ -28,18 +28,18 @@ class MediaWorkflowTaskDeclaration(object):
 
         :param parameters_schema:
             The value to assign to the parameters_schema property of this MediaWorkflowTaskDeclaration.
-        :type parameters_schema: dict(str, str)
+        :type parameters_schema: dict(str, object)
 
         :param parameters_schema_allowing_references:
             The value to assign to the parameters_schema_allowing_references property of this MediaWorkflowTaskDeclaration.
-        :type parameters_schema_allowing_references: dict(str, str)
+        :type parameters_schema_allowing_references: dict(str, object)
 
         """
         self.swagger_types = {
             'name': 'str',
             'version': 'int',
-            'parameters_schema': 'dict(str, str)',
-            'parameters_schema_allowing_references': 'dict(str, str)'
+            'parameters_schema': 'dict(str, object)',
+            'parameters_schema_allowing_references': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -115,7 +115,7 @@ class MediaWorkflowTaskDeclaration(object):
 
 
         :return: The parameters_schema of this MediaWorkflowTaskDeclaration.
-        :rtype: dict(str, str)
+        :rtype: dict(str, object)
         """
         return self._parameters_schema
 
@@ -128,7 +128,7 @@ class MediaWorkflowTaskDeclaration(object):
 
 
         :param parameters_schema: The parameters_schema of this MediaWorkflowTaskDeclaration.
-        :type: dict(str, str)
+        :type: dict(str, object)
         """
         self._parameters_schema = parameters_schema
 
@@ -141,7 +141,7 @@ class MediaWorkflowTaskDeclaration(object):
 
 
         :return: The parameters_schema_allowing_references of this MediaWorkflowTaskDeclaration.
-        :rtype: dict(str, str)
+        :rtype: dict(str, object)
         """
         return self._parameters_schema_allowing_references
 
@@ -154,7 +154,7 @@ class MediaWorkflowTaskDeclaration(object):
 
 
         :param parameters_schema_allowing_references: The parameters_schema_allowing_references of this MediaWorkflowTaskDeclaration.
-        :type: dict(str, str)
+        :type: dict(str, object)
         """
         self._parameters_schema_allowing_references = parameters_schema_allowing_references
 

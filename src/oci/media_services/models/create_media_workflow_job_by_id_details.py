@@ -38,7 +38,7 @@ class CreateMediaWorkflowJobByIdDetails(CreateMediaWorkflowJobDetails):
 
         :param parameters:
             The value to assign to the parameters property of this CreateMediaWorkflowJobByIdDetails.
-        :type parameters: dict(str, str)
+        :type parameters: dict(str, object)
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateMediaWorkflowJobByIdDetails.
@@ -58,7 +58,7 @@ class CreateMediaWorkflowJobByIdDetails(CreateMediaWorkflowJobDetails):
             'media_workflow_configuration_ids': 'list[str]',
             'compartment_id': 'str',
             'display_name': 'str',
-            'parameters': 'dict(str, str)',
+            'parameters': 'dict(str, object)',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'media_workflow_id': 'str'

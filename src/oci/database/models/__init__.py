@@ -204,6 +204,8 @@ from .generate_autonomous_database_wallet_details import GenerateAutonomousDatab
 from .generate_recommended_network_details import GenerateRecommendedNetworkDetails
 from .gi_version_summary import GiVersionSummary
 from .info_for_network_gen_details import InfoForNetworkGenDetails
+from .infrastructure_target_version import InfrastructureTargetVersion
+from .infrastructure_target_version_summary import InfrastructureTargetVersionSummary
 from .key_store import KeyStore
 from .key_store_associated_database_details import KeyStoreAssociatedDatabaseDetails
 from .key_store_summary import KeyStoreSummary
@@ -501,6 +503,8 @@ database_type_mapping = {
     "GenerateRecommendedNetworkDetails": GenerateRecommendedNetworkDetails,
     "GiVersionSummary": GiVersionSummary,
     "InfoForNetworkGenDetails": InfoForNetworkGenDetails,
+    "InfrastructureTargetVersion": InfrastructureTargetVersion,
+    "InfrastructureTargetVersionSummary": InfrastructureTargetVersionSummary,
     "KeyStore": KeyStore,
     "KeyStoreAssociatedDatabaseDetails": KeyStoreAssociatedDatabaseDetails,
     "KeyStoreSummary": KeyStoreSummary,

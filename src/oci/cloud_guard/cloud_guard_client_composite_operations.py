@@ -49,18 +49,23 @@ class CloudGuardClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        security_zone_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_security_zone(wait_for_resource_id),
+                self.client.get_security_zone(security_zone_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -128,18 +133,23 @@ class CloudGuardClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        data_mask_rule_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_data_mask_rule(wait_for_resource_id),
+                self.client.get_data_mask_rule(data_mask_rule_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -204,18 +214,23 @@ class CloudGuardClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        detector_recipe_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_detector_recipe(wait_for_resource_id),
+                self.client.get_detector_recipe(detector_recipe_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -245,18 +260,23 @@ class CloudGuardClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        detector_recipe_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_detector_recipe_detector_rule(wait_for_resource_id),
+                self.client.get_detector_recipe_detector_rule(detector_recipe_id, detector_rule_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -283,18 +303,23 @@ class CloudGuardClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        managed_list_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_managed_list(wait_for_resource_id),
+                self.client.get_managed_list(managed_list_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -321,18 +346,23 @@ class CloudGuardClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        responder_recipe_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_responder_recipe(wait_for_resource_id),
+                self.client.get_responder_recipe(responder_recipe_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -359,18 +389,23 @@ class CloudGuardClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        security_recipe_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_security_recipe(wait_for_resource_id),
+                self.client.get_security_recipe(security_recipe_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -397,18 +432,23 @@ class CloudGuardClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        security_zone_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_security_zone(wait_for_resource_id),
+                self.client.get_security_zone(security_zone_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -435,18 +475,23 @@ class CloudGuardClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        target_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_target(wait_for_resource_id),
+                self.client.get_target(target_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -476,18 +521,23 @@ class CloudGuardClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        target_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_target_detector_recipe(wait_for_resource_id),
+                self.client.get_target_detector_recipe(target_id, target_detector_recipe_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -527,7 +577,7 @@ class CloudGuardClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                initial_get_result,
+                initial_get_result,  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 succeed_on_not_found=True,
                 **waiter_kwargs
@@ -535,6 +585,11 @@ class CloudGuardClientCompositeOperations(object):
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -620,7 +675,7 @@ class CloudGuardClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                initial_get_result,
+                initial_get_result,  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 succeed_on_not_found=True,
                 **waiter_kwargs
@@ -628,6 +683,11 @@ class CloudGuardClientCompositeOperations(object):
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -667,7 +727,7 @@ class CloudGuardClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                initial_get_result,
+                initial_get_result,  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 succeed_on_not_found=True,
                 **waiter_kwargs
@@ -675,6 +735,11 @@ class CloudGuardClientCompositeOperations(object):
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -714,7 +779,7 @@ class CloudGuardClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                initial_get_result,
+                initial_get_result,  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 succeed_on_not_found=True,
                 **waiter_kwargs
@@ -722,6 +787,11 @@ class CloudGuardClientCompositeOperations(object):
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -761,7 +831,7 @@ class CloudGuardClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                initial_get_result,
+                initial_get_result,  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 succeed_on_not_found=True,
                 **waiter_kwargs
@@ -769,6 +839,11 @@ class CloudGuardClientCompositeOperations(object):
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -808,7 +883,7 @@ class CloudGuardClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                initial_get_result,
+                initial_get_result,  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 succeed_on_not_found=True,
                 **waiter_kwargs
@@ -816,6 +891,11 @@ class CloudGuardClientCompositeOperations(object):
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -855,7 +935,7 @@ class CloudGuardClientCompositeOperations(object):
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                initial_get_result,
+                initial_get_result,  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 succeed_on_not_found=True,
                 **waiter_kwargs
@@ -863,6 +943,11 @@ class CloudGuardClientCompositeOperations(object):
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -892,18 +977,23 @@ class CloudGuardClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        security_zone_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_security_zone(wait_for_resource_id),
+                self.client.get_security_zone(security_zone_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -933,18 +1023,23 @@ class CloudGuardClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        data_mask_rule_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_data_mask_rule(wait_for_resource_id),
+                self.client.get_data_mask_rule(data_mask_rule_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1015,18 +1110,23 @@ class CloudGuardClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        detector_recipe_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_detector_recipe(wait_for_resource_id),
+                self.client.get_detector_recipe(detector_recipe_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1059,18 +1159,23 @@ class CloudGuardClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        detector_recipe_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_detector_recipe_detector_rule(wait_for_resource_id),
+                self.client.get_detector_recipe_detector_rule(detector_recipe_id, detector_rule_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1100,18 +1205,23 @@ class CloudGuardClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        managed_list_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_managed_list(wait_for_resource_id),
+                self.client.get_managed_list(managed_list_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1141,18 +1251,23 @@ class CloudGuardClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        problem_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_problem(wait_for_resource_id),
+                self.client.get_problem(problem_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1182,18 +1297,23 @@ class CloudGuardClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        responder_recipe_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_responder_recipe(wait_for_resource_id),
+                self.client.get_responder_recipe(responder_recipe_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1226,18 +1346,23 @@ class CloudGuardClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        responder_recipe_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_responder_recipe_responder_rule(wait_for_resource_id),
+                self.client.get_responder_recipe_responder_rule(responder_recipe_id, responder_rule_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1267,18 +1392,23 @@ class CloudGuardClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        security_recipe_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_security_recipe(wait_for_resource_id),
+                self.client.get_security_recipe(security_recipe_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1308,18 +1438,23 @@ class CloudGuardClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        security_zone_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_security_zone(wait_for_resource_id),
+                self.client.get_security_zone(security_zone_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1349,18 +1484,23 @@ class CloudGuardClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        target_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_target(wait_for_resource_id),
+                self.client.get_target(target_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1393,18 +1533,23 @@ class CloudGuardClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        target_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_target_detector_recipe(wait_for_resource_id),
+                self.client.get_target_detector_recipe(target_id, target_detector_recipe_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1440,18 +1585,23 @@ class CloudGuardClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        target_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_target_detector_recipe_detector_rule(wait_for_resource_id),
+                self.client.get_target_detector_recipe_detector_rule(target_id, target_detector_recipe_id, detector_rule_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -1487,17 +1637,22 @@ class CloudGuardClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        target_id = operation_result.data.id
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_target_responder_recipe_responder_rule(wait_for_resource_id),
+                self.client.get_target_responder_recipe_responder_rule(target_id, target_responder_recipe_id, responder_rule_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
 
             return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)

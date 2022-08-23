@@ -53,22 +53,29 @@ class GitlabFilter(Filter):
             The value to assign to the include property of this GitlabFilter.
         :type include: oci.devops.models.GitlabFilterAttributes
 
+        :param exclude:
+            The value to assign to the exclude property of this GitlabFilter.
+        :type exclude: oci.devops.models.GitlabFilterExclusionAttributes
+
         """
         self.swagger_types = {
             'trigger_source': 'str',
             'events': 'list[str]',
-            'include': 'GitlabFilterAttributes'
+            'include': 'GitlabFilterAttributes',
+            'exclude': 'GitlabFilterExclusionAttributes'
         }
 
         self.attribute_map = {
             'trigger_source': 'triggerSource',
             'events': 'events',
-            'include': 'include'
+            'include': 'include',
+            'exclude': 'exclude'
         }
 
         self._trigger_source = None
         self._events = None
         self._include = None
+        self._exclude = None
         self._trigger_source = 'GITLAB'
 
     @property
@@ -120,6 +127,26 @@ class GitlabFilter(Filter):
         :type: oci.devops.models.GitlabFilterAttributes
         """
         self._include = include
+
+    @property
+    def exclude(self):
+        """
+        Gets the exclude of this GitlabFilter.
+
+        :return: The exclude of this GitlabFilter.
+        :rtype: oci.devops.models.GitlabFilterExclusionAttributes
+        """
+        return self._exclude
+
+    @exclude.setter
+    def exclude(self, exclude):
+        """
+        Sets the exclude of this GitlabFilter.
+
+        :param exclude: The exclude of this GitlabFilter.
+        :type: oci.devops.models.GitlabFilterExclusionAttributes
+        """
+        self._exclude = exclude
 
     def __repr__(self):
         return formatted_flat_dict(self)

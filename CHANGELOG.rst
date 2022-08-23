@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.80.0 - 2022-08-23
+====================
+
+Added
+-----
+* Support for the Enterprise Manager Warehouse service
+* Support for additional configuration variables in the MySQL Database service
+* Support for file filters in the DevOps service
+* Support for support rewards redemption summaries in the Usage service
+* Support for the parent tenancy of an organization to view child tenancy categories, recommendations, and resource actions in the Optimizer service
+* Support for choosing prior versions during infrastructure maintenance on Exadata Cloud at Customer in the Database service
+
+Breaking
+--------
+* `EmDataLakeClient` was renamed to `EmWarehouseClient` in the Enterprise Manager Warehouse service
+* `EmDataLakeClientCompositeOperations` was renamed to `EmWarehouseClientCompositeOperations` in the Enterprise Manager Warehouse service
+
+=====================
 2.79.0 - 2022-08-16
 ====================
 

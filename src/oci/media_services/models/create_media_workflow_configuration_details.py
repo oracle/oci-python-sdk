@@ -24,7 +24,7 @@ class CreateMediaWorkflowConfigurationDetails(object):
 
         :param parameters:
             The value to assign to the parameters property of this CreateMediaWorkflowConfigurationDetails.
-        :type parameters: dict(str, str)
+        :type parameters: dict(str, object)
 
         :param compartment_id:
             The value to assign to the compartment_id property of this CreateMediaWorkflowConfigurationDetails.
@@ -41,7 +41,7 @@ class CreateMediaWorkflowConfigurationDetails(object):
         """
         self.swagger_types = {
             'display_name': 'str',
-            'parameters': 'dict(str, str)',
+            'parameters': 'dict(str, object)',
             'compartment_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -96,7 +96,7 @@ class CreateMediaWorkflowConfigurationDetails(object):
 
 
         :return: The parameters of this CreateMediaWorkflowConfigurationDetails.
-        :rtype: dict(str, str)
+        :rtype: dict(str, object)
         """
         return self._parameters
 
@@ -111,7 +111,7 @@ class CreateMediaWorkflowConfigurationDetails(object):
 
 
         :param parameters: The parameters of this CreateMediaWorkflowConfigurationDetails.
-        :type: dict(str, str)
+        :type: dict(str, object)
         """
         self._parameters = parameters
 

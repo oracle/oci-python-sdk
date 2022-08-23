@@ -11,6 +11,8 @@ from .product_summary import ProductSummary
 from .redeemable_user import RedeemableUser
 from .redeemable_user_collection import RedeemableUserCollection
 from .redeemable_user_summary import RedeemableUserSummary
+from .redemption_collection import RedemptionCollection
+from .redemption_summary import RedemptionSummary
 from .reward_collection import RewardCollection
 from .reward_details import RewardDetails
 
@@ -23,6 +25,8 @@ usage_type_mapping = {
     "RedeemableUser": RedeemableUser,
     "RedeemableUserCollection": RedeemableUserCollection,
     "RedeemableUserSummary": RedeemableUserSummary,
+    "RedemptionCollection": RedemptionCollection,
+    "RedemptionSummary": RedemptionSummary,
     "RewardCollection": RewardCollection,
     "RewardDetails": RewardDetails
 }

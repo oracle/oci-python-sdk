@@ -22,16 +22,23 @@ class DevopsCodeRepositoryFilterAttributes(object):
             The value to assign to the head_ref property of this DevopsCodeRepositoryFilterAttributes.
         :type head_ref: str
 
+        :param file_filter:
+            The value to assign to the file_filter property of this DevopsCodeRepositoryFilterAttributes.
+        :type file_filter: oci.devops.models.FileFilter
+
         """
         self.swagger_types = {
-            'head_ref': 'str'
+            'head_ref': 'str',
+            'file_filter': 'FileFilter'
         }
 
         self.attribute_map = {
-            'head_ref': 'headRef'
+            'head_ref': 'headRef',
+            'file_filter': 'fileFilter'
         }
 
         self._head_ref = None
+        self._file_filter = None
 
     @property
     def head_ref(self):
@@ -56,6 +63,26 @@ class DevopsCodeRepositoryFilterAttributes(object):
         :type: str
         """
         self._head_ref = head_ref
+
+    @property
+    def file_filter(self):
+        """
+        Gets the file_filter of this DevopsCodeRepositoryFilterAttributes.
+
+        :return: The file_filter of this DevopsCodeRepositoryFilterAttributes.
+        :rtype: oci.devops.models.FileFilter
+        """
+        return self._file_filter
+
+    @file_filter.setter
+    def file_filter(self, file_filter):
+        """
+        Sets the file_filter of this DevopsCodeRepositoryFilterAttributes.
+
+        :param file_filter: The file_filter of this DevopsCodeRepositoryFilterAttributes.
+        :type: oci.devops.models.FileFilter
+        """
+        self._file_filter = file_filter
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -405,9 +405,9 @@ class OptimizerClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
-    def filter_resource_actions(self, compartment_id, compartment_id_in_subtree, recommendation_id, query_details, **kwargs):
+    def filter_resource_actions(self, compartment_id, compartment_id_in_subtree, query_details, **kwargs):
         """
-        Queries the Cloud Advisor resource actions that are supported by the specified recommendation.
+        Queries the Cloud Advisor resource actions that are supported.
 
 
         :param str compartment_id: (required)
@@ -418,11 +418,42 @@ class OptimizerClient(object):
 
             Can only be set to true when performing ListCompartments on the tenancy (root compartment).
 
-        :param str recommendation_id: (required)
-            The unique OCID associated with the recommendation.
-
         :param oci.optimizer.models.QueryDetails query_details: (required)
             The request parameters that describe the query criteria.
+
+        :param str recommendation_id: (optional)
+            The unique OCID associated with the recommendation.
+
+        :param str recommendation_name: (optional)
+            Optional. A filter that returns results that match the recommendation name specified.
+
+        :param list[str] child_tenancy_ids: (optional)
+            A list of child tenancies for which the respective data will be returned. Please note that
+            the parent tenancy id can also be included in this list. For example, if there is a parent P with two
+            children A and B, to return results of only parent P and child A, this list should be populated with
+            tenancy id of parent P and child A.
+
+            If this list contains a tenancy id that isn't part of the organization of parent P, the request will
+            fail. That is, let's say there is an organization with parent P with children A and B, and also one
+            other tenant T that isn't part of the organization. If T is included in the list of
+            childTenancyIds, the request will fail.
+
+            It is important to note that if you are setting the includeOrganization parameter value as true and
+            also populating the childTenancyIds parameter with a list of child tenancies, the request will fail.
+            The childTenancyIds and includeOrganization should be used exclusively.
+
+            When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
+
+        :param bool include_organization: (optional)
+            When set to true, the data for all child tenancies including the parent is returned. That is, if
+            there is an organization with parent P and children A and B, to return the data for the parent P, child
+            A and child B, this parameter value should be set to true.
+
+            Please note that this parameter shouldn't be used along with childTenancyIds parameter. If you would like
+            to get results specifically for parent P and only child A, use the childTenancyIds parameter and populate
+            the list with tenancy id of P and A.
+
+            When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
 
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
@@ -461,6 +492,10 @@ class OptimizerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "recommendation_id",
+            "recommendation_name",
+            "child_tenancy_ids",
+            "include_organization",
             "limit",
             "page",
             "opc_request_id"
@@ -473,7 +508,10 @@ class OptimizerClient(object):
         query_params = {
             "compartmentId": compartment_id,
             "compartmentIdInSubtree": compartment_id_in_subtree,
-            "recommendationId": recommendation_id,
+            "recommendationId": kwargs.get("recommendation_id", missing),
+            "recommendationName": kwargs.get("recommendation_name", missing),
+            "childTenancyIds": self.base_client.generate_collection_format_param(kwargs.get("child_tenancy_ids", missing), 'multi'),
+            "includeOrganization": kwargs.get("include_organization", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing)
         }
@@ -1089,6 +1127,34 @@ class OptimizerClient(object):
 
             Can only be set to true when performing ListCompartments on the tenancy (root compartment).
 
+        :param list[str] child_tenancy_ids: (optional)
+            A list of child tenancies for which the respective data will be returned. Please note that
+            the parent tenancy id can also be included in this list. For example, if there is a parent P with two
+            children A and B, to return results of only parent P and child A, this list should be populated with
+            tenancy id of parent P and child A.
+
+            If this list contains a tenancy id that isn't part of the organization of parent P, the request will
+            fail. That is, let's say there is an organization with parent P with children A and B, and also one
+            other tenant T that isn't part of the organization. If T is included in the list of
+            childTenancyIds, the request will fail.
+
+            It is important to note that if you are setting the includeOrganization parameter value as true and
+            also populating the childTenancyIds parameter with a list of child tenancies, the request will fail.
+            The childTenancyIds and includeOrganization should be used exclusively.
+
+            When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
+
+        :param bool include_organization: (optional)
+            When set to true, the data for all child tenancies including the parent is returned. That is, if
+            there is an organization with parent P and children A and B, to return the data for the parent P, child
+            A and child B, this parameter value should be set to true.
+
+            Please note that this parameter shouldn't be used along with childTenancyIds parameter. If you would like
+            to get results specifically for parent P and only child A, use the childTenancyIds parameter and populate
+            the list with tenancy id of P and A.
+
+            When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
+
         :param str name: (optional)
             Optional. A filter that returns results that match the name specified.
 
@@ -1144,6 +1210,8 @@ class OptimizerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "child_tenancy_ids",
+            "include_organization",
             "name",
             "limit",
             "page",
@@ -1181,6 +1249,8 @@ class OptimizerClient(object):
         query_params = {
             "compartmentId": compartment_id,
             "compartmentIdInSubtree": compartment_id_in_subtree,
+            "childTenancyIds": self.base_client.generate_collection_format_param(kwargs.get("child_tenancy_ids", missing), 'multi'),
+            "includeOrganization": kwargs.get("include_organization", missing),
             "name": kwargs.get("name", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
@@ -1991,9 +2061,9 @@ class OptimizerClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
-    def list_recommendations(self, compartment_id, compartment_id_in_subtree, category_id, **kwargs):
+    def list_recommendations(self, compartment_id, compartment_id_in_subtree, **kwargs):
         """
-        Lists the Cloud Advisor recommendations that are currently supported in the specified category.
+        Lists the Cloud Advisor recommendations that are currently supported.
 
 
         :param str compartment_id: (required)
@@ -2004,8 +2074,39 @@ class OptimizerClient(object):
 
             Can only be set to true when performing ListCompartments on the tenancy (root compartment).
 
-        :param str category_id: (required)
+        :param str category_id: (optional)
             The unique OCID associated with the category.
+
+        :param str category_name: (optional)
+            Optional. A filter that returns results that match the category name specified.
+
+        :param list[str] child_tenancy_ids: (optional)
+            A list of child tenancies for which the respective data will be returned. Please note that
+            the parent tenancy id can also be included in this list. For example, if there is a parent P with two
+            children A and B, to return results of only parent P and child A, this list should be populated with
+            tenancy id of parent P and child A.
+
+            If this list contains a tenancy id that isn't part of the organization of parent P, the request will
+            fail. That is, let's say there is an organization with parent P with children A and B, and also one
+            other tenant T that isn't part of the organization. If T is included in the list of
+            childTenancyIds, the request will fail.
+
+            It is important to note that if you are setting the includeOrganization parameter value as true and
+            also populating the childTenancyIds parameter with a list of child tenancies, the request will fail.
+            The childTenancyIds and includeOrganization should be used exclusively.
+
+            When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
+
+        :param bool include_organization: (optional)
+            When set to true, the data for all child tenancies including the parent is returned. That is, if
+            there is an organization with parent P and children A and B, to return the data for the parent P, child
+            A and child B, this parameter value should be set to true.
+
+            Please note that this parameter shouldn't be used along with childTenancyIds parameter. If you would like
+            to get results specifically for parent P and only child A, use the childTenancyIds parameter and populate
+            the list with tenancy id of P and A.
+
+            When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
 
         :param str name: (optional)
             Optional. A filter that returns results that match the name specified.
@@ -2067,6 +2168,10 @@ class OptimizerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "category_id",
+            "category_name",
+            "child_tenancy_ids",
+            "include_organization",
             "name",
             "limit",
             "page",
@@ -2112,7 +2217,10 @@ class OptimizerClient(object):
         query_params = {
             "compartmentId": compartment_id,
             "compartmentIdInSubtree": compartment_id_in_subtree,
-            "categoryId": category_id,
+            "categoryId": kwargs.get("category_id", missing),
+            "categoryName": kwargs.get("category_name", missing),
+            "childTenancyIds": self.base_client.generate_collection_format_param(kwargs.get("child_tenancy_ids", missing), 'multi'),
+            "includeOrganization": kwargs.get("include_organization", missing),
             "name": kwargs.get("name", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
@@ -2264,9 +2372,9 @@ class OptimizerClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
-    def list_resource_actions(self, compartment_id, compartment_id_in_subtree, recommendation_id, **kwargs):
+    def list_resource_actions(self, compartment_id, compartment_id_in_subtree, **kwargs):
         """
-        Lists the Cloud Advisor resource actions that are supported by the specified recommendation.
+        Lists the Cloud Advisor resource actions that are supported.
 
 
         :param str compartment_id: (required)
@@ -2277,8 +2385,39 @@ class OptimizerClient(object):
 
             Can only be set to true when performing ListCompartments on the tenancy (root compartment).
 
-        :param str recommendation_id: (required)
+        :param str recommendation_id: (optional)
             The unique OCID associated with the recommendation.
+
+        :param str recommendation_name: (optional)
+            Optional. A filter that returns results that match the recommendation name specified.
+
+        :param list[str] child_tenancy_ids: (optional)
+            A list of child tenancies for which the respective data will be returned. Please note that
+            the parent tenancy id can also be included in this list. For example, if there is a parent P with two
+            children A and B, to return results of only parent P and child A, this list should be populated with
+            tenancy id of parent P and child A.
+
+            If this list contains a tenancy id that isn't part of the organization of parent P, the request will
+            fail. That is, let's say there is an organization with parent P with children A and B, and also one
+            other tenant T that isn't part of the organization. If T is included in the list of
+            childTenancyIds, the request will fail.
+
+            It is important to note that if you are setting the includeOrganization parameter value as true and
+            also populating the childTenancyIds parameter with a list of child tenancies, the request will fail.
+            The childTenancyIds and includeOrganization should be used exclusively.
+
+            When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
+
+        :param bool include_organization: (optional)
+            When set to true, the data for all child tenancies including the parent is returned. That is, if
+            there is an organization with parent P and children A and B, to return the data for the parent P, child
+            A and child B, this parameter value should be set to true.
+
+            Please note that this parameter shouldn't be used along with childTenancyIds parameter. If you would like
+            to get results specifically for parent P and only child A, use the childTenancyIds parameter and populate
+            the list with tenancy id of P and A.
+
+            When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
 
         :param str name: (optional)
             Optional. A filter that returns results that match the name specified.
@@ -2343,6 +2482,10 @@ class OptimizerClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "recommendation_id",
+            "recommendation_name",
+            "child_tenancy_ids",
+            "include_organization",
             "name",
             "resource_type",
             "limit",
@@ -2389,7 +2532,10 @@ class OptimizerClient(object):
         query_params = {
             "compartmentId": compartment_id,
             "compartmentIdInSubtree": compartment_id_in_subtree,
-            "recommendationId": recommendation_id,
+            "recommendationId": kwargs.get("recommendation_id", missing),
+            "recommendationName": kwargs.get("recommendation_name", missing),
+            "childTenancyIds": self.base_client.generate_collection_format_param(kwargs.get("child_tenancy_ids", missing), 'multi'),
+            "includeOrganization": kwargs.get("include_organization", missing),
             "name": kwargs.get("name", missing),
             "resourceType": kwargs.get("resource_type", missing),
             "limit": kwargs.get("limit", missing),
@@ -2982,7 +3128,7 @@ class OptimizerClient(object):
             The unique OCID associated with the recommendation.
 
         :param oci.optimizer.models.UpdateRecommendationDetails update_recommendation_details: (required)
-            The request object for udpating the recommendation details.
+            The request object for updating the recommendation details.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request.

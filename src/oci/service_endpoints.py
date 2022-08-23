@@ -7,7 +7,7 @@ SERVICE_ENDPOINTS = {
     "announcement_subscription": "https://announcements.{domain}",
     "announcements_preferences": "https://announcements.{domain}",
     "audit": "https://audit.{domain}",
-    "auto_scaling": "None",
+    "auto_scaling": "https://autoscaling.{domain}",
     "blockstorage": "https://iaas.{domain}",
     "budget": "https://iaas.{domain}",
     "compute": "https://iaas.{domain}",

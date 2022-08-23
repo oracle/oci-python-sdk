@@ -18,6 +18,7 @@ from .bitbucket_cloud_build_run_source import BitbucketCloudBuildRunSource
 from .bitbucket_cloud_build_source import BitbucketCloudBuildSource
 from .bitbucket_cloud_filter import BitbucketCloudFilter
 from .bitbucket_cloud_filter_attributes import BitbucketCloudFilterAttributes
+from .bitbucket_cloud_filter_exclusion_attributes import BitbucketCloudFilterExclusionAttributes
 from .bitbucket_cloud_trigger import BitbucketCloudTrigger
 from .bitbucket_cloud_trigger_create_result import BitbucketCloudTriggerCreateResult
 from .bitbucket_cloud_trigger_summary import BitbucketCloudTriggerSummary
@@ -200,6 +201,7 @@ from .devops_code_repository_build_run_source import DevopsCodeRepositoryBuildRu
 from .devops_code_repository_build_source import DevopsCodeRepositoryBuildSource
 from .devops_code_repository_filter import DevopsCodeRepositoryFilter
 from .devops_code_repository_filter_attributes import DevopsCodeRepositoryFilterAttributes
+from .devops_code_repository_filter_exclusion_attributes import DevopsCodeRepositoryFilterExclusionAttributes
 from .devops_code_repository_trigger import DevopsCodeRepositoryTrigger
 from .devops_code_repository_trigger_create_result import DevopsCodeRepositoryTriggerCreateResult
 from .devops_code_repository_trigger_summary import DevopsCodeRepositoryTriggerSummary
@@ -213,6 +215,7 @@ from .diff_summary import DiffSummary
 from .exported_variable import ExportedVariable
 from .exported_variable_collection import ExportedVariableCollection
 from .file_diff_response import FileDiffResponse
+from .file_filter import FileFilter
 from .file_line_details import FileLineDetails
 from .filter import Filter
 from .function_deploy_environment import FunctionDeployEnvironment
@@ -228,6 +231,7 @@ from .github_build_run_source import GithubBuildRunSource
 from .github_build_source import GithubBuildSource
 from .github_filter import GithubFilter
 from .github_filter_attributes import GithubFilterAttributes
+from .github_filter_exclusion_attributes import GithubFilterExclusionAttributes
 from .github_trigger import GithubTrigger
 from .github_trigger_create_result import GithubTriggerCreateResult
 from .github_trigger_summary import GithubTriggerSummary
@@ -237,12 +241,14 @@ from .gitlab_build_run_source import GitlabBuildRunSource
 from .gitlab_build_source import GitlabBuildSource
 from .gitlab_filter import GitlabFilter
 from .gitlab_filter_attributes import GitlabFilterAttributes
+from .gitlab_filter_exclusion_attributes import GitlabFilterExclusionAttributes
 from .gitlab_server_access_token_connection import GitlabServerAccessTokenConnection
 from .gitlab_server_access_token_connection_summary import GitlabServerAccessTokenConnectionSummary
 from .gitlab_server_build_run_source import GitlabServerBuildRunSource
 from .gitlab_server_build_source import GitlabServerBuildSource
 from .gitlab_server_filter import GitlabServerFilter
 from .gitlab_server_filter_attributes import GitlabServerFilterAttributes
+from .gitlab_server_filter_exclusion_attributes import GitlabServerFilterExclusionAttributes
 from .gitlab_server_trigger import GitlabServerTrigger
 from .gitlab_server_trigger_create_result import GitlabServerTriggerCreateResult
 from .gitlab_server_trigger_summary import GitlabServerTriggerSummary
@@ -430,6 +436,7 @@ devops_type_mapping = {
     "BitbucketCloudBuildSource": BitbucketCloudBuildSource,
     "BitbucketCloudFilter": BitbucketCloudFilter,
     "BitbucketCloudFilterAttributes": BitbucketCloudFilterAttributes,
+    "BitbucketCloudFilterExclusionAttributes": BitbucketCloudFilterExclusionAttributes,
     "BitbucketCloudTrigger": BitbucketCloudTrigger,
     "BitbucketCloudTriggerCreateResult": BitbucketCloudTriggerCreateResult,
     "BitbucketCloudTriggerSummary": BitbucketCloudTriggerSummary,
@@ -612,6 +619,7 @@ devops_type_mapping = {
     "DevopsCodeRepositoryBuildSource": DevopsCodeRepositoryBuildSource,
     "DevopsCodeRepositoryFilter": DevopsCodeRepositoryFilter,
     "DevopsCodeRepositoryFilterAttributes": DevopsCodeRepositoryFilterAttributes,
+    "DevopsCodeRepositoryFilterExclusionAttributes": DevopsCodeRepositoryFilterExclusionAttributes,
     "DevopsCodeRepositoryTrigger": DevopsCodeRepositoryTrigger,
     "DevopsCodeRepositoryTriggerCreateResult": DevopsCodeRepositoryTriggerCreateResult,
     "DevopsCodeRepositoryTriggerSummary": DevopsCodeRepositoryTriggerSummary,
@@ -625,6 +633,7 @@ devops_type_mapping = {
     "ExportedVariable": ExportedVariable,
     "ExportedVariableCollection": ExportedVariableCollection,
     "FileDiffResponse": FileDiffResponse,
+    "FileFilter": FileFilter,
     "FileLineDetails": FileLineDetails,
     "Filter": Filter,
     "FunctionDeployEnvironment": FunctionDeployEnvironment,
@@ -640,6 +649,7 @@ devops_type_mapping = {
     "GithubBuildSource": GithubBuildSource,
     "GithubFilter": GithubFilter,
     "GithubFilterAttributes": GithubFilterAttributes,
+    "GithubFilterExclusionAttributes": GithubFilterExclusionAttributes,
     "GithubTrigger": GithubTrigger,
     "GithubTriggerCreateResult": GithubTriggerCreateResult,
     "GithubTriggerSummary": GithubTriggerSummary,
@@ -649,12 +659,14 @@ devops_type_mapping = {
     "GitlabBuildSource": GitlabBuildSource,
     "GitlabFilter": GitlabFilter,
     "GitlabFilterAttributes": GitlabFilterAttributes,
+    "GitlabFilterExclusionAttributes": GitlabFilterExclusionAttributes,
     "GitlabServerAccessTokenConnection": GitlabServerAccessTokenConnection,
     "GitlabServerAccessTokenConnectionSummary": GitlabServerAccessTokenConnectionSummary,
     "GitlabServerBuildRunSource": GitlabServerBuildRunSource,
     "GitlabServerBuildSource": GitlabServerBuildSource,
     "GitlabServerFilter": GitlabServerFilter,
     "GitlabServerFilterAttributes": GitlabServerFilterAttributes,
+    "GitlabServerFilterExclusionAttributes": GitlabServerFilterExclusionAttributes,
     "GitlabServerTrigger": GitlabServerTrigger,
     "GitlabServerTriggerCreateResult": GitlabServerTriggerCreateResult,
     "GitlabServerTriggerSummary": GitlabServerTriggerSummary,

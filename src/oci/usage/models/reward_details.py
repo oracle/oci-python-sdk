@@ -192,7 +192,7 @@ class RewardDetails(object):
     def redemption_code(self):
         """
         Gets the redemption_code of this RewardDetails.
-        The redemption code used in the billing center during the reward redemption process
+        The redemption code used in the Billing Center during the reward redemption process.
 
 
         :return: The redemption_code of this RewardDetails.
@@ -204,7 +204,7 @@ class RewardDetails(object):
     def redemption_code(self, redemption_code):
         """
         Sets the redemption_code of this RewardDetails.
-        The redemption code used in the billing center during the reward redemption process
+        The redemption code used in the Billing Center during the reward redemption process.
 
 
         :param redemption_code: The redemption_code of this RewardDetails.

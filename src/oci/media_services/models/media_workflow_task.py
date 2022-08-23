@@ -41,11 +41,11 @@ class MediaWorkflowTask(object):
 
         :param enable_when_referenced_parameter_equals:
             The value to assign to the enable_when_referenced_parameter_equals property of this MediaWorkflowTask.
-        :type enable_when_referenced_parameter_equals: dict(str, str)
+        :type enable_when_referenced_parameter_equals: dict(str, object)
 
         :param parameters:
             The value to assign to the parameters property of this MediaWorkflowTask.
-        :type parameters: dict(str, str)
+        :type parameters: dict(str, object)
 
         """
         self.swagger_types = {
@@ -54,8 +54,8 @@ class MediaWorkflowTask(object):
             'key': 'str',
             'prerequisites': 'list[str]',
             'enable_parameter_reference': 'str',
-            'enable_when_referenced_parameter_equals': 'dict(str, str)',
-            'parameters': 'dict(str, str)'
+            'enable_when_referenced_parameter_equals': 'dict(str, object)',
+            'parameters': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -213,7 +213,7 @@ class MediaWorkflowTask(object):
 
 
         :return: The enable_when_referenced_parameter_equals of this MediaWorkflowTask.
-        :rtype: dict(str, str)
+        :rtype: dict(str, object)
         """
         return self._enable_when_referenced_parameter_equals
 
@@ -228,7 +228,7 @@ class MediaWorkflowTask(object):
 
 
         :param enable_when_referenced_parameter_equals: The enable_when_referenced_parameter_equals of this MediaWorkflowTask.
-        :type: dict(str, str)
+        :type: dict(str, object)
         """
         self._enable_when_referenced_parameter_equals = enable_when_referenced_parameter_equals
 
@@ -242,7 +242,7 @@ class MediaWorkflowTask(object):
 
 
         :return: The parameters of this MediaWorkflowTask.
-        :rtype: dict(str, str)
+        :rtype: dict(str, object)
         """
         return self._parameters
 
@@ -256,7 +256,7 @@ class MediaWorkflowTask(object):
 
 
         :param parameters: The parameters of this MediaWorkflowTask.
-        :type: dict(str, str)
+        :type: dict(str, object)
         """
         self._parameters = parameters
 

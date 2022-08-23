@@ -25,5 +25,7 @@ Usage
     oci.usage.models.RedeemableUser
     oci.usage.models.RedeemableUserCollection
     oci.usage.models.RedeemableUserSummary
+    oci.usage.models.RedemptionCollection
+    oci.usage.models.RedemptionSummary
     oci.usage.models.RewardCollection
     oci.usage.models.RewardDetails

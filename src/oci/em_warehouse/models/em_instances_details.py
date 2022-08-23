@@ -30,22 +30,29 @@ class EmInstancesDetails(object):
             The value to assign to the em_host property of this EmInstancesDetails.
         :type em_host: str
 
+        :param em_discoverer_url:
+            The value to assign to the em_discoverer_url property of this EmInstancesDetails.
+        :type em_discoverer_url: str
+
         """
         self.swagger_types = {
             'em_id': 'str',
             'targets_count': 'int',
-            'em_host': 'str'
+            'em_host': 'str',
+            'em_discoverer_url': 'str'
         }
 
         self.attribute_map = {
             'em_id': 'emId',
             'targets_count': 'targetsCount',
-            'em_host': 'emHost'
+            'em_host': 'emHost',
+            'em_discoverer_url': 'emDiscovererUrl'
         }
 
         self._em_id = None
         self._targets_count = None
         self._em_host = None
+        self._em_discoverer_url = None
 
     @property
     def em_id(self):
@@ -118,6 +125,30 @@ class EmInstancesDetails(object):
         :type: str
         """
         self._em_host = em_host
+
+    @property
+    def em_discoverer_url(self):
+        """
+        Gets the em_discoverer_url of this EmInstancesDetails.
+        emdDiscoverer url
+
+
+        :return: The em_discoverer_url of this EmInstancesDetails.
+        :rtype: str
+        """
+        return self._em_discoverer_url
+
+    @em_discoverer_url.setter
+    def em_discoverer_url(self, em_discoverer_url):
+        """
+        Sets the em_discoverer_url of this EmInstancesDetails.
+        emdDiscoverer url
+
+
+        :param em_discoverer_url: The em_discoverer_url of this EmInstancesDetails.
+        :type: str
+        """
+        self._em_discoverer_url = em_discoverer_url
 
     def __repr__(self):
         return formatted_flat_dict(self)

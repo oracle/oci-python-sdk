@@ -24,7 +24,7 @@ class UpdateMediaWorkflowConfigurationDetails(object):
 
         :param parameters:
             The value to assign to the parameters property of this UpdateMediaWorkflowConfigurationDetails.
-        :type parameters: dict(str, str)
+        :type parameters: dict(str, object)
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateMediaWorkflowConfigurationDetails.
@@ -37,7 +37,7 @@ class UpdateMediaWorkflowConfigurationDetails(object):
         """
         self.swagger_types = {
             'display_name': 'str',
-            'parameters': 'dict(str, str)',
+            'parameters': 'dict(str, object)',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -89,7 +89,7 @@ class UpdateMediaWorkflowConfigurationDetails(object):
 
 
         :return: The parameters of this UpdateMediaWorkflowConfigurationDetails.
-        :rtype: dict(str, str)
+        :rtype: dict(str, object)
         """
         return self._parameters
 
@@ -104,7 +104,7 @@ class UpdateMediaWorkflowConfigurationDetails(object):
 
 
         :param parameters: The parameters of this UpdateMediaWorkflowConfigurationDetails.
-        :type: dict(str, str)
+        :type: dict(str, object)
         """
         self._parameters = parameters
 

@@ -63,6 +63,14 @@ class UpdateMaintenanceRunDetails(object):
             The value to assign to the is_resume_patching property of this UpdateMaintenanceRunDetails.
         :type is_resume_patching: bool
 
+        :param target_db_server_version:
+            The value to assign to the target_db_server_version property of this UpdateMaintenanceRunDetails.
+        :type target_db_server_version: str
+
+        :param target_storage_server_version:
+            The value to assign to the target_storage_server_version property of this UpdateMaintenanceRunDetails.
+        :type target_storage_server_version: str
+
         """
         self.swagger_types = {
             'is_enabled': 'bool',
@@ -73,7 +81,9 @@ class UpdateMaintenanceRunDetails(object):
             'is_custom_action_timeout_enabled': 'bool',
             'custom_action_timeout_in_mins': 'int',
             'current_custom_action_timeout_in_mins': 'int',
-            'is_resume_patching': 'bool'
+            'is_resume_patching': 'bool',
+            'target_db_server_version': 'str',
+            'target_storage_server_version': 'str'
         }
 
         self.attribute_map = {
@@ -85,7 +95,9 @@ class UpdateMaintenanceRunDetails(object):
             'is_custom_action_timeout_enabled': 'isCustomActionTimeoutEnabled',
             'custom_action_timeout_in_mins': 'customActionTimeoutInMins',
             'current_custom_action_timeout_in_mins': 'currentCustomActionTimeoutInMins',
-            'is_resume_patching': 'isResumePatching'
+            'is_resume_patching': 'isResumePatching',
+            'target_db_server_version': 'targetDbServerVersion',
+            'target_storage_server_version': 'targetStorageServerVersion'
         }
 
         self._is_enabled = None
@@ -97,6 +109,8 @@ class UpdateMaintenanceRunDetails(object):
         self._custom_action_timeout_in_mins = None
         self._current_custom_action_timeout_in_mins = None
         self._is_resume_patching = None
+        self._target_db_server_version = None
+        self._target_storage_server_version = None
 
     @property
     def is_enabled(self):
@@ -335,6 +349,54 @@ class UpdateMaintenanceRunDetails(object):
         :type: bool
         """
         self._is_resume_patching = is_resume_patching
+
+    @property
+    def target_db_server_version(self):
+        """
+        Gets the target_db_server_version of this UpdateMaintenanceRunDetails.
+        The target database server system software version for the patching operation.
+
+
+        :return: The target_db_server_version of this UpdateMaintenanceRunDetails.
+        :rtype: str
+        """
+        return self._target_db_server_version
+
+    @target_db_server_version.setter
+    def target_db_server_version(self, target_db_server_version):
+        """
+        Sets the target_db_server_version of this UpdateMaintenanceRunDetails.
+        The target database server system software version for the patching operation.
+
+
+        :param target_db_server_version: The target_db_server_version of this UpdateMaintenanceRunDetails.
+        :type: str
+        """
+        self._target_db_server_version = target_db_server_version
+
+    @property
+    def target_storage_server_version(self):
+        """
+        Gets the target_storage_server_version of this UpdateMaintenanceRunDetails.
+        The target storage cell system software version for the patching operation.
+
+
+        :return: The target_storage_server_version of this UpdateMaintenanceRunDetails.
+        :rtype: str
+        """
+        return self._target_storage_server_version
+
+    @target_storage_server_version.setter
+    def target_storage_server_version(self, target_storage_server_version):
+        """
+        Sets the target_storage_server_version of this UpdateMaintenanceRunDetails.
+        The target storage cell system software version for the patching operation.
+
+
+        :param target_storage_server_version: The target_storage_server_version of this UpdateMaintenanceRunDetails.
+        :type: str
+        """
+        self._target_storage_server_version = target_storage_server_version
 
     def __repr__(self):
         return formatted_flat_dict(self)
