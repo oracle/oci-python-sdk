@@ -4,13 +4,10 @@ Executing using Cloud Shell:
 
 .. code-block::
 
-    1. install oci sdk package
-       pip3 install --user oci
-
-    2. clone the oci sdk repo
+    1. clone the oci sdk repo
        git clone https://github.com/oracle/oci-python-sdk
 
-    3. Execute
+    2. Execute
        cd $HOME/oci-python-sdk/examples/list_resources_in_tenancy
        python3 list_all_ipsec_tunnels_in_tenancy.py -dt
        python3 list_all_virtual_circuits_in_tenancy.py -dt
@@ -20,7 +17,8 @@ Executing using Cloud Shell:
        python3 list_limits_per_compartments.py -dt
        python3 list_policies_in_tenancy.py -dt
        python3 list_all_capacity_reservations_in_tenancy.py -dt
+       python3 list_databases_shapes_in_tenancy.py -dt -csv output.csv
 
-    4. Help with --help
+    3. Help with --help
 
 
