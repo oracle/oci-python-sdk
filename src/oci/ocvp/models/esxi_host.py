@@ -143,6 +143,18 @@ class EsxiHost(object):
             The value to assign to the grace_period_end_date property of this EsxiHost.
         :type grace_period_end_date: datetime
 
+        :param vmware_software_version:
+            The value to assign to the vmware_software_version property of this EsxiHost.
+        :type vmware_software_version: str
+
+        :param non_upgraded_esxi_host_id:
+            The value to assign to the non_upgraded_esxi_host_id property of this EsxiHost.
+        :type non_upgraded_esxi_host_id: str
+
+        :param upgraded_replacement_esxi_host_id:
+            The value to assign to the upgraded_replacement_esxi_host_id property of this EsxiHost.
+        :type upgraded_replacement_esxi_host_id: str
+
         :param compute_availability_domain:
             The value to assign to the compute_availability_domain property of this EsxiHost.
         :type compute_availability_domain: str
@@ -183,6 +195,9 @@ class EsxiHost(object):
             'failed_esxi_host_id': 'str',
             'replacement_esxi_host_id': 'str',
             'grace_period_end_date': 'datetime',
+            'vmware_software_version': 'str',
+            'non_upgraded_esxi_host_id': 'str',
+            'upgraded_replacement_esxi_host_id': 'str',
             'compute_availability_domain': 'str',
             'host_shape_name': 'str',
             'host_ocpu_count': 'float',
@@ -206,6 +221,9 @@ class EsxiHost(object):
             'failed_esxi_host_id': 'failedEsxiHostId',
             'replacement_esxi_host_id': 'replacementEsxiHostId',
             'grace_period_end_date': 'gracePeriodEndDate',
+            'vmware_software_version': 'vmwareSoftwareVersion',
+            'non_upgraded_esxi_host_id': 'nonUpgradedEsxiHostId',
+            'upgraded_replacement_esxi_host_id': 'upgradedReplacementEsxiHostId',
             'compute_availability_domain': 'computeAvailabilityDomain',
             'host_shape_name': 'hostShapeName',
             'host_ocpu_count': 'hostOcpuCount',
@@ -228,6 +246,9 @@ class EsxiHost(object):
         self._failed_esxi_host_id = None
         self._replacement_esxi_host_id = None
         self._grace_period_end_date = None
+        self._vmware_software_version = None
+        self._non_upgraded_esxi_host_id = None
+        self._upgraded_replacement_esxi_host_id = None
         self._compute_availability_domain = None
         self._host_shape_name = None
         self._host_ocpu_count = None
@@ -658,6 +679,90 @@ class EsxiHost(object):
         :type: datetime
         """
         self._grace_period_end_date = grace_period_end_date
+
+    @property
+    def vmware_software_version(self):
+        """
+        **[Required]** Gets the vmware_software_version of this EsxiHost.
+        The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+
+
+        :return: The vmware_software_version of this EsxiHost.
+        :rtype: str
+        """
+        return self._vmware_software_version
+
+    @vmware_software_version.setter
+    def vmware_software_version(self, vmware_software_version):
+        """
+        Sets the vmware_software_version of this EsxiHost.
+        The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+
+
+        :param vmware_software_version: The vmware_software_version of this EsxiHost.
+        :type: str
+        """
+        self._vmware_software_version = vmware_software_version
+
+    @property
+    def non_upgraded_esxi_host_id(self):
+        """
+        Gets the non_upgraded_esxi_host_id of this EsxiHost.
+        The `OCID`__ of the ESXi host that
+        will be upgraded.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The non_upgraded_esxi_host_id of this EsxiHost.
+        :rtype: str
+        """
+        return self._non_upgraded_esxi_host_id
+
+    @non_upgraded_esxi_host_id.setter
+    def non_upgraded_esxi_host_id(self, non_upgraded_esxi_host_id):
+        """
+        Sets the non_upgraded_esxi_host_id of this EsxiHost.
+        The `OCID`__ of the ESXi host that
+        will be upgraded.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param non_upgraded_esxi_host_id: The non_upgraded_esxi_host_id of this EsxiHost.
+        :type: str
+        """
+        self._non_upgraded_esxi_host_id = non_upgraded_esxi_host_id
+
+    @property
+    def upgraded_replacement_esxi_host_id(self):
+        """
+        Gets the upgraded_replacement_esxi_host_id of this EsxiHost.
+        The `OCID`__ of the ESXi host that
+        is newly created to upgrade the original host.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The upgraded_replacement_esxi_host_id of this EsxiHost.
+        :rtype: str
+        """
+        return self._upgraded_replacement_esxi_host_id
+
+    @upgraded_replacement_esxi_host_id.setter
+    def upgraded_replacement_esxi_host_id(self, upgraded_replacement_esxi_host_id):
+        """
+        Sets the upgraded_replacement_esxi_host_id of this EsxiHost.
+        The `OCID`__ of the ESXi host that
+        is newly created to upgrade the original host.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param upgraded_replacement_esxi_host_id: The upgraded_replacement_esxi_host_id of this EsxiHost.
+        :type: str
+        """
+        self._upgraded_replacement_esxi_host_id = upgraded_replacement_esxi_host_id
 
     @property
     def compute_availability_domain(self):

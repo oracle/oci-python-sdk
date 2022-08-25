@@ -46,6 +46,14 @@ class PrivateAccessChannel(object):
             The value to assign to the private_source_dns_zones property of this PrivateAccessChannel.
         :type private_source_dns_zones: list[oci.analytics.models.PrivateSourceDnsZone]
 
+        :param private_source_scan_hosts:
+            The value to assign to the private_source_scan_hosts property of this PrivateAccessChannel.
+        :type private_source_scan_hosts: list[oci.analytics.models.PrivateSourceScanHost]
+
+        :param network_security_group_ids:
+            The value to assign to the network_security_group_ids property of this PrivateAccessChannel.
+        :type network_security_group_ids: list[str]
+
         """
         self.swagger_types = {
             'key': 'str',
@@ -54,7 +62,9 @@ class PrivateAccessChannel(object):
             'subnet_id': 'str',
             'ip_address': 'str',
             'egress_source_ip_addresses': 'list[str]',
-            'private_source_dns_zones': 'list[PrivateSourceDnsZone]'
+            'private_source_dns_zones': 'list[PrivateSourceDnsZone]',
+            'private_source_scan_hosts': 'list[PrivateSourceScanHost]',
+            'network_security_group_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -64,7 +74,9 @@ class PrivateAccessChannel(object):
             'subnet_id': 'subnetId',
             'ip_address': 'ipAddress',
             'egress_source_ip_addresses': 'egressSourceIpAddresses',
-            'private_source_dns_zones': 'privateSourceDnsZones'
+            'private_source_dns_zones': 'privateSourceDnsZones',
+            'private_source_scan_hosts': 'privateSourceScanHosts',
+            'network_security_group_ids': 'networkSecurityGroupIds'
         }
 
         self._key = None
@@ -74,6 +86,8 @@ class PrivateAccessChannel(object):
         self._ip_address = None
         self._egress_source_ip_addresses = None
         self._private_source_dns_zones = None
+        self._private_source_scan_hosts = None
+        self._network_security_group_ids = None
 
     @property
     def key(self):
@@ -248,6 +262,54 @@ class PrivateAccessChannel(object):
         :type: list[oci.analytics.models.PrivateSourceDnsZone]
         """
         self._private_source_dns_zones = private_source_dns_zones
+
+    @property
+    def private_source_scan_hosts(self):
+        """
+        Gets the private_source_scan_hosts of this PrivateAccessChannel.
+        List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+
+
+        :return: The private_source_scan_hosts of this PrivateAccessChannel.
+        :rtype: list[oci.analytics.models.PrivateSourceScanHost]
+        """
+        return self._private_source_scan_hosts
+
+    @private_source_scan_hosts.setter
+    def private_source_scan_hosts(self, private_source_scan_hosts):
+        """
+        Sets the private_source_scan_hosts of this PrivateAccessChannel.
+        List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+
+
+        :param private_source_scan_hosts: The private_source_scan_hosts of this PrivateAccessChannel.
+        :type: list[oci.analytics.models.PrivateSourceScanHost]
+        """
+        self._private_source_scan_hosts = private_source_scan_hosts
+
+    @property
+    def network_security_group_ids(self):
+        """
+        Gets the network_security_group_ids of this PrivateAccessChannel.
+        Network Security Group OCIDs for an Analytics instance.
+
+
+        :return: The network_security_group_ids of this PrivateAccessChannel.
+        :rtype: list[str]
+        """
+        return self._network_security_group_ids
+
+    @network_security_group_ids.setter
+    def network_security_group_ids(self, network_security_group_ids):
+        """
+        Sets the network_security_group_ids of this PrivateAccessChannel.
+        Network Security Group OCIDs for an Analytics instance.
+
+
+        :param network_security_group_ids: The network_security_group_ids of this PrivateAccessChannel.
+        :type: list[str]
+        """
+        self._network_security_group_ids = network_security_group_ids
 
     def __repr__(self):
         return formatted_flat_dict(self)

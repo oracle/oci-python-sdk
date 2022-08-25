@@ -43,6 +43,7 @@ from .attach_paravirtualized_volume_details import AttachParavirtualizedVolumeDe
 from .attach_service_determined_volume_details import AttachServiceDeterminedVolumeDetails
 from .attach_vnic_details import AttachVnicDetails
 from .attach_volume_details import AttachVolumeDetails
+from .autotune_policy import AutotunePolicy
 from .bgp_session_info import BgpSessionInfo
 from .block_volume_replica import BlockVolumeReplica
 from .block_volume_replica_details import BlockVolumeReplicaDetails
@@ -209,6 +210,7 @@ from .default_phase_two_parameters import DefaultPhaseTwoParameters
 from .delete_virtual_circuit_public_prefix_details import DeleteVirtualCircuitPublicPrefixDetails
 from .detach_instance_pool_instance_details import DetachInstancePoolInstanceDetails
 from .detach_load_balancer_details import DetachLoadBalancerDetails
+from .detached_volume_autotune_policy import DetachedVolumeAutotunePolicy
 from .device import Device
 from .dhcp_dns_option import DhcpDnsOption
 from .dhcp_option import DhcpOption
@@ -272,10 +274,12 @@ from .instance_configuration_amd_rome_bm_launch_instance_platform_config import 
 from .instance_configuration_amd_vm_launch_instance_platform_config import InstanceConfigurationAmdVmLaunchInstancePlatformConfig
 from .instance_configuration_attach_vnic_details import InstanceConfigurationAttachVnicDetails
 from .instance_configuration_attach_volume_details import InstanceConfigurationAttachVolumeDetails
+from .instance_configuration_autotune_policy import InstanceConfigurationAutotunePolicy
 from .instance_configuration_availability_config import InstanceConfigurationAvailabilityConfig
 from .instance_configuration_block_volume_details import InstanceConfigurationBlockVolumeDetails
 from .instance_configuration_create_vnic_details import InstanceConfigurationCreateVnicDetails
 from .instance_configuration_create_volume_details import InstanceConfigurationCreateVolumeDetails
+from .instance_configuration_detached_volume_autotune_policy import InstanceConfigurationDetachedVolumeAutotunePolicy
 from .instance_configuration_instance_details import InstanceConfigurationInstanceDetails
 from .instance_configuration_instance_options import InstanceConfigurationInstanceOptions
 from .instance_configuration_instance_source_details import InstanceConfigurationInstanceSourceDetails
@@ -291,6 +295,7 @@ from .instance_configuration_launch_instance_platform_config import InstanceConf
 from .instance_configuration_launch_instance_shape_config_details import InstanceConfigurationLaunchInstanceShapeConfigDetails
 from .instance_configuration_launch_options import InstanceConfigurationLaunchOptions
 from .instance_configuration_paravirtualized_attach_volume_details import InstanceConfigurationParavirtualizedAttachVolumeDetails
+from .instance_configuration_performance_based_autotune_policy import InstanceConfigurationPerformanceBasedAutotunePolicy
 from .instance_configuration_summary import InstanceConfigurationSummary
 from .instance_configuration_volume_source_details import InstanceConfigurationVolumeSourceDetails
 from .instance_configuration_volume_source_from_volume_backup_details import InstanceConfigurationVolumeSourceFromVolumeBackupDetails
@@ -347,6 +352,7 @@ from .networking_topology import NetworkingTopology
 from .paravirtualized_volume_attachment import ParavirtualizedVolumeAttachment
 from .peer_region_for_remote_peering import PeerRegionForRemotePeering
 from .percentage_of_cores_enabled_options import PercentageOfCoresEnabledOptions
+from .performance_based_autotune_policy import PerformanceBasedAutotunePolicy
 from .phase_one_config_details import PhaseOneConfigDetails
 from .phase_two_config_details import PhaseTwoConfigDetails
 from .platform_config import PlatformConfig
@@ -560,6 +566,7 @@ core_type_mapping = {
     "AttachServiceDeterminedVolumeDetails": AttachServiceDeterminedVolumeDetails,
     "AttachVnicDetails": AttachVnicDetails,
     "AttachVolumeDetails": AttachVolumeDetails,
+    "AutotunePolicy": AutotunePolicy,
     "BgpSessionInfo": BgpSessionInfo,
     "BlockVolumeReplica": BlockVolumeReplica,
     "BlockVolumeReplicaDetails": BlockVolumeReplicaDetails,
@@ -726,6 +733,7 @@ core_type_mapping = {
     "DeleteVirtualCircuitPublicPrefixDetails": DeleteVirtualCircuitPublicPrefixDetails,
     "DetachInstancePoolInstanceDetails": DetachInstancePoolInstanceDetails,
     "DetachLoadBalancerDetails": DetachLoadBalancerDetails,
+    "DetachedVolumeAutotunePolicy": DetachedVolumeAutotunePolicy,
     "Device": Device,
     "DhcpDnsOption": DhcpDnsOption,
     "DhcpOption": DhcpOption,
@@ -789,10 +797,12 @@ core_type_mapping = {
     "InstanceConfigurationAmdVmLaunchInstancePlatformConfig": InstanceConfigurationAmdVmLaunchInstancePlatformConfig,
     "InstanceConfigurationAttachVnicDetails": InstanceConfigurationAttachVnicDetails,
     "InstanceConfigurationAttachVolumeDetails": InstanceConfigurationAttachVolumeDetails,
+    "InstanceConfigurationAutotunePolicy": InstanceConfigurationAutotunePolicy,
     "InstanceConfigurationAvailabilityConfig": InstanceConfigurationAvailabilityConfig,
     "InstanceConfigurationBlockVolumeDetails": InstanceConfigurationBlockVolumeDetails,
     "InstanceConfigurationCreateVnicDetails": InstanceConfigurationCreateVnicDetails,
     "InstanceConfigurationCreateVolumeDetails": InstanceConfigurationCreateVolumeDetails,
+    "InstanceConfigurationDetachedVolumeAutotunePolicy": InstanceConfigurationDetachedVolumeAutotunePolicy,
     "InstanceConfigurationInstanceDetails": InstanceConfigurationInstanceDetails,
     "InstanceConfigurationInstanceOptions": InstanceConfigurationInstanceOptions,
     "InstanceConfigurationInstanceSourceDetails": InstanceConfigurationInstanceSourceDetails,
@@ -808,6 +818,7 @@ core_type_mapping = {
     "InstanceConfigurationLaunchInstanceShapeConfigDetails": InstanceConfigurationLaunchInstanceShapeConfigDetails,
     "InstanceConfigurationLaunchOptions": InstanceConfigurationLaunchOptions,
     "InstanceConfigurationParavirtualizedAttachVolumeDetails": InstanceConfigurationParavirtualizedAttachVolumeDetails,
+    "InstanceConfigurationPerformanceBasedAutotunePolicy": InstanceConfigurationPerformanceBasedAutotunePolicy,
     "InstanceConfigurationSummary": InstanceConfigurationSummary,
     "InstanceConfigurationVolumeSourceDetails": InstanceConfigurationVolumeSourceDetails,
     "InstanceConfigurationVolumeSourceFromVolumeBackupDetails": InstanceConfigurationVolumeSourceFromVolumeBackupDetails,
@@ -864,6 +875,7 @@ core_type_mapping = {
     "ParavirtualizedVolumeAttachment": ParavirtualizedVolumeAttachment,
     "PeerRegionForRemotePeering": PeerRegionForRemotePeering,
     "PercentageOfCoresEnabledOptions": PercentageOfCoresEnabledOptions,
+    "PerformanceBasedAutotunePolicy": PerformanceBasedAutotunePolicy,
     "PhaseOneConfigDetails": PhaseOneConfigDetails,
     "PhaseTwoConfigDetails": PhaseTwoConfigDetails,
     "PlatformConfig": PlatformConfig,

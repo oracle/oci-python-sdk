@@ -16,6 +16,7 @@ from .network_endpoint_details import NetworkEndpointDetails
 from .private_access_channel import PrivateAccessChannel
 from .private_endpoint_details import PrivateEndpointDetails
 from .private_source_dns_zone import PrivateSourceDnsZone
+from .private_source_scan_host import PrivateSourceScanHost
 from .public_endpoint_details import PublicEndpointDetails
 from .scale_analytics_instance_details import ScaleAnalyticsInstanceDetails
 from .set_kms_key_details import SetKmsKeyDetails
@@ -44,6 +45,7 @@ analytics_type_mapping = {
     "PrivateAccessChannel": PrivateAccessChannel,
     "PrivateEndpointDetails": PrivateEndpointDetails,
     "PrivateSourceDnsZone": PrivateSourceDnsZone,
+    "PrivateSourceScanHost": PrivateSourceScanHost,
     "PublicEndpointDetails": PublicEndpointDetails,
     "ScaleAnalyticsInstanceDetails": ScaleAnalyticsInstanceDetails,
     "SetKmsKeyDetails": SetKmsKeyDetails,

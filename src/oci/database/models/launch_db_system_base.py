@@ -161,6 +161,10 @@ class LaunchDbSystemBase(object):
             The value to assign to the private_ip property of this LaunchDbSystemBase.
         :type private_ip: str
 
+        :param data_collection_options:
+            The value to assign to the data_collection_options property of this LaunchDbSystemBase.
+        :type data_collection_options: oci.database.models.DataCollectionOptions
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -189,7 +193,8 @@ class LaunchDbSystemBase(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'source': 'str',
-            'private_ip': 'str'
+            'private_ip': 'str',
+            'data_collection_options': 'DataCollectionOptions'
         }
 
         self.attribute_map = {
@@ -219,7 +224,8 @@ class LaunchDbSystemBase(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'source': 'source',
-            'private_ip': 'privateIp'
+            'private_ip': 'privateIp',
+            'data_collection_options': 'dataCollectionOptions'
         }
 
         self._compartment_id = None
@@ -249,6 +255,7 @@ class LaunchDbSystemBase(object):
         self._defined_tags = None
         self._source = None
         self._private_ip = None
+        self._data_collection_options = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -1101,6 +1108,26 @@ class LaunchDbSystemBase(object):
         :type: str
         """
         self._private_ip = private_ip
+
+    @property
+    def data_collection_options(self):
+        """
+        Gets the data_collection_options of this LaunchDbSystemBase.
+
+        :return: The data_collection_options of this LaunchDbSystemBase.
+        :rtype: oci.database.models.DataCollectionOptions
+        """
+        return self._data_collection_options
+
+    @data_collection_options.setter
+    def data_collection_options(self, data_collection_options):
+        """
+        Sets the data_collection_options of this LaunchDbSystemBase.
+
+        :param data_collection_options: The data_collection_options of this LaunchDbSystemBase.
+        :type: oci.database.models.DataCollectionOptions
+        """
+        self._data_collection_options = data_collection_options
 
     def __repr__(self):
         return formatted_flat_dict(self)

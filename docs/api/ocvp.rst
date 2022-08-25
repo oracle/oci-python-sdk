@@ -41,6 +41,8 @@ Ocvp
     oci.ocvp.models.SupportedVmwareSoftwareVersionSummary
     oci.ocvp.models.UpdateEsxiHostDetails
     oci.ocvp.models.UpdateSddcDetails
+    oci.ocvp.models.VsphereLicense
+    oci.ocvp.models.VsphereUpgradeObject
     oci.ocvp.models.WorkRequest
     oci.ocvp.models.WorkRequestCollection
     oci.ocvp.models.WorkRequestError

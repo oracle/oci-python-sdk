@@ -321,6 +321,10 @@ class DbSystemSummary(object):
             The value to assign to the point_in_time_data_disk_clone_timestamp property of this DbSystemSummary.
         :type point_in_time_data_disk_clone_timestamp: datetime
 
+        :param data_collection_options:
+            The value to assign to the data_collection_options property of this DbSystemSummary.
+        :type data_collection_options: oci.database.models.DataCollectionOptions
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -368,7 +372,8 @@ class DbSystemSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'source_db_system_id': 'str',
-            'point_in_time_data_disk_clone_timestamp': 'datetime'
+            'point_in_time_data_disk_clone_timestamp': 'datetime',
+            'data_collection_options': 'DataCollectionOptions'
         }
 
         self.attribute_map = {
@@ -417,7 +422,8 @@ class DbSystemSummary(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'source_db_system_id': 'sourceDbSystemId',
-            'point_in_time_data_disk_clone_timestamp': 'pointInTimeDataDiskCloneTimestamp'
+            'point_in_time_data_disk_clone_timestamp': 'pointInTimeDataDiskCloneTimestamp',
+            'data_collection_options': 'dataCollectionOptions'
         }
 
         self._id = None
@@ -466,6 +472,7 @@ class DbSystemSummary(object):
         self._defined_tags = None
         self._source_db_system_id = None
         self._point_in_time_data_disk_clone_timestamp = None
+        self._data_collection_options = None
 
     @property
     def id(self):
@@ -1726,6 +1733,26 @@ class DbSystemSummary(object):
         :type: datetime
         """
         self._point_in_time_data_disk_clone_timestamp = point_in_time_data_disk_clone_timestamp
+
+    @property
+    def data_collection_options(self):
+        """
+        Gets the data_collection_options of this DbSystemSummary.
+
+        :return: The data_collection_options of this DbSystemSummary.
+        :rtype: oci.database.models.DataCollectionOptions
+        """
+        return self._data_collection_options
+
+    @data_collection_options.setter
+    def data_collection_options(self, data_collection_options):
+        """
+        Sets the data_collection_options of this DbSystemSummary.
+
+        :param data_collection_options: The data_collection_options of this DbSystemSummary.
+        :type: oci.database.models.DataCollectionOptions
+        """
+        self._data_collection_options = data_collection_options
 
     def __repr__(self):
         return formatted_flat_dict(self)

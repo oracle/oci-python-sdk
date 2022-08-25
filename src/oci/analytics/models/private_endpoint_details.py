@@ -32,22 +32,29 @@ class PrivateEndpointDetails(NetworkEndpointDetails):
             The value to assign to the subnet_id property of this PrivateEndpointDetails.
         :type subnet_id: str
 
+        :param network_security_group_ids:
+            The value to assign to the network_security_group_ids property of this PrivateEndpointDetails.
+        :type network_security_group_ids: list[str]
+
         """
         self.swagger_types = {
             'network_endpoint_type': 'str',
             'vcn_id': 'str',
-            'subnet_id': 'str'
+            'subnet_id': 'str',
+            'network_security_group_ids': 'list[str]'
         }
 
         self.attribute_map = {
             'network_endpoint_type': 'networkEndpointType',
             'vcn_id': 'vcnId',
-            'subnet_id': 'subnetId'
+            'subnet_id': 'subnetId',
+            'network_security_group_ids': 'networkSecurityGroupIds'
         }
 
         self._network_endpoint_type = None
         self._vcn_id = None
         self._subnet_id = None
+        self._network_security_group_ids = None
         self._network_endpoint_type = 'PRIVATE'
 
     @property
@@ -97,6 +104,30 @@ class PrivateEndpointDetails(NetworkEndpointDetails):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def network_security_group_ids(self):
+        """
+        Gets the network_security_group_ids of this PrivateEndpointDetails.
+        Network Security Group OCIDs for an Analytics instance.
+
+
+        :return: The network_security_group_ids of this PrivateEndpointDetails.
+        :rtype: list[str]
+        """
+        return self._network_security_group_ids
+
+    @network_security_group_ids.setter
+    def network_security_group_ids(self, network_security_group_ids):
+        """
+        Sets the network_security_group_ids of this PrivateEndpointDetails.
+        Network Security Group OCIDs for an Analytics instance.
+
+
+        :param network_security_group_ids: The network_security_group_ids of this PrivateEndpointDetails.
+        :type: list[str]
+        """
+        self._network_security_group_ids = network_security_group_ids
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -58,6 +58,10 @@ class InstanceConfigurationCreateVolumeDetails(object):
             The value to assign to the source_details property of this InstanceConfigurationCreateVolumeDetails.
         :type source_details: oci.core.models.InstanceConfigurationVolumeSourceDetails
 
+        :param autotune_policies:
+            The value to assign to the autotune_policies property of this InstanceConfigurationCreateVolumeDetails.
+        :type autotune_policies: list[oci.core.models.InstanceConfigurationAutotunePolicy]
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -69,7 +73,8 @@ class InstanceConfigurationCreateVolumeDetails(object):
             'kms_key_id': 'str',
             'vpus_per_gb': 'int',
             'size_in_gbs': 'int',
-            'source_details': 'InstanceConfigurationVolumeSourceDetails'
+            'source_details': 'InstanceConfigurationVolumeSourceDetails',
+            'autotune_policies': 'list[InstanceConfigurationAutotunePolicy]'
         }
 
         self.attribute_map = {
@@ -82,7 +87,8 @@ class InstanceConfigurationCreateVolumeDetails(object):
             'kms_key_id': 'kmsKeyId',
             'vpus_per_gb': 'vpusPerGB',
             'size_in_gbs': 'sizeInGBs',
-            'source_details': 'sourceDetails'
+            'source_details': 'sourceDetails',
+            'autotune_policies': 'autotunePolicies'
         }
 
         self._availability_domain = None
@@ -95,6 +101,7 @@ class InstanceConfigurationCreateVolumeDetails(object):
         self._vpus_per_gb = None
         self._size_in_gbs = None
         self._source_details = None
+        self._autotune_policies = None
 
     @property
     def availability_domain(self):
@@ -312,6 +319,8 @@ class InstanceConfigurationCreateVolumeDetails(object):
 
           * `30`-`120`: Represents the Ultra High Performance option.
 
+        For performance autotune enabled volumes, it would be the Default(Minimum) VPUs/GB.
+
         __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
 
 
@@ -337,6 +346,8 @@ class InstanceConfigurationCreateVolumeDetails(object):
           * `20`: Represents Higher Performance option.
 
           * `30`-`120`: Represents the Ultra High Performance option.
+
+        For performance autotune enabled volumes, it would be the Default(Minimum) VPUs/GB.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
 
@@ -389,6 +400,30 @@ class InstanceConfigurationCreateVolumeDetails(object):
         :type: oci.core.models.InstanceConfigurationVolumeSourceDetails
         """
         self._source_details = source_details
+
+    @property
+    def autotune_policies(self):
+        """
+        Gets the autotune_policies of this InstanceConfigurationCreateVolumeDetails.
+        The list of autotune policies enabled for this volume.
+
+
+        :return: The autotune_policies of this InstanceConfigurationCreateVolumeDetails.
+        :rtype: list[oci.core.models.InstanceConfigurationAutotunePolicy]
+        """
+        return self._autotune_policies
+
+    @autotune_policies.setter
+    def autotune_policies(self, autotune_policies):
+        """
+        Sets the autotune_policies of this InstanceConfigurationCreateVolumeDetails.
+        The list of autotune policies enabled for this volume.
+
+
+        :param autotune_policies: The autotune_policies of this InstanceConfigurationCreateVolumeDetails.
+        :type: list[oci.core.models.InstanceConfigurationAutotunePolicy]
+        """
+        self._autotune_policies = autotune_policies
 
     def __repr__(self):
         return formatted_flat_dict(self)

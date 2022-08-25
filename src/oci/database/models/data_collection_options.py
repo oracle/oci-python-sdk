@@ -22,16 +22,30 @@ class DataCollectionOptions(object):
             The value to assign to the is_diagnostics_events_enabled property of this DataCollectionOptions.
         :type is_diagnostics_events_enabled: bool
 
+        :param is_health_monitoring_enabled:
+            The value to assign to the is_health_monitoring_enabled property of this DataCollectionOptions.
+        :type is_health_monitoring_enabled: bool
+
+        :param is_incident_logs_enabled:
+            The value to assign to the is_incident_logs_enabled property of this DataCollectionOptions.
+        :type is_incident_logs_enabled: bool
+
         """
         self.swagger_types = {
-            'is_diagnostics_events_enabled': 'bool'
+            'is_diagnostics_events_enabled': 'bool',
+            'is_health_monitoring_enabled': 'bool',
+            'is_incident_logs_enabled': 'bool'
         }
 
         self.attribute_map = {
-            'is_diagnostics_events_enabled': 'isDiagnosticsEventsEnabled'
+            'is_diagnostics_events_enabled': 'isDiagnosticsEventsEnabled',
+            'is_health_monitoring_enabled': 'isHealthMonitoringEnabled',
+            'is_incident_logs_enabled': 'isIncidentLogsEnabled'
         }
 
         self._is_diagnostics_events_enabled = None
+        self._is_health_monitoring_enabled = None
+        self._is_incident_logs_enabled = None
 
     @property
     def is_diagnostics_events_enabled(self):
@@ -56,6 +70,58 @@ class DataCollectionOptions(object):
         :type: bool
         """
         self._is_diagnostics_events_enabled = is_diagnostics_events_enabled
+
+    @property
+    def is_health_monitoring_enabled(self):
+        """
+        Gets the is_health_monitoring_enabled of this DataCollectionOptions.
+        Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system.
+        Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+
+
+        :return: The is_health_monitoring_enabled of this DataCollectionOptions.
+        :rtype: bool
+        """
+        return self._is_health_monitoring_enabled
+
+    @is_health_monitoring_enabled.setter
+    def is_health_monitoring_enabled(self, is_health_monitoring_enabled):
+        """
+        Sets the is_health_monitoring_enabled of this DataCollectionOptions.
+        Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system.
+        Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+
+
+        :param is_health_monitoring_enabled: The is_health_monitoring_enabled of this DataCollectionOptions.
+        :type: bool
+        """
+        self._is_health_monitoring_enabled = is_health_monitoring_enabled
+
+    @property
+    def is_incident_logs_enabled(self):
+        """
+        Gets the is_incident_logs_enabled of this DataCollectionOptions.
+        Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them.
+        Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+
+
+        :return: The is_incident_logs_enabled of this DataCollectionOptions.
+        :rtype: bool
+        """
+        return self._is_incident_logs_enabled
+
+    @is_incident_logs_enabled.setter
+    def is_incident_logs_enabled(self, is_incident_logs_enabled):
+        """
+        Sets the is_incident_logs_enabled of this DataCollectionOptions.
+        Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them.
+        Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+
+
+        :param is_incident_logs_enabled: The is_incident_logs_enabled of this DataCollectionOptions.
+        :type: bool
+        """
+        self._is_incident_logs_enabled = is_incident_logs_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

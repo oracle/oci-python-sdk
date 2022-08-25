@@ -30,6 +30,7 @@ Analytics
     oci.analytics.models.PrivateAccessChannel
     oci.analytics.models.PrivateEndpointDetails
     oci.analytics.models.PrivateSourceDnsZone
+    oci.analytics.models.PrivateSourceScanHost
     oci.analytics.models.PublicEndpointDetails
     oci.analytics.models.ScaleAnalyticsInstanceDetails
     oci.analytics.models.SetKmsKeyDetails
