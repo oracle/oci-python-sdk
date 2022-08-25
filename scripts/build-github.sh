@@ -29,8 +29,22 @@ echo Creating venv to install sdk locally
 virtualenv .sdk-venv
 . .sdk-venv/bin/activate
 
-echo Python version
+# Set up python3 pyenv(v3.8.6)
+echo "Setup python environment"
+curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)"
+export PYTHON_3_VERSION=3.8.6
+pyenv install $PYTHON_3_VERSION -s
+pyenv shell $PYTHON_3_VERSION
+
+echo "Python Version"
 python --version
+
+pip install -U pip
+pip install -e .
 
 SDK_VERSION=$(tail -1 .python-sdk-github/src/oci/version.py | cut -d '"' -f2)
 echo SDK Version Number $SDK_VERSION
@@ -38,6 +52,7 @@ echo SDK Version Number $SDK_VERSION
 # build wheel to ensure it can be packaged correctly
 echo Building Wheel
 cd .python-sdk-github/
+pip install -r requirements.txt
 
 # Redirect STDOUT and STDERR to a file to avoid resource unavailable error in TeamCity jobs.
 python setup.py sdist bdist_wheel >> build_output.txt 2>&1
