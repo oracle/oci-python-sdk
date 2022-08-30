@@ -68,7 +68,7 @@ class VirtualCloudNetwork(object):
     def whitelisted_ips(self):
         """
         Gets the whitelisted_ips of this VirtualCloudNetwork.
-        Source IP addresses or IP address ranges igress rules.
+        Source IP addresses or IP address ranges in ingress rules.
 
 
         :return: The whitelisted_ips of this VirtualCloudNetwork.
@@ -80,7 +80,7 @@ class VirtualCloudNetwork(object):
     def whitelisted_ips(self, whitelisted_ips):
         """
         Sets the whitelisted_ips of this VirtualCloudNetwork.
-        Source IP addresses or IP address ranges igress rules.
+        Source IP addresses or IP address ranges in ingress rules.
 
 
         :param whitelisted_ips: The whitelisted_ips of this VirtualCloudNetwork.

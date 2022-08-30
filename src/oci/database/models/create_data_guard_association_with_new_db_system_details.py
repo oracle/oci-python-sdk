@@ -145,6 +145,10 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
             The value to assign to the database_defined_tags property of this CreateDataGuardAssociationWithNewDbSystemDetails.
         :type database_defined_tags: dict(str, dict(str, object))
 
+        :param data_collection_options:
+            The value to assign to the data_collection_options property of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :type data_collection_options: oci.database.models.DataCollectionOptions
+
         """
         self.swagger_types = {
             'database_software_image_id': 'str',
@@ -172,7 +176,8 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
             'db_system_freeform_tags': 'dict(str, str)',
             'db_system_defined_tags': 'dict(str, dict(str, object))',
             'database_freeform_tags': 'dict(str, str)',
-            'database_defined_tags': 'dict(str, dict(str, object))'
+            'database_defined_tags': 'dict(str, dict(str, object))',
+            'data_collection_options': 'DataCollectionOptions'
         }
 
         self.attribute_map = {
@@ -201,7 +206,8 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
             'db_system_freeform_tags': 'dbSystemFreeformTags',
             'db_system_defined_tags': 'dbSystemDefinedTags',
             'database_freeform_tags': 'databaseFreeformTags',
-            'database_defined_tags': 'databaseDefinedTags'
+            'database_defined_tags': 'databaseDefinedTags',
+            'data_collection_options': 'dataCollectionOptions'
         }
 
         self._database_software_image_id = None
@@ -230,6 +236,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         self._db_system_defined_tags = None
         self._database_freeform_tags = None
         self._database_defined_tags = None
+        self._data_collection_options = None
         self._creation_type = 'NewDbSystem'
 
     @property
@@ -787,6 +794,26 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         :type: dict(str, dict(str, object))
         """
         self._database_defined_tags = database_defined_tags
+
+    @property
+    def data_collection_options(self):
+        """
+        Gets the data_collection_options of this CreateDataGuardAssociationWithNewDbSystemDetails.
+
+        :return: The data_collection_options of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :rtype: oci.database.models.DataCollectionOptions
+        """
+        return self._data_collection_options
+
+    @data_collection_options.setter
+    def data_collection_options(self, data_collection_options):
+        """
+        Sets the data_collection_options of this CreateDataGuardAssociationWithNewDbSystemDetails.
+
+        :param data_collection_options: The data_collection_options of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :type: oci.database.models.DataCollectionOptions
+        """
+        self._data_collection_options = data_collection_options
 
     def __repr__(self):
         return formatted_flat_dict(self)

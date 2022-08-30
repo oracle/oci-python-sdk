@@ -77,7 +77,7 @@ def extract_vault_first_master_key(oci_config, compartment_id, clients, vault_id
     return vault_key_id
 
 
-def create_secret(oci_config, compartment_id: str, clients, vault_id: str, name: str, base64_password: str, vault_key_id: str = None):
+def create_secret(oci_config, compartment_id: str, clients, vault_id: str, name: str, base64_secret_content: str, vault_key_id: str = None):
     """
     Create a secret using the specified name. The content is in base64Secret.
     If a secret with that name already exists, we simply return its OCID.
@@ -105,7 +105,7 @@ def create_secret(oci_config, compartment_id: str, clients, vault_id: str, name:
         compartment_id=compartment_id,
         secret_name=name,
         secret_content=oci.vault.models.Base64SecretContentDetails(
-            content=base64_password
+            content=base64_secret_content
         )
     )
 
@@ -158,7 +158,7 @@ def get_wallet_and_create_secrets(oci_config, compartment_id, clients, autonomou
     # 2. Extract Wallet from DB
     # Create a wallet details object
     db_wallet = oci.database.models.GenerateAutonomousDatabaseWalletDetails(
-        password="example-password"
+        password="Change-Example-Passw0rd!"
     )
 
     print("Extracting Wallet...")
@@ -186,7 +186,7 @@ def get_wallet_and_create_secrets(oci_config, compartment_id, clients, autonomou
                                                    clients=clients,
                                                    vault_id=vault_id,
                                                    name=db_wallet_secret_name,
-                                                   base64_password=base64_sso_str)
+                                                   base64_secret_content=base64_sso_str)
 
     # 4. Store the DB password in the vault as a secret under name X. If name X already exists, we will simply use it.
     base64_db_password_str = base64.b64encode(db_password.encode()).decode()
@@ -196,6 +196,6 @@ def get_wallet_and_create_secrets(oci_config, compartment_id, clients, autonomou
                                                      vault_id=vault_id,
                                                      vault_key_id=vault_key_id,
                                                      name=db_password_secret_name,
-                                                     base64_password=base64_db_password_str)
+                                                     base64_secret_content=base64_db_password_str)
 
     return wallet_secret_id, password_secret_id

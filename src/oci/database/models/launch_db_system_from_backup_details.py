@@ -161,6 +161,10 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
             The value to assign to the private_ip property of this LaunchDbSystemFromBackupDetails.
         :type private_ip: str
 
+        :param data_collection_options:
+            The value to assign to the data_collection_options property of this LaunchDbSystemFromBackupDetails.
+        :type data_collection_options: oci.database.models.DataCollectionOptions
+
         :param db_home:
             The value to assign to the db_home property of this LaunchDbSystemFromBackupDetails.
         :type db_home: oci.database.models.CreateDbHomeFromBackupDetails
@@ -209,6 +213,7 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
             'defined_tags': 'dict(str, dict(str, object))',
             'source': 'str',
             'private_ip': 'str',
+            'data_collection_options': 'DataCollectionOptions',
             'db_home': 'CreateDbHomeFromBackupDetails',
             'database_edition': 'str',
             'disk_redundancy': 'str',
@@ -243,6 +248,7 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
             'defined_tags': 'definedTags',
             'source': 'source',
             'private_ip': 'privateIp',
+            'data_collection_options': 'dataCollectionOptions',
             'db_home': 'dbHome',
             'database_edition': 'databaseEdition',
             'disk_redundancy': 'diskRedundancy',
@@ -276,6 +282,7 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
         self._defined_tags = None
         self._source = None
         self._private_ip = None
+        self._data_collection_options = None
         self._db_home = None
         self._database_edition = None
         self._disk_redundancy = None
