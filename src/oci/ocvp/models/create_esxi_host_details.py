@@ -88,6 +88,10 @@ class CreateEsxiHostDetails(object):
             The value to assign to the capacity_reservation_id property of this CreateEsxiHostDetails.
         :type capacity_reservation_id: str
 
+        :param non_upgraded_esxi_host_id:
+            The value to assign to the non_upgraded_esxi_host_id property of this CreateEsxiHostDetails.
+        :type non_upgraded_esxi_host_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateEsxiHostDetails.
         :type freeform_tags: dict(str, str)
@@ -107,6 +111,7 @@ class CreateEsxiHostDetails(object):
             'host_shape_name': 'str',
             'host_ocpu_count': 'float',
             'capacity_reservation_id': 'str',
+            'non_upgraded_esxi_host_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -121,6 +126,7 @@ class CreateEsxiHostDetails(object):
             'host_shape_name': 'hostShapeName',
             'host_ocpu_count': 'hostOcpuCount',
             'capacity_reservation_id': 'capacityReservationId',
+            'non_upgraded_esxi_host_id': 'nonUpgradedEsxiHostId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -134,6 +140,7 @@ class CreateEsxiHostDetails(object):
         self._host_shape_name = None
         self._host_ocpu_count = None
         self._capacity_reservation_id = None
+        self._non_upgraded_esxi_host_id = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -312,7 +319,7 @@ class CreateEsxiHostDetails(object):
         The `OCID`__ of the ESXi host that
         is failed. This is an optional parameter. If this parameter is specified, a new ESXi
         host will be created to replace the failed one, and the `failedEsxiHostId` field
-        will be udpated in the newly created Esxi host.
+        will be updated in the newly created Esxi host.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -329,7 +336,7 @@ class CreateEsxiHostDetails(object):
         The `OCID`__ of the ESXi host that
         is failed. This is an optional parameter. If this parameter is specified, a new ESXi
         host will be created to replace the failed one, and the `failedEsxiHostId` field
-        will be udpated in the newly created Esxi host.
+        will be updated in the newly created Esxi host.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -416,6 +423,42 @@ class CreateEsxiHostDetails(object):
         :type: str
         """
         self._capacity_reservation_id = capacity_reservation_id
+
+    @property
+    def non_upgraded_esxi_host_id(self):
+        """
+        Gets the non_upgraded_esxi_host_id of this CreateEsxiHostDetails.
+        The `OCID`__ of the ESXi host that
+        will be upgraded. This is an optional parameter. If this parameter
+        is specified, an ESXi host with new version will be created to replace the
+        original one, and the `nonUpgradedEsxiHostId` field will be updated in the newly
+        created Esxi host.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The non_upgraded_esxi_host_id of this CreateEsxiHostDetails.
+        :rtype: str
+        """
+        return self._non_upgraded_esxi_host_id
+
+    @non_upgraded_esxi_host_id.setter
+    def non_upgraded_esxi_host_id(self, non_upgraded_esxi_host_id):
+        """
+        Sets the non_upgraded_esxi_host_id of this CreateEsxiHostDetails.
+        The `OCID`__ of the ESXi host that
+        will be upgraded. This is an optional parameter. If this parameter
+        is specified, an ESXi host with new version will be created to replace the
+        original one, and the `nonUpgradedEsxiHostId` field will be updated in the newly
+        created Esxi host.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param non_upgraded_esxi_host_id: The non_upgraded_esxi_host_id of this CreateEsxiHostDetails.
+        :type: str
+        """
+        self._non_upgraded_esxi_host_id = non_upgraded_esxi_host_id
 
     @property
     def freeform_tags(self):

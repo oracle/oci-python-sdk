@@ -252,6 +252,18 @@ class Sddc(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param upgrade_licenses:
+            The value to assign to the upgrade_licenses property of this Sddc.
+        :type upgrade_licenses: list[oci.ocvp.models.VsphereLicense]
+
+        :param vsphere_upgrade_guide:
+            The value to assign to the vsphere_upgrade_guide property of this Sddc.
+        :type vsphere_upgrade_guide: str
+
+        :param vsphere_upgrade_objects:
+            The value to assign to the vsphere_upgrade_objects property of this Sddc.
+        :type vsphere_upgrade_objects: list[oci.ocvp.models.VsphereUpgradeObject]
+
         :param initial_host_shape_name:
             The value to assign to the initial_host_shape_name property of this Sddc.
         :type initial_host_shape_name: str
@@ -323,6 +335,9 @@ class Sddc(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
+            'upgrade_licenses': 'list[VsphereLicense]',
+            'vsphere_upgrade_guide': 'str',
+            'vsphere_upgrade_objects': 'list[VsphereUpgradeObject]',
             'initial_host_shape_name': 'str',
             'initial_host_ocpu_count': 'float',
             'is_shielded_instance_enabled': 'bool',
@@ -377,6 +392,9 @@ class Sddc(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
+            'upgrade_licenses': 'upgradeLicenses',
+            'vsphere_upgrade_guide': 'vsphereUpgradeGuide',
+            'vsphere_upgrade_objects': 'vsphereUpgradeObjects',
             'initial_host_shape_name': 'initialHostShapeName',
             'initial_host_ocpu_count': 'initialHostOcpuCount',
             'is_shielded_instance_enabled': 'isShieldedInstanceEnabled',
@@ -430,6 +448,9 @@ class Sddc(object):
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
+        self._upgrade_licenses = None
+        self._vsphere_upgrade_guide = None
+        self._vsphere_upgrade_objects = None
         self._initial_host_shape_name = None
         self._initial_host_ocpu_count = None
         self._is_shielded_instance_enabled = None
@@ -1946,6 +1967,78 @@ class Sddc(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def upgrade_licenses(self):
+        """
+        Gets the upgrade_licenses of this Sddc.
+        The vSphere licenses to be used when upgrade SDDC.
+
+
+        :return: The upgrade_licenses of this Sddc.
+        :rtype: list[oci.ocvp.models.VsphereLicense]
+        """
+        return self._upgrade_licenses
+
+    @upgrade_licenses.setter
+    def upgrade_licenses(self, upgrade_licenses):
+        """
+        Sets the upgrade_licenses of this Sddc.
+        The vSphere licenses to be used when upgrade SDDC.
+
+
+        :param upgrade_licenses: The upgrade_licenses of this Sddc.
+        :type: list[oci.ocvp.models.VsphereLicense]
+        """
+        self._upgrade_licenses = upgrade_licenses
+
+    @property
+    def vsphere_upgrade_guide(self):
+        """
+        Gets the vsphere_upgrade_guide of this Sddc.
+        The link of guidance to upgrade vSphere.
+
+
+        :return: The vsphere_upgrade_guide of this Sddc.
+        :rtype: str
+        """
+        return self._vsphere_upgrade_guide
+
+    @vsphere_upgrade_guide.setter
+    def vsphere_upgrade_guide(self, vsphere_upgrade_guide):
+        """
+        Sets the vsphere_upgrade_guide of this Sddc.
+        The link of guidance to upgrade vSphere.
+
+
+        :param vsphere_upgrade_guide: The vsphere_upgrade_guide of this Sddc.
+        :type: str
+        """
+        self._vsphere_upgrade_guide = vsphere_upgrade_guide
+
+    @property
+    def vsphere_upgrade_objects(self):
+        """
+        Gets the vsphere_upgrade_objects of this Sddc.
+        The links of binary objects needed for upgrade vSphere.
+
+
+        :return: The vsphere_upgrade_objects of this Sddc.
+        :rtype: list[oci.ocvp.models.VsphereUpgradeObject]
+        """
+        return self._vsphere_upgrade_objects
+
+    @vsphere_upgrade_objects.setter
+    def vsphere_upgrade_objects(self, vsphere_upgrade_objects):
+        """
+        Sets the vsphere_upgrade_objects of this Sddc.
+        The links of binary objects needed for upgrade vSphere.
+
+
+        :param vsphere_upgrade_objects: The vsphere_upgrade_objects of this Sddc.
+        :type: list[oci.ocvp.models.VsphereUpgradeObject]
+        """
+        self._vsphere_upgrade_objects = vsphere_upgrade_objects
 
     @property
     def initial_host_shape_name(self):

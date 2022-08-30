@@ -2,355 +2,376 @@
 # Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
-
-# Creates a connection to a VM DB System with Private Endpoint (PE) in a Private Subnet
-# - Requires Database Tools Private Endpoint Reverse Connection: Yes
-# - Requires a KeyStore: No
+# -----------------------------------------------------------------------------
+# Example Use Case: Existing Oracle VM DB System with Private IP
+# -----------------------------------------------------------------------------
+# This example creates a Database Tools connection to an Oracle VM DB System
+# accessible via private ip. Note, since this connection will be for a database
+# in a private subnet, a Database Tools private endpoint (PE) is required to
+# make a reverse connection. This example serves as an academic exercise of the
+# SDK. It is a best practice to use separate subnets for the database and the
+# Database Tools PE.
 #
-# 1- Create a Database Tools Private Endpoint for A Reverse Connection to the VM DB System
-# 2- Create required secrets
-# 3- Create a connection
-# 4- Validate the connection
+# Prerequisites:
 #
-# Prerequisites are:
-# - An DB system created following the instructions from: https://docs.oracle.com/en-us/iaas/Content/Database/Tasks/creatingDBsystem.htm with NSG for port 1521
-# - A compartment Id where the vcn, DB System, vault, private endpoint and connection will reside
-# - vault_id: a vault created in KMS with at least one master key.
-# - subnet_id of the Database Tools Private Endpoint and the DB system. Best practice is to use a private subnet.
+#  - An existing VM DB System and network security group (i.e. ingress on 1521)
+#    See: https://docs.oracle.com/en-us/iaas/dbcs/doc/overview-creating-db-system.html
+#  - Available capacity (limits apply) to create a new private endpoint
+#  - An existing vault for storage of secrets, with at least one master key
+#  - A previously configured .oci/config file with a [DEFAULT] section
+#  - Set the following variables in the code below:
+#      + compartment_id  : The ocid for the target compartment
+#      + vault_id        : The ocid for a vault (to store secrets)
+#      + db_system_id    : The ocid for an Oracle VM DB System
+#      + subnet_id       : The ocid for a subnet where the DB exists
+#      + db_username     : The database user to connect with
+#      + db_password     : The database password to connect with
+#
+# High-level Steps:
+#
+#  1- Create a Database Tools private endpoint
+#  2- Create required secret
+#  3- Create a connection using the Database Tools private endpoint
+#  4- Validate the connection
+# -----------------------------------------------------------------------------
 
 import oci
 from oci.config import from_file, validate_config
-from utils.dbtools import get_dbtools_clients, get_database_clients, get_secrets_client, \
-    get_kms_vault_client, get_vaults_clients, create_secret, delete_secret
+from utils.dbtools import get_dbtools_clients, get_database_clients, get_secrets_client, get_kms_vault_client
+from utils.dbtools import get_vaults_clients, create_secret, delete_secret
 
-from datetime import datetime, timedelta
 import pkg_resources
 import base64
+from datetime import datetime, timedelta
 
-# Specify Compartment and subnet to use for tests
-compartment_id = "ocid1.compartment.oc1.changeme"
-# Specify vault id to use in the test. Must in compartment_name
-vault_id = "ocid1.vault.oc1.changeme"
-# Specify subnet id
-subnet_id = "ocid1.subnet.oc1.changeme"
-# Specify VM DB System Id
-db_system_id = "ocid1.dbsystem.oc1.changeme"
-# Specify VM DB Password
-db_password = "example-password"
-
-utc_now = datetime.utcnow()
-db_password_secret_name = "db_password_SDK_" + utc_now.strftime("%m-%d%.%H%M")
-
-# Display OCI Python SDK version
-print("oci version:", pkg_resources.get_distribution("oci").version)
-
-# Set do_clean_up_at_end to false to keep the Database Tools Private Endpoint, secrets and connection created
+# Set do_clean_up_at_end = False to keep the secret and connection created
 do_clean_up_at_end = True
 
-# Variables that will be modified during the processing
-vault_key_id = None
-password_secret_id = None
-private_endpoint_id = None
-connection_id = None
+# Specify compartment ocid to use. (can also use tenancy ocid if applicable)
+compartment_id = "ocid1.tenancy......changeme"
 
-# Load OCI Config
-oci_config = from_file(file_location="~/.oci/config", profile_name="DEFAULT")
+# Specify vault ocid to use. (For this example, vault must be in compartment_id and contain a master key)
+vault_id = "ocid1.vault.....changeme"
 
-# Validate OCI Config
-validate_config(oci_config)
+# Specify Oracle VM DB System ocid to use
+db_system_id = "ocid1.dbsystem.....changeme"
 
-# Prepare all clients that we will need
-db_client, db_async_client = get_database_clients(oci_config)
-vaults_client, vaults_async_client = get_vaults_clients(oci_config)
-kms_vault_client = get_kms_vault_client(oci_config)
-secrets_client = get_secrets_client(oci_config)
-dbtools_client, dbtools_async_client = get_dbtools_clients(oci_config)
+# Specifiy the VCN subnet ocid where the ADB-S PE was created
+subnet_id = "ocid1.subnet.....changeme"
 
-# Prepare a dict that contains all the required clients
-clients = {"db_client": db_client, "db_async_client": db_async_client,
-           "vaults_client": vaults_client, "vaults_async_client": vaults_async_client,
-           "kms_vault_client": kms_vault_client,
-           "secrets_client": secrets_client,
-           "dbtools_client": dbtools_client, "dbtools_async_client": dbtools_async_client}
+# Specify the database username and password
+db_username = "system"
+db_password = "example-password"
+
+print("Using oci version:", pkg_resources.get_distribution("oci").version)
 
 
-def get_endpoint_services():
+class DBToolsExample:
     """
-    DBTools Endpoints Services
+    A Database Tools example that demonstrates usage of the OCI Python SDK.
     """
-    print("===DBTools Service - Endpoint Services")
+    def __init__(self, compartment, vault, db, subnet, username, password):
 
-    endpoint_services_response = clients["dbtools_client"].list_database_tools_endpoint_services(compartment_id)
+        # Load an OCI config with the DEFAULT profile
+        self.oci_config = from_file(file_location="~/.oci/config", profile_name="DEFAULT")
 
-    assert endpoint_services_response, "list_database_tools_endpoint_services should return a response"
-    assert endpoint_services_response.data, "endpoint_services should return data"
-    assert endpoint_services_response.data.items, "endpoint_services should contain a list of endpoints"
+        self.compartment_id = compartment
+        self.vault_id = vault
+        self.db_system_id = db
+        self.subnet_id = subnet
+        self.db_username = username
+        self.db_password = password
 
-    # Use the first endpoint_service
-    endpoint_service = endpoint_services_response.data.items[0]
-    print(f"===Endpoints Services - Using {endpoint_service}.")
-    assert endpoint_service.lifecycle_state == "ACTIVE", "endpoint_service must be ACTIVE"
+        validate_config(self.oci_config)
 
-    return endpoint_service.id
+        # Prepare SDK clients used in this example
+        self.dbtools_client, self.dbtools_async_client = get_dbtools_clients(self.oci_config)
+        self.db_client, self.db_async_client = get_database_clients(self.oci_config)
+        self.vaults_client, self.vaults_async_client = get_vaults_clients(self.oci_config)
+        self.kms_vault_client = get_kms_vault_client(self.oci_config)
+        self.secrets_client = get_secrets_client(self.oci_config)
 
+        # Dict that contains all the clients (used by utils.dbtools helpers)
+        self.clients = {"dbtools_client": self.dbtools_client, "dbtools_async_client": self.dbtools_async_client,
+                        "db_client": self.db_client, "db_async_client": self.db_async_client,
+                        "vaults_client": self.vaults_client, "vaults_async_client": self.vaults_async_client,
+                        "kms_vault_client": self.kms_vault_client,
+                        "secrets_client": self.secrets_client}
 
-def create_private_endpoint(endpoint_service_id):
-    """
-    Create a DBTools Private Endpoint
-    """
-    global private_endpoint_id
+        self.password_secret_id = None      # populated at runtime
+        self.private_endpoint_id = None     # populated at runtime
+        self.connection_id = None           # populated at runtime
+        self.connection_string = None       # populated at runtime
 
-    print("===DBTools Service - Private Endpoints")
+        # When waiting for asynchronous calls, which status is considered "done"
+        self.terminal_states = ["FAILED", "SUCCEEDED", "CANCELED", "AVAILABLE"]
 
-    #
-    # Create a Database Tools Private Endpoint
-    #
-    display_name = "pe_pysdk_" + utc_now.strftime("%Y-%m-%d_%H-%M-%S")
-    description = "test with Python SDK"
-    pe_details_for_create = oci.database_tools.models.CreateDatabaseToolsPrivateEndpointDetails(
-        compartment_id=compartment_id,
-        endpoint_service_id=endpoint_service_id,
-        subnet_id=subnet_id,
-        display_name=display_name,
-        description=description)
-    print("===Private Endpoint - Create")
-    create_pe_response = clients["dbtools_async_client"].create_database_tools_private_endpoint_and_wait_for_state(
-        pe_details_for_create, wait_for_states=["FAILED", "SUCCEEDED", "CANCELED"])
+    def get_endpoint_service(self):
+        """
+        Get the ocid of the Database Tools endpoints service (used to create private endpoints)
+        """
+        response = self.dbtools_client.list_database_tools_endpoint_services(self.compartment_id)
 
-    assert create_pe_response, "create_database_tools_private_endpoint_and_wait_for_state should return a response"
-    assert create_pe_response.data, "create_database_tools_private_endpoint_and_wait_for_state should return data"
+        assert response, "list_database_tools_endpoint_services should return a response"
+        assert response.data, "endpoint_services should return data"
+        assert response.data.items, "endpoint_services should contain a list of endpoints"
 
-    status = create_pe_response.data.status
-    private_endpoint_id = create_pe_response.data.resources[0].identifier
-    print(f"Database Tools Private Endpoint created. Status: {status}, name: {display_name}, pe id: {private_endpoint_id}.")
-    assert status == "SUCCEEDED", "Create Private Endpoint should succeed"
+        # Use the first endpoint_service
+        endpoint_service = response.data.items[0]
+        assert endpoint_service.lifecycle_state == "ACTIVE", f"endpoint_service should be ACTIVE but was {endpoint_service.lifecycle_state}"
 
-    #
-    # Get the Private Endpoint by Id
-    #
-    print("===Private endpoints - Get by id:", private_endpoint_id)
-    get_pe_response = clients["dbtools_client"].get_database_tools_private_endpoint(private_endpoint_id)
-    print("Read created Private Endpoint:", get_pe_response.data)
-    assert get_pe_response, "get_database_tools_private_endpoint should return a response"
-    assert get_pe_response.data, "get_database_tools_private_endpoint should return data"
-    assert get_pe_response.data.lifecycle_state == "ACTIVE", "Private Endpoint should be ACTIVE"
+        return endpoint_service.id
 
+    def create_private_endpoint(self):
+        """
+        Create a Database Tools private endpoint.
+        """
+        print("=== DBTools Example - Create Private Endpoint")
 
-def create_connection():
-    """
-    Do tests related to DBTools Connections
-    - Create Connection
-    - Get created connection
-    - Validate Connection. This makes sure that we can use this connection to connect to the ADB-S.
-    """
-    global connection_id, password_secret_id, vault_key_id
-    print("===DBTools Service - Connections")
+        endpoint_service_id = self.get_endpoint_service()
+        assert endpoint_service_id, "endpoint_service_id is required"
 
-    # 1. Get Connection String for VM DB System
-    #
-    # - List dbHomes in compartment for our dbSystemId
-    #   - Take the first
-    # - List database in compartment for the dbHome of our DB System
-    #   - Take the 1 one that matches dbSystemId
-    # - List pdbs in database
-    #   - Take the 1 one/
-    #   - connection string is in pdb_default of the connection strings.
+        display_name = "pe_pysdk_" + datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S")
+        description = "Test private endpoint with Python SDK"
+        pe_details_for_create = oci.database_tools.models.CreateDatabaseToolsPrivateEndpointDetails(
+            compartment_id=self.compartment_id,
+            endpoint_service_id=endpoint_service_id,
+            subnet_id=self.subnet_id,
+            display_name=display_name,
+            description=description)
 
-    # List db_homes in compartment for our db_system_id
-    db_homes_response = clients["db_client"].list_db_homes(
-        compartment_id=compartment_id,
-        db_system_id=db_system_id
-    )
-    assert db_homes_response, "list_db_homes should return a response"
-    assert db_homes_response.data, "list_db_homes should return data"
-    db_home = db_homes_response.data[0]
-    db_home_id = db_home.id
+        response = self.dbtools_async_client.create_database_tools_private_endpoint_and_wait_for_state(
+            pe_details_for_create, wait_for_states=self.terminal_states)
 
-    # List databases in compartment for the dbHome of our DB System
-    databases_response = clients["db_client"].list_databases(
-        compartment_id=compartment_id,
-        db_home_id=db_home_id
-    )
-    assert databases_response, "list_databases should return a response"
-    assert databases_response.data, "list_databases should return data"
-    database_summary = databases_response.data[0]
+        assert response, "create_database_tools_private_endpoint_and_wait_for_state should return a response"
+        assert response.data, "create_database_tools_private_endpoint_and_wait_for_state should return data"
 
-    assert database_summary.db_system_id == db_system_id, "This database should be for our VM DB System"
-    print("database:", database_summary)
+        status = response.data.status
+        self.private_endpoint_id = response.data.resources[0].identifier
+        assert status == "SUCCEEDED", f"create private endpoint should return status SUCCEEDED but was {status}"
 
-    # List pdbs in database
-    pdbs_response = clients["db_client"].list_pluggable_databases(
-        database_id=database_summary.id
-    )
-    assert pdbs_response, "list_pluggable_databases should return a response"
-    assert pdbs_response.data, "list_pluggable_databases should return data"
-    pdb = pdbs_response.data[0]
+        print(f"Private endpoint created. Name: {display_name}, ocid: {self.private_endpoint_id}.")
 
-    assert pdb.connection_strings, "pdb should have connection_strings"
-    assert pdb.connection_strings.pdb_default, "pdb should have a default pdb connection_string"
-    connection_string = pdb.connection_strings.pdb_default
-    print(f"Using connection_string {connection_string}")
+    def get_private_endpoint(self):
+        """
+        Given an existing Database Tools private endpoint, this method shows how to get a PE by id.
+        """
+        print("=== DBTools Private Endpoint - Get by id:", self.private_endpoint_id)
 
-    # 4. Store the DB password in the vault as a secret under name X. If name X already exists, we will simply use it.
-    base64_db_password_str = base64.b64encode(db_password.encode()).decode()
-    password_secret_id, vault_key_id = create_secret(oci_config,
-                                                     compartment_id=compartment_id,
-                                                     clients=clients,
-                                                     vault_id=vault_id,
-                                                     vault_key_id=vault_key_id,
-                                                     name=db_password_secret_name,
-                                                     base64_password=base64_db_password_str)
+        response = self.dbtools_client.get_database_tools_private_endpoint(self.private_endpoint_id)
+        assert response, "get_database_tools_private_endpoint should return a response"
+        assert response.data, "get_database_tools_private_endpoint should return data"
+        assert response.data.lifecycle_state == "ACTIVE", f"lifecycle_state should be ACTIVE but was {response.data.lifecycle_state}"
 
-    #
-    # 2. Create connection using:
-    #    - DB Compartment
-    #    - Connection String
-    #    - dbUser
-    #    - dbPasswordSecretId
-    #    - Time generated display name
-    #    - Related Resource
-    #    - Advanced property since we want to connect with SYS as SYSDBA
-    #
-    print("===Connection - Create")
-    user_name = "system"
-    user_password = oci.database_tools.models.DatabaseToolsUserPasswordSecretIdDetails(
-        secret_id=password_secret_id)
+        print("Read created private endpoint:", response.data)
 
-    display_name = "conn_pysdk_" + utc_now.strftime("%Y-%m-%d_%H-%M-%S")
-    related_resource = oci.database_tools.models.CreateDatabaseToolsRelatedResourceDetails(
-        entity_type=oci.database_tools.models.CreateDatabaseToolsRelatedResourceDetails.ENTITY_TYPE_PLUGGABLEDATABASE,
-        identifier=db_system_id)
+    def save_dbpassword_to_vault(self):
+        """
+        Database Tools connections don't store secrets directly. Instead, they hold a pointer to
+        secrets stored securely in a vault.
+        """
+        print("=== DBTools Example - Save DB Password to Vault")
 
-    conn_details_for_create = oci.database_tools.models.CreateDatabaseToolsConnectionOracleDatabaseDetails(
-        compartment_id=compartment_id,
-        connection_string=connection_string,
-        user_name=user_name,
-        user_password=user_password,
-        display_name=display_name,
-        private_endpoint_id=private_endpoint_id,
-        related_resource=related_resource
-    )
-    create_conn_response = clients["dbtools_async_client"].create_database_tools_connection_and_wait_for_state(
-        conn_details_for_create, wait_for_states=["FAILED", "SUCCEEDED", "CANCELED"])
+        db_password_secret_name = "dbtools-temp-secretp-" + datetime.utcnow().strftime("%m%d%H%M")
+        base64_secret_content = base64.b64encode(self.db_password.encode()).decode()
 
-    assert create_conn_response, "create_database_tools_connection_and_wait_for_state should return a response"
-    assert create_conn_response.data, "Create db Response should contain data"
+        self.password_secret_id = create_secret(oci_config=self.oci_config,
+                                                compartment_id=self.compartment_id,
+                                                vault_id=self.vault_id,
+                                                name=db_password_secret_name,
+                                                base64_secret_content=base64_secret_content,
+                                                clients=self.clients)[0]
 
-    status = create_conn_response.data.status
-    connection_id = create_conn_response.data.resources[0].identifier
-    print(f"Creating Connection. Status: {status}, name: {display_name}, connection id: {connection_id}.")
-    assert status == "SUCCEEDED", "Create Connection should succeed"
+        print(f"Created secret. Name: {db_password_secret_name}, ocid: {self.password_secret_id}")
 
-    #
-    # 3. Get connection that we just created BY Id
-    #
-    print("===Connection - Get by id:", connection_id)
-    connection = clients["dbtools_client"].get_database_tools_connection(connection_id)
-    print("Read created Connection:", connection.data)
-    assert connection.data, "Created Connection data should exist"
-    assert connection.data.display_name == display_name, "Unexpected Connection display name"
-    assert connection.data.lifecycle_state == "ACTIVE", "Connection should be ACTIVE"
+    def get_connection_string(self):
+        """
+        Given a VM DB System, lookup the default connection string
+        """
+        # - List dbHomes in the compartment for the dbSystemId
+        #   - Take the first one
+        # - List the databases in compartment for the dbHome of the DB System
+        #   - Take the first one that matches dbSystemId
+        # - List pdbs in the database
+        #   - Take the first one
+        #   - connection string is in pdb_default of the connection strings.
 
-    #
-    # 4. Validate Connection
-    #
-    print("===Connection - Validate by id:", connection_id)
-    validate_detail = oci.database_tools.models.ValidateDatabaseToolsConnectionOracleDatabaseDetails(
-        type="ORACLE_DATABASE")
-    result = clients["dbtools_client"].validate_database_tools_connection(connection_id, validate_detail)
-    assert result.data, "Validation should return a validation info"
-    print("Validation Result:", result.data)
-    assert result.data.code == "OK", "Created connection should be valid"
+        # List db_homes in compartment for the db_system_id
+        db_homes_response = self.db_client.list_db_homes(
+            compartment_id=self.compartment_id,
+            db_system_id=self.db_system_id)
 
+        assert db_homes_response, "list_db_homes should return a response"
+        assert db_homes_response.data, "list_db_homes should return data"
+        db_home = db_homes_response.data[0]
+        db_home_id = db_home.id
 
-def do_connection_cleanup(conn_id):
-    """
-    Delete the connection that we used for our tests
-    """
-    if conn_id:
-        print("===Connection - Delete by id:", conn_id)
-        result = clients["dbtools_async_client"].delete_database_tools_connection_and_wait_for_state(conn_id,
-                                                                                                     wait_for_states=[
-                                                                                                         "FAILED",
-                                                                                                         "SUCCEEDED",
-                                                                                                         "CANCELED"])
+        # List databases in compartment for the dbHome of the DB System
+        databases_response = self.db_client.list_databases(
+            compartment_id=self.compartment_id,
+            db_home_id=db_home_id)
 
-        if result and result.data:
-            status = result.data.status
-            print(
-                f"delete_database_tools_connection_and_wait_for_state. Status: {status}, connection id: {conn_id}.")
-            assert status == "SUCCEEDED", "Delete Connection should succeed"
+        assert databases_response, "list_databases should return a response"
+        assert databases_response.data, "list_databases should return data"
+        database_summary = databases_response.data[0]
+
+        assert database_summary.db_system_id == self.db_system_id, f"expected {self.db_system_id} but found {database_summary.db_system_id}"
+        print("database:", database_summary)
+
+        # List pdbs in database
+        pdbs_response = self.db_client.list_pluggable_databases(
+            database_id=database_summary.id)
+
+        assert pdbs_response, "list_pluggable_databases should return a response"
+        assert pdbs_response.data, "list_pluggable_databases should return data"
+        pdb = pdbs_response.data[0]
+
+        assert pdb.connection_strings, "pdb should have connection_strings"
+        assert pdb.connection_strings.pdb_default, "pdb should have a default pdb connection_string"
+        self.connection_string = pdb.connection_strings.pdb_default
+
+    def create_connection(self):
+        """
+        Given the configuration details provided above, the secrets stored in the vault,
+        and the PE, create a Database Tools connection to the database.
+        """
+        print("=== DBTools Example - Create Connection Using:", self.connection_string)
+
+        user_name = self.db_username
+        user_password = oci.database_tools.models.DatabaseToolsUserPasswordSecretIdDetails(
+            secret_id=self.password_secret_id)
+
+        display_name = "conn_pysdk_" + datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S")
+        related_resource = oci.database_tools.models.CreateDatabaseToolsRelatedResourceDetails(
+            entity_type=oci.database_tools.models.CreateDatabaseToolsRelatedResourceDetails.ENTITY_TYPE_PLUGGABLEDATABASE,
+            identifier=self.db_system_id)
+
+        conn_details_for_create = oci.database_tools.models.CreateDatabaseToolsConnectionOracleDatabaseDetails(
+            compartment_id=self.compartment_id,
+            connection_string=self.connection_string,
+            user_name=user_name,
+            user_password=user_password,
+            display_name=display_name,
+            private_endpoint_id=self.private_endpoint_id,
+            related_resource=related_resource)
+
+        response = self.dbtools_async_client.create_database_tools_connection_and_wait_for_state(
+            conn_details_for_create, wait_for_states=self.terminal_states)
+
+        assert response, "create_database_tools_connection_and_wait_for_state should return a response"
+        assert response.data, "response should contain data"
+        assert response.data.resources, "response data should return resources"
+
+        status = response.data.status
+        assert status == "SUCCEEDED", f"create connection should return status SUCCEEDED but was {status}"
+
+        self.connection_id = response.data.resources[0].identifier
+        print(f"Created connection. Name: {display_name}, ocid: {self.connection_id}.")
+
+    def get_connection(self):
+        """
+        Given an existing Database Tools connection, this method shows how to get a connection by id.
+        """
+        print("=== DBTools Connection - Get by id:", self.connection_id)
+
+        response = self.dbtools_client.get_database_tools_connection(self.connection_id)
+        assert response.data, "response should contain data"
+        assert response.data.lifecycle_state == "ACTIVE", f"lifecycle_state should be ACTIVE but was {response.data.lifecycle_state}"
+
+        print("Read created connection:", response.data)
+
+    def validate_connection(self):
+        """
+        Given an existing Database Tools connection, this method shows how to validate a connection by id.
+        For a connection to be able to route traffic to a database, it must be valid. (code == OK)
+        """
+        print("=== DBTools Connection - Validate by id:", self.connection_id)
+
+        validate_detail = oci.database_tools.models.ValidateDatabaseToolsConnectionOracleDatabaseDetails()
+        response = self.dbtools_client.validate_database_tools_connection(self.connection_id, validate_detail)
+        assert response, "validate_database_tools_connection should return a response"
+        assert response.data, "response should contain data"
+
+        print("Validation result:", response.data)
+        assert response.data.code == "OK", f"validation code should be OK but was {response.data.code}"
+
+    def do_connection_cleanup(self):
+        """
+        Delete the Database Tools connection created by the example.
+        """
+        if self.connection_id is None:
+            print("do_connection_cleanup skipped")
+            return
+
+        print("=== DBTools Connection - Delete by id:", self.connection_id)
+        response = self.dbtools_async_client.delete_database_tools_connection_and_wait_for_state(self.connection_id,
+                                                                                                 wait_for_states=self.terminal_states)
+        assert response, "delete_database_tools_connection_and_wait_for_state should return a response"
+        assert response.data, "response should contain data"
+        assert response.data.status == "SUCCEEDED", f"delete connection should return status SUCCEEDED but was {response.data.status}"
+
+        print(f"Deleted connection. ocid: {self.connection_id}.")
+
+    def do_private_endpoint_cleanup(self):
+        """
+        Delete the Database Tools private endpoint created by the example.
+        """
+        if self.private_endpoint_id is None:
+            print("do_private_endpoint_cleanup skipped")
+            return
+
+        print("=== DBTools Private Endpoint - Delete by id:", self.private_endpoint_id)
+        response = self.dbtools_async_client.delete_database_tools_private_endpoint_and_wait_for_state(self.private_endpoint_id,
+                                                                                                       wait_for_states=self.terminal_states)
+        assert response, "delete_database_tools_private_endpoint_and_wait_for_state should return a response"
+        assert response.data, "response should contain data"
+        assert response.data.status == "SUCCEEDED", f"delete private endpoint should return status SUCCEEDED but was {response.data.status}"
+
+        print(f"Deleted private endpoint. ocid: {self.private_endpoint_id}.")
+
+    def do_secrets_cleanup(self, days=2):
+        """
+        Schedule deletion of the secrets created by the example.
+        """
+        secret_deletion_time = datetime.now() + timedelta(days=days)
+        if self.password_secret_id:
+            print("=== DBTools Example - Schedule Secret Deletion:", self.password_secret_id)
+            delete_secret(clients=self.clients, secret_id=self.password_secret_id, deletion_time=secret_deletion_time)
         else:
-            print("Error. do_connection_tests_cleanup failed")
-    else:
-        print("Error. do_connection_tests_cleanup skipped")
-
-
-def do_private_endpoint_cleanup(pe_id):
-    """
-    Delete the Database Tools Private endpoint that we used for our tests
-    """
-    if pe_id:
-        print("===Private Endpoint - Delete by id:", pe_id)
-        result = clients["dbtools_async_client"].delete_database_tools_private_endpoint_and_wait_for_state(pe_id,
-                                                                                                           wait_for_states=[
-                                                                                                               "FAILED",
-                                                                                                               "SUCCEEDED",
-                                                                                                               "CANCELED"])
-
-        if result and result.data:
-            status = result.data.status
-            print(
-                f"delete_database_tools_private_endpoint_and_wait_for_state. Status: {status}, connection id: {private_endpoint_id}.")
-            assert status == "SUCCEEDED", "Delete Private Endpoint should succeed"
-        else:
-            print("Error. do_private_endpoint_cleanup failed")
-    else:
-        print("Error. do_private_endpoint_cleanup skipped")
-
-
-def do_secrets_cleanup(secrets_ids, days=2):
-    """
-    Delete the secrets that we used for our tests
-    """
-    # Delete Secret in vault clean-up
-    secret_deletion_time = datetime.now() + timedelta(days=days)
-    for secret_id in secrets_ids:
-        if secret_id:
-            delete_secret(clients,
-                          secret_id=secret_id,
-                          deletion_time=secret_deletion_time)
+            print("do_secrets_cleanup skipped (password)")
 
 
 #
-# main logic
+# Run DBToolsExample and print results
 #
 if __name__ == "__main__":
     # Output Colors
     OKGREEN = '\033[92m'
     FAIL = '\033[91m'
     ENDC = '\033[0m'
+    example = None
 
     try:
-        # Endpoint Service
-        endpoint_service_id = get_endpoint_services()
+        example = DBToolsExample(compartment_id, vault_id, db_system_id, subnet_id, db_username, db_password)
 
-        # Create a Database Tools Private Endpoint
-        create_private_endpoint(endpoint_service_id)
+        example.create_private_endpoint()
+        example.save_dbpassword_to_vault()
+        example.get_connection_string()
+        example.create_connection()
+        example.get_connection()
+        example.validate_connection()
 
-        # Create and Validate a Database Tools Connection
-        create_connection()
+        print(f"{OKGREEN}Python SDK test completed OK{ENDC}")
 
-        print(f"{OKGREEN}Python SDK Test completed OK{ENDC}")
     except Exception as e:
         print(f"{FAIL}Exception during tests:{ENDC} {e}")
+
     finally:
-        # Clean-up
-        if do_clean_up_at_end:
+        if do_clean_up_at_end and example is not None:
             print("Starting resource clean-up.")
-            do_connection_cleanup(connection_id)
-            do_private_endpoint_cleanup(private_endpoint_id)
-            do_secrets_cleanup([password_secret_id])
+            example.do_connection_cleanup()
+            example.do_secrets_cleanup()
+            example.do_private_endpoint_cleanup()
             print("Clean-up completed.")
         else:
             print("Skipping resource clean-up.")

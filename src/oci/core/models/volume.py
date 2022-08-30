@@ -132,6 +132,10 @@ class Volume(object):
             The value to assign to the block_volume_replicas property of this Volume.
         :type block_volume_replicas: list[oci.core.models.BlockVolumeReplicaInfo]
 
+        :param autotune_policies:
+            The value to assign to the autotune_policies property of this Volume.
+        :type autotune_policies: list[oci.core.models.AutotunePolicy]
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -152,7 +156,8 @@ class Volume(object):
             'volume_group_id': 'str',
             'is_auto_tune_enabled': 'bool',
             'auto_tuned_vpus_per_gb': 'int',
-            'block_volume_replicas': 'list[BlockVolumeReplicaInfo]'
+            'block_volume_replicas': 'list[BlockVolumeReplicaInfo]',
+            'autotune_policies': 'list[AutotunePolicy]'
         }
 
         self.attribute_map = {
@@ -174,7 +179,8 @@ class Volume(object):
             'volume_group_id': 'volumeGroupId',
             'is_auto_tune_enabled': 'isAutoTuneEnabled',
             'auto_tuned_vpus_per_gb': 'autoTunedVpusPerGB',
-            'block_volume_replicas': 'blockVolumeReplicas'
+            'block_volume_replicas': 'blockVolumeReplicas',
+            'autotune_policies': 'autotunePolicies'
         }
 
         self._availability_domain = None
@@ -196,6 +202,7 @@ class Volume(object):
         self._is_auto_tune_enabled = None
         self._auto_tuned_vpus_per_gb = None
         self._block_volume_replicas = None
+        self._autotune_policies = None
 
     @property
     def availability_domain(self):
@@ -489,6 +496,8 @@ class Volume(object):
 
           * `30`-`120`: Represents the Ultra High Performance option.
 
+        For performance autotune enabled volumes, It would be the Default(Minimum) VPUs/GB.
+
         __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
 
 
@@ -514,6 +523,8 @@ class Volume(object):
           * `20`: Represents Higher Performance option.
 
           * `30`-`120`: Represents the Ultra High Performance option.
+
+        For performance autotune enabled volumes, It would be the Default(Minimum) VPUs/GB.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
 
@@ -649,7 +660,8 @@ class Volume(object):
     def is_auto_tune_enabled(self):
         """
         Gets the is_auto_tune_enabled of this Volume.
-        Specifies whether the auto-tune performance is enabled for this volume.
+        Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated.
+        Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 
 
         :return: The is_auto_tune_enabled of this Volume.
@@ -661,7 +673,8 @@ class Volume(object):
     def is_auto_tune_enabled(self, is_auto_tune_enabled):
         """
         Sets the is_auto_tune_enabled of this Volume.
-        Specifies whether the auto-tune performance is enabled for this volume.
+        Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated.
+        Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 
 
         :param is_auto_tune_enabled: The is_auto_tune_enabled of this Volume.
@@ -673,7 +686,7 @@ class Volume(object):
     def auto_tuned_vpus_per_gb(self):
         """
         Gets the auto_tuned_vpus_per_gb of this Volume.
-        The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+        The number of Volume Performance Units per GB that this volume is effectively tuned to.
 
 
         :return: The auto_tuned_vpus_per_gb of this Volume.
@@ -685,7 +698,7 @@ class Volume(object):
     def auto_tuned_vpus_per_gb(self, auto_tuned_vpus_per_gb):
         """
         Sets the auto_tuned_vpus_per_gb of this Volume.
-        The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+        The number of Volume Performance Units per GB that this volume is effectively tuned to.
 
 
         :param auto_tuned_vpus_per_gb: The auto_tuned_vpus_per_gb of this Volume.
@@ -716,6 +729,30 @@ class Volume(object):
         :type: list[oci.core.models.BlockVolumeReplicaInfo]
         """
         self._block_volume_replicas = block_volume_replicas
+
+    @property
+    def autotune_policies(self):
+        """
+        Gets the autotune_policies of this Volume.
+        The list of autotune policies enabled for this volume.
+
+
+        :return: The autotune_policies of this Volume.
+        :rtype: list[oci.core.models.AutotunePolicy]
+        """
+        return self._autotune_policies
+
+    @autotune_policies.setter
+    def autotune_policies(self, autotune_policies):
+        """
+        Sets the autotune_policies of this Volume.
+        The list of autotune policies enabled for this volume.
+
+
+        :param autotune_policies: The autotune_policies of this Volume.
+        :type: list[oci.core.models.AutotunePolicy]
+        """
+        self._autotune_policies = autotune_policies
 
     def __repr__(self):
         return formatted_flat_dict(self)

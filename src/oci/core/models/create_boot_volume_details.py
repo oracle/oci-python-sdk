@@ -66,6 +66,10 @@ class CreateBootVolumeDetails(object):
             The value to assign to the boot_volume_replicas property of this CreateBootVolumeDetails.
         :type boot_volume_replicas: list[oci.core.models.BootVolumeReplicaDetails]
 
+        :param autotune_policies:
+            The value to assign to the autotune_policies property of this CreateBootVolumeDetails.
+        :type autotune_policies: list[oci.core.models.AutotunePolicy]
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -79,7 +83,8 @@ class CreateBootVolumeDetails(object):
             'vpus_per_gb': 'int',
             'source_details': 'BootVolumeSourceDetails',
             'is_auto_tune_enabled': 'bool',
-            'boot_volume_replicas': 'list[BootVolumeReplicaDetails]'
+            'boot_volume_replicas': 'list[BootVolumeReplicaDetails]',
+            'autotune_policies': 'list[AutotunePolicy]'
         }
 
         self.attribute_map = {
@@ -94,7 +99,8 @@ class CreateBootVolumeDetails(object):
             'vpus_per_gb': 'vpusPerGB',
             'source_details': 'sourceDetails',
             'is_auto_tune_enabled': 'isAutoTuneEnabled',
-            'boot_volume_replicas': 'bootVolumeReplicas'
+            'boot_volume_replicas': 'bootVolumeReplicas',
+            'autotune_policies': 'autotunePolicies'
         }
 
         self._availability_domain = None
@@ -109,6 +115,7 @@ class CreateBootVolumeDetails(object):
         self._source_details = None
         self._is_auto_tune_enabled = None
         self._boot_volume_replicas = None
+        self._autotune_policies = None
 
     @property
     def availability_domain(self):
@@ -342,11 +349,13 @@ class CreateBootVolumeDetails(object):
 
         Allowed values:
 
-          * `10`: Represents Balanced option.
+          * `10`: Represents the Balanced option.
 
-          * `20`: Represents Higher Performance option.
+          * `20`: Represents the Higher Performance option.
 
           * `30`-`120`: Represents the Ultra High Performance option.
+
+        For performance autotune enabled volumes, it would be the Default(Minimum) VPUs/GB.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
 
@@ -366,11 +375,13 @@ class CreateBootVolumeDetails(object):
 
         Allowed values:
 
-          * `10`: Represents Balanced option.
+          * `10`: Represents the Balanced option.
 
-          * `20`: Represents Higher Performance option.
+          * `20`: Represents the Higher Performance option.
 
           * `30`-`120`: Represents the Ultra High Performance option.
+
+        For performance autotune enabled volumes, it would be the Default(Minimum) VPUs/GB.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
 
@@ -404,7 +415,8 @@ class CreateBootVolumeDetails(object):
     def is_auto_tune_enabled(self):
         """
         Gets the is_auto_tune_enabled of this CreateBootVolumeDetails.
-        Specifies whether the auto-tune performance is enabled for this boot volume.
+        Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated.
+        Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 
 
         :return: The is_auto_tune_enabled of this CreateBootVolumeDetails.
@@ -416,7 +428,8 @@ class CreateBootVolumeDetails(object):
     def is_auto_tune_enabled(self, is_auto_tune_enabled):
         """
         Sets the is_auto_tune_enabled of this CreateBootVolumeDetails.
-        Specifies whether the auto-tune performance is enabled for this boot volume.
+        Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated.
+        Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 
 
         :param is_auto_tune_enabled: The is_auto_tune_enabled of this CreateBootVolumeDetails.
@@ -449,6 +462,30 @@ class CreateBootVolumeDetails(object):
         :type: list[oci.core.models.BootVolumeReplicaDetails]
         """
         self._boot_volume_replicas = boot_volume_replicas
+
+    @property
+    def autotune_policies(self):
+        """
+        Gets the autotune_policies of this CreateBootVolumeDetails.
+        The list of autotune policies to be enabled for this volume.
+
+
+        :return: The autotune_policies of this CreateBootVolumeDetails.
+        :rtype: list[oci.core.models.AutotunePolicy]
+        """
+        return self._autotune_policies
+
+    @autotune_policies.setter
+    def autotune_policies(self, autotune_policies):
+        """
+        Sets the autotune_policies of this CreateBootVolumeDetails.
+        The list of autotune policies to be enabled for this volume.
+
+
+        :param autotune_policies: The autotune_policies of this CreateBootVolumeDetails.
+        :type: list[oci.core.models.AutotunePolicy]
+        """
+        self._autotune_policies = autotune_policies
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -135,6 +135,10 @@ class BootVolume(object):
             The value to assign to the boot_volume_replicas property of this BootVolume.
         :type boot_volume_replicas: list[oci.core.models.BootVolumeReplicaInfo]
 
+        :param autotune_policies:
+            The value to assign to the autotune_policies property of this BootVolume.
+        :type autotune_policies: list[oci.core.models.AutotunePolicy]
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -156,7 +160,8 @@ class BootVolume(object):
             'kms_key_id': 'str',
             'is_auto_tune_enabled': 'bool',
             'auto_tuned_vpus_per_gb': 'int',
-            'boot_volume_replicas': 'list[BootVolumeReplicaInfo]'
+            'boot_volume_replicas': 'list[BootVolumeReplicaInfo]',
+            'autotune_policies': 'list[AutotunePolicy]'
         }
 
         self.attribute_map = {
@@ -179,7 +184,8 @@ class BootVolume(object):
             'kms_key_id': 'kmsKeyId',
             'is_auto_tune_enabled': 'isAutoTuneEnabled',
             'auto_tuned_vpus_per_gb': 'autoTunedVpusPerGB',
-            'boot_volume_replicas': 'bootVolumeReplicas'
+            'boot_volume_replicas': 'bootVolumeReplicas',
+            'autotune_policies': 'autotunePolicies'
         }
 
         self._availability_domain = None
@@ -202,6 +208,7 @@ class BootVolume(object):
         self._is_auto_tune_enabled = None
         self._auto_tuned_vpus_per_gb = None
         self._boot_volume_replicas = None
+        self._autotune_policies = None
 
     @property
     def availability_domain(self):
@@ -465,6 +472,8 @@ class BootVolume(object):
 
           * `30`-`120`: Represents the Ultra High Performance option.
 
+        For performance autotune enabled volumes, it would be the Default(Minimum) VPUs/GB.
+
         __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
 
 
@@ -488,6 +497,8 @@ class BootVolume(object):
           * `20`: Represents Higher Performance option.
 
           * `30`-`120`: Represents the Ultra High Performance option.
+
+        For performance autotune enabled volumes, it would be the Default(Minimum) VPUs/GB.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
 
@@ -679,7 +690,8 @@ class BootVolume(object):
     def is_auto_tune_enabled(self):
         """
         Gets the is_auto_tune_enabled of this BootVolume.
-        Specifies whether the auto-tune performance is enabled for this boot volume.
+        Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated.
+        Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 
 
         :return: The is_auto_tune_enabled of this BootVolume.
@@ -691,7 +703,8 @@ class BootVolume(object):
     def is_auto_tune_enabled(self, is_auto_tune_enabled):
         """
         Sets the is_auto_tune_enabled of this BootVolume.
-        Specifies whether the auto-tune performance is enabled for this boot volume.
+        Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated.
+        Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 
 
         :param is_auto_tune_enabled: The is_auto_tune_enabled of this BootVolume.
@@ -703,7 +716,7 @@ class BootVolume(object):
     def auto_tuned_vpus_per_gb(self):
         """
         Gets the auto_tuned_vpus_per_gb of this BootVolume.
-        The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
+        The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
 
 
         :return: The auto_tuned_vpus_per_gb of this BootVolume.
@@ -715,7 +728,7 @@ class BootVolume(object):
     def auto_tuned_vpus_per_gb(self, auto_tuned_vpus_per_gb):
         """
         Sets the auto_tuned_vpus_per_gb of this BootVolume.
-        The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
+        The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
 
 
         :param auto_tuned_vpus_per_gb: The auto_tuned_vpus_per_gb of this BootVolume.
@@ -746,6 +759,30 @@ class BootVolume(object):
         :type: list[oci.core.models.BootVolumeReplicaInfo]
         """
         self._boot_volume_replicas = boot_volume_replicas
+
+    @property
+    def autotune_policies(self):
+        """
+        Gets the autotune_policies of this BootVolume.
+        The list of autotune policies enabled for this volume.
+
+
+        :return: The autotune_policies of this BootVolume.
+        :rtype: list[oci.core.models.AutotunePolicy]
+        """
+        return self._autotune_policies
+
+    @autotune_policies.setter
+    def autotune_policies(self, autotune_policies):
+        """
+        Sets the autotune_policies of this BootVolume.
+        The list of autotune policies enabled for this volume.
+
+
+        :param autotune_policies: The autotune_policies of this BootVolume.
+        :type: list[oci.core.models.AutotunePolicy]
+        """
+        self._autotune_policies = autotune_policies
 
     def __repr__(self):
         return formatted_flat_dict(self)

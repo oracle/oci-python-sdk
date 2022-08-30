@@ -23,6 +23,8 @@ from .supported_vmware_software_version_collection import SupportedVmwareSoftwar
 from .supported_vmware_software_version_summary import SupportedVmwareSoftwareVersionSummary
 from .update_esxi_host_details import UpdateEsxiHostDetails
 from .update_sddc_details import UpdateSddcDetails
+from .vsphere_license import VsphereLicense
+from .vsphere_upgrade_object import VsphereUpgradeObject
 from .work_request import WorkRequest
 from .work_request_collection import WorkRequestCollection
 from .work_request_error import WorkRequestError
@@ -52,6 +54,8 @@ ocvp_type_mapping = {
     "SupportedVmwareSoftwareVersionSummary": SupportedVmwareSoftwareVersionSummary,
     "UpdateEsxiHostDetails": UpdateEsxiHostDetails,
     "UpdateSddcDetails": UpdateSddcDetails,
+    "VsphereLicense": VsphereLicense,
+    "VsphereUpgradeObject": VsphereUpgradeObject,
     "WorkRequest": WorkRequest,
     "WorkRequestCollection": WorkRequestCollection,
     "WorkRequestError": WorkRequestError,

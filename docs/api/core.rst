@@ -63,6 +63,7 @@ Core Services
     oci.core.models.AttachServiceDeterminedVolumeDetails
     oci.core.models.AttachVnicDetails
     oci.core.models.AttachVolumeDetails
+    oci.core.models.AutotunePolicy
     oci.core.models.BgpSessionInfo
     oci.core.models.BlockVolumeReplica
     oci.core.models.BlockVolumeReplicaDetails
@@ -229,6 +230,7 @@ Core Services
     oci.core.models.DeleteVirtualCircuitPublicPrefixDetails
     oci.core.models.DetachInstancePoolInstanceDetails
     oci.core.models.DetachLoadBalancerDetails
+    oci.core.models.DetachedVolumeAutotunePolicy
     oci.core.models.Device
     oci.core.models.DhcpDnsOption
     oci.core.models.DhcpOption
@@ -292,10 +294,12 @@ Core Services
     oci.core.models.InstanceConfigurationAmdVmLaunchInstancePlatformConfig
     oci.core.models.InstanceConfigurationAttachVnicDetails
     oci.core.models.InstanceConfigurationAttachVolumeDetails
+    oci.core.models.InstanceConfigurationAutotunePolicy
     oci.core.models.InstanceConfigurationAvailabilityConfig
     oci.core.models.InstanceConfigurationBlockVolumeDetails
     oci.core.models.InstanceConfigurationCreateVnicDetails
     oci.core.models.InstanceConfigurationCreateVolumeDetails
+    oci.core.models.InstanceConfigurationDetachedVolumeAutotunePolicy
     oci.core.models.InstanceConfigurationInstanceDetails
     oci.core.models.InstanceConfigurationInstanceOptions
     oci.core.models.InstanceConfigurationInstanceSourceDetails
@@ -311,6 +315,7 @@ Core Services
     oci.core.models.InstanceConfigurationLaunchInstanceShapeConfigDetails
     oci.core.models.InstanceConfigurationLaunchOptions
     oci.core.models.InstanceConfigurationParavirtualizedAttachVolumeDetails
+    oci.core.models.InstanceConfigurationPerformanceBasedAutotunePolicy
     oci.core.models.InstanceConfigurationSummary
     oci.core.models.InstanceConfigurationVolumeSourceDetails
     oci.core.models.InstanceConfigurationVolumeSourceFromVolumeBackupDetails
@@ -367,6 +372,7 @@ Core Services
     oci.core.models.ParavirtualizedVolumeAttachment
     oci.core.models.PeerRegionForRemotePeering
     oci.core.models.PercentageOfCoresEnabledOptions
+    oci.core.models.PerformanceBasedAutotunePolicy
     oci.core.models.PhaseOneConfigDetails
     oci.core.models.PhaseTwoConfigDetails
     oci.core.models.PlatformConfig

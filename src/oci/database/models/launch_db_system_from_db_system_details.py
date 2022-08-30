@@ -137,6 +137,10 @@ class LaunchDbSystemFromDbSystemDetails(LaunchDbSystemBase):
             The value to assign to the private_ip property of this LaunchDbSystemFromDbSystemDetails.
         :type private_ip: str
 
+        :param data_collection_options:
+            The value to assign to the data_collection_options property of this LaunchDbSystemFromDbSystemDetails.
+        :type data_collection_options: oci.database.models.DataCollectionOptions
+
         :param source_db_system_id:
             The value to assign to the source_db_system_id property of this LaunchDbSystemFromDbSystemDetails.
         :type source_db_system_id: str
@@ -179,6 +183,7 @@ class LaunchDbSystemFromDbSystemDetails(LaunchDbSystemBase):
             'defined_tags': 'dict(str, dict(str, object))',
             'source': 'str',
             'private_ip': 'str',
+            'data_collection_options': 'DataCollectionOptions',
             'source_db_system_id': 'str',
             'db_home': 'CreateDbHomeFromDbSystemDetails',
             'license_model': 'str'
@@ -212,6 +217,7 @@ class LaunchDbSystemFromDbSystemDetails(LaunchDbSystemBase):
             'defined_tags': 'definedTags',
             'source': 'source',
             'private_ip': 'privateIp',
+            'data_collection_options': 'dataCollectionOptions',
             'source_db_system_id': 'sourceDbSystemId',
             'db_home': 'dbHome',
             'license_model': 'licenseModel'
@@ -244,6 +250,7 @@ class LaunchDbSystemFromDbSystemDetails(LaunchDbSystemBase):
         self._defined_tags = None
         self._source = None
         self._private_ip = None
+        self._data_collection_options = None
         self._source_db_system_id = None
         self._db_home = None
         self._license_model = None

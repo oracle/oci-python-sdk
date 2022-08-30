@@ -77,6 +77,10 @@ class UpdateDbSystemDetails(object):
             The value to assign to the maintenance_window_details property of this UpdateDbSystemDetails.
         :type maintenance_window_details: oci.database.models.MaintenanceWindow
 
+        :param data_collection_options:
+            The value to assign to the data_collection_options property of this UpdateDbSystemDetails.
+        :type data_collection_options: oci.database.models.DataCollectionOptions
+
         """
         self.swagger_types = {
             'cpu_core_count': 'int',
@@ -90,7 +94,8 @@ class UpdateDbSystemDetails(object):
             'nsg_ids': 'list[str]',
             'backup_network_nsg_ids': 'list[str]',
             'license_model': 'str',
-            'maintenance_window_details': 'MaintenanceWindow'
+            'maintenance_window_details': 'MaintenanceWindow',
+            'data_collection_options': 'DataCollectionOptions'
         }
 
         self.attribute_map = {
@@ -105,7 +110,8 @@ class UpdateDbSystemDetails(object):
             'nsg_ids': 'nsgIds',
             'backup_network_nsg_ids': 'backupNetworkNsgIds',
             'license_model': 'licenseModel',
-            'maintenance_window_details': 'maintenanceWindowDetails'
+            'maintenance_window_details': 'maintenanceWindowDetails',
+            'data_collection_options': 'dataCollectionOptions'
         }
 
         self._cpu_core_count = None
@@ -120,6 +126,7 @@ class UpdateDbSystemDetails(object):
         self._backup_network_nsg_ids = None
         self._license_model = None
         self._maintenance_window_details = None
+        self._data_collection_options = None
 
     @property
     def cpu_core_count(self):
@@ -446,6 +453,26 @@ class UpdateDbSystemDetails(object):
         :type: oci.database.models.MaintenanceWindow
         """
         self._maintenance_window_details = maintenance_window_details
+
+    @property
+    def data_collection_options(self):
+        """
+        Gets the data_collection_options of this UpdateDbSystemDetails.
+
+        :return: The data_collection_options of this UpdateDbSystemDetails.
+        :rtype: oci.database.models.DataCollectionOptions
+        """
+        return self._data_collection_options
+
+    @data_collection_options.setter
+    def data_collection_options(self, data_collection_options):
+        """
+        Sets the data_collection_options of this UpdateDbSystemDetails.
+
+        :param data_collection_options: The data_collection_options of this UpdateDbSystemDetails.
+        :type: oci.database.models.DataCollectionOptions
+        """
+        self._data_collection_options = data_collection_options
 
     def __repr__(self):
         return formatted_flat_dict(self)

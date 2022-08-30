@@ -46,6 +46,10 @@ class UpdateVolumeDetails(object):
             The value to assign to the block_volume_replicas property of this UpdateVolumeDetails.
         :type block_volume_replicas: list[oci.core.models.BlockVolumeReplicaDetails]
 
+        :param autotune_policies:
+            The value to assign to the autotune_policies property of this UpdateVolumeDetails.
+        :type autotune_policies: list[oci.core.models.AutotunePolicy]
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
@@ -54,7 +58,8 @@ class UpdateVolumeDetails(object):
             'vpus_per_gb': 'int',
             'size_in_gbs': 'int',
             'is_auto_tune_enabled': 'bool',
-            'block_volume_replicas': 'list[BlockVolumeReplicaDetails]'
+            'block_volume_replicas': 'list[BlockVolumeReplicaDetails]',
+            'autotune_policies': 'list[AutotunePolicy]'
         }
 
         self.attribute_map = {
@@ -64,7 +69,8 @@ class UpdateVolumeDetails(object):
             'vpus_per_gb': 'vpusPerGB',
             'size_in_gbs': 'sizeInGBs',
             'is_auto_tune_enabled': 'isAutoTuneEnabled',
-            'block_volume_replicas': 'blockVolumeReplicas'
+            'block_volume_replicas': 'blockVolumeReplicas',
+            'autotune_policies': 'autotunePolicies'
         }
 
         self._defined_tags = None
@@ -74,6 +80,7 @@ class UpdateVolumeDetails(object):
         self._size_in_gbs = None
         self._is_auto_tune_enabled = None
         self._block_volume_replicas = None
+        self._autotune_policies = None
 
     @property
     def defined_tags(self):
@@ -187,6 +194,8 @@ class UpdateVolumeDetails(object):
 
           * `30`-`120`: Represents the Ultra High Performance option.
 
+        For performance autotune enabled volumes, it would be the Default(Minimum) VPUs/GB.
+
         __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
 
 
@@ -212,6 +221,8 @@ class UpdateVolumeDetails(object):
           * `20`: Represents Higher Performance option.
 
           * `30`-`120`: Represents the Ultra High Performance option.
+
+        For performance autotune enabled volumes, it would be the Default(Minimum) VPUs/GB.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
 
@@ -249,7 +260,8 @@ class UpdateVolumeDetails(object):
     def is_auto_tune_enabled(self):
         """
         Gets the is_auto_tune_enabled of this UpdateVolumeDetails.
-        Specifies whether the auto-tune performance is enabled for this volume.
+        Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated.
+        Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 
 
         :return: The is_auto_tune_enabled of this UpdateVolumeDetails.
@@ -261,7 +273,8 @@ class UpdateVolumeDetails(object):
     def is_auto_tune_enabled(self, is_auto_tune_enabled):
         """
         Sets the is_auto_tune_enabled of this UpdateVolumeDetails.
-        Specifies whether the auto-tune performance is enabled for this volume.
+        Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated.
+        Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 
 
         :param is_auto_tune_enabled: The is_auto_tune_enabled of this UpdateVolumeDetails.
@@ -294,6 +307,30 @@ class UpdateVolumeDetails(object):
         :type: list[oci.core.models.BlockVolumeReplicaDetails]
         """
         self._block_volume_replicas = block_volume_replicas
+
+    @property
+    def autotune_policies(self):
+        """
+        Gets the autotune_policies of this UpdateVolumeDetails.
+        The list of autotune policies enabled for this volume.
+
+
+        :return: The autotune_policies of this UpdateVolumeDetails.
+        :rtype: list[oci.core.models.AutotunePolicy]
+        """
+        return self._autotune_policies
+
+    @autotune_policies.setter
+    def autotune_policies(self, autotune_policies):
+        """
+        Sets the autotune_policies of this UpdateVolumeDetails.
+        The list of autotune policies enabled for this volume.
+
+
+        :param autotune_policies: The autotune_policies of this UpdateVolumeDetails.
+        :type: list[oci.core.models.AutotunePolicy]
+        """
+        self._autotune_policies = autotune_policies
 
     def __repr__(self):
         return formatted_flat_dict(self)
