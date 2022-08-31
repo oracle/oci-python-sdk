@@ -51,7 +51,7 @@ class DataProfile(object):
     def entity_name(self):
         """
         **[Required]** Gets the entity_name of this DataProfile.
-        Entity name for which prodilig is requested.
+        Entity name for which profiling is requested.
 
 
         :return: The entity_name of this DataProfile.
@@ -63,7 +63,7 @@ class DataProfile(object):
     def entity_name(self, entity_name):
         """
         Sets the entity_name of this DataProfile.
-        Entity name for which prodilig is requested.
+        Entity name for which profiling is requested.
 
 
         :param entity_name: The entity_name of this DataProfile.
@@ -95,7 +95,7 @@ class DataProfile(object):
     def attribute_profile_results(self):
         """
         Gets the attribute_profile_results of this DataProfile.
-        Array of profiling results
+        Array of profiling results.
 
 
         :return: The attribute_profile_results of this DataProfile.
@@ -107,7 +107,7 @@ class DataProfile(object):
     def attribute_profile_results(self, attribute_profile_results):
         """
         Sets the attribute_profile_results of this DataProfile.
-        Array of profiling results
+        Array of profiling results.
 
 
         :param attribute_profile_results: The attribute_profile_results of this DataProfile.

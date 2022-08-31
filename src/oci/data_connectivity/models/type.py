@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Type(object):
     """
-    DataAsset & Connection Registry Attributes
+    DataAsset and Connection Registry Attributes
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class Type(object):
     def data_asset_attributes(self):
         """
         **[Required]** Gets the data_asset_attributes of this Type.
-        list of attributes for the dataAsset
+        The list of attributes of the data asset.
 
 
         :return: The data_asset_attributes of this Type.
@@ -56,7 +56,7 @@ class Type(object):
     def data_asset_attributes(self, data_asset_attributes):
         """
         Sets the data_asset_attributes of this Type.
-        list of attributes for the dataAsset
+        The list of attributes of the data asset.
 
 
         :param data_asset_attributes: The data_asset_attributes of this Type.
@@ -68,7 +68,7 @@ class Type(object):
     def connection_attributes(self):
         """
         **[Required]** Gets the connection_attributes of this Type.
-        Map of connectionType as key and List of attributes as value
+        Mapping the connectionType as the key to the list of attributes as the value.
 
 
         :return: The connection_attributes of this Type.
@@ -80,7 +80,7 @@ class Type(object):
     def connection_attributes(self, connection_attributes):
         """
         Sets the connection_attributes of this Type.
-        Map of connectionType as key and List of attributes as value
+        Mapping the connectionType as the key to the list of attributes as the value.
 
 
         :param connection_attributes: The connection_attributes of this Type.

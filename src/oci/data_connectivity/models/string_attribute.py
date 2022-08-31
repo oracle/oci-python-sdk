@@ -190,7 +190,7 @@ class StringAttribute(AttributeProfileResult):
     def pattern_frequencies(self):
         """
         Gets the pattern_frequencies of this StringAttribute.
-        Pattern frequencies for the column as described already in profile config.
+        Pattern frequencies for the column as described in the profile config.
 
 
         :return: The pattern_frequencies of this StringAttribute.
@@ -202,7 +202,7 @@ class StringAttribute(AttributeProfileResult):
     def pattern_frequencies(self, pattern_frequencies):
         """
         Sets the pattern_frequencies of this StringAttribute.
-        Pattern frequencies for the column as described already in profile config.
+        Pattern frequencies for the column as described in the profile config.
 
 
         :param pattern_frequencies: The pattern_frequencies of this StringAttribute.

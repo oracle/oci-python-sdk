@@ -83,7 +83,7 @@ class OperationExecResult(object):
     def execution_status(self):
         """
         Gets the execution_status of this OperationExecResult.
-        Status of the operation job for particular set of input.
+        Status of the operation job for a particular set of input.
 
         Allowed values for this property are: "FAILED", "SUCCESS", "QUEUED", "RUNNING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -98,7 +98,7 @@ class OperationExecResult(object):
     def execution_status(self, execution_status):
         """
         Sets the execution_status of this OperationExecResult.
-        Status of the operation job for particular set of input.
+        Status of the operation job for a particular set of input.
 
 
         :param execution_status: The execution_status of this OperationExecResult.
@@ -113,7 +113,7 @@ class OperationExecResult(object):
     def error_message(self):
         """
         Gets the error_message of this OperationExecResult.
-        Error message if execution of operation is failed.
+        Error message when the execution of operation fails.
 
 
         :return: The error_message of this OperationExecResult.
@@ -125,7 +125,7 @@ class OperationExecResult(object):
     def error_message(self, error_message):
         """
         Sets the error_message of this OperationExecResult.
-        Error message if execution of operation is failed.
+        Error message when the execution of operation fails.
 
 
         :param error_message: The error_message of this OperationExecResult.
@@ -161,7 +161,7 @@ class OperationExecResult(object):
     def output_values(self):
         """
         Gets the output_values of this OperationExecResult.
-        List of emitted rows for each OUT/INOUT param.
+        The list of emitted rows for each OUT/INOUT parameter.
 
 
         :return: The output_values of this OperationExecResult.
@@ -173,7 +173,7 @@ class OperationExecResult(object):
     def output_values(self, output_values):
         """
         Sets the output_values of this OperationExecResult.
-        List of emitted rows for each OUT/INOUT param.
+        The list of emitted rows for each OUT/INOUT parameter.
 
 
         :param output_values: The output_values of this OperationExecResult.
@@ -185,7 +185,7 @@ class OperationExecResult(object):
     def is_whitelisted_error_message(self):
         """
         Gets the is_whitelisted_error_message of this OperationExecResult.
-        True, if error message should be displayed on UI.
+        True, if the error message must be displayed in the UI.
 
 
         :return: The is_whitelisted_error_message of this OperationExecResult.
@@ -197,7 +197,7 @@ class OperationExecResult(object):
     def is_whitelisted_error_message(self, is_whitelisted_error_message):
         """
         Sets the is_whitelisted_error_message of this OperationExecResult.
-        True, if error message should be displayed on UI.
+        True, if the error message must be displayed in the UI.
 
 
         :param is_whitelisted_error_message: The is_whitelisted_error_message of this OperationExecResult.

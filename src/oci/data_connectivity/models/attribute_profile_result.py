@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AttributeProfileResult(object):
     """
-    A summary of profiling results of a specefic attribute.
+    A summary of profiling results of a specific attribute.
     """
 
     def __init__(self, **kwargs):
@@ -142,7 +142,7 @@ class AttributeProfileResult(object):
     def name(self):
         """
         Gets the name of this AttributeProfileResult.
-        Name of attribute
+        Name of the attribute
 
 
         :return: The name of this AttributeProfileResult.
@@ -154,7 +154,7 @@ class AttributeProfileResult(object):
     def name(self, name):
         """
         Sets the name of this AttributeProfileResult.
-        Name of attribute
+        Name of the attribute
 
 
         :param name: The name of this AttributeProfileResult.
@@ -286,7 +286,7 @@ class AttributeProfileResult(object):
     def value_frequencies(self):
         """
         Gets the value_frequencies of this AttributeProfileResult.
-        Top N value frequencies for the column as described already in profile config topNValueFrequency property.
+        Top N value frequencies for the column as described already in the topNValueFrequency profile config property.
 
 
         :return: The value_frequencies of this AttributeProfileResult.
@@ -298,7 +298,7 @@ class AttributeProfileResult(object):
     def value_frequencies(self, value_frequencies):
         """
         Sets the value_frequencies of this AttributeProfileResult.
-        Top N value frequencies for the column as described already in profile config topNValueFrequency property.
+        Top N value frequencies for the column as described already in the topNValueFrequency profile config property.
 
 
         :param value_frequencies: The value_frequencies of this AttributeProfileResult.

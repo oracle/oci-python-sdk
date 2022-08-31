@@ -644,6 +644,48 @@ def test_delete_managed_database_group(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_delete_preferred_credential(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'DeletePreferredCredential'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'DeletePreferredCredential')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='DeletePreferredCredential')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.delete_preferred_credential(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                credential_name=request.pop(util.camelize('credentialName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'DeletePreferredCredential',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_preferred_credential',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
 def test_drop_tablespace(testing_service_client):
     if not testing_service_client.is_api_enabled('database_management', 'DropTablespace'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1352,6 +1394,48 @@ def test_get_pdb_metrics(testing_service_client):
             result,
             service_error,
             'pdbMetrics',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_get_preferred_credential(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'GetPreferredCredential'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'GetPreferredCredential')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='GetPreferredCredential')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_preferred_credential(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                credential_name=request.pop(util.camelize('credentialName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'GetPreferredCredential',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'preferredCredential',
             False,
             False
         )
@@ -2567,6 +2651,47 @@ def test_list_optimizer_statistics_collection_operations(testing_service_client)
             'optimizerStatisticsCollectionOperationsCollection',
             False,
             True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_list_preferred_credentials(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ListPreferredCredentials'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ListPreferredCredentials')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ListPreferredCredentials')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_preferred_credentials(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ListPreferredCredentials',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'preferredCredentialCollection',
+            False,
+            False
         )
 
 
@@ -4025,6 +4150,48 @@ def test_summarize_job_executions_statuses(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_test_preferred_credential(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'TestPreferredCredential'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'TestPreferredCredential')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='TestPreferredCredential')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.test_preferred_credential(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                credential_name=request.pop(util.camelize('credentialName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'TestPreferredCredential',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'testPreferredCredentialStatus',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
 def test_update_db_management_private_endpoint(testing_service_client):
     if not testing_service_client.is_api_enabled('database_management', 'UpdateDbManagementPrivateEndpoint'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4145,6 +4312,49 @@ def test_update_managed_database_group(testing_service_client):
             result,
             service_error,
             'managedDatabaseGroup',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_update_preferred_credential(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'UpdatePreferredCredential'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'UpdatePreferredCredential')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='UpdatePreferredCredential')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.update_preferred_credential(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                credential_name=request.pop(util.camelize('credentialName')),
+                update_preferred_credential_details=request.pop(util.camelize('UpdatePreferredCredentialDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'UpdatePreferredCredential',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'preferredCredential',
             False,
             False
         )

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ValidationResult(object):
     """
-    Validation Result object for a single DataAsset.
+    Validation result object for a single data asset.
     """
 
     #: A constant which can be used with the status property of a ValidationResult.
@@ -54,7 +54,7 @@ class ValidationResult(object):
     def error_msg(self):
         """
         Gets the error_msg of this ValidationResult.
-        Error text for validation failure
+        Error text for validation failure.
 
 
         :return: The error_msg of this ValidationResult.
@@ -66,7 +66,7 @@ class ValidationResult(object):
     def error_msg(self, error_msg):
         """
         Sets the error_msg of this ValidationResult.
-        Error text for validation failure
+        Error text for validation failure.
 
 
         :param error_msg: The error_msg of this ValidationResult.
@@ -78,7 +78,7 @@ class ValidationResult(object):
     def status(self):
         """
         Gets the status of this ValidationResult.
-        Status of the validatio result execution
+        Status of the validation result execution.
 
         Allowed values for this property are: "ERROR", "SUCCESS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -93,7 +93,7 @@ class ValidationResult(object):
     def status(self, status):
         """
         Sets the status of this ValidationResult.
-        Status of the validatio result execution
+        Status of the validation result execution.
 
 
         :param status: The status of this ValidationResult.

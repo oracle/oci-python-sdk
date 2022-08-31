@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateConnectionDetails(object):
     """
-    Properties used in connection create operations.
+    Properties used in the create connection operations.
     """
 
     def __init__(self, **kwargs):
@@ -135,7 +135,7 @@ class CreateConnectionDetails(object):
     def key(self):
         """
         Gets the key of this CreateConnectionDetails.
-        Generated key that can be used in API calls to identify connection. On scenarios where reference to the connection is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the connection. In scenarios where reference to the connection is required, a value can be passed in create.
 
 
         :return: The key of this CreateConnectionDetails.
@@ -147,7 +147,7 @@ class CreateConnectionDetails(object):
     def key(self, key):
         """
         Sets the key of this CreateConnectionDetails.
-        Generated key that can be used in API calls to identify connection. On scenarios where reference to the connection is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the connection. In scenarios where reference to the connection is required, a value can be passed in create.
 
 
         :param key: The key of this CreateConnectionDetails.
@@ -207,7 +207,7 @@ class CreateConnectionDetails(object):
     def name(self):
         """
         **[Required]** Gets the name of this CreateConnectionDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this CreateConnectionDetails.
@@ -219,7 +219,7 @@ class CreateConnectionDetails(object):
     def name(self, name):
         """
         Sets the name of this CreateConnectionDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this CreateConnectionDetails.
@@ -231,7 +231,7 @@ class CreateConnectionDetails(object):
     def description(self):
         """
         Gets the description of this CreateConnectionDetails.
-        User-defined description for the connection.
+        User-defined description of the connection.
 
 
         :return: The description of this CreateConnectionDetails.
@@ -243,7 +243,7 @@ class CreateConnectionDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateConnectionDetails.
-        User-defined description for the connection.
+        User-defined description of the connection.
 
 
         :param description: The description of this CreateConnectionDetails.
@@ -303,7 +303,7 @@ class CreateConnectionDetails(object):
     def identifier(self):
         """
         **[Required]** Gets the identifier of this CreateConnectionDetails.
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this CreateConnectionDetails.
@@ -315,7 +315,7 @@ class CreateConnectionDetails(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this CreateConnectionDetails.
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this CreateConnectionDetails.
@@ -347,7 +347,7 @@ class CreateConnectionDetails(object):
     def connection_properties(self):
         """
         Gets the connection_properties of this CreateConnectionDetails.
-        The properties for the connection.
+        The properties of the connection.
 
 
         :return: The connection_properties of this CreateConnectionDetails.
@@ -359,7 +359,7 @@ class CreateConnectionDetails(object):
     def connection_properties(self, connection_properties):
         """
         Sets the connection_properties of this CreateConnectionDetails.
-        The properties for the connection.
+        The properties of the connection.
 
 
         :param connection_properties: The connection_properties of this CreateConnectionDetails.
@@ -371,7 +371,7 @@ class CreateConnectionDetails(object):
     def properties(self):
         """
         **[Required]** Gets the properties of this CreateConnectionDetails.
-        All the properties for the connection in a key-value map format.
+        All the properties of the connection in a key-value map format.
 
 
         :return: The properties of this CreateConnectionDetails.
@@ -383,7 +383,7 @@ class CreateConnectionDetails(object):
     def properties(self, properties):
         """
         Sets the properties of this CreateConnectionDetails.
-        All the properties for the connection in a key-value map format.
+        All the properties of the connection in a key-value map format.
 
 
         :param properties: The properties of this CreateConnectionDetails.
@@ -419,7 +419,7 @@ class CreateConnectionDetails(object):
     def is_default(self):
         """
         Gets the is_default of this CreateConnectionDetails.
-        The default property for the connection.
+        The default property of the connection.
 
 
         :return: The is_default of this CreateConnectionDetails.
@@ -431,7 +431,7 @@ class CreateConnectionDetails(object):
     def is_default(self, is_default):
         """
         Sets the is_default of this CreateConnectionDetails.
-        The default property for the connection.
+        The default property of the connection.
 
 
         :param is_default: The is_default of this CreateConnectionDetails.

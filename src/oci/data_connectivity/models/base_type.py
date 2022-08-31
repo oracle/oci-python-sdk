@@ -134,7 +134,7 @@ class BaseType(object):
     def model_type(self):
         """
         **[Required]** Gets the model_type of this BaseType.
-        The property which disciminates the subtypes.
+        The property which differentiates the subtypes.
 
         Allowed values for this property are: "STRUCTURED_TYPE", "DATA_TYPE", "CONFIGURED_TYPE", "COMPOSITE_TYPE", "DERIVED_TYPE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -149,7 +149,7 @@ class BaseType(object):
     def model_type(self, model_type):
         """
         Sets the model_type of this BaseType.
-        The property which disciminates the subtypes.
+        The property which differentiates the subtypes.
 
 
         :param model_type: The model_type of this BaseType.
@@ -232,7 +232,7 @@ class BaseType(object):
     def name(self):
         """
         Gets the name of this BaseType.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this BaseType.
@@ -244,7 +244,7 @@ class BaseType(object):
     def name(self, name):
         """
         Sets the name of this BaseType.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this BaseType.
@@ -280,7 +280,7 @@ class BaseType(object):
     def description(self):
         """
         Gets the description of this BaseType.
-        A user defined description for the object.
+        A user-defined description for the object.
 
 
         :return: The description of this BaseType.
@@ -292,7 +292,7 @@ class BaseType(object):
     def description(self, description):
         """
         Sets the description of this BaseType.
-        A user defined description for the object.
+        A user-defined description for the object.
 
 
         :param description: The description of this BaseType.

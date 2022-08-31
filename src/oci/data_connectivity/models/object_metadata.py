@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ObjectMetadata(object):
     """
-    A summary type containing information about the object including its key, name and when/who created/updated it.
+    A summary type containing information about the object including its key, name, the time that it was created or updated, and the user who created or updated it.
     """
 
     def __init__(self, **kwargs):
@@ -309,7 +309,7 @@ class ObjectMetadata(object):
     def identifier_path(self):
         """
         Gets the identifier_path of this ObjectMetadata.
-        The full path to identify this object.
+        The full path to identify the object.
 
 
         :return: The identifier_path of this ObjectMetadata.
@@ -321,7 +321,7 @@ class ObjectMetadata(object):
     def identifier_path(self, identifier_path):
         """
         Sets the identifier_path of this ObjectMetadata.
-        The full path to identify this object.
+        The full path to identify the object.
 
 
         :param identifier_path: The identifier_path of this ObjectMetadata.
@@ -381,7 +381,7 @@ class ObjectMetadata(object):
     def labels(self):
         """
         Gets the labels of this ObjectMetadata.
-        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        Labels are keywords or tags that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 
 
         :return: The labels of this ObjectMetadata.
@@ -393,7 +393,7 @@ class ObjectMetadata(object):
     def labels(self, labels):
         """
         Sets the labels of this ObjectMetadata.
-        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        Labels are keywords or tags that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 
 
         :param labels: The labels of this ObjectMetadata.
@@ -405,7 +405,7 @@ class ObjectMetadata(object):
     def is_favorite(self):
         """
         Gets the is_favorite of this ObjectMetadata.
-        Specifies whether this object is a favorite or not.
+        Specifies whether this object is a favorite.
 
 
         :return: The is_favorite of this ObjectMetadata.
@@ -417,7 +417,7 @@ class ObjectMetadata(object):
     def is_favorite(self, is_favorite):
         """
         Sets the is_favorite of this ObjectMetadata.
-        Specifies whether this object is a favorite or not.
+        Specifies whether this object is a favorite.
 
 
         :param is_favorite: The is_favorite of this ObjectMetadata.

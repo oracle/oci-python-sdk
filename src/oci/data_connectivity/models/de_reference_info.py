@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DeReferenceInfo(object):
     """
-    Represents de-reference details of a dcms artifact.
+    Represents de-reference details of a DCMS artifact.
     """
 
     def __init__(self, **kwargs):
@@ -145,7 +145,7 @@ class DeReferenceInfo(object):
     def key(self):
         """
         Gets the key of this DeReferenceInfo.
-        Generated key that can be used in API calls to identify referenceinfo.
+        Generated key that can be used in API calls to identify the referenceinfo.
 
 
         :return: The key of this DeReferenceInfo.
@@ -157,7 +157,7 @@ class DeReferenceInfo(object):
     def key(self, key):
         """
         Sets the key of this DeReferenceInfo.
-        Generated key that can be used in API calls to identify referenceinfo.
+        Generated key that can be used in API calls to identify the referenceinfo.
 
 
         :param key: The key of this DeReferenceInfo.
@@ -193,7 +193,7 @@ class DeReferenceInfo(object):
     def name(self):
         """
         Gets the name of this DeReferenceInfo.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this DeReferenceInfo.
@@ -205,7 +205,7 @@ class DeReferenceInfo(object):
     def name(self, name):
         """
         Sets the name of this DeReferenceInfo.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this DeReferenceInfo.
@@ -289,7 +289,7 @@ class DeReferenceInfo(object):
     def identifier(self):
         """
         Gets the identifier of this DeReferenceInfo.
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this DeReferenceInfo.
@@ -301,7 +301,7 @@ class DeReferenceInfo(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this DeReferenceInfo.
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this DeReferenceInfo.
@@ -313,7 +313,7 @@ class DeReferenceInfo(object):
     def dcms_artifact_id(self):
         """
         **[Required]** Gets the dcms_artifact_id of this DeReferenceInfo.
-        unique id of dcms artifact that is getting referenced.
+        The unique ID of the DCMS artifact that is getting referenced.
 
 
         :return: The dcms_artifact_id of this DeReferenceInfo.
@@ -325,7 +325,7 @@ class DeReferenceInfo(object):
     def dcms_artifact_id(self, dcms_artifact_id):
         """
         Sets the dcms_artifact_id of this DeReferenceInfo.
-        unique id of dcms artifact that is getting referenced.
+        The unique ID of the DCMS artifact that is getting referenced.
 
 
         :param dcms_artifact_id: The dcms_artifact_id of this DeReferenceInfo.
@@ -337,7 +337,7 @@ class DeReferenceInfo(object):
     def service_artifact_id(self):
         """
         **[Required]** Gets the service_artifact_id of this DeReferenceInfo.
-        unique id of service which is referencing dcms artifact.
+        The unique ID of the service that is referencing a DCMS artifact.
 
 
         :return: The service_artifact_id of this DeReferenceInfo.
@@ -349,7 +349,7 @@ class DeReferenceInfo(object):
     def service_artifact_id(self, service_artifact_id):
         """
         Sets the service_artifact_id of this DeReferenceInfo.
-        unique id of service which is referencing dcms artifact.
+        The unique ID of the service that is referencing a DCMS artifact.
 
 
         :param service_artifact_id: The service_artifact_id of this DeReferenceInfo.
@@ -361,7 +361,7 @@ class DeReferenceInfo(object):
     def reference_count(self):
         """
         Gets the reference_count of this DeReferenceInfo.
-        count of how many times a dcms artifact has been registered by a service.
+        The number of times a DCMS artifact has been registered by a service.
 
 
         :return: The reference_count of this DeReferenceInfo.
@@ -373,7 +373,7 @@ class DeReferenceInfo(object):
     def reference_count(self, reference_count):
         """
         Sets the reference_count of this DeReferenceInfo.
-        count of how many times a dcms artifact has been registered by a service.
+        The number of times a DCMS artifact has been registered by a service.
 
 
         :param reference_count: The reference_count of this DeReferenceInfo.

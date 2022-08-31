@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.dcms-dp</groupId>
         <artifactId>sdk-spec</artifactId>
-        <version>3.0.0-582</version>
+        <version>3.3.0-1261</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

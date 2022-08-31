@@ -161,7 +161,7 @@ class DpEndpoint(object):
     def key(self):
         """
         Gets the key of this DpEndpoint.
-        Generated key that can be used in API calls to identify endpoint. On scenarios where reference to the endpoint is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the endpoint. In scenarios where reference to the endpoint is required, a value can be passed in create.
 
 
         :return: The key of this DpEndpoint.
@@ -173,7 +173,7 @@ class DpEndpoint(object):
     def key(self, key):
         """
         Sets the key of this DpEndpoint.
-        Generated key that can be used in API calls to identify endpoint. On scenarios where reference to the endpoint is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the endpoint. In scenarios where reference to the endpoint is required, a value can be passed in create.
 
 
         :param key: The key of this DpEndpoint.
@@ -229,7 +229,7 @@ class DpEndpoint(object):
     def name(self):
         """
         Gets the name of this DpEndpoint.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this DpEndpoint.
@@ -241,7 +241,7 @@ class DpEndpoint(object):
     def name(self, name):
         """
         Sets the name of this DpEndpoint.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this DpEndpoint.
@@ -253,7 +253,7 @@ class DpEndpoint(object):
     def description(self):
         """
         Gets the description of this DpEndpoint.
-        User-defined description for the endpoint.
+        User-defined description of the endpoint.
 
 
         :return: The description of this DpEndpoint.
@@ -265,7 +265,7 @@ class DpEndpoint(object):
     def description(self, description):
         """
         Sets the description of this DpEndpoint.
-        User-defined description for the endpoint.
+        User-defined description of the endpoint.
 
 
         :param description: The description of this DpEndpoint.
@@ -325,7 +325,7 @@ class DpEndpoint(object):
     def identifier(self):
         """
         Gets the identifier of this DpEndpoint.
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this DpEndpoint.
@@ -337,7 +337,7 @@ class DpEndpoint(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this DpEndpoint.
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this DpEndpoint.
@@ -349,7 +349,7 @@ class DpEndpoint(object):
     def data_assets(self):
         """
         Gets the data_assets of this DpEndpoint.
-        List of data assets which belongs to this endpoint
+        The list of data assets that belong to the endpoint.
 
 
         :return: The data_assets of this DpEndpoint.
@@ -361,7 +361,7 @@ class DpEndpoint(object):
     def data_assets(self, data_assets):
         """
         Sets the data_assets of this DpEndpoint.
-        List of data assets which belongs to this endpoint
+        The list of data assets that belong to the endpoint.
 
 
         :param data_assets: The data_assets of this DpEndpoint.

@@ -152,7 +152,7 @@ class Schema(object):
     def model_type(self):
         """
         **[Required]** Gets the model_type of this Schema.
-        The object's type.
+        The object type.
 
 
         :return: The model_type of this Schema.
@@ -164,7 +164,7 @@ class Schema(object):
     def model_type(self, model_type):
         """
         Sets the model_type of this Schema.
-        The object's type.
+        The object type.
 
 
         :param model_type: The model_type of this Schema.
@@ -176,7 +176,7 @@ class Schema(object):
     def model_version(self):
         """
         Gets the model_version of this Schema.
-        The object's model version.
+        The model version of the object.
 
 
         :return: The model_version of this Schema.
@@ -188,7 +188,7 @@ class Schema(object):
     def model_version(self, model_version):
         """
         Sets the model_version of this Schema.
-        The object's model version.
+        The model version of the object.
 
 
         :param model_version: The model_version of this Schema.
@@ -220,7 +220,7 @@ class Schema(object):
     def name(self):
         """
         **[Required]** Gets the name of this Schema.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this Schema.
@@ -232,7 +232,7 @@ class Schema(object):
     def name(self, name):
         """
         Sets the name of this Schema.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this Schema.
@@ -316,7 +316,7 @@ class Schema(object):
     def external_key(self):
         """
         Gets the external_key of this Schema.
-        The external key for the object.
+        The external key of the object.
 
 
         :return: The external_key of this Schema.
@@ -328,7 +328,7 @@ class Schema(object):
     def external_key(self, external_key):
         """
         Sets the external_key of this Schema.
-        The external key for the object.
+        The external key of the object.
 
 
         :param external_key: The external_key of this Schema.
@@ -412,7 +412,7 @@ class Schema(object):
     def identifier(self):
         """
         **[Required]** Gets the identifier of this Schema.
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this Schema.
@@ -424,7 +424,7 @@ class Schema(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this Schema.
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this Schema.

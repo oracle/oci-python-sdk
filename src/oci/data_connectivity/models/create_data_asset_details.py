@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDataAssetDetails(object):
     """
-    Properties used in data asset Create operations.
+    Properties used in the create data asset operations.
     """
 
     def __init__(self, **kwargs):
@@ -149,7 +149,7 @@ class CreateDataAssetDetails(object):
     def key(self):
         """
         Gets the key of this CreateDataAssetDetails.
-        Generated key that can be used in API calls to identify dataasset.
+        Generated key that can be used in API calls to identify the data asset.
 
 
         :return: The key of this CreateDataAssetDetails.
@@ -161,7 +161,7 @@ class CreateDataAssetDetails(object):
     def key(self, key):
         """
         Sets the key of this CreateDataAssetDetails.
-        Generated key that can be used in API calls to identify dataasset.
+        Generated key that can be used in API calls to identify the data asset.
 
 
         :param key: The key of this CreateDataAssetDetails.
@@ -221,7 +221,7 @@ class CreateDataAssetDetails(object):
     def name(self):
         """
         **[Required]** Gets the name of this CreateDataAssetDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this CreateDataAssetDetails.
@@ -233,7 +233,7 @@ class CreateDataAssetDetails(object):
     def name(self, name):
         """
         Sets the name of this CreateDataAssetDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this CreateDataAssetDetails.
@@ -317,7 +317,7 @@ class CreateDataAssetDetails(object):
     def identifier(self):
         """
         **[Required]** Gets the identifier of this CreateDataAssetDetails.
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this CreateDataAssetDetails.
@@ -329,7 +329,7 @@ class CreateDataAssetDetails(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this CreateDataAssetDetails.
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this CreateDataAssetDetails.
@@ -341,7 +341,7 @@ class CreateDataAssetDetails(object):
     def external_key(self):
         """
         Gets the external_key of this CreateDataAssetDetails.
-        The external key for the object.
+        The external key of the object.
 
 
         :return: The external_key of this CreateDataAssetDetails.
@@ -353,7 +353,7 @@ class CreateDataAssetDetails(object):
     def external_key(self, external_key):
         """
         Sets the external_key of this CreateDataAssetDetails.
-        The external key for the object.
+        The external key of the object.
 
 
         :param external_key: The external_key of this CreateDataAssetDetails.

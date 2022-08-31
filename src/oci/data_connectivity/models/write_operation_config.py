@@ -44,6 +44,10 @@ class WriteOperationConfig(AbstractDataOperationConfig):
             Allowed values for this property are: "READ_OPERATION_CONFIG", "WRITE_OPERATION_CONFIG"
         :type model_type: str
 
+        :param derived_attributes:
+            The value to assign to the derived_attributes property of this WriteOperationConfig.
+        :type derived_attributes: dict(str, str)
+
         :param key:
             The value to assign to the key property of this WriteOperationConfig.
         :type key: str
@@ -92,6 +96,7 @@ class WriteOperationConfig(AbstractDataOperationConfig):
         """
         self.swagger_types = {
             'model_type': 'str',
+            'derived_attributes': 'dict(str, str)',
             'key': 'str',
             'model_version': 'str',
             'parent_ref': 'ParentReference',
@@ -107,6 +112,7 @@ class WriteOperationConfig(AbstractDataOperationConfig):
 
         self.attribute_map = {
             'model_type': 'modelType',
+            'derived_attributes': 'derivedAttributes',
             'key': 'key',
             'model_version': 'modelVersion',
             'parent_ref': 'parentRef',
@@ -121,6 +127,7 @@ class WriteOperationConfig(AbstractDataOperationConfig):
         }
 
         self._model_type = None
+        self._derived_attributes = None
         self._key = None
         self._model_version = None
         self._parent_ref = None
@@ -162,7 +169,7 @@ class WriteOperationConfig(AbstractDataOperationConfig):
     def model_version(self):
         """
         Gets the model_version of this WriteOperationConfig.
-        The object's model version.
+        The model version of the object.
 
 
         :return: The model_version of this WriteOperationConfig.
@@ -174,7 +181,7 @@ class WriteOperationConfig(AbstractDataOperationConfig):
     def model_version(self, model_version):
         """
         Sets the model_version of this WriteOperationConfig.
-        The object's model version.
+        The model version of the object.
 
 
         :param model_version: The model_version of this WriteOperationConfig.
@@ -366,7 +373,7 @@ class WriteOperationConfig(AbstractDataOperationConfig):
     def reject_limit(self):
         """
         Gets the reject_limit of this WriteOperationConfig.
-        The number of rows are rejected based on which operation will error out.
+        The number of rows are rejected based on the operation that errors out.
 
 
         :return: The reject_limit of this WriteOperationConfig.
@@ -378,7 +385,7 @@ class WriteOperationConfig(AbstractDataOperationConfig):
     def reject_limit(self, reject_limit):
         """
         Sets the reject_limit of this WriteOperationConfig.
-        The number of rows are rejected based on which operation will error out.
+        The number of rows are rejected based on the operation that errors out.
 
 
         :param reject_limit: The reject_limit of this WriteOperationConfig.

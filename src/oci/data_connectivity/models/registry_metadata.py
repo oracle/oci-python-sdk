@@ -131,7 +131,7 @@ class RegistryMetadata(object):
     def labels(self):
         """
         Gets the labels of this RegistryMetadata.
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 
 
         :return: The labels of this RegistryMetadata.
@@ -143,7 +143,7 @@ class RegistryMetadata(object):
     def labels(self, labels):
         """
         Sets the labels of this RegistryMetadata.
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 
 
         :param labels: The labels of this RegistryMetadata.
@@ -203,7 +203,7 @@ class RegistryMetadata(object):
     def is_favorite(self):
         """
         Gets the is_favorite of this RegistryMetadata.
-        Specifies whether this object is a favorite or not.
+        Specifies whether the object is a favorite.
 
 
         :return: The is_favorite of this RegistryMetadata.
@@ -215,7 +215,7 @@ class RegistryMetadata(object):
     def is_favorite(self, is_favorite):
         """
         Sets the is_favorite of this RegistryMetadata.
-        Specifies whether this object is a favorite or not.
+        Specifies whether the object is a favorite.
 
 
         :param is_favorite: The is_favorite of this RegistryMetadata.
@@ -227,7 +227,7 @@ class RegistryMetadata(object):
     def created_by_user_id(self):
         """
         Gets the created_by_user_id of this RegistryMetadata.
-        The id of the user who created the object.
+        The ID of the user who created the object.
 
 
         :return: The created_by_user_id of this RegistryMetadata.
@@ -239,7 +239,7 @@ class RegistryMetadata(object):
     def created_by_user_id(self, created_by_user_id):
         """
         Sets the created_by_user_id of this RegistryMetadata.
-        The id of the user who created the object.
+        The ID of the user who created the object.
 
 
         :param created_by_user_id: The created_by_user_id of this RegistryMetadata.
@@ -275,7 +275,7 @@ class RegistryMetadata(object):
     def updated_by_user_id(self):
         """
         Gets the updated_by_user_id of this RegistryMetadata.
-        The id of the user who updated the object.
+        The ID of the user who updated the object.
 
 
         :return: The updated_by_user_id of this RegistryMetadata.
@@ -287,7 +287,7 @@ class RegistryMetadata(object):
     def updated_by_user_id(self, updated_by_user_id):
         """
         Sets the updated_by_user_id of this RegistryMetadata.
-        The id of the user who updated the object.
+        The ID of the user who updated the object.
 
 
         :param updated_by_user_id: The updated_by_user_id of this RegistryMetadata.

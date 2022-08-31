@@ -33,6 +33,14 @@ class DataEntitySummary(object):
     #: This constant has a value of "SQL_ENTITY"
     MODEL_TYPE_SQL_ENTITY = "SQL_ENTITY"
 
+    #: A constant which can be used with the model_type property of a DataEntitySummary.
+    #: This constant has a value of "DERIVED_ENTITY"
+    MODEL_TYPE_DERIVED_ENTITY = "DERIVED_ENTITY"
+
+    #: A constant which can be used with the model_type property of a DataEntitySummary.
+    #: This constant has a value of "MESSAGE_ENTITY"
+    MODEL_TYPE_MESSAGE_ENTITY = "MESSAGE_ENTITY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DataEntitySummary object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -48,7 +56,7 @@ class DataEntitySummary(object):
 
         :param model_type:
             The value to assign to the model_type property of this DataEntitySummary.
-            Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY", "DERIVED_ENTITY", "MESSAGE_ENTITY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -101,7 +109,7 @@ class DataEntitySummary(object):
         **[Required]** Gets the model_type of this DataEntitySummary.
         The data entity type.
 
-        Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY", "DERIVED_ENTITY", "MESSAGE_ENTITY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -120,7 +128,7 @@ class DataEntitySummary(object):
         :param model_type: The model_type of this DataEntitySummary.
         :type: str
         """
-        allowed_values = ["VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY"]
+        allowed_values = ["VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY", "DERIVED_ENTITY", "MESSAGE_ENTITY"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type

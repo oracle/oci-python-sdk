@@ -33,6 +33,14 @@ class DataEntity(object):
     #: This constant has a value of "SQL_ENTITY"
     MODEL_TYPE_SQL_ENTITY = "SQL_ENTITY"
 
+    #: A constant which can be used with the model_type property of a DataEntity.
+    #: This constant has a value of "DERIVED_ENTITY"
+    MODEL_TYPE_DERIVED_ENTITY = "DERIVED_ENTITY"
+
+    #: A constant which can be used with the model_type property of a DataEntity.
+    #: This constant has a value of "MESSAGE_ENTITY"
+    MODEL_TYPE_MESSAGE_ENTITY = "MESSAGE_ENTITY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DataEntity object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -43,12 +51,17 @@ class DataEntity(object):
         * :class:`~oci.data_connectivity.models.DataEntityFromView`
         * :class:`~oci.data_connectivity.models.DataEntityFromSql`
         * :class:`~oci.data_connectivity.models.DataEntityFromFile`
+        * :class:`~oci.data_connectivity.models.DerivedEntity`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param entity_properties:
+            The value to assign to the entity_properties property of this DataEntity.
+        :type entity_properties: dict(str, str)
+
         :param model_type:
             The value to assign to the model_type property of this DataEntity.
-            Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY", "DERIVED_ENTITY", "MESSAGE_ENTITY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -58,15 +71,18 @@ class DataEntity(object):
 
         """
         self.swagger_types = {
+            'entity_properties': 'dict(str, str)',
             'model_type': 'str',
             'metadata': 'ObjectMetadata'
         }
 
         self.attribute_map = {
+            'entity_properties': 'entityProperties',
             'model_type': 'modelType',
             'metadata': 'metadata'
         }
 
+        self._entity_properties = None
         self._model_type = None
         self._metadata = None
 
@@ -92,8 +108,35 @@ class DataEntity(object):
 
         if type == 'FILE_ENTITY':
             return 'DataEntityFromFile'
+
+        if type == 'DERIVED_ENTITY':
+            return 'DerivedEntity'
         else:
             return 'DataEntity'
+
+    @property
+    def entity_properties(self):
+        """
+        Gets the entity_properties of this DataEntity.
+        Map<String, String> for entity properties
+
+
+        :return: The entity_properties of this DataEntity.
+        :rtype: dict(str, str)
+        """
+        return self._entity_properties
+
+    @entity_properties.setter
+    def entity_properties(self, entity_properties):
+        """
+        Sets the entity_properties of this DataEntity.
+        Map<String, String> for entity properties
+
+
+        :param entity_properties: The entity_properties of this DataEntity.
+        :type: dict(str, str)
+        """
+        self._entity_properties = entity_properties
 
     @property
     def model_type(self):
@@ -101,7 +144,7 @@ class DataEntity(object):
         **[Required]** Gets the model_type of this DataEntity.
         The data entity type.
 
-        Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY", "DERIVED_ENTITY", "MESSAGE_ENTITY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -120,7 +163,7 @@ class DataEntity(object):
         :param model_type: The model_type of this DataEntity.
         :type: str
         """
-        allowed_values = ["VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY"]
+        allowed_values = ["VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY", "DERIVED_ENTITY", "MESSAGE_ENTITY"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type

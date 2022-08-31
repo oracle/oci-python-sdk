@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConfigValues(object):
     """
-    Configuration values can be string, objects, or parameters.
+    Configuration values can be a string, objects, or parameters.
     """
 
     def __init__(self, **kwargs):

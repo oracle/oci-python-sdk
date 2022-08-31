@@ -29,6 +29,14 @@ class DataEntityFromSqlEntityDetails(DataEntityDetails):
     #: This constant has a value of "SQL"
     ENTITY_TYPE_SQL = "SQL"
 
+    #: A constant which can be used with the entity_type property of a DataEntityFromSqlEntityDetails.
+    #: This constant has a value of "DATA_STORE"
+    ENTITY_TYPE_DATA_STORE = "DATA_STORE"
+
+    #: A constant which can be used with the entity_type property of a DataEntityFromSqlEntityDetails.
+    #: This constant has a value of "MESSAGE"
+    ENTITY_TYPE_MESSAGE = "MESSAGE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DataEntityFromSqlEntityDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.data_connectivity.models.DataEntityFromSqlEntityDetails.model_type` attribute
@@ -37,7 +45,7 @@ class DataEntityFromSqlEntityDetails(DataEntityDetails):
 
         :param model_type:
             The value to assign to the model_type property of this DataEntityFromSqlEntityDetails.
-            Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY"
+            Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY", "DERIVED_ENTITY", "MESSAGE_ENTITY"
         :type model_type: str
 
         :param key:
@@ -78,7 +86,7 @@ class DataEntityFromSqlEntityDetails(DataEntityDetails):
 
         :param entity_type:
             The value to assign to the entity_type property of this DataEntityFromSqlEntityDetails.
-            Allowed values for this property are: "TABLE", "VIEW", "FILE", "SQL"
+            Allowed values for this property are: "TABLE", "VIEW", "FILE", "SQL", "DATA_STORE", "MESSAGE"
         :type entity_type: str
 
         :param other_type_label:
@@ -200,7 +208,7 @@ class DataEntityFromSqlEntityDetails(DataEntityDetails):
     def model_version(self):
         """
         Gets the model_version of this DataEntityFromSqlEntityDetails.
-        The object's model version.
+        The model version of the object.
 
 
         :return: The model_version of this DataEntityFromSqlEntityDetails.
@@ -212,7 +220,7 @@ class DataEntityFromSqlEntityDetails(DataEntityDetails):
     def model_version(self, model_version):
         """
         Sets the model_version of this DataEntityFromSqlEntityDetails.
-        The object's model version.
+        The model version of the object.
 
 
         :param model_version: The model_version of this DataEntityFromSqlEntityDetails.
@@ -244,7 +252,7 @@ class DataEntityFromSqlEntityDetails(DataEntityDetails):
     def name(self):
         """
         Gets the name of this DataEntityFromSqlEntityDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this DataEntityFromSqlEntityDetails.
@@ -256,7 +264,7 @@ class DataEntityFromSqlEntityDetails(DataEntityDetails):
     def name(self, name):
         """
         Sets the name of this DataEntityFromSqlEntityDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this DataEntityFromSqlEntityDetails.
@@ -268,7 +276,7 @@ class DataEntityFromSqlEntityDetails(DataEntityDetails):
     def description(self):
         """
         Gets the description of this DataEntityFromSqlEntityDetails.
-        Detailed description for the object.
+        Detailed description of the object.
 
 
         :return: The description of this DataEntityFromSqlEntityDetails.
@@ -280,7 +288,7 @@ class DataEntityFromSqlEntityDetails(DataEntityDetails):
     def description(self, description):
         """
         Sets the description of this DataEntityFromSqlEntityDetails.
-        Detailed description for the object.
+        Detailed description of the object.
 
 
         :param description: The description of this DataEntityFromSqlEntityDetails.
@@ -316,7 +324,7 @@ class DataEntityFromSqlEntityDetails(DataEntityDetails):
     def external_key(self):
         """
         Gets the external_key of this DataEntityFromSqlEntityDetails.
-        The external key for the object
+        The external key of the object.
 
 
         :return: The external_key of this DataEntityFromSqlEntityDetails.
@@ -328,7 +336,7 @@ class DataEntityFromSqlEntityDetails(DataEntityDetails):
     def external_key(self, external_key):
         """
         Sets the external_key of this DataEntityFromSqlEntityDetails.
-        The external key for the object
+        The external key of the object.
 
 
         :param external_key: The external_key of this DataEntityFromSqlEntityDetails.
@@ -386,7 +394,7 @@ class DataEntityFromSqlEntityDetails(DataEntityDetails):
         Gets the entity_type of this DataEntityFromSqlEntityDetails.
         The entity type.
 
-        Allowed values for this property are: "TABLE", "VIEW", "FILE", "SQL"
+        Allowed values for this property are: "TABLE", "VIEW", "FILE", "SQL", "DATA_STORE", "MESSAGE"
 
 
         :return: The entity_type of this DataEntityFromSqlEntityDetails.
@@ -404,7 +412,7 @@ class DataEntityFromSqlEntityDetails(DataEntityDetails):
         :param entity_type: The entity_type of this DataEntityFromSqlEntityDetails.
         :type: str
         """
-        allowed_values = ["TABLE", "VIEW", "FILE", "SQL"]
+        allowed_values = ["TABLE", "VIEW", "FILE", "SQL", "DATA_STORE", "MESSAGE"]
         if not value_allowed_none_or_none_sentinel(entity_type, allowed_values):
             raise ValueError(
                 "Invalid value for `entity_type`, must be None or one of {0}"
@@ -536,7 +544,7 @@ class DataEntityFromSqlEntityDetails(DataEntityDetails):
     def identifier(self):
         """
         Gets the identifier of this DataEntityFromSqlEntityDetails.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this DataEntityFromSqlEntityDetails.
@@ -548,7 +556,7 @@ class DataEntityFromSqlEntityDetails(DataEntityDetails):
     def identifier(self, identifier):
         """
         Sets the identifier of this DataEntityFromSqlEntityDetails.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this DataEntityFromSqlEntityDetails.

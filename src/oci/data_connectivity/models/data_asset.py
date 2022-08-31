@@ -149,7 +149,7 @@ class DataAsset(object):
     def key(self):
         """
         **[Required]** Gets the key of this DataAsset.
-        Currently not used on data asset creation. Reserved for future.
+        Currently not used while creating a data asset. Reserved for future.
 
 
         :return: The key of this DataAsset.
@@ -161,7 +161,7 @@ class DataAsset(object):
     def key(self, key):
         """
         Sets the key of this DataAsset.
-        Currently not used on data asset creation. Reserved for future.
+        Currently not used while creating a data asset. Reserved for future.
 
 
         :param key: The key of this DataAsset.
@@ -221,7 +221,7 @@ class DataAsset(object):
     def name(self):
         """
         **[Required]** Gets the name of this DataAsset.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this DataAsset.
@@ -233,7 +233,7 @@ class DataAsset(object):
     def name(self, name):
         """
         Sets the name of this DataAsset.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this DataAsset.
@@ -317,7 +317,7 @@ class DataAsset(object):
     def identifier(self):
         """
         **[Required]** Gets the identifier of this DataAsset.
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this DataAsset.
@@ -329,7 +329,7 @@ class DataAsset(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this DataAsset.
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this DataAsset.
@@ -341,7 +341,7 @@ class DataAsset(object):
     def external_key(self):
         """
         Gets the external_key of this DataAsset.
-        The external key for the object.
+        The external key of the object.
 
 
         :return: The external_key of this DataAsset.
@@ -353,7 +353,7 @@ class DataAsset(object):
     def external_key(self, external_key):
         """
         Sets the external_key of this DataAsset.
-        The external key for the object.
+        The external key of the object.
 
 
         :param external_key: The external_key of this DataAsset.

@@ -880,48 +880,6 @@ def test_delete_connection(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="di_dcms_dev_ww_grp@oracle.com" jiraProject="DCMS" opsJiraProject="DCMS"
-def test_delete_connection_validation(testing_service_client):
-    if not testing_service_client.is_api_enabled('data_connectivity', 'DeleteConnectionValidation'):
-        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
-
-    config = util.test_config_to_python_config(
-        testing_service_client.get_test_config('data_connectivity', util.camelize('data_connectivity_management'), 'DeleteConnectionValidation')
-    )
-
-    request_containers = testing_service_client.get_requests(service_name='data_connectivity', api_name='DeleteConnectionValidation')
-
-    for i in range(len(request_containers)):
-        request = request_containers[i]['request'].copy()
-        result = []
-        service_error = None
-
-        try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
-            client = oci.data_connectivity.DataConnectivityManagementClient(config, service_endpoint=service_endpoint)
-            response = client.delete_connection_validation(
-                registry_id=request.pop(util.camelize('registryId')),
-                connection_validation_key=request.pop(util.camelize('connectionValidationKey')),
-                retry_strategy=oci.retry.NoneRetryStrategy(),
-                **(util.camel_to_snake_keys(request))
-            )
-            result.append(response)
-        except oci_exception.ServiceError as service_exception:
-            service_error = service_exception
-
-        testing_service_client.validate_result(
-            'data_connectivity',
-            'DeleteConnectionValidation',
-            request_containers[i]['containerId'],
-            request_containers[i]['request'],
-            result,
-            service_error,
-            'delete_connection_validation',
-            True,
-            False
-        )
-
-
-# IssueRoutingInfo tag="default" email="di_dcms_dev_ww_grp@oracle.com" jiraProject="DCMS" opsJiraProject="DCMS"
 def test_delete_data_asset(testing_service_client):
     if not testing_service_client.is_api_enabled('data_connectivity', 'DeleteDataAsset'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1130,6 +1088,48 @@ def test_delete_registry(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="di_dcms_dev_ww_grp@oracle.com" jiraProject="DCMS" opsJiraProject="DCMS"
+def test_derive_entities(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_connectivity', 'DeriveEntities'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_connectivity', util.camelize('data_connectivity_management'), 'DeriveEntities')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_connectivity', api_name='DeriveEntities')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_connectivity.DataConnectivityManagementClient(config, service_endpoint=service_endpoint)
+            response = client.derive_entities(
+                registry_id=request.pop(util.camelize('registryId')),
+                derive_entities_details=request.pop(util.camelize('DeriveEntitiesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_connectivity',
+            'DeriveEntities',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'deriveEntities',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dcms_dev_ww_grp@oracle.com" jiraProject="DCMS" opsJiraProject="DCMS"
 def test_get_connection(testing_service_client):
     if not testing_service_client.is_api_enabled('data_connectivity', 'GetConnection'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1166,48 +1166,6 @@ def test_get_connection(testing_service_client):
             result,
             service_error,
             'connection',
-            False,
-            False
-        )
-
-
-# IssueRoutingInfo tag="default" email="di_dcms_dev_ww_grp@oracle.com" jiraProject="DCMS" opsJiraProject="DCMS"
-def test_get_connection_validation(testing_service_client):
-    if not testing_service_client.is_api_enabled('data_connectivity', 'GetConnectionValidation'):
-        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
-
-    config = util.test_config_to_python_config(
-        testing_service_client.get_test_config('data_connectivity', util.camelize('data_connectivity_management'), 'GetConnectionValidation')
-    )
-
-    request_containers = testing_service_client.get_requests(service_name='data_connectivity', api_name='GetConnectionValidation')
-
-    for i in range(len(request_containers)):
-        request = request_containers[i]['request'].copy()
-        result = []
-        service_error = None
-
-        try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
-            client = oci.data_connectivity.DataConnectivityManagementClient(config, service_endpoint=service_endpoint)
-            response = client.get_connection_validation(
-                registry_id=request.pop(util.camelize('registryId')),
-                connection_validation_key=request.pop(util.camelize('connectionValidationKey')),
-                retry_strategy=oci.retry.NoneRetryStrategy(),
-                **(util.camel_to_snake_keys(request))
-            )
-            result.append(response)
-        except oci_exception.ServiceError as service_exception:
-            service_error = service_exception
-
-        testing_service_client.validate_result(
-            'data_connectivity',
-            'GetConnectionValidation',
-            request_containers[i]['containerId'],
-            request_containers[i]['request'],
-            result,
-            service_error,
-            'connectionValidation',
             False,
             False
         )
@@ -1335,6 +1293,48 @@ def test_get_endpoint(testing_service_client):
             result,
             service_error,
             'endpoint',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dcms_dev_ww_grp@oracle.com" jiraProject="DCMS" opsJiraProject="DCMS"
+def test_get_engine_configurations(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_connectivity', 'GetEngineConfigurations'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_connectivity', util.camelize('data_connectivity_management'), 'GetEngineConfigurations')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_connectivity', api_name='GetEngineConfigurations')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_connectivity.DataConnectivityManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_engine_configurations(
+                registry_id=request.pop(util.camelize('registryId')),
+                connection_key=request.pop(util.camelize('connectionKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_connectivity',
+            'GetEngineConfigurations',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'configDetails',
             False,
             False
         )
@@ -1676,69 +1676,6 @@ def test_get_work_request(testing_service_client):
             'workRequest',
             False,
             False
-        )
-
-
-# IssueRoutingInfo tag="default" email="di_dcms_dev_ww_grp@oracle.com" jiraProject="DCMS" opsJiraProject="DCMS"
-def test_list_connection_validations(testing_service_client):
-    if not testing_service_client.is_api_enabled('data_connectivity', 'ListConnectionValidations'):
-        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
-
-    config = util.test_config_to_python_config(
-        testing_service_client.get_test_config('data_connectivity', util.camelize('data_connectivity_management'), 'ListConnectionValidations')
-    )
-    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
-
-    request_containers = testing_service_client.get_requests(service_name='data_connectivity', api_name='ListConnectionValidations')
-
-    for i in range(len(request_containers)):
-        request = request_containers[i]['request'].copy()
-        result = []
-        service_error = None
-
-        try:
-            service_endpoint = config['endpoint'] if 'endpoint' in config else None
-            client = oci.data_connectivity.DataConnectivityManagementClient(config, service_endpoint=service_endpoint)
-            response = client.list_connection_validations(
-                registry_id=request.pop(util.camelize('registryId')),
-                retry_strategy=oci.retry.NoneRetryStrategy(),
-                **(util.camel_to_snake_keys(request))
-            )
-            result.append(response)
-            if not mock_mode and response.has_next_page:
-                next_page = response.headers['opc-next-page']
-                request = request_containers[i]['request'].copy()
-                next_response = client.list_connection_validations(
-                    registry_id=request.pop(util.camelize('registryId')),
-                    page=next_page,
-                    retry_strategy=oci.retry.NoneRetryStrategy(),
-                    **(util.camel_to_snake_keys(request))
-                )
-                result.append(next_response)
-
-                prev_page = 'opc-prev-page'
-                if prev_page in next_response.headers:
-                    request = request_containers[i]['request'].copy()
-                    prev_response = client.list_connection_validations(
-                        registry_id=request.pop(util.camelize('registryId')),
-                        page=next_response.headers[prev_page],
-                        retry_strategy=oci.retry.NoneRetryStrategy(),
-                        **(util.camel_to_snake_keys(request))
-                    )
-                    result.append(prev_response)
-        except oci_exception.ServiceError as service_exception:
-            service_error = service_exception
-
-        testing_service_client.validate_result(
-            'data_connectivity',
-            'ListConnectionValidations',
-            request_containers[i]['containerId'],
-            request_containers[i]['request'],
-            result,
-            service_error,
-            'connectionValidationSummaryCollection',
-            False,
-            True
         )
 
 

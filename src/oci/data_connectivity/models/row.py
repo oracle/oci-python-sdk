@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Row(object):
     """
-    Data preview row calues.
+    Data preview row values.
     """
 
     def __init__(self, **kwargs):

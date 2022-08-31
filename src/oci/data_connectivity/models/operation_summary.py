@@ -10,12 +10,16 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OperationSummary(object):
     """
-    The operation summary object
+    The operation summary object.
     """
 
     #: A constant which can be used with the model_type property of a OperationSummary.
     #: This constant has a value of "PROCEDURE"
     MODEL_TYPE_PROCEDURE = "PROCEDURE"
+
+    #: A constant which can be used with the model_type property of a OperationSummary.
+    #: This constant has a value of "API"
+    MODEL_TYPE_API = "API"
 
     def __init__(self, **kwargs):
         """
@@ -23,12 +27,13 @@ class OperationSummary(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.data_connectivity.models.OperationSummaryFromProcedure`
+        * :class:`~oci.data_connectivity.models.OperationSummaryFromApi`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param model_type:
             The value to assign to the model_type property of this OperationSummary.
-            Allowed values for this property are: "PROCEDURE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PROCEDURE", "API", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -60,6 +65,9 @@ class OperationSummary(object):
 
         if type == 'PROCEDURE':
             return 'OperationSummaryFromProcedure'
+
+        if type == 'API':
+            return 'OperationSummaryFromApi'
         else:
             return 'OperationSummary'
 
@@ -67,9 +75,9 @@ class OperationSummary(object):
     def model_type(self):
         """
         **[Required]** Gets the model_type of this OperationSummary.
-        The operation type
+        The operation type.
 
-        Allowed values for this property are: "PROCEDURE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROCEDURE", "API", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -82,13 +90,13 @@ class OperationSummary(object):
     def model_type(self, model_type):
         """
         Sets the model_type of this OperationSummary.
-        The operation type
+        The operation type.
 
 
         :param model_type: The model_type of this OperationSummary.
         :type: str
         """
-        allowed_values = ["PROCEDURE"]
+        allowed_values = ["PROCEDURE", "API"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type

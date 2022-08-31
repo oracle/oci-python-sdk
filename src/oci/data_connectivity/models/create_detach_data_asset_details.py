@@ -37,7 +37,7 @@ class CreateDetachDataAssetDetails(object):
     def data_assets(self):
         """
         **[Required]** Gets the data_assets of this CreateDetachDataAssetDetails.
-        The array of DataAsset keys
+        The array of DataAsset keys.
 
 
         :return: The data_assets of this CreateDetachDataAssetDetails.
@@ -49,7 +49,7 @@ class CreateDetachDataAssetDetails(object):
     def data_assets(self, data_assets):
         """
         Sets the data_assets of this CreateDetachDataAssetDetails.
-        The array of DataAsset keys
+        The array of DataAsset keys.
 
 
         :param data_assets: The data_assets of this CreateDetachDataAssetDetails.

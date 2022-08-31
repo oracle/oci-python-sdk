@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DpEndpointFromPublicDetails(DpEndpointDetails):
     """
-    The endpoint details for a public endpoint.
+    The endpoint details of a public endpoint.
     """
 
     def __init__(self, **kwargs):

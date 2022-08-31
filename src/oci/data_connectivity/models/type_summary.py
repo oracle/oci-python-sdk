@@ -51,7 +51,7 @@ class TypeSummary(object):
     def key(self):
         """
         **[Required]** Gets the key of this TypeSummary.
-        unique id of specefic data asset type.
+        The unique ID of the specific data asset type.
 
 
         :return: The key of this TypeSummary.
@@ -63,7 +63,7 @@ class TypeSummary(object):
     def key(self, key):
         """
         Sets the key of this TypeSummary.
-        unique id of specefic data asset type.
+        The unique ID of the specific data asset type.
 
 
         :param key: The key of this TypeSummary.
@@ -99,7 +99,7 @@ class TypeSummary(object):
     def description(self):
         """
         Gets the description of this TypeSummary.
-        desctription for the specific data asset type.
+        Description for the specific data asset type.
 
 
         :return: The description of this TypeSummary.
@@ -111,7 +111,7 @@ class TypeSummary(object):
     def description(self, description):
         """
         Sets the description of this TypeSummary.
-        desctription for the specific data asset type.
+        Description for the specific data asset type.
 
 
         :param description: The description of this TypeSummary.

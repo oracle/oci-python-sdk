@@ -37,7 +37,7 @@ class AttachDataAssetInfo(object):
     def reference_info(self):
         """
         **[Required]** Gets the reference_info of this AttachDataAssetInfo.
-        Map of DataAsset name as key and results as value
+        Mapping the DataAsset name as the key to the results as the value.
 
 
         :return: The reference_info of this AttachDataAssetInfo.
@@ -49,7 +49,7 @@ class AttachDataAssetInfo(object):
     def reference_info(self, reference_info):
         """
         Sets the reference_info of this AttachDataAssetInfo.
-        Map of DataAsset name as key and results as value
+        Mapping the DataAsset name as the key to the results as the value.
 
 
         :param reference_info: The reference_info of this AttachDataAssetInfo.

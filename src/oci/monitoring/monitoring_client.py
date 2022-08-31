@@ -878,6 +878,9 @@ class MonitoringClient(object):
     def list_alarms_status(self, compartment_id, **kwargs):
         """
         List the status of each alarm in the specified compartment.
+        Status is collective, across all metric streams in the alarm.
+        To list alarm status for each metric stream, use :func:`retrieve_dimension_states`.
+        The alarm attribute `isNotificationsPerMetricDimensionEnabled` must be set to `true`.
         For important limits information, see `Limits on Monitoring`__.
 
         This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
@@ -1192,7 +1195,7 @@ class MonitoringClient(object):
 
         *A metric group is the combination of a given metric, metric namespace, and tenancy for the purpose of determining limits.
         A dimension is a qualifier provided in a metric definition.
-        A metric stream is an individual set of aggregated data for a metric, typically specific to a resource.
+        A metric stream is an individual set of aggregated data for a metric with zero or more dimension values.
         For more information about metric-related concepts, see `Monitoring Concepts`__.
 
         The endpoints for this operation differ from other Monitoring operations. Replace the string `telemetry` with `telemetry-ingestion` in the endpoint, as in the following example:
@@ -1210,6 +1213,9 @@ class MonitoringClient(object):
         :param str opc_request_id: (optional)
             Customer part of the request identifier token. If you need to contact Oracle about a particular
             request, please provide the complete request ID.
+
+        :param str content_encoding: (optional)
+            The optional Content-Encoding header that defines the content encodings that were applied to the payload.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1238,7 +1244,8 @@ class MonitoringClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "content_encoding"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1248,7 +1255,8 @@ class MonitoringClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "content-encoding": kwargs.get("content_encoding", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -1385,6 +1393,144 @@ class MonitoringClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def retrieve_dimension_states(self, alarm_id, **kwargs):
+        """
+        Lists the current alarm status of each metric stream, where status is derived from the metric stream's last associated transition.
+        Optionally filter by status value and one or more dimension key-value pairs.
+        This operation is only valid for alarms that have notifications per dimension enabled (`isNotificationsPerMetricDimensionEnabled=true`).
+         If `isNotificationsPerMetricDimensionEnabled` for the alarm is false or null, then no results are returned.
+
+        For important limits information, see `Limits on Monitoring`__.
+
+         This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+         Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+         or transactions, per second (TPS) for a given tenancy.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits
+
+
+        :param str alarm_id: (required)
+            The `OCID`__ of an alarm.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Customer part of the request identifier token. If you need to contact Oracle about a particular
+            request, please provide the complete request ID.
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
+            For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
+            For important details about how pagination works, see `List Pagination`__.
+
+            Default: 1000
+
+            Example: 500
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param oci.monitoring.models.RetrieveDimensionStatesDetails retrieve_dimension_states_details: (optional)
+            The configuration details for retrieving the current alarm status of each metric stream.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.monitoring.models.AlarmDimensionStatesCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/monitoring/retrieve_dimension_states.py.html>`__ to see an example of how to use retrieve_dimension_states API.
+        """
+        resource_path = "/alarms/{alarmId}/actions/retrieveDimensionStates"
+        method = "POST"
+        operation_name = "retrieve_dimension_states"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/AlarmDimensionStatesCollection/RetrieveDimensionStates"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "page",
+            "limit",
+            "retrieve_dimension_states_details"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "retrieve_dimension_states got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "alarmId": alarm_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('retrieve_dimension_states_details'),
+                response_type="AlarmDimensionStatesCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('retrieve_dimension_states_details'),
+                response_type="AlarmDimensionStatesCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)

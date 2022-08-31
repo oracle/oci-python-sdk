@@ -116,7 +116,7 @@ class OutputPort(TypedObject):
     def port_type(self):
         """
         Gets the port_type of this OutputPort.
-        The port details for the data asset.Type.
+        The port details of the data asset type.
 
         Allowed values for this property are: "DATA", "CONTROL", "MODEL"
 
@@ -130,7 +130,7 @@ class OutputPort(TypedObject):
     def port_type(self, port_type):
         """
         Sets the port_type of this OutputPort.
-        The port details for the data asset.Type.
+        The port details of the data asset type.
 
 
         :param port_type: The port_type of this OutputPort.

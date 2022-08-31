@@ -33,6 +33,10 @@ class CreateEntityShapeDetails(object):
     #: This constant has a value of "SQL_ENTITY"
     MODEL_TYPE_SQL_ENTITY = "SQL_ENTITY"
 
+    #: A constant which can be used with the model_type property of a CreateEntityShapeDetails.
+    #: This constant has a value of "MESSAGE_ENTITY"
+    MODEL_TYPE_MESSAGE_ENTITY = "MESSAGE_ENTITY"
+
     #: A constant which can be used with the entity_type property of a CreateEntityShapeDetails.
     #: This constant has a value of "TABLE"
     ENTITY_TYPE_TABLE = "TABLE"
@@ -49,12 +53,21 @@ class CreateEntityShapeDetails(object):
     #: This constant has a value of "SQL"
     ENTITY_TYPE_SQL = "SQL"
 
+    #: A constant which can be used with the entity_type property of a CreateEntityShapeDetails.
+    #: This constant has a value of "DATA_STORE"
+    ENTITY_TYPE_DATA_STORE = "DATA_STORE"
+
+    #: A constant which can be used with the entity_type property of a CreateEntityShapeDetails.
+    #: This constant has a value of "MESSAGE"
+    ENTITY_TYPE_MESSAGE = "MESSAGE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateEntityShapeDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.data_connectivity.models.CreateEntityShapeFromDataStore`
+        * :class:`~oci.data_connectivity.models.CreateEntityShapeFromMessage`
         * :class:`~oci.data_connectivity.models.CreateEntityShapeFromTable`
         * :class:`~oci.data_connectivity.models.CreateEntityShapeFromSQL`
         * :class:`~oci.data_connectivity.models.CreateEntityShapeFromFile`
@@ -64,7 +77,7 @@ class CreateEntityShapeDetails(object):
 
         :param model_type:
             The value to assign to the model_type property of this CreateEntityShapeDetails.
-            Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY"
+            Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY", "MESSAGE_ENTITY"
         :type model_type: str
 
         :param key:
@@ -101,7 +114,7 @@ class CreateEntityShapeDetails(object):
 
         :param entity_type:
             The value to assign to the entity_type property of this CreateEntityShapeDetails.
-            Allowed values for this property are: "TABLE", "VIEW", "FILE", "SQL"
+            Allowed values for this property are: "TABLE", "VIEW", "FILE", "SQL", "DATA_STORE", "MESSAGE"
         :type entity_type: str
 
         :param other_type_label:
@@ -209,6 +222,9 @@ class CreateEntityShapeDetails(object):
         if type == 'DATA_STORE_ENTITY':
             return 'CreateEntityShapeFromDataStore'
 
+        if type == 'MESSAGE_ENTITY':
+            return 'CreateEntityShapeFromMessage'
+
         if type == 'TABLE_ENTITY':
             return 'CreateEntityShapeFromTable'
 
@@ -229,7 +245,7 @@ class CreateEntityShapeDetails(object):
         **[Required]** Gets the model_type of this CreateEntityShapeDetails.
         The data entity type.
 
-        Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY"
+        Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY", "MESSAGE_ENTITY"
 
 
         :return: The model_type of this CreateEntityShapeDetails.
@@ -247,7 +263,7 @@ class CreateEntityShapeDetails(object):
         :param model_type: The model_type of this CreateEntityShapeDetails.
         :type: str
         """
-        allowed_values = ["VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY"]
+        allowed_values = ["VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY", "MESSAGE_ENTITY"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             raise ValueError(
                 "Invalid value for `model_type`, must be None or one of {0}"
@@ -283,7 +299,7 @@ class CreateEntityShapeDetails(object):
     def model_version(self):
         """
         Gets the model_version of this CreateEntityShapeDetails.
-        The object's model version.
+        The model version of the object.
 
 
         :return: The model_version of this CreateEntityShapeDetails.
@@ -295,7 +311,7 @@ class CreateEntityShapeDetails(object):
     def model_version(self, model_version):
         """
         Sets the model_version of this CreateEntityShapeDetails.
-        The object's model version.
+        The model version of the object.
 
 
         :param model_version: The model_version of this CreateEntityShapeDetails.
@@ -327,7 +343,7 @@ class CreateEntityShapeDetails(object):
     def name(self):
         """
         **[Required]** Gets the name of this CreateEntityShapeDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this CreateEntityShapeDetails.
@@ -339,7 +355,7 @@ class CreateEntityShapeDetails(object):
     def name(self, name):
         """
         Sets the name of this CreateEntityShapeDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this CreateEntityShapeDetails.
@@ -375,7 +391,7 @@ class CreateEntityShapeDetails(object):
     def external_key(self):
         """
         Gets the external_key of this CreateEntityShapeDetails.
-        The external key for the object.
+        The external key of the object.
 
 
         :return: The external_key of this CreateEntityShapeDetails.
@@ -387,7 +403,7 @@ class CreateEntityShapeDetails(object):
     def external_key(self, external_key):
         """
         Sets the external_key of this CreateEntityShapeDetails.
-        The external key for the object.
+        The external key of the object.
 
 
         :param external_key: The external_key of this CreateEntityShapeDetails.
@@ -445,7 +461,7 @@ class CreateEntityShapeDetails(object):
         Gets the entity_type of this CreateEntityShapeDetails.
         The entity type.
 
-        Allowed values for this property are: "TABLE", "VIEW", "FILE", "SQL"
+        Allowed values for this property are: "TABLE", "VIEW", "FILE", "SQL", "DATA_STORE", "MESSAGE"
 
 
         :return: The entity_type of this CreateEntityShapeDetails.
@@ -463,7 +479,7 @@ class CreateEntityShapeDetails(object):
         :param entity_type: The entity_type of this CreateEntityShapeDetails.
         :type: str
         """
-        allowed_values = ["TABLE", "VIEW", "FILE", "SQL"]
+        allowed_values = ["TABLE", "VIEW", "FILE", "SQL", "DATA_STORE", "MESSAGE"]
         if not value_allowed_none_or_none_sentinel(entity_type, allowed_values):
             raise ValueError(
                 "Invalid value for `entity_type`, must be None or one of {0}"
@@ -595,7 +611,7 @@ class CreateEntityShapeDetails(object):
     def identifier(self):
         """
         Gets the identifier of this CreateEntityShapeDetails.
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this CreateEntityShapeDetails.
@@ -607,7 +623,7 @@ class CreateEntityShapeDetails(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this CreateEntityShapeDetails.
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this CreateEntityShapeDetails.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ProfileStat(object):
     """
-    To capture all the statistical data related to profiling
+    To capture all the statistical data related to profiling.
     """
 
     def __init__(self, **kwargs):
@@ -68,7 +68,7 @@ class ProfileStat(object):
     def value(self):
         """
         Gets the value of this ProfileStat.
-        Value of the confidence of the profile result
+        Value of the confidence of the profile result.
 
 
         :return: The value of this ProfileStat.
@@ -80,7 +80,7 @@ class ProfileStat(object):
     def value(self, value):
         """
         Sets the value of this ProfileStat.
-        Value of the confidence of the profile result
+        Value of the confidence of the profile result.
 
 
         :param value: The value of this ProfileStat.

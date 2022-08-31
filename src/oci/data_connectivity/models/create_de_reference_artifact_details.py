@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDeReferenceArtifactDetails(object):
     """
-    Represents the info needed for de-referencing a dcms artifact.
+    Represents the info required for de-referencing a DCMS artifact.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class CreateDeReferenceArtifactDetails(object):
     def service_artifact_id(self):
         """
         **[Required]** Gets the service_artifact_id of this CreateDeReferenceArtifactDetails.
-        unique id of service which is referencing data asset.
+        The unique ID of the service that is referencing a data asset.
 
 
         :return: The service_artifact_id of this CreateDeReferenceArtifactDetails.
@@ -49,7 +49,7 @@ class CreateDeReferenceArtifactDetails(object):
     def service_artifact_id(self, service_artifact_id):
         """
         Sets the service_artifact_id of this CreateDeReferenceArtifactDetails.
-        unique id of service which is referencing data asset.
+        The unique ID of the service that is referencing a data asset.
 
 
         :param service_artifact_id: The service_artifact_id of this CreateDeReferenceArtifactDetails.

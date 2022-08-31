@@ -52,6 +52,18 @@ class CsvFormatAttribute(AbstractFormatAttribute):
             The value to assign to the timestamp_format property of this CsvFormatAttribute.
         :type timestamp_format: str
 
+        :param is_quote_all:
+            The value to assign to the is_quote_all property of this CsvFormatAttribute.
+        :type is_quote_all: bool
+
+        :param is_multiline:
+            The value to assign to the is_multiline property of this CsvFormatAttribute.
+        :type is_multiline: bool
+
+        :param is_trailing_delimiter:
+            The value to assign to the is_trailing_delimiter property of this CsvFormatAttribute.
+        :type is_trailing_delimiter: bool
+
         """
         self.swagger_types = {
             'model_type': 'str',
@@ -61,7 +73,10 @@ class CsvFormatAttribute(AbstractFormatAttribute):
             'quote_character': 'str',
             'has_header': 'bool',
             'is_file_pattern': 'bool',
-            'timestamp_format': 'str'
+            'timestamp_format': 'str',
+            'is_quote_all': 'bool',
+            'is_multiline': 'bool',
+            'is_trailing_delimiter': 'bool'
         }
 
         self.attribute_map = {
@@ -72,7 +87,10 @@ class CsvFormatAttribute(AbstractFormatAttribute):
             'quote_character': 'quoteCharacter',
             'has_header': 'hasHeader',
             'is_file_pattern': 'isFilePattern',
-            'timestamp_format': 'timestampFormat'
+            'timestamp_format': 'timestampFormat',
+            'is_quote_all': 'isQuoteAll',
+            'is_multiline': 'isMultiline',
+            'is_trailing_delimiter': 'isTrailingDelimiter'
         }
 
         self._model_type = None
@@ -83,6 +101,9 @@ class CsvFormatAttribute(AbstractFormatAttribute):
         self._has_header = None
         self._is_file_pattern = None
         self._timestamp_format = None
+        self._is_quote_all = None
+        self._is_multiline = None
+        self._is_trailing_delimiter = None
         self._model_type = 'CSV_FORMAT'
 
     @property
@@ -252,6 +273,78 @@ class CsvFormatAttribute(AbstractFormatAttribute):
         :type: str
         """
         self._timestamp_format = timestamp_format
+
+    @property
+    def is_quote_all(self):
+        """
+        Gets the is_quote_all of this CsvFormatAttribute.
+        Defines whether the quote entire content while performing read/write.
+
+
+        :return: The is_quote_all of this CsvFormatAttribute.
+        :rtype: bool
+        """
+        return self._is_quote_all
+
+    @is_quote_all.setter
+    def is_quote_all(self, is_quote_all):
+        """
+        Sets the is_quote_all of this CsvFormatAttribute.
+        Defines whether the quote entire content while performing read/write.
+
+
+        :param is_quote_all: The is_quote_all of this CsvFormatAttribute.
+        :type: bool
+        """
+        self._is_quote_all = is_quote_all
+
+    @property
+    def is_multiline(self):
+        """
+        Gets the is_multiline of this CsvFormatAttribute.
+        Defines whether the file has a multiline content
+
+
+        :return: The is_multiline of this CsvFormatAttribute.
+        :rtype: bool
+        """
+        return self._is_multiline
+
+    @is_multiline.setter
+    def is_multiline(self, is_multiline):
+        """
+        Sets the is_multiline of this CsvFormatAttribute.
+        Defines whether the file has a multiline content
+
+
+        :param is_multiline: The is_multiline of this CsvFormatAttribute.
+        :type: bool
+        """
+        self._is_multiline = is_multiline
+
+    @property
+    def is_trailing_delimiter(self):
+        """
+        Gets the is_trailing_delimiter of this CsvFormatAttribute.
+        Defines whether the file has a trailing delimiter
+
+
+        :return: The is_trailing_delimiter of this CsvFormatAttribute.
+        :rtype: bool
+        """
+        return self._is_trailing_delimiter
+
+    @is_trailing_delimiter.setter
+    def is_trailing_delimiter(self, is_trailing_delimiter):
+        """
+        Sets the is_trailing_delimiter of this CsvFormatAttribute.
+        Defines whether the file has a trailing delimiter
+
+
+        :param is_trailing_delimiter: The is_trailing_delimiter of this CsvFormatAttribute.
+        :type: bool
+        """
+        self._is_trailing_delimiter = is_trailing_delimiter
 
     def __repr__(self):
         return formatted_flat_dict(self)
