@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDataAssetDetails(object):
     """
-    Properties used in data asset update operations.
+    Properties used in the update data asset operations.
     """
 
     def __init__(self, **kwargs):
@@ -190,7 +190,7 @@ class UpdateDataAssetDetails(object):
     def name(self):
         """
         Gets the name of this UpdateDataAssetDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this UpdateDataAssetDetails.
@@ -202,7 +202,7 @@ class UpdateDataAssetDetails(object):
     def name(self, name):
         """
         Sets the name of this UpdateDataAssetDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this UpdateDataAssetDetails.
@@ -286,7 +286,7 @@ class UpdateDataAssetDetails(object):
     def identifier(self):
         """
         Gets the identifier of this UpdateDataAssetDetails.
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this UpdateDataAssetDetails.
@@ -298,7 +298,7 @@ class UpdateDataAssetDetails(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this UpdateDataAssetDetails.
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this UpdateDataAssetDetails.
@@ -310,7 +310,7 @@ class UpdateDataAssetDetails(object):
     def external_key(self):
         """
         Gets the external_key of this UpdateDataAssetDetails.
-        The external key for the object.
+        The external key of the object.
 
 
         :return: The external_key of this UpdateDataAssetDetails.
@@ -322,7 +322,7 @@ class UpdateDataAssetDetails(object):
     def external_key(self, external_key):
         """
         Sets the external_key of this UpdateDataAssetDetails.
-        The external key for the object.
+        The external key of the object.
 
 
         :param external_key: The external_key of this UpdateDataAssetDetails.
@@ -334,7 +334,7 @@ class UpdateDataAssetDetails(object):
     def asset_properties(self):
         """
         Gets the asset_properties of this UpdateDataAssetDetails.
-        Additional properties for the data asset.
+        Additional properties of the data asset.
 
 
         :return: The asset_properties of this UpdateDataAssetDetails.
@@ -346,7 +346,7 @@ class UpdateDataAssetDetails(object):
     def asset_properties(self, asset_properties):
         """
         Sets the asset_properties of this UpdateDataAssetDetails.
-        Additional properties for the data asset.
+        Additional properties of the data asset.
 
 
         :param asset_properties: The asset_properties of this UpdateDataAssetDetails.
@@ -358,7 +358,7 @@ class UpdateDataAssetDetails(object):
     def properties(self):
         """
         **[Required]** Gets the properties of this UpdateDataAssetDetails.
-        All the properties for the data asset in a key-value map format.
+        All the properties of the data asset in a key-value map format.
 
 
         :return: The properties of this UpdateDataAssetDetails.
@@ -370,7 +370,7 @@ class UpdateDataAssetDetails(object):
     def properties(self, properties):
         """
         Sets the properties of this UpdateDataAssetDetails.
-        All the properties for the data asset in a key-value map format.
+        All the properties of the data asset in a key-value map format.
 
 
         :param properties: The properties of this UpdateDataAssetDetails.

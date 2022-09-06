@@ -128,7 +128,7 @@ class ForeignKey(Key):
     def model_version(self):
         """
         Gets the model_version of this ForeignKey.
-        The object's model version.
+        The model version of the object.
 
 
         :return: The model_version of this ForeignKey.
@@ -140,7 +140,7 @@ class ForeignKey(Key):
     def model_version(self, model_version):
         """
         Sets the model_version of this ForeignKey.
-        The object's model version.
+        The model version of the object.
 
 
         :param model_version: The model_version of this ForeignKey.
@@ -172,7 +172,7 @@ class ForeignKey(Key):
     def name(self):
         """
         Gets the name of this ForeignKey.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this ForeignKey.
@@ -184,7 +184,7 @@ class ForeignKey(Key):
     def name(self, name):
         """
         Sets the name of this ForeignKey.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this ForeignKey.

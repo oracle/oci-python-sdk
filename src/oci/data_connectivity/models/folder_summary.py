@@ -124,7 +124,7 @@ class FolderSummary(object):
     def key(self):
         """
         Gets the key of this FolderSummary.
-        Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 
 
         :return: The key of this FolderSummary.
@@ -136,7 +136,7 @@ class FolderSummary(object):
     def key(self, key):
         """
         Sets the key of this FolderSummary.
-        Generated key that can be used in API calls to identify folder. On scenarios where reference to the folder is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the folder. In scenarios where reference to the folder is required, a value can be passed in create.
 
 
         :param key: The key of this FolderSummary.
@@ -192,7 +192,7 @@ class FolderSummary(object):
     def name(self):
         """
         Gets the name of this FolderSummary.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this FolderSummary.
@@ -204,7 +204,7 @@ class FolderSummary(object):
     def name(self, name):
         """
         Sets the name of this FolderSummary.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this FolderSummary.
@@ -216,7 +216,7 @@ class FolderSummary(object):
     def description(self):
         """
         Gets the description of this FolderSummary.
-        User-defined description for the folder.
+        User-defined description of the folder.
 
 
         :return: The description of this FolderSummary.
@@ -228,7 +228,7 @@ class FolderSummary(object):
     def description(self, description):
         """
         Sets the description of this FolderSummary.
-        User-defined description for the folder.
+        User-defined description of the folder.
 
 
         :param description: The description of this FolderSummary.
@@ -288,7 +288,7 @@ class FolderSummary(object):
     def identifier(self):
         """
         Gets the identifier of this FolderSummary.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this FolderSummary.
@@ -300,7 +300,7 @@ class FolderSummary(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this FolderSummary.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this FolderSummary.
@@ -312,7 +312,7 @@ class FolderSummary(object):
     def data_assets(self):
         """
         Gets the data_assets of this FolderSummary.
-        List of data assets which belongs to this folder
+        The list of data assets that belong to the folder.
 
 
         :return: The data_assets of this FolderSummary.
@@ -324,7 +324,7 @@ class FolderSummary(object):
     def data_assets(self, data_assets):
         """
         Sets the data_assets of this FolderSummary.
-        List of data assets which belongs to this folder
+        The list of data assets that belong to the folder.
 
 
         :param data_assets: The data_assets of this FolderSummary.

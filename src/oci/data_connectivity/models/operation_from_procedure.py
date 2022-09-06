@@ -19,9 +19,13 @@ class OperationFromProcedure(Operation):
         of this class is ``PROCEDURE`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param operation_attributes:
+            The value to assign to the operation_attributes property of this OperationFromProcedure.
+        :type operation_attributes: oci.data_connectivity.models.AbstractOperationAttributes
+
         :param model_type:
             The value to assign to the model_type property of this OperationFromProcedure.
-            Allowed values for this property are: "PROCEDURE"
+            Allowed values for this property are: "PROCEDURE", "API"
         :type model_type: str
 
         :param metadata:
@@ -66,6 +70,7 @@ class OperationFromProcedure(Operation):
 
         """
         self.swagger_types = {
+            'operation_attributes': 'AbstractOperationAttributes',
             'model_type': 'str',
             'metadata': 'ObjectMetadata',
             'key': 'str',
@@ -80,6 +85,7 @@ class OperationFromProcedure(Operation):
         }
 
         self.attribute_map = {
+            'operation_attributes': 'operationAttributes',
             'model_type': 'modelType',
             'metadata': 'metadata',
             'key': 'key',
@@ -93,6 +99,7 @@ class OperationFromProcedure(Operation):
             'object_status': 'objectStatus'
         }
 
+        self._operation_attributes = None
         self._model_type = None
         self._metadata = None
         self._key = None
@@ -246,7 +253,7 @@ class OperationFromProcedure(Operation):
     def external_key(self):
         """
         Gets the external_key of this OperationFromProcedure.
-        The external key for the object.
+        The external key of the object.
 
 
         :return: The external_key of this OperationFromProcedure.
@@ -258,7 +265,7 @@ class OperationFromProcedure(Operation):
     def external_key(self, external_key):
         """
         Sets the external_key of this OperationFromProcedure.
-        The external key for the object.
+        The external key of the object.
 
 
         :param external_key: The external_key of this OperationFromProcedure.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class FolderSummaryCollection(object):
     """
-    This is the collection of folder summaries, it may be a collection of lightweight details or full definitions.
+    This is the collection of folder summaries; it can be a collection of lightweight details or full definitions.
     """
 
     def __init__(self, **kwargs):

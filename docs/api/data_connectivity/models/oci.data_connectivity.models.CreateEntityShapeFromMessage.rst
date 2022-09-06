@@ -1,9 +1,9 @@
-ConnectionValidationSummaryCollection
-=====================================
+CreateEntityShapeFromMessage
+============================
 
 .. currentmodule:: oci.data_connectivity.models
 
-.. autoclass:: ConnectionValidationSummaryCollection
+.. autoclass:: CreateEntityShapeFromMessage
     :show-inheritance:
     :special-members: __init__
     :members:

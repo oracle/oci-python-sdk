@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ObjectFreqStat(object):
     """
-    One specific element. Its meaning changes in the context i.e. For ValueFrequency, the value represents a column value. For Patterns the value represents a pattern. For DataType the value represents a data type. For DataType formats (pertaining to date time) the value represent a format.
+    One specific element. Its meaning changes according to the context. For example, for ValueFrequency, the value represents a column value. For Patterns the value represents a pattern. For DataType the value represents a data type. For DataType formats (pertaining to date time) the value represents a format.
     """
 
     def __init__(self, **kwargs):
@@ -58,7 +58,7 @@ class ObjectFreqStat(object):
     def value(self):
         """
         Gets the value of this ObjectFreqStat.
-        Value of the confidence of the profile result
+        Value of the confidence of the profile result.
 
 
         :return: The value of this ObjectFreqStat.
@@ -70,7 +70,7 @@ class ObjectFreqStat(object):
     def value(self, value):
         """
         Sets the value of this ObjectFreqStat.
-        Value of the confidence of the profile result
+        Value of the confidence of the profile result.
 
 
         :param value: The value of this ObjectFreqStat.
@@ -106,7 +106,7 @@ class ObjectFreqStat(object):
     def freq(self):
         """
         Gets the freq of this ObjectFreqStat.
-        How many times that value occurred.
+        The number of times the value appeared.
 
 
         :return: The freq of this ObjectFreqStat.
@@ -118,7 +118,7 @@ class ObjectFreqStat(object):
     def freq(self, freq):
         """
         Sets the freq of this ObjectFreqStat.
-        How many times that value occurred.
+        The number of times the value appeared.
 
 
         :param freq: The freq of this ObjectFreqStat.

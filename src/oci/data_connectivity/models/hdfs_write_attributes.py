@@ -47,7 +47,7 @@ class HdfsWriteAttributes(AbstractWriteAttribute):
     def write_to_single_file(self):
         """
         Gets the write_to_single_file of this HdfsWriteAttributes.
-        Specifies whether to write output to single-file or not.
+        Specifies whether to write output to a single file.
 
 
         :return: The write_to_single_file of this HdfsWriteAttributes.
@@ -59,7 +59,7 @@ class HdfsWriteAttributes(AbstractWriteAttribute):
     def write_to_single_file(self, write_to_single_file):
         """
         Sets the write_to_single_file of this HdfsWriteAttributes.
-        Specifies whether to write output to single-file or not.
+        Specifies whether to write output to a single file.
 
 
         :param write_to_single_file: The write_to_single_file of this HdfsWriteAttributes.

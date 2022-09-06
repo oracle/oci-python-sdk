@@ -123,7 +123,7 @@ class ConfigParameterDefinition(object):
     def description(self):
         """
         Gets the description of this ConfigParameterDefinition.
-        A user defined description for the object.
+        A user-defined description for the object.
 
 
         :return: The description of this ConfigParameterDefinition.
@@ -135,7 +135,7 @@ class ConfigParameterDefinition(object):
     def description(self, description):
         """
         Sets the description of this ConfigParameterDefinition.
-        A user defined description for the object.
+        A user-defined description for the object.
 
 
         :param description: The description of this ConfigParameterDefinition.
@@ -195,7 +195,7 @@ class ConfigParameterDefinition(object):
     def is_static(self):
         """
         Gets the is_static of this ConfigParameterDefinition.
-        Specifies whether the parameter is static or not.
+        Specifies whether the parameter is static.
 
 
         :return: The is_static of this ConfigParameterDefinition.
@@ -207,7 +207,7 @@ class ConfigParameterDefinition(object):
     def is_static(self, is_static):
         """
         Sets the is_static of this ConfigParameterDefinition.
-        Specifies whether the parameter is static or not.
+        Specifies whether the parameter is static.
 
 
         :param is_static: The is_static of this ConfigParameterDefinition.
@@ -219,7 +219,7 @@ class ConfigParameterDefinition(object):
     def is_class_field_value(self):
         """
         Gets the is_class_field_value of this ConfigParameterDefinition.
-        Specifies whether the parameter is a class field or not.
+        Specifies whether the parameter is a class field.
 
 
         :return: The is_class_field_value of this ConfigParameterDefinition.
@@ -231,7 +231,7 @@ class ConfigParameterDefinition(object):
     def is_class_field_value(self, is_class_field_value):
         """
         Sets the is_class_field_value of this ConfigParameterDefinition.
-        Specifies whether the parameter is a class field or not.
+        Specifies whether the parameter is a class field.
 
 
         :param is_class_field_value: The is_class_field_value of this ConfigParameterDefinition.

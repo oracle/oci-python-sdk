@@ -67,6 +67,7 @@ Database Management
     oci.database_management.models.AwrDbWaitEventCollection
     oci.database_management.models.AwrDbWaitEventSummary
     oci.database_management.models.AwrQueryResult
+    oci.database_management.models.BasicPreferredCredential
     oci.database_management.models.ChangeDatabaseParameterDetails
     oci.database_management.models.ChangeDatabaseParametersDetails
     oci.database_management.models.ChangeDbManagementPrivateEndpointCompartmentDetails
@@ -161,6 +162,9 @@ Database Management
     oci.database_management.models.ParentGroup
     oci.database_management.models.PdbMetrics
     oci.database_management.models.PdbStatusDetails
+    oci.database_management.models.PreferredCredential
+    oci.database_management.models.PreferredCredentialCollection
+    oci.database_management.models.PreferredCredentialSummary
     oci.database_management.models.ProxiedForUserCollection
     oci.database_management.models.ProxiedForUserSummary
     oci.database_management.models.ProxyUserCollection
@@ -219,12 +223,17 @@ Database Management
     oci.database_management.models.TablespaceCollection
     oci.database_management.models.TablespaceStorageSize
     oci.database_management.models.TablespaceSummary
+    oci.database_management.models.TestBasicPreferredCredentialDetails
+    oci.database_management.models.TestPreferredCredentialDetails
+    oci.database_management.models.TestPreferredCredentialStatus
     oci.database_management.models.TimeSeriesMetricDataPoint
     oci.database_management.models.TimeSeriesMetricDefinition
+    oci.database_management.models.UpdateBasicPreferredCredentialDetails
     oci.database_management.models.UpdateDatabaseParametersResult
     oci.database_management.models.UpdateDbManagementPrivateEndpointDetails
     oci.database_management.models.UpdateJobDetails
     oci.database_management.models.UpdateManagedDatabaseGroupDetails
+    oci.database_management.models.UpdatePreferredCredentialDetails
     oci.database_management.models.UpdateSqlJobDetails
     oci.database_management.models.UpdateTablespaceDetails
     oci.database_management.models.User

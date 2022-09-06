@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class EndpointSummary(object):
     """
-    Summary of a Endpoint.
+    Summary of an endpoint.
     """
 
     def __init__(self, **kwargs):
@@ -100,7 +100,7 @@ class EndpointSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this EndpointSummary.
-        Unique identifier that is immutable on creation
+        A unique identifier that is immutable on creation.
 
 
         :return: The id of this EndpointSummary.
@@ -112,7 +112,7 @@ class EndpointSummary(object):
     def id(self, id):
         """
         Sets the id of this EndpointSummary.
-        Unique identifier that is immutable on creation
+        A unique identifier that is immutable on creation.
 
 
         :param id: The id of this EndpointSummary.
@@ -148,7 +148,7 @@ class EndpointSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this EndpointSummary.
-        Data Connectivity Management Endpoint display name, Endpoints can be renamed
+        Data Connectivity Management Endpoint display name; endpoints can be renamed.
 
 
         :return: The display_name of this EndpointSummary.
@@ -160,7 +160,7 @@ class EndpointSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this EndpointSummary.
-        Data Connectivity Management Endpoint display name, Endpoints can be renamed
+        Data Connectivity Management Endpoint display name; endpoints can be renamed.
 
 
         :param display_name: The display_name of this EndpointSummary.
@@ -196,7 +196,7 @@ class EndpointSummary(object):
     def time_created(self):
         """
         Gets the time_created of this EndpointSummary.
-        The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+        Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
 
 
         :return: The time_created of this EndpointSummary.
@@ -208,7 +208,7 @@ class EndpointSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this EndpointSummary.
-        The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+        Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
 
 
         :param time_created: The time_created of this EndpointSummary.
@@ -220,7 +220,7 @@ class EndpointSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this EndpointSummary.
-        The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+        Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
 
 
         :return: The time_updated of this EndpointSummary.
@@ -232,7 +232,7 @@ class EndpointSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this EndpointSummary.
-        The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+        Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
 
 
         :param time_updated: The time_updated of this EndpointSummary.
@@ -244,7 +244,7 @@ class EndpointSummary(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this EndpointSummary.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -257,7 +257,7 @@ class EndpointSummary(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this EndpointSummary.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
         Example: `{\"bar-key\": \"value\"}`
 
 

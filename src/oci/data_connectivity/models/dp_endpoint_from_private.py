@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DpEndpointFromPrivate(DpEndpoint):
     """
-    The endpoint details for a private endpoint.
+    The endpoint details of a private endpoint.
     """
 
     #: A constant which can be used with the state property of a DpEndpointFromPrivate.
@@ -187,7 +187,7 @@ class DpEndpointFromPrivate(DpEndpoint):
     def pe_id(self):
         """
         Gets the pe_id of this DpEndpointFromPrivate.
-        The ocid of private endpoint resource.
+        The OCID of the private endpoint resource.
 
 
         :return: The pe_id of this DpEndpointFromPrivate.
@@ -199,7 +199,7 @@ class DpEndpointFromPrivate(DpEndpoint):
     def pe_id(self, pe_id):
         """
         Sets the pe_id of this DpEndpointFromPrivate.
-        The ocid of private endpoint resource.
+        The OCID of the private endpoint resource.
 
 
         :param pe_id: The pe_id of this DpEndpointFromPrivate.
@@ -211,7 +211,7 @@ class DpEndpointFromPrivate(DpEndpoint):
     def compartment_id(self):
         """
         Gets the compartment_id of this DpEndpointFromPrivate.
-        The compartmentId of private endpoint resource.
+        The compartmentId of the private endpoint resource.
 
 
         :return: The compartment_id of this DpEndpointFromPrivate.
@@ -223,7 +223,7 @@ class DpEndpointFromPrivate(DpEndpoint):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this DpEndpointFromPrivate.
-        The compartmentId of private endpoint resource.
+        The compartmentId of the private endpoint resource.
 
 
         :param compartment_id: The compartment_id of this DpEndpointFromPrivate.
@@ -235,7 +235,7 @@ class DpEndpointFromPrivate(DpEndpoint):
     def dns_proxy_ip(self):
         """
         Gets the dns_proxy_ip of this DpEndpointFromPrivate.
-        The IP address of dns proxy.
+        The IP address of the DNS proxy.
 
 
         :return: The dns_proxy_ip of this DpEndpointFromPrivate.
@@ -247,7 +247,7 @@ class DpEndpointFromPrivate(DpEndpoint):
     def dns_proxy_ip(self, dns_proxy_ip):
         """
         Sets the dns_proxy_ip of this DpEndpointFromPrivate.
-        The IP address of dns proxy.
+        The IP address of the DNS proxy.
 
 
         :param dns_proxy_ip: The dns_proxy_ip of this DpEndpointFromPrivate.
@@ -259,7 +259,7 @@ class DpEndpointFromPrivate(DpEndpoint):
     def private_endpoint_ip(self):
         """
         Gets the private_endpoint_ip of this DpEndpointFromPrivate.
-        The ocid of private endpoint resource.
+        The OCID of the private endpoint resource.
 
 
         :return: The private_endpoint_ip of this DpEndpointFromPrivate.
@@ -271,7 +271,7 @@ class DpEndpointFromPrivate(DpEndpoint):
     def private_endpoint_ip(self, private_endpoint_ip):
         """
         Sets the private_endpoint_ip of this DpEndpointFromPrivate.
-        The ocid of private endpoint resource.
+        The OCID of the private endpoint resource.
 
 
         :param private_endpoint_ip: The private_endpoint_ip of this DpEndpointFromPrivate.
@@ -283,7 +283,7 @@ class DpEndpointFromPrivate(DpEndpoint):
     def dns_zones(self):
         """
         Gets the dns_zones of this DpEndpointFromPrivate.
-        Array of dns zones to be use during private endpoint resolution.
+        Array of DNS zones to be used during the private endpoint resolution.
 
 
         :return: The dns_zones of this DpEndpointFromPrivate.
@@ -295,7 +295,7 @@ class DpEndpointFromPrivate(DpEndpoint):
     def dns_zones(self, dns_zones):
         """
         Sets the dns_zones of this DpEndpointFromPrivate.
-        Array of dns zones to be use during private endpoint resolution.
+        Array of DNS zones to be used during the private endpoint resolution.
 
 
         :param dns_zones: The dns_zones of this DpEndpointFromPrivate.

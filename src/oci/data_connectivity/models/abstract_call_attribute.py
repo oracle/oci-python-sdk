@@ -10,12 +10,16 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AbstractCallAttribute(object):
     """
-    The call attributes
+    The call attributes.
     """
 
     #: A constant which can be used with the model_type property of a AbstractCallAttribute.
     #: This constant has a value of "BIPCALLATTRIBUTE"
     MODEL_TYPE_BIPCALLATTRIBUTE = "BIPCALLATTRIBUTE"
+
+    #: A constant which can be used with the model_type property of a AbstractCallAttribute.
+    #: This constant has a value of "GENERIC_REST_CALL_ATTRIBUTE"
+    MODEL_TYPE_GENERIC_REST_CALL_ATTRIBUTE = "GENERIC_REST_CALL_ATTRIBUTE"
 
     def __init__(self, **kwargs):
         """
@@ -23,12 +27,13 @@ class AbstractCallAttribute(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.data_connectivity.models.BipCallAttribute`
+        * :class:`~oci.data_connectivity.models.GenericRestCallAttribute`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param model_type:
             The value to assign to the model_type property of this AbstractCallAttribute.
-            Allowed values for this property are: "BIPCALLATTRIBUTE"
+            Allowed values for this property are: "BIPCALLATTRIBUTE", "GENERIC_REST_CALL_ATTRIBUTE"
         :type model_type: str
 
         """
@@ -52,6 +57,9 @@ class AbstractCallAttribute(object):
 
         if type == 'BIPCALLATTRIBUTE':
             return 'BipCallAttribute'
+
+        if type == 'GENERIC_REST_CALL_ATTRIBUTE':
+            return 'GenericRestCallAttribute'
         else:
             return 'AbstractCallAttribute'
 
@@ -59,9 +67,9 @@ class AbstractCallAttribute(object):
     def model_type(self):
         """
         **[Required]** Gets the model_type of this AbstractCallAttribute.
-        The operation type
+        The operation type.
 
-        Allowed values for this property are: "BIPCALLATTRIBUTE"
+        Allowed values for this property are: "BIPCALLATTRIBUTE", "GENERIC_REST_CALL_ATTRIBUTE"
 
 
         :return: The model_type of this AbstractCallAttribute.
@@ -73,13 +81,13 @@ class AbstractCallAttribute(object):
     def model_type(self, model_type):
         """
         Sets the model_type of this AbstractCallAttribute.
-        The operation type
+        The operation type.
 
 
         :param model_type: The model_type of this AbstractCallAttribute.
         :type: str
         """
-        allowed_values = ["BIPCALLATTRIBUTE"]
+        allowed_values = ["BIPCALLATTRIBUTE", "GENERIC_REST_CALL_ATTRIBUTE"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             raise ValueError(
                 "Invalid value for `model_type`, must be None or one of {0}"

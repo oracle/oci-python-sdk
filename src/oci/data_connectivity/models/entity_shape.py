@@ -33,12 +33,17 @@ class EntityShape(object):
     #: This constant has a value of "DATA_STORE_ENTITY"
     MODEL_TYPE_DATA_STORE_ENTITY = "DATA_STORE_ENTITY"
 
+    #: A constant which can be used with the model_type property of a EntityShape.
+    #: This constant has a value of "MESSAGE_ENTITY"
+    MODEL_TYPE_MESSAGE_ENTITY = "MESSAGE_ENTITY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new EntityShape object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.data_connectivity.models.EntityShapeFromDataStore`
+        * :class:`~oci.data_connectivity.models.EntityShapeFromMessage`
         * :class:`~oci.data_connectivity.models.EntityShapeFromTable`
         * :class:`~oci.data_connectivity.models.EntityShapeFromSQL`
         * :class:`~oci.data_connectivity.models.EntityShapeFromView`
@@ -48,7 +53,7 @@ class EntityShape(object):
 
         :param model_type:
             The value to assign to the model_type property of this EntityShape.
-            Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "SQL_ENTITY", "DATA_STORE_ENTITY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "SQL_ENTITY", "DATA_STORE_ENTITY", "MESSAGE_ENTITY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -81,6 +86,9 @@ class EntityShape(object):
         if type == 'DATA_STORE_ENTITY':
             return 'EntityShapeFromDataStore'
 
+        if type == 'MESSAGE_ENTITY':
+            return 'EntityShapeFromMessage'
+
         if type == 'TABLE_ENTITY':
             return 'EntityShapeFromTable'
 
@@ -101,7 +109,7 @@ class EntityShape(object):
         **[Required]** Gets the model_type of this EntityShape.
         The data entity type.
 
-        Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "SQL_ENTITY", "DATA_STORE_ENTITY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "SQL_ENTITY", "DATA_STORE_ENTITY", "MESSAGE_ENTITY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -120,7 +128,7 @@ class EntityShape(object):
         :param model_type: The model_type of this EntityShape.
         :type: str
         """
-        allowed_values = ["VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "SQL_ENTITY", "DATA_STORE_ENTITY"]
+        allowed_values = ["VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "SQL_ENTITY", "DATA_STORE_ENTITY", "MESSAGE_ENTITY"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type

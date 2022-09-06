@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConnectivityValidation(object):
     """
-    The information about connectivity validation results
+    The information about connectivity validation results.
     """
 
     def __init__(self, **kwargs):
@@ -65,7 +65,7 @@ class ConnectivityValidation(object):
     def total_message_count(self):
         """
         **[Required]** Gets the total_message_count of this ConnectivityValidation.
-        Total number of validation messages
+        Total number of validation messages.
 
 
         :return: The total_message_count of this ConnectivityValidation.
@@ -77,7 +77,7 @@ class ConnectivityValidation(object):
     def total_message_count(self, total_message_count):
         """
         Sets the total_message_count of this ConnectivityValidation.
-        Total number of validation messages
+        Total number of validation messages.
 
 
         :param total_message_count: The total_message_count of this ConnectivityValidation.
@@ -89,7 +89,7 @@ class ConnectivityValidation(object):
     def error_message_count(self):
         """
         Gets the error_message_count of this ConnectivityValidation.
-        Total number of validation error messages
+        Total number of validation error messages.
 
 
         :return: The error_message_count of this ConnectivityValidation.
@@ -101,7 +101,7 @@ class ConnectivityValidation(object):
     def error_message_count(self, error_message_count):
         """
         Sets the error_message_count of this ConnectivityValidation.
-        Total number of validation error messages
+        Total number of validation error messages.
 
 
         :param error_message_count: The error_message_count of this ConnectivityValidation.
@@ -113,7 +113,7 @@ class ConnectivityValidation(object):
     def warn_message_count(self):
         """
         Gets the warn_message_count of this ConnectivityValidation.
-        Total number of validation warning messages
+        Total number of validation warning messages.
 
 
         :return: The warn_message_count of this ConnectivityValidation.
@@ -125,7 +125,7 @@ class ConnectivityValidation(object):
     def warn_message_count(self, warn_message_count):
         """
         Sets the warn_message_count of this ConnectivityValidation.
-        Total number of validation warning messages
+        Total number of validation warning messages.
 
 
         :param warn_message_count: The warn_message_count of this ConnectivityValidation.
@@ -137,7 +137,7 @@ class ConnectivityValidation(object):
     def info_message_count(self):
         """
         Gets the info_message_count of this ConnectivityValidation.
-        Total number of validation information messages
+        Total number of validation information messages.
 
 
         :return: The info_message_count of this ConnectivityValidation.
@@ -149,7 +149,7 @@ class ConnectivityValidation(object):
     def info_message_count(self, info_message_count):
         """
         Sets the info_message_count of this ConnectivityValidation.
-        Total number of validation information messages
+        Total number of validation information messages.
 
 
         :param info_message_count: The info_message_count of this ConnectivityValidation.

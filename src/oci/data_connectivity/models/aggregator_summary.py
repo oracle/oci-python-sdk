@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AggregatorSummary(object):
     """
-    A summary type containing information about the object's aggregator including its type, key, name and description.
+    A summary type containing information about the object's aggregator including its type, key, name, and description.
     """
 
     def __init__(self, **kwargs):

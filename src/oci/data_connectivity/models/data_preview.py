@@ -58,7 +58,7 @@ class DataPreview(object):
     def entity_name(self):
         """
         **[Required]** Gets the entity_name of this DataPreview.
-        Name of the entity for which data preview was requested
+        Name of the entity for which data preview is requested.
 
 
         :return: The entity_name of this DataPreview.
@@ -70,7 +70,7 @@ class DataPreview(object):
     def entity_name(self, entity_name):
         """
         Sets the entity_name of this DataPreview.
-        Name of the entity for which data preview was requested
+        Name of the entity for which data preview is requested.
 
 
         :param entity_name: The entity_name of this DataPreview.
@@ -82,7 +82,7 @@ class DataPreview(object):
     def sample_rows_count(self):
         """
         Gets the sample_rows_count of this DataPreview.
-        Total number of rows taken for sampling
+        Total number of rows taken for sampling.
 
 
         :return: The sample_rows_count of this DataPreview.
@@ -94,7 +94,7 @@ class DataPreview(object):
     def sample_rows_count(self, sample_rows_count):
         """
         Sets the sample_rows_count of this DataPreview.
-        Total number of rows taken for sampling
+        Total number of rows taken for sampling.
 
 
         :param sample_rows_count: The sample_rows_count of this DataPreview.
@@ -106,7 +106,7 @@ class DataPreview(object):
     def columns(self):
         """
         Gets the columns of this DataPreview.
-        Array of column definition for the preview result
+        Array of column definition for the preview result.
 
 
         :return: The columns of this DataPreview.
@@ -118,7 +118,7 @@ class DataPreview(object):
     def columns(self, columns):
         """
         Sets the columns of this DataPreview.
-        Array of column definition for the preview result
+        Array of column definition for the preview result.
 
 
         :param columns: The columns of this DataPreview.
@@ -130,7 +130,7 @@ class DataPreview(object):
     def rows(self):
         """
         Gets the rows of this DataPreview.
-        Array of rows values for the preview result
+        Array of row values for the preview result.
 
 
         :return: The rows of this DataPreview.
@@ -142,7 +142,7 @@ class DataPreview(object):
     def rows(self, rows):
         """
         Sets the rows of this DataPreview.
-        Array of rows values for the preview result
+        Array of row values for the preview result.
 
 
         :param rows: The rows of this DataPreview.

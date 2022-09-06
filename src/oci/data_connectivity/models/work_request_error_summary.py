@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequestErrorSummary(object):
     """
-    A work request error summary object.
+    The list of work request log summaries.
     """
 
     def __init__(self, **kwargs):
@@ -51,8 +51,8 @@ class WorkRequestErrorSummary(object):
     def code(self):
         """
         **[Required]** Gets the code of this WorkRequestErrorSummary.
-        A machine-usable code for the error that occured. Error codes are listed on
-        (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+        A machine-usable code for the error that occured. Error codes are listed in
+        (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
 
 
         :return: The code of this WorkRequestErrorSummary.
@@ -64,8 +64,8 @@ class WorkRequestErrorSummary(object):
     def code(self, code):
         """
         Sets the code of this WorkRequestErrorSummary.
-        A machine-usable code for the error that occured. Error codes are listed on
-        (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+        A machine-usable code for the error that occured. Error codes are listed in
+        (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
 
 
         :param code: The code of this WorkRequestErrorSummary.

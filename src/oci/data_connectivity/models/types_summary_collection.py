@@ -37,7 +37,7 @@ class TypesSummaryCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this TypesSummaryCollection.
-        The array of Type summaries
+        The array of type summaries.
 
 
         :return: The items of this TypesSummaryCollection.
@@ -49,7 +49,7 @@ class TypesSummaryCollection(object):
     def items(self, items):
         """
         Sets the items of this TypesSummaryCollection.
-        The array of Type summaries
+        The array of type summaries.
 
 
         :param items: The items of this TypesSummaryCollection.

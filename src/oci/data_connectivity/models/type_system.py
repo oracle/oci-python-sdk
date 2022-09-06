@@ -206,7 +206,7 @@ class TypeSystem(object):
     def name(self):
         """
         Gets the name of this TypeSystem.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this TypeSystem.
@@ -218,7 +218,7 @@ class TypeSystem(object):
     def name(self, name):
         """
         Sets the name of this TypeSystem.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this TypeSystem.
@@ -230,7 +230,7 @@ class TypeSystem(object):
     def description(self):
         """
         Gets the description of this TypeSystem.
-        A user defined description for the object.
+        A user-defined description for the object.
 
 
         :return: The description of this TypeSystem.
@@ -242,7 +242,7 @@ class TypeSystem(object):
     def description(self, description):
         """
         Sets the description of this TypeSystem.
-        A user defined description for the object.
+        A user-defined description for the object.
 
 
         :param description: The description of this TypeSystem.
@@ -350,7 +350,7 @@ class TypeSystem(object):
     def identifier(self):
         """
         Gets the identifier of this TypeSystem.
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this TypeSystem.
@@ -362,7 +362,7 @@ class TypeSystem(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this TypeSystem.
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this TypeSystem.

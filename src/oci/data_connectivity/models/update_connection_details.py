@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateConnectionDetails(object):
     """
-    Properties used in connection update operations.
+    Properties used in the update connection operations.
     """
 
     def __init__(self, **kwargs):
@@ -176,7 +176,7 @@ class UpdateConnectionDetails(object):
     def name(self):
         """
         Gets the name of this UpdateConnectionDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this UpdateConnectionDetails.
@@ -188,7 +188,7 @@ class UpdateConnectionDetails(object):
     def name(self, name):
         """
         Sets the name of this UpdateConnectionDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this UpdateConnectionDetails.
@@ -272,7 +272,7 @@ class UpdateConnectionDetails(object):
     def identifier(self):
         """
         Gets the identifier of this UpdateConnectionDetails.
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this UpdateConnectionDetails.
@@ -284,7 +284,7 @@ class UpdateConnectionDetails(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this UpdateConnectionDetails.
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this UpdateConnectionDetails.
@@ -316,7 +316,7 @@ class UpdateConnectionDetails(object):
     def connection_properties(self):
         """
         Gets the connection_properties of this UpdateConnectionDetails.
-        The properties for the connection.
+        The properties of the connection.
 
 
         :return: The connection_properties of this UpdateConnectionDetails.
@@ -328,7 +328,7 @@ class UpdateConnectionDetails(object):
     def connection_properties(self, connection_properties):
         """
         Sets the connection_properties of this UpdateConnectionDetails.
-        The properties for the connection.
+        The properties of the connection.
 
 
         :param connection_properties: The connection_properties of this UpdateConnectionDetails.
@@ -340,7 +340,7 @@ class UpdateConnectionDetails(object):
     def properties(self):
         """
         **[Required]** Gets the properties of this UpdateConnectionDetails.
-        All the properties for the connection in a key-value map format.
+        All the properties of the connection in a key-value map format.
 
 
         :return: The properties of this UpdateConnectionDetails.
@@ -352,7 +352,7 @@ class UpdateConnectionDetails(object):
     def properties(self, properties):
         """
         Sets the properties of this UpdateConnectionDetails.
-        All the properties for the connection in a key-value map format.
+        All the properties of the connection in a key-value map format.
 
 
         :param properties: The properties of this UpdateConnectionDetails.
@@ -388,7 +388,7 @@ class UpdateConnectionDetails(object):
     def is_default(self):
         """
         Gets the is_default of this UpdateConnectionDetails.
-        The default property for the connection.
+        The default property of the connection.
 
 
         :return: The is_default of this UpdateConnectionDetails.
@@ -400,7 +400,7 @@ class UpdateConnectionDetails(object):
     def is_default(self, is_default):
         """
         Sets the is_default of this UpdateConnectionDetails.
-        The default property for the connection.
+        The default property of the connection.
 
 
         :param is_default: The is_default of this UpdateConnectionDetails.

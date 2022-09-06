@@ -209,8 +209,8 @@ class MetricDataDetails(object):
         **[Required]** Gets the dimensions of this MetricDataDetails.
         Qualifiers provided in a metric definition. Available dimensions vary by metric namespace.
         Each dimension takes the form of a key-value pair.
-        A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. The character limit for a dimension key is 256.
-        A valid dimension value includes only Unicode characters. The character limit for a dimension value is 256.
+        A valid dimension key includes only printable ASCII, excluding spaces. The character limit for a dimension key is 256.
+        A valid dimension value includes only Unicode characters. The character limit for a dimension value is 512.
         Empty strings are not allowed for keys or values. Avoid entering confidential information.
 
         Example: `\"resourceId\": \"ocid1.instance.region1.phx.exampleuniqueID\"`
@@ -227,8 +227,8 @@ class MetricDataDetails(object):
         Sets the dimensions of this MetricDataDetails.
         Qualifiers provided in a metric definition. Available dimensions vary by metric namespace.
         Each dimension takes the form of a key-value pair.
-        A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. The character limit for a dimension key is 256.
-        A valid dimension value includes only Unicode characters. The character limit for a dimension value is 256.
+        A valid dimension key includes only printable ASCII, excluding spaces. The character limit for a dimension key is 256.
+        A valid dimension value includes only Unicode characters. The character limit for a dimension value is 512.
         Empty strings are not allowed for keys or values. Avoid entering confidential information.
 
         Example: `\"resourceId\": \"ocid1.instance.region1.phx.exampleuniqueID\"`

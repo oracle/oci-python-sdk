@@ -6,6 +6,8 @@ from __future__ import absolute_import
 
 from .aggregated_datapoint import AggregatedDatapoint
 from .alarm import Alarm
+from .alarm_dimension_states_collection import AlarmDimensionStatesCollection
+from .alarm_dimension_states_entry import AlarmDimensionStatesEntry
 from .alarm_history_collection import AlarmHistoryCollection
 from .alarm_history_entry import AlarmHistoryEntry
 from .alarm_status_summary import AlarmStatusSummary
@@ -20,6 +22,7 @@ from .metric_data import MetricData
 from .metric_data_details import MetricDataDetails
 from .post_metric_data_details import PostMetricDataDetails
 from .post_metric_data_response_details import PostMetricDataResponseDetails
+from .retrieve_dimension_states_details import RetrieveDimensionStatesDetails
 from .summarize_metrics_data_details import SummarizeMetricsDataDetails
 from .suppression import Suppression
 from .update_alarm_details import UpdateAlarmDetails
@@ -28,6 +31,8 @@ from .update_alarm_details import UpdateAlarmDetails
 monitoring_type_mapping = {
     "AggregatedDatapoint": AggregatedDatapoint,
     "Alarm": Alarm,
+    "AlarmDimensionStatesCollection": AlarmDimensionStatesCollection,
+    "AlarmDimensionStatesEntry": AlarmDimensionStatesEntry,
     "AlarmHistoryCollection": AlarmHistoryCollection,
     "AlarmHistoryEntry": AlarmHistoryEntry,
     "AlarmStatusSummary": AlarmStatusSummary,
@@ -42,6 +47,7 @@ monitoring_type_mapping = {
     "MetricDataDetails": MetricDataDetails,
     "PostMetricDataDetails": PostMetricDataDetails,
     "PostMetricDataResponseDetails": PostMetricDataResponseDetails,
+    "RetrieveDimensionStatesDetails": RetrieveDimensionStatesDetails,
     "SummarizeMetricsDataDetails": SummarizeMetricsDataDetails,
     "Suppression": Suppression,
     "UpdateAlarmDetails": UpdateAlarmDetails

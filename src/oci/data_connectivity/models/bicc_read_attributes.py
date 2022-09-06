@@ -160,7 +160,7 @@ class BiccReadAttributes(AbstractReadAttribute):
     def initial_extract_date(self):
         """
         Gets the initial_extract_date of this BiccReadAttributes.
-        Date from where extract should start
+        Date from where extract should start.
 
 
         :return: The initial_extract_date of this BiccReadAttributes.
@@ -172,7 +172,7 @@ class BiccReadAttributes(AbstractReadAttribute):
     def initial_extract_date(self, initial_extract_date):
         """
         Sets the initial_extract_date of this BiccReadAttributes.
-        Date from where extract should start
+        Date from where extract should start.
 
 
         :param initial_extract_date: The initial_extract_date of this BiccReadAttributes.

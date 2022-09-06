@@ -17,18 +17,27 @@ class Operation(object):
     #: This constant has a value of "PROCEDURE"
     MODEL_TYPE_PROCEDURE = "PROCEDURE"
 
+    #: A constant which can be used with the model_type property of a Operation.
+    #: This constant has a value of "API"
+    MODEL_TYPE_API = "API"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Operation object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.data_connectivity.models.OperationFromProcedure`
+        * :class:`~oci.data_connectivity.models.OperationFromApi`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param operation_attributes:
+            The value to assign to the operation_attributes property of this Operation.
+        :type operation_attributes: oci.data_connectivity.models.AbstractOperationAttributes
+
         :param model_type:
             The value to assign to the model_type property of this Operation.
-            Allowed values for this property are: "PROCEDURE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PROCEDURE", "API", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -38,15 +47,18 @@ class Operation(object):
 
         """
         self.swagger_types = {
+            'operation_attributes': 'AbstractOperationAttributes',
             'model_type': 'str',
             'metadata': 'ObjectMetadata'
         }
 
         self.attribute_map = {
+            'operation_attributes': 'operationAttributes',
             'model_type': 'modelType',
             'metadata': 'metadata'
         }
 
+        self._operation_attributes = None
         self._model_type = None
         self._metadata = None
 
@@ -60,8 +72,31 @@ class Operation(object):
 
         if type == 'PROCEDURE':
             return 'OperationFromProcedure'
+
+        if type == 'API':
+            return 'OperationFromApi'
         else:
             return 'Operation'
+
+    @property
+    def operation_attributes(self):
+        """
+        Gets the operation_attributes of this Operation.
+
+        :return: The operation_attributes of this Operation.
+        :rtype: oci.data_connectivity.models.AbstractOperationAttributes
+        """
+        return self._operation_attributes
+
+    @operation_attributes.setter
+    def operation_attributes(self, operation_attributes):
+        """
+        Sets the operation_attributes of this Operation.
+
+        :param operation_attributes: The operation_attributes of this Operation.
+        :type: oci.data_connectivity.models.AbstractOperationAttributes
+        """
+        self._operation_attributes = operation_attributes
 
     @property
     def model_type(self):
@@ -69,7 +104,7 @@ class Operation(object):
         **[Required]** Gets the model_type of this Operation.
         The operation type.
 
-        Allowed values for this property are: "PROCEDURE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROCEDURE", "API", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -88,7 +123,7 @@ class Operation(object):
         :param model_type: The model_type of this Operation.
         :type: str
         """
-        allowed_values = ["PROCEDURE"]
+        allowed_values = ["PROCEDURE", "API"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type

@@ -42,6 +42,10 @@ class UpdateEndpointDetails(object):
             The value to assign to the nsg_ids property of this UpdateEndpointDetails.
         :type nsg_ids: list[str]
 
+        :param dns_zones:
+            The value to assign to the dns_zones property of this UpdateEndpointDetails.
+        :type dns_zones: list[str]
+
         """
         self.swagger_types = {
             'freeform_tags': 'dict(str, str)',
@@ -49,7 +53,8 @@ class UpdateEndpointDetails(object):
             'description': 'str',
             'display_name': 'str',
             'endpoint_size': 'int',
-            'nsg_ids': 'list[str]'
+            'nsg_ids': 'list[str]',
+            'dns_zones': 'list[str]'
         }
 
         self.attribute_map = {
@@ -58,7 +63,8 @@ class UpdateEndpointDetails(object):
             'description': 'description',
             'display_name': 'displayName',
             'endpoint_size': 'endpointSize',
-            'nsg_ids': 'nsgIds'
+            'nsg_ids': 'nsgIds',
+            'dns_zones': 'dnsZones'
         }
 
         self._freeform_tags = None
@@ -67,12 +73,13 @@ class UpdateEndpointDetails(object):
         self._display_name = None
         self._endpoint_size = None
         self._nsg_ids = None
+        self._dns_zones = None
 
     @property
     def freeform_tags(self):
         """
         Gets the freeform_tags of this UpdateEndpointDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -85,7 +92,7 @@ class UpdateEndpointDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this UpdateEndpointDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -148,7 +155,7 @@ class UpdateEndpointDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateEndpointDetails.
-        Data Connectivity Management Registry display name, registries can be renamed
+        The Data Connectivity Management registry display name; registries can be renamed.
 
 
         :return: The display_name of this UpdateEndpointDetails.
@@ -160,7 +167,7 @@ class UpdateEndpointDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateEndpointDetails.
-        Data Connectivity Management Registry display name, registries can be renamed
+        The Data Connectivity Management registry display name; registries can be renamed.
 
 
         :param display_name: The display_name of this UpdateEndpointDetails.
@@ -172,7 +179,7 @@ class UpdateEndpointDetails(object):
     def endpoint_size(self):
         """
         Gets the endpoint_size of this UpdateEndpointDetails.
-        Update Endpoint size for reverse connection capacity.
+        Update endpoint size for reverse connection capacity.
 
 
         :return: The endpoint_size of this UpdateEndpointDetails.
@@ -184,7 +191,7 @@ class UpdateEndpointDetails(object):
     def endpoint_size(self, endpoint_size):
         """
         Sets the endpoint_size of this UpdateEndpointDetails.
-        Update Endpoint size for reverse connection capacity.
+        Update endpoint size for reverse connection capacity.
 
 
         :param endpoint_size: The endpoint_size of this UpdateEndpointDetails.
@@ -196,7 +203,7 @@ class UpdateEndpointDetails(object):
     def nsg_ids(self):
         """
         Gets the nsg_ids of this UpdateEndpointDetails.
-        List of NSGs to which the Private Endpoint VNIC must be added.
+        The list of NSGs to which the Private Endpoint VNIC must be added.
 
 
         :return: The nsg_ids of this UpdateEndpointDetails.
@@ -208,13 +215,39 @@ class UpdateEndpointDetails(object):
     def nsg_ids(self, nsg_ids):
         """
         Sets the nsg_ids of this UpdateEndpointDetails.
-        List of NSGs to which the Private Endpoint VNIC must be added.
+        The list of NSGs to which the Private Endpoint VNIC must be added.
 
 
         :param nsg_ids: The nsg_ids of this UpdateEndpointDetails.
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def dns_zones(self):
+        """
+        Gets the dns_zones of this UpdateEndpointDetails.
+        List of DNS zones to be used by the data assets.
+        Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
+
+
+        :return: The dns_zones of this UpdateEndpointDetails.
+        :rtype: list[str]
+        """
+        return self._dns_zones
+
+    @dns_zones.setter
+    def dns_zones(self, dns_zones):
+        """
+        Sets the dns_zones of this UpdateEndpointDetails.
+        List of DNS zones to be used by the data assets.
+        Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
+
+
+        :param dns_zones: The dns_zones of this UpdateEndpointDetails.
+        :type: list[str]
+        """
+        self._dns_zones = dns_zones
 
     def __repr__(self):
         return formatted_flat_dict(self)

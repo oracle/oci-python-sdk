@@ -20,6 +20,8 @@ Monitoring
 
     oci.monitoring.models.AggregatedDatapoint
     oci.monitoring.models.Alarm
+    oci.monitoring.models.AlarmDimensionStatesCollection
+    oci.monitoring.models.AlarmDimensionStatesEntry
     oci.monitoring.models.AlarmHistoryCollection
     oci.monitoring.models.AlarmHistoryEntry
     oci.monitoring.models.AlarmStatusSummary
@@ -34,6 +36,7 @@ Monitoring
     oci.monitoring.models.MetricDataDetails
     oci.monitoring.models.PostMetricDataDetails
     oci.monitoring.models.PostMetricDataResponseDetails
+    oci.monitoring.models.RetrieveDimensionStatesDetails
     oci.monitoring.models.SummarizeMetricsDataDetails
     oci.monitoring.models.Suppression
     oci.monitoring.models.UpdateAlarmDetails

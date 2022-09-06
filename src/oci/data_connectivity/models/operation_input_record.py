@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OperationInputRecord(object):
     """
-    Holder for IN/INOUT params' values.
+    Holder for IN/INOUT parameter values.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class OperationInputRecord(object):
     def field_values(self):
         """
         Gets the field_values of this OperationInputRecord.
-        values of IN/INOUT params.
+        Values of IN/INOUT parameter.
 
 
         :return: The field_values of this OperationInputRecord.
@@ -49,7 +49,7 @@ class OperationInputRecord(object):
     def field_values(self, field_values):
         """
         Sets the field_values of this OperationInputRecord.
-        values of IN/INOUT params.
+        Values of IN/INOUT parameter.
 
 
         :param field_values: The field_values of this OperationInputRecord.

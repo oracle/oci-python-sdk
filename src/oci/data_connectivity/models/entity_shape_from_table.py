@@ -33,6 +33,10 @@ class EntityShapeFromTable(EntityShape):
     #: This constant has a value of "DATA_STORE"
     ENTITY_TYPE_DATA_STORE = "DATA_STORE"
 
+    #: A constant which can be used with the entity_type property of a EntityShapeFromTable.
+    #: This constant has a value of "MESSAGE"
+    ENTITY_TYPE_MESSAGE = "MESSAGE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new EntityShapeFromTable object with values from keyword arguments. The default value of the :py:attr:`~oci.data_connectivity.models.EntityShapeFromTable.model_type` attribute
@@ -41,7 +45,7 @@ class EntityShapeFromTable(EntityShape):
 
         :param model_type:
             The value to assign to the model_type property of this EntityShapeFromTable.
-            Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "SQL_ENTITY", "DATA_STORE_ENTITY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "SQL_ENTITY", "DATA_STORE_ENTITY", "MESSAGE_ENTITY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -87,7 +91,7 @@ class EntityShapeFromTable(EntityShape):
 
         :param entity_type:
             The value to assign to the entity_type property of this EntityShapeFromTable.
-            Allowed values for this property are: "TABLE", "VIEW", "FILE", "SQL", "DATA_STORE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "TABLE", "VIEW", "FILE", "SQL", "DATA_STORE", "MESSAGE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type entity_type: str
 
@@ -119,6 +123,10 @@ class EntityShapeFromTable(EntityShape):
             The value to assign to the identifier property of this EntityShapeFromTable.
         :type identifier: str
 
+        :param entity_properties:
+            The value to assign to the entity_properties property of this EntityShapeFromTable.
+        :type entity_properties: dict(str, str)
+
         """
         self.swagger_types = {
             'model_type': 'str',
@@ -139,7 +147,8 @@ class EntityShapeFromTable(EntityShape):
             'resource_name': 'str',
             'data_format': 'DataFormat',
             'object_status': 'int',
-            'identifier': 'str'
+            'identifier': 'str',
+            'entity_properties': 'dict(str, str)'
         }
 
         self.attribute_map = {
@@ -161,7 +170,8 @@ class EntityShapeFromTable(EntityShape):
             'resource_name': 'resourceName',
             'data_format': 'dataFormat',
             'object_status': 'objectStatus',
-            'identifier': 'identifier'
+            'identifier': 'identifier',
+            'entity_properties': 'entityProperties'
         }
 
         self._model_type = None
@@ -183,6 +193,7 @@ class EntityShapeFromTable(EntityShape):
         self._data_format = None
         self._object_status = None
         self._identifier = None
+        self._entity_properties = None
         self._model_type = 'TABLE_ENTITY'
 
     @property
@@ -213,7 +224,7 @@ class EntityShapeFromTable(EntityShape):
     def model_version(self):
         """
         Gets the model_version of this EntityShapeFromTable.
-        The object's model version.
+        The model version of the object.
 
 
         :return: The model_version of this EntityShapeFromTable.
@@ -225,7 +236,7 @@ class EntityShapeFromTable(EntityShape):
     def model_version(self, model_version):
         """
         Sets the model_version of this EntityShapeFromTable.
-        The object's model version.
+        The model version of the object.
 
 
         :param model_version: The model_version of this EntityShapeFromTable.
@@ -257,7 +268,7 @@ class EntityShapeFromTable(EntityShape):
     def name(self):
         """
         Gets the name of this EntityShapeFromTable.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this EntityShapeFromTable.
@@ -269,7 +280,7 @@ class EntityShapeFromTable(EntityShape):
     def name(self, name):
         """
         Sets the name of this EntityShapeFromTable.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this EntityShapeFromTable.
@@ -281,7 +292,7 @@ class EntityShapeFromTable(EntityShape):
     def description(self):
         """
         Gets the description of this EntityShapeFromTable.
-        Detailed description for the object.
+        Detailed description of the object.
 
 
         :return: The description of this EntityShapeFromTable.
@@ -293,7 +304,7 @@ class EntityShapeFromTable(EntityShape):
     def description(self, description):
         """
         Sets the description of this EntityShapeFromTable.
-        Detailed description for the object.
+        Detailed description of the object.
 
 
         :param description: The description of this EntityShapeFromTable.
@@ -329,7 +340,7 @@ class EntityShapeFromTable(EntityShape):
     def external_key(self):
         """
         Gets the external_key of this EntityShapeFromTable.
-        The external key for the object.
+        The external key of the object.
 
 
         :return: The external_key of this EntityShapeFromTable.
@@ -341,7 +352,7 @@ class EntityShapeFromTable(EntityShape):
     def external_key(self, external_key):
         """
         Sets the external_key of this EntityShapeFromTable.
-        The external key for the object.
+        The external key of the object.
 
 
         :param external_key: The external_key of this EntityShapeFromTable.
@@ -399,7 +410,7 @@ class EntityShapeFromTable(EntityShape):
         Gets the entity_type of this EntityShapeFromTable.
         The entity type.
 
-        Allowed values for this property are: "TABLE", "VIEW", "FILE", "SQL", "DATA_STORE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "TABLE", "VIEW", "FILE", "SQL", "DATA_STORE", "MESSAGE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -418,7 +429,7 @@ class EntityShapeFromTable(EntityShape):
         :param entity_type: The entity_type of this EntityShapeFromTable.
         :type: str
         """
-        allowed_values = ["TABLE", "VIEW", "FILE", "SQL", "DATA_STORE"]
+        allowed_values = ["TABLE", "VIEW", "FILE", "SQL", "DATA_STORE", "MESSAGE"]
         if not value_allowed_none_or_none_sentinel(entity_type, allowed_values):
             entity_type = 'UNKNOWN_ENUM_VALUE'
         self._entity_type = entity_type
@@ -567,7 +578,7 @@ class EntityShapeFromTable(EntityShape):
     def identifier(self):
         """
         Gets the identifier of this EntityShapeFromTable.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this EntityShapeFromTable.
@@ -579,13 +590,37 @@ class EntityShapeFromTable(EntityShape):
     def identifier(self, identifier):
         """
         Sets the identifier of this EntityShapeFromTable.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this EntityShapeFromTable.
         :type: str
         """
         self._identifier = identifier
+
+    @property
+    def entity_properties(self):
+        """
+        Gets the entity_properties of this EntityShapeFromTable.
+        Map<String, String> for entity properties
+
+
+        :return: The entity_properties of this EntityShapeFromTable.
+        :rtype: dict(str, str)
+        """
+        return self._entity_properties
+
+    @entity_properties.setter
+    def entity_properties(self, entity_properties):
+        """
+        Sets the entity_properties of this EntityShapeFromTable.
+        Map<String, String> for entity properties
+
+
+        :param entity_properties: The entity_properties of this EntityShapeFromTable.
+        :type: dict(str, str)
+        """
+        self._entity_properties = entity_properties
 
     def __repr__(self):
         return formatted_flat_dict(self)

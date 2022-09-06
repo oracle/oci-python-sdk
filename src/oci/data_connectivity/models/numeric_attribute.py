@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class NumericAttribute(AttributeProfileResult):
     """
-    A summary of profiling results of a specefic attribute.
+    A summary of profiling results of a specific attribute.
     """
 
     def __init__(self, **kwargs):

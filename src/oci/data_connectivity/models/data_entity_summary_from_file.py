@@ -33,6 +33,10 @@ class DataEntitySummaryFromFile(DataEntitySummary):
     #: This constant has a value of "DATA_STORE"
     ENTITY_TYPE_DATA_STORE = "DATA_STORE"
 
+    #: A constant which can be used with the entity_type property of a DataEntitySummaryFromFile.
+    #: This constant has a value of "MESSAGE"
+    ENTITY_TYPE_MESSAGE = "MESSAGE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DataEntitySummaryFromFile object with values from keyword arguments. The default value of the :py:attr:`~oci.data_connectivity.models.DataEntitySummaryFromFile.model_type` attribute
@@ -41,7 +45,7 @@ class DataEntitySummaryFromFile(DataEntitySummary):
 
         :param model_type:
             The value to assign to the model_type property of this DataEntitySummaryFromFile.
-            Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY", "DERIVED_ENTITY", "MESSAGE_ENTITY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -87,7 +91,7 @@ class DataEntitySummaryFromFile(DataEntitySummary):
 
         :param entity_type:
             The value to assign to the entity_type property of this DataEntitySummaryFromFile.
-            Allowed values for this property are: "TABLE", "VIEW", "FILE", "SQL", "DATA_STORE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "TABLE", "VIEW", "FILE", "SQL", "DATA_STORE", "MESSAGE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type entity_type: str
 
@@ -213,7 +217,7 @@ class DataEntitySummaryFromFile(DataEntitySummary):
     def model_version(self):
         """
         Gets the model_version of this DataEntitySummaryFromFile.
-        The object's model version.
+        The model version of the object.
 
 
         :return: The model_version of this DataEntitySummaryFromFile.
@@ -225,7 +229,7 @@ class DataEntitySummaryFromFile(DataEntitySummary):
     def model_version(self, model_version):
         """
         Sets the model_version of this DataEntitySummaryFromFile.
-        The object's model version.
+        The model version of the object.
 
 
         :param model_version: The model_version of this DataEntitySummaryFromFile.
@@ -257,7 +261,7 @@ class DataEntitySummaryFromFile(DataEntitySummary):
     def name(self):
         """
         Gets the name of this DataEntitySummaryFromFile.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this DataEntitySummaryFromFile.
@@ -269,7 +273,7 @@ class DataEntitySummaryFromFile(DataEntitySummary):
     def name(self, name):
         """
         Sets the name of this DataEntitySummaryFromFile.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this DataEntitySummaryFromFile.
@@ -281,7 +285,7 @@ class DataEntitySummaryFromFile(DataEntitySummary):
     def description(self):
         """
         Gets the description of this DataEntitySummaryFromFile.
-        Detailed description for the object.
+        Detailed description of the object.
 
 
         :return: The description of this DataEntitySummaryFromFile.
@@ -293,7 +297,7 @@ class DataEntitySummaryFromFile(DataEntitySummary):
     def description(self, description):
         """
         Sets the description of this DataEntitySummaryFromFile.
-        Detailed description for the object.
+        Detailed description of the object.
 
 
         :param description: The description of this DataEntitySummaryFromFile.
@@ -329,7 +333,7 @@ class DataEntitySummaryFromFile(DataEntitySummary):
     def external_key(self):
         """
         Gets the external_key of this DataEntitySummaryFromFile.
-        The external key for the object.
+        The external key of the object.
 
 
         :return: The external_key of this DataEntitySummaryFromFile.
@@ -341,7 +345,7 @@ class DataEntitySummaryFromFile(DataEntitySummary):
     def external_key(self, external_key):
         """
         Sets the external_key of this DataEntitySummaryFromFile.
-        The external key for the object.
+        The external key of the object.
 
 
         :param external_key: The external_key of this DataEntitySummaryFromFile.
@@ -399,7 +403,7 @@ class DataEntitySummaryFromFile(DataEntitySummary):
         Gets the entity_type of this DataEntitySummaryFromFile.
         The entity type.
 
-        Allowed values for this property are: "TABLE", "VIEW", "FILE", "SQL", "DATA_STORE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "TABLE", "VIEW", "FILE", "SQL", "DATA_STORE", "MESSAGE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -418,7 +422,7 @@ class DataEntitySummaryFromFile(DataEntitySummary):
         :param entity_type: The entity_type of this DataEntitySummaryFromFile.
         :type: str
         """
-        allowed_values = ["TABLE", "VIEW", "FILE", "SQL", "DATA_STORE"]
+        allowed_values = ["TABLE", "VIEW", "FILE", "SQL", "DATA_STORE", "MESSAGE"]
         if not value_allowed_none_or_none_sentinel(entity_type, allowed_values):
             entity_type = 'UNKNOWN_ENUM_VALUE'
         self._entity_type = entity_type
@@ -567,7 +571,7 @@ class DataEntitySummaryFromFile(DataEntitySummary):
     def identifier(self):
         """
         Gets the identifier of this DataEntitySummaryFromFile.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this DataEntitySummaryFromFile.
@@ -579,7 +583,7 @@ class DataEntitySummaryFromFile(DataEntitySummary):
     def identifier(self, identifier):
         """
         Sets the identifier of this DataEntitySummaryFromFile.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this DataEntitySummaryFromFile.

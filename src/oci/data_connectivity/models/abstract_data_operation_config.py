@@ -36,16 +36,23 @@ class AbstractDataOperationConfig(object):
             Allowed values for this property are: "READ_OPERATION_CONFIG", "WRITE_OPERATION_CONFIG"
         :type model_type: str
 
+        :param derived_attributes:
+            The value to assign to the derived_attributes property of this AbstractDataOperationConfig.
+        :type derived_attributes: dict(str, str)
+
         """
         self.swagger_types = {
-            'model_type': 'str'
+            'model_type': 'str',
+            'derived_attributes': 'dict(str, str)'
         }
 
         self.attribute_map = {
-            'model_type': 'modelType'
+            'model_type': 'modelType',
+            'derived_attributes': 'derivedAttributes'
         }
 
         self._model_type = None
+        self._derived_attributes = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -94,6 +101,30 @@ class AbstractDataOperationConfig(object):
                 .format(allowed_values)
             )
         self._model_type = model_type
+
+    @property
+    def derived_attributes(self):
+        """
+        Gets the derived_attributes of this AbstractDataOperationConfig.
+        this map is used for passing BIP report/REST parameter values.
+
+
+        :return: The derived_attributes of this AbstractDataOperationConfig.
+        :rtype: dict(str, str)
+        """
+        return self._derived_attributes
+
+    @derived_attributes.setter
+    def derived_attributes(self, derived_attributes):
+        """
+        Sets the derived_attributes of this AbstractDataOperationConfig.
+        this map is used for passing BIP report/REST parameter values.
+
+
+        :param derived_attributes: The derived_attributes of this AbstractDataOperationConfig.
+        :type: dict(str, str)
+        """
+        self._derived_attributes = derived_attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateEndpointDetails(object):
     """
-    The information about new Endpoint.
+    Information about a new endpoint.
     """
 
     def __init__(self, **kwargs):
@@ -100,7 +100,7 @@ class CreateEndpointDetails(object):
     def vcn_id(self):
         """
         Gets the vcn_id of this CreateEndpointDetails.
-        VCN Identifier where the subnet resides.
+        VCN identifier where the subnet resides.
 
 
         :return: The vcn_id of this CreateEndpointDetails.
@@ -112,7 +112,7 @@ class CreateEndpointDetails(object):
     def vcn_id(self, vcn_id):
         """
         Sets the vcn_id of this CreateEndpointDetails.
-        VCN Identifier where the subnet resides.
+        VCN identifier where the subnet resides.
 
 
         :param vcn_id: The vcn_id of this CreateEndpointDetails.
@@ -124,7 +124,7 @@ class CreateEndpointDetails(object):
     def subnet_id(self):
         """
         Gets the subnet_id of this CreateEndpointDetails.
-        Subnet Identifier for customer connected databases
+        Subnet identifier for the customer-connected databases.
 
 
         :return: The subnet_id of this CreateEndpointDetails.
@@ -136,7 +136,7 @@ class CreateEndpointDetails(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this CreateEndpointDetails.
-        Subnet Identifier for customer connected databases
+        Subnet identifier for the customer-connected databases.
 
 
         :param subnet_id: The subnet_id of this CreateEndpointDetails.
@@ -148,7 +148,7 @@ class CreateEndpointDetails(object):
     def dns_zones(self):
         """
         Gets the dns_zones of this CreateEndpointDetails.
-        List of DNS zones to be used by the data assets to be harvested.
+        The list of DNS zones to be used by the data assets to be harvested.
         Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
 
 
@@ -161,7 +161,7 @@ class CreateEndpointDetails(object):
     def dns_zones(self, dns_zones):
         """
         Sets the dns_zones of this CreateEndpointDetails.
-        List of DNS zones to be used by the data assets to be harvested.
+        The list of DNS zones to be used by the data assets to be harvested.
         Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
 
 
@@ -174,7 +174,7 @@ class CreateEndpointDetails(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this CreateEndpointDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -187,7 +187,7 @@ class CreateEndpointDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this CreateEndpointDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -250,7 +250,7 @@ class CreateEndpointDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateEndpointDetails.
-        Data Connectivity Management Registry display name, registries can be renamed
+        The Data Connectivity Management registry display name; registries can be renamed.
 
 
         :return: The display_name of this CreateEndpointDetails.
@@ -262,7 +262,7 @@ class CreateEndpointDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateEndpointDetails.
-        Data Connectivity Management Registry display name, registries can be renamed
+        The Data Connectivity Management registry display name; registries can be renamed.
 
 
         :param display_name: The display_name of this CreateEndpointDetails.
@@ -322,7 +322,7 @@ class CreateEndpointDetails(object):
     def nsg_ids(self):
         """
         Gets the nsg_ids of this CreateEndpointDetails.
-        List of NSGs to which the Private Endpoint VNIC must be added.
+        The list of NSGs to which the private endpoint VNIC must be added.
 
 
         :return: The nsg_ids of this CreateEndpointDetails.
@@ -334,7 +334,7 @@ class CreateEndpointDetails(object):
     def nsg_ids(self, nsg_ids):
         """
         Sets the nsg_ids of this CreateEndpointDetails.
-        List of NSGs to which the Private Endpoint VNIC must be added.
+        The list of NSGs to which the private endpoint VNIC must be added.
 
 
         :param nsg_ids: The nsg_ids of this CreateEndpointDetails.

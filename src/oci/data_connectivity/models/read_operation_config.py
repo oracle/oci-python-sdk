@@ -24,6 +24,10 @@ class ReadOperationConfig(AbstractDataOperationConfig):
             Allowed values for this property are: "READ_OPERATION_CONFIG", "WRITE_OPERATION_CONFIG"
         :type model_type: str
 
+        :param derived_attributes:
+            The value to assign to the derived_attributes property of this ReadOperationConfig.
+        :type derived_attributes: dict(str, str)
+
         :param key:
             The value to assign to the key property of this ReadOperationConfig.
         :type key: str
@@ -63,6 +67,7 @@ class ReadOperationConfig(AbstractDataOperationConfig):
         """
         self.swagger_types = {
             'model_type': 'str',
+            'derived_attributes': 'dict(str, str)',
             'key': 'str',
             'model_version': 'str',
             'parent_ref': 'ParentReference',
@@ -76,6 +81,7 @@ class ReadOperationConfig(AbstractDataOperationConfig):
 
         self.attribute_map = {
             'model_type': 'modelType',
+            'derived_attributes': 'derivedAttributes',
             'key': 'key',
             'model_version': 'modelVersion',
             'parent_ref': 'parentRef',
@@ -88,6 +94,7 @@ class ReadOperationConfig(AbstractDataOperationConfig):
         }
 
         self._model_type = None
+        self._derived_attributes = None
         self._key = None
         self._model_version = None
         self._parent_ref = None
@@ -127,7 +134,7 @@ class ReadOperationConfig(AbstractDataOperationConfig):
     def model_version(self):
         """
         Gets the model_version of this ReadOperationConfig.
-        The object's model version.
+        The model version of the object.
 
 
         :return: The model_version of this ReadOperationConfig.
@@ -139,7 +146,7 @@ class ReadOperationConfig(AbstractDataOperationConfig):
     def model_version(self, model_version):
         """
         Sets the model_version of this ReadOperationConfig.
-        The object's model version.
+        The model version of the object.
 
 
         :param model_version: The model_version of this ReadOperationConfig.
@@ -279,7 +286,7 @@ class ReadOperationConfig(AbstractDataOperationConfig):
     def read_raw_data(self):
         """
         Gets the read_raw_data of this ReadOperationConfig.
-        Specifies if this readOperationConfig operation should trigger raw data preview flow.
+        Specifies if the readOperationConfig operation should trigger a raw data preview flow.
 
 
         :return: The read_raw_data of this ReadOperationConfig.
@@ -291,7 +298,7 @@ class ReadOperationConfig(AbstractDataOperationConfig):
     def read_raw_data(self, read_raw_data):
         """
         Sets the read_raw_data of this ReadOperationConfig.
-        Specifies if this readOperationConfig operation should trigger raw data preview flow.
+        Specifies if the readOperationConfig operation should trigger a raw data preview flow.
 
 
         :param read_raw_data: The read_raw_data of this ReadOperationConfig.

@@ -122,6 +122,10 @@ class Alarm(object):
             The value to assign to the body property of this Alarm.
         :type body: str
 
+        :param is_notifications_per_metric_dimension_enabled:
+            The value to assign to the is_notifications_per_metric_dimension_enabled property of this Alarm.
+        :type is_notifications_per_metric_dimension_enabled: bool
+
         :param message_format:
             The value to assign to the message_format property of this Alarm.
             Allowed values for this property are: "RAW", "PRETTY_JSON", "ONS_OPTIMIZED", 'UNKNOWN_ENUM_VALUE'.
@@ -180,6 +184,7 @@ class Alarm(object):
             'pending_duration': 'str',
             'severity': 'str',
             'body': 'str',
+            'is_notifications_per_metric_dimension_enabled': 'bool',
             'message_format': 'str',
             'destinations': 'list[str]',
             'repeat_notification_duration': 'str',
@@ -205,6 +210,7 @@ class Alarm(object):
             'pending_duration': 'pendingDuration',
             'severity': 'severity',
             'body': 'body',
+            'is_notifications_per_metric_dimension_enabled': 'isNotificationsPerMetricDimensionEnabled',
             'message_format': 'messageFormat',
             'destinations': 'destinations',
             'repeat_notification_duration': 'repeatNotificationDuration',
@@ -229,6 +235,7 @@ class Alarm(object):
         self._pending_duration = None
         self._severity = None
         self._body = None
+        self._is_notifications_per_metric_dimension_enabled = None
         self._message_format = None
         self._destinations = None
         self._repeat_notification_duration = None
@@ -673,6 +680,32 @@ class Alarm(object):
         :type: str
         """
         self._body = body
+
+    @property
+    def is_notifications_per_metric_dimension_enabled(self):
+        """
+        Gets the is_notifications_per_metric_dimension_enabled of this Alarm.
+        When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams.
+        Example: `true`
+
+
+        :return: The is_notifications_per_metric_dimension_enabled of this Alarm.
+        :rtype: bool
+        """
+        return self._is_notifications_per_metric_dimension_enabled
+
+    @is_notifications_per_metric_dimension_enabled.setter
+    def is_notifications_per_metric_dimension_enabled(self, is_notifications_per_metric_dimension_enabled):
+        """
+        Sets the is_notifications_per_metric_dimension_enabled of this Alarm.
+        When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams.
+        Example: `true`
+
+
+        :param is_notifications_per_metric_dimension_enabled: The is_notifications_per_metric_dimension_enabled of this Alarm.
+        :type: bool
+        """
+        self._is_notifications_per_metric_dimension_enabled = is_notifications_per_metric_dimension_enabled
 
     @property
     def message_format(self):

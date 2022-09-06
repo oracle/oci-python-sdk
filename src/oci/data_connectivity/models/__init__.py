@@ -7,6 +7,7 @@ from __future__ import absolute_import
 from .abstract_call_attribute import AbstractCallAttribute
 from .abstract_data_operation_config import AbstractDataOperationConfig
 from .abstract_format_attribute import AbstractFormatAttribute
+from .abstract_operation_attributes import AbstractOperationAttributes
 from .abstract_read_attribute import AbstractReadAttribute
 from .abstract_write_attribute import AbstractWriteAttribute
 from .aggregator_summary import AggregatorSummary
@@ -24,6 +25,7 @@ from .column import Column
 from .composite_type import CompositeType
 from .compression import Compression
 from .config_definition import ConfigDefinition
+from .config_details import ConfigDetails
 from .config_parameter_definition import ConfigParameterDefinition
 from .config_parameter_value import ConfigParameterValue
 from .config_values import ConfigValues
@@ -34,7 +36,8 @@ from .connection_summary import ConnectionSummary
 from .connection_summary_collection import ConnectionSummaryCollection
 from .connection_validation import ConnectionValidation
 from .connection_validation_summary import ConnectionValidationSummary
-from .connection_validation_summary_collection import ConnectionValidationSummaryCollection
+from .connectivity_usage import ConnectivityUsage
+from .connectivity_usage_details import ConnectivityUsageDetails
 from .connectivity_validation import ConnectivityValidation
 from .connector_attribute import ConnectorAttribute
 from .create_attach_data_asset_details import CreateAttachDataAssetDetails
@@ -53,6 +56,7 @@ from .create_endpoint_details import CreateEndpointDetails
 from .create_entity_shape_details import CreateEntityShapeDetails
 from .create_entity_shape_from_data_store import CreateEntityShapeFromDataStore
 from .create_entity_shape_from_file import CreateEntityShapeFromFile
+from .create_entity_shape_from_message import CreateEntityShapeFromMessage
 from .create_entity_shape_from_sql import CreateEntityShapeFromSQL
 from .create_entity_shape_from_table import CreateEntityShapeFromTable
 from .create_entity_shape_from_view import CreateEntityShapeFromView
@@ -72,6 +76,7 @@ from .data_entity_from_data_store import DataEntityFromDataStore
 from .data_entity_from_data_store_entity_details import DataEntityFromDataStoreEntityDetails
 from .data_entity_from_file import DataEntityFromFile
 from .data_entity_from_file_entity_details import DataEntityFromFileEntityDetails
+from .data_entity_from_message_entity_details import DataEntityFromMessageEntityDetails
 from .data_entity_from_sql import DataEntityFromSql
 from .data_entity_from_sql_entity_details import DataEntityFromSqlEntityDetails
 from .data_entity_from_table import DataEntityFromTable
@@ -92,6 +97,10 @@ from .data_type import DataType
 from .data_type_stat import DataTypeStat
 from .date_attribute import DateAttribute
 from .de_reference_info import DeReferenceInfo
+from .derive_entities import DeriveEntities
+from .derive_entities_details import DeriveEntitiesDetails
+from .derive_entities_item import DeriveEntitiesItem
+from .derived_entity import DerivedEntity
 from .derived_type import DerivedType
 from .detach_data_asset_info import DetachDataAssetInfo
 from .dp_endpoint import DpEndpoint
@@ -110,10 +119,12 @@ from .entity_profile_result import EntityProfileResult
 from .entity_shape import EntityShape
 from .entity_shape_from_data_store import EntityShapeFromDataStore
 from .entity_shape_from_file import EntityShapeFromFile
+from .entity_shape_from_message import EntityShapeFromMessage
 from .entity_shape_from_sql import EntityShapeFromSQL
 from .entity_shape_from_table import EntityShapeFromTable
 from .entity_shape_from_view import EntityShapeFromView
 from .error_details import ErrorDetails
+from .excel_format_attribute import ExcelFormatAttribute
 from .execute_operation_job import ExecuteOperationJob
 from .execute_operation_job_details import ExecuteOperationJobDetails
 from .external_storage import ExternalStorage
@@ -123,6 +134,8 @@ from .folder_summary import FolderSummary
 from .folder_summary_collection import FolderSummaryCollection
 from .foreign_key import ForeignKey
 from .full_push_down_task_response import FullPushDownTaskResponse
+from .generic_rest_api_attributes import GenericRestApiAttributes
+from .generic_rest_call_attribute import GenericRestCallAttribute
 from .hdfs_write_attributes import HdfsWriteAttributes
 from .histogram import Histogram
 from .input_port import InputPort
@@ -142,10 +155,12 @@ from .object_metadata import ObjectMetadata
 from .object_storage_write_attributes import ObjectStorageWriteAttributes
 from .operation import Operation
 from .operation_exec_result import OperationExecResult
+from .operation_from_api import OperationFromApi
 from .operation_from_procedure import OperationFromProcedure
 from .operation_input_record import OperationInputRecord
 from .operation_summary import OperationSummary
 from .operation_summary_collection import OperationSummaryCollection
+from .operation_summary_from_api import OperationSummaryFromApi
 from .operation_summary_from_procedure import OperationSummaryFromProcedure
 from .oracle_adwc_write_attributes import OracleAdwcWriteAttributes
 from .oracle_atp_write_attributes import OracleAtpWriteAttributes
@@ -167,6 +182,9 @@ from .read_operation_config import ReadOperationConfig
 from .reference_artifact_summary import ReferenceArtifactSummary
 from .reference_artifact_summary_collection import ReferenceArtifactSummaryCollection
 from .reference_info import ReferenceInfo
+from .referenced_data_object import ReferencedDataObject
+from .referenced_data_object_from_api import ReferencedDataObjectFromAPI
+from .referenced_data_object_from_procedure import ReferencedDataObjectFromProcedure
 from .registry import Registry
 from .registry_metadata import RegistryMetadata
 from .registry_summary import RegistrySummary
@@ -219,6 +237,7 @@ data_connectivity_type_mapping = {
     "AbstractCallAttribute": AbstractCallAttribute,
     "AbstractDataOperationConfig": AbstractDataOperationConfig,
     "AbstractFormatAttribute": AbstractFormatAttribute,
+    "AbstractOperationAttributes": AbstractOperationAttributes,
     "AbstractReadAttribute": AbstractReadAttribute,
     "AbstractWriteAttribute": AbstractWriteAttribute,
     "AggregatorSummary": AggregatorSummary,
@@ -236,6 +255,7 @@ data_connectivity_type_mapping = {
     "CompositeType": CompositeType,
     "Compression": Compression,
     "ConfigDefinition": ConfigDefinition,
+    "ConfigDetails": ConfigDetails,
     "ConfigParameterDefinition": ConfigParameterDefinition,
     "ConfigParameterValue": ConfigParameterValue,
     "ConfigValues": ConfigValues,
@@ -246,7 +266,8 @@ data_connectivity_type_mapping = {
     "ConnectionSummaryCollection": ConnectionSummaryCollection,
     "ConnectionValidation": ConnectionValidation,
     "ConnectionValidationSummary": ConnectionValidationSummary,
-    "ConnectionValidationSummaryCollection": ConnectionValidationSummaryCollection,
+    "ConnectivityUsage": ConnectivityUsage,
+    "ConnectivityUsageDetails": ConnectivityUsageDetails,
     "ConnectivityValidation": ConnectivityValidation,
     "ConnectorAttribute": ConnectorAttribute,
     "CreateAttachDataAssetDetails": CreateAttachDataAssetDetails,
@@ -265,6 +286,7 @@ data_connectivity_type_mapping = {
     "CreateEntityShapeDetails": CreateEntityShapeDetails,
     "CreateEntityShapeFromDataStore": CreateEntityShapeFromDataStore,
     "CreateEntityShapeFromFile": CreateEntityShapeFromFile,
+    "CreateEntityShapeFromMessage": CreateEntityShapeFromMessage,
     "CreateEntityShapeFromSQL": CreateEntityShapeFromSQL,
     "CreateEntityShapeFromTable": CreateEntityShapeFromTable,
     "CreateEntityShapeFromView": CreateEntityShapeFromView,
@@ -284,6 +306,7 @@ data_connectivity_type_mapping = {
     "DataEntityFromDataStoreEntityDetails": DataEntityFromDataStoreEntityDetails,
     "DataEntityFromFile": DataEntityFromFile,
     "DataEntityFromFileEntityDetails": DataEntityFromFileEntityDetails,
+    "DataEntityFromMessageEntityDetails": DataEntityFromMessageEntityDetails,
     "DataEntityFromSql": DataEntityFromSql,
     "DataEntityFromSqlEntityDetails": DataEntityFromSqlEntityDetails,
     "DataEntityFromTable": DataEntityFromTable,
@@ -304,6 +327,10 @@ data_connectivity_type_mapping = {
     "DataTypeStat": DataTypeStat,
     "DateAttribute": DateAttribute,
     "DeReferenceInfo": DeReferenceInfo,
+    "DeriveEntities": DeriveEntities,
+    "DeriveEntitiesDetails": DeriveEntitiesDetails,
+    "DeriveEntitiesItem": DeriveEntitiesItem,
+    "DerivedEntity": DerivedEntity,
     "DerivedType": DerivedType,
     "DetachDataAssetInfo": DetachDataAssetInfo,
     "DpEndpoint": DpEndpoint,
@@ -322,10 +349,12 @@ data_connectivity_type_mapping = {
     "EntityShape": EntityShape,
     "EntityShapeFromDataStore": EntityShapeFromDataStore,
     "EntityShapeFromFile": EntityShapeFromFile,
+    "EntityShapeFromMessage": EntityShapeFromMessage,
     "EntityShapeFromSQL": EntityShapeFromSQL,
     "EntityShapeFromTable": EntityShapeFromTable,
     "EntityShapeFromView": EntityShapeFromView,
     "ErrorDetails": ErrorDetails,
+    "ExcelFormatAttribute": ExcelFormatAttribute,
     "ExecuteOperationJob": ExecuteOperationJob,
     "ExecuteOperationJobDetails": ExecuteOperationJobDetails,
     "ExternalStorage": ExternalStorage,
@@ -335,6 +364,8 @@ data_connectivity_type_mapping = {
     "FolderSummaryCollection": FolderSummaryCollection,
     "ForeignKey": ForeignKey,
     "FullPushDownTaskResponse": FullPushDownTaskResponse,
+    "GenericRestApiAttributes": GenericRestApiAttributes,
+    "GenericRestCallAttribute": GenericRestCallAttribute,
     "HdfsWriteAttributes": HdfsWriteAttributes,
     "Histogram": Histogram,
     "InputPort": InputPort,
@@ -354,10 +385,12 @@ data_connectivity_type_mapping = {
     "ObjectStorageWriteAttributes": ObjectStorageWriteAttributes,
     "Operation": Operation,
     "OperationExecResult": OperationExecResult,
+    "OperationFromApi": OperationFromApi,
     "OperationFromProcedure": OperationFromProcedure,
     "OperationInputRecord": OperationInputRecord,
     "OperationSummary": OperationSummary,
     "OperationSummaryCollection": OperationSummaryCollection,
+    "OperationSummaryFromApi": OperationSummaryFromApi,
     "OperationSummaryFromProcedure": OperationSummaryFromProcedure,
     "OracleAdwcWriteAttributes": OracleAdwcWriteAttributes,
     "OracleAtpWriteAttributes": OracleAtpWriteAttributes,
@@ -379,6 +412,9 @@ data_connectivity_type_mapping = {
     "ReferenceArtifactSummary": ReferenceArtifactSummary,
     "ReferenceArtifactSummaryCollection": ReferenceArtifactSummaryCollection,
     "ReferenceInfo": ReferenceInfo,
+    "ReferencedDataObject": ReferencedDataObject,
+    "ReferencedDataObjectFromAPI": ReferencedDataObjectFromAPI,
+    "ReferencedDataObjectFromProcedure": ReferencedDataObjectFromProcedure,
     "Registry": Registry,
     "RegistryMetadata": RegistryMetadata,
     "RegistrySummary": RegistrySummary,

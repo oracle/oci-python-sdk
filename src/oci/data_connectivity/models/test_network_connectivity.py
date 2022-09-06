@@ -75,7 +75,7 @@ class TestNetworkConnectivity(object):
     def is_reachable(self):
         """
         **[Required]** Gets the is_reachable of this TestNetworkConnectivity.
-        True if the data asset is has a valid network path.
+        True if the data asset has a valid network path.
 
 
         :return: The is_reachable of this TestNetworkConnectivity.
@@ -87,7 +87,7 @@ class TestNetworkConnectivity(object):
     def is_reachable(self, is_reachable):
         """
         Sets the is_reachable of this TestNetworkConnectivity.
-        True if the data asset is has a valid network path.
+        True if the data asset has a valid network path.
 
 
         :param is_reachable: The is_reachable of this TestNetworkConnectivity.

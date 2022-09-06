@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Outlier(object):
     """
-    To capture all the Outlier details related to profiling
+    To capture all the Outlier details related to profiling.
     """
 
     def __init__(self, **kwargs):

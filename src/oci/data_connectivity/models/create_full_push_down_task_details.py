@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateFullPushDownTaskDetails(object):
     """
-    The full pushdown task parameter
+    The full pushdown task parameter.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class CreateFullPushDownTaskDetails(object):
     def model_type(self):
         """
         **[Required]** Gets the model_type of this CreateFullPushDownTaskDetails.
-        The type of of FullPushDownTask.
+        The type of FullPushDownTask.
 
 
         :return: The model_type of this CreateFullPushDownTaskDetails.
@@ -63,7 +63,7 @@ class CreateFullPushDownTaskDetails(object):
     def model_type(self, model_type):
         """
         Sets the model_type of this CreateFullPushDownTaskDetails.
-        The type of of FullPushDownTask.
+        The type of FullPushDownTask.
 
 
         :param model_type: The model_type of this CreateFullPushDownTaskDetails.

@@ -49,6 +49,7 @@ from .awr_db_wait_event_bucket_summary import AwrDbWaitEventBucketSummary
 from .awr_db_wait_event_collection import AwrDbWaitEventCollection
 from .awr_db_wait_event_summary import AwrDbWaitEventSummary
 from .awr_query_result import AwrQueryResult
+from .basic_preferred_credential import BasicPreferredCredential
 from .change_database_parameter_details import ChangeDatabaseParameterDetails
 from .change_database_parameters_details import ChangeDatabaseParametersDetails
 from .change_db_management_private_endpoint_compartment_details import ChangeDbManagementPrivateEndpointCompartmentDetails
@@ -143,6 +144,9 @@ from .optimizer_statistics_operation_task import OptimizerStatisticsOperationTas
 from .parent_group import ParentGroup
 from .pdb_metrics import PdbMetrics
 from .pdb_status_details import PdbStatusDetails
+from .preferred_credential import PreferredCredential
+from .preferred_credential_collection import PreferredCredentialCollection
+from .preferred_credential_summary import PreferredCredentialSummary
 from .proxied_for_user_collection import ProxiedForUserCollection
 from .proxied_for_user_summary import ProxiedForUserSummary
 from .proxy_user_collection import ProxyUserCollection
@@ -201,12 +205,17 @@ from .tablespace_admin_status import TablespaceAdminStatus
 from .tablespace_collection import TablespaceCollection
 from .tablespace_storage_size import TablespaceStorageSize
 from .tablespace_summary import TablespaceSummary
+from .test_basic_preferred_credential_details import TestBasicPreferredCredentialDetails
+from .test_preferred_credential_details import TestPreferredCredentialDetails
+from .test_preferred_credential_status import TestPreferredCredentialStatus
 from .time_series_metric_data_point import TimeSeriesMetricDataPoint
 from .time_series_metric_definition import TimeSeriesMetricDefinition
+from .update_basic_preferred_credential_details import UpdateBasicPreferredCredentialDetails
 from .update_database_parameters_result import UpdateDatabaseParametersResult
 from .update_db_management_private_endpoint_details import UpdateDbManagementPrivateEndpointDetails
 from .update_job_details import UpdateJobDetails
 from .update_managed_database_group_details import UpdateManagedDatabaseGroupDetails
+from .update_preferred_credential_details import UpdatePreferredCredentialDetails
 from .update_sql_job_details import UpdateSqlJobDetails
 from .update_tablespace_details import UpdateTablespaceDetails
 from .user import User
@@ -268,6 +277,7 @@ database_management_type_mapping = {
     "AwrDbWaitEventCollection": AwrDbWaitEventCollection,
     "AwrDbWaitEventSummary": AwrDbWaitEventSummary,
     "AwrQueryResult": AwrQueryResult,
+    "BasicPreferredCredential": BasicPreferredCredential,
     "ChangeDatabaseParameterDetails": ChangeDatabaseParameterDetails,
     "ChangeDatabaseParametersDetails": ChangeDatabaseParametersDetails,
     "ChangeDbManagementPrivateEndpointCompartmentDetails": ChangeDbManagementPrivateEndpointCompartmentDetails,
@@ -362,6 +372,9 @@ database_management_type_mapping = {
     "ParentGroup": ParentGroup,
     "PdbMetrics": PdbMetrics,
     "PdbStatusDetails": PdbStatusDetails,
+    "PreferredCredential": PreferredCredential,
+    "PreferredCredentialCollection": PreferredCredentialCollection,
+    "PreferredCredentialSummary": PreferredCredentialSummary,
     "ProxiedForUserCollection": ProxiedForUserCollection,
     "ProxiedForUserSummary": ProxiedForUserSummary,
     "ProxyUserCollection": ProxyUserCollection,
@@ -420,12 +433,17 @@ database_management_type_mapping = {
     "TablespaceCollection": TablespaceCollection,
     "TablespaceStorageSize": TablespaceStorageSize,
     "TablespaceSummary": TablespaceSummary,
+    "TestBasicPreferredCredentialDetails": TestBasicPreferredCredentialDetails,
+    "TestPreferredCredentialDetails": TestPreferredCredentialDetails,
+    "TestPreferredCredentialStatus": TestPreferredCredentialStatus,
     "TimeSeriesMetricDataPoint": TimeSeriesMetricDataPoint,
     "TimeSeriesMetricDefinition": TimeSeriesMetricDefinition,
+    "UpdateBasicPreferredCredentialDetails": UpdateBasicPreferredCredentialDetails,
     "UpdateDatabaseParametersResult": UpdateDatabaseParametersResult,
     "UpdateDbManagementPrivateEndpointDetails": UpdateDbManagementPrivateEndpointDetails,
     "UpdateJobDetails": UpdateJobDetails,
     "UpdateManagedDatabaseGroupDetails": UpdateManagedDatabaseGroupDetails,
+    "UpdatePreferredCredentialDetails": UpdatePreferredCredentialDetails,
     "UpdateSqlJobDetails": UpdateSqlJobDetails,
     "UpdateTablespaceDetails": UpdateTablespaceDetails,
     "User": User,
