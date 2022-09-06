@@ -21,7 +21,7 @@ class OperationSummaryFromProcedure(OperationSummary):
 
         :param model_type:
             The value to assign to the model_type property of this OperationSummaryFromProcedure.
-            Allowed values for this property are: "PROCEDURE"
+            Allowed values for this property are: "PROCEDURE", "API"
         :type model_type: str
 
         :param metadata:
@@ -219,7 +219,7 @@ class OperationSummaryFromProcedure(OperationSummary):
     def external_key(self):
         """
         Gets the external_key of this OperationSummaryFromProcedure.
-        The external key for the object.
+        The external key of the object.
 
 
         :return: The external_key of this OperationSummaryFromProcedure.
@@ -231,7 +231,7 @@ class OperationSummaryFromProcedure(OperationSummary):
     def external_key(self, external_key):
         """
         Sets the external_key of this OperationSummaryFromProcedure.
-        The external key for the object.
+        The external key of the object.
 
 
         :param external_key: The external_key of this OperationSummaryFromProcedure.

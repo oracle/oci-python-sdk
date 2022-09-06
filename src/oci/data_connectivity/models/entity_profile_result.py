@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class EntityProfileResult(object):
     """
-    A metadata details of a profiling entity result.
+    The metadata details of a profiling entity result.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class EntityProfileResult(object):
     def attribute_count(self):
         """
         Gets the attribute_count of this EntityProfileResult.
-        Number of columns in the DataFrame (arrow buffer) sent from Java layer. This value is not impacted by the List of attributes to profile as being passed via configuration.
+        Number of columns in the DataFrame (arrow buffer) sent from Java layer. This value is not impacted by the list of attributes to profile as being passed via configuration.
 
 
         :return: The attribute_count of this EntityProfileResult.
@@ -63,7 +63,7 @@ class EntityProfileResult(object):
     def attribute_count(self, attribute_count):
         """
         Sets the attribute_count of this EntityProfileResult.
-        Number of columns in the DataFrame (arrow buffer) sent from Java layer. This value is not impacted by the List of attributes to profile as being passed via configuration.
+        Number of columns in the DataFrame (arrow buffer) sent from Java layer. This value is not impacted by the list of attributes to profile as being passed via configuration.
 
 
         :param attribute_count: The attribute_count of this EntityProfileResult.
@@ -75,7 +75,7 @@ class EntityProfileResult(object):
     def sampled_row_count(self):
         """
         Gets the sampled_row_count of this EntityProfileResult.
-        Number of rows were that were sampled
+        Number of rows that are sampled.
 
 
         :return: The sampled_row_count of this EntityProfileResult.
@@ -87,7 +87,7 @@ class EntityProfileResult(object):
     def sampled_row_count(self, sampled_row_count):
         """
         Sets the sampled_row_count of this EntityProfileResult.
-        Number of rows were that were sampled
+        Number of rows that are sampled.
 
 
         :param sampled_row_count: The sampled_row_count of this EntityProfileResult.

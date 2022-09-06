@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BipCallAttribute(AbstractCallAttribute):
     """
-    The call attributes impl
+    The call attributes impl.
     """
 
     def __init__(self, **kwargs):
@@ -21,7 +21,7 @@ class BipCallAttribute(AbstractCallAttribute):
 
         :param model_type:
             The value to assign to the model_type property of this BipCallAttribute.
-            Allowed values for this property are: "BIPCALLATTRIBUTE"
+            Allowed values for this property are: "BIPCALLATTRIBUTE", "GENERIC_REST_CALL_ATTRIBUTE"
         :type model_type: str
 
         :param staging_bucket:
@@ -102,7 +102,7 @@ class BipCallAttribute(AbstractCallAttribute):
     def offset_parameter(self):
         """
         Gets the offset_parameter of this BipCallAttribute.
-        Parameter to set offset
+        The parameter to set offset.
 
 
         :return: The offset_parameter of this BipCallAttribute.
@@ -114,7 +114,7 @@ class BipCallAttribute(AbstractCallAttribute):
     def offset_parameter(self, offset_parameter):
         """
         Sets the offset_parameter of this BipCallAttribute.
-        Parameter to set offset
+        The parameter to set offset.
 
 
         :param offset_parameter: The offset_parameter of this BipCallAttribute.
@@ -126,7 +126,7 @@ class BipCallAttribute(AbstractCallAttribute):
     def fetch_next_rows_parameter(self):
         """
         Gets the fetch_next_rows_parameter of this BipCallAttribute.
-        Parameter to fetch next set of rows
+        The parameter to fetch the next set of rows.
 
 
         :return: The fetch_next_rows_parameter of this BipCallAttribute.
@@ -138,7 +138,7 @@ class BipCallAttribute(AbstractCallAttribute):
     def fetch_next_rows_parameter(self, fetch_next_rows_parameter):
         """
         Sets the fetch_next_rows_parameter of this BipCallAttribute.
-        Parameter to fetch next set of rows
+        The parameter to fetch the next set of rows.
 
 
         :param fetch_next_rows_parameter: The fetch_next_rows_parameter of this BipCallAttribute.
@@ -190,7 +190,7 @@ class BipCallAttribute(AbstractCallAttribute):
     def staging_prefix(self):
         """
         Gets the staging_prefix of this BipCallAttribute.
-        Prefix for the staging DataAsset
+        The prefix for the staging DataAsset.
 
 
         :return: The staging_prefix of this BipCallAttribute.
@@ -202,7 +202,7 @@ class BipCallAttribute(AbstractCallAttribute):
     def staging_prefix(self, staging_prefix):
         """
         Sets the staging_prefix of this BipCallAttribute.
-        Prefix for the staging DataAsset
+        The prefix for the staging DataAsset.
 
 
         :param staging_prefix: The staging_prefix of this BipCallAttribute.

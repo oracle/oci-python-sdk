@@ -51,8 +51,8 @@ class WorkRequestError(object):
     def code(self):
         """
         **[Required]** Gets the code of this WorkRequestError.
-        A machine-usable code for the error that occured. Error codes are listed on
-        (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+        A machine-usable code for the error that occured. Error codes are listed in
+        (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
 
 
         :return: The code of this WorkRequestError.
@@ -64,8 +64,8 @@ class WorkRequestError(object):
     def code(self, code):
         """
         Sets the code of this WorkRequestError.
-        A machine-usable code for the error that occured. Error codes are listed on
-        (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+        A machine-usable code for the error that occured. Error codes are listed in
+        (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
 
 
         :param code: The code of this WorkRequestError.

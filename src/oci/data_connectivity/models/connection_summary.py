@@ -135,7 +135,7 @@ class ConnectionSummary(object):
     def key(self):
         """
         **[Required]** Gets the key of this ConnectionSummary.
-        Generated key that can be used in API calls to identify connection. On scenarios where reference to the connection is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the connection. In scenarios where reference to the connection is required, a value can be passed in create.
 
 
         :return: The key of this ConnectionSummary.
@@ -147,7 +147,7 @@ class ConnectionSummary(object):
     def key(self, key):
         """
         Sets the key of this ConnectionSummary.
-        Generated key that can be used in API calls to identify connection. On scenarios where reference to the connection is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the connection. In scenarios where reference to the connection is required, a value can be passed in create.
 
 
         :param key: The key of this ConnectionSummary.
@@ -207,7 +207,7 @@ class ConnectionSummary(object):
     def name(self):
         """
         **[Required]** Gets the name of this ConnectionSummary.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this ConnectionSummary.
@@ -219,7 +219,7 @@ class ConnectionSummary(object):
     def name(self, name):
         """
         Sets the name of this ConnectionSummary.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this ConnectionSummary.
@@ -303,7 +303,7 @@ class ConnectionSummary(object):
     def identifier(self):
         """
         **[Required]** Gets the identifier of this ConnectionSummary.
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this ConnectionSummary.
@@ -315,7 +315,7 @@ class ConnectionSummary(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this ConnectionSummary.
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this ConnectionSummary.
@@ -347,7 +347,7 @@ class ConnectionSummary(object):
     def connection_properties(self):
         """
         Gets the connection_properties of this ConnectionSummary.
-        The properties for the connection.
+        The properties of the connection.
 
 
         :return: The connection_properties of this ConnectionSummary.
@@ -359,7 +359,7 @@ class ConnectionSummary(object):
     def connection_properties(self, connection_properties):
         """
         Sets the connection_properties of this ConnectionSummary.
-        The properties for the connection.
+        The properties of the connection.
 
 
         :param connection_properties: The connection_properties of this ConnectionSummary.
@@ -371,7 +371,7 @@ class ConnectionSummary(object):
     def properties(self):
         """
         Gets the properties of this ConnectionSummary.
-        All the properties for the connection in a key-value map format.
+        All the properties of the connection in a key-value map format.
 
 
         :return: The properties of this ConnectionSummary.
@@ -383,7 +383,7 @@ class ConnectionSummary(object):
     def properties(self, properties):
         """
         Sets the properties of this ConnectionSummary.
-        All the properties for the connection in a key-value map format.
+        All the properties of the connection in a key-value map format.
 
 
         :param properties: The properties of this ConnectionSummary.
@@ -419,7 +419,7 @@ class ConnectionSummary(object):
     def is_default(self):
         """
         Gets the is_default of this ConnectionSummary.
-        The default property for the connection.
+        The default property of the connection.
 
 
         :return: The is_default of this ConnectionSummary.
@@ -431,7 +431,7 @@ class ConnectionSummary(object):
     def is_default(self, is_default):
         """
         Sets the is_default of this ConnectionSummary.
-        The default property for the connection.
+        The default property of the connection.
 
 
         :param is_default: The is_default of this ConnectionSummary.

@@ -97,7 +97,7 @@ class SchemaDriftConfig(object):
     def extra_column_handling(self):
         """
         Gets the extra_column_handling of this SchemaDriftConfig.
-        The setting for how to handle extra columns/fields.  NULL_FILLUP means that nulls will be loaded into the target for extra columns.
+        The setting to handle extra columns/fields.  NULL_FILLUP means that nulls will be loaded into the target for extra columns.
 
         Allowed values for this property are: "ALLOW", "NULL_FILLUP", "DO_NOT_ALLOW"
 
@@ -111,7 +111,7 @@ class SchemaDriftConfig(object):
     def extra_column_handling(self, extra_column_handling):
         """
         Sets the extra_column_handling of this SchemaDriftConfig.
-        The setting for how to handle extra columns/fields.  NULL_FILLUP means that nulls will be loaded into the target for extra columns.
+        The setting to handle extra columns/fields.  NULL_FILLUP means that nulls will be loaded into the target for extra columns.
 
 
         :param extra_column_handling: The extra_column_handling of this SchemaDriftConfig.
@@ -129,7 +129,7 @@ class SchemaDriftConfig(object):
     def missing_column_handling(self):
         """
         Gets the missing_column_handling of this SchemaDriftConfig.
-        The setting for how to handle missing columns/fields.  NULL_SELECT means that null values will be selected from the source for missing columns.
+        The setting to handle missing columns/fields.  NULL_SELECT means that null values will be selected from the source for missing columns.
 
         Allowed values for this property are: "ALLOW", "NULL_SELECT", "DO_NOT_ALLOW"
 
@@ -143,7 +143,7 @@ class SchemaDriftConfig(object):
     def missing_column_handling(self, missing_column_handling):
         """
         Sets the missing_column_handling of this SchemaDriftConfig.
-        The setting for how to handle missing columns/fields.  NULL_SELECT means that null values will be selected from the source for missing columns.
+        The setting to handle missing columns/fields.  NULL_SELECT means that null values will be selected from the source for missing columns.
 
 
         :param missing_column_handling: The missing_column_handling of this SchemaDriftConfig.
@@ -161,7 +161,7 @@ class SchemaDriftConfig(object):
     def data_type_change_handling(self):
         """
         Gets the data_type_change_handling of this SchemaDriftConfig.
-        The setting for how to handle columns/fields with changed data types.
+        The setting to handle columns/fields with changed data types.
 
         Allowed values for this property are: "ALLOW", "DO_CAST_IF_POSSIBLE", "DO_NOT_ALLOW"
 
@@ -175,7 +175,7 @@ class SchemaDriftConfig(object):
     def data_type_change_handling(self, data_type_change_handling):
         """
         Sets the data_type_change_handling of this SchemaDriftConfig.
-        The setting for how to handle columns/fields with changed data types.
+        The setting to handle columns/fields with changed data types.
 
 
         :param data_type_change_handling: The data_type_change_handling of this SchemaDriftConfig.

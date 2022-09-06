@@ -44,7 +44,7 @@ class Column(object):
     def name(self):
         """
         Gets the name of this Column.
-        Column Name.
+        Column name.
 
 
         :return: The name of this Column.
@@ -56,7 +56,7 @@ class Column(object):
     def name(self, name):
         """
         Sets the name of this Column.
-        Column Name.
+        Column name.
 
 
         :param name: The name of this Column.

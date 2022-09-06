@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataTypeStat(object):
     """
-    Statistical data in profiling results
+    Statistical data in profiling results.
     """
 
     def __init__(self, **kwargs):
@@ -58,7 +58,7 @@ class DataTypeStat(object):
     def value(self):
         """
         Gets the value of this DataTypeStat.
-        Value of the confidence of the profile result
+        Value of the confidence of the profile result.
 
 
         :return: The value of this DataTypeStat.
@@ -70,7 +70,7 @@ class DataTypeStat(object):
     def value(self, value):
         """
         Sets the value of this DataTypeStat.
-        Value of the confidence of the profile result
+        Value of the confidence of the profile result.
 
 
         :param value: The value of this DataTypeStat.
@@ -106,7 +106,7 @@ class DataTypeStat(object):
     def freq(self):
         """
         Gets the freq of this DataTypeStat.
-        How many times that value occurred.
+        The number of times the value appeared.
 
 
         :return: The freq of this DataTypeStat.
@@ -118,7 +118,7 @@ class DataTypeStat(object):
     def freq(self, freq):
         """
         Sets the freq of this DataTypeStat.
-        How many times that value occurred.
+        The number of times the value appeared.
 
 
         :param freq: The freq of this DataTypeStat.

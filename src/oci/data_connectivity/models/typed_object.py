@@ -280,7 +280,7 @@ class TypedObject(object):
     def name(self):
         """
         Gets the name of this TypedObject.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this TypedObject.
@@ -292,7 +292,7 @@ class TypedObject(object):
     def name(self, name):
         """
         Sets the name of this TypedObject.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this TypedObject.
@@ -304,7 +304,7 @@ class TypedObject(object):
     def description(self):
         """
         Gets the description of this TypedObject.
-        Detailed description for the object.
+        A detailed description of the object.
 
 
         :return: The description of this TypedObject.
@@ -316,7 +316,7 @@ class TypedObject(object):
     def description(self, description):
         """
         Sets the description of this TypedObject.
-        Detailed description for the object.
+        A detailed description of the object.
 
 
         :param description: The description of this TypedObject.

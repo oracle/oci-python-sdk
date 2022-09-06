@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ReferenceInfo(object):
     """
-    Represents reference details of a dcms artifact.
+    Represents reference details of a DCMS artifact.
     """
 
     def __init__(self, **kwargs):
@@ -145,7 +145,7 @@ class ReferenceInfo(object):
     def key(self):
         """
         Gets the key of this ReferenceInfo.
-        Generated key that can be used in API calls to identify referenceinfo.
+        Generated key that can be used in API calls to identify the referenceinfo.
 
 
         :return: The key of this ReferenceInfo.
@@ -157,7 +157,7 @@ class ReferenceInfo(object):
     def key(self, key):
         """
         Sets the key of this ReferenceInfo.
-        Generated key that can be used in API calls to identify referenceinfo.
+        Generated key that can be used in API calls to identify the referenceinfo.
 
 
         :param key: The key of this ReferenceInfo.
@@ -193,7 +193,7 @@ class ReferenceInfo(object):
     def name(self):
         """
         Gets the name of this ReferenceInfo.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this ReferenceInfo.
@@ -205,7 +205,7 @@ class ReferenceInfo(object):
     def name(self, name):
         """
         Sets the name of this ReferenceInfo.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this ReferenceInfo.
@@ -289,7 +289,7 @@ class ReferenceInfo(object):
     def identifier(self):
         """
         Gets the identifier of this ReferenceInfo.
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this ReferenceInfo.
@@ -301,7 +301,7 @@ class ReferenceInfo(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this ReferenceInfo.
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this ReferenceInfo.
@@ -313,7 +313,7 @@ class ReferenceInfo(object):
     def dcms_artifact_id(self):
         """
         **[Required]** Gets the dcms_artifact_id of this ReferenceInfo.
-        unique id of dcms artifact that is getting registered.
+        The unique ID of the DCMS artifact that is getting registered.
 
 
         :return: The dcms_artifact_id of this ReferenceInfo.
@@ -325,7 +325,7 @@ class ReferenceInfo(object):
     def dcms_artifact_id(self, dcms_artifact_id):
         """
         Sets the dcms_artifact_id of this ReferenceInfo.
-        unique id of dcms artifact that is getting registered.
+        The unique ID of the DCMS artifact that is getting registered.
 
 
         :param dcms_artifact_id: The dcms_artifact_id of this ReferenceInfo.
@@ -337,7 +337,7 @@ class ReferenceInfo(object):
     def service_artifact_id(self):
         """
         **[Required]** Gets the service_artifact_id of this ReferenceInfo.
-        unique id of service which is referencing data asset.
+        The unique ID of the service that is referencing a data asset.
 
 
         :return: The service_artifact_id of this ReferenceInfo.
@@ -349,7 +349,7 @@ class ReferenceInfo(object):
     def service_artifact_id(self, service_artifact_id):
         """
         Sets the service_artifact_id of this ReferenceInfo.
-        unique id of service which is referencing data asset.
+        The unique ID of the service that is referencing a data asset.
 
 
         :param service_artifact_id: The service_artifact_id of this ReferenceInfo.
@@ -361,7 +361,7 @@ class ReferenceInfo(object):
     def reference_count(self):
         """
         Gets the reference_count of this ReferenceInfo.
-        count of how many times a data asset has been registered by a service.
+        The number of times a data asset has been registered by a service.
 
 
         :return: The reference_count of this ReferenceInfo.
@@ -373,7 +373,7 @@ class ReferenceInfo(object):
     def reference_count(self, reference_count):
         """
         Sets the reference_count of this ReferenceInfo.
-        count of how many times a data asset has been registered by a service.
+        The number of times a data asset has been registered by a service.
 
 
         :param reference_count: The reference_count of this ReferenceInfo.

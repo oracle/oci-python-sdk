@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CallOperationConfig(object):
     """
-    Holder for parameters names.
+    Holder for parameter names.
     """
 
     def __init__(self, **kwargs):
@@ -58,7 +58,7 @@ class CallOperationConfig(object):
     def in_fields(self):
         """
         Gets the in_fields of this CallOperationConfig.
-        List of names of IN/INOUT parameters.
+        The list of names of the IN/INOUT parameters.
 
 
         :return: The in_fields of this CallOperationConfig.
@@ -70,7 +70,7 @@ class CallOperationConfig(object):
     def in_fields(self, in_fields):
         """
         Sets the in_fields of this CallOperationConfig.
-        List of names of IN/INOUT parameters.
+        The list of names of the IN/INOUT parameters.
 
 
         :param in_fields: The in_fields of this CallOperationConfig.
@@ -82,7 +82,7 @@ class CallOperationConfig(object):
     def out_fields(self):
         """
         Gets the out_fields of this CallOperationConfig.
-        List of names of OUT/INOUT parameters.
+        The list of names of the OUT/INOUT parameters.
 
 
         :return: The out_fields of this CallOperationConfig.
@@ -94,7 +94,7 @@ class CallOperationConfig(object):
     def out_fields(self, out_fields):
         """
         Sets the out_fields of this CallOperationConfig.
-        List of names of OUT/INOUT parameters.
+        The list of names of the OUT/INOUT parameters.
 
 
         :param out_fields: The out_fields of this CallOperationConfig.
@@ -126,7 +126,7 @@ class CallOperationConfig(object):
     def push_down_operations(self):
         """
         Gets the push_down_operations of this CallOperationConfig.
-        List of push down operations.
+        The List of push down operations.
 
 
         :return: The push_down_operations of this CallOperationConfig.
@@ -138,7 +138,7 @@ class CallOperationConfig(object):
     def push_down_operations(self, push_down_operations):
         """
         Sets the push_down_operations of this CallOperationConfig.
-        List of push down operations.
+        The List of push down operations.
 
 
         :param push_down_operations: The push_down_operations of this CallOperationConfig.

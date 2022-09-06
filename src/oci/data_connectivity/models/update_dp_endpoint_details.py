@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDpEndpointDetails(object):
     """
-    Properties used in endpoint update operations.
+    Properties used in the update operations of the endpoint.
     """
 
     #: A constant which can be used with the model_type property of a UpdateDpEndpointDetails.
@@ -162,7 +162,7 @@ class UpdateDpEndpointDetails(object):
     def key(self):
         """
         **[Required]** Gets the key of this UpdateDpEndpointDetails.
-        Generated key that can be used in API calls to identify endpoint. On scenarios where reference to the endpoint is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the endpoint. In scenarios where reference to the endpoint is required, a value can be passed in create.
 
 
         :return: The key of this UpdateDpEndpointDetails.
@@ -174,7 +174,7 @@ class UpdateDpEndpointDetails(object):
     def key(self, key):
         """
         Sets the key of this UpdateDpEndpointDetails.
-        Generated key that can be used in API calls to identify endpoint. On scenarios where reference to the endpoint is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify the endpoint. In scenarios where reference to the endpoint is required, a value can be passed in create.
 
 
         :param key: The key of this UpdateDpEndpointDetails.
@@ -230,7 +230,7 @@ class UpdateDpEndpointDetails(object):
     def name(self):
         """
         Gets the name of this UpdateDpEndpointDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this UpdateDpEndpointDetails.
@@ -242,7 +242,7 @@ class UpdateDpEndpointDetails(object):
     def name(self, name):
         """
         Sets the name of this UpdateDpEndpointDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this UpdateDpEndpointDetails.
@@ -254,7 +254,7 @@ class UpdateDpEndpointDetails(object):
     def description(self):
         """
         Gets the description of this UpdateDpEndpointDetails.
-        User-defined description for the endpoint.
+        User-defined description of the endpoint.
 
 
         :return: The description of this UpdateDpEndpointDetails.
@@ -266,7 +266,7 @@ class UpdateDpEndpointDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateDpEndpointDetails.
-        User-defined description for the endpoint.
+        User-defined description of the endpoint.
 
 
         :param description: The description of this UpdateDpEndpointDetails.
@@ -326,7 +326,7 @@ class UpdateDpEndpointDetails(object):
     def identifier(self):
         """
         Gets the identifier of this UpdateDpEndpointDetails.
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this UpdateDpEndpointDetails.
@@ -338,7 +338,7 @@ class UpdateDpEndpointDetails(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this UpdateDpEndpointDetails.
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this UpdateDpEndpointDetails.
@@ -350,7 +350,7 @@ class UpdateDpEndpointDetails(object):
     def data_assets(self):
         """
         Gets the data_assets of this UpdateDpEndpointDetails.
-        List of data assets which belongs to this endpoint
+        The list of data assets that belong to the endpoint.
 
 
         :return: The data_assets of this UpdateDpEndpointDetails.
@@ -362,7 +362,7 @@ class UpdateDpEndpointDetails(object):
     def data_assets(self, data_assets):
         """
         Sets the data_assets of this UpdateDpEndpointDetails.
-        List of data assets which belongs to this endpoint
+        The list of data assets that belong to the endpoint.
 
 
         :param data_assets: The data_assets of this UpdateDpEndpointDetails.

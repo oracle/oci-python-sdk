@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class FullPushDownTaskResponse(object):
     """
-    The full pushdown task
+    The full pushdown task.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class FullPushDownTaskResponse(object):
     def model_type(self):
         """
         **[Required]** Gets the model_type of this FullPushDownTaskResponse.
-        The type of of FullPushDownTask Response.
+        The type of of FullPushDownTask response.
 
 
         :return: The model_type of this FullPushDownTaskResponse.
@@ -63,7 +63,7 @@ class FullPushDownTaskResponse(object):
     def model_type(self, model_type):
         """
         Sets the model_type of this FullPushDownTaskResponse.
-        The type of of FullPushDownTask Response.
+        The type of of FullPushDownTask response.
 
 
         :param model_type: The model_type of this FullPushDownTaskResponse.
@@ -75,7 +75,7 @@ class FullPushDownTaskResponse(object):
     def error_message(self):
         """
         Gets the error_message of this FullPushDownTaskResponse.
-        The error message in response object.
+        The error message in the response object.
 
 
         :return: The error_message of this FullPushDownTaskResponse.
@@ -87,7 +87,7 @@ class FullPushDownTaskResponse(object):
     def error_message(self, error_message):
         """
         Sets the error_message of this FullPushDownTaskResponse.
-        The error message in response object.
+        The error message in the response object.
 
 
         :param error_message: The error_message of this FullPushDownTaskResponse.

@@ -38,6 +38,7 @@ class AbstractFormatAttribute(object):
         * :class:`~oci.data_connectivity.models.JsonFormatAttribute`
         * :class:`~oci.data_connectivity.models.CsvFormatAttribute`
         * :class:`~oci.data_connectivity.models.ParquetFormatAttribute`
+        * :class:`~oci.data_connectivity.models.ExcelFormatAttribute`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -77,6 +78,9 @@ class AbstractFormatAttribute(object):
 
         if type == 'PARQUET_FORMAT':
             return 'ParquetFormatAttribute'
+
+        if type == 'EXCEL_FORMAT':
+            return 'ExcelFormatAttribute'
         else:
             return 'AbstractFormatAttribute'
 

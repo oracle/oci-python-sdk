@@ -33,6 +33,14 @@ class DataEntityDetails(object):
     #: This constant has a value of "SQL_ENTITY"
     MODEL_TYPE_SQL_ENTITY = "SQL_ENTITY"
 
+    #: A constant which can be used with the model_type property of a DataEntityDetails.
+    #: This constant has a value of "DERIVED_ENTITY"
+    MODEL_TYPE_DERIVED_ENTITY = "DERIVED_ENTITY"
+
+    #: A constant which can be used with the model_type property of a DataEntityDetails.
+    #: This constant has a value of "MESSAGE_ENTITY"
+    MODEL_TYPE_MESSAGE_ENTITY = "MESSAGE_ENTITY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DataEntityDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -42,13 +50,14 @@ class DataEntityDetails(object):
         * :class:`~oci.data_connectivity.models.DataEntityFromViewEntityDetails`
         * :class:`~oci.data_connectivity.models.DataEntityFromSqlEntityDetails`
         * :class:`~oci.data_connectivity.models.DataEntityFromDataStoreEntityDetails`
+        * :class:`~oci.data_connectivity.models.DataEntityFromMessageEntityDetails`
         * :class:`~oci.data_connectivity.models.DataEntityFromTableEntityDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param model_type:
             The value to assign to the model_type property of this DataEntityDetails.
-            Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY"
+            Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY", "DERIVED_ENTITY", "MESSAGE_ENTITY"
         :type model_type: str
 
         """
@@ -82,6 +91,9 @@ class DataEntityDetails(object):
         if type == 'DATA_STORE_ENTITY':
             return 'DataEntityFromDataStoreEntityDetails'
 
+        if type == 'MESSAGE_ENTITY':
+            return 'DataEntityFromMessageEntityDetails'
+
         if type == 'TABLE_ENTITY':
             return 'DataEntityFromTableEntityDetails'
         else:
@@ -93,7 +105,7 @@ class DataEntityDetails(object):
         **[Required]** Gets the model_type of this DataEntityDetails.
         The data entity type.
 
-        Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY"
+        Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY", "DERIVED_ENTITY", "MESSAGE_ENTITY"
 
 
         :return: The model_type of this DataEntityDetails.
@@ -111,7 +123,7 @@ class DataEntityDetails(object):
         :param model_type: The model_type of this DataEntityDetails.
         :type: str
         """
-        allowed_values = ["VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY"]
+        allowed_values = ["VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY", "DERIVED_ENTITY", "MESSAGE_ENTITY"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             raise ValueError(
                 "Invalid value for `model_type`, must be None or one of {0}"

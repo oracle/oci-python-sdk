@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Endpoint(object):
     """
-    An Endpoint is an organizational construct to keep multiple data Connectivity Management solutions and their resources (pe-id, dnsProxyIp, dnsZones, and so on) separate from each other, helping you to stay organized. For example, you could have separate registries for development, testing, and production.
+    An endpoint is an organizational construct to keep multiple data connectivity management solutions and their resources (pe-id, dnsProxyIp, dnsZones, and so on) separate from each other, helping you to stay organized. For example, you could have separate registries for development, testing, and production.
     """
 
     #: A constant which can be used with the lifecycle_state property of a Endpoint.
@@ -189,7 +189,7 @@ class Endpoint(object):
     def subnet_id(self):
         """
         **[Required]** Gets the subnet_id of this Endpoint.
-        Subnet OCID for the customer connected network where databases for example reside.
+        Subnet OCID of the customer connected network where, for example, the databases reside.
 
 
         :return: The subnet_id of this Endpoint.
@@ -201,7 +201,7 @@ class Endpoint(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this Endpoint.
-        Subnet OCID for the customer connected network where databases for example reside.
+        Subnet OCID of the customer connected network where, for example, the databases reside.
 
 
         :param subnet_id: The subnet_id of this Endpoint.
@@ -239,7 +239,7 @@ class Endpoint(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this Endpoint.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -252,7 +252,7 @@ class Endpoint(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this Endpoint.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -315,7 +315,7 @@ class Endpoint(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this Endpoint.
-        Data Connectivity Management Registry display name, registries can be renamed
+        The Data Connectivity Management Registry display name; registries can be renamed.
 
 
         :return: The display_name of this Endpoint.
@@ -327,7 +327,7 @@ class Endpoint(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Endpoint.
-        Data Connectivity Management Registry display name, registries can be renamed
+        The Data Connectivity Management Registry display name; registries can be renamed.
 
 
         :param display_name: The display_name of this Endpoint.
@@ -363,7 +363,7 @@ class Endpoint(object):
     def time_created(self):
         """
         Gets the time_created of this Endpoint.
-        The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+        Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
 
 
         :return: The time_created of this Endpoint.
@@ -375,7 +375,7 @@ class Endpoint(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Endpoint.
-        The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+        Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
 
 
         :param time_created: The time_created of this Endpoint.
@@ -387,7 +387,7 @@ class Endpoint(object):
     def time_updated(self):
         """
         Gets the time_updated of this Endpoint.
-        The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+        Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
 
 
         :return: The time_updated of this Endpoint.
@@ -399,7 +399,7 @@ class Endpoint(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this Endpoint.
-        The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+        Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
 
 
         :param time_updated: The time_updated of this Endpoint.
@@ -411,15 +411,15 @@ class Endpoint(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this Endpoint.
-        Lifecycle states for registries in Data Connectivity Management Service
-        CREATING - The resource is being created and may not be usable until the entire metadata is defined
-        UPDATING - The resource is being updated and may not be usable until all changes are commited
+        Lifecycle states for registries in the Data Connectivity Management Service.
+        CREATING - The resource is being created and may not be usable until the entire metadata is defined.
+        UPDATING - The resource is being updated and may not be usable until all changes are commited.
         DELETING - The resource is being deleted and might require deep cleanup of children.
-        ACTIVE   - The resource is valid and available for access
+        ACTIVE   - The resource is valid and available for access.
         INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for
-                 administrative reasons
-        DELETED  - The resource has been deleted and isn't available
-        FAILED   - The resource is in a failed state due to validation or other errors
+                 administrative reasons.
+        DELETED  - The resource has been deleted and isn't available.
+        FAILED   - The resource is in a failed state due to validation or other errors.
 
         Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -434,15 +434,15 @@ class Endpoint(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Endpoint.
-        Lifecycle states for registries in Data Connectivity Management Service
-        CREATING - The resource is being created and may not be usable until the entire metadata is defined
-        UPDATING - The resource is being updated and may not be usable until all changes are commited
+        Lifecycle states for registries in the Data Connectivity Management Service.
+        CREATING - The resource is being created and may not be usable until the entire metadata is defined.
+        UPDATING - The resource is being updated and may not be usable until all changes are commited.
         DELETING - The resource is being deleted and might require deep cleanup of children.
-        ACTIVE   - The resource is valid and available for access
+        ACTIVE   - The resource is valid and available for access.
         INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for
-                 administrative reasons
-        DELETED  - The resource has been deleted and isn't available
-        FAILED   - The resource is in a failed state due to validation or other errors
+                 administrative reasons.
+        DELETED  - The resource has been deleted and isn't available.
+        FAILED   - The resource is in a failed state due to validation or other errors.
 
 
         :param lifecycle_state: The lifecycle_state of this Endpoint.
@@ -481,7 +481,7 @@ class Endpoint(object):
     def id(self):
         """
         **[Required]** Gets the id of this Endpoint.
-        Unique identifier that is immutable on creation
+        A unique identifier that is immutable on creation.
 
 
         :return: The id of this Endpoint.
@@ -493,7 +493,7 @@ class Endpoint(object):
     def id(self, id):
         """
         Sets the id of this Endpoint.
-        Unique identifier that is immutable on creation
+        A unique identifier that is immutable on creation.
 
 
         :param id: The id of this Endpoint.
@@ -529,7 +529,7 @@ class Endpoint(object):
     def nsg_ids(self):
         """
         Gets the nsg_ids of this Endpoint.
-        List of NSGs to which the Private Endpoint VNIC must be added.
+        The list of NSGs to which the private endpoint VNIC must be added.
 
 
         :return: The nsg_ids of this Endpoint.
@@ -541,7 +541,7 @@ class Endpoint(object):
     def nsg_ids(self, nsg_ids):
         """
         Sets the nsg_ids of this Endpoint.
-        List of NSGs to which the Private Endpoint VNIC must be added.
+        The list of NSGs to which the private endpoint VNIC must be added.
 
 
         :param nsg_ids: The nsg_ids of this Endpoint.

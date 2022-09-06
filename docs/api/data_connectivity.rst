@@ -23,6 +23,7 @@ Data Connectivity
     oci.data_connectivity.models.AbstractCallAttribute
     oci.data_connectivity.models.AbstractDataOperationConfig
     oci.data_connectivity.models.AbstractFormatAttribute
+    oci.data_connectivity.models.AbstractOperationAttributes
     oci.data_connectivity.models.AbstractReadAttribute
     oci.data_connectivity.models.AbstractWriteAttribute
     oci.data_connectivity.models.AggregatorSummary
@@ -40,6 +41,7 @@ Data Connectivity
     oci.data_connectivity.models.CompositeType
     oci.data_connectivity.models.Compression
     oci.data_connectivity.models.ConfigDefinition
+    oci.data_connectivity.models.ConfigDetails
     oci.data_connectivity.models.ConfigParameterDefinition
     oci.data_connectivity.models.ConfigParameterValue
     oci.data_connectivity.models.ConfigValues
@@ -50,7 +52,8 @@ Data Connectivity
     oci.data_connectivity.models.ConnectionSummaryCollection
     oci.data_connectivity.models.ConnectionValidation
     oci.data_connectivity.models.ConnectionValidationSummary
-    oci.data_connectivity.models.ConnectionValidationSummaryCollection
+    oci.data_connectivity.models.ConnectivityUsage
+    oci.data_connectivity.models.ConnectivityUsageDetails
     oci.data_connectivity.models.ConnectivityValidation
     oci.data_connectivity.models.ConnectorAttribute
     oci.data_connectivity.models.CreateAttachDataAssetDetails
@@ -69,6 +72,7 @@ Data Connectivity
     oci.data_connectivity.models.CreateEntityShapeDetails
     oci.data_connectivity.models.CreateEntityShapeFromDataStore
     oci.data_connectivity.models.CreateEntityShapeFromFile
+    oci.data_connectivity.models.CreateEntityShapeFromMessage
     oci.data_connectivity.models.CreateEntityShapeFromSQL
     oci.data_connectivity.models.CreateEntityShapeFromTable
     oci.data_connectivity.models.CreateEntityShapeFromView
@@ -88,6 +92,7 @@ Data Connectivity
     oci.data_connectivity.models.DataEntityFromDataStoreEntityDetails
     oci.data_connectivity.models.DataEntityFromFile
     oci.data_connectivity.models.DataEntityFromFileEntityDetails
+    oci.data_connectivity.models.DataEntityFromMessageEntityDetails
     oci.data_connectivity.models.DataEntityFromSql
     oci.data_connectivity.models.DataEntityFromSqlEntityDetails
     oci.data_connectivity.models.DataEntityFromTable
@@ -108,6 +113,10 @@ Data Connectivity
     oci.data_connectivity.models.DataTypeStat
     oci.data_connectivity.models.DateAttribute
     oci.data_connectivity.models.DeReferenceInfo
+    oci.data_connectivity.models.DeriveEntities
+    oci.data_connectivity.models.DeriveEntitiesDetails
+    oci.data_connectivity.models.DeriveEntitiesItem
+    oci.data_connectivity.models.DerivedEntity
     oci.data_connectivity.models.DerivedType
     oci.data_connectivity.models.DetachDataAssetInfo
     oci.data_connectivity.models.DpEndpoint
@@ -126,10 +135,12 @@ Data Connectivity
     oci.data_connectivity.models.EntityShape
     oci.data_connectivity.models.EntityShapeFromDataStore
     oci.data_connectivity.models.EntityShapeFromFile
+    oci.data_connectivity.models.EntityShapeFromMessage
     oci.data_connectivity.models.EntityShapeFromSQL
     oci.data_connectivity.models.EntityShapeFromTable
     oci.data_connectivity.models.EntityShapeFromView
     oci.data_connectivity.models.ErrorDetails
+    oci.data_connectivity.models.ExcelFormatAttribute
     oci.data_connectivity.models.ExecuteOperationJob
     oci.data_connectivity.models.ExecuteOperationJobDetails
     oci.data_connectivity.models.ExternalStorage
@@ -139,6 +150,8 @@ Data Connectivity
     oci.data_connectivity.models.FolderSummaryCollection
     oci.data_connectivity.models.ForeignKey
     oci.data_connectivity.models.FullPushDownTaskResponse
+    oci.data_connectivity.models.GenericRestApiAttributes
+    oci.data_connectivity.models.GenericRestCallAttribute
     oci.data_connectivity.models.HdfsWriteAttributes
     oci.data_connectivity.models.Histogram
     oci.data_connectivity.models.InputPort
@@ -158,10 +171,12 @@ Data Connectivity
     oci.data_connectivity.models.ObjectStorageWriteAttributes
     oci.data_connectivity.models.Operation
     oci.data_connectivity.models.OperationExecResult
+    oci.data_connectivity.models.OperationFromApi
     oci.data_connectivity.models.OperationFromProcedure
     oci.data_connectivity.models.OperationInputRecord
     oci.data_connectivity.models.OperationSummary
     oci.data_connectivity.models.OperationSummaryCollection
+    oci.data_connectivity.models.OperationSummaryFromApi
     oci.data_connectivity.models.OperationSummaryFromProcedure
     oci.data_connectivity.models.OracleAdwcWriteAttributes
     oci.data_connectivity.models.OracleAtpWriteAttributes
@@ -183,6 +198,9 @@ Data Connectivity
     oci.data_connectivity.models.ReferenceArtifactSummary
     oci.data_connectivity.models.ReferenceArtifactSummaryCollection
     oci.data_connectivity.models.ReferenceInfo
+    oci.data_connectivity.models.ReferencedDataObject
+    oci.data_connectivity.models.ReferencedDataObjectFromAPI
+    oci.data_connectivity.models.ReferencedDataObjectFromProcedure
     oci.data_connectivity.models.Registry
     oci.data_connectivity.models.RegistryMetadata
     oci.data_connectivity.models.RegistrySummary

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Attribute(object):
     """
-    Registry Attribute Object, to get connector details
+    The attribute object fo the registry that can be used to get the connector details.
     """
 
     def __init__(self, **kwargs):
@@ -79,7 +79,7 @@ class Attribute(object):
     def name(self):
         """
         **[Required]** Gets the name of this Attribute.
-        The name of of the Attribute.
+        The name of of the attribute.
 
 
         :return: The name of this Attribute.
@@ -91,7 +91,7 @@ class Attribute(object):
     def name(self, name):
         """
         Sets the name of this Attribute.
-        The name of of the Attribute.
+        The name of of the attribute.
 
 
         :param name: The name of this Attribute.
@@ -103,7 +103,7 @@ class Attribute(object):
     def is_sensitive(self):
         """
         Gets the is_sensitive of this Attribute.
-        True if Attribute is sensitive.
+        True if attribute is sensitive.
 
 
         :return: The is_sensitive of this Attribute.
@@ -115,7 +115,7 @@ class Attribute(object):
     def is_sensitive(self, is_sensitive):
         """
         Sets the is_sensitive of this Attribute.
-        True if Attribute is sensitive.
+        True if attribute is sensitive.
 
 
         :param is_sensitive: The is_sensitive of this Attribute.
@@ -127,7 +127,7 @@ class Attribute(object):
     def is_mandatory(self):
         """
         Gets the is_mandatory of this Attribute.
-        True if Attribute is mandatory.
+        True if attribute is mandatory.
 
 
         :return: The is_mandatory of this Attribute.
@@ -139,7 +139,7 @@ class Attribute(object):
     def is_mandatory(self, is_mandatory):
         """
         Sets the is_mandatory of this Attribute.
-        True if Attribute is mandatory.
+        True if attribute is mandatory.
 
 
         :param is_mandatory: The is_mandatory of this Attribute.
@@ -151,7 +151,7 @@ class Attribute(object):
     def is_generated(self):
         """
         Gets the is_generated of this Attribute.
-        True if Attribute is generated.
+        True if attribute is generated.
 
 
         :return: The is_generated of this Attribute.
@@ -163,7 +163,7 @@ class Attribute(object):
     def is_generated(self, is_generated):
         """
         Sets the is_generated of this Attribute.
-        True if Attribute is generated.
+        True if attribute is generated.
 
 
         :param is_generated: The is_generated of this Attribute.
@@ -175,7 +175,7 @@ class Attribute(object):
     def is_base64_encoded(self):
         """
         Gets the is_base64_encoded of this Attribute.
-        True if Attribute is encoded.
+        True if attribute is encoded.
 
 
         :return: The is_base64_encoded of this Attribute.
@@ -187,7 +187,7 @@ class Attribute(object):
     def is_base64_encoded(self, is_base64_encoded):
         """
         Sets the is_base64_encoded of this Attribute.
-        True if Attribute is encoded.
+        True if attribute is encoded.
 
 
         :param is_base64_encoded: The is_base64_encoded of this Attribute.
@@ -199,7 +199,7 @@ class Attribute(object):
     def valid_key_list(self):
         """
         Gets the valid_key_list of this Attribute.
-        List of valid key list
+        The list of valid keys.
 
 
         :return: The valid_key_list of this Attribute.
@@ -211,7 +211,7 @@ class Attribute(object):
     def valid_key_list(self, valid_key_list):
         """
         Sets the valid_key_list of this Attribute.
-        List of valid key list
+        The list of valid keys.
 
 
         :param valid_key_list: The valid_key_list of this Attribute.
@@ -223,7 +223,7 @@ class Attribute(object):
     def attribute_type(self):
         """
         Gets the attribute_type of this Attribute.
-        Attribute type details
+        The attribute type details.
 
 
         :return: The attribute_type of this Attribute.
@@ -235,7 +235,7 @@ class Attribute(object):
     def attribute_type(self, attribute_type):
         """
         Sets the attribute_type of this Attribute.
-        Attribute type details
+        The attribute type details.
 
 
         :param attribute_type: The attribute_type of this Attribute.

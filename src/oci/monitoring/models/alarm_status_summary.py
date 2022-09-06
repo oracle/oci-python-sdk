@@ -239,6 +239,9 @@ class AlarmStatusSummary(object):
         """
         **[Required]** Gets the status of this AlarmStatusSummary.
         The status of this alarm.
+        Status is collective, across all metric streams in the alarm.
+        To list alarm status for each metric stream, use :func:`retrieve_dimension_states`.
+        The alarm attribute `isNotificationsPerMetricDimensionEnabled` must be set to `true`.
 
         Example: `FIRING`
 
@@ -256,6 +259,9 @@ class AlarmStatusSummary(object):
         """
         Sets the status of this AlarmStatusSummary.
         The status of this alarm.
+        Status is collective, across all metric streams in the alarm.
+        To list alarm status for each metric stream, use :func:`retrieve_dimension_states`.
+        The alarm attribute `isNotificationsPerMetricDimensionEnabled` must be set to `true`.
 
         Example: `FIRING`
 

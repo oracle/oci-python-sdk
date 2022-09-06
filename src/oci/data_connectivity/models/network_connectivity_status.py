@@ -151,7 +151,7 @@ class NetworkConnectivityStatus(object):
     def time_last_updated(self):
         """
         Gets the time_last_updated of this NetworkConnectivityStatus.
-        Instant when the network validation was last done for the given DataAsset-PrivateEndpoint pair..
+        The timestamp when the network validation was last updated for the given DataAsset-PrivateEndpoint pair.
 
 
         :return: The time_last_updated of this NetworkConnectivityStatus.
@@ -163,7 +163,7 @@ class NetworkConnectivityStatus(object):
     def time_last_updated(self, time_last_updated):
         """
         Sets the time_last_updated of this NetworkConnectivityStatus.
-        Instant when the network validation was last done for the given DataAsset-PrivateEndpoint pair..
+        The timestamp when the network validation was last updated for the given DataAsset-PrivateEndpoint pair.
 
 
         :param time_last_updated: The time_last_updated of this NetworkConnectivityStatus.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RegistrySummary(object):
     """
-    Summary of a Registry.
+    The summary of a registry.
     """
 
     def __init__(self, **kwargs):
@@ -107,7 +107,7 @@ class RegistrySummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this RegistrySummary.
-        Unique identifier that is immutable on creation
+        A unique identifier that is immutable on creation.
 
 
         :return: The id of this RegistrySummary.
@@ -119,7 +119,7 @@ class RegistrySummary(object):
     def id(self, id):
         """
         Sets the id of this RegistrySummary.
-        Unique identifier that is immutable on creation
+        A unique identifier that is immutable on creation.
 
 
         :param id: The id of this RegistrySummary.
@@ -131,7 +131,7 @@ class RegistrySummary(object):
     def description(self):
         """
         Gets the description of this RegistrySummary.
-        Registry description
+        Registry description.
 
 
         :return: The description of this RegistrySummary.
@@ -143,7 +143,7 @@ class RegistrySummary(object):
     def description(self, description):
         """
         Sets the description of this RegistrySummary.
-        Registry description
+        Registry description.
 
 
         :param description: The description of this RegistrySummary.
@@ -155,7 +155,7 @@ class RegistrySummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this RegistrySummary.
-        Data Connectivity Management Registry display name, registries can be renamed
+        The Data Connectivity Management registry display name; registries can be renamed.
 
 
         :return: The display_name of this RegistrySummary.
@@ -167,7 +167,7 @@ class RegistrySummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this RegistrySummary.
-        Data Connectivity Management Registry display name, registries can be renamed
+        The Data Connectivity Management registry display name; registries can be renamed.
 
 
         :param display_name: The display_name of this RegistrySummary.
@@ -203,7 +203,7 @@ class RegistrySummary(object):
     def time_created(self):
         """
         Gets the time_created of this RegistrySummary.
-        The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+        Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
 
 
         :return: The time_created of this RegistrySummary.
@@ -215,7 +215,7 @@ class RegistrySummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this RegistrySummary.
-        The time the Data Connectivity Management Registry was created. An RFC3339 formatted datetime string
+        Time when the Data Connectivity Management registry was created. An RFC3339 formatted datetime string.
 
 
         :param time_created: The time_created of this RegistrySummary.
@@ -227,7 +227,7 @@ class RegistrySummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this RegistrySummary.
-        The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+        Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
 
 
         :return: The time_updated of this RegistrySummary.
@@ -239,7 +239,7 @@ class RegistrySummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this RegistrySummary.
-        The time the Data Connectivity Management Registry was updated. An RFC3339 formatted datetime string
+        Time when the Data Connectivity Management registry was updated. An RFC3339 formatted datetime string.
 
 
         :param time_updated: The time_updated of this RegistrySummary.
@@ -251,7 +251,7 @@ class RegistrySummary(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this RegistrySummary.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -264,7 +264,7 @@ class RegistrySummary(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this RegistrySummary.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
         Example: `{\"bar-key\": \"value\"}`
 
 

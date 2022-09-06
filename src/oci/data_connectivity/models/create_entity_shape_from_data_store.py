@@ -21,7 +21,7 @@ class CreateEntityShapeFromDataStore(CreateEntityShapeDetails):
 
         :param model_type:
             The value to assign to the model_type property of this CreateEntityShapeFromDataStore.
-            Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY"
+            Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY", "MESSAGE_ENTITY"
         :type model_type: str
 
         :param key:
@@ -58,7 +58,7 @@ class CreateEntityShapeFromDataStore(CreateEntityShapeDetails):
 
         :param entity_type:
             The value to assign to the entity_type property of this CreateEntityShapeFromDataStore.
-            Allowed values for this property are: "TABLE", "VIEW", "FILE", "SQL"
+            Allowed values for this property are: "TABLE", "VIEW", "FILE", "SQL", "DATA_STORE", "MESSAGE"
         :type entity_type: str
 
         :param other_type_label:

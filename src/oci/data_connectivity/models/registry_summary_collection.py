@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RegistrySummaryCollection(object):
     """
-    List of Registry summaries.
+    The list of registry summaries.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class RegistrySummaryCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this RegistrySummaryCollection.
-        The array of Registry summariess
+        The array of registry summaries.
 
 
         :return: The items of this RegistrySummaryCollection.
@@ -49,7 +49,7 @@ class RegistrySummaryCollection(object):
     def items(self, items):
         """
         Sets the items of this RegistrySummaryCollection.
-        The array of Registry summariess
+        The array of registry summaries.
 
 
         :param items: The items of this RegistrySummaryCollection.

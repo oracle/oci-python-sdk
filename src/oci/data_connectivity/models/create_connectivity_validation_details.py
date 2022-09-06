@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateConnectivityValidationDetails(object):
     """
-    Input to perform connector validation. If defines some data integration semantics in a data flow. It may be reading/writing data or transforming the data.
+    Input to perform connector validation. Defines the data integration semantics in a data flow. It can be about reading, writing, or transforming the data.
     """
 
     #: A constant which can be used with the model_type property of a CreateConnectivityValidationDetails.
@@ -251,7 +251,7 @@ class CreateConnectivityValidationDetails(object):
     def name(self):
         """
         Gets the name of this CreateConnectivityValidationDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this CreateConnectivityValidationDetails.
@@ -263,7 +263,7 @@ class CreateConnectivityValidationDetails(object):
     def name(self, name):
         """
         Sets the name of this CreateConnectivityValidationDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this CreateConnectivityValidationDetails.
@@ -395,7 +395,7 @@ class CreateConnectivityValidationDetails(object):
     def identifier(self):
         """
         Gets the identifier of this CreateConnectivityValidationDetails.
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this CreateConnectivityValidationDetails.
@@ -407,7 +407,7 @@ class CreateConnectivityValidationDetails(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this CreateConnectivityValidationDetails.
-        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this CreateConnectivityValidationDetails.

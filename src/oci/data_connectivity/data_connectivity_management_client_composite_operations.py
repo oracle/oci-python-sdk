@@ -29,10 +29,10 @@ class DataConnectivityManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str endpoint_id: (required)
-            DCMS Endpoint id
+            DCMS endpoint ID.
 
         :param oci.data_connectivity.models.ChangeEndpointCompartmentDetails change_endpoint_compartment_details: (required)
-            The details of change compartment action.
+            The details of the change compartment action.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_connectivity.models.WorkRequest.status`
@@ -70,10 +70,10 @@ class DataConnectivityManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str registry_id: (required)
-            The registry Ocid.
+            The registry OCID.
 
         :param oci.data_connectivity.models.ChangeRegistryCompartmentDetails change_registry_compartment_details: (required)
-            The details of change compartment action.
+            The details of the change compartment action.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_connectivity.models.WorkRequest.status`
@@ -111,7 +111,7 @@ class DataConnectivityManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.data_connectivity.models.CreateEndpointDetails create_endpoint_details: (required)
-            Details for the new Data Connectivity Management Endpoint.
+            Details of the new Data Connectivity Management endpoint.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_connectivity.models.WorkRequest.status`
@@ -187,7 +187,7 @@ class DataConnectivityManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str endpoint_id: (required)
-            DCMS Endpoint id
+            DCMS endpoint ID.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_connectivity.models.WorkRequest.status`
@@ -233,7 +233,7 @@ class DataConnectivityManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str registry_id: (required)
-            The registry Ocid.
+            The registry OCID.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_connectivity.models.WorkRequest.status`
@@ -279,7 +279,7 @@ class DataConnectivityManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str endpoint_id: (required)
-            DCMS Endpoint id
+            DCMS endpoint ID.
 
         :param oci.data_connectivity.models.UpdateEndpointDetails update_endpoint_details: (required)
             The information to be updated.
@@ -320,7 +320,7 @@ class DataConnectivityManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str registry_id: (required)
-            The registry Ocid.
+            The registry OCID.
 
         :param oci.data_connectivity.models.UpdateRegistryDetails update_registry_details: (required)
             The information to be updated.
@@ -361,7 +361,7 @@ class DataConnectivityManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str endpoint_id: (required)
-            DCMS Endpoint id
+            DCMS endpoint ID.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_connectivity.models.WorkRequest.status`

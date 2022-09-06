@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateRegistryDetails(object):
     """
-    The information about new Registry.
+    The information about a new Registry.
     """
 
     def __init__(self, **kwargs):
@@ -65,7 +65,7 @@ class CreateRegistryDetails(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this CreateRegistryDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -78,7 +78,7 @@ class CreateRegistryDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this CreateRegistryDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Simple key-value pair that is applied without any predefined name, type, or scope. Exists only for cross-compatibility.
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -141,7 +141,7 @@ class CreateRegistryDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateRegistryDetails.
-        Data Connectivity Management Registry display name, registries can be renamed
+        The Data Connectivity Management Registry display name; registries can be renamed.
 
 
         :return: The display_name of this CreateRegistryDetails.
@@ -153,7 +153,7 @@ class CreateRegistryDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateRegistryDetails.
-        Data Connectivity Management Registry display name, registries can be renamed
+        The Data Connectivity Management Registry display name; registries can be renamed.
 
 
         :param display_name: The display_name of this CreateRegistryDetails.

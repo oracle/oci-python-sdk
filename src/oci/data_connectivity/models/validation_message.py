@@ -44,7 +44,7 @@ class ValidationMessage(object):
     def level(self):
         """
         Gets the level of this ValidationMessage.
-        level of validation messages
+        The level of validation messages.
 
 
         :return: The level of this ValidationMessage.
@@ -56,7 +56,7 @@ class ValidationMessage(object):
     def level(self, level):
         """
         Sets the level of this ValidationMessage.
-        level of validation messages
+        The level of validation messages.
 
 
         :param level: The level of this ValidationMessage.

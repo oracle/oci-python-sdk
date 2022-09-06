@@ -89,7 +89,7 @@ class ExecuteOperationJob(object):
     def error_message(self):
         """
         Gets the error_message of this ExecuteOperationJob.
-        Error message, if whole operation is failed.
+        Error message when the whole operation fails.
 
 
         :return: The error_message of this ExecuteOperationJob.
@@ -101,7 +101,7 @@ class ExecuteOperationJob(object):
     def error_message(self, error_message):
         """
         Sets the error_message of this ExecuteOperationJob.
-        Error message, if whole operation is failed.
+        Error message when the whole operation fails.
 
 
         :param error_message: The error_message of this ExecuteOperationJob.
@@ -137,7 +137,7 @@ class ExecuteOperationJob(object):
     def out_params(self):
         """
         Gets the out_params of this ExecuteOperationJob.
-        List of names of OUT/INOUT params.
+        The list of names of OUT/INOUT parameters.
 
 
         :return: The out_params of this ExecuteOperationJob.
@@ -149,7 +149,7 @@ class ExecuteOperationJob(object):
     def out_params(self, out_params):
         """
         Sets the out_params of this ExecuteOperationJob.
-        List of names of OUT/INOUT params.
+        The list of names of OUT/INOUT parameters.
 
 
         :param out_params: The out_params of this ExecuteOperationJob.
@@ -161,7 +161,7 @@ class ExecuteOperationJob(object):
     def operation_result(self):
         """
         **[Required]** Gets the operation_result of this ExecuteOperationJob.
-        List of operation execution result for each input set.
+        The list of operation execution result for each input set.
 
 
         :return: The operation_result of this ExecuteOperationJob.
@@ -173,7 +173,7 @@ class ExecuteOperationJob(object):
     def operation_result(self, operation_result):
         """
         Sets the operation_result of this ExecuteOperationJob.
-        List of operation execution result for each input set.
+        The list of operation execution result for each input set.
 
 
         :param operation_result: The operation_result of this ExecuteOperationJob.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateExecuteOperationJobDetails(object):
     """
-    Input details to execute operation.
+    Input details to execute an operation.
     """
 
     def __init__(self, **kwargs):
@@ -91,7 +91,7 @@ class CreateExecuteOperationJobDetails(object):
     def input_records(self):
         """
         Gets the input_records of this CreateExecuteOperationJobDetails.
-        Collection of input parameters supplied.
+        Collection of the input parameters supplied.
 
 
         :return: The input_records of this CreateExecuteOperationJobDetails.
@@ -103,7 +103,7 @@ class CreateExecuteOperationJobDetails(object):
     def input_records(self, input_records):
         """
         Sets the input_records of this CreateExecuteOperationJobDetails.
-        Collection of input parameters supplied.
+        Collection of the input parameters supplied.
 
 
         :param input_records: The input_records of this CreateExecuteOperationJobDetails.

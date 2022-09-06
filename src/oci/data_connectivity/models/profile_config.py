@@ -146,7 +146,7 @@ class ProfileConfig(object):
     def attributes(self):
         """
         Gets the attributes of this ProfileConfig.
-        Array of column names to profile. If empty all columns in the entity are profiled.
+        Array of column names to profile. If empty, all the columns in the entity are profiled.
 
 
         :return: The attributes of this ProfileConfig.
@@ -158,7 +158,7 @@ class ProfileConfig(object):
     def attributes(self, attributes):
         """
         Sets the attributes of this ProfileConfig.
-        Array of column names to profile. If empty all columns in the entity are profiled.
+        Array of column names to profile. If empty, all the columns in the entity are profiled.
 
 
         :param attributes: The attributes of this ProfileConfig.
@@ -170,7 +170,7 @@ class ProfileConfig(object):
     def functions(self):
         """
         Gets the functions of this ProfileConfig.
-        Array of enum Strings basically what all profile functions to run. If empty, all supported functions are run.
+        Array of enum strings to decide which profile functions to run. If empty, all the supported functions are run.
 
         Allowed values for items in this list are: "ATTRIBUTE_COUNT", "ROW_COUNT", "DATA_TYPE", "DISTINCT_COUNT", "DUPLICATE_COUNT", "HISTOGRAM", "MAX", "MAX_LENGTH", "MEAN", "MEAN_LENGTH", "MEDIAN", "MIN", "MIN_LENGTH", "NULL_COUNT", "OUTLIER", "PATTERN", "STANDARD_DEVIATION", "UNIQUE_COUNT", "VARIANCE", "VALUE_FREQUENCY"
 
@@ -184,7 +184,7 @@ class ProfileConfig(object):
     def functions(self, functions):
         """
         Sets the functions of this ProfileConfig.
-        Array of enum Strings basically what all profile functions to run. If empty, all supported functions are run.
+        Array of enum strings to decide which profile functions to run. If empty, all the supported functions are run.
 
 
         :param functions: The functions of this ProfileConfig.
@@ -205,7 +205,7 @@ class ProfileConfig(object):
     def top_n_val_freq(self):
         """
         Gets the top_n_val_freq of this ProfileConfig.
-        The maximum number of value frequencies to return per column. The VFs are sorted descending on frequency and ascending on value and then topN are returned and rest discarded.
+        The maximum number of value frequencies to return per column. The VFs are sorted descending on frequency, and ascending on value, and then topN are returned and rest discarded.
 
 
         :return: The top_n_val_freq of this ProfileConfig.
@@ -217,7 +217,7 @@ class ProfileConfig(object):
     def top_n_val_freq(self, top_n_val_freq):
         """
         Sets the top_n_val_freq of this ProfileConfig.
-        The maximum number of value frequencies to return per column. The VFs are sorted descending on frequency and ascending on value and then topN are returned and rest discarded.
+        The maximum number of value frequencies to return per column. The VFs are sorted descending on frequency, and ascending on value, and then topN are returned and rest discarded.
 
 
         :param top_n_val_freq: The top_n_val_freq of this ProfileConfig.
@@ -229,7 +229,7 @@ class ProfileConfig(object):
     def pattern_threshold(self):
         """
         Gets the pattern_threshold of this ProfileConfig.
-        A pattern has to qualify minumum this percentage threshold to be considered a legitimate pattern on its own. All patterns which does not qualify this will be clubbed together into a single 'Others' pattern.
+        A pattern has to qualify at least this percentage threshold to be considered a pattern on its own. Patterns that do not qualify are clubbed together into 'Others' pattern.
 
 
         :return: The pattern_threshold of this ProfileConfig.
@@ -241,7 +241,7 @@ class ProfileConfig(object):
     def pattern_threshold(self, pattern_threshold):
         """
         Sets the pattern_threshold of this ProfileConfig.
-        A pattern has to qualify minumum this percentage threshold to be considered a legitimate pattern on its own. All patterns which does not qualify this will be clubbed together into a single 'Others' pattern.
+        A pattern has to qualify at least this percentage threshold to be considered a pattern on its own. Patterns that do not qualify are clubbed together into 'Others' pattern.
 
 
         :param pattern_threshold: The pattern_threshold of this ProfileConfig.
@@ -253,7 +253,7 @@ class ProfileConfig(object):
     def data_type_threshold(self):
         """
         Gets the data_type_threshold of this ProfileConfig.
-        A data type has to qualify minimum this percentage threshold to be considered an infrred data type for a column.
+        A data type has to qualify at least this percentage threshold to be considered an inferred data type for a column.
 
 
         :return: The data_type_threshold of this ProfileConfig.
@@ -265,7 +265,7 @@ class ProfileConfig(object):
     def data_type_threshold(self, data_type_threshold):
         """
         Sets the data_type_threshold of this ProfileConfig.
-        A data type has to qualify minimum this percentage threshold to be considered an infrred data type for a column.
+        A data type has to qualify at least this percentage threshold to be considered an inferred data type for a column.
 
 
         :param data_type_threshold: The data_type_threshold of this ProfileConfig.

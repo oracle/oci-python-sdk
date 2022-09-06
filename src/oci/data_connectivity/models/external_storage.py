@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExternalStorage(ConnectorAttribute):
     """
-    BICC Connector Attribute.Object Storage as External storage where the BICC extracted files are written
+    BICC Connector Attribute. Object Storage as External storage where the BICC extracted files are written.
     """
 
     def __init__(self, **kwargs):
@@ -82,7 +82,7 @@ class ExternalStorage(ConnectorAttribute):
     def storage_id(self):
         """
         Gets the storage_id of this ExternalStorage.
-        Id of the external stoarge configured in BICC console. Usually its numeric.
+        ID of the external stoarge configured in the BICC console. Usually it's numeric.
 
 
         :return: The storage_id of this ExternalStorage.
@@ -94,7 +94,7 @@ class ExternalStorage(ConnectorAttribute):
     def storage_id(self, storage_id):
         """
         Sets the storage_id of this ExternalStorage.
-        Id of the external stoarge configured in BICC console. Usually its numeric.
+        ID of the external stoarge configured in the BICC console. Usually it's numeric.
 
 
         :param storage_id: The storage_id of this ExternalStorage.
@@ -106,7 +106,7 @@ class ExternalStorage(ConnectorAttribute):
     def storage_name(self):
         """
         Gets the storage_name of this ExternalStorage.
-        Name of the external storage configured in BICC console
+        Name of the external storage configured in the BICC console.
 
 
         :return: The storage_name of this ExternalStorage.
@@ -118,7 +118,7 @@ class ExternalStorage(ConnectorAttribute):
     def storage_name(self, storage_name):
         """
         Sets the storage_name of this ExternalStorage.
-        Name of the external storage configured in BICC console
+        Name of the external storage configured in the BICC console.
 
 
         :param storage_name: The storage_name of this ExternalStorage.
@@ -130,7 +130,7 @@ class ExternalStorage(ConnectorAttribute):
     def host(self):
         """
         Gets the host of this ExternalStorage.
-        Object Storage host Url. DO not give http/https.
+        Object Storage host URL. DO not give http/https.
 
 
         :return: The host of this ExternalStorage.
@@ -142,7 +142,7 @@ class ExternalStorage(ConnectorAttribute):
     def host(self, host):
         """
         Sets the host of this ExternalStorage.
-        Object Storage host Url. DO not give http/https.
+        Object Storage host URL. DO not give http/https.
 
 
         :param host: The host of this ExternalStorage.
@@ -154,7 +154,7 @@ class ExternalStorage(ConnectorAttribute):
     def tenancy_id(self):
         """
         Gets the tenancy_id of this ExternalStorage.
-        Tenancy OCID for the OOS bucket
+        Tenancy OCID of the OOS bucket.
 
 
         :return: The tenancy_id of this ExternalStorage.
@@ -166,7 +166,7 @@ class ExternalStorage(ConnectorAttribute):
     def tenancy_id(self, tenancy_id):
         """
         Sets the tenancy_id of this ExternalStorage.
-        Tenancy OCID for the OOS bucket
+        Tenancy OCID of the OOS bucket.
 
 
         :param tenancy_id: The tenancy_id of this ExternalStorage.
@@ -178,7 +178,7 @@ class ExternalStorage(ConnectorAttribute):
     def namespace(self):
         """
         Gets the namespace of this ExternalStorage.
-        Namespace for the OOS bucket
+        Namespace of the OOS bucket.
 
 
         :return: The namespace of this ExternalStorage.
@@ -190,7 +190,7 @@ class ExternalStorage(ConnectorAttribute):
     def namespace(self, namespace):
         """
         Sets the namespace of this ExternalStorage.
-        Namespace for the OOS bucket
+        Namespace of the OOS bucket.
 
 
         :param namespace: The namespace of this ExternalStorage.
@@ -202,7 +202,7 @@ class ExternalStorage(ConnectorAttribute):
     def bucket(self):
         """
         Gets the bucket of this ExternalStorage.
-        Bucket Name where BICC extracts stores the files
+        Bucket name where BICC extracts and stores the files.
 
 
         :return: The bucket of this ExternalStorage.
@@ -214,7 +214,7 @@ class ExternalStorage(ConnectorAttribute):
     def bucket(self, bucket):
         """
         Sets the bucket of this ExternalStorage.
-        Bucket Name where BICC extracts stores the files
+        Bucket name where BICC extracts and stores the files.
 
 
         :param bucket: The bucket of this ExternalStorage.

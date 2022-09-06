@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class EndpointSummaryCollection(object):
     """
-    List of endpoint summaries.
+    The list of endpoint summaries.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class EndpointSummaryCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this EndpointSummaryCollection.
-        The array of endpoint summariess
+        The array of endpoint summaries.
 
 
         :return: The items of this EndpointSummaryCollection.
@@ -49,7 +49,7 @@ class EndpointSummaryCollection(object):
     def items(self, items):
         """
         Sets the items of this EndpointSummaryCollection.
-        The array of endpoint summariess
+        The array of endpoint summaries.
 
 
         :param items: The items of this EndpointSummaryCollection.

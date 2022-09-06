@@ -61,7 +61,7 @@ class ExecuteOperationJobDetails(object):
     def execute_operation_job_id(self):
         """
         **[Required]** Gets the execute_operation_job_id of this ExecuteOperationJobDetails.
-        Job id to track job status.
+        Job ID to track the job status.
 
 
         :return: The execute_operation_job_id of this ExecuteOperationJobDetails.
@@ -73,7 +73,7 @@ class ExecuteOperationJobDetails(object):
     def execute_operation_job_id(self, execute_operation_job_id):
         """
         Sets the execute_operation_job_id of this ExecuteOperationJobDetails.
-        Job id to track job status.
+        Job ID to track the job status.
 
 
         :param execute_operation_job_id: The execute_operation_job_id of this ExecuteOperationJobDetails.
@@ -85,7 +85,7 @@ class ExecuteOperationJobDetails(object):
     def status(self):
         """
         **[Required]** Gets the status of this ExecuteOperationJobDetails.
-        The status of job
+        The status of the job.
 
         Allowed values for this property are: "FAILED", "SUCCESS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -100,7 +100,7 @@ class ExecuteOperationJobDetails(object):
     def status(self, status):
         """
         Sets the status of this ExecuteOperationJobDetails.
-        The status of job
+        The status of the job.
 
 
         :param status: The status of this ExecuteOperationJobDetails.
@@ -115,7 +115,7 @@ class ExecuteOperationJobDetails(object):
     def error_message(self):
         """
         Gets the error_message of this ExecuteOperationJobDetails.
-        Error message if job creation is failed.
+        Error message when the job creation fails.
 
 
         :return: The error_message of this ExecuteOperationJobDetails.
@@ -127,7 +127,7 @@ class ExecuteOperationJobDetails(object):
     def error_message(self, error_message):
         """
         Sets the error_message of this ExecuteOperationJobDetails.
-        Error message if job creation is failed.
+        Error message when the job creation fails.
 
 
         :param error_message: The error_message of this ExecuteOperationJobDetails.

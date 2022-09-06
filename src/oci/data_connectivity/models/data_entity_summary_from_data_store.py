@@ -33,6 +33,10 @@ class DataEntitySummaryFromDataStore(DataEntitySummary):
     #: This constant has a value of "DATA_STORE"
     ENTITY_TYPE_DATA_STORE = "DATA_STORE"
 
+    #: A constant which can be used with the entity_type property of a DataEntitySummaryFromDataStore.
+    #: This constant has a value of "MESSAGE"
+    ENTITY_TYPE_MESSAGE = "MESSAGE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DataEntitySummaryFromDataStore object with values from keyword arguments. The default value of the :py:attr:`~oci.data_connectivity.models.DataEntitySummaryFromDataStore.model_type` attribute
@@ -41,7 +45,7 @@ class DataEntitySummaryFromDataStore(DataEntitySummary):
 
         :param model_type:
             The value to assign to the model_type property of this DataEntitySummaryFromDataStore.
-            Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", "SQL_ENTITY", "DERIVED_ENTITY", "MESSAGE_ENTITY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -87,7 +91,7 @@ class DataEntitySummaryFromDataStore(DataEntitySummary):
 
         :param entity_type:
             The value to assign to the entity_type property of this DataEntitySummaryFromDataStore.
-            Allowed values for this property are: "TABLE", "VIEW", "FILE", "SQL", "DATA_STORE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "TABLE", "VIEW", "FILE", "SQL", "DATA_STORE", "MESSAGE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type entity_type: str
 
@@ -241,7 +245,7 @@ class DataEntitySummaryFromDataStore(DataEntitySummary):
     def model_version(self):
         """
         Gets the model_version of this DataEntitySummaryFromDataStore.
-        The object's model version.
+        The model version of the object.
 
 
         :return: The model_version of this DataEntitySummaryFromDataStore.
@@ -253,7 +257,7 @@ class DataEntitySummaryFromDataStore(DataEntitySummary):
     def model_version(self, model_version):
         """
         Sets the model_version of this DataEntitySummaryFromDataStore.
-        The object's model version.
+        The model version of the object.
 
 
         :param model_version: The model_version of this DataEntitySummaryFromDataStore.
@@ -285,7 +289,7 @@ class DataEntitySummaryFromDataStore(DataEntitySummary):
     def name(self):
         """
         Gets the name of this DataEntitySummaryFromDataStore.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this DataEntitySummaryFromDataStore.
@@ -297,7 +301,7 @@ class DataEntitySummaryFromDataStore(DataEntitySummary):
     def name(self, name):
         """
         Sets the name of this DataEntitySummaryFromDataStore.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this DataEntitySummaryFromDataStore.
@@ -309,7 +313,7 @@ class DataEntitySummaryFromDataStore(DataEntitySummary):
     def description(self):
         """
         Gets the description of this DataEntitySummaryFromDataStore.
-        Detailed description for the object.
+        Detailed description of the object.
 
 
         :return: The description of this DataEntitySummaryFromDataStore.
@@ -321,7 +325,7 @@ class DataEntitySummaryFromDataStore(DataEntitySummary):
     def description(self, description):
         """
         Sets the description of this DataEntitySummaryFromDataStore.
-        Detailed description for the object.
+        Detailed description of the object.
 
 
         :param description: The description of this DataEntitySummaryFromDataStore.
@@ -357,7 +361,7 @@ class DataEntitySummaryFromDataStore(DataEntitySummary):
     def external_key(self):
         """
         Gets the external_key of this DataEntitySummaryFromDataStore.
-        The external key for the object
+        The external key of the object.
 
 
         :return: The external_key of this DataEntitySummaryFromDataStore.
@@ -369,7 +373,7 @@ class DataEntitySummaryFromDataStore(DataEntitySummary):
     def external_key(self, external_key):
         """
         Sets the external_key of this DataEntitySummaryFromDataStore.
-        The external key for the object
+        The external key of the object.
 
 
         :param external_key: The external_key of this DataEntitySummaryFromDataStore.
@@ -427,7 +431,7 @@ class DataEntitySummaryFromDataStore(DataEntitySummary):
         Gets the entity_type of this DataEntitySummaryFromDataStore.
         The entity type.
 
-        Allowed values for this property are: "TABLE", "VIEW", "FILE", "SQL", "DATA_STORE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "TABLE", "VIEW", "FILE", "SQL", "DATA_STORE", "MESSAGE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -446,7 +450,7 @@ class DataEntitySummaryFromDataStore(DataEntitySummary):
         :param entity_type: The entity_type of this DataEntitySummaryFromDataStore.
         :type: str
         """
-        allowed_values = ["TABLE", "VIEW", "FILE", "SQL", "DATA_STORE"]
+        allowed_values = ["TABLE", "VIEW", "FILE", "SQL", "DATA_STORE", "MESSAGE"]
         if not value_allowed_none_or_none_sentinel(entity_type, allowed_values):
             entity_type = 'UNKNOWN_ENUM_VALUE'
         self._entity_type = entity_type
@@ -575,7 +579,7 @@ class DataEntitySummaryFromDataStore(DataEntitySummary):
     def identifier(self):
         """
         Gets the identifier of this DataEntitySummaryFromDataStore.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this DataEntitySummaryFromDataStore.
@@ -587,7 +591,7 @@ class DataEntitySummaryFromDataStore(DataEntitySummary):
     def identifier(self, identifier):
         """
         Sets the identifier of this DataEntitySummaryFromDataStore.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this DataEntitySummaryFromDataStore.
@@ -599,7 +603,7 @@ class DataEntitySummaryFromDataStore(DataEntitySummary):
     def filters(self):
         """
         Gets the filters of this DataEntitySummaryFromDataStore.
-        Query filter for the extract. It can be Null.
+        Query filter for the extract. It can be null.
 
 
         :return: The filters of this DataEntitySummaryFromDataStore.
@@ -611,7 +615,7 @@ class DataEntitySummaryFromDataStore(DataEntitySummary):
     def filters(self, filters):
         """
         Sets the filters of this DataEntitySummaryFromDataStore.
-        Query filter for the extract. It can be Null.
+        Query filter for the extract. It can be null.
 
 
         :param filters: The filters of this DataEntitySummaryFromDataStore.
@@ -623,7 +627,7 @@ class DataEntitySummaryFromDataStore(DataEntitySummary):
     def is_effective_date_disabled(self):
         """
         Gets the is_effective_date_disabled of this DataEntitySummaryFromDataStore.
-        It shows whether or not effective date is disabled
+        It shows whether the effective date is disabled.
 
 
         :return: The is_effective_date_disabled of this DataEntitySummaryFromDataStore.
@@ -635,7 +639,7 @@ class DataEntitySummaryFromDataStore(DataEntitySummary):
     def is_effective_date_disabled(self, is_effective_date_disabled):
         """
         Sets the is_effective_date_disabled of this DataEntitySummaryFromDataStore.
-        It shows whether or not effective date is disabled
+        It shows whether the effective date is disabled.
 
 
         :param is_effective_date_disabled: The is_effective_date_disabled of this DataEntitySummaryFromDataStore.
@@ -647,7 +651,7 @@ class DataEntitySummaryFromDataStore(DataEntitySummary):
     def is_flex_data_store(self):
         """
         Gets the is_flex_data_store of this DataEntitySummaryFromDataStore.
-        Is Flex data store. Metadata csv will be generated for flex data store
+        Is a flex data store. Metadata CSV will be generated for a flex data store.
 
 
         :return: The is_flex_data_store of this DataEntitySummaryFromDataStore.
@@ -659,7 +663,7 @@ class DataEntitySummaryFromDataStore(DataEntitySummary):
     def is_flex_data_store(self, is_flex_data_store):
         """
         Sets the is_flex_data_store of this DataEntitySummaryFromDataStore.
-        Is Flex data store. Metadata csv will be generated for flex data store
+        Is a flex data store. Metadata CSV will be generated for a flex data store.
 
 
         :param is_flex_data_store: The is_flex_data_store of this DataEntitySummaryFromDataStore.
@@ -695,7 +699,7 @@ class DataEntitySummaryFromDataStore(DataEntitySummary):
     def supports_incremental(self):
         """
         Gets the supports_incremental of this DataEntitySummaryFromDataStore.
-        It shows whether the datastore supports Incremental Extract or not.
+        It shows whether the datastore supports incremental extract.
 
 
         :return: The supports_incremental of this DataEntitySummaryFromDataStore.
@@ -707,7 +711,7 @@ class DataEntitySummaryFromDataStore(DataEntitySummary):
     def supports_incremental(self, supports_incremental):
         """
         Sets the supports_incremental of this DataEntitySummaryFromDataStore.
-        It shows whether the datastore supports Incremental Extract or not.
+        It shows whether the datastore supports incremental extract.
 
 
         :param supports_incremental: The supports_incremental of this DataEntitySummaryFromDataStore.

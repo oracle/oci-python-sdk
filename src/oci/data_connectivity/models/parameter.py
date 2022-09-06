@@ -199,7 +199,7 @@ class Parameter(TypedObject):
     def root_object_default_value(self):
         """
         Gets the root_object_default_value of this Parameter.
-        The default value of the parameter which can be an object in DIS, such as a data entity.
+        The default value of the parameter, which can be an object in DIS, such as a data entity.
 
 
         :return: The root_object_default_value of this Parameter.
@@ -211,7 +211,7 @@ class Parameter(TypedObject):
     def root_object_default_value(self, root_object_default_value):
         """
         Sets the root_object_default_value of this Parameter.
-        The default value of the parameter which can be an object in DIS, such as a data entity.
+        The default value of the parameter, which can be an object in DIS, such as a data entity.
 
 
         :param root_object_default_value: The root_object_default_value of this Parameter.
@@ -223,7 +223,7 @@ class Parameter(TypedObject):
     def is_input(self):
         """
         Gets the is_input of this Parameter.
-        Specifies whether the parameter is input value.
+        Specifies whether the parameter is an input value.
 
 
         :return: The is_input of this Parameter.
@@ -235,7 +235,7 @@ class Parameter(TypedObject):
     def is_input(self, is_input):
         """
         Sets the is_input of this Parameter.
-        Specifies whether the parameter is input value.
+        Specifies whether the parameter is an input value.
 
 
         :param is_input: The is_input of this Parameter.
@@ -247,7 +247,7 @@ class Parameter(TypedObject):
     def is_output(self):
         """
         Gets the is_output of this Parameter.
-        Specifies whether the parameter is output value.
+        Specifies whether the parameter is an output value.
 
 
         :return: The is_output of this Parameter.
@@ -259,7 +259,7 @@ class Parameter(TypedObject):
     def is_output(self, is_output):
         """
         Sets the is_output of this Parameter.
-        Specifies whether the parameter is output value.
+        Specifies whether the parameter is an output value.
 
 
         :param is_output: The is_output of this Parameter.

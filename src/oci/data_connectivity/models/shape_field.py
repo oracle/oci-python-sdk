@@ -134,7 +134,7 @@ class ShapeField(TypedObject):
     def labels(self):
         """
         Gets the labels of this ShapeField.
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 
 
         :return: The labels of this ShapeField.
@@ -146,7 +146,7 @@ class ShapeField(TypedObject):
     def labels(self, labels):
         """
         Sets the labels of this ShapeField.
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
 
 
         :param labels: The labels of this ShapeField.
