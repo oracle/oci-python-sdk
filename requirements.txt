@@ -1,6 +1,5 @@
 autodocsumm==0.1.11
 certifi
-configparser==4.0.2; python_version < '3'
 coverage==4.5.2
 cryptography>=3.2.1,<=37.0.2
 flake8>=3.6.0,<5
