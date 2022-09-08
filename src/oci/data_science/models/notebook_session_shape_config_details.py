@@ -44,7 +44,7 @@ class NotebookSessionShapeConfigDetails(object):
     def ocpus(self):
         """
         Gets the ocpus of this NotebookSessionShapeConfigDetails.
-        A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        The total number of OCPUs available to the notebook session instance.
 
 
         :return: The ocpus of this NotebookSessionShapeConfigDetails.
@@ -56,7 +56,7 @@ class NotebookSessionShapeConfigDetails(object):
     def ocpus(self, ocpus):
         """
         Sets the ocpus of this NotebookSessionShapeConfigDetails.
-        A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        The total number of OCPUs available to the notebook session instance.
 
 
         :param ocpus: The ocpus of this NotebookSessionShapeConfigDetails.
@@ -68,7 +68,7 @@ class NotebookSessionShapeConfigDetails(object):
     def memory_in_gbs(self):
         """
         Gets the memory_in_gbs of this NotebookSessionShapeConfigDetails.
-        A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        The total amount of memory available to the notebook session instance, in gigabytes.
 
 
         :return: The memory_in_gbs of this NotebookSessionShapeConfigDetails.
@@ -80,7 +80,7 @@ class NotebookSessionShapeConfigDetails(object):
     def memory_in_gbs(self, memory_in_gbs):
         """
         Sets the memory_in_gbs of this NotebookSessionShapeConfigDetails.
-        A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        The total amount of memory available to the notebook session instance, in gigabytes.
 
 
         :param memory_in_gbs: The memory_in_gbs of this NotebookSessionShapeConfigDetails.

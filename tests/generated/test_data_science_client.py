@@ -1232,6 +1232,48 @@ def test_delete_project(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
+def test_export_model_artifact(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_science', 'ExportModelArtifact'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_science', util.camelize('data_science'), 'ExportModelArtifact')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_science', api_name='ExportModelArtifact')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
+            response = client.export_model_artifact(
+                model_id=request.pop(util.camelize('modelId')),
+                export_model_artifact_details=request.pop(util.camelize('ExportModelArtifactDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_science',
+            'ExportModelArtifact',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'export_model_artifact',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
 def test_get_job(testing_service_client):
     if not testing_service_client.is_api_enabled('data_science', 'GetJob'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1718,6 +1760,48 @@ def test_head_model_artifact(testing_service_client):
             result,
             service_error,
             'head_model_artifact',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datascience_grp@oracle.com" jiraProject="ODSC" opsJiraProject="ODSC"
+def test_import_model_artifact(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_science', 'ImportModelArtifact'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_science', util.camelize('data_science'), 'ImportModelArtifact')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_science', api_name='ImportModelArtifact')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_science.DataScienceClient(config, service_endpoint=service_endpoint)
+            response = client.import_model_artifact(
+                model_id=request.pop(util.camelize('modelId')),
+                import_model_artifact_details=request.pop(util.camelize('ImportModelArtifactDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_science',
+            'ImportModelArtifact',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'import_model_artifact',
             False,
             False
         )

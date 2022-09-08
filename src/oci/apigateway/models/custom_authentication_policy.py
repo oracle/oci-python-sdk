@@ -41,13 +41,28 @@ class CustomAuthenticationPolicy(AuthenticationPolicy):
             The value to assign to the token_query_param property of this CustomAuthenticationPolicy.
         :type token_query_param: str
 
+        :param parameters:
+            The value to assign to the parameters property of this CustomAuthenticationPolicy.
+        :type parameters: dict(str, str)
+
+        :param cache_key:
+            The value to assign to the cache_key property of this CustomAuthenticationPolicy.
+        :type cache_key: list[str]
+
+        :param validation_failure_policy:
+            The value to assign to the validation_failure_policy property of this CustomAuthenticationPolicy.
+        :type validation_failure_policy: oci.apigateway.models.ValidationFailurePolicy
+
         """
         self.swagger_types = {
             'is_anonymous_access_allowed': 'bool',
             'type': 'str',
             'function_id': 'str',
             'token_header': 'str',
-            'token_query_param': 'str'
+            'token_query_param': 'str',
+            'parameters': 'dict(str, str)',
+            'cache_key': 'list[str]',
+            'validation_failure_policy': 'ValidationFailurePolicy'
         }
 
         self.attribute_map = {
@@ -55,7 +70,10 @@ class CustomAuthenticationPolicy(AuthenticationPolicy):
             'type': 'type',
             'function_id': 'functionId',
             'token_header': 'tokenHeader',
-            'token_query_param': 'tokenQueryParam'
+            'token_query_param': 'tokenQueryParam',
+            'parameters': 'parameters',
+            'cache_key': 'cacheKey',
+            'validation_failure_policy': 'validationFailurePolicy'
         }
 
         self._is_anonymous_access_allowed = None
@@ -63,6 +81,9 @@ class CustomAuthenticationPolicy(AuthenticationPolicy):
         self._function_id = None
         self._token_header = None
         self._token_query_param = None
+        self._parameters = None
+        self._cache_key = None
+        self._validation_failure_policy = None
         self._type = 'CUSTOM_AUTHENTICATION'
 
     @property
@@ -140,6 +161,76 @@ class CustomAuthenticationPolicy(AuthenticationPolicy):
         :type: str
         """
         self._token_query_param = token_query_param
+
+    @property
+    def parameters(self):
+        """
+        Gets the parameters of this CustomAuthenticationPolicy.
+        A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression.
+        Example: `{\"foo\": \"request.header[abc]\"}`
+
+
+        :return: The parameters of this CustomAuthenticationPolicy.
+        :rtype: dict(str, str)
+        """
+        return self._parameters
+
+    @parameters.setter
+    def parameters(self, parameters):
+        """
+        Sets the parameters of this CustomAuthenticationPolicy.
+        A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression.
+        Example: `{\"foo\": \"request.header[abc]\"}`
+
+
+        :param parameters: The parameters of this CustomAuthenticationPolicy.
+        :type: dict(str, str)
+        """
+        self._parameters = parameters
+
+    @property
+    def cache_key(self):
+        """
+        Gets the cache_key of this CustomAuthenticationPolicy.
+        A list of keys from \"parameters\" attribute value whose values will be added to the cache key.
+
+
+        :return: The cache_key of this CustomAuthenticationPolicy.
+        :rtype: list[str]
+        """
+        return self._cache_key
+
+    @cache_key.setter
+    def cache_key(self, cache_key):
+        """
+        Sets the cache_key of this CustomAuthenticationPolicy.
+        A list of keys from \"parameters\" attribute value whose values will be added to the cache key.
+
+
+        :param cache_key: The cache_key of this CustomAuthenticationPolicy.
+        :type: list[str]
+        """
+        self._cache_key = cache_key
+
+    @property
+    def validation_failure_policy(self):
+        """
+        Gets the validation_failure_policy of this CustomAuthenticationPolicy.
+
+        :return: The validation_failure_policy of this CustomAuthenticationPolicy.
+        :rtype: oci.apigateway.models.ValidationFailurePolicy
+        """
+        return self._validation_failure_policy
+
+    @validation_failure_policy.setter
+    def validation_failure_policy(self, validation_failure_policy):
+        """
+        Sets the validation_failure_policy of this CustomAuthenticationPolicy.
+
+        :param validation_failure_policy: The validation_failure_policy of this CustomAuthenticationPolicy.
+        :type: oci.apigateway.models.ValidationFailurePolicy
+        """
+        self._validation_failure_policy = validation_failure_policy
 
     def __repr__(self):
         return formatted_flat_dict(self)
