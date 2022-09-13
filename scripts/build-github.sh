@@ -44,7 +44,6 @@ echo "Python Version"
 python --version
 
 pip install -U pip
-pip install -e .
 
 SDK_VERSION=$(tail -1 .python-sdk-github/src/oci/version.py | cut -d '"' -f2)
 echo SDK Version Number $SDK_VERSION
@@ -53,6 +52,7 @@ echo SDK Version Number $SDK_VERSION
 echo Building Wheel
 cd .python-sdk-github/
 pip install -r requirements.txt
+pip install -e .
 
 # Redirect STDOUT and STDERR to a file to avoid resource unavailable error in TeamCity jobs.
 python setup.py sdist bdist_wheel >> build_output.txt 2>&1
