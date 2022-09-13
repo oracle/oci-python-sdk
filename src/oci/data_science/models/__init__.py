@@ -4,6 +4,10 @@
 
 from __future__ import absolute_import
 
+from .artifact_export_details import ArtifactExportDetails
+from .artifact_export_details_object_storage import ArtifactExportDetailsObjectStorage
+from .artifact_import_details import ArtifactImportDetails
+from .artifact_import_details_object_storage import ArtifactImportDetailsObjectStorage
 from .category_log_details import CategoryLogDetails
 from .change_job_compartment_details import ChangeJobCompartmentDetails
 from .change_job_run_compartment_details import ChangeJobRunCompartmentDetails
@@ -19,8 +23,10 @@ from .create_model_provenance_details import CreateModelProvenanceDetails
 from .create_notebook_session_details import CreateNotebookSessionDetails
 from .create_project_details import CreateProjectDetails
 from .default_job_configuration_details import DefaultJobConfigurationDetails
+from .export_model_artifact_details import ExportModelArtifactDetails
 from .fast_launch_job_config_summary import FastLaunchJobConfigSummary
 from .fixed_size_scaling_policy import FixedSizeScalingPolicy
+from .import_model_artifact_details import ImportModelArtifactDetails
 from .instance_configuration import InstanceConfiguration
 from .job import Job
 from .job_configuration_details import JobConfigurationDetails
@@ -77,6 +83,10 @@ from .work_request_summary import WorkRequestSummary
 
 # Maps type names to classes for data_science services.
 data_science_type_mapping = {
+    "ArtifactExportDetails": ArtifactExportDetails,
+    "ArtifactExportDetailsObjectStorage": ArtifactExportDetailsObjectStorage,
+    "ArtifactImportDetails": ArtifactImportDetails,
+    "ArtifactImportDetailsObjectStorage": ArtifactImportDetailsObjectStorage,
     "CategoryLogDetails": CategoryLogDetails,
     "ChangeJobCompartmentDetails": ChangeJobCompartmentDetails,
     "ChangeJobRunCompartmentDetails": ChangeJobRunCompartmentDetails,
@@ -92,8 +102,10 @@ data_science_type_mapping = {
     "CreateNotebookSessionDetails": CreateNotebookSessionDetails,
     "CreateProjectDetails": CreateProjectDetails,
     "DefaultJobConfigurationDetails": DefaultJobConfigurationDetails,
+    "ExportModelArtifactDetails": ExportModelArtifactDetails,
     "FastLaunchJobConfigSummary": FastLaunchJobConfigSummary,
     "FixedSizeScalingPolicy": FixedSizeScalingPolicy,
+    "ImportModelArtifactDetails": ImportModelArtifactDetails,
     "InstanceConfiguration": InstanceConfiguration,
     "Job": Job,
     "JobConfigurationDetails": JobConfigurationDetails,

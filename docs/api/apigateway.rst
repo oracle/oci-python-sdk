@@ -31,6 +31,7 @@ Apigateway
     oci.apigateway.models.AccessLogPolicy
     oci.apigateway.models.AnonymousRouteAuthorizationPolicy
     oci.apigateway.models.AnyOfRouteAuthorizationPolicy
+    oci.apigateway.models.AnyOfSelectionKey
     oci.apigateway.models.Api
     oci.apigateway.models.ApiCollection
     oci.apigateway.models.ApiSpecification
@@ -47,6 +48,7 @@ Apigateway
     oci.apigateway.models.ApiValidations
     oci.apigateway.models.AuthenticationOnlyRouteAuthorizationPolicy
     oci.apigateway.models.AuthenticationPolicy
+    oci.apigateway.models.AuthenticationServerPolicy
     oci.apigateway.models.BodyValidationRequestPolicy
     oci.apigateway.models.CaBundle
     oci.apigateway.models.Certificate
@@ -75,6 +77,10 @@ Apigateway
     oci.apigateway.models.Deployment
     oci.apigateway.models.DeploymentCollection
     oci.apigateway.models.DeploymentSummary
+    oci.apigateway.models.DynamicAuthenticationPolicy
+    oci.apigateway.models.DynamicRoutingBackend
+    oci.apigateway.models.DynamicRoutingTypeRoutingBackend
+    oci.apigateway.models.DynamicSelectionKey
     oci.apigateway.models.Entitlement
     oci.apigateway.models.EntitlementSummary
     oci.apigateway.models.EntitlementTarget
@@ -97,6 +103,7 @@ Apigateway
     oci.apigateway.models.JsonWebKey
     oci.apigateway.models.JsonWebTokenClaim
     oci.apigateway.models.JwtAuthenticationPolicy
+    oci.apigateway.models.ModifyResponseValidationFailurePolicy
     oci.apigateway.models.MutualTlsDetails
     oci.apigateway.models.NoCache
     oci.apigateway.models.NoContentValidation
@@ -128,11 +135,13 @@ Apigateway
     oci.apigateway.models.SdkLanguageTypeSummary
     oci.apigateway.models.SdkLanguageTypes
     oci.apigateway.models.SdkSummary
+    oci.apigateway.models.SelectionSourcePolicy
     oci.apigateway.models.SetHeaderPolicy
     oci.apigateway.models.SetHeaderPolicyItem
     oci.apigateway.models.SetQueryParameterPolicy
     oci.apigateway.models.SetQueryParameterPolicyItem
     oci.apigateway.models.SimpleLookupPolicy
+    oci.apigateway.models.SingleSelectionSourcePolicy
     oci.apigateway.models.StaticPublicKey
     oci.apigateway.models.StaticPublicKeySet
     oci.apigateway.models.StockResponseBackend
@@ -150,7 +159,9 @@ Apigateway
     oci.apigateway.models.UsagePlanCollection
     oci.apigateway.models.UsagePlanSummary
     oci.apigateway.models.UsagePlansPolicy
+    oci.apigateway.models.ValidationFailurePolicy
     oci.apigateway.models.ValidationRequestPolicy
+    oci.apigateway.models.WildcardSelectionKey
     oci.apigateway.models.WorkRequest
     oci.apigateway.models.WorkRequestCollection
     oci.apigateway.models.WorkRequestError
