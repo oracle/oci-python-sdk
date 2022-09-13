@@ -18,6 +18,10 @@ Data Science
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.data_science.models.ArtifactExportDetails
+    oci.data_science.models.ArtifactExportDetailsObjectStorage
+    oci.data_science.models.ArtifactImportDetails
+    oci.data_science.models.ArtifactImportDetailsObjectStorage
     oci.data_science.models.CategoryLogDetails
     oci.data_science.models.ChangeJobCompartmentDetails
     oci.data_science.models.ChangeJobRunCompartmentDetails
@@ -33,8 +37,10 @@ Data Science
     oci.data_science.models.CreateNotebookSessionDetails
     oci.data_science.models.CreateProjectDetails
     oci.data_science.models.DefaultJobConfigurationDetails
+    oci.data_science.models.ExportModelArtifactDetails
     oci.data_science.models.FastLaunchJobConfigSummary
     oci.data_science.models.FixedSizeScalingPolicy
+    oci.data_science.models.ImportModelArtifactDetails
     oci.data_science.models.InstanceConfiguration
     oci.data_science.models.Job
     oci.data_science.models.JobConfigurationDetails

@@ -7,6 +7,7 @@ from __future__ import absolute_import
 from .access_log_policy import AccessLogPolicy
 from .anonymous_route_authorization_policy import AnonymousRouteAuthorizationPolicy
 from .any_of_route_authorization_policy import AnyOfRouteAuthorizationPolicy
+from .any_of_selection_key import AnyOfSelectionKey
 from .api import Api
 from .api_collection import ApiCollection
 from .api_specification import ApiSpecification
@@ -23,6 +24,7 @@ from .api_validation_result import ApiValidationResult
 from .api_validations import ApiValidations
 from .authentication_only_route_authorization_policy import AuthenticationOnlyRouteAuthorizationPolicy
 from .authentication_policy import AuthenticationPolicy
+from .authentication_server_policy import AuthenticationServerPolicy
 from .body_validation_request_policy import BodyValidationRequestPolicy
 from .ca_bundle import CaBundle
 from .certificate import Certificate
@@ -51,6 +53,10 @@ from .custom_authentication_policy import CustomAuthenticationPolicy
 from .deployment import Deployment
 from .deployment_collection import DeploymentCollection
 from .deployment_summary import DeploymentSummary
+from .dynamic_authentication_policy import DynamicAuthenticationPolicy
+from .dynamic_routing_backend import DynamicRoutingBackend
+from .dynamic_routing_type_routing_backend import DynamicRoutingTypeRoutingBackend
+from .dynamic_selection_key import DynamicSelectionKey
 from .entitlement import Entitlement
 from .entitlement_summary import EntitlementSummary
 from .entitlement_target import EntitlementTarget
@@ -73,6 +79,7 @@ from .ip_address import IpAddress
 from .json_web_key import JsonWebKey
 from .json_web_token_claim import JsonWebTokenClaim
 from .jwt_authentication_policy import JwtAuthenticationPolicy
+from .modify_response_validation_failure_policy import ModifyResponseValidationFailurePolicy
 from .mutual_tls_details import MutualTlsDetails
 from .no_cache import NoCache
 from .no_content_validation import NoContentValidation
@@ -104,11 +111,13 @@ from .sdk_language_type_collection import SdkLanguageTypeCollection
 from .sdk_language_type_summary import SdkLanguageTypeSummary
 from .sdk_language_types import SdkLanguageTypes
 from .sdk_summary import SdkSummary
+from .selection_source_policy import SelectionSourcePolicy
 from .set_header_policy import SetHeaderPolicy
 from .set_header_policy_item import SetHeaderPolicyItem
 from .set_query_parameter_policy import SetQueryParameterPolicy
 from .set_query_parameter_policy_item import SetQueryParameterPolicyItem
 from .simple_lookup_policy import SimpleLookupPolicy
+from .single_selection_source_policy import SingleSelectionSourcePolicy
 from .static_public_key import StaticPublicKey
 from .static_public_key_set import StaticPublicKeySet
 from .stock_response_backend import StockResponseBackend
@@ -126,7 +135,9 @@ from .usage_plan import UsagePlan
 from .usage_plan_collection import UsagePlanCollection
 from .usage_plan_summary import UsagePlanSummary
 from .usage_plans_policy import UsagePlansPolicy
+from .validation_failure_policy import ValidationFailurePolicy
 from .validation_request_policy import ValidationRequestPolicy
+from .wildcard_selection_key import WildcardSelectionKey
 from .work_request import WorkRequest
 from .work_request_collection import WorkRequestCollection
 from .work_request_error import WorkRequestError
@@ -141,6 +152,7 @@ apigateway_type_mapping = {
     "AccessLogPolicy": AccessLogPolicy,
     "AnonymousRouteAuthorizationPolicy": AnonymousRouteAuthorizationPolicy,
     "AnyOfRouteAuthorizationPolicy": AnyOfRouteAuthorizationPolicy,
+    "AnyOfSelectionKey": AnyOfSelectionKey,
     "Api": Api,
     "ApiCollection": ApiCollection,
     "ApiSpecification": ApiSpecification,
@@ -157,6 +169,7 @@ apigateway_type_mapping = {
     "ApiValidations": ApiValidations,
     "AuthenticationOnlyRouteAuthorizationPolicy": AuthenticationOnlyRouteAuthorizationPolicy,
     "AuthenticationPolicy": AuthenticationPolicy,
+    "AuthenticationServerPolicy": AuthenticationServerPolicy,
     "BodyValidationRequestPolicy": BodyValidationRequestPolicy,
     "CaBundle": CaBundle,
     "Certificate": Certificate,
@@ -185,6 +198,10 @@ apigateway_type_mapping = {
     "Deployment": Deployment,
     "DeploymentCollection": DeploymentCollection,
     "DeploymentSummary": DeploymentSummary,
+    "DynamicAuthenticationPolicy": DynamicAuthenticationPolicy,
+    "DynamicRoutingBackend": DynamicRoutingBackend,
+    "DynamicRoutingTypeRoutingBackend": DynamicRoutingTypeRoutingBackend,
+    "DynamicSelectionKey": DynamicSelectionKey,
     "Entitlement": Entitlement,
     "EntitlementSummary": EntitlementSummary,
     "EntitlementTarget": EntitlementTarget,
@@ -207,6 +224,7 @@ apigateway_type_mapping = {
     "JsonWebKey": JsonWebKey,
     "JsonWebTokenClaim": JsonWebTokenClaim,
     "JwtAuthenticationPolicy": JwtAuthenticationPolicy,
+    "ModifyResponseValidationFailurePolicy": ModifyResponseValidationFailurePolicy,
     "MutualTlsDetails": MutualTlsDetails,
     "NoCache": NoCache,
     "NoContentValidation": NoContentValidation,
@@ -238,11 +256,13 @@ apigateway_type_mapping = {
     "SdkLanguageTypeSummary": SdkLanguageTypeSummary,
     "SdkLanguageTypes": SdkLanguageTypes,
     "SdkSummary": SdkSummary,
+    "SelectionSourcePolicy": SelectionSourcePolicy,
     "SetHeaderPolicy": SetHeaderPolicy,
     "SetHeaderPolicyItem": SetHeaderPolicyItem,
     "SetQueryParameterPolicy": SetQueryParameterPolicy,
     "SetQueryParameterPolicyItem": SetQueryParameterPolicyItem,
     "SimpleLookupPolicy": SimpleLookupPolicy,
+    "SingleSelectionSourcePolicy": SingleSelectionSourcePolicy,
     "StaticPublicKey": StaticPublicKey,
     "StaticPublicKeySet": StaticPublicKeySet,
     "StockResponseBackend": StockResponseBackend,
@@ -260,7 +280,9 @@ apigateway_type_mapping = {
     "UsagePlanCollection": UsagePlanCollection,
     "UsagePlanSummary": UsagePlanSummary,
     "UsagePlansPolicy": UsagePlansPolicy,
+    "ValidationFailurePolicy": ValidationFailurePolicy,
     "ValidationRequestPolicy": ValidationRequestPolicy,
+    "WildcardSelectionKey": WildcardSelectionKey,
     "WorkRequest": WorkRequest,
     "WorkRequestCollection": WorkRequestCollection,
     "WorkRequestError": WorkRequestError,

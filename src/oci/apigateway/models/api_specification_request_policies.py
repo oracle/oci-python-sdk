@@ -38,13 +38,18 @@ class ApiSpecificationRequestPolicies(object):
             The value to assign to the usage_plans property of this ApiSpecificationRequestPolicies.
         :type usage_plans: oci.apigateway.models.UsagePlansPolicy
 
+        :param dynamic_authentication:
+            The value to assign to the dynamic_authentication property of this ApiSpecificationRequestPolicies.
+        :type dynamic_authentication: oci.apigateway.models.DynamicAuthenticationPolicy
+
         """
         self.swagger_types = {
             'authentication': 'AuthenticationPolicy',
             'rate_limiting': 'RateLimitingPolicy',
             'cors': 'CorsPolicy',
             'mutual_tls': 'MutualTlsDetails',
-            'usage_plans': 'UsagePlansPolicy'
+            'usage_plans': 'UsagePlansPolicy',
+            'dynamic_authentication': 'DynamicAuthenticationPolicy'
         }
 
         self.attribute_map = {
@@ -52,7 +57,8 @@ class ApiSpecificationRequestPolicies(object):
             'rate_limiting': 'rateLimiting',
             'cors': 'cors',
             'mutual_tls': 'mutualTls',
-            'usage_plans': 'usagePlans'
+            'usage_plans': 'usagePlans',
+            'dynamic_authentication': 'dynamicAuthentication'
         }
 
         self._authentication = None
@@ -60,6 +66,7 @@ class ApiSpecificationRequestPolicies(object):
         self._cors = None
         self._mutual_tls = None
         self._usage_plans = None
+        self._dynamic_authentication = None
 
     @property
     def authentication(self):
@@ -160,6 +167,26 @@ class ApiSpecificationRequestPolicies(object):
         :type: oci.apigateway.models.UsagePlansPolicy
         """
         self._usage_plans = usage_plans
+
+    @property
+    def dynamic_authentication(self):
+        """
+        Gets the dynamic_authentication of this ApiSpecificationRequestPolicies.
+
+        :return: The dynamic_authentication of this ApiSpecificationRequestPolicies.
+        :rtype: oci.apigateway.models.DynamicAuthenticationPolicy
+        """
+        return self._dynamic_authentication
+
+    @dynamic_authentication.setter
+    def dynamic_authentication(self, dynamic_authentication):
+        """
+        Sets the dynamic_authentication of this ApiSpecificationRequestPolicies.
+
+        :param dynamic_authentication: The dynamic_authentication of this ApiSpecificationRequestPolicies.
+        :type: oci.apigateway.models.DynamicAuthenticationPolicy
+        """
+        self._dynamic_authentication = dynamic_authentication
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -124,7 +124,7 @@ class ShowOCIData(object):
         data = {
             'program': "showoci.py",
             'author': "Adi Zohar",
-            'disclaimer': "This is not an official Oracle application,  It does not supported by Oracle, It should NOT be used for utilization calculation purposes !",
+            'disclaimer': "This is not an official Oracle application, it is not supported by Oracle. It should NOT be used for utilization calculation purposes. If you run into issues using this, please file an issue at https://github.com/oracle/oci-python-sdk/issues rather than contacting support",
             'config_file': self.service.flags.config_file,
             'config_profile': self.service.flags.config_section,
             'use_instance_principals': self.service.flags.use_instance_principals,
