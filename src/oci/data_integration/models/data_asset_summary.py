@@ -45,6 +45,14 @@ class DataAssetSummary(object):
     #: This constant has a value of "AMAZON_S3_DATA_ASSET"
     MODEL_TYPE_AMAZON_S3_DATA_ASSET = "AMAZON_S3_DATA_ASSET"
 
+    #: A constant which can be used with the model_type property of a DataAssetSummary.
+    #: This constant has a value of "LAKE_HOUSE_DATA_ASSET"
+    MODEL_TYPE_LAKE_HOUSE_DATA_ASSET = "LAKE_HOUSE_DATA_ASSET"
+
+    #: A constant which can be used with the model_type property of a DataAssetSummary.
+    #: This constant has a value of "REST_DATA_ASSET"
+    MODEL_TYPE_REST_DATA_ASSET = "REST_DATA_ASSET"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DataAssetSummary object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -56,14 +64,16 @@ class DataAssetSummary(object):
         * :class:`~oci.data_integration.models.DataAssetSummaryFromJdbc`
         * :class:`~oci.data_integration.models.DataAssetSummaryFromAmazonS3`
         * :class:`~oci.data_integration.models.DataAssetSummaryFromObjectStorage`
+        * :class:`~oci.data_integration.models.DataAssetSummaryFromRest`
         * :class:`~oci.data_integration.models.DataAssetSummaryFromOracle`
         * :class:`~oci.data_integration.models.DataAssetSummaryFromFusionApp`
+        * :class:`~oci.data_integration.models.DataAssetSummaryFromLakehouse`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param model_type:
             The value to assign to the model_type property of this DataAssetSummary.
-            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET", "FUSION_APP_DATA_ASSET", "AMAZON_S3_DATA_ASSET", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET", "FUSION_APP_DATA_ASSET", "AMAZON_S3_DATA_ASSET", "LAKE_HOUSE_DATA_ASSET", "REST_DATA_ASSET", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -188,11 +198,17 @@ class DataAssetSummary(object):
         if type == 'ORACLE_OBJECT_STORAGE_DATA_ASSET':
             return 'DataAssetSummaryFromObjectStorage'
 
+        if type == 'REST_DATA_ASSET':
+            return 'DataAssetSummaryFromRest'
+
         if type == 'ORACLE_DATA_ASSET':
             return 'DataAssetSummaryFromOracle'
 
         if type == 'FUSION_APP_DATA_ASSET':
             return 'DataAssetSummaryFromFusionApp'
+
+        if type == 'LAKE_HOUSE_DATA_ASSET':
+            return 'DataAssetSummaryFromLakehouse'
         else:
             return 'DataAssetSummary'
 
@@ -202,7 +218,7 @@ class DataAssetSummary(object):
         Gets the model_type of this DataAssetSummary.
         The type of the data asset.
 
-        Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET", "FUSION_APP_DATA_ASSET", "AMAZON_S3_DATA_ASSET", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET", "FUSION_APP_DATA_ASSET", "AMAZON_S3_DATA_ASSET", "LAKE_HOUSE_DATA_ASSET", "REST_DATA_ASSET", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -221,7 +237,7 @@ class DataAssetSummary(object):
         :param model_type: The model_type of this DataAssetSummary.
         :type: str
         """
-        allowed_values = ["ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET", "FUSION_APP_DATA_ASSET", "AMAZON_S3_DATA_ASSET"]
+        allowed_values = ["ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET", "FUSION_APP_DATA_ASSET", "AMAZON_S3_DATA_ASSET", "LAKE_HOUSE_DATA_ASSET", "REST_DATA_ASSET"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type

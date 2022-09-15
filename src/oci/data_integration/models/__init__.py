@@ -18,6 +18,7 @@ from .application import Application
 from .application_details import ApplicationDetails
 from .application_summary import ApplicationSummary
 from .application_summary_collection import ApplicationSummaryCollection
+from .array_type import ArrayType
 from .auth_config import AuthConfig
 from .auth_details import AuthDetails
 from .avro_format_attribute import AvroFormatAttribute
@@ -58,12 +59,18 @@ from .connection_from_bip import ConnectionFromBIP
 from .connection_from_bip_details import ConnectionFromBipDetails
 from .connection_from_jdbc import ConnectionFromJdbc
 from .connection_from_jdbc_details import ConnectionFromJdbcDetails
+from .connection_from_lakehouse import ConnectionFromLakehouse
+from .connection_from_lakehouse_details import ConnectionFromLakehouseDetails
 from .connection_from_my_sql import ConnectionFromMySQL
 from .connection_from_my_sql_details import ConnectionFromMySQLDetails
 from .connection_from_object_storage import ConnectionFromObjectStorage
 from .connection_from_object_storage_details import ConnectionFromObjectStorageDetails
 from .connection_from_oracle import ConnectionFromOracle
 from .connection_from_oracle_details import ConnectionFromOracleDetails
+from .connection_from_rest_basic_auth import ConnectionFromRestBasicAuth
+from .connection_from_rest_basic_auth_details import ConnectionFromRestBasicAuthDetails
+from .connection_from_rest_no_auth import ConnectionFromRestNoAuth
+from .connection_from_rest_no_auth_details import ConnectionFromRestNoAuthDetails
 from .connection_property import ConnectionProperty
 from .connection_summary import ConnectionSummary
 from .connection_summary_collection import ConnectionSummaryCollection
@@ -73,9 +80,12 @@ from .connection_summary_from_atp import ConnectionSummaryFromAtp
 from .connection_summary_from_bicc import ConnectionSummaryFromBICC
 from .connection_summary_from_bip import ConnectionSummaryFromBIP
 from .connection_summary_from_jdbc import ConnectionSummaryFromJdbc
+from .connection_summary_from_lakehouse import ConnectionSummaryFromLakehouse
 from .connection_summary_from_my_sql import ConnectionSummaryFromMySQL
 from .connection_summary_from_object_storage import ConnectionSummaryFromObjectStorage
 from .connection_summary_from_oracle import ConnectionSummaryFromOracle
+from .connection_summary_from_rest_basic_auth import ConnectionSummaryFromRestBasicAuth
+from .connection_summary_from_rest_no_auth import ConnectionSummaryFromRestNoAuth
 from .connection_validation import ConnectionValidation
 from .connection_validation_summary import ConnectionValidationSummary
 from .connection_validation_summary_collection import ConnectionValidationSummaryCollection
@@ -91,9 +101,12 @@ from .create_connection_from_atp import CreateConnectionFromAtp
 from .create_connection_from_bicc import CreateConnectionFromBICC
 from .create_connection_from_bip import CreateConnectionFromBIP
 from .create_connection_from_jdbc import CreateConnectionFromJdbc
+from .create_connection_from_lakehouse import CreateConnectionFromLakehouse
 from .create_connection_from_my_sql import CreateConnectionFromMySQL
 from .create_connection_from_object_storage import CreateConnectionFromObjectStorage
 from .create_connection_from_oracle import CreateConnectionFromOracle
+from .create_connection_from_rest_basic_auth import CreateConnectionFromRestBasicAuth
+from .create_connection_from_rest_no_auth import CreateConnectionFromRestNoAuth
 from .create_connection_validation_details import CreateConnectionValidationDetails
 from .create_data_asset_details import CreateDataAssetDetails
 from .create_data_asset_from_adwc import CreateDataAssetFromAdwc
@@ -101,9 +114,11 @@ from .create_data_asset_from_amazon_s3 import CreateDataAssetFromAmazonS3
 from .create_data_asset_from_atp import CreateDataAssetFromAtp
 from .create_data_asset_from_fusion_app import CreateDataAssetFromFusionApp
 from .create_data_asset_from_jdbc import CreateDataAssetFromJdbc
+from .create_data_asset_from_lakehouse import CreateDataAssetFromLakehouse
 from .create_data_asset_from_my_sql import CreateDataAssetFromMySQL
 from .create_data_asset_from_object_storage import CreateDataAssetFromObjectStorage
 from .create_data_asset_from_oracle import CreateDataAssetFromOracle
+from .create_data_asset_from_rest import CreateDataAssetFromRest
 from .create_data_flow_details import CreateDataFlowDetails
 from .create_data_flow_validation_details import CreateDataFlowValidationDetails
 from .create_dis_application_details import CreateDisApplicationDetails
@@ -145,9 +160,11 @@ from .data_asset_from_amazon_s3 import DataAssetFromAmazonS3
 from .data_asset_from_atp_details import DataAssetFromAtpDetails
 from .data_asset_from_fusion_app import DataAssetFromFusionApp
 from .data_asset_from_jdbc import DataAssetFromJdbc
+from .data_asset_from_lakehouse_details import DataAssetFromLakehouseDetails
 from .data_asset_from_my_sql import DataAssetFromMySQL
 from .data_asset_from_object_storage_details import DataAssetFromObjectStorageDetails
 from .data_asset_from_oracle_details import DataAssetFromOracleDetails
+from .data_asset_from_rest_details import DataAssetFromRestDetails
 from .data_asset_summary import DataAssetSummary
 from .data_asset_summary_collection import DataAssetSummaryCollection
 from .data_asset_summary_from_adwc import DataAssetSummaryFromAdwc
@@ -155,9 +172,11 @@ from .data_asset_summary_from_amazon_s3 import DataAssetSummaryFromAmazonS3
 from .data_asset_summary_from_atp import DataAssetSummaryFromAtp
 from .data_asset_summary_from_fusion_app import DataAssetSummaryFromFusionApp
 from .data_asset_summary_from_jdbc import DataAssetSummaryFromJdbc
+from .data_asset_summary_from_lakehouse import DataAssetSummaryFromLakehouse
 from .data_asset_summary_from_my_sql import DataAssetSummaryFromMySQL
 from .data_asset_summary_from_object_storage import DataAssetSummaryFromObjectStorage
 from .data_asset_summary_from_oracle import DataAssetSummaryFromOracle
+from .data_asset_summary_from_rest import DataAssetSummaryFromRest
 from .data_entity import DataEntity
 from .data_entity_details import DataEntityDetails
 from .data_entity_from_data_store import DataEntityFromDataStore
@@ -187,9 +206,12 @@ from .data_flow_validation_summary_collection import DataFlowValidationSummaryCo
 from .data_format import DataFormat
 from .data_type import DataType
 from .dataflow_application import DataflowApplication
+from .decision_operator import DecisionOperator
+from .decision_output_port import DecisionOutputPort
 from .dependent_object import DependentObject
 from .dependent_object_summary import DependentObjectSummary
 from .dependent_object_summary_collection import DependentObjectSummaryCollection
+from .derived_entity import DerivedEntity
 from .derived_field import DerivedField
 from .derived_type import DerivedType
 from .direct_field_map import DirectFieldMap
@@ -219,11 +241,13 @@ from .external_publication_validation_summary import ExternalPublicationValidati
 from .external_publication_validation_summary_collection import ExternalPublicationValidationSummaryCollection
 from .external_storage import ExternalStorage
 from .field_map import FieldMap
+from .field_map_wrapper import FieldMapWrapper
 from .filter import Filter
 from .filter_push import FilterPush
 from .flatten import Flatten
 from .flatten_details import FlattenDetails
 from .flatten_projection_preferences import FlattenProjectionPreferences
+from .flatten_type_handler import FlattenTypeHandler
 from .flow_node import FlowNode
 from .flow_port import FlowPort
 from .flow_port_link import FlowPortLink
@@ -233,15 +257,20 @@ from .folder_summary import FolderSummary
 from .folder_summary_collection import FolderSummaryCollection
 from .foreign_key import ForeignKey
 from .function import Function
+from .function_configuration_definition import FunctionConfigurationDefinition
 from .function_library import FunctionLibrary
 from .function_library_details import FunctionLibraryDetails
 from .function_library_summary import FunctionLibrarySummary
 from .function_library_summary_collection import FunctionLibrarySummaryCollection
 from .function_signature import FunctionSignature
+from .generic_rest_api_attributes import GenericRestApiAttributes
+from .generic_rest_call_attribute import GenericRestCallAttribute
+from .grouped_name_pattern_rule import GroupedNamePatternRule
 from .hourly_frequency_details import HourlyFrequencyDetails
 from .input_field import InputField
 from .input_link import InputLink
 from .input_port import InputPort
+from .input_proxy_field import InputProxyField
 from .intersect import Intersect
 from .java_type import JavaType
 from .join import Join
@@ -256,6 +285,9 @@ from .last_run_details import LastRunDetails
 from .lookup import Lookup
 from .macro_field import MacroField
 from .macro_pivot_field import MacroPivotField
+from .map_type import MapType
+from .materialized_composite_type import MaterializedCompositeType
+from .materialized_dynamic_field import MaterializedDynamicField
 from .merge_operator import MergeOperator
 from .message import Message
 from .minus import Minus
@@ -270,6 +302,9 @@ from .object_storage_write_attribute import ObjectStorageWriteAttribute
 from .object_storage_write_attributes import ObjectStorageWriteAttributes
 from .oci_function import OciFunction
 from .oci_vault_secret_config import OciVaultSecretConfig
+from .operation import Operation
+from .operation_from_api import OperationFromApi
+from .operation_from_procedure import OperationFromProcedure
 from .operator import Operator
 from .oracle_adwc_write_attribute import OracleAdwcWriteAttribute
 from .oracle_adwc_write_attributes import OracleAdwcWriteAttributes
@@ -327,6 +362,9 @@ from .reference import Reference
 from .reference_summary import ReferenceSummary
 from .reference_summary_collection import ReferenceSummaryCollection
 from .reference_used_by import ReferenceUsedBy
+from .referenced_data_object import ReferencedDataObject
+from .referenced_data_object_from_api import ReferencedDataObjectFromAPI
+from .referenced_data_object_from_procedure import ReferencedDataObjectFromProcedure
 from .registry_metadata import RegistryMetadata
 from .rename_rule import RenameRule
 from .resource_configuration import ResourceConfiguration
@@ -336,6 +374,12 @@ from .root_object import RootObject
 from .rule_based_entity_map import RuleBasedEntityMap
 from .rule_based_field_map import RuleBasedFieldMap
 from .rule_type_config import RuleTypeConfig
+from .runtime_operator import RuntimeOperator
+from .runtime_operator_summary import RuntimeOperatorSummary
+from .runtime_operator_summary_collection import RuntimeOperatorSummaryCollection
+from .runtime_pipeline import RuntimePipeline
+from .runtime_pipeline_summary import RuntimePipelineSummary
+from .runtime_pipeline_summary_collection import RuntimePipelineSummaryCollection
 from .schedule import Schedule
 from .schedule_summary import ScheduleSummary
 from .schedule_summary_collection import ScheduleSummaryCollection
@@ -371,6 +415,9 @@ from .task_from_sql_task_details import TaskFromSQLTaskDetails
 from .task_operator import TaskOperator
 from .task_run import TaskRun
 from .task_run_details import TaskRunDetails
+from .task_run_lineage_details import TaskRunLineageDetails
+from .task_run_lineage_summary import TaskRunLineageSummary
+from .task_run_lineage_summary_collection import TaskRunLineageSummaryCollection
 from .task_run_log_summary import TaskRunLogSummary
 from .task_run_summary import TaskRunSummary
 from .task_run_summary_collection import TaskRunSummaryCollection
@@ -388,6 +435,8 @@ from .task_summary_from_sql_task import TaskSummaryFromSQLTask
 from .task_validation import TaskValidation
 from .task_validation_summary import TaskValidationSummary
 from .task_validation_summary_collection import TaskValidationSummaryCollection
+from .template_summary import TemplateSummary
+from .template_summary_collection import TemplateSummaryCollection
 from .time import Time
 from .type_library import TypeLibrary
 from .type_list_rule import TypeListRule
@@ -395,6 +444,7 @@ from .type_system import TypeSystem
 from .typed_expression import TypedExpression
 from .typed_name_pattern_rule import TypedNamePatternRule
 from .typed_object import TypedObject
+from .typed_object_wrapper import TypedObjectWrapper
 from .ui_properties import UIProperties
 from .union import Union
 from .unique_data_key import UniqueDataKey
@@ -407,18 +457,23 @@ from .update_connection_from_atp import UpdateConnectionFromAtp
 from .update_connection_from_bicc import UpdateConnectionFromBICC
 from .update_connection_from_bip import UpdateConnectionFromBIP
 from .update_connection_from_jdbc import UpdateConnectionFromJdbc
+from .update_connection_from_lakehouse import UpdateConnectionFromLakehouse
 from .update_connection_from_my_sql import UpdateConnectionFromMySQL
 from .update_connection_from_object_storage import UpdateConnectionFromObjectStorage
 from .update_connection_from_oracle import UpdateConnectionFromOracle
+from .update_connection_from_rest_basic_auth import UpdateConnectionFromRestBasicAuth
+from .update_connection_from_rest_no_auth import UpdateConnectionFromRestNoAuth
 from .update_data_asset_details import UpdateDataAssetDetails
 from .update_data_asset_from_adwc import UpdateDataAssetFromAdwc
 from .update_data_asset_from_amazon_s3 import UpdateDataAssetFromAmazonS3
 from .update_data_asset_from_atp import UpdateDataAssetFromAtp
 from .update_data_asset_from_fusion_app import UpdateDataAssetFromFusionApp
 from .update_data_asset_from_jdbc import UpdateDataAssetFromJdbc
+from .update_data_asset_from_lakehouse import UpdateDataAssetFromLakehouse
 from .update_data_asset_from_my_sql import UpdateDataAssetFromMySQL
 from .update_data_asset_from_object_storage import UpdateDataAssetFromObjectStorage
 from .update_data_asset_from_oracle import UpdateDataAssetFromOracle
+from .update_data_asset_from_rest import UpdateDataAssetFromRest
 from .update_data_flow_details import UpdateDataFlowDetails
 from .update_dis_application_details import UpdateDisApplicationDetails
 from .update_external_publication_details import UpdateExternalPublicationDetails
@@ -474,6 +529,7 @@ data_integration_type_mapping = {
     "ApplicationDetails": ApplicationDetails,
     "ApplicationSummary": ApplicationSummary,
     "ApplicationSummaryCollection": ApplicationSummaryCollection,
+    "ArrayType": ArrayType,
     "AuthConfig": AuthConfig,
     "AuthDetails": AuthDetails,
     "AvroFormatAttribute": AvroFormatAttribute,
@@ -514,12 +570,18 @@ data_integration_type_mapping = {
     "ConnectionFromBipDetails": ConnectionFromBipDetails,
     "ConnectionFromJdbc": ConnectionFromJdbc,
     "ConnectionFromJdbcDetails": ConnectionFromJdbcDetails,
+    "ConnectionFromLakehouse": ConnectionFromLakehouse,
+    "ConnectionFromLakehouseDetails": ConnectionFromLakehouseDetails,
     "ConnectionFromMySQL": ConnectionFromMySQL,
     "ConnectionFromMySQLDetails": ConnectionFromMySQLDetails,
     "ConnectionFromObjectStorage": ConnectionFromObjectStorage,
     "ConnectionFromObjectStorageDetails": ConnectionFromObjectStorageDetails,
     "ConnectionFromOracle": ConnectionFromOracle,
     "ConnectionFromOracleDetails": ConnectionFromOracleDetails,
+    "ConnectionFromRestBasicAuth": ConnectionFromRestBasicAuth,
+    "ConnectionFromRestBasicAuthDetails": ConnectionFromRestBasicAuthDetails,
+    "ConnectionFromRestNoAuth": ConnectionFromRestNoAuth,
+    "ConnectionFromRestNoAuthDetails": ConnectionFromRestNoAuthDetails,
     "ConnectionProperty": ConnectionProperty,
     "ConnectionSummary": ConnectionSummary,
     "ConnectionSummaryCollection": ConnectionSummaryCollection,
@@ -529,9 +591,12 @@ data_integration_type_mapping = {
     "ConnectionSummaryFromBICC": ConnectionSummaryFromBICC,
     "ConnectionSummaryFromBIP": ConnectionSummaryFromBIP,
     "ConnectionSummaryFromJdbc": ConnectionSummaryFromJdbc,
+    "ConnectionSummaryFromLakehouse": ConnectionSummaryFromLakehouse,
     "ConnectionSummaryFromMySQL": ConnectionSummaryFromMySQL,
     "ConnectionSummaryFromObjectStorage": ConnectionSummaryFromObjectStorage,
     "ConnectionSummaryFromOracle": ConnectionSummaryFromOracle,
+    "ConnectionSummaryFromRestBasicAuth": ConnectionSummaryFromRestBasicAuth,
+    "ConnectionSummaryFromRestNoAuth": ConnectionSummaryFromRestNoAuth,
     "ConnectionValidation": ConnectionValidation,
     "ConnectionValidationSummary": ConnectionValidationSummary,
     "ConnectionValidationSummaryCollection": ConnectionValidationSummaryCollection,
@@ -547,9 +612,12 @@ data_integration_type_mapping = {
     "CreateConnectionFromBICC": CreateConnectionFromBICC,
     "CreateConnectionFromBIP": CreateConnectionFromBIP,
     "CreateConnectionFromJdbc": CreateConnectionFromJdbc,
+    "CreateConnectionFromLakehouse": CreateConnectionFromLakehouse,
     "CreateConnectionFromMySQL": CreateConnectionFromMySQL,
     "CreateConnectionFromObjectStorage": CreateConnectionFromObjectStorage,
     "CreateConnectionFromOracle": CreateConnectionFromOracle,
+    "CreateConnectionFromRestBasicAuth": CreateConnectionFromRestBasicAuth,
+    "CreateConnectionFromRestNoAuth": CreateConnectionFromRestNoAuth,
     "CreateConnectionValidationDetails": CreateConnectionValidationDetails,
     "CreateDataAssetDetails": CreateDataAssetDetails,
     "CreateDataAssetFromAdwc": CreateDataAssetFromAdwc,
@@ -557,9 +625,11 @@ data_integration_type_mapping = {
     "CreateDataAssetFromAtp": CreateDataAssetFromAtp,
     "CreateDataAssetFromFusionApp": CreateDataAssetFromFusionApp,
     "CreateDataAssetFromJdbc": CreateDataAssetFromJdbc,
+    "CreateDataAssetFromLakehouse": CreateDataAssetFromLakehouse,
     "CreateDataAssetFromMySQL": CreateDataAssetFromMySQL,
     "CreateDataAssetFromObjectStorage": CreateDataAssetFromObjectStorage,
     "CreateDataAssetFromOracle": CreateDataAssetFromOracle,
+    "CreateDataAssetFromRest": CreateDataAssetFromRest,
     "CreateDataFlowDetails": CreateDataFlowDetails,
     "CreateDataFlowValidationDetails": CreateDataFlowValidationDetails,
     "CreateDisApplicationDetails": CreateDisApplicationDetails,
@@ -601,9 +671,11 @@ data_integration_type_mapping = {
     "DataAssetFromAtpDetails": DataAssetFromAtpDetails,
     "DataAssetFromFusionApp": DataAssetFromFusionApp,
     "DataAssetFromJdbc": DataAssetFromJdbc,
+    "DataAssetFromLakehouseDetails": DataAssetFromLakehouseDetails,
     "DataAssetFromMySQL": DataAssetFromMySQL,
     "DataAssetFromObjectStorageDetails": DataAssetFromObjectStorageDetails,
     "DataAssetFromOracleDetails": DataAssetFromOracleDetails,
+    "DataAssetFromRestDetails": DataAssetFromRestDetails,
     "DataAssetSummary": DataAssetSummary,
     "DataAssetSummaryCollection": DataAssetSummaryCollection,
     "DataAssetSummaryFromAdwc": DataAssetSummaryFromAdwc,
@@ -611,9 +683,11 @@ data_integration_type_mapping = {
     "DataAssetSummaryFromAtp": DataAssetSummaryFromAtp,
     "DataAssetSummaryFromFusionApp": DataAssetSummaryFromFusionApp,
     "DataAssetSummaryFromJdbc": DataAssetSummaryFromJdbc,
+    "DataAssetSummaryFromLakehouse": DataAssetSummaryFromLakehouse,
     "DataAssetSummaryFromMySQL": DataAssetSummaryFromMySQL,
     "DataAssetSummaryFromObjectStorage": DataAssetSummaryFromObjectStorage,
     "DataAssetSummaryFromOracle": DataAssetSummaryFromOracle,
+    "DataAssetSummaryFromRest": DataAssetSummaryFromRest,
     "DataEntity": DataEntity,
     "DataEntityDetails": DataEntityDetails,
     "DataEntityFromDataStore": DataEntityFromDataStore,
@@ -643,9 +717,12 @@ data_integration_type_mapping = {
     "DataFormat": DataFormat,
     "DataType": DataType,
     "DataflowApplication": DataflowApplication,
+    "DecisionOperator": DecisionOperator,
+    "DecisionOutputPort": DecisionOutputPort,
     "DependentObject": DependentObject,
     "DependentObjectSummary": DependentObjectSummary,
     "DependentObjectSummaryCollection": DependentObjectSummaryCollection,
+    "DerivedEntity": DerivedEntity,
     "DerivedField": DerivedField,
     "DerivedType": DerivedType,
     "DirectFieldMap": DirectFieldMap,
@@ -675,11 +752,13 @@ data_integration_type_mapping = {
     "ExternalPublicationValidationSummaryCollection": ExternalPublicationValidationSummaryCollection,
     "ExternalStorage": ExternalStorage,
     "FieldMap": FieldMap,
+    "FieldMapWrapper": FieldMapWrapper,
     "Filter": Filter,
     "FilterPush": FilterPush,
     "Flatten": Flatten,
     "FlattenDetails": FlattenDetails,
     "FlattenProjectionPreferences": FlattenProjectionPreferences,
+    "FlattenTypeHandler": FlattenTypeHandler,
     "FlowNode": FlowNode,
     "FlowPort": FlowPort,
     "FlowPortLink": FlowPortLink,
@@ -689,15 +768,20 @@ data_integration_type_mapping = {
     "FolderSummaryCollection": FolderSummaryCollection,
     "ForeignKey": ForeignKey,
     "Function": Function,
+    "FunctionConfigurationDefinition": FunctionConfigurationDefinition,
     "FunctionLibrary": FunctionLibrary,
     "FunctionLibraryDetails": FunctionLibraryDetails,
     "FunctionLibrarySummary": FunctionLibrarySummary,
     "FunctionLibrarySummaryCollection": FunctionLibrarySummaryCollection,
     "FunctionSignature": FunctionSignature,
+    "GenericRestApiAttributes": GenericRestApiAttributes,
+    "GenericRestCallAttribute": GenericRestCallAttribute,
+    "GroupedNamePatternRule": GroupedNamePatternRule,
     "HourlyFrequencyDetails": HourlyFrequencyDetails,
     "InputField": InputField,
     "InputLink": InputLink,
     "InputPort": InputPort,
+    "InputProxyField": InputProxyField,
     "Intersect": Intersect,
     "JavaType": JavaType,
     "Join": Join,
@@ -712,6 +796,9 @@ data_integration_type_mapping = {
     "Lookup": Lookup,
     "MacroField": MacroField,
     "MacroPivotField": MacroPivotField,
+    "MapType": MapType,
+    "MaterializedCompositeType": MaterializedCompositeType,
+    "MaterializedDynamicField": MaterializedDynamicField,
     "MergeOperator": MergeOperator,
     "Message": Message,
     "Minus": Minus,
@@ -726,6 +813,9 @@ data_integration_type_mapping = {
     "ObjectStorageWriteAttributes": ObjectStorageWriteAttributes,
     "OciFunction": OciFunction,
     "OciVaultSecretConfig": OciVaultSecretConfig,
+    "Operation": Operation,
+    "OperationFromApi": OperationFromApi,
+    "OperationFromProcedure": OperationFromProcedure,
     "Operator": Operator,
     "OracleAdwcWriteAttribute": OracleAdwcWriteAttribute,
     "OracleAdwcWriteAttributes": OracleAdwcWriteAttributes,
@@ -783,6 +873,9 @@ data_integration_type_mapping = {
     "ReferenceSummary": ReferenceSummary,
     "ReferenceSummaryCollection": ReferenceSummaryCollection,
     "ReferenceUsedBy": ReferenceUsedBy,
+    "ReferencedDataObject": ReferencedDataObject,
+    "ReferencedDataObjectFromAPI": ReferencedDataObjectFromAPI,
+    "ReferencedDataObjectFromProcedure": ReferencedDataObjectFromProcedure,
     "RegistryMetadata": RegistryMetadata,
     "RenameRule": RenameRule,
     "ResourceConfiguration": ResourceConfiguration,
@@ -792,6 +885,12 @@ data_integration_type_mapping = {
     "RuleBasedEntityMap": RuleBasedEntityMap,
     "RuleBasedFieldMap": RuleBasedFieldMap,
     "RuleTypeConfig": RuleTypeConfig,
+    "RuntimeOperator": RuntimeOperator,
+    "RuntimeOperatorSummary": RuntimeOperatorSummary,
+    "RuntimeOperatorSummaryCollection": RuntimeOperatorSummaryCollection,
+    "RuntimePipeline": RuntimePipeline,
+    "RuntimePipelineSummary": RuntimePipelineSummary,
+    "RuntimePipelineSummaryCollection": RuntimePipelineSummaryCollection,
     "Schedule": Schedule,
     "ScheduleSummary": ScheduleSummary,
     "ScheduleSummaryCollection": ScheduleSummaryCollection,
@@ -827,6 +926,9 @@ data_integration_type_mapping = {
     "TaskOperator": TaskOperator,
     "TaskRun": TaskRun,
     "TaskRunDetails": TaskRunDetails,
+    "TaskRunLineageDetails": TaskRunLineageDetails,
+    "TaskRunLineageSummary": TaskRunLineageSummary,
+    "TaskRunLineageSummaryCollection": TaskRunLineageSummaryCollection,
     "TaskRunLogSummary": TaskRunLogSummary,
     "TaskRunSummary": TaskRunSummary,
     "TaskRunSummaryCollection": TaskRunSummaryCollection,
@@ -844,6 +946,8 @@ data_integration_type_mapping = {
     "TaskValidation": TaskValidation,
     "TaskValidationSummary": TaskValidationSummary,
     "TaskValidationSummaryCollection": TaskValidationSummaryCollection,
+    "TemplateSummary": TemplateSummary,
+    "TemplateSummaryCollection": TemplateSummaryCollection,
     "Time": Time,
     "TypeLibrary": TypeLibrary,
     "TypeListRule": TypeListRule,
@@ -851,6 +955,7 @@ data_integration_type_mapping = {
     "TypedExpression": TypedExpression,
     "TypedNamePatternRule": TypedNamePatternRule,
     "TypedObject": TypedObject,
+    "TypedObjectWrapper": TypedObjectWrapper,
     "UIProperties": UIProperties,
     "Union": Union,
     "UniqueDataKey": UniqueDataKey,
@@ -863,18 +968,23 @@ data_integration_type_mapping = {
     "UpdateConnectionFromBICC": UpdateConnectionFromBICC,
     "UpdateConnectionFromBIP": UpdateConnectionFromBIP,
     "UpdateConnectionFromJdbc": UpdateConnectionFromJdbc,
+    "UpdateConnectionFromLakehouse": UpdateConnectionFromLakehouse,
     "UpdateConnectionFromMySQL": UpdateConnectionFromMySQL,
     "UpdateConnectionFromObjectStorage": UpdateConnectionFromObjectStorage,
     "UpdateConnectionFromOracle": UpdateConnectionFromOracle,
+    "UpdateConnectionFromRestBasicAuth": UpdateConnectionFromRestBasicAuth,
+    "UpdateConnectionFromRestNoAuth": UpdateConnectionFromRestNoAuth,
     "UpdateDataAssetDetails": UpdateDataAssetDetails,
     "UpdateDataAssetFromAdwc": UpdateDataAssetFromAdwc,
     "UpdateDataAssetFromAmazonS3": UpdateDataAssetFromAmazonS3,
     "UpdateDataAssetFromAtp": UpdateDataAssetFromAtp,
     "UpdateDataAssetFromFusionApp": UpdateDataAssetFromFusionApp,
     "UpdateDataAssetFromJdbc": UpdateDataAssetFromJdbc,
+    "UpdateDataAssetFromLakehouse": UpdateDataAssetFromLakehouse,
     "UpdateDataAssetFromMySQL": UpdateDataAssetFromMySQL,
     "UpdateDataAssetFromObjectStorage": UpdateDataAssetFromObjectStorage,
     "UpdateDataAssetFromOracle": UpdateDataAssetFromOracle,
+    "UpdateDataAssetFromRest": UpdateDataAssetFromRest,
     "UpdateDataFlowDetails": UpdateDataFlowDetails,
     "UpdateDisApplicationDetails": UpdateDisApplicationDetails,
     "UpdateExternalPublicationDetails": UpdateExternalPublicationDetails,

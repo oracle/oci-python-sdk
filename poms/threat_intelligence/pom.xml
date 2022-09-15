@@ -20,7 +20,7 @@
     <feature-id-file>${sdk-root-dir}/featureId.yaml</feature-id-file>
     <feature-id-dir>${sdk-root-dir}/codegenConfig/featureIds</feature-id-dir>
     <!-- Service Spec file goes here -->
-    <threat-intel-control-plane-spec-spec-file>source/api.cond.yaml</threat-intel-control-plane-spec-spec-file>
+    <threat-intel-control-plane-spec-spec-file>source/api.20220901.cond.yaml</threat-intel-control-plane-spec-spec-file>
   </properties>
   <build>
     <directory>${sdk-root-dir}/target</directory>
@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.oci.threatintelcp</groupId>
         <artifactId>threat-intel-control-plane-spec</artifactId>
-        <version>0.1.10-PREVIEW</version>
+        <version>0.1.27-2-PREVIEW</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

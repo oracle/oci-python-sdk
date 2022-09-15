@@ -17,18 +17,23 @@ class AbstractCallAttribute(object):
     #: This constant has a value of "BIP_CALL_ATTRIBUTE"
     MODEL_TYPE_BIP_CALL_ATTRIBUTE = "BIP_CALL_ATTRIBUTE"
 
+    #: A constant which can be used with the model_type property of a AbstractCallAttribute.
+    #: This constant has a value of "GENERIC_REST_CALL_ATTRIBUTE"
+    MODEL_TYPE_GENERIC_REST_CALL_ATTRIBUTE = "GENERIC_REST_CALL_ATTRIBUTE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AbstractCallAttribute object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.data_integration.models.BipCallAttribute`
+        * :class:`~oci.data_integration.models.GenericRestCallAttribute`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param model_type:
             The value to assign to the model_type property of this AbstractCallAttribute.
-            Allowed values for this property are: "BIP_CALL_ATTRIBUTE"
+            Allowed values for this property are: "BIP_CALL_ATTRIBUTE", "GENERIC_REST_CALL_ATTRIBUTE"
         :type model_type: str
 
         :param fetch_size:
@@ -59,6 +64,9 @@ class AbstractCallAttribute(object):
 
         if type == 'BIP_CALL_ATTRIBUTE':
             return 'BipCallAttribute'
+
+        if type == 'GENERIC_REST_CALL_ATTRIBUTE':
+            return 'GenericRestCallAttribute'
         else:
             return 'AbstractCallAttribute'
 
@@ -68,7 +76,7 @@ class AbstractCallAttribute(object):
         **[Required]** Gets the model_type of this AbstractCallAttribute.
         The type of the abstract call attribute.
 
-        Allowed values for this property are: "BIP_CALL_ATTRIBUTE"
+        Allowed values for this property are: "BIP_CALL_ATTRIBUTE", "GENERIC_REST_CALL_ATTRIBUTE"
 
 
         :return: The model_type of this AbstractCallAttribute.
@@ -86,7 +94,7 @@ class AbstractCallAttribute(object):
         :param model_type: The model_type of this AbstractCallAttribute.
         :type: str
         """
-        allowed_values = ["BIP_CALL_ATTRIBUTE"]
+        allowed_values = ["BIP_CALL_ATTRIBUTE", "GENERIC_REST_CALL_ATTRIBUTE"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             raise ValueError(
                 "Invalid value for `model_type`, must be None or one of {0}"

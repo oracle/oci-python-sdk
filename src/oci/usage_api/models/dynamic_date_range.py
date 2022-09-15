@@ -10,12 +10,16 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DynamicDateRange(DateRange):
     """
-    The saved dynamic date range (Required when staticDateRange is missing).
+    The saved dynamic date range (required when the static date range is missing).
     """
 
     #: A constant which can be used with the dynamic_date_range_type property of a DynamicDateRange.
     #: This constant has a value of "LAST_7_DAYS"
     DYNAMIC_DATE_RANGE_TYPE_LAST_7_DAYS = "LAST_7_DAYS"
+
+    #: A constant which can be used with the dynamic_date_range_type property of a DynamicDateRange.
+    #: This constant has a value of "LAST_10_DAYS"
+    DYNAMIC_DATE_RANGE_TYPE_LAST_10_DAYS = "LAST_10_DAYS"
 
     #: A constant which can be used with the dynamic_date_range_type property of a DynamicDateRange.
     #: This constant has a value of "LAST_CALENDAR_WEEK"
@@ -24,6 +28,18 @@ class DynamicDateRange(DateRange):
     #: A constant which can be used with the dynamic_date_range_type property of a DynamicDateRange.
     #: This constant has a value of "LAST_CALENDAR_MONTH"
     DYNAMIC_DATE_RANGE_TYPE_LAST_CALENDAR_MONTH = "LAST_CALENDAR_MONTH"
+
+    #: A constant which can be used with the dynamic_date_range_type property of a DynamicDateRange.
+    #: This constant has a value of "LAST_2_CALENDAR_MONTHS"
+    DYNAMIC_DATE_RANGE_TYPE_LAST_2_CALENDAR_MONTHS = "LAST_2_CALENDAR_MONTHS"
+
+    #: A constant which can be used with the dynamic_date_range_type property of a DynamicDateRange.
+    #: This constant has a value of "LAST_3_CALENDAR_MONTHS"
+    DYNAMIC_DATE_RANGE_TYPE_LAST_3_CALENDAR_MONTHS = "LAST_3_CALENDAR_MONTHS"
+
+    #: A constant which can be used with the dynamic_date_range_type property of a DynamicDateRange.
+    #: This constant has a value of "LAST_6_CALENDAR_MONTHS"
+    DYNAMIC_DATE_RANGE_TYPE_LAST_6_CALENDAR_MONTHS = "LAST_6_CALENDAR_MONTHS"
 
     #: A constant which can be used with the dynamic_date_range_type property of a DynamicDateRange.
     #: This constant has a value of "LAST_30_DAYS"
@@ -41,6 +57,10 @@ class DynamicDateRange(DateRange):
     #: This constant has a value of "YEAR_TODATE"
     DYNAMIC_DATE_RANGE_TYPE_YEAR_TODATE = "YEAR_TODATE"
 
+    #: A constant which can be used with the dynamic_date_range_type property of a DynamicDateRange.
+    #: This constant has a value of "ALL"
+    DYNAMIC_DATE_RANGE_TYPE_ALL = "ALL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DynamicDateRange object with values from keyword arguments. The default value of the :py:attr:`~oci.usage_api.models.DynamicDateRange.date_range_type` attribute
@@ -55,7 +75,7 @@ class DynamicDateRange(DateRange):
 
         :param dynamic_date_range_type:
             The value to assign to the dynamic_date_range_type property of this DynamicDateRange.
-            Allowed values for this property are: "LAST_7_DAYS", "LAST_CALENDAR_WEEK", "LAST_CALENDAR_MONTH", "LAST_30_DAYS", "MONTH_TO_DATE", "LAST_YEAR", "YEAR_TODATE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LAST_7_DAYS", "LAST_10_DAYS", "LAST_CALENDAR_WEEK", "LAST_CALENDAR_MONTH", "LAST_2_CALENDAR_MONTHS", "LAST_3_CALENDAR_MONTHS", "LAST_6_CALENDAR_MONTHS", "LAST_30_DAYS", "MONTH_TO_DATE", "LAST_YEAR", "YEAR_TODATE", "ALL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type dynamic_date_range_type: str
 
@@ -78,7 +98,7 @@ class DynamicDateRange(DateRange):
     def dynamic_date_range_type(self):
         """
         **[Required]** Gets the dynamic_date_range_type of this DynamicDateRange.
-        Allowed values for this property are: "LAST_7_DAYS", "LAST_CALENDAR_WEEK", "LAST_CALENDAR_MONTH", "LAST_30_DAYS", "MONTH_TO_DATE", "LAST_YEAR", "YEAR_TODATE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "LAST_7_DAYS", "LAST_10_DAYS", "LAST_CALENDAR_WEEK", "LAST_CALENDAR_MONTH", "LAST_2_CALENDAR_MONTHS", "LAST_3_CALENDAR_MONTHS", "LAST_6_CALENDAR_MONTHS", "LAST_30_DAYS", "MONTH_TO_DATE", "LAST_YEAR", "YEAR_TODATE", "ALL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -95,7 +115,7 @@ class DynamicDateRange(DateRange):
         :param dynamic_date_range_type: The dynamic_date_range_type of this DynamicDateRange.
         :type: str
         """
-        allowed_values = ["LAST_7_DAYS", "LAST_CALENDAR_WEEK", "LAST_CALENDAR_MONTH", "LAST_30_DAYS", "MONTH_TO_DATE", "LAST_YEAR", "YEAR_TODATE"]
+        allowed_values = ["LAST_7_DAYS", "LAST_10_DAYS", "LAST_CALENDAR_WEEK", "LAST_CALENDAR_MONTH", "LAST_2_CALENDAR_MONTHS", "LAST_3_CALENDAR_MONTHS", "LAST_6_CALENDAR_MONTHS", "LAST_30_DAYS", "MONTH_TO_DATE", "LAST_YEAR", "YEAR_TODATE", "ALL"]
         if not value_allowed_none_or_none_sentinel(dynamic_date_range_type, allowed_values):
             dynamic_date_range_type = 'UNKNOWN_ENUM_VALUE'
         self._dynamic_date_range_type = dynamic_date_range_type

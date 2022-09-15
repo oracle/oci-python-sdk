@@ -87,7 +87,7 @@ class CreateSingleDeployStageDeploymentDetails(CreateDeploymentDetails):
     @property
     def deploy_stage_id(self):
         """
-        Gets the deploy_stage_id of this CreateSingleDeployStageDeploymentDetails.
+        **[Required]** Gets the deploy_stage_id of this CreateSingleDeployStageDeploymentDetails.
         Specifies the OCID of the stage to be redeployed.
 
 

@@ -13,6 +13,14 @@ class Schedule(object):
     The schedule.
     """
 
+    #: A constant which can be used with the output_file_format property of a Schedule.
+    #: This constant has a value of "CSV"
+    OUTPUT_FILE_FORMAT_CSV = "CSV"
+
+    #: A constant which can be used with the output_file_format property of a Schedule.
+    #: This constant has a value of "PDF"
+    OUTPUT_FILE_FORMAT_PDF = "PDF"
+
     #: A constant which can be used with the lifecycle_state property of a Schedule.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
@@ -41,6 +49,24 @@ class Schedule(object):
         :param result_location:
             The value to assign to the result_location property of this Schedule.
         :type result_location: oci.usage_api.models.ResultLocation
+
+        :param description:
+            The value to assign to the description property of this Schedule.
+        :type description: str
+
+        :param time_next_run:
+            The value to assign to the time_next_run property of this Schedule.
+        :type time_next_run: datetime
+
+        :param output_file_format:
+            The value to assign to the output_file_format property of this Schedule.
+            Allowed values for this property are: "CSV", "PDF", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type output_file_format: str
+
+        :param saved_report_id:
+            The value to assign to the saved_report_id property of this Schedule.
+        :type saved_report_id: str
 
         :param schedule_recurrences:
             The value to assign to the schedule_recurrences property of this Schedule.
@@ -82,6 +108,10 @@ class Schedule(object):
             'name': 'str',
             'compartment_id': 'str',
             'result_location': 'ResultLocation',
+            'description': 'str',
+            'time_next_run': 'datetime',
+            'output_file_format': 'str',
+            'saved_report_id': 'str',
             'schedule_recurrences': 'str',
             'time_scheduled': 'datetime',
             'query_properties': 'QueryProperties',
@@ -97,6 +127,10 @@ class Schedule(object):
             'name': 'name',
             'compartment_id': 'compartmentId',
             'result_location': 'resultLocation',
+            'description': 'description',
+            'time_next_run': 'timeNextRun',
+            'output_file_format': 'outputFileFormat',
+            'saved_report_id': 'savedReportId',
             'schedule_recurrences': 'scheduleRecurrences',
             'time_scheduled': 'timeScheduled',
             'query_properties': 'queryProperties',
@@ -111,6 +145,10 @@ class Schedule(object):
         self._name = None
         self._compartment_id = None
         self._result_location = None
+        self._description = None
+        self._time_next_run = None
+        self._output_file_format = None
+        self._saved_report_id = None
         self._schedule_recurrences = None
         self._time_scheduled = None
         self._query_properties = None
@@ -124,7 +162,7 @@ class Schedule(object):
     def id(self):
         """
         **[Required]** Gets the id of this Schedule.
-        The OCID representing unique shedule
+        The OCID representing a unique shedule.
 
 
         :return: The id of this Schedule.
@@ -136,7 +174,7 @@ class Schedule(object):
     def id(self, id):
         """
         Sets the id of this Schedule.
-        The OCID representing unique shedule
+        The OCID representing a unique shedule.
 
 
         :param id: The id of this Schedule.
@@ -148,7 +186,7 @@ class Schedule(object):
     def name(self):
         """
         **[Required]** Gets the name of this Schedule.
-        The unique name of the schedule created by the user
+        The unique name of the schedule created by the user.
 
 
         :return: The name of this Schedule.
@@ -160,7 +198,7 @@ class Schedule(object):
     def name(self, name):
         """
         Sets the name of this Schedule.
-        The unique name of the schedule created by the user
+        The unique name of the schedule created by the user.
 
 
         :param name: The name of this Schedule.
@@ -172,7 +210,7 @@ class Schedule(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this Schedule.
-        The tenancy of the customer
+        The customer tenancy.
 
 
         :return: The compartment_id of this Schedule.
@@ -184,7 +222,7 @@ class Schedule(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Schedule.
-        The tenancy of the customer
+        The customer tenancy.
 
 
         :param compartment_id: The compartment_id of this Schedule.
@@ -213,11 +251,116 @@ class Schedule(object):
         self._result_location = result_location
 
     @property
+    def description(self):
+        """
+        Gets the description of this Schedule.
+        The description of the schedule.
+
+
+        :return: The description of this Schedule.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """
+        Sets the description of this Schedule.
+        The description of the schedule.
+
+
+        :param description: The description of this Schedule.
+        :type: str
+        """
+        self._description = description
+
+    @property
+    def time_next_run(self):
+        """
+        Gets the time_next_run of this Schedule.
+        The date and time of the next job execution.
+
+
+        :return: The time_next_run of this Schedule.
+        :rtype: datetime
+        """
+        return self._time_next_run
+
+    @time_next_run.setter
+    def time_next_run(self, time_next_run):
+        """
+        Sets the time_next_run of this Schedule.
+        The date and time of the next job execution.
+
+
+        :param time_next_run: The time_next_run of this Schedule.
+        :type: datetime
+        """
+        self._time_next_run = time_next_run
+
+    @property
+    def output_file_format(self):
+        """
+        Gets the output_file_format of this Schedule.
+        Specifies supported output file format.
+
+        Allowed values for this property are: "CSV", "PDF", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The output_file_format of this Schedule.
+        :rtype: str
+        """
+        return self._output_file_format
+
+    @output_file_format.setter
+    def output_file_format(self, output_file_format):
+        """
+        Sets the output_file_format of this Schedule.
+        Specifies supported output file format.
+
+
+        :param output_file_format: The output_file_format of this Schedule.
+        :type: str
+        """
+        allowed_values = ["CSV", "PDF"]
+        if not value_allowed_none_or_none_sentinel(output_file_format, allowed_values):
+            output_file_format = 'UNKNOWN_ENUM_VALUE'
+        self._output_file_format = output_file_format
+
+    @property
+    def saved_report_id(self):
+        """
+        Gets the saved_report_id of this Schedule.
+        The saved report id which can also be used to generate query.
+
+
+        :return: The saved_report_id of this Schedule.
+        :rtype: str
+        """
+        return self._saved_report_id
+
+    @saved_report_id.setter
+    def saved_report_id(self, saved_report_id):
+        """
+        Sets the saved_report_id of this Schedule.
+        The saved report id which can also be used to generate query.
+
+
+        :param saved_report_id: The saved_report_id of this Schedule.
+        :type: str
+        """
+        self._saved_report_id = saved_report_id
+
+    @property
     def schedule_recurrences(self):
         """
         **[Required]** Gets the schedule_recurrences of this Schedule.
-        In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10
-        Describes the frequency of when the schedule will be run
+        Specifies the frequency according to when the schedule will be run,
+        in the x-obmcs-recurring-time format described in `RFC 5545 section 3.3.10`__.
+        Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+
+        __ https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10
 
 
         :return: The schedule_recurrences of this Schedule.
@@ -229,8 +372,11 @@ class Schedule(object):
     def schedule_recurrences(self, schedule_recurrences):
         """
         Sets the schedule_recurrences of this Schedule.
-        In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10
-        Describes the frequency of when the schedule will be run
+        Specifies the frequency according to when the schedule will be run,
+        in the x-obmcs-recurring-time format described in `RFC 5545 section 3.3.10`__.
+        Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+
+        __ https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10
 
 
         :param schedule_recurrences: The schedule_recurrences of this Schedule.
@@ -242,7 +388,7 @@ class Schedule(object):
     def time_scheduled(self):
         """
         **[Required]** Gets the time_scheduled of this Schedule.
-        The date and time of the first time job execution
+        The date and time of the first time job execution.
 
 
         :return: The time_scheduled of this Schedule.
@@ -254,7 +400,7 @@ class Schedule(object):
     def time_scheduled(self, time_scheduled):
         """
         Sets the time_scheduled of this Schedule.
-        The date and time of the first time job execution
+        The date and time of the first time job execution.
 
 
         :param time_scheduled: The time_scheduled of this Schedule.
@@ -265,7 +411,7 @@ class Schedule(object):
     @property
     def query_properties(self):
         """
-        **[Required]** Gets the query_properties of this Schedule.
+        Gets the query_properties of this Schedule.
 
         :return: The query_properties of this Schedule.
         :rtype: oci.usage_api.models.QueryProperties
@@ -286,7 +432,7 @@ class Schedule(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this Schedule.
-        The date and time of when the schedule was created
+        The date and time the schedule was created.
 
 
         :return: The time_created of this Schedule.
@@ -298,7 +444,7 @@ class Schedule(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Schedule.
-        The date and time of when the schedule was created
+        The date and time the schedule was created.
 
 
         :param time_created: The time_created of this Schedule.
@@ -310,7 +456,7 @@ class Schedule(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this Schedule.
-        The lifecycle state of the schedule
+        The schedule lifecycle state.
 
         Allowed values for this property are: "ACTIVE", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -325,7 +471,7 @@ class Schedule(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Schedule.
-        The lifecycle state of the schedule
+        The schedule lifecycle state.
 
 
         :param lifecycle_state: The lifecycle_state of this Schedule.

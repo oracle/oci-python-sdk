@@ -162,6 +162,8 @@ Devops
     oci.devops.models.CreateSingleDeployStageRedeploymentDetails
     oci.devops.models.CreateTriggerDeploymentStageDetails
     oci.devops.models.CreateTriggerDetails
+    oci.devops.models.CreateVbsAccessTokenConnectionDetails
+    oci.devops.models.CreateVbsTriggerDetails
     oci.devops.models.CreateWaitCriteriaDetails
     oci.devops.models.CreateWaitDeployStageDetails
     oci.devops.models.CreateWaitStageDetails
@@ -412,9 +414,21 @@ Devops
     oci.devops.models.UpdateSingleDeployStageRedeploymentDetails
     oci.devops.models.UpdateTriggerDeploymentStageDetails
     oci.devops.models.UpdateTriggerDetails
+    oci.devops.models.UpdateVbsAccessTokenConnectionDetails
+    oci.devops.models.UpdateVbsTriggerDetails
     oci.devops.models.UpdateWaitCriteriaDetails
     oci.devops.models.UpdateWaitDeployStageDetails
     oci.devops.models.UpdateWaitStageDetails
+    oci.devops.models.VbsAccessTokenConnection
+    oci.devops.models.VbsAccessTokenConnectionSummary
+    oci.devops.models.VbsBuildRunSource
+    oci.devops.models.VbsBuildSource
+    oci.devops.models.VbsFilter
+    oci.devops.models.VbsFilterAttributes
+    oci.devops.models.VbsFilterExclusionAttributes
+    oci.devops.models.VbsTrigger
+    oci.devops.models.VbsTriggerCreateResult
+    oci.devops.models.VbsTriggerSummary
     oci.devops.models.VulnerabilityAuditSummary
     oci.devops.models.VulnerabilityAuditSummaryCollection
     oci.devops.models.WaitCriteria

@@ -69,7 +69,7 @@ class DateRange(object):
     def date_range_type(self):
         """
         **[Required]** Gets the date_range_type of this DateRange.
-        Defines whether the schedule date range is STATIC or DYNAMIC
+        Defines whether the schedule date range is STATIC or DYNAMIC.
 
         Allowed values for this property are: "STATIC", "DYNAMIC", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -84,7 +84,7 @@ class DateRange(object):
     def date_range_type(self, date_range_type):
         """
         Sets the date_range_type of this DateRange.
-        Defines whether the schedule date range is STATIC or DYNAMIC
+        Defines whether the schedule date range is STATIC or DYNAMIC.
 
 
         :param date_range_type: The date_range_type of this DateRange.

@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.pic.metering.usagestore.api</groupId>
         <artifactId>usage-api-spec</artifactId>
-        <version>1.16</version>
+        <version>1.20</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

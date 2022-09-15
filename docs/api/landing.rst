@@ -36,7 +36,12 @@ API Reference
 * :doc:`Certificates Management <certificates_management/client/oci.certificates_management.CertificatesManagementClient>`
 * :doc:`Incident <cims/client/oci.cims.IncidentClient>`
 * :doc:`User <cims/client/oci.cims.UserClient>`
+* :doc:`Common <cloud_bridge/client/oci.cloud_bridge.CommonClient>`
+* :doc:`Discovery <cloud_bridge/client/oci.cloud_bridge.DiscoveryClient>`
+* :doc:`Inventory <cloud_bridge/client/oci.cloud_bridge.InventoryClient>`
+* :doc:`Ocb Agent Svc <cloud_bridge/client/oci.cloud_bridge.OcbAgentSvcClient>`
 * :doc:`Cloud Guard <cloud_guard/client/oci.cloud_guard.CloudGuardClient>`
+* :doc:`Migration <cloud_migrations/client/oci.cloud_migrations.MigrationClient>`
 * :doc:`Compute Instance Agent <compute_instance_agent/client/oci.compute_instance_agent.ComputeInstanceAgentClient>`
 * :doc:`Plugin <compute_instance_agent/client/oci.compute_instance_agent.PluginClient>`
 * :doc:`Pluginconfig <compute_instance_agent/client/oci.compute_instance_agent.PluginconfigClient>`
@@ -230,7 +235,9 @@ API Reference
     certificates
     certificates_management
     cims
+    cloud_bridge
     cloud_guard
+    cloud_migrations
     compute_instance_agent
     container_engine
     core

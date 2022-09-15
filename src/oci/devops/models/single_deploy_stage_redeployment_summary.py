@@ -174,7 +174,7 @@ class SingleDeployStageRedeploymentSummary(DeploymentSummary):
     @property
     def deploy_stage_id(self):
         """
-        Gets the deploy_stage_id of this SingleDeployStageRedeploymentSummary.
+        **[Required]** Gets the deploy_stage_id of this SingleDeployStageRedeploymentSummary.
         Specifies the OCID of the stage to be redeployed.
 
 

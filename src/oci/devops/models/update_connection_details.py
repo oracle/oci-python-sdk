@@ -19,6 +19,7 @@ class UpdateConnectionDetails(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.devops.models.UpdateGithubAccessTokenConnectionDetails`
+        * :class:`~oci.devops.models.UpdateVbsAccessTokenConnectionDetails`
         * :class:`~oci.devops.models.UpdateBitbucketServerAccessTokenConnectionDetails`
         * :class:`~oci.devops.models.UpdateGitlabAccessTokenConnectionDetails`
         * :class:`~oci.devops.models.UpdateBitbucketCloudAppPasswordConnectionDetails`
@@ -79,6 +80,9 @@ class UpdateConnectionDetails(object):
 
         if type == 'GITHUB_ACCESS_TOKEN':
             return 'UpdateGithubAccessTokenConnectionDetails'
+
+        if type == 'VBS_ACCESS_TOKEN':
+            return 'UpdateVbsAccessTokenConnectionDetails'
 
         if type == 'BITBUCKET_SERVER_ACCESS_TOKEN':
             return 'UpdateBitbucketServerAccessTokenConnectionDetails'

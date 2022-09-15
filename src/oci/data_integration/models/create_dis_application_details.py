@@ -46,6 +46,10 @@ class CreateDisApplicationDetails(object):
         Initializes a new CreateDisApplicationDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this CreateDisApplicationDetails.
+        :type compartment_id: str
+
         :param key:
             The value to assign to the key property of this CreateDisApplicationDetails.
         :type key: str
@@ -102,6 +106,7 @@ class CreateDisApplicationDetails(object):
 
         """
         self.swagger_types = {
+            'compartment_id': 'str',
             'key': 'str',
             'model_version': 'str',
             'model_type': 'str',
@@ -118,6 +123,7 @@ class CreateDisApplicationDetails(object):
         }
 
         self.attribute_map = {
+            'compartment_id': 'compartmentId',
             'key': 'key',
             'model_version': 'modelVersion',
             'model_type': 'modelType',
@@ -133,6 +139,7 @@ class CreateDisApplicationDetails(object):
             'registry_metadata': 'registryMetadata'
         }
 
+        self._compartment_id = None
         self._key = None
         self._model_version = None
         self._model_type = None
@@ -146,6 +153,30 @@ class CreateDisApplicationDetails(object):
         self._lifecycle_state = None
         self._source_application_info = None
         self._registry_metadata = None
+
+    @property
+    def compartment_id(self):
+        """
+        Gets the compartment_id of this CreateDisApplicationDetails.
+        OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
+
+
+        :return: The compartment_id of this CreateDisApplicationDetails.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this CreateDisApplicationDetails.
+        OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
+
+
+        :param compartment_id: The compartment_id of this CreateDisApplicationDetails.
+        :type: str
+        """
+        self._compartment_id = compartment_id
 
     @property
     def key(self):

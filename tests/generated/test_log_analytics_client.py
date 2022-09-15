@@ -274,6 +274,49 @@ def test_cancel_query_work_request(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
+def test_change_ingest_time_rule_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('log_analytics', 'ChangeIngestTimeRuleCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('log_analytics', util.camelize('log_analytics'), 'ChangeIngestTimeRuleCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='log_analytics', api_name='ChangeIngestTimeRuleCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.log_analytics.LogAnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.change_ingest_time_rule_compartment(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                ingest_time_rule_id=request.pop(util.camelize('ingestTimeRuleId')),
+                change_ingest_time_rule_compartment_details=request.pop(util.camelize('ChangeIngestTimeRuleCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'log_analytics',
+            'ChangeIngestTimeRuleCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_ingest_time_rule_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
 def test_change_log_analytics_em_bridge_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('log_analytics', 'ChangeLogAnalyticsEmBridgeCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -567,6 +610,48 @@ def test_compare_content(testing_service_client):
             result,
             service_error,
             'compareContentResult',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
+def test_create_ingest_time_rule(testing_service_client):
+    if not testing_service_client.is_api_enabled('log_analytics', 'CreateIngestTimeRule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('log_analytics', util.camelize('log_analytics'), 'CreateIngestTimeRule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='log_analytics', api_name='CreateIngestTimeRule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.log_analytics.LogAnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.create_ingest_time_rule(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                create_ingest_time_rule_details=request.pop(util.camelize('CreateIngestTimeRuleDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'log_analytics',
+            'CreateIngestTimeRule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'ingestTimeRule',
             False,
             False
         )
@@ -903,6 +988,48 @@ def test_delete_field(testing_service_client):
             result,
             service_error,
             'delete_field',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
+def test_delete_ingest_time_rule(testing_service_client):
+    if not testing_service_client.is_api_enabled('log_analytics', 'DeleteIngestTimeRule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('log_analytics', util.camelize('log_analytics'), 'DeleteIngestTimeRule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='log_analytics', api_name='DeleteIngestTimeRule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.log_analytics.LogAnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.delete_ingest_time_rule(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                ingest_time_rule_id=request.pop(util.camelize('ingestTimeRuleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'log_analytics',
+            'DeleteIngestTimeRule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_ingest_time_rule',
             True,
             False
         )
@@ -1541,6 +1668,48 @@ def test_disable_auto_association(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
+def test_disable_ingest_time_rule(testing_service_client):
+    if not testing_service_client.is_api_enabled('log_analytics', 'DisableIngestTimeRule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('log_analytics', util.camelize('log_analytics'), 'DisableIngestTimeRule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='log_analytics', api_name='DisableIngestTimeRule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.log_analytics.LogAnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.disable_ingest_time_rule(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                ingest_time_rule_id=request.pop(util.camelize('ingestTimeRuleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'log_analytics',
+            'DisableIngestTimeRule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'disable_ingest_time_rule',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
 def test_disable_source_event_types(testing_service_client):
     if not testing_service_client.is_api_enabled('log_analytics', 'DisableSourceEventTypes'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1662,6 +1831,48 @@ def test_enable_auto_association(testing_service_client):
             result,
             service_error,
             'enable_auto_association',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
+def test_enable_ingest_time_rule(testing_service_client):
+    if not testing_service_client.is_api_enabled('log_analytics', 'EnableIngestTimeRule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('log_analytics', util.camelize('log_analytics'), 'EnableIngestTimeRule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='log_analytics', api_name='EnableIngestTimeRule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.log_analytics.LogAnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.enable_ingest_time_rule(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                ingest_time_rule_id=request.pop(util.camelize('ingestTimeRuleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'log_analytics',
+            'EnableIngestTimeRule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'enable_ingest_time_rule',
             False,
             False
         )
@@ -2292,6 +2503,48 @@ def test_get_fields_summary(testing_service_client):
             result,
             service_error,
             'fieldSummaryReport',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
+def test_get_ingest_time_rule(testing_service_client):
+    if not testing_service_client.is_api_enabled('log_analytics', 'GetIngestTimeRule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('log_analytics', util.camelize('log_analytics'), 'GetIngestTimeRule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='log_analytics', api_name='GetIngestTimeRule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.log_analytics.LogAnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.get_ingest_time_rule(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                ingest_time_rule_id=request.pop(util.camelize('ingestTimeRuleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'log_analytics',
+            'GetIngestTimeRule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'ingestTimeRule',
             False,
             False
         )
@@ -4078,6 +4331,72 @@ def test_list_fields(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
+def test_list_ingest_time_rules(testing_service_client):
+    if not testing_service_client.is_api_enabled('log_analytics', 'ListIngestTimeRules'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('log_analytics', util.camelize('log_analytics'), 'ListIngestTimeRules')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='log_analytics', api_name='ListIngestTimeRules')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.log_analytics.LogAnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.list_ingest_time_rules(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_ingest_time_rules(
+                    namespace_name=request.pop(util.camelize('namespaceName')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_ingest_time_rules(
+                        namespace_name=request.pop(util.camelize('namespaceName')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'log_analytics',
+            'ListIngestTimeRules',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'ingestTimeRuleSummaryCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
 def test_list_label_priorities(testing_service_client):
     if not testing_service_client.is_api_enabled('log_analytics', 'ListLabelPriorities'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5268,6 +5587,72 @@ def test_list_resource_categories(testing_service_client):
             result,
             service_error,
             'logAnalyticsResourceCategoryCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
+def test_list_rules(testing_service_client):
+    if not testing_service_client.is_api_enabled('log_analytics', 'ListRules'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('log_analytics', util.camelize('log_analytics'), 'ListRules')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='log_analytics', api_name='ListRules')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.log_analytics.LogAnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.list_rules(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_rules(
+                    namespace_name=request.pop(util.camelize('namespaceName')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_rules(
+                        namespace_name=request.pop(util.camelize('namespaceName')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'log_analytics',
+            'ListRules',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'ruleSummaryCollection',
             False,
             True
         )
@@ -7425,6 +7810,49 @@ def test_unsuppress_warning(testing_service_client):
             result,
             service_error,
             'unsuppress_warning',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
+def test_update_ingest_time_rule(testing_service_client):
+    if not testing_service_client.is_api_enabled('log_analytics', 'UpdateIngestTimeRule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('log_analytics', util.camelize('log_analytics'), 'UpdateIngestTimeRule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='log_analytics', api_name='UpdateIngestTimeRule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.log_analytics.LogAnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.update_ingest_time_rule(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                ingest_time_rule_id=request.pop(util.camelize('ingestTimeRuleId')),
+                update_ingest_time_rule_details=request.pop(util.camelize('UpdateIngestTimeRuleDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'log_analytics',
+            'UpdateIngestTimeRule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'ingestTimeRule',
             False,
             False
         )

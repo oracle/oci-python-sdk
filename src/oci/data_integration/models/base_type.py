@@ -41,23 +41,38 @@ class BaseType(object):
     #: This constant has a value of "DERIVED_TYPE"
     MODEL_TYPE_DERIVED_TYPE = "DERIVED_TYPE"
 
+    #: A constant which can be used with the model_type property of a BaseType.
+    #: This constant has a value of "ARRAY_TYPE"
+    MODEL_TYPE_ARRAY_TYPE = "ARRAY_TYPE"
+
+    #: A constant which can be used with the model_type property of a BaseType.
+    #: This constant has a value of "MAP_TYPE"
+    MODEL_TYPE_MAP_TYPE = "MAP_TYPE"
+
+    #: A constant which can be used with the model_type property of a BaseType.
+    #: This constant has a value of "MATERIALIZED_COMPOSITE_TYPE"
+    MODEL_TYPE_MATERIALIZED_COMPOSITE_TYPE = "MATERIALIZED_COMPOSITE_TYPE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new BaseType object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.data_integration.models.ArrayType`
         * :class:`~oci.data_integration.models.ConfiguredType`
         * :class:`~oci.data_integration.models.JavaType`
         * :class:`~oci.data_integration.models.DynamicType`
         * :class:`~oci.data_integration.models.DerivedType`
         * :class:`~oci.data_integration.models.DataType`
+        * :class:`~oci.data_integration.models.MaterializedCompositeType`
+        * :class:`~oci.data_integration.models.MapType`
         * :class:`~oci.data_integration.models.CompositeType`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param model_type:
             The value to assign to the model_type property of this BaseType.
-            Allowed values for this property are: "DYNAMIC_TYPE", "STRUCTURED_TYPE", "DATA_TYPE", "JAVA_TYPE", "CONFIGURED_TYPE", "COMPOSITE_TYPE", "DERIVED_TYPE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DYNAMIC_TYPE", "STRUCTURED_TYPE", "DATA_TYPE", "JAVA_TYPE", "CONFIGURED_TYPE", "COMPOSITE_TYPE", "DERIVED_TYPE", "ARRAY_TYPE", "MAP_TYPE", "MATERIALIZED_COMPOSITE_TYPE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -122,6 +137,9 @@ class BaseType(object):
         """
         type = object_dictionary['modelType']
 
+        if type == 'ARRAY_TYPE':
+            return 'ArrayType'
+
         if type == 'CONFIGURED_TYPE':
             return 'ConfiguredType'
 
@@ -137,6 +155,12 @@ class BaseType(object):
         if type == 'DATA_TYPE':
             return 'DataType'
 
+        if type == 'MATERIALIZED_COMPOSITE_TYPE':
+            return 'MaterializedCompositeType'
+
+        if type == 'MAP_TYPE':
+            return 'MapType'
+
         if type == 'COMPOSITE_TYPE':
             return 'CompositeType'
         else:
@@ -148,7 +172,7 @@ class BaseType(object):
         **[Required]** Gets the model_type of this BaseType.
         The property which disciminates the subtypes.
 
-        Allowed values for this property are: "DYNAMIC_TYPE", "STRUCTURED_TYPE", "DATA_TYPE", "JAVA_TYPE", "CONFIGURED_TYPE", "COMPOSITE_TYPE", "DERIVED_TYPE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DYNAMIC_TYPE", "STRUCTURED_TYPE", "DATA_TYPE", "JAVA_TYPE", "CONFIGURED_TYPE", "COMPOSITE_TYPE", "DERIVED_TYPE", "ARRAY_TYPE", "MAP_TYPE", "MATERIALIZED_COMPOSITE_TYPE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -167,7 +191,7 @@ class BaseType(object):
         :param model_type: The model_type of this BaseType.
         :type: str
         """
-        allowed_values = ["DYNAMIC_TYPE", "STRUCTURED_TYPE", "DATA_TYPE", "JAVA_TYPE", "CONFIGURED_TYPE", "COMPOSITE_TYPE", "DERIVED_TYPE"]
+        allowed_values = ["DYNAMIC_TYPE", "STRUCTURED_TYPE", "DATA_TYPE", "JAVA_TYPE", "CONFIGURED_TYPE", "COMPOSITE_TYPE", "DERIVED_TYPE", "ARRAY_TYPE", "MAP_TYPE", "MATERIALIZED_COMPOSITE_TYPE"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type

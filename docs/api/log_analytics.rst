@@ -26,6 +26,8 @@ Log Analytics
     oci.log_analytics.models.Action
     oci.log_analytics.models.AddEntityAssociationDetails
     oci.log_analytics.models.AddFieldsCommandDescriptor
+    oci.log_analytics.models.AddInsightsCommandDescriptor
+    oci.log_analytics.models.AnomalyCommandDescriptor
     oci.log_analytics.models.ArchivingConfiguration
     oci.log_analytics.models.Argument
     oci.log_analytics.models.AssociableEntity
@@ -37,6 +39,7 @@ Log Analytics
     oci.log_analytics.models.BottomCommandDescriptor
     oci.log_analytics.models.BucketCommandDescriptor
     oci.log_analytics.models.BucketRange
+    oci.log_analytics.models.ChangeIngestTimeRuleCompartmentDetails
     oci.log_analytics.models.ChangeLogAnalyticsEmBridgeCompartmentDetails
     oci.log_analytics.models.ChangeLogAnalyticsEntityCompartmentDetails
     oci.log_analytics.models.ChangeLogAnalyticsLogGroupCompartmentDetails
@@ -60,6 +63,7 @@ Log Analytics
     oci.log_analytics.models.CompareContentResult
     oci.log_analytics.models.CompareLineResult
     oci.log_analytics.models.CreateAccelerationTaskDetails
+    oci.log_analytics.models.CreateIngestTimeRuleDetails
     oci.log_analytics.models.CreateLogAnalyticsEmBridgeDetails
     oci.log_analytics.models.CreateLogAnalyticsEntityDetails
     oci.log_analytics.models.CreateLogAnalyticsEntityTypeDetails
@@ -70,6 +74,7 @@ Log Analytics
     oci.log_analytics.models.CreateViewCommandDescriptor
     oci.log_analytics.models.CreationSource
     oci.log_analytics.models.CronSchedule
+    oci.log_analytics.models.DedupCommandDescriptor
     oci.log_analytics.models.DeleteCommandDescriptor
     oci.log_analytics.models.DeleteLogAnalyticsAssociation
     oci.log_analytics.models.DeleteLogAnalyticsAssociationDetails
@@ -120,6 +125,15 @@ Log Analytics
     oci.log_analytics.models.HighlightGroupsCommandDescriptor
     oci.log_analytics.models.HighlightRowsCommandDescriptor
     oci.log_analytics.models.Indexes
+    oci.log_analytics.models.IngestTimeRule
+    oci.log_analytics.models.IngestTimeRuleAction
+    oci.log_analytics.models.IngestTimeRuleAdditionalFieldCondition
+    oci.log_analytics.models.IngestTimeRuleCondition
+    oci.log_analytics.models.IngestTimeRuleFieldCondition
+    oci.log_analytics.models.IngestTimeRuleMetricExtractionAction
+    oci.log_analytics.models.IngestTimeRuleResource
+    oci.log_analytics.models.IngestTimeRuleSummary
+    oci.log_analytics.models.IngestTimeRuleSummaryCollection
     oci.log_analytics.models.JsonExtractCommandDescriptor
     oci.log_analytics.models.LabelNames
     oci.log_analytics.models.LabelPriority
@@ -230,6 +244,7 @@ Log Analytics
     oci.log_analytics.models.MapCommandDescriptor
     oci.log_analytics.models.MatchInfo
     oci.log_analytics.models.MetricExtraction
+    oci.log_analytics.models.ModuleCommandDescriptor
     oci.log_analytics.models.MultiSearchCommandDescriptor
     oci.log_analytics.models.Namespace
     oci.log_analytics.models.NamespaceCollection
@@ -258,6 +273,9 @@ Log Analytics
     oci.log_analytics.models.RemoveEntityAssociationsDetails
     oci.log_analytics.models.RenameCommandDescriptor
     oci.log_analytics.models.ResultColumn
+    oci.log_analytics.models.Rule
+    oci.log_analytics.models.RuleSummary
+    oci.log_analytics.models.RuleSummaryCollection
     oci.log_analytics.models.Schedule
     oci.log_analytics.models.ScheduledTask
     oci.log_analytics.models.ScheduledTaskCollection
@@ -287,10 +305,16 @@ Log Analytics
     oci.log_analytics.models.SuggestOutput
     oci.log_analytics.models.TailCommandDescriptor
     oci.log_analytics.models.TestParserPayloadDetails
+    oci.log_analytics.models.TimeClusterColumn
+    oci.log_analytics.models.TimeClusterCommandDescriptor
+    oci.log_analytics.models.TimeClusterDataColumn
     oci.log_analytics.models.TimeColumn
     oci.log_analytics.models.TimeCompareCommandDescriptor
     oci.log_analytics.models.TimeRange
+    oci.log_analytics.models.TimeStatsCluster
+    oci.log_analytics.models.TimeStatsColumn
     oci.log_analytics.models.TimeStatsCommandDescriptor
+    oci.log_analytics.models.TimeStatsDataColumn
     oci.log_analytics.models.TimezoneCollection
     oci.log_analytics.models.TopCommandDescriptor
     oci.log_analytics.models.TrendColumn

@@ -37,7 +37,7 @@ class ScheduleCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ScheduleCollection.
-        List of schedule summary.
+        Schedule summary list.
 
 
         :return: The items of this ScheduleCollection.
@@ -49,7 +49,7 @@ class ScheduleCollection(object):
     def items(self, items):
         """
         Sets the items of this ScheduleCollection.
-        List of schedule summary.
+        Schedule summary list.
 
 
         :param items: The items of this ScheduleCollection.

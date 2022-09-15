@@ -100,6 +100,18 @@ class WorkspaceSummary(object):
             The value to assign to the state_message property of this WorkspaceSummary.
         :type state_message: str
 
+        :param endpoint_name:
+            The value to assign to the endpoint_name property of this WorkspaceSummary.
+        :type endpoint_name: str
+
+        :param endpoint_id:
+            The value to assign to the endpoint_id property of this WorkspaceSummary.
+        :type endpoint_id: str
+
+        :param registry_id:
+            The value to assign to the registry_id property of this WorkspaceSummary.
+        :type registry_id: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -111,7 +123,10 @@ class WorkspaceSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'lifecycle_state': 'str',
-            'state_message': 'str'
+            'state_message': 'str',
+            'endpoint_name': 'str',
+            'endpoint_id': 'str',
+            'registry_id': 'str'
         }
 
         self.attribute_map = {
@@ -124,7 +139,10 @@ class WorkspaceSummary(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'lifecycle_state': 'lifecycleState',
-            'state_message': 'stateMessage'
+            'state_message': 'stateMessage',
+            'endpoint_name': 'endpointName',
+            'endpoint_id': 'endpointId',
+            'registry_id': 'registryId'
         }
 
         self._id = None
@@ -137,6 +155,9 @@ class WorkspaceSummary(object):
         self._defined_tags = None
         self._lifecycle_state = None
         self._state_message = None
+        self._endpoint_name = None
+        self._endpoint_id = None
+        self._registry_id = None
 
     @property
     def id(self):
@@ -387,6 +408,78 @@ class WorkspaceSummary(object):
         :type: str
         """
         self._state_message = state_message
+
+    @property
+    def endpoint_name(self):
+        """
+        Gets the endpoint_name of this WorkspaceSummary.
+        Name of the private endpoint associated with the container/workspace. Returns null if there is none.
+
+
+        :return: The endpoint_name of this WorkspaceSummary.
+        :rtype: str
+        """
+        return self._endpoint_name
+
+    @endpoint_name.setter
+    def endpoint_name(self, endpoint_name):
+        """
+        Sets the endpoint_name of this WorkspaceSummary.
+        Name of the private endpoint associated with the container/workspace. Returns null if there is none.
+
+
+        :param endpoint_name: The endpoint_name of this WorkspaceSummary.
+        :type: str
+        """
+        self._endpoint_name = endpoint_name
+
+    @property
+    def endpoint_id(self):
+        """
+        Gets the endpoint_id of this WorkspaceSummary.
+        DCMS endpoint associated with the container/workspace. Returns null if there is none.
+
+
+        :return: The endpoint_id of this WorkspaceSummary.
+        :rtype: str
+        """
+        return self._endpoint_id
+
+    @endpoint_id.setter
+    def endpoint_id(self, endpoint_id):
+        """
+        Sets the endpoint_id of this WorkspaceSummary.
+        DCMS endpoint associated with the container/workspace. Returns null if there is none.
+
+
+        :param endpoint_id: The endpoint_id of this WorkspaceSummary.
+        :type: str
+        """
+        self._endpoint_id = endpoint_id
+
+    @property
+    def registry_id(self):
+        """
+        Gets the registry_id of this WorkspaceSummary.
+        DCMS registry associated with the container/workspace. Returns null if there is none.
+
+
+        :return: The registry_id of this WorkspaceSummary.
+        :rtype: str
+        """
+        return self._registry_id
+
+    @registry_id.setter
+    def registry_id(self, registry_id):
+        """
+        Sets the registry_id of this WorkspaceSummary.
+        DCMS registry associated with the container/workspace. Returns null if there is none.
+
+
+        :param registry_id: The registry_id of this WorkspaceSummary.
+        :type: str
+        """
+        self._registry_id = registry_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

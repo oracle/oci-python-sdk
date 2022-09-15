@@ -160,3 +160,5 @@
 ^src/oci/media_services/.*\.py$
 ^src/oci/opa/.*\.py$
 ^src/oci/opensearch/.*\.py$
+^src/oci/cloud_migrations/.*\.py$
+^src/oci/cloud_bridge/.*\.py$

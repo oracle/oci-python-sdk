@@ -58,6 +58,30 @@ class CreateWorkspaceDetails(object):
             The value to assign to the is_private_network_enabled property of this CreateWorkspaceDetails.
         :type is_private_network_enabled: bool
 
+        :param registry_id:
+            The value to assign to the registry_id property of this CreateWorkspaceDetails.
+        :type registry_id: str
+
+        :param endpoint_id:
+            The value to assign to the endpoint_id property of this CreateWorkspaceDetails.
+        :type endpoint_id: str
+
+        :param registry_name:
+            The value to assign to the registry_name property of this CreateWorkspaceDetails.
+        :type registry_name: str
+
+        :param registry_compartment_id:
+            The value to assign to the registry_compartment_id property of this CreateWorkspaceDetails.
+        :type registry_compartment_id: str
+
+        :param endpoint_name:
+            The value to assign to the endpoint_name property of this CreateWorkspaceDetails.
+        :type endpoint_name: str
+
+        :param endpoint_compartment_id:
+            The value to assign to the endpoint_compartment_id property of this CreateWorkspaceDetails.
+        :type endpoint_compartment_id: str
+
         """
         self.swagger_types = {
             'vcn_id': 'str',
@@ -69,7 +93,13 @@ class CreateWorkspaceDetails(object):
             'description': 'str',
             'display_name': 'str',
             'compartment_id': 'str',
-            'is_private_network_enabled': 'bool'
+            'is_private_network_enabled': 'bool',
+            'registry_id': 'str',
+            'endpoint_id': 'str',
+            'registry_name': 'str',
+            'registry_compartment_id': 'str',
+            'endpoint_name': 'str',
+            'endpoint_compartment_id': 'str'
         }
 
         self.attribute_map = {
@@ -82,7 +112,13 @@ class CreateWorkspaceDetails(object):
             'description': 'description',
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
-            'is_private_network_enabled': 'isPrivateNetworkEnabled'
+            'is_private_network_enabled': 'isPrivateNetworkEnabled',
+            'registry_id': 'registryId',
+            'endpoint_id': 'endpointId',
+            'registry_name': 'registryName',
+            'registry_compartment_id': 'registryCompartmentId',
+            'endpoint_name': 'endpointName',
+            'endpoint_compartment_id': 'endpointCompartmentId'
         }
 
         self._vcn_id = None
@@ -95,6 +131,12 @@ class CreateWorkspaceDetails(object):
         self._display_name = None
         self._compartment_id = None
         self._is_private_network_enabled = None
+        self._registry_id = None
+        self._endpoint_id = None
+        self._registry_name = None
+        self._registry_compartment_id = None
+        self._endpoint_name = None
+        self._endpoint_compartment_id = None
 
     @property
     def vcn_id(self):
@@ -347,6 +389,150 @@ class CreateWorkspaceDetails(object):
         :type: bool
         """
         self._is_private_network_enabled = is_private_network_enabled
+
+    @property
+    def registry_id(self):
+        """
+        Gets the registry_id of this CreateWorkspaceDetails.
+        DCMS Data Asset Registry ID to which the workspace is associated
+
+
+        :return: The registry_id of this CreateWorkspaceDetails.
+        :rtype: str
+        """
+        return self._registry_id
+
+    @registry_id.setter
+    def registry_id(self, registry_id):
+        """
+        Sets the registry_id of this CreateWorkspaceDetails.
+        DCMS Data Asset Registry ID to which the workspace is associated
+
+
+        :param registry_id: The registry_id of this CreateWorkspaceDetails.
+        :type: str
+        """
+        self._registry_id = registry_id
+
+    @property
+    def endpoint_id(self):
+        """
+        Gets the endpoint_id of this CreateWorkspaceDetails.
+        DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
+
+
+        :return: The endpoint_id of this CreateWorkspaceDetails.
+        :rtype: str
+        """
+        return self._endpoint_id
+
+    @endpoint_id.setter
+    def endpoint_id(self, endpoint_id):
+        """
+        Sets the endpoint_id of this CreateWorkspaceDetails.
+        DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
+
+
+        :param endpoint_id: The endpoint_id of this CreateWorkspaceDetails.
+        :type: str
+        """
+        self._endpoint_id = endpoint_id
+
+    @property
+    def registry_name(self):
+        """
+        Gets the registry_name of this CreateWorkspaceDetails.
+        DCMS Data Asset Registry display name
+
+
+        :return: The registry_name of this CreateWorkspaceDetails.
+        :rtype: str
+        """
+        return self._registry_name
+
+    @registry_name.setter
+    def registry_name(self, registry_name):
+        """
+        Sets the registry_name of this CreateWorkspaceDetails.
+        DCMS Data Asset Registry display name
+
+
+        :param registry_name: The registry_name of this CreateWorkspaceDetails.
+        :type: str
+        """
+        self._registry_name = registry_name
+
+    @property
+    def registry_compartment_id(self):
+        """
+        Gets the registry_compartment_id of this CreateWorkspaceDetails.
+        DCMS Data Asset Registry Compartment Identifier
+
+
+        :return: The registry_compartment_id of this CreateWorkspaceDetails.
+        :rtype: str
+        """
+        return self._registry_compartment_id
+
+    @registry_compartment_id.setter
+    def registry_compartment_id(self, registry_compartment_id):
+        """
+        Sets the registry_compartment_id of this CreateWorkspaceDetails.
+        DCMS Data Asset Registry Compartment Identifier
+
+
+        :param registry_compartment_id: The registry_compartment_id of this CreateWorkspaceDetails.
+        :type: str
+        """
+        self._registry_compartment_id = registry_compartment_id
+
+    @property
+    def endpoint_name(self):
+        """
+        Gets the endpoint_name of this CreateWorkspaceDetails.
+        DCMS Private Endpoint Name
+
+
+        :return: The endpoint_name of this CreateWorkspaceDetails.
+        :rtype: str
+        """
+        return self._endpoint_name
+
+    @endpoint_name.setter
+    def endpoint_name(self, endpoint_name):
+        """
+        Sets the endpoint_name of this CreateWorkspaceDetails.
+        DCMS Private Endpoint Name
+
+
+        :param endpoint_name: The endpoint_name of this CreateWorkspaceDetails.
+        :type: str
+        """
+        self._endpoint_name = endpoint_name
+
+    @property
+    def endpoint_compartment_id(self):
+        """
+        Gets the endpoint_compartment_id of this CreateWorkspaceDetails.
+        DCMS PRivate Endpoint Compartment Identifier
+
+
+        :return: The endpoint_compartment_id of this CreateWorkspaceDetails.
+        :rtype: str
+        """
+        return self._endpoint_compartment_id
+
+    @endpoint_compartment_id.setter
+    def endpoint_compartment_id(self, endpoint_compartment_id):
+        """
+        Sets the endpoint_compartment_id of this CreateWorkspaceDetails.
+        DCMS PRivate Endpoint Compartment Identifier
+
+
+        :param endpoint_compartment_id: The endpoint_compartment_id of this CreateWorkspaceDetails.
+        :type: str
+        """
+        self._endpoint_compartment_id = endpoint_compartment_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

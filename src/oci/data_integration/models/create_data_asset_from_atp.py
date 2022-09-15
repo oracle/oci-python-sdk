@@ -21,7 +21,7 @@ class CreateDataAssetFromAtp(CreateDataAssetDetails):
 
         :param model_type:
             The value to assign to the model_type property of this CreateDataAssetFromAtp.
-            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET", "FUSION_APP_DATA_ASSET", "AMAZON_S3_DATA_ASSET"
+            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET", "FUSION_APP_DATA_ASSET", "AMAZON_S3_DATA_ASSET", "LAKE_HOUSE_DATA_ASSET", "REST_DATA_ASSET"
         :type model_type: str
 
         :param key:
@@ -100,6 +100,18 @@ class CreateDataAssetFromAtp(CreateDataAssetDetails):
             The value to assign to the default_connection property of this CreateDataAssetFromAtp.
         :type default_connection: oci.data_integration.models.CreateConnectionFromAtp
 
+        :param staging_data_asset:
+            The value to assign to the staging_data_asset property of this CreateDataAssetFromAtp.
+        :type staging_data_asset: oci.data_integration.models.DataAsset
+
+        :param staging_connection:
+            The value to assign to the staging_connection property of this CreateDataAssetFromAtp.
+        :type staging_connection: oci.data_integration.models.Connection
+
+        :param bucket_schema:
+            The value to assign to the bucket_schema property of this CreateDataAssetFromAtp.
+        :type bucket_schema: oci.data_integration.models.Schema
+
         """
         self.swagger_types = {
             'model_type': 'str',
@@ -121,7 +133,10 @@ class CreateDataAssetFromAtp(CreateDataAssetDetails):
             'tenancy_id': 'str',
             'compartment_id': 'str',
             'autonomous_db_id': 'str',
-            'default_connection': 'CreateConnectionFromAtp'
+            'default_connection': 'CreateConnectionFromAtp',
+            'staging_data_asset': 'DataAsset',
+            'staging_connection': 'Connection',
+            'bucket_schema': 'Schema'
         }
 
         self.attribute_map = {
@@ -144,7 +159,10 @@ class CreateDataAssetFromAtp(CreateDataAssetDetails):
             'tenancy_id': 'tenancyId',
             'compartment_id': 'compartmentId',
             'autonomous_db_id': 'autonomousDbId',
-            'default_connection': 'defaultConnection'
+            'default_connection': 'defaultConnection',
+            'staging_data_asset': 'stagingDataAsset',
+            'staging_connection': 'stagingConnection',
+            'bucket_schema': 'bucketSchema'
         }
 
         self._model_type = None
@@ -167,6 +185,9 @@ class CreateDataAssetFromAtp(CreateDataAssetDetails):
         self._compartment_id = None
         self._autonomous_db_id = None
         self._default_connection = None
+        self._staging_data_asset = None
+        self._staging_connection = None
+        self._bucket_schema = None
         self._model_type = 'ORACLE_ATP_DATA_ASSET'
 
     @property
@@ -396,6 +417,66 @@ class CreateDataAssetFromAtp(CreateDataAssetDetails):
         :type: oci.data_integration.models.CreateConnectionFromAtp
         """
         self._default_connection = default_connection
+
+    @property
+    def staging_data_asset(self):
+        """
+        Gets the staging_data_asset of this CreateDataAssetFromAtp.
+
+        :return: The staging_data_asset of this CreateDataAssetFromAtp.
+        :rtype: oci.data_integration.models.DataAsset
+        """
+        return self._staging_data_asset
+
+    @staging_data_asset.setter
+    def staging_data_asset(self, staging_data_asset):
+        """
+        Sets the staging_data_asset of this CreateDataAssetFromAtp.
+
+        :param staging_data_asset: The staging_data_asset of this CreateDataAssetFromAtp.
+        :type: oci.data_integration.models.DataAsset
+        """
+        self._staging_data_asset = staging_data_asset
+
+    @property
+    def staging_connection(self):
+        """
+        Gets the staging_connection of this CreateDataAssetFromAtp.
+
+        :return: The staging_connection of this CreateDataAssetFromAtp.
+        :rtype: oci.data_integration.models.Connection
+        """
+        return self._staging_connection
+
+    @staging_connection.setter
+    def staging_connection(self, staging_connection):
+        """
+        Sets the staging_connection of this CreateDataAssetFromAtp.
+
+        :param staging_connection: The staging_connection of this CreateDataAssetFromAtp.
+        :type: oci.data_integration.models.Connection
+        """
+        self._staging_connection = staging_connection
+
+    @property
+    def bucket_schema(self):
+        """
+        Gets the bucket_schema of this CreateDataAssetFromAtp.
+
+        :return: The bucket_schema of this CreateDataAssetFromAtp.
+        :rtype: oci.data_integration.models.Schema
+        """
+        return self._bucket_schema
+
+    @bucket_schema.setter
+    def bucket_schema(self, bucket_schema):
+        """
+        Sets the bucket_schema of this CreateDataAssetFromAtp.
+
+        :param bucket_schema: The bucket_schema of this CreateDataAssetFromAtp.
+        :type: oci.data_integration.models.Schema
+        """
+        self._bucket_schema = bucket_schema
 
     def __repr__(self):
         return formatted_flat_dict(self)

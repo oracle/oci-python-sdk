@@ -33,6 +33,10 @@ class ProjectionRule(object):
     #: This constant has a value of "RENAME_RULE"
     MODEL_TYPE_RENAME_RULE = "RENAME_RULE"
 
+    #: A constant which can be used with the model_type property of a ProjectionRule.
+    #: This constant has a value of "GROUPED_NAME_PATTERN_RULE"
+    MODEL_TYPE_GROUPED_NAME_PATTERN_RULE = "GROUPED_NAME_PATTERN_RULE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ProjectionRule object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -42,13 +46,14 @@ class ProjectionRule(object):
         * :class:`~oci.data_integration.models.TypeListRule`
         * :class:`~oci.data_integration.models.TypedNamePatternRule`
         * :class:`~oci.data_integration.models.NamePatternRule`
+        * :class:`~oci.data_integration.models.GroupedNamePatternRule`
         * :class:`~oci.data_integration.models.NameListRule`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param model_type:
             The value to assign to the model_type property of this ProjectionRule.
-            Allowed values for this property are: "NAME_PATTERN_RULE", "TYPE_LIST_RULE", "NAME_LIST_RULE", "TYPED_NAME_PATTERN_RULE", "RENAME_RULE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "NAME_PATTERN_RULE", "TYPE_LIST_RULE", "NAME_LIST_RULE", "TYPED_NAME_PATTERN_RULE", "RENAME_RULE", "GROUPED_NAME_PATTERN_RULE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -132,6 +137,9 @@ class ProjectionRule(object):
         if type == 'NAME_PATTERN_RULE':
             return 'NamePatternRule'
 
+        if type == 'GROUPED_NAME_PATTERN_RULE':
+            return 'GroupedNamePatternRule'
+
         if type == 'NAME_LIST_RULE':
             return 'NameListRule'
         else:
@@ -143,7 +151,7 @@ class ProjectionRule(object):
         **[Required]** Gets the model_type of this ProjectionRule.
         The type of the project rule.
 
-        Allowed values for this property are: "NAME_PATTERN_RULE", "TYPE_LIST_RULE", "NAME_LIST_RULE", "TYPED_NAME_PATTERN_RULE", "RENAME_RULE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "NAME_PATTERN_RULE", "TYPE_LIST_RULE", "NAME_LIST_RULE", "TYPED_NAME_PATTERN_RULE", "RENAME_RULE", "GROUPED_NAME_PATTERN_RULE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -162,7 +170,7 @@ class ProjectionRule(object):
         :param model_type: The model_type of this ProjectionRule.
         :type: str
         """
-        allowed_values = ["NAME_PATTERN_RULE", "TYPE_LIST_RULE", "NAME_LIST_RULE", "TYPED_NAME_PATTERN_RULE", "RENAME_RULE"]
+        allowed_values = ["NAME_PATTERN_RULE", "TYPE_LIST_RULE", "NAME_LIST_RULE", "TYPED_NAME_PATTERN_RULE", "RENAME_RULE", "GROUPED_NAME_PATTERN_RULE"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type

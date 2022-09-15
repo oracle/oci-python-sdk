@@ -2953,6 +2953,93 @@ def test_get_reference(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_get_runtime_operator(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'GetRuntimeOperator'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'GetRuntimeOperator')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='GetRuntimeOperator')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.get_runtime_operator(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                application_key=request.pop(util.camelize('applicationKey')),
+                runtime_pipeline_key=request.pop(util.camelize('runtimePipelineKey')),
+                runtime_operator_key=request.pop(util.camelize('runtimeOperatorKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'GetRuntimeOperator',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'runtimeOperator',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_get_runtime_pipeline(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'GetRuntimePipeline'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'GetRuntimePipeline')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='GetRuntimePipeline')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.get_runtime_pipeline(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                application_key=request.pop(util.camelize('applicationKey')),
+                runtime_pipeline_key=request.pop(util.camelize('runtimePipelineKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'GetRuntimePipeline',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'runtimePipeline',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
 def test_get_schedule(testing_service_client):
     if not testing_service_client.is_api_enabled('data_integration', 'GetSchedule'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3891,6 +3978,72 @@ def test_list_dependent_objects(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_list_dis_application_task_run_lineages(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'ListDisApplicationTaskRunLineages'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'ListDisApplicationTaskRunLineages')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='ListDisApplicationTaskRunLineages')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.list_dis_application_task_run_lineages(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                dis_application_id=request.pop(util.camelize('disApplicationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_dis_application_task_run_lineages(
+                    workspace_id=request.pop(util.camelize('workspaceId')),
+                    dis_application_id=request.pop(util.camelize('disApplicationId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_dis_application_task_run_lineages(
+                        workspace_id=request.pop(util.camelize('workspaceId')),
+                        dis_application_id=request.pop(util.camelize('disApplicationId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'ListDisApplicationTaskRunLineages',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'taskRunLineageSummaryCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
 def test_list_dis_applications(testing_service_client):
     if not testing_service_client.is_api_enabled('data_integration', 'ListDisApplications'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4668,6 +4821,141 @@ def test_list_references(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_list_runtime_operators(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'ListRuntimeOperators'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'ListRuntimeOperators')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='ListRuntimeOperators')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.list_runtime_operators(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                application_key=request.pop(util.camelize('applicationKey')),
+                runtime_pipeline_key=request.pop(util.camelize('runtimePipelineKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_runtime_operators(
+                    workspace_id=request.pop(util.camelize('workspaceId')),
+                    application_key=request.pop(util.camelize('applicationKey')),
+                    runtime_pipeline_key=request.pop(util.camelize('runtimePipelineKey')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_runtime_operators(
+                        workspace_id=request.pop(util.camelize('workspaceId')),
+                        application_key=request.pop(util.camelize('applicationKey')),
+                        runtime_pipeline_key=request.pop(util.camelize('runtimePipelineKey')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'ListRuntimeOperators',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'runtimeOperatorSummaryCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_list_runtime_pipelines(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'ListRuntimePipelines'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'ListRuntimePipelines')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='ListRuntimePipelines')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.list_runtime_pipelines(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                application_key=request.pop(util.camelize('applicationKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_runtime_pipelines(
+                    workspace_id=request.pop(util.camelize('workspaceId')),
+                    application_key=request.pop(util.camelize('applicationKey')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_runtime_pipelines(
+                        workspace_id=request.pop(util.camelize('workspaceId')),
+                        application_key=request.pop(util.camelize('applicationKey')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'ListRuntimePipelines',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'runtimePipelineSummaryCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
 def test_list_schedules(testing_service_client):
     if not testing_service_client.is_api_enabled('data_integration', 'ListSchedules'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4797,6 +5085,72 @@ def test_list_schemas(testing_service_client):
             result,
             service_error,
             'schemaSummaryCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_list_task_run_lineages(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'ListTaskRunLineages'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'ListTaskRunLineages')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='ListTaskRunLineages')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.list_task_run_lineages(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                application_key=request.pop(util.camelize('applicationKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_task_run_lineages(
+                    workspace_id=request.pop(util.camelize('workspaceId')),
+                    application_key=request.pop(util.camelize('applicationKey')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_task_run_lineages(
+                        workspace_id=request.pop(util.camelize('workspaceId')),
+                        application_key=request.pop(util.camelize('applicationKey')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'ListTaskRunLineages',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'taskRunLineageSummaryCollection',
             False,
             True
         )

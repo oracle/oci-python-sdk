@@ -21,7 +21,7 @@ class DataAssetFromAdwcDetails(DataAsset):
 
         :param model_type:
             The value to assign to the model_type property of this DataAssetFromAdwcDetails.
-            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET", "FUSION_APP_DATA_ASSET", "AMAZON_S3_DATA_ASSET"
+            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET", "FUSION_APP_DATA_ASSET", "AMAZON_S3_DATA_ASSET", "LAKE_HOUSE_DATA_ASSET", "REST_DATA_ASSET"
         :type model_type: str
 
         :param key:
@@ -92,6 +92,18 @@ class DataAssetFromAdwcDetails(DataAsset):
             The value to assign to the default_connection property of this DataAssetFromAdwcDetails.
         :type default_connection: oci.data_integration.models.ConnectionFromAdwcDetails
 
+        :param staging_data_asset:
+            The value to assign to the staging_data_asset property of this DataAssetFromAdwcDetails.
+        :type staging_data_asset: oci.data_integration.models.DataAsset
+
+        :param staging_connection:
+            The value to assign to the staging_connection property of this DataAssetFromAdwcDetails.
+        :type staging_connection: oci.data_integration.models.Connection
+
+        :param bucket_schema:
+            The value to assign to the bucket_schema property of this DataAssetFromAdwcDetails.
+        :type bucket_schema: oci.data_integration.models.Schema
+
         """
         self.swagger_types = {
             'model_type': 'str',
@@ -111,7 +123,10 @@ class DataAssetFromAdwcDetails(DataAsset):
             'service_name': 'str',
             'service_names': 'list[str]',
             'driver_class': 'str',
-            'default_connection': 'ConnectionFromAdwcDetails'
+            'default_connection': 'ConnectionFromAdwcDetails',
+            'staging_data_asset': 'DataAsset',
+            'staging_connection': 'Connection',
+            'bucket_schema': 'Schema'
         }
 
         self.attribute_map = {
@@ -132,7 +147,10 @@ class DataAssetFromAdwcDetails(DataAsset):
             'service_name': 'serviceName',
             'service_names': 'serviceNames',
             'driver_class': 'driverClass',
-            'default_connection': 'defaultConnection'
+            'default_connection': 'defaultConnection',
+            'staging_data_asset': 'stagingDataAsset',
+            'staging_connection': 'stagingConnection',
+            'bucket_schema': 'bucketSchema'
         }
 
         self._model_type = None
@@ -153,6 +171,9 @@ class DataAssetFromAdwcDetails(DataAsset):
         self._service_names = None
         self._driver_class = None
         self._default_connection = None
+        self._staging_data_asset = None
+        self._staging_connection = None
+        self._bucket_schema = None
         self._model_type = 'ORACLE_ADWC_DATA_ASSET'
 
     @property
@@ -246,6 +267,66 @@ class DataAssetFromAdwcDetails(DataAsset):
         :type: oci.data_integration.models.ConnectionFromAdwcDetails
         """
         self._default_connection = default_connection
+
+    @property
+    def staging_data_asset(self):
+        """
+        Gets the staging_data_asset of this DataAssetFromAdwcDetails.
+
+        :return: The staging_data_asset of this DataAssetFromAdwcDetails.
+        :rtype: oci.data_integration.models.DataAsset
+        """
+        return self._staging_data_asset
+
+    @staging_data_asset.setter
+    def staging_data_asset(self, staging_data_asset):
+        """
+        Sets the staging_data_asset of this DataAssetFromAdwcDetails.
+
+        :param staging_data_asset: The staging_data_asset of this DataAssetFromAdwcDetails.
+        :type: oci.data_integration.models.DataAsset
+        """
+        self._staging_data_asset = staging_data_asset
+
+    @property
+    def staging_connection(self):
+        """
+        Gets the staging_connection of this DataAssetFromAdwcDetails.
+
+        :return: The staging_connection of this DataAssetFromAdwcDetails.
+        :rtype: oci.data_integration.models.Connection
+        """
+        return self._staging_connection
+
+    @staging_connection.setter
+    def staging_connection(self, staging_connection):
+        """
+        Sets the staging_connection of this DataAssetFromAdwcDetails.
+
+        :param staging_connection: The staging_connection of this DataAssetFromAdwcDetails.
+        :type: oci.data_integration.models.Connection
+        """
+        self._staging_connection = staging_connection
+
+    @property
+    def bucket_schema(self):
+        """
+        Gets the bucket_schema of this DataAssetFromAdwcDetails.
+
+        :return: The bucket_schema of this DataAssetFromAdwcDetails.
+        :rtype: oci.data_integration.models.Schema
+        """
+        return self._bucket_schema
+
+    @bucket_schema.setter
+    def bucket_schema(self, bucket_schema):
+        """
+        Sets the bucket_schema of this DataAssetFromAdwcDetails.
+
+        :param bucket_schema: The bucket_schema of this DataAssetFromAdwcDetails.
+        :type: oci.data_integration.models.Schema
+        """
+        self._bucket_schema = bucket_schema
 
     def __repr__(self):
         return formatted_flat_dict(self)

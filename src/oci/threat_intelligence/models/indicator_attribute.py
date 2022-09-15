@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class IndicatorAttribute(object):
     """
-    An attribute name and list of values.
+    An attribute name and list of values with attribution.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class IndicatorAttribute(object):
     def name(self):
         """
         **[Required]** Gets the name of this IndicatorAttribute.
-        The name of the attribute
+        The name of the attribute.
 
 
         :return: The name of this IndicatorAttribute.
@@ -63,7 +63,7 @@ class IndicatorAttribute(object):
     def name(self, name):
         """
         Sets the name of this IndicatorAttribute.
-        The name of the attribute
+        The name of the attribute.
 
 
         :param name: The name of this IndicatorAttribute.

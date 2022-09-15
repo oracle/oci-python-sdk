@@ -33,6 +33,14 @@ class LogAnalyticsConfigWorkRequest(object):
     #: This constant has a value of "DELETE_LOOKUP"
     OPERATION_TYPE_DELETE_LOOKUP = "DELETE_LOOKUP"
 
+    #: A constant which can be used with the operation_type property of a LogAnalyticsConfigWorkRequest.
+    #: This constant has a value of "ENABLE_INGEST_TIME_RULE"
+    OPERATION_TYPE_ENABLE_INGEST_TIME_RULE = "ENABLE_INGEST_TIME_RULE"
+
+    #: A constant which can be used with the operation_type property of a LogAnalyticsConfigWorkRequest.
+    #: This constant has a value of "DISABLE_INGEST_TIME_RULE"
+    OPERATION_TYPE_DISABLE_INGEST_TIME_RULE = "DISABLE_INGEST_TIME_RULE"
+
     #: A constant which can be used with the lifecycle_state property of a LogAnalyticsConfigWorkRequest.
     #: This constant has a value of "ACCEPTED"
     LIFECYCLE_STATE_ACCEPTED = "ACCEPTED"
@@ -64,7 +72,7 @@ class LogAnalyticsConfigWorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this LogAnalyticsConfigWorkRequest.
-            Allowed values for this property are: "CREATE_ASSOCIATIONS", "DELETE_ASSOCIATIONS", "APPEND_LOOKUP_DATA", "UPDATE_LOOKUP_DATA", "DELETE_LOOKUP", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_ASSOCIATIONS", "DELETE_ASSOCIATIONS", "APPEND_LOOKUP_DATA", "UPDATE_LOOKUP_DATA", "DELETE_LOOKUP", "ENABLE_INGEST_TIME_RULE", "DISABLE_INGEST_TIME_RULE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -181,11 +189,9 @@ class LogAnalyticsConfigWorkRequest(object):
     def operation_type(self):
         """
         Gets the operation_type of this LogAnalyticsConfigWorkRequest.
-        The operation type.  There are two classes of operations, association operations and
-        lookup operations.  Associations may be created or deleted, and lookup operations include
-        append, update and delete.
+        The operation type
 
-        Allowed values for this property are: "CREATE_ASSOCIATIONS", "DELETE_ASSOCIATIONS", "APPEND_LOOKUP_DATA", "UPDATE_LOOKUP_DATA", "DELETE_LOOKUP", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_ASSOCIATIONS", "DELETE_ASSOCIATIONS", "APPEND_LOOKUP_DATA", "UPDATE_LOOKUP_DATA", "DELETE_LOOKUP", "ENABLE_INGEST_TIME_RULE", "DISABLE_INGEST_TIME_RULE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -198,15 +204,13 @@ class LogAnalyticsConfigWorkRequest(object):
     def operation_type(self, operation_type):
         """
         Sets the operation_type of this LogAnalyticsConfigWorkRequest.
-        The operation type.  There are two classes of operations, association operations and
-        lookup operations.  Associations may be created or deleted, and lookup operations include
-        append, update and delete.
+        The operation type
 
 
         :param operation_type: The operation_type of this LogAnalyticsConfigWorkRequest.
         :type: str
         """
-        allowed_values = ["CREATE_ASSOCIATIONS", "DELETE_ASSOCIATIONS", "APPEND_LOOKUP_DATA", "UPDATE_LOOKUP_DATA", "DELETE_LOOKUP"]
+        allowed_values = ["CREATE_ASSOCIATIONS", "DELETE_ASSOCIATIONS", "APPEND_LOOKUP_DATA", "UPDATE_LOOKUP_DATA", "DELETE_LOOKUP", "ENABLE_INGEST_TIME_RULE", "DISABLE_INGEST_TIME_RULE"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

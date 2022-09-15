@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.ggs</groupId>
         <artifactId>ggs-control-plane-spec</artifactId>
-        <version>1.20465.8-PREVIEW</version>
+        <version>3.20627.222</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

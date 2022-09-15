@@ -13,6 +13,14 @@ class CreateSourceApplicationInfo(object):
     The information about the application.
     """
 
+    #: A constant which can be used with the copy_type property of a CreateSourceApplicationInfo.
+    #: This constant has a value of "CONNECTED"
+    COPY_TYPE_CONNECTED = "CONNECTED"
+
+    #: A constant which can be used with the copy_type property of a CreateSourceApplicationInfo.
+    #: This constant has a value of "DISCONNECTED"
+    COPY_TYPE_DISCONNECTED = "DISCONNECTED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateSourceApplicationInfo object with values from keyword arguments.
@@ -26,19 +34,27 @@ class CreateSourceApplicationInfo(object):
             The value to assign to the application_key property of this CreateSourceApplicationInfo.
         :type application_key: str
 
+        :param copy_type:
+            The value to assign to the copy_type property of this CreateSourceApplicationInfo.
+            Allowed values for this property are: "CONNECTED", "DISCONNECTED"
+        :type copy_type: str
+
         """
         self.swagger_types = {
             'workspace_id': 'str',
-            'application_key': 'str'
+            'application_key': 'str',
+            'copy_type': 'str'
         }
 
         self.attribute_map = {
             'workspace_id': 'workspaceId',
-            'application_key': 'applicationKey'
+            'application_key': 'applicationKey',
+            'copy_type': 'copyType'
         }
 
         self._workspace_id = None
         self._application_key = None
+        self._copy_type = None
 
     @property
     def workspace_id(self):
@@ -87,6 +103,38 @@ class CreateSourceApplicationInfo(object):
         :type: str
         """
         self._application_key = application_key
+
+    @property
+    def copy_type(self):
+        """
+        Gets the copy_type of this CreateSourceApplicationInfo.
+        Parameter to specify the link between SOURCE and TARGET application after copying. CONNECTED    - Indicate that TARGET application is conneced to SOURCE and can be synced after copy. DISCONNECTED - Indicate that TARGET application is not conneced to SOURCE and can evolve independently.
+
+        Allowed values for this property are: "CONNECTED", "DISCONNECTED"
+
+
+        :return: The copy_type of this CreateSourceApplicationInfo.
+        :rtype: str
+        """
+        return self._copy_type
+
+    @copy_type.setter
+    def copy_type(self, copy_type):
+        """
+        Sets the copy_type of this CreateSourceApplicationInfo.
+        Parameter to specify the link between SOURCE and TARGET application after copying. CONNECTED    - Indicate that TARGET application is conneced to SOURCE and can be synced after copy. DISCONNECTED - Indicate that TARGET application is not conneced to SOURCE and can evolve independently.
+
+
+        :param copy_type: The copy_type of this CreateSourceApplicationInfo.
+        :type: str
+        """
+        allowed_values = ["CONNECTED", "DISCONNECTED"]
+        if not value_allowed_none_or_none_sentinel(copy_type, allowed_values):
+            raise ValueError(
+                "Invalid value for `copy_type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._copy_type = copy_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class IndicatorCountSummary(object):
     """
-    A group of indicators with the same dimensions
+    A group of indicators with the same dimensions, such as the same indicator type.
     """
 
     def __init__(self, **kwargs):
@@ -64,7 +64,7 @@ class IndicatorCountSummary(object):
     def count(self):
         """
         **[Required]** Gets the count of this IndicatorCountSummary.
-        The count of indicators in the group
+        The count of indicators in the group.
 
 
         :return: The count of this IndicatorCountSummary.
@@ -76,7 +76,7 @@ class IndicatorCountSummary(object):
     def count(self, count):
         """
         Sets the count of this IndicatorCountSummary.
-        The count of indicators in the group
+        The count of indicators in the group.
 
 
         :param count: The count of this IndicatorCountSummary.

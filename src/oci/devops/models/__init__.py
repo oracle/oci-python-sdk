@@ -148,6 +148,8 @@ from .create_single_deploy_stage_deployment_details import CreateSingleDeploySta
 from .create_single_deploy_stage_redeployment_details import CreateSingleDeployStageRedeploymentDetails
 from .create_trigger_deployment_stage_details import CreateTriggerDeploymentStageDetails
 from .create_trigger_details import CreateTriggerDetails
+from .create_vbs_access_token_connection_details import CreateVbsAccessTokenConnectionDetails
+from .create_vbs_trigger_details import CreateVbsTriggerDetails
 from .create_wait_criteria_details import CreateWaitCriteriaDetails
 from .create_wait_deploy_stage_details import CreateWaitDeployStageDetails
 from .create_wait_stage_details import CreateWaitStageDetails
@@ -398,9 +400,21 @@ from .update_single_deploy_stage_deployment_details import UpdateSingleDeploySta
 from .update_single_deploy_stage_redeployment_details import UpdateSingleDeployStageRedeploymentDetails
 from .update_trigger_deployment_stage_details import UpdateTriggerDeploymentStageDetails
 from .update_trigger_details import UpdateTriggerDetails
+from .update_vbs_access_token_connection_details import UpdateVbsAccessTokenConnectionDetails
+from .update_vbs_trigger_details import UpdateVbsTriggerDetails
 from .update_wait_criteria_details import UpdateWaitCriteriaDetails
 from .update_wait_deploy_stage_details import UpdateWaitDeployStageDetails
 from .update_wait_stage_details import UpdateWaitStageDetails
+from .vbs_access_token_connection import VbsAccessTokenConnection
+from .vbs_access_token_connection_summary import VbsAccessTokenConnectionSummary
+from .vbs_build_run_source import VbsBuildRunSource
+from .vbs_build_source import VbsBuildSource
+from .vbs_filter import VbsFilter
+from .vbs_filter_attributes import VbsFilterAttributes
+from .vbs_filter_exclusion_attributes import VbsFilterExclusionAttributes
+from .vbs_trigger import VbsTrigger
+from .vbs_trigger_create_result import VbsTriggerCreateResult
+from .vbs_trigger_summary import VbsTriggerSummary
 from .vulnerability_audit_summary import VulnerabilityAuditSummary
 from .vulnerability_audit_summary_collection import VulnerabilityAuditSummaryCollection
 from .wait_criteria import WaitCriteria
@@ -566,6 +580,8 @@ devops_type_mapping = {
     "CreateSingleDeployStageRedeploymentDetails": CreateSingleDeployStageRedeploymentDetails,
     "CreateTriggerDeploymentStageDetails": CreateTriggerDeploymentStageDetails,
     "CreateTriggerDetails": CreateTriggerDetails,
+    "CreateVbsAccessTokenConnectionDetails": CreateVbsAccessTokenConnectionDetails,
+    "CreateVbsTriggerDetails": CreateVbsTriggerDetails,
     "CreateWaitCriteriaDetails": CreateWaitCriteriaDetails,
     "CreateWaitDeployStageDetails": CreateWaitDeployStageDetails,
     "CreateWaitStageDetails": CreateWaitStageDetails,
@@ -816,9 +832,21 @@ devops_type_mapping = {
     "UpdateSingleDeployStageRedeploymentDetails": UpdateSingleDeployStageRedeploymentDetails,
     "UpdateTriggerDeploymentStageDetails": UpdateTriggerDeploymentStageDetails,
     "UpdateTriggerDetails": UpdateTriggerDetails,
+    "UpdateVbsAccessTokenConnectionDetails": UpdateVbsAccessTokenConnectionDetails,
+    "UpdateVbsTriggerDetails": UpdateVbsTriggerDetails,
     "UpdateWaitCriteriaDetails": UpdateWaitCriteriaDetails,
     "UpdateWaitDeployStageDetails": UpdateWaitDeployStageDetails,
     "UpdateWaitStageDetails": UpdateWaitStageDetails,
+    "VbsAccessTokenConnection": VbsAccessTokenConnection,
+    "VbsAccessTokenConnectionSummary": VbsAccessTokenConnectionSummary,
+    "VbsBuildRunSource": VbsBuildRunSource,
+    "VbsBuildSource": VbsBuildSource,
+    "VbsFilter": VbsFilter,
+    "VbsFilterAttributes": VbsFilterAttributes,
+    "VbsFilterExclusionAttributes": VbsFilterExclusionAttributes,
+    "VbsTrigger": VbsTrigger,
+    "VbsTriggerCreateResult": VbsTriggerCreateResult,
+    "VbsTriggerSummary": VbsTriggerSummary,
     "VulnerabilityAuditSummary": VulnerabilityAuditSummary,
     "VulnerabilityAuditSummaryCollection": VulnerabilityAuditSummaryCollection,
     "WaitCriteria": WaitCriteria,
