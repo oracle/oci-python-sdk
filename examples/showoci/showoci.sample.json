@@ -123,8 +123,7 @@
                             ]
                         }
                     ],
-                    "mysql": [],
-
+                    "mysql": []
                 },
                 "object_storage": [],
                 "file_storage": [
@@ -142,7 +141,7 @@
                             "listeners": [],
                             "path_route": [],
                             "hostnames": [],
-                            "rule_sets": [],
+                            "rule_sets": []
 
                         },
                         "backendset": [
@@ -184,7 +183,7 @@
                 },
                 "security": {
                     "cloud_guard": [],
-                    "logging": [],
+                    "logging": []
                 },
                 "data_ai": {
                     "oda": [],
@@ -193,7 +192,7 @@
                     "data_flow": [],
                     "data_catalog": []
                 },
-                "functions": [],
+                "functions": []
             }
         ],
         "limits": [],

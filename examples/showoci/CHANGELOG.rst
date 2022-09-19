@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+22.09.20 - 22.09.20
+=====================
+* Removed list_identity_providers which deprecated from OCI SDK
+* Removed list_idp_group_mappings which deprecated from OCI SDK
+
+=====================
 22.08.16 - 22.08.16
 =====================
 * Fix block volume list for oci 2.78.0 breaking
