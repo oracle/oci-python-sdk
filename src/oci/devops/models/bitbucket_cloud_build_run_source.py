@@ -21,7 +21,7 @@ class BitbucketCloudBuildRunSource(BuildRunSource):
 
         :param source_type:
             The value to assign to the source_type property of this BitbucketCloudBuildRunSource.
-            Allowed values for this property are: "MANUAL", "GITHUB", "GITLAB", "GITLAB_SERVER", "BITBUCKET_CLOUD", "BITBUCKET_SERVER", "DEVOPS_CODE_REPOSITORY"
+            Allowed values for this property are: "MANUAL", "GITHUB", "GITLAB", "GITLAB_SERVER", "BITBUCKET_CLOUD", "BITBUCKET_SERVER", "DEVOPS_CODE_REPOSITORY", "VBS"
         :type source_type: str
 
         :param trigger_id:

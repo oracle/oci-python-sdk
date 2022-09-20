@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ThreatType(object):
     """
-    Threat type along with attribution data for its association to an indicator
+    A threat type along with attribution data that associates it to a threat indicator.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class ThreatType(object):
     def id(self):
         """
         **[Required]** Gets the id of this ThreatType.
-        The OCID of the threat type
+        The OCID of the threat type.
 
 
         :return: The id of this ThreatType.
@@ -63,7 +63,7 @@ class ThreatType(object):
     def id(self, id):
         """
         Sets the id of this ThreatType.
-        The OCID of the threat type
+        The OCID of the threat type.
 
 
         :param id: The id of this ThreatType.
@@ -75,7 +75,7 @@ class ThreatType(object):
     def name(self):
         """
         **[Required]** Gets the name of this ThreatType.
-        The name of the threat type
+        The name of the threat type.
 
 
         :return: The name of this ThreatType.
@@ -87,7 +87,7 @@ class ThreatType(object):
     def name(self, name):
         """
         Sets the name of this ThreatType.
-        The name of the threat type
+        The name of the threat type.
 
 
         :param name: The name of this ThreatType.

@@ -41,7 +41,7 @@ class TypeListRule(ProjectionRule):
 
         :param model_type:
             The value to assign to the model_type property of this TypeListRule.
-            Allowed values for this property are: "NAME_PATTERN_RULE", "TYPE_LIST_RULE", "NAME_LIST_RULE", "TYPED_NAME_PATTERN_RULE", "RENAME_RULE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "NAME_PATTERN_RULE", "TYPE_LIST_RULE", "NAME_LIST_RULE", "TYPED_NAME_PATTERN_RULE", "RENAME_RULE", "GROUPED_NAME_PATTERN_RULE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class IndicatorRelationship(object):
     """
-    An relationship name and list of releated entities.
+    A relationship name and list of releated entities.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class IndicatorRelationship(object):
     def name(self):
         """
         **[Required]** Gets the name of this IndicatorRelationship.
-        The name of the attribute
+        The name of the attribute.
 
 
         :return: The name of this IndicatorRelationship.
@@ -63,7 +63,7 @@ class IndicatorRelationship(object):
     def name(self, name):
         """
         Sets the name of this IndicatorRelationship.
-        The name of the attribute
+        The name of the attribute.
 
 
         :param name: The name of this IndicatorRelationship.
@@ -95,7 +95,7 @@ class IndicatorRelationship(object):
     def attribution(self):
         """
         **[Required]** Gets the attribution of this IndicatorRelationship.
-        The array of attribution data that support this SourcedRelationship
+        The array of attribution data that support this relationship.
 
 
         :return: The attribution of this IndicatorRelationship.
@@ -107,7 +107,7 @@ class IndicatorRelationship(object):
     def attribution(self, attribution):
         """
         Sets the attribution of this IndicatorRelationship.
-        The array of attribution data that support this SourcedRelationship
+        The array of attribution data that support this relationship.
 
 
         :param attribution: The attribution of this IndicatorRelationship.

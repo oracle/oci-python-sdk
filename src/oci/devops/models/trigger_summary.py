@@ -24,6 +24,7 @@ class TriggerSummary(object):
         * :class:`~oci.devops.models.GithubTriggerSummary`
         * :class:`~oci.devops.models.DevopsCodeRepositoryTriggerSummary`
         * :class:`~oci.devops.models.BitbucketServerTriggerSummary`
+        * :class:`~oci.devops.models.VbsTriggerSummary`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -151,6 +152,9 @@ class TriggerSummary(object):
 
         if type == 'BITBUCKET_SERVER':
             return 'BitbucketServerTriggerSummary'
+
+        if type == 'VBS':
+            return 'VbsTriggerSummary'
         else:
             return 'TriggerSummary'
 

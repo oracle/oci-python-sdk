@@ -17,18 +17,23 @@ class DynamicTypeHandler(object):
     #: This constant has a value of "RULE_TYPE_CONFIGS"
     MODEL_TYPE_RULE_TYPE_CONFIGS = "RULE_TYPE_CONFIGS"
 
+    #: A constant which can be used with the model_type property of a DynamicTypeHandler.
+    #: This constant has a value of "FLATTEN_TYPE_HANDLER"
+    MODEL_TYPE_FLATTEN_TYPE_HANDLER = "FLATTEN_TYPE_HANDLER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DynamicTypeHandler object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.data_integration.models.FlattenTypeHandler`
         * :class:`~oci.data_integration.models.RuleTypeConfig`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param model_type:
             The value to assign to the model_type property of this DynamicTypeHandler.
-            Allowed values for this property are: "RULE_TYPE_CONFIGS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "RULE_TYPE_CONFIGS", "FLATTEN_TYPE_HANDLER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -51,6 +56,9 @@ class DynamicTypeHandler(object):
         """
         type = object_dictionary['modelType']
 
+        if type == 'FLATTEN_TYPE_HANDLER':
+            return 'FlattenTypeHandler'
+
         if type == 'RULE_TYPE_CONFIGS':
             return 'RuleTypeConfig'
         else:
@@ -62,7 +70,7 @@ class DynamicTypeHandler(object):
         **[Required]** Gets the model_type of this DynamicTypeHandler.
         The dynamic type handler.
 
-        Allowed values for this property are: "RULE_TYPE_CONFIGS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "RULE_TYPE_CONFIGS", "FLATTEN_TYPE_HANDLER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -81,7 +89,7 @@ class DynamicTypeHandler(object):
         :param model_type: The model_type of this DynamicTypeHandler.
         :type: str
         """
-        allowed_values = ["RULE_TYPE_CONFIGS"]
+        allowed_values = ["RULE_TYPE_CONFIGS", "FLATTEN_TYPE_HANDLER"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type

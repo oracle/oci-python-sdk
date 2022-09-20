@@ -19,6 +19,7 @@ class CreateTriggerDetails(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.devops.models.CreateGithubTriggerDetails`
+        * :class:`~oci.devops.models.CreateVbsTriggerDetails`
         * :class:`~oci.devops.models.CreateDevopsCodeRepositoryTriggerDetails`
         * :class:`~oci.devops.models.CreateBitbucketCloudTriggerDetails`
         * :class:`~oci.devops.models.CreateGitlabServerTriggerDetails`
@@ -94,6 +95,9 @@ class CreateTriggerDetails(object):
 
         if type == 'GITHUB':
             return 'CreateGithubTriggerDetails'
+
+        if type == 'VBS':
+            return 'CreateVbsTriggerDetails'
 
         if type == 'DEVOPS_CODE_REPOSITORY':
             return 'CreateDevopsCodeRepositoryTriggerDetails'

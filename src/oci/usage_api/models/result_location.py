@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResultLocation(object):
     """
-    The location where usage/cost CSVs will be uploaded defined by `locationType`,
+    The location where usage or cost CSVs will be uploaded defined by `locationType`,
     which corresponds with type-specific characteristics.
     """
 
@@ -61,7 +61,7 @@ class ResultLocation(object):
     def location_type(self):
         """
         **[Required]** Gets the location_type of this ResultLocation.
-        Defines the type of location where the usage/cost CSVs will be stored
+        Defines the type of location where the usage or cost CSVs will be stored.
 
         Allowed values for this property are: "OBJECT_STORAGE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -76,7 +76,7 @@ class ResultLocation(object):
     def location_type(self, location_type):
         """
         Sets the location_type of this ResultLocation.
-        Defines the type of location where the usage/cost CSVs will be stored
+        Defines the type of location where the usage or cost CSVs will be stored.
 
 
         :param location_type: The location_type of this ResultLocation.

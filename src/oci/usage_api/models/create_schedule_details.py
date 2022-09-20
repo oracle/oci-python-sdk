@@ -13,6 +13,14 @@ class CreateScheduleDetails(object):
     The saved schedule.
     """
 
+    #: A constant which can be used with the output_file_format property of a CreateScheduleDetails.
+    #: This constant has a value of "CSV"
+    OUTPUT_FILE_FORMAT_CSV = "CSV"
+
+    #: A constant which can be used with the output_file_format property of a CreateScheduleDetails.
+    #: This constant has a value of "PDF"
+    OUTPUT_FILE_FORMAT_PDF = "PDF"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateScheduleDetails object with values from keyword arguments.
@@ -25,6 +33,19 @@ class CreateScheduleDetails(object):
         :param compartment_id:
             The value to assign to the compartment_id property of this CreateScheduleDetails.
         :type compartment_id: str
+
+        :param description:
+            The value to assign to the description property of this CreateScheduleDetails.
+        :type description: str
+
+        :param output_file_format:
+            The value to assign to the output_file_format property of this CreateScheduleDetails.
+            Allowed values for this property are: "CSV", "PDF"
+        :type output_file_format: str
+
+        :param saved_report_id:
+            The value to assign to the saved_report_id property of this CreateScheduleDetails.
+        :type saved_report_id: str
 
         :param result_location:
             The value to assign to the result_location property of this CreateScheduleDetails.
@@ -54,6 +75,9 @@ class CreateScheduleDetails(object):
         self.swagger_types = {
             'name': 'str',
             'compartment_id': 'str',
+            'description': 'str',
+            'output_file_format': 'str',
+            'saved_report_id': 'str',
             'result_location': 'ResultLocation',
             'schedule_recurrences': 'str',
             'time_scheduled': 'datetime',
@@ -65,6 +89,9 @@ class CreateScheduleDetails(object):
         self.attribute_map = {
             'name': 'name',
             'compartment_id': 'compartmentId',
+            'description': 'description',
+            'output_file_format': 'outputFileFormat',
+            'saved_report_id': 'savedReportId',
             'result_location': 'resultLocation',
             'schedule_recurrences': 'scheduleRecurrences',
             'time_scheduled': 'timeScheduled',
@@ -75,6 +102,9 @@ class CreateScheduleDetails(object):
 
         self._name = None
         self._compartment_id = None
+        self._description = None
+        self._output_file_format = None
+        self._saved_report_id = None
         self._result_location = None
         self._schedule_recurrences = None
         self._time_scheduled = None
@@ -86,7 +116,7 @@ class CreateScheduleDetails(object):
     def name(self):
         """
         **[Required]** Gets the name of this CreateScheduleDetails.
-        The unique name of the schedule created by the user
+        The unique name of the user-created schedule.
 
 
         :return: The name of this CreateScheduleDetails.
@@ -98,7 +128,7 @@ class CreateScheduleDetails(object):
     def name(self, name):
         """
         Sets the name of this CreateScheduleDetails.
-        The unique name of the schedule created by the user
+        The unique name of the user-created schedule.
 
 
         :param name: The name of this CreateScheduleDetails.
@@ -110,7 +140,7 @@ class CreateScheduleDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateScheduleDetails.
-        The tenancy of the customer
+        The customer tenancy.
 
 
         :return: The compartment_id of this CreateScheduleDetails.
@@ -122,13 +152,93 @@ class CreateScheduleDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateScheduleDetails.
-        The tenancy of the customer
+        The customer tenancy.
 
 
         :param compartment_id: The compartment_id of this CreateScheduleDetails.
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def description(self):
+        """
+        Gets the description of this CreateScheduleDetails.
+        The description of the schedule.
+
+
+        :return: The description of this CreateScheduleDetails.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """
+        Sets the description of this CreateScheduleDetails.
+        The description of the schedule.
+
+
+        :param description: The description of this CreateScheduleDetails.
+        :type: str
+        """
+        self._description = description
+
+    @property
+    def output_file_format(self):
+        """
+        Gets the output_file_format of this CreateScheduleDetails.
+        Specifies supported output file format.
+
+        Allowed values for this property are: "CSV", "PDF"
+
+
+        :return: The output_file_format of this CreateScheduleDetails.
+        :rtype: str
+        """
+        return self._output_file_format
+
+    @output_file_format.setter
+    def output_file_format(self, output_file_format):
+        """
+        Sets the output_file_format of this CreateScheduleDetails.
+        Specifies supported output file format.
+
+
+        :param output_file_format: The output_file_format of this CreateScheduleDetails.
+        :type: str
+        """
+        allowed_values = ["CSV", "PDF"]
+        if not value_allowed_none_or_none_sentinel(output_file_format, allowed_values):
+            raise ValueError(
+                "Invalid value for `output_file_format`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._output_file_format = output_file_format
+
+    @property
+    def saved_report_id(self):
+        """
+        Gets the saved_report_id of this CreateScheduleDetails.
+        The saved report id which can also be used to generate query.
+
+
+        :return: The saved_report_id of this CreateScheduleDetails.
+        :rtype: str
+        """
+        return self._saved_report_id
+
+    @saved_report_id.setter
+    def saved_report_id(self, saved_report_id):
+        """
+        Sets the saved_report_id of this CreateScheduleDetails.
+        The saved report id which can also be used to generate query.
+
+
+        :param saved_report_id: The saved_report_id of this CreateScheduleDetails.
+        :type: str
+        """
+        self._saved_report_id = saved_report_id
 
     @property
     def result_location(self):
@@ -154,8 +264,11 @@ class CreateScheduleDetails(object):
     def schedule_recurrences(self):
         """
         **[Required]** Gets the schedule_recurrences of this CreateScheduleDetails.
-        In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10
-        Describes the frequency of when the schedule will be run
+        Specifies the frequency according to when the schedule will be run,
+        in the x-obmcs-recurring-time format described in `RFC 5545 section 3.3.10`__.
+        Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+
+        __ https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10
 
 
         :return: The schedule_recurrences of this CreateScheduleDetails.
@@ -167,8 +280,11 @@ class CreateScheduleDetails(object):
     def schedule_recurrences(self, schedule_recurrences):
         """
         Sets the schedule_recurrences of this CreateScheduleDetails.
-        In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10
-        Describes the frequency of when the schedule will be run
+        Specifies the frequency according to when the schedule will be run,
+        in the x-obmcs-recurring-time format described in `RFC 5545 section 3.3.10`__.
+        Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+
+        __ https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10
 
 
         :param schedule_recurrences: The schedule_recurrences of this CreateScheduleDetails.
@@ -180,7 +296,7 @@ class CreateScheduleDetails(object):
     def time_scheduled(self):
         """
         **[Required]** Gets the time_scheduled of this CreateScheduleDetails.
-        The date and time of the first time job execution
+        The date and time of the first time job execution.
 
 
         :return: The time_scheduled of this CreateScheduleDetails.
@@ -192,7 +308,7 @@ class CreateScheduleDetails(object):
     def time_scheduled(self, time_scheduled):
         """
         Sets the time_scheduled of this CreateScheduleDetails.
-        The date and time of the first time job execution
+        The date and time of the first time job execution.
 
 
         :param time_scheduled: The time_scheduled of this CreateScheduleDetails.
@@ -203,7 +319,7 @@ class CreateScheduleDetails(object):
     @property
     def query_properties(self):
         """
-        **[Required]** Gets the query_properties of this CreateScheduleDetails.
+        Gets the query_properties of this CreateScheduleDetails.
 
         :return: The query_properties of this CreateScheduleDetails.
         :rtype: oci.usage_api.models.QueryProperties

@@ -47,6 +47,7 @@ class DataEntity(object):
         * :class:`~oci.data_integration.models.DataEntityFromView`
         * :class:`~oci.data_integration.models.DataEntityFromSql`
         * :class:`~oci.data_integration.models.DataEntityFromFile`
+        * :class:`~oci.data_integration.models.DerivedEntity`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -96,6 +97,9 @@ class DataEntity(object):
 
         if type == 'FILE_ENTITY':
             return 'DataEntityFromFile'
+
+        if type == 'DERIVED_ENTITY':
+            return 'DerivedEntity'
         else:
             return 'DataEntity'
 

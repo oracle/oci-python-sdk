@@ -222,6 +222,10 @@ class TaskRun(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type task_type: str
 
+        :param is_log_processing_in_progress:
+            The value to assign to the is_log_processing_in_progress property of this TaskRun.
+        :type is_log_processing_in_progress: bool
+
         :param identifier:
             The value to assign to the identifier property of this TaskRun.
         :type identifier: str
@@ -265,6 +269,7 @@ class TaskRun(object):
             'opc_request_id': 'str',
             'object_status': 'int',
             'task_type': 'str',
+            'is_log_processing_in_progress': 'bool',
             'identifier': 'str',
             'metadata': 'ObjectMetadata',
             'key_map': 'dict(str, str)'
@@ -300,6 +305,7 @@ class TaskRun(object):
             'opc_request_id': 'opcRequestId',
             'object_status': 'objectStatus',
             'task_type': 'taskType',
+            'is_log_processing_in_progress': 'isLogProcessingInProgress',
             'identifier': 'identifier',
             'metadata': 'metadata',
             'key_map': 'keyMap'
@@ -334,6 +340,7 @@ class TaskRun(object):
         self._opc_request_id = None
         self._object_status = None
         self._task_type = None
+        self._is_log_processing_in_progress = None
         self._identifier = None
         self._metadata = None
         self._key_map = None
@@ -1045,6 +1052,30 @@ class TaskRun(object):
         if not value_allowed_none_or_none_sentinel(task_type, allowed_values):
             task_type = 'UNKNOWN_ENUM_VALUE'
         self._task_type = task_type
+
+    @property
+    def is_log_processing_in_progress(self):
+        """
+        Gets the is_log_processing_in_progress of this TaskRun.
+        This field tells the user if there is any logs being fetched in backend for failure. Applicable only for failed pipeline tasks.
+
+
+        :return: The is_log_processing_in_progress of this TaskRun.
+        :rtype: bool
+        """
+        return self._is_log_processing_in_progress
+
+    @is_log_processing_in_progress.setter
+    def is_log_processing_in_progress(self, is_log_processing_in_progress):
+        """
+        Sets the is_log_processing_in_progress of this TaskRun.
+        This field tells the user if there is any logs being fetched in backend for failure. Applicable only for failed pipeline tasks.
+
+
+        :param is_log_processing_in_progress: The is_log_processing_in_progress of this TaskRun.
+        :type: bool
+        """
+        self._is_log_processing_in_progress = is_log_processing_in_progress
 
     @property
     def identifier(self):

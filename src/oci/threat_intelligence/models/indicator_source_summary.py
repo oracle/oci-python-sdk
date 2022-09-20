@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class IndicatorSourceSummary(object):
     """
-    Information about the source of indicator data.
+    Information about the source of threat indicator data.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class IndicatorSourceSummary(object):
     def name(self):
         """
         **[Required]** Gets the name of this IndicatorSourceSummary.
-        The name of the source
+        The name of the source.
 
 
         :return: The name of this IndicatorSourceSummary.
@@ -49,7 +49,7 @@ class IndicatorSourceSummary(object):
     def name(self, name):
         """
         Sets the name of this IndicatorSourceSummary.
-        The name of the source
+        The name of the source.
 
 
         :param name: The name of this IndicatorSourceSummary.

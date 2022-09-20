@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class ThreatintelClient(object):
     """
-    Use the Threat Intelligence API to view indicators of compromise and related items. For more information, see [Overview of Threat Intelligence](/Content/ThreatIntelligence/Concepts/threatintelligenceoverview.htm).
+    Use the Threat Intelligence API to search for information about known threat indicators, including suspicious IP addresses, domain names, and other digital fingerprints. Threat Intelligence is a managed database of curated threat intelligence that comes from first party Oracle security insights, open source feeds, and vendor-procured data. For more information, see the [Threat Intelligence documentation](/iaas/Content/threat-intel/home.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -89,7 +89,7 @@ class ThreatintelClient(object):
         base_client_init_kwargs = {
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
-            'base_path': '/20210831',
+            'base_path': '/20220901',
             'service_endpoint_template': 'https://api-threatintel.{region}.oci.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False),
             'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
@@ -106,14 +106,14 @@ class ThreatintelClient(object):
 
     def get_indicator(self, indicator_id, compartment_id, **kwargs):
         """
-        Gets a detailed indicator by identifier
+        Get detailed information about a threat indicator with a given identifier.
 
 
         :param str indicator_id: (required)
-            unique indicator identifier
+            The unique identifier (OCID) of the threat indicator.
 
         :param str compartment_id: (required)
-            The ID of the tenancy to use to filter results.
+            The OCID of the tenancy (root compartment) that is used to filter results.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -121,7 +121,7 @@ class ThreatintelClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -139,7 +139,7 @@ class ThreatintelClient(object):
         resource_path = "/indicators/{indicatorId}"
         method = "GET"
         operation_name = "get_indicator"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/Indicator/GetIndicator"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/threat-intel/20220901/Indicator/GetIndicator"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -178,6 +178,8 @@ class ThreatintelClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -208,11 +210,11 @@ class ThreatintelClient(object):
 
     def list_indicator_counts(self, compartment_id, **kwargs):
         """
-        Get the current count of each indicator type.  Results can be sorted ASC or DESC by count.
+        Get the current count of each threat indicator type. Indicator counts can be sorted in ascending or descending order.
 
 
         :param str compartment_id: (required)
-            The ID of the tenancy to use to filter results.
+            The OCID of the tenancy (root compartment) that is used to filter results.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -225,7 +227,7 @@ class ThreatintelClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -243,7 +245,7 @@ class ThreatintelClient(object):
         resource_path = "/indicatorCounts"
         method = "GET"
         operation_name = "list_indicator_counts"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/IndicatorCountCollection/ListIndicatorCounts"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/threat-intel/20220901/IndicatorCountCollection/ListIndicatorCounts"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -281,6 +283,8 @@ class ThreatintelClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -309,14 +313,14 @@ class ThreatintelClient(object):
 
     def list_indicators(self, compartment_id, **kwargs):
         """
-        Returns a list of IndicatorSummary objects.
+        Get a list of threat indicator summaries based on the search criteria.
 
 
         :param str compartment_id: (required)
-            The ID of the tenancy to use to filter results.
+            The OCID of the tenancy (root compartment) that is used to filter results.
 
         :param list[str] threat_type_name: (optional)
-            The result set will include indicators that have any of the provided threat types. To filter for multiple threat types repeat the query parameter.
+            The threat type of entites to be returned. To filter for multiple threat types, repeat this parameter.
 
         :param str type: (optional)
             The indicator type of entities to be returned.
@@ -332,6 +336,21 @@ class ThreatintelClient(object):
         :param datetime time_updated_greater_than_or_equal_to: (optional)
             The oldest update time of entities to be returned.
 
+        :param datetime time_updated_less_than: (optional)
+            Return indicators updated before the provided time.
+
+        :param datetime time_last_seen_greater_than_or_equal_to: (optional)
+            The oldest last seen time of entities to be returned.
+
+        :param datetime time_last_seen_less_than: (optional)
+            Return indicators last seen before the provided time.
+
+        :param datetime time_created_greater_than_or_equal_to: (optional)
+            The oldest created/first seen time of entities to be returned.
+
+        :param datetime time_created_less_than: (optional)
+            Return indicators created/first seen before the provided time.
+
         :param int limit: (optional)
             The maximum number of items to return.
 
@@ -346,7 +365,7 @@ class ThreatintelClient(object):
         :param str sort_by: (optional)
             The field to sort by. Only one field to sort by may be provided.
 
-            Allowed values are: "confidence", "timeUpdated"
+            Allowed values are: "confidence", "timeCreated", "timeUpdated", "timeLastSeen"
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -354,7 +373,7 @@ class ThreatintelClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -372,7 +391,7 @@ class ThreatintelClient(object):
         resource_path = "/indicators"
         method = "GET"
         operation_name = "list_indicators"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/IndicatorSummaryCollection/ListIndicators"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/threat-intel/20220901/IndicatorSummaryCollection/ListIndicators"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -383,6 +402,11 @@ class ThreatintelClient(object):
             "value",
             "confidence_greater_than_or_equal_to",
             "time_updated_greater_than_or_equal_to",
+            "time_updated_less_than",
+            "time_last_seen_greater_than_or_equal_to",
+            "time_last_seen_less_than",
+            "time_created_greater_than_or_equal_to",
+            "time_created_less_than",
             "limit",
             "page",
             "sort_order",
@@ -409,7 +433,7 @@ class ThreatintelClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["confidence", "timeUpdated"]
+            sort_by_allowed_values = ["confidence", "timeCreated", "timeUpdated", "timeLastSeen"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -422,6 +446,11 @@ class ThreatintelClient(object):
             "value": kwargs.get("value", missing),
             "confidenceGreaterThanOrEqualTo": kwargs.get("confidence_greater_than_or_equal_to", missing),
             "timeUpdatedGreaterThanOrEqualTo": kwargs.get("time_updated_greater_than_or_equal_to", missing),
+            "timeUpdatedLessThan": kwargs.get("time_updated_less_than", missing),
+            "timeLastSeenGreaterThanOrEqualTo": kwargs.get("time_last_seen_greater_than_or_equal_to", missing),
+            "timeLastSeenLessThan": kwargs.get("time_last_seen_less_than", missing),
+            "timeCreatedGreaterThanOrEqualTo": kwargs.get("time_created_greater_than_or_equal_to", missing),
+            "timeCreatedLessThan": kwargs.get("time_created_less_than", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
@@ -440,6 +469,8 @@ class ThreatintelClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -469,11 +500,11 @@ class ThreatintelClient(object):
     def list_threat_types(self, compartment_id, **kwargs):
         """
         Gets a list of threat types that are available to use as parameters when querying indicators.
-        This is sorted by threat type name according to the sort order query param.
+        The list is sorted by threat type name according to the sort order query param.
 
 
         :param str compartment_id: (required)
-            The ID of the tenancy to use to filter results.
+            The OCID of the tenancy (root compartment) that is used to filter results.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -492,7 +523,7 @@ class ThreatintelClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -510,7 +541,7 @@ class ThreatintelClient(object):
         resource_path = "/threatTypes"
         method = "GET"
         operation_name = "list_threat_types"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/threat-intel/20210831/ThreatTypesCollection/ListThreatTypes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/threat-intel/20220901/ThreatTypesCollection/ListThreatTypes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -552,6 +583,8 @@ class ThreatintelClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -574,6 +607,110 @@ class ThreatintelClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="ThreatTypesCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def summarize_indicators(self, compartment_id, summarize_indicators_details, **kwargs):
+        """
+        Get indicator summaries based on advanced search criteria.
+
+
+        :param str compartment_id: (required)
+            The OCID of the tenancy (root compartment) that is used to filter results.
+
+        :param oci.threat_intelligence.models.SummarizeIndicatorsDetails summarize_indicators_details: (required)
+            Query Parameters to search for indicators.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            A token representing the position at which to start retrieving results. This must come from the `opc-next-page` header field of a previous response.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.threat_intelligence.models.IndicatorSummaryCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/threatintelligence/summarize_indicators.py.html>`__ to see an example of how to use summarize_indicators API.
+        """
+        resource_path = "/indicators/actions/summarize"
+        method = "POST"
+        operation_name = "summarize_indicators"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/threat-intel/20220901/Indicator/SummarizeIndicators"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "summarize_indicators got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=summarize_indicators_details,
+                response_type="IndicatorSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=summarize_indicators_details,
+                response_type="IndicatorSummaryCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)

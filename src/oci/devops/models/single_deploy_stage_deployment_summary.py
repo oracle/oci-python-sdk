@@ -143,7 +143,7 @@ class SingleDeployStageDeploymentSummary(DeploymentSummary):
     @property
     def deploy_stage_id(self):
         """
-        Gets the deploy_stage_id of this SingleDeployStageDeploymentSummary.
+        **[Required]** Gets the deploy_stage_id of this SingleDeployStageDeploymentSummary.
         Specifies the OCID of the stage to be deployed.
 
 

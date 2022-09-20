@@ -21,7 +21,7 @@ class RenameRule(ProjectionRule):
 
         :param model_type:
             The value to assign to the model_type property of this RenameRule.
-            Allowed values for this property are: "NAME_PATTERN_RULE", "TYPE_LIST_RULE", "NAME_LIST_RULE", "TYPED_NAME_PATTERN_RULE", "RENAME_RULE"
+            Allowed values for this property are: "NAME_PATTERN_RULE", "TYPE_LIST_RULE", "NAME_LIST_RULE", "TYPED_NAME_PATTERN_RULE", "RENAME_RULE", "GROUPED_NAME_PATTERN_RULE"
         :type model_type: str
 
         :param key:

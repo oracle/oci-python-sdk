@@ -1068,7 +1068,8 @@ class Deployment(object):
     def deployment_type(self):
         """
         **[Required]** Gets the deployment_type of this Deployment.
-        The deployment type.
+        The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged
+              in favor of the equivalent DATABASE_ORACLE value.
 
         Allowed values for this property are: "OGG", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -1083,7 +1084,8 @@ class Deployment(object):
     def deployment_type(self, deployment_type):
         """
         Sets the deployment_type of this Deployment.
-        The deployment type.
+        The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged
+              in favor of the equivalent DATABASE_ORACLE value.
 
 
         :param deployment_type: The deployment_type of this Deployment.

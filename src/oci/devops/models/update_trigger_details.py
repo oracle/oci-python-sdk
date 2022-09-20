@@ -19,6 +19,7 @@ class UpdateTriggerDetails(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.devops.models.UpdateBitbucketServerTriggerDetails`
+        * :class:`~oci.devops.models.UpdateVbsTriggerDetails`
         * :class:`~oci.devops.models.UpdateGitlabServerTriggerDetails`
         * :class:`~oci.devops.models.UpdateDevopsCodeRepositoryTriggerDetails`
         * :class:`~oci.devops.models.UpdateGithubTriggerDetails`
@@ -87,6 +88,9 @@ class UpdateTriggerDetails(object):
 
         if type == 'BITBUCKET_SERVER':
             return 'UpdateBitbucketServerTriggerDetails'
+
+        if type == 'VBS':
+            return 'UpdateVbsTriggerDetails'
 
         if type == 'GITLAB_SERVER':
             return 'UpdateGitlabServerTriggerDetails'

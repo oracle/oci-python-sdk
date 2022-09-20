@@ -74,6 +74,14 @@ class DataFlowSummary(object):
             The value to assign to the key_map property of this DataFlowSummary.
         :type key_map: dict(str, str)
 
+        :param typed_object_map:
+            The value to assign to the typed_object_map property of this DataFlowSummary.
+        :type typed_object_map: dict(str, TypedObjectWrapper)
+
+        :param target_field_map_summary:
+            The value to assign to the target_field_map_summary property of this DataFlowSummary.
+        :type target_field_map_summary: dict(str, FieldMapWrapper)
+
         """
         self.swagger_types = {
             'key': 'str',
@@ -89,7 +97,9 @@ class DataFlowSummary(object):
             'flow_config_values': 'ConfigValues',
             'object_status': 'int',
             'metadata': 'ObjectMetadata',
-            'key_map': 'dict(str, str)'
+            'key_map': 'dict(str, str)',
+            'typed_object_map': 'dict(str, TypedObjectWrapper)',
+            'target_field_map_summary': 'dict(str, FieldMapWrapper)'
         }
 
         self.attribute_map = {
@@ -106,7 +116,9 @@ class DataFlowSummary(object):
             'flow_config_values': 'flowConfigValues',
             'object_status': 'objectStatus',
             'metadata': 'metadata',
-            'key_map': 'keyMap'
+            'key_map': 'keyMap',
+            'typed_object_map': 'typedObjectMap',
+            'target_field_map_summary': 'targetFieldMapSummary'
         }
 
         self._key = None
@@ -123,6 +135,8 @@ class DataFlowSummary(object):
         self._object_status = None
         self._metadata = None
         self._key_map = None
+        self._typed_object_map = None
+        self._target_field_map_summary = None
 
     @property
     def key(self):
@@ -447,6 +461,54 @@ class DataFlowSummary(object):
         :type: dict(str, str)
         """
         self._key_map = key_map
+
+    @property
+    def typed_object_map(self):
+        """
+        Gets the typed_object_map of this DataFlowSummary.
+        A hash map that maps TypedObject keys to the object itself, for java sdk.
+
+
+        :return: The typed_object_map of this DataFlowSummary.
+        :rtype: dict(str, TypedObjectWrapper)
+        """
+        return self._typed_object_map
+
+    @typed_object_map.setter
+    def typed_object_map(self, typed_object_map):
+        """
+        Sets the typed_object_map of this DataFlowSummary.
+        A hash map that maps TypedObject keys to the object itself, for java sdk.
+
+
+        :param typed_object_map: The typed_object_map of this DataFlowSummary.
+        :type: dict(str, TypedObjectWrapper)
+        """
+        self._typed_object_map = typed_object_map
+
+    @property
+    def target_field_map_summary(self):
+        """
+        Gets the target_field_map_summary of this DataFlowSummary.
+        A hash map that maps TypedObject keys to a field map that maps to the typed object as a target, for java sdk.
+
+
+        :return: The target_field_map_summary of this DataFlowSummary.
+        :rtype: dict(str, FieldMapWrapper)
+        """
+        return self._target_field_map_summary
+
+    @target_field_map_summary.setter
+    def target_field_map_summary(self, target_field_map_summary):
+        """
+        Sets the target_field_map_summary of this DataFlowSummary.
+        A hash map that maps TypedObject keys to a field map that maps to the typed object as a target, for java sdk.
+
+
+        :param target_field_map_summary: The target_field_map_summary of this DataFlowSummary.
+        :type: dict(str, FieldMapWrapper)
+        """
+        self._target_field_map_summary = target_field_map_summary
 
     def __repr__(self):
         return formatted_flat_dict(self)

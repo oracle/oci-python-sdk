@@ -47,7 +47,8 @@ class LaunchInstanceShapeConfigDetails(object):
 
         :param baseline_ocpu_utilization:
             The value to assign to the baseline_ocpu_utilization property of this LaunchInstanceShapeConfigDetails.
-            Allowed values for this property are: "BASELINE_1_8", "BASELINE_1_2", "BASELINE_1_1"
+            Allowed values for this property are: "BASELINE_1_8", "BASELINE_1_2", "BASELINE_1_1", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type baseline_ocpu_utilization: str
 
         :param nvmes:
@@ -134,7 +135,8 @@ class LaunchInstanceShapeConfigDetails(object):
         - `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
         - `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
 
-        Allowed values for this property are: "BASELINE_1_8", "BASELINE_1_2", "BASELINE_1_1"
+        Allowed values for this property are: "BASELINE_1_8", "BASELINE_1_2", "BASELINE_1_1", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The baseline_ocpu_utilization of this LaunchInstanceShapeConfigDetails.
@@ -160,10 +162,7 @@ class LaunchInstanceShapeConfigDetails(object):
         """
         allowed_values = ["BASELINE_1_8", "BASELINE_1_2", "BASELINE_1_1"]
         if not value_allowed_none_or_none_sentinel(baseline_ocpu_utilization, allowed_values):
-            raise ValueError(
-                "Invalid value for `baseline_ocpu_utilization`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            baseline_ocpu_utilization = 'UNKNOWN_ENUM_VALUE'
         self._baseline_ocpu_utilization = baseline_ocpu_utilization
 
     @property

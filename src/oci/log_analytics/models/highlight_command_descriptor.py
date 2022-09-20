@@ -21,7 +21,7 @@ class HighlightCommandDescriptor(AbstractCommandDescriptor):
 
         :param name:
             The value to assign to the name property of this HighlightCommandDescriptor.
-            Allowed values for this property are: "COMMAND", "SEARCH", "STATS", "GEO_STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "JSON_EXTRACT", "XML_EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", "COMPARE"
+            Allowed values for this property are: "COMMAND", "SEARCH", "STATS", "GEO_STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "JSON_EXTRACT", "XML_EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MODULE", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", "COMPARE", "ADD_INSIGHTS", "ANOMALY", "DEDUP", "TIME_CLUSTER"
         :type name: str
 
         :param display_query_string:
@@ -44,6 +44,10 @@ class HighlightCommandDescriptor(AbstractCommandDescriptor):
             The value to assign to the declared_fields property of this HighlightCommandDescriptor.
         :type declared_fields: list[oci.log_analytics.models.AbstractField]
 
+        :param is_hidden:
+            The value to assign to the is_hidden property of this HighlightCommandDescriptor.
+        :type is_hidden: bool
+
         :param color:
             The value to assign to the color property of this HighlightCommandDescriptor.
         :type color: str
@@ -64,6 +68,7 @@ class HighlightCommandDescriptor(AbstractCommandDescriptor):
             'category': 'str',
             'referenced_fields': 'list[AbstractField]',
             'declared_fields': 'list[AbstractField]',
+            'is_hidden': 'bool',
             'color': 'str',
             'fields': 'list[str]',
             'keywords': 'list[str]'
@@ -76,6 +81,7 @@ class HighlightCommandDescriptor(AbstractCommandDescriptor):
             'category': 'category',
             'referenced_fields': 'referencedFields',
             'declared_fields': 'declaredFields',
+            'is_hidden': 'isHidden',
             'color': 'color',
             'fields': 'fields',
             'keywords': 'keywords'
@@ -87,6 +93,7 @@ class HighlightCommandDescriptor(AbstractCommandDescriptor):
         self._category = None
         self._referenced_fields = None
         self._declared_fields = None
+        self._is_hidden = None
         self._color = None
         self._fields = None
         self._keywords = None

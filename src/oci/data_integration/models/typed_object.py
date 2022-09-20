@@ -73,6 +73,18 @@ class TypedObject(object):
     #: This constant has a value of "CONDITIONAL_OUTPUT_PORT"
     MODEL_TYPE_CONDITIONAL_OUTPUT_PORT = "CONDITIONAL_OUTPUT_PORT"
 
+    #: A constant which can be used with the model_type property of a TypedObject.
+    #: This constant has a value of "INPUT_PROXY_FIELD"
+    MODEL_TYPE_INPUT_PROXY_FIELD = "INPUT_PROXY_FIELD"
+
+    #: A constant which can be used with the model_type property of a TypedObject.
+    #: This constant has a value of "MATERIALIZED_DYNAMIC_FIELD"
+    MODEL_TYPE_MATERIALIZED_DYNAMIC_FIELD = "MATERIALIZED_DYNAMIC_FIELD"
+
+    #: A constant which can be used with the model_type property of a TypedObject.
+    #: This constant has a value of "DECISION_OUTPUT_PORT"
+    MODEL_TYPE_DECISION_OUTPUT_PORT = "DECISION_OUTPUT_PORT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new TypedObject object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -85,9 +97,12 @@ class TypedObject(object):
         * :class:`~oci.data_integration.models.Shape`
         * :class:`~oci.data_integration.models.InputPort`
         * :class:`~oci.data_integration.models.ConditionalOutputPort`
+        * :class:`~oci.data_integration.models.DecisionOutputPort`
+        * :class:`~oci.data_integration.models.MaterializedDynamicField`
         * :class:`~oci.data_integration.models.ProxyField`
         * :class:`~oci.data_integration.models.DynamicProxyField`
         * :class:`~oci.data_integration.models.ShapeField`
+        * :class:`~oci.data_integration.models.InputProxyField`
         * :class:`~oci.data_integration.models.Parameter`
         * :class:`~oci.data_integration.models.PivotField`
         * :class:`~oci.data_integration.models.OutputField`
@@ -100,7 +115,7 @@ class TypedObject(object):
 
         :param model_type:
             The value to assign to the model_type property of this TypedObject.
-            Allowed values for this property are: "SHAPE", "INPUT_PORT", "SHAPE_FIELD", "INPUT_FIELD", "DERIVED_FIELD", "MACRO_FIELD", "OUTPUT_FIELD", "DYNAMIC_PROXY_FIELD", "OUTPUT_PORT", "DYNAMIC_INPUT_FIELD", "PROXY_FIELD", "PARAMETER", "PIVOT_FIELD", "MACRO_PIVOT_FIELD", "CONDITIONAL_OUTPUT_PORT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SHAPE", "INPUT_PORT", "SHAPE_FIELD", "INPUT_FIELD", "DERIVED_FIELD", "MACRO_FIELD", "OUTPUT_FIELD", "DYNAMIC_PROXY_FIELD", "OUTPUT_PORT", "DYNAMIC_INPUT_FIELD", "PROXY_FIELD", "PARAMETER", "PIVOT_FIELD", "MACRO_PIVOT_FIELD", "CONDITIONAL_OUTPUT_PORT", "INPUT_PROXY_FIELD", "MATERIALIZED_DYNAMIC_FIELD", "DECISION_OUTPUT_PORT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -193,6 +208,12 @@ class TypedObject(object):
         if type == 'CONDITIONAL_OUTPUT_PORT':
             return 'ConditionalOutputPort'
 
+        if type == 'DECISION_OUTPUT_PORT':
+            return 'DecisionOutputPort'
+
+        if type == 'MATERIALIZED_DYNAMIC_FIELD':
+            return 'MaterializedDynamicField'
+
         if type == 'PROXY_FIELD':
             return 'ProxyField'
 
@@ -201,6 +222,9 @@ class TypedObject(object):
 
         if type == 'SHAPE_FIELD':
             return 'ShapeField'
+
+        if type == 'INPUT_PROXY_FIELD':
+            return 'InputProxyField'
 
         if type == 'PARAMETER':
             return 'Parameter'
@@ -231,7 +255,7 @@ class TypedObject(object):
         **[Required]** Gets the model_type of this TypedObject.
         The type of the types object.
 
-        Allowed values for this property are: "SHAPE", "INPUT_PORT", "SHAPE_FIELD", "INPUT_FIELD", "DERIVED_FIELD", "MACRO_FIELD", "OUTPUT_FIELD", "DYNAMIC_PROXY_FIELD", "OUTPUT_PORT", "DYNAMIC_INPUT_FIELD", "PROXY_FIELD", "PARAMETER", "PIVOT_FIELD", "MACRO_PIVOT_FIELD", "CONDITIONAL_OUTPUT_PORT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SHAPE", "INPUT_PORT", "SHAPE_FIELD", "INPUT_FIELD", "DERIVED_FIELD", "MACRO_FIELD", "OUTPUT_FIELD", "DYNAMIC_PROXY_FIELD", "OUTPUT_PORT", "DYNAMIC_INPUT_FIELD", "PROXY_FIELD", "PARAMETER", "PIVOT_FIELD", "MACRO_PIVOT_FIELD", "CONDITIONAL_OUTPUT_PORT", "INPUT_PROXY_FIELD", "MATERIALIZED_DYNAMIC_FIELD", "DECISION_OUTPUT_PORT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -250,7 +274,7 @@ class TypedObject(object):
         :param model_type: The model_type of this TypedObject.
         :type: str
         """
-        allowed_values = ["SHAPE", "INPUT_PORT", "SHAPE_FIELD", "INPUT_FIELD", "DERIVED_FIELD", "MACRO_FIELD", "OUTPUT_FIELD", "DYNAMIC_PROXY_FIELD", "OUTPUT_PORT", "DYNAMIC_INPUT_FIELD", "PROXY_FIELD", "PARAMETER", "PIVOT_FIELD", "MACRO_PIVOT_FIELD", "CONDITIONAL_OUTPUT_PORT"]
+        allowed_values = ["SHAPE", "INPUT_PORT", "SHAPE_FIELD", "INPUT_FIELD", "DERIVED_FIELD", "MACRO_FIELD", "OUTPUT_FIELD", "DYNAMIC_PROXY_FIELD", "OUTPUT_PORT", "DYNAMIC_INPUT_FIELD", "PROXY_FIELD", "PARAMETER", "PIVOT_FIELD", "MACRO_PIVOT_FIELD", "CONDITIONAL_OUTPUT_PORT", "INPUT_PROXY_FIELD", "MATERIALIZED_DYNAMIC_FIELD", "DECISION_OUTPUT_PORT"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type

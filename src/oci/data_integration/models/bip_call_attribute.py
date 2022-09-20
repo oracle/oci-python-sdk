@@ -21,7 +21,7 @@ class BipCallAttribute(AbstractCallAttribute):
 
         :param model_type:
             The value to assign to the model_type property of this BipCallAttribute.
-            Allowed values for this property are: "BIP_CALL_ATTRIBUTE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "BIP_CALL_ATTRIBUTE", "GENERIC_REST_CALL_ATTRIBUTE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 

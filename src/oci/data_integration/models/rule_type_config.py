@@ -21,7 +21,7 @@ class RuleTypeConfig(DynamicTypeHandler):
 
         :param model_type:
             The value to assign to the model_type property of this RuleTypeConfig.
-            Allowed values for this property are: "RULE_TYPE_CONFIGS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "RULE_TYPE_CONFIGS", "FLATTEN_TYPE_HANDLER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 

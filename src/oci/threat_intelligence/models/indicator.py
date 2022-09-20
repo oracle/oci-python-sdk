@@ -102,6 +102,14 @@ class Indicator(object):
             The value to assign to the time_updated property of this Indicator.
         :type time_updated: datetime
 
+        :param time_last_seen:
+            The value to assign to the time_last_seen property of this Indicator.
+        :type time_last_seen: datetime
+
+        :param geodata:
+            The value to assign to the geodata property of this Indicator.
+        :type geodata: oci.threat_intelligence.models.GeodataDetails
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -114,7 +122,9 @@ class Indicator(object):
             'relationships': 'list[IndicatorRelationship]',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
-            'time_updated': 'datetime'
+            'time_updated': 'datetime',
+            'time_last_seen': 'datetime',
+            'geodata': 'GeodataDetails'
         }
 
         self.attribute_map = {
@@ -128,7 +138,9 @@ class Indicator(object):
             'relationships': 'relationships',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
-            'time_updated': 'timeUpdated'
+            'time_updated': 'timeUpdated',
+            'time_last_seen': 'timeLastSeen',
+            'geodata': 'geodata'
         }
 
         self._id = None
@@ -142,6 +154,8 @@ class Indicator(object):
         self._lifecycle_state = None
         self._time_created = None
         self._time_updated = None
+        self._time_last_seen = None
+        self._geodata = None
 
     @property
     def id(self):
@@ -171,7 +185,7 @@ class Indicator(object):
     def type(self):
         """
         **[Required]** Gets the type of this Indicator.
-        Type of indicator
+        The type of indicator.
 
         Allowed values for this property are: "DOMAIN_NAME", "FILE_NAME", "MD5_HASH", "SHA1_HASH", "SHA256_HASH", "IP_ADDRESS", "URL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -186,7 +200,7 @@ class Indicator(object):
     def type(self, type):
         """
         Sets the type of this Indicator.
-        Type of indicator
+        The type of indicator.
 
 
         :param type: The type of this Indicator.
@@ -202,7 +216,13 @@ class Indicator(object):
         """
         **[Required]** Gets the value of this Indicator.
         The value for this indicator.
-        Format is dependent upon `type`, e.g. DOMAIN_NAME \"evil.example.com\", MD5_HASH \"44d88612fea8a8f36de82e1278abb02f\", IP_ADDRESS \"2001:db8::1\".
+        The value's format is dependent upon its `type`. Examples:
+
+        DOMAIN_NAME \"evil.example.com\"
+
+        MD5_HASH \"44d88612fea8a8f36de82e1278abb02f\"
+
+        IP_ADDRESS \"2001:db8::1\"
 
 
         :return: The value of this Indicator.
@@ -215,7 +235,13 @@ class Indicator(object):
         """
         Sets the value of this Indicator.
         The value for this indicator.
-        Format is dependent upon `type`, e.g. DOMAIN_NAME \"evil.example.com\", MD5_HASH \"44d88612fea8a8f36de82e1278abb02f\", IP_ADDRESS \"2001:db8::1\".
+        The value's format is dependent upon its `type`. Examples:
+
+        DOMAIN_NAME \"evil.example.com\"
+
+        MD5_HASH \"44d88612fea8a8f36de82e1278abb02f\"
+
+        IP_ADDRESS \"2001:db8::1\"
 
 
         :param value: The value of this Indicator.
@@ -227,7 +253,7 @@ class Indicator(object):
     def confidence(self):
         """
         Gets the confidence of this Indicator.
-        Confidence is an integer from 0 to 100 that provides a measure of our certainty in the maliciousness of the indicator.  This confidence value is aggregated from the confidence in the threat types, attributes, and relationships to create an overall value for the indicator.
+        An integer from 0 to 100 that represents how certain we are that the indicator is malicious and a potential threat if it is detected communicating with your cloud resources. This confidence value is aggregated from the confidence in the threat types, attributes, and relationships to create an overall value for the indicator.
 
 
         :return: The confidence of this Indicator.
@@ -239,7 +265,7 @@ class Indicator(object):
     def confidence(self, confidence):
         """
         Sets the confidence of this Indicator.
-        Confidence is an integer from 0 to 100 that provides a measure of our certainty in the maliciousness of the indicator.  This confidence value is aggregated from the confidence in the threat types, attributes, and relationships to create an overall value for the indicator.
+        An integer from 0 to 100 that represents how certain we are that the indicator is malicious and a potential threat if it is detected communicating with your cloud resources. This confidence value is aggregated from the confidence in the threat types, attributes, and relationships to create an overall value for the indicator.
 
 
         :param confidence: The confidence of this Indicator.
@@ -251,7 +277,7 @@ class Indicator(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this Indicator.
-        Compartment Identifier
+        The OCID of the compartment that contains this indicator.
 
 
         :return: The compartment_id of this Indicator.
@@ -263,7 +289,7 @@ class Indicator(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Indicator.
-        Compartment Identifier
+        The OCID of the compartment that contains this indicator.
 
 
         :param compartment_id: The compartment_id of this Indicator.
@@ -299,8 +325,8 @@ class Indicator(object):
     def attributes(self):
         """
         **[Required]** Gets the attributes of this Indicator.
-        A map of attribute name (string) to IndicatorAttribute (values and supporting data).
-        This provides generic storage for additional data about an indicator.
+        A map of attributes with additional information about the indicator.
+        Each attribute has a name (string), value (string), and attribution (supporting data).
 
 
         :return: The attributes of this Indicator.
@@ -312,8 +338,8 @@ class Indicator(object):
     def attributes(self, attributes):
         """
         Sets the attributes of this Indicator.
-        A map of attribute name (string) to IndicatorAttribute (values and supporting data).
-        This provides generic storage for additional data about an indicator.
+        A map of attributes with additional information about the indicator.
+        Each attribute has a name (string), value (string), and attribution (supporting data).
 
 
         :param attributes: The attributes of this Indicator.
@@ -325,8 +351,8 @@ class Indicator(object):
     def relationships(self):
         """
         **[Required]** Gets the relationships of this Indicator.
-        A map of relationship name (string) to IndicatorRelationship (related entities and supporting data).
-        This provides generic storage for relationships between indicators or other entities.
+        A map of relationships between the indicator and other entities.
+        Each relationship has a name (string), related entity, and attribution (supporting data).
 
 
         :return: The relationships of this Indicator.
@@ -338,8 +364,8 @@ class Indicator(object):
     def relationships(self, relationships):
         """
         Sets the relationships of this Indicator.
-        A map of relationship name (string) to IndicatorRelationship (related entities and supporting data).
-        This provides generic storage for relationships between indicators or other entities.
+        A map of relationships between the indicator and other entities.
+        Each relationship has a name (string), related entity, and attribution (supporting data).
 
 
         :param relationships: The relationships of this Indicator.
@@ -351,7 +377,7 @@ class Indicator(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this Indicator.
-        The state of the indicator.  It will always be ACTIVE.  This field is added for consistency.
+        The state of the indicator. It will always be `ACTIVE`.
 
         Allowed values for this property are: "ACTIVE", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -366,7 +392,7 @@ class Indicator(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Indicator.
-        The state of the indicator.  It will always be ACTIVE.  This field is added for consistency.
+        The state of the indicator. It will always be `ACTIVE`.
 
 
         :param lifecycle_state: The lifecycle_state of this Indicator.
@@ -381,7 +407,7 @@ class Indicator(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this Indicator.
-        The time the data was first seen for this indicator. An RFC3339 formatted datetime string
+        The date and time that the indicator was first detected. An RFC3339 formatted string.
 
 
         :return: The time_created of this Indicator.
@@ -393,7 +419,7 @@ class Indicator(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Indicator.
-        The time the data was first seen for this indicator. An RFC3339 formatted datetime string
+        The date and time that the indicator was first detected. An RFC3339 formatted string.
 
 
         :param time_created: The time_created of this Indicator.
@@ -405,7 +431,7 @@ class Indicator(object):
     def time_updated(self):
         """
         **[Required]** Gets the time_updated of this Indicator.
-        The last time this indicator was updated. It starts with the same value as timeCreated and is never empty. An RFC3339 formatted datetime string
+        The date and time that this indicator was last updated. The value is the same as `timeCreated` for a new indicator. An RFC3339 formatted string.
 
 
         :return: The time_updated of this Indicator.
@@ -417,13 +443,57 @@ class Indicator(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this Indicator.
-        The last time this indicator was updated. It starts with the same value as timeCreated and is never empty. An RFC3339 formatted datetime string
+        The date and time that this indicator was last updated. The value is the same as `timeCreated` for a new indicator. An RFC3339 formatted string.
 
 
         :param time_updated: The time_updated of this Indicator.
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def time_last_seen(self):
+        """
+        **[Required]** Gets the time_last_seen of this Indicator.
+        The date and time that this indicator was last seen. The value is the same as `timeCreated` for a new indicator. An RFC3339 formatted string.
+
+
+        :return: The time_last_seen of this Indicator.
+        :rtype: datetime
+        """
+        return self._time_last_seen
+
+    @time_last_seen.setter
+    def time_last_seen(self, time_last_seen):
+        """
+        Sets the time_last_seen of this Indicator.
+        The date and time that this indicator was last seen. The value is the same as `timeCreated` for a new indicator. An RFC3339 formatted string.
+
+
+        :param time_last_seen: The time_last_seen of this Indicator.
+        :type: datetime
+        """
+        self._time_last_seen = time_last_seen
+
+    @property
+    def geodata(self):
+        """
+        **[Required]** Gets the geodata of this Indicator.
+
+        :return: The geodata of this Indicator.
+        :rtype: oci.threat_intelligence.models.GeodataDetails
+        """
+        return self._geodata
+
+    @geodata.setter
+    def geodata(self, geodata):
+        """
+        Sets the geodata of this Indicator.
+
+        :param geodata: The geodata of this Indicator.
+        :type: oci.threat_intelligence.models.GeodataDetails
+        """
+        self._geodata = geodata
 
     def __repr__(self):
         return formatted_flat_dict(self)

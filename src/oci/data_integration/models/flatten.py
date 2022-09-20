@@ -21,7 +21,7 @@ class Flatten(Operator):
 
         :param model_type:
             The value to assign to the model_type property of this Flatten.
-            Allowed values for this property are: "SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "FLATTEN_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR", "UNION_OPERATOR", "INTERSECT_OPERATOR", "MINUS_OPERATOR", "MERGE_OPERATOR", "FUNCTION_OPERATOR", "SPLIT_OPERATOR", "START_OPERATOR", "END_OPERATOR", "PIPELINE_OPERATOR", "TASK_OPERATOR", "EXPRESSION_OPERATOR", "LOOKUP_OPERATOR", "PIVOT_OPERATOR"
+            Allowed values for this property are: "SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "FLATTEN_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR", "UNION_OPERATOR", "INTERSECT_OPERATOR", "MINUS_OPERATOR", "MERGE_OPERATOR", "FUNCTION_OPERATOR", "SPLIT_OPERATOR", "START_OPERATOR", "END_OPERATOR", "PIPELINE_OPERATOR", "DECISION_OPERATOR", "TASK_OPERATOR", "EXPRESSION_OPERATOR", "LOOKUP_OPERATOR", "PIVOT_OPERATOR"
         :type model_type: str
 
         :param key:
@@ -80,6 +80,10 @@ class Flatten(Operator):
             The value to assign to the flatten_field property of this Flatten.
         :type flatten_field: oci.data_integration.models.DynamicProxyField
 
+        :param materialized_flatten_field:
+            The value to assign to the materialized_flatten_field property of this Flatten.
+        :type materialized_flatten_field: oci.data_integration.models.MaterializedDynamicField
+
         """
         self.swagger_types = {
             'model_type': 'str',
@@ -96,7 +100,8 @@ class Flatten(Operator):
             'parameters': 'list[Parameter]',
             'op_config_values': 'ConfigValues',
             'flatten_details': 'FlattenDetails',
-            'flatten_field': 'DynamicProxyField'
+            'flatten_field': 'DynamicProxyField',
+            'materialized_flatten_field': 'MaterializedDynamicField'
         }
 
         self.attribute_map = {
@@ -114,7 +119,8 @@ class Flatten(Operator):
             'parameters': 'parameters',
             'op_config_values': 'opConfigValues',
             'flatten_details': 'flattenDetails',
-            'flatten_field': 'flattenField'
+            'flatten_field': 'flattenField',
+            'materialized_flatten_field': 'materializedFlattenField'
         }
 
         self._model_type = None
@@ -132,6 +138,7 @@ class Flatten(Operator):
         self._op_config_values = None
         self._flatten_details = None
         self._flatten_field = None
+        self._materialized_flatten_field = None
         self._model_type = 'FLATTEN_OPERATOR'
 
     @property
@@ -173,6 +180,26 @@ class Flatten(Operator):
         :type: oci.data_integration.models.DynamicProxyField
         """
         self._flatten_field = flatten_field
+
+    @property
+    def materialized_flatten_field(self):
+        """
+        Gets the materialized_flatten_field of this Flatten.
+
+        :return: The materialized_flatten_field of this Flatten.
+        :rtype: oci.data_integration.models.MaterializedDynamicField
+        """
+        return self._materialized_flatten_field
+
+    @materialized_flatten_field.setter
+    def materialized_flatten_field(self, materialized_flatten_field):
+        """
+        Sets the materialized_flatten_field of this Flatten.
+
+        :param materialized_flatten_field: The materialized_flatten_field of this Flatten.
+        :type: oci.data_integration.models.MaterializedDynamicField
+        """
+        self._materialized_flatten_field = materialized_flatten_field
 
     def __repr__(self):
         return formatted_flat_dict(self)

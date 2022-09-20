@@ -26,19 +26,26 @@ class DataflowApplication(object):
             The value to assign to the compartment_id property of this DataflowApplication.
         :type compartment_id: str
 
+        :param config_values:
+            The value to assign to the config_values property of this DataflowApplication.
+        :type config_values: oci.data_integration.models.ConfigValues
+
         """
         self.swagger_types = {
             'application_id': 'str',
-            'compartment_id': 'str'
+            'compartment_id': 'str',
+            'config_values': 'ConfigValues'
         }
 
         self.attribute_map = {
             'application_id': 'applicationId',
-            'compartment_id': 'compartmentId'
+            'compartment_id': 'compartmentId',
+            'config_values': 'configValues'
         }
 
         self._application_id = None
         self._compartment_id = None
+        self._config_values = None
 
     @property
     def application_id(self):
@@ -87,6 +94,26 @@ class DataflowApplication(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def config_values(self):
+        """
+        Gets the config_values of this DataflowApplication.
+
+        :return: The config_values of this DataflowApplication.
+        :rtype: oci.data_integration.models.ConfigValues
+        """
+        return self._config_values
+
+    @config_values.setter
+    def config_values(self, config_values):
+        """
+        Sets the config_values of this DataflowApplication.
+
+        :param config_values: The config_values of this DataflowApplication.
+        :type: oci.data_integration.models.ConfigValues
+        """
+        self._config_values = config_values
 
     def __repr__(self):
         return formatted_flat_dict(self)

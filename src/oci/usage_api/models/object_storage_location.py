@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ObjectStorageLocation(ResultLocation):
     """
-    The object storage location where usage/cost CSVs will be uploaded
+    The object storage location where usage or cost CSVs will be uploaded.
     """
 
     def __init__(self, **kwargs):
@@ -61,7 +61,7 @@ class ObjectStorageLocation(ResultLocation):
     def region(self):
         """
         **[Required]** Gets the region of this ObjectStorageLocation.
-        The destination Object Store Region specified by customer
+        The destination Object Store Region specified by the customer.
 
 
         :return: The region of this ObjectStorageLocation.
@@ -73,7 +73,7 @@ class ObjectStorageLocation(ResultLocation):
     def region(self, region):
         """
         Sets the region of this ObjectStorageLocation.
-        The destination Object Store Region specified by customer
+        The destination Object Store Region specified by the customer.
 
 
         :param region: The region of this ObjectStorageLocation.
@@ -85,7 +85,7 @@ class ObjectStorageLocation(ResultLocation):
     def namespace(self):
         """
         **[Required]** Gets the namespace of this ObjectStorageLocation.
-        The namespace needed to determine object storage bucket.
+        The namespace needed to determine the object storage bucket.
 
 
         :return: The namespace of this ObjectStorageLocation.
@@ -97,7 +97,7 @@ class ObjectStorageLocation(ResultLocation):
     def namespace(self, namespace):
         """
         Sets the namespace of this ObjectStorageLocation.
-        The namespace needed to determine object storage bucket.
+        The namespace needed to determine the object storage bucket.
 
 
         :param namespace: The namespace of this ObjectStorageLocation.
@@ -109,7 +109,7 @@ class ObjectStorageLocation(ResultLocation):
     def bucket_name(self):
         """
         **[Required]** Gets the bucket_name of this ObjectStorageLocation.
-        The bucket name where usage/cost CSVs will be uploaded
+        The bucket name where usage or cost CSVs will be uploaded.
 
 
         :return: The bucket_name of this ObjectStorageLocation.
@@ -121,7 +121,7 @@ class ObjectStorageLocation(ResultLocation):
     def bucket_name(self, bucket_name):
         """
         Sets the bucket_name of this ObjectStorageLocation.
-        The bucket name where usage/cost CSVs will be uploaded
+        The bucket name where usage or cost CSVs will be uploaded.
 
 
         :param bucket_name: The bucket_name of this ObjectStorageLocation.

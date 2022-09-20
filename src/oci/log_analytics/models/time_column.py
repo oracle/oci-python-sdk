@@ -21,7 +21,7 @@ class TimeColumn(AbstractColumn):
 
         :param type:
             The value to assign to the type property of this TimeColumn.
-            Allowed values for this property are: "COLUMN", "CHART_COLUMN", "CHART_DATA_COLUMN", "TIME_COLUMN", "TREND_COLUMN", "CLASSIFY_COLUMN"
+            Allowed values for this property are: "COLUMN", "CHART_COLUMN", "CHART_DATA_COLUMN", "TIME_STATS_COLUMN", "TIME_STATS_DATA_COLUMN", "TIME_CLUSTER_COLUMN", "TIME_CLUSTER_DATA_COLUMN", "TIME_COLUMN", "TREND_COLUMN", "CLASSIFY_COLUMN"
         :type type: str
 
         :param display_name:
@@ -133,7 +133,7 @@ class TimeColumn(AbstractColumn):
     def span(self):
         """
         Gets the span of this TimeColumn.
-        Time span betwwen each series data point.
+        Time span between each series data point.
 
 
         :return: The span of this TimeColumn.
@@ -145,7 +145,7 @@ class TimeColumn(AbstractColumn):
     def span(self, span):
         """
         Sets the span of this TimeColumn.
-        Time span betwwen each series data point.
+        Time span between each series data point.
 
 
         :param span: The span of this TimeColumn.

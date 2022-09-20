@@ -143,7 +143,7 @@ class DeployPipelineRedeploymentSummary(DeploymentSummary):
     @property
     def previous_deployment_id(self):
         """
-        Gets the previous_deployment_id of this DeployPipelineRedeploymentSummary.
+        **[Required]** Gets the previous_deployment_id of this DeployPipelineRedeploymentSummary.
         Specifies the OCID of the previous deployment to be redeployed.
 
 

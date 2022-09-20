@@ -10,13 +10,34 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateScheduleDetails(object):
     """
-    Details for updating the custom table. Only updating tags is supported
+    Details for updating the custom table.
     """
+
+    #: A constant which can be used with the output_file_format property of a UpdateScheduleDetails.
+    #: This constant has a value of "CSV"
+    OUTPUT_FILE_FORMAT_CSV = "CSV"
+
+    #: A constant which can be used with the output_file_format property of a UpdateScheduleDetails.
+    #: This constant has a value of "PDF"
+    OUTPUT_FILE_FORMAT_PDF = "PDF"
 
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateScheduleDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
+
+        :param description:
+            The value to assign to the description property of this UpdateScheduleDetails.
+        :type description: str
+
+        :param output_file_format:
+            The value to assign to the output_file_format property of this UpdateScheduleDetails.
+            Allowed values for this property are: "CSV", "PDF"
+        :type output_file_format: str
+
+        :param result_location:
+            The value to assign to the result_location property of this UpdateScheduleDetails.
+        :type result_location: oci.usage_api.models.ResultLocation
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateScheduleDetails.
@@ -28,17 +49,102 @@ class UpdateScheduleDetails(object):
 
         """
         self.swagger_types = {
+            'description': 'str',
+            'output_file_format': 'str',
+            'result_location': 'ResultLocation',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
+            'description': 'description',
+            'output_file_format': 'outputFileFormat',
+            'result_location': 'resultLocation',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
+        self._description = None
+        self._output_file_format = None
+        self._result_location = None
         self._freeform_tags = None
         self._defined_tags = None
+
+    @property
+    def description(self):
+        """
+        Gets the description of this UpdateScheduleDetails.
+        The description of the schedule.
+
+
+        :return: The description of this UpdateScheduleDetails.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """
+        Sets the description of this UpdateScheduleDetails.
+        The description of the schedule.
+
+
+        :param description: The description of this UpdateScheduleDetails.
+        :type: str
+        """
+        self._description = description
+
+    @property
+    def output_file_format(self):
+        """
+        Gets the output_file_format of this UpdateScheduleDetails.
+        Specifies supported output file format.
+
+        Allowed values for this property are: "CSV", "PDF"
+
+
+        :return: The output_file_format of this UpdateScheduleDetails.
+        :rtype: str
+        """
+        return self._output_file_format
+
+    @output_file_format.setter
+    def output_file_format(self, output_file_format):
+        """
+        Sets the output_file_format of this UpdateScheduleDetails.
+        Specifies supported output file format.
+
+
+        :param output_file_format: The output_file_format of this UpdateScheduleDetails.
+        :type: str
+        """
+        allowed_values = ["CSV", "PDF"]
+        if not value_allowed_none_or_none_sentinel(output_file_format, allowed_values):
+            raise ValueError(
+                "Invalid value for `output_file_format`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._output_file_format = output_file_format
+
+    @property
+    def result_location(self):
+        """
+        Gets the result_location of this UpdateScheduleDetails.
+
+        :return: The result_location of this UpdateScheduleDetails.
+        :rtype: oci.usage_api.models.ResultLocation
+        """
+        return self._result_location
+
+    @result_location.setter
+    def result_location(self, result_location):
+        """
+        Sets the result_location of this UpdateScheduleDetails.
+
+        :param result_location: The result_location of this UpdateScheduleDetails.
+        :type: oci.usage_api.models.ResultLocation
+        """
+        self._result_location = result_location
 
     @property
     def freeform_tags(self):

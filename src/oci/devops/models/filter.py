@@ -18,6 +18,7 @@ class Filter(object):
         Initializes a new Filter object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.devops.models.VbsFilter`
         * :class:`~oci.devops.models.DevopsCodeRepositoryFilter`
         * :class:`~oci.devops.models.BitbucketCloudFilter`
         * :class:`~oci.devops.models.BitbucketServerFilter`
@@ -49,6 +50,9 @@ class Filter(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['triggerSource']
+
+        if type == 'VBS':
+            return 'VbsFilter'
 
         if type == 'DEVOPS_CODE_REPOSITORY':
             return 'DevopsCodeRepositoryFilter'

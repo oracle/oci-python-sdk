@@ -34,6 +34,10 @@ class Trigger(object):
     TRIGGER_SOURCE_BITBUCKET_SERVER = "BITBUCKET_SERVER"
 
     #: A constant which can be used with the trigger_source property of a Trigger.
+    #: This constant has a value of "VBS"
+    TRIGGER_SOURCE_VBS = "VBS"
+
+    #: A constant which can be used with the trigger_source property of a Trigger.
     #: This constant has a value of "DEVOPS_CODE_REPOSITORY"
     TRIGGER_SOURCE_DEVOPS_CODE_REPOSITORY = "DEVOPS_CODE_REPOSITORY"
 
@@ -47,6 +51,7 @@ class Trigger(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.devops.models.GitlabTrigger`
+        * :class:`~oci.devops.models.VbsTrigger`
         * :class:`~oci.devops.models.BitbucketServerTrigger`
         * :class:`~oci.devops.models.GitlabServerTrigger`
         * :class:`~oci.devops.models.GithubTrigger`
@@ -77,7 +82,7 @@ class Trigger(object):
 
         :param trigger_source:
             The value to assign to the trigger_source property of this Trigger.
-            Allowed values for this property are: "GITHUB", "GITLAB", "GITLAB_SERVER", "BITBUCKET_CLOUD", "BITBUCKET_SERVER", "DEVOPS_CODE_REPOSITORY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GITHUB", "GITLAB", "GITLAB_SERVER", "BITBUCKET_CLOUD", "BITBUCKET_SERVER", "VBS", "DEVOPS_CODE_REPOSITORY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type trigger_source: str
 
@@ -175,6 +180,9 @@ class Trigger(object):
 
         if type == 'GITLAB':
             return 'GitlabTrigger'
+
+        if type == 'VBS':
+            return 'VbsTrigger'
 
         if type == 'BITBUCKET_SERVER':
             return 'BitbucketServerTrigger'
@@ -319,7 +327,7 @@ class Trigger(object):
         **[Required]** Gets the trigger_source of this Trigger.
         Source of the trigger.
 
-        Allowed values for this property are: "GITHUB", "GITLAB", "GITLAB_SERVER", "BITBUCKET_CLOUD", "BITBUCKET_SERVER", "DEVOPS_CODE_REPOSITORY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "GITHUB", "GITLAB", "GITLAB_SERVER", "BITBUCKET_CLOUD", "BITBUCKET_SERVER", "VBS", "DEVOPS_CODE_REPOSITORY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -338,7 +346,7 @@ class Trigger(object):
         :param trigger_source: The trigger_source of this Trigger.
         :type: str
         """
-        allowed_values = ["GITHUB", "GITLAB", "GITLAB_SERVER", "BITBUCKET_CLOUD", "BITBUCKET_SERVER", "DEVOPS_CODE_REPOSITORY"]
+        allowed_values = ["GITHUB", "GITLAB", "GITLAB_SERVER", "BITBUCKET_CLOUD", "BITBUCKET_SERVER", "VBS", "DEVOPS_CODE_REPOSITORY"]
         if not value_allowed_none_or_none_sentinel(trigger_source, allowed_values):
             trigger_source = 'UNKNOWN_ENUM_VALUE'
         self._trigger_source = trigger_source

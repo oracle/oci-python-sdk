@@ -43,25 +43,39 @@ class RecallArchivedDataDetails(object):
             Allowed values for this property are: "LOG", "LOOKUP"
         :type data_type: str
 
+        :param log_sets:
+            The value to assign to the log_sets property of this RecallArchivedDataDetails.
+        :type log_sets: str
+
+        :param query:
+            The value to assign to the query property of this RecallArchivedDataDetails.
+        :type query: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
             'time_data_ended': 'datetime',
             'time_data_started': 'datetime',
-            'data_type': 'str'
+            'data_type': 'str',
+            'log_sets': 'str',
+            'query': 'str'
         }
 
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'time_data_ended': 'timeDataEnded',
             'time_data_started': 'timeDataStarted',
-            'data_type': 'dataType'
+            'data_type': 'dataType',
+            'log_sets': 'logSets',
+            'query': 'query'
         }
 
         self._compartment_id = None
         self._time_data_ended = None
         self._time_data_started = None
         self._data_type = None
+        self._log_sets = None
+        self._query = None
 
     @property
     def compartment_id(self):
@@ -166,6 +180,54 @@ class RecallArchivedDataDetails(object):
                 .format(allowed_values)
             )
         self._data_type = data_type
+
+    @property
+    def log_sets(self):
+        """
+        Gets the log_sets of this RecallArchivedDataDetails.
+        This is a list of comma-separated log sets that recalled data belongs to.
+
+
+        :return: The log_sets of this RecallArchivedDataDetails.
+        :rtype: str
+        """
+        return self._log_sets
+
+    @log_sets.setter
+    def log_sets(self, log_sets):
+        """
+        Sets the log_sets of this RecallArchivedDataDetails.
+        This is a list of comma-separated log sets that recalled data belongs to.
+
+
+        :param log_sets: The log_sets of this RecallArchivedDataDetails.
+        :type: str
+        """
+        self._log_sets = log_sets
+
+    @property
+    def query(self):
+        """
+        Gets the query of this RecallArchivedDataDetails.
+        This is the query that identifies the recalled data.
+
+
+        :return: The query of this RecallArchivedDataDetails.
+        :rtype: str
+        """
+        return self._query
+
+    @query.setter
+    def query(self, query):
+        """
+        Sets the query of this RecallArchivedDataDetails.
+        This is the query that identifies the recalled data.
+
+
+        :param query: The query of this RecallArchivedDataDetails.
+        :type: str
+        """
+        self._query = query
 
     def __repr__(self):
         return formatted_flat_dict(self)
