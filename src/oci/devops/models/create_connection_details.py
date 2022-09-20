@@ -18,6 +18,7 @@ class CreateConnectionDetails(object):
         Initializes a new CreateConnectionDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.devops.models.CreateVbsAccessTokenConnectionDetails`
         * :class:`~oci.devops.models.CreateGitlabServerAccessTokenConnectionDetails`
         * :class:`~oci.devops.models.CreateBitbucketServerAccessTokenConnectionDetails`
         * :class:`~oci.devops.models.CreateGithubAccessTokenConnectionDetails`
@@ -83,6 +84,9 @@ class CreateConnectionDetails(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['connectionType']
+
+        if type == 'VBS_ACCESS_TOKEN':
+            return 'CreateVbsAccessTokenConnectionDetails'
 
         if type == 'GITLAB_SERVER_ACCESS_TOKEN':
             return 'CreateGitlabServerAccessTokenConnectionDetails'

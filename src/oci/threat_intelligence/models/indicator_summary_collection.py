@@ -37,7 +37,7 @@ class IndicatorSummaryCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this IndicatorSummaryCollection.
-        The list of indicators
+        The list of indicator summaries.
 
 
         :return: The items of this IndicatorSummaryCollection.
@@ -49,7 +49,7 @@ class IndicatorSummaryCollection(object):
     def items(self, items):
         """
         Sets the items of this IndicatorSummaryCollection.
-        The list of indicators
+        The list of indicator summaries.
 
 
         :param items: The items of this IndicatorSummaryCollection.

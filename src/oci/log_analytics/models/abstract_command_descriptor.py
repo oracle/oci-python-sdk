@@ -162,6 +162,10 @@ class AbstractCommandDescriptor(object):
     NAME_MACRO = "MACRO"
 
     #: A constant which can be used with the name property of a AbstractCommandDescriptor.
+    #: This constant has a value of "MODULE"
+    NAME_MODULE = "MODULE"
+
+    #: A constant which can be used with the name property of a AbstractCommandDescriptor.
     #: This constant has a value of "MULTI_SEARCH"
     NAME_MULTI_SEARCH = "MULTI_SEARCH"
 
@@ -193,6 +197,22 @@ class AbstractCommandDescriptor(object):
     #: This constant has a value of "COMPARE"
     NAME_COMPARE = "COMPARE"
 
+    #: A constant which can be used with the name property of a AbstractCommandDescriptor.
+    #: This constant has a value of "ADD_INSIGHTS"
+    NAME_ADD_INSIGHTS = "ADD_INSIGHTS"
+
+    #: A constant which can be used with the name property of a AbstractCommandDescriptor.
+    #: This constant has a value of "ANOMALY"
+    NAME_ANOMALY = "ANOMALY"
+
+    #: A constant which can be used with the name property of a AbstractCommandDescriptor.
+    #: This constant has a value of "DEDUP"
+    NAME_DEDUP = "DEDUP"
+
+    #: A constant which can be used with the name property of a AbstractCommandDescriptor.
+    #: This constant has a value of "TIME_CLUSTER"
+    NAME_TIME_CLUSTER = "TIME_CLUSTER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AbstractCommandDescriptor object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -200,55 +220,60 @@ class AbstractCommandDescriptor(object):
 
         * :class:`~oci.log_analytics.models.TopCommandDescriptor`
         * :class:`~oci.log_analytics.models.HighlightCommandDescriptor`
-        * :class:`~oci.log_analytics.models.MultiSearchCommandDescriptor`
-        * :class:`~oci.log_analytics.models.CompareCommandDescriptor`
         * :class:`~oci.log_analytics.models.StatsCommandDescriptor`
-        * :class:`~oci.log_analytics.models.TimeCompareCommandDescriptor`
         * :class:`~oci.log_analytics.models.TailCommandDescriptor`
-        * :class:`~oci.log_analytics.models.RegexCommandDescriptor`
-        * :class:`~oci.log_analytics.models.DeltaCommandDescriptor`
-        * :class:`~oci.log_analytics.models.LookupCommandDescriptor`
         * :class:`~oci.log_analytics.models.DemoModeCommandDescriptor`
         * :class:`~oci.log_analytics.models.FieldSummaryCommandDescriptor`
         * :class:`~oci.log_analytics.models.GeoStatsCommandDescriptor`
-        * :class:`~oci.log_analytics.models.JsonExtractCommandDescriptor`
         * :class:`~oci.log_analytics.models.MapCommandDescriptor`
-        * :class:`~oci.log_analytics.models.EventStatsCommandDescriptor`
         * :class:`~oci.log_analytics.models.HighlightGroupsCommandDescriptor`
-        * :class:`~oci.log_analytics.models.WhereCommandDescriptor`
-        * :class:`~oci.log_analytics.models.ClusterSplitCommandDescriptor`
+        * :class:`~oci.log_analytics.models.DedupCommandDescriptor`
         * :class:`~oci.log_analytics.models.TimeStatsCommandDescriptor`
         * :class:`~oci.log_analytics.models.ClusterCommandDescriptor`
-        * :class:`~oci.log_analytics.models.ClusterDetailsCommandDescriptor`
         * :class:`~oci.log_analytics.models.DeleteCommandDescriptor`
-        * :class:`~oci.log_analytics.models.ClusterCompareCommandDescriptor`
         * :class:`~oci.log_analytics.models.SearchCommandDescriptor`
         * :class:`~oci.log_analytics.models.BucketCommandDescriptor`
-        * :class:`~oci.log_analytics.models.CommandDescriptor`
-        * :class:`~oci.log_analytics.models.DistinctCommandDescriptor`
+        * :class:`~oci.log_analytics.models.AddInsightsCommandDescriptor`
         * :class:`~oci.log_analytics.models.LinkCommandDescriptor`
         * :class:`~oci.log_analytics.models.SortCommandDescriptor`
+        * :class:`~oci.log_analytics.models.HighlightRowsCommandDescriptor`
+        * :class:`~oci.log_analytics.models.MacroCommandDescriptor`
+        * :class:`~oci.log_analytics.models.EvalCommandDescriptor`
+        * :class:`~oci.log_analytics.models.RenameCommandDescriptor`
+        * :class:`~oci.log_analytics.models.XmlExtractCommandDescriptor`
+        * :class:`~oci.log_analytics.models.MultiSearchCommandDescriptor`
+        * :class:`~oci.log_analytics.models.CompareCommandDescriptor`
+        * :class:`~oci.log_analytics.models.TimeCompareCommandDescriptor`
+        * :class:`~oci.log_analytics.models.ModuleCommandDescriptor`
+        * :class:`~oci.log_analytics.models.RegexCommandDescriptor`
+        * :class:`~oci.log_analytics.models.DeltaCommandDescriptor`
+        * :class:`~oci.log_analytics.models.LookupCommandDescriptor`
+        * :class:`~oci.log_analytics.models.JsonExtractCommandDescriptor`
+        * :class:`~oci.log_analytics.models.EventStatsCommandDescriptor`
+        * :class:`~oci.log_analytics.models.WhereCommandDescriptor`
+        * :class:`~oci.log_analytics.models.ClusterSplitCommandDescriptor`
+        * :class:`~oci.log_analytics.models.ClusterDetailsCommandDescriptor`
+        * :class:`~oci.log_analytics.models.ClusterCompareCommandDescriptor`
+        * :class:`~oci.log_analytics.models.CommandDescriptor`
+        * :class:`~oci.log_analytics.models.DistinctCommandDescriptor`
         * :class:`~oci.log_analytics.models.ExtractCommandDescriptor`
         * :class:`~oci.log_analytics.models.NlpCommandDescriptor`
         * :class:`~oci.log_analytics.models.BottomCommandDescriptor`
         * :class:`~oci.log_analytics.models.FieldsCommandDescriptor`
-        * :class:`~oci.log_analytics.models.HighlightRowsCommandDescriptor`
-        * :class:`~oci.log_analytics.models.MacroCommandDescriptor`
+        * :class:`~oci.log_analytics.models.AnomalyCommandDescriptor`
         * :class:`~oci.log_analytics.models.ClassifyCommandDescriptor`
         * :class:`~oci.log_analytics.models.LinkDetailsCommandDescriptor`
         * :class:`~oci.log_analytics.models.SearchLookupCommandDescriptor`
         * :class:`~oci.log_analytics.models.HeadCommandDescriptor`
         * :class:`~oci.log_analytics.models.CreateViewCommandDescriptor`
+        * :class:`~oci.log_analytics.models.TimeClusterCommandDescriptor`
         * :class:`~oci.log_analytics.models.AddFieldsCommandDescriptor`
-        * :class:`~oci.log_analytics.models.EvalCommandDescriptor`
-        * :class:`~oci.log_analytics.models.RenameCommandDescriptor`
-        * :class:`~oci.log_analytics.models.XmlExtractCommandDescriptor`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param name:
             The value to assign to the name property of this AbstractCommandDescriptor.
-            Allowed values for this property are: "COMMAND", "SEARCH", "STATS", "GEO_STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "JSON_EXTRACT", "XML_EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", "COMPARE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "COMMAND", "SEARCH", "STATS", "GEO_STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "JSON_EXTRACT", "XML_EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MODULE", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", "COMPARE", "ADD_INSIGHTS", "ANOMALY", "DEDUP", "TIME_CLUSTER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type name: str
 
@@ -272,6 +297,10 @@ class AbstractCommandDescriptor(object):
             The value to assign to the declared_fields property of this AbstractCommandDescriptor.
         :type declared_fields: list[oci.log_analytics.models.AbstractField]
 
+        :param is_hidden:
+            The value to assign to the is_hidden property of this AbstractCommandDescriptor.
+        :type is_hidden: bool
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -279,7 +308,8 @@ class AbstractCommandDescriptor(object):
             'internal_query_string': 'str',
             'category': 'str',
             'referenced_fields': 'list[AbstractField]',
-            'declared_fields': 'list[AbstractField]'
+            'declared_fields': 'list[AbstractField]',
+            'is_hidden': 'bool'
         }
 
         self.attribute_map = {
@@ -288,7 +318,8 @@ class AbstractCommandDescriptor(object):
             'internal_query_string': 'internalQueryString',
             'category': 'category',
             'referenced_fields': 'referencedFields',
-            'declared_fields': 'declaredFields'
+            'declared_fields': 'declaredFields',
+            'is_hidden': 'isHidden'
         }
 
         self._name = None
@@ -297,6 +328,7 @@ class AbstractCommandDescriptor(object):
         self._category = None
         self._referenced_fields = None
         self._declared_fields = None
+        self._is_hidden = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -312,29 +344,11 @@ class AbstractCommandDescriptor(object):
         if type == 'HIGHLIGHT':
             return 'HighlightCommandDescriptor'
 
-        if type == 'MULTI_SEARCH':
-            return 'MultiSearchCommandDescriptor'
-
-        if type == 'COMPARE':
-            return 'CompareCommandDescriptor'
-
         if type == 'STATS':
             return 'StatsCommandDescriptor'
 
-        if type == 'TIME_COMPARE':
-            return 'TimeCompareCommandDescriptor'
-
         if type == 'TAIL':
             return 'TailCommandDescriptor'
-
-        if type == 'REGEX':
-            return 'RegexCommandDescriptor'
-
-        if type == 'DELTA':
-            return 'DeltaCommandDescriptor'
-
-        if type == 'LOOKUP':
-            return 'LookupCommandDescriptor'
 
         if type == 'DEMO_MODE':
             return 'DemoModeCommandDescriptor'
@@ -345,23 +359,14 @@ class AbstractCommandDescriptor(object):
         if type == 'GEO_STATS':
             return 'GeoStatsCommandDescriptor'
 
-        if type == 'JSON_EXTRACT':
-            return 'JsonExtractCommandDescriptor'
-
         if type == 'MAP':
             return 'MapCommandDescriptor'
-
-        if type == 'EVENT_STATS':
-            return 'EventStatsCommandDescriptor'
 
         if type == 'HIGHLIGHT_GROUPS':
             return 'HighlightGroupsCommandDescriptor'
 
-        if type == 'WHERE':
-            return 'WhereCommandDescriptor'
-
-        if type == 'CLUSTER_SPLIT':
-            return 'ClusterSplitCommandDescriptor'
+        if type == 'DEDUP':
+            return 'DedupCommandDescriptor'
 
         if type == 'TIME_STATS':
             return 'TimeStatsCommandDescriptor'
@@ -369,14 +374,8 @@ class AbstractCommandDescriptor(object):
         if type == 'CLUSTER':
             return 'ClusterCommandDescriptor'
 
-        if type == 'CLUSTER_DETAILS':
-            return 'ClusterDetailsCommandDescriptor'
-
         if type == 'DELETE':
             return 'DeleteCommandDescriptor'
-
-        if type == 'CLUSTER_COMPARE':
-            return 'ClusterCompareCommandDescriptor'
 
         if type == 'SEARCH':
             return 'SearchCommandDescriptor'
@@ -384,17 +383,74 @@ class AbstractCommandDescriptor(object):
         if type == 'BUCKET':
             return 'BucketCommandDescriptor'
 
-        if type == 'COMMAND':
-            return 'CommandDescriptor'
-
-        if type == 'DISTINCT':
-            return 'DistinctCommandDescriptor'
+        if type == 'ADD_INSIGHTS':
+            return 'AddInsightsCommandDescriptor'
 
         if type == 'LINK':
             return 'LinkCommandDescriptor'
 
         if type == 'SORT':
             return 'SortCommandDescriptor'
+
+        if type == 'HIGHLIGHT_ROWS':
+            return 'HighlightRowsCommandDescriptor'
+
+        if type == 'MACRO':
+            return 'MacroCommandDescriptor'
+
+        if type == 'EVAL':
+            return 'EvalCommandDescriptor'
+
+        if type == 'RENAME':
+            return 'RenameCommandDescriptor'
+
+        if type == 'XML_EXTRACT':
+            return 'XmlExtractCommandDescriptor'
+
+        if type == 'MULTI_SEARCH':
+            return 'MultiSearchCommandDescriptor'
+
+        if type == 'COMPARE':
+            return 'CompareCommandDescriptor'
+
+        if type == 'TIME_COMPARE':
+            return 'TimeCompareCommandDescriptor'
+
+        if type == 'MODULE':
+            return 'ModuleCommandDescriptor'
+
+        if type == 'REGEX':
+            return 'RegexCommandDescriptor'
+
+        if type == 'DELTA':
+            return 'DeltaCommandDescriptor'
+
+        if type == 'LOOKUP':
+            return 'LookupCommandDescriptor'
+
+        if type == 'JSON_EXTRACT':
+            return 'JsonExtractCommandDescriptor'
+
+        if type == 'EVENT_STATS':
+            return 'EventStatsCommandDescriptor'
+
+        if type == 'WHERE':
+            return 'WhereCommandDescriptor'
+
+        if type == 'CLUSTER_SPLIT':
+            return 'ClusterSplitCommandDescriptor'
+
+        if type == 'CLUSTER_DETAILS':
+            return 'ClusterDetailsCommandDescriptor'
+
+        if type == 'CLUSTER_COMPARE':
+            return 'ClusterCompareCommandDescriptor'
+
+        if type == 'COMMAND':
+            return 'CommandDescriptor'
+
+        if type == 'DISTINCT':
+            return 'DistinctCommandDescriptor'
 
         if type == 'EXTRACT':
             return 'ExtractCommandDescriptor'
@@ -408,11 +464,8 @@ class AbstractCommandDescriptor(object):
         if type == 'FIELDS':
             return 'FieldsCommandDescriptor'
 
-        if type == 'HIGHLIGHT_ROWS':
-            return 'HighlightRowsCommandDescriptor'
-
-        if type == 'MACRO':
-            return 'MacroCommandDescriptor'
+        if type == 'ANOMALY':
+            return 'AnomalyCommandDescriptor'
 
         if type == 'CLASSIFY':
             return 'ClassifyCommandDescriptor'
@@ -429,17 +482,11 @@ class AbstractCommandDescriptor(object):
         if type == 'CREATE_VIEW':
             return 'CreateViewCommandDescriptor'
 
+        if type == 'TIME_CLUSTER':
+            return 'TimeClusterCommandDescriptor'
+
         if type == 'ADD_FIELDS':
             return 'AddFieldsCommandDescriptor'
-
-        if type == 'EVAL':
-            return 'EvalCommandDescriptor'
-
-        if type == 'RENAME':
-            return 'RenameCommandDescriptor'
-
-        if type == 'XML_EXTRACT':
-            return 'XmlExtractCommandDescriptor'
         else:
             return 'AbstractCommandDescriptor'
 
@@ -449,7 +496,7 @@ class AbstractCommandDescriptor(object):
         **[Required]** Gets the name of this AbstractCommandDescriptor.
         Name of querylanguage command
 
-        Allowed values for this property are: "COMMAND", "SEARCH", "STATS", "GEO_STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "JSON_EXTRACT", "XML_EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", "COMPARE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "COMMAND", "SEARCH", "STATS", "GEO_STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "JSON_EXTRACT", "XML_EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MODULE", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", "COMPARE", "ADD_INSIGHTS", "ANOMALY", "DEDUP", "TIME_CLUSTER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -468,7 +515,7 @@ class AbstractCommandDescriptor(object):
         :param name: The name of this AbstractCommandDescriptor.
         :type: str
         """
-        allowed_values = ["COMMAND", "SEARCH", "STATS", "GEO_STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "JSON_EXTRACT", "XML_EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", "COMPARE"]
+        allowed_values = ["COMMAND", "SEARCH", "STATS", "GEO_STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "JSON_EXTRACT", "XML_EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MODULE", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", "COMPARE", "ADD_INSIGHTS", "ANOMALY", "DEDUP", "TIME_CLUSTER"]
         if not value_allowed_none_or_none_sentinel(name, allowed_values):
             name = 'UNKNOWN_ENUM_VALUE'
         self._name = name
@@ -592,6 +639,30 @@ class AbstractCommandDescriptor(object):
         :type: list[oci.log_analytics.models.AbstractField]
         """
         self._declared_fields = declared_fields
+
+    @property
+    def is_hidden(self):
+        """
+        Gets the is_hidden of this AbstractCommandDescriptor.
+        Field denoting if this is a hidden command that is not shown in the query string.
+
+
+        :return: The is_hidden of this AbstractCommandDescriptor.
+        :rtype: bool
+        """
+        return self._is_hidden
+
+    @is_hidden.setter
+    def is_hidden(self, is_hidden):
+        """
+        Sets the is_hidden of this AbstractCommandDescriptor.
+        Field denoting if this is a hidden command that is not shown in the query string.
+
+
+        :param is_hidden: The is_hidden of this AbstractCommandDescriptor.
+        :type: bool
+        """
+        self._is_hidden = is_hidden
 
     def __repr__(self):
         return formatted_flat_dict(self)

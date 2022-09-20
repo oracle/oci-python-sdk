@@ -24,14 +24,20 @@ from .deployment_backup import DeploymentBackup
 from .deployment_backup_collection import DeploymentBackupCollection
 from .deployment_backup_summary import DeploymentBackupSummary
 from .deployment_collection import DeploymentCollection
+from .deployment_message_collection import DeploymentMessageCollection
 from .deployment_summary import DeploymentSummary
 from .deployment_upgrade import DeploymentUpgrade
 from .deployment_upgrade_collection import DeploymentUpgradeCollection
 from .deployment_upgrade_summary import DeploymentUpgradeSummary
+from .message_summary import MessageSummary
 from .ogg_deployment import OggDeployment
 from .restore_deployment_details import RestoreDeploymentDetails
 from .start_deployment_details import StartDeploymentDetails
 from .stop_deployment_details import StopDeploymentDetails
+from .trail_file_collection import TrailFileCollection
+from .trail_file_summary import TrailFileSummary
+from .trail_sequence_collection import TrailSequenceCollection
+from .trail_sequence_summary import TrailSequenceSummary
 from .update_database_registration_details import UpdateDatabaseRegistrationDetails
 from .update_deployment_backup_details import UpdateDeploymentBackupDetails
 from .update_deployment_details import UpdateDeploymentDetails
@@ -65,14 +71,20 @@ golden_gate_type_mapping = {
     "DeploymentBackupCollection": DeploymentBackupCollection,
     "DeploymentBackupSummary": DeploymentBackupSummary,
     "DeploymentCollection": DeploymentCollection,
+    "DeploymentMessageCollection": DeploymentMessageCollection,
     "DeploymentSummary": DeploymentSummary,
     "DeploymentUpgrade": DeploymentUpgrade,
     "DeploymentUpgradeCollection": DeploymentUpgradeCollection,
     "DeploymentUpgradeSummary": DeploymentUpgradeSummary,
+    "MessageSummary": MessageSummary,
     "OggDeployment": OggDeployment,
     "RestoreDeploymentDetails": RestoreDeploymentDetails,
     "StartDeploymentDetails": StartDeploymentDetails,
     "StopDeploymentDetails": StopDeploymentDetails,
+    "TrailFileCollection": TrailFileCollection,
+    "TrailFileSummary": TrailFileSummary,
+    "TrailSequenceCollection": TrailSequenceCollection,
+    "TrailSequenceSummary": TrailSequenceSummary,
     "UpdateDatabaseRegistrationDetails": UpdateDatabaseRegistrationDetails,
     "UpdateDeploymentBackupDetails": UpdateDeploymentBackupDetails,
     "UpdateDeploymentDetails": UpdateDeploymentDetails,

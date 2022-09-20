@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ThreatTypesCollection(object):
     """
-    List of threat types applicable to indicators.
+    List of threat types that can be associated with threat indicators.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class ThreatTypesCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ThreatTypesCollection.
-        The list of threat types that are available to query on
+        The list of threat types that can be used to search for threat indicators.
 
 
         :return: The items of this ThreatTypesCollection.
@@ -49,7 +49,7 @@ class ThreatTypesCollection(object):
     def items(self, items):
         """
         Sets the items of this ThreatTypesCollection.
-        The list of threat types that are available to query on
+        The list of threat types that can be used to search for threat indicators.
 
 
         :param items: The items of this ThreatTypesCollection.

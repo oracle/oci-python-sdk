@@ -26,6 +26,22 @@ class AbstractColumn(object):
     TYPE_CHART_DATA_COLUMN = "CHART_DATA_COLUMN"
 
     #: A constant which can be used with the type property of a AbstractColumn.
+    #: This constant has a value of "TIME_STATS_COLUMN"
+    TYPE_TIME_STATS_COLUMN = "TIME_STATS_COLUMN"
+
+    #: A constant which can be used with the type property of a AbstractColumn.
+    #: This constant has a value of "TIME_STATS_DATA_COLUMN"
+    TYPE_TIME_STATS_DATA_COLUMN = "TIME_STATS_DATA_COLUMN"
+
+    #: A constant which can be used with the type property of a AbstractColumn.
+    #: This constant has a value of "TIME_CLUSTER_COLUMN"
+    TYPE_TIME_CLUSTER_COLUMN = "TIME_CLUSTER_COLUMN"
+
+    #: A constant which can be used with the type property of a AbstractColumn.
+    #: This constant has a value of "TIME_CLUSTER_DATA_COLUMN"
+    TYPE_TIME_CLUSTER_DATA_COLUMN = "TIME_CLUSTER_DATA_COLUMN"
+
+    #: A constant which can be used with the type property of a AbstractColumn.
     #: This constant has a value of "TIME_COLUMN"
     TYPE_TIME_COLUMN = "TIME_COLUMN"
 
@@ -81,7 +97,11 @@ class AbstractColumn(object):
         * :class:`~oci.log_analytics.models.TimeColumn`
         * :class:`~oci.log_analytics.models.ClassifyColumn`
         * :class:`~oci.log_analytics.models.TrendColumn`
+        * :class:`~oci.log_analytics.models.TimeStatsColumn`
+        * :class:`~oci.log_analytics.models.TimeClusterColumn`
         * :class:`~oci.log_analytics.models.Column`
+        * :class:`~oci.log_analytics.models.TimeClusterDataColumn`
+        * :class:`~oci.log_analytics.models.TimeStatsDataColumn`
         * :class:`~oci.log_analytics.models.ChartColumn`
         * :class:`~oci.log_analytics.models.ChartDataColumn`
 
@@ -89,7 +109,7 @@ class AbstractColumn(object):
 
         :param type:
             The value to assign to the type property of this AbstractColumn.
-            Allowed values for this property are: "COLUMN", "CHART_COLUMN", "CHART_DATA_COLUMN", "TIME_COLUMN", "TREND_COLUMN", "CLASSIFY_COLUMN", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "COLUMN", "CHART_COLUMN", "CHART_DATA_COLUMN", "TIME_STATS_COLUMN", "TIME_STATS_DATA_COLUMN", "TIME_CLUSTER_COLUMN", "TIME_CLUSTER_DATA_COLUMN", "TIME_COLUMN", "TREND_COLUMN", "CLASSIFY_COLUMN", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -202,8 +222,20 @@ class AbstractColumn(object):
         if type == 'TREND_COLUMN':
             return 'TrendColumn'
 
+        if type == 'TIME_STATS_COLUMN':
+            return 'TimeStatsColumn'
+
+        if type == 'TIME_CLUSTER_COLUMN':
+            return 'TimeClusterColumn'
+
         if type == 'COLUMN':
             return 'Column'
+
+        if type == 'TIME_CLUSTER_DATA_COLUMN':
+            return 'TimeClusterDataColumn'
+
+        if type == 'TIME_STATS_DATA_COLUMN':
+            return 'TimeStatsDataColumn'
 
         if type == 'CHART_COLUMN':
             return 'ChartColumn'
@@ -219,7 +251,7 @@ class AbstractColumn(object):
         **[Required]** Gets the type of this AbstractColumn.
         Column classification when column requires special designation.
 
-        Allowed values for this property are: "COLUMN", "CHART_COLUMN", "CHART_DATA_COLUMN", "TIME_COLUMN", "TREND_COLUMN", "CLASSIFY_COLUMN", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "COLUMN", "CHART_COLUMN", "CHART_DATA_COLUMN", "TIME_STATS_COLUMN", "TIME_STATS_DATA_COLUMN", "TIME_CLUSTER_COLUMN", "TIME_CLUSTER_DATA_COLUMN", "TIME_COLUMN", "TREND_COLUMN", "CLASSIFY_COLUMN", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -238,7 +270,7 @@ class AbstractColumn(object):
         :param type: The type of this AbstractColumn.
         :type: str
         """
-        allowed_values = ["COLUMN", "CHART_COLUMN", "CHART_DATA_COLUMN", "TIME_COLUMN", "TREND_COLUMN", "CLASSIFY_COLUMN"]
+        allowed_values = ["COLUMN", "CHART_COLUMN", "CHART_DATA_COLUMN", "TIME_STATS_COLUMN", "TIME_STATS_DATA_COLUMN", "TIME_CLUSTER_COLUMN", "TIME_CLUSTER_DATA_COLUMN", "TIME_COLUMN", "TREND_COLUMN", "CLASSIFY_COLUMN"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

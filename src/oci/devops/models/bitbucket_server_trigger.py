@@ -41,7 +41,7 @@ class BitbucketServerTrigger(Trigger):
 
         :param trigger_source:
             The value to assign to the trigger_source property of this BitbucketServerTrigger.
-            Allowed values for this property are: "GITHUB", "GITLAB", "GITLAB_SERVER", "BITBUCKET_CLOUD", "BITBUCKET_SERVER", "DEVOPS_CODE_REPOSITORY"
+            Allowed values for this property are: "GITHUB", "GITLAB", "GITLAB_SERVER", "BITBUCKET_CLOUD", "BITBUCKET_SERVER", "VBS", "DEVOPS_CODE_REPOSITORY"
         :type trigger_source: str
 
         :param time_created:

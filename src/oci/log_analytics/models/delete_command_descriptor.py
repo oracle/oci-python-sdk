@@ -21,7 +21,7 @@ class DeleteCommandDescriptor(AbstractCommandDescriptor):
 
         :param name:
             The value to assign to the name property of this DeleteCommandDescriptor.
-            Allowed values for this property are: "COMMAND", "SEARCH", "STATS", "GEO_STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "JSON_EXTRACT", "XML_EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", "COMPARE"
+            Allowed values for this property are: "COMMAND", "SEARCH", "STATS", "GEO_STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "JSON_EXTRACT", "XML_EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MODULE", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", "COMPARE", "ADD_INSIGHTS", "ANOMALY", "DEDUP", "TIME_CLUSTER"
         :type name: str
 
         :param display_query_string:
@@ -44,6 +44,10 @@ class DeleteCommandDescriptor(AbstractCommandDescriptor):
             The value to assign to the declared_fields property of this DeleteCommandDescriptor.
         :type declared_fields: list[oci.log_analytics.models.AbstractField]
 
+        :param is_hidden:
+            The value to assign to the is_hidden property of this DeleteCommandDescriptor.
+        :type is_hidden: bool
+
         :param is_dry_run:
             The value to assign to the is_dry_run property of this DeleteCommandDescriptor.
         :type is_dry_run: bool
@@ -56,6 +60,7 @@ class DeleteCommandDescriptor(AbstractCommandDescriptor):
             'category': 'str',
             'referenced_fields': 'list[AbstractField]',
             'declared_fields': 'list[AbstractField]',
+            'is_hidden': 'bool',
             'is_dry_run': 'bool'
         }
 
@@ -66,6 +71,7 @@ class DeleteCommandDescriptor(AbstractCommandDescriptor):
             'category': 'category',
             'referenced_fields': 'referencedFields',
             'declared_fields': 'declaredFields',
+            'is_hidden': 'isHidden',
             'is_dry_run': 'isDryRun'
         }
 
@@ -75,6 +81,7 @@ class DeleteCommandDescriptor(AbstractCommandDescriptor):
         self._category = None
         self._referenced_fields = None
         self._declared_fields = None
+        self._is_hidden = None
         self._is_dry_run = None
         self._name = 'DELETE'
 

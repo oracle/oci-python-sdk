@@ -73,7 +73,7 @@ class CreateDeployPipelineRedeploymentDetails(CreateDeploymentDetails):
     @property
     def previous_deployment_id(self):
         """
-        Gets the previous_deployment_id of this CreateDeployPipelineRedeploymentDetails.
+        **[Required]** Gets the previous_deployment_id of this CreateDeployPipelineRedeploymentDetails.
         Specifies the OCID of the previous deployment to be redeployed.
 
 

@@ -10,7 +10,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataVisibility(object):
     """
-    The visibility level associated with data and an associated TLP (https://www.cisa.gov/tlp) level.
+    The visibility level of attribution data, including its `Traffic Light Protocol (TLP)`__ color.
+
+    __ https://www.cisa.gov/tlp
     """
 
     #: A constant which can be used with the tlp_name property of a DataVisibility.
@@ -90,7 +92,7 @@ class DataVisibility(object):
     def tlp_name(self):
         """
         **[Required]** Gets the tlp_name of this DataVisibility.
-        The Traffic Light Protocol (TLP) name of the visibility level.
+        The Traffic Light Protocol (TLP) color of the visibility level.
 
         Allowed values for this property are: "TLP_INTERNAL_AUDIT", "TLP_WHITE", "TLP_GREEN", "TLP_AMBER", "TLP_RED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -105,7 +107,7 @@ class DataVisibility(object):
     def tlp_name(self, tlp_name):
         """
         Sets the tlp_name of this DataVisibility.
-        The Traffic Light Protocol (TLP) name of the visibility level.
+        The Traffic Light Protocol (TLP) color of the visibility level.
 
 
         :param tlp_name: The tlp_name of this DataVisibility.

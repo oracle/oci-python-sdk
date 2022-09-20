@@ -67,6 +67,52 @@ class LogAnalyticsClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def create_ingest_time_rule_and_wait_for_state(self, namespace_name, create_ingest_time_rule_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.create_ingest_time_rule` and waits for the :py:class:`~oci.log_analytics.models.IngestTimeRule` acted upon
+        to enter the given state(s).
+
+        :param str namespace_name: (required)
+            The Logging Analytics namespace used for the request.
+
+        :param oci.log_analytics.models.CreateIngestTimeRuleDetails create_ingest_time_rule_details: (required)
+            Details of the new ingest time rule.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.IngestTimeRule.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.log_analytics.LogAnalyticsClient.create_ingest_time_rule`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_ingest_time_rule(namespace_name, create_ingest_time_rule_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        ingest_time_rule_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_ingest_time_rule(namespace_name, ingest_time_rule_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def create_log_analytics_em_bridge_and_wait_for_state(self, namespace_name, create_log_analytics_em_bridge_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.create_log_analytics_em_bridge` and waits for the :py:class:`~oci.log_analytics.models.LogAnalyticsEmBridge` acted upon
@@ -385,6 +431,47 @@ class LogAnalyticsClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def disable_ingest_time_rule_and_wait_for_state(self, namespace_name, ingest_time_rule_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.disable_ingest_time_rule` and waits for the :py:class:`~oci.log_analytics.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str namespace_name: (required)
+            The Logging Analytics namespace used for the request.
+
+        :param str ingest_time_rule_id: (required)
+            Unique ocid of the ingest time rule.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.log_analytics.LogAnalyticsClient.disable_ingest_time_rule`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.disable_ingest_time_rule(namespace_name, ingest_time_rule_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def enable_auto_association_and_wait_for_state(self, namespace_name, source_name, enable_auto_association_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.enable_auto_association` and waits for the :py:class:`~oci.log_analytics.models.WorkRequest`
@@ -410,6 +497,47 @@ class LogAnalyticsClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.enable_auto_association(namespace_name, source_name, enable_auto_association_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def enable_ingest_time_rule_and_wait_for_state(self, namespace_name, ingest_time_rule_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.enable_ingest_time_rule` and waits for the :py:class:`~oci.log_analytics.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str namespace_name: (required)
+            The Logging Analytics namespace used for the request.
+
+        :param str ingest_time_rule_id: (required)
+            Unique ocid of the ingest time rule.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.log_analytics.LogAnalyticsClient.enable_ingest_time_rule`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.enable_ingest_time_rule(namespace_name, ingest_time_rule_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
 
@@ -749,6 +877,55 @@ class LogAnalyticsClientCompositeOperations(object):
             waiter_result = oci.wait_until(
                 self.client,
                 self.client.get_scheduled_task(namespace_name, scheduled_task_id),  # noqa: F821
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except (NameError, TypeError) as e:
+            if not e.args:
+                e.args = ('',)
+            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_ingest_time_rule_and_wait_for_state(self, namespace_name, ingest_time_rule_id, update_ingest_time_rule_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.log_analytics.LogAnalyticsClient.update_ingest_time_rule` and waits for the :py:class:`~oci.log_analytics.models.IngestTimeRule` acted upon
+        to enter the given state(s).
+
+        :param str namespace_name: (required)
+            The Logging Analytics namespace used for the request.
+
+        :param str ingest_time_rule_id: (required)
+            Unique ocid of the ingest time rule.
+
+        :param oci.log_analytics.models.IngestTimeRule update_ingest_time_rule_details: (required)
+            The information to be updated.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.log_analytics.models.IngestTimeRule.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.log_analytics.LogAnalyticsClient.update_ingest_time_rule`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_ingest_time_rule(namespace_name, ingest_time_rule_id, update_ingest_time_rule_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        ingest_time_rule_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_ingest_time_rule(namespace_name, ingest_time_rule_id),  # noqa: F821
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )

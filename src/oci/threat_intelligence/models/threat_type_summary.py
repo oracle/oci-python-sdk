@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ThreatTypeSummary(object):
     """
-    Threat type id and text
+    The name of a threat type and its ID.
     """
 
     def __init__(self, **kwargs):

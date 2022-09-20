@@ -21,8 +21,10 @@ Threat Intelligence
     oci.threat_intelligence.models.DataAttribution
     oci.threat_intelligence.models.DataVisibility
     oci.threat_intelligence.models.EntityReference
+    oci.threat_intelligence.models.GeodataDetails
     oci.threat_intelligence.models.Indicator
     oci.threat_intelligence.models.IndicatorAttribute
+    oci.threat_intelligence.models.IndicatorAttributeSummary
     oci.threat_intelligence.models.IndicatorCountCollection
     oci.threat_intelligence.models.IndicatorCountDimensions
     oci.threat_intelligence.models.IndicatorCountSummary
@@ -31,6 +33,7 @@ Threat Intelligence
     oci.threat_intelligence.models.IndicatorSourceSummary
     oci.threat_intelligence.models.IndicatorSummary
     oci.threat_intelligence.models.IndicatorSummaryCollection
+    oci.threat_intelligence.models.SummarizeIndicatorsDetails
     oci.threat_intelligence.models.ThreatType
     oci.threat_intelligence.models.ThreatTypeSummary
     oci.threat_intelligence.models.ThreatTypesCollection

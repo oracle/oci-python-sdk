@@ -166,7 +166,7 @@ class SingleDeployStageDeployment(Deployment):
     @property
     def deploy_stage_id(self):
         """
-        Gets the deploy_stage_id of this SingleDeployStageDeployment.
+        **[Required]** Gets the deploy_stage_id of this SingleDeployStageDeployment.
         Specifies the OCID of the stage to be deployed.
 
 

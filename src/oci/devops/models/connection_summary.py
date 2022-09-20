@@ -19,6 +19,7 @@ class ConnectionSummary(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.devops.models.BitbucketCloudAppPasswordConnectionSummary`
+        * :class:`~oci.devops.models.VbsAccessTokenConnectionSummary`
         * :class:`~oci.devops.models.GithubAccessTokenConnectionSummary`
         * :class:`~oci.devops.models.GitlabAccessTokenConnectionSummary`
         * :class:`~oci.devops.models.BitbucketServerTokenConnectionSummary`
@@ -128,6 +129,9 @@ class ConnectionSummary(object):
 
         if type == 'BITBUCKET_CLOUD_APP_PASSWORD':
             return 'BitbucketCloudAppPasswordConnectionSummary'
+
+        if type == 'VBS_ACCESS_TOKEN':
+            return 'VbsAccessTokenConnectionSummary'
 
         if type == 'GITHUB_ACCESS_TOKEN':
             return 'GithubAccessTokenConnectionSummary'

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class StaticDateRange(DateRange):
     """
-    The saved static date range (Required when dynamicDateRange is missing).
+    The saved static date range (required when the dynamic date range is missing).
     """
 
     def __init__(self, **kwargs):

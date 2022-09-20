@@ -25,6 +25,10 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
     #: This constant has a value of "HISTORIC_LIVE"
     COLLECTION_TYPE_HISTORIC_LIVE = "HISTORIC_LIVE"
 
+    #: A constant which can be used with the log_set_key property of a CreateLogAnalyticsObjectCollectionRuleDetails.
+    #: This constant has a value of "OBJECT_PATH"
+    LOG_SET_KEY_OBJECT_PATH = "OBJECT_PATH"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateLogAnalyticsObjectCollectionRuleDetails object with values from keyword arguments.
@@ -83,6 +87,23 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
             The value to assign to the is_enabled property of this CreateLogAnalyticsObjectCollectionRuleDetails.
         :type is_enabled: bool
 
+        :param timezone:
+            The value to assign to the timezone property of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        :type timezone: str
+
+        :param log_set:
+            The value to assign to the log_set property of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        :type log_set: str
+
+        :param log_set_key:
+            The value to assign to the log_set_key property of this CreateLogAnalyticsObjectCollectionRuleDetails.
+            Allowed values for this property are: "OBJECT_PATH"
+        :type log_set_key: str
+
+        :param log_set_ext_regex:
+            The value to assign to the log_set_ext_regex property of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        :type log_set_ext_regex: str
+
         :param overrides:
             The value to assign to the overrides property of this CreateLogAnalyticsObjectCollectionRuleDetails.
         :type overrides: dict(str, list[PropertyOverride])
@@ -114,6 +135,10 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
             'entity_id': 'str',
             'char_encoding': 'str',
             'is_enabled': 'bool',
+            'timezone': 'str',
+            'log_set': 'str',
+            'log_set_key': 'str',
+            'log_set_ext_regex': 'str',
             'overrides': 'dict(str, list[PropertyOverride])',
             'object_name_filters': 'list[str]',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -134,6 +159,10 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
             'entity_id': 'entityId',
             'char_encoding': 'charEncoding',
             'is_enabled': 'isEnabled',
+            'timezone': 'timezone',
+            'log_set': 'logSet',
+            'log_set_key': 'logSetKey',
+            'log_set_ext_regex': 'logSetExtRegex',
             'overrides': 'overrides',
             'object_name_filters': 'objectNameFilters',
             'defined_tags': 'definedTags',
@@ -153,6 +182,10 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
         self._entity_id = None
         self._char_encoding = None
         self._is_enabled = None
+        self._timezone = None
+        self._log_set = None
+        self._log_set_key = None
+        self._log_set_ext_regex = None
         self._overrides = None
         self._object_name_filters = None
         self._defined_tags = None
@@ -497,6 +530,120 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
         :type: bool
         """
         self._is_enabled = is_enabled
+
+    @property
+    def timezone(self):
+        """
+        Gets the timezone of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.
+        When this property is not specified, the timezone of the entity specified is used.
+        If the entity is also not specified or do not have a valid timezone then UTC is used.
+
+
+        :return: The timezone of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        :rtype: str
+        """
+        return self._timezone
+
+    @timezone.setter
+    def timezone(self, timezone):
+        """
+        Sets the timezone of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.
+        When this property is not specified, the timezone of the entity specified is used.
+        If the entity is also not specified or do not have a valid timezone then UTC is used.
+
+
+        :param timezone: The timezone of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        :type: str
+        """
+        self._timezone = timezone
+
+    @property
+    def log_set(self):
+        """
+        Gets the log_set of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data
+        and this feature has to be enabled for a given tenancy prior to its usage.
+        When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically
+        using logSetKey and logSetExtRegex.
+
+
+        :return: The log_set of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        :rtype: str
+        """
+        return self._log_set
+
+    @log_set.setter
+    def log_set(self, log_set):
+        """
+        Sets the log_set of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data
+        and this feature has to be enabled for a given tenancy prior to its usage.
+        When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically
+        using logSetKey and logSetExtRegex.
+
+
+        :param log_set: The log_set of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        :type: str
+        """
+        self._log_set = log_set
+
+    @property
+    def log_set_key(self):
+        """
+        Gets the log_set_key of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
+
+        Allowed values for this property are: "OBJECT_PATH"
+
+
+        :return: The log_set_key of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        :rtype: str
+        """
+        return self._log_set_key
+
+    @log_set_key.setter
+    def log_set_key(self, log_set_key):
+        """
+        Sets the log_set_key of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
+
+
+        :param log_set_key: The log_set_key of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        :type: str
+        """
+        allowed_values = ["OBJECT_PATH"]
+        if not value_allowed_none_or_none_sentinel(log_set_key, allowed_values):
+            raise ValueError(
+                "Invalid value for `log_set_key`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._log_set_key = log_set_key
+
+    @property
+    def log_set_ext_regex(self):
+        """
+        Gets the log_set_ext_regex of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+
+
+        :return: The log_set_ext_regex of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        :rtype: str
+        """
+        return self._log_set_ext_regex
+
+    @log_set_ext_regex.setter
+    def log_set_ext_regex(self, log_set_ext_regex):
+        """
+        Sets the log_set_ext_regex of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+
+
+        :param log_set_ext_regex: The log_set_ext_regex of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        :type: str
+        """
+        self._log_set_ext_regex = log_set_ext_regex
 
     @property
     def overrides(self):

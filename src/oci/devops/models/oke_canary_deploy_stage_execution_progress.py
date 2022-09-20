@@ -52,6 +52,10 @@ class OkeCanaryDeployStageExecutionProgress(DeployStageExecutionProgress):
             The value to assign to the deploy_stage_execution_progress_details property of this OkeCanaryDeployStageExecutionProgress.
         :type deploy_stage_execution_progress_details: list[oci.devops.models.DeployStageExecutionProgressDetails]
 
+        :param namespace:
+            The value to assign to the namespace property of this OkeCanaryDeployStageExecutionProgress.
+        :type namespace: str
+
         """
         self.swagger_types = {
             'deploy_stage_display_name': 'str',
@@ -61,7 +65,8 @@ class OkeCanaryDeployStageExecutionProgress(DeployStageExecutionProgress):
             'time_finished': 'datetime',
             'status': 'str',
             'deploy_stage_predecessors': 'DeployStagePredecessorCollection',
-            'deploy_stage_execution_progress_details': 'list[DeployStageExecutionProgressDetails]'
+            'deploy_stage_execution_progress_details': 'list[DeployStageExecutionProgressDetails]',
+            'namespace': 'str'
         }
 
         self.attribute_map = {
@@ -72,7 +77,8 @@ class OkeCanaryDeployStageExecutionProgress(DeployStageExecutionProgress):
             'time_finished': 'timeFinished',
             'status': 'status',
             'deploy_stage_predecessors': 'deployStagePredecessors',
-            'deploy_stage_execution_progress_details': 'deployStageExecutionProgressDetails'
+            'deploy_stage_execution_progress_details': 'deployStageExecutionProgressDetails',
+            'namespace': 'namespace'
         }
 
         self._deploy_stage_display_name = None
@@ -83,7 +89,32 @@ class OkeCanaryDeployStageExecutionProgress(DeployStageExecutionProgress):
         self._status = None
         self._deploy_stage_predecessors = None
         self._deploy_stage_execution_progress_details = None
+        self._namespace = None
         self._deploy_stage_type = 'OKE_CANARY_DEPLOYMENT'
+
+    @property
+    def namespace(self):
+        """
+        Gets the namespace of this OkeCanaryDeployStageExecutionProgress.
+        The namespace of OKE Canary deployment.
+
+
+        :return: The namespace of this OkeCanaryDeployStageExecutionProgress.
+        :rtype: str
+        """
+        return self._namespace
+
+    @namespace.setter
+    def namespace(self, namespace):
+        """
+        Sets the namespace of this OkeCanaryDeployStageExecutionProgress.
+        The namespace of OKE Canary deployment.
+
+
+        :param namespace: The namespace of this OkeCanaryDeployStageExecutionProgress.
+        :type: str
+        """
+        self._namespace = namespace
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -38,14 +38,20 @@ Golden Gate
     oci.golden_gate.models.DeploymentBackupCollection
     oci.golden_gate.models.DeploymentBackupSummary
     oci.golden_gate.models.DeploymentCollection
+    oci.golden_gate.models.DeploymentMessageCollection
     oci.golden_gate.models.DeploymentSummary
     oci.golden_gate.models.DeploymentUpgrade
     oci.golden_gate.models.DeploymentUpgradeCollection
     oci.golden_gate.models.DeploymentUpgradeSummary
+    oci.golden_gate.models.MessageSummary
     oci.golden_gate.models.OggDeployment
     oci.golden_gate.models.RestoreDeploymentDetails
     oci.golden_gate.models.StartDeploymentDetails
     oci.golden_gate.models.StopDeploymentDetails
+    oci.golden_gate.models.TrailFileCollection
+    oci.golden_gate.models.TrailFileSummary
+    oci.golden_gate.models.TrailSequenceCollection
+    oci.golden_gate.models.TrailSequenceSummary
     oci.golden_gate.models.UpdateDatabaseRegistrationDetails
     oci.golden_gate.models.UpdateDeploymentBackupDetails
     oci.golden_gate.models.UpdateDeploymentDetails

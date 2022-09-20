@@ -7,8 +7,10 @@ from __future__ import absolute_import
 from .data_attribution import DataAttribution
 from .data_visibility import DataVisibility
 from .entity_reference import EntityReference
+from .geodata_details import GeodataDetails
 from .indicator import Indicator
 from .indicator_attribute import IndicatorAttribute
+from .indicator_attribute_summary import IndicatorAttributeSummary
 from .indicator_count_collection import IndicatorCountCollection
 from .indicator_count_dimensions import IndicatorCountDimensions
 from .indicator_count_summary import IndicatorCountSummary
@@ -17,6 +19,7 @@ from .indicator_relationship import IndicatorRelationship
 from .indicator_source_summary import IndicatorSourceSummary
 from .indicator_summary import IndicatorSummary
 from .indicator_summary_collection import IndicatorSummaryCollection
+from .summarize_indicators_details import SummarizeIndicatorsDetails
 from .threat_type import ThreatType
 from .threat_type_summary import ThreatTypeSummary
 from .threat_types_collection import ThreatTypesCollection
@@ -26,8 +29,10 @@ threat_intelligence_type_mapping = {
     "DataAttribution": DataAttribution,
     "DataVisibility": DataVisibility,
     "EntityReference": EntityReference,
+    "GeodataDetails": GeodataDetails,
     "Indicator": Indicator,
     "IndicatorAttribute": IndicatorAttribute,
+    "IndicatorAttributeSummary": IndicatorAttributeSummary,
     "IndicatorCountCollection": IndicatorCountCollection,
     "IndicatorCountDimensions": IndicatorCountDimensions,
     "IndicatorCountSummary": IndicatorCountSummary,
@@ -36,6 +41,7 @@ threat_intelligence_type_mapping = {
     "IndicatorSourceSummary": IndicatorSourceSummary,
     "IndicatorSummary": IndicatorSummary,
     "IndicatorSummaryCollection": IndicatorSummaryCollection,
+    "SummarizeIndicatorsDetails": SummarizeIndicatorsDetails,
     "ThreatType": ThreatType,
     "ThreatTypeSummary": ThreatTypeSummary,
     "ThreatTypesCollection": ThreatTypesCollection

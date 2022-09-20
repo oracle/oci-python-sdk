@@ -20,6 +20,7 @@ class TriggerCreateResult(object):
 
         * :class:`~oci.devops.models.GitlabServerTriggerCreateResult`
         * :class:`~oci.devops.models.GithubTriggerCreateResult`
+        * :class:`~oci.devops.models.VbsTriggerCreateResult`
         * :class:`~oci.devops.models.GitlabTriggerCreateResult`
         * :class:`~oci.devops.models.DevopsCodeRepositoryTriggerCreateResult`
         * :class:`~oci.devops.models.BitbucketCloudTriggerCreateResult`
@@ -146,6 +147,9 @@ class TriggerCreateResult(object):
 
         if type == 'GITHUB':
             return 'GithubTriggerCreateResult'
+
+        if type == 'VBS':
+            return 'VbsTriggerCreateResult'
 
         if type == 'GITLAB':
             return 'GitlabTriggerCreateResult'

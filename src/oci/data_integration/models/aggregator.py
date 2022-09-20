@@ -21,7 +21,7 @@ class Aggregator(Operator):
 
         :param model_type:
             The value to assign to the model_type property of this Aggregator.
-            Allowed values for this property are: "SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "FLATTEN_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR", "UNION_OPERATOR", "INTERSECT_OPERATOR", "MINUS_OPERATOR", "MERGE_OPERATOR", "FUNCTION_OPERATOR", "SPLIT_OPERATOR", "START_OPERATOR", "END_OPERATOR", "PIPELINE_OPERATOR", "TASK_OPERATOR", "EXPRESSION_OPERATOR", "LOOKUP_OPERATOR", "PIVOT_OPERATOR"
+            Allowed values for this property are: "SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "FLATTEN_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR", "UNION_OPERATOR", "INTERSECT_OPERATOR", "MINUS_OPERATOR", "MERGE_OPERATOR", "FUNCTION_OPERATOR", "SPLIT_OPERATOR", "START_OPERATOR", "END_OPERATOR", "PIPELINE_OPERATOR", "DECISION_OPERATOR", "TASK_OPERATOR", "EXPRESSION_OPERATOR", "LOOKUP_OPERATOR", "PIVOT_OPERATOR"
         :type model_type: str
 
         :param key:
@@ -76,6 +76,10 @@ class Aggregator(Operator):
             The value to assign to the group_by_columns property of this Aggregator.
         :type group_by_columns: oci.data_integration.models.DynamicProxyField
 
+        :param materialized_group_by_columns:
+            The value to assign to the materialized_group_by_columns property of this Aggregator.
+        :type materialized_group_by_columns: oci.data_integration.models.MaterializedDynamicField
+
         """
         self.swagger_types = {
             'model_type': 'str',
@@ -91,7 +95,8 @@ class Aggregator(Operator):
             'identifier': 'str',
             'parameters': 'list[Parameter]',
             'op_config_values': 'ConfigValues',
-            'group_by_columns': 'DynamicProxyField'
+            'group_by_columns': 'DynamicProxyField',
+            'materialized_group_by_columns': 'MaterializedDynamicField'
         }
 
         self.attribute_map = {
@@ -108,7 +113,8 @@ class Aggregator(Operator):
             'identifier': 'identifier',
             'parameters': 'parameters',
             'op_config_values': 'opConfigValues',
-            'group_by_columns': 'groupByColumns'
+            'group_by_columns': 'groupByColumns',
+            'materialized_group_by_columns': 'materializedGroupByColumns'
         }
 
         self._model_type = None
@@ -125,6 +131,7 @@ class Aggregator(Operator):
         self._parameters = None
         self._op_config_values = None
         self._group_by_columns = None
+        self._materialized_group_by_columns = None
         self._model_type = 'AGGREGATOR_OPERATOR'
 
     @property
@@ -146,6 +153,26 @@ class Aggregator(Operator):
         :type: oci.data_integration.models.DynamicProxyField
         """
         self._group_by_columns = group_by_columns
+
+    @property
+    def materialized_group_by_columns(self):
+        """
+        Gets the materialized_group_by_columns of this Aggregator.
+
+        :return: The materialized_group_by_columns of this Aggregator.
+        :rtype: oci.data_integration.models.MaterializedDynamicField
+        """
+        return self._materialized_group_by_columns
+
+    @materialized_group_by_columns.setter
+    def materialized_group_by_columns(self, materialized_group_by_columns):
+        """
+        Sets the materialized_group_by_columns of this Aggregator.
+
+        :param materialized_group_by_columns: The materialized_group_by_columns of this Aggregator.
+        :type: oci.data_integration.models.MaterializedDynamicField
+        """
+        self._materialized_group_by_columns = materialized_group_by_columns
 
     def __repr__(self):
         return formatted_flat_dict(self)

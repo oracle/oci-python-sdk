@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class IndicatorCountDimensions(object):
     """
-    Dimensions characterizing the group
+    The indicator dimension that was counted, such as the indicator type.
     """
 
     #: A constant which can be used with the type property of a IndicatorCountDimensions.
@@ -74,7 +74,7 @@ class IndicatorCountDimensions(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this IndicatorCountDimensions.
-        Compartment Identifier
+        The compartment OCID that contains the indicator type.
 
 
         :return: The compartment_id of this IndicatorCountDimensions.
@@ -86,7 +86,7 @@ class IndicatorCountDimensions(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this IndicatorCountDimensions.
-        Compartment Identifier
+        The compartment OCID that contains the indicator type.
 
 
         :param compartment_id: The compartment_id of this IndicatorCountDimensions.
@@ -98,7 +98,7 @@ class IndicatorCountDimensions(object):
     def type(self):
         """
         Gets the type of this IndicatorCountDimensions.
-        The indicator type that corresponds to the count.
+        The indicator type that was counted.
 
         Allowed values for this property are: "DOMAIN_NAME", "FILE_NAME", "MD5_HASH", "SHA1_HASH", "SHA256_HASH", "IP_ADDRESS", "URL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -113,7 +113,7 @@ class IndicatorCountDimensions(object):
     def type(self, type):
         """
         Sets the type of this IndicatorCountDimensions.
-        The indicator type that corresponds to the count.
+        The indicator type that was counted.
 
 
         :param type: The type of this IndicatorCountDimensions.

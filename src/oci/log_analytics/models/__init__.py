@@ -12,6 +12,8 @@ from .abstract_parser_test_result_log_line import AbstractParserTestResultLogLin
 from .action import Action
 from .add_entity_association_details import AddEntityAssociationDetails
 from .add_fields_command_descriptor import AddFieldsCommandDescriptor
+from .add_insights_command_descriptor import AddInsightsCommandDescriptor
+from .anomaly_command_descriptor import AnomalyCommandDescriptor
 from .archiving_configuration import ArchivingConfiguration
 from .argument import Argument
 from .associable_entity import AssociableEntity
@@ -23,6 +25,7 @@ from .auto_lookups import AutoLookups
 from .bottom_command_descriptor import BottomCommandDescriptor
 from .bucket_command_descriptor import BucketCommandDescriptor
 from .bucket_range import BucketRange
+from .change_ingest_time_rule_compartment_details import ChangeIngestTimeRuleCompartmentDetails
 from .change_log_analytics_em_bridge_compartment_details import ChangeLogAnalyticsEmBridgeCompartmentDetails
 from .change_log_analytics_entity_compartment_details import ChangeLogAnalyticsEntityCompartmentDetails
 from .change_log_analytics_log_group_compartment_details import ChangeLogAnalyticsLogGroupCompartmentDetails
@@ -46,6 +49,7 @@ from .compare_content_details import CompareContentDetails
 from .compare_content_result import CompareContentResult
 from .compare_line_result import CompareLineResult
 from .create_acceleration_task_details import CreateAccelerationTaskDetails
+from .create_ingest_time_rule_details import CreateIngestTimeRuleDetails
 from .create_log_analytics_em_bridge_details import CreateLogAnalyticsEmBridgeDetails
 from .create_log_analytics_entity_details import CreateLogAnalyticsEntityDetails
 from .create_log_analytics_entity_type_details import CreateLogAnalyticsEntityTypeDetails
@@ -56,6 +60,7 @@ from .create_standard_task_details import CreateStandardTaskDetails
 from .create_view_command_descriptor import CreateViewCommandDescriptor
 from .creation_source import CreationSource
 from .cron_schedule import CronSchedule
+from .dedup_command_descriptor import DedupCommandDescriptor
 from .delete_command_descriptor import DeleteCommandDescriptor
 from .delete_log_analytics_association import DeleteLogAnalyticsAssociation
 from .delete_log_analytics_association_details import DeleteLogAnalyticsAssociationDetails
@@ -106,6 +111,15 @@ from .highlight_command_descriptor import HighlightCommandDescriptor
 from .highlight_groups_command_descriptor import HighlightGroupsCommandDescriptor
 from .highlight_rows_command_descriptor import HighlightRowsCommandDescriptor
 from .indexes import Indexes
+from .ingest_time_rule import IngestTimeRule
+from .ingest_time_rule_action import IngestTimeRuleAction
+from .ingest_time_rule_additional_field_condition import IngestTimeRuleAdditionalFieldCondition
+from .ingest_time_rule_condition import IngestTimeRuleCondition
+from .ingest_time_rule_field_condition import IngestTimeRuleFieldCondition
+from .ingest_time_rule_metric_extraction_action import IngestTimeRuleMetricExtractionAction
+from .ingest_time_rule_resource import IngestTimeRuleResource
+from .ingest_time_rule_summary import IngestTimeRuleSummary
+from .ingest_time_rule_summary_collection import IngestTimeRuleSummaryCollection
 from .json_extract_command_descriptor import JsonExtractCommandDescriptor
 from .label_names import LabelNames
 from .label_priority import LabelPriority
@@ -216,6 +230,7 @@ from .macro_command_descriptor import MacroCommandDescriptor
 from .map_command_descriptor import MapCommandDescriptor
 from .match_info import MatchInfo
 from .metric_extraction import MetricExtraction
+from .module_command_descriptor import ModuleCommandDescriptor
 from .multi_search_command_descriptor import MultiSearchCommandDescriptor
 from .namespace import Namespace
 from .namespace_collection import NamespaceCollection
@@ -244,6 +259,9 @@ from .release_recalled_data_details import ReleaseRecalledDataDetails
 from .remove_entity_associations_details import RemoveEntityAssociationsDetails
 from .rename_command_descriptor import RenameCommandDescriptor
 from .result_column import ResultColumn
+from .rule import Rule
+from .rule_summary import RuleSummary
+from .rule_summary_collection import RuleSummaryCollection
 from .schedule import Schedule
 from .scheduled_task import ScheduledTask
 from .scheduled_task_collection import ScheduledTaskCollection
@@ -273,10 +291,16 @@ from .suggest_details import SuggestDetails
 from .suggest_output import SuggestOutput
 from .tail_command_descriptor import TailCommandDescriptor
 from .test_parser_payload_details import TestParserPayloadDetails
+from .time_cluster_column import TimeClusterColumn
+from .time_cluster_command_descriptor import TimeClusterCommandDescriptor
+from .time_cluster_data_column import TimeClusterDataColumn
 from .time_column import TimeColumn
 from .time_compare_command_descriptor import TimeCompareCommandDescriptor
 from .time_range import TimeRange
+from .time_stats_cluster import TimeStatsCluster
+from .time_stats_column import TimeStatsColumn
 from .time_stats_command_descriptor import TimeStatsCommandDescriptor
+from .time_stats_data_column import TimeStatsDataColumn
 from .timezone_collection import TimezoneCollection
 from .top_command_descriptor import TopCommandDescriptor
 from .trend_column import TrendColumn
@@ -330,6 +354,8 @@ log_analytics_type_mapping = {
     "Action": Action,
     "AddEntityAssociationDetails": AddEntityAssociationDetails,
     "AddFieldsCommandDescriptor": AddFieldsCommandDescriptor,
+    "AddInsightsCommandDescriptor": AddInsightsCommandDescriptor,
+    "AnomalyCommandDescriptor": AnomalyCommandDescriptor,
     "ArchivingConfiguration": ArchivingConfiguration,
     "Argument": Argument,
     "AssociableEntity": AssociableEntity,
@@ -341,6 +367,7 @@ log_analytics_type_mapping = {
     "BottomCommandDescriptor": BottomCommandDescriptor,
     "BucketCommandDescriptor": BucketCommandDescriptor,
     "BucketRange": BucketRange,
+    "ChangeIngestTimeRuleCompartmentDetails": ChangeIngestTimeRuleCompartmentDetails,
     "ChangeLogAnalyticsEmBridgeCompartmentDetails": ChangeLogAnalyticsEmBridgeCompartmentDetails,
     "ChangeLogAnalyticsEntityCompartmentDetails": ChangeLogAnalyticsEntityCompartmentDetails,
     "ChangeLogAnalyticsLogGroupCompartmentDetails": ChangeLogAnalyticsLogGroupCompartmentDetails,
@@ -364,6 +391,7 @@ log_analytics_type_mapping = {
     "CompareContentResult": CompareContentResult,
     "CompareLineResult": CompareLineResult,
     "CreateAccelerationTaskDetails": CreateAccelerationTaskDetails,
+    "CreateIngestTimeRuleDetails": CreateIngestTimeRuleDetails,
     "CreateLogAnalyticsEmBridgeDetails": CreateLogAnalyticsEmBridgeDetails,
     "CreateLogAnalyticsEntityDetails": CreateLogAnalyticsEntityDetails,
     "CreateLogAnalyticsEntityTypeDetails": CreateLogAnalyticsEntityTypeDetails,
@@ -374,6 +402,7 @@ log_analytics_type_mapping = {
     "CreateViewCommandDescriptor": CreateViewCommandDescriptor,
     "CreationSource": CreationSource,
     "CronSchedule": CronSchedule,
+    "DedupCommandDescriptor": DedupCommandDescriptor,
     "DeleteCommandDescriptor": DeleteCommandDescriptor,
     "DeleteLogAnalyticsAssociation": DeleteLogAnalyticsAssociation,
     "DeleteLogAnalyticsAssociationDetails": DeleteLogAnalyticsAssociationDetails,
@@ -424,6 +453,15 @@ log_analytics_type_mapping = {
     "HighlightGroupsCommandDescriptor": HighlightGroupsCommandDescriptor,
     "HighlightRowsCommandDescriptor": HighlightRowsCommandDescriptor,
     "Indexes": Indexes,
+    "IngestTimeRule": IngestTimeRule,
+    "IngestTimeRuleAction": IngestTimeRuleAction,
+    "IngestTimeRuleAdditionalFieldCondition": IngestTimeRuleAdditionalFieldCondition,
+    "IngestTimeRuleCondition": IngestTimeRuleCondition,
+    "IngestTimeRuleFieldCondition": IngestTimeRuleFieldCondition,
+    "IngestTimeRuleMetricExtractionAction": IngestTimeRuleMetricExtractionAction,
+    "IngestTimeRuleResource": IngestTimeRuleResource,
+    "IngestTimeRuleSummary": IngestTimeRuleSummary,
+    "IngestTimeRuleSummaryCollection": IngestTimeRuleSummaryCollection,
     "JsonExtractCommandDescriptor": JsonExtractCommandDescriptor,
     "LabelNames": LabelNames,
     "LabelPriority": LabelPriority,
@@ -534,6 +572,7 @@ log_analytics_type_mapping = {
     "MapCommandDescriptor": MapCommandDescriptor,
     "MatchInfo": MatchInfo,
     "MetricExtraction": MetricExtraction,
+    "ModuleCommandDescriptor": ModuleCommandDescriptor,
     "MultiSearchCommandDescriptor": MultiSearchCommandDescriptor,
     "Namespace": Namespace,
     "NamespaceCollection": NamespaceCollection,
@@ -562,6 +601,9 @@ log_analytics_type_mapping = {
     "RemoveEntityAssociationsDetails": RemoveEntityAssociationsDetails,
     "RenameCommandDescriptor": RenameCommandDescriptor,
     "ResultColumn": ResultColumn,
+    "Rule": Rule,
+    "RuleSummary": RuleSummary,
+    "RuleSummaryCollection": RuleSummaryCollection,
     "Schedule": Schedule,
     "ScheduledTask": ScheduledTask,
     "ScheduledTaskCollection": ScheduledTaskCollection,
@@ -591,10 +633,16 @@ log_analytics_type_mapping = {
     "SuggestOutput": SuggestOutput,
     "TailCommandDescriptor": TailCommandDescriptor,
     "TestParserPayloadDetails": TestParserPayloadDetails,
+    "TimeClusterColumn": TimeClusterColumn,
+    "TimeClusterCommandDescriptor": TimeClusterCommandDescriptor,
+    "TimeClusterDataColumn": TimeClusterDataColumn,
     "TimeColumn": TimeColumn,
     "TimeCompareCommandDescriptor": TimeCompareCommandDescriptor,
     "TimeRange": TimeRange,
+    "TimeStatsCluster": TimeStatsCluster,
+    "TimeStatsColumn": TimeStatsColumn,
     "TimeStatsCommandDescriptor": TimeStatsCommandDescriptor,
+    "TimeStatsDataColumn": TimeStatsDataColumn,
     "TimezoneCollection": TimezoneCollection,
     "TopCommandDescriptor": TopCommandDescriptor,
     "TrendColumn": TrendColumn,

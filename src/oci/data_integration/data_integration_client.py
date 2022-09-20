@@ -7366,6 +7366,225 @@ class DataIntegrationClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
+    def get_runtime_operator(self, workspace_id, application_key, runtime_pipeline_key, runtime_operator_key, **kwargs):
+        """
+        Retrieves a runtime operator using the specified identifier.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str application_key: (required)
+            The application key.
+
+        :param str runtime_pipeline_key: (required)
+            Runtime Pipeline Key
+
+        :param str runtime_operator_key: (required)
+            Runtime Operator Key
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.RuntimeOperator`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_runtime_operator.py.html>`__ to see an example of how to use get_runtime_operator API.
+        """
+        resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/runtimePipelines/{runtimePipelineKey}/runtimeOperators/{runtimeOperatorKey}"
+        method = "GET"
+        operation_name = "get_runtime_operator"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/RuntimeOperator/GetRuntimeOperator"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_runtime_operator got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "applicationKey": application_key,
+            "runtimePipelineKey": runtime_pipeline_key,
+            "runtimeOperatorKey": runtime_operator_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="RuntimeOperator",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="RuntimeOperator",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def get_runtime_pipeline(self, workspace_id, application_key, runtime_pipeline_key, **kwargs):
+        """
+        Retrieves a runtime pipeline using the specified identifier.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str application_key: (required)
+            The application key.
+
+        :param str runtime_pipeline_key: (required)
+            Runtime Pipeline Key
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param str expand_references: (optional)
+            Used to expand references of the object. If value is true, then all referenced objects are expanded. If value is false, then shallow objects are returned in place of references. Default is false. <br><br><B>Example:</B><br> <ul> <li><B>?expandReferences=true</B> returns all objects of type data loader task</li> </ul>
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.RuntimePipeline`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_runtime_pipeline.py.html>`__ to see an example of how to use get_runtime_pipeline API.
+        """
+        resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/runtimePipelines/{runtimePipelineKey}"
+        method = "GET"
+        operation_name = "get_runtime_pipeline"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/RuntimePipeline/GetRuntimePipeline"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "expand_references"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_runtime_pipeline got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "applicationKey": application_key,
+            "runtimePipelineKey": runtime_pipeline_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "expandReferences": kwargs.get("expand_references", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="RuntimePipeline",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="RuntimePipeline",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
     def get_schedule(self, workspace_id, application_key, schedule_key, **kwargs):
         """
         Retrieves schedule by schedule key
@@ -8403,7 +8622,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -8470,7 +8689,7 @@ class DataIntegrationClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -8560,7 +8779,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -8625,7 +8844,7 @@ class DataIntegrationClient(object):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -8722,7 +8941,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -8786,7 +9005,7 @@ class DataIntegrationClient(object):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -8877,7 +9096,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -8944,7 +9163,7 @@ class DataIntegrationClient(object):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -9043,7 +9262,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -9060,6 +9279,9 @@ class DataIntegrationClient(object):
 
         :param bool is_pattern: (optional)
             This parameter can be used to specify whether entity search type is pattern search or not.
+
+        :param list[str] include_types: (optional)
+            Artifact type which needs to be listed while listing Artifacts.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -9097,7 +9319,8 @@ class DataIntegrationClient(object):
             "sort_order",
             "opc_request_id",
             "name_list",
-            "is_pattern"
+            "is_pattern",
+            "include_types"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -9117,7 +9340,7 @@ class DataIntegrationClient(object):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -9139,7 +9362,8 @@ class DataIntegrationClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "nameList": self.base_client.generate_collection_format_param(kwargs.get("name_list", missing), 'multi'),
-            "isPattern": kwargs.get("is_pattern", missing)
+            "isPattern": kwargs.get("is_pattern", missing),
+            "includeTypes": self.base_client.generate_collection_format_param(kwargs.get("include_types", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -9215,7 +9439,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -9280,7 +9504,7 @@ class DataIntegrationClient(object):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -9387,7 +9611,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -9449,7 +9673,7 @@ class DataIntegrationClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -9557,7 +9781,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -9627,7 +9851,7 @@ class DataIntegrationClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -9686,6 +9910,182 @@ class DataIntegrationClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
+    def list_dis_application_task_run_lineages(self, workspace_id, dis_application_id, **kwargs):
+        """
+        This endpoint can be used to list Task Run Lineages within a given time window.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str dis_application_id: (required)
+            The OCID of the DIS Application.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param list[str] fields: (optional)
+            Specifies the fields to get for an object.
+
+        :param str page: (optional)
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param int limit: (optional)
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
+
+        :param list[str] filter: (optional)
+            This filter parameter can be used to filter by model specific queryable fields of the object <br><br><B>Examples:-</B><br> <ul> <li><B>?filter=status eq Failed</B> returns all objects that have a status field with value Failed</li> </ul>
+
+        :param datetime time_updated_greater_than: (optional)
+            This parameter allows users to get objects which were updated after a certain time. The format of timeUpdatedGreaterThan is \"YYYY-MM-dd'T'HH:mm:ss.SSS'Z'\"
+
+        :param datetime time_updated_greater_than_or_equal_to: (optional)
+            This parameter allows users to get objects which were updated after and at a certain time. The format of timeUpdatedGreaterThanOrEqualTo is \"YYYY-MM-dd'T'HH:mm:ss.SSS'Z'\"
+
+        :param datetime time_upated_less_than: (optional)
+            This parameter allows users to get objects which were updated before a certain time. The format of timeUpatedLessThan is \"YYYY-MM-dd'T'HH:mm:ss.SSS'Z'\"
+
+        :param datetime time_upated_less_than_or_equal_to: (optional)
+            This parameter allows users to get objects which were updated before and at a certain time. The format of timeUpatedLessThanOrEqualTo is \"YYYY-MM-dd'T'HH:mm:ss.SSS'Z'\"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.TaskRunLineageSummaryCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_dis_application_task_run_lineages.py.html>`__ to see an example of how to use list_dis_application_task_run_lineages API.
+        """
+        resource_path = "/workspaces/{workspaceId}/disApplications/{disApplicationId}/taskRunLineages"
+        method = "GET"
+        operation_name = "list_dis_application_task_run_lineages"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRunLineageSummaryCollection/ListDisApplicationTaskRunLineages"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "fields",
+            "page",
+            "limit",
+            "sort_order",
+            "sort_by",
+            "filter",
+            "time_updated_greater_than",
+            "time_updated_greater_than_or_equal_to",
+            "time_upated_less_than",
+            "time_upated_less_than_or_equal_to"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_dis_application_task_run_lineages got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "disApplicationId": dis_application_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "filter": self.base_client.generate_collection_format_param(kwargs.get("filter", missing), 'multi'),
+            "timeUpdatedGreaterThan": kwargs.get("time_updated_greater_than", missing),
+            "timeUpdatedGreaterThanOrEqualTo": kwargs.get("time_updated_greater_than_or_equal_to", missing),
+            "timeUpatedLessThan": kwargs.get("time_upated_less_than", missing),
+            "timeUpatedLessThanOrEqualTo": kwargs.get("time_upated_less_than_or_equal_to", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="TaskRunLineageSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="TaskRunLineageSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
     def list_dis_applications(self, workspace_id, compartment_id, **kwargs):
         """
         Retrieves a list of DIS Applications in a compartment and provides options to filter the list.
@@ -9727,7 +10127,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -9794,7 +10194,7 @@ class DataIntegrationClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -9895,7 +10295,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -9957,7 +10357,7 @@ class DataIntegrationClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -10048,7 +10448,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -10114,7 +10514,7 @@ class DataIntegrationClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -10215,7 +10615,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -10278,7 +10678,7 @@ class DataIntegrationClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -10379,7 +10779,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -10441,7 +10841,7 @@ class DataIntegrationClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -10536,7 +10936,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -10603,7 +11003,7 @@ class DataIntegrationClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -10697,7 +11097,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -10764,7 +11164,7 @@ class DataIntegrationClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -10853,7 +11253,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -10918,7 +11318,7 @@ class DataIntegrationClient(object):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -11025,7 +11425,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -11087,7 +11487,7 @@ class DataIntegrationClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -11187,7 +11587,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -11249,7 +11649,7 @@ class DataIntegrationClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -11360,7 +11760,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -11431,7 +11831,7 @@ class DataIntegrationClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -11528,7 +11928,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -11588,7 +11988,7 @@ class DataIntegrationClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -11642,6 +12042,362 @@ class DataIntegrationClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
+    def list_runtime_operators(self, workspace_id, application_key, runtime_pipeline_key, **kwargs):
+        """
+        This endpoint can be used to list runtime operators with filtering options
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str application_key: (required)
+            The application key.
+
+        :param str runtime_pipeline_key: (required)
+            Runtime Pipeline Key
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param list[str] key: (optional)
+            Used to filter by the key of the object.
+
+        :param list[str] fields: (optional)
+            Specifies the fields to get for an object.
+
+        :param str name: (optional)
+            Used to filter by the name of the object.
+
+        :param list[str] identifier: (optional)
+            Used to filter by the identifier of the object.
+
+        :param str page: (optional)
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param int limit: (optional)
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
+
+        :param list[str] aggregator_type: (optional)
+            Unique type of the aggregator
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.RuntimeOperatorSummaryCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_runtime_operators.py.html>`__ to see an example of how to use list_runtime_operators API.
+        """
+        resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/runtimePipelines/{runtimePipelineKey}/runtimeOperators"
+        method = "GET"
+        operation_name = "list_runtime_operators"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/RuntimeOperatorSummaryCollection/ListRuntimeOperators"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "key",
+            "fields",
+            "name",
+            "identifier",
+            "page",
+            "limit",
+            "sort_order",
+            "sort_by",
+            "aggregator_type"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_runtime_operators got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "applicationKey": application_key,
+            "runtimePipelineKey": runtime_pipeline_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "key": self.base_client.generate_collection_format_param(kwargs.get("key", missing), 'multi'),
+            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
+            "name": kwargs.get("name", missing),
+            "identifier": self.base_client.generate_collection_format_param(kwargs.get("identifier", missing), 'multi'),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "aggregatorType": self.base_client.generate_collection_format_param(kwargs.get("aggregator_type", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="RuntimeOperatorSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="RuntimeOperatorSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
+    def list_runtime_pipelines(self, workspace_id, application_key, **kwargs):
+        """
+        This endpoint can be used to list runtime pipelines with filtering options
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str application_key: (required)
+            The application key.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param list[str] key: (optional)
+            Used to filter by the key of the object.
+
+        :param str aggregator_key: (optional)
+            Unique key of the aggregator
+
+        :param list[str] fields: (optional)
+            Specifies the fields to get for an object.
+
+        :param str name: (optional)
+            Used to filter by the name of the object.
+
+        :param list[str] identifier: (optional)
+            Used to filter by the identifier of the object.
+
+        :param str page: (optional)
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param int limit: (optional)
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
+
+        :param list[str] aggregator_type: (optional)
+            Unique type of the aggregator
+
+        :param list[str] filter: (optional)
+            This filter parameter can be used to filter by model specific queryable fields of the object <br><br><B>Examples:-</B><br> <ul> <li><B>?filter=status eq Failed</B> returns all objects that have a status field with value Failed</li> </ul>
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.RuntimePipelineSummaryCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_runtime_pipelines.py.html>`__ to see an example of how to use list_runtime_pipelines API.
+        """
+        resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/runtimePipelines"
+        method = "GET"
+        operation_name = "list_runtime_pipelines"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/RuntimePipelineSummaryCollection/ListRuntimePipelines"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "key",
+            "aggregator_key",
+            "fields",
+            "name",
+            "identifier",
+            "page",
+            "limit",
+            "sort_order",
+            "sort_by",
+            "aggregator_type",
+            "filter"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_runtime_pipelines got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "applicationKey": application_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "key": self.base_client.generate_collection_format_param(kwargs.get("key", missing), 'multi'),
+            "aggregatorKey": kwargs.get("aggregator_key", missing),
+            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
+            "name": kwargs.get("name", missing),
+            "identifier": self.base_client.generate_collection_format_param(kwargs.get("identifier", missing), 'multi'),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "aggregatorType": self.base_client.generate_collection_format_param(kwargs.get("aggregator_type", missing), 'multi'),
+            "filter": self.base_client.generate_collection_format_param(kwargs.get("filter", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="RuntimePipelineSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="RuntimePipelineSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
     def list_schedules(self, workspace_id, application_key, **kwargs):
         """
         Use this endpoint to list schedules.
@@ -11678,7 +12434,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -11744,7 +12500,7 @@ class DataIntegrationClient(object):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -11838,7 +12594,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -11855,6 +12611,9 @@ class DataIntegrationClient(object):
 
         :param list[str] name_list: (optional)
             Used to filter by the name of the object.
+
+        :param list[str] include_types: (optional)
+            Artifact type which needs to be listed while listing Artifacts.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -11890,7 +12649,8 @@ class DataIntegrationClient(object):
             "sort_order",
             "name",
             "opc_request_id",
-            "name_list"
+            "name_list",
+            "include_types"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -11909,7 +12669,7 @@ class DataIntegrationClient(object):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -11930,7 +12690,8 @@ class DataIntegrationClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "schemaResourceName": schema_resource_name,
             "name": kwargs.get("name", missing),
-            "nameList": self.base_client.generate_collection_format_param(kwargs.get("name_list", missing), 'multi')
+            "nameList": self.base_client.generate_collection_format_param(kwargs.get("name_list", missing), 'multi'),
+            "includeTypes": self.base_client.generate_collection_format_param(kwargs.get("include_types", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -11973,6 +12734,182 @@ class DataIntegrationClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
+    def list_task_run_lineages(self, workspace_id, application_key, **kwargs):
+        """
+        This endpoint can be used to list Task Run Lineages within a given time window.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str application_key: (required)
+            The application key.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param list[str] fields: (optional)
+            Specifies the fields to get for an object.
+
+        :param str page: (optional)
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param int limit: (optional)
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
+
+        :param list[str] filter: (optional)
+            This filter parameter can be used to filter by model specific queryable fields of the object <br><br><B>Examples:-</B><br> <ul> <li><B>?filter=status eq Failed</B> returns all objects that have a status field with value Failed</li> </ul>
+
+        :param datetime time_updated_greater_than: (optional)
+            This parameter allows users to get objects which were updated after a certain time. The format of timeUpdatedGreaterThan is \"YYYY-MM-dd'T'HH:mm:ss.SSS'Z'\"
+
+        :param datetime time_updated_greater_than_or_equal_to: (optional)
+            This parameter allows users to get objects which were updated after and at a certain time. The format of timeUpdatedGreaterThanOrEqualTo is \"YYYY-MM-dd'T'HH:mm:ss.SSS'Z'\"
+
+        :param datetime time_upated_less_than: (optional)
+            This parameter allows users to get objects which were updated before a certain time. The format of timeUpatedLessThan is \"YYYY-MM-dd'T'HH:mm:ss.SSS'Z'\"
+
+        :param datetime time_upated_less_than_or_equal_to: (optional)
+            This parameter allows users to get objects which were updated before and at a certain time. The format of timeUpatedLessThanOrEqualTo is \"YYYY-MM-dd'T'HH:mm:ss.SSS'Z'\"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.TaskRunLineageSummaryCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_task_run_lineages.py.html>`__ to see an example of how to use list_task_run_lineages API.
+        """
+        resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/taskRunLineages"
+        method = "GET"
+        operation_name = "list_task_run_lineages"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/TaskRunLineageSummaryCollection/ListTaskRunLineages"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "fields",
+            "page",
+            "limit",
+            "sort_order",
+            "sort_by",
+            "filter",
+            "time_updated_greater_than",
+            "time_updated_greater_than_or_equal_to",
+            "time_upated_less_than",
+            "time_upated_less_than_or_equal_to"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_task_run_lineages got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "applicationKey": application_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "filter": self.base_client.generate_collection_format_param(kwargs.get("filter", missing), 'multi'),
+            "timeUpdatedGreaterThan": kwargs.get("time_updated_greater_than", missing),
+            "timeUpdatedGreaterThanOrEqualTo": kwargs.get("time_updated_greater_than_or_equal_to", missing),
+            "timeUpatedLessThan": kwargs.get("time_upated_less_than", missing),
+            "timeUpatedLessThanOrEqualTo": kwargs.get("time_upated_less_than_or_equal_to", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="TaskRunLineageSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="TaskRunLineageSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
     def list_task_run_logs(self, workspace_id, application_key, task_run_key, **kwargs):
         """
         Gets log entries for task runs using its key.
@@ -12010,7 +12947,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -12070,7 +13007,7 @@ class DataIntegrationClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -12172,7 +13109,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param list[str] filter: (optional)
             This filter parameter can be used to filter by model specific queryable fields of the object <br><br><B>Examples:-</B><br> <ul> <li><B>?filter=status eq Failed</B> returns all objects that have a status field with value Failed</li> </ul>
@@ -12244,7 +13181,7 @@ class DataIntegrationClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -12340,7 +13277,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -12410,7 +13347,7 @@ class DataIntegrationClient(object):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -12508,7 +13445,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -12573,7 +13510,7 @@ class DataIntegrationClient(object):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -12686,7 +13623,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -12750,7 +13687,7 @@ class DataIntegrationClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -12842,7 +13779,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param str sort_order: (optional)
             Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
@@ -12907,7 +13844,7 @@ class DataIntegrationClient(object):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -13014,7 +13951,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -13076,7 +14013,7 @@ class DataIntegrationClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -13164,7 +14101,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -13222,7 +14159,7 @@ class DataIntegrationClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -13306,7 +14243,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -13364,7 +14301,7 @@ class DataIntegrationClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -13456,7 +14393,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -13513,7 +14450,7 @@ class DataIntegrationClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -13601,7 +14538,7 @@ class DataIntegrationClient(object):
         :param str sort_by: (optional)
             Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
-            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -13663,7 +14600,7 @@ class DataIntegrationClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)

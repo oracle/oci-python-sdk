@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class IndicatorReference(EntityReference):
     """
-    a reference to an Indicator resource
+    A reference to a threat indicator resource.
     """
 
     def __init__(self, **kwargs):
@@ -47,7 +47,7 @@ class IndicatorReference(EntityReference):
     def indicator_id(self):
         """
         **[Required]** Gets the indicator_id of this IndicatorReference.
-        the OCID of the referenced Indicator
+        The unique OCID of the referenced threat indicator.
 
 
         :return: The indicator_id of this IndicatorReference.
@@ -59,7 +59,7 @@ class IndicatorReference(EntityReference):
     def indicator_id(self, indicator_id):
         """
         Sets the indicator_id of this IndicatorReference.
-        the OCID of the referenced Indicator
+        The unique OCID of the referenced threat indicator.
 
 
         :param indicator_id: The indicator_id of this IndicatorReference.

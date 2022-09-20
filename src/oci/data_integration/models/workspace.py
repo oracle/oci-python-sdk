@@ -120,6 +120,18 @@ class Workspace(object):
             The value to assign to the id property of this Workspace.
         :type id: str
 
+        :param endpoint_id:
+            The value to assign to the endpoint_id property of this Workspace.
+        :type endpoint_id: str
+
+        :param endpoint_name:
+            The value to assign to the endpoint_name property of this Workspace.
+        :type endpoint_name: str
+
+        :param registry_id:
+            The value to assign to the registry_id property of this Workspace.
+        :type registry_id: str
+
         """
         self.swagger_types = {
             'vcn_id': 'str',
@@ -136,7 +148,10 @@ class Workspace(object):
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
             'state_message': 'str',
-            'id': 'str'
+            'id': 'str',
+            'endpoint_id': 'str',
+            'endpoint_name': 'str',
+            'registry_id': 'str'
         }
 
         self.attribute_map = {
@@ -154,7 +169,10 @@ class Workspace(object):
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             'state_message': 'stateMessage',
-            'id': 'id'
+            'id': 'id',
+            'endpoint_id': 'endpointId',
+            'endpoint_name': 'endpointName',
+            'registry_id': 'registryId'
         }
 
         self._vcn_id = None
@@ -172,6 +190,9 @@ class Workspace(object):
         self._lifecycle_state = None
         self._state_message = None
         self._id = None
+        self._endpoint_id = None
+        self._endpoint_name = None
+        self._registry_id = None
 
     @property
     def vcn_id(self):
@@ -576,6 +597,78 @@ class Workspace(object):
         :type: str
         """
         self._id = id
+
+    @property
+    def endpoint_id(self):
+        """
+        Gets the endpoint_id of this Workspace.
+        OCID of the private endpoint associated with the container/workspace.
+
+
+        :return: The endpoint_id of this Workspace.
+        :rtype: str
+        """
+        return self._endpoint_id
+
+    @endpoint_id.setter
+    def endpoint_id(self, endpoint_id):
+        """
+        Sets the endpoint_id of this Workspace.
+        OCID of the private endpoint associated with the container/workspace.
+
+
+        :param endpoint_id: The endpoint_id of this Workspace.
+        :type: str
+        """
+        self._endpoint_id = endpoint_id
+
+    @property
+    def endpoint_name(self):
+        """
+        Gets the endpoint_name of this Workspace.
+        Name of the private endpoint associated with the container/workspace.
+
+
+        :return: The endpoint_name of this Workspace.
+        :rtype: str
+        """
+        return self._endpoint_name
+
+    @endpoint_name.setter
+    def endpoint_name(self, endpoint_name):
+        """
+        Sets the endpoint_name of this Workspace.
+        Name of the private endpoint associated with the container/workspace.
+
+
+        :param endpoint_name: The endpoint_name of this Workspace.
+        :type: str
+        """
+        self._endpoint_name = endpoint_name
+
+    @property
+    def registry_id(self):
+        """
+        Gets the registry_id of this Workspace.
+        DCMS Registry ID associated with the container/workspace.
+
+
+        :return: The registry_id of this Workspace.
+        :rtype: str
+        """
+        return self._registry_id
+
+    @registry_id.setter
+    def registry_id(self, registry_id):
+        """
+        Sets the registry_id of this Workspace.
+        DCMS Registry ID associated with the container/workspace.
+
+
+        :param registry_id: The registry_id of this Workspace.
+        :type: str
+        """
+        self._registry_id = registry_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

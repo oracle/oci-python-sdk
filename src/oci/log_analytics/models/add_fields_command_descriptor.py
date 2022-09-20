@@ -21,7 +21,7 @@ class AddFieldsCommandDescriptor(AbstractCommandDescriptor):
 
         :param name:
             The value to assign to the name property of this AddFieldsCommandDescriptor.
-            Allowed values for this property are: "COMMAND", "SEARCH", "STATS", "GEO_STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "JSON_EXTRACT", "XML_EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", "COMPARE"
+            Allowed values for this property are: "COMMAND", "SEARCH", "STATS", "GEO_STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "JSON_EXTRACT", "XML_EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MODULE", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", "COMPARE", "ADD_INSIGHTS", "ANOMALY", "DEDUP", "TIME_CLUSTER"
         :type name: str
 
         :param display_query_string:
@@ -44,6 +44,10 @@ class AddFieldsCommandDescriptor(AbstractCommandDescriptor):
             The value to assign to the declared_fields property of this AddFieldsCommandDescriptor.
         :type declared_fields: list[oci.log_analytics.models.AbstractField]
 
+        :param is_hidden:
+            The value to assign to the is_hidden property of this AddFieldsCommandDescriptor.
+        :type is_hidden: bool
+
         :param sub_queries:
             The value to assign to the sub_queries property of this AddFieldsCommandDescriptor.
         :type sub_queries: list[oci.log_analytics.models.ParseQueryOutput]
@@ -56,6 +60,7 @@ class AddFieldsCommandDescriptor(AbstractCommandDescriptor):
             'category': 'str',
             'referenced_fields': 'list[AbstractField]',
             'declared_fields': 'list[AbstractField]',
+            'is_hidden': 'bool',
             'sub_queries': 'list[ParseQueryOutput]'
         }
 
@@ -66,6 +71,7 @@ class AddFieldsCommandDescriptor(AbstractCommandDescriptor):
             'category': 'category',
             'referenced_fields': 'referencedFields',
             'declared_fields': 'declaredFields',
+            'is_hidden': 'isHidden',
             'sub_queries': 'subQueries'
         }
 
@@ -75,6 +81,7 @@ class AddFieldsCommandDescriptor(AbstractCommandDescriptor):
         self._category = None
         self._referenced_fields = None
         self._declared_fields = None
+        self._is_hidden = None
         self._sub_queries = None
         self._name = 'ADD_FIELDS'
 

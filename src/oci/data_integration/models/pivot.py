@@ -21,7 +21,7 @@ class Pivot(Operator):
 
         :param model_type:
             The value to assign to the model_type property of this Pivot.
-            Allowed values for this property are: "SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "FLATTEN_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR", "UNION_OPERATOR", "INTERSECT_OPERATOR", "MINUS_OPERATOR", "MERGE_OPERATOR", "FUNCTION_OPERATOR", "SPLIT_OPERATOR", "START_OPERATOR", "END_OPERATOR", "PIPELINE_OPERATOR", "TASK_OPERATOR", "EXPRESSION_OPERATOR", "LOOKUP_OPERATOR", "PIVOT_OPERATOR"
+            Allowed values for this property are: "SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "FLATTEN_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR", "UNION_OPERATOR", "INTERSECT_OPERATOR", "MINUS_OPERATOR", "MERGE_OPERATOR", "FUNCTION_OPERATOR", "SPLIT_OPERATOR", "START_OPERATOR", "END_OPERATOR", "PIPELINE_OPERATOR", "DECISION_OPERATOR", "TASK_OPERATOR", "EXPRESSION_OPERATOR", "LOOKUP_OPERATOR", "PIVOT_OPERATOR"
         :type model_type: str
 
         :param key:
@@ -76,6 +76,10 @@ class Pivot(Operator):
             The value to assign to the group_by_columns property of this Pivot.
         :type group_by_columns: oci.data_integration.models.DynamicProxyField
 
+        :param materialized_group_by_columns:
+            The value to assign to the materialized_group_by_columns property of this Pivot.
+        :type materialized_group_by_columns: oci.data_integration.models.MaterializedDynamicField
+
         :param pivot_keys:
             The value to assign to the pivot_keys property of this Pivot.
         :type pivot_keys: oci.data_integration.models.PivotKeys
@@ -96,6 +100,7 @@ class Pivot(Operator):
             'parameters': 'list[Parameter]',
             'op_config_values': 'ConfigValues',
             'group_by_columns': 'DynamicProxyField',
+            'materialized_group_by_columns': 'MaterializedDynamicField',
             'pivot_keys': 'PivotKeys'
         }
 
@@ -114,6 +119,7 @@ class Pivot(Operator):
             'parameters': 'parameters',
             'op_config_values': 'opConfigValues',
             'group_by_columns': 'groupByColumns',
+            'materialized_group_by_columns': 'materializedGroupByColumns',
             'pivot_keys': 'pivotKeys'
         }
 
@@ -131,6 +137,7 @@ class Pivot(Operator):
         self._parameters = None
         self._op_config_values = None
         self._group_by_columns = None
+        self._materialized_group_by_columns = None
         self._pivot_keys = None
         self._model_type = 'PIVOT_OPERATOR'
 
@@ -153,6 +160,26 @@ class Pivot(Operator):
         :type: oci.data_integration.models.DynamicProxyField
         """
         self._group_by_columns = group_by_columns
+
+    @property
+    def materialized_group_by_columns(self):
+        """
+        Gets the materialized_group_by_columns of this Pivot.
+
+        :return: The materialized_group_by_columns of this Pivot.
+        :rtype: oci.data_integration.models.MaterializedDynamicField
+        """
+        return self._materialized_group_by_columns
+
+    @materialized_group_by_columns.setter
+    def materialized_group_by_columns(self, materialized_group_by_columns):
+        """
+        Sets the materialized_group_by_columns of this Pivot.
+
+        :param materialized_group_by_columns: The materialized_group_by_columns of this Pivot.
+        :type: oci.data_integration.models.MaterializedDynamicField
+        """
+        self._materialized_group_by_columns = materialized_group_by_columns
 
     @property
     def pivot_keys(self):
