@@ -608,6 +608,12 @@ class BaseClient(object):
             timestamp = datetime.now(timezone.utc).isoformat()
 
             service_code, message, deserialized_data = self.get_deserialized_service_code_and_message(response, allow_control_chars)
+            if response.status_code == 413 and service_code == 'RequestEntityTooLarge':
+                self.logger.warning("Recieved a 413/RequestEntityTooLarge from {}, resetting session".format(target_service))
+                _ = response.content  # Read the response content to enable closing the socket.
+                response.close()
+                self.session.close()
+                self.session = requests.session()
             if isinstance(self.circuit_breaker_strategy, CircuitBreakerStrategy) and self.circuit_breaker_strategy.is_transient_error(response.status_code, service_code):
                 new_circuit_breaker_state = CircuitBreakerMonitor.get(self.circuit_breaker_name).state
                 if initial_circuit_breaker_state != new_circuit_breaker_state:
