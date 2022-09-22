@@ -34,25 +34,32 @@ class Schema(object):
             The value to assign to the ttl property of this Schema.
         :type ttl: int
 
+        :param identity:
+            The value to assign to the identity property of this Schema.
+        :type identity: oci.nosql.models.Identity
+
         """
         self.swagger_types = {
             'columns': 'list[Column]',
             'primary_key': 'list[str]',
             'shard_key': 'list[str]',
-            'ttl': 'int'
+            'ttl': 'int',
+            'identity': 'Identity'
         }
 
         self.attribute_map = {
             'columns': 'columns',
             'primary_key': 'primaryKey',
             'shard_key': 'shardKey',
-            'ttl': 'ttl'
+            'ttl': 'ttl',
+            'identity': 'identity'
         }
 
         self._columns = None
         self._primary_key = None
         self._shard_key = None
         self._ttl = None
+        self._identity = None
 
     @property
     def columns(self):
@@ -149,6 +156,26 @@ class Schema(object):
         :type: int
         """
         self._ttl = ttl
+
+    @property
+    def identity(self):
+        """
+        Gets the identity of this Schema.
+
+        :return: The identity of this Schema.
+        :rtype: oci.nosql.models.Identity
+        """
+        return self._identity
+
+    @identity.setter
+    def identity(self, identity):
+        """
+        Sets the identity of this Schema.
+
+        :param identity: The identity of this Schema.
+        :type: oci.nosql.models.Identity
+        """
+        self._identity = identity
 
     def __repr__(self):
         return formatted_flat_dict(self)

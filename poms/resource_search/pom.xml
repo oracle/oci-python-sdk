@@ -136,7 +136,7 @@
       <dependency>
         <groupId>com.oracle.pic.query</groupId>
         <artifactId>resource-query-service-spec</artifactId>
-        <version>0.0.97</version>
+        <version>0.0.120</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

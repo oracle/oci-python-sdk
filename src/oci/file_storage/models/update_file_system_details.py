@@ -154,7 +154,9 @@ class UpdateFileSystemDetails(object):
     def kms_key_id(self):
         """
         Gets the kms_key_id of this UpdateFileSystemDetails.
-        The `OCID`__ of the Key Management master encryption key to associate with the specified file system. If this value is empty, the Update operation will remove the associated key, if there is one, from the file system. (The file system will continue to be encrypted, but with an encryption key managed by Oracle.)
+        The `OCID`__ of the Key Management master encryption key to associate with the specified file system.
+        If this value is empty, the Update operation will remove the associated key, if there is one, from the file system.
+        (The file system will continue to be encrypted, but with an encryption key managed by Oracle.)
 
         If updating to a new Key Management key, the old key must remain enabled so that files previously encrypted continue
         to be accessible. For more information, see `Overview of Key Management`__.
@@ -172,7 +174,9 @@ class UpdateFileSystemDetails(object):
     def kms_key_id(self, kms_key_id):
         """
         Sets the kms_key_id of this UpdateFileSystemDetails.
-        The `OCID`__ of the Key Management master encryption key to associate with the specified file system. If this value is empty, the Update operation will remove the associated key, if there is one, from the file system. (The file system will continue to be encrypted, but with an encryption key managed by Oracle.)
+        The `OCID`__ of the Key Management master encryption key to associate with the specified file system.
+        If this value is empty, the Update operation will remove the associated key, if there is one, from the file system.
+        (The file system will continue to be encrypted, but with an encryption key managed by Oracle.)
 
         If updating to a new Key Management key, the old key must remain enabled so that files previously encrypted continue
         to be accessible. For more information, see `Overview of Key Management`__.

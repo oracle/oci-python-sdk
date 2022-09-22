@@ -118,6 +118,48 @@ def test_change_mount_target_compartment(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
+def test_change_replication_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('file_storage', 'ChangeReplicationCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'ChangeReplicationCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='ChangeReplicationCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
+            response = client.change_replication_compartment(
+                replication_id=request.pop(util.camelize('replicationId')),
+                change_replication_compartment_details=request.pop(util.camelize('ChangeReplicationCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'file_storage',
+            'ChangeReplicationCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_replication_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
 def test_create_export(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'CreateExport'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -235,6 +277,47 @@ def test_create_mount_target(testing_service_client):
             result,
             service_error,
             'mountTarget',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
+def test_create_replication(testing_service_client):
+    if not testing_service_client.is_api_enabled('file_storage', 'CreateReplication'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'CreateReplication')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='CreateReplication')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
+            response = client.create_replication(
+                create_replication_details=request.pop(util.camelize('CreateReplicationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'file_storage',
+            'CreateReplication',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'replication',
             False,
             False
         )
@@ -405,6 +488,88 @@ def test_delete_mount_target(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
+def test_delete_replication(testing_service_client):
+    if not testing_service_client.is_api_enabled('file_storage', 'DeleteReplication'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'DeleteReplication')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='DeleteReplication')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
+            response = client.delete_replication(
+                replication_id=request.pop(util.camelize('replicationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'file_storage',
+            'DeleteReplication',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_replication',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
+def test_delete_replication_target(testing_service_client):
+    if not testing_service_client.is_api_enabled('file_storage', 'DeleteReplicationTarget'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'DeleteReplicationTarget')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='DeleteReplicationTarget')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
+            response = client.delete_replication_target(
+                replication_target_id=request.pop(util.camelize('replicationTargetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'file_storage',
+            'DeleteReplicationTarget',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_replication_target',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
 def test_delete_snapshot(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'DeleteSnapshot'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -441,6 +606,47 @@ def test_delete_snapshot(testing_service_client):
             service_error,
             'delete_snapshot',
             True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
+def test_estimate_replication(testing_service_client):
+    if not testing_service_client.is_api_enabled('file_storage', 'EstimateReplication'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'EstimateReplication')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='EstimateReplication')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
+            response = client.estimate_replication(
+                file_system_id=request.pop(util.camelize('fileSystemId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'file_storage',
+            'EstimateReplication',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'replicationEstimate',
+            False,
             False
         )
 
@@ -604,6 +810,88 @@ def test_get_mount_target(testing_service_client):
             result,
             service_error,
             'mountTarget',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
+def test_get_replication(testing_service_client):
+    if not testing_service_client.is_api_enabled('file_storage', 'GetReplication'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'GetReplication')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='GetReplication')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
+            response = client.get_replication(
+                replication_id=request.pop(util.camelize('replicationId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'file_storage',
+            'GetReplication',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'replication',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
+def test_get_replication_target(testing_service_client):
+    if not testing_service_client.is_api_enabled('file_storage', 'GetReplicationTarget'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'GetReplicationTarget')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='GetReplicationTarget')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
+            response = client.get_replication_target(
+                replication_target_id=request.pop(util.camelize('replicationTargetId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'file_storage',
+            'GetReplicationTarget',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'replicationTarget',
             False,
             False
         )
@@ -909,6 +1197,138 @@ def test_list_mount_targets(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
+def test_list_replication_targets(testing_service_client):
+    if not testing_service_client.is_api_enabled('file_storage', 'ListReplicationTargets'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'ListReplicationTargets')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='ListReplicationTargets')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
+            response = client.list_replication_targets(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                availability_domain=request.pop(util.camelize('availabilityDomain')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_replication_targets(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    availability_domain=request.pop(util.camelize('availabilityDomain')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_replication_targets(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        availability_domain=request.pop(util.camelize('availabilityDomain')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'file_storage',
+            'ListReplicationTargets',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'replicationTargetSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
+def test_list_replications(testing_service_client):
+    if not testing_service_client.is_api_enabled('file_storage', 'ListReplications'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'ListReplications')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='ListReplications')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
+            response = client.list_replications(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                availability_domain=request.pop(util.camelize('availabilityDomain')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_replications(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    availability_domain=request.pop(util.camelize('availabilityDomain')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_replications(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        availability_domain=request.pop(util.camelize('availabilityDomain')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'file_storage',
+            'ListReplications',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'replicationSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
 def test_list_snapshots(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'ListSnapshots'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1134,6 +1554,48 @@ def test_update_mount_target(testing_service_client):
             result,
             service_error,
             'mountTarget',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
+def test_update_replication(testing_service_client):
+    if not testing_service_client.is_api_enabled('file_storage', 'UpdateReplication'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'UpdateReplication')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='UpdateReplication')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
+            response = client.update_replication(
+                replication_id=request.pop(util.camelize('replicationId')),
+                update_replication_details=request.pop(util.camelize('UpdateReplicationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'file_storage',
+            'UpdateReplication',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'replication',
             False,
             False
         )

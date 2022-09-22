@@ -26,6 +26,10 @@ class GenerateRecommendedNetworkDetails(object):
             The value to assign to the display_name property of this GenerateRecommendedNetworkDetails.
         :type display_name: str
 
+        :param db_servers:
+            The value to assign to the db_servers property of this GenerateRecommendedNetworkDetails.
+        :type db_servers: list[str]
+
         :param scan_listener_port_tcp:
             The value to assign to the scan_listener_port_tcp property of this GenerateRecommendedNetworkDetails.
         :type scan_listener_port_tcp: int
@@ -58,6 +62,7 @@ class GenerateRecommendedNetworkDetails(object):
         self.swagger_types = {
             'compartment_id': 'str',
             'display_name': 'str',
+            'db_servers': 'list[str]',
             'scan_listener_port_tcp': 'int',
             'scan_listener_port_tcp_ssl': 'int',
             'networks': 'list[InfoForNetworkGenDetails]',
@@ -70,6 +75,7 @@ class GenerateRecommendedNetworkDetails(object):
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
+            'db_servers': 'dbServers',
             'scan_listener_port_tcp': 'scanListenerPortTcp',
             'scan_listener_port_tcp_ssl': 'scanListenerPortTcpSsl',
             'networks': 'networks',
@@ -81,6 +87,7 @@ class GenerateRecommendedNetworkDetails(object):
 
         self._compartment_id = None
         self._display_name = None
+        self._db_servers = None
         self._scan_listener_port_tcp = None
         self._scan_listener_port_tcp_ssl = None
         self._networks = None
@@ -140,6 +147,30 @@ class GenerateRecommendedNetworkDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def db_servers(self):
+        """
+        Gets the db_servers of this GenerateRecommendedNetworkDetails.
+        The list of Db server Ids to configure network.
+
+
+        :return: The db_servers of this GenerateRecommendedNetworkDetails.
+        :rtype: list[str]
+        """
+        return self._db_servers
+
+    @db_servers.setter
+    def db_servers(self, db_servers):
+        """
+        Sets the db_servers of this GenerateRecommendedNetworkDetails.
+        The list of Db server Ids to configure network.
+
+
+        :param db_servers: The db_servers of this GenerateRecommendedNetworkDetails.
+        :type: list[str]
+        """
+        self._db_servers = db_servers
 
     @property
     def scan_listener_port_tcp(self):

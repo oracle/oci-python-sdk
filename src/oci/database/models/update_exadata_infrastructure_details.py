@@ -14,6 +14,22 @@ class UpdateExadataInfrastructureDetails(object):
     See :func:`update_cloud_exadata_infrastructure_details` for information on updating Exadata Cloud Service cloud Exadata infrastructure resources.
     """
 
+    #: A constant which can be used with the additional_compute_system_model property of a UpdateExadataInfrastructureDetails.
+    #: This constant has a value of "X7"
+    ADDITIONAL_COMPUTE_SYSTEM_MODEL_X7 = "X7"
+
+    #: A constant which can be used with the additional_compute_system_model property of a UpdateExadataInfrastructureDetails.
+    #: This constant has a value of "X8"
+    ADDITIONAL_COMPUTE_SYSTEM_MODEL_X8 = "X8"
+
+    #: A constant which can be used with the additional_compute_system_model property of a UpdateExadataInfrastructureDetails.
+    #: This constant has a value of "X8M"
+    ADDITIONAL_COMPUTE_SYSTEM_MODEL_X8_M = "X8M"
+
+    #: A constant which can be used with the additional_compute_system_model property of a UpdateExadataInfrastructureDetails.
+    #: This constant has a value of "X9M"
+    ADDITIONAL_COMPUTE_SYSTEM_MODEL_X9_M = "X9M"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateExadataInfrastructureDetails object with values from keyword arguments.
@@ -59,6 +75,15 @@ class UpdateExadataInfrastructureDetails(object):
             The value to assign to the additional_storage_count property of this UpdateExadataInfrastructureDetails.
         :type additional_storage_count: int
 
+        :param additional_compute_count:
+            The value to assign to the additional_compute_count property of this UpdateExadataInfrastructureDetails.
+        :type additional_compute_count: int
+
+        :param additional_compute_system_model:
+            The value to assign to the additional_compute_system_model property of this UpdateExadataInfrastructureDetails.
+            Allowed values for this property are: "X7", "X8", "X8M", "X9M"
+        :type additional_compute_system_model: str
+
         :param dns_server:
             The value to assign to the dns_server property of this UpdateExadataInfrastructureDetails.
         :type dns_server: list[str]
@@ -95,6 +120,8 @@ class UpdateExadataInfrastructureDetails(object):
             'contacts': 'list[ExadataInfrastructureContact]',
             'maintenance_window': 'MaintenanceWindow',
             'additional_storage_count': 'int',
+            'additional_compute_count': 'int',
+            'additional_compute_system_model': 'str',
             'dns_server': 'list[str]',
             'ntp_server': 'list[str]',
             'time_zone': 'str',
@@ -114,6 +141,8 @@ class UpdateExadataInfrastructureDetails(object):
             'contacts': 'contacts',
             'maintenance_window': 'maintenanceWindow',
             'additional_storage_count': 'additionalStorageCount',
+            'additional_compute_count': 'additionalComputeCount',
+            'additional_compute_system_model': 'additionalComputeSystemModel',
             'dns_server': 'dnsServer',
             'ntp_server': 'ntpServer',
             'time_zone': 'timeZone',
@@ -132,6 +161,8 @@ class UpdateExadataInfrastructureDetails(object):
         self._contacts = None
         self._maintenance_window = None
         self._additional_storage_count = None
+        self._additional_compute_count = None
+        self._additional_compute_system_model = None
         self._dns_server = None
         self._ntp_server = None
         self._time_zone = None
@@ -374,6 +405,66 @@ class UpdateExadataInfrastructureDetails(object):
         :type: int
         """
         self._additional_storage_count = additional_storage_count
+
+    @property
+    def additional_compute_count(self):
+        """
+        Gets the additional_compute_count of this UpdateExadataInfrastructureDetails.
+        The requested number of additional compute servers for the Exadata infrastructure.
+
+
+        :return: The additional_compute_count of this UpdateExadataInfrastructureDetails.
+        :rtype: int
+        """
+        return self._additional_compute_count
+
+    @additional_compute_count.setter
+    def additional_compute_count(self, additional_compute_count):
+        """
+        Sets the additional_compute_count of this UpdateExadataInfrastructureDetails.
+        The requested number of additional compute servers for the Exadata infrastructure.
+
+
+        :param additional_compute_count: The additional_compute_count of this UpdateExadataInfrastructureDetails.
+        :type: int
+        """
+        self._additional_compute_count = additional_compute_count
+
+    @property
+    def additional_compute_system_model(self):
+        """
+        Gets the additional_compute_system_model of this UpdateExadataInfrastructureDetails.
+        Oracle Exadata System Model specification. The system model determines the amount of compute or storage
+        server resources available for use. For more information, please see [System and Shape Configuration Options]
+        (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+
+        Allowed values for this property are: "X7", "X8", "X8M", "X9M"
+
+
+        :return: The additional_compute_system_model of this UpdateExadataInfrastructureDetails.
+        :rtype: str
+        """
+        return self._additional_compute_system_model
+
+    @additional_compute_system_model.setter
+    def additional_compute_system_model(self, additional_compute_system_model):
+        """
+        Sets the additional_compute_system_model of this UpdateExadataInfrastructureDetails.
+        Oracle Exadata System Model specification. The system model determines the amount of compute or storage
+        server resources available for use. For more information, please see [System and Shape Configuration Options]
+        (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+
+
+        :param additional_compute_system_model: The additional_compute_system_model of this UpdateExadataInfrastructureDetails.
+        :type: str
+        """
+        allowed_values = ["X7", "X8", "X8M", "X9M"]
+        if not value_allowed_none_or_none_sentinel(additional_compute_system_model, allowed_values):
+            raise ValueError(
+                "Invalid value for `additional_compute_system_model`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._additional_compute_system_model = additional_compute_system_model
 
     @property
     def dns_server(self):

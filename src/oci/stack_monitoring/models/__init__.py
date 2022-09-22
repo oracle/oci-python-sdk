@@ -5,6 +5,10 @@
 from __future__ import absolute_import
 
 from .associate_monitored_resources_details import AssociateMonitoredResourcesDetails
+from .associated_monitored_resource import AssociatedMonitoredResource
+from .associated_resources_collection import AssociatedResourcesCollection
+from .associated_resources_summary import AssociatedResourcesSummary
+from .association_details import AssociationDetails
 from .association_resource_details import AssociationResourceDetails
 from .change_monitored_resource_compartment_details import ChangeMonitoredResourceCompartmentDetails
 from .connection_details import ConnectionDetails
@@ -36,6 +40,7 @@ from .monitored_resource_summary import MonitoredResourceSummary
 from .plain_text_credentials import PlainTextCredentials
 from .pre_existing_credentials import PreExistingCredentials
 from .property_details import PropertyDetails
+from .search_associated_resources_details import SearchAssociatedResourcesDetails
 from .search_monitored_resource_associations_details import SearchMonitoredResourceAssociationsDetails
 from .search_monitored_resource_members_details import SearchMonitoredResourceMembersDetails
 from .search_monitored_resources_details import SearchMonitoredResourcesDetails
@@ -52,6 +57,10 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 # Maps type names to classes for stack_monitoring services.
 stack_monitoring_type_mapping = {
     "AssociateMonitoredResourcesDetails": AssociateMonitoredResourcesDetails,
+    "AssociatedMonitoredResource": AssociatedMonitoredResource,
+    "AssociatedResourcesCollection": AssociatedResourcesCollection,
+    "AssociatedResourcesSummary": AssociatedResourcesSummary,
+    "AssociationDetails": AssociationDetails,
     "AssociationResourceDetails": AssociationResourceDetails,
     "ChangeMonitoredResourceCompartmentDetails": ChangeMonitoredResourceCompartmentDetails,
     "ConnectionDetails": ConnectionDetails,
@@ -83,6 +92,7 @@ stack_monitoring_type_mapping = {
     "PlainTextCredentials": PlainTextCredentials,
     "PreExistingCredentials": PreExistingCredentials,
     "PropertyDetails": PropertyDetails,
+    "SearchAssociatedResourcesDetails": SearchAssociatedResourcesDetails,
     "SearchMonitoredResourceAssociationsDetails": SearchMonitoredResourceAssociationsDetails,
     "SearchMonitoredResourceMembersDetails": SearchMonitoredResourceMembersDetails,
     "SearchMonitoredResourcesDetails": SearchMonitoredResourcesDetails,

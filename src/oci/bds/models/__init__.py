@@ -59,6 +59,8 @@ from .restart_node_details import RestartNodeDetails
 from .schedule_based_horizontal_scaling_policy_details import ScheduleBasedHorizontalScalingPolicyDetails
 from .schedule_based_vertical_scaling_policy_details import ScheduleBasedVerticalScalingPolicyDetails
 from .shape_config_details import ShapeConfigDetails
+from .start_bds_instance_details import StartBdsInstanceDetails
+from .stop_bds_instance_details import StopBdsInstanceDetails
 from .test_bds_metastore_configuration_details import TestBdsMetastoreConfigurationDetails
 from .test_bds_object_storage_connection_details import TestBdsObjectStorageConnectionDetails
 from .time_and_horizontal_scaling_config import TimeAndHorizontalScalingConfig
@@ -135,6 +137,8 @@ bds_type_mapping = {
     "ScheduleBasedHorizontalScalingPolicyDetails": ScheduleBasedHorizontalScalingPolicyDetails,
     "ScheduleBasedVerticalScalingPolicyDetails": ScheduleBasedVerticalScalingPolicyDetails,
     "ShapeConfigDetails": ShapeConfigDetails,
+    "StartBdsInstanceDetails": StartBdsInstanceDetails,
+    "StopBdsInstanceDetails": StopBdsInstanceDetails,
     "TestBdsMetastoreConfigurationDetails": TestBdsMetastoreConfigurationDetails,
     "TestBdsObjectStorageConnectionDetails": TestBdsObjectStorageConnectionDetails,
     "TimeAndHorizontalScalingConfig": TimeAndHorizontalScalingConfig,

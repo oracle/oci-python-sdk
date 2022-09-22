@@ -10233,6 +10233,49 @@ def test_remove_virtual_machine_from_vm_cluster(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_resize_vm_cluster_network(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ResizeVmClusterNetwork'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ResizeVmClusterNetwork')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ResizeVmClusterNetwork')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.resize_vm_cluster_network(
+                exadata_infrastructure_id=request.pop(util.camelize('exadataInfrastructureId')),
+                vm_cluster_network_id=request.pop(util.camelize('vmClusterNetworkId')),
+                resize_vm_cluster_network_details=request.pop(util.camelize('ResizeVmClusterNetworkDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ResizeVmClusterNetwork',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'vmClusterNetwork',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_restart_autonomous_container_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'RestartAutonomousContainerDatabase'):

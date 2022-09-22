@@ -13,8 +13,6 @@ class MountTarget(object):
     Provides access to a collection of file systems through one or more VNICs on a
     specified subnet. The set of file systems is controlled through the
     referenced export set.
-
-    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
     #: A constant which can be used with the lifecycle_state property of a MountTarget.

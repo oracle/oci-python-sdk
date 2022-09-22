@@ -640,6 +640,9 @@ class StackMonitoringClient(object):
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param bool is_delete_members: (optional)
+            A filter to delete the associated children or not for given resource.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -668,7 +671,8 @@ class StackMonitoringClient(object):
             "allow_control_chars",
             "retry_strategy",
             "if_match",
-            "opc_request_id"
+            "opc_request_id",
+            "is_delete_members"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -684,6 +688,11 @@ class StackMonitoringClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "isDeleteMembers": kwargs.get("is_delete_members", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -707,6 +716,7 @@ class StackMonitoringClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -716,6 +726,7 @@ class StackMonitoringClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -1982,6 +1993,162 @@ class StackMonitoringClient(object):
                 operation_name=operation_name,
                 api_reference_link=api_reference_link)
 
+    def search_associated_resources(self, search_associated_resources_details, **kwargs):
+        """
+        List associated monitored resources.
+
+
+        :param oci.stack_monitoring.models.SearchAssociatedResourcesDetails search_associated_resources_details: (required)
+            Search Criteria for the listing the monitored resources for given type and compartmentId.
+
+        :param list[str] fields: (optional)
+            Partial response refers to an optimization technique offered
+            by the RESTful web APIs, to return only the information
+            (fields) required by the client. In this mechanism, the client
+            sends the required field names as the query parameters for
+            an API to the server, and the server trims down the default
+            response content by removing the fields that are not required
+            by the client. The parameter controls which fields to
+            return and should be a query string parameter called \"fields\" of
+            an array type, provide the values as enums, and use collectionFormat.
+
+        :param list[str] exclude_fields: (optional)
+            Partial response refers to an optimization technique offered
+            by the RESTful web APIs, to return all the information except
+            the fields requested to be excluded (excludeFields) by the client.
+            In this mechanism, the client
+            sends the exclude field names as the query parameters for
+            an API to the server, and the server trims down the default
+            response content by removing the fields that are not required
+            by the client. The parameter controls which fields to
+            exlude and to return and should be a query string parameter
+            called \"excludeFields\" of an array type, provide the values
+            as enums, and use collectionFormat.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to return in a
+            paginated \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from the
+            previous \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.stack_monitoring.models.AssociatedResourcesCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/stackmonitoring/search_associated_resources.py.html>`__ to see an example of how to use search_associated_resources API.
+        """
+        resource_path = "/monitoredResources/actions/searchAssociatedResources"
+        method = "POST"
+        operation_name = "search_associated_resources"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/SearchAssociatedResources"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "fields",
+            "exclude_fields",
+            "opc_request_id",
+            "opc_retry_token",
+            "if_match",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "search_associated_resources got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
+            "excludeFields": self.base_client.generate_collection_format_param(kwargs.get("exclude_fields", missing), 'multi'),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=search_associated_resources_details,
+                response_type="AssociatedResourcesCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=search_associated_resources_details,
+                response_type="AssociatedResourcesCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
+
     def search_monitored_resource_associations(self, search_monitored_resource_associations_details, **kwargs):
         """
         Returns a list of monitored resource associations.
@@ -2305,6 +2472,30 @@ class StackMonitoringClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
+        :param list[str] fields: (optional)
+            Partial response refers to an optimization technique offered
+            by the RESTful web APIs, to return only the information
+            (fields) required by the client. In this mechanism, the client
+            sends the required field names as the query parameters for
+            an API to the server, and the server trims down the default
+            response content by removing the fields that are not required
+            by the client. The parameter controls which fields to
+            return and should be a query string parameter called \"fields\" of
+            an array type, provide the values as enums, and use collectionFormat.
+
+        :param list[str] exclude_fields: (optional)
+            Partial response refers to an optimization technique offered
+            by the RESTful web APIs, to return all the information except
+            the fields requested to be excluded (excludeFields) by the client.
+            In this mechanism, the client
+            sends the exclude field names as the query parameters for
+            an API to the server, and the server trims down the default
+            response content by removing the fields that are not required
+            by the client. The parameter controls which fields to
+            exlude and to return and should be a query string parameter
+            called \"excludeFields\" of an array type, provide the values
+            as enums, and use collectionFormat.
+
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
@@ -2352,6 +2543,8 @@ class StackMonitoringClient(object):
             "retry_strategy",
             "limit",
             "page",
+            "fields",
+            "exclude_fields",
             "opc_request_id",
             "opc_retry_token",
             "if_match"
@@ -2363,7 +2556,9 @@ class StackMonitoringClient(object):
 
         query_params = {
             "limit": kwargs.get("limit", missing),
-            "page": kwargs.get("page", missing)
+            "page": kwargs.get("page", missing),
+            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
+            "excludeFields": self.base_client.generate_collection_format_param(kwargs.get("exclude_fields", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

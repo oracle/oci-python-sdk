@@ -174,7 +174,7 @@
       <dependency>
         <groupId>oracle.nosql.oci.controlplane</groupId>
         <artifactId>ndcs-control-plane-spec</artifactId>
-        <version>1.0.6</version>
+        <version>1.0.14</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

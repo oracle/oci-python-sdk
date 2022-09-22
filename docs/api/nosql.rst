@@ -23,6 +23,7 @@ Nosql
     oci.nosql.models.CreateIndexDetails
     oci.nosql.models.CreateTableDetails
     oci.nosql.models.DeleteRowResult
+    oci.nosql.models.Identity
     oci.nosql.models.Index
     oci.nosql.models.IndexCollection
     oci.nosql.models.IndexKey

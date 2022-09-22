@@ -38,6 +38,10 @@ class CreateMonitoredResourceDetails(object):
             The value to assign to the host_name property of this CreateMonitoredResourceDetails.
         :type host_name: str
 
+        :param external_id:
+            The value to assign to the external_id property of this CreateMonitoredResourceDetails.
+        :type external_id: str
+
         :param management_agent_id:
             The value to assign to the management_agent_id property of this CreateMonitoredResourceDetails.
         :type management_agent_id: str
@@ -69,6 +73,7 @@ class CreateMonitoredResourceDetails(object):
             'type': 'str',
             'compartment_id': 'str',
             'host_name': 'str',
+            'external_id': 'str',
             'management_agent_id': 'str',
             'resource_time_zone': 'str',
             'properties': 'list[MonitoredResourceProperty]',
@@ -83,6 +88,7 @@ class CreateMonitoredResourceDetails(object):
             'type': 'type',
             'compartment_id': 'compartmentId',
             'host_name': 'hostName',
+            'external_id': 'externalId',
             'management_agent_id': 'managementAgentId',
             'resource_time_zone': 'resourceTimeZone',
             'properties': 'properties',
@@ -96,6 +102,7 @@ class CreateMonitoredResourceDetails(object):
         self._type = None
         self._compartment_id = None
         self._host_name = None
+        self._external_id = None
         self._management_agent_id = None
         self._resource_time_zone = None
         self._properties = None
@@ -226,6 +233,38 @@ class CreateMonitoredResourceDetails(object):
         :type: str
         """
         self._host_name = host_name
+
+    @property
+    def external_id(self):
+        """
+        Gets the external_id of this CreateMonitoredResourceDetails.
+        External resource is any OCI resource identifier `OCID`__
+        which is not a Stack Monitoring service resource.
+        Currently supports only OCI compute instance.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The external_id of this CreateMonitoredResourceDetails.
+        :rtype: str
+        """
+        return self._external_id
+
+    @external_id.setter
+    def external_id(self, external_id):
+        """
+        Sets the external_id of this CreateMonitoredResourceDetails.
+        External resource is any OCI resource identifier `OCID`__
+        which is not a Stack Monitoring service resource.
+        Currently supports only OCI compute instance.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param external_id: The external_id of this CreateMonitoredResourceDetails.
+        :type: str
+        """
+        self._external_id = external_id
 
     @property
     def management_agent_id(self):
