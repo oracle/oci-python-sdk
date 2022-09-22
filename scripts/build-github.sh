@@ -77,9 +77,6 @@ else
   # *github* version of the SDK (which was installed above)
   # tox runs the tests inside a virtual environment and explicitly installs
   # the current project which we dont want
-  pip install pytest==3.2.3
-  pip install mock==2.0.0
-  pip install vcrpy==1.11.1
 
   # run tests from bitbucket repository because not all tests are copied into github
   # skip the long running integration tests
@@ -92,6 +89,7 @@ else
           --ignore=tests/integ/test_composite_operations.py \
           --ignore=tests/integ/test_virtualnetwork.py \
           --ignore=tests/integ/test_launch_instance_tutorial.py \
+          --ignore=tests/integ/test_object_storage_retry_file_like_body.py \
           tests/unit tests/integ -s >> build_output.txt 2>&1
 
 fi
