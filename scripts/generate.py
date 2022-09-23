@@ -10,7 +10,7 @@ import os
 ROOT_INIT_LOCATION = "src/oci/__init__.py"
 SOURCE_LOCATION = "poms"
 
-ROOT_INIT_FILE_TEMPLATE = """from . import auth, config, constants, decorators, exceptions, regions, pagination, retry, fips
+ROOT_INIT_FILE_TEMPLATE = """from . import auth, config, constants, decorators, exceptions, regions, pagination, retry, fips, circuit_breaker
 from .base_client import BaseClient
 from .request import Request
 from .response import Response
@@ -18,18 +18,27 @@ from .signer import Signer
 from .version import __version__  # noqa
 from .waiter import wait_until
 import os
+import sys
 
 fips.enable_fips_mode()
 
 if os.getenv("OCI_PYTHON_SDK_NO_SERVICE_IMPORTS", "").lower() in ["true", "1"]:
     pass
 else:
-    from . import {spec_names}
-
     __all__ = [
         "BaseClient", "Error", "Request", "Response", "Signer", "config", "constants", "decorators", "exceptions", "regions", "wait_until", "pagination", "auth", "retry", "fips", "circuit_breaker",
         {quoted_spec_names}
     ]
+    if sys.version_info >= (3, 7):
+        def __getattr__(x):
+            # Loads the oci modules only when they are needed instead of loading them all at start to reduce the initial
+            # import time and memory used by the SDK.
+            if x in __all__:
+                import importlib
+                return importlib.import_module(__name__ + "." + x)
+            raise AttributeError("module " + __name__ + " has no attribute" + x)
+    else:
+        from . import {spec_names}
 """
 
 
