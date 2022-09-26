@@ -18,7 +18,6 @@ Added
 * Support for starting and stopping clusters in the Big Data service
 * Support for additional compute shapes in the Big Data service
 * Support for backwards pagination in the Search service
-* Support for cross-region replication in the File Storage service
 * Support for elastic compute for Exadata Cloud at Customer in the Database service  
  
 Breaking
