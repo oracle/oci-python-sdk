@@ -12,8 +12,6 @@ class ExportSet(object):
     """
     A set of file systems to export through one or more mount
     targets. Composed of zero or more export resources.
-
-    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
     #: A constant which can be used with the lifecycle_state property of a ExportSet.

@@ -357,7 +357,7 @@ class ResourceSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{orcl-cloud: {free-tier-retain: true}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :return: The system_tags of this ResourceSummary.
@@ -373,7 +373,7 @@ class ResourceSummary(object):
         For more information, see `Resource Tags`__.
         Example: `{orcl-cloud: {free-tier-retain: true}}`
 
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+        __ https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
 
 
         :param system_tags: The system_tags of this ResourceSummary.

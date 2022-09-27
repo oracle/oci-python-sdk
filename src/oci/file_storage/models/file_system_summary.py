@@ -29,6 +29,10 @@ class FileSystemSummary(object):
     #: This constant has a value of "DELETED"
     LIFECYCLE_STATE_DELETED = "DELETED"
 
+    #: A constant which can be used with the lifecycle_state property of a FileSystemSummary.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new FileSystemSummary object with values from keyword arguments.
@@ -56,7 +60,7 @@ class FileSystemSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this FileSystemSummary.
-            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -294,7 +298,7 @@ class FileSystemSummary(object):
         **[Required]** Gets the lifecycle_state of this FileSystemSummary.
         The current state of the file system.
 
-        Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -313,7 +317,7 @@ class FileSystemSummary(object):
         :param lifecycle_state: The lifecycle_state of this FileSystemSummary.
         :type: str
         """
-        allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED"]
+        allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -473,7 +477,7 @@ class FileSystemSummary(object):
         Specifies whether the file system has been cloned.
         See `Cloning a File System`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
 
 
         :return: The is_clone_parent of this FileSystemSummary.
@@ -488,7 +492,7 @@ class FileSystemSummary(object):
         Specifies whether the file system has been cloned.
         See `Cloning a File System`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
 
 
         :param is_clone_parent: The is_clone_parent of this FileSystemSummary.
@@ -505,7 +509,7 @@ class FileSystemSummary(object):
         The source and clone remain available during hydration, but there may be some performance impact.
         See `Cloning a File System`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration
 
 
         :return: The is_hydrated of this FileSystemSummary.
@@ -522,7 +526,7 @@ class FileSystemSummary(object):
         The source and clone remain available during hydration, but there may be some performance impact.
         See `Cloning a File System`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration
 
 
         :param is_hydrated: The is_hydrated of this FileSystemSummary.

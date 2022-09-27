@@ -22,6 +22,10 @@ class PreparedStatement(object):
             The value to assign to the statement property of this PreparedStatement.
         :type statement: str
 
+        :param query_plan:
+            The value to assign to the query_plan property of this PreparedStatement.
+        :type query_plan: object
+
         :param usage:
             The value to assign to the usage property of this PreparedStatement.
         :type usage: oci.nosql.models.RequestUsage
@@ -29,15 +33,18 @@ class PreparedStatement(object):
         """
         self.swagger_types = {
             'statement': 'str',
+            'query_plan': 'object',
             'usage': 'RequestUsage'
         }
 
         self.attribute_map = {
             'statement': 'statement',
+            'query_plan': 'queryPlan',
             'usage': 'usage'
         }
 
         self._statement = None
+        self._query_plan = None
         self._usage = None
 
     @property
@@ -65,6 +72,30 @@ class PreparedStatement(object):
         :type: str
         """
         self._statement = statement
+
+    @property
+    def query_plan(self):
+        """
+        Gets the query_plan of this PreparedStatement.
+        A representation of the query plan as a schema-less JSON object.
+
+
+        :return: The query_plan of this PreparedStatement.
+        :rtype: object
+        """
+        return self._query_plan
+
+    @query_plan.setter
+    def query_plan(self, query_plan):
+        """
+        Sets the query_plan of this PreparedStatement.
+        A representation of the query plan as a schema-less JSON object.
+
+
+        :param query_plan: The query_plan of this PreparedStatement.
+        :type: object
+        """
+        self._query_plan = query_plan
 
     @property
     def usage(self):

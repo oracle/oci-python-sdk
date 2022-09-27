@@ -62,6 +62,10 @@ class MonitoredResourceSummary(object):
             The value to assign to the host_name property of this MonitoredResourceSummary.
         :type host_name: str
 
+        :param external_id:
+            The value to assign to the external_id property of this MonitoredResourceSummary.
+        :type external_id: str
+
         :param management_agent_id:
             The value to assign to the management_agent_id property of this MonitoredResourceSummary.
         :type management_agent_id: str
@@ -79,6 +83,10 @@ class MonitoredResourceSummary(object):
             Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
+
+        :param properties:
+            The value to assign to the properties property of this MonitoredResourceSummary.
+        :type properties: list[oci.stack_monitoring.models.MonitoredResourceProperty]
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this MonitoredResourceSummary.
@@ -99,10 +107,12 @@ class MonitoredResourceSummary(object):
             'display_name': 'str',
             'type': 'str',
             'host_name': 'str',
+            'external_id': 'str',
             'management_agent_id': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
+            'properties': 'list[MonitoredResourceProperty]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -114,10 +124,12 @@ class MonitoredResourceSummary(object):
             'display_name': 'displayName',
             'type': 'type',
             'host_name': 'hostName',
+            'external_id': 'externalId',
             'management_agent_id': 'managementAgentId',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
+            'properties': 'properties',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -128,10 +140,12 @@ class MonitoredResourceSummary(object):
         self._display_name = None
         self._type = None
         self._host_name = None
+        self._external_id = None
         self._management_agent_id = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
+        self._properties = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -261,6 +275,40 @@ class MonitoredResourceSummary(object):
         self._host_name = host_name
 
     @property
+    def external_id(self):
+        """
+        Gets the external_id of this MonitoredResourceSummary.
+        External resource is any OCI resource identifier `OCID`__
+        which is not a Stack Monitoring service resource.
+        Currently supports only following resource type identifiers - externalcontainerdatabase,
+        externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The external_id of this MonitoredResourceSummary.
+        :rtype: str
+        """
+        return self._external_id
+
+    @external_id.setter
+    def external_id(self, external_id):
+        """
+        Sets the external_id of this MonitoredResourceSummary.
+        External resource is any OCI resource identifier `OCID`__
+        which is not a Stack Monitoring service resource.
+        Currently supports only following resource type identifiers - externalcontainerdatabase,
+        externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param external_id: The external_id of this MonitoredResourceSummary.
+        :type: str
+        """
+        self._external_id = external_id
+
+    @property
     def management_agent_id(self):
         """
         Gets the management_agent_id of this MonitoredResourceSummary.
@@ -365,6 +413,30 @@ class MonitoredResourceSummary(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def properties(self):
+        """
+        Gets the properties of this MonitoredResourceSummary.
+        List of monitored resource properties
+
+
+        :return: The properties of this MonitoredResourceSummary.
+        :rtype: list[oci.stack_monitoring.models.MonitoredResourceProperty]
+        """
+        return self._properties
+
+    @properties.setter
+    def properties(self, properties):
+        """
+        Sets the properties of this MonitoredResourceSummary.
+        List of monitored resource properties
+
+
+        :param properties: The properties of this MonitoredResourceSummary.
+        :type: list[oci.stack_monitoring.models.MonitoredResourceProperty]
+        """
+        self._properties = properties
 
     @property
     def freeform_tags(self):

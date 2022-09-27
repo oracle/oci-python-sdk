@@ -57,6 +57,22 @@ class ExadataInfrastructure(object):
     #: This constant has a value of "MAINTENANCE_IN_PROGRESS"
     LIFECYCLE_STATE_MAINTENANCE_IN_PROGRESS = "MAINTENANCE_IN_PROGRESS"
 
+    #: A constant which can be used with the additional_compute_system_model property of a ExadataInfrastructure.
+    #: This constant has a value of "X7"
+    ADDITIONAL_COMPUTE_SYSTEM_MODEL_X7 = "X7"
+
+    #: A constant which can be used with the additional_compute_system_model property of a ExadataInfrastructure.
+    #: This constant has a value of "X8"
+    ADDITIONAL_COMPUTE_SYSTEM_MODEL_X8 = "X8"
+
+    #: A constant which can be used with the additional_compute_system_model property of a ExadataInfrastructure.
+    #: This constant has a value of "X8M"
+    ADDITIONAL_COMPUTE_SYSTEM_MODEL_X8_M = "X8M"
+
+    #: A constant which can be used with the additional_compute_system_model property of a ExadataInfrastructure.
+    #: This constant has a value of "X9M"
+    ADDITIONAL_COMPUTE_SYSTEM_MODEL_X9_M = "X9M"
+
     #: A constant which can be used with the maintenance_slo_status property of a ExadataInfrastructure.
     #: This constant has a value of "OK"
     MAINTENANCE_SLO_STATUS_OK = "OK"
@@ -147,6 +163,16 @@ class ExadataInfrastructure(object):
         :param compute_count:
             The value to assign to the compute_count property of this ExadataInfrastructure.
         :type compute_count: int
+
+        :param additional_compute_count:
+            The value to assign to the additional_compute_count property of this ExadataInfrastructure.
+        :type additional_compute_count: int
+
+        :param additional_compute_system_model:
+            The value to assign to the additional_compute_system_model property of this ExadataInfrastructure.
+            Allowed values for this property are: "X7", "X8", "X8M", "X9M", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type additional_compute_system_model: str
 
         :param cloud_control_plane_server1:
             The value to assign to the cloud_control_plane_server1 property of this ExadataInfrastructure.
@@ -263,6 +289,8 @@ class ExadataInfrastructure(object):
             'additional_storage_count': 'int',
             'activated_storage_count': 'int',
             'compute_count': 'int',
+            'additional_compute_count': 'int',
+            'additional_compute_system_model': 'str',
             'cloud_control_plane_server1': 'str',
             'cloud_control_plane_server2': 'str',
             'netmask': 'str',
@@ -308,6 +336,8 @@ class ExadataInfrastructure(object):
             'additional_storage_count': 'additionalStorageCount',
             'activated_storage_count': 'activatedStorageCount',
             'compute_count': 'computeCount',
+            'additional_compute_count': 'additionalComputeCount',
+            'additional_compute_system_model': 'additionalComputeSystemModel',
             'cloud_control_plane_server1': 'cloudControlPlaneServer1',
             'cloud_control_plane_server2': 'cloudControlPlaneServer2',
             'netmask': 'netmask',
@@ -352,6 +382,8 @@ class ExadataInfrastructure(object):
         self._additional_storage_count = None
         self._activated_storage_count = None
         self._compute_count = None
+        self._additional_compute_count = None
+        self._additional_compute_system_model = None
         self._cloud_control_plane_server1 = None
         self._cloud_control_plane_server2 = None
         self._netmask = None
@@ -849,6 +881,64 @@ class ExadataInfrastructure(object):
         :type: int
         """
         self._compute_count = compute_count
+
+    @property
+    def additional_compute_count(self):
+        """
+        Gets the additional_compute_count of this ExadataInfrastructure.
+        The requested number of additional compute servers for the Exadata infrastructure.
+
+
+        :return: The additional_compute_count of this ExadataInfrastructure.
+        :rtype: int
+        """
+        return self._additional_compute_count
+
+    @additional_compute_count.setter
+    def additional_compute_count(self, additional_compute_count):
+        """
+        Sets the additional_compute_count of this ExadataInfrastructure.
+        The requested number of additional compute servers for the Exadata infrastructure.
+
+
+        :param additional_compute_count: The additional_compute_count of this ExadataInfrastructure.
+        :type: int
+        """
+        self._additional_compute_count = additional_compute_count
+
+    @property
+    def additional_compute_system_model(self):
+        """
+        Gets the additional_compute_system_model of this ExadataInfrastructure.
+        Oracle Exadata System Model specification. The system model determines the amount of compute or storage
+        server resources available for use. For more information, please see [System and Shape Configuration Options]
+        (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+
+        Allowed values for this property are: "X7", "X8", "X8M", "X9M", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The additional_compute_system_model of this ExadataInfrastructure.
+        :rtype: str
+        """
+        return self._additional_compute_system_model
+
+    @additional_compute_system_model.setter
+    def additional_compute_system_model(self, additional_compute_system_model):
+        """
+        Sets the additional_compute_system_model of this ExadataInfrastructure.
+        Oracle Exadata System Model specification. The system model determines the amount of compute or storage
+        server resources available for use. For more information, please see [System and Shape Configuration Options]
+        (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+
+
+        :param additional_compute_system_model: The additional_compute_system_model of this ExadataInfrastructure.
+        :type: str
+        """
+        allowed_values = ["X7", "X8", "X8M", "X9M"]
+        if not value_allowed_none_or_none_sentinel(additional_compute_system_model, allowed_values):
+            additional_compute_system_model = 'UNKNOWN_ENUM_VALUE'
+        self._additional_compute_system_model = additional_compute_system_model
 
     @property
     def cloud_control_plane_server1(self):

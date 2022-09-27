@@ -11,8 +11,6 @@ from oci.decorators import init_model_state_from_kwargs
 class Snapshot(object):
     """
     A point-in-time snapshot of a specified file system.
-
-    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
     #: A constant which can be used with the lifecycle_state property of a Snapshot.
@@ -30,6 +28,18 @@ class Snapshot(object):
     #: A constant which can be used with the lifecycle_state property of a Snapshot.
     #: This constant has a value of "DELETED"
     LIFECYCLE_STATE_DELETED = "DELETED"
+
+    #: A constant which can be used with the snapshot_type property of a Snapshot.
+    #: This constant has a value of "USER"
+    SNAPSHOT_TYPE_USER = "USER"
+
+    #: A constant which can be used with the snapshot_type property of a Snapshot.
+    #: This constant has a value of "POLICY_BASED"
+    SNAPSHOT_TYPE_POLICY_BASED = "POLICY_BASED"
+
+    #: A constant which can be used with the snapshot_type property of a Snapshot.
+    #: This constant has a value of "REPLICATION"
+    SNAPSHOT_TYPE_REPLICATION = "REPLICATION"
 
     def __init__(self, **kwargs):
         """
@@ -58,6 +68,16 @@ class Snapshot(object):
             The value to assign to the time_created property of this Snapshot.
         :type time_created: datetime
 
+        :param snapshot_type:
+            The value to assign to the snapshot_type property of this Snapshot.
+            Allowed values for this property are: "USER", "POLICY_BASED", "REPLICATION", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type snapshot_type: str
+
+        :param snapshot_time:
+            The value to assign to the snapshot_time property of this Snapshot.
+        :type snapshot_time: datetime
+
         :param provenance_id:
             The value to assign to the provenance_id property of this Snapshot.
         :type provenance_id: str
@@ -85,6 +105,8 @@ class Snapshot(object):
             'lifecycle_state': 'str',
             'name': 'str',
             'time_created': 'datetime',
+            'snapshot_type': 'str',
+            'snapshot_time': 'datetime',
             'provenance_id': 'str',
             'is_clone_source': 'bool',
             'lifecycle_details': 'str',
@@ -98,6 +120,8 @@ class Snapshot(object):
             'lifecycle_state': 'lifecycleState',
             'name': 'name',
             'time_created': 'timeCreated',
+            'snapshot_type': 'snapshotType',
+            'snapshot_time': 'snapshotTime',
             'provenance_id': 'provenanceId',
             'is_clone_source': 'isCloneSource',
             'lifecycle_details': 'lifecycleDetails',
@@ -110,6 +134,8 @@ class Snapshot(object):
         self._lifecycle_state = None
         self._name = None
         self._time_created = None
+        self._snapshot_type = None
+        self._snapshot_time = None
         self._provenance_id = None
         self._is_clone_source = None
         self._lifecycle_details = None
@@ -271,6 +297,80 @@ class Snapshot(object):
         self._time_created = time_created
 
     @property
+    def snapshot_type(self):
+        """
+        Gets the snapshot_type of this Snapshot.
+        Specifies generation type of the snapshot.
+
+        Allowed values for this property are: "USER", "POLICY_BASED", "REPLICATION", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The snapshot_type of this Snapshot.
+        :rtype: str
+        """
+        return self._snapshot_type
+
+    @snapshot_type.setter
+    def snapshot_type(self, snapshot_type):
+        """
+        Sets the snapshot_type of this Snapshot.
+        Specifies generation type of the snapshot.
+
+
+        :param snapshot_type: The snapshot_type of this Snapshot.
+        :type: str
+        """
+        allowed_values = ["USER", "POLICY_BASED", "REPLICATION"]
+        if not value_allowed_none_or_none_sentinel(snapshot_type, allowed_values):
+            snapshot_type = 'UNKNOWN_ENUM_VALUE'
+        self._snapshot_type = snapshot_type
+
+    @property
+    def snapshot_time(self):
+        """
+        Gets the snapshot_time of this Snapshot.
+        The date and time the snapshot was taken, expressed
+        in `RFC 3339`__ timestamp format.
+        This value might be the same or different from `timeCreated` depending
+        on the following factors:
+        - If the snapshot is created in the original file system directory.
+        - If the snapshot is cloned from a file system.
+        - If the snapshot is replicated from a file system.
+
+        Example: `2020-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
+
+
+        :return: The snapshot_time of this Snapshot.
+        :rtype: datetime
+        """
+        return self._snapshot_time
+
+    @snapshot_time.setter
+    def snapshot_time(self, snapshot_time):
+        """
+        Sets the snapshot_time of this Snapshot.
+        The date and time the snapshot was taken, expressed
+        in `RFC 3339`__ timestamp format.
+        This value might be the same or different from `timeCreated` depending
+        on the following factors:
+        - If the snapshot is created in the original file system directory.
+        - If the snapshot is cloned from a file system.
+        - If the snapshot is replicated from a file system.
+
+        Example: `2020-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
+
+
+        :param snapshot_time: The snapshot_time of this Snapshot.
+        :type: datetime
+        """
+        self._snapshot_time = snapshot_time
+
+    @property
     def provenance_id(self):
         """
         Gets the provenance_id of this Snapshot.
@@ -280,7 +380,7 @@ class Snapshot(object):
         See `Cloning a File System`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
 
 
         :return: The provenance_id of this Snapshot.
@@ -298,7 +398,7 @@ class Snapshot(object):
         See `Cloning a File System`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
 
 
         :param provenance_id: The provenance_id of this Snapshot.
@@ -313,7 +413,7 @@ class Snapshot(object):
         Specifies whether the snapshot has been cloned.
         See `Cloning a File System`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
 
 
         :return: The is_clone_source of this Snapshot.
@@ -328,7 +428,7 @@ class Snapshot(object):
         Specifies whether the snapshot has been cloned.
         See `Cloning a File System`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
 
 
         :param is_clone_source: The is_clone_source of this Snapshot.
@@ -340,7 +440,7 @@ class Snapshot(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this Snapshot.
-        Additional information about the current 'lifecycleState'.
+        Additional information about the current `lifecycleState`.
 
 
         :return: The lifecycle_details of this Snapshot.
@@ -352,7 +452,7 @@ class Snapshot(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this Snapshot.
-        Additional information about the current 'lifecycleState'.
+        Additional information about the current `lifecycleState`.
 
 
         :param lifecycle_details: The lifecycle_details of this Snapshot.

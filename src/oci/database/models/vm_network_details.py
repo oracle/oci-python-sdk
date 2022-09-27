@@ -81,7 +81,7 @@ class VmNetworkDetails(object):
     @property
     def vlan_id(self):
         """
-        **[Required]** Gets the vlan_id of this VmNetworkDetails.
+        Gets the vlan_id of this VmNetworkDetails.
         The network VLAN ID.
 
 
@@ -135,7 +135,7 @@ class VmNetworkDetails(object):
     @property
     def netmask(self):
         """
-        **[Required]** Gets the netmask of this VmNetworkDetails.
+        Gets the netmask of this VmNetworkDetails.
         The network netmask.
 
 
@@ -159,7 +159,7 @@ class VmNetworkDetails(object):
     @property
     def gateway(self):
         """
-        **[Required]** Gets the gateway of this VmNetworkDetails.
+        Gets the gateway of this VmNetworkDetails.
         The network gateway.
 
 
@@ -183,7 +183,7 @@ class VmNetworkDetails(object):
     @property
     def domain_name(self):
         """
-        **[Required]** Gets the domain_name of this VmNetworkDetails.
+        Gets the domain_name of this VmNetworkDetails.
         The network domain name.
 
 

@@ -153,7 +153,7 @@ class OcbAgentSvcClient(object):
         resource_path = "/environments/{environmentId}/actions/addAgentDependency"
         method = "POST"
         operation_name = "add_agent_dependency"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Environment/AddAgentDependency"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -271,7 +271,7 @@ class OcbAgentSvcClient(object):
         resource_path = "/agents/{agentId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_agent_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Agent/ChangeAgentCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -387,7 +387,7 @@ class OcbAgentSvcClient(object):
         resource_path = "/agentDependencies/{agentDependencyId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_agent_dependency_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AgentDependency/ChangeAgentDependencyCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -503,7 +503,7 @@ class OcbAgentSvcClient(object):
         resource_path = "/environments/{environmentId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_environment_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Environment/ChangeEnvironmentCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -609,7 +609,7 @@ class OcbAgentSvcClient(object):
         resource_path = "/agents"
         method = "POST"
         operation_name = "create_agent"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Agent/CreateAgent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -703,7 +703,7 @@ class OcbAgentSvcClient(object):
         resource_path = "/agentDependencies"
         method = "POST"
         operation_name = "create_agent_dependency"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AgentDependency/CreateAgentDependency"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -797,7 +797,7 @@ class OcbAgentSvcClient(object):
         resource_path = "/environments"
         method = "POST"
         operation_name = "create_environment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Environment/CreateEnvironment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -898,7 +898,7 @@ class OcbAgentSvcClient(object):
         resource_path = "/agents/{agentId}"
         method = "DELETE"
         operation_name = "delete_agent"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Agent/DeleteAgent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1002,7 +1002,7 @@ class OcbAgentSvcClient(object):
         resource_path = "/agentDependencies/{agentDependencyId}"
         method = "DELETE"
         operation_name = "delete_agent_dependency"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AgentDependency/DeleteAgentDependency"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1103,7 +1103,7 @@ class OcbAgentSvcClient(object):
         resource_path = "/environments/{environmentId}"
         method = "DELETE"
         operation_name = "delete_environment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Environment/DeleteEnvironment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1197,7 +1197,7 @@ class OcbAgentSvcClient(object):
         resource_path = "/agents/{agentId}"
         method = "GET"
         operation_name = "get_agent"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Agent/GetAgent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1291,7 +1291,7 @@ class OcbAgentSvcClient(object):
         resource_path = "/agentDependencies/{agentDependencyId}"
         method = "GET"
         operation_name = "get_agent_dependency"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AgentDependency/GetAgentDependency"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1385,7 +1385,7 @@ class OcbAgentSvcClient(object):
         resource_path = "/environments/{environmentId}"
         method = "GET"
         operation_name = "get_environment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Environment/GetEnvironment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1482,7 +1482,7 @@ class OcbAgentSvcClient(object):
         resource_path = "/agents/{agentId}/plugins/{pluginName}"
         method = "GET"
         operation_name = "get_plugin"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Plugin/GetPlugin"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1607,7 +1607,7 @@ class OcbAgentSvcClient(object):
         resource_path = "/agentDependencies"
         method = "GET"
         operation_name = "list_agent_dependencies"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AgentDependencyCollection/ListAgentDependencies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1763,7 +1763,7 @@ class OcbAgentSvcClient(object):
         resource_path = "/agents"
         method = "GET"
         operation_name = "list_agents"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AgentCollection/ListAgents"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1908,7 +1908,7 @@ class OcbAgentSvcClient(object):
         resource_path = "/applianceImages"
         method = "GET"
         operation_name = "list_appliance_images"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/ApplianceImageCollection/ListApplianceImages"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2048,7 +2048,7 @@ class OcbAgentSvcClient(object):
         resource_path = "/environments"
         method = "GET"
         operation_name = "list_environments"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/EnvironmentCollection/ListEnvironments"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2189,7 +2189,7 @@ class OcbAgentSvcClient(object):
         resource_path = "/environments/{environmentId}/actions/removeAgentDependency"
         method = "POST"
         operation_name = "remove_agent_dependency"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Environment/RemoveAgentDependency"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2307,7 +2307,7 @@ class OcbAgentSvcClient(object):
         resource_path = "/agents/{agentId}"
         method = "PUT"
         operation_name = "update_agent"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Agent/UpdateAgent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2425,7 +2425,7 @@ class OcbAgentSvcClient(object):
         resource_path = "/agentDependencies/{agentDependencyId}"
         method = "PUT"
         operation_name = "update_agent_dependency"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AgentDependency/UpdateAgentDependency"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2541,7 +2541,7 @@ class OcbAgentSvcClient(object):
         resource_path = "/environments/{environmentId}"
         method = "PUT"
         operation_name = "update_environment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Environment/UpdateEnvironment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2655,7 +2655,7 @@ class OcbAgentSvcClient(object):
         resource_path = "/agents/{agentId}/plugins/{pluginName}"
         method = "PUT"
         operation_name = "update_plugin"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Plugin/UpdatePlugin"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

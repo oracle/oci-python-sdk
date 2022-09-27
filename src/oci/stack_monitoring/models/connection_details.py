@@ -52,6 +52,10 @@ class ConnectionDetails(object):
             The value to assign to the db_id property of this ConnectionDetails.
         :type db_id: str
 
+        :param ssl_secret_id:
+            The value to assign to the ssl_secret_id property of this ConnectionDetails.
+        :type ssl_secret_id: str
+
         """
         self.swagger_types = {
             'protocol': 'str',
@@ -59,7 +63,8 @@ class ConnectionDetails(object):
             'connector_id': 'str',
             'service_name': 'str',
             'db_unique_name': 'str',
-            'db_id': 'str'
+            'db_id': 'str',
+            'ssl_secret_id': 'str'
         }
 
         self.attribute_map = {
@@ -68,7 +73,8 @@ class ConnectionDetails(object):
             'connector_id': 'connectorId',
             'service_name': 'serviceName',
             'db_unique_name': 'dbUniqueName',
-            'db_id': 'dbId'
+            'db_id': 'dbId',
+            'ssl_secret_id': 'sslSecretId'
         }
 
         self._protocol = None
@@ -77,6 +83,7 @@ class ConnectionDetails(object):
         self._service_name = None
         self._db_unique_name = None
         self._db_id = None
+        self._ssl_secret_id = None
 
     @property
     def protocol(self):
@@ -227,6 +234,34 @@ class ConnectionDetails(object):
         :type: str
         """
         self._db_id = db_id
+
+    @property
+    def ssl_secret_id(self):
+        """
+        Gets the ssl_secret_id of this ConnectionDetails.
+        SSL Secret Identifier for TCPS connector in OCI Vault`OCID`__
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The ssl_secret_id of this ConnectionDetails.
+        :rtype: str
+        """
+        return self._ssl_secret_id
+
+    @ssl_secret_id.setter
+    def ssl_secret_id(self, ssl_secret_id):
+        """
+        Sets the ssl_secret_id of this ConnectionDetails.
+        SSL Secret Identifier for TCPS connector in OCI Vault`OCID`__
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param ssl_secret_id: The ssl_secret_id of this ConnectionDetails.
+        :type: str
+        """
+        self._ssl_secret_id = ssl_secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

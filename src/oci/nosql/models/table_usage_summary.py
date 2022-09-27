@@ -49,6 +49,10 @@ class TableUsageSummary(object):
             The value to assign to the storage_throttle_count property of this TableUsageSummary.
         :type storage_throttle_count: int
 
+        :param max_shard_size_usage_in_percent:
+            The value to assign to the max_shard_size_usage_in_percent property of this TableUsageSummary.
+        :type max_shard_size_usage_in_percent: int
+
         """
         self.swagger_types = {
             'seconds_in_period': 'int',
@@ -57,7 +61,8 @@ class TableUsageSummary(object):
             'storage_in_g_bs': 'int',
             'read_throttle_count': 'int',
             'write_throttle_count': 'int',
-            'storage_throttle_count': 'int'
+            'storage_throttle_count': 'int',
+            'max_shard_size_usage_in_percent': 'int'
         }
 
         self.attribute_map = {
@@ -67,7 +72,8 @@ class TableUsageSummary(object):
             'storage_in_g_bs': 'storageInGBs',
             'read_throttle_count': 'readThrottleCount',
             'write_throttle_count': 'writeThrottleCount',
-            'storage_throttle_count': 'storageThrottleCount'
+            'storage_throttle_count': 'storageThrottleCount',
+            'max_shard_size_usage_in_percent': 'maxShardSizeUsageInPercent'
         }
 
         self._seconds_in_period = None
@@ -77,6 +83,7 @@ class TableUsageSummary(object):
         self._read_throttle_count = None
         self._write_throttle_count = None
         self._storage_throttle_count = None
+        self._max_shard_size_usage_in_percent = None
 
     @property
     def seconds_in_period(self):
@@ -251,6 +258,30 @@ class TableUsageSummary(object):
         :type: int
         """
         self._storage_throttle_count = storage_throttle_count
+
+    @property
+    def max_shard_size_usage_in_percent(self):
+        """
+        Gets the max_shard_size_usage_in_percent of this TableUsageSummary.
+        The percentage of allowed per-shard usage for the table shard with the highest usage.
+
+
+        :return: The max_shard_size_usage_in_percent of this TableUsageSummary.
+        :rtype: int
+        """
+        return self._max_shard_size_usage_in_percent
+
+    @max_shard_size_usage_in_percent.setter
+    def max_shard_size_usage_in_percent(self, max_shard_size_usage_in_percent):
+        """
+        Sets the max_shard_size_usage_in_percent of this TableUsageSummary.
+        The percentage of allowed per-shard usage for the table shard with the highest usage.
+
+
+        :param max_shard_size_usage_in_percent: The max_shard_size_usage_in_percent of this TableUsageSummary.
+        :type: int
+        """
+        self._max_shard_size_usage_in_percent = max_shard_size_usage_in_percent
 
     def __repr__(self):
         return formatted_flat_dict(self)

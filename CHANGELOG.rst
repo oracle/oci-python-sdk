@@ -4,6 +4,28 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.84.0 - 2022-09-27
+====================
+
+Added
+-----
+* Support for search capabilities for monitored resources in the Stack Monitoring service
+* Support for deleting monitored resources with their members in the Stack Monitoring service
+* Support for creating host-type monitored resources in the Stack Monitoring service
+* Support for associating external resources during creation of monitored resources in the Stack Monitoring service
+* Support for uploading bulk data in the NoSQL Database Cloud service
+* Support for examining query execution plans in the NoSQL Database Cloud service
+* Support for starting and stopping clusters in the Big Data service
+* Support for additional compute shapes in the Big Data service
+* Support for backwards pagination in the Search service
+* Support for cross-region replication in the File Storage service
+* Support for elastic compute for Exadata Cloud at Customer in the Database service  
+ 
+Breaking
+--------
+* Support for default retries on operations of the NoSQL Database Cloud service
+ 
+====================
 2.83.0 - 2022-09-20
 ====================
 

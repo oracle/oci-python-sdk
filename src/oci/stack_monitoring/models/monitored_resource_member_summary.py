@@ -62,6 +62,10 @@ class MonitoredResourceMemberSummary(object):
             The value to assign to the host_name property of this MonitoredResourceMemberSummary.
         :type host_name: str
 
+        :param external_id:
+            The value to assign to the external_id property of this MonitoredResourceMemberSummary.
+        :type external_id: str
+
         :param parent_id:
             The value to assign to the parent_id property of this MonitoredResourceMemberSummary.
         :type parent_id: str
@@ -91,6 +95,7 @@ class MonitoredResourceMemberSummary(object):
             'resource_display_name': 'str',
             'resource_type': 'str',
             'host_name': 'str',
+            'external_id': 'str',
             'parent_id': 'str',
             'lifecycle_state': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -104,6 +109,7 @@ class MonitoredResourceMemberSummary(object):
             'resource_display_name': 'resourceDisplayName',
             'resource_type': 'resourceType',
             'host_name': 'hostName',
+            'external_id': 'externalId',
             'parent_id': 'parentId',
             'lifecycle_state': 'lifecycleState',
             'freeform_tags': 'freeformTags',
@@ -116,6 +122,7 @@ class MonitoredResourceMemberSummary(object):
         self._resource_display_name = None
         self._resource_type = None
         self._host_name = None
+        self._external_id = None
         self._parent_id = None
         self._lifecycle_state = None
         self._freeform_tags = None
@@ -241,6 +248,40 @@ class MonitoredResourceMemberSummary(object):
         :type: str
         """
         self._host_name = host_name
+
+    @property
+    def external_id(self):
+        """
+        Gets the external_id of this MonitoredResourceMemberSummary.
+        External resource is any OCI resource identifier `OCID`__
+        which is not a Stack Monitoring service resource.
+        Currently supports only following resource type identifiers - externalcontainerdatabase,
+        externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The external_id of this MonitoredResourceMemberSummary.
+        :rtype: str
+        """
+        return self._external_id
+
+    @external_id.setter
+    def external_id(self, external_id):
+        """
+        Sets the external_id of this MonitoredResourceMemberSummary.
+        External resource is any OCI resource identifier `OCID`__
+        which is not a Stack Monitoring service resource.
+        Currently supports only following resource type identifiers - externalcontainerdatabase,
+        externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param external_id: The external_id of this MonitoredResourceMemberSummary.
+        :type: str
+        """
+        self._external_id = external_id
 
     @property
     def parent_id(self):

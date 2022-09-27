@@ -78,6 +78,10 @@ class DbServer(object):
             The value to assign to the db_node_ids property of this DbServer.
         :type db_node_ids: list[str]
 
+        :param shape:
+            The value to assign to the shape property of this DbServer.
+        :type shape: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DbServer.
             Allowed values for this property are: "CREATING", "AVAILABLE", "UNAVAILABLE", "DELETING", "DELETED", "MAINTENANCE_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
@@ -127,6 +131,7 @@ class DbServer(object):
             'db_node_storage_size_in_gbs': 'int',
             'vm_cluster_ids': 'list[str]',
             'db_node_ids': 'list[str]',
+            'shape': 'str',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'max_cpu_count': 'int',
@@ -148,6 +153,7 @@ class DbServer(object):
             'db_node_storage_size_in_gbs': 'dbNodeStorageSizeInGBs',
             'vm_cluster_ids': 'vmClusterIds',
             'db_node_ids': 'dbNodeIds',
+            'shape': 'shape',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'max_cpu_count': 'maxCpuCount',
@@ -168,6 +174,7 @@ class DbServer(object):
         self._db_node_storage_size_in_gbs = None
         self._vm_cluster_ids = None
         self._db_node_ids = None
+        self._shape = None
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._max_cpu_count = None
@@ -413,6 +420,30 @@ class DbServer(object):
         :type: list[str]
         """
         self._db_node_ids = db_node_ids
+
+    @property
+    def shape(self):
+        """
+        Gets the shape of this DbServer.
+        The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
+
+
+        :return: The shape of this DbServer.
+        :rtype: str
+        """
+        return self._shape
+
+    @shape.setter
+    def shape(self, shape):
+        """
+        Sets the shape of this DbServer.
+        The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
+
+
+        :param shape: The shape of this DbServer.
+        :type: str
+        """
+        self._shape = shape
 
     @property
     def lifecycle_state(self):

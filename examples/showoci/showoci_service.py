@@ -135,7 +135,7 @@ class ShowOCIFlags(object):
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.78.0"
+    oci_compatible_version = "2.82.0"
 
     ##########################################################################
     # Global Constants
@@ -1219,7 +1219,6 @@ class ShowOCIService(object):
                 self.__load_identity_users_groups(identity, tenancy_id)
                 self.__load_identity_dynamic_groups(identity, tenancy_id)
                 self.__load_identity_policies(identity)
-                self.__load_identity_providers(identity, tenancy_id)
                 self.__load_identity_cost_tracking_tags(identity, tenancy_id)
                 self.__load_identity_tag_namespace(identity)
 
@@ -1480,12 +1479,10 @@ class ShowOCIService(object):
         try:
             users = []
             groups = []
-            identity_providers = []
 
             try:
                 users = oci.pagination.list_call_get_all_results(identity.list_users, tenancy_id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
                 groups = oci.pagination.list_call_get_all_results(identity.list_groups, tenancy_id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
-                identity_providers = identity.list_identity_providers("SAML2", tenancy_id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
             except oci.exceptions.ServiceError as item:
                 if 'auth' in item.code.lower() or item.code == 'Forbidden':
                     self.__load_print_auth_warning()
@@ -1535,15 +1532,6 @@ class ShowOCIService(object):
                 for ugm in [e['group_id'] for e in members if user.id == e['user_id']]:
                     group_users.append(next(item for item in groups if item.id == ugm).name)
 
-                # identity provider
-                identity_provider_name = ""
-                try:
-                    if user.identity_provider_id:
-                        identity_provider_name = next(
-                            item for item in identity_providers if item.id == user.identity_provider_id).name
-                except Exception:
-                    identity_provider_name = 'unknown'
-
                 # user data
                 user_data = {
                     'id': user.id,
@@ -1553,8 +1541,8 @@ class ShowOCIService(object):
                     'lifecycle_state': str(user.lifecycle_state),
                     'inactive_status': str(user.inactive_status),
                     'time_created': str(user.time_created),
-                    'identity_provider_id': str(user.identity_provider_id),
-                    'identity_provider_name': str(identity_provider_name),
+                    'identity_provider_id': "",
+                    'identity_provider_name': "",
                     'email': str(user.email),
                     'email_verified': str(user.email_verified),
                     'external_identifier': str(user.external_identifier),
@@ -1769,65 +1757,6 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_identity_policies", e)
-
-    ##########################################################################
-    # Print Identity Providers
-    ##########################################################################
-    def __load_identity_providers(self, identity, tenancy_id):
-        data = []
-        self.__load_print_status("Providers")
-        start_time = time.time()
-
-        try:
-            groups = self.data[self.C_IDENTITY][self.C_IDENTITY_GROUPS]
-
-            try:
-                identity_providers = identity.list_identity_providers("SAML2", tenancy_id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
-
-                for d in identity_providers:
-
-                    # get identity providers groups
-                    try:
-                        igm = oci.pagination.list_call_get_all_results(identity.list_idp_group_mappings, d.id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
-
-                        # get the group data
-                        groupdata = []
-                        for ig in igm:
-                            for grp in groups:
-                                if grp['id'] == ig.group_id:
-                                    groupdata.append(ig.idp_group_name + " <-> " + grp['name'])
-
-                        data.append({
-                            'id': str(d.id),
-                            'name': str(d.name),
-                            'description': str(d.description),
-                            'product_type': str(d.product_type),
-                            'protocol': str(d.protocol),
-                            'redirect_url': str(d.redirect_url),
-                            'metadata_url': str(d.metadata_url),
-                            'group_map': groupdata
-                        })
-
-                    except oci.exceptions.ServiceError as e:
-                        if self.__check_service_error(e.code):
-                            self.__load_print_auth_warning()
-                            continue
-                        raise
-
-            except oci.exceptions.ServiceError as e:
-                if self.__check_service_error(e.code):
-                    self.__load_print_auth_warning()
-                else:
-                    raise
-
-            # add to data
-            self.data[self.C_IDENTITY][self.C_IDENTITY_PROVIDERS] = data
-            self.__load_print_cnt(len(data), start_time)
-
-        except oci.exceptions.RequestException:
-            raise
-        except Exception as e:
-            self.__print_error("__load_identity_providers", e)
 
     ##########################################################################
     # Print Dynamic Groups

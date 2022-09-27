@@ -144,7 +144,7 @@ class MigrationClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/WorkRequest/CancelWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -248,7 +248,7 @@ class MigrationClient(object):
         resource_path = "/migrations/{migrationId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_migration_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/Migration/ChangeMigrationCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -361,7 +361,7 @@ class MigrationClient(object):
         resource_path = "/migrationPlans/{migrationPlanId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_migration_plan_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationPlan/ChangeMigrationPlanCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -477,7 +477,7 @@ class MigrationClient(object):
         resource_path = "/replicationSchedules/{replicationScheduleId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_replication_schedule_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/ReplicationSchedule/ChangeReplicationScheduleCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -583,7 +583,7 @@ class MigrationClient(object):
         resource_path = "/migrations"
         method = "POST"
         operation_name = "create_migration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/Migration/CreateMigration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -677,7 +677,7 @@ class MigrationClient(object):
         resource_path = "/migrationAssets"
         method = "POST"
         operation_name = "create_migration_asset"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationAsset/CreateMigrationAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -771,7 +771,7 @@ class MigrationClient(object):
         resource_path = "/migrationPlans"
         method = "POST"
         operation_name = "create_migration_plan"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationPlan/CreateMigrationPlan"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -865,7 +865,7 @@ class MigrationClient(object):
         resource_path = "/replicationSchedules"
         method = "POST"
         operation_name = "create_replication_schedule"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/ReplicationSchedule/CreateReplicationSchedule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -959,7 +959,7 @@ class MigrationClient(object):
         resource_path = "/targetAssets"
         method = "POST"
         operation_name = "create_target_asset"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/TargetAsset/CreateTargetAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1053,7 +1053,7 @@ class MigrationClient(object):
         resource_path = "/migrations/{migrationId}"
         method = "DELETE"
         operation_name = "delete_migration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/Migration/DeleteMigration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1154,7 +1154,7 @@ class MigrationClient(object):
         resource_path = "/migrationAssets/{migrationAssetId}"
         method = "DELETE"
         operation_name = "delete_migration_asset"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationAsset/DeleteMigrationAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1255,7 +1255,7 @@ class MigrationClient(object):
         resource_path = "/migrationPlans/{migrationPlanId}"
         method = "DELETE"
         operation_name = "delete_migration_plan"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationPlan/DeleteMigrationPlan"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1356,7 +1356,7 @@ class MigrationClient(object):
         resource_path = "/replicationSchedules/{replicationScheduleId}"
         method = "DELETE"
         operation_name = "delete_replication_schedule"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/ReplicationSchedule/DeleteReplicationSchedule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1457,7 +1457,7 @@ class MigrationClient(object):
         resource_path = "/targetAssets/{targetAssetId}"
         method = "DELETE"
         operation_name = "delete_target_asset"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/TargetAsset/DeleteTargetAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1565,7 +1565,7 @@ class MigrationClient(object):
         resource_path = "/migrationPlans/{migrationPlanId}/actions/execute"
         method = "POST"
         operation_name = "execute_migration_plan"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationPlan/ExecuteMigrationPlan"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1662,7 +1662,7 @@ class MigrationClient(object):
         resource_path = "/migrationPlans/{migrationPlanId}/actions/export"
         method = "GET"
         operation_name = "export_migration_plan"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationPlan/ExportMigrationPlan"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1756,7 +1756,7 @@ class MigrationClient(object):
         resource_path = "/migrations/{migrationId}"
         method = "GET"
         operation_name = "get_migration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/Migration/GetMigration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1850,7 +1850,7 @@ class MigrationClient(object):
         resource_path = "/migrationAssets/{migrationAssetId}"
         method = "GET"
         operation_name = "get_migration_asset"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationAsset/GetMigrationAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1944,7 +1944,7 @@ class MigrationClient(object):
         resource_path = "/migrationPlans/{migrationPlanId}"
         method = "GET"
         operation_name = "get_migration_plan"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationPlan/GetMigrationPlan"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2038,7 +2038,7 @@ class MigrationClient(object):
         resource_path = "/migrationAssets/{migrationAssetId}/actions/replicationProgress"
         method = "GET"
         operation_name = "get_replication_progress"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationAsset/GetReplicationProgress"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2132,7 +2132,7 @@ class MigrationClient(object):
         resource_path = "/replicationSchedules/{replicationScheduleId}"
         method = "GET"
         operation_name = "get_replication_schedule"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/ReplicationSchedule/GetReplicationSchedule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2226,7 +2226,7 @@ class MigrationClient(object):
         resource_path = "/targetAssets/{targetAssetId}"
         method = "GET"
         operation_name = "get_target_asset"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/TargetAsset/GetTargetAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2320,7 +2320,7 @@ class MigrationClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2438,7 +2438,7 @@ class MigrationClient(object):
         resource_path = "/migrationPlans/{migrationPlanId}/actions/import"
         method = "POST"
         operation_name = "import_migration_plan"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationPlan/ImportMigrationPlan"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2586,7 +2586,7 @@ class MigrationClient(object):
         resource_path = "/migrationPlans/{migrationPlanId}/availableShapes"
         method = "GET"
         operation_name = "list_available_shapes"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/AvailableShapesCollection/ListAvailableShapes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2743,7 +2743,7 @@ class MigrationClient(object):
         resource_path = "/migrationAssets"
         method = "GET"
         operation_name = "list_migration_assets"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationAssetCollection/ListMigrationAssets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2898,7 +2898,7 @@ class MigrationClient(object):
         resource_path = "/migrationPlans"
         method = "GET"
         operation_name = "list_migration_plans"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationPlanCollection/ListMigrationPlans"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3052,7 +3052,7 @@ class MigrationClient(object):
         resource_path = "/migrations"
         method = "GET"
         operation_name = "list_migrations"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationCollection/ListMigrations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3204,7 +3204,7 @@ class MigrationClient(object):
         resource_path = "/replicationSchedules"
         method = "GET"
         operation_name = "list_replication_schedules"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/ReplicationScheduleCollection/ListReplicationSchedules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3356,7 +3356,7 @@ class MigrationClient(object):
         resource_path = "/targetAssets"
         method = "GET"
         operation_name = "list_target_assets"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/TargetAssetCollection/ListTargetAssets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3497,7 +3497,7 @@ class MigrationClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3635,7 +3635,7 @@ class MigrationClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3789,7 +3789,7 @@ class MigrationClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3937,7 +3937,7 @@ class MigrationClient(object):
         resource_path = "/migrations/{migrationId}/actions/refresh"
         method = "POST"
         operation_name = "refresh_migration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/Migration/RefreshMigration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4048,7 +4048,7 @@ class MigrationClient(object):
         resource_path = "/migrationAssets/{migrationAssetId}/actions/refresh"
         method = "POST"
         operation_name = "refresh_migration_asset"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationAsset/RefreshMigrationAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4159,7 +4159,7 @@ class MigrationClient(object):
         resource_path = "/migrationPlans/{migrationPlanId}/actions/refresh"
         method = "POST"
         operation_name = "refresh_migration_plan"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationPlan/RefreshMigrationPlan"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4270,7 +4270,7 @@ class MigrationClient(object):
         resource_path = "/migrationAssets/{migrationAssetId}/actions/startAssetReplication"
         method = "POST"
         operation_name = "start_asset_replication"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationAsset/StartAssetReplication"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4381,7 +4381,7 @@ class MigrationClient(object):
         resource_path = "/migrations/{migrationId}/actions/startMigrationReplication"
         method = "POST"
         operation_name = "start_migration_replication"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/Migration/StartMigrationReplication"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4488,7 +4488,7 @@ class MigrationClient(object):
         resource_path = "/migrations/{migrationId}"
         method = "PUT"
         operation_name = "update_migration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/Migration/UpdateMigration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4596,7 +4596,7 @@ class MigrationClient(object):
         resource_path = "/migrationAssets/{migrationAssetId}"
         method = "PUT"
         operation_name = "update_migration_asset"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationAsset/UpdateMigrationAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4704,7 +4704,7 @@ class MigrationClient(object):
         resource_path = "/migrationPlans/{migrationPlanId}"
         method = "PUT"
         operation_name = "update_migration_plan"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/MigrationPlan/UpdateMigrationPlan"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4810,7 +4810,7 @@ class MigrationClient(object):
         resource_path = "/replicationSchedules/{replicationScheduleId}"
         method = "PUT"
         operation_name = "update_replication_schedule"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/ReplicationSchedule/UpdateReplicationSchedule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4916,7 +4916,7 @@ class MigrationClient(object):
         resource_path = "/targetAssets/{targetAssetId}"
         method = "PUT"
         operation_name = "update_target_asset"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/ocm/20220919/TargetAsset/UpdateTargetAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

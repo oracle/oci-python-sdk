@@ -21,8 +21,6 @@ class FileSystem(object):
     policies to give users access, see `Getting Started with
     Policies`__.
 
-    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     """
 
@@ -41,6 +39,10 @@ class FileSystem(object):
     #: A constant which can be used with the lifecycle_state property of a FileSystem.
     #: This constant has a value of "DELETED"
     LIFECYCLE_STATE_DELETED = "DELETED"
+
+    #: A constant which can be used with the lifecycle_state property of a FileSystem.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
 
     def __init__(self, **kwargs):
         """
@@ -69,7 +71,7 @@ class FileSystem(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this FileSystem.
-            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -105,6 +107,14 @@ class FileSystem(object):
             The value to assign to the lifecycle_details property of this FileSystem.
         :type lifecycle_details: str
 
+        :param is_targetable:
+            The value to assign to the is_targetable property of this FileSystem.
+        :type is_targetable: bool
+
+        :param replication_target_id:
+            The value to assign to the replication_target_id property of this FileSystem.
+        :type replication_target_id: str
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -120,7 +130,9 @@ class FileSystem(object):
             'source_details': 'SourceDetails',
             'is_clone_parent': 'bool',
             'is_hydrated': 'bool',
-            'lifecycle_details': 'str'
+            'lifecycle_details': 'str',
+            'is_targetable': 'bool',
+            'replication_target_id': 'str'
         }
 
         self.attribute_map = {
@@ -137,7 +149,9 @@ class FileSystem(object):
             'source_details': 'sourceDetails',
             'is_clone_parent': 'isCloneParent',
             'is_hydrated': 'isHydrated',
-            'lifecycle_details': 'lifecycleDetails'
+            'lifecycle_details': 'lifecycleDetails',
+            'is_targetable': 'isTargetable',
+            'replication_target_id': 'replicationTargetId'
         }
 
         self._availability_domain = None
@@ -154,6 +168,8 @@ class FileSystem(object):
         self._is_clone_parent = None
         self._is_hydrated = None
         self._lifecycle_details = None
+        self._is_targetable = None
+        self._replication_target_id = None
 
     @property
     def availability_domain(self):
@@ -313,7 +329,7 @@ class FileSystem(object):
         **[Required]** Gets the lifecycle_state of this FileSystem.
         The current state of the file system.
 
-        Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -332,7 +348,7 @@ class FileSystem(object):
         :param lifecycle_state: The lifecycle_state of this FileSystem.
         :type: str
         """
-        allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED"]
+        allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -492,7 +508,7 @@ class FileSystem(object):
         Specifies whether the file system has been cloned.
         See `Cloning a File System`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
 
 
         :return: The is_clone_parent of this FileSystem.
@@ -507,7 +523,7 @@ class FileSystem(object):
         Specifies whether the file system has been cloned.
         See `Cloning a File System`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
 
 
         :param is_clone_parent: The is_clone_parent of this FileSystem.
@@ -524,7 +540,7 @@ class FileSystem(object):
         The source and clone remain available during hydration, but there may be some performance impact.
         See `Cloning a File System`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration
 
 
         :return: The is_hydrated of this FileSystem.
@@ -541,7 +557,7 @@ class FileSystem(object):
         The source and clone remain available during hydration, but there may be some performance impact.
         See `Cloning a File System`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration
 
 
         :param is_hydrated: The is_hydrated of this FileSystem.
@@ -572,6 +588,66 @@ class FileSystem(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def is_targetable(self):
+        """
+        Gets the is_targetable of this FileSystem.
+        Specifies whether the file system can be used as a target file system for replication.
+        For more information, see `Using Replication`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm
+
+
+        :return: The is_targetable of this FileSystem.
+        :rtype: bool
+        """
+        return self._is_targetable
+
+    @is_targetable.setter
+    def is_targetable(self, is_targetable):
+        """
+        Sets the is_targetable of this FileSystem.
+        Specifies whether the file system can be used as a target file system for replication.
+        For more information, see `Using Replication`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm
+
+
+        :param is_targetable: The is_targetable of this FileSystem.
+        :type: bool
+        """
+        self._is_targetable = is_targetable
+
+    @property
+    def replication_target_id(self):
+        """
+        Gets the replication_target_id of this FileSystem.
+        The `OCID`__ of the replication target associated with the file system.
+        Empty if the file system is not being used as target in a replication.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The replication_target_id of this FileSystem.
+        :rtype: str
+        """
+        return self._replication_target_id
+
+    @replication_target_id.setter
+    def replication_target_id(self, replication_target_id):
+        """
+        Sets the replication_target_id of this FileSystem.
+        The `OCID`__ of the replication target associated with the file system.
+        Empty if the file system is not being used as target in a replication.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param replication_target_id: The replication_target_id of this FileSystem.
+        :type: str
+        """
+        self._replication_target_id = replication_target_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

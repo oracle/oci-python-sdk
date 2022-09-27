@@ -246,6 +246,7 @@ from .register_autonomous_database_data_safe_details import RegisterAutonomousDa
 from .reinstate_data_guard_association_details import ReinstateDataGuardAssociationDetails
 from .remote_clone_pluggable_database_details import RemoteClonePluggableDatabaseDetails
 from .remove_virtual_machine_from_vm_cluster_details import RemoveVirtualMachineFromVmClusterDetails
+from .resize_vm_cluster_network_details import ResizeVmClusterNetworkDetails
 from .restore_autonomous_database_details import RestoreAutonomousDatabaseDetails
 from .restore_database_details import RestoreDatabaseDetails
 from .scan_details import ScanDetails
@@ -545,6 +546,7 @@ database_type_mapping = {
     "ReinstateDataGuardAssociationDetails": ReinstateDataGuardAssociationDetails,
     "RemoteClonePluggableDatabaseDetails": RemoteClonePluggableDatabaseDetails,
     "RemoveVirtualMachineFromVmClusterDetails": RemoveVirtualMachineFromVmClusterDetails,
+    "ResizeVmClusterNetworkDetails": ResizeVmClusterNetworkDetails,
     "RestoreAutonomousDatabaseDetails": RestoreAutonomousDatabaseDetails,
     "RestoreDatabaseDetails": RestoreDatabaseDetails,
     "ScanDetails": ScanDetails,

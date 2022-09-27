@@ -73,6 +73,8 @@ Bds
     oci.bds.models.ScheduleBasedHorizontalScalingPolicyDetails
     oci.bds.models.ScheduleBasedVerticalScalingPolicyDetails
     oci.bds.models.ShapeConfigDetails
+    oci.bds.models.StartBdsInstanceDetails
+    oci.bds.models.StopBdsInstanceDetails
     oci.bds.models.TestBdsMetastoreConfigurationDetails
     oci.bds.models.TestBdsObjectStorageConnectionDetails
     oci.bds.models.TimeAndHorizontalScalingConfig

@@ -54,6 +54,10 @@ class ChangeShapeNodes(object):
             The value to assign to the cloudsql property of this ChangeShapeNodes.
         :type cloudsql: str
 
+        :param cloudsql_shape_config:
+            The value to assign to the cloudsql_shape_config property of this ChangeShapeNodes.
+        :type cloudsql_shape_config: oci.bds.models.ShapeConfigDetails
+
         """
         self.swagger_types = {
             'worker': 'str',
@@ -64,7 +68,8 @@ class ChangeShapeNodes(object):
             'master_shape_config': 'ShapeConfigDetails',
             'utility': 'str',
             'utility_shape_config': 'ShapeConfigDetails',
-            'cloudsql': 'str'
+            'cloudsql': 'str',
+            'cloudsql_shape_config': 'ShapeConfigDetails'
         }
 
         self.attribute_map = {
@@ -76,7 +81,8 @@ class ChangeShapeNodes(object):
             'master_shape_config': 'masterShapeConfig',
             'utility': 'utility',
             'utility_shape_config': 'utilityShapeConfig',
-            'cloudsql': 'cloudsql'
+            'cloudsql': 'cloudsql',
+            'cloudsql_shape_config': 'cloudsqlShapeConfig'
         }
 
         self._worker = None
@@ -88,6 +94,7 @@ class ChangeShapeNodes(object):
         self._utility = None
         self._utility_shape_config = None
         self._cloudsql = None
+        self._cloudsql_shape_config = None
 
     @property
     def worker(self):
@@ -269,7 +276,7 @@ class ChangeShapeNodes(object):
     def cloudsql(self):
         """
         Gets the cloudsql of this ChangeShapeNodes.
-        Change shape of the Cloud SQL node to the desired target shape. Only VM_STANDARD shapes are allowed here.
+        Change shape of the Cloud SQL node to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
 
 
         :return: The cloudsql of this ChangeShapeNodes.
@@ -281,13 +288,33 @@ class ChangeShapeNodes(object):
     def cloudsql(self, cloudsql):
         """
         Sets the cloudsql of this ChangeShapeNodes.
-        Change shape of the Cloud SQL node to the desired target shape. Only VM_STANDARD shapes are allowed here.
+        Change shape of the Cloud SQL node to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
 
 
         :param cloudsql: The cloudsql of this ChangeShapeNodes.
         :type: str
         """
         self._cloudsql = cloudsql
+
+    @property
+    def cloudsql_shape_config(self):
+        """
+        Gets the cloudsql_shape_config of this ChangeShapeNodes.
+
+        :return: The cloudsql_shape_config of this ChangeShapeNodes.
+        :rtype: oci.bds.models.ShapeConfigDetails
+        """
+        return self._cloudsql_shape_config
+
+    @cloudsql_shape_config.setter
+    def cloudsql_shape_config(self, cloudsql_shape_config):
+        """
+        Sets the cloudsql_shape_config of this ChangeShapeNodes.
+
+        :param cloudsql_shape_config: The cloudsql_shape_config of this ChangeShapeNodes.
+        :type: oci.bds.models.ShapeConfigDetails
+        """
+        self._cloudsql_shape_config = cloudsql_shape_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

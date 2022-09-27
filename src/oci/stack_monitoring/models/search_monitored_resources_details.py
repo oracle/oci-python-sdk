@@ -78,6 +78,10 @@ class SearchMonitoredResourcesDetails(object):
             The value to assign to the host_name property of this SearchMonitoredResourcesDetails.
         :type host_name: str
 
+        :param external_id:
+            The value to assign to the external_id property of this SearchMonitoredResourcesDetails.
+        :type external_id: str
+
         :param host_name_contains:
             The value to assign to the host_name_contains property of this SearchMonitoredResourcesDetails.
         :type host_name_contains: str
@@ -132,6 +136,7 @@ class SearchMonitoredResourcesDetails(object):
             'name_contains': 'str',
             'type': 'str',
             'host_name': 'str',
+            'external_id': 'str',
             'host_name_contains': 'str',
             'management_agent_id': 'str',
             'lifecycle_state': 'str',
@@ -151,6 +156,7 @@ class SearchMonitoredResourcesDetails(object):
             'name_contains': 'nameContains',
             'type': 'type',
             'host_name': 'hostName',
+            'external_id': 'externalId',
             'host_name_contains': 'hostNameContains',
             'management_agent_id': 'managementAgentId',
             'lifecycle_state': 'lifecycleState',
@@ -169,6 +175,7 @@ class SearchMonitoredResourcesDetails(object):
         self._name_contains = None
         self._type = None
         self._host_name = None
+        self._external_id = None
         self._host_name_contains = None
         self._management_agent_id = None
         self._lifecycle_state = None
@@ -304,6 +311,40 @@ class SearchMonitoredResourcesDetails(object):
         :type: str
         """
         self._host_name = host_name
+
+    @property
+    def external_id(self):
+        """
+        Gets the external_id of this SearchMonitoredResourcesDetails.
+        External resource is any OCI resource identifier `OCID`__
+        which is not a Stack Monitoring service resource.
+        Currently supports only following resource type identifiers - externalcontainerdatabase,
+        externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The external_id of this SearchMonitoredResourcesDetails.
+        :rtype: str
+        """
+        return self._external_id
+
+    @external_id.setter
+    def external_id(self, external_id):
+        """
+        Sets the external_id of this SearchMonitoredResourcesDetails.
+        External resource is any OCI resource identifier `OCID`__
+        which is not a Stack Monitoring service resource.
+        Currently supports only following resource type identifiers - externalcontainerdatabase,
+        externalnoncontainerdatabase, externalpluggabledatabase and OCI compute instance.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param external_id: The external_id of this SearchMonitoredResourcesDetails.
+        :type: str
+        """
+        self._external_id = external_id
 
     @property
     def host_name_contains(self):

@@ -187,6 +187,14 @@ class CreateMountTargetDetails(object):
         with `RFC 952`__
         and `RFC 1123`__.
 
+        Note: This attribute value is stored in the `PrivateIp`__ resource,
+        not in the `mountTarget` resource.
+        To update the `hostnameLabel`, use `GetMountTarget` to obtain the
+        `OCIDs`__ of the mount target's
+        private IPs (`privateIpIds`). Then, you can use
+        `UpdatePrivateIp`__
+        to update the `hostnameLabel` value.
+
         For more information, see
         `DNS in Your Virtual Cloud Network`__.
 
@@ -194,6 +202,9 @@ class CreateMountTargetDetails(object):
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
 
 
@@ -214,6 +225,14 @@ class CreateMountTargetDetails(object):
         with `RFC 952`__
         and `RFC 1123`__.
 
+        Note: This attribute value is stored in the `PrivateIp`__ resource,
+        not in the `mountTarget` resource.
+        To update the `hostnameLabel`, use `GetMountTarget` to obtain the
+        `OCIDs`__ of the mount target's
+        private IPs (`privateIpIds`). Then, you can use
+        `UpdatePrivateIp`__
+        to update the `hostnameLabel` value.
+
         For more information, see
         `DNS in Your Virtual Cloud Network`__.
 
@@ -221,6 +240,9 @@ class CreateMountTargetDetails(object):
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
 
 
@@ -237,7 +259,19 @@ class CreateMountTargetDetails(object):
         the subnet's CIDR. If you don't specify a value, Oracle automatically
         assigns a private IP address from the subnet.
 
+        Note: This attribute value is stored in the `PrivateIp`__ resource,
+        not in the `mountTarget` resource.
+        To update the `ipAddress`, use `GetMountTarget` to obtain the
+        `OCIDs`__ of the mount target's
+        private IPs (`privateIpIds`). Then, you can use
+        `UpdatePrivateIp`__
+        to update the `ipAddress` value.
+
         Example: `10.0.3.3`
+
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp
 
 
         :return: The ip_address of this CreateMountTargetDetails.
@@ -253,7 +287,19 @@ class CreateMountTargetDetails(object):
         the subnet's CIDR. If you don't specify a value, Oracle automatically
         assigns a private IP address from the subnet.
 
+        Note: This attribute value is stored in the `PrivateIp`__ resource,
+        not in the `mountTarget` resource.
+        To update the `ipAddress`, use `GetMountTarget` to obtain the
+        `OCIDs`__ of the mount target's
+        private IPs (`privateIpIds`). Then, you can use
+        `UpdatePrivateIp`__
+        to update the `ipAddress` value.
+
         Example: `10.0.3.3`
+
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp
 
 
         :param ip_address: The ip_address of this CreateMountTargetDetails.

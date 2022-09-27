@@ -41,6 +41,18 @@ class Node(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the lifecycle_state property of a Node.
+    #: This constant has a value of "STOPPED"
+    LIFECYCLE_STATE_STOPPED = "STOPPED"
+
+    #: A constant which can be used with the lifecycle_state property of a Node.
+    #: This constant has a value of "STOPPING"
+    LIFECYCLE_STATE_STOPPING = "STOPPING"
+
+    #: A constant which can be used with the lifecycle_state property of a Node.
+    #: This constant has a value of "STARTING"
+    LIFECYCLE_STATE_STARTING = "STARTING"
+
     #: A constant which can be used with the node_type property of a Node.
     #: This constant has a value of "MASTER"
     NODE_TYPE_MASTER = "MASTER"
@@ -84,7 +96,7 @@ class Node(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Node.
-            Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "STOPPED", "STOPPING", "STARTING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -146,6 +158,14 @@ class Node(object):
             The value to assign to the memory_in_gbs property of this Node.
         :type memory_in_gbs: int
 
+        :param nvmes:
+            The value to assign to the nvmes property of this Node.
+        :type nvmes: int
+
+        :param local_disks_total_size_in_gbs:
+            The value to assign to the local_disks_total_size_in_gbs property of this Node.
+        :type local_disks_total_size_in_gbs: float
+
         """
         self.swagger_types = {
             'instance_id': 'str',
@@ -164,7 +184,9 @@ class Node(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'ocpus': 'int',
-            'memory_in_gbs': 'int'
+            'memory_in_gbs': 'int',
+            'nvmes': 'int',
+            'local_disks_total_size_in_gbs': 'float'
         }
 
         self.attribute_map = {
@@ -184,7 +206,9 @@ class Node(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'ocpus': 'ocpus',
-            'memory_in_gbs': 'memoryInGBs'
+            'memory_in_gbs': 'memoryInGBs',
+            'nvmes': 'nvmes',
+            'local_disks_total_size_in_gbs': 'localDisksTotalSizeInGBs'
         }
 
         self._instance_id = None
@@ -204,6 +228,8 @@ class Node(object):
         self._time_updated = None
         self._ocpus = None
         self._memory_in_gbs = None
+        self._nvmes = None
+        self._local_disks_total_size_in_gbs = None
 
     @property
     def instance_id(self):
@@ -259,7 +285,7 @@ class Node(object):
         **[Required]** Gets the lifecycle_state of this Node.
         The state of the node.
 
-        Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "STOPPED", "STOPPING", "STARTING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -278,7 +304,7 @@ class Node(object):
         :param lifecycle_state: The lifecycle_state of this Node.
         :type: str
         """
-        allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "STOPPED", "STOPPING", "STARTING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -624,6 +650,54 @@ class Node(object):
         :type: int
         """
         self._memory_in_gbs = memory_in_gbs
+
+    @property
+    def nvmes(self):
+        """
+        Gets the nvmes of this Node.
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+
+
+        :return: The nvmes of this Node.
+        :rtype: int
+        """
+        return self._nvmes
+
+    @nvmes.setter
+    def nvmes(self, nvmes):
+        """
+        Sets the nvmes of this Node.
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+
+
+        :param nvmes: The nvmes of this Node.
+        :type: int
+        """
+        self._nvmes = nvmes
+
+    @property
+    def local_disks_total_size_in_gbs(self):
+        """
+        Gets the local_disks_total_size_in_gbs of this Node.
+        The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+
+
+        :return: The local_disks_total_size_in_gbs of this Node.
+        :rtype: float
+        """
+        return self._local_disks_total_size_in_gbs
+
+    @local_disks_total_size_in_gbs.setter
+    def local_disks_total_size_in_gbs(self, local_disks_total_size_in_gbs):
+        """
+        Sets the local_disks_total_size_in_gbs of this Node.
+        The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+
+
+        :param local_disks_total_size_in_gbs: The local_disks_total_size_in_gbs of this Node.
+        :type: float
+        """
+        self._local_disks_total_size_in_gbs = local_disks_total_size_in_gbs
 
     def __repr__(self):
         return formatted_flat_dict(self)

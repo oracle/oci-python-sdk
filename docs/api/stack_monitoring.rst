@@ -19,6 +19,10 @@ Stack Monitoring
     :template: autosummary/model_class.rst
 
     oci.stack_monitoring.models.AssociateMonitoredResourcesDetails
+    oci.stack_monitoring.models.AssociatedMonitoredResource
+    oci.stack_monitoring.models.AssociatedResourcesCollection
+    oci.stack_monitoring.models.AssociatedResourcesSummary
+    oci.stack_monitoring.models.AssociationDetails
     oci.stack_monitoring.models.AssociationResourceDetails
     oci.stack_monitoring.models.ChangeMonitoredResourceCompartmentDetails
     oci.stack_monitoring.models.ConnectionDetails
@@ -50,6 +54,7 @@ Stack Monitoring
     oci.stack_monitoring.models.PlainTextCredentials
     oci.stack_monitoring.models.PreExistingCredentials
     oci.stack_monitoring.models.PropertyDetails
+    oci.stack_monitoring.models.SearchAssociatedResourcesDetails
     oci.stack_monitoring.models.SearchMonitoredResourceAssociationsDetails
     oci.stack_monitoring.models.SearchMonitoredResourceMembersDetails
     oci.stack_monitoring.models.SearchMonitoredResourcesDetails

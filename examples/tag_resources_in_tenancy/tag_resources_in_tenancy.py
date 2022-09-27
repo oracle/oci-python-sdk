@@ -43,7 +43,6 @@
 #   -tag            - tag information, can be either namespace.key=value or key=value with comma seperator for multiple tags
 #   -tagsep         - tag seperator default comma
 #   -service type   - Service Type default all, Services = all,compute,block,network,identity,loadbalancer,database,object,file
-#   -force          - don't confirm execution
 #   -output         - list | json | summary
 #   -filter_by_name - Filter service by name, comma seperator for multi names
 ##########################################################################
@@ -134,7 +133,6 @@ def command_line():
         parser.add_argument('-tagseperator', default=",", dest='tagseperator', help='Tag Seperator for multiple tags, default=,')
         parser.add_argument('-action', default="", dest='action', choices=['add_defined', 'add_free', 'del_defined', 'del_free', 'list'], help='Action Type')
         parser.add_argument('-output', default="list", dest='output', choices=['list', 'json', 'summary'], help='Output type, default=summary')
-        parser.add_argument('-force', default=False, action='store_true', dest='force', help='Force execution (do not confirm)')
         parser.add_argument('-service', default="all", dest='service', help='Services = all,compute,block,network,identity,loadbalancer,database,object,file. default=all')
         parser.add_argument('-filter_by_name', default="", dest='filter_by_name', help='Filter service by name comma seperator for multi')
         cmd = parser.parse_args()
@@ -604,16 +602,6 @@ def main():
     ############################################
     if "defined" in cmd.action and cmd.tag:
         read_tag_namespaces(identity, tenancy, assign_tags)
-
-    ############################################
-    # Confirm
-    ############################################
-    confirm = "yes" if cmd.force else ""
-    if not cmd.force:
-        confirm = input("\nType yes to execute: ")
-
-    if confirm.lower() != "yes":
-        sys.exit()
 
     ############################################
     # Loop on all regions
