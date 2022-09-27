@@ -37,6 +37,10 @@ class DiscoveryJobSummary(object):
     #: This constant has a value of "OCI_ORACLE_PDB"
     RESOURCE_TYPE_OCI_ORACLE_PDB = "OCI_ORACLE_PDB"
 
+    #: A constant which can be used with the resource_type property of a DiscoveryJobSummary.
+    #: This constant has a value of "HOST"
+    RESOURCE_TYPE_HOST = "HOST"
+
     #: A constant which can be used with the discovery_type property of a DiscoveryJobSummary.
     #: This constant has a value of "ADD"
     DISCOVERY_TYPE_ADD = "ADD"
@@ -108,7 +112,7 @@ class DiscoveryJobSummary(object):
 
         :param resource_type:
             The value to assign to the resource_type property of this DiscoveryJobSummary.
-            Allowed values for this property are: "WEBLOGIC_DOMAIN", "EBS_INSTANCE", "ORACLE_DATABASE", "OCI_ORACLE_DB", "OCI_ORACLE_CDB", "OCI_ORACLE_PDB", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "WEBLOGIC_DOMAIN", "EBS_INSTANCE", "ORACLE_DATABASE", "OCI_ORACLE_DB", "OCI_ORACLE_CDB", "OCI_ORACLE_PDB", "HOST", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_type: str
 
@@ -246,7 +250,7 @@ class DiscoveryJobSummary(object):
         Gets the resource_type of this DiscoveryJobSummary.
         Resource Type
 
-        Allowed values for this property are: "WEBLOGIC_DOMAIN", "EBS_INSTANCE", "ORACLE_DATABASE", "OCI_ORACLE_DB", "OCI_ORACLE_CDB", "OCI_ORACLE_PDB", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "WEBLOGIC_DOMAIN", "EBS_INSTANCE", "ORACLE_DATABASE", "OCI_ORACLE_DB", "OCI_ORACLE_CDB", "OCI_ORACLE_PDB", "HOST", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -265,7 +269,7 @@ class DiscoveryJobSummary(object):
         :param resource_type: The resource_type of this DiscoveryJobSummary.
         :type: str
         """
-        allowed_values = ["WEBLOGIC_DOMAIN", "EBS_INSTANCE", "ORACLE_DATABASE", "OCI_ORACLE_DB", "OCI_ORACLE_CDB", "OCI_ORACLE_PDB"]
+        allowed_values = ["WEBLOGIC_DOMAIN", "EBS_INSTANCE", "ORACLE_DATABASE", "OCI_ORACLE_DB", "OCI_ORACLE_CDB", "OCI_ORACLE_PDB", "HOST"]
         if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
             resource_type = 'UNKNOWN_ENUM_VALUE'
         self._resource_type = resource_type

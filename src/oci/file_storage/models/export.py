@@ -44,8 +44,6 @@ class Export(object):
     Use `exportOptions` to control access to an export. For more information, see
     `Export Options`__.
 
-    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
-
     __ https://docs.cloud.oracle.com/Content/File/Tasks/exportoptions.htm
     """
 

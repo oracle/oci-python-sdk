@@ -9,6 +9,7 @@ from .column import Column
 from .create_index_details import CreateIndexDetails
 from .create_table_details import CreateTableDetails
 from .delete_row_result import DeleteRowResult
+from .identity import Identity
 from .index import Index
 from .index_collection import IndexCollection
 from .index_key import IndexKey
@@ -45,6 +46,7 @@ nosql_type_mapping = {
     "CreateIndexDetails": CreateIndexDetails,
     "CreateTableDetails": CreateTableDetails,
     "DeleteRowResult": DeleteRowResult,
+    "Identity": Identity,
     "Index": Index,
     "IndexCollection": IndexCollection,
     "IndexKey": IndexKey,

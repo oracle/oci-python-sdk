@@ -260,6 +260,7 @@ Database
     oci.database.models.ReinstateDataGuardAssociationDetails
     oci.database.models.RemoteClonePluggableDatabaseDetails
     oci.database.models.RemoveVirtualMachineFromVmClusterDetails
+    oci.database.models.ResizeVmClusterNetworkDetails
     oci.database.models.RestoreAutonomousDatabaseDetails
     oci.database.models.RestoreDatabaseDetails
     oci.database.models.ScanDetails

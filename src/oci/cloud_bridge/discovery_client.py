@@ -155,7 +155,7 @@ class DiscoveryClient(object):
         resource_path = "/assetSources/{assetSourceId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_asset_source_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AssetSource/ChangeAssetSourceCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -273,7 +273,7 @@ class DiscoveryClient(object):
         resource_path = "/discoverySchedules/{discoveryScheduleId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_discovery_schedule_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/DiscoverySchedule/ChangeDiscoveryScheduleCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -379,7 +379,7 @@ class DiscoveryClient(object):
         resource_path = "/assetSources"
         method = "POST"
         operation_name = "create_asset_source"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AssetSource/CreateAssetSource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -473,7 +473,7 @@ class DiscoveryClient(object):
         resource_path = "/discoverySchedules"
         method = "POST"
         operation_name = "create_discovery_schedule"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/DiscoverySchedule/CreateDiscoverySchedule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -569,7 +569,7 @@ class DiscoveryClient(object):
         resource_path = "/assetSources/{assetSourceId}"
         method = "DELETE"
         operation_name = "delete_asset_source"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AssetSource/DeleteAssetSource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -672,7 +672,7 @@ class DiscoveryClient(object):
         resource_path = "/discoverySchedules/{discoveryScheduleId}"
         method = "DELETE"
         operation_name = "delete_discovery_schedule"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/DiscoverySchedule/DeleteDiscoverySchedule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -768,7 +768,7 @@ class DiscoveryClient(object):
         resource_path = "/assetSources/{assetSourceId}"
         method = "GET"
         operation_name = "get_asset_source"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AssetSource/GetAssetSource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -864,7 +864,7 @@ class DiscoveryClient(object):
         resource_path = "/discoverySchedules/{discoveryScheduleId}"
         method = "GET"
         operation_name = "get_discovery_schedule"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/DiscoverySchedule/GetDiscoverySchedule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -966,7 +966,7 @@ class DiscoveryClient(object):
         resource_path = "/assetSources/{assetSourceId}/actions/listConnections"
         method = "POST"
         operation_name = "list_asset_source_connections"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AssetSource/ListAssetSourceConnections"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1099,7 +1099,7 @@ class DiscoveryClient(object):
         resource_path = "/assetSources"
         method = "GET"
         operation_name = "list_asset_sources"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AssetSource/ListAssetSources"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1252,7 +1252,7 @@ class DiscoveryClient(object):
         resource_path = "/discoverySchedules"
         method = "GET"
         operation_name = "list_discovery_schedules"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/DiscoverySchedule/ListDiscoverySchedules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1385,7 +1385,7 @@ class DiscoveryClient(object):
         resource_path = "/assetSources/{assetSourceId}/actions/refresh"
         method = "POST"
         operation_name = "refresh_asset_source"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AssetSource/RefreshAssetSource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1492,7 +1492,7 @@ class DiscoveryClient(object):
         resource_path = "/assetSources/{assetSourceId}"
         method = "PUT"
         operation_name = "update_asset_source"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AssetSource/UpdateAssetSource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1600,7 +1600,7 @@ class DiscoveryClient(object):
         resource_path = "/discoverySchedules/{discoveryScheduleId}"
         method = "PUT"
         operation_name = "update_discovery_schedule"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/DiscoverySchedule/UpdateDiscoverySchedule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

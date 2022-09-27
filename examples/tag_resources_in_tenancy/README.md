@@ -68,7 +68,6 @@ optional arguments:
   -tagseperator TAGSEPERATOR                                Tag Seperator for multiple tags, default=,
   -action {add_defined,add_free,del_defined,del_free,list}  Action Type
   -output {list,json,summary}                               Output type, default=summary
-  -force                                                    Force execution (do not confirm)
   -service SERVICE                                          Services = all,compute,block,network,identity,loadbalancer,database,object,file. default=all
   -filter_by_name FILTER_BY_NAME                            Filter service by name, comma seperator for multi names
 ```
@@ -98,8 +97,6 @@ Reading Tag Namespaces...
    Found Tag Key 'desc', id = ocid1.tagdefinition.oc1..aaaaaaaakvoslxfyen744cotrkdrv4hrlwrs3rqd3uhr64hmfxxxxxxx
    Found Tag Namespace 'project', id = ocid1.tagnamespace.oc1..aaaaaaaaofnh6y66knfqxg3ihjd53e2olhotnetsisoxxxxx
    Found Tag Key 'team', id = ocid1.tagdefinition.oc1..aaaaaaaauvpkmmewoxifdaih4g2p5u6j7m5xvsujeelsoha4xxxxxxxx
-
-Type yes to execute: yes
 
 Processing Regions...
 

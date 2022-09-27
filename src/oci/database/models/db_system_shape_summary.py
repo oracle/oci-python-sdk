@@ -662,7 +662,7 @@ class DbSystemShapeSummary(object):
     def minimum_node_count(self):
         """
         Gets the minimum_node_count of this DbSystemShapeSummary.
-        The minimum number of database nodes available for this shape.
+        The minimum number of compute servers available for this shape.
 
 
         :return: The minimum_node_count of this DbSystemShapeSummary.
@@ -674,7 +674,7 @@ class DbSystemShapeSummary(object):
     def minimum_node_count(self, minimum_node_count):
         """
         Sets the minimum_node_count of this DbSystemShapeSummary.
-        The minimum number of database nodes available for this shape.
+        The minimum number of compute servers available for this shape.
 
 
         :param minimum_node_count: The minimum_node_count of this DbSystemShapeSummary.
@@ -686,7 +686,7 @@ class DbSystemShapeSummary(object):
     def maximum_node_count(self):
         """
         Gets the maximum_node_count of this DbSystemShapeSummary.
-        The maximum number of database nodes available for this shape.
+        The maximum number of compute servers available for this shape.
 
 
         :return: The maximum_node_count of this DbSystemShapeSummary.
@@ -698,7 +698,7 @@ class DbSystemShapeSummary(object):
     def maximum_node_count(self, maximum_node_count):
         """
         Sets the maximum_node_count of this DbSystemShapeSummary.
-        The maximum number of database nodes available for this shape.
+        The maximum number of compute servers available for this shape.
 
 
         :param maximum_node_count: The maximum_node_count of this DbSystemShapeSummary.

@@ -173,7 +173,7 @@ class InventoryClient(object):
         resource_path = "/assetAnalytics"
         method = "GET"
         operation_name = "analyze_assets"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AssetAggregation/AnalyzeAssets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -319,7 +319,7 @@ class InventoryClient(object):
         resource_path = "/assets/{assetId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_asset_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Asset/ChangeAssetCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -435,7 +435,7 @@ class InventoryClient(object):
         resource_path = "/assets/{assetId}/actions/changeTags"
         method = "POST"
         operation_name = "change_asset_tags"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Asset/ChangeAssetTags"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -543,7 +543,7 @@ class InventoryClient(object):
         resource_path = "/assets"
         method = "POST"
         operation_name = "create_asset"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Asset/CreateAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -637,7 +637,7 @@ class InventoryClient(object):
         resource_path = "/inventories"
         method = "POST"
         operation_name = "create_inventory"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Inventory/CreateInventory"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -729,7 +729,7 @@ class InventoryClient(object):
         resource_path = "/assets/{assetId}"
         method = "DELETE"
         operation_name = "delete_asset"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Asset/DeleteAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -830,7 +830,7 @@ class InventoryClient(object):
         resource_path = "/inventories/{inventoryId}"
         method = "DELETE"
         operation_name = "delete_inventory"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Inventory/DeleteInventory"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -924,7 +924,7 @@ class InventoryClient(object):
         resource_path = "/assets/{assetId}"
         method = "GET"
         operation_name = "get_asset"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Asset/GetAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1018,7 +1018,7 @@ class InventoryClient(object):
         resource_path = "/inventories/{inventoryId}"
         method = "GET"
         operation_name = "get_inventory"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Inventory/GetInventory"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1122,7 +1122,7 @@ class InventoryClient(object):
         resource_path = "/inventories/{inventoryId}/actions/import"
         method = "POST"
         operation_name = "import_inventory"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Inventory/ImportInventory"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1260,7 +1260,7 @@ class InventoryClient(object):
         resource_path = "/assets"
         method = "GET"
         operation_name = "list_assets"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/AssetCollection/ListAssets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1415,7 +1415,7 @@ class InventoryClient(object):
         resource_path = "/assets/{assetId}/historicalMetrics"
         method = "GET"
         operation_name = "list_historical_metrics"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/HistoricalMetric/ListHistoricalMetrics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1558,7 +1558,7 @@ class InventoryClient(object):
         resource_path = "/inventories"
         method = "GET"
         operation_name = "list_inventories"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Inventory/ListInventories"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1688,7 +1688,7 @@ class InventoryClient(object):
         resource_path = "/assets/{assetId}/actions/submitHistoricalMetrics"
         method = "POST"
         operation_name = "submit_historical_metrics"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/HistoricalMetric/SubmitHistoricalMetrics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1796,7 +1796,7 @@ class InventoryClient(object):
         resource_path = "/assets/{assetId}"
         method = "PUT"
         operation_name = "update_asset"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Asset/UpdateAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1904,7 +1904,7 @@ class InventoryClient(object):
         resource_path = "/inventories/{inventoryId}"
         method = "PUT"
         operation_name = "update_inventory"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Inventory/UpdateInventory"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

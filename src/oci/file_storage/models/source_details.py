@@ -48,7 +48,7 @@ class SourceDetails(object):
         See `Cloning a File System`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
 
 
         :return: The parent_file_system_id of this SourceDetails.
@@ -64,7 +64,7 @@ class SourceDetails(object):
         See `Cloning a File System`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
 
 
         :param parent_file_system_id: The parent_file_system_id of this SourceDetails.
@@ -80,7 +80,7 @@ class SourceDetails(object):
         See `Cloning a File System`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
 
 
         :return: The source_snapshot_id of this SourceDetails.
@@ -96,7 +96,7 @@ class SourceDetails(object):
         See `Cloning a File System`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm
 
 
         :param source_snapshot_id: The source_snapshot_id of this SourceDetails.
