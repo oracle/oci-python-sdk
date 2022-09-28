@@ -14,7 +14,7 @@ whenever sqlerror exit sql.sqlcode rollback
 begin
 wwv_flow_imp.import_begin (
  p_version_yyyy_mm_dd=>'2022.04.12'
-,p_release=>'22.1.2'
+,p_release=>'22.1.4'
 ,p_default_workspace_id=>9710643564672463
 ,p_default_application_id=>100
 ,p_default_id_offset=>0
@@ -28,7 +28,7 @@ prompt APPLICATION 100 - OCI Usage and Cost Report
 -- Application Export:
 --   Application:     100
 --   Name:            OCI Usage and Cost Report
---   Date and Time:   00:44 Saturday August 6, 2022
+--   Date and Time:   19:57 Wednesday September 28, 2022
 --   Exported By:     ADI.ZOHAR@ORACLE.COM
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -36,7 +36,7 @@ prompt APPLICATION 100 - OCI Usage and Cost Report
 --       Items:                  104
 --       Computations:            34
 --       Processes:                6
---       Regions:                 92
+--       Regions:                 93
 --       Buttons:                  6
 --       Dynamic Actions:          1
 --     Shared Components:
@@ -69,7 +69,7 @@ prompt APPLICATION 100 - OCI Usage and Cost Report
 --       Reports:
 --       E-Mail:
 --     Supporting Objects:  Excluded
---   Version:         22.1.2
+--   Version:         22.1.4
 --   Instance ID:     9710412995014033
 --
 
@@ -84,7 +84,7 @@ wwv_flow_imp.create_flow(
  p_id=>wwv_flow.g_flow_id
 ,p_owner=>nvl(wwv_flow_application_install.get_schema,'USAGE')
 ,p_name=>nvl(wwv_flow_application_install.get_application_name,'OCI Usage and Cost Report')
-,p_alias=>nvl(wwv_flow_application_install.get_application_alias,'A10020220726221939431')
+,p_alias=>nvl(wwv_flow_application_install.get_application_alias,'USAGE2ADW')
 ,p_page_view_logging=>'YES'
 ,p_page_protection_enabled_y_n=>'Y'
 ,p_checksum_salt=>'875FACC9195C359EC344917E15564C1D485DD4068144173F315788BE04F6A9F4'
@@ -106,7 +106,7 @@ wwv_flow_imp.create_flow(
 ,p_public_user=>'APEX_PUBLIC_USER'
 ,p_proxy_server=>nvl(wwv_flow_application_install.get_proxy,'')
 ,p_no_proxy_domains=>nvl(wwv_flow_application_install.get_no_proxy_domains,'')
-,p_flow_version=>'Release 22.8.12'
+,p_flow_version=>'Release 22.10.04'
 ,p_flow_status=>'AVAILABLE_W_EDIT_LINK'
 ,p_flow_unavailable_text=>'This application is currently unavailable at this time.'
 ,p_exact_substitutions_only=>'Y'
@@ -128,7 +128,7 @@ wwv_flow_imp.create_flow(
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'OCI Usage and Cost Report'
 ,p_last_updated_by=>'ADI.ZOHAR@ORACLE.COM'
-,p_last_upd_yyyymmddhh24miss=>'20220806004346'
+,p_last_upd_yyyymmddhh24miss=>'20220928195342'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>3
 ,p_ui_type_name => null
@@ -18489,7 +18489,7 @@ wwv_flow_imp_page.create_page(
 ,p_page_template_options=>'#DEFAULT#'
 ,p_page_component_map=>'18'
 ,p_last_updated_by=>'ADI.ZOHAR@ORACLE.COM'
-,p_last_upd_yyyymmddhh24miss=>'20220806004346'
+,p_last_upd_yyyymmddhh24miss=>'20220928195342'
 );
 wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(10816553122165737)
@@ -18537,7 +18537,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_component_template_options=>'#DEFAULT#'
 ,p_escape_on_http_output=>'Y'
 ,p_plug_template=>wwv_flow_imp.id(9765042323688020)
-,p_plug_display_sequence=>190
+,p_plug_display_sequence=>200
 ,p_plug_display_point=>'SUB_REGIONS'
 ,p_plug_source_type=>'NATIVE_JET_CHART'
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
@@ -18591,8 +18591,7 @@ wwv_flow_imp_page.create_jet_chart_series(
 '    (:P4_TAG1_SPECIAL is null or TAG_SPECIAL = :P4_TAG1_SPECIAL) and',
 '    (:P4_TAG2_SPECIAL is null or TAG_SPECIAL2 = :P4_TAG2_SPECIAL) and',
 '    (:P4_TAG_DATA is null or tags_data like ''%#'' || nvl(:P4_TAG_KEY,''%'') || ''='' || :P4_TAG_DATA || ''#%'') and',
-'    COST_MY_COST>0 ',
-'    and :P4_REPORT_SELECTOR = ''Cost Per Tag 2 Special''',
+'    :P4_REPORT_SELECTOR = ''Cost Per Tag 2 Special''',
 'group by ',
 '	nvl(tag_special2,''No Tag'')',
 'order by 2 desc',
@@ -18664,7 +18663,6 @@ wwv_flow_imp_page.create_page_plug(
 '    (:P4_TAG1_SPECIAL is null or TAG_SPECIAL = :P4_TAG1_SPECIAL) and',
 '    (:P4_TAG2_SPECIAL is null or TAG_SPECIAL2 = :P4_TAG2_SPECIAL) and',
 '    USAGE_INTERVAL_START >= to_date(:P4_DATE_FROM,''DD-MON-YYYY HH24:MI'') and USAGE_INTERVAL_START < to_date(:P4_DATE_TO,''DD-MON-YYYY HH24:MI'')',
-'    and COST_MY_COST > 0',
 '    and not (:P4_TENANT_ID is null and :P4_COMPARTMENT_NAME is null and :P4_PRODUCT_SERVICE is null and :P4_PRODUCT_REGION is null and :P4_COMPARTMENT_TOP is null and :P4_TAG_KEY is null and :P4_TAG_DATA is null and :P4_COST_PRODUCT_SKU is null and :'
 ||'P4_TAG1_SPECIAL is null and :P4_TAG2_SPECIAL is null)',
 '    and :P4_REPORT_SELECTOR = ''Cost Per Day''',
@@ -18678,9 +18676,8 @@ wwv_flow_imp_page.create_page_plug(
 'where ',
 '    (tenant_name=:P4_TENANT_NAME or :P4_TENANT_NAME = ''ALL'') and',
 '    USAGE_INTERVAL_START >= to_date(:P4_DATE_FROM,''DD-MON-YYYY HH24:MI'') and USAGE_INTERVAL_START < to_date(:P4_DATE_TO,''DD-MON-YYYY HH24:MI'')',
-'    and COST_MY_COST > 0',
-'    and (:P4_TENANT_ID is null and :P4_COMPARTMENT_NAME is null and :P4_PRODUCT_SERVICE is null and :P4_PRODUCT_REGION is null and :P4_COMPARTMENT_TOP is null and :P4_TAG_KEY is null and :P4_TAG_DATA is null and :P4_COST_PRODUCT_SKU is null and :P4_T'
-||'AG1_SPECIAL is null and :P4_TAG2_SPECIAL is null)',
+'     and (:P4_TENANT_ID is null and :P4_COMPARTMENT_NAME is null and :P4_PRODUCT_SERVICE is null and :P4_PRODUCT_REGION is null and :P4_COMPARTMENT_TOP is null and :P4_TAG_KEY is null and :P4_TAG_DATA is null and :P4_COST_PRODUCT_SKU is null and :P4_'
+||'TAG1_SPECIAL is null and :P4_TAG2_SPECIAL is null)',
 '    and :P4_REPORT_SELECTOR = ''Cost Per Day''',
 'group by ',
 '	to_char(USAGE_INTERVAL_START,''YYYY-MM-DD'')',
@@ -18805,7 +18802,6 @@ wwv_flow_imp_page.create_page_plug(
 '        (:P4_TAG_KEY is null or tags_data like ''%#'' || :P4_TAG_KEY || ''=%'') and',
 '        (:P4_TAG_DATA is null or tags_data like ''%#'' || nvl(:P4_TAG_KEY,''%'') || ''='' || :P4_TAG_DATA || ''#%'') and',
 '        USAGE_INTERVAL_START >= to_date(:P4_DATE_FROM,''DD-MON-YYYY HH24:MI'') and USAGE_INTERVAL_START < to_date(:P4_DATE_TO,''DD-MON-YYYY HH24:MI'')',
-'        and COST_MY_COST > 0',
 '        and not (:P4_TENANT_ID is null and :P4_COMPARTMENT_NAME is null and :P4_PRODUCT_SERVICE is null and :P4_PRODUCT_REGION is null and :P4_COMPARTMENT_TOP is null and :P4_TAG_KEY is null and :P4_TAG_DATA is null and :P4_COST_PRODUCT_SKU is null a'
 ||'nd :P4_TAG1_SPECIAL is null and :P4_TAG2_SPECIAL is null)',
 '        and :P4_REPORT_SELECTOR = ''Cost Per Day Accumulated''',
@@ -18819,7 +18815,6 @@ wwv_flow_imp_page.create_page_plug(
 '    where ',
 '        (tenant_name=:P4_TENANT_NAME or :P4_TENANT_NAME = ''ALL'') and',
 '        USAGE_INTERVAL_START >= to_date(:P4_DATE_FROM,''DD-MON-YYYY HH24:MI'') and USAGE_INTERVAL_START < to_date(:P4_DATE_TO,''DD-MON-YYYY HH24:MI'')',
-'        and COST_MY_COST > 0',
 '        and (:P4_TENANT_ID is null and :P4_COMPARTMENT_NAME is null and :P4_PRODUCT_SERVICE is null and :P4_PRODUCT_REGION is null and :P4_COMPARTMENT_TOP is null and :P4_TAG_KEY is null and :P4_TAG_DATA is null and :P4_COST_PRODUCT_SKU is null and :'
 ||'P4_TAG1_SPECIAL is null and :P4_TAG2_SPECIAL is null)',
 '        and :P4_REPORT_SELECTOR = ''Cost Per Day Accumulated''',
@@ -18952,8 +18947,7 @@ wwv_flow_imp_page.create_page_plug(
 '    (:P4_TAG2_SPECIAL is null or TAG_SPECIAL2 = :P4_TAG2_SPECIAL) and',
 '    (:P4_TAG_DATA is null or tags_data like ''%#'' || nvl(:P4_TAG_KEY,''%'') || ''='' || :P4_TAG_DATA || ''#%'') and',
 '    USAGE_INTERVAL_START >= to_date(:P4_DATE_FROM,''DD-MON-YYYY HH24:MI'') and USAGE_INTERVAL_START < to_date(:P4_DATE_TO,''DD-MON-YYYY HH24:MI'') and',
-'    COST_MY_COST > 0',
-'    and :P4_REPORT_SELECTOR = ''Cost Per Region''',
+'   :P4_REPORT_SELECTOR = ''Cost Per Region''',
 'group by ',
 '	prd_region',
 'order by 2 desc',
@@ -19071,8 +19065,7 @@ wwv_flow_imp_page.create_page_plug(
 '    (:P4_TAG2_SPECIAL is null or TAG_SPECIAL2 = :P4_TAG2_SPECIAL) and',
 '    (:P4_TAG_DATA is null or tags_data like ''%#'' || nvl(:P4_TAG_KEY,''%'') || ''='' || :P4_TAG_DATA || ''#%'') and',
 '    USAGE_INTERVAL_START >= to_date(:P4_DATE_FROM,''DD-MON-YYYY HH24:MI'') and USAGE_INTERVAL_START < to_date(:P4_DATE_TO,''DD-MON-YYYY HH24:MI'') and',
-'    COST_MY_COST > 0',
-'    and :P4_REPORT_SELECTOR = ''Cost Per Service''',
+'    :P4_REPORT_SELECTOR = ''Cost Per Service''',
 '',
 'group by ',
 '	replace(nvl(prd_service,COST_PRODUCT_SKU),''_'','' '')',
@@ -19169,7 +19162,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_region_template_options=>'#DEFAULT#:t-Region--accent15:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#'
 ,p_plug_template=>wwv_flow_imp.id(9765042323688020)
-,p_plug_display_sequence=>120
+,p_plug_display_sequence=>130
 ,p_plug_grid_column_span=>6
 ,p_plug_display_point=>'SUB_REGIONS'
 ,p_query_type=>'SQL'
@@ -19192,8 +19185,7 @@ wwv_flow_imp_page.create_page_plug(
 '    (:P4_TAG2_SPECIAL is null or TAG_SPECIAL2 = :P4_TAG2_SPECIAL) and',
 '    (:P4_TAG_DATA is null or tags_data like ''%#'' || nvl(:P4_TAG_KEY,''%'') || ''='' || :P4_TAG_DATA || ''#%'') and',
 '    USAGE_INTERVAL_START >= to_date(:P4_DATE_FROM,''DD-MON-YYYY HH24:MI'') and USAGE_INTERVAL_START < to_date(:P4_DATE_TO,''DD-MON-YYYY HH24:MI'') and',
-'    COST_MY_COST > 0',
-'    and :P4_REPORT_SELECTOR = ''Cost Per SKU''',
+'    :P4_REPORT_SELECTOR = ''Cost Per SKU''',
 'group by ',
 '	COST_PRODUCT_SKU ',
 'having sum(COST_MY_COST) > 0',
@@ -19237,9 +19229,6 @@ wwv_flow_imp_page.create_page_plug(
 ,p_prn_page_footer_alignment=>'CENTER'
 ,p_prn_border_color=>'#666666'
 );
-end;
-/
-begin
 wwv_flow_imp_page.create_worksheet(
  p_id=>wwv_flow_imp.id(7352996203959739)
 ,p_max_row_count=>'1000000'
@@ -19257,6 +19246,9 @@ wwv_flow_imp_page.create_worksheet(
 ,p_owner=>'ADI.ZOHAR@ORACLE.COM'
 ,p_internal_uid=>7352996203959739
 );
+end;
+/
+begin
 wwv_flow_imp_page.create_worksheet_column(
  p_id=>wwv_flow_imp.id(7353113688959741)
 ,p_db_column_name=>'COST_MY_COST'
@@ -19302,7 +19294,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_region_template_options=>'#DEFAULT#:t-Region--accent15:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#'
 ,p_plug_template=>wwv_flow_imp.id(9765042323688020)
-,p_plug_display_sequence=>140
+,p_plug_display_sequence=>150
 ,p_plug_grid_column_span=>6
 ,p_plug_display_point=>'SUB_REGIONS'
 ,p_query_type=>'SQL'
@@ -19327,8 +19319,7 @@ wwv_flow_imp_page.create_page_plug(
 '    USAGE_INTERVAL_START >= to_date(:P4_DATE_FROM,''DD-MON-YYYY HH24:MI'') and USAGE_INTERVAL_START < to_date(:P4_DATE_TO,''DD-MON-YYYY HH24:MI'') and',
 '    (:P4_TAG_KEY is null or tags_data like ''%#'' || :P4_TAG_KEY || ''=%'') and',
 '    (:P4_TAG_DATA is null or tags_data like ''%#'' || nvl(:P4_TAG_KEY,''%'') || ''='' || :P4_TAG_DATA || ''#%'') and',
-'    COST_MY_COST>0 ',
-'    and :P4_REPORT_SELECTOR = ''Cost Per Top Compartment''',
+'    :P4_REPORT_SELECTOR = ''Cost Per Top Compartment''',
 'group by ',
 '    case ',
 '    when prd_compartment_path is null then ''No Compartment''',
@@ -19428,7 +19419,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_region_template_options=>'#DEFAULT#:t-Region--accent15:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#'
 ,p_plug_template=>wwv_flow_imp.id(9765042323688020)
-,p_plug_display_sequence=>160
+,p_plug_display_sequence=>170
 ,p_plug_grid_column_span=>6
 ,p_plug_display_point=>'SUB_REGIONS'
 ,p_query_type=>'SQL'
@@ -19450,8 +19441,7 @@ wwv_flow_imp_page.create_page_plug(
 '    (:P4_TAG1_SPECIAL is null or TAG_SPECIAL = :P4_TAG1_SPECIAL) and',
 '    (:P4_TAG2_SPECIAL is null or TAG_SPECIAL2 = :P4_TAG2_SPECIAL) and',
 '    (:P4_TAG_DATA is null or tags_data like ''%#'' || nvl(:P4_TAG_KEY,''%'') || ''='' || :P4_TAG_DATA || ''#%'') and',
-'    COST_MY_COST>0 ',
-'    and :P4_REPORT_SELECTOR = ''Cost Per Single Compartment''',
+'    :P4_REPORT_SELECTOR = ''Cost Per Single Compartment''',
 'group by ',
 '    nvl(prd_compartment_path,''No Compartment''),',
 '    nvl(prd_compartment_name,''No Compartment'')',
@@ -19557,7 +19547,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_region_template_options=>'#DEFAULT#:t-Region--accent15:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#'
 ,p_plug_template=>wwv_flow_imp.id(9765042323688020)
-,p_plug_display_sequence=>180
+,p_plug_display_sequence=>190
 ,p_plug_grid_column_span=>6
 ,p_plug_display_point=>'SUB_REGIONS'
 ,p_query_type=>'SQL'
@@ -19578,8 +19568,7 @@ wwv_flow_imp_page.create_page_plug(
 '    (:P4_TAG1_SPECIAL is null or TAG_SPECIAL = :P4_TAG1_SPECIAL) and',
 '    (:P4_TAG2_SPECIAL is null or TAG_SPECIAL2 = :P4_TAG2_SPECIAL) and',
 '    (:P4_TAG_DATA is null or tags_data like ''%#'' || nvl(:P4_TAG_KEY,''%'') || ''='' || :P4_TAG_DATA || ''#%'') and',
-'    COST_MY_COST>0 ',
-'    and :P4_REPORT_SELECTOR = ''Cost Per Tag 1 Special''',
+'    :P4_REPORT_SELECTOR = ''Cost Per Tag 1 Special''',
 'group by ',
 '	nvl(tag_special,''No Tag'')',
 'order by 2 desc',
@@ -19675,7 +19664,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_region_template_options=>'#DEFAULT#:t-Region--accent15:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#'
 ,p_plug_template=>wwv_flow_imp.id(9765042323688020)
-,p_plug_display_sequence=>200
+,p_plug_display_sequence=>210
 ,p_plug_grid_column_span=>6
 ,p_plug_display_point=>'SUB_REGIONS'
 ,p_query_type=>'SQL'
@@ -19696,8 +19685,7 @@ wwv_flow_imp_page.create_page_plug(
 '    (:P4_TAG1_SPECIAL is null or TAG_SPECIAL = :P4_TAG1_SPECIAL) and',
 '    (:P4_TAG2_SPECIAL is null or TAG_SPECIAL2 = :P4_TAG2_SPECIAL) and',
 '    (:P4_TAG_DATA is null or tags_data like ''%#'' || nvl(:P4_TAG_KEY,''%'') || ''='' || :P4_TAG_DATA || ''#%'') and',
-'    COST_MY_COST>0 ',
-'    and :P4_REPORT_SELECTOR = ''Cost Per Tag 2 Special''',
+'    :P4_REPORT_SELECTOR = ''Cost Per Tag 2 Special''',
 'group by ',
 '	nvl(tag_special2,''No Tag'')',
 'order by 2 desc',
@@ -19794,7 +19782,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_component_template_options=>'#DEFAULT#'
 ,p_escape_on_http_output=>'Y'
 ,p_plug_template=>wwv_flow_imp.id(9765042323688020)
-,p_plug_display_sequence=>210
+,p_plug_display_sequence=>220
 ,p_plug_display_point=>'SUB_REGIONS'
 ,p_plug_source_type=>'NATIVE_JET_CHART'
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
@@ -19848,8 +19836,7 @@ wwv_flow_imp_page.create_jet_chart_series(
 '    (:P4_TAG1_SPECIAL is null or TAG_SPECIAL = :P4_TAG1_SPECIAL) and',
 '    (:P4_TAG2_SPECIAL is null or TAG_SPECIAL2 = :P4_TAG2_SPECIAL) and',
 '    (:P4_TAG_DATA is null or tags_data like ''%#'' || nvl(:P4_TAG_KEY,''%'') || ''='' || :P4_TAG_DATA || ''#%'') and',
-'    COST_MY_COST>0 ',
-'    and :P4_REPORT_SELECTOR = ''Cost Per Tag 1+2 Special''',
+'    :P4_REPORT_SELECTOR = ''Cost Per Tag 1+2 Special''',
 'group by ',
 '	nvl(tag_special,''No Tag'')||'':''||nvl(tag_special2,''No Tag'')',
 'order by 2 desc',
@@ -19899,7 +19886,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_region_template_options=>'#DEFAULT#:t-Region--accent15:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#'
 ,p_plug_template=>wwv_flow_imp.id(9765042323688020)
-,p_plug_display_sequence=>220
+,p_plug_display_sequence=>230
 ,p_plug_grid_column_span=>6
 ,p_plug_display_point=>'SUB_REGIONS'
 ,p_query_type=>'SQL'
@@ -19921,8 +19908,7 @@ wwv_flow_imp_page.create_page_plug(
 '    (:P4_TAG1_SPECIAL is null or TAG_SPECIAL = :P4_TAG1_SPECIAL) and',
 '    (:P4_TAG2_SPECIAL is null or TAG_SPECIAL2 = :P4_TAG2_SPECIAL) and',
 '    (:P4_TAG_DATA is null or tags_data like ''%#'' || nvl(:P4_TAG_KEY,''%'') || ''='' || :P4_TAG_DATA || ''#%'') and',
-'    COST_MY_COST>0 ',
-'    and :P4_REPORT_SELECTOR = ''Cost Per Tag 1+2 Special''',
+'    :P4_REPORT_SELECTOR = ''Cost Per Tag 1+2 Special''',
 'group by ',
 '	nvl(tag_special,''No Tag''),nvl(tag_special2,''No Tag'')',
 'order by 3 desc',
@@ -20027,7 +20013,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_region_template_options=>'#DEFAULT#:t-Region--accent15:t-Region--scrollBody'
 ,p_escape_on_http_output=>'Y'
 ,p_plug_template=>wwv_flow_imp.id(9765042323688020)
-,p_plug_display_sequence=>110
+,p_plug_display_sequence=>120
 ,p_plug_new_grid_row=>false
 ,p_plug_new_grid_column=>false
 ,p_plug_display_point=>'SUB_REGIONS'
@@ -20103,8 +20089,7 @@ wwv_flow_imp_page.create_jet_chart_series(
 '    (:P4_TAG2_SPECIAL is null or TAG_SPECIAL2 = :P4_TAG2_SPECIAL) and',
 '    (:P4_TAG_DATA is null or tags_data like ''%#'' || nvl(:P4_TAG_KEY,''%'') || ''='' || :P4_TAG_DATA || ''#%'') and',
 '    USAGE_INTERVAL_START >= to_date(:P4_DATE_FROM,''DD-MON-YYYY HH24:MI'') and USAGE_INTERVAL_START < to_date(:P4_DATE_TO,''DD-MON-YYYY HH24:MI'') and',
-'    COST_MY_COST > 0',
-'    and :P4_REPORT_SELECTOR = ''Cost Per SKU''',
+'    :P4_REPORT_SELECTOR = ''Cost Per SKU''',
 'group by ',
 '	COST_PRODUCT_SKU ',
 'having sum(COST_MY_COST) > 0',
@@ -20130,7 +20115,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_region_template_options=>'#DEFAULT#:t-Region--accent15:t-Region--scrollBody'
 ,p_escape_on_http_output=>'Y'
 ,p_plug_template=>wwv_flow_imp.id(9765042323688020)
-,p_plug_display_sequence=>130
+,p_plug_display_sequence=>140
 ,p_plug_display_point=>'SUB_REGIONS'
 ,p_plug_source_type=>'NATIVE_JET_CHART'
 ,p_plug_query_num_rows=>15
@@ -20203,8 +20188,7 @@ wwv_flow_imp_page.create_jet_chart_series(
 '    USAGE_INTERVAL_START >= to_date(:P4_DATE_FROM,''DD-MON-YYYY HH24:MI'') and USAGE_INTERVAL_START < to_date(:P4_DATE_TO,''DD-MON-YYYY HH24:MI'') and',
 '    (:P4_TAG_KEY is null or tags_data like ''%#'' || :P4_TAG_KEY || ''=%'') and',
 '    (:P4_TAG_DATA is null or tags_data like ''%#'' || nvl(:P4_TAG_KEY,''%'') || ''='' || :P4_TAG_DATA || ''#%'') and',
-'    COST_MY_COST>0 ',
-'    and :P4_REPORT_SELECTOR = ''Cost Per Top Compartment''',
+'    :P4_REPORT_SELECTOR = ''Cost Per Top Compartment''',
 'group by ',
 '    case ',
 '    when prd_compartment_path is null then ''No Compartment''',
@@ -20343,7 +20327,6 @@ wwv_flow_imp_page.create_jet_chart_series(
 '    (:P4_TAG1_SPECIAL is null or TAG_SPECIAL = :P4_TAG1_SPECIAL) and',
 '    (:P4_TAG2_SPECIAL is null or TAG_SPECIAL2 = :P4_TAG2_SPECIAL) and',
 '    USAGE_INTERVAL_START >= to_date(:P4_DATE_FROM,''DD-MON-YYYY HH24:MI'') and USAGE_INTERVAL_START < to_date(:P4_DATE_TO,''DD-MON-YYYY HH24:MI'')',
-'    and COST_MY_COST > 0',
 '    and not (:P4_TENANT_ID is null and :P4_COMPARTMENT_NAME is null and :P4_PRODUCT_SERVICE is null and :P4_PRODUCT_REGION is null and :P4_COMPARTMENT_TOP is null and :P4_TAG_KEY is null and :P4_TAG_DATA is null and :P4_COST_PRODUCT_SKU is null and :'
 ||'P4_TAG1_SPECIAL is null and :P4_TAG2_SPECIAL is null)',
 '    and :P4_REPORT_SELECTOR = ''Cost Per Day''',
@@ -20504,8 +20487,7 @@ wwv_flow_imp_page.create_jet_chart_series(
 '    (:P4_TAG2_SPECIAL is null or TAG_SPECIAL2 = :P4_TAG2_SPECIAL) and',
 '    (:P4_TAG_DATA is null or tags_data like ''%#'' || nvl(:P4_TAG_KEY,''%'') || ''='' || :P4_TAG_DATA || ''#%'') and',
 '    USAGE_INTERVAL_START >= to_date(:P4_DATE_FROM,''DD-MON-YYYY HH24:MI'') and USAGE_INTERVAL_START < to_date(:P4_DATE_TO,''DD-MON-YYYY HH24:MI'') and',
-'    COST_MY_COST > 0',
-'    and :P4_REPORT_SELECTOR = ''Cost Per Service''',
+'   :P4_REPORT_SELECTOR = ''Cost Per Service''',
 '',
 'group by ',
 '	replace(nvl(prd_service,COST_PRODUCT_SKU),''_'','' '')',
@@ -20528,7 +20510,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_region_template_options=>'#DEFAULT#:t-Region--accent15:t-Region--scrollBody'
 ,p_escape_on_http_output=>'Y'
 ,p_plug_template=>wwv_flow_imp.id(9765042323688020)
-,p_plug_display_sequence=>170
+,p_plug_display_sequence=>180
 ,p_plug_display_point=>'SUB_REGIONS'
 ,p_plug_source_type=>'NATIVE_JET_CHART'
 ,p_plug_query_num_rows=>15
@@ -20597,8 +20579,7 @@ wwv_flow_imp_page.create_jet_chart_series(
 '    (:P4_TAG1_SPECIAL is null or TAG_SPECIAL = :P4_TAG1_SPECIAL) and',
 '    (:P4_TAG2_SPECIAL is null or TAG_SPECIAL2 = :P4_TAG2_SPECIAL) and',
 '    (:P4_TAG_DATA is null or tags_data like ''%#'' || nvl(:P4_TAG_KEY,''%'') || ''='' || :P4_TAG_DATA || ''#%'') and',
-'    COST_MY_COST>0 ',
-'    and :P4_REPORT_SELECTOR = ''Cost Per Tag 1 Special''',
+'    :P4_REPORT_SELECTOR = ''Cost Per Tag 1 Special''',
 'group by ',
 '	nvl(tag_special,''No Tag'')',
 'order by 2 desc',
@@ -21350,6 +21331,146 @@ wwv_flow_imp_page.create_worksheet_rpt(
 ||'_UNIT_PRICE:COST_UNIT_PRICE_OVERAGE:COST_MY_COST:COST_MY_COST_OVERAGE:COST_CURRENCY_CODE:COST_OVERAGE_FLAG:IS_CORRECTION:TAG_SPECIAL:TAG_SPECIAL2:TAGS_DATA:USG_RESOURCE_ID:'
 );
 wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(12373130135885226)
+,p_plug_name=>'Cost Per Day Compartment and Service Report'
+,p_parent_plug_id=>wwv_flow_imp.id(21608843544513693)
+,p_region_template_options=>'#DEFAULT#:t-Region--accent15:t-Region--scrollBody'
+,p_component_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_imp.id(9765042323688020)
+,p_plug_display_sequence=>110
+,p_plug_grid_column_span=>6
+,p_plug_display_point=>'SUB_REGIONS'
+,p_query_type=>'SQL'
+,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select /*+ parallel(oci_cost,8) full(oci_cost) */ ',
+'    to_char(USAGE_INTERVAL_START,''YYYY-MM-DD'') as USAGE_DAY, ',
+'    prd_compartment_name COMPARTMENT_NAME,',
+'    replace(nvl(prd_service,COST_PRODUCT_SKU),''_'','' '') prd_service,',
+'    sum(COST_MY_COST) as COST_MY_COST',
+'from oci_cost',
+'where ',
+'    (tenant_name=:P4_TENANT_NAME or :P4_TENANT_NAME = ''ALL'') and',
+'    (:P4_COMPARTMENT_NAME is null or prd_compartment_name = :P4_COMPARTMENT_NAME) and',
+'    (:P4_COMPARTMENT_TOP is null or prd_compartment_path like :P4_COMPARTMENT_TOP ||''%'') and',
+'    (:P4_PRODUCT_SERVICE is null or prd_service = :P4_PRODUCT_SERVICE) and',
+'    (:P4_PRODUCT_REGION is null or prd_region = :P4_PRODUCT_REGION) and',
+'    (:P4_COST_PRODUCT_SKU is null or COST_PRODUCT_SKU = :P4_COST_PRODUCT_SKU) and',
+'    (:P4_TENANT_ID is null or tenant_id = :P4_TENANT_ID) and',
+'    (:P4_TAG_KEY is null or tags_data like ''%#'' || :P4_TAG_KEY || ''=%'') and',
+'    (:P4_TAG1_SPECIAL is null or TAG_SPECIAL = :P4_TAG1_SPECIAL) and',
+'    (:P4_TAG2_SPECIAL is null or TAG_SPECIAL2 = :P4_TAG2_SPECIAL) and',
+'    (:P4_TAG_DATA is null or tags_data like ''%#'' || nvl(:P4_TAG_KEY,''%'') || ''='' || :P4_TAG_DATA || ''#%'') and',
+'    USAGE_INTERVAL_START >= to_date(:P4_DATE_FROM,''DD-MON-YYYY HH24:MI'') and USAGE_INTERVAL_START < to_date(:P4_DATE_TO,''DD-MON-YYYY HH24:MI'') and',
+'    :P4_REPORT_SELECTOR = ''Cost Per Day Comp and Service Report''',
+'group by ',
+'	to_char(USAGE_INTERVAL_START,''YYYY-MM-DD''),',
+'    prd_compartment_name,',
+'    replace(nvl(prd_service,COST_PRODUCT_SKU),''_'','' '')',
+'order by 1,2,3',
+'',
+'',
+'',
+''))
+,p_plug_source_type=>'NATIVE_IR'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_plug_display_condition_type=>'VAL_OF_ITEM_IN_COND_EQ_COND2'
+,p_plug_display_when_condition=>'P4_REPORT_SELECTOR'
+,p_plug_display_when_cond2=>'Cost Per Day Comp and Service Report'
+,p_prn_content_disposition=>'ATTACHMENT'
+,p_prn_units=>'INCHES'
+,p_prn_paper_size=>'LETTER'
+,p_prn_width=>11
+,p_prn_height=>8.5
+,p_prn_orientation=>'HORIZONTAL'
+,p_prn_page_header=>'Cost Per Day Compartment and Service Report'
+,p_prn_page_header_font_color=>'#000000'
+,p_prn_page_header_font_family=>'Helvetica'
+,p_prn_page_header_font_weight=>'normal'
+,p_prn_page_header_font_size=>'12'
+,p_prn_page_footer_font_color=>'#000000'
+,p_prn_page_footer_font_family=>'Helvetica'
+,p_prn_page_footer_font_weight=>'normal'
+,p_prn_page_footer_font_size=>'12'
+,p_prn_header_bg_color=>'#EEEEEE'
+,p_prn_header_font_color=>'#000000'
+,p_prn_header_font_family=>'Helvetica'
+,p_prn_header_font_weight=>'bold'
+,p_prn_header_font_size=>'10'
+,p_prn_body_bg_color=>'#FFFFFF'
+,p_prn_body_font_color=>'#000000'
+,p_prn_body_font_family=>'Helvetica'
+,p_prn_body_font_weight=>'normal'
+,p_prn_body_font_size=>'10'
+,p_prn_border_width=>.5
+,p_prn_page_header_alignment=>'CENTER'
+,p_prn_page_footer_alignment=>'CENTER'
+,p_prn_border_color=>'#666666'
+);
+wwv_flow_imp_page.create_worksheet(
+ p_id=>wwv_flow_imp.id(12373287812885227)
+,p_max_row_count=>'1000000'
+,p_allow_save_rpt_public=>'Y'
+,p_pagination_type=>'ROWS_X_TO_Y_OF_Z'
+,p_pagination_display_pos=>'BOTTOM_RIGHT'
+,p_show_display_row_count=>'Y'
+,p_report_list_mode=>'TABS'
+,p_lazy_loading=>false
+,p_show_detail_link=>'N'
+,p_show_rows_per_page=>'N'
+,p_show_notify=>'Y'
+,p_download_formats=>'CSV:HTML:XLSX:PDF'
+,p_enable_mail_download=>'Y'
+,p_owner=>'ADI.ZOHAR@ORACLE.COM'
+,p_internal_uid=>12373287812885227
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(12373520463885230)
+,p_db_column_name=>'USAGE_DAY'
+,p_display_order=>10
+,p_column_identifier=>'C'
+,p_column_label=>'Usage Day'
+,p_column_type=>'STRING'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(12373622721885231)
+,p_db_column_name=>'COMPARTMENT_NAME'
+,p_display_order=>20
+,p_column_identifier=>'D'
+,p_column_label=>'Compartment Name'
+,p_column_type=>'STRING'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(12373317928885228)
+,p_db_column_name=>'PRD_SERVICE'
+,p_display_order=>30
+,p_column_identifier=>'A'
+,p_column_label=>'Service'
+,p_column_type=>'STRING'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(12373445934885229)
+,p_db_column_name=>'COST_MY_COST'
+,p_display_order=>40
+,p_column_identifier=>'B'
+,p_column_label=>'Cost'
+,p_column_type=>'NUMBER'
+,p_column_alignment=>'RIGHT'
+,p_format_mask=>'FML999G999G999G999G990D00'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_rpt(
+ p_id=>wwv_flow_imp.id(9267456140928842)
+,p_application_user=>'APXWS_DEFAULT'
+,p_report_seq=>10
+,p_report_alias=>'92675'
+,p_status=>'PUBLIC'
+,p_is_default=>'Y'
+,p_report_columns=>'USAGE_DAY:COMPARTMENT_NAME:PRD_SERVICE:COST_MY_COST'
+);
+wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(13974097805041417)
 ,p_plug_name=>'Cost Per Day Accumulated'
 ,p_parent_plug_id=>wwv_flow_imp.id(21608843544513693)
@@ -21431,9 +21552,8 @@ wwv_flow_imp_page.create_jet_chart_series(
 '        (:P4_TAG_KEY is null or tags_data like ''%#'' || :P4_TAG_KEY || ''=%'') and',
 '        (:P4_TAG_DATA is null or tags_data like ''%#'' || nvl(:P4_TAG_KEY,''%'') || ''='' || :P4_TAG_DATA || ''#%'') and',
 '        USAGE_INTERVAL_START >= to_date(:P4_DATE_FROM,''DD-MON-YYYY HH24:MI'') and USAGE_INTERVAL_START < to_date(:P4_DATE_TO,''DD-MON-YYYY HH24:MI'')',
-'        and COST_MY_COST > 0',
-'        and not (:P4_TENANT_ID is null and :P4_COMPARTMENT_NAME is null and :P4_PRODUCT_SERVICE is null and :P4_PRODUCT_REGION is null and :P4_COMPARTMENT_TOP is null and :P4_TAG_KEY is null and :P4_TAG_DATA is null and :P4_COST_PRODUCT_SKU is null a'
-||'nd :P4_TAG1_SPECIAL is null and :P4_TAG2_SPECIAL is null)',
+'         and not (:P4_TENANT_ID is null and :P4_COMPARTMENT_NAME is null and :P4_PRODUCT_SERVICE is null and :P4_PRODUCT_REGION is null and :P4_COMPARTMENT_TOP is null and :P4_TAG_KEY is null and :P4_TAG_DATA is null and :P4_COST_PRODUCT_SKU is null '
+||'and :P4_TAG1_SPECIAL is null and :P4_TAG2_SPECIAL is null)',
 '        and :P4_REPORT_SELECTOR = ''Cost Per Day Accumulated''',
 '    group by ',
 '        to_char(USAGE_INTERVAL_START,''YYYY-MM-DD'')',
@@ -21445,7 +21565,6 @@ wwv_flow_imp_page.create_jet_chart_series(
 '    where ',
 '        (tenant_name=:P4_TENANT_NAME or :P4_TENANT_NAME = ''ALL'') and',
 '        USAGE_INTERVAL_START >= to_date(:P4_DATE_FROM,''DD-MON-YYYY HH24:MI'') and USAGE_INTERVAL_START < to_date(:P4_DATE_TO,''DD-MON-YYYY HH24:MI'')',
-'        and COST_MY_COST > 0',
 '        and (:P4_TENANT_ID is null and :P4_COMPARTMENT_NAME is null and :P4_PRODUCT_SERVICE is null and :P4_PRODUCT_REGION is null and :P4_COMPARTMENT_TOP is null and :P4_TAG_KEY is null and :P4_TAG_DATA is null and :P4_COST_PRODUCT_SKU is null and :'
 ||'P4_TAG1_SPECIAL is null and :P4_TAG2_SPECIAL is null)',
 '        and :P4_REPORT_SELECTOR = ''Cost Per Day Accumulated''',
@@ -21751,6 +21870,9 @@ wwv_flow_imp_page.create_worksheet_column(
 ,p_format_mask=>'999G999G999G999G990D0'
 ,p_use_as_row_header=>'N'
 );
+end;
+/
+begin
 wwv_flow_imp_page.create_worksheet_column(
  p_id=>wwv_flow_imp.id(11935047811191643)
 ,p_db_column_name=>'TOTAL_QUANTITY'
@@ -21825,7 +21947,7 @@ wwv_flow_imp_page.create_page_plug(
 ,p_region_template_options=>'#DEFAULT#:t-Region--accent15:t-Region--scrollBody'
 ,p_escape_on_http_output=>'Y'
 ,p_plug_template=>wwv_flow_imp.id(9765042323688020)
-,p_plug_display_sequence=>150
+,p_plug_display_sequence=>160
 ,p_plug_display_point=>'SUB_REGIONS'
 ,p_plug_source_type=>'NATIVE_JET_CHART'
 ,p_plug_query_num_rows=>15
@@ -21894,8 +22016,7 @@ wwv_flow_imp_page.create_jet_chart_series(
 '    (:P4_TAG1_SPECIAL is null or TAG_SPECIAL = :P4_TAG1_SPECIAL) and',
 '    (:P4_TAG2_SPECIAL is null or TAG_SPECIAL2 = :P4_TAG2_SPECIAL) and',
 '    (:P4_TAG_DATA is null or tags_data like ''%#'' || nvl(:P4_TAG_KEY,''%'') || ''='' || :P4_TAG_DATA || ''#%'') and',
-'    COST_MY_COST>0 ',
-'    and :P4_REPORT_SELECTOR = ''Cost Per Single Compartment''',
+'    :P4_REPORT_SELECTOR = ''Cost Per Single Compartment''',
 'group by ',
 '	nvl(prd_compartment_name,''No Compartment'')',
 'order by 2 desc',
@@ -21909,9 +22030,6 @@ wwv_flow_imp_page.create_jet_chart_series(
 ,p_assigned_to_y2=>'off'
 ,p_items_label_rendered=>false
 );
-end;
-/
-begin
 wwv_flow_imp_page.create_jet_chart_axis(
  p_id=>wwv_flow_imp.id(11711229189773204)
 ,p_chart_id=>wwv_flow_imp.id(11710134020773204)
@@ -22038,8 +22156,7 @@ wwv_flow_imp_page.create_jet_chart_series(
 '    (:P4_TAG2_SPECIAL is null or TAG_SPECIAL2 = :P4_TAG2_SPECIAL) and',
 '    (:P4_TAG_DATA is null or tags_data like ''%#'' || nvl(:P4_TAG_KEY,''%'') || ''='' || :P4_TAG_DATA || ''#%'') and',
 '    USAGE_INTERVAL_START >= to_date(:P4_DATE_FROM,''DD-MON-YYYY HH24:MI'') and USAGE_INTERVAL_START < to_date(:P4_DATE_TO,''DD-MON-YYYY HH24:MI'') and',
-'    COST_MY_COST > 0',
-'    and :P4_REPORT_SELECTOR = ''Cost Per Region''',
+'    :P4_REPORT_SELECTOR = ''Cost Per Region''',
 'group by ',
 '	prd_region',
 'order by 2 desc',
@@ -22572,7 +22689,7 @@ wwv_flow_imp_page.create_page_item(
 ,p_display_as=>'NATIVE_SELECT_LIST'
 ,p_lov=>'STATIC2:Cost Per Day;Cost Per Day,Cost Per Day Accumulated;Cost Per Day Accumulated,Cost Per Region;Cost Per Region,Cost Per Service;Cost Per Service,Cost Per SKU;Cost Per SKU,Cost Per Top Compartment;Cost Per Top Compartment,Cost Per Single Compartm'
 ||'ent;Cost Per Single Compartment,Cost Per Tag 1 Special;Cost Per Tag 1 Special,Cost Per Tag 2 Special;Cost Per Tag 2 Special,Cost Per Tag 1+2 Special;Cost Per Tag 1+2 Special,Cost Report;Cost Report,Cost Explorer;Cost Explorer,Cost Resource Report;Cos'
-||'t Resource Report'
+||'t Resource Report,Cost Per Day Comp and Service Report;Cost Per Day Comp and Service Report'
 ,p_cHeight=>1
 ,p_tag_attributes=>'style="background-color: #F5FBB4; font-weight: bold; font-size: 13px;"'
 ,p_begin_on_new_line=>'N'

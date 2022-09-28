@@ -4816,6 +4816,7 @@ class ShowOCICSV(object):
                         'private_ips': str(', '.join(x['details']['private_ip'] for x in instance['vnic'])),
                         'security_groups': str(', '.join(x['details']['nsg_names'] for x in instance['vnic'])),
                         'internal_fqdn': str(', '.join(x['details']['internal_fqdn'] for x in instance['vnic'])),
+                        'plugin_status': str(', '.join(x['name'] + ":" + x['status'] for x in instance['agent_plugin_status'])),
                         'time_created': instance['time_created'][0:16],
                         'boot_volume': "",
                         'boot_volume_size_gb': "",
