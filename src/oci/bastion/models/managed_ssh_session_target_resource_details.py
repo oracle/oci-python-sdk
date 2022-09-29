@@ -21,12 +21,8 @@ class ManagedSshSessionTargetResourceDetails(TargetResourceDetails):
 
         :param session_type:
             The value to assign to the session_type property of this ManagedSshSessionTargetResourceDetails.
-            Allowed values for this property are: "MANAGED_SSH", "PORT_FORWARDING"
+            Allowed values for this property are: "MANAGED_SSH", "PORT_FORWARDING", "DYNAMIC_PORT_FORWARDING"
         :type session_type: str
-
-        :param target_resource_port:
-            The value to assign to the target_resource_port property of this ManagedSshSessionTargetResourceDetails.
-        :type target_resource_port: int
 
         :param target_resource_operating_system_user_name:
             The value to assign to the target_resource_operating_system_user_name property of this ManagedSshSessionTargetResourceDetails.
@@ -44,31 +40,35 @@ class ManagedSshSessionTargetResourceDetails(TargetResourceDetails):
             The value to assign to the target_resource_display_name property of this ManagedSshSessionTargetResourceDetails.
         :type target_resource_display_name: str
 
+        :param target_resource_port:
+            The value to assign to the target_resource_port property of this ManagedSshSessionTargetResourceDetails.
+        :type target_resource_port: int
+
         """
         self.swagger_types = {
             'session_type': 'str',
-            'target_resource_port': 'int',
             'target_resource_operating_system_user_name': 'str',
             'target_resource_id': 'str',
             'target_resource_private_ip_address': 'str',
-            'target_resource_display_name': 'str'
+            'target_resource_display_name': 'str',
+            'target_resource_port': 'int'
         }
 
         self.attribute_map = {
             'session_type': 'sessionType',
-            'target_resource_port': 'targetResourcePort',
             'target_resource_operating_system_user_name': 'targetResourceOperatingSystemUserName',
             'target_resource_id': 'targetResourceId',
             'target_resource_private_ip_address': 'targetResourcePrivateIpAddress',
-            'target_resource_display_name': 'targetResourceDisplayName'
+            'target_resource_display_name': 'targetResourceDisplayName',
+            'target_resource_port': 'targetResourcePort'
         }
 
         self._session_type = None
-        self._target_resource_port = None
         self._target_resource_operating_system_user_name = None
         self._target_resource_id = None
         self._target_resource_private_ip_address = None
         self._target_resource_display_name = None
+        self._target_resource_port = None
         self._session_type = 'MANAGED_SSH'
 
     @property
@@ -166,6 +166,30 @@ class ManagedSshSessionTargetResourceDetails(TargetResourceDetails):
         :type: str
         """
         self._target_resource_display_name = target_resource_display_name
+
+    @property
+    def target_resource_port(self):
+        """
+        Gets the target_resource_port of this ManagedSshSessionTargetResourceDetails.
+        The port number to connect to on the target resource.
+
+
+        :return: The target_resource_port of this ManagedSshSessionTargetResourceDetails.
+        :rtype: int
+        """
+        return self._target_resource_port
+
+    @target_resource_port.setter
+    def target_resource_port(self, target_resource_port):
+        """
+        Sets the target_resource_port of this ManagedSshSessionTargetResourceDetails.
+        The port number to connect to on the target resource.
+
+
+        :param target_resource_port: The target_resource_port of this ManagedSshSessionTargetResourceDetails.
+        :type: int
+        """
+        self._target_resource_port = target_resource_port
 
     def __repr__(self):
         return formatted_flat_dict(self)

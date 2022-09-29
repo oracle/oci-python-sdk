@@ -196,6 +196,7 @@ class HostDetails(object):
         **[Required]** Gets the platform_type of this HostDetails.
         Platform type.
         Supported platformType(s) for MACS-managed external host insight: [LINUX].
+        Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
         Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
 
         Allowed values for this property are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX", 'UNKNOWN_ENUM_VALUE'.
@@ -213,6 +214,7 @@ class HostDetails(object):
         Sets the platform_type of this HostDetails.
         Platform type.
         Supported platformType(s) for MACS-managed external host insight: [LINUX].
+        Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
         Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
 
 

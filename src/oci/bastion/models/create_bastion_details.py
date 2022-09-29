@@ -13,6 +13,14 @@ class CreateBastionDetails(object):
     The configuration details for a new bastion. A bastion provides secured, public access to target resources in the cloud that you cannot otherwise reach from the internet. A bastion resides in a public subnet and establishes the network infrastructure needed to connect a user to a target resource in a private subnet.
     """
 
+    #: A constant which can be used with the dns_proxy_status property of a CreateBastionDetails.
+    #: This constant has a value of "DISABLED"
+    DNS_PROXY_STATUS_DISABLED = "DISABLED"
+
+    #: A constant which can be used with the dns_proxy_status property of a CreateBastionDetails.
+    #: This constant has a value of "ENABLED"
+    DNS_PROXY_STATUS_ENABLED = "ENABLED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateBastionDetails object with values from keyword arguments.
@@ -50,6 +58,11 @@ class CreateBastionDetails(object):
             The value to assign to the max_session_ttl_in_seconds property of this CreateBastionDetails.
         :type max_session_ttl_in_seconds: int
 
+        :param dns_proxy_status:
+            The value to assign to the dns_proxy_status property of this CreateBastionDetails.
+            Allowed values for this property are: "DISABLED", "ENABLED"
+        :type dns_proxy_status: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateBastionDetails.
         :type freeform_tags: dict(str, str)
@@ -68,6 +81,7 @@ class CreateBastionDetails(object):
             'static_jump_host_ip_addresses': 'list[str]',
             'client_cidr_block_allow_list': 'list[str]',
             'max_session_ttl_in_seconds': 'int',
+            'dns_proxy_status': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -81,6 +95,7 @@ class CreateBastionDetails(object):
             'static_jump_host_ip_addresses': 'staticJumpHostIpAddresses',
             'client_cidr_block_allow_list': 'clientCidrBlockAllowList',
             'max_session_ttl_in_seconds': 'maxSessionTtlInSeconds',
+            'dns_proxy_status': 'dnsProxyStatus',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -93,6 +108,7 @@ class CreateBastionDetails(object):
         self._static_jump_host_ip_addresses = None
         self._client_cidr_block_allow_list = None
         self._max_session_ttl_in_seconds = None
+        self._dns_proxy_status = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -287,6 +303,38 @@ class CreateBastionDetails(object):
         :type: int
         """
         self._max_session_ttl_in_seconds = max_session_ttl_in_seconds
+
+    @property
+    def dns_proxy_status(self):
+        """
+        Gets the dns_proxy_status of this CreateBastionDetails.
+        The desired dns proxy status of the bastion.
+
+        Allowed values for this property are: "DISABLED", "ENABLED"
+
+
+        :return: The dns_proxy_status of this CreateBastionDetails.
+        :rtype: str
+        """
+        return self._dns_proxy_status
+
+    @dns_proxy_status.setter
+    def dns_proxy_status(self, dns_proxy_status):
+        """
+        Sets the dns_proxy_status of this CreateBastionDetails.
+        The desired dns proxy status of the bastion.
+
+
+        :param dns_proxy_status: The dns_proxy_status of this CreateBastionDetails.
+        :type: str
+        """
+        allowed_values = ["DISABLED", "ENABLED"]
+        if not value_allowed_none_or_none_sentinel(dns_proxy_status, allowed_values):
+            raise ValueError(
+                "Invalid value for `dns_proxy_status`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._dns_proxy_status = dns_proxy_status
 
     @property
     def freeform_tags(self):

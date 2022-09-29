@@ -30,22 +30,29 @@ class ResourceUsageTrendAggregation(object):
             The value to assign to the capacity property of this ResourceUsageTrendAggregation.
         :type capacity: float
 
+        :param total_host_capacity:
+            The value to assign to the total_host_capacity property of this ResourceUsageTrendAggregation.
+        :type total_host_capacity: float
+
         """
         self.swagger_types = {
             'end_timestamp': 'datetime',
             'usage': 'float',
-            'capacity': 'float'
+            'capacity': 'float',
+            'total_host_capacity': 'float'
         }
 
         self.attribute_map = {
             'end_timestamp': 'endTimestamp',
             'usage': 'usage',
-            'capacity': 'capacity'
+            'capacity': 'capacity',
+            'total_host_capacity': 'totalHostCapacity'
         }
 
         self._end_timestamp = None
         self._usage = None
         self._capacity = None
+        self._total_host_capacity = None
 
     @property
     def end_timestamp(self):
@@ -99,7 +106,7 @@ class ResourceUsageTrendAggregation(object):
     def capacity(self):
         """
         **[Required]** Gets the capacity of this ResourceUsageTrendAggregation.
-        The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+        The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
 
 
         :return: The capacity of this ResourceUsageTrendAggregation.
@@ -111,13 +118,37 @@ class ResourceUsageTrendAggregation(object):
     def capacity(self, capacity):
         """
         Sets the capacity of this ResourceUsageTrendAggregation.
-        The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+        The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
 
 
         :param capacity: The capacity of this ResourceUsageTrendAggregation.
         :type: float
         """
         self._capacity = capacity
+
+    @property
+    def total_host_capacity(self):
+        """
+        Gets the total_host_capacity of this ResourceUsageTrendAggregation.
+        The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+
+
+        :return: The total_host_capacity of this ResourceUsageTrendAggregation.
+        :rtype: float
+        """
+        return self._total_host_capacity
+
+    @total_host_capacity.setter
+    def total_host_capacity(self, total_host_capacity):
+        """
+        Sets the total_host_capacity of this ResourceUsageTrendAggregation.
+        The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+
+
+        :param total_host_capacity: The total_host_capacity of this ResourceUsageTrendAggregation.
+        :type: float
+        """
+        self._total_host_capacity = total_host_capacity
 
     def __repr__(self):
         return formatted_flat_dict(self)

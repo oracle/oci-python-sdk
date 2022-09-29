@@ -46,6 +46,10 @@ class ResourceStatistics(object):
             The value to assign to the instance_metrics property of this ResourceStatistics.
         :type instance_metrics: list[oci.opsi.models.InstanceMetrics]
 
+        :param total_host_capacity:
+            The value to assign to the total_host_capacity property of this ResourceStatistics.
+        :type total_host_capacity: float
+
         """
         self.swagger_types = {
             'usage': 'float',
@@ -54,7 +58,8 @@ class ResourceStatistics(object):
             'is_auto_scaling_enabled': 'bool',
             'utilization_percent': 'float',
             'usage_change_percent': 'float',
-            'instance_metrics': 'list[InstanceMetrics]'
+            'instance_metrics': 'list[InstanceMetrics]',
+            'total_host_capacity': 'float'
         }
 
         self.attribute_map = {
@@ -64,7 +69,8 @@ class ResourceStatistics(object):
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
             'utilization_percent': 'utilizationPercent',
             'usage_change_percent': 'usageChangePercent',
-            'instance_metrics': 'instanceMetrics'
+            'instance_metrics': 'instanceMetrics',
+            'total_host_capacity': 'totalHostCapacity'
         }
 
         self._usage = None
@@ -74,6 +80,7 @@ class ResourceStatistics(object):
         self._utilization_percent = None
         self._usage_change_percent = None
         self._instance_metrics = None
+        self._total_host_capacity = None
 
     @property
     def usage(self):
@@ -103,7 +110,7 @@ class ResourceStatistics(object):
     def capacity(self):
         """
         **[Required]** Gets the capacity of this ResourceStatistics.
-        The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+        The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
 
 
         :return: The capacity of this ResourceStatistics.
@@ -115,7 +122,7 @@ class ResourceStatistics(object):
     def capacity(self, capacity):
         """
         Sets the capacity of this ResourceStatistics.
-        The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+        The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
 
 
         :param capacity: The capacity of this ResourceStatistics.
@@ -127,7 +134,7 @@ class ResourceStatistics(object):
     def base_capacity(self):
         """
         Gets the base_capacity of this ResourceStatistics.
-        The base allocated amount of the resource metric type  (CPU, STORAGE).
+        The base allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
 
 
         :return: The base_capacity of this ResourceStatistics.
@@ -139,7 +146,7 @@ class ResourceStatistics(object):
     def base_capacity(self, base_capacity):
         """
         Sets the base_capacity of this ResourceStatistics.
-        The base allocated amount of the resource metric type  (CPU, STORAGE).
+        The base allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
 
 
         :param base_capacity: The base_capacity of this ResourceStatistics.
@@ -242,6 +249,30 @@ class ResourceStatistics(object):
         :type: list[oci.opsi.models.InstanceMetrics]
         """
         self._instance_metrics = instance_metrics
+
+    @property
+    def total_host_capacity(self):
+        """
+        Gets the total_host_capacity of this ResourceStatistics.
+        The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+
+
+        :return: The total_host_capacity of this ResourceStatistics.
+        :rtype: float
+        """
+        return self._total_host_capacity
+
+    @total_host_capacity.setter
+    def total_host_capacity(self, total_host_capacity):
+        """
+        Sets the total_host_capacity of this ResourceStatistics.
+        The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+
+
+        :param total_host_capacity: The total_host_capacity of this ResourceStatistics.
+        :type: float
+        """
+        self._total_host_capacity = total_host_capacity
 
     def __repr__(self):
         return formatted_flat_dict(self)

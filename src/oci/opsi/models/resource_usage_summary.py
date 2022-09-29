@@ -42,6 +42,10 @@ class ResourceUsageSummary(object):
             The value to assign to the usage_change_percent property of this ResourceUsageSummary.
         :type usage_change_percent: float
 
+        :param total_host_capacity:
+            The value to assign to the total_host_capacity property of this ResourceUsageSummary.
+        :type total_host_capacity: float
+
         """
         self.swagger_types = {
             'exadata_insight_id': 'str',
@@ -49,7 +53,8 @@ class ResourceUsageSummary(object):
             'usage': 'float',
             'capacity': 'float',
             'utilization_percent': 'float',
-            'usage_change_percent': 'float'
+            'usage_change_percent': 'float',
+            'total_host_capacity': 'float'
         }
 
         self.attribute_map = {
@@ -58,7 +63,8 @@ class ResourceUsageSummary(object):
             'usage': 'usage',
             'capacity': 'capacity',
             'utilization_percent': 'utilizationPercent',
-            'usage_change_percent': 'usageChangePercent'
+            'usage_change_percent': 'usageChangePercent',
+            'total_host_capacity': 'totalHostCapacity'
         }
 
         self._exadata_insight_id = None
@@ -67,6 +73,7 @@ class ResourceUsageSummary(object):
         self._capacity = None
         self._utilization_percent = None
         self._usage_change_percent = None
+        self._total_host_capacity = None
 
     @property
     def exadata_insight_id(self):
@@ -148,7 +155,7 @@ class ResourceUsageSummary(object):
     def capacity(self):
         """
         **[Required]** Gets the capacity of this ResourceUsageSummary.
-        The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+        The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
 
 
         :return: The capacity of this ResourceUsageSummary.
@@ -160,7 +167,7 @@ class ResourceUsageSummary(object):
     def capacity(self, capacity):
         """
         Sets the capacity of this ResourceUsageSummary.
-        The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+        The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
 
 
         :param capacity: The capacity of this ResourceUsageSummary.
@@ -215,6 +222,30 @@ class ResourceUsageSummary(object):
         :type: float
         """
         self._usage_change_percent = usage_change_percent
+
+    @property
+    def total_host_capacity(self):
+        """
+        Gets the total_host_capacity of this ResourceUsageSummary.
+        The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+
+
+        :return: The total_host_capacity of this ResourceUsageSummary.
+        :rtype: float
+        """
+        return self._total_host_capacity
+
+    @total_host_capacity.setter
+    def total_host_capacity(self, total_host_capacity):
+        """
+        Sets the total_host_capacity of this ResourceUsageSummary.
+        The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+
+
+        :param total_host_capacity: The total_host_capacity of this ResourceUsageSummary.
+        :type: float
+        """
+        self._total_host_capacity = total_host_capacity
 
     def __repr__(self):
         return formatted_flat_dict(self)

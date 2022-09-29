@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.pic.ocibstn.controlplane.resources</groupId>
         <artifactId>oci-bastions-spec</artifactId>
-        <version>0.1.1204</version>
+        <version>0.1.1231</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

@@ -26,6 +26,10 @@ class ExadataInsightResourceStatistics(object):
             The value to assign to the capacity property of this ExadataInsightResourceStatistics.
         :type capacity: float
 
+        :param total_host_capacity:
+            The value to assign to the total_host_capacity property of this ExadataInsightResourceStatistics.
+        :type total_host_capacity: float
+
         :param utilization_percent:
             The value to assign to the utilization_percent property of this ExadataInsightResourceStatistics.
         :type utilization_percent: float
@@ -42,6 +46,7 @@ class ExadataInsightResourceStatistics(object):
         self.swagger_types = {
             'usage': 'float',
             'capacity': 'float',
+            'total_host_capacity': 'float',
             'utilization_percent': 'float',
             'usage_change_percent': 'float',
             'instance_metrics': 'list[InstanceMetrics]'
@@ -50,6 +55,7 @@ class ExadataInsightResourceStatistics(object):
         self.attribute_map = {
             'usage': 'usage',
             'capacity': 'capacity',
+            'total_host_capacity': 'totalHostCapacity',
             'utilization_percent': 'utilizationPercent',
             'usage_change_percent': 'usageChangePercent',
             'instance_metrics': 'instanceMetrics'
@@ -57,6 +63,7 @@ class ExadataInsightResourceStatistics(object):
 
         self._usage = None
         self._capacity = None
+        self._total_host_capacity = None
         self._utilization_percent = None
         self._usage_change_percent = None
         self._instance_metrics = None
@@ -89,7 +96,7 @@ class ExadataInsightResourceStatistics(object):
     def capacity(self):
         """
         **[Required]** Gets the capacity of this ExadataInsightResourceStatistics.
-        The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+        The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
 
 
         :return: The capacity of this ExadataInsightResourceStatistics.
@@ -101,13 +108,37 @@ class ExadataInsightResourceStatistics(object):
     def capacity(self, capacity):
         """
         Sets the capacity of this ExadataInsightResourceStatistics.
-        The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+        The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
 
 
         :param capacity: The capacity of this ExadataInsightResourceStatistics.
         :type: float
         """
         self._capacity = capacity
+
+    @property
+    def total_host_capacity(self):
+        """
+        Gets the total_host_capacity of this ExadataInsightResourceStatistics.
+        The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+
+
+        :return: The total_host_capacity of this ExadataInsightResourceStatistics.
+        :rtype: float
+        """
+        return self._total_host_capacity
+
+    @total_host_capacity.setter
+    def total_host_capacity(self, total_host_capacity):
+        """
+        Sets the total_host_capacity of this ExadataInsightResourceStatistics.
+        The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+
+
+        :param total_host_capacity: The total_host_capacity of this ExadataInsightResourceStatistics.
+        :type: float
+        """
+        self._total_host_capacity = total_host_capacity
 
     @property
     def utilization_percent(self):
