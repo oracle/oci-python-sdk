@@ -4,12 +4,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.84.1 - TBD
+2.85.0 - 2022-10-04
 ====================
 
 Added
 -----
-* TBD
+* Support for calling Oracle Cloud Infrastructure services in the eu-dcc-milan-1 region
+* Support for target host identification and SOCKS support on dynamic port forwarding sessions in the Bastion service
+* Support for viewing top processes running at a particular point of time in the Operations Insights service
+* Support for filtering top processes by a single process to view that process's trend over time in the Operations Insights service
+* Support for creating Enterprise Manager-based Windows host targets in the Operations Insights service
+* Support for creating Management Agent Cloud-based Windows and Solaris host targets in the Operations Insights service
+
+Breaking
+--------
+* Parameter `target_resource_port` is removed from models `TargetResourceDetails` and `CreateSessionTargetResourceDetails`
 
 ====================
 2.84.0 - 2022-09-27
