@@ -247,7 +247,7 @@ class SummarizeHostInsightResourceUsageAggregation(object):
     def capacity(self):
         """
         **[Required]** Gets the capacity of this SummarizeHostInsightResourceUsageAggregation.
-        The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+        The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
 
 
         :return: The capacity of this SummarizeHostInsightResourceUsageAggregation.
@@ -259,7 +259,7 @@ class SummarizeHostInsightResourceUsageAggregation(object):
     def capacity(self, capacity):
         """
         Sets the capacity of this SummarizeHostInsightResourceUsageAggregation.
-        The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+        The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
 
 
         :param capacity: The capacity of this SummarizeHostInsightResourceUsageAggregation.

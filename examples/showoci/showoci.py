@@ -107,7 +107,7 @@ import datetime
 import contextlib
 import os
 
-version = "22.09.20"
+version = "22.10.04"
 
 ##########################################################################
 # check OCI version

@@ -22,10 +22,12 @@ Bastion
     oci.bastion.models.BastionSummary
     oci.bastion.models.ChangeBastionCompartmentDetails
     oci.bastion.models.CreateBastionDetails
+    oci.bastion.models.CreateDynamicPortForwardingSessionTargetResourceDetails
     oci.bastion.models.CreateManagedSshSessionTargetResourceDetails
     oci.bastion.models.CreatePortForwardingSessionTargetResourceDetails
     oci.bastion.models.CreateSessionDetails
     oci.bastion.models.CreateSessionTargetResourceDetails
+    oci.bastion.models.DynamicPortForwardingSessionTargetResourceDetails
     oci.bastion.models.ManagedSshSessionTargetResourceDetails
     oci.bastion.models.PortForwardingSessionTargetResourceDetails
     oci.bastion.models.PublicKeyDetails

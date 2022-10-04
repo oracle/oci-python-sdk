@@ -21,11 +21,16 @@ class TargetResourceDetails(object):
     #: This constant has a value of "PORT_FORWARDING"
     SESSION_TYPE_PORT_FORWARDING = "PORT_FORWARDING"
 
+    #: A constant which can be used with the session_type property of a TargetResourceDetails.
+    #: This constant has a value of "DYNAMIC_PORT_FORWARDING"
+    SESSION_TYPE_DYNAMIC_PORT_FORWARDING = "DYNAMIC_PORT_FORWARDING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new TargetResourceDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.bastion.models.DynamicPortForwardingSessionTargetResourceDetails`
         * :class:`~oci.bastion.models.ManagedSshSessionTargetResourceDetails`
         * :class:`~oci.bastion.models.PortForwardingSessionTargetResourceDetails`
 
@@ -33,27 +38,20 @@ class TargetResourceDetails(object):
 
         :param session_type:
             The value to assign to the session_type property of this TargetResourceDetails.
-            Allowed values for this property are: "MANAGED_SSH", "PORT_FORWARDING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "MANAGED_SSH", "PORT_FORWARDING", "DYNAMIC_PORT_FORWARDING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type session_type: str
 
-        :param target_resource_port:
-            The value to assign to the target_resource_port property of this TargetResourceDetails.
-        :type target_resource_port: int
-
         """
         self.swagger_types = {
-            'session_type': 'str',
-            'target_resource_port': 'int'
+            'session_type': 'str'
         }
 
         self.attribute_map = {
-            'session_type': 'sessionType',
-            'target_resource_port': 'targetResourcePort'
+            'session_type': 'sessionType'
         }
 
         self._session_type = None
-        self._target_resource_port = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -62,6 +60,9 @@ class TargetResourceDetails(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['sessionType']
+
+        if type == 'DYNAMIC_PORT_FORWARDING':
+            return 'DynamicPortForwardingSessionTargetResourceDetails'
 
         if type == 'MANAGED_SSH':
             return 'ManagedSshSessionTargetResourceDetails'
@@ -75,9 +76,9 @@ class TargetResourceDetails(object):
     def session_type(self):
         """
         **[Required]** Gets the session_type of this TargetResourceDetails.
-        The Bastion service recognizes two types of sessions, managed SSH sessions and SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
+        The Bastion service recognizes three types of sessions, managed SSH sessions, SSH port forwarding sessions, and Dynamic SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
 
-        Allowed values for this property are: "MANAGED_SSH", "PORT_FORWARDING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "MANAGED_SSH", "PORT_FORWARDING", "DYNAMIC_PORT_FORWARDING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -90,40 +91,16 @@ class TargetResourceDetails(object):
     def session_type(self, session_type):
         """
         Sets the session_type of this TargetResourceDetails.
-        The Bastion service recognizes two types of sessions, managed SSH sessions and SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
+        The Bastion service recognizes three types of sessions, managed SSH sessions, SSH port forwarding sessions, and Dynamic SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
 
 
         :param session_type: The session_type of this TargetResourceDetails.
         :type: str
         """
-        allowed_values = ["MANAGED_SSH", "PORT_FORWARDING"]
+        allowed_values = ["MANAGED_SSH", "PORT_FORWARDING", "DYNAMIC_PORT_FORWARDING"]
         if not value_allowed_none_or_none_sentinel(session_type, allowed_values):
             session_type = 'UNKNOWN_ENUM_VALUE'
         self._session_type = session_type
-
-    @property
-    def target_resource_port(self):
-        """
-        **[Required]** Gets the target_resource_port of this TargetResourceDetails.
-        The port number to connect to on the target resource.
-
-
-        :return: The target_resource_port of this TargetResourceDetails.
-        :rtype: int
-        """
-        return self._target_resource_port
-
-    @target_resource_port.setter
-    def target_resource_port(self, target_resource_port):
-        """
-        Sets the target_resource_port of this TargetResourceDetails.
-        The port number to connect to on the target resource.
-
-
-        :param target_resource_port: The target_resource_port of this TargetResourceDetails.
-        :type: int
-        """
-        self._target_resource_port = target_resource_port
 
     def __repr__(self):
         return formatted_flat_dict(self)

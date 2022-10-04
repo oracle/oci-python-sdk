@@ -207,6 +207,7 @@ Opsi
     oci.opsi.models.IngestSqlTextDetails
     oci.opsi.models.IngestSqlTextResponseDetails
     oci.opsi.models.InstanceMetrics
+    oci.opsi.models.MacsManagedCloudHostConfigurationSummary
     oci.opsi.models.MacsManagedCloudHostInsight
     oci.opsi.models.MacsManagedCloudHostInsightSummary
     oci.opsi.models.MacsManagedExternalDatabaseConfigurationSummary
@@ -226,6 +227,7 @@ Opsi
     oci.opsi.models.OperationsInsightsWarehouseUserSummaryCollection
     oci.opsi.models.OperationsInsightsWarehouseUsers
     oci.opsi.models.OperationsInsightsWarehouses
+    oci.opsi.models.OpsiConfigurations
     oci.opsi.models.OpsiDataObject
     oci.opsi.models.OpsiDataObjectSummary
     oci.opsi.models.OpsiDataObjects
@@ -300,11 +302,13 @@ Opsi
     oci.opsi.models.SummarizeHostInsightResourceUsageAggregation
     oci.opsi.models.SummarizeHostInsightResourceUsageTrendAggregationCollection
     oci.opsi.models.SummarizeHostInsightResourceUtilizationInsightAggregation
+    oci.opsi.models.SummarizeHostInsightsTopProcessesUsageCollection
     oci.opsi.models.SummarizeHostInsightsTopProcessesUsageTrendCollection
     oci.opsi.models.SummarizeOperationsInsightsWarehouseResourceUsageAggregation
     oci.opsi.models.SummaryStatistics
     oci.opsi.models.TablespaceUsageTrend
     oci.opsi.models.TablespaceUsageTrendAggregation
+    oci.opsi.models.TopProcessesUsage
     oci.opsi.models.TopProcessesUsageTrend
     oci.opsi.models.TopProcessesUsageTrendAggregation
     oci.opsi.models.UpdateAutonomousDatabaseInsightDetails
