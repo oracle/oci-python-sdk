@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+22.10.04 - 22.10.04
+=====================
+* Add Compute Instance Plugin Status to the JSON output and CSV
+
+=====================
 22.09.20 - 22.09.20
 =====================
 * Removed list_identity_providers which deprecated from OCI SDK

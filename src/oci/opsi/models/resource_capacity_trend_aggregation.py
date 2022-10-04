@@ -30,22 +30,29 @@ class ResourceCapacityTrendAggregation(object):
             The value to assign to the base_capacity property of this ResourceCapacityTrendAggregation.
         :type base_capacity: float
 
+        :param total_host_capacity:
+            The value to assign to the total_host_capacity property of this ResourceCapacityTrendAggregation.
+        :type total_host_capacity: float
+
         """
         self.swagger_types = {
             'end_timestamp': 'datetime',
             'capacity': 'float',
-            'base_capacity': 'float'
+            'base_capacity': 'float',
+            'total_host_capacity': 'float'
         }
 
         self.attribute_map = {
             'end_timestamp': 'endTimestamp',
             'capacity': 'capacity',
-            'base_capacity': 'baseCapacity'
+            'base_capacity': 'baseCapacity',
+            'total_host_capacity': 'totalHostCapacity'
         }
 
         self._end_timestamp = None
         self._capacity = None
         self._base_capacity = None
+        self._total_host_capacity = None
 
     @property
     def end_timestamp(self):
@@ -75,7 +82,7 @@ class ResourceCapacityTrendAggregation(object):
     def capacity(self):
         """
         **[Required]** Gets the capacity of this ResourceCapacityTrendAggregation.
-        The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+        The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
 
 
         :return: The capacity of this ResourceCapacityTrendAggregation.
@@ -87,7 +94,7 @@ class ResourceCapacityTrendAggregation(object):
     def capacity(self, capacity):
         """
         Sets the capacity of this ResourceCapacityTrendAggregation.
-        The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+        The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
 
 
         :param capacity: The capacity of this ResourceCapacityTrendAggregation.
@@ -99,7 +106,7 @@ class ResourceCapacityTrendAggregation(object):
     def base_capacity(self):
         """
         **[Required]** Gets the base_capacity of this ResourceCapacityTrendAggregation.
-        The base allocated amount of the resource metric type  (CPU, STORAGE).
+        The base allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
 
 
         :return: The base_capacity of this ResourceCapacityTrendAggregation.
@@ -111,13 +118,37 @@ class ResourceCapacityTrendAggregation(object):
     def base_capacity(self, base_capacity):
         """
         Sets the base_capacity of this ResourceCapacityTrendAggregation.
-        The base allocated amount of the resource metric type  (CPU, STORAGE).
+        The base allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
 
 
         :param base_capacity: The base_capacity of this ResourceCapacityTrendAggregation.
         :type: float
         """
         self._base_capacity = base_capacity
+
+    @property
+    def total_host_capacity(self):
+        """
+        Gets the total_host_capacity of this ResourceCapacityTrendAggregation.
+        The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+
+
+        :return: The total_host_capacity of this ResourceCapacityTrendAggregation.
+        :rtype: float
+        """
+        return self._total_host_capacity
+
+    @total_host_capacity.setter
+    def total_host_capacity(self, total_host_capacity):
+        """
+        Sets the total_host_capacity of this ResourceCapacityTrendAggregation.
+        The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+
+
+        :param total_host_capacity: The total_host_capacity of this ResourceCapacityTrendAggregation.
+        :type: float
+        """
+        self._total_host_capacity = total_host_capacity
 
     def __repr__(self):
         return formatted_flat_dict(self)

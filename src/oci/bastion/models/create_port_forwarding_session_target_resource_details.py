@@ -21,12 +21,8 @@ class CreatePortForwardingSessionTargetResourceDetails(CreateSessionTargetResour
 
         :param session_type:
             The value to assign to the session_type property of this CreatePortForwardingSessionTargetResourceDetails.
-            Allowed values for this property are: "MANAGED_SSH", "PORT_FORWARDING"
+            Allowed values for this property are: "MANAGED_SSH", "PORT_FORWARDING", "DYNAMIC_PORT_FORWARDING"
         :type session_type: str
-
-        :param target_resource_port:
-            The value to assign to the target_resource_port property of this CreatePortForwardingSessionTargetResourceDetails.
-        :type target_resource_port: int
 
         :param target_resource_id:
             The value to assign to the target_resource_id property of this CreatePortForwardingSessionTargetResourceDetails.
@@ -36,25 +32,36 @@ class CreatePortForwardingSessionTargetResourceDetails(CreateSessionTargetResour
             The value to assign to the target_resource_private_ip_address property of this CreatePortForwardingSessionTargetResourceDetails.
         :type target_resource_private_ip_address: str
 
+        :param target_resource_fqdn:
+            The value to assign to the target_resource_fqdn property of this CreatePortForwardingSessionTargetResourceDetails.
+        :type target_resource_fqdn: str
+
+        :param target_resource_port:
+            The value to assign to the target_resource_port property of this CreatePortForwardingSessionTargetResourceDetails.
+        :type target_resource_port: int
+
         """
         self.swagger_types = {
             'session_type': 'str',
-            'target_resource_port': 'int',
             'target_resource_id': 'str',
-            'target_resource_private_ip_address': 'str'
+            'target_resource_private_ip_address': 'str',
+            'target_resource_fqdn': 'str',
+            'target_resource_port': 'int'
         }
 
         self.attribute_map = {
             'session_type': 'sessionType',
-            'target_resource_port': 'targetResourcePort',
             'target_resource_id': 'targetResourceId',
-            'target_resource_private_ip_address': 'targetResourcePrivateIpAddress'
+            'target_resource_private_ip_address': 'targetResourcePrivateIpAddress',
+            'target_resource_fqdn': 'targetResourceFqdn',
+            'target_resource_port': 'targetResourcePort'
         }
 
         self._session_type = None
-        self._target_resource_port = None
         self._target_resource_id = None
         self._target_resource_private_ip_address = None
+        self._target_resource_fqdn = None
+        self._target_resource_port = None
         self._session_type = 'PORT_FORWARDING'
 
     @property
@@ -104,6 +111,54 @@ class CreatePortForwardingSessionTargetResourceDetails(CreateSessionTargetResour
         :type: str
         """
         self._target_resource_private_ip_address = target_resource_private_ip_address
+
+    @property
+    def target_resource_fqdn(self):
+        """
+        Gets the target_resource_fqdn of this CreatePortForwardingSessionTargetResourceDetails.
+        The Fully Qualified Domain Name of the target resource that the session connects to.
+
+
+        :return: The target_resource_fqdn of this CreatePortForwardingSessionTargetResourceDetails.
+        :rtype: str
+        """
+        return self._target_resource_fqdn
+
+    @target_resource_fqdn.setter
+    def target_resource_fqdn(self, target_resource_fqdn):
+        """
+        Sets the target_resource_fqdn of this CreatePortForwardingSessionTargetResourceDetails.
+        The Fully Qualified Domain Name of the target resource that the session connects to.
+
+
+        :param target_resource_fqdn: The target_resource_fqdn of this CreatePortForwardingSessionTargetResourceDetails.
+        :type: str
+        """
+        self._target_resource_fqdn = target_resource_fqdn
+
+    @property
+    def target_resource_port(self):
+        """
+        Gets the target_resource_port of this CreatePortForwardingSessionTargetResourceDetails.
+        The port number to connect to on the target resource.
+
+
+        :return: The target_resource_port of this CreatePortForwardingSessionTargetResourceDetails.
+        :rtype: int
+        """
+        return self._target_resource_port
+
+    @target_resource_port.setter
+    def target_resource_port(self, target_resource_port):
+        """
+        Sets the target_resource_port of this CreatePortForwardingSessionTargetResourceDetails.
+        The port number to connect to on the target resource.
+
+
+        :param target_resource_port: The target_resource_port of this CreatePortForwardingSessionTargetResourceDetails.
+        :type: int
+        """
+        self._target_resource_port = target_resource_port
 
     def __repr__(self):
         return formatted_flat_dict(self)

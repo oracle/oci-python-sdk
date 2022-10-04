@@ -5,19 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
-22.08.12 - 22.08.12
+22.10.04 - 2022.10.04
+=====================
+* Added new report to Cost Analysis
+* Fix few report to include billing amendment rows
+
+=====================
+22.09.02 - 2022.09.02
+=====================
+* Fix error with script run_single_daily_usage2adw.sh
+
+=====================
+22.08.12 - 2022.08.12
 =====================
 * Added second special tag key and corresponding reports and charts
 * Added Report for Cost Analysis
 
 =====================
-22.08.08 - 22.08.08
+22.08.08 - 2022.08.08
 =====================
 * Fix few bugs
 * Added OCPU report by service to daily_report and Data Statistics page
 
 =====================
-22.02.22 - 22.02.22
+22.02.22 - 2022.02.22
 =====================
 * New Marketplace Version
 

@@ -17,7 +17,7 @@ Copyright 2019 Kenneth Reitz
 
 ======================== Third Party Components ========================
 certifi
-* Copyright
+* Copyright 2022, Kenneth Reitz
 * License: Mozilla Public License 2.0 (MPL 2.0)
 * Source code: https://github.com/certifi/python-certifi
 * Project home: https://certifi.io
@@ -29,16 +29,10 @@ cryptography
 * Project home: https://github.com/pyca/cryptography
 
 pyOpenSSL
-* Copyright
+* Copyright 2001 The pyOpenSSL developers
 * License: Apache License 2.0
 * Source code: https://github.com/pyca/pyopenssl
 * Project home: https://www.pyopenssl.org/
-
-attrs
-* Copyright (c) 2015 Hynek Schlawack
-* License: The MIT License (MIT)
-* Source code: https://github.com/python-attrs/attrs
-* Project home: https://www.attrs.org
 
 python-dateutil
 * Copyright 2017- Paul Ganssle <paul@ganssle.io> 2017- dateutil contributors (see AUTHORS file)
@@ -51,12 +45,6 @@ pytz
 * License: The MIT License (MIT)
 * Source code: https://github.com/stub42/pytz
 * Project home: https://pythonhosted.org/pytz
-
-click
-* Copyright 2014 Pallets
-* License: BSD 3-Clause "New" or "Revised" License
-* Source code: https://github.com/pallets/click
-* Project home: https://palletsprojects.com/p/click
 
 six
 * Copyright (c) 2010-2020 Benjamin Peterson
@@ -71,7 +59,7 @@ vendorize
 * Project home: https://github.com/mwilliamson/python-vendorize
 
 chardet
-* Copyright
+* Copyright 2015, Mark Pilgrim, Dan Blanchard, Ian Cordasco
 * License: GNU Lesser General Public License v2.1
 * Source code: https://github.com/chardet/chardet
 * Project home: https://github.com/chardet/chardet
@@ -89,7 +77,7 @@ idna
 * Project home: https://github.com/kjd/idna
 
 jwt
-* Copyright
+* Copyright 2017 Gehirn Inc
 * License: Apache License 2.0
 * Source code: https://github.com/GehirnInc/python-jwt
 * Project home: https://github.com/GehirnInc/python-jwt
@@ -127,19 +115,6 @@ cffi
 =============================== Licenses ===============================
 
 ------------------------------ MIT License -----------------------------
-Copyright Jason R. Coombs
-
-Copyright (c) 2015 Hynek Schlawack
-
-Copyright (c) 2003-2019 Stuart Bishop <stuart@stuartbishop.net>
-
-Copyright (c) 2010-2020 Benjamin Peterson
-
-Copyright (c) 2014 Adam Knight 2012 Adam T. Lindsay (original author)
-
-Copyright (c) 2008-2020 Andrey Petrov and contributors (see CONTRIBUTORS.txt)
-
-Copyright (c) 2016-2020, Fabian Fuelling opensource@fabfuel.de. All rights reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to
@@ -161,7 +136,6 @@ IN THE SOFTWARE.
 ------------------------------------------------------------------------
 
 -------------------------- Apache License 2.0 --------------------------
-Copyright 2017- Paul Ganssle <paul@ganssle.io> 2017- dateutil contributors (see AUTHORS file)
 
                                 Apache License
                            Version 2.0, January 2004
@@ -342,7 +316,6 @@ Copyright 2017- Paul Ganssle <paul@ganssle.io> 2017- dateutil contributors (see 
 ------------------------------------------------------------------------
 
 --------------------- BSD 2-Clause "Simplified" License ----------------
-Copyright (c) 2015, Michael Williamson All rights reserved
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
@@ -370,13 +343,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ------------------------------------------------------------------------
 
 ------------------------ BSD-3-Clause New License ----------------------
-Copyright 2014 Pallets
-
-Copyright (c) 2013-2021, Kim Davies All rights reserved
-
-Copyright (c) 2008-2020, Eli Bendersky All rights reserved
-
-Copyright (c) 2013, Ethan Furman All rights reserved
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:

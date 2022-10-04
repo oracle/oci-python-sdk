@@ -3938,6 +3938,11 @@ class ShowOCIService(object):
             if self.flags.proxy:
                 compute_client.base_client.session.proxies = {'https': self.flags.proxy}
 
+            # compute_plugins
+            plugin_client = oci.compute_instance_agent.PluginClient(self.config, signer=self.signer)
+            if self.flags.proxy:
+                plugin_client.base_client.session.proxies = {'https': self.flags.proxy}
+
             # virtual_network - for vnics
             virtual_network = oci.core.VirtualNetworkClient(self.config, signer=self.signer)
             if self.flags.proxy:
@@ -3975,7 +3980,7 @@ class ShowOCIService(object):
             block = self.data[self.C_BLOCK]
 
             # append the data
-            compute[self.C_COMPUTE_INST] += self.__load_core_compute_instances(compute_client, compartments)
+            compute[self.C_COMPUTE_INST] += self.__load_core_compute_instances(compute_client, compartments, plugin_client)
             compute[self.C_COMPUTE_IMAGES] += self.__load_core_compute_images(compute_client, compartments)
             compute[self.C_COMPUTE_BOOT_VOL_ATTACH] += self.__load_core_compute_boot_vol_attach(compute_client, compartments)
             compute[self.C_COMPUTE_VOLUME_ATTACH] += self.__load_core_compute_vol_attach(compute_client, compartments)
@@ -4011,7 +4016,7 @@ class ShowOCIService(object):
     ##########################################################################
     # data compute read instances
     ##########################################################################
-    def __load_core_compute_instances(self, compute, compartments):
+    def __load_core_compute_instances(self, compute, compartments, plugin_client):
 
         data = []
         cnt = 0
@@ -4083,16 +4088,37 @@ class ShowOCIService(object):
                            'console_vnc_connection_string': "",
                            'image': "Unknown",
                            'image_os': "Unknown",
-                           'agent_is_management_disabled ': "",
+                           'are_all_plugins_disabled': "",
+                           'agent_is_management_disabled': "",
                            'agent_is_monitoring_disabled': "",
+                           'agent_plugin_config': [],
+                           'agent_plugin_status': [],
                            'metadata': arr.metadata,
                            'extended_metadata': arr.extended_metadata
                            }
 
                     # agent_config
                     if arr.agent_config:
+                        val["are_all_plugins_disabled"] = str(arr.agent_config.are_all_plugins_disabled)
                         val["agent_is_management_disabled"] = str(arr.agent_config.is_management_disabled)
                         val["agent_is_monitoring_disabled"] = str(arr.agent_config.is_monitoring_disabled)
+                        plugin_config = []
+                        if arr.agent_config.plugins_config:
+                            for config in arr.agent_config.plugins_config:
+                                plugin_config.append({'name': config.name, 'desired_state': config.desired_state})
+                            val['agent_plugin_config'] = plugin_config
+
+                    # agent_status
+                    plugins = []
+                    try:
+                        # arr = oci.compute_instance_agent.models.InstanceAgentPluginSummary
+                        plugins = plugin_client.list_instance_agent_plugins(compartment_id=arr.compartment_id, instanceagent_id=arr.id).data
+                        for plugin in plugins:
+                            val['agent_plugin_status'].append({'name': plugin.name, 'status': plugin.status, 'time_last_updated_utc': str(plugin.time_last_updated_utc)})
+
+                    except oci.exceptions.ServiceError as e:
+                        if self.__check_service_error(e.code):
+                            continue
 
                     # check if vm has shape config
                     if arr.shape_config:

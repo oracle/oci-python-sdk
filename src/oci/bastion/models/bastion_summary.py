@@ -13,6 +13,14 @@ class BastionSummary(object):
     Summary information for a bastion resource. A bastion provides secured, public access to target resources in the cloud that you cannot otherwise reach from the internet. A bastion resides in a public subnet and establishes the network infrastructure needed to connect a user to a target resource in a private subnet.
     """
 
+    #: A constant which can be used with the dns_proxy_status property of a BastionSummary.
+    #: This constant has a value of "DISABLED"
+    DNS_PROXY_STATUS_DISABLED = "DISABLED"
+
+    #: A constant which can be used with the dns_proxy_status property of a BastionSummary.
+    #: This constant has a value of "ENABLED"
+    DNS_PROXY_STATUS_ENABLED = "ENABLED"
+
     #: A constant which can be used with the lifecycle_state property of a BastionSummary.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -66,6 +74,12 @@ class BastionSummary(object):
             The value to assign to the target_subnet_id property of this BastionSummary.
         :type target_subnet_id: str
 
+        :param dns_proxy_status:
+            The value to assign to the dns_proxy_status property of this BastionSummary.
+            Allowed values for this property are: "DISABLED", "ENABLED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type dns_proxy_status: str
+
         :param time_created:
             The value to assign to the time_created property of this BastionSummary.
         :type time_created: datetime
@@ -104,6 +118,7 @@ class BastionSummary(object):
             'compartment_id': 'str',
             'target_vcn_id': 'str',
             'target_subnet_id': 'str',
+            'dns_proxy_status': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
@@ -120,6 +135,7 @@ class BastionSummary(object):
             'compartment_id': 'compartmentId',
             'target_vcn_id': 'targetVcnId',
             'target_subnet_id': 'targetSubnetId',
+            'dns_proxy_status': 'dnsProxyStatus',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
@@ -135,6 +151,7 @@ class BastionSummary(object):
         self._compartment_id = None
         self._target_vcn_id = None
         self._target_subnet_id = None
+        self._dns_proxy_status = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
@@ -286,6 +303,36 @@ class BastionSummary(object):
         :type: str
         """
         self._target_subnet_id = target_subnet_id
+
+    @property
+    def dns_proxy_status(self):
+        """
+        Gets the dns_proxy_status of this BastionSummary.
+        The current dns proxy status of the bastion.
+
+        Allowed values for this property are: "DISABLED", "ENABLED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The dns_proxy_status of this BastionSummary.
+        :rtype: str
+        """
+        return self._dns_proxy_status
+
+    @dns_proxy_status.setter
+    def dns_proxy_status(self, dns_proxy_status):
+        """
+        Sets the dns_proxy_status of this BastionSummary.
+        The current dns proxy status of the bastion.
+
+
+        :param dns_proxy_status: The dns_proxy_status of this BastionSummary.
+        :type: str
+        """
+        allowed_values = ["DISABLED", "ENABLED"]
+        if not value_allowed_none_or_none_sentinel(dns_proxy_status, allowed_values):
+            dns_proxy_status = 'UNKNOWN_ENUM_VALUE'
+        self._dns_proxy_status = dns_proxy_status
 
     @property
     def time_created(self):

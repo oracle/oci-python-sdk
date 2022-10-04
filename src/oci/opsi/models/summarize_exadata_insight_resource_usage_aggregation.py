@@ -116,6 +116,10 @@ class SummarizeExadataInsightResourceUsageAggregation(object):
             The value to assign to the usage_change_percent property of this SummarizeExadataInsightResourceUsageAggregation.
         :type usage_change_percent: float
 
+        :param total_host_capacity:
+            The value to assign to the total_host_capacity property of this SummarizeExadataInsightResourceUsageAggregation.
+        :type total_host_capacity: float
+
         """
         self.swagger_types = {
             'time_interval_start': 'datetime',
@@ -125,7 +129,8 @@ class SummarizeExadataInsightResourceUsageAggregation(object):
             'usage_unit': 'str',
             'usage': 'float',
             'capacity': 'float',
-            'usage_change_percent': 'float'
+            'usage_change_percent': 'float',
+            'total_host_capacity': 'float'
         }
 
         self.attribute_map = {
@@ -136,7 +141,8 @@ class SummarizeExadataInsightResourceUsageAggregation(object):
             'usage_unit': 'usageUnit',
             'usage': 'usage',
             'capacity': 'capacity',
-            'usage_change_percent': 'usageChangePercent'
+            'usage_change_percent': 'usageChangePercent',
+            'total_host_capacity': 'totalHostCapacity'
         }
 
         self._time_interval_start = None
@@ -147,6 +153,7 @@ class SummarizeExadataInsightResourceUsageAggregation(object):
         self._usage = None
         self._capacity = None
         self._usage_change_percent = None
+        self._total_host_capacity = None
 
     @property
     def time_interval_start(self):
@@ -314,7 +321,7 @@ class SummarizeExadataInsightResourceUsageAggregation(object):
     def capacity(self):
         """
         **[Required]** Gets the capacity of this SummarizeExadataInsightResourceUsageAggregation.
-        The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+        The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
 
 
         :return: The capacity of this SummarizeExadataInsightResourceUsageAggregation.
@@ -326,7 +333,7 @@ class SummarizeExadataInsightResourceUsageAggregation(object):
     def capacity(self, capacity):
         """
         Sets the capacity of this SummarizeExadataInsightResourceUsageAggregation.
-        The maximum allocated amount of the resource metric type  (CPU, STORAGE).
+        The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
 
 
         :param capacity: The capacity of this SummarizeExadataInsightResourceUsageAggregation.
@@ -357,6 +364,30 @@ class SummarizeExadataInsightResourceUsageAggregation(object):
         :type: float
         """
         self._usage_change_percent = usage_change_percent
+
+    @property
+    def total_host_capacity(self):
+        """
+        Gets the total_host_capacity of this SummarizeExadataInsightResourceUsageAggregation.
+        The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+
+
+        :return: The total_host_capacity of this SummarizeExadataInsightResourceUsageAggregation.
+        :rtype: float
+        """
+        return self._total_host_capacity
+
+    @total_host_capacity.setter
+    def total_host_capacity(self, total_host_capacity):
+        """
+        Sets the total_host_capacity of this SummarizeExadataInsightResourceUsageAggregation.
+        The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+
+
+        :param total_host_capacity: The total_host_capacity of this SummarizeExadataInsightResourceUsageAggregation.
+        :type: float
+        """
+        self._total_host_capacity = total_host_capacity
 
     def __repr__(self):
         return formatted_flat_dict(self)

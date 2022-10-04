@@ -8,10 +8,12 @@ from .bastion import Bastion
 from .bastion_summary import BastionSummary
 from .change_bastion_compartment_details import ChangeBastionCompartmentDetails
 from .create_bastion_details import CreateBastionDetails
+from .create_dynamic_port_forwarding_session_target_resource_details import CreateDynamicPortForwardingSessionTargetResourceDetails
 from .create_managed_ssh_session_target_resource_details import CreateManagedSshSessionTargetResourceDetails
 from .create_port_forwarding_session_target_resource_details import CreatePortForwardingSessionTargetResourceDetails
 from .create_session_details import CreateSessionDetails
 from .create_session_target_resource_details import CreateSessionTargetResourceDetails
+from .dynamic_port_forwarding_session_target_resource_details import DynamicPortForwardingSessionTargetResourceDetails
 from .managed_ssh_session_target_resource_details import ManagedSshSessionTargetResourceDetails
 from .port_forwarding_session_target_resource_details import PortForwardingSessionTargetResourceDetails
 from .public_key_details import PublicKeyDetails
@@ -32,10 +34,12 @@ bastion_type_mapping = {
     "BastionSummary": BastionSummary,
     "ChangeBastionCompartmentDetails": ChangeBastionCompartmentDetails,
     "CreateBastionDetails": CreateBastionDetails,
+    "CreateDynamicPortForwardingSessionTargetResourceDetails": CreateDynamicPortForwardingSessionTargetResourceDetails,
     "CreateManagedSshSessionTargetResourceDetails": CreateManagedSshSessionTargetResourceDetails,
     "CreatePortForwardingSessionTargetResourceDetails": CreatePortForwardingSessionTargetResourceDetails,
     "CreateSessionDetails": CreateSessionDetails,
     "CreateSessionTargetResourceDetails": CreateSessionTargetResourceDetails,
+    "DynamicPortForwardingSessionTargetResourceDetails": DynamicPortForwardingSessionTargetResourceDetails,
     "ManagedSshSessionTargetResourceDetails": ManagedSshSessionTargetResourceDetails,
     "PortForwardingSessionTargetResourceDetails": PortForwardingSessionTargetResourceDetails,
     "PublicKeyDetails": PublicKeyDetails,

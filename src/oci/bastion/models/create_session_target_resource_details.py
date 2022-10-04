@@ -21,38 +21,36 @@ class CreateSessionTargetResourceDetails(object):
     #: This constant has a value of "PORT_FORWARDING"
     SESSION_TYPE_PORT_FORWARDING = "PORT_FORWARDING"
 
+    #: A constant which can be used with the session_type property of a CreateSessionTargetResourceDetails.
+    #: This constant has a value of "DYNAMIC_PORT_FORWARDING"
+    SESSION_TYPE_DYNAMIC_PORT_FORWARDING = "DYNAMIC_PORT_FORWARDING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateSessionTargetResourceDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.bastion.models.CreateManagedSshSessionTargetResourceDetails`
+        * :class:`~oci.bastion.models.CreateDynamicPortForwardingSessionTargetResourceDetails`
         * :class:`~oci.bastion.models.CreatePortForwardingSessionTargetResourceDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param session_type:
             The value to assign to the session_type property of this CreateSessionTargetResourceDetails.
-            Allowed values for this property are: "MANAGED_SSH", "PORT_FORWARDING"
+            Allowed values for this property are: "MANAGED_SSH", "PORT_FORWARDING", "DYNAMIC_PORT_FORWARDING"
         :type session_type: str
-
-        :param target_resource_port:
-            The value to assign to the target_resource_port property of this CreateSessionTargetResourceDetails.
-        :type target_resource_port: int
 
         """
         self.swagger_types = {
-            'session_type': 'str',
-            'target_resource_port': 'int'
+            'session_type': 'str'
         }
 
         self.attribute_map = {
-            'session_type': 'sessionType',
-            'target_resource_port': 'targetResourcePort'
+            'session_type': 'sessionType'
         }
 
         self._session_type = None
-        self._target_resource_port = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -65,6 +63,9 @@ class CreateSessionTargetResourceDetails(object):
         if type == 'MANAGED_SSH':
             return 'CreateManagedSshSessionTargetResourceDetails'
 
+        if type == 'DYNAMIC_PORT_FORWARDING':
+            return 'CreateDynamicPortForwardingSessionTargetResourceDetails'
+
         if type == 'PORT_FORWARDING':
             return 'CreatePortForwardingSessionTargetResourceDetails'
         else:
@@ -76,7 +77,7 @@ class CreateSessionTargetResourceDetails(object):
         **[Required]** Gets the session_type of this CreateSessionTargetResourceDetails.
         The session type.
 
-        Allowed values for this property are: "MANAGED_SSH", "PORT_FORWARDING"
+        Allowed values for this property are: "MANAGED_SSH", "PORT_FORWARDING", "DYNAMIC_PORT_FORWARDING"
 
 
         :return: The session_type of this CreateSessionTargetResourceDetails.
@@ -94,37 +95,13 @@ class CreateSessionTargetResourceDetails(object):
         :param session_type: The session_type of this CreateSessionTargetResourceDetails.
         :type: str
         """
-        allowed_values = ["MANAGED_SSH", "PORT_FORWARDING"]
+        allowed_values = ["MANAGED_SSH", "PORT_FORWARDING", "DYNAMIC_PORT_FORWARDING"]
         if not value_allowed_none_or_none_sentinel(session_type, allowed_values):
             raise ValueError(
                 "Invalid value for `session_type`, must be None or one of {0}"
                 .format(allowed_values)
             )
         self._session_type = session_type
-
-    @property
-    def target_resource_port(self):
-        """
-        Gets the target_resource_port of this CreateSessionTargetResourceDetails.
-        The port number to connect to on the target resource.
-
-
-        :return: The target_resource_port of this CreateSessionTargetResourceDetails.
-        :rtype: int
-        """
-        return self._target_resource_port
-
-    @target_resource_port.setter
-    def target_resource_port(self, target_resource_port):
-        """
-        Sets the target_resource_port of this CreateSessionTargetResourceDetails.
-        The port number to connect to on the target resource.
-
-
-        :param target_resource_port: The target_resource_port of this CreateSessionTargetResourceDetails.
-        :type: int
-        """
-        self._target_resource_port = target_resource_port
 
     def __repr__(self):
         return formatted_flat_dict(self)

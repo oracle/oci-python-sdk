@@ -53,6 +53,7 @@ class HostConfigurationSummary(object):
         * :class:`~oci.opsi.models.MacsManagedExternalHostConfigurationSummary`
         * :class:`~oci.opsi.models.PeComanagedHostConfigurationSummary`
         * :class:`~oci.opsi.models.EmManagedExternalHostConfigurationSummary`
+        * :class:`~oci.opsi.models.MacsManagedCloudHostConfigurationSummary`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -224,6 +225,9 @@ class HostConfigurationSummary(object):
 
         if type == 'EM_MANAGED_EXTERNAL_HOST':
             return 'EmManagedExternalHostConfigurationSummary'
+
+        if type == 'MACS_MANAGED_CLOUD_HOST':
+            return 'MacsManagedCloudHostConfigurationSummary'
         else:
             return 'HostConfigurationSummary'
 
@@ -343,6 +347,7 @@ class HostConfigurationSummary(object):
         **[Required]** Gets the platform_type of this HostConfigurationSummary.
         Platform type.
         Supported platformType(s) for MACS-managed external host insight: [LINUX].
+        Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
         Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
 
         Allowed values for this property are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX", 'UNKNOWN_ENUM_VALUE'.
@@ -360,6 +365,7 @@ class HostConfigurationSummary(object):
         Sets the platform_type of this HostConfigurationSummary.
         Platform type.
         Supported platformType(s) for MACS-managed external host insight: [LINUX].
+        Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
         Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
 
 

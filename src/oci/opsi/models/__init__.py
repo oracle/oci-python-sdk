@@ -193,6 +193,7 @@ from .ingest_sql_stats_response_details import IngestSqlStatsResponseDetails
 from .ingest_sql_text_details import IngestSqlTextDetails
 from .ingest_sql_text_response_details import IngestSqlTextResponseDetails
 from .instance_metrics import InstanceMetrics
+from .macs_managed_cloud_host_configuration_summary import MacsManagedCloudHostConfigurationSummary
 from .macs_managed_cloud_host_insight import MacsManagedCloudHostInsight
 from .macs_managed_cloud_host_insight_summary import MacsManagedCloudHostInsightSummary
 from .macs_managed_external_database_configuration_summary import MacsManagedExternalDatabaseConfigurationSummary
@@ -212,6 +213,7 @@ from .operations_insights_warehouse_user_summary import OperationsInsightsWareho
 from .operations_insights_warehouse_user_summary_collection import OperationsInsightsWarehouseUserSummaryCollection
 from .operations_insights_warehouse_users import OperationsInsightsWarehouseUsers
 from .operations_insights_warehouses import OperationsInsightsWarehouses
+from .opsi_configurations import OpsiConfigurations
 from .opsi_data_object import OpsiDataObject
 from .opsi_data_object_summary import OpsiDataObjectSummary
 from .opsi_data_objects import OpsiDataObjects
@@ -286,11 +288,13 @@ from .summarize_host_insight_resource_statistics_aggregation_collection import S
 from .summarize_host_insight_resource_usage_aggregation import SummarizeHostInsightResourceUsageAggregation
 from .summarize_host_insight_resource_usage_trend_aggregation_collection import SummarizeHostInsightResourceUsageTrendAggregationCollection
 from .summarize_host_insight_resource_utilization_insight_aggregation import SummarizeHostInsightResourceUtilizationInsightAggregation
+from .summarize_host_insights_top_processes_usage_collection import SummarizeHostInsightsTopProcessesUsageCollection
 from .summarize_host_insights_top_processes_usage_trend_collection import SummarizeHostInsightsTopProcessesUsageTrendCollection
 from .summarize_operations_insights_warehouse_resource_usage_aggregation import SummarizeOperationsInsightsWarehouseResourceUsageAggregation
 from .summary_statistics import SummaryStatistics
 from .tablespace_usage_trend import TablespaceUsageTrend
 from .tablespace_usage_trend_aggregation import TablespaceUsageTrendAggregation
+from .top_processes_usage import TopProcessesUsage
 from .top_processes_usage_trend import TopProcessesUsageTrend
 from .top_processes_usage_trend_aggregation import TopProcessesUsageTrendAggregation
 from .update_autonomous_database_insight_details import UpdateAutonomousDatabaseInsightDetails
@@ -509,6 +513,7 @@ opsi_type_mapping = {
     "IngestSqlTextDetails": IngestSqlTextDetails,
     "IngestSqlTextResponseDetails": IngestSqlTextResponseDetails,
     "InstanceMetrics": InstanceMetrics,
+    "MacsManagedCloudHostConfigurationSummary": MacsManagedCloudHostConfigurationSummary,
     "MacsManagedCloudHostInsight": MacsManagedCloudHostInsight,
     "MacsManagedCloudHostInsightSummary": MacsManagedCloudHostInsightSummary,
     "MacsManagedExternalDatabaseConfigurationSummary": MacsManagedExternalDatabaseConfigurationSummary,
@@ -528,6 +533,7 @@ opsi_type_mapping = {
     "OperationsInsightsWarehouseUserSummaryCollection": OperationsInsightsWarehouseUserSummaryCollection,
     "OperationsInsightsWarehouseUsers": OperationsInsightsWarehouseUsers,
     "OperationsInsightsWarehouses": OperationsInsightsWarehouses,
+    "OpsiConfigurations": OpsiConfigurations,
     "OpsiDataObject": OpsiDataObject,
     "OpsiDataObjectSummary": OpsiDataObjectSummary,
     "OpsiDataObjects": OpsiDataObjects,
@@ -602,11 +608,13 @@ opsi_type_mapping = {
     "SummarizeHostInsightResourceUsageAggregation": SummarizeHostInsightResourceUsageAggregation,
     "SummarizeHostInsightResourceUsageTrendAggregationCollection": SummarizeHostInsightResourceUsageTrendAggregationCollection,
     "SummarizeHostInsightResourceUtilizationInsightAggregation": SummarizeHostInsightResourceUtilizationInsightAggregation,
+    "SummarizeHostInsightsTopProcessesUsageCollection": SummarizeHostInsightsTopProcessesUsageCollection,
     "SummarizeHostInsightsTopProcessesUsageTrendCollection": SummarizeHostInsightsTopProcessesUsageTrendCollection,
     "SummarizeOperationsInsightsWarehouseResourceUsageAggregation": SummarizeOperationsInsightsWarehouseResourceUsageAggregation,
     "SummaryStatistics": SummaryStatistics,
     "TablespaceUsageTrend": TablespaceUsageTrend,
     "TablespaceUsageTrendAggregation": TablespaceUsageTrendAggregation,
+    "TopProcessesUsage": TopProcessesUsage,
     "TopProcessesUsageTrend": TopProcessesUsageTrend,
     "TopProcessesUsageTrendAggregation": TopProcessesUsageTrendAggregation,
     "UpdateAutonomousDatabaseInsightDetails": UpdateAutonomousDatabaseInsightDetails,
