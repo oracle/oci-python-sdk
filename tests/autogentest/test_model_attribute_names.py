@@ -44,4 +44,4 @@ def test_bad_conversions_in_attibute_names():
                     if (x, model_name, attribute) in ignored_attributes:
                         continue
                     for invalid in invalid_conversions:
-                        assert(invalid not in attribute)
+                        assert (invalid not in attribute)

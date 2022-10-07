@@ -57,8 +57,8 @@ def test_all_regions():
         pytest.fail("Decoding JSON array from regions configuration file failed because of error: {}".format(e))
 
     for region in regions:
-        assert(region['regionIdentifier'] in REGIONS)
-        assert(region['realmKey'] in REALMS.keys())
+        assert (region['regionIdentifier'] in REGIONS)
+        assert (region['realmKey'] in REALMS.keys())
 
 
 def test_endpoint_for_service_template():
@@ -337,20 +337,20 @@ def test_endpoint_for_region():
 def test_short_name_to_region():
     reset_external_sources_dict()
     for shortname in six.iterkeys(REGIONS_SHORT_NAMES):
-        assert(REGIONS_SHORT_NAMES[shortname] in REGIONS)
+        assert (REGIONS_SHORT_NAMES[shortname] in REGIONS)
 
 
 def test_short_name_to_realm():
     reset_external_sources_dict()
     for shortname in six.iterkeys(REGIONS_SHORT_NAMES):
-        assert(REGIONS_SHORT_NAMES[shortname] in REGION_REALMS)
+        assert (REGIONS_SHORT_NAMES[shortname] in REGION_REALMS)
 
 
 def test_region_to_realm():
     reset_external_sources_dict()
     for region in REGIONS:
-        assert(region in REGION_REALMS)
-        assert(REGION_REALMS[region] in REALMS)
+        assert (region in REGION_REALMS)
+        assert (REGION_REALMS[region] in REALMS)
 
 
 def test_region_from_env_variable():
