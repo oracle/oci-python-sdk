@@ -62,9 +62,8 @@ export OCI_PYSDK_USING_EXPECT_HEADER=FALSE
 
 echo Running Tests
 
-pip install virtualenv==16.7.9
-pip install flake8==4.0.1
-pip install tox==3.14.3
+pip install -r requirements.txt
+
 if [[ $TEST_ENABLE = "false" ]]; then
   echo "Tests Disabled.  Just running flake 8"
   tox -e flake8

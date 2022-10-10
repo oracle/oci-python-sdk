@@ -27,7 +27,7 @@ echo Running Tests
 if [ $TEST_ENABLE = "false" ]; then
   echo "TESTS HAVE BEEN DISABLED."
 else
-  pip install tox
+  pip install -r requirements.txt
 
   echo "Removing mocked responses before Python 3.6 test run"
   rm tests/fixtures/cassettes/*.yml
