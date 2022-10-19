@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+22.10.15 - 2022.10.15
+=====================
+* Added additional output information
+* Added Option to Tag resources
+
+=====================
 22.10.04 - 2022.10.04
 =====================
 * Added new report to Cost Analysis
