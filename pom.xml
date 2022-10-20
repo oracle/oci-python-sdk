@@ -63,6 +63,7 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/disaster_recovery/pom.xml</module>
     <module>poms/cloud_bridge/pom.xml</module>
     <module>poms/cloud_migrations/pom.xml</module>
     <module>poms/opensearch/pom.xml</module>

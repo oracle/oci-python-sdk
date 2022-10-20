@@ -18,20 +18,55 @@ class BatchDetectDominantLanguageDetails(object):
         Initializes a new BatchDetectDominantLanguageDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this BatchDetectDominantLanguageDetails.
+        :type compartment_id: str
+
         :param documents:
             The value to assign to the documents property of this BatchDetectDominantLanguageDetails.
         :type documents: list[oci.ai_language.models.DominantLanguageDocument]
 
         """
         self.swagger_types = {
+            'compartment_id': 'str',
             'documents': 'list[DominantLanguageDocument]'
         }
 
         self.attribute_map = {
+            'compartment_id': 'compartmentId',
             'documents': 'documents'
         }
 
+        self._compartment_id = None
         self._documents = None
+
+    @property
+    def compartment_id(self):
+        """
+        Gets the compartment_id of this BatchDetectDominantLanguageDetails.
+        The `OCID`__ of the compartment that calls the API, inference will be served from pre trained model
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The compartment_id of this BatchDetectDominantLanguageDetails.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this BatchDetectDominantLanguageDetails.
+        The `OCID`__ of the compartment that calls the API, inference will be served from pre trained model
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param compartment_id: The compartment_id of this BatchDetectDominantLanguageDetails.
+        :type: str
+        """
+        self._compartment_id = compartment_id
 
     @property
     def documents(self):

@@ -68,6 +68,7 @@ API Reference
 * :doc:`Database Migration <database_migration/client/oci.database_migration.DatabaseMigrationClient>`
 * :doc:`Database Tools <database_tools/client/oci.database_tools.DatabaseToolsClient>`
 * :doc:`Devops <devops/client/oci.devops.DevopsClient>`
+* :doc:`Disaster Recovery <disaster_recovery/client/oci.disaster_recovery.DisasterRecoveryClient>`
 * :doc:`DNS <dns/client/oci.dns.DnsClient>`
 * :doc:`Appliance Export Job <dts/client/oci.dts.ApplianceExportJobClient>`
 * :doc:`Shipping Vendors <dts/client/oci.dts.ShippingVendorsClient>`
@@ -255,6 +256,7 @@ API Reference
     database_migration
     database_tools
     devops
+    disaster_recovery
     dns
     dts
     em_warehouse

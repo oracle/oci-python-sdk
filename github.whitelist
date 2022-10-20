@@ -162,3 +162,4 @@
 ^src/oci/opensearch/.*\.py$
 ^src/oci/cloud_migrations/.*\.py$
 ^src/oci/cloud_bridge/.*\.py$
+^src/oci/disaster_recovery/.*\.py$

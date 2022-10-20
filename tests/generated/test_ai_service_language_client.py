@@ -239,6 +239,419 @@ def test_batch_detect_language_text_classification(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
+def test_batch_language_translation(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_language', 'BatchLanguageTranslation'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_language', util.camelize('ai_service_language'), 'BatchLanguageTranslation')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ai_language', api_name='BatchLanguageTranslation')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
+            response = client.batch_language_translation(
+                batch_language_translation_details=request.pop(util.camelize('BatchLanguageTranslationDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_language',
+            'BatchLanguageTranslation',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'batchLanguageTranslationResult',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
+def test_change_endpoint_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_language', 'ChangeEndpointCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_language', util.camelize('ai_service_language'), 'ChangeEndpointCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ai_language', api_name='ChangeEndpointCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
+            response = client.change_endpoint_compartment(
+                endpoint_id=request.pop(util.camelize('endpointId')),
+                change_endpoint_compartment_details=request.pop(util.camelize('ChangeEndpointCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_language',
+            'ChangeEndpointCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_endpoint_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
+def test_change_model_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_language', 'ChangeModelCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_language', util.camelize('ai_service_language'), 'ChangeModelCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ai_language', api_name='ChangeModelCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
+            response = client.change_model_compartment(
+                model_id=request.pop(util.camelize('modelId')),
+                change_model_compartment_details=request.pop(util.camelize('ChangeModelCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_language',
+            'ChangeModelCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_model_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
+def test_change_project_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_language', 'ChangeProjectCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_language', util.camelize('ai_service_language'), 'ChangeProjectCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ai_language', api_name='ChangeProjectCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
+            response = client.change_project_compartment(
+                project_id=request.pop(util.camelize('projectId')),
+                change_project_compartment_details=request.pop(util.camelize('ChangeProjectCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_language',
+            'ChangeProjectCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_project_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
+def test_create_endpoint(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_language', 'CreateEndpoint'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_language', util.camelize('ai_service_language'), 'CreateEndpoint')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ai_language', api_name='CreateEndpoint')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
+            response = client.create_endpoint(
+                create_endpoint_details=request.pop(util.camelize('CreateEndpointDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_language',
+            'CreateEndpoint',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'endpoint',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
+def test_create_model(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_language', 'CreateModel'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_language', util.camelize('ai_service_language'), 'CreateModel')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ai_language', api_name='CreateModel')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
+            response = client.create_model(
+                create_model_details=request.pop(util.camelize('CreateModelDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_language',
+            'CreateModel',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'model',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
+def test_create_project(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_language', 'CreateProject'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_language', util.camelize('ai_service_language'), 'CreateProject')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ai_language', api_name='CreateProject')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
+            response = client.create_project(
+                create_project_details=request.pop(util.camelize('CreateProjectDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_language',
+            'CreateProject',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'project',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
+def test_delete_endpoint(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_language', 'DeleteEndpoint'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_language', util.camelize('ai_service_language'), 'DeleteEndpoint')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ai_language', api_name='DeleteEndpoint')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
+            response = client.delete_endpoint(
+                endpoint_id=request.pop(util.camelize('endpointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_language',
+            'DeleteEndpoint',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_endpoint',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
+def test_delete_model(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_language', 'DeleteModel'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_language', util.camelize('ai_service_language'), 'DeleteModel')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ai_language', api_name='DeleteModel')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
+            response = client.delete_model(
+                model_id=request.pop(util.camelize('modelId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_language',
+            'DeleteModel',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_model',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
+def test_delete_project(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_language', 'DeleteProject'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_language', util.camelize('ai_service_language'), 'DeleteProject')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ai_language', api_name='DeleteProject')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
+            response = client.delete_project(
+                project_id=request.pop(util.camelize('projectId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_language',
+            'DeleteProject',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_project',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
 def test_detect_dominant_language(testing_service_client):
     if not testing_service_client.is_api_enabled('ai_language', 'DetectDominantLanguage'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -438,6 +851,737 @@ def test_detect_language_text_classification(testing_service_client):
             result,
             service_error,
             'detectLanguageTextClassificationResult',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
+def test_get_endpoint(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_language', 'GetEndpoint'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_language', util.camelize('ai_service_language'), 'GetEndpoint')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ai_language', api_name='GetEndpoint')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
+            response = client.get_endpoint(
+                endpoint_id=request.pop(util.camelize('endpointId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_language',
+            'GetEndpoint',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'endpoint',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
+def test_get_model(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_language', 'GetModel'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_language', util.camelize('ai_service_language'), 'GetModel')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ai_language', api_name='GetModel')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
+            response = client.get_model(
+                model_id=request.pop(util.camelize('modelId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_language',
+            'GetModel',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'model',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
+def test_get_project(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_language', 'GetProject'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_language', util.camelize('ai_service_language'), 'GetProject')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ai_language', api_name='GetProject')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
+            response = client.get_project(
+                project_id=request.pop(util.camelize('projectId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_language',
+            'GetProject',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'project',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
+def test_get_work_request(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_language', 'GetWorkRequest'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_language', util.camelize('ai_service_language'), 'GetWorkRequest')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ai_language', api_name='GetWorkRequest')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
+            response = client.get_work_request(
+                work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_language',
+            'GetWorkRequest',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'workRequest',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
+def test_list_endpoints(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_language', 'ListEndpoints'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_language', util.camelize('ai_service_language'), 'ListEndpoints')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='ai_language', api_name='ListEndpoints')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
+            response = client.list_endpoints(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_endpoints(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_endpoints(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_language',
+            'ListEndpoints',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'endpointCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
+def test_list_evaluation_results(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_language', 'ListEvaluationResults'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_language', util.camelize('ai_service_language'), 'ListEvaluationResults')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='ai_language', api_name='ListEvaluationResults')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
+            response = client.list_evaluation_results(
+                model_id=request.pop(util.camelize('modelId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_evaluation_results(
+                    model_id=request.pop(util.camelize('modelId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_evaluation_results(
+                        model_id=request.pop(util.camelize('modelId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_language',
+            'ListEvaluationResults',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'evaluationResultCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
+def test_list_models(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_language', 'ListModels'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_language', util.camelize('ai_service_language'), 'ListModels')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='ai_language', api_name='ListModels')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
+            response = client.list_models(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_models(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_models(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_language',
+            'ListModels',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'modelCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
+def test_list_projects(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_language', 'ListProjects'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_language', util.camelize('ai_service_language'), 'ListProjects')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='ai_language', api_name='ListProjects')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
+            response = client.list_projects(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_projects(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_projects(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_language',
+            'ListProjects',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'projectCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
+def test_list_work_request_errors(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_language', 'ListWorkRequestErrors'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_language', util.camelize('ai_service_language'), 'ListWorkRequestErrors')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='ai_language', api_name='ListWorkRequestErrors')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
+            response = client.list_work_request_errors(
+                work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_work_request_errors(
+                    work_request_id=request.pop(util.camelize('workRequestId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_work_request_errors(
+                        work_request_id=request.pop(util.camelize('workRequestId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_language',
+            'ListWorkRequestErrors',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'workRequestErrorCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
+def test_list_work_request_logs(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_language', 'ListWorkRequestLogs'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_language', util.camelize('ai_service_language'), 'ListWorkRequestLogs')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='ai_language', api_name='ListWorkRequestLogs')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
+            response = client.list_work_request_logs(
+                work_request_id=request.pop(util.camelize('workRequestId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_work_request_logs(
+                    work_request_id=request.pop(util.camelize('workRequestId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_work_request_logs(
+                        work_request_id=request.pop(util.camelize('workRequestId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_language',
+            'ListWorkRequestLogs',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'workRequestLogCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
+def test_list_work_requests(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_language', 'ListWorkRequests'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_language', util.camelize('ai_service_language'), 'ListWorkRequests')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='ai_language', api_name='ListWorkRequests')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
+            response = client.list_work_requests(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_work_requests(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_work_requests(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_language',
+            'ListWorkRequests',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'workRequestSummaryCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
+def test_update_endpoint(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_language', 'UpdateEndpoint'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_language', util.camelize('ai_service_language'), 'UpdateEndpoint')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ai_language', api_name='UpdateEndpoint')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
+            response = client.update_endpoint(
+                endpoint_id=request.pop(util.camelize('endpointId')),
+                update_endpoint_details=request.pop(util.camelize('UpdateEndpointDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_language',
+            'UpdateEndpoint',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_endpoint',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
+def test_update_model(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_language', 'UpdateModel'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_language', util.camelize('ai_service_language'), 'UpdateModel')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ai_language', api_name='UpdateModel')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
+            response = client.update_model(
+                model_id=request.pop(util.camelize('modelId')),
+                update_model_details=request.pop(util.camelize('UpdateModelDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_language',
+            'UpdateModel',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_model',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
+def test_update_project(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_language', 'UpdateProject'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_language', util.camelize('ai_service_language'), 'UpdateProject')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ai_language', api_name='UpdateProject')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
+            response = client.update_project(
+                project_id=request.pop(util.camelize('projectId')),
+                update_project_details=request.pop(util.camelize('UpdateProjectDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_language',
+            'UpdateProject',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_project',
             False,
             False
         )

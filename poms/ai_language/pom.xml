@@ -20,7 +20,7 @@
     <feature-id-file>${sdk-root-dir}/featureId.yaml</feature-id-file>
     <feature-id-dir>${sdk-root-dir}/codegenConfig/featureIds</feature-id-dir>
     <!-- Service Spec file goes here -->
-    <ai-service-control-plane-spec-spec-file>source/api.cond.yaml</ai-service-control-plane-spec-spec-file>
+    <ai-service-control-plane-spec-spec-file>source/api-20221001.cond.yaml</ai-service-control-plane-spec-spec-file>
   </properties>
   <build>
     <directory>${sdk-root-dir}/target</directory>
@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.pic.ocas</groupId>
         <artifactId>ai-service-control-plane-spec</artifactId>
-        <version>1.0.16</version>
+        <version>1.3.247</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
