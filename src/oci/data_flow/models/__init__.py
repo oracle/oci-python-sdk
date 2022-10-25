@@ -14,6 +14,8 @@ from .change_run_compartment_details import ChangeRunCompartmentDetails
 from .create_application_details import CreateApplicationDetails
 from .create_private_endpoint_details import CreatePrivateEndpointDetails
 from .create_run_details import CreateRunDetails
+from .create_statement_details import CreateStatementDetails
+from .image_png_statement_output_data import ImagePngStatementOutputData
 from .private_endpoint import PrivateEndpoint
 from .private_endpoint_collection import PrivateEndpointCollection
 from .private_endpoint_summary import PrivateEndpointSummary
@@ -21,6 +23,13 @@ from .run import Run
 from .run_log_summary import RunLogSummary
 from .run_summary import RunSummary
 from .shape_config import ShapeConfig
+from .statement import Statement
+from .statement_collection import StatementCollection
+from .statement_output import StatementOutput
+from .statement_output_data import StatementOutputData
+from .statement_summary import StatementSummary
+from .text_html_statement_output_data import TextHtmlStatementOutputData
+from .text_plain_statement_output_data import TextPlainStatementOutputData
 from .update_application_details import UpdateApplicationDetails
 from .update_private_endpoint_details import UpdatePrivateEndpointDetails
 from .update_run_details import UpdateRunDetails
@@ -45,6 +54,8 @@ data_flow_type_mapping = {
     "CreateApplicationDetails": CreateApplicationDetails,
     "CreatePrivateEndpointDetails": CreatePrivateEndpointDetails,
     "CreateRunDetails": CreateRunDetails,
+    "CreateStatementDetails": CreateStatementDetails,
+    "ImagePngStatementOutputData": ImagePngStatementOutputData,
     "PrivateEndpoint": PrivateEndpoint,
     "PrivateEndpointCollection": PrivateEndpointCollection,
     "PrivateEndpointSummary": PrivateEndpointSummary,
@@ -52,6 +63,13 @@ data_flow_type_mapping = {
     "RunLogSummary": RunLogSummary,
     "RunSummary": RunSummary,
     "ShapeConfig": ShapeConfig,
+    "Statement": Statement,
+    "StatementCollection": StatementCollection,
+    "StatementOutput": StatementOutput,
+    "StatementOutputData": StatementOutputData,
+    "StatementSummary": StatementSummary,
+    "TextHtmlStatementOutputData": TextHtmlStatementOutputData,
+    "TextPlainStatementOutputData": TextPlainStatementOutputData,
     "UpdateApplicationDetails": UpdateApplicationDetails,
     "UpdatePrivateEndpointDetails": UpdatePrivateEndpointDetails,
     "UpdateRunDetails": UpdateRunDetails,

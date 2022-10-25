@@ -1,0 +1,11 @@
+DrPlanExecutionOptionDetails
+============================
+
+.. currentmodule:: oci.disaster_recovery.models
+
+.. autoclass:: DrPlanExecutionOptionDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

@@ -44,7 +44,7 @@ class DocumentError(object):
     def key(self):
         """
         **[Required]** Gets the key of this DocumentError.
-        Unique Document Identifier.
+        Document unique identifier defined by the user.
 
 
         :return: The key of this DocumentError.
@@ -56,7 +56,7 @@ class DocumentError(object):
     def key(self, key):
         """
         Sets the key of this DocumentError.
-        Unique Document Identifier.
+        Document unique identifier defined by the user.
 
 
         :param key: The key of this DocumentError.

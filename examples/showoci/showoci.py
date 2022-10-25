@@ -93,7 +93,6 @@
 # - oci.data_safe.DataSafeClient
 # - oci.devops.DevopsClient
 # - oci.jms.JavaManagementServiceClient
-
 ##########################################################################
 from __future__ import print_function
 from showoci_data import ShowOCIData
@@ -107,7 +106,7 @@ import datetime
 import contextlib
 import os
 
-version = "22.10.04"
+version = "22.10.18"
 
 ##########################################################################
 # check OCI version

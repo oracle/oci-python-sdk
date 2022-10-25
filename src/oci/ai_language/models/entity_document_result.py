@@ -99,7 +99,7 @@ class EntityDocumentResult(object):
     def language_code(self):
         """
         **[Required]** Gets the language_code of this EntityDocumentResult.
-        Language code as per `ISO 639-1`__ standard.
+        Language code per the `ISO 639-1`__ standard.
 
         __ https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 
@@ -113,7 +113,7 @@ class EntityDocumentResult(object):
     def language_code(self, language_code):
         """
         Sets the language_code of this EntityDocumentResult.
-        Language code as per `ISO 639-1`__ standard.
+        Language code per the `ISO 639-1`__ standard.
 
         __ https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 

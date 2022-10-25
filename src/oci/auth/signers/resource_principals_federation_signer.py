@@ -6,7 +6,7 @@ import json
 import threading
 import oci
 from .instance_principals_security_token_signer import InstancePrincipalsSecurityTokenSigner
-from .security_token_signer import SecurityTokenSigner
+from .security_token_signer import SecurityTokenSigner, SECURITY_TOKEN_FORMAT_STRING
 from ..security_token_container import SecurityTokenContainer
 from ..session_key_supplier import SessionKeySupplier
 from .. import auth_utils
@@ -106,9 +106,19 @@ class ResourcePrincipalsFederationSigner(SecurityTokenSigner):
 
             # Get RPST token from itentity, steps A.2 and B.2
             self.security_token = SecurityTokenContainer(self.session_key_supplier, self._get_resource_principal_session_token())
+            self._reset_signers()
             return self.security_token.security_token
         finally:
             self._reset_signers_lock.release()
+
+    def _reset_signers(self):
+        self.api_key = SECURITY_TOKEN_FORMAT_STRING.format(self.security_token.security_token)
+        self.private_key = self.session_key_supplier.get_key_pair()['private']
+
+        if hasattr(self, '_basic_signer'):
+            self._basic_signer.reset_signer(self.api_key, self.private_key)
+        if hasattr(self, '_body_signer'):
+            self._body_signer.reset_signer(self.api_key, self.private_key)
 
     def _get_resource_principal_token_and_service_principal_session_token(self):
         """

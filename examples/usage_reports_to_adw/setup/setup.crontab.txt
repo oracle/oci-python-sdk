@@ -1,7 +1,7 @@
 ###############################################################################
-# Crontab to run every 3 hours
+# Crontab to run every 4 hours
 ###############################################################################
-0 */3 * * * timeout 6h /home/opc/usage_reports_to_adw/shell_scripts/run_single_daily_usage2adw.sh > /home/opc/usage_reports_to_adw/run_single_daily_usage2adw_crontab_run.txt 2>&1
+0 */4 * * * timeout 6h /home/opc/usage_reports_to_adw/shell_scripts/run_multi_daily_usage2adw.sh > /home/opc/usage_reports_to_adw/run_multi_daily_usage2adw_crontab_run.txt 2>&1
 
 ###############################################################################
 # Gather stats every weekend
