@@ -1,9 +1,9 @@
 #!/bin/bash
 #############################################################################################################################
-# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 #
-# Author - Adi Zohar, Feb 28th 2020
+# Author - Adi Zohar, Feb 28th 2020, Amended Oct 18th 2022
 #
 # Run Multi daily usage load for crontab use
 #
@@ -11,7 +11,7 @@
 # Use .oci/config profiles with user authentications
 #
 # Crontab set:
-# 0 0 * * * timeout 6h /home/opc/usage_reports_to_adw/shell_scripts/run_multi_tenants.sh > /home/opc/usage_reports_to_adw/run_multi_tenants_crontab_run.txt 2>&1
+# 0 0 * * * timeout 6h /home/opc/usage_reports_to_adw/shell_scripts/run_multi_daily_usage2adw.sh > /home/opc/usage_reports_to_adw/cron_run_multi_tenants_crontab_run.txt 2>&1
 #############################################################################################################################
 
 # Env Variables based on yum instant client
@@ -38,20 +38,28 @@ export DATE=`date '+%Y%m%d_%H%M'`
 export REPORT_DIR=${APPDIR}/report
 mkdir -p ${REPORT_DIR}
 
+# Check if usage2adw.py already running
+if (( `ps -ef |grep python |grep usage2adw.py |wc -l` > 0 ))
+then
+    echo "usage2adw.py is already running, abort.."
+    ps -ef |grep python |grep usage2adw.py
+    exit 1
+fi
+
 ##################################
 # Report Function
 ##################################
 run_report()
 {
     NAME=$1
-    export TENANT="-t $NAME"
+    export tenant="-t $NAME"
     if [ -z "$NAME" ]
     then
         exit 1
     fi
 
     if [ "${1}" = "local" ]; then
-        export TENANT="-ip"
+        export tenant="-ip"
     fi
 
     if [ -z "${2}" ]
@@ -67,11 +75,12 @@ run_report()
     else
         TAG2=$3
     fi
+
     DIR=${REPORT_DIR}/$NAME
     OUTPUT_FILE=${DIR}/${DATE}_${NAME}.txt
     mkdir -p $DIR
     echo "Running $NAME... to $OUTPUT_FILE "
-    python3 $APPDIR/usage2adw.py $TENANT -du $DATABASE_USER -dp $DATABASE_PASS -dn $DATABASE_NAME -d $MIN_DATE -ts "${TAG1}" -ts2 "${TAG2}" |tee -a $OUTPUT_FILE
+    python3 $APPDIR/usage2adw.py $tenant -du $DATABASE_USER -dp $DATABASE_PASS -dn $DATABASE_NAME -d $MIN_DATE -ts "${TAG1}" -ts2 "${TAG2}" $4 |tee -a $OUTPUT_FILE
     grep -i "Error" $OUTPUT_FILE
 
     ERROR=""
@@ -84,13 +93,16 @@ run_report()
     echo "Finish `date` - $NAME $ERROR "
 }
 
-##################################
+###########################################################
 # Main
+###########################################################
+# local - authentication by instant principle
+# add oci config tenant profile to add more tenants to load
 ##################################
 echo "Start running at `date`..."
 
-run_report local 
-run_report tenant_name_1 tagspacial1 tagspacial2
-run_report tenant_name_2 
+run_report local
+#run_report tenant2 tagspecial1 tagspecial2
+#run_report tenant3 tagspecial1 tagspecial2
 
 echo "Completed at `date`.."

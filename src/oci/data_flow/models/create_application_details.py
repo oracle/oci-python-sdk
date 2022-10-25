@@ -37,6 +37,10 @@ class CreateApplicationDetails(object):
     #: This constant has a value of "STREAMING"
     TYPE_STREAMING = "STREAMING"
 
+    #: A constant which can be used with the type property of a CreateApplicationDetails.
+    #: This constant has a value of "SESSION"
+    TYPE_SESSION = "SESSION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateApplicationDetails object with values from keyword arguments.
@@ -137,12 +141,20 @@ class CreateApplicationDetails(object):
 
         :param type:
             The value to assign to the type property of this CreateApplicationDetails.
-            Allowed values for this property are: "BATCH", "STREAMING"
+            Allowed values for this property are: "BATCH", "STREAMING", "SESSION"
         :type type: str
 
         :param warehouse_bucket_uri:
             The value to assign to the warehouse_bucket_uri property of this CreateApplicationDetails.
         :type warehouse_bucket_uri: str
+
+        :param max_duration_in_minutes:
+            The value to assign to the max_duration_in_minutes property of this CreateApplicationDetails.
+        :type max_duration_in_minutes: int
+
+        :param idle_timeout_in_minutes:
+            The value to assign to the idle_timeout_in_minutes property of this CreateApplicationDetails.
+        :type idle_timeout_in_minutes: int
 
         """
         self.swagger_types = {
@@ -170,7 +182,9 @@ class CreateApplicationDetails(object):
             'private_endpoint_id': 'str',
             'spark_version': 'str',
             'type': 'str',
-            'warehouse_bucket_uri': 'str'
+            'warehouse_bucket_uri': 'str',
+            'max_duration_in_minutes': 'int',
+            'idle_timeout_in_minutes': 'int'
         }
 
         self.attribute_map = {
@@ -198,7 +212,9 @@ class CreateApplicationDetails(object):
             'private_endpoint_id': 'privateEndpointId',
             'spark_version': 'sparkVersion',
             'type': 'type',
-            'warehouse_bucket_uri': 'warehouseBucketUri'
+            'warehouse_bucket_uri': 'warehouseBucketUri',
+            'max_duration_in_minutes': 'maxDurationInMinutes',
+            'idle_timeout_in_minutes': 'idleTimeoutInMinutes'
         }
 
         self._archive_uri = None
@@ -226,12 +242,14 @@ class CreateApplicationDetails(object):
         self._spark_version = None
         self._type = None
         self._warehouse_bucket_uri = None
+        self._max_duration_in_minutes = None
+        self._idle_timeout_in_minutes = None
 
     @property
     def archive_uri(self):
         """
         Gets the archive_uri of this CreateApplicationDetails.
-        An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application.
+        A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application.
         See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
@@ -244,7 +262,7 @@ class CreateApplicationDetails(object):
     def archive_uri(self, archive_uri):
         """
         Sets the archive_uri of this CreateApplicationDetails.
-        An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application.
+        A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application.
         See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
@@ -592,7 +610,7 @@ class CreateApplicationDetails(object):
     @property
     def file_uri(self):
         """
-        **[Required]** Gets the file_uri of this CreateApplicationDetails.
+        Gets the file_uri of this CreateApplicationDetails.
         An Oracle Cloud Infrastructure URI of the file containing the application to execute.
         See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
@@ -837,7 +855,7 @@ class CreateApplicationDetails(object):
         Gets the type of this CreateApplicationDetails.
         The Spark application processing type.
 
-        Allowed values for this property are: "BATCH", "STREAMING"
+        Allowed values for this property are: "BATCH", "STREAMING", "SESSION"
 
 
         :return: The type of this CreateApplicationDetails.
@@ -855,7 +873,7 @@ class CreateApplicationDetails(object):
         :param type: The type of this CreateApplicationDetails.
         :type: str
         """
-        allowed_values = ["BATCH", "STREAMING"]
+        allowed_values = ["BATCH", "STREAMING", "SESSION"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 "Invalid value for `type`, must be None or one of {0}"
@@ -890,6 +908,58 @@ class CreateApplicationDetails(object):
         :type: str
         """
         self._warehouse_bucket_uri = warehouse_bucket_uri
+
+    @property
+    def max_duration_in_minutes(self):
+        """
+        Gets the max_duration_in_minutes of this CreateApplicationDetails.
+        The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated
+        once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
+
+
+        :return: The max_duration_in_minutes of this CreateApplicationDetails.
+        :rtype: int
+        """
+        return self._max_duration_in_minutes
+
+    @max_duration_in_minutes.setter
+    def max_duration_in_minutes(self, max_duration_in_minutes):
+        """
+        Sets the max_duration_in_minutes of this CreateApplicationDetails.
+        The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated
+        once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
+
+
+        :param max_duration_in_minutes: The max_duration_in_minutes of this CreateApplicationDetails.
+        :type: int
+        """
+        self._max_duration_in_minutes = max_duration_in_minutes
+
+    @property
+    def idle_timeout_in_minutes(self):
+        """
+        Gets the idle_timeout_in_minutes of this CreateApplicationDetails.
+        The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period.
+        Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
+
+
+        :return: The idle_timeout_in_minutes of this CreateApplicationDetails.
+        :rtype: int
+        """
+        return self._idle_timeout_in_minutes
+
+    @idle_timeout_in_minutes.setter
+    def idle_timeout_in_minutes(self, idle_timeout_in_minutes):
+        """
+        Sets the idle_timeout_in_minutes of this CreateApplicationDetails.
+        The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period.
+        Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
+
+
+        :param idle_timeout_in_minutes: The idle_timeout_in_minutes of this CreateApplicationDetails.
+        :type: int
+        """
+        self._idle_timeout_in_minutes = idle_timeout_in_minutes
 
     def __repr__(self):
         return formatted_flat_dict(self)

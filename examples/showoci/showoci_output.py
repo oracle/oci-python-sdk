@@ -417,6 +417,11 @@ class ShowOCIOutput(object):
                 for s in subnet['security_list']:
                     print(self.tabs + self.tabs + "Sec List: " + s)
 
+                # print logs
+                if 'logs' in subnet:
+                    for index, log in enumerate(subnet['logs'], start=1):
+                        print(self.tabs + self.tabs + "Log " + str(index) + "   : " + log['name'] + " - " + log['source_service'])
+
         except Exception as e:
             self.__print_error("__print_core_network_vcn_subnet", e)
 
@@ -1739,6 +1744,8 @@ class ShowOCIOutput(object):
                 if ct['subnets']:
                     for sub in ct['subnets']:
                         print(self.tabs + self.tabs + "Subnet: " + sub)
+                for fun in ct['functions']:
+                    print(self.tabs + self.tabs + "FN    : " + fun['display_name'] + " - " + fun['image'])
 
                 print("")
 
@@ -1867,6 +1874,8 @@ class ShowOCIOutput(object):
                     for event in events:
                         print(self.taba + event['display_name'] + " (" + event['description'] + "), Enabled = " + str(event['is_enabled']))
                         print(self.tabs + "Condition : " + event['condition'])
+                        for act in event['actions']:
+                            print(self.tabs + "Action    : " + act['action_type'] + ", Enabled = " + act['is_enabled'] + ", " + act['lifecycle_state'] + ", Dest: " + act['dest_name'])
                         print("")
 
             # if agents
@@ -2083,9 +2092,9 @@ class ShowOCIOutput(object):
                 for val in paas_services['ocvs']:
                     print(self.taba + val['display_name'] + ", (" + val['compute_availability_domain'] + "), Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + ")")
                     print(self.tabs + "Version  : " + val['vmware_software_version'] + ", esxi hosts: " + val['esxi_hosts_count'])
-                    print(self.tabs + "HCX      : " + val['is_hcx_enabled'] + ", URL: " + val['hcx_fqdn'] + ", OnPremKey: " + val['hcx_on_prem_key'] + ", TempPass: " + val['hcx_initial_password'])
-                    print(self.tabs + "VCENTER  : " + val['vcenter_fqdn'] + " - " + val['vcenter_private_ip'] + ", User: " + val['vcenter_username'] + ", TempPass: " + val['vcenter_initial_password'])
-                    print(self.tabs + "NSX      : " + val['nsx_manager_fqdn'] + " - " + val['nsx_manager_private_ip'] + ", User: " + val['nsx_manager_username'] + ", TempPass: " + val['nsx_manager_initial_password'])
+                    print(self.tabs + "HCX      : " + val['is_hcx_enabled'] + ", URL: " + val['hcx_fqdn'] + ", OnPremKey: " + val['hcx_on_prem_key'] + ", initial: " + val['hcx_initial_password'])
+                    print(self.tabs + "VCENTER  : " + val['vcenter_fqdn'] + " - " + val['vcenter_private_ip'] + ", User: " + val['vcenter_username'] + ", initial: " + val['vcenter_initial_password'])
+                    print(self.tabs + "NSX      : " + val['nsx_manager_fqdn'] + " - " + val['nsx_manager_private_ip'] + ", User: " + val['nsx_manager_username'] + ", initial: " + val['nsx_manager_initial_password'])
                     print(self.tabs + "NSX GW   : " + val['nsx_edge_uplink_ip'])
                     print(self.tabs + "Subnet   : " + val['provisioning_subnet'])
                     print(self.tabs + "Vlans    : " + val['vsphere_vlan'])
@@ -3491,6 +3500,11 @@ class ShowOCICSV(object):
     start_time = ""
     csv_add_date_field = True
     csv_columns = []
+    csv_monitor_agents = []
+    csv_monitor_db_management = []
+    csv_monitor_alarms = []
+    csv_monitor_events = []
+    csv_notifications = []
 
     ############################################
     # Init
@@ -3574,6 +3588,11 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("data_integration", self.csv_data_integration)
             self.__export_to_csv_file("digital_assistance", self.csv_data_ai_oda)
             self.__export_to_csv_file("big_data_service", self.csv_data_ai_bds)
+            self.__export_to_csv_file("monitor_agents", self.csv_monitor_agents)
+            self.__export_to_csv_file("monitor_db_managements", self.csv_monitor_db_management)
+            self.__export_to_csv_file("monitor_alarms", self.csv_monitor_alarms)
+            self.__export_to_csv_file("monitor_events", self.csv_monitor_events)
+            self.__export_to_csv_file("monitor_topics_subs", self.csv_notifications)
 
             print("")
         except Exception as e:
@@ -3846,6 +3865,7 @@ class ShowOCICSV(object):
                         'route': subnet['route'],
                         'security_list': str(', '.join(x for x in subnet['security_list'])),
                         'dns': subnet['dns'],
+                        'logs': str(', '.join(x['name'] for x in subnet['logs'])),
                         'vcn_id': vcn['id'],
                         'subnet_id': subnet['id']}
                 self.csv_network_subnet.append(data)
@@ -4295,6 +4315,7 @@ class ShowOCICSV(object):
                             'vm_name': dbs['display_name'],
                             'time_created': dbs['time_created'][0:16],
                             'domain': dbs['domain'],
+                            'auto_backup_enabled': db['auto_backup_enabled'],
                             'db_nodes': str(', '.join(x['desc'] for x in dbs['db_nodes'])),
                             'freeform_tags': str(', '.join(key + "=" + db['freeform_tags'][key] for key in db['freeform_tags'].keys())),
                             'defined_tags': self.__get_defined_tags(db['defined_tags']),
@@ -4451,6 +4472,7 @@ class ShowOCICSV(object):
                                     'vm_name': vm['display_name'],
                                     'time_created': vm['time_created'][0:16],
                                     'domain': vm['domain'],
+                                    'auto_backup_enabled': db['auto_backup_enabled'],
                                     'db_nodes': str(', '.join(x['desc'] for x in vm['db_nodes'])),
                                     'freeform_tags': str(', '.join(key + "=" + db['freeform_tags'][key] for key in db['freeform_tags'].keys())),
                                     'defined_tags': self.__get_defined_tags(db['defined_tags']),
@@ -4608,6 +4630,7 @@ class ShowOCICSV(object):
                                     'vm_name': vm['display_name'],
                                     'time_created': vm['time_created'][0:16],
                                     'domain': "",
+                                    'auto_backup_enabled': db['auto_backup_enabled'],
                                     'db_nodes': str(', '.join(x['desc'] for x in vm['db_nodes'])),
                                     'freeform_tags': str(', '.join(key + "=" + db['freeform_tags'][key] for key in db['freeform_tags'].keys())),
                                     'defined_tags': self.__get_defined_tags(db['defined_tags']),
@@ -4671,6 +4694,7 @@ class ShowOCICSV(object):
                         'cluster_name': "",
                         'time_created': dbs['time_created'],
                         'domain': "",
+                        'auto_backup_enabled': "True",
                         'db_nodes': "",
                         'freeform_tags': str(', '.join(key + "=" + dbs['freeform_tags'][key] for key in dbs['freeform_tags'].keys())),
                         'defined_tags': self.__get_defined_tags(dbs['defined_tags']),
@@ -4821,6 +4845,7 @@ class ShowOCICSV(object):
                         'boot_volume': "",
                         'boot_volume_size_gb': "",
                         'boot_volume_b_policy': "",
+                        'boot_volume_encryption': "",
                         'block_volumes': "",
                         'block_volumes_total_gb': "",
                         'block_volumes_size_gb': "",
@@ -4851,6 +4876,7 @@ class ShowOCICSV(object):
                         data['boot_volume'] = bv['display_name']
                         data['boot_volume_size_gb'] = bv['sum_size_gb']
                         data['boot_volume_b_policy'] = bv['backup_policy']
+                        data['boot_volume_encryption'] = bv['is_pv_encryption_in_transit_enabled']
 
                 if 'block_volume' in instance:
                     data['block_volumes'] = str(', '.join(x['display_name'] for x in instance['block_volume']))
@@ -6105,6 +6131,205 @@ class ShowOCICSV(object):
             self.__print_error("__csv_data_science", e)
 
     ##########################################################################
+    # csv monitoring
+    ##########################################################################
+    def __csv_monitoring(self, region_name, data):
+
+        try:
+            if len(data) == 0:
+                return
+
+            if 'events' in data:
+                self.__csv_monitor_events(region_name, data['events'])
+
+            if 'agents' in data:
+                self.__csv_monitor_agents(region_name, data['agents'])
+
+            if 'db_managements' in data:
+                self.__csv_monitor_db_managements(region_name, data['db_managements'])
+
+            if 'alarms' in data:
+                self.__csv_monitor_alarms(region_name, data['alarms'])
+
+        except Exception as e:
+            self.__print_error("__csv_monitoring", e)
+
+    ##########################################################################
+    # Monitor Agents
+    ##########################################################################
+    def __csv_monitor_agents(self, region_name, agents):
+        try:
+
+            if len(agents) == 0:
+                return
+
+            if agents:
+                for ar in agents:
+
+                    data = {
+                        'region_name': region_name,
+                        'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
+                        'display_name': ar['display_name'],
+                        'time_created': ar['time_created'][0:16],
+                        'lifecycle_state': ar['lifecycle_state'],
+                        'platform_type': ar['platform_type'],
+                        'platform_name': ar['platform_name'],
+                        'platform_version': ar['platform_version'],
+                        'version': ar['version'],
+                        'is_agent_auto_upgradable': ar['is_agent_auto_upgradable'],
+                        'host': ar['host'],
+                        'plugin_list': ar['plugin_list'],
+                        'time_last_heartbeat': ar['time_last_heartbeat'],
+                        'availability_status': ar['availability_status'],
+                        'install_key_id': ar['install_key_id'],
+                        'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(ar['defined_tags']),
+                        'id': ar['id']
+                    }
+
+                    self.csv_monitor_agents.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_monitor_agents", e)
+
+    ##########################################################################
+    # Monitor Events
+    ##########################################################################
+    def __csv_monitor_events(self, region_name, events):
+        try:
+
+            if len(events) == 0:
+                return
+
+            if events:
+                for ar in events:
+
+                    data = {
+                        'region_name': region_name,
+                        'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
+                        'display_name': ar['display_name'],
+                        'description': ar['description'],
+                        'condition': ar['condition'],
+                        'is_enabled': ar['is_enabled'],
+                        'actions': str(ar['actions']),
+                        'time_created': ar['time_created'][0:16],
+                        'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(ar['defined_tags']),
+                        'id': ar['id']
+                    }
+
+                    self.csv_monitor_events.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_monitor_events", e)
+
+    ##########################################################################
+    # Monitor db_managements
+    ##########################################################################
+    def __csv_monitor_db_managements(self, region_name, db_managements):
+        try:
+
+            if len(db_managements) == 0:
+                return
+
+            if db_managements:
+                for ar in db_managements:
+
+                    data = {
+                        'region_name': region_name,
+                        'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
+                        'name': ar['name'],
+                        'time_created': ar['time_created'][0:16],
+                        'database_type': ar['database_type'],
+                        'database_sub_type': ar['database_sub_type'],
+                        'is_cluster': ar['is_cluster'],
+                        'parent_container_id': ar['parent_container_id'],
+                        'id': ar['id']
+                    }
+
+                    self.csv_monitor_db_management.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_monitor_db_managements", e)
+
+    ##########################################################################
+    # Monitor Alarms
+    ##########################################################################
+    def __csv_monitor_alarms(self, region_name, alarms):
+        try:
+
+            if len(alarms) == 0:
+                return
+
+            if alarms:
+                for ar in alarms:
+
+                    data = {
+                        'region_name': region_name,
+                        'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
+                        'display_name': ar['display_name'],
+                        'namespace': ar['namespace'],
+                        'query': ar['query'],
+                        'severity': ar['severity'],
+                        'destinations': str(', '.join(x for x in ar['destinations'])),
+                        'destinations_names': str(', '.join(x for x in ar['destinations_names'])),
+                        'is_enabled': ar['is_enabled'],
+                        'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(ar['defined_tags']),
+                        'metric_compartment_id': ar['metric_compartment_id'],
+                        'id': ar['id']
+                    }
+
+                    self.csv_monitor_alarms.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_monitor_alarms", e)
+
+    ##########################################################################
+    # Monitor Notifications
+    ##########################################################################
+    def __csv_notifications(self, region_name, notifications):
+        try:
+
+            if len(notifications) == 0:
+                return
+
+            if notifications:
+                for ar in notifications:
+                    for sr in ar['subscriptions']:
+
+                        data = {
+                            'region_name': region_name,
+                            'topic_compartment_name': ar['compartment_name'],
+                            'topic_compartment_path': ar['compartment_path'],
+                            'topic_name': ar['name'],
+                            'topic_description': ar['description'],
+                            'topic_time_created': ar['time_created'][0:16],
+                            'topic_etag': ar['etag'],
+                            'topic_api_endpoint': ar['api_endpoint'],
+                            'topic_freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
+                            'topic_defined_tags': self.__get_defined_tags(ar['defined_tags']),
+                            'topic_id': ar['topic_id'],
+                            'protocol': sr['protocol'],
+                            'endpoint': sr['endpoint'],
+                            'compartment_name': sr['compartment_name'],
+                            'compartment_path': sr['compartment_path'],
+                            'etag': sr['etag'],
+                            'freeform_tags': self.__get_freeform_tags(sr['freeform_tags']),
+                            'defined_tags': self.__get_defined_tags(sr['defined_tags']),
+                            'id': sr['id']
+                        }
+
+                        self.csv_notifications.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_notifications", e)
+
+    ##########################################################################
     # Print Identity data
     ##########################################################################
     def __csv_region_data(self, region_name, data):
@@ -6138,6 +6363,10 @@ class ShowOCICSV(object):
                     self.__csv_paas_main(region_name, cdata['paas_services'])
                 if 'data_ai' in cdata:
                     self.__csv_data_ai_main(region_name, cdata['data_ai'])
+                if 'monitoring' in cdata:
+                    self.__csv_monitoring(region_name, cdata['monitoring'])
+                if 'notifications' in cdata:
+                    self.__csv_notifications(region_name, cdata['notifications'])
 
         except Exception as e:
             self.__print_error("__csv_region_data", e)

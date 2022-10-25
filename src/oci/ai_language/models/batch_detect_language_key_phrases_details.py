@@ -18,20 +18,55 @@ class BatchDetectLanguageKeyPhrasesDetails(object):
         Initializes a new BatchDetectLanguageKeyPhrasesDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this BatchDetectLanguageKeyPhrasesDetails.
+        :type compartment_id: str
+
         :param documents:
             The value to assign to the documents property of this BatchDetectLanguageKeyPhrasesDetails.
-        :type documents: list[oci.ai_language.models.KeyPhraseDocument]
+        :type documents: list[oci.ai_language.models.TextDocument]
 
         """
         self.swagger_types = {
-            'documents': 'list[KeyPhraseDocument]'
+            'compartment_id': 'str',
+            'documents': 'list[TextDocument]'
         }
 
         self.attribute_map = {
+            'compartment_id': 'compartmentId',
             'documents': 'documents'
         }
 
+        self._compartment_id = None
         self._documents = None
+
+    @property
+    def compartment_id(self):
+        """
+        Gets the compartment_id of this BatchDetectLanguageKeyPhrasesDetails.
+        The `OCID`__ of the compartment that calls the API, inference will be served from pre trained model
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The compartment_id of this BatchDetectLanguageKeyPhrasesDetails.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this BatchDetectLanguageKeyPhrasesDetails.
+        The `OCID`__ of the compartment that calls the API, inference will be served from pre trained model
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param compartment_id: The compartment_id of this BatchDetectLanguageKeyPhrasesDetails.
+        :type: str
+        """
+        self._compartment_id = compartment_id
 
     @property
     def documents(self):
@@ -41,7 +76,7 @@ class BatchDetectLanguageKeyPhrasesDetails(object):
 
 
         :return: The documents of this BatchDetectLanguageKeyPhrasesDetails.
-        :rtype: list[oci.ai_language.models.KeyPhraseDocument]
+        :rtype: list[oci.ai_language.models.TextDocument]
         """
         return self._documents
 
@@ -53,7 +88,7 @@ class BatchDetectLanguageKeyPhrasesDetails(object):
 
 
         :param documents: The documents of this BatchDetectLanguageKeyPhrasesDetails.
-        :type: list[oci.ai_language.models.KeyPhraseDocument]
+        :type: list[oci.ai_language.models.TextDocument]
         """
         self._documents = documents
 

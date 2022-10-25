@@ -49,6 +49,10 @@ class Application(object):
     #: This constant has a value of "STREAMING"
     TYPE_STREAMING = "STREAMING"
 
+    #: A constant which can be used with the type property of a Application.
+    #: This constant has a value of "SESSION"
+    TYPE_SESSION = "SESSION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Application object with values from keyword arguments.
@@ -176,13 +180,21 @@ class Application(object):
 
         :param type:
             The value to assign to the type property of this Application.
-            Allowed values for this property are: "BATCH", "STREAMING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "BATCH", "STREAMING", "SESSION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
         :param warehouse_bucket_uri:
             The value to assign to the warehouse_bucket_uri property of this Application.
         :type warehouse_bucket_uri: str
+
+        :param max_duration_in_minutes:
+            The value to assign to the max_duration_in_minutes property of this Application.
+        :type max_duration_in_minutes: int
+
+        :param idle_timeout_in_minutes:
+            The value to assign to the idle_timeout_in_minutes property of this Application.
+        :type idle_timeout_in_minutes: int
 
         """
         self.swagger_types = {
@@ -216,7 +228,9 @@ class Application(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'type': 'str',
-            'warehouse_bucket_uri': 'str'
+            'warehouse_bucket_uri': 'str',
+            'max_duration_in_minutes': 'int',
+            'idle_timeout_in_minutes': 'int'
         }
 
         self.attribute_map = {
@@ -250,7 +264,9 @@ class Application(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'type': 'type',
-            'warehouse_bucket_uri': 'warehouseBucketUri'
+            'warehouse_bucket_uri': 'warehouseBucketUri',
+            'max_duration_in_minutes': 'maxDurationInMinutes',
+            'idle_timeout_in_minutes': 'idleTimeoutInMinutes'
         }
 
         self._application_log_config = None
@@ -284,6 +300,8 @@ class Application(object):
         self._time_updated = None
         self._type = None
         self._warehouse_bucket_uri = None
+        self._max_duration_in_minutes = None
+        self._idle_timeout_in_minutes = None
 
     @property
     def application_log_config(self):
@@ -309,7 +327,7 @@ class Application(object):
     def archive_uri(self):
         """
         Gets the archive_uri of this Application.
-        An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application.
+        A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application.
         See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
@@ -322,7 +340,7 @@ class Application(object):
     def archive_uri(self, archive_uri):
         """
         Sets the archive_uri of this Application.
-        An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application.
+        A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application.
         See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
@@ -1057,7 +1075,7 @@ class Application(object):
         Gets the type of this Application.
         The Spark application processing type.
 
-        Allowed values for this property are: "BATCH", "STREAMING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "BATCH", "STREAMING", "SESSION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -1076,7 +1094,7 @@ class Application(object):
         :param type: The type of this Application.
         :type: str
         """
-        allowed_values = ["BATCH", "STREAMING"]
+        allowed_values = ["BATCH", "STREAMING", "SESSION"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
@@ -1108,6 +1126,58 @@ class Application(object):
         :type: str
         """
         self._warehouse_bucket_uri = warehouse_bucket_uri
+
+    @property
+    def max_duration_in_minutes(self):
+        """
+        Gets the max_duration_in_minutes of this Application.
+        The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated
+        once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
+
+
+        :return: The max_duration_in_minutes of this Application.
+        :rtype: int
+        """
+        return self._max_duration_in_minutes
+
+    @max_duration_in_minutes.setter
+    def max_duration_in_minutes(self, max_duration_in_minutes):
+        """
+        Sets the max_duration_in_minutes of this Application.
+        The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated
+        once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
+
+
+        :param max_duration_in_minutes: The max_duration_in_minutes of this Application.
+        :type: int
+        """
+        self._max_duration_in_minutes = max_duration_in_minutes
+
+    @property
+    def idle_timeout_in_minutes(self):
+        """
+        Gets the idle_timeout_in_minutes of this Application.
+        The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period.
+        Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
+
+
+        :return: The idle_timeout_in_minutes of this Application.
+        :rtype: int
+        """
+        return self._idle_timeout_in_minutes
+
+    @idle_timeout_in_minutes.setter
+    def idle_timeout_in_minutes(self, idle_timeout_in_minutes):
+        """
+        Sets the idle_timeout_in_minutes of this Application.
+        The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period.
+        Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
+
+
+        :param idle_timeout_in_minutes: The idle_timeout_in_minutes of this Application.
+        :type: int
+        """
+        self._idle_timeout_in_minutes = idle_timeout_in_minutes
 
     def __repr__(self):
         return formatted_flat_dict(self)

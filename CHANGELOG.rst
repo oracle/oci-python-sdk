@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.86.0 - 2022-10-25
+====================
+
+Added
+-----
+* Support for the Disaster Recovery service
+* Support for running code interactively with session applications using statements in the Data Flow service
+* Support for language custom models and language translation in the AI Language service
+ 
+Breaking
+--------
+* type `documents` is changed from `TextClassificationDocument` to `TextDocument` in `BatchDetectLanguageTextClassificationDetails` model in the AI Language service
+* type `documents` is changed from `SentimentsDocument` to `TextDocument` in `BatchDetectLanguageSentimentsDetails` model in the AI Language service
+* type `documents` is changed from `KeyPhraseDocument` to `TextDocument` in `BatchDetectLanguageKeyPhrasesDetails` model in the AI Language service
+* type `documents` is changed from `EntityDocument` to `TextDocument` in `BatchDetectLanguageEntitiesDetails` model in the AI Language service
+ 
+====================
 2.85.0 - 2022-10-04
 ====================
 

@@ -73,11 +73,11 @@ import requests
 import time
 
 
-version = "22.10.05"
+version = "22.10.15"
 usage_report_namespace = "bling"
 work_report_dir = os.curdir + "/work_report_dir"
 
-# create the work dir if not exist
+# create the work dir if not  exist
 if not os.path.exists(work_report_dir):
     os.mkdir(work_report_dir)
 
@@ -102,6 +102,21 @@ def get_column_value_from_array(column, array):
         return array[column]
     else:
         return ""
+
+
+##########################################################################
+# Get Currnet Date Time
+##########################################################################
+def get_current_date_time():
+    return str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+
+
+##########################################################################
+# print count result
+##########################################################################
+def get_time_elapsed(start_time):
+    et = time.time() - start_time
+    return ", Process Time " + str('{:02d}:{:02d}:{:02d}'.format(round(et // 3600), (round(et % 3600 // 60)), round(et % 60)))
 
 
 ##########################################################################
@@ -1180,7 +1195,8 @@ def check_database_table_structure_price_list(connection, tenant_name):
 #########################################################################
 # Load Cost File
 ##########################################################################
-def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, tenancy, compartments):
+def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, tenancy, compartments, file_num, total_files):
+    start_time = time.time()
     num_files = 0
     num_rows = 0
 
@@ -1198,20 +1214,23 @@ def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, te
         # if file already loaded, skip (check if < max_file_id
         if str(max_file_id) != "None":
             if file_id <= str(max_file_id):
+                print("   Skipping   file " + o.name + " - " + str(round(o.size / 1024 / 1024)) + " MB, " + file_time + ", #" + str(file_num) + "/" + str(total_files) + ", File already loaded")
                 return num_files
 
         # if file id enabled, check
         if cmd.fileid:
             if file_id != cmd.fileid:
+                print("   Skipping   file " + o.name + " - " + str(round(o.size / 1024 / 1024)) + " MB, " + file_time + ", #" + str(file_num) + "/" + str(total_files) + ", File Id " + cmd.fileid + " filter specified")
                 return num_files
 
         # check file date
         if cmd.filedate:
             if file_time <= cmd.filedate:
+                print("   Skipping   file " + o.name + " - " + str(round(o.size / 1024 / 1024)) + " MB, " + file_time + ", #" + str(file_num) + "/" + str(total_files) + ", Less then specified date " + cmd.filedate)
                 return num_files
 
         path_filename = work_report_dir + '/' + filename
-        print("   Processing file " + o.name + " - " + str(o.size) + " bytes, " + file_time)
+        print("\n   Processing file " + o.name + " - " + str(round(o.size / 1024 / 1024)) + " MB, " + file_time + ", #" + str(file_num) + "/" + str(total_files))
 
         # download file
         object_details = object_storage.get_object(usage_report_namespace, str(tenancy.id), o.name)
@@ -1405,7 +1424,7 @@ def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, te
 
             connection.commit()
             cursor.close()
-            print("   Completed  file " + o.name + " - " + str(num_rows) + " Rows Inserted")
+            print("   Completed  file " + o.name + " - " + str(num_rows) + " Rows Inserted" + get_time_elapsed(start_time), end="")
 
         num_files += 1
 
@@ -1430,7 +1449,9 @@ def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, te
             cursor.executemany(None, data)
             connection.commit()
             cursor.close()
-            print("   Total " + str(len(data)) + " Tags Merged.")
+            print(", " + str(len(data)) + " Tags Merged.")
+        else:
+            print("")
 
         return num_files
 
@@ -1446,7 +1467,8 @@ def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, te
 #########################################################################
 # Load Usage File
 ##########################################################################
-def load_usage_file(connection, object_storage, object_file, max_file_id, cmd, tenancy, compartments):
+def load_usage_file(connection, object_storage, object_file, max_file_id, cmd, tenancy, compartments, file_num, total_files):
+    start_time = time.time()
     num_files = 0
     num_rows = 0
     try:
@@ -1463,20 +1485,23 @@ def load_usage_file(connection, object_storage, object_file, max_file_id, cmd, t
         # if file already loaded, skip (check if < max_usage_file_id)
         if str(max_file_id) != "None":
             if file_id <= str(max_file_id):
+                print("   Skipping   file " + o.name + " - " + str(round(o.size / 1024 / 1024)) + " MB, " + file_time + ", #" + str(file_num) + "/" + str(total_files) + ", File already loaded")
                 return num_files
 
         # if file id enabled, check
         if cmd.fileid:
             if file_id != cmd.file_id:
+                print("   Skipping   file " + o.name + " - " + str(round(o.size / 1024 / 1024)) + " MB, " + file_time + ", #" + str(file_num) + "/" + str(total_files) + ", File Id " + cmd.fileid + " filter specified")
                 return num_files
 
         # check file date
         if cmd.filedate:
             if file_time <= cmd.filedate:
+                print("   Skipping   file " + o.name + " - " + str(round(o.size / 1024 / 1024)) + " MB, " + file_time + ", #" + str(file_num) + "/" + str(total_files) + ", Less then specified date " + cmd.filedate)
                 return num_files
 
         path_filename = work_report_dir + '/' + filename
-        print("   Processing file " + o.name + " - " + str(o.size) + " bytes, " + file_time)
+        print("\n   Processing file " + o.name + " - " + str(round(o.size / 1024 / 1024)) + " MB, " + file_time + ", #" + str(file_num) + "/" + str(total_files))
 
         # download file
         object_details = object_storage.get_object(usage_report_namespace, str(tenancy.id), o.name)
@@ -1608,7 +1633,7 @@ def load_usage_file(connection, object_storage, object_file, max_file_id, cmd, t
             # commit
             connection.commit()
             cursor.close()
-            print("   Completed  file " + o.name + " - " + str(num_rows) + " Rows Inserted")
+            print("   Completed  file " + o.name + " - " + str(num_rows) + " Rows Inserted" + get_time_elapsed(start_time), end="")
 
         num_files += 1
 
@@ -1633,7 +1658,9 @@ def load_usage_file(connection, object_storage, object_file, max_file_id, cmd, t
             cursor.executemany(None, data)
             connection.commit()
             cursor.close()
-            print("   Total " + str(len(data)) + " Tags Merged.")
+            print(", " + str(len(data)) + " Tags Merged.")
+        else:
+            print("")
 
         return num_files
 
@@ -1659,7 +1686,7 @@ def main_process():
     # Start
     ############################################
     print_header("Running Usage Load to ADW", 0)
-    print("Starts at " + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+    print("Starts at " + get_current_date_time())
     print("Command Line : " + ' '.join(x for x in sys.argv[1:]))
 
     ############################################
@@ -1733,18 +1760,21 @@ def main_process():
         # fetch max file id processed
         # for usage and cost
         ###############################
-        print("\nChecking Last Loaded File...")
+        print("\nChecking Last Loaded Files... started at " + get_current_date_time())
+
         sql = "select /*+ full(a) parallel(a,4) */ nvl(max(file_id),'0') as file_id from OCI_USAGE a where TENANT_NAME=:tenant_name"
         cursor.execute(sql, {"tenant_name": str(tenancy.name)})
         max_usage_file_id, = cursor.fetchone()
+        print("   Max Usage File Id Processed = " + str(max_usage_file_id))
 
         sql = "select /*+ full(a) parallel(a,4) */ nvl(max(file_id),'0') as file_id from OCI_COST a where TENANT_NAME=:tenant_name"
         cursor.execute(sql, {"tenant_name": str(tenancy.name)})
         max_cost_file_id, = cursor.fetchone()
-
-        print("   Max Usage File Id Processed = " + str(max_usage_file_id))
         print("   Max Cost  File Id Processed = " + str(max_cost_file_id))
+
         cursor.close()
+
+        print("Completed Checking at " + get_current_date_time())
 
     except cx_Oracle.DatabaseError as e:
         print("\nError manipulating database - " + str(e) + "\n")
@@ -1769,22 +1799,28 @@ def main_process():
         #############################
         usage_num = 0
         if not cmd.skip_usage:
-            print("\nHandling Usage Report...")
+            print("\nHandling Usage Report... started at " + get_current_date_time())
             objects = oci.pagination.list_call_get_all_results(object_storage.list_objects, usage_report_namespace, str(tenancy.id), fields="timeCreated,size", prefix="reports/usage-csv/", start="reports/usage-csv/" + max_usage_file_id).data
-            for object_file in objects.objects:
-                usage_num += load_usage_file(connection, object_storage, object_file, max_usage_file_id, cmd, tenancy, compartments)
-            print("\n   Total " + str(usage_num) + " Usage Files Loaded")
+
+            total_files = len(objects.objects)
+            print("Total " + str(total_files) + " usage files found to scan...")
+            for index, object_file in enumerate(objects.objects, start=1):
+                usage_num += load_usage_file(connection, object_storage, object_file, max_usage_file_id, cmd, tenancy, compartments, index, total_files)
+            print("\n   Total " + str(usage_num) + " Usage Files Loaded, conmpleted at " + get_current_date_time())
 
         #############################
         # Handle Cost Usage
         #############################
         cost_num = 0
         if not cmd.skip_cost:
-            print("\nHandling Cost Report...")
+            print("\nHandling Cost Report... started at " + get_current_date_time())
             objects = oci.pagination.list_call_get_all_results(object_storage.list_objects, usage_report_namespace, str(tenancy.id), fields="timeCreated,size", prefix="reports/cost-csv/", start="reports/cost-csv/" + max_cost_file_id).data
-            for object_file in objects.objects:
-                cost_num += load_cost_file(connection, object_storage, object_file, max_cost_file_id, cmd, tenancy, compartments)
-            print("\n   Total " + str(cost_num) + " Cost Files Loaded")
+
+            total_files = len(objects.objects)
+            print("Total " + str(total_files) + " cost files found to scan...")
+            for index, object_file in enumerate(objects.objects, start=1):
+                cost_num += load_cost_file(connection, object_storage, object_file, max_cost_file_id, cmd, tenancy, compartments, index, total_files)
+            print("\n   Total " + str(cost_num) + " Cost Files Loaded, completed at " + get_current_date_time())
 
         # Handle Index structure if not exist
         check_database_index_structure_usage(connection)
@@ -1815,7 +1851,7 @@ def main_process():
     ############################################
     # print completed
     ############################################
-    print("\nCompleted at " + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+    print("\nCompleted at " + get_current_date_time())
 
 
 ##########################################################################
