@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDatabaseRegistrationDetails(object):
     """
-    The information to update for a DatabaseRegistration.
+    The information to update a DatabaseRegistration.
     """
 
     #: A constant which can be used with the session_mode property of a UpdateDatabaseRegistrationDetails.
@@ -164,7 +164,9 @@ class UpdateDatabaseRegistrationDetails(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this UpdateDatabaseRegistrationDetails.
-        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+        A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+        for cross-compatibility only.
+
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -177,7 +179,9 @@ class UpdateDatabaseRegistrationDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this UpdateDatabaseRegistrationDetails.
-        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+        A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+        for cross-compatibility only.
+
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -191,6 +195,7 @@ class UpdateDatabaseRegistrationDetails(object):
         """
         Gets the defined_tags of this UpdateDatabaseRegistrationDetails.
         Tags defined for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
@@ -204,6 +209,7 @@ class UpdateDatabaseRegistrationDetails(object):
         """
         Sets the defined_tags of this UpdateDatabaseRegistrationDetails.
         Tags defined for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
@@ -240,7 +246,9 @@ class UpdateDatabaseRegistrationDetails(object):
     def username(self):
         """
         Gets the username of this UpdateDatabaseRegistrationDetails.
-        The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+        The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must
+        already exist and be available for use by the database.  It must conform to the security
+        requirements implemented by the database including length, case sensitivity, and so on.
 
 
         :return: The username of this UpdateDatabaseRegistrationDetails.
@@ -252,7 +260,9 @@ class UpdateDatabaseRegistrationDetails(object):
     def username(self, username):
         """
         Sets the username of this UpdateDatabaseRegistrationDetails.
-        The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+        The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must
+        already exist and be available for use by the database.  It must conform to the security
+        requirements implemented by the database including length, case sensitivity, and so on.
 
 
         :param username: The username of this UpdateDatabaseRegistrationDetails.
@@ -264,7 +274,9 @@ class UpdateDatabaseRegistrationDetails(object):
     def password(self):
         """
         Gets the password of this UpdateDatabaseRegistrationDetails.
-        The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the specific security requirements implemented by the database including length, case sensitivity, and so on.
+        The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the
+        specific security requirements implemented by the database including length, case
+        sensitivity, and so on.
 
 
         :return: The password of this UpdateDatabaseRegistrationDetails.
@@ -276,7 +288,9 @@ class UpdateDatabaseRegistrationDetails(object):
     def password(self, password):
         """
         Sets the password of this UpdateDatabaseRegistrationDetails.
-        The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the specific security requirements implemented by the database including length, case sensitivity, and so on.
+        The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the
+        specific security requirements implemented by the database including length, case
+        sensitivity, and so on.
 
 
         :param password: The password of this UpdateDatabaseRegistrationDetails.
@@ -288,7 +302,8 @@ class UpdateDatabaseRegistrationDetails(object):
     def connection_string(self):
         """
         Gets the connection_string of this UpdateDatabaseRegistrationDetails.
-        Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
+        Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a
+        database.
 
 
         :return: The connection_string of this UpdateDatabaseRegistrationDetails.
@@ -300,7 +315,8 @@ class UpdateDatabaseRegistrationDetails(object):
     def connection_string(self, connection_string):
         """
         Sets the connection_string of this UpdateDatabaseRegistrationDetails.
-        Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
+        Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a
+        database.
 
 
         :param connection_string: The connection_string of this UpdateDatabaseRegistrationDetails.
@@ -312,7 +328,10 @@ class UpdateDatabaseRegistrationDetails(object):
     def session_mode(self):
         """
         Gets the session_mode of this UpdateDatabaseRegistrationDetails.
-        The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+        The mode of the database connection session to be established by the data client.
+        'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
+        Connection to a RAC database involves a redirection received from the SCAN listeners
+        to the database node to connect to. By default the mode would be DIRECT.
 
         Allowed values for this property are: "DIRECT", "REDIRECT"
 
@@ -326,7 +345,10 @@ class UpdateDatabaseRegistrationDetails(object):
     def session_mode(self, session_mode):
         """
         Sets the session_mode of this UpdateDatabaseRegistrationDetails.
-        The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+        The mode of the database connection session to be established by the data client.
+        'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
+        Connection to a RAC database involves a redirection received from the SCAN listeners
+        to the database node to connect to. By default the mode would be DIRECT.
 
 
         :param session_mode: The session_mode of this UpdateDatabaseRegistrationDetails.
@@ -344,7 +366,8 @@ class UpdateDatabaseRegistrationDetails(object):
     def wallet(self):
         """
         Gets the wallet of this UpdateDatabaseRegistrationDetails.
-        The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
+        The wallet contents Oracle GoldenGate uses to make connections to a database.  This
+        attribute is expected to be base64 encoded.
 
 
         :return: The wallet of this UpdateDatabaseRegistrationDetails.
@@ -356,7 +379,8 @@ class UpdateDatabaseRegistrationDetails(object):
     def wallet(self, wallet):
         """
         Sets the wallet of this UpdateDatabaseRegistrationDetails.
-        The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
+        The wallet contents Oracle GoldenGate uses to make connections to a database.  This
+        attribute is expected to be base64 encoded.
 
 
         :param wallet: The wallet of this UpdateDatabaseRegistrationDetails.

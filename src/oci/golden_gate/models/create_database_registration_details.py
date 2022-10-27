@@ -241,7 +241,9 @@ class CreateDatabaseRegistrationDetails(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this CreateDatabaseRegistrationDetails.
-        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+        A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+        for cross-compatibility only.
+
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -254,7 +256,9 @@ class CreateDatabaseRegistrationDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this CreateDatabaseRegistrationDetails.
-        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+        A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+        for cross-compatibility only.
+
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -268,6 +272,7 @@ class CreateDatabaseRegistrationDetails(object):
         """
         Gets the defined_tags of this CreateDatabaseRegistrationDetails.
         Tags defined for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
@@ -281,6 +286,7 @@ class CreateDatabaseRegistrationDetails(object):
         """
         Sets the defined_tags of this CreateDatabaseRegistrationDetails.
         Tags defined for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
@@ -317,7 +323,8 @@ class CreateDatabaseRegistrationDetails(object):
     def ip_address(self):
         """
         Gets the ip_address of this CreateDatabaseRegistrationDetails.
-        The private IP address in the customer's VCN of the customer's endpoint, typically a database.
+        The private IP address in the customer's VCN of the customer's endpoint, typically a
+        database.
 
 
         :return: The ip_address of this CreateDatabaseRegistrationDetails.
@@ -329,7 +336,8 @@ class CreateDatabaseRegistrationDetails(object):
     def ip_address(self, ip_address):
         """
         Sets the ip_address of this CreateDatabaseRegistrationDetails.
-        The private IP address in the customer's VCN of the customer's endpoint, typically a database.
+        The private IP address in the customer's VCN of the customer's endpoint, typically a
+        database.
 
 
         :param ip_address: The ip_address of this CreateDatabaseRegistrationDetails.
@@ -397,7 +405,9 @@ class CreateDatabaseRegistrationDetails(object):
     def username(self):
         """
         **[Required]** Gets the username of this CreateDatabaseRegistrationDetails.
-        The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+        The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must
+        already exist and be available for use by the database.  It must conform to the security
+        requirements implemented by the database including length, case sensitivity, and so on.
 
 
         :return: The username of this CreateDatabaseRegistrationDetails.
@@ -409,7 +419,9 @@ class CreateDatabaseRegistrationDetails(object):
     def username(self, username):
         """
         Sets the username of this CreateDatabaseRegistrationDetails.
-        The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+        The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must
+        already exist and be available for use by the database.  It must conform to the security
+        requirements implemented by the database including length, case sensitivity, and so on.
 
 
         :param username: The username of this CreateDatabaseRegistrationDetails.
@@ -421,7 +433,9 @@ class CreateDatabaseRegistrationDetails(object):
     def password(self):
         """
         **[Required]** Gets the password of this CreateDatabaseRegistrationDetails.
-        The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the specific security requirements implemented by the database including length, case sensitivity, and so on.
+        The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the
+        specific security requirements implemented by the database including length, case
+        sensitivity, and so on.
 
 
         :return: The password of this CreateDatabaseRegistrationDetails.
@@ -433,7 +447,9 @@ class CreateDatabaseRegistrationDetails(object):
     def password(self, password):
         """
         Sets the password of this CreateDatabaseRegistrationDetails.
-        The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the specific security requirements implemented by the database including length, case sensitivity, and so on.
+        The password Oracle GoldenGate uses to connect the associated RDBMS.  It must conform to the
+        specific security requirements implemented by the database including length, case
+        sensitivity, and so on.
 
 
         :param password: The password of this CreateDatabaseRegistrationDetails.
@@ -445,7 +461,8 @@ class CreateDatabaseRegistrationDetails(object):
     def connection_string(self):
         """
         Gets the connection_string of this CreateDatabaseRegistrationDetails.
-        Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
+        Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a
+        database.
 
 
         :return: The connection_string of this CreateDatabaseRegistrationDetails.
@@ -457,7 +474,8 @@ class CreateDatabaseRegistrationDetails(object):
     def connection_string(self, connection_string):
         """
         Sets the connection_string of this CreateDatabaseRegistrationDetails.
-        Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
+        Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a
+        database.
 
 
         :param connection_string: The connection_string of this CreateDatabaseRegistrationDetails.
@@ -469,7 +487,10 @@ class CreateDatabaseRegistrationDetails(object):
     def session_mode(self):
         """
         Gets the session_mode of this CreateDatabaseRegistrationDetails.
-        The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+        The mode of the database connection session to be established by the data client.
+        'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
+        Connection to a RAC database involves a redirection received from the SCAN listeners
+        to the database node to connect to. By default the mode would be DIRECT.
 
         Allowed values for this property are: "DIRECT", "REDIRECT"
 
@@ -483,7 +504,10 @@ class CreateDatabaseRegistrationDetails(object):
     def session_mode(self, session_mode):
         """
         Sets the session_mode of this CreateDatabaseRegistrationDetails.
-        The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+        The mode of the database connection session to be established by the data client.
+        'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
+        Connection to a RAC database involves a redirection received from the SCAN listeners
+        to the database node to connect to. By default the mode would be DIRECT.
 
 
         :param session_mode: The session_mode of this CreateDatabaseRegistrationDetails.
@@ -501,7 +525,8 @@ class CreateDatabaseRegistrationDetails(object):
     def wallet(self):
         """
         Gets the wallet of this CreateDatabaseRegistrationDetails.
-        The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
+        The wallet contents Oracle GoldenGate uses to make connections to a database.  This
+        attribute is expected to be base64 encoded.
 
 
         :return: The wallet of this CreateDatabaseRegistrationDetails.
@@ -513,7 +538,8 @@ class CreateDatabaseRegistrationDetails(object):
     def wallet(self, wallet):
         """
         Sets the wallet of this CreateDatabaseRegistrationDetails.
-        The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
+        The wallet contents Oracle GoldenGate uses to make connections to a database.  This
+        attribute is expected to be base64 encoded.
 
 
         :param wallet: The wallet of this CreateDatabaseRegistrationDetails.
@@ -549,7 +575,11 @@ class CreateDatabaseRegistrationDetails(object):
     def vault_id(self):
         """
         Gets the vault_id of this CreateDatabaseRegistrationDetails.
-        The `OCID`__ of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+        The `OCID`__ of the customer vault being
+        referenced.
+        If provided, this will reference a vault which the customer will be required to ensure
+        the policies are established to permit the GoldenGate Service to manage secrets contained
+        within this vault.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -563,7 +593,11 @@ class CreateDatabaseRegistrationDetails(object):
     def vault_id(self, vault_id):
         """
         Sets the vault_id of this CreateDatabaseRegistrationDetails.
-        The `OCID`__ of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+        The `OCID`__ of the customer vault being
+        referenced.
+        If provided, this will reference a vault which the customer will be required to ensure
+        the policies are established to permit the GoldenGate Service to manage secrets contained
+        within this vault.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -577,7 +611,11 @@ class CreateDatabaseRegistrationDetails(object):
     def key_id(self):
         """
         Gets the key_id of this CreateDatabaseRegistrationDetails.
-        The `OCID`__ of the customer \"Master\" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+        The `OCID`__ of the customer \"Master\" key being
+        referenced.
+        If provided, this will reference a key which the customer will be required to ensure
+        the policies are established to permit the GoldenGate Service to utilize this key to
+        manage secrets.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -591,7 +629,11 @@ class CreateDatabaseRegistrationDetails(object):
     def key_id(self, key_id):
         """
         Sets the key_id of this CreateDatabaseRegistrationDetails.
-        The `OCID`__ of the customer \"Master\" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+        The `OCID`__ of the customer \"Master\" key being
+        referenced.
+        If provided, this will reference a key which the customer will be required to ensure
+        the policies are established to permit the GoldenGate Service to utilize this key to
+        manage secrets.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -605,7 +647,11 @@ class CreateDatabaseRegistrationDetails(object):
     def secret_compartment_id(self):
         """
         Gets the secret_compartment_id of this CreateDatabaseRegistrationDetails.
-        The `OCID`__ of the compartment where the the GGS Secret will be created. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Compartment in which to create a Secret.
+        The `OCID`__ of the compartment where the
+        the GGS Secret will be created.
+        If provided, this will reference a key which the customer will be required to ensure
+        the policies are established to permit the GoldenGate Service to utilize this Compartment
+        in which to create a Secret.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -619,7 +665,11 @@ class CreateDatabaseRegistrationDetails(object):
     def secret_compartment_id(self, secret_compartment_id):
         """
         Sets the secret_compartment_id of this CreateDatabaseRegistrationDetails.
-        The `OCID`__ of the compartment where the the GGS Secret will be created. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Compartment in which to create a Secret.
+        The `OCID`__ of the compartment where the
+        the GGS Secret will be created.
+        If provided, this will reference a key which the customer will be required to ensure
+        the policies are established to permit the GoldenGate Service to utilize this Compartment
+        in which to create a Secret.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

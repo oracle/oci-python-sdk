@@ -1013,7 +1013,7 @@ class AutonomousContainerDatabase(object):
     def role(self):
         """
         Gets the role of this AutonomousContainerDatabase.
-        The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 
         Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -1028,7 +1028,7 @@ class AutonomousContainerDatabase(object):
     def role(self, role):
         """
         Sets the role of this AutonomousContainerDatabase.
-        The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 
 
         :param role: The role of this AutonomousContainerDatabase.
@@ -1187,7 +1187,7 @@ class AutonomousContainerDatabase(object):
     def available_cpus(self):
         """
         Gets the available_cpus of this AutonomousContainerDatabase.
-        Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+        Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
 
 
         :return: The available_cpus of this AutonomousContainerDatabase.
@@ -1199,7 +1199,7 @@ class AutonomousContainerDatabase(object):
     def available_cpus(self, available_cpus):
         """
         Sets the available_cpus of this AutonomousContainerDatabase.
-        Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+        Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
 
 
         :param available_cpus: The available_cpus of this AutonomousContainerDatabase.

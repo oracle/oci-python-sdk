@@ -852,7 +852,7 @@ class CloudAutonomousVmCluster(object):
     def cpu_core_count(self):
         """
         Gets the cpu_core_count of this CloudAutonomousVmCluster.
-        The number of CPU cores enabled on the cloud Autonomous VM cluster.
+        The number of CPU cores on the cloud Autonomous VM cluster.
 
 
         :return: The cpu_core_count of this CloudAutonomousVmCluster.
@@ -864,7 +864,7 @@ class CloudAutonomousVmCluster(object):
     def cpu_core_count(self, cpu_core_count):
         """
         Sets the cpu_core_count of this CloudAutonomousVmCluster.
-        The number of CPU cores enabled on the cloud Autonomous VM cluster.
+        The number of CPU cores on the cloud Autonomous VM cluster.
 
 
         :param cpu_core_count: The cpu_core_count of this CloudAutonomousVmCluster.
@@ -876,7 +876,7 @@ class CloudAutonomousVmCluster(object):
     def ocpu_count(self):
         """
         Gets the ocpu_count of this CloudAutonomousVmCluster.
-        The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
+        The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
 
 
         :return: The ocpu_count of this CloudAutonomousVmCluster.
@@ -888,7 +888,7 @@ class CloudAutonomousVmCluster(object):
     def ocpu_count(self, ocpu_count):
         """
         Sets the ocpu_count of this CloudAutonomousVmCluster.
-        The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
+        The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
 
 
         :param ocpu_count: The ocpu_count of this CloudAutonomousVmCluster.

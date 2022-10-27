@@ -1385,7 +1385,7 @@ class AutonomousDatabase(object):
     def cpu_core_count(self):
         """
         **[Required]** Gets the cpu_core_count of this AutonomousDatabase.
-        The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
+        The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
 
         **Note:** This parameter cannot be used with the `ocpuCount` parameter.
 
@@ -1401,7 +1401,7 @@ class AutonomousDatabase(object):
     def cpu_core_count(self, cpu_core_count):
         """
         Sets the cpu_core_count of this AutonomousDatabase.
-        The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
+        The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
 
         **Note:** This parameter cannot be used with the `ocpuCount` parameter.
 

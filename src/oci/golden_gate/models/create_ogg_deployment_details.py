@@ -65,7 +65,8 @@ class CreateOggDeploymentDetails(object):
     def deployment_name(self):
         """
         **[Required]** Gets the deployment_name of this CreateOggDeploymentDetails.
-        The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+        The name given to the GoldenGate service deployment.
+        The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
 
 
         :return: The deployment_name of this CreateOggDeploymentDetails.
@@ -77,7 +78,8 @@ class CreateOggDeploymentDetails(object):
     def deployment_name(self, deployment_name):
         """
         Sets the deployment_name of this CreateOggDeploymentDetails.
-        The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+        The name given to the GoldenGate service deployment.
+        The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
 
 
         :param deployment_name: The deployment_name of this CreateOggDeploymentDetails.
@@ -113,7 +115,9 @@ class CreateOggDeploymentDetails(object):
     def admin_password(self):
         """
         **[Required]** Gets the admin_password of this CreateOggDeploymentDetails.
-        The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as \u2018$\u2019, \u2018^\u2019, or \u2018?\u2019 are not allowed.
+        The password associated with the GoldenGate deployment console username.
+        The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric,
+        and 1 special character. Special characters such as \u2018$\u2019, \u2018^\u2019, or \u2018?\u2019 are not allowed.
 
 
         :return: The admin_password of this CreateOggDeploymentDetails.
@@ -125,7 +129,9 @@ class CreateOggDeploymentDetails(object):
     def admin_password(self, admin_password):
         """
         Sets the admin_password of this CreateOggDeploymentDetails.
-        The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as \u2018$\u2019, \u2018^\u2019, or \u2018?\u2019 are not allowed.
+        The password associated with the GoldenGate deployment console username.
+        The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric,
+        and 1 special character. Special characters such as \u2018$\u2019, \u2018^\u2019, or \u2018?\u2019 are not allowed.
 
 
         :param admin_password: The admin_password of this CreateOggDeploymentDetails.

@@ -163,6 +163,48 @@ def test_append_lookup_data(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
+def test_assign_encryption_key(testing_service_client):
+    if not testing_service_client.is_api_enabled('log_analytics', 'AssignEncryptionKey'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('log_analytics', util.camelize('log_analytics'), 'AssignEncryptionKey')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='log_analytics', api_name='AssignEncryptionKey')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.log_analytics.LogAnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.assign_encryption_key(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                assign_encryption_key_details=request.pop(util.camelize('AssignEncryptionKeyDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'log_analytics',
+            'AssignEncryptionKey',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'assign_encryption_key',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
 def test_batch_get_basic_info(testing_service_client):
     if not testing_service_client.is_api_enabled('log_analytics', 'BatchGetBasicInfo'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4132,6 +4174,47 @@ def test_list_config_work_requests(testing_service_client):
             'logAnalyticsConfigWorkRequestCollection',
             False,
             True
+        )
+
+
+# IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
+def test_list_encryption_key_info(testing_service_client):
+    if not testing_service_client.is_api_enabled('log_analytics', 'ListEncryptionKeyInfo'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('log_analytics', util.camelize('log_analytics'), 'ListEncryptionKeyInfo')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='log_analytics', api_name='ListEncryptionKeyInfo')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.log_analytics.LogAnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.list_encryption_key_info(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'log_analytics',
+            'ListEncryptionKeyInfo',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'encryptionKeyInfoCollection',
+            False,
+            False
         )
 
 

@@ -76,6 +76,48 @@ def test_cancel_deployment_backup(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
+def test_change_connection_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('golden_gate', 'ChangeConnectionCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('golden_gate', util.camelize('golden_gate'), 'ChangeConnectionCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='golden_gate', api_name='ChangeConnectionCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
+            response = client.change_connection_compartment(
+                connection_id=request.pop(util.camelize('connectionId')),
+                change_connection_compartment_details=request.pop(util.camelize('ChangeConnectionCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'golden_gate',
+            'ChangeConnectionCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_connection_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
 def test_change_database_registration_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('golden_gate', 'ChangeDatabaseRegistrationCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -196,6 +238,88 @@ def test_change_deployment_compartment(testing_service_client):
             result,
             service_error,
             'change_deployment_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
+def test_create_connection(testing_service_client):
+    if not testing_service_client.is_api_enabled('golden_gate', 'CreateConnection'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('golden_gate', util.camelize('golden_gate'), 'CreateConnection')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='golden_gate', api_name='CreateConnection')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
+            response = client.create_connection(
+                create_connection_details=request.pop(util.camelize('CreateConnectionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'golden_gate',
+            'CreateConnection',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'connection',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
+def test_create_connection_assignment(testing_service_client):
+    if not testing_service_client.is_api_enabled('golden_gate', 'CreateConnectionAssignment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('golden_gate', util.camelize('golden_gate'), 'CreateConnectionAssignment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='golden_gate', api_name='CreateConnectionAssignment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
+            response = client.create_connection_assignment(
+                create_connection_assignment_details=request.pop(util.camelize('CreateConnectionAssignmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'golden_gate',
+            'CreateConnectionAssignment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'connectionAssignment',
             False,
             False
         )
@@ -325,6 +449,88 @@ def test_create_deployment_backup(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
+def test_delete_connection(testing_service_client):
+    if not testing_service_client.is_api_enabled('golden_gate', 'DeleteConnection'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('golden_gate', util.camelize('golden_gate'), 'DeleteConnection')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='golden_gate', api_name='DeleteConnection')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
+            response = client.delete_connection(
+                connection_id=request.pop(util.camelize('connectionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'golden_gate',
+            'DeleteConnection',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_connection',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
+def test_delete_connection_assignment(testing_service_client):
+    if not testing_service_client.is_api_enabled('golden_gate', 'DeleteConnectionAssignment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('golden_gate', util.camelize('golden_gate'), 'DeleteConnectionAssignment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='golden_gate', api_name='DeleteConnectionAssignment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
+            response = client.delete_connection_assignment(
+                connection_assignment_id=request.pop(util.camelize('connectionAssignmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'golden_gate',
+            'DeleteConnectionAssignment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_connection_assignment',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
 def test_delete_database_registration(testing_service_client):
     if not testing_service_client.is_api_enabled('golden_gate', 'DeleteDatabaseRegistration'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -443,6 +649,88 @@ def test_delete_deployment_backup(testing_service_client):
             service_error,
             'delete_deployment_backup',
             True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
+def test_get_connection(testing_service_client):
+    if not testing_service_client.is_api_enabled('golden_gate', 'GetConnection'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('golden_gate', util.camelize('golden_gate'), 'GetConnection')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='golden_gate', api_name='GetConnection')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
+            response = client.get_connection(
+                connection_id=request.pop(util.camelize('connectionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'golden_gate',
+            'GetConnection',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'connection',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
+def test_get_connection_assignment(testing_service_client):
+    if not testing_service_client.is_api_enabled('golden_gate', 'GetConnectionAssignment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('golden_gate', util.camelize('golden_gate'), 'GetConnectionAssignment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='golden_gate', api_name='GetConnectionAssignment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
+            response = client.get_connection_assignment(
+                connection_assignment_id=request.pop(util.camelize('connectionAssignmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'golden_gate',
+            'GetConnectionAssignment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'connectionAssignment',
+            False,
             False
         )
 
@@ -653,6 +941,132 @@ def test_get_work_request(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
+def test_list_connection_assignments(testing_service_client):
+    if not testing_service_client.is_api_enabled('golden_gate', 'ListConnectionAssignments'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('golden_gate', util.camelize('golden_gate'), 'ListConnectionAssignments')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='golden_gate', api_name='ListConnectionAssignments')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
+            response = client.list_connection_assignments(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_connection_assignments(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_connection_assignments(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'golden_gate',
+            'ListConnectionAssignments',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'connectionAssignmentCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
+def test_list_connections(testing_service_client):
+    if not testing_service_client.is_api_enabled('golden_gate', 'ListConnections'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('golden_gate', util.camelize('golden_gate'), 'ListConnections')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='golden_gate', api_name='ListConnections')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
+            response = client.list_connections(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_connections(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_connections(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'golden_gate',
+            'ListConnections',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'connectionCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
 def test_list_database_registrations(testing_service_client):
     if not testing_service_client.is_api_enabled('golden_gate', 'ListDatabaseRegistrations'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -773,6 +1187,69 @@ def test_list_deployment_backups(testing_service_client):
             result,
             service_error,
             'deploymentBackupCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
+def test_list_deployment_types(testing_service_client):
+    if not testing_service_client.is_api_enabled('golden_gate', 'ListDeploymentTypes'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('golden_gate', util.camelize('golden_gate'), 'ListDeploymentTypes')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='golden_gate', api_name='ListDeploymentTypes')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
+            response = client.list_deployment_types(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_deployment_types(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_deployment_types(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'golden_gate',
+            'ListDeploymentTypes',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'deploymentTypeCollection',
             False,
             True
         )
@@ -1406,6 +1883,48 @@ def test_stop_deployment(testing_service_client):
             result,
             service_error,
             'stop_deployment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
+def test_update_connection(testing_service_client):
+    if not testing_service_client.is_api_enabled('golden_gate', 'UpdateConnection'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('golden_gate', util.camelize('golden_gate'), 'UpdateConnection')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='golden_gate', api_name='UpdateConnection')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
+            response = client.update_connection(
+                connection_id=request.pop(util.camelize('connectionId')),
+                update_connection_details=request.pop(util.camelize('UpdateConnectionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'golden_gate',
+            'UpdateConnection',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_connection',
             False,
             False
         )

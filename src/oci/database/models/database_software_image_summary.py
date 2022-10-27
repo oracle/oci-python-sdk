@@ -570,7 +570,7 @@ class DatabaseSoftwareImageSummary(object):
     def included_patches_summary(self):
         """
         Gets the included_patches_summary of this DatabaseSoftwareImageSummary.
-        The patches included in the image and the version of the image
+        The patches included in the image and the version of the image.
 
 
         :return: The included_patches_summary of this DatabaseSoftwareImageSummary.
@@ -582,7 +582,7 @@ class DatabaseSoftwareImageSummary(object):
     def included_patches_summary(self, included_patches_summary):
         """
         Sets the included_patches_summary of this DatabaseSoftwareImageSummary.
-        The patches included in the image and the version of the image
+        The patches included in the image and the version of the image.
 
 
         :param included_patches_summary: The included_patches_summary of this DatabaseSoftwareImageSummary.

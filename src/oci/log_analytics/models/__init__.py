@@ -16,6 +16,7 @@ from .add_insights_command_descriptor import AddInsightsCommandDescriptor
 from .anomaly_command_descriptor import AnomalyCommandDescriptor
 from .archiving_configuration import ArchivingConfiguration
 from .argument import Argument
+from .assign_encryption_key_details import AssignEncryptionKeyDetails
 from .associable_entity import AssociableEntity
 from .associable_entity_collection import AssociableEntityCollection
 from .association_summary_report import AssociationSummaryReport
@@ -72,6 +73,8 @@ from .distinct_command_descriptor import DistinctCommandDescriptor
 from .efd_regex_result import EfdRegexResult
 from .enable_auto_association_detail import EnableAutoAssociationDetail
 from .enable_auto_association_details import EnableAutoAssociationDetails
+from .encryption_key_info_collection import EncryptionKeyInfoCollection
+from .encryption_key_info_summary import EncryptionKeyInfoSummary
 from .entity_type_property import EntityTypeProperty
 from .error_details import ErrorDetails
 from .estimate_purge_data_size_details import EstimatePurgeDataSizeDetails
@@ -358,6 +361,7 @@ log_analytics_type_mapping = {
     "AnomalyCommandDescriptor": AnomalyCommandDescriptor,
     "ArchivingConfiguration": ArchivingConfiguration,
     "Argument": Argument,
+    "AssignEncryptionKeyDetails": AssignEncryptionKeyDetails,
     "AssociableEntity": AssociableEntity,
     "AssociableEntityCollection": AssociableEntityCollection,
     "AssociationSummaryReport": AssociationSummaryReport,
@@ -414,6 +418,8 @@ log_analytics_type_mapping = {
     "EfdRegexResult": EfdRegexResult,
     "EnableAutoAssociationDetail": EnableAutoAssociationDetail,
     "EnableAutoAssociationDetails": EnableAutoAssociationDetails,
+    "EncryptionKeyInfoCollection": EncryptionKeyInfoCollection,
+    "EncryptionKeyInfoSummary": EncryptionKeyInfoSummary,
     "EntityTypeProperty": EntityTypeProperty,
     "ErrorDetails": ErrorDetails,
     "EstimatePurgeDataSizeDetails": EstimatePurgeDataSizeDetails,
