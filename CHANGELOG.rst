@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.87.0 - 2022-11-01
+====================
+
+Added
+-----
+* Support for cloning from a backup from the last available timestamp in the Database service
+* Support for third-party scanning using Qualys in the Vulnerability Scanning service
+* Support for customer-provided encryption keys in the Logging Analytics service
+* Support for connections for database resources in the GoldenGate service  
+ 
+Breaking
+--------
+* The properties `dataType`, `timeDataEnded`, `compartmentId` is made from required to optional from the `StorageWorkRequestSummary` model in Log Analytics service 
+ 
+====================
 2.86.0 - 2022-10-25
 ====================
 

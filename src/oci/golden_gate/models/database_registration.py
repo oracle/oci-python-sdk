@@ -258,7 +258,8 @@ class DatabaseRegistration(object):
     def id(self):
         """
         **[Required]** Gets the id of this DatabaseRegistration.
-        The `OCID`__ of the databaseRegistration being referenced.
+        The `OCID`__ of the databaseRegistration being
+        referenced.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -272,7 +273,8 @@ class DatabaseRegistration(object):
     def id(self, id):
         """
         Sets the id of this DatabaseRegistration.
-        The `OCID`__ of the databaseRegistration being referenced.
+        The `OCID`__ of the databaseRegistration being
+        referenced.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -362,7 +364,8 @@ class DatabaseRegistration(object):
     def time_created(self):
         """
         Gets the time_created of this DatabaseRegistration.
-        The time the resource was created. The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+        The time the resource was created. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -376,7 +379,8 @@ class DatabaseRegistration(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this DatabaseRegistration.
-        The time the resource was created. The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+        The time the resource was created. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -390,7 +394,8 @@ class DatabaseRegistration(object):
     def time_updated(self):
         """
         Gets the time_updated of this DatabaseRegistration.
-        The time the resource was last updated. The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+        The time the resource was last updated. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -404,7 +409,8 @@ class DatabaseRegistration(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this DatabaseRegistration.
-        The time the resource was last updated. The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+        The time the resource was last updated. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -448,7 +454,8 @@ class DatabaseRegistration(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this DatabaseRegistration.
-        Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+        Describes the object's current state in detail. For example, it can be used to provide
+        actionable information for a resource in a Failed state.
 
 
         :return: The lifecycle_details of this DatabaseRegistration.
@@ -460,7 +467,8 @@ class DatabaseRegistration(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this DatabaseRegistration.
-        Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+        Describes the object's current state in detail. For example, it can be used to provide
+        actionable information for a resource in a Failed state.
 
 
         :param lifecycle_details: The lifecycle_details of this DatabaseRegistration.
@@ -472,7 +480,9 @@ class DatabaseRegistration(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this DatabaseRegistration.
-        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+        A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+        for cross-compatibility only.
+
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -485,7 +495,9 @@ class DatabaseRegistration(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this DatabaseRegistration.
-        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+        A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+        for cross-compatibility only.
+
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -499,6 +511,7 @@ class DatabaseRegistration(object):
         """
         Gets the defined_tags of this DatabaseRegistration.
         Tags defined for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
@@ -512,6 +525,7 @@ class DatabaseRegistration(object):
         """
         Sets the defined_tags of this DatabaseRegistration.
         Tags defined for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
@@ -548,7 +562,8 @@ class DatabaseRegistration(object):
     def ip_address(self):
         """
         **[Required]** Gets the ip_address of this DatabaseRegistration.
-        The private IP address in the customer's VCN of the customer's endpoint, typically a database.
+        The private IP address in the customer's VCN of the customer's endpoint, typically a
+        database.
 
 
         :return: The ip_address of this DatabaseRegistration.
@@ -560,7 +575,8 @@ class DatabaseRegistration(object):
     def ip_address(self, ip_address):
         """
         Sets the ip_address of this DatabaseRegistration.
-        The private IP address in the customer's VCN of the customer's endpoint, typically a database.
+        The private IP address in the customer's VCN of the customer's endpoint, typically a
+        database.
 
 
         :param ip_address: The ip_address of this DatabaseRegistration.
@@ -628,7 +644,10 @@ class DatabaseRegistration(object):
     def rce_private_ip(self):
         """
         Gets the rce_private_ip of this DatabaseRegistration.
-        A Private Endpoint IP Address created in the customer's subnet.  A customer database can expect network traffic initiated by GGS from this IP address and send network traffic to this IP address, typically in response to requests from GGS (OGG).  The customer may utilize this IP address in Security Lists or Network Security Groups (NSG) as needed.
+        A Private Endpoint IP Address created in the customer's subnet.  A customer
+        database can expect network traffic initiated by GGS from this IP address and send network traffic
+        to this IP address, typically in response to requests from GGS (OGG).  The customer may utilize
+        this IP address in Security Lists or Network Security Groups (NSG) as needed.
 
 
         :return: The rce_private_ip of this DatabaseRegistration.
@@ -640,7 +659,10 @@ class DatabaseRegistration(object):
     def rce_private_ip(self, rce_private_ip):
         """
         Sets the rce_private_ip of this DatabaseRegistration.
-        A Private Endpoint IP Address created in the customer's subnet.  A customer database can expect network traffic initiated by GGS from this IP address and send network traffic to this IP address, typically in response to requests from GGS (OGG).  The customer may utilize this IP address in Security Lists or Network Security Groups (NSG) as needed.
+        A Private Endpoint IP Address created in the customer's subnet.  A customer
+        database can expect network traffic initiated by GGS from this IP address and send network traffic
+        to this IP address, typically in response to requests from GGS (OGG).  The customer may utilize
+        this IP address in Security Lists or Network Security Groups (NSG) as needed.
 
 
         :param rce_private_ip: The rce_private_ip of this DatabaseRegistration.
@@ -652,7 +674,10 @@ class DatabaseRegistration(object):
     def system_tags(self):
         """
         Gets the system_tags of this DatabaseRegistration.
-        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see `Resource Tags`__.
+        The system tags associated with this resource, if any. The system tags are set by Oracle
+        Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more
+        information, see `Resource Tags`__.
+
         Example: `{orcl-cloud: {free-tier-retain: true}}`
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
@@ -667,7 +692,10 @@ class DatabaseRegistration(object):
     def system_tags(self, system_tags):
         """
         Sets the system_tags of this DatabaseRegistration.
-        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see `Resource Tags`__.
+        The system tags associated with this resource, if any. The system tags are set by Oracle
+        Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more
+        information, see `Resource Tags`__.
+
         Example: `{orcl-cloud: {free-tier-retain: true}}`
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
@@ -682,7 +710,9 @@ class DatabaseRegistration(object):
     def username(self):
         """
         **[Required]** Gets the username of this DatabaseRegistration.
-        The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+        The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must
+        already exist and be available for use by the database.  It must conform to the security
+        requirements implemented by the database including length, case sensitivity, and so on.
 
 
         :return: The username of this DatabaseRegistration.
@@ -694,7 +724,9 @@ class DatabaseRegistration(object):
     def username(self, username):
         """
         Sets the username of this DatabaseRegistration.
-        The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+        The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must
+        already exist and be available for use by the database.  It must conform to the security
+        requirements implemented by the database including length, case sensitivity, and so on.
 
 
         :param username: The username of this DatabaseRegistration.
@@ -706,7 +738,8 @@ class DatabaseRegistration(object):
     def connection_string(self):
         """
         Gets the connection_string of this DatabaseRegistration.
-        Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
+        Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a
+        database.
 
 
         :return: The connection_string of this DatabaseRegistration.
@@ -718,7 +751,8 @@ class DatabaseRegistration(object):
     def connection_string(self, connection_string):
         """
         Sets the connection_string of this DatabaseRegistration.
-        Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
+        Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a
+        database.
 
 
         :param connection_string: The connection_string of this DatabaseRegistration.
@@ -730,7 +764,10 @@ class DatabaseRegistration(object):
     def session_mode(self):
         """
         Gets the session_mode of this DatabaseRegistration.
-        The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+        The mode of the database connection session to be established by the data client.
+        'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
+        Connection to a RAC database involves a redirection received from the SCAN listeners
+        to the database node to connect to. By default the mode would be DIRECT.
 
         Allowed values for this property are: "DIRECT", "REDIRECT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -745,7 +782,10 @@ class DatabaseRegistration(object):
     def session_mode(self, session_mode):
         """
         Sets the session_mode of this DatabaseRegistration.
-        The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+        The mode of the database connection session to be established by the data client.
+        'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
+        Connection to a RAC database involves a redirection received from the SCAN listeners
+        to the database node to connect to. By default the mode would be DIRECT.
 
 
         :param session_mode: The session_mode of this DatabaseRegistration.
@@ -784,7 +824,11 @@ class DatabaseRegistration(object):
     def vault_id(self):
         """
         Gets the vault_id of this DatabaseRegistration.
-        The `OCID`__ of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+        The `OCID`__ of the customer vault being
+        referenced.
+        If provided, this will reference a vault which the customer will be required to ensure
+        the policies are established to permit the GoldenGate Service to manage secrets contained
+        within this vault.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -798,7 +842,11 @@ class DatabaseRegistration(object):
     def vault_id(self, vault_id):
         """
         Sets the vault_id of this DatabaseRegistration.
-        The `OCID`__ of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+        The `OCID`__ of the customer vault being
+        referenced.
+        If provided, this will reference a vault which the customer will be required to ensure
+        the policies are established to permit the GoldenGate Service to manage secrets contained
+        within this vault.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -812,7 +860,11 @@ class DatabaseRegistration(object):
     def key_id(self):
         """
         Gets the key_id of this DatabaseRegistration.
-        The `OCID`__ of the customer \"Master\" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+        The `OCID`__ of the customer \"Master\" key being
+        referenced.
+        If provided, this will reference a key which the customer will be required to ensure
+        the policies are established to permit the GoldenGate Service to utilize this key to
+        manage secrets.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -826,7 +878,11 @@ class DatabaseRegistration(object):
     def key_id(self, key_id):
         """
         Sets the key_id of this DatabaseRegistration.
-        The `OCID`__ of the customer \"Master\" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+        The `OCID`__ of the customer \"Master\" key being
+        referenced.
+        If provided, this will reference a key which the customer will be required to ensure
+        the policies are established to permit the GoldenGate Service to utilize this key to
+        manage secrets.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -840,7 +896,11 @@ class DatabaseRegistration(object):
     def secret_compartment_id(self):
         """
         Gets the secret_compartment_id of this DatabaseRegistration.
-        The `OCID`__ of the compartment where the the GGS Secret will be created. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Compartment in which to create a Secret.
+        The `OCID`__ of the compartment where the
+        the GGS Secret will be created.
+        If provided, this will reference a key which the customer will be required to ensure
+        the policies are established to permit the GoldenGate Service to utilize this Compartment
+        in which to create a Secret.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -854,7 +914,11 @@ class DatabaseRegistration(object):
     def secret_compartment_id(self, secret_compartment_id):
         """
         Sets the secret_compartment_id of this DatabaseRegistration.
-        The `OCID`__ of the compartment where the the GGS Secret will be created. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Compartment in which to create a Secret.
+        The `OCID`__ of the compartment where the
+        the GGS Secret will be created.
+        If provided, this will reference a key which the customer will be required to ensure
+        the policies are established to permit the GoldenGate Service to utilize this Compartment
+        in which to create a Secret.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -868,7 +932,10 @@ class DatabaseRegistration(object):
     def secret_id(self):
         """
         Gets the secret_id of this DatabaseRegistration.
-        The `OCID`__ of the customer GGS Secret being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Secret
+        The `OCID`__ of the customer GGS Secret being
+        referenced.
+        If provided, this will reference a key which the customer will be required to ensure
+        the policies are established to permit the GoldenGate Service to utilize this Secret
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -882,7 +949,10 @@ class DatabaseRegistration(object):
     def secret_id(self, secret_id):
         """
         Sets the secret_id of this DatabaseRegistration.
-        The `OCID`__ of the customer GGS Secret being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Secret
+        The `OCID`__ of the customer GGS Secret being
+        referenced.
+        If provided, this will reference a key which the customer will be required to ensure
+        the policies are established to permit the GoldenGate Service to utilize this Secret
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

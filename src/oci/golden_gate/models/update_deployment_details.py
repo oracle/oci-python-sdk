@@ -203,7 +203,9 @@ class UpdateDeploymentDetails(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this UpdateDeploymentDetails.
-        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+        A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+        for cross-compatibility only.
+
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -216,7 +218,9 @@ class UpdateDeploymentDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this UpdateDeploymentDetails.
-        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+        A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+        for cross-compatibility only.
+
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -230,6 +234,7 @@ class UpdateDeploymentDetails(object):
         """
         Gets the defined_tags of this UpdateDeploymentDetails.
         Tags defined for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
@@ -243,6 +248,7 @@ class UpdateDeploymentDetails(object):
         """
         Sets the defined_tags of this UpdateDeploymentDetails.
         Tags defined for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
@@ -255,9 +261,7 @@ class UpdateDeploymentDetails(object):
     def nsg_ids(self):
         """
         Gets the nsg_ids of this UpdateDeploymentDetails.
-        An array of `Network Security Group`__ OCIDs used to define network access for a deployment.
-
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/networksecuritygroups.htm
+        An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 
 
         :return: The nsg_ids of this UpdateDeploymentDetails.
@@ -269,9 +273,7 @@ class UpdateDeploymentDetails(object):
     def nsg_ids(self, nsg_ids):
         """
         Sets the nsg_ids of this UpdateDeploymentDetails.
-        An array of `Network Security Group`__ OCIDs used to define network access for a deployment.
-
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/networksecuritygroups.htm
+        An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 
 
         :param nsg_ids: The nsg_ids of this UpdateDeploymentDetails.

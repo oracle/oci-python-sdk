@@ -10,7 +10,10 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequest(object):
     """
-    The API operations that create and configure GoldenGate resources do not take effect immediately. In these cases, the operation spawns an asynchronous workflow to fulfill teh request. Work requests provide visibility into the status of these in-progress, long-running asynchronous workflows.
+    The API operations that create and configure GoldenGate resources do not take effect
+    immediately. In these cases, the operation spawns an asynchronous workflow to fulfill the
+    request. Work requests provide visibility into the status of these in-progress, long-running
+    asynchronous workflows.
     """
 
     #: A constant which can be used with the operation_type property of a WorkRequest.
@@ -58,10 +61,6 @@ class WorkRequest(object):
     OPERATION_TYPE_GOLDENGATE_DEPLOYMENT_STOP = "GOLDENGATE_DEPLOYMENT_STOP"
 
     #: A constant which can be used with the operation_type property of a WorkRequest.
-    #: This constant has a value of "GOLDENGATE_DEPLOYMENT_PATCH"
-    OPERATION_TYPE_GOLDENGATE_DEPLOYMENT_PATCH = "GOLDENGATE_DEPLOYMENT_PATCH"
-
-    #: A constant which can be used with the operation_type property of a WorkRequest.
     #: This constant has a value of "GOLDENGATE_DEPLOYMENT_UPGRADE"
     OPERATION_TYPE_GOLDENGATE_DEPLOYMENT_UPGRADE = "GOLDENGATE_DEPLOYMENT_UPGRADE"
 
@@ -76,6 +75,38 @@ class WorkRequest(object):
     #: A constant which can be used with the operation_type property of a WorkRequest.
     #: This constant has a value of "GOLDENGATE_DEPLOYMENT_BACKUP_CANCEL"
     OPERATION_TYPE_GOLDENGATE_DEPLOYMENT_BACKUP_CANCEL = "GOLDENGATE_DEPLOYMENT_BACKUP_CANCEL"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "GOLDENGATE_CONNECTION_CREATE"
+    OPERATION_TYPE_GOLDENGATE_CONNECTION_CREATE = "GOLDENGATE_CONNECTION_CREATE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "GOLDENGATE_CONNECTION_UPDATE"
+    OPERATION_TYPE_GOLDENGATE_CONNECTION_UPDATE = "GOLDENGATE_CONNECTION_UPDATE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "GOLDENGATE_CONNECTION_DELETE"
+    OPERATION_TYPE_GOLDENGATE_CONNECTION_DELETE = "GOLDENGATE_CONNECTION_DELETE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "GOLDENGATE_CONNECTION_MOVE"
+    OPERATION_TYPE_GOLDENGATE_CONNECTION_MOVE = "GOLDENGATE_CONNECTION_MOVE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "GOLDENGATE_CONNECTION_ASSIGNMENT_CREATE"
+    OPERATION_TYPE_GOLDENGATE_CONNECTION_ASSIGNMENT_CREATE = "GOLDENGATE_CONNECTION_ASSIGNMENT_CREATE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "GOLDENGATE_CONNECTION_ASSIGMNENT_DELETE"
+    OPERATION_TYPE_GOLDENGATE_CONNECTION_ASSIGMNENT_DELETE = "GOLDENGATE_CONNECTION_ASSIGMNENT_DELETE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "GOLDENGATE_DEPLOYMENT_DIAGNOSTIC_COLLECT"
+    OPERATION_TYPE_GOLDENGATE_DEPLOYMENT_DIAGNOSTIC_COLLECT = "GOLDENGATE_DEPLOYMENT_DIAGNOSTIC_COLLECT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "GOLDENGATE_DEPLOYMENT_PATCH"
+    OPERATION_TYPE_GOLDENGATE_DEPLOYMENT_PATCH = "GOLDENGATE_DEPLOYMENT_PATCH"
 
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "ACCEPTED"
@@ -104,7 +135,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "GOLDENGATE_DATABASE_REGISTRATION_CREATE", "GOLDENGATE_DATABASE_REGISTRATION_UPDATE", "GOLDENGATE_DATABASE_REGISTRATION_DELETE", "GOLDENGATE_DATABASE_REGISTRATION_MOVE", "GOLDENGATE_DEPLOYMENT_CREATE", "GOLDENGATE_DEPLOYMENT_UPDATE", "GOLDENGATE_DEPLOYMENT_DELETE", "GOLDENGATE_DEPLOYMENT_MOVE", "GOLDENGATE_DEPLOYMENT_RESTORE", "GOLDENGATE_DEPLOYMENT_START", "GOLDENGATE_DEPLOYMENT_STOP", "GOLDENGATE_DEPLOYMENT_PATCH", "GOLDENGATE_DEPLOYMENT_UPGRADE", "GOLDENGATE_DEPLOYMENT_BACKUP_CREATE", "GOLDENGATE_DEPLOYMENT_BACKUP_DELETE", "GOLDENGATE_DEPLOYMENT_BACKUP_CANCEL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE_DATABASE_REGISTRATION_CREATE", "GOLDENGATE_DATABASE_REGISTRATION_UPDATE", "GOLDENGATE_DATABASE_REGISTRATION_DELETE", "GOLDENGATE_DATABASE_REGISTRATION_MOVE", "GOLDENGATE_DEPLOYMENT_CREATE", "GOLDENGATE_DEPLOYMENT_UPDATE", "GOLDENGATE_DEPLOYMENT_DELETE", "GOLDENGATE_DEPLOYMENT_MOVE", "GOLDENGATE_DEPLOYMENT_RESTORE", "GOLDENGATE_DEPLOYMENT_START", "GOLDENGATE_DEPLOYMENT_STOP", "GOLDENGATE_DEPLOYMENT_UPGRADE", "GOLDENGATE_DEPLOYMENT_BACKUP_CREATE", "GOLDENGATE_DEPLOYMENT_BACKUP_DELETE", "GOLDENGATE_DEPLOYMENT_BACKUP_CANCEL", "GOLDENGATE_CONNECTION_CREATE", "GOLDENGATE_CONNECTION_UPDATE", "GOLDENGATE_CONNECTION_DELETE", "GOLDENGATE_CONNECTION_MOVE", "GOLDENGATE_CONNECTION_ASSIGNMENT_CREATE", "GOLDENGATE_CONNECTION_ASSIGMNENT_DELETE", "GOLDENGATE_DEPLOYMENT_DIAGNOSTIC_COLLECT", "GOLDENGATE_DEPLOYMENT_PATCH", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -183,7 +214,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         The work request's operation type.
 
-        Allowed values for this property are: "GOLDENGATE_DATABASE_REGISTRATION_CREATE", "GOLDENGATE_DATABASE_REGISTRATION_UPDATE", "GOLDENGATE_DATABASE_REGISTRATION_DELETE", "GOLDENGATE_DATABASE_REGISTRATION_MOVE", "GOLDENGATE_DEPLOYMENT_CREATE", "GOLDENGATE_DEPLOYMENT_UPDATE", "GOLDENGATE_DEPLOYMENT_DELETE", "GOLDENGATE_DEPLOYMENT_MOVE", "GOLDENGATE_DEPLOYMENT_RESTORE", "GOLDENGATE_DEPLOYMENT_START", "GOLDENGATE_DEPLOYMENT_STOP", "GOLDENGATE_DEPLOYMENT_PATCH", "GOLDENGATE_DEPLOYMENT_UPGRADE", "GOLDENGATE_DEPLOYMENT_BACKUP_CREATE", "GOLDENGATE_DEPLOYMENT_BACKUP_DELETE", "GOLDENGATE_DEPLOYMENT_BACKUP_CANCEL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "GOLDENGATE_DATABASE_REGISTRATION_CREATE", "GOLDENGATE_DATABASE_REGISTRATION_UPDATE", "GOLDENGATE_DATABASE_REGISTRATION_DELETE", "GOLDENGATE_DATABASE_REGISTRATION_MOVE", "GOLDENGATE_DEPLOYMENT_CREATE", "GOLDENGATE_DEPLOYMENT_UPDATE", "GOLDENGATE_DEPLOYMENT_DELETE", "GOLDENGATE_DEPLOYMENT_MOVE", "GOLDENGATE_DEPLOYMENT_RESTORE", "GOLDENGATE_DEPLOYMENT_START", "GOLDENGATE_DEPLOYMENT_STOP", "GOLDENGATE_DEPLOYMENT_UPGRADE", "GOLDENGATE_DEPLOYMENT_BACKUP_CREATE", "GOLDENGATE_DEPLOYMENT_BACKUP_DELETE", "GOLDENGATE_DEPLOYMENT_BACKUP_CANCEL", "GOLDENGATE_CONNECTION_CREATE", "GOLDENGATE_CONNECTION_UPDATE", "GOLDENGATE_CONNECTION_DELETE", "GOLDENGATE_CONNECTION_MOVE", "GOLDENGATE_CONNECTION_ASSIGNMENT_CREATE", "GOLDENGATE_CONNECTION_ASSIGMNENT_DELETE", "GOLDENGATE_DEPLOYMENT_DIAGNOSTIC_COLLECT", "GOLDENGATE_DEPLOYMENT_PATCH", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -202,7 +233,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["GOLDENGATE_DATABASE_REGISTRATION_CREATE", "GOLDENGATE_DATABASE_REGISTRATION_UPDATE", "GOLDENGATE_DATABASE_REGISTRATION_DELETE", "GOLDENGATE_DATABASE_REGISTRATION_MOVE", "GOLDENGATE_DEPLOYMENT_CREATE", "GOLDENGATE_DEPLOYMENT_UPDATE", "GOLDENGATE_DEPLOYMENT_DELETE", "GOLDENGATE_DEPLOYMENT_MOVE", "GOLDENGATE_DEPLOYMENT_RESTORE", "GOLDENGATE_DEPLOYMENT_START", "GOLDENGATE_DEPLOYMENT_STOP", "GOLDENGATE_DEPLOYMENT_PATCH", "GOLDENGATE_DEPLOYMENT_UPGRADE", "GOLDENGATE_DEPLOYMENT_BACKUP_CREATE", "GOLDENGATE_DEPLOYMENT_BACKUP_DELETE", "GOLDENGATE_DEPLOYMENT_BACKUP_CANCEL"]
+        allowed_values = ["GOLDENGATE_DATABASE_REGISTRATION_CREATE", "GOLDENGATE_DATABASE_REGISTRATION_UPDATE", "GOLDENGATE_DATABASE_REGISTRATION_DELETE", "GOLDENGATE_DATABASE_REGISTRATION_MOVE", "GOLDENGATE_DEPLOYMENT_CREATE", "GOLDENGATE_DEPLOYMENT_UPDATE", "GOLDENGATE_DEPLOYMENT_DELETE", "GOLDENGATE_DEPLOYMENT_MOVE", "GOLDENGATE_DEPLOYMENT_RESTORE", "GOLDENGATE_DEPLOYMENT_START", "GOLDENGATE_DEPLOYMENT_STOP", "GOLDENGATE_DEPLOYMENT_UPGRADE", "GOLDENGATE_DEPLOYMENT_BACKUP_CREATE", "GOLDENGATE_DEPLOYMENT_BACKUP_DELETE", "GOLDENGATE_DEPLOYMENT_BACKUP_CANCEL", "GOLDENGATE_CONNECTION_CREATE", "GOLDENGATE_CONNECTION_UPDATE", "GOLDENGATE_CONNECTION_DELETE", "GOLDENGATE_CONNECTION_MOVE", "GOLDENGATE_CONNECTION_ASSIGNMENT_CREATE", "GOLDENGATE_CONNECTION_ASSIGMNENT_DELETE", "GOLDENGATE_DEPLOYMENT_DIAGNOSTIC_COLLECT", "GOLDENGATE_DEPLOYMENT_PATCH"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
@@ -265,7 +296,10 @@ class WorkRequest(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this WorkRequest.
-        The ocid of the compartment that contains the work request. Work requests should be scoped to the same compartment as the resource the work request affects. If the work request affects multiple resources, and those resources are not in the same compartment, it is up to the service team to pick the primary resource whose compartment should be used.
+        The ocid of the compartment that contains the work request. Work requests should be scoped
+        to the same compartment as the resource the work request affects. If the work request
+        affects multiple resources, and those resources are not in the same compartment, it is up
+        to the service team to pick the primary resource whose compartment should be used.
 
 
         :return: The compartment_id of this WorkRequest.
@@ -277,7 +311,10 @@ class WorkRequest(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this WorkRequest.
-        The ocid of the compartment that contains the work request. Work requests should be scoped to the same compartment as the resource the work request affects. If the work request affects multiple resources, and those resources are not in the same compartment, it is up to the service team to pick the primary resource whose compartment should be used.
+        The ocid of the compartment that contains the work request. Work requests should be scoped
+        to the same compartment as the resource the work request affects. If the work request
+        affects multiple resources, and those resources are not in the same compartment, it is up
+        to the service team to pick the primary resource whose compartment should be used.
 
 
         :param compartment_id: The compartment_id of this WorkRequest.
@@ -337,7 +374,8 @@ class WorkRequest(object):
     def time_accepted(self):
         """
         **[Required]** Gets the time_accepted of this WorkRequest.
-        The date and time the request was created. The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+        The date and time the request was created. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -351,7 +389,8 @@ class WorkRequest(object):
     def time_accepted(self, time_accepted):
         """
         Sets the time_accepted of this WorkRequest.
-        The date and time the request was created. The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+        The date and time the request was created. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -365,7 +404,8 @@ class WorkRequest(object):
     def time_started(self):
         """
         Gets the time_started of this WorkRequest.
-        The date and time the request was started. The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+        The date and time the request was started. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -379,7 +419,8 @@ class WorkRequest(object):
     def time_started(self, time_started):
         """
         Sets the time_started of this WorkRequest.
-        The date and time the request was started. The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+        The date and time the request was started. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -393,7 +434,8 @@ class WorkRequest(object):
     def time_finished(self):
         """
         Gets the time_finished of this WorkRequest.
-        The date and time the request was finished. The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+        The date and time the request was finished. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -407,7 +449,8 @@ class WorkRequest(object):
     def time_finished(self, time_finished):
         """
         Sets the time_finished of this WorkRequest.
-        The date and time the request was finished. The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+        The date and time the request was finished. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
 
         __ https://tools.ietf.org/html/rfc3339
 

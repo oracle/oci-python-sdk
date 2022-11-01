@@ -58,7 +58,8 @@ class OggDeployment(object):
     def deployment_name(self):
         """
         **[Required]** Gets the deployment_name of this OggDeployment.
-        The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+        The name given to the GoldenGate service deployment.
+        The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
 
 
         :return: The deployment_name of this OggDeployment.
@@ -70,7 +71,8 @@ class OggDeployment(object):
     def deployment_name(self, deployment_name):
         """
         Sets the deployment_name of this OggDeployment.
-        The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+        The name given to the GoldenGate service deployment.
+        The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
 
 
         :param deployment_name: The deployment_name of this OggDeployment.

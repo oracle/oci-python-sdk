@@ -65,6 +65,26 @@ class StorageWorkRequest(object):
     #: This constant has a value of "CLEANUP_ARCHIVAL_STORAGE_DATA"
     OPERATION_TYPE_CLEANUP_ARCHIVAL_STORAGE_DATA = "CLEANUP_ARCHIVAL_STORAGE_DATA"
 
+    #: A constant which can be used with the operation_type property of a StorageWorkRequest.
+    #: This constant has a value of "ENCRYPT_ACTIVE_DATA"
+    OPERATION_TYPE_ENCRYPT_ACTIVE_DATA = "ENCRYPT_ACTIVE_DATA"
+
+    #: A constant which can be used with the operation_type property of a StorageWorkRequest.
+    #: This constant has a value of "ENCRYPT_ARCHIVAL_DATA"
+    OPERATION_TYPE_ENCRYPT_ARCHIVAL_DATA = "ENCRYPT_ARCHIVAL_DATA"
+
+    #: A constant which can be used with the key_type property of a StorageWorkRequest.
+    #: This constant has a value of "ACTIVE_DATA"
+    KEY_TYPE_ACTIVE_DATA = "ACTIVE_DATA"
+
+    #: A constant which can be used with the key_type property of a StorageWorkRequest.
+    #: This constant has a value of "ARCHIVAL_DATA"
+    KEY_TYPE_ARCHIVAL_DATA = "ARCHIVAL_DATA"
+
+    #: A constant which can be used with the key_type property of a StorageWorkRequest.
+    #: This constant has a value of "ALL"
+    KEY_TYPE_ALL = "ALL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new StorageWorkRequest object with values from keyword arguments.
@@ -148,9 +168,19 @@ class StorageWorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this StorageWorkRequest.
-            Allowed values for this property are: "OFFBOARD_TENANCY", "PURGE_STORAGE_DATA", "RECALL_ARCHIVED_STORAGE_DATA", "RELEASE_RECALLED_STORAGE_DATA", "ARCHIVE_STORAGE_DATA", "CLEANUP_ARCHIVAL_STORAGE_DATA", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OFFBOARD_TENANCY", "PURGE_STORAGE_DATA", "RECALL_ARCHIVED_STORAGE_DATA", "RELEASE_RECALLED_STORAGE_DATA", "ARCHIVE_STORAGE_DATA", "CLEANUP_ARCHIVAL_STORAGE_DATA", "ENCRYPT_ACTIVE_DATA", "ENCRYPT_ARCHIVAL_DATA", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
+
+        :param key_id:
+            The value to assign to the key_id property of this StorageWorkRequest.
+        :type key_id: str
+
+        :param key_type:
+            The value to assign to the key_type property of this StorageWorkRequest.
+            Allowed values for this property are: "ACTIVE_DATA", "ARCHIVAL_DATA", "ALL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type key_type: str
 
         """
         self.swagger_types = {
@@ -172,7 +202,9 @@ class StorageWorkRequest(object):
             'policy_id': 'str',
             'storage_usage_in_bytes': 'int',
             'compartment_id_in_subtree': 'bool',
-            'operation_type': 'str'
+            'operation_type': 'str',
+            'key_id': 'str',
+            'key_type': 'str'
         }
 
         self.attribute_map = {
@@ -194,7 +226,9 @@ class StorageWorkRequest(object):
             'policy_id': 'policyId',
             'storage_usage_in_bytes': 'storageUsageInBytes',
             'compartment_id_in_subtree': 'compartmentIdInSubtree',
-            'operation_type': 'operationType'
+            'operation_type': 'operationType',
+            'key_id': 'keyId',
+            'key_type': 'keyType'
         }
 
         self._id = None
@@ -216,6 +250,8 @@ class StorageWorkRequest(object):
         self._storage_usage_in_bytes = None
         self._compartment_id_in_subtree = None
         self._operation_type = None
+        self._key_id = None
+        self._key_type = None
 
     @property
     def id(self):
@@ -244,7 +280,7 @@ class StorageWorkRequest(object):
     @property
     def compartment_id(self):
         """
-        **[Required]** Gets the compartment_id of this StorageWorkRequest.
+        Gets the compartment_id of this StorageWorkRequest.
         Compartment Identifier `OCID]`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
@@ -446,7 +482,7 @@ class StorageWorkRequest(object):
     @property
     def time_data_ended(self):
         """
-        **[Required]** Gets the time_data_ended of this StorageWorkRequest.
+        Gets the time_data_ended of this StorageWorkRequest.
         This is the end of the time interval
 
 
@@ -494,7 +530,7 @@ class StorageWorkRequest(object):
     @property
     def data_type(self):
         """
-        **[Required]** Gets the data_type of this StorageWorkRequest.
+        Gets the data_type of this StorageWorkRequest.
         Thie is the type of data to be purged
 
         Allowed values for this property are: "LOG", "LOOKUP", 'UNKNOWN_ENUM_VALUE'.
@@ -671,7 +707,7 @@ class StorageWorkRequest(object):
         **[Required]** Gets the operation_type of this StorageWorkRequest.
         This is the type of the work request.
 
-        Allowed values for this property are: "OFFBOARD_TENANCY", "PURGE_STORAGE_DATA", "RECALL_ARCHIVED_STORAGE_DATA", "RELEASE_RECALLED_STORAGE_DATA", "ARCHIVE_STORAGE_DATA", "CLEANUP_ARCHIVAL_STORAGE_DATA", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OFFBOARD_TENANCY", "PURGE_STORAGE_DATA", "RECALL_ARCHIVED_STORAGE_DATA", "RELEASE_RECALLED_STORAGE_DATA", "ARCHIVE_STORAGE_DATA", "CLEANUP_ARCHIVAL_STORAGE_DATA", "ENCRYPT_ACTIVE_DATA", "ENCRYPT_ARCHIVAL_DATA", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -690,10 +726,64 @@ class StorageWorkRequest(object):
         :param operation_type: The operation_type of this StorageWorkRequest.
         :type: str
         """
-        allowed_values = ["OFFBOARD_TENANCY", "PURGE_STORAGE_DATA", "RECALL_ARCHIVED_STORAGE_DATA", "RELEASE_RECALLED_STORAGE_DATA", "ARCHIVE_STORAGE_DATA", "CLEANUP_ARCHIVAL_STORAGE_DATA"]
+        allowed_values = ["OFFBOARD_TENANCY", "PURGE_STORAGE_DATA", "RECALL_ARCHIVED_STORAGE_DATA", "RELEASE_RECALLED_STORAGE_DATA", "ARCHIVE_STORAGE_DATA", "CLEANUP_ARCHIVAL_STORAGE_DATA", "ENCRYPT_ACTIVE_DATA", "ENCRYPT_ARCHIVAL_DATA"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
+
+    @property
+    def key_id(self):
+        """
+        Gets the key_id of this StorageWorkRequest.
+        This is the key ID for encryption key.
+
+
+        :return: The key_id of this StorageWorkRequest.
+        :rtype: str
+        """
+        return self._key_id
+
+    @key_id.setter
+    def key_id(self, key_id):
+        """
+        Sets the key_id of this StorageWorkRequest.
+        This is the key ID for encryption key.
+
+
+        :param key_id: The key_id of this StorageWorkRequest.
+        :type: str
+        """
+        self._key_id = key_id
+
+    @property
+    def key_type(self):
+        """
+        Gets the key_type of this StorageWorkRequest.
+        The type of customer encryption key. It can be archival, active or all.
+
+        Allowed values for this property are: "ACTIVE_DATA", "ARCHIVAL_DATA", "ALL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The key_type of this StorageWorkRequest.
+        :rtype: str
+        """
+        return self._key_type
+
+    @key_type.setter
+    def key_type(self, key_type):
+        """
+        Sets the key_type of this StorageWorkRequest.
+        The type of customer encryption key. It can be archival, active or all.
+
+
+        :param key_type: The key_type of this StorageWorkRequest.
+        :type: str
+        """
+        allowed_values = ["ACTIVE_DATA", "ARCHIVAL_DATA", "ALL"]
+        if not value_allowed_none_or_none_sentinel(key_type, allowed_values):
+            key_type = 'UNKNOWN_ENUM_VALUE'
+        self._key_type = key_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -158,7 +158,7 @@ class DisasterRecoveryClient(object):
         resource_path = "/drProtectionGroups/{drProtectionGroupId}/actions/associate"
         method = "POST"
         operation_name = "associate_dr_protection_group"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/AssociateDrProtectionGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -274,7 +274,7 @@ class DisasterRecoveryClient(object):
         resource_path = "/drPlanExecutions/{drPlanExecutionId}/actions/cancel"
         method = "POST"
         operation_name = "cancel_dr_plan_execution"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/CancelDrPlanExecution"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -380,7 +380,7 @@ class DisasterRecoveryClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
         operation_name = "cancel_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/WorkRequest/CancelWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -491,7 +491,7 @@ class DisasterRecoveryClient(object):
         resource_path = "/drProtectionGroups/{drProtectionGroupId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_dr_protection_group_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/ChangeDrProtectionGroupCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -595,7 +595,7 @@ class DisasterRecoveryClient(object):
         resource_path = "/drPlans"
         method = "POST"
         operation_name = "create_dr_plan"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/CreateDrPlan"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -687,7 +687,7 @@ class DisasterRecoveryClient(object):
         resource_path = "/drPlanExecutions"
         method = "POST"
         operation_name = "create_dr_plan_execution"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/CreateDrPlanExecution"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -779,7 +779,7 @@ class DisasterRecoveryClient(object):
         resource_path = "/drProtectionGroups"
         method = "POST"
         operation_name = "create_dr_protection_group"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/CreateDrProtectionGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -873,7 +873,7 @@ class DisasterRecoveryClient(object):
         resource_path = "/drPlans/{drPlanId}"
         method = "DELETE"
         operation_name = "delete_dr_plan"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/DeleteDrPlan"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -974,7 +974,7 @@ class DisasterRecoveryClient(object):
         resource_path = "/drPlanExecutions/{drPlanExecutionId}"
         method = "DELETE"
         operation_name = "delete_dr_plan_execution"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/DeleteDrPlanExecution"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1075,7 +1075,7 @@ class DisasterRecoveryClient(object):
         resource_path = "/drProtectionGroups/{drProtectionGroupId}"
         method = "DELETE"
         operation_name = "delete_dr_protection_group"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/DeleteDrProtectionGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1187,7 +1187,7 @@ class DisasterRecoveryClient(object):
         resource_path = "/drProtectionGroups/{drProtectionGroupId}/actions/disassociate"
         method = "POST"
         operation_name = "disassociate_dr_protection_group"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/DisassociateDrProtectionGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1286,7 +1286,7 @@ class DisasterRecoveryClient(object):
         resource_path = "/drPlans/{drPlanId}"
         method = "GET"
         operation_name = "get_dr_plan"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/GetDrPlan"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1380,7 +1380,7 @@ class DisasterRecoveryClient(object):
         resource_path = "/drPlanExecutions/{drPlanExecutionId}"
         method = "GET"
         operation_name = "get_dr_plan_execution"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/GetDrPlanExecution"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1474,7 +1474,7 @@ class DisasterRecoveryClient(object):
         resource_path = "/drProtectionGroups/{drProtectionGroupId}"
         method = "GET"
         operation_name = "get_dr_protection_group"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/GetDrProtectionGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1568,7 +1568,7 @@ class DisasterRecoveryClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1679,7 +1679,7 @@ class DisasterRecoveryClient(object):
         resource_path = "/drPlanExecutions/{drPlanExecutionId}/actions/ignore"
         method = "POST"
         operation_name = "ignore_dr_plan_execution"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/IgnoreDrPlanExecution"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1832,7 +1832,7 @@ class DisasterRecoveryClient(object):
         resource_path = "/drPlanExecutions"
         method = "GET"
         operation_name = "list_dr_plan_executions"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/ListDrPlanExecutions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2019,7 +2019,7 @@ class DisasterRecoveryClient(object):
         resource_path = "/drPlans"
         method = "GET"
         operation_name = "list_dr_plans"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/ListDrPlans"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2201,7 +2201,7 @@ class DisasterRecoveryClient(object):
         resource_path = "/drProtectionGroups"
         method = "GET"
         operation_name = "list_dr_protection_groups"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/ListDrProtectionGroups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2357,7 +2357,7 @@ class DisasterRecoveryClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2511,7 +2511,7 @@ class DisasterRecoveryClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2679,7 +2679,7 @@ class DisasterRecoveryClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2821,7 +2821,7 @@ class DisasterRecoveryClient(object):
         resource_path = "/drPlanExecutions/{drPlanExecutionId}/actions/pause"
         method = "POST"
         operation_name = "pause_dr_plan_execution"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/PauseDrPlanExecution"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2937,7 +2937,7 @@ class DisasterRecoveryClient(object):
         resource_path = "/drPlanExecutions/{drPlanExecutionId}/actions/resume"
         method = "POST"
         operation_name = "resume_dr_plan_execution"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/ResumeDrPlanExecution"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3053,7 +3053,7 @@ class DisasterRecoveryClient(object):
         resource_path = "/drPlanExecutions/{drPlanExecutionId}/actions/retry"
         method = "POST"
         operation_name = "retry_dr_plan_execution"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/RetryDrPlanExecution"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3162,7 +3162,7 @@ class DisasterRecoveryClient(object):
         resource_path = "/drPlans/{drPlanId}"
         method = "PUT"
         operation_name = "update_dr_plan"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/UpdateDrPlan"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3268,7 +3268,7 @@ class DisasterRecoveryClient(object):
         resource_path = "/drPlanExecutions/{drPlanExecutionId}"
         method = "PUT"
         operation_name = "update_dr_plan_execution"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlanExecution/UpdateDrPlanExecution"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3374,7 +3374,7 @@ class DisasterRecoveryClient(object):
         resource_path = "/drProtectionGroups/{drProtectionGroupId}"
         method = "PUT"
         operation_name = "update_dr_protection_group"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/UpdateDrProtectionGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3487,7 +3487,7 @@ class DisasterRecoveryClient(object):
         resource_path = "/drProtectionGroups/{drProtectionGroupId}/actions/updateRole"
         method = "POST"
         operation_name = "update_dr_protection_group_role"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrProtectionGroup/UpdateDrProtectionGroupRole"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

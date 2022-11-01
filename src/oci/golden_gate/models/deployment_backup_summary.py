@@ -392,7 +392,8 @@ class DeploymentBackupSummary(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this DeploymentBackupSummary.
-        Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+        Describes the object's current state in detail. For example, it can be used to provide
+        actionable information for a resource in a Failed state.
 
 
         :return: The lifecycle_details of this DeploymentBackupSummary.
@@ -404,7 +405,8 @@ class DeploymentBackupSummary(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this DeploymentBackupSummary.
-        Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+        Describes the object's current state in detail. For example, it can be used to provide
+        actionable information for a resource in a Failed state.
 
 
         :param lifecycle_details: The lifecycle_details of this DeploymentBackupSummary.
@@ -416,7 +418,8 @@ class DeploymentBackupSummary(object):
     def time_of_backup(self):
         """
         Gets the time_of_backup of this DeploymentBackupSummary.
-        The time of the resource backup. The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+        The time of the resource backup. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -430,7 +433,8 @@ class DeploymentBackupSummary(object):
     def time_of_backup(self, time_of_backup):
         """
         Sets the time_of_backup of this DeploymentBackupSummary.
-        The time of the resource backup. The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+        The time of the resource backup. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -444,7 +448,8 @@ class DeploymentBackupSummary(object):
     def time_backup_finished(self):
         """
         Gets the time_backup_finished of this DeploymentBackupSummary.
-        The time of the resource backup finish. The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+        The time of the resource backup finish. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -458,7 +463,8 @@ class DeploymentBackupSummary(object):
     def time_backup_finished(self, time_backup_finished):
         """
         Sets the time_backup_finished of this DeploymentBackupSummary.
-        The time of the resource backup finish. The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+        The time of the resource backup finish. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -622,7 +628,8 @@ class DeploymentBackupSummary(object):
     def time_created(self):
         """
         Gets the time_created of this DeploymentBackupSummary.
-        The time the resource was created. The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+        The time the resource was created. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -636,7 +643,8 @@ class DeploymentBackupSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this DeploymentBackupSummary.
-        The time the resource was created. The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+        The time the resource was created. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -650,7 +658,8 @@ class DeploymentBackupSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this DeploymentBackupSummary.
-        The time the resource was last updated. The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+        The time the resource was last updated. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -664,7 +673,8 @@ class DeploymentBackupSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this DeploymentBackupSummary.
-        The time the resource was last updated. The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+        The time the resource was last updated. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -678,7 +688,9 @@ class DeploymentBackupSummary(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this DeploymentBackupSummary.
-        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+        A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+        for cross-compatibility only.
+
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -691,7 +703,9 @@ class DeploymentBackupSummary(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this DeploymentBackupSummary.
-        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+        A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+        for cross-compatibility only.
+
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -705,6 +719,7 @@ class DeploymentBackupSummary(object):
         """
         Gets the defined_tags of this DeploymentBackupSummary.
         Tags defined for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
@@ -718,6 +733,7 @@ class DeploymentBackupSummary(object):
         """
         Sets the defined_tags of this DeploymentBackupSummary.
         Tags defined for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
@@ -730,7 +746,10 @@ class DeploymentBackupSummary(object):
     def system_tags(self):
         """
         Gets the system_tags of this DeploymentBackupSummary.
-        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see `Resource Tags`__.
+        The system tags associated with this resource, if any. The system tags are set by Oracle
+        Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more
+        information, see `Resource Tags`__.
+
         Example: `{orcl-cloud: {free-tier-retain: true}}`
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
@@ -745,7 +764,10 @@ class DeploymentBackupSummary(object):
     def system_tags(self, system_tags):
         """
         Sets the system_tags of this DeploymentBackupSummary.
-        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see `Resource Tags`__.
+        The system tags associated with this resource, if any. The system tags are set by Oracle
+        Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more
+        information, see `Resource Tags`__.
+
         Example: `{orcl-cloud: {free-tier-retain: true}}`
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm

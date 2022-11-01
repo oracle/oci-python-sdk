@@ -466,7 +466,7 @@ class AutonomousDatabaseDataguardAssociation(object):
     def protection_mode(self):
         """
         Gets the protection_mode of this AutonomousDatabaseDataguardAssociation.
-        The protection mode of this Data Guard association. For more information, see
+        The protection mode of this Autonomous Data Guard association. For more information, see
         `Oracle Data Guard Protection Modes`__
         in the Oracle Data Guard documentation.
 
@@ -485,7 +485,7 @@ class AutonomousDatabaseDataguardAssociation(object):
     def protection_mode(self, protection_mode):
         """
         Sets the protection_mode of this AutonomousDatabaseDataguardAssociation.
-        The protection mode of this Data Guard association. For more information, see
+        The protection mode of this Autonomous Data Guard association. For more information, see
         `Oracle Data Guard Protection Modes`__
         in the Oracle Data Guard documentation.
 

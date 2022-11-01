@@ -45,7 +45,7 @@ class CreateAutonomousDatabaseBackupDetails(object):
     @property
     def display_name(self):
         """
-        **[Required]** Gets the display_name of this CreateAutonomousDatabaseBackupDetails.
+        Gets the display_name of this CreateAutonomousDatabaseBackupDetails.
         The user-friendly name for the backup. The name does not have to be unique.
 
 

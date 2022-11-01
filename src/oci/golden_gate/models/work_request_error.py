@@ -51,7 +51,8 @@ class WorkRequestError(object):
     def code(self):
         """
         **[Required]** Gets the code of this WorkRequestError.
-        A machine-usable code for the error that occured. Error codes are listed on (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
+        A machine-usable code for the error that occured. Error codes are listed on
+        (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
 
 
         :return: The code of this WorkRequestError.
@@ -63,7 +64,8 @@ class WorkRequestError(object):
     def code(self, code):
         """
         Sets the code of this WorkRequestError.
-        A machine-usable code for the error that occured. Error codes are listed on (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
+        A machine-usable code for the error that occured. Error codes are listed on
+        (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
 
 
         :param code: The code of this WorkRequestError.
@@ -99,7 +101,8 @@ class WorkRequestError(object):
     def timestamp(self):
         """
         **[Required]** Gets the timestamp of this WorkRequestError.
-        The time the error occured.  The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+        The time the error occured.  The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -113,7 +116,8 @@ class WorkRequestError(object):
     def timestamp(self, timestamp):
         """
         Sets the timestamp of this WorkRequestError.
-        The time the error occured.  The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+        The time the error occured.  The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
 
         __ https://tools.ietf.org/html/rfc3339
 

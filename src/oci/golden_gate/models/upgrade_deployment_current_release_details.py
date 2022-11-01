@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpgradeDeploymentCurrentReleaseDetails(UpgradeDeploymentDetails):
     """
-    Definiton of the additional attributes for a Current Release upgrade.
+    Definition of the additional attributes for a Current Release upgrade.
     """
 
     def __init__(self, **kwargs):
