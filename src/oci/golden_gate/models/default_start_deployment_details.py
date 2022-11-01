@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DefaultStartDeploymentDetails(StartDeploymentDetails):
     """
-    Definiton of the additional attributes for default deployment start.
+    Definition of the additional attributes for default deployment start.
     """
 
     def __init__(self, **kwargs):

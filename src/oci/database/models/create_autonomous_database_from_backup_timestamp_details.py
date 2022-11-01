@@ -200,6 +200,10 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
             Allowed values for this property are: "FULL", "METADATA"
         :type clone_type: str
 
+        :param use_latest_available_backup_time_stamp:
+            The value to assign to the use_latest_available_backup_time_stamp property of this CreateAutonomousDatabaseFromBackupTimestampDetails.
+        :type use_latest_available_backup_time_stamp: bool
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -243,7 +247,8 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
             'database_edition': 'str',
             'autonomous_database_id': 'str',
             'timestamp': 'datetime',
-            'clone_type': 'str'
+            'clone_type': 'str',
+            'use_latest_available_backup_time_stamp': 'bool'
         }
 
         self.attribute_map = {
@@ -288,7 +293,8 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
             'database_edition': 'databaseEdition',
             'autonomous_database_id': 'autonomousDatabaseId',
             'timestamp': 'timestamp',
-            'clone_type': 'cloneType'
+            'clone_type': 'cloneType',
+            'use_latest_available_backup_time_stamp': 'useLatestAvailableBackupTimeStamp'
         }
 
         self._compartment_id = None
@@ -333,6 +339,7 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
         self._autonomous_database_id = None
         self._timestamp = None
         self._clone_type = None
+        self._use_latest_available_backup_time_stamp = None
         self._source = 'BACKUP_FROM_TIMESTAMP'
 
     @property
@@ -366,7 +373,7 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
     @property
     def timestamp(self):
         """
-        **[Required]** Gets the timestamp of this CreateAutonomousDatabaseFromBackupTimestampDetails.
+        Gets the timestamp of this CreateAutonomousDatabaseFromBackupTimestampDetails.
         The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
 
 
@@ -418,6 +425,30 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
                 .format(allowed_values)
             )
         self._clone_type = clone_type
+
+    @property
+    def use_latest_available_backup_time_stamp(self):
+        """
+        Gets the use_latest_available_backup_time_stamp of this CreateAutonomousDatabaseFromBackupTimestampDetails.
+        Clone from latest available backup timestamp.
+
+
+        :return: The use_latest_available_backup_time_stamp of this CreateAutonomousDatabaseFromBackupTimestampDetails.
+        :rtype: bool
+        """
+        return self._use_latest_available_backup_time_stamp
+
+    @use_latest_available_backup_time_stamp.setter
+    def use_latest_available_backup_time_stamp(self, use_latest_available_backup_time_stamp):
+        """
+        Sets the use_latest_available_backup_time_stamp of this CreateAutonomousDatabaseFromBackupTimestampDetails.
+        Clone from latest available backup timestamp.
+
+
+        :param use_latest_available_backup_time_stamp: The use_latest_available_backup_time_stamp of this CreateAutonomousDatabaseFromBackupTimestampDetails.
+        :type: bool
+        """
+        self._use_latest_available_backup_time_stamp = use_latest_available_backup_time_stamp
 
     def __repr__(self):
         return formatted_flat_dict(self)

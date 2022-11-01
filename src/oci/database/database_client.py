@@ -24061,6 +24061,7 @@ class DatabaseClient(object):
     def remote_clone_pluggable_database(self, remote_clone_pluggable_database_details, pluggable_database_id, **kwargs):
         """
         Clones a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone.
+        For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone.
 
 
         :param oci.database.models.RemoteClonePluggableDatabaseDetails remote_clone_pluggable_database_details: (required)
@@ -26849,7 +26850,7 @@ class DatabaseClient(object):
 
     def update_autonomous_container_database(self, autonomous_container_database_id, update_autonomous_container_database_details, **kwargs):
         """
-        Updates the properties of an Autonomous Container Database, such as the OCPU core count and storage size.
+        Updates the properties of an Autonomous Container Database, such as display name, maintenance preference, backup retention, and tags.
 
 
         :param str autonomous_container_database_id: (required)

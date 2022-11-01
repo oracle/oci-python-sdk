@@ -101,6 +101,18 @@ class Deployment(object):
     #: This constant has a value of "OGG"
     DEPLOYMENT_TYPE_OGG = "OGG"
 
+    #: A constant which can be used with the deployment_type property of a Deployment.
+    #: This constant has a value of "DATABASE_ORACLE"
+    DEPLOYMENT_TYPE_DATABASE_ORACLE = "DATABASE_ORACLE"
+
+    #: A constant which can be used with the deployment_type property of a Deployment.
+    #: This constant has a value of "BIGDATA"
+    DEPLOYMENT_TYPE_BIGDATA = "BIGDATA"
+
+    #: A constant which can be used with the deployment_type property of a Deployment.
+    #: This constant has a value of "DATABASE_MYSQL"
+    DEPLOYMENT_TYPE_DATABASE_MYSQL = "DATABASE_MYSQL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Deployment object with values from keyword arguments.
@@ -226,7 +238,7 @@ class Deployment(object):
 
         :param deployment_type:
             The value to assign to the deployment_type property of this Deployment.
-            Allowed values for this property are: "OGG", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MYSQL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type deployment_type: str
 
@@ -468,7 +480,8 @@ class Deployment(object):
     def time_created(self):
         """
         Gets the time_created of this Deployment.
-        The time the resource was created. The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+        The time the resource was created. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -482,7 +495,8 @@ class Deployment(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Deployment.
-        The time the resource was created. The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+        The time the resource was created. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -496,7 +510,8 @@ class Deployment(object):
     def time_updated(self):
         """
         Gets the time_updated of this Deployment.
-        The time the resource was last updated. The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+        The time the resource was last updated. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -510,7 +525,8 @@ class Deployment(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this Deployment.
-        The time the resource was last updated. The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+        The time the resource was last updated. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -584,7 +600,8 @@ class Deployment(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this Deployment.
-        Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+        Describes the object's current state in detail. For example, it can be used to provide
+        actionable information for a resource in a Failed state.
 
 
         :return: The lifecycle_details of this Deployment.
@@ -596,7 +613,8 @@ class Deployment(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this Deployment.
-        Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+        Describes the object's current state in detail. For example, it can be used to provide
+        actionable information for a resource in a Failed state.
 
 
         :param lifecycle_details: The lifecycle_details of this Deployment.
@@ -608,7 +626,9 @@ class Deployment(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this Deployment.
-        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+        A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+        for cross-compatibility only.
+
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -621,7 +641,9 @@ class Deployment(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this Deployment.
-        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+        A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+        for cross-compatibility only.
+
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -635,6 +657,7 @@ class Deployment(object):
         """
         Gets the defined_tags of this Deployment.
         Tags defined for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
@@ -648,6 +671,7 @@ class Deployment(object):
         """
         Sets the defined_tags of this Deployment.
         Tags defined for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
@@ -814,9 +838,7 @@ class Deployment(object):
     def nsg_ids(self):
         """
         Gets the nsg_ids of this Deployment.
-        An array of `Network Security Group`__ OCIDs used to define network access for a deployment.
-
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/networksecuritygroups.htm
+        An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 
 
         :return: The nsg_ids of this Deployment.
@@ -828,9 +850,7 @@ class Deployment(object):
     def nsg_ids(self, nsg_ids):
         """
         Sets the nsg_ids of this Deployment.
-        An array of `Network Security Group`__ OCIDs used to define network access for a deployment.
-
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/networksecuritygroups.htm
+        An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 
 
         :param nsg_ids: The nsg_ids of this Deployment.
@@ -890,7 +910,8 @@ class Deployment(object):
     def private_ip_address(self):
         """
         Gets the private_ip_address of this Deployment.
-        The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
+        The private IP address in the customer's VCN representing the access point for the
+        associated endpoint service in the GoldenGate service VCN.
 
 
         :return: The private_ip_address of this Deployment.
@@ -902,7 +923,8 @@ class Deployment(object):
     def private_ip_address(self, private_ip_address):
         """
         Sets the private_ip_address of this Deployment.
-        The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
+        The private IP address in the customer's VCN representing the access point for the
+        associated endpoint service in the GoldenGate service VCN.
 
 
         :param private_ip_address: The private_ip_address of this Deployment.
@@ -938,7 +960,10 @@ class Deployment(object):
     def system_tags(self):
         """
         Gets the system_tags of this Deployment.
-        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see `Resource Tags`__.
+        The system tags associated with this resource, if any. The system tags are set by Oracle
+        Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more
+        information, see `Resource Tags`__.
+
         Example: `{orcl-cloud: {free-tier-retain: true}}`
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
@@ -953,7 +978,10 @@ class Deployment(object):
     def system_tags(self, system_tags):
         """
         Sets the system_tags of this Deployment.
-        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see `Resource Tags`__.
+        The system tags associated with this resource, if any. The system tags are set by Oracle
+        Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more
+        information, see `Resource Tags`__.
+
         Example: `{orcl-cloud: {free-tier-retain: true}}`
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
@@ -992,7 +1020,10 @@ class Deployment(object):
     def time_upgrade_required(self):
         """
         Gets the time_upgrade_required of this Deployment.
-        The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+        The date the existing version in use will no longer be considered as usable
+        and an upgrade will be required.  This date is typically 6 months after the
+        version was released for use by GGS.  The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -1006,7 +1037,10 @@ class Deployment(object):
     def time_upgrade_required(self, time_upgrade_required):
         """
         Sets the time_upgrade_required of this Deployment.
-        The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+        The date the existing version in use will no longer be considered as usable
+        and an upgrade will be required.  This date is typically 6 months after the
+        version was released for use by GGS.  The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -1068,10 +1102,11 @@ class Deployment(object):
     def deployment_type(self):
         """
         **[Required]** Gets the deployment_type of this Deployment.
-        The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged
-              in favor of the equivalent DATABASE_ORACLE value.
+        The type of deployment, the value determines the exact 'type' of service executed in the Deployment.
+        NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged
+              in favor of the equivalent 'DATABASE_ORACLE' value.
 
-        Allowed values for this property are: "OGG", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MYSQL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -1084,14 +1119,15 @@ class Deployment(object):
     def deployment_type(self, deployment_type):
         """
         Sets the deployment_type of this Deployment.
-        The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged
-              in favor of the equivalent DATABASE_ORACLE value.
+        The type of deployment, the value determines the exact 'type' of service executed in the Deployment.
+        NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged
+              in favor of the equivalent 'DATABASE_ORACLE' value.
 
 
         :param deployment_type: The deployment_type of this Deployment.
         :type: str
         """
-        allowed_values = ["OGG"]
+        allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MYSQL"]
         if not value_allowed_none_or_none_sentinel(deployment_type, allowed_values):
             deployment_type = 'UNKNOWN_ENUM_VALUE'
         self._deployment_type = deployment_type

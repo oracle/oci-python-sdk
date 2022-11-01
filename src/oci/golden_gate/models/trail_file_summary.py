@@ -165,7 +165,8 @@ class TrailFileSummary(object):
     def time_last_updated(self):
         """
         Gets the time_last_updated of this TrailFileSummary.
-        The time the resource was last updated. The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+        The time the resource was last updated. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -179,7 +180,8 @@ class TrailFileSummary(object):
     def time_last_updated(self, time_last_updated):
         """
         Sets the time_last_updated of this TrailFileSummary.
-        The time the resource was last updated. The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+        The time the resource was last updated. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
 
         __ https://tools.ietf.org/html/rfc3339
 

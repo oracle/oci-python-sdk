@@ -673,7 +673,7 @@ class AutonomousVmClusterSummary(object):
     def cpu_core_count_per_node(self):
         """
         Gets the cpu_core_count_per_node of this AutonomousVmClusterSummary.
-        The number of OCPU cores enabled per VM cluster node.
+        The number of CPU cores enabled per VM cluster node.
 
 
         :return: The cpu_core_count_per_node of this AutonomousVmClusterSummary.
@@ -685,7 +685,7 @@ class AutonomousVmClusterSummary(object):
     def cpu_core_count_per_node(self, cpu_core_count_per_node):
         """
         Sets the cpu_core_count_per_node of this AutonomousVmClusterSummary.
-        The number of OCPU cores enabled per VM cluster node.
+        The number of CPU cores enabled per VM cluster node.
 
 
         :param cpu_core_count_per_node: The cpu_core_count_per_node of this AutonomousVmClusterSummary.

@@ -35,17 +35,15 @@ Since ``config`` is a dict, you can also build it manually and check it with
 
 .. code-block:: python
 
-    import os
-    from myproject import testrunner
-    user_ocid = os.environ["USER_OCID"]
-    key_file = key_for(user_ocid)
+    # Please check https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm
+    # for help on how to generate a key-pair and calculate the key fingerprint.
 
     config = {
-        "user": user_ocid,
-        "key_file": key_file,
-        "fingerprint": calc_fingerprint(key_file),
-        "tenancy": testrunner.tenancy,
-        "region": testrunner.region
+        "user": "<your_user_ocid>",
+        "key_file": "<full_path_to_your_private_key>",
+        "fingerprint": "<fingerprint_of_your_public_key>",
+        "tenancy": "<your_tenancy_ocid>",
+        "region": "<your_oci_region>"
     }
 
     from oci.config import validate_config
@@ -55,16 +53,15 @@ If you want to use the private key which is not in the key file, key_content can
 
 .. code-block:: python
 
-    import os
-    from myproject import testrunner
-    user_ocid = os.environ["USER_OCID"]
+    # Please check https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm
+    # for help on how to generate a key-pair and calculate the key fingerprint.
 
     config = {
-        "user": user_ocid,
-        "key_content": testrunner.key_content,
-        "fingerprint": calc_fingerprint(key_content),
-        "tenancy": testrunner.tenancy,
-        "region": testrunner.region
+        "user": "<your_user_ocid>",
+        "key_content": "<content_of_the_private_key_not_in_key_file>",
+        "fingerprint": "<fingerprint_of_your_public_key>",
+        "tenancy": "<your_tenancy_ocid>",
+        "region": "<your_oci_region>"
     }
 
     from oci.config import validate_config
@@ -73,7 +70,7 @@ If you want to use the private key which is not in the key file, key_content can
 .. seealso::
 
     The `SDK and Tool Configuration`__ page has a full description of the required and supported options.
-    These are supported across the SDKs, so if you've already set this file up for the Ruby or Java SDKs,
+    These are supported across the OCI SDKs, so if you've already set this file up for any of the SDKs,
     you're all set.
 
     __ https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm

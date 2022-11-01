@@ -44,7 +44,9 @@ class UpdateDeploymentBackupDetails(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this UpdateDeploymentBackupDetails.
-        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+        A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+        for cross-compatibility only.
+
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -57,7 +59,9 @@ class UpdateDeploymentBackupDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this UpdateDeploymentBackupDetails.
-        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+        A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+        for cross-compatibility only.
+
         Example: `{\"bar-key\": \"value\"}`
 
 
@@ -71,6 +75,7 @@ class UpdateDeploymentBackupDetails(object):
         """
         Gets the defined_tags of this UpdateDeploymentBackupDetails.
         Tags defined for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
@@ -84,6 +89,7 @@ class UpdateDeploymentBackupDetails(object):
         """
         Sets the defined_tags of this UpdateDeploymentBackupDetails.
         Tags defined for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 

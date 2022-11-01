@@ -30,6 +30,7 @@ Log Analytics
     oci.log_analytics.models.AnomalyCommandDescriptor
     oci.log_analytics.models.ArchivingConfiguration
     oci.log_analytics.models.Argument
+    oci.log_analytics.models.AssignEncryptionKeyDetails
     oci.log_analytics.models.AssociableEntity
     oci.log_analytics.models.AssociableEntityCollection
     oci.log_analytics.models.AssociationSummaryReport
@@ -86,6 +87,8 @@ Log Analytics
     oci.log_analytics.models.EfdRegexResult
     oci.log_analytics.models.EnableAutoAssociationDetail
     oci.log_analytics.models.EnableAutoAssociationDetails
+    oci.log_analytics.models.EncryptionKeyInfoCollection
+    oci.log_analytics.models.EncryptionKeyInfoSummary
     oci.log_analytics.models.EntityTypeProperty
     oci.log_analytics.models.ErrorDetails
     oci.log_analytics.models.EstimatePurgeDataSizeDetails
