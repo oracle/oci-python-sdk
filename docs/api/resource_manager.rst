@@ -21,6 +21,8 @@ Resource Manager
     oci.resource_manager.models.ApplyJobOperationDetails
     oci.resource_manager.models.ApplyJobOperationDetailsSummary
     oci.resource_manager.models.ApplyJobPlanResolution
+    oci.resource_manager.models.ApplyRollbackJobOperationDetails
+    oci.resource_manager.models.ApplyRollbackJobOperationDetailsSummary
     oci.resource_manager.models.CancellationDetails
     oci.resource_manager.models.ChangeConfigurationSourceProviderCompartmentDetails
     oci.resource_manager.models.ChangePrivateEndpointCompartmentDetails
@@ -33,6 +35,7 @@ Resource Manager
     oci.resource_manager.models.ConfigurationSourceProviderCollection
     oci.resource_manager.models.ConfigurationSourceProviderSummary
     oci.resource_manager.models.CreateApplyJobOperationDetails
+    oci.resource_manager.models.CreateApplyRollbackJobOperationDetails
     oci.resource_manager.models.CreateCompartmentConfigSourceDetails
     oci.resource_manager.models.CreateConfigSourceDetails
     oci.resource_manager.models.CreateConfigurationSourceProviderDetails
@@ -45,6 +48,7 @@ Resource Manager
     oci.resource_manager.models.CreateJobOperationDetails
     oci.resource_manager.models.CreateObjectStorageConfigSourceDetails
     oci.resource_manager.models.CreatePlanJobOperationDetails
+    oci.resource_manager.models.CreatePlanRollbackJobOperationDetails
     oci.resource_manager.models.CreatePrivateEndpointDetails
     oci.resource_manager.models.CreateStackDetails
     oci.resource_manager.models.CreateStackTemplateConfigSourceDetails
@@ -74,6 +78,8 @@ Resource Manager
     oci.resource_manager.models.ObjectStorageConfigSourceRecord
     oci.resource_manager.models.PlanJobOperationDetails
     oci.resource_manager.models.PlanJobOperationDetailsSummary
+    oci.resource_manager.models.PlanRollbackJobOperationDetails
+    oci.resource_manager.models.PlanRollbackJobOperationDetailsSummary
     oci.resource_manager.models.PrivateEndpoint
     oci.resource_manager.models.PrivateEndpointCollection
     oci.resource_manager.models.PrivateEndpointSummary

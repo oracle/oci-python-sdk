@@ -152,6 +152,22 @@ class CloudVmCluster(object):
             The value to assign to the ocpu_count property of this CloudVmCluster.
         :type ocpu_count: float
 
+        :param memory_size_in_gbs:
+            The value to assign to the memory_size_in_gbs property of this CloudVmCluster.
+        :type memory_size_in_gbs: int
+
+        :param db_node_storage_size_in_gbs:
+            The value to assign to the db_node_storage_size_in_gbs property of this CloudVmCluster.
+        :type db_node_storage_size_in_gbs: int
+
+        :param data_storage_size_in_tbs:
+            The value to assign to the data_storage_size_in_tbs property of this CloudVmCluster.
+        :type data_storage_size_in_tbs: float
+
+        :param db_servers:
+            The value to assign to the db_servers property of this CloudVmCluster.
+        :type db_servers: list[str]
+
         :param cluster_name:
             The value to assign to the cluster_name property of this CloudVmCluster.
         :type cluster_name: str
@@ -260,6 +276,10 @@ class CloudVmCluster(object):
             'domain': 'str',
             'cpu_core_count': 'int',
             'ocpu_count': 'float',
+            'memory_size_in_gbs': 'int',
+            'db_node_storage_size_in_gbs': 'int',
+            'data_storage_size_in_tbs': 'float',
+            'db_servers': 'list[str]',
             'cluster_name': 'str',
             'data_storage_percentage': 'int',
             'is_local_backup_enabled': 'bool',
@@ -305,6 +325,10 @@ class CloudVmCluster(object):
             'domain': 'domain',
             'cpu_core_count': 'cpuCoreCount',
             'ocpu_count': 'ocpuCount',
+            'memory_size_in_gbs': 'memorySizeInGBs',
+            'db_node_storage_size_in_gbs': 'dbNodeStorageSizeInGBs',
+            'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
+            'db_servers': 'dbServers',
             'cluster_name': 'clusterName',
             'data_storage_percentage': 'dataStoragePercentage',
             'is_local_backup_enabled': 'isLocalBackupEnabled',
@@ -349,6 +373,10 @@ class CloudVmCluster(object):
         self._domain = None
         self._cpu_core_count = None
         self._ocpu_count = None
+        self._memory_size_in_gbs = None
+        self._db_node_storage_size_in_gbs = None
+        self._data_storage_size_in_tbs = None
+        self._db_servers = None
         self._cluster_name = None
         self._data_storage_percentage = None
         self._is_local_backup_enabled = None
@@ -957,6 +985,102 @@ class CloudVmCluster(object):
         :type: float
         """
         self._ocpu_count = ocpu_count
+
+    @property
+    def memory_size_in_gbs(self):
+        """
+        Gets the memory_size_in_gbs of this CloudVmCluster.
+        The memory to be allocated in GBs.
+
+
+        :return: The memory_size_in_gbs of this CloudVmCluster.
+        :rtype: int
+        """
+        return self._memory_size_in_gbs
+
+    @memory_size_in_gbs.setter
+    def memory_size_in_gbs(self, memory_size_in_gbs):
+        """
+        Sets the memory_size_in_gbs of this CloudVmCluster.
+        The memory to be allocated in GBs.
+
+
+        :param memory_size_in_gbs: The memory_size_in_gbs of this CloudVmCluster.
+        :type: int
+        """
+        self._memory_size_in_gbs = memory_size_in_gbs
+
+    @property
+    def db_node_storage_size_in_gbs(self):
+        """
+        Gets the db_node_storage_size_in_gbs of this CloudVmCluster.
+        The local node storage to be allocated in GBs.
+
+
+        :return: The db_node_storage_size_in_gbs of this CloudVmCluster.
+        :rtype: int
+        """
+        return self._db_node_storage_size_in_gbs
+
+    @db_node_storage_size_in_gbs.setter
+    def db_node_storage_size_in_gbs(self, db_node_storage_size_in_gbs):
+        """
+        Sets the db_node_storage_size_in_gbs of this CloudVmCluster.
+        The local node storage to be allocated in GBs.
+
+
+        :param db_node_storage_size_in_gbs: The db_node_storage_size_in_gbs of this CloudVmCluster.
+        :type: int
+        """
+        self._db_node_storage_size_in_gbs = db_node_storage_size_in_gbs
+
+    @property
+    def data_storage_size_in_tbs(self):
+        """
+        Gets the data_storage_size_in_tbs of this CloudVmCluster.
+        The data disk group size to be allocated in TBs.
+
+
+        :return: The data_storage_size_in_tbs of this CloudVmCluster.
+        :rtype: float
+        """
+        return self._data_storage_size_in_tbs
+
+    @data_storage_size_in_tbs.setter
+    def data_storage_size_in_tbs(self, data_storage_size_in_tbs):
+        """
+        Sets the data_storage_size_in_tbs of this CloudVmCluster.
+        The data disk group size to be allocated in TBs.
+
+
+        :param data_storage_size_in_tbs: The data_storage_size_in_tbs of this CloudVmCluster.
+        :type: float
+        """
+        self._data_storage_size_in_tbs = data_storage_size_in_tbs
+
+    @property
+    def db_servers(self):
+        """
+        Gets the db_servers of this CloudVmCluster.
+        The list of Db servers.
+
+
+        :return: The db_servers of this CloudVmCluster.
+        :rtype: list[str]
+        """
+        return self._db_servers
+
+    @db_servers.setter
+    def db_servers(self, db_servers):
+        """
+        Sets the db_servers of this CloudVmCluster.
+        The list of Db servers.
+
+
+        :param db_servers: The db_servers of this CloudVmCluster.
+        :type: list[str]
+        """
+        self._db_servers = db_servers
 
     @property
     def cluster_name(self):

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateGitConfigSourceDetails(UpdateConfigSourceDetails):
     """
-    Updates property details for the configuration git information.
+    Update details for a Git configuration source.
     """
 
     def __init__(self, **kwargs):

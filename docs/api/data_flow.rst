@@ -36,6 +36,7 @@ Data Flow
     oci.data_flow.models.Run
     oci.data_flow.models.RunLogSummary
     oci.data_flow.models.RunSummary
+    oci.data_flow.models.Scan
     oci.data_flow.models.ShapeConfig
     oci.data_flow.models.Statement
     oci.data_flow.models.StatementCollection

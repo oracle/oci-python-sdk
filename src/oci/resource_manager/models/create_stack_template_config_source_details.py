@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateStackTemplateConfigSourceDetails(CreateConfigSourceDetails):
     """
-    The template to use as the source of the Terraform configuration.
+    Creation details for a template to use as the source of the Terraform configuration.
     """
 
     def __init__(self, **kwargs):

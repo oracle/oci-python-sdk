@@ -25,15 +25,19 @@ Adm
     oci.adm.models.ChangeVulnerabilityAuditCompartmentDetails
     oci.adm.models.CreateKnowledgeBaseDetails
     oci.adm.models.CreateVulnerabilityAuditDetails
+    oci.adm.models.ExternalResourceVulnerabilityAuditSource
     oci.adm.models.KnowledgeBase
     oci.adm.models.KnowledgeBaseCollection
     oci.adm.models.KnowledgeBaseSummary
+    oci.adm.models.OciResourceVulnerabilityAuditSource
+    oci.adm.models.UnknownSourceVulnerabilityAuditSource
     oci.adm.models.UpdateKnowledgeBaseDetails
     oci.adm.models.UpdateVulnerabilityAuditDetails
     oci.adm.models.Vulnerability
     oci.adm.models.VulnerabilityAudit
     oci.adm.models.VulnerabilityAuditCollection
     oci.adm.models.VulnerabilityAuditConfiguration
+    oci.adm.models.VulnerabilityAuditSource
     oci.adm.models.VulnerabilityAuditSummary
     oci.adm.models.WorkRequest
     oci.adm.models.WorkRequestError

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TemplateZipUploadConfigSource(TemplateConfigSource):
     """
-    Metadata about the user-provided Terraform configuration.
+    Metadata about the zip file containing the Terraform configuration for the template.
     """
 
     def __init__(self, **kwargs):

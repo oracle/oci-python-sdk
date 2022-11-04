@@ -12,12 +12,12 @@ class CustomTerraformProvider(object):
     """
     Location information about custom Terraform providers for a stack.
     For more information, see `Custom Providers`__.
-    Note: Older stacks that use Terraform version 12.x or 13.x must be explicitly updated to use Terraform Registry (`isThirdPartyProviderExperienceEnabled=true`).
+    Note: Older stacks must be explicitly updated to use Terraform Registry (`isThirdPartyProviderExperienceEnabled=true`).
     See :func:`update_stack`. For more information, see
-    `To use Terraform Registry with an older stack`__.
+    `Using Terraform Registry with Older Stacks`__.
 
     __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#features__custom-providers
-    __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#use-tf-reg
+    __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/update-stack-tf-reg.htm
     """
 
     def __init__(self, **kwargs):

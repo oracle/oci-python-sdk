@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateStackDetails(object):
     """
-    The configuration details for creating a stack.
+    Creation details for a stack.
     """
 
     def __init__(self, **kwargs):

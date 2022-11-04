@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateObjectStorageConfigSourceDetails(UpdateConfigSourceDetails):
     """
-    Updates property details for the Object Storage bucket that contains Terraform configuration files.
+    Update details for an Object Storage bucket that contains Terraform configuration files.
     """
 
     def __init__(self, **kwargs):

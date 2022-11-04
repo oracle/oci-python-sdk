@@ -38,6 +38,18 @@ class UpdateCloudVmClusterDetails(object):
             The value to assign to the ocpu_count property of this UpdateCloudVmClusterDetails.
         :type ocpu_count: float
 
+        :param memory_size_in_gbs:
+            The value to assign to the memory_size_in_gbs property of this UpdateCloudVmClusterDetails.
+        :type memory_size_in_gbs: int
+
+        :param db_node_storage_size_in_gbs:
+            The value to assign to the db_node_storage_size_in_gbs property of this UpdateCloudVmClusterDetails.
+        :type db_node_storage_size_in_gbs: int
+
+        :param data_storage_size_in_tbs:
+            The value to assign to the data_storage_size_in_tbs property of this UpdateCloudVmClusterDetails.
+        :type data_storage_size_in_tbs: float
+
         :param license_model:
             The value to assign to the license_model property of this UpdateCloudVmClusterDetails.
             Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
@@ -84,6 +96,9 @@ class UpdateCloudVmClusterDetails(object):
             'display_name': 'str',
             'cpu_core_count': 'int',
             'ocpu_count': 'float',
+            'memory_size_in_gbs': 'int',
+            'db_node_storage_size_in_gbs': 'int',
+            'data_storage_size_in_tbs': 'float',
             'license_model': 'str',
             'ssh_public_keys': 'list[str]',
             'update_details': 'UpdateDetails',
@@ -100,6 +115,9 @@ class UpdateCloudVmClusterDetails(object):
             'display_name': 'displayName',
             'cpu_core_count': 'cpuCoreCount',
             'ocpu_count': 'ocpuCount',
+            'memory_size_in_gbs': 'memorySizeInGBs',
+            'db_node_storage_size_in_gbs': 'dbNodeStorageSizeInGBs',
+            'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
             'license_model': 'licenseModel',
             'ssh_public_keys': 'sshPublicKeys',
             'update_details': 'updateDetails',
@@ -115,6 +133,9 @@ class UpdateCloudVmClusterDetails(object):
         self._display_name = None
         self._cpu_core_count = None
         self._ocpu_count = None
+        self._memory_size_in_gbs = None
+        self._db_node_storage_size_in_gbs = None
+        self._data_storage_size_in_tbs = None
         self._license_model = None
         self._ssh_public_keys = None
         self._update_details = None
@@ -197,6 +218,78 @@ class UpdateCloudVmClusterDetails(object):
         :type: float
         """
         self._ocpu_count = ocpu_count
+
+    @property
+    def memory_size_in_gbs(self):
+        """
+        Gets the memory_size_in_gbs of this UpdateCloudVmClusterDetails.
+        The memory to be allocated in GBs.
+
+
+        :return: The memory_size_in_gbs of this UpdateCloudVmClusterDetails.
+        :rtype: int
+        """
+        return self._memory_size_in_gbs
+
+    @memory_size_in_gbs.setter
+    def memory_size_in_gbs(self, memory_size_in_gbs):
+        """
+        Sets the memory_size_in_gbs of this UpdateCloudVmClusterDetails.
+        The memory to be allocated in GBs.
+
+
+        :param memory_size_in_gbs: The memory_size_in_gbs of this UpdateCloudVmClusterDetails.
+        :type: int
+        """
+        self._memory_size_in_gbs = memory_size_in_gbs
+
+    @property
+    def db_node_storage_size_in_gbs(self):
+        """
+        Gets the db_node_storage_size_in_gbs of this UpdateCloudVmClusterDetails.
+        The local node storage to be allocated in GBs.
+
+
+        :return: The db_node_storage_size_in_gbs of this UpdateCloudVmClusterDetails.
+        :rtype: int
+        """
+        return self._db_node_storage_size_in_gbs
+
+    @db_node_storage_size_in_gbs.setter
+    def db_node_storage_size_in_gbs(self, db_node_storage_size_in_gbs):
+        """
+        Sets the db_node_storage_size_in_gbs of this UpdateCloudVmClusterDetails.
+        The local node storage to be allocated in GBs.
+
+
+        :param db_node_storage_size_in_gbs: The db_node_storage_size_in_gbs of this UpdateCloudVmClusterDetails.
+        :type: int
+        """
+        self._db_node_storage_size_in_gbs = db_node_storage_size_in_gbs
+
+    @property
+    def data_storage_size_in_tbs(self):
+        """
+        Gets the data_storage_size_in_tbs of this UpdateCloudVmClusterDetails.
+        The data disk group size to be allocated in TBs.
+
+
+        :return: The data_storage_size_in_tbs of this UpdateCloudVmClusterDetails.
+        :rtype: float
+        """
+        return self._data_storage_size_in_tbs
+
+    @data_storage_size_in_tbs.setter
+    def data_storage_size_in_tbs(self, data_storage_size_in_tbs):
+        """
+        Sets the data_storage_size_in_tbs of this UpdateCloudVmClusterDetails.
+        The data disk group size to be allocated in TBs.
+
+
+        :param data_storage_size_in_tbs: The data_storage_size_in_tbs of this UpdateCloudVmClusterDetails.
+        :type: float
+        """
+        self._data_storage_size_in_tbs = data_storage_size_in_tbs
 
     @property
     def license_model(self):

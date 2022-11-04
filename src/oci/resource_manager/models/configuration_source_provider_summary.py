@@ -291,7 +291,8 @@ class ConfigurationSourceProviderSummary(object):
     def config_source_provider_type(self):
         """
         **[Required]** Gets the config_source_provider_type of this ConfigurationSourceProviderSummary.
-        The type of configuration source provider. The `GITLAB_ACCESS_TOKEN` type corresponds to GitLab.
+        The type of configuration source provider.
+        The `GITLAB_ACCESS_TOKEN` type corresponds to GitLab.
         The `GITHUB_ACCESS_TOKEN` type corresponds to GitHub.
 
 
@@ -304,7 +305,8 @@ class ConfigurationSourceProviderSummary(object):
     def config_source_provider_type(self, config_source_provider_type):
         """
         Sets the config_source_provider_type of this ConfigurationSourceProviderSummary.
-        The type of configuration source provider. The `GITLAB_ACCESS_TOKEN` type corresponds to GitLab.
+        The type of configuration source provider.
+        The `GITLAB_ACCESS_TOKEN` type corresponds to GitLab.
         The `GITHUB_ACCESS_TOKEN` type corresponds to GitHub.
 
 

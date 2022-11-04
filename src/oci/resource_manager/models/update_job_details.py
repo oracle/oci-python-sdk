@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateJobDetails(object):
     """
-    Updates the display name, free-form tags, and/or defined tag properties of the job.
+    Update details for a job.
     """
 
     def __init__(self, **kwargs):

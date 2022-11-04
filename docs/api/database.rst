@@ -19,6 +19,7 @@ Database
     :template: autosummary/model_class.rst
 
     oci.database.models.ActivateExadataInfrastructureDetails
+    oci.database.models.AddVirtualMachineToCloudVmClusterDetails
     oci.database.models.AddVirtualMachineToVmClusterDetails
     oci.database.models.AssociatedDatabaseDetails
     oci.database.models.AutomatedMountDetails
@@ -69,6 +70,7 @@ Database
     oci.database.models.CloudAutonomousVmCluster
     oci.database.models.CloudAutonomousVmClusterSummary
     oci.database.models.CloudDatabaseManagementConfig
+    oci.database.models.CloudDbServerDetails
     oci.database.models.CloudExadataInfrastructure
     oci.database.models.CloudExadataInfrastructureSummary
     oci.database.models.CloudVmCluster
@@ -256,9 +258,12 @@ Database
     oci.database.models.PluggableDatabase
     oci.database.models.PluggableDatabaseConnectionStrings
     oci.database.models.PluggableDatabaseSummary
+    oci.database.models.RefreshableCloneCollection
+    oci.database.models.RefreshableCloneSummary
     oci.database.models.RegisterAutonomousDatabaseDataSafeDetails
     oci.database.models.ReinstateDataGuardAssociationDetails
     oci.database.models.RemoteClonePluggableDatabaseDetails
+    oci.database.models.RemoveVirtualMachineFromCloudVmClusterDetails
     oci.database.models.RemoveVirtualMachineFromVmClusterDetails
     oci.database.models.ResizeVmClusterNetworkDetails
     oci.database.models.RestoreAutonomousDatabaseDetails

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateConfigurationSourceProviderDetails(object):
     """
-    The details for creating a configuration source provider.
+    Creation details for a configuration source provider.
     """
 
     def __init__(self, **kwargs):

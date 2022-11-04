@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class JobSummary(object):
     """
-    Returns a listing of all of the specified job's properties and their values.
+    Summary information for a job.
     """
 
     def __init__(self, **kwargs):

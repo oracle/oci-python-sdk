@@ -75,6 +75,47 @@ def test_activate_exadata_infrastructure(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_add_storage_capacity_cloud_exadata_infrastructure(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'AddStorageCapacityCloudExadataInfrastructure'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'AddStorageCapacityCloudExadataInfrastructure')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='AddStorageCapacityCloudExadataInfrastructure')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.add_storage_capacity_cloud_exadata_infrastructure(
+                cloud_exadata_infrastructure_id=request.pop(util.camelize('cloudExadataInfrastructureId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'AddStorageCapacityCloudExadataInfrastructure',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'cloudExadataInfrastructure',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_add_storage_capacity_exadata_infrastructure(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'AddStorageCapacityExadataInfrastructure'):
@@ -111,6 +152,48 @@ def test_add_storage_capacity_exadata_infrastructure(testing_service_client):
             result,
             service_error,
             'exadataInfrastructure',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_add_virtual_machine_to_cloud_vm_cluster(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'AddVirtualMachineToCloudVmCluster'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'AddVirtualMachineToCloudVmCluster')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='AddVirtualMachineToCloudVmCluster')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.add_virtual_machine_to_cloud_vm_cluster(
+                add_virtual_machine_to_cloud_vm_cluster_details=request.pop(util.camelize('AddVirtualMachineToCloudVmClusterDetails')),
+                cloud_vm_cluster_id=request.pop(util.camelize('cloudVmClusterId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'AddVirtualMachineToCloudVmCluster',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'cloudVmCluster',
             False,
             False
         )
@@ -6765,6 +6848,69 @@ def test_list_autonomous_database_dataguard_associations(testing_service_client)
 
 
 # IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_autonomous_database_refreshable_clones(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ListAutonomousDatabaseRefreshableClones'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListAutonomousDatabaseRefreshableClones')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ListAutonomousDatabaseRefreshableClones')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.list_autonomous_database_refreshable_clones(
+                autonomous_database_id=request.pop(util.camelize('autonomousDatabaseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_autonomous_database_refreshable_clones(
+                    autonomous_database_id=request.pop(util.camelize('autonomousDatabaseId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_autonomous_database_refreshable_clones(
+                        autonomous_database_id=request.pop(util.camelize('autonomousDatabaseId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ListAutonomousDatabaseRefreshableClones',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'refreshableCloneCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_list_autonomous_databases(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListAutonomousDatabases'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -10186,6 +10332,48 @@ def test_remote_clone_pluggable_database(testing_service_client):
             result,
             service_error,
             'pluggableDatabase',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_remove_virtual_machine_from_cloud_vm_cluster(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'RemoveVirtualMachineFromCloudVmCluster'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'RemoveVirtualMachineFromCloudVmCluster')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='RemoveVirtualMachineFromCloudVmCluster')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.remove_virtual_machine_from_cloud_vm_cluster(
+                remove_virtual_machine_from_cloud_vm_cluster_details=request.pop(util.camelize('RemoveVirtualMachineFromCloudVmClusterDetails')),
+                cloud_vm_cluster_id=request.pop(util.camelize('cloudVmClusterId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'RemoveVirtualMachineFromCloudVmCluster',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'cloudVmCluster',
             False,
             False
         )
