@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateTemplateDetails(object):
     """
-    The configuration details for creating a template.
+    Creation details for a template.
     """
 
     def __init__(self, **kwargs):

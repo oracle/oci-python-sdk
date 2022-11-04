@@ -22,6 +22,7 @@ from .private_endpoint_summary import PrivateEndpointSummary
 from .run import Run
 from .run_log_summary import RunLogSummary
 from .run_summary import RunSummary
+from .scan import Scan
 from .shape_config import ShapeConfig
 from .statement import Statement
 from .statement_collection import StatementCollection
@@ -62,6 +63,7 @@ data_flow_type_mapping = {
     "Run": Run,
     "RunLogSummary": RunLogSummary,
     "RunSummary": RunSummary,
+    "Scan": Scan,
     "ShapeConfig": ShapeConfig,
     "Statement": Statement,
     "StatementCollection": StatementCollection,

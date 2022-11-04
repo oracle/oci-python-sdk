@@ -20,6 +20,8 @@ class JobOperationDetails(object):
 
         * :class:`~oci.resource_manager.models.ImportTfStateJobOperationDetails`
         * :class:`~oci.resource_manager.models.PlanJobOperationDetails`
+        * :class:`~oci.resource_manager.models.ApplyRollbackJobOperationDetails`
+        * :class:`~oci.resource_manager.models.PlanRollbackJobOperationDetails`
         * :class:`~oci.resource_manager.models.ApplyJobOperationDetails`
         * :class:`~oci.resource_manager.models.DestroyJobOperationDetails`
 
@@ -53,6 +55,12 @@ class JobOperationDetails(object):
 
         if type == 'PLAN':
             return 'PlanJobOperationDetails'
+
+        if type == 'APPLY_ROLLBACK':
+            return 'ApplyRollbackJobOperationDetails'
+
+        if type == 'PLAN_ROLLBACK':
+            return 'PlanRollbackJobOperationDetails'
 
         if type == 'APPLY':
             return 'ApplyJobOperationDetails'

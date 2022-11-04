@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateZipUploadConfigSourceDetails(UpdateConfigSourceDetails):
     """
-    Updates property details for the configuration .zip file.
+    Update details for a Terraform configuration zip file.
     """
 
     def __init__(self, **kwargs):

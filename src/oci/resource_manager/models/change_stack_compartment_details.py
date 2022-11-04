@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeStackCompartmentDetails(object):
     """
-    Defines the requirements and properties of changeStackCompartment operation.
+    Compartment details for moving a stack.
     """
 
     def __init__(self, **kwargs):

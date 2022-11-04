@@ -10,7 +10,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResourceDiscoveryServiceSummary(object):
     """
-    A service supported for use with Resource Discovery.
+    A service supported for use with `Resource Discovery`__.
+
+    __ https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services
     """
 
     #: A constant which can be used with the discovery_scope property of a ResourceDiscoveryServiceSummary.

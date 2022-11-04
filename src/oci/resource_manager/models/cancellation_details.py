@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CancellationDetails(object):
     """
-    Defines the cancellation details of the job.
+    Cancellation details for a job.
     """
 
     def __init__(self, **kwargs):

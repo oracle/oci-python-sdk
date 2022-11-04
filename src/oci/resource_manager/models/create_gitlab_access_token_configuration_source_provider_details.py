@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateGitlabAccessTokenConfigurationSourceProviderDetails(CreateConfigurationSourceProviderDetails):
     """
-    The details for creating a configuration source provider of the type `GITLAB_ACCESS_TOKEN`.
+    Creation details for a configuration source provider of the type `GITLAB_ACCESS_TOKEN`.
     This type corresponds to a configuration source provider in GitLab that is authenticated with a personal access token.
     """
 

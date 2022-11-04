@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateConfigSourceDetails(object):
     """
-    Property details for the configuration source used for the stack.
+    Creation details for a configuration source used with the stack.
     """
 
     def __init__(self, **kwargs):

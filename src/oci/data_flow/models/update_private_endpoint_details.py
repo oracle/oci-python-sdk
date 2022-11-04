@@ -46,6 +46,10 @@ class UpdatePrivateEndpointDetails(object):
             The value to assign to the nsg_ids property of this UpdatePrivateEndpointDetails.
         :type nsg_ids: list[str]
 
+        :param scan_details:
+            The value to assign to the scan_details property of this UpdatePrivateEndpointDetails.
+        :type scan_details: list[oci.data_flow.models.Scan]
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
@@ -54,7 +58,8 @@ class UpdatePrivateEndpointDetails(object):
             'dns_zones': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'max_host_count': 'int',
-            'nsg_ids': 'list[str]'
+            'nsg_ids': 'list[str]',
+            'scan_details': 'list[Scan]'
         }
 
         self.attribute_map = {
@@ -64,7 +69,8 @@ class UpdatePrivateEndpointDetails(object):
             'dns_zones': 'dnsZones',
             'freeform_tags': 'freeformTags',
             'max_host_count': 'maxHostCount',
-            'nsg_ids': 'nsgIds'
+            'nsg_ids': 'nsgIds',
+            'scan_details': 'scanDetails'
         }
 
         self._defined_tags = None
@@ -74,6 +80,7 @@ class UpdatePrivateEndpointDetails(object):
         self._freeform_tags = None
         self._max_host_count = None
         self._nsg_ids = None
+        self._scan_details = None
 
     @property
     def defined_tags(self):
@@ -264,6 +271,32 @@ class UpdatePrivateEndpointDetails(object):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def scan_details(self):
+        """
+        Gets the scan_details of this UpdatePrivateEndpointDetails.
+        An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value.
+        [ { fqdn: \"scan1.oracle.com\", port: \"1521\"}, { fqdn: \"scan2.oracle.com\", port: \"1521\" } ]
+
+
+        :return: The scan_details of this UpdatePrivateEndpointDetails.
+        :rtype: list[oci.data_flow.models.Scan]
+        """
+        return self._scan_details
+
+    @scan_details.setter
+    def scan_details(self, scan_details):
+        """
+        Sets the scan_details of this UpdatePrivateEndpointDetails.
+        An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value.
+        [ { fqdn: \"scan1.oracle.com\", port: \"1521\"}, { fqdn: \"scan2.oracle.com\", port: \"1521\" } ]
+
+
+        :param scan_details: The scan_details of this UpdatePrivateEndpointDetails.
+        :type: list[oci.data_flow.models.Scan]
+        """
+        self._scan_details = scan_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -10,15 +10,15 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Job(object):
     """
-    The properties that define a job. Jobs perform the actions that are defined in your configuration.
-    - **Plan job**. A plan job takes your Terraform configuration, parses it, and creates an execution plan.
-    - **Apply job**. The apply job takes your execution plan, applies it to the associated stack, then executes
-    the configuration's instructions.
-    - **Destroy job**. To clean up the infrastructure controlled by the stack, you run a destroy job.
-    A destroy job does not delete the stack or associated job resources,
-    but instead releases the resources managed by the stack.
-    - **Import_TF_State job**. An import Terraform state job takes a Terraform state file and sets it as the current
-    state of the stack. This is used to migrate local Terraform environments to Resource Manager.
+    The properties of a job.
+    A job performs the actions that are defined in your Terraform configuration.
+    For instructions on managing jobs, see
+    `Managing Jobs`__.
+    For more information about jobs, see
+    `Key Concepts`__.
+
+    __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/jobs.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__jobdefinition
     """
 
     #: A constant which can be used with the operation property of a Job.
@@ -36,6 +36,14 @@ class Job(object):
     #: A constant which can be used with the operation property of a Job.
     #: This constant has a value of "IMPORT_TF_STATE"
     OPERATION_IMPORT_TF_STATE = "IMPORT_TF_STATE"
+
+    #: A constant which can be used with the operation property of a Job.
+    #: This constant has a value of "PLAN_ROLLBACK"
+    OPERATION_PLAN_ROLLBACK = "PLAN_ROLLBACK"
+
+    #: A constant which can be used with the operation property of a Job.
+    #: This constant has a value of "APPLY_ROLLBACK"
+    OPERATION_APPLY_ROLLBACK = "APPLY_ROLLBACK"
 
     #: A constant which can be used with the lifecycle_state property of a Job.
     #: This constant has a value of "ACCEPTED"
@@ -84,9 +92,13 @@ class Job(object):
 
         :param operation:
             The value to assign to the operation property of this Job.
-            Allowed values for this property are: "PLAN", "APPLY", "DESTROY", "IMPORT_TF_STATE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PLAN", "APPLY", "DESTROY", "IMPORT_TF_STATE", "PLAN_ROLLBACK", "APPLY_ROLLBACK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation: str
+
+        :param is_third_party_provider_experience_enabled:
+            The value to assign to the is_third_party_provider_experience_enabled property of this Job.
+        :type is_third_party_provider_experience_enabled: bool
 
         :param is_provider_upgrade_required:
             The value to assign to the is_provider_upgrade_required property of this Job.
@@ -153,6 +165,7 @@ class Job(object):
             'compartment_id': 'str',
             'display_name': 'str',
             'operation': 'str',
+            'is_third_party_provider_experience_enabled': 'bool',
             'is_provider_upgrade_required': 'bool',
             'job_operation_details': 'JobOperationDetails',
             'apply_job_plan_resolution': 'ApplyJobPlanResolution',
@@ -175,6 +188,7 @@ class Job(object):
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'operation': 'operation',
+            'is_third_party_provider_experience_enabled': 'isThirdPartyProviderExperienceEnabled',
             'is_provider_upgrade_required': 'isProviderUpgradeRequired',
             'job_operation_details': 'jobOperationDetails',
             'apply_job_plan_resolution': 'applyJobPlanResolution',
@@ -196,6 +210,7 @@ class Job(object):
         self._compartment_id = None
         self._display_name = None
         self._operation = None
+        self._is_third_party_provider_experience_enabled = None
         self._is_provider_upgrade_required = None
         self._job_operation_details = None
         self._apply_job_plan_resolution = None
@@ -325,7 +340,7 @@ class Job(object):
         Gets the operation of this Job.
         The type of job executing.
 
-        Allowed values for this property are: "PLAN", "APPLY", "DESTROY", "IMPORT_TF_STATE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PLAN", "APPLY", "DESTROY", "IMPORT_TF_STATE", "PLAN_ROLLBACK", "APPLY_ROLLBACK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -344,10 +359,48 @@ class Job(object):
         :param operation: The operation of this Job.
         :type: str
         """
-        allowed_values = ["PLAN", "APPLY", "DESTROY", "IMPORT_TF_STATE"]
+        allowed_values = ["PLAN", "APPLY", "DESTROY", "IMPORT_TF_STATE", "PLAN_ROLLBACK", "APPLY_ROLLBACK"]
         if not value_allowed_none_or_none_sentinel(operation, allowed_values):
             operation = 'UNKNOWN_ENUM_VALUE'
         self._operation = operation
+
+    @property
+    def is_third_party_provider_experience_enabled(self):
+        """
+        Gets the is_third_party_provider_experience_enabled of this Job.
+        When `true`, the stack sources third-party Terraform providers from
+        `Terraform Registry`__ and allows
+        :func:`custom_terraform_provider`.
+        For more information about stack sourcing of third-party Terraform providers, see
+        `Third-party Provider Configuration`__.
+
+        __ https://registry.terraform.io/browse/providers
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers
+
+
+        :return: The is_third_party_provider_experience_enabled of this Job.
+        :rtype: bool
+        """
+        return self._is_third_party_provider_experience_enabled
+
+    @is_third_party_provider_experience_enabled.setter
+    def is_third_party_provider_experience_enabled(self, is_third_party_provider_experience_enabled):
+        """
+        Sets the is_third_party_provider_experience_enabled of this Job.
+        When `true`, the stack sources third-party Terraform providers from
+        `Terraform Registry`__ and allows
+        :func:`custom_terraform_provider`.
+        For more information about stack sourcing of third-party Terraform providers, see
+        `Third-party Provider Configuration`__.
+
+        __ https://registry.terraform.io/browse/providers
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers
+
+
+        :param is_third_party_provider_experience_enabled: The is_third_party_provider_experience_enabled of this Job.
+        :type: bool
+        """
+        self._is_third_party_provider_experience_enabled = is_third_party_provider_experience_enabled
 
     @property
     def is_provider_upgrade_required(self):

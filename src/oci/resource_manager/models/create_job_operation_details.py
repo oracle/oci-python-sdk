@@ -19,6 +19,8 @@ class CreateJobOperationDetails(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.resource_manager.models.CreateImportTfStateJobOperationDetails`
+        * :class:`~oci.resource_manager.models.CreatePlanRollbackJobOperationDetails`
+        * :class:`~oci.resource_manager.models.CreateApplyRollbackJobOperationDetails`
         * :class:`~oci.resource_manager.models.CreateApplyJobOperationDetails`
         * :class:`~oci.resource_manager.models.CreatePlanJobOperationDetails`
         * :class:`~oci.resource_manager.models.CreateDestroyJobOperationDetails`
@@ -57,6 +59,12 @@ class CreateJobOperationDetails(object):
 
         if type == 'IMPORT_TF_STATE':
             return 'CreateImportTfStateJobOperationDetails'
+
+        if type == 'PLAN_ROLLBACK':
+            return 'CreatePlanRollbackJobOperationDetails'
+
+        if type == 'APPLY_ROLLBACK':
+            return 'CreateApplyRollbackJobOperationDetails'
 
         if type == 'APPLY':
             return 'CreateApplyJobOperationDetails'
