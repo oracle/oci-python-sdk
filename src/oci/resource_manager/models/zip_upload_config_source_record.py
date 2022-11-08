@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ZipUploadConfigSourceRecord(ConfigSourceRecord):
     """
-    Information about the user-provided file used for the Terraform configuration.
+    Information about the user-provided Terraform configuration zip file.
     """
 
     def __init__(self, **kwargs):

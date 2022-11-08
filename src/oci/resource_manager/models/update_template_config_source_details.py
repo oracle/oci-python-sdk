@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateTemplateConfigSourceDetails(object):
     """
-    Updates the property details for the configuration source for the template.
+    Update details for a configuration source for a template.
     """
 
     def __init__(self, **kwargs):

@@ -5,6 +5,7 @@
 from __future__ import absolute_import
 
 from .activate_exadata_infrastructure_details import ActivateExadataInfrastructureDetails
+from .add_virtual_machine_to_cloud_vm_cluster_details import AddVirtualMachineToCloudVmClusterDetails
 from .add_virtual_machine_to_vm_cluster_details import AddVirtualMachineToVmClusterDetails
 from .associated_database_details import AssociatedDatabaseDetails
 from .automated_mount_details import AutomatedMountDetails
@@ -55,6 +56,7 @@ from .change_vm_cluster_compartment_details import ChangeVmClusterCompartmentDet
 from .cloud_autonomous_vm_cluster import CloudAutonomousVmCluster
 from .cloud_autonomous_vm_cluster_summary import CloudAutonomousVmClusterSummary
 from .cloud_database_management_config import CloudDatabaseManagementConfig
+from .cloud_db_server_details import CloudDbServerDetails
 from .cloud_exadata_infrastructure import CloudExadataInfrastructure
 from .cloud_exadata_infrastructure_summary import CloudExadataInfrastructureSummary
 from .cloud_vm_cluster import CloudVmCluster
@@ -242,9 +244,12 @@ from .peer_autonomous_container_database_backup_config import PeerAutonomousCont
 from .pluggable_database import PluggableDatabase
 from .pluggable_database_connection_strings import PluggableDatabaseConnectionStrings
 from .pluggable_database_summary import PluggableDatabaseSummary
+from .refreshable_clone_collection import RefreshableCloneCollection
+from .refreshable_clone_summary import RefreshableCloneSummary
 from .register_autonomous_database_data_safe_details import RegisterAutonomousDatabaseDataSafeDetails
 from .reinstate_data_guard_association_details import ReinstateDataGuardAssociationDetails
 from .remote_clone_pluggable_database_details import RemoteClonePluggableDatabaseDetails
+from .remove_virtual_machine_from_cloud_vm_cluster_details import RemoveVirtualMachineFromCloudVmClusterDetails
 from .remove_virtual_machine_from_vm_cluster_details import RemoveVirtualMachineFromVmClusterDetails
 from .resize_vm_cluster_network_details import ResizeVmClusterNetworkDetails
 from .restore_autonomous_database_details import RestoreAutonomousDatabaseDetails
@@ -305,6 +310,7 @@ from .workload_type import WorkloadType
 # Maps type names to classes for database services.
 database_type_mapping = {
     "ActivateExadataInfrastructureDetails": ActivateExadataInfrastructureDetails,
+    "AddVirtualMachineToCloudVmClusterDetails": AddVirtualMachineToCloudVmClusterDetails,
     "AddVirtualMachineToVmClusterDetails": AddVirtualMachineToVmClusterDetails,
     "AssociatedDatabaseDetails": AssociatedDatabaseDetails,
     "AutomatedMountDetails": AutomatedMountDetails,
@@ -355,6 +361,7 @@ database_type_mapping = {
     "CloudAutonomousVmCluster": CloudAutonomousVmCluster,
     "CloudAutonomousVmClusterSummary": CloudAutonomousVmClusterSummary,
     "CloudDatabaseManagementConfig": CloudDatabaseManagementConfig,
+    "CloudDbServerDetails": CloudDbServerDetails,
     "CloudExadataInfrastructure": CloudExadataInfrastructure,
     "CloudExadataInfrastructureSummary": CloudExadataInfrastructureSummary,
     "CloudVmCluster": CloudVmCluster,
@@ -542,9 +549,12 @@ database_type_mapping = {
     "PluggableDatabase": PluggableDatabase,
     "PluggableDatabaseConnectionStrings": PluggableDatabaseConnectionStrings,
     "PluggableDatabaseSummary": PluggableDatabaseSummary,
+    "RefreshableCloneCollection": RefreshableCloneCollection,
+    "RefreshableCloneSummary": RefreshableCloneSummary,
     "RegisterAutonomousDatabaseDataSafeDetails": RegisterAutonomousDatabaseDataSafeDetails,
     "ReinstateDataGuardAssociationDetails": ReinstateDataGuardAssociationDetails,
     "RemoteClonePluggableDatabaseDetails": RemoteClonePluggableDatabaseDetails,
+    "RemoveVirtualMachineFromCloudVmClusterDetails": RemoveVirtualMachineFromCloudVmClusterDetails,
     "RemoveVirtualMachineFromVmClusterDetails": RemoveVirtualMachineFromVmClusterDetails,
     "ResizeVmClusterNetworkDetails": ResizeVmClusterNetworkDetails,
     "RestoreAutonomousDatabaseDetails": RestoreAutonomousDatabaseDetails,

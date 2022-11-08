@@ -88,6 +88,46 @@ class CloudExadataInfrastructureSummary(object):
             The value to assign to the available_storage_size_in_gbs property of this CloudExadataInfrastructureSummary.
         :type available_storage_size_in_gbs: int
 
+        :param cpu_count:
+            The value to assign to the cpu_count property of this CloudExadataInfrastructureSummary.
+        :type cpu_count: int
+
+        :param max_cpu_count:
+            The value to assign to the max_cpu_count property of this CloudExadataInfrastructureSummary.
+        :type max_cpu_count: int
+
+        :param memory_size_in_gbs:
+            The value to assign to the memory_size_in_gbs property of this CloudExadataInfrastructureSummary.
+        :type memory_size_in_gbs: int
+
+        :param max_memory_in_gbs:
+            The value to assign to the max_memory_in_gbs property of this CloudExadataInfrastructureSummary.
+        :type max_memory_in_gbs: int
+
+        :param db_node_storage_size_in_gbs:
+            The value to assign to the db_node_storage_size_in_gbs property of this CloudExadataInfrastructureSummary.
+        :type db_node_storage_size_in_gbs: int
+
+        :param max_db_node_storage_in_gbs:
+            The value to assign to the max_db_node_storage_in_gbs property of this CloudExadataInfrastructureSummary.
+        :type max_db_node_storage_in_gbs: int
+
+        :param data_storage_size_in_tbs:
+            The value to assign to the data_storage_size_in_tbs property of this CloudExadataInfrastructureSummary.
+        :type data_storage_size_in_tbs: float
+
+        :param max_data_storage_in_tbs:
+            The value to assign to the max_data_storage_in_tbs property of this CloudExadataInfrastructureSummary.
+        :type max_data_storage_in_tbs: float
+
+        :param additional_storage_count:
+            The value to assign to the additional_storage_count property of this CloudExadataInfrastructureSummary.
+        :type additional_storage_count: int
+
+        :param activated_storage_count:
+            The value to assign to the activated_storage_count property of this CloudExadataInfrastructureSummary.
+        :type activated_storage_count: int
+
         :param time_created:
             The value to assign to the time_created property of this CloudExadataInfrastructureSummary.
         :type time_created: datetime
@@ -132,6 +172,16 @@ class CloudExadataInfrastructureSummary(object):
             'storage_count': 'int',
             'total_storage_size_in_gbs': 'int',
             'available_storage_size_in_gbs': 'int',
+            'cpu_count': 'int',
+            'max_cpu_count': 'int',
+            'memory_size_in_gbs': 'int',
+            'max_memory_in_gbs': 'int',
+            'db_node_storage_size_in_gbs': 'int',
+            'max_db_node_storage_in_gbs': 'int',
+            'data_storage_size_in_tbs': 'float',
+            'max_data_storage_in_tbs': 'float',
+            'additional_storage_count': 'int',
+            'activated_storage_count': 'int',
             'time_created': 'datetime',
             'lifecycle_details': 'str',
             'maintenance_window': 'MaintenanceWindow',
@@ -153,6 +203,16 @@ class CloudExadataInfrastructureSummary(object):
             'storage_count': 'storageCount',
             'total_storage_size_in_gbs': 'totalStorageSizeInGBs',
             'available_storage_size_in_gbs': 'availableStorageSizeInGBs',
+            'cpu_count': 'cpuCount',
+            'max_cpu_count': 'maxCpuCount',
+            'memory_size_in_gbs': 'memorySizeInGBs',
+            'max_memory_in_gbs': 'maxMemoryInGBs',
+            'db_node_storage_size_in_gbs': 'dbNodeStorageSizeInGBs',
+            'max_db_node_storage_in_gbs': 'maxDbNodeStorageInGBs',
+            'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
+            'max_data_storage_in_tbs': 'maxDataStorageInTBs',
+            'additional_storage_count': 'additionalStorageCount',
+            'activated_storage_count': 'activatedStorageCount',
             'time_created': 'timeCreated',
             'lifecycle_details': 'lifecycleDetails',
             'maintenance_window': 'maintenanceWindow',
@@ -173,6 +233,16 @@ class CloudExadataInfrastructureSummary(object):
         self._storage_count = None
         self._total_storage_size_in_gbs = None
         self._available_storage_size_in_gbs = None
+        self._cpu_count = None
+        self._max_cpu_count = None
+        self._memory_size_in_gbs = None
+        self._max_memory_in_gbs = None
+        self._db_node_storage_size_in_gbs = None
+        self._max_db_node_storage_in_gbs = None
+        self._data_storage_size_in_tbs = None
+        self._max_data_storage_in_tbs = None
+        self._additional_storage_count = None
+        self._activated_storage_count = None
         self._time_created = None
         self._lifecycle_details = None
         self._maintenance_window = None
@@ -435,6 +505,246 @@ class CloudExadataInfrastructureSummary(object):
         :type: int
         """
         self._available_storage_size_in_gbs = available_storage_size_in_gbs
+
+    @property
+    def cpu_count(self):
+        """
+        Gets the cpu_count of this CloudExadataInfrastructureSummary.
+        The total number of CPU cores allocated.
+
+
+        :return: The cpu_count of this CloudExadataInfrastructureSummary.
+        :rtype: int
+        """
+        return self._cpu_count
+
+    @cpu_count.setter
+    def cpu_count(self, cpu_count):
+        """
+        Sets the cpu_count of this CloudExadataInfrastructureSummary.
+        The total number of CPU cores allocated.
+
+
+        :param cpu_count: The cpu_count of this CloudExadataInfrastructureSummary.
+        :type: int
+        """
+        self._cpu_count = cpu_count
+
+    @property
+    def max_cpu_count(self):
+        """
+        Gets the max_cpu_count of this CloudExadataInfrastructureSummary.
+        The total number of CPU cores available.
+
+
+        :return: The max_cpu_count of this CloudExadataInfrastructureSummary.
+        :rtype: int
+        """
+        return self._max_cpu_count
+
+    @max_cpu_count.setter
+    def max_cpu_count(self, max_cpu_count):
+        """
+        Sets the max_cpu_count of this CloudExadataInfrastructureSummary.
+        The total number of CPU cores available.
+
+
+        :param max_cpu_count: The max_cpu_count of this CloudExadataInfrastructureSummary.
+        :type: int
+        """
+        self._max_cpu_count = max_cpu_count
+
+    @property
+    def memory_size_in_gbs(self):
+        """
+        Gets the memory_size_in_gbs of this CloudExadataInfrastructureSummary.
+        The memory allocated in GBs.
+
+
+        :return: The memory_size_in_gbs of this CloudExadataInfrastructureSummary.
+        :rtype: int
+        """
+        return self._memory_size_in_gbs
+
+    @memory_size_in_gbs.setter
+    def memory_size_in_gbs(self, memory_size_in_gbs):
+        """
+        Sets the memory_size_in_gbs of this CloudExadataInfrastructureSummary.
+        The memory allocated in GBs.
+
+
+        :param memory_size_in_gbs: The memory_size_in_gbs of this CloudExadataInfrastructureSummary.
+        :type: int
+        """
+        self._memory_size_in_gbs = memory_size_in_gbs
+
+    @property
+    def max_memory_in_gbs(self):
+        """
+        Gets the max_memory_in_gbs of this CloudExadataInfrastructureSummary.
+        The total memory available in GBs.
+
+
+        :return: The max_memory_in_gbs of this CloudExadataInfrastructureSummary.
+        :rtype: int
+        """
+        return self._max_memory_in_gbs
+
+    @max_memory_in_gbs.setter
+    def max_memory_in_gbs(self, max_memory_in_gbs):
+        """
+        Sets the max_memory_in_gbs of this CloudExadataInfrastructureSummary.
+        The total memory available in GBs.
+
+
+        :param max_memory_in_gbs: The max_memory_in_gbs of this CloudExadataInfrastructureSummary.
+        :type: int
+        """
+        self._max_memory_in_gbs = max_memory_in_gbs
+
+    @property
+    def db_node_storage_size_in_gbs(self):
+        """
+        Gets the db_node_storage_size_in_gbs of this CloudExadataInfrastructureSummary.
+        The local node storage allocated in GBs.
+
+
+        :return: The db_node_storage_size_in_gbs of this CloudExadataInfrastructureSummary.
+        :rtype: int
+        """
+        return self._db_node_storage_size_in_gbs
+
+    @db_node_storage_size_in_gbs.setter
+    def db_node_storage_size_in_gbs(self, db_node_storage_size_in_gbs):
+        """
+        Sets the db_node_storage_size_in_gbs of this CloudExadataInfrastructureSummary.
+        The local node storage allocated in GBs.
+
+
+        :param db_node_storage_size_in_gbs: The db_node_storage_size_in_gbs of this CloudExadataInfrastructureSummary.
+        :type: int
+        """
+        self._db_node_storage_size_in_gbs = db_node_storage_size_in_gbs
+
+    @property
+    def max_db_node_storage_in_gbs(self):
+        """
+        Gets the max_db_node_storage_in_gbs of this CloudExadataInfrastructureSummary.
+        The total local node storage available in GBs.
+
+
+        :return: The max_db_node_storage_in_gbs of this CloudExadataInfrastructureSummary.
+        :rtype: int
+        """
+        return self._max_db_node_storage_in_gbs
+
+    @max_db_node_storage_in_gbs.setter
+    def max_db_node_storage_in_gbs(self, max_db_node_storage_in_gbs):
+        """
+        Sets the max_db_node_storage_in_gbs of this CloudExadataInfrastructureSummary.
+        The total local node storage available in GBs.
+
+
+        :param max_db_node_storage_in_gbs: The max_db_node_storage_in_gbs of this CloudExadataInfrastructureSummary.
+        :type: int
+        """
+        self._max_db_node_storage_in_gbs = max_db_node_storage_in_gbs
+
+    @property
+    def data_storage_size_in_tbs(self):
+        """
+        Gets the data_storage_size_in_tbs of this CloudExadataInfrastructureSummary.
+        Size, in terabytes, of the DATA disk group.
+
+
+        :return: The data_storage_size_in_tbs of this CloudExadataInfrastructureSummary.
+        :rtype: float
+        """
+        return self._data_storage_size_in_tbs
+
+    @data_storage_size_in_tbs.setter
+    def data_storage_size_in_tbs(self, data_storage_size_in_tbs):
+        """
+        Sets the data_storage_size_in_tbs of this CloudExadataInfrastructureSummary.
+        Size, in terabytes, of the DATA disk group.
+
+
+        :param data_storage_size_in_tbs: The data_storage_size_in_tbs of this CloudExadataInfrastructureSummary.
+        :type: float
+        """
+        self._data_storage_size_in_tbs = data_storage_size_in_tbs
+
+    @property
+    def max_data_storage_in_tbs(self):
+        """
+        Gets the max_data_storage_in_tbs of this CloudExadataInfrastructureSummary.
+        The total available DATA disk group size.
+
+
+        :return: The max_data_storage_in_tbs of this CloudExadataInfrastructureSummary.
+        :rtype: float
+        """
+        return self._max_data_storage_in_tbs
+
+    @max_data_storage_in_tbs.setter
+    def max_data_storage_in_tbs(self, max_data_storage_in_tbs):
+        """
+        Sets the max_data_storage_in_tbs of this CloudExadataInfrastructureSummary.
+        The total available DATA disk group size.
+
+
+        :param max_data_storage_in_tbs: The max_data_storage_in_tbs of this CloudExadataInfrastructureSummary.
+        :type: float
+        """
+        self._max_data_storage_in_tbs = max_data_storage_in_tbs
+
+    @property
+    def additional_storage_count(self):
+        """
+        Gets the additional_storage_count of this CloudExadataInfrastructureSummary.
+        The requested number of additional storage servers for the Exadata infrastructure.
+
+
+        :return: The additional_storage_count of this CloudExadataInfrastructureSummary.
+        :rtype: int
+        """
+        return self._additional_storage_count
+
+    @additional_storage_count.setter
+    def additional_storage_count(self, additional_storage_count):
+        """
+        Sets the additional_storage_count of this CloudExadataInfrastructureSummary.
+        The requested number of additional storage servers for the Exadata infrastructure.
+
+
+        :param additional_storage_count: The additional_storage_count of this CloudExadataInfrastructureSummary.
+        :type: int
+        """
+        self._additional_storage_count = additional_storage_count
+
+    @property
+    def activated_storage_count(self):
+        """
+        Gets the activated_storage_count of this CloudExadataInfrastructureSummary.
+        The requested number of additional storage servers activated for the Exadata infrastructure.
+
+
+        :return: The activated_storage_count of this CloudExadataInfrastructureSummary.
+        :rtype: int
+        """
+        return self._activated_storage_count
+
+    @activated_storage_count.setter
+    def activated_storage_count(self, activated_storage_count):
+        """
+        Sets the activated_storage_count of this CloudExadataInfrastructureSummary.
+        The requested number of additional storage servers activated for the Exadata infrastructure.
+
+
+        :param activated_storage_count: The activated_storage_count of this CloudExadataInfrastructureSummary.
+        :type: int
+        """
+        self._activated_storage_count = activated_storage_count
 
     @property
     def time_created(self):

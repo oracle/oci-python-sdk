@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DetectStackDriftDetails(object):
     """
-    The details for detecting drift in a stack
+    Details for detecting drift in a stack.
     """
 
     def __init__(self, **kwargs):

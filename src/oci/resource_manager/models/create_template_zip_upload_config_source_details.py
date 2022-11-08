@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateTemplateZipUploadConfigSourceDetails(CreateTemplateConfigSourceDetails):
     """
-    Property details for uploading the zip file for template.
+    Creation details for a zip file used for a template.
     """
 
     def __init__(self, **kwargs):

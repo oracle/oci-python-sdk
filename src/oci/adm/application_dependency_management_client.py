@@ -1156,10 +1156,21 @@ class ApplicationDependencyManagementClient(object):
 
         :param str sort_by: (optional)
             The field to sort by. Only one sort order may be provided.
+            If sort order is dfs, the nodes are returned by going through the application dependency tree in a depth-first manner. Children are sorted based on their GAV property alphabetically (either ascending or descending, depending on the order parameter). Default order is ascending.
+            If sort order is bfs, the nodes are returned by going through the application dependency tree in a breadth-first manner. Children are sorted based on their GAV property alphabetically (either ascending or descending, depending on the order parameter). Default order is ascending.
             Default order for gav is ascending where ascending corresponds to alphanumerical order.
             Default order for nodeId is ascending where ascending corresponds to alphanumerical order.
+            Sorting by DFS or BFS cannot be used in conjunction with the following query parameters: \"gav\", \"cvssV2GreaterThanOrEqual\", \"cvssV3GreaterThanOrEqual\" and \"vulnerabilityId\".
 
-            Allowed values are: "gav", "nodeId"
+            Allowed values are: "gav", "nodeId", "dfs", "bfs"
+
+        :param str root_node_id: (optional)
+            A filter to override the top level root identifier with the new given value. The application dependency tree will only be traversed from the given node.
+            Query parameters \"cvssV2GreaterThanOrEqual\", \"cvssV3GreaterThanOrEqual\", \"gav\" and \"vulnerabilityId\" cannot be used in conjunction with this parameter.
+
+        :param int depth: (optional)
+            A filter to limit depth of the application dependencies tree traversal.
+            Additionally query parameters such as \"cvssV2GreaterThanOrEqual\", \"cvssV3GreaterThanOrEqual\", \"gav\" and \"vulnerabilityId\" can't be used in conjunction with this latter.
 
         :param str gav: (optional)
             A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
@@ -1201,6 +1212,8 @@ class ApplicationDependencyManagementClient(object):
             "page",
             "sort_order",
             "sort_by",
+            "root_node_id",
+            "depth",
             "gav",
             "opc_request_id"
         ]
@@ -1227,7 +1240,7 @@ class ApplicationDependencyManagementClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["gav", "nodeId"]
+            sort_by_allowed_values = ["gav", "nodeId", "dfs", "bfs"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -1241,6 +1254,8 @@ class ApplicationDependencyManagementClient(object):
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
+            "rootNodeId": kwargs.get("root_node_id", missing),
+            "depth": kwargs.get("depth", missing),
             "gav": kwargs.get("gav", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
@@ -1483,10 +1498,13 @@ class ApplicationDependencyManagementClient(object):
             The field used to sort Vulnerability Audits. Only one sort order is allowed.
             Default order for _maxObservedCvssV2Score_ is **ascending**.
             Default order for _maxObservedCvssV3Score_ is **ascending**.
+            Default order for _maxObservedCvssV2ScoreWithIgnored_ is **ascending**.
+            Default order for _maxObservedCvssV3ScoreWithIgnored_ is **ascending**.
             Default order for _timeCreated_ is **descending**.
             Default order for _vulnerableArtifactsCount_ is **ascending**.
+            Default order for _vulnerableArtifactsCountWithIgnored_ is **ascending**.
 
-            Allowed values are: "maxObservedCvssV2Score", "maxObservedCvssV3Score", "timeCreated", "vulnerableArtifactsCount"
+            Allowed values are: "maxObservedCvssV2Score", "maxObservedCvssV3Score", "timeCreated", "vulnerableArtifactsCount", "maxObservedCvssV2ScoreWithIgnored", "maxObservedCvssV3ScoreWithIgnored", "vulnerableArtifactsCountWithIgnored"
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given.
@@ -1550,7 +1568,7 @@ class ApplicationDependencyManagementClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["maxObservedCvssV2Score", "maxObservedCvssV3Score", "timeCreated", "vulnerableArtifactsCount"]
+            sort_by_allowed_values = ["maxObservedCvssV2Score", "maxObservedCvssV3Score", "timeCreated", "vulnerableArtifactsCount", "maxObservedCvssV2ScoreWithIgnored", "maxObservedCvssV3ScoreWithIgnored", "vulnerableArtifactsCountWithIgnored"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)

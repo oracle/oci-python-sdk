@@ -471,7 +471,11 @@ class ResourceManagerClient(object):
 
     def change_stack_compartment(self, stack_id, change_stack_compartment_details, **kwargs):
         """
-        Moves a Stack and it's associated Jobs into a different compartment.
+        Moves a stack (and its associated jobs) into a different compartment within the same tenancy.
+        For information about moving resources between compartments, see
+        `Moving Resources to a Different Compartment`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str stack_id: (required)
@@ -1001,12 +1005,12 @@ class ResourceManagerClient(object):
         Creates a stack in the specified compartment.
         You can create a stack from a Terraform configuration.
         The Terraform configuration can be directly uploaded or referenced from a source code control system.
-        You can also create a stack from an existing compartment.
+        You can also create a stack from an existing compartment, which generates a Terraform configuration.
         You can also upload the Terraform configuration from an Object Storage bucket.
         For more information, see
-        `To create a stack`__.
+        `Creating Stacks`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#createstack-all
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/create-stack.htm
 
 
         :param oci.resource_manager.models.CreateStackDetails create_stack_details: (required)
@@ -1400,7 +1404,7 @@ class ResourceManagerClient(object):
 
     def delete_stack(self, stack_id, **kwargs):
         """
-        Deletes the specified stack object.
+        Deletes the specified stack.
 
 
         :param str stack_id: (required)
@@ -1819,7 +1823,7 @@ class ResourceManagerClient(object):
 
     def get_job(self, job_id, **kwargs):
         """
-        Returns the specified job along with the job details.
+        Gets the properties of the specified job.
 
 
         :param str job_id: (required)
@@ -2181,7 +2185,8 @@ class ResourceManagerClient(object):
 
     def get_job_logs_content(self, job_id, **kwargs):
         """
-        Returns a raw log file for the specified job. The raw log file contains console log entries in text format. The maximum number of entries in a file is 100,000.
+        Returns the raw log file for the specified job in text format.
+        The file includes a maximum of 100,000 log entries.
 
 
         :param str job_id: (required)
@@ -2278,8 +2283,8 @@ class ResourceManagerClient(object):
 
     def get_job_tf_config(self, job_id, **kwargs):
         """
-        Returns the Terraform configuration file for the specified job in .zip format.
-        Returns an error if no zip file is found.
+        Returns the Terraform configuration for the specified job in zip format.
+        If no zip file is found, returns an error.
 
 
         :param str job_id: (required)
@@ -2378,9 +2383,9 @@ class ResourceManagerClient(object):
         """
         Returns the output of the specified Terraform plan job in binary or JSON format.
         For information about running Terraform plan jobs, see
-        `To run a plan job`__.
+        `Creating Plan Jobs`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#PlanJobRun
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/create-job.htm
 
 
         :param str job_id: (required)
@@ -2809,7 +2814,7 @@ class ResourceManagerClient(object):
 
     def get_stack(self, stack_id, **kwargs):
         """
-        Gets a stack using the stack ID.
+        Gets the specified stack.
 
 
         :param str stack_id: (required)
@@ -2906,7 +2911,7 @@ class ResourceManagerClient(object):
 
     def get_stack_tf_config(self, stack_id, **kwargs):
         """
-        Returns the Terraform configuration file in .zip format for the specified stack.
+        Returns the Terraform configuration file for the specified stack in zip format.
         Returns an error if no zip file is found.
 
 
@@ -3296,7 +3301,7 @@ class ResourceManagerClient(object):
 
     def get_template_tf_config(self, template_id, **kwargs):
         """
-        Returns the Terraform configuration file in .zip format for the specified template.
+        Returns the Terraform configuration file in zip format for the specified template.
         Returns an error if no zip file is found.
 
 
@@ -3394,7 +3399,7 @@ class ResourceManagerClient(object):
 
     def get_work_request(self, work_request_id, **kwargs):
         """
-        Return the given work request.
+        Returns the specified work request.
 
 
         :param str work_request_id: (required)
@@ -3652,11 +3657,11 @@ class ResourceManagerClient(object):
 
     def list_jobs(self, **kwargs):
         """
-        Returns a list of jobs in a stack or compartment, ordered by time created.
+        Lists jobs according to the specified filter. By default, the list is ordered by time created.
 
         - To list all jobs in a stack, provide the stack `OCID`__.
         - To list all jobs in a compartment, provide the compartment `OCID`__.
-        - To return a specific job, provide the job `OCID`__.
+        - To return a specific job, provide the job `OCID`__. (Equivalent to :func:`get_stack`.)
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
@@ -4007,8 +4012,10 @@ class ResourceManagerClient(object):
 
     def list_resource_discovery_services(self, **kwargs):
         """
-        Returns a list of supported services for Resource Discovery. For reference on service names, see the `Terraform provider documentation`__.
+        Returns a list of supported services for `Resource Discovery`__.
+        For reference on service names, see the `Terraform provider documentation`__.
 
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resource-discovery.htm
         __ https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services
 
 
@@ -4242,9 +4249,9 @@ class ResourceManagerClient(object):
 
     def list_stacks(self, **kwargs):
         """
-        Returns a list of stacks.
+        Lists stacks according to the specified filter.
         - If called using the compartment ID, returns all stacks in the specified compartment.
-        - If called using the stack ID, returns the specified stack.
+        - If called using the stack ID, returns the specified stack. (See also :func:`get_stack`.)
 
 
         :param str opc_request_id: (optional)
@@ -4518,8 +4525,11 @@ class ResourceManagerClient(object):
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str template_category_id: (optional)
-            Unique identifier of the template category.
-            Possible values are `0` (Quick Starts), `1` (Service), `2` (Architecture), and `3` (Private).
+            Unique identifier for the template category.
+            Possible values are `0` (Quickstarts), `1` (Service), `2` (Architecture), and `3` (Private).
+            Template category labels are displayed in the Console page listing templates.
+            Quickstarts, Service, and Architecture templates (categories 0, 1, and 2) are available in all compartments.
+            Each private template (category 3) is available in the compartment where it was created.
 
         :param str template_id: (optional)
             The `OCID`__ of the template.
@@ -4758,7 +4768,7 @@ class ResourceManagerClient(object):
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
-        Return a (paginated) list of errors for a given work request.
+        Returns a paginated list of errors for the specified work request.
 
 
         :param str work_request_id: (required)
@@ -4898,7 +4908,7 @@ class ResourceManagerClient(object):
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
-        Return a (paginated) list of logs for a given work request.
+        Returns a paginated list of logs for the specified work request.
 
 
         :param str work_request_id: (required)
@@ -5038,7 +5048,7 @@ class ResourceManagerClient(object):
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
-        Lists the work requests in a given compartment or for a given resource.
+        Lists the work requests in the specified compartment or for the specified resource.
 
 
         :param str compartment_id: (required)
@@ -5484,15 +5494,13 @@ class ResourceManagerClient(object):
 
     def update_stack(self, stack_id, update_stack_details, **kwargs):
         """
-        Updates the specified stack object.
+        Updates the specified stack.
         Use `UpdateStack` when you update your Terraform configuration
         and want your changes to be reflected in the execution plan.
         For more information, see
-        `To update a stack`__ and
-        `To edit a stack`__.
+        `Updating Stacks`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#UpdateStack
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#EditStack
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/update-stack.htm
 
 
         :param str stack_id: (required)
@@ -5501,7 +5509,7 @@ class ResourceManagerClient(object):
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.resource_manager.models.UpdateStackDetails update_stack_details: (required)
-            Updated information provided for the stack.
+            The details for updating a stack.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a

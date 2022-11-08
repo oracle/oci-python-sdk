@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class StackSummary(object):
     """
-    Returns a list of properties and the defining property values for the specified stack.
+    Summary information for a stack.
     """
 
     def __init__(self, **kwargs):
