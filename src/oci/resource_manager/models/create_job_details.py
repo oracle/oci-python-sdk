@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateJobDetails(object):
     """
-    Defines the requirements and properties of a job to create and run against the specified stack.
+    Creation details for a job for running inside the specified stack.
     """
 
     def __init__(self, **kwargs):

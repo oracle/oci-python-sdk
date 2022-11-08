@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateGithubAccessTokenConfigurationSourceProviderDetails(UpdateConfigurationSourceProviderDetails):
     """
-    The details for updating a configuration source provider of the type `GITHUB_ACCESS_TOKEN`.
+    Update details for a configuration source provider of the type `GITHUB_ACCESS_TOKEN`.
     This type corresponds to a configuration source provider in GitHub that is authenticated with a personal access token.
     """
 

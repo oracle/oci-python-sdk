@@ -50,6 +50,10 @@ class CreatePrivateEndpointDetails(object):
             The value to assign to the nsg_ids property of this CreatePrivateEndpointDetails.
         :type nsg_ids: list[str]
 
+        :param scan_details:
+            The value to assign to the scan_details property of this CreatePrivateEndpointDetails.
+        :type scan_details: list[oci.data_flow.models.Scan]
+
         :param subnet_id:
             The value to assign to the subnet_id property of this CreatePrivateEndpointDetails.
         :type subnet_id: str
@@ -64,6 +68,7 @@ class CreatePrivateEndpointDetails(object):
             'freeform_tags': 'dict(str, str)',
             'max_host_count': 'int',
             'nsg_ids': 'list[str]',
+            'scan_details': 'list[Scan]',
             'subnet_id': 'str'
         }
 
@@ -76,6 +81,7 @@ class CreatePrivateEndpointDetails(object):
             'freeform_tags': 'freeformTags',
             'max_host_count': 'maxHostCount',
             'nsg_ids': 'nsgIds',
+            'scan_details': 'scanDetails',
             'subnet_id': 'subnetId'
         }
 
@@ -87,6 +93,7 @@ class CreatePrivateEndpointDetails(object):
         self._freeform_tags = None
         self._max_host_count = None
         self._nsg_ids = None
+        self._scan_details = None
         self._subnet_id = None
 
     @property
@@ -302,6 +309,32 @@ class CreatePrivateEndpointDetails(object):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def scan_details(self):
+        """
+        Gets the scan_details of this CreatePrivateEndpointDetails.
+        An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value.
+        [ { fqdn: \"scan1.oracle.com\", port: \"1521\"}, { fqdn: \"scan2.oracle.com\", port: \"1521\" } ]
+
+
+        :return: The scan_details of this CreatePrivateEndpointDetails.
+        :rtype: list[oci.data_flow.models.Scan]
+        """
+        return self._scan_details
+
+    @scan_details.setter
+    def scan_details(self, scan_details):
+        """
+        Sets the scan_details of this CreatePrivateEndpointDetails.
+        An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value.
+        [ { fqdn: \"scan1.oracle.com\", port: \"1521\"}, { fqdn: \"scan2.oracle.com\", port: \"1521\" } ]
+
+
+        :param scan_details: The scan_details of this CreatePrivateEndpointDetails.
+        :type: list[oci.data_flow.models.Scan]
+        """
+        self._scan_details = scan_details
 
     @property
     def subnet_id(self):

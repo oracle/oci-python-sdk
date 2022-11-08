@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeConfigurationSourceProviderCompartmentDetails(object):
     """
-    The details for moving a configuration source provider to a different compartment.
+    Compartment details for moving a configuration source provider.
     """
 
     def __init__(self, **kwargs):

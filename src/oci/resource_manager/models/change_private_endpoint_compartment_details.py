@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangePrivateEndpointCompartmentDetails(object):
     """
-    The details for moving a private endpoint to a different compartment.
+    Compartment details for moving a private endpoint.
     """
 
     def __init__(self, **kwargs):

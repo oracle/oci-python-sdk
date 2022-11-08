@@ -7,6 +7,8 @@ from __future__ import absolute_import
 from .apply_job_operation_details import ApplyJobOperationDetails
 from .apply_job_operation_details_summary import ApplyJobOperationDetailsSummary
 from .apply_job_plan_resolution import ApplyJobPlanResolution
+from .apply_rollback_job_operation_details import ApplyRollbackJobOperationDetails
+from .apply_rollback_job_operation_details_summary import ApplyRollbackJobOperationDetailsSummary
 from .cancellation_details import CancellationDetails
 from .change_configuration_source_provider_compartment_details import ChangeConfigurationSourceProviderCompartmentDetails
 from .change_private_endpoint_compartment_details import ChangePrivateEndpointCompartmentDetails
@@ -19,6 +21,7 @@ from .configuration_source_provider import ConfigurationSourceProvider
 from .configuration_source_provider_collection import ConfigurationSourceProviderCollection
 from .configuration_source_provider_summary import ConfigurationSourceProviderSummary
 from .create_apply_job_operation_details import CreateApplyJobOperationDetails
+from .create_apply_rollback_job_operation_details import CreateApplyRollbackJobOperationDetails
 from .create_compartment_config_source_details import CreateCompartmentConfigSourceDetails
 from .create_config_source_details import CreateConfigSourceDetails
 from .create_configuration_source_provider_details import CreateConfigurationSourceProviderDetails
@@ -31,6 +34,7 @@ from .create_job_details import CreateJobDetails
 from .create_job_operation_details import CreateJobOperationDetails
 from .create_object_storage_config_source_details import CreateObjectStorageConfigSourceDetails
 from .create_plan_job_operation_details import CreatePlanJobOperationDetails
+from .create_plan_rollback_job_operation_details import CreatePlanRollbackJobOperationDetails
 from .create_private_endpoint_details import CreatePrivateEndpointDetails
 from .create_stack_details import CreateStackDetails
 from .create_stack_template_config_source_details import CreateStackTemplateConfigSourceDetails
@@ -60,6 +64,8 @@ from .object_storage_config_source import ObjectStorageConfigSource
 from .object_storage_config_source_record import ObjectStorageConfigSourceRecord
 from .plan_job_operation_details import PlanJobOperationDetails
 from .plan_job_operation_details_summary import PlanJobOperationDetailsSummary
+from .plan_rollback_job_operation_details import PlanRollbackJobOperationDetails
+from .plan_rollback_job_operation_details_summary import PlanRollbackJobOperationDetailsSummary
 from .private_endpoint import PrivateEndpoint
 from .private_endpoint_collection import PrivateEndpointCollection
 from .private_endpoint_summary import PrivateEndpointSummary
@@ -107,6 +113,8 @@ resource_manager_type_mapping = {
     "ApplyJobOperationDetails": ApplyJobOperationDetails,
     "ApplyJobOperationDetailsSummary": ApplyJobOperationDetailsSummary,
     "ApplyJobPlanResolution": ApplyJobPlanResolution,
+    "ApplyRollbackJobOperationDetails": ApplyRollbackJobOperationDetails,
+    "ApplyRollbackJobOperationDetailsSummary": ApplyRollbackJobOperationDetailsSummary,
     "CancellationDetails": CancellationDetails,
     "ChangeConfigurationSourceProviderCompartmentDetails": ChangeConfigurationSourceProviderCompartmentDetails,
     "ChangePrivateEndpointCompartmentDetails": ChangePrivateEndpointCompartmentDetails,
@@ -119,6 +127,7 @@ resource_manager_type_mapping = {
     "ConfigurationSourceProviderCollection": ConfigurationSourceProviderCollection,
     "ConfigurationSourceProviderSummary": ConfigurationSourceProviderSummary,
     "CreateApplyJobOperationDetails": CreateApplyJobOperationDetails,
+    "CreateApplyRollbackJobOperationDetails": CreateApplyRollbackJobOperationDetails,
     "CreateCompartmentConfigSourceDetails": CreateCompartmentConfigSourceDetails,
     "CreateConfigSourceDetails": CreateConfigSourceDetails,
     "CreateConfigurationSourceProviderDetails": CreateConfigurationSourceProviderDetails,
@@ -131,6 +140,7 @@ resource_manager_type_mapping = {
     "CreateJobOperationDetails": CreateJobOperationDetails,
     "CreateObjectStorageConfigSourceDetails": CreateObjectStorageConfigSourceDetails,
     "CreatePlanJobOperationDetails": CreatePlanJobOperationDetails,
+    "CreatePlanRollbackJobOperationDetails": CreatePlanRollbackJobOperationDetails,
     "CreatePrivateEndpointDetails": CreatePrivateEndpointDetails,
     "CreateStackDetails": CreateStackDetails,
     "CreateStackTemplateConfigSourceDetails": CreateStackTemplateConfigSourceDetails,
@@ -160,6 +170,8 @@ resource_manager_type_mapping = {
     "ObjectStorageConfigSourceRecord": ObjectStorageConfigSourceRecord,
     "PlanJobOperationDetails": PlanJobOperationDetails,
     "PlanJobOperationDetailsSummary": PlanJobOperationDetailsSummary,
+    "PlanRollbackJobOperationDetails": PlanRollbackJobOperationDetails,
+    "PlanRollbackJobOperationDetailsSummary": PlanRollbackJobOperationDetailsSummary,
     "PrivateEndpoint": PrivateEndpoint,
     "PrivateEndpointCollection": PrivateEndpointCollection,
     "PrivateEndpointSummary": PrivateEndpointSummary,

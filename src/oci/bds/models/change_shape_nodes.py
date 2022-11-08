@@ -58,6 +58,14 @@ class ChangeShapeNodes(object):
             The value to assign to the cloudsql_shape_config property of this ChangeShapeNodes.
         :type cloudsql_shape_config: oci.bds.models.ShapeConfigDetails
 
+        :param edge:
+            The value to assign to the edge property of this ChangeShapeNodes.
+        :type edge: str
+
+        :param edge_shape_config:
+            The value to assign to the edge_shape_config property of this ChangeShapeNodes.
+        :type edge_shape_config: oci.bds.models.ShapeConfigDetails
+
         """
         self.swagger_types = {
             'worker': 'str',
@@ -69,7 +77,9 @@ class ChangeShapeNodes(object):
             'utility': 'str',
             'utility_shape_config': 'ShapeConfigDetails',
             'cloudsql': 'str',
-            'cloudsql_shape_config': 'ShapeConfigDetails'
+            'cloudsql_shape_config': 'ShapeConfigDetails',
+            'edge': 'str',
+            'edge_shape_config': 'ShapeConfigDetails'
         }
 
         self.attribute_map = {
@@ -82,7 +92,9 @@ class ChangeShapeNodes(object):
             'utility': 'utility',
             'utility_shape_config': 'utilityShapeConfig',
             'cloudsql': 'cloudsql',
-            'cloudsql_shape_config': 'cloudsqlShapeConfig'
+            'cloudsql_shape_config': 'cloudsqlShapeConfig',
+            'edge': 'edge',
+            'edge_shape_config': 'edgeShapeConfig'
         }
 
         self._worker = None
@@ -95,6 +107,8 @@ class ChangeShapeNodes(object):
         self._utility_shape_config = None
         self._cloudsql = None
         self._cloudsql_shape_config = None
+        self._edge = None
+        self._edge_shape_config = None
 
     @property
     def worker(self):
@@ -315,6 +329,50 @@ class ChangeShapeNodes(object):
         :type: oci.bds.models.ShapeConfigDetails
         """
         self._cloudsql_shape_config = cloudsql_shape_config
+
+    @property
+    def edge(self):
+        """
+        Gets the edge of this ChangeShapeNodes.
+        Change shape of edge nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
+
+
+        :return: The edge of this ChangeShapeNodes.
+        :rtype: str
+        """
+        return self._edge
+
+    @edge.setter
+    def edge(self, edge):
+        """
+        Sets the edge of this ChangeShapeNodes.
+        Change shape of edge nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
+
+
+        :param edge: The edge of this ChangeShapeNodes.
+        :type: str
+        """
+        self._edge = edge
+
+    @property
+    def edge_shape_config(self):
+        """
+        Gets the edge_shape_config of this ChangeShapeNodes.
+
+        :return: The edge_shape_config of this ChangeShapeNodes.
+        :rtype: oci.bds.models.ShapeConfigDetails
+        """
+        return self._edge_shape_config
+
+    @edge_shape_config.setter
+    def edge_shape_config(self, edge_shape_config):
+        """
+        Sets the edge_shape_config of this ChangeShapeNodes.
+
+        :param edge_shape_config: The edge_shape_config of this ChangeShapeNodes.
+        :type: oci.bds.models.ShapeConfigDetails
+        """
+        self._edge_shape_config = edge_shape_config
 
     def __repr__(self):
         return formatted_flat_dict(self)
