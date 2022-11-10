@@ -54,11 +54,13 @@ from .change_exadata_infrastructure_compartment_details import ChangeExadataInfr
 from .change_key_store_compartment_details import ChangeKeyStoreCompartmentDetails
 from .change_vm_cluster_compartment_details import ChangeVmClusterCompartmentDetails
 from .cloud_autonomous_vm_cluster import CloudAutonomousVmCluster
+from .cloud_autonomous_vm_cluster_resource_details import CloudAutonomousVmClusterResourceDetails
 from .cloud_autonomous_vm_cluster_summary import CloudAutonomousVmClusterSummary
 from .cloud_database_management_config import CloudDatabaseManagementConfig
 from .cloud_db_server_details import CloudDbServerDetails
 from .cloud_exadata_infrastructure import CloudExadataInfrastructure
 from .cloud_exadata_infrastructure_summary import CloudExadataInfrastructureSummary
+from .cloud_exadata_infrastructure_unallocated_resources import CloudExadataInfrastructureUnallocatedResources
 from .cloud_vm_cluster import CloudVmCluster
 from .cloud_vm_cluster_summary import CloudVmClusterSummary
 from .complete_external_backup_job_details import CompleteExternalBackupJobDetails
@@ -359,11 +361,13 @@ database_type_mapping = {
     "ChangeKeyStoreCompartmentDetails": ChangeKeyStoreCompartmentDetails,
     "ChangeVmClusterCompartmentDetails": ChangeVmClusterCompartmentDetails,
     "CloudAutonomousVmCluster": CloudAutonomousVmCluster,
+    "CloudAutonomousVmClusterResourceDetails": CloudAutonomousVmClusterResourceDetails,
     "CloudAutonomousVmClusterSummary": CloudAutonomousVmClusterSummary,
     "CloudDatabaseManagementConfig": CloudDatabaseManagementConfig,
     "CloudDbServerDetails": CloudDbServerDetails,
     "CloudExadataInfrastructure": CloudExadataInfrastructure,
     "CloudExadataInfrastructureSummary": CloudExadataInfrastructureSummary,
+    "CloudExadataInfrastructureUnallocatedResources": CloudExadataInfrastructureUnallocatedResources,
     "CloudVmCluster": CloudVmCluster,
     "CloudVmClusterSummary": CloudVmClusterSummary,
     "CompleteExternalBackupJobDetails": CompleteExternalBackupJobDetails,
