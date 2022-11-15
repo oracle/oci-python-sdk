@@ -182,6 +182,18 @@ class AutonomousVmCluster(object):
             The value to assign to the available_autonomous_data_storage_size_in_tbs property of this AutonomousVmCluster.
         :type available_autonomous_data_storage_size_in_tbs: float
 
+        :param scan_listener_port_tls:
+            The value to assign to the scan_listener_port_tls property of this AutonomousVmCluster.
+        :type scan_listener_port_tls: int
+
+        :param scan_listener_port_non_tls:
+            The value to assign to the scan_listener_port_non_tls property of this AutonomousVmCluster.
+        :type scan_listener_port_non_tls: int
+
+        :param is_mtls_enabled:
+            The value to assign to the is_mtls_enabled property of this AutonomousVmCluster.
+        :type is_mtls_enabled: bool
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -214,7 +226,10 @@ class AutonomousVmCluster(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'reclaimable_cpus': 'int',
             'available_container_databases': 'int',
-            'available_autonomous_data_storage_size_in_tbs': 'float'
+            'available_autonomous_data_storage_size_in_tbs': 'float',
+            'scan_listener_port_tls': 'int',
+            'scan_listener_port_non_tls': 'int',
+            'is_mtls_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -248,7 +263,10 @@ class AutonomousVmCluster(object):
             'defined_tags': 'definedTags',
             'reclaimable_cpus': 'reclaimableCpus',
             'available_container_databases': 'availableContainerDatabases',
-            'available_autonomous_data_storage_size_in_tbs': 'availableAutonomousDataStorageSizeInTBs'
+            'available_autonomous_data_storage_size_in_tbs': 'availableAutonomousDataStorageSizeInTBs',
+            'scan_listener_port_tls': 'scanListenerPortTls',
+            'scan_listener_port_non_tls': 'scanListenerPortNonTls',
+            'is_mtls_enabled': 'isMtlsEnabled'
         }
 
         self._id = None
@@ -282,6 +300,9 @@ class AutonomousVmCluster(object):
         self._reclaimable_cpus = None
         self._available_container_databases = None
         self._available_autonomous_data_storage_size_in_tbs = None
+        self._scan_listener_port_tls = None
+        self._scan_listener_port_non_tls = None
+        self._is_mtls_enabled = None
 
     @property
     def id(self):
@@ -1078,6 +1099,78 @@ class AutonomousVmCluster(object):
         :type: float
         """
         self._available_autonomous_data_storage_size_in_tbs = available_autonomous_data_storage_size_in_tbs
+
+    @property
+    def scan_listener_port_tls(self):
+        """
+        Gets the scan_listener_port_tls of this AutonomousVmCluster.
+        The SCAN Listener TLS port number. Default value is 2484.
+
+
+        :return: The scan_listener_port_tls of this AutonomousVmCluster.
+        :rtype: int
+        """
+        return self._scan_listener_port_tls
+
+    @scan_listener_port_tls.setter
+    def scan_listener_port_tls(self, scan_listener_port_tls):
+        """
+        Sets the scan_listener_port_tls of this AutonomousVmCluster.
+        The SCAN Listener TLS port number. Default value is 2484.
+
+
+        :param scan_listener_port_tls: The scan_listener_port_tls of this AutonomousVmCluster.
+        :type: int
+        """
+        self._scan_listener_port_tls = scan_listener_port_tls
+
+    @property
+    def scan_listener_port_non_tls(self):
+        """
+        Gets the scan_listener_port_non_tls of this AutonomousVmCluster.
+        The SCAN Listener Non TLS port number. Default value is 1521.
+
+
+        :return: The scan_listener_port_non_tls of this AutonomousVmCluster.
+        :rtype: int
+        """
+        return self._scan_listener_port_non_tls
+
+    @scan_listener_port_non_tls.setter
+    def scan_listener_port_non_tls(self, scan_listener_port_non_tls):
+        """
+        Sets the scan_listener_port_non_tls of this AutonomousVmCluster.
+        The SCAN Listener Non TLS port number. Default value is 1521.
+
+
+        :param scan_listener_port_non_tls: The scan_listener_port_non_tls of this AutonomousVmCluster.
+        :type: int
+        """
+        self._scan_listener_port_non_tls = scan_listener_port_non_tls
+
+    @property
+    def is_mtls_enabled(self):
+        """
+        Gets the is_mtls_enabled of this AutonomousVmCluster.
+        Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. Default is TLS.
+
+
+        :return: The is_mtls_enabled of this AutonomousVmCluster.
+        :rtype: bool
+        """
+        return self._is_mtls_enabled
+
+    @is_mtls_enabled.setter
+    def is_mtls_enabled(self, is_mtls_enabled):
+        """
+        Sets the is_mtls_enabled of this AutonomousVmCluster.
+        Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. Default is TLS.
+
+
+        :param is_mtls_enabled: The is_mtls_enabled of this AutonomousVmCluster.
+        :type: bool
+        """
+        self._is_mtls_enabled = is_mtls_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

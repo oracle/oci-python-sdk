@@ -69,6 +69,10 @@ class BdsInstance(object):
     #: This constant has a value of "ODH0_9"
     CLUSTER_VERSION_ODH0_9 = "ODH0_9"
 
+    #: A constant which can be used with the cluster_version property of a BdsInstance.
+    #: This constant has a value of "ODH2_0"
+    CLUSTER_VERSION_ODH2_0 = "ODH2_0"
+
     def __init__(self, **kwargs):
         """
         Initializes a new BdsInstance object with values from keyword arguments.
@@ -94,7 +98,7 @@ class BdsInstance(object):
 
         :param cluster_version:
             The value to assign to the cluster_version property of this BdsInstance.
-            Allowed values for this property are: "CDH5", "CDH6", "ODH1", "ODH0_9", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CDH5", "CDH6", "ODH1", "ODH0_9", "ODH2_0", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type cluster_version: str
 
@@ -334,7 +338,7 @@ class BdsInstance(object):
         Gets the cluster_version of this BdsInstance.
         Version of the Hadoop distribution.
 
-        Allowed values for this property are: "CDH5", "CDH6", "ODH1", "ODH0_9", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CDH5", "CDH6", "ODH1", "ODH0_9", "ODH2_0", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -353,7 +357,7 @@ class BdsInstance(object):
         :param cluster_version: The cluster_version of this BdsInstance.
         :type: str
         """
-        allowed_values = ["CDH5", "CDH6", "ODH1", "ODH0_9"]
+        allowed_values = ["CDH5", "CDH6", "ODH1", "ODH0_9", "ODH2_0"]
         if not value_allowed_none_or_none_sentinel(cluster_version, allowed_values):
             cluster_version = 'UNKNOWN_ENUM_VALUE'
         self._cluster_version = cluster_version
