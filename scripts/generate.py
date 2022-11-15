@@ -29,7 +29,7 @@ else:
         "BaseClient", "Error", "Request", "Response", "Signer", "config", "constants", "decorators", "exceptions", "regions", "wait_until", "pagination", "auth", "retry", "fips", "circuit_breaker",
         {quoted_spec_names}
     ]
-    if sys.version_info >= (3, 7):
+    if sys.version_info >= (3, 7) and os.getenv("OCI_PYTHON_SDK_LAZY_IMPORTS_DISABLED", "False").lower() != "true":
         def __getattr__(x):
             # Loads the oci modules only when they are needed instead of loading them all at start to reduce the initial
             # import time and memory used by the SDK.
