@@ -46,9 +46,33 @@ class CreateCloudAutonomousVmClusterDetails(object):
             The value to assign to the cloud_exadata_infrastructure_id property of this CreateCloudAutonomousVmClusterDetails.
         :type cloud_exadata_infrastructure_id: str
 
+        :param total_container_databases:
+            The value to assign to the total_container_databases property of this CreateCloudAutonomousVmClusterDetails.
+        :type total_container_databases: int
+
+        :param cpu_core_count_per_node:
+            The value to assign to the cpu_core_count_per_node property of this CreateCloudAutonomousVmClusterDetails.
+        :type cpu_core_count_per_node: int
+
+        :param memory_per_oracle_compute_unit_in_gbs:
+            The value to assign to the memory_per_oracle_compute_unit_in_gbs property of this CreateCloudAutonomousVmClusterDetails.
+        :type memory_per_oracle_compute_unit_in_gbs: int
+
+        :param autonomous_data_storage_size_in_tbs:
+            The value to assign to the autonomous_data_storage_size_in_tbs property of this CreateCloudAutonomousVmClusterDetails.
+        :type autonomous_data_storage_size_in_tbs: float
+
         :param cluster_time_zone:
             The value to assign to the cluster_time_zone property of this CreateCloudAutonomousVmClusterDetails.
         :type cluster_time_zone: str
+
+        :param db_servers:
+            The value to assign to the db_servers property of this CreateCloudAutonomousVmClusterDetails.
+        :type db_servers: list[str]
+
+        :param maintenance_window_details:
+            The value to assign to the maintenance_window_details property of this CreateCloudAutonomousVmClusterDetails.
+        :type maintenance_window_details: oci.database.models.MaintenanceWindow
 
         :param license_model:
             The value to assign to the license_model property of this CreateCloudAutonomousVmClusterDetails.
@@ -74,7 +98,13 @@ class CreateCloudAutonomousVmClusterDetails(object):
             'subnet_id': 'str',
             'display_name': 'str',
             'cloud_exadata_infrastructure_id': 'str',
+            'total_container_databases': 'int',
+            'cpu_core_count_per_node': 'int',
+            'memory_per_oracle_compute_unit_in_gbs': 'int',
+            'autonomous_data_storage_size_in_tbs': 'float',
             'cluster_time_zone': 'str',
+            'db_servers': 'list[str]',
+            'maintenance_window_details': 'MaintenanceWindow',
             'license_model': 'str',
             'nsg_ids': 'list[str]',
             'freeform_tags': 'dict(str, str)',
@@ -87,7 +117,13 @@ class CreateCloudAutonomousVmClusterDetails(object):
             'subnet_id': 'subnetId',
             'display_name': 'displayName',
             'cloud_exadata_infrastructure_id': 'cloudExadataInfrastructureId',
+            'total_container_databases': 'totalContainerDatabases',
+            'cpu_core_count_per_node': 'cpuCoreCountPerNode',
+            'memory_per_oracle_compute_unit_in_gbs': 'memoryPerOracleComputeUnitInGBs',
+            'autonomous_data_storage_size_in_tbs': 'autonomousDataStorageSizeInTBs',
             'cluster_time_zone': 'clusterTimeZone',
+            'db_servers': 'dbServers',
+            'maintenance_window_details': 'maintenanceWindowDetails',
             'license_model': 'licenseModel',
             'nsg_ids': 'nsgIds',
             'freeform_tags': 'freeformTags',
@@ -99,7 +135,13 @@ class CreateCloudAutonomousVmClusterDetails(object):
         self._subnet_id = None
         self._display_name = None
         self._cloud_exadata_infrastructure_id = None
+        self._total_container_databases = None
+        self._cpu_core_count_per_node = None
+        self._memory_per_oracle_compute_unit_in_gbs = None
+        self._autonomous_data_storage_size_in_tbs = None
         self._cluster_time_zone = None
+        self._db_servers = None
+        self._maintenance_window_details = None
         self._license_model = None
         self._nsg_ids = None
         self._freeform_tags = None
@@ -238,6 +280,102 @@ class CreateCloudAutonomousVmClusterDetails(object):
         self._cloud_exadata_infrastructure_id = cloud_exadata_infrastructure_id
 
     @property
+    def total_container_databases(self):
+        """
+        Gets the total_container_databases of this CreateCloudAutonomousVmClusterDetails.
+        The total number of Autonomous Container Databases that can be created.
+
+
+        :return: The total_container_databases of this CreateCloudAutonomousVmClusterDetails.
+        :rtype: int
+        """
+        return self._total_container_databases
+
+    @total_container_databases.setter
+    def total_container_databases(self, total_container_databases):
+        """
+        Sets the total_container_databases of this CreateCloudAutonomousVmClusterDetails.
+        The total number of Autonomous Container Databases that can be created.
+
+
+        :param total_container_databases: The total_container_databases of this CreateCloudAutonomousVmClusterDetails.
+        :type: int
+        """
+        self._total_container_databases = total_container_databases
+
+    @property
+    def cpu_core_count_per_node(self):
+        """
+        Gets the cpu_core_count_per_node of this CreateCloudAutonomousVmClusterDetails.
+        The number of OCPU cores to enable per VM cluster node.
+
+
+        :return: The cpu_core_count_per_node of this CreateCloudAutonomousVmClusterDetails.
+        :rtype: int
+        """
+        return self._cpu_core_count_per_node
+
+    @cpu_core_count_per_node.setter
+    def cpu_core_count_per_node(self, cpu_core_count_per_node):
+        """
+        Sets the cpu_core_count_per_node of this CreateCloudAutonomousVmClusterDetails.
+        The number of OCPU cores to enable per VM cluster node.
+
+
+        :param cpu_core_count_per_node: The cpu_core_count_per_node of this CreateCloudAutonomousVmClusterDetails.
+        :type: int
+        """
+        self._cpu_core_count_per_node = cpu_core_count_per_node
+
+    @property
+    def memory_per_oracle_compute_unit_in_gbs(self):
+        """
+        Gets the memory_per_oracle_compute_unit_in_gbs of this CreateCloudAutonomousVmClusterDetails.
+        The amount of memory (in GBs) to be enabled per each OCPU core.
+
+
+        :return: The memory_per_oracle_compute_unit_in_gbs of this CreateCloudAutonomousVmClusterDetails.
+        :rtype: int
+        """
+        return self._memory_per_oracle_compute_unit_in_gbs
+
+    @memory_per_oracle_compute_unit_in_gbs.setter
+    def memory_per_oracle_compute_unit_in_gbs(self, memory_per_oracle_compute_unit_in_gbs):
+        """
+        Sets the memory_per_oracle_compute_unit_in_gbs of this CreateCloudAutonomousVmClusterDetails.
+        The amount of memory (in GBs) to be enabled per each OCPU core.
+
+
+        :param memory_per_oracle_compute_unit_in_gbs: The memory_per_oracle_compute_unit_in_gbs of this CreateCloudAutonomousVmClusterDetails.
+        :type: int
+        """
+        self._memory_per_oracle_compute_unit_in_gbs = memory_per_oracle_compute_unit_in_gbs
+
+    @property
+    def autonomous_data_storage_size_in_tbs(self):
+        """
+        Gets the autonomous_data_storage_size_in_tbs of this CreateCloudAutonomousVmClusterDetails.
+        The data disk group size to be allocated for Autonomous Databases, in TBs.
+
+
+        :return: The autonomous_data_storage_size_in_tbs of this CreateCloudAutonomousVmClusterDetails.
+        :rtype: float
+        """
+        return self._autonomous_data_storage_size_in_tbs
+
+    @autonomous_data_storage_size_in_tbs.setter
+    def autonomous_data_storage_size_in_tbs(self, autonomous_data_storage_size_in_tbs):
+        """
+        Sets the autonomous_data_storage_size_in_tbs of this CreateCloudAutonomousVmClusterDetails.
+        The data disk group size to be allocated for Autonomous Databases, in TBs.
+
+
+        :param autonomous_data_storage_size_in_tbs: The autonomous_data_storage_size_in_tbs of this CreateCloudAutonomousVmClusterDetails.
+        :type: float
+        """
+        self._autonomous_data_storage_size_in_tbs = autonomous_data_storage_size_in_tbs
+
+    @property
     def cluster_time_zone(self):
         """
         Gets the cluster_time_zone of this CreateCloudAutonomousVmClusterDetails.
@@ -264,6 +402,50 @@ class CreateCloudAutonomousVmClusterDetails(object):
         :type: str
         """
         self._cluster_time_zone = cluster_time_zone
+
+    @property
+    def db_servers(self):
+        """
+        Gets the db_servers of this CreateCloudAutonomousVmClusterDetails.
+        The list of Db server.
+
+
+        :return: The db_servers of this CreateCloudAutonomousVmClusterDetails.
+        :rtype: list[str]
+        """
+        return self._db_servers
+
+    @db_servers.setter
+    def db_servers(self, db_servers):
+        """
+        Sets the db_servers of this CreateCloudAutonomousVmClusterDetails.
+        The list of Db server.
+
+
+        :param db_servers: The db_servers of this CreateCloudAutonomousVmClusterDetails.
+        :type: list[str]
+        """
+        self._db_servers = db_servers
+
+    @property
+    def maintenance_window_details(self):
+        """
+        Gets the maintenance_window_details of this CreateCloudAutonomousVmClusterDetails.
+
+        :return: The maintenance_window_details of this CreateCloudAutonomousVmClusterDetails.
+        :rtype: oci.database.models.MaintenanceWindow
+        """
+        return self._maintenance_window_details
+
+    @maintenance_window_details.setter
+    def maintenance_window_details(self, maintenance_window_details):
+        """
+        Sets the maintenance_window_details of this CreateCloudAutonomousVmClusterDetails.
+
+        :param maintenance_window_details: The maintenance_window_details of this CreateCloudAutonomousVmClusterDetails.
+        :type: oci.database.models.MaintenanceWindow
+        """
+        self._maintenance_window_details = maintenance_window_details
 
     @property
     def license_model(self):

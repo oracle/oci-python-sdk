@@ -23,6 +23,8 @@ Resource Manager
     oci.resource_manager.models.ApplyJobPlanResolution
     oci.resource_manager.models.ApplyRollbackJobOperationDetails
     oci.resource_manager.models.ApplyRollbackJobOperationDetailsSummary
+    oci.resource_manager.models.AssociatedResourceSummary
+    oci.resource_manager.models.AssociatedResourcesCollection
     oci.resource_manager.models.CancellationDetails
     oci.resource_manager.models.ChangeConfigurationSourceProviderCompartmentDetails
     oci.resource_manager.models.ChangePrivateEndpointCompartmentDetails
@@ -72,6 +74,8 @@ Resource Manager
     oci.resource_manager.models.Job
     oci.resource_manager.models.JobOperationDetails
     oci.resource_manager.models.JobOperationDetailsSummary
+    oci.resource_manager.models.JobOutputSummary
+    oci.resource_manager.models.JobOutputsCollection
     oci.resource_manager.models.JobSummary
     oci.resource_manager.models.LogEntry
     oci.resource_manager.models.ObjectStorageConfigSource

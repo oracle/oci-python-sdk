@@ -68,11 +68,13 @@ Database
     oci.database.models.ChangeKeyStoreCompartmentDetails
     oci.database.models.ChangeVmClusterCompartmentDetails
     oci.database.models.CloudAutonomousVmCluster
+    oci.database.models.CloudAutonomousVmClusterResourceDetails
     oci.database.models.CloudAutonomousVmClusterSummary
     oci.database.models.CloudDatabaseManagementConfig
     oci.database.models.CloudDbServerDetails
     oci.database.models.CloudExadataInfrastructure
     oci.database.models.CloudExadataInfrastructureSummary
+    oci.database.models.CloudExadataInfrastructureUnallocatedResources
     oci.database.models.CloudVmCluster
     oci.database.models.CloudVmClusterSummary
     oci.database.models.CompleteExternalBackupJobDetails

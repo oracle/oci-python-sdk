@@ -9,6 +9,8 @@ from .apply_job_operation_details_summary import ApplyJobOperationDetailsSummary
 from .apply_job_plan_resolution import ApplyJobPlanResolution
 from .apply_rollback_job_operation_details import ApplyRollbackJobOperationDetails
 from .apply_rollback_job_operation_details_summary import ApplyRollbackJobOperationDetailsSummary
+from .associated_resource_summary import AssociatedResourceSummary
+from .associated_resources_collection import AssociatedResourcesCollection
 from .cancellation_details import CancellationDetails
 from .change_configuration_source_provider_compartment_details import ChangeConfigurationSourceProviderCompartmentDetails
 from .change_private_endpoint_compartment_details import ChangePrivateEndpointCompartmentDetails
@@ -58,6 +60,8 @@ from .import_tf_state_job_operation_details_summary import ImportTfStateJobOpera
 from .job import Job
 from .job_operation_details import JobOperationDetails
 from .job_operation_details_summary import JobOperationDetailsSummary
+from .job_output_summary import JobOutputSummary
+from .job_outputs_collection import JobOutputsCollection
 from .job_summary import JobSummary
 from .log_entry import LogEntry
 from .object_storage_config_source import ObjectStorageConfigSource
@@ -115,6 +119,8 @@ resource_manager_type_mapping = {
     "ApplyJobPlanResolution": ApplyJobPlanResolution,
     "ApplyRollbackJobOperationDetails": ApplyRollbackJobOperationDetails,
     "ApplyRollbackJobOperationDetailsSummary": ApplyRollbackJobOperationDetailsSummary,
+    "AssociatedResourceSummary": AssociatedResourceSummary,
+    "AssociatedResourcesCollection": AssociatedResourcesCollection,
     "CancellationDetails": CancellationDetails,
     "ChangeConfigurationSourceProviderCompartmentDetails": ChangeConfigurationSourceProviderCompartmentDetails,
     "ChangePrivateEndpointCompartmentDetails": ChangePrivateEndpointCompartmentDetails,
@@ -164,6 +170,8 @@ resource_manager_type_mapping = {
     "Job": Job,
     "JobOperationDetails": JobOperationDetails,
     "JobOperationDetailsSummary": JobOperationDetailsSummary,
+    "JobOutputSummary": JobOutputSummary,
+    "JobOutputsCollection": JobOutputsCollection,
     "JobSummary": JobSummary,
     "LogEntry": LogEntry,
     "ObjectStorageConfigSource": ObjectStorageConfigSource,

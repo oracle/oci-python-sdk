@@ -144,6 +144,10 @@ class CloudAutonomousVmCluster(object):
             The value to assign to the ocpu_count property of this CloudAutonomousVmCluster.
         :type ocpu_count: float
 
+        :param cpu_core_count_per_node:
+            The value to assign to the cpu_core_count_per_node property of this CloudAutonomousVmCluster.
+        :type cpu_core_count_per_node: int
+
         :param memory_size_in_gbs:
             The value to assign to the memory_size_in_gbs property of this CloudAutonomousVmCluster.
         :type memory_size_in_gbs: int
@@ -161,6 +165,10 @@ class CloudAutonomousVmCluster(object):
         :param next_maintenance_run_id:
             The value to assign to the next_maintenance_run_id property of this CloudAutonomousVmCluster.
         :type next_maintenance_run_id: str
+
+        :param maintenance_window:
+            The value to assign to the maintenance_window property of this CloudAutonomousVmCluster.
+        :type maintenance_window: oci.database.models.MaintenanceWindow
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CloudAutonomousVmCluster.
@@ -226,10 +234,12 @@ class CloudAutonomousVmCluster(object):
             'data_storage_size_in_gbs': 'float',
             'cpu_core_count': 'int',
             'ocpu_count': 'float',
+            'cpu_core_count_per_node': 'int',
             'memory_size_in_gbs': 'int',
             'license_model': 'str',
             'last_maintenance_run_id': 'str',
             'next_maintenance_run_id': 'str',
+            'maintenance_window': 'MaintenanceWindow',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'available_cpus': 'float',
@@ -265,10 +275,12 @@ class CloudAutonomousVmCluster(object):
             'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
             'cpu_core_count': 'cpuCoreCount',
             'ocpu_count': 'ocpuCount',
+            'cpu_core_count_per_node': 'cpuCoreCountPerNode',
             'memory_size_in_gbs': 'memorySizeInGBs',
             'license_model': 'licenseModel',
             'last_maintenance_run_id': 'lastMaintenanceRunId',
             'next_maintenance_run_id': 'nextMaintenanceRunId',
+            'maintenance_window': 'maintenanceWindow',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'available_cpus': 'availableCpus',
@@ -303,10 +315,12 @@ class CloudAutonomousVmCluster(object):
         self._data_storage_size_in_gbs = None
         self._cpu_core_count = None
         self._ocpu_count = None
+        self._cpu_core_count_per_node = None
         self._memory_size_in_gbs = None
         self._license_model = None
         self._last_maintenance_run_id = None
         self._next_maintenance_run_id = None
+        self._maintenance_window = None
         self._freeform_tags = None
         self._defined_tags = None
         self._available_cpus = None
@@ -897,6 +911,30 @@ class CloudAutonomousVmCluster(object):
         self._ocpu_count = ocpu_count
 
     @property
+    def cpu_core_count_per_node(self):
+        """
+        Gets the cpu_core_count_per_node of this CloudAutonomousVmCluster.
+        The number of OCPU cores enabled per VM cluster node.
+
+
+        :return: The cpu_core_count_per_node of this CloudAutonomousVmCluster.
+        :rtype: int
+        """
+        return self._cpu_core_count_per_node
+
+    @cpu_core_count_per_node.setter
+    def cpu_core_count_per_node(self, cpu_core_count_per_node):
+        """
+        Sets the cpu_core_count_per_node of this CloudAutonomousVmCluster.
+        The number of OCPU cores enabled per VM cluster node.
+
+
+        :param cpu_core_count_per_node: The cpu_core_count_per_node of this CloudAutonomousVmCluster.
+        :type: int
+        """
+        self._cpu_core_count_per_node = cpu_core_count_per_node
+
+    @property
     def memory_size_in_gbs(self):
         """
         Gets the memory_size_in_gbs of this CloudAutonomousVmCluster.
@@ -1017,6 +1055,26 @@ class CloudAutonomousVmCluster(object):
         :type: str
         """
         self._next_maintenance_run_id = next_maintenance_run_id
+
+    @property
+    def maintenance_window(self):
+        """
+        Gets the maintenance_window of this CloudAutonomousVmCluster.
+
+        :return: The maintenance_window of this CloudAutonomousVmCluster.
+        :rtype: oci.database.models.MaintenanceWindow
+        """
+        return self._maintenance_window
+
+    @maintenance_window.setter
+    def maintenance_window(self, maintenance_window):
+        """
+        Sets the maintenance_window of this CloudAutonomousVmCluster.
+
+        :param maintenance_window: The maintenance_window of this CloudAutonomousVmCluster.
+        :type: oci.database.models.MaintenanceWindow
+        """
+        self._maintenance_window = maintenance_window
 
     @property
     def freeform_tags(self):
