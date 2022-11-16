@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+22.11.22 - 2022.11.22
+=====================
+* Update the list price API
+
+=====================
 22.10.15 - 2022.10.15
 =====================
 * Added additional output information

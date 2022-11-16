@@ -595,6 +595,9 @@ class ShowOCIData(object):
 
             for subnet in subnets:
 
+                # get the list of private_ips
+                private_ips = self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_SUBNET_PIP, 'subnet_id', subnet['id'])
+
                 # get the list of security lists
                 sec_lists = []
                 if 'security_list_ids' in subnet:
@@ -636,6 +639,7 @@ class ShowOCIData(object):
                     'time_created': subnet['time_created'],
                     'defined_tags': subnet['defined_tags'],
                     'freeform_tags': subnet['freeform_tags'],
+                    'private_ips': private_ips,
                     'logs': self.service.get_logging_log(subnet['id'])
                 })
                 data.append(val)

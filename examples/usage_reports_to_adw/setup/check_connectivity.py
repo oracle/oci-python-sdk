@@ -54,8 +54,8 @@ try:
     print("   Okay.")
 
     print("\n   Check Access to OCI Public Rates URL (Required Internet Access)...")
-    api_url = "https://itra.oraclecloud.com/itas/.anon/myservices/api/v1/products?partNumber=B88206"
-    resp = requests.get(api_url, headers={'X-Oracle-Accept-CurrencyCode': 'USD'})
+    api_url = "https://apexapps.oracle.com/pls/apex/cetools/api/v1/products/?currencyCode=USD"
+    resp = requests.get(api_url)
     print("   Okay.")
 
     print("\n   Check Completed Successfully.")

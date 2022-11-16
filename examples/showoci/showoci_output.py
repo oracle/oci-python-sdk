@@ -414,6 +414,7 @@ class ShowOCIOutput(object):
                 print(self.tabs + self.tabs + "DNS     : " + subnet['dns'])
                 print(self.tabs + self.tabs + "DHCP    : " + subnet['dhcp_options'])
                 print(self.tabs + self.tabs + "Route   : " + subnet['route'])
+                print(self.tabs + self.tabs + "Prv IPs : " + str(len(subnet['private_ips'])) + " Private IPs Allocated")
                 for s in subnet['security_list']:
                     print(self.tabs + self.tabs + "Sec List: " + s)
 
@@ -3467,6 +3468,7 @@ class ShowOCICSV(object):
     csv_network_drg_ipsec_tunnels = []
     csv_network_drg_virtual_circuits = []
     csv_network_subnet = []
+    csv_network_subnet_prv_ips = []
     csv_network_security_list = []
     csv_network_security_group = []
     csv_network_routes = []
@@ -3547,6 +3549,7 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("block_volumes", self.csv_block_volumes)
             self.__export_to_csv_file("block_volumes_backups", self.csv_block_volumes_backups)
             self.__export_to_csv_file("network_subnet", self.csv_network_subnet)
+            self.__export_to_csv_file("network_subnet_prv_ips", self.csv_network_subnet_prv_ips)
             self.__export_to_csv_file("network_drgs", self.csv_network_drg)
             self.__export_to_csv_file("network_drg_ipsec_tunnels", self.csv_network_drg_ipsec_tunnels)
             self.__export_to_csv_file("network_drg_virtual_circuits", self.csv_network_drg_virtual_circuits)
@@ -3641,7 +3644,7 @@ class ShowOCICSV(object):
                 for row in result:
                     writer.writerow(row)
 
-            print("CSV: " + file_subject.ljust(24) + " --> " + file_name)
+            print("CSV: " + file_subject.ljust(26) + " --> " + file_name)
 
         except Exception as e:
             raise Exception("Error in __export_to_csv_file: " + str(e.args))
@@ -3869,6 +3872,36 @@ class ShowOCICSV(object):
                         'vcn_id': vcn['id'],
                         'subnet_id': subnet['id']}
                 self.csv_network_subnet.append(data)
+
+                # private ips
+                for ip in subnet['private_ips']:
+                    data = {'region_name': region_name,
+                            'vcn_name': vcn['display_name'],
+                            'vcn_cidr': vcn['cidr_block'],
+                            'vcn_cidrs': vcn['cidr_blocks'],
+                            'vcn_compartment': vcn['compartment_name'],
+                            'vcn_compartment_path': vcn['compartment_path'],
+                            'subnet_name': subnet['name'],
+                            'subnet_cidr': subnet['cidr_block'],
+                            'subnet_compartment': subnet['compartment_name'],
+                            'subnet_compartment_path': subnet['compartment_path'],
+                            'ip_address': ip['ip_address'],
+                            'display_name': ip['display_name'],
+                            'hostname_label': ip['hostname_label'],
+                            'is_primary': ip['is_primary'],
+                            'time_created': ip['time_created'],
+                            'ip_compartment_name': ip['compartment_name'],
+                            'ip_compartment_path': ip['compartment_path'],
+                            'ip_compartment_id': ip['compartment_id'],
+                            'privateip_id': ip['id'],
+                            'vlan_id': ip['vlan_id'],
+                            'vcn_id': vcn['id'],
+                            'subnet_id': subnet['id'],
+                            'freeform_tags': self.__get_freeform_tags(ip['freeform_tags']),
+                            'defined_tags': self.__get_defined_tags(ip['defined_tags'])
+                            }
+
+                    self.csv_network_subnet_prv_ips.append(data)
 
         except Exception as e:
             self.__print_error("__csv_core_network_vcn_subnet", e)

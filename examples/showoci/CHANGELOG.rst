@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+22.11.15 - 22.11.15
+=====================
+* Added privte ip addresses to subnet - json and csv
+
+=====================
 22.10.18 - 22.10.18
 =====================
 * Added csv for Monitoring: agents, events, alarm, db management and Notifications
