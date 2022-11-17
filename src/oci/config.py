@@ -127,7 +127,7 @@ def validate_config(config, **kwargs):
         # InstancePrincipalsSecurityTokenSigner and  SecurityTokenSigner are
         # self-sufficient and do not need to read the normally-required keys
         # in the config
-        if isinstance(kwargs['signer'], signers.InstancePrincipalsSecurityTokenSigner) or isinstance(kwargs['signer'], signers.SecurityTokenSigner):
+        if isinstance(kwargs['signer'], signers.InstancePrincipalsSecurityTokenSigner) or isinstance(kwargs['signer'], signers.SecurityTokenSigner) or isinstance(kwargs['signer'], signers.KeyPairSigner):
             return
 
     if AUTHENTICATION_TYPE_FIELD_NAME in config:

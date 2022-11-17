@@ -7,6 +7,7 @@ from .resource_principals_federation_signer import ResourcePrincipalsFederationS
 from .resource_principals_delegation_token_signer import ResourcePrincipalsDelegationTokenSigner
 from .ephemeral_resource_principals_signer import EphemeralResourcePrincipalSigner
 from .ephemeral_resource_principals_delegation_token_signer import EphemeralResourcePrincipalsDelegationTokenSigner
+from .ephemeral_resource_principals_v21_signer import EphemeralResourcePrincipalV21Signer
 
 OCI_RESOURCE_PRINCIPAL_VERSION = "OCI_RESOURCE_PRINCIPAL_VERSION"
 OCI_RESOURCE_PRINCIPAL_RPST = "OCI_RESOURCE_PRINCIPAL_RPST"
@@ -15,6 +16,8 @@ OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE = "OCI_RESOURCE_PRINCIPAL_PRIVATE_
 OCI_RESOURCE_PRINCIPAL_REGION = "OCI_RESOURCE_PRINCIPAL_REGION"
 OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT = "OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT"
 OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT = "OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT"
+OCI_RESOURCE_PRINCIPAL_RESOURCE_ID = "OCI_RESOURCE_PRINCIPAL_RESOURCE_ID"
+OCI_RESOURCE_PRINCIPAL_TENANCY_ID = "OCI_RESOURCE_PRINCIPAL_TENANCY_ID"
 
 
 def get_resource_principals_signer(resource_principal_token_path_provider=None):
@@ -57,6 +60,31 @@ def get_resource_principals_signer(resource_principal_token_path_provider=None):
                                                 private_key=private_key,
                                                 private_key_passphrase=private_key_passphrase,
                                                 region=region)
+
+    elif rp_version in ["2.1", "2.1.1"]:
+        """
+        This signer takes its configuration from the following environment variables.
+            - OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT: The endpoint for retrieving the Resource Principal Token
+            - OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT: The endpoint for retrieving the Resource Principal Session Token
+            - OCI_RESOURCE_PRINCIPAL_RESOURCE_ID: The RPv2.1/Rpv2.1.1 resource id
+            - OCI_RESOURCE_PRINCIPAL_TENANCY_ID: The RPv2.1.1 tenancy id
+            - OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM: The private key in PEM format
+            - OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE: The (optional) passphrase for the private key
+        """
+        resource_principal_token_endpoint = os.environ.get(OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT)
+        resource_principal_session_token_endpoint = os.environ.get(OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT)
+        resource_id = os.environ.get(OCI_RESOURCE_PRINCIPAL_RESOURCE_ID)
+        tenancy_id = os.environ.get(OCI_RESOURCE_PRINCIPAL_TENANCY_ID)
+        private_key = os.environ.get(OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM)
+        private_key_passphrase = os.environ.get(OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE)
+
+        return EphemeralResourcePrincipalV21Signer(resource_principal_token_endpoint=resource_principal_token_endpoint,
+                                                   resource_principal_session_token_endpoint=resource_principal_session_token_endpoint,
+                                                   resource_id=resource_id,
+                                                   tenancy_id=tenancy_id,
+                                                   private_key=private_key,
+                                                   private_key_passphrase=private_key_passphrase,
+                                                   rp_version=rp_version)
 
     elif rp_version == "1.1":
         """

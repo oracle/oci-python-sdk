@@ -461,7 +461,8 @@ class BaseClient(object):
 
         if isinstance(self.signer, signers.InstancePrincipalsSecurityTokenSigner) or \
                 isinstance(self.signer, signers.ResourcePrincipalsFederationSigner) or \
-                isinstance(self.signer, signers.EphemeralResourcePrincipalSigner):
+                isinstance(self.signer, signers.EphemeralResourcePrincipalSigner) or \
+                isinstance(self.signer, signers.EphemeralResourcePrincipalV21Signer):
             call_attempts = 0
             while call_attempts < 2:
                 try:

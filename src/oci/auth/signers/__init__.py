@@ -10,3 +10,5 @@ from .resource_principals_delegation_token_signer import ResourcePrincipalsDeleg
 from .ephemeral_resource_principals_signer import EphemeralResourcePrincipalSigner  # noqa: F401
 from .ephemeral_resource_principals_delegation_token_signer import EphemeralResourcePrincipalsDelegationTokenSigner  # noqa: F401
 from .resource_principals_signer import get_resource_principals_signer, get_resource_principal_delegation_token_signer  # noqa: F401
+from .ephemeral_resource_principals_v21_signer import EphemeralResourcePrincipalV21Signer  # noqa: F401
+from .key_pair_signer import KeyPairSigner  # noqa: F401
