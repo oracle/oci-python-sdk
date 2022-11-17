@@ -28,6 +28,9 @@ pyenv shell $PYTHON_3_VERSION
 echo "Python Version"
 python --version
 
+# Disable Lazy imports for docs generation
+export OCI_PYTHON_SDK_LAZY_IMPORTS_DISABLED=TRUE
+
 pip install -U pip
 pip install -e .
 
