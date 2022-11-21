@@ -4,12 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.88.2 - TBD
+2.88.2 - 2022-11-22
 ====================
 
 Added
 -----
-* TBD
+* Support for Resource Principals version 2.1 and 2.1.1
+* Support for disabling Lazy Imports introduced in version `2.88.1` by setting the environment variable `OCI_PYTHON_SDK_LAZY_IMPORTS_DISABLED` to `True`
+ 
+Changed
+-------
+* The upper bound for `cryptography` dependency has changed from `37.0.2` to versions less than `39.0.0`
 
 ====================
 2.88.1 - 2022-11-15
