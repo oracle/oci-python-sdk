@@ -48,7 +48,7 @@
 # - ObjectStorageClient.get_object            - Policy OBJECT_READ
 #
 # Meter API for Public Rate:
-# - https://itra.oraclecloud.com/itas/.anon/myservices/api/v1/products?partNumber=XX
+# - https://apexapps.oracle.com/pls/apex/cetools/api/v1/products/?currencyCode=USD
 #
 ##########################################################################
 # Tables used:
@@ -73,7 +73,7 @@ import requests
 import time
 
 
-version = "22.10.15"
+version = "22.11.22"
 usage_report_namespace = "bling"
 work_report_dir = os.curdir + "/work_report_dir"
 
@@ -237,6 +237,7 @@ def set_parser_arguments():
     parser.add_argument('-du', default="", dest='duser', help='ADB User')
     parser.add_argument('-dp', default="", dest='dpass', help='ADB Password')
     parser.add_argument('-dn', default="", dest='dname', help='ADB Name')
+    parser.add_argument('--force', action='store_true', default=False, dest='force', help='Force Update without updated file')
     parser.add_argument('--version', action='version', version='%(prog)s ' + version)
 
     result = parser.parse_args()
@@ -457,6 +458,7 @@ def check_database_index_structure_cost(connection):
 ##########################################################################
 def update_cost_stats(connection, tenant_name):
     try:
+        start_time = time.time()
         # open cursor
         cursor = connection.cursor()
 
@@ -466,7 +468,7 @@ def update_cost_stats(connection, tenant_name):
         sql = "merge into OCI_COST_STATS a "
         sql += "using "
         sql += "( "
-        sql += "    select /*+ parallel(oci_cost,4) full(oci_cost) */  "
+        sql += "    select /*+ parallel(oci_cost,8) full(oci_cost) */  "
         sql += "        tenant_name, "
         sql += "        file_id, "
         sql += "        USAGE_INTERVAL_START, "
@@ -492,7 +494,7 @@ def update_cost_stats(connection, tenant_name):
 
         cursor.execute(sql, {"version": version, "tenant_name": tenant_name})
         connection.commit()
-        print("   Merge Completed, " + str(cursor.rowcount) + " rows merged")
+        print("   Merge Completed, " + str(cursor.rowcount) + " rows merged" + get_time_elapsed(start_time))
         cursor.close()
 
     except cx_Oracle.DatabaseError as e:
@@ -508,6 +510,7 @@ def update_cost_stats(connection, tenant_name):
 ##########################################################################
 def update_price_list(connection, tenant_name):
     try:
+        start_time = time.time()
         # open cursor
         cursor = connection.cursor()
 
@@ -526,7 +529,7 @@ def update_price_list(connection, tenant_name):
         sql += "        COST_UNIT_PRICE "
         sql += "    FROM "
         sql += "    ( "
-        sql += "        SELECT  /*+ parallel(a,4) full(a) */ "
+        sql += "        SELECT  /*+ parallel(a,8) full(a) */ "
         sql += "            TENANT_NAME, "
         sql += "            TENANT_ID, "
         sql += "            COST_PRODUCT_SKU, "
@@ -546,7 +549,27 @@ def update_price_list(connection, tenant_name):
 
         cursor.execute(sql, {"tenant_name": tenant_name})
         connection.commit()
-        print("   Merge Completed, " + str(cursor.rowcount) + " rows merged")
+        print("   Merge Completed, " + str(cursor.rowcount) + " rows merged" + get_time_elapsed(start_time))
+
+        start_time = time.time()
+        print("\nUpdate OCI_PRICE_LIST for empty currency...")
+
+        # update currency when currency is null
+        sql = "update OCI_PRICE_LIST "
+        sql += "set COST_CURRENCY_CODE = "
+        sql += "("
+        sql += "    select COST_CURRENCY_CODE "
+        sql += "    from (SELECT  /*+ parallel(a,8) full(a) */ "
+        sql += "        COST_CURRENCY_CODE, "
+        sql += "        ROW_NUMBER() OVER (PARTITION BY TENANT_NAME ORDER BY USAGE_INTERVAL_START DESC) RN "
+        sql += "    FROM OCI_COST A where COST_CURRENCY_CODE is not null and tenant_name=:tenant_name"
+        sql += "    ) where rn=1"
+        sql += ") "
+        sql += "where COST_CURRENCY_CODE is null and tenant_name=:tenant_name"
+
+        cursor.execute(sql, {"tenant_name": tenant_name})
+        connection.commit()
+        print("   Merge Completed, " + str(cursor.rowcount) + " rows merged" + get_time_elapsed(start_time))
         cursor.close()
 
     except cx_Oracle.DatabaseError as e:
@@ -562,6 +585,7 @@ def update_price_list(connection, tenant_name):
 ##########################################################################
 def update_cost_reference(connection, tag_special_key, tag_special_key2, tenant_name):
     try:
+        start_time = time.time()
         # open cursor
         cursor = connection.cursor()
 
@@ -577,26 +601,26 @@ def update_cost_reference(connection, tag_special_key, tag_special_key2, tenant_
         sql += "    select TENANT_NAME, REF_TYPE, REF_NAME "
         sql += "    from "
         sql += "    ( "
-        sql += "        select /*+ parallel(oci_cost,4) full(oci_cost) */ distinct TENANT_NAME, 'PRD_SERVICE' as REF_TYPE, PRD_SERVICE as REF_NAME from OCI_COST  where :tenant_name = TENANT_NAME "
+        sql += "        select /*+ parallel(oci_cost,8) full(oci_cost) */ distinct TENANT_NAME, 'PRD_SERVICE' as REF_TYPE, PRD_SERVICE as REF_NAME from OCI_COST  where :tenant_name = TENANT_NAME "
         sql += "        union all "
-        sql += "        select /*+ parallel(oci_cost,4) full(oci_cost) */ distinct TENANT_NAME, 'PRD_COMPARTMENT_PATH' as REF_TYPE,  "
+        sql += "        select /*+ parallel(oci_cost,8) full(oci_cost) */ distinct TENANT_NAME, 'PRD_COMPARTMENT_PATH' as REF_TYPE,  "
         sql += "            case when prd_compartment_path like '%/%' then substr(prd_compartment_path,1,instr(prd_compartment_path,' /')-1)  "
         sql += "            else prd_compartment_path end as REF_NAME  "
         sql += "            from OCI_COST  where :tenant_name = TENANT_NAME "
         sql += "        union all "
-        sql += "        select /*+ parallel(oci_cost,4) full(oci_cost) */ distinct TENANT_NAME, 'TENANT_ID' as REF_TYPE, TENANT_ID as ref_name from OCI_COST where tenant_id is not null and :tenant_name = TENANT_NAME "
+        sql += "        select /*+ parallel(oci_cost,8) full(oci_cost) */ distinct TENANT_NAME, 'TENANT_ID' as REF_TYPE, TENANT_ID as ref_name from OCI_COST where tenant_id is not null and :tenant_name = TENANT_NAME "
         sql += "        union all "
-        sql += "        select /*+ parallel(oci_cost,4) full(oci_cost) */ distinct TENANT_NAME, 'PRD_COMPARTMENT_NAME' as REF_TYPE, PRD_COMPARTMENT_NAME as ref_name from OCI_COST  where :tenant_name = TENANT_NAME "
+        sql += "        select /*+ parallel(oci_cost,8) full(oci_cost) */ distinct TENANT_NAME, 'PRD_COMPARTMENT_NAME' as REF_TYPE, PRD_COMPARTMENT_NAME as ref_name from OCI_COST  where :tenant_name = TENANT_NAME "
         sql += "        union all "
-        sql += "        select /*+ parallel(oci_cost,4) full(oci_cost) */ distinct TENANT_NAME, 'PRD_REGION' as REF_TYPE, PRD_REGION as ref_name from OCI_COST  where :tenant_name = TENANT_NAME "
+        sql += "        select /*+ parallel(oci_cost,8) full(oci_cost) */ distinct TENANT_NAME, 'PRD_REGION' as REF_TYPE, PRD_REGION as ref_name from OCI_COST  where :tenant_name = TENANT_NAME "
         sql += "        union all "
-        sql += "        select /*+ parallel(oci_cost,4) full(oci_cost) */ distinct TENANT_NAME, 'COST_SUBSCRIPTION_ID' as REF_TYPE, to_char(COST_SUBSCRIPTION_ID) as ref_name from OCI_COST  where :tenant_name = TENANT_NAME "
+        sql += "        select /*+ parallel(oci_cost,8) full(oci_cost) */ distinct TENANT_NAME, 'COST_SUBSCRIPTION_ID' as REF_TYPE, to_char(COST_SUBSCRIPTION_ID) as ref_name from OCI_COST  where :tenant_name = TENANT_NAME "
         sql += "        union all "
-        sql += "        select /*+ parallel(oci_cost,4) full(oci_cost) */ distinct TENANT_NAME, 'TAG_SPECIAL' as REF_TYPE, TAG_SPECIAL as ref_name from OCI_COST  where :tenant_name = TENANT_NAME "
+        sql += "        select /*+ parallel(oci_cost,8) full(oci_cost) */ distinct TENANT_NAME, 'TAG_SPECIAL' as REF_TYPE, TAG_SPECIAL as ref_name from OCI_COST  where :tenant_name = TENANT_NAME "
         sql += "        union all "
-        sql += "        select /*+ parallel(oci_cost,4) full(oci_cost) */ distinct TENANT_NAME, 'TAG_SPECIAL2' as REF_TYPE, TAG_SPECIAL2 as ref_name from OCI_COST  where :tenant_name = TENANT_NAME "
+        sql += "        select /*+ parallel(oci_cost,8) full(oci_cost) */ distinct TENANT_NAME, 'TAG_SPECIAL2' as REF_TYPE, TAG_SPECIAL2 as ref_name from OCI_COST  where :tenant_name = TENANT_NAME "
         sql += "        union all "
-        sql += "        select /*+ parallel(oci_cost,4) full(oci_cost) */ distinct TENANT_NAME, 'COST_PRODUCT_SKU' as REF_TYPE, COST_PRODUCT_SKU || ' '||min(PRD_DESCRIPTION) as ref_name from OCI_COST  where :tenant_name = TENANT_NAME  "
+        sql += "        select /*+ parallel(oci_cost,8) full(oci_cost) */ distinct TENANT_NAME, 'COST_PRODUCT_SKU' as REF_TYPE, COST_PRODUCT_SKU || ' '||min(PRD_DESCRIPTION) as ref_name from OCI_COST  where :tenant_name = TENANT_NAME  "
         sql += "        group by TENANT_NAME, COST_PRODUCT_SKU "
         sql += "    ) where ref_name is not null "
         sql += ") b "
@@ -606,10 +630,11 @@ def update_cost_reference(connection, tag_special_key, tag_special_key2, tenant_
 
         cursor.execute(sql, {"tenant_name": tenant_name})
         connection.commit()
-        print("   Merge Completed, " + str(cursor.rowcount) + " rows merged")
+        print("   Merge Completed, " + str(cursor.rowcount) + " rows merged" + get_time_elapsed(start_time))
 
         if tag_special_key:
 
+            start_time = time.time()
             # run merge to OCI_COST_REFERENCE for the tag special key
             print("   Handling Tag Special Key '" + tag_special_key + "'")
 
@@ -625,10 +650,11 @@ def update_cost_reference(connection, tag_special_key, tag_special_key2, tenant_
 
             cursor.execute(sql, {"tenant_name": tenant_name, "tag_special_key": tag_special_key})
             connection.commit()
-            print("   Merge Completed, " + str(cursor.rowcount) + " rows merged")
+            print("   Merge Completed, " + str(cursor.rowcount) + " rows merged" + get_time_elapsed(start_time))
 
         if tag_special_key2:
 
+            start_time = time.time()
             # run merge to OCI_COST_REFERENCE for the tag special key
             print("   Handling Tag Special Key '" + tag_special_key2 + "'")
 
@@ -644,7 +670,7 @@ def update_cost_reference(connection, tag_special_key, tag_special_key2, tenant_
 
             cursor.execute(sql, {"tenant_name": tenant_name, "tag_special_key2": tag_special_key2})
             connection.commit()
-            print("   Merge Completed, " + str(cursor.rowcount) + " rows merged")
+            print("   Merge Completed, " + str(cursor.rowcount) + " rows merged" + get_time_elapsed(start_time))
 
         cursor.close()
 
@@ -661,6 +687,7 @@ def update_cost_reference(connection, tag_special_key, tag_special_key2, tenant_
 ##########################################################################
 def update_usage_reference(connection, tag_special_key, tag_special_key2, tenant_name):
     try:
+        start_time = time.time()
         # open cursor
         cursor = connection.cursor()
 
@@ -676,24 +703,24 @@ def update_usage_reference(connection, tag_special_key, tag_special_key2, tenant
         sql += "    select TENANT_NAME, REF_TYPE, REF_NAME "
         sql += "    from "
         sql += "    ( "
-        sql += "        select /*+ parallel(OCI_USAGE,4) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_PRD_SERVICE' as REF_TYPE, PRD_SERVICE as REF_NAME from OCI_USAGE where :tenant_name = TENANT_NAME "
+        sql += "        select /*+ parallel(OCI_USAGE,8) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_PRD_SERVICE' as REF_TYPE, PRD_SERVICE as REF_NAME from OCI_USAGE where :tenant_name = TENANT_NAME "
         sql += "        union all "
-        sql += "        select /*+ parallel(OCI_USAGE,4) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_PRD_COMPARTMENT_PATH' as REF_TYPE,  "
+        sql += "        select /*+ parallel(OCI_USAGE,8) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_PRD_COMPARTMENT_PATH' as REF_TYPE,  "
         sql += "            case when prd_compartment_path like '%/%' then substr(prd_compartment_path,1,instr(prd_compartment_path,' /')-1)  "
         sql += "            else prd_compartment_path end as REF_NAME  "
         sql += "            from OCI_USAGE  where :tenant_name = TENANT_NAME "
         sql += "        union all "
-        sql += "        select /*+ parallel(OCI_USAGE,4) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_TENANT_ID' as REF_TYPE, TENANT_ID as ref_name from OCI_USAGE where tenant_id is not null and :tenant_name = TENANT_NAME "
+        sql += "        select /*+ parallel(OCI_USAGE,8) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_TENANT_ID' as REF_TYPE, TENANT_ID as ref_name from OCI_USAGE where tenant_id is not null and :tenant_name = TENANT_NAME "
         sql += "        union all "
-        sql += "        select /*+ parallel(OCI_USAGE,4) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_PRD_COMPARTMENT_NAME' as REF_TYPE, PRD_COMPARTMENT_NAME as ref_name from OCI_USAGE  where :tenant_name = TENANT_NAME "
+        sql += "        select /*+ parallel(OCI_USAGE,8) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_PRD_COMPARTMENT_NAME' as REF_TYPE, PRD_COMPARTMENT_NAME as ref_name from OCI_USAGE  where :tenant_name = TENANT_NAME "
         sql += "        union all "
-        sql += "        select /*+ parallel(OCI_USAGE,4) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_PRD_REGION' as REF_TYPE, PRD_REGION as ref_name from OCI_USAGE  where :tenant_name = TENANT_NAME "
+        sql += "        select /*+ parallel(OCI_USAGE,8) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_PRD_REGION' as REF_TYPE, PRD_REGION as ref_name from OCI_USAGE  where :tenant_name = TENANT_NAME "
         sql += "        union all "
-        sql += "        select /*+ parallel(OCI_USAGE,4) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_PRD_RESOURCE' as REF_TYPE, PRD_RESOURCE as ref_name from OCI_USAGE  where :tenant_name = TENANT_NAME "
+        sql += "        select /*+ parallel(OCI_USAGE,8) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_PRD_RESOURCE' as REF_TYPE, PRD_RESOURCE as ref_name from OCI_USAGE  where :tenant_name = TENANT_NAME "
         sql += "        union all "
-        sql += "        select /*+ parallel(OCI_USAGE,4) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_TAG_SPECIAL' as REF_TYPE, TAG_SPECIAL as ref_name from OCI_USAGE  where :tenant_name = TENANT_NAME "
+        sql += "        select /*+ parallel(OCI_USAGE,8) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_TAG_SPECIAL' as REF_TYPE, TAG_SPECIAL as ref_name from OCI_USAGE  where :tenant_name = TENANT_NAME "
         sql += "        union all "
-        sql += "        select /*+ parallel(OCI_USAGE,4) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_TAG_SPECIAL2' as REF_TYPE, TAG_SPECIAL2 as ref_name from OCI_USAGE  where :tenant_name = TENANT_NAME "
+        sql += "        select /*+ parallel(OCI_USAGE,8) full(OCI_USAGE) */ distinct TENANT_NAME, 'USAGE_TAG_SPECIAL2' as REF_TYPE, TAG_SPECIAL2 as ref_name from OCI_USAGE  where :tenant_name = TENANT_NAME "
         sql += "    ) where ref_name is not null "
         sql += ") b "
         sql += "on (a.TENANT_NAME=b.TENANT_NAME and a.REF_TYPE=b.REF_TYPE and a.REF_NAME=b.REF_NAME) "
@@ -702,10 +729,11 @@ def update_usage_reference(connection, tag_special_key, tag_special_key2, tenant
 
         cursor.execute(sql, {"tenant_name": tenant_name})
         connection.commit()
-        print("   Merge Completed, " + str(cursor.rowcount) + " rows merged")
+        print("   Merge Completed, " + str(cursor.rowcount) + " rows merged" + get_time_elapsed(start_time))
 
         if tag_special_key:
 
+            start_time = time.time()
             # run merge to OCI_COST_REFERENCE for the tag special key
             print("   Handling Tag Special Key '" + tag_special_key + "'")
 
@@ -721,10 +749,11 @@ def update_usage_reference(connection, tag_special_key, tag_special_key2, tenant
 
             cursor.execute(sql, {"tenant_name": tenant_name, "tag_special_key": tag_special_key})
             connection.commit()
-            print("   Merge Completed, " + str(cursor.rowcount) + " rows merged")
+            print("   Merge Completed, " + str(cursor.rowcount) + " rows merged" + get_time_elapsed(start_time))
 
         if tag_special_key2:
 
+            start_time = time.time()
             # run merge to OCI_COST_REFERENCE for the tag special key
             print("   Handling Tag Special Key '" + tag_special_key2 + "'")
 
@@ -740,7 +769,7 @@ def update_usage_reference(connection, tag_special_key, tag_special_key2, tenant
 
             cursor.execute(sql, {"tenant_name": tenant_name, "tag_special_key2": tag_special_key2})
             connection.commit()
-            print("   Merge Completed, " + str(cursor.rowcount) + " rows merged")
+            print("   Merge Completed, " + str(cursor.rowcount) + " rows merged" + get_time_elapsed(start_time))
 
         cursor.close()
 
@@ -756,8 +785,9 @@ def update_usage_reference(connection, tag_special_key, tag_special_key2, tenant
 # update_public_rates
 ##########################################################################
 def update_public_rates(connection, tenant_name):
-    api_url = "https://itra.oraclecloud.com/itas/.anon/myservices/api/v1/products?partNumber="
+    api_url = "https://apexapps.oracle.com/pls/apex/cetools/api/v1/products/?"
     try:
+        start_time = time.time()
         # open cursor
         num_rows = 0
         cursor = connection.cursor()
@@ -783,8 +813,8 @@ def update_public_rates(connection, tenant_name):
                 try:
                     cost_product_sku = str(row[0])
                     country_code = str(row[1])
-                    resp = requests.get(api_url + cost_product_sku, headers={'X-Oracle-Accept-CurrencyCode': country_code})
-                    time.sleep(0.5)
+                    resp = requests.get(api_url + "partNumber=" + cost_product_sku + "&currencyCode=" + country_code)
+                    time.sleep(0.2)
 
                 except Exception as e:
                     print("\nWarning  Calling REST API for Public Rate at update_public_rates() - " + str(e))
@@ -796,14 +826,13 @@ def update_public_rates(connection, tenant_name):
 
                 for item in resp.json()['items']:
                     rate_description = item["displayName"]
-                    if 'price' in item:
-                        if 'value' in item['price']:
-                            rate_price = item['price']['value']
-                    else:
-                        if 'prices' in item:
-                            for price in item['prices']:
-                                if price['model'] == 'PAY_AS_YOU_GO':
-                                    rate_price = price['value']
+                    if 'currencyCodeLocalizations' in item:
+                        for currency in item['currencyCodeLocalizations']:
+                            if 'prices' in currency:
+                                for price in currency['prices']:
+                                    if price['model'] == 'PAY_AS_YOU_GO':
+                                        rate_price = price['value']
+
                 if rate_price:
                     # update database
                     sql = "update OCI_PRICE_LIST set "
@@ -827,7 +856,7 @@ def update_public_rates(connection, tenant_name):
             # Commit
             connection.commit()
 
-        print("   Update Completed, " + str(num_rows) + " rows updated.")
+        print("   Update Completed, " + str(num_rows) + " rows updated." + get_time_elapsed(start_time))
         cursor.close()
 
     except cx_Oracle.DatabaseError as e:
@@ -836,7 +865,7 @@ def update_public_rates(connection, tenant_name):
 
     except requests.exceptions.ConnectionError as e:
         print("\nError connecting to billing metering API at update_public_rates() - " + str(e))
-        print("\nPlease check you can connect to " + api_url + "B90000")
+        print("\nPlease check you can connect to " + api_url + "partNumber=B90000")
 
     except Exception as e:
         raise Exception("\nError manipulating database at update_public_rates() - " + str(e))
@@ -847,6 +876,7 @@ def update_public_rates(connection, tenant_name):
 ##########################################################################
 def update_usage_stats(connection, tenant_name):
     try:
+        start_time = time.time()
         # open cursor
         cursor = connection.cursor()
 
@@ -856,7 +886,7 @@ def update_usage_stats(connection, tenant_name):
         sql = "merge into OCI_USAGE_STATS a "
         sql += "using "
         sql += "( "
-        sql += "    select /*+ parallel(OCI_USAGE,4) full(OCI_USAGE) */  "
+        sql += "    select /*+ parallel(OCI_USAGE,8) full(OCI_USAGE) */  "
         sql += "        tenant_name, "
         sql += "        file_id, "
         sql += "        USAGE_INTERVAL_START, "
@@ -878,7 +908,7 @@ def update_usage_stats(connection, tenant_name):
 
         cursor.execute(sql, {"version": version, "tenant_name": tenant_name})
         connection.commit()
-        print("   Merge Completed, " + str(cursor.rowcount) + " rows merged")
+        print("   Merge Completed, " + str(cursor.rowcount) + " rows merged" + get_time_elapsed(start_time))
         cursor.close()
 
     except cx_Oracle.DatabaseError as e:
@@ -894,6 +924,7 @@ def update_usage_stats(connection, tenant_name):
 ##########################################################################
 def update_tenant_id_if_null(connection, tenant_name, short_tenant_id):
     try:
+        start_time = time.time()
         # open cursor
         cursor = connection.cursor()
 
@@ -905,12 +936,13 @@ def update_tenant_id_if_null(connection, tenant_name, short_tenant_id):
 
         if cnt > 0:
             print("   Update TENANT_ID on OCI_USAGE... " + str(cnt) + " rows to update... updating max 1,000,000 per execution")
-            sql = "update /*+ parallel(a,4) */ OCI_USAGE a set TENANT_ID = :tenant_id where tenant_id is null and tenant_name = :tenant_name and rownum<=1000000"
+            sql = "update /*+ parallel(a,8) */ OCI_USAGE a set TENANT_ID = :tenant_id where tenant_id is null and tenant_name = :tenant_name and rownum<=1000000"
             cursor.execute(sql, {"tenant_id": short_tenant_id, "tenant_name": tenant_name})
             connection.commit()
-            print("   Update Completed, " + str(cursor.rowcount) + " rows updated")
+            print("   Update Completed, " + str(cursor.rowcount) + " rows updated" + get_time_elapsed(start_time))
 
         # Check OCI_COST
+        start_time = time.time()
         print("\nCheck if TENANT_ID is null on OCI_COST...")
         sql = "select /*+ full(a) parallel(a,8) */ count(*) as cnt from OCI_COST a where TENANT_NAME=:tenant_name and tenant_id is null"
         cursor.execute(sql, {"tenant_name": str(tenant_name)})
@@ -918,10 +950,10 @@ def update_tenant_id_if_null(connection, tenant_name, short_tenant_id):
 
         if cnt > 0:
             print("   Update TENANT_ID on OCI_COST..." + str(cnt) + " rows to update... updating max 1,000,000 per execution")
-            sql = "update /*+ parallel(a,4) */ OCI_COST a set TENANT_ID = :tenant_id where tenant_id is null and tenant_name = :tenant_name and rownum<=1000000"
+            sql = "update /*+ parallel(a,8) */ OCI_COST a set TENANT_ID = :tenant_id where tenant_id is null and tenant_name = :tenant_name and rownum<=1000000"
             cursor.execute(sql, {"tenant_id": short_tenant_id, "tenant_name": tenant_name})
             connection.commit()
-            print("   Update Completed, " + str(cursor.rowcount) + " rows updated")
+            print("   Update Completed, " + str(cursor.rowcount) + " rows updated" + get_time_elapsed(start_time))
 
         cursor.close()
 
@@ -1762,12 +1794,12 @@ def main_process():
         ###############################
         print("\nChecking Last Loaded Files... started at " + get_current_date_time())
 
-        sql = "select /*+ full(a) parallel(a,4) */ nvl(max(file_id),'0') as file_id from OCI_USAGE a where TENANT_NAME=:tenant_name"
+        sql = "select /*+ full(a) parallel(a,8) */ nvl(max(file_id),'0') as file_id from OCI_USAGE a where TENANT_NAME=:tenant_name"
         cursor.execute(sql, {"tenant_name": str(tenancy.name)})
         max_usage_file_id, = cursor.fetchone()
         print("   Max Usage File Id Processed = " + str(max_usage_file_id))
 
-        sql = "select /*+ full(a) parallel(a,4) */ nvl(max(file_id),'0') as file_id from OCI_COST a where TENANT_NAME=:tenant_name"
+        sql = "select /*+ full(a) parallel(a,8) */ nvl(max(file_id),'0') as file_id from OCI_COST a where TENANT_NAME=:tenant_name"
         cursor.execute(sql, {"tenant_name": str(tenancy.name)})
         max_cost_file_id, = cursor.fetchone()
         print("   Max Cost  File Id Processed = " + str(max_cost_file_id))
@@ -1827,11 +1859,11 @@ def main_process():
         check_database_index_structure_cost(connection)
 
         # Update oci_usage_stats and oci_cost_stats if there were files
-        if usage_num > 0:
+        if usage_num > 0 or cmd.force:
             update_usage_stats(connection, tenancy.name)
             update_usage_reference(connection, cmd.tagspecial, cmd.tagspecial2, tenancy.name)
 
-        if cost_num > 0:
+        if cost_num > 0 or cmd.force:
             update_cost_stats(connection, tenancy.name)
             update_price_list(connection, tenancy.name)
             update_cost_reference(connection, cmd.tagspecial, cmd.tagspecial2, tenancy.name)
