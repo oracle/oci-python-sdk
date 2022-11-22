@@ -135,7 +135,7 @@ class ShowOCIFlags(object):
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.82.0"
+    oci_compatible_version = "2.88.0"
 
     ##########################################################################
     # Global Constants
@@ -164,6 +164,7 @@ class ShowOCIService(object):
     C_NETWORK_ROUTE = 'route'
     C_NETWORK_DHCP = 'dhcp'
     C_NETWORK_SUBNET = 'subnet'
+    C_NETWORK_SUBNET_PIP = 'private_ips'
     C_NETWORK_VC = 'virtualcircuit'
     C_NETWORK_PRIVATEIP = 'privateip'
     C_NETWORK_DNS_RESOLVERS = 'dns_resolvers'
@@ -664,6 +665,19 @@ class ShowOCIService(object):
     ##########################################################################
     def get_compartment(self):
         return self.data[self.C_IDENTITY][self.C_IDENTITY_COMPARTMENTS]
+
+    ##########################################################################
+    # return compartment by id
+    ##########################################################################
+    def get_compartment_by_id(self, compartment_id):
+        try:
+            compartments = self.data[self.C_IDENTITY][self.C_IDENTITY_COMPARTMENTS]
+            for c in compartments:
+                if c['id'] == compartment_id:
+                    return c
+            return {}
+        except Exception as e:
+            self.__print_error("get_compartment_by_id", e)
 
     ##########################################################################
     # return availability domains
@@ -2010,7 +2024,6 @@ class ShowOCIService(object):
     #
     #    Not done APIs:
     #    list_allowed_peer_regions_for_remote_peering(**kwargs)
-    #    list_private_ips(**kwargs) - this is performance issue running all subnets
     #    list_public_ips(scope, compartment_id, **kwargs)
     #    list_cross_connect_groups(compartment_id, **kwargs)
     #    list_cross_connect_locations(compartment_id, **kwargs)
@@ -2044,6 +2057,7 @@ class ShowOCIService(object):
             # if to load all network resources initialize the keys
             if self.flags.read_network:
                 # add the key to the network if not exists
+                self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_SUBNET_PIP)
                 self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_VLAN)
                 self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_SGW)
                 self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_NAT)
@@ -2084,6 +2098,7 @@ class ShowOCIService(object):
                 if self.flags.read_network:
 
                     # append the data
+                    network[self.C_NETWORK_SUBNET_PIP] += self.__load_core_network_subnet_private_ip(virtual_network, subnets)
                     network[self.C_NETWORK_VLAN] += self.__load_core_network_vlan(virtual_network, compartments, vcns)
                     network[self.C_NETWORK_LPG] += self.__load_core_network_lpg(virtual_network, compartments)
                     network[self.C_NETWORK_SGW] += self.__load_core_network_sgw(virtual_network, compartments)
@@ -3162,6 +3177,80 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_core_network_slist", e)
+            return data
+
+    ##########################################################################
+    # data network read private ip for subnet
+    ##########################################################################
+    def __load_core_network_subnet_private_ip(self, virtual_network, subnets):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+
+            self.__load_print_status("Subnet Private IPs")
+
+            # loop on all subnets
+            for subnet in subnets:
+
+                private_ips = []
+                try:
+                    private_ips = oci.pagination.list_call_get_all_results(
+                        virtual_network.list_private_ips,
+                        subnet_id=subnet['id'],
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+
+                print("s", end="")
+
+                # loop on all sgws
+                # sgw = oci.core.models.ServiceGateway
+                for ip in private_ips:
+                    val = {
+                        'id': str(ip.id),
+                        'compartment_id': str(ip.compartment_id),
+                        'compartment_name': '',
+                        'compartment_path': '',
+                        'display_name': str(ip.display_name),
+                        'hostname_label': str(ip.hostname_label),
+                        'ip_address': str(ip.ip_address),
+                        'is_primary': str(ip.is_primary),
+                        'vlan_id': str(ip.vlan_id),
+                        'subnet_id': str(ip.subnet_id),
+                        'time_created': str(ip.time_created)[0:16],
+                        'vnic_id': str(ip.vnic_id),
+                        'defined_tags': [] if ip.defined_tags is None else ip.defined_tags,
+                        'freeform_tags': [] if ip.freeform_tags is None else ip.freeform_tags,
+                        'region_name': str(self.config['region'])}
+
+                    # compartment
+                    c = self.get_compartment_by_id(str(ip.compartment_id))
+                    if c:
+                        val['compartment_name'] = c['name']
+                        val['compartment_path'] = c['path']
+
+                    data.append(val)
+                    cnt += 1
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
+            raise
+        except Exception as e:
+            self.__print_error("__load_core_network_subnet_private_ip", e)
             return data
 
     ##########################################################################

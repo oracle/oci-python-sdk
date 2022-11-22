@@ -78,8 +78,8 @@ Please check step by step daily report guide - [step_by_step_daily_report.md](st
 - ObjectStorageClient.list_objects - Policy OBJECT_INSPECT
 - ObjectStorageClient.get_object   - Policy OBJECT_READ
 
-## REST API Used:
-- https://itra.oraclecloud.com/itas/.anon/myservices/api/v1/products?partNumber=XX
+## REST API Used Doc:
+- https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/signingup_topic-Estimating_Costs.htm#accessing_list_pricing
 
 ## Python 3 OCI SDK
 

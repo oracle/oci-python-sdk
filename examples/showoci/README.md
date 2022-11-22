@@ -63,13 +63,10 @@ and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/
 
 ## Executing using Cloud Shell:
 ```
-1. install oci sdk package
-   pip3 install --user oci
-
-2. clone the oci sdk repo
+1. clone the oci sdk repo
    git clone https://github.com/oracle/oci-python-sdk
 
-3. run showoci with delegation token
+2. run showoci with delegation token
    cd oci-python-sdk/examples/showoci
    python3 showoci.py -dt -ani
 ```

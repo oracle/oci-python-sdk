@@ -91,6 +91,12 @@ class MultipartObjectAssembler:
         :param str content_encoding (optional):
             The content encoding of the object to upload.
 
+        :param str content_disposition (optional):
+            The content disposition of the object to upload.
+
+        :param str cache_control (optional):
+            The cache control for the object to upload.
+
         :param dict metadata (optional):
             A dictionary of string to string values to associate with the object to upload
 
@@ -138,6 +144,12 @@ class MultipartObjectAssembler:
         self.content_encoding = None
         if 'content_encoding' in kwargs:
             self.content_encoding = kwargs['content_encoding']
+        self.content_disposition = None
+        if 'content_disposition' in kwargs:
+            self.content_disposition = kwargs['content_disposition']
+        self.cache_control = None
+        if 'cache_control' in kwargs:
+            self.cache_control = kwargs['cache_control']
         self.metadata = None
         if 'metadata' in kwargs:
             self.metadata = kwargs['metadata']
@@ -377,6 +389,10 @@ class MultipartObjectAssembler:
             request.content_language = self.content_language
         if self.content_encoding:
             request.content_encoding = self.content_encoding
+        if self.content_disposition:
+            request.content_disposition = self.content_disposition
+        if self.cache_control:
+            request.cache_control = self.cache_control
         if self.metadata:
             # TODO: look into moving this into codegen for create_multipart_upload like it is for put_object
             processed_metadata = {}

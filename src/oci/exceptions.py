@@ -104,6 +104,10 @@ class InvalidConfig(ClientError):
         return str(self.errors)
 
 
+class InvalidResourcePrincipalArguments(ClientError):
+    """The ResourceId is missing."""
+
+
 class InvalidPrivateKey(ClientError):
     """The provided key is not a private key, or the provided passphrase is incorrect."""
 

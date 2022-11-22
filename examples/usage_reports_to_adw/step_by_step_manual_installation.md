@@ -186,10 +186,12 @@ This script will ask for Database Name, Admin Password, Application Password and
    /home/opc/usage_reports_to_adw/setup/setup_credentials.sh
 ```
 
-## 12. Execute the python script - usage2adw.py
+## 12. Execute the python script - usage2adw.py or setup_usage2adw.sh
 
 ```
-    # Please amend the password for the USAGE schema
+    # if you want to skip 13 to 17, execute the script /home/opc/usage_reports_to_adw/setup/setup_usage2adw.sh
+    
+    # Please amend the password for the USAGE schema and load the data
     python3 usage2adw.py -ip -du USAGE -dp <password> -dn adwcusg_low
 ```
 
@@ -328,7 +330,7 @@ Right Click and Download [usage.demo.apex.sql](https://raw.githubusercontent.com
 	$HOME/usage_reports_to_adw/shell_scripts/run_single_daily_usage2adw.sh
    
     # add crontab that execute every night
-    0 0 * * * timeout 6h /home/opc/usage_reports_to_adw/shell_scripts/run_single_daily_usage2adw.sh > /home/opc/usage_reports_to_adw/shell_scripts/run_single_daily_usage2adw_crontab_run.txt 2>&1
+    0 0 * * * timeout 6h /home/opc/usage_reports_to_adw/shell_scripts/run_multi_daily_usage2adw.sh > /home/opc/usage_reports_to_adw/shell_scripts/run_multi_daily_usage2adw_crontab_run.txt 2>&1
 ```
 
 ## 20. How to change Autonomous Database to Private End Point

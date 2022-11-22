@@ -30,3 +30,6 @@ line. For example, the script  `here <https://github.com/oracle/oci-python-sdk#a
     With deferred imports, only the modules that you explicitly import in your code will be imported,
     thereby reducing the initial load time significantly. If you are either using Python 3.6 or using a version older
     than v2.88.1, then follow the instructions mentioned in the section above to enable selective imports in your code.
+
+    PS: If the lazy imports are causing an issue with your code then you can opt-out of this feature by setting the
+    environment variable `OCI_PYTHON_SDK_LAZY_IMPORTS_DISABLED` to True.
