@@ -15,6 +15,8 @@ from .signers.instance_principals_security_token_signer import InstancePrincipal
 
 OCI_RESOURCE_PRINCIPAL_RPT_PATH = "OCI_RESOURCE_PRINCIPAL_RPT_PATH"
 OCI_RESOURCE_PRINCIPAL_RPT_ID = "OCI_RESOURCE_PRINCIPAL_RPT_ID"
+OCI_RESOURCE_PRINCIPAL_RPT_PATH_FOR_LEAF_RESOURCE = "OCI_RESOURCE_PRINCIPAL_RPT_PATH_FOR_LEAF_RESOURCE"
+OCI_RESOURCE_PRINCIPAL_RPT_ID_FOR_LEAF_RESOURCE = "OCI_RESOURCE_PRINCIPAL_RPT_ID_FOR_LEAF_RESOURCE"
 IMDS_PATH_TEMPLATE = "/20180711/resourcePrincipalToken/{id}"
 METADATA_AUTH_HEADERS = {'Authorization': 'Bearer Oracle'}
 OCI_KUBERNETES_SERVICE_ACCOUNT_TOKEN_PATH = "/var/run/secrets/kubernetes.io/serviceaccount/token"
@@ -73,18 +75,27 @@ class ImdsRptPathProvider(AbstractRptPathProvider):
 
 
 class EnvRptPathProvider(AbstractRptPathProvider):
-    def __init__(self):
+    def __init__(self, **kwargs):
         super(EnvRptPathProvider, self).__init__(self.get_path_template())
         self.replacements = self.build_replacements()
+        if kwargs.get("child_resource", False):
+            self.child_resource = True
+        else:
+            self.child_resource = False
 
     def get_replacements(self):
         return self.replacements
 
     def get_path_template(self):
+        if self.child_resource:
+            return os.environ.get(OCI_RESOURCE_PRINCIPAL_RPT_PATH_FOR_LEAF_RESOURCE)
         return os.environ.get(OCI_RESOURCE_PRINCIPAL_RPT_PATH)
 
     def build_replacements(self):
-        rpt_id = os.environ.get(OCI_RESOURCE_PRINCIPAL_RPT_ID)
+        if self.child_resource:
+            rpt_id = os.environ.get(OCI_RESOURCE_PRINCIPAL_RPT_ID_FOR_LEAF_RESOURCE)
+        else:
+            rpt_id = os.environ.get(OCI_RESOURCE_PRINCIPAL_RPT_ID)
         if rpt_id:
             return {'id': rpt_id}
         return None
@@ -105,9 +116,9 @@ class DefaultRptPathProvider(AbstractRptPathProvider):
     This path provider is used when the caller doesn't provide a specific path provider to the resource principals signer
     """
 
-    def __init__(self):
+    def __init__(self, **kwargs):
         logger.debug("A path provider was not specified, using DefaultRptPathProvider")
-        self.env_rpt_path_provider = EnvRptPathProvider()
+        self.env_rpt_path_provider = EnvRptPathProvider(**kwargs)
         self.imds_rpt_path_provider = ImdsRptPathProvider()
         super(DefaultRptPathProvider, self).__init__(self.get_path_template())
         self.replacements = self.build_replacements()

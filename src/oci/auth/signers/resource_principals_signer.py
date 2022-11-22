@@ -10,6 +10,7 @@ from .ephemeral_resource_principals_delegation_token_signer import EphemeralReso
 from .ephemeral_resource_principals_v21_signer import EphemeralResourcePrincipalV21Signer
 from .oke_workload_identity_resource_principal_signer import OkeWorkloadIdentityResourcePrincipalSigner
 from ..rpt_path_providers import DefaultServiceAccountTokenProvider, SuppliedServiceAccountTokenProvider
+from .nested_resource_principals_signer import NestedResourcePrincipals
 
 OCI_RESOURCE_PRINCIPAL_VERSION = "OCI_RESOURCE_PRINCIPAL_VERSION"
 OCI_RESOURCE_PRINCIPAL_RPST = "OCI_RESOURCE_PRINCIPAL_RPST"
@@ -20,6 +21,27 @@ OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT = "OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT"
 OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT = "OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT"
 OCI_RESOURCE_PRINCIPAL_RESOURCE_ID = "OCI_RESOURCE_PRINCIPAL_RESOURCE_ID"
 OCI_RESOURCE_PRINCIPAL_TENANCY_ID = "OCI_RESOURCE_PRINCIPAL_TENANCY_ID"
+
+# Resource Principal v3.0
+OCI_RESOURCE_PRINCIPAL_VERSION_FOR_LEAF_RESOURCE = "OCI_RESOURCE_PRINCIPAL_VERSION_FOR_LEAF_RESOURCE"
+# For 1.1 LEAF-resource
+OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT_FOR_LEAF_RESOURCE = "OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT_FOR_LEAF_RESOURCE"
+OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT_FOR_LEAF_RESOURCE = "OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT_FOR_LEAF_RESOURCE"
+# For 2.2 LEAF-resource
+OCI_RESOURCE_PRINCIPAL_RPST_FOR_LEAF_RESOURCE = "OCI_RESOURCE_PRINCIPAL_RPST_FOR_LEAF_RESOURCE"
+OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_FOR_LEAF_RESOURCE = "OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_FOR_LEAF_RESOURCE"
+OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE_FOR_LEAF_RESOURCE = "OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE_FOR_LEAF_RESOURCE"
+OCI_RESOURCE_PRINCIPAL_REGION_FOR_LEAF_RESOURCE = "OCI_RESOURCE_PRINCIPAL_REGION_FOR_LEAF_RESOURCE"
+# For 2.1/2.1.1 LEAF-resource
+OCI_RESOURCE_PRINCIPAL_RESOURCE_ID_FOR_LEAF_RESOURCE = "OCI_RESOURCE_PRINCIPAL_RESOURCE_ID_FOR_LEAF_RESOURCE"
+OCI_RESOURCE_PRINCIPAL_TENANCY_ID_FOR_LEAF_RESOURCE = "OCI_RESOURCE_PRINCIPAL_TENANCY_ID_FOR_LEAF_RESOURCE"
+# For Parent Resource
+OCI_RESOURCE_PRINCIPAL_RPT_URL_FOR_PARENT_RESOURCE = "OCI_RESOURCE_PRINCIPAL_RPT_URL_FOR_PARENT_RESOURCE"
+OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT_FOR_PARENT_RESOURCE = "OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT_FOR_PARENT_RESOURCE"
+OCI_RESOURCE_PRINCIPAL_RPT_PATH_FOR_PARENT_RESOURCE = "OCI_RESOURCE_PRINCIPAL_RPT_PATH_FOR_PARENT_RESOURCE"
+OCI_RESOURCE_PRINCIPAL_RPT_ID_FOR_PARENT_RESOURCE = "OCI_RESOURCE_PRINCIPAL_RPT_ID_FOR_PARENT_RESOURCE"
+OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT_FOR_PARENT_RESOURCE = "OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT_FOR_PARENT_RESOURCE"
+MAX_NESTED_PARENT_DEPTH = 10
 
 OCI_KUBERNETES_SERVICE_ACCOUNT_TOKEN_PATH = "/var/run/secrets/kubernetes.io/serviceaccount/token"
 DEFAULT_OCI_KUBERNETES_SERVICE_ACCOUNT_CERT_PATH = "/var/run/secrets/kubernetes.io/serviceaccount/ca.crt"
@@ -38,6 +60,95 @@ def get_resource_principals_signer(resource_principal_token_path_provider=None):
     """
 
     rp_version = os.environ.get(OCI_RESOURCE_PRINCIPAL_VERSION, "UNDEFINED")
+    if rp_version == "3.0":
+        """
+            This signer utilizes a resource principals signer for the LEAF-resource, via the following environment variable:-
+            - OCI_RESOURCE_PRINCIPAL_VERSION_FOR_LEAF_RESOURCE
+                Based on the value of this variable we need different environment variable set.
+
+            For 1.1 it needs:
+            - OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT_FOR_LEAF_RESOURCE The endpoint for retrieving the Resource Principal Token for LEAF-resource
+            - OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT_FOR_LEAF_RESOURCE The endpoint for retrieving the Resource Principal Session Token for LEAF-resource
+
+            For 2.1/2.1.1 it needs:
+            - OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT_FOR_LEAF_RESOURCE: The endpoint for retrieving the Resource Principal Token
+            - OCI_RESOURCE_PRINCIPAL_RESOURCE_ID_FOR_LEAF_RESOURCE: The RPv2.1/Rpv2.1.1 resource id
+            - OCI_RESOURCE_PRINCIPAL_TENANCY_ID_FOR_LEAF_RESOURCE: The RPv2.1.1 tenancy id
+            - OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_FOR_LEAF_RESOURCE: The private key in PEM format
+            - OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE_FOR_LEAF_RESOURCE: The (optional) passphrase for the private key
+            - OCI_RESOURCE_PRINCIPAL_REGION_FOR_LEAF_RESOURCE: the canonical region name
+
+            For 2.2 it needs:
+            - OCI_RESOURCE_PRINCIPAL_RPST_FOR_LEAF_RESOURCE: the Resource Principals Session Token
+            - OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_FOR_LEAF_RESOURCE: the private key in PEM format
+            - OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE_FOR_LEAF_RESOURCE: the (optional) passphrase for the private key
+            - OCI_RESOURCE_PRINCIPAL_REGION_FOR_LEAF_RESOURCE: the canonical region name
+
+            For the Parent resource the following environment variables need to be set:-
+            - OCI_RESOURCE_PRINCIPAL_RPT_URL_FOR_PARENT_RESOURCE: The complete URL including API and resource if any to retrieve Resource Principal Token for the parent resource.
+            - OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT_FOR_PARENT_RESOURCE: The endpoint for retrieving the Resource Principal Session Token for parent resource
+        """
+        # Step 1: Get the Resource Principals signer for the sub resource.
+        resource_principal_version_for_leaf_resource = os.environ.get(OCI_RESOURCE_PRINCIPAL_VERSION_FOR_LEAF_RESOURCE)
+        if resource_principal_version_for_leaf_resource == "2.2":
+            resource_session_token_for_leaf_resource = os.environ.get(OCI_RESOURCE_PRINCIPAL_RPST_FOR_LEAF_RESOURCE)
+            private_key_for_leaf_resource = os.environ.get(OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_FOR_LEAF_RESOURCE)
+            private_key_passphrase_for_leaf_resource = os.environ.get(OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE_FOR_LEAF_RESOURCE)
+            region_for_leaf_resource = os.environ.get(OCI_RESOURCE_PRINCIPAL_REGION_FOR_LEAF_RESOURCE)
+
+            leaf_resource_rp_signer = EphemeralResourcePrincipalSigner(session_token=resource_session_token_for_leaf_resource,
+                                                                       private_key=private_key_for_leaf_resource,
+                                                                       private_key_passphrase=private_key_passphrase_for_leaf_resource,
+                                                                       region=region_for_leaf_resource)
+        elif resource_principal_version_for_leaf_resource in ["2.1", "2.1.1"]:
+            resource_principal_token_endpoint_for_leaf_resource = os.environ.get(OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT_FOR_LEAF_RESOURCE)
+            resource_principal_session_token_endpoint_for_leaf_resource = os.environ.get(OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT_FOR_LEAF_RESOURCE)
+            resource_id_for_leaf_resource = os.environ.get(OCI_RESOURCE_PRINCIPAL_RESOURCE_ID_FOR_LEAF_RESOURCE)
+            tenancy_id_for_leaf_resource = os.environ.get(OCI_RESOURCE_PRINCIPAL_TENANCY_ID_FOR_LEAF_RESOURCE)
+            private_key_for_leaf_resource = os.environ.get(OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_FOR_LEAF_RESOURCE)
+            private_key_passphrase_for_leaf_resource = os.environ.get(OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE_FOR_LEAF_RESOURCE)
+            region_for_leaf_resource = os.environ.get(OCI_RESOURCE_PRINCIPAL_REGION_FOR_LEAF_RESOURCE)
+
+            leaf_resource_rp_signer = EphemeralResourcePrincipalV21Signer(resource_principal_token_endpoint=resource_principal_token_endpoint_for_leaf_resource,
+                                                                          resource_principal_session_token_endpoint=resource_principal_session_token_endpoint_for_leaf_resource,
+                                                                          resource_id=resource_id_for_leaf_resource,
+                                                                          tenancy_id=tenancy_id_for_leaf_resource,
+                                                                          private_key=private_key_for_leaf_resource,
+                                                                          private_key_passphrase=private_key_passphrase_for_leaf_resource,
+                                                                          rp_version=rp_version,
+                                                                          region=region_for_leaf_resource)
+        elif resource_principal_version_for_leaf_resource == "1.1":
+            resource_principal_token_endpoint_for_leaf_resource = os.environ.get(OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT_FOR_LEAF_RESOURCE)
+            resource_principal_session_token_endpoint_for_leaf_resource = os.environ.get(OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT_FOR_LEAF_RESOURCE)
+            leaf_resource_rp_signer = ResourcePrincipalsFederationSigner(resource_principal_token_endpoint=resource_principal_token_endpoint_for_leaf_resource,
+                                                                         resource_principal_session_token_endpoint=resource_principal_session_token_endpoint_for_leaf_resource,
+                                                                         resource_principal_token_path_provider=resource_principal_token_path_provider,
+                                                                         child_resource=True)
+        else:
+            raise EnvironmentError("Unsupported {}: {}".format(OCI_RESOURCE_PRINCIPAL_VERSION_FOR_LEAF_RESOURCE, resource_principal_version_for_leaf_resource))
+
+        # Get values for First Parent Resource
+        resource_principal_rpt_url = os.environ.get(OCI_RESOURCE_PRINCIPAL_RPT_URL_FOR_PARENT_RESOURCE)
+        resource_principal_session_token_endpoint = os.environ.get(OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT_FOR_PARENT_RESOURCE)
+        nested_resource_principal = NestedResourcePrincipals(resource_principal_rpt_url=resource_principal_rpt_url,
+                                                             resource_principal_session_token_endpoint=resource_principal_session_token_endpoint,
+                                                             sub_resource_rp_signer=leaf_resource_rp_signer)
+
+        # Terminal case when we reach terminal parent.
+        if nested_resource_principal.nested_parent_rpt_url is None:
+            return nested_resource_principal
+        # If the recursion level for N level parent reaches MAX_NESTED_PARENT_DEPTH or the response HEADER contains
+        # the same endpoint as the one it already has we will treat it as the terminal condition for recursion end
+        elif nested_resource_principal.current_parent_depth >= MAX_NESTED_PARENT_DEPTH \
+                or nested_resource_principal.nested_parent_rpt_url == nested_resource_principal.resource_principal_token_endpoint:
+            raise AttributeError("The nested resource principals went over the max allowed recursion {}, or detected a cycle!".format(MAX_NESTED_PARENT_DEPTH))
+        # We have another parent, so we create a new signer based off that
+        else:
+            return NestedResourcePrincipals(resource_principal_rpt_url=nested_resource_principal.nested_parent_rpt_url,
+                                            resource_principal_session_token_endpoint=resource_principal_session_token_endpoint,
+                                            sub_resource_rp_signer=nested_resource_principal,
+                                            current_parent_depth=nested_resource_principal.current_parent_depth + 1)
+
     if rp_version == "2.2":
         """
         This signer takes its configuration from the following environment variables.
@@ -57,7 +168,7 @@ def get_resource_principals_signer(resource_principal_token_path_provider=None):
 
         - OCI_RESOURCE_PRINCIPAL_REGION: the canonical region name
 
-            This is utilised in locating the "local" endpoints of services.
+            This is utilized in locating the "local" endpoints of services.
         """
         session_token = os.environ.get(OCI_RESOURCE_PRINCIPAL_RPST)
         private_key = os.environ.get(OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM)
@@ -78,6 +189,7 @@ def get_resource_principals_signer(resource_principal_token_path_provider=None):
             - OCI_RESOURCE_PRINCIPAL_TENANCY_ID: The RPv2.1.1 tenancy id
             - OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM: The private key in PEM format
             - OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE: The (optional) passphrase for the private key
+            - OCI_RESOURCE_PRINCIPAL_REGION: The (optional) canonical region name
         """
         resource_principal_token_endpoint = os.environ.get(OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT)
         resource_principal_session_token_endpoint = os.environ.get(OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT)
@@ -85,6 +197,7 @@ def get_resource_principals_signer(resource_principal_token_path_provider=None):
         tenancy_id = os.environ.get(OCI_RESOURCE_PRINCIPAL_TENANCY_ID)
         private_key = os.environ.get(OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM)
         private_key_passphrase = os.environ.get(OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE)
+        region = os.environ.get(OCI_RESOURCE_PRINCIPAL_REGION)
 
         return EphemeralResourcePrincipalV21Signer(resource_principal_token_endpoint=resource_principal_token_endpoint,
                                                    resource_principal_session_token_endpoint=resource_principal_session_token_endpoint,
@@ -92,13 +205,14 @@ def get_resource_principals_signer(resource_principal_token_path_provider=None):
                                                    tenancy_id=tenancy_id,
                                                    private_key=private_key,
                                                    private_key_passphrase=private_key_passphrase,
-                                                   rp_version=rp_version)
+                                                   rp_version=rp_version,
+                                                   region=region)
 
     elif rp_version == "1.1":
         """
-        This signer takes its configuration from the following environement variables
+        This signer takes its configuration from the following environment variables
         - OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT
-            The endpoint for retreiving the Resource Principal Token
+            The endpoint for retrieving the Resource Principal Token
         - OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT
             The endpoint for retrieving the Resource Principal Session Token
         """
@@ -143,7 +257,7 @@ def get_resource_principal_delegation_token_signer(delegation_token, resource_pr
 
         - OCI_RESOURCE_PRINCIPAL_REGION: the canonical region name
 
-            This is utilised in locating the "local" endpoints of services.
+            This is utilized in locating the "local" endpoints of services.
         """
         session_token = os.environ.get(OCI_RESOURCE_PRINCIPAL_RPST)
         private_key = os.environ.get(OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM)
