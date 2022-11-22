@@ -4,6 +4,29 @@ Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~
 These are the current known issues for the Python SDK.
 
+Potential memory leak issue with repeatedly creating new signers/clients with Instance Principals, Resource Principal, and Delegation token auth. Cloud Shell is known to be affected
+=====================================================================================================================================================================================
+**Details:** When repeatedly creating new signers/client objects with Instance Principals, Resource Principal, and Delegation token auth, some underlying objects are not cleared from memory and causes a memory leak. From our tests, the rate of memory growth is ~10 MiB/hour when only client/signer objects are created in an infinite loop. Cloud Shell is affected by the same issue when new client objects are created repeatedly using the Python SDK. This seems to be coming from an underlying `memory leak in the requests package <https://github.com/psf/requests/issues/4601>`_.
+
+**Workarounds:**
+These workarounds are known to mitigate the issue:
+
+1. Avoid creating new signer/client objects and reuse them if possible. If you are using delegation token auth, and need to update the value of the delegation token you can do it this way to update an existing signer, instead of creating a new signer:
+
+.. code-block:: python
+
+    from oci.auth.signers import InstancePrincipalsDelegationTokenSigner
+    from oci.object_storage import ObjectStorageClient
+
+    # Create signer and client
+    delegation_token_signer = InstancePrincipalsDelegationTokenSigner(delegation_token="delegation_token_value")
+    client = ObjectStorageClient(config={}, signer=delegation_token_signer)
+
+    # Update the delegation token on the client
+    client.base_client.signer.delegation_token="new_delegation_token_value"
+
+2. Use the `raw request signer <https://docs.oracle.com/en-us/iaas/tools/python/latest/raw-requests.html>`_.
+
 Potential data corruption with Python SDK on UploadManager.upload_stream() in FIPS mode and Cloud Shell (versions 2.53.0 and below)
 ===================================================================================================================================
 **Details:** When using the Python SDK to perform stream upload operations you may encounter an issue with data corruption if you are using UploadManager.upload_stream. This issue is known to affect the customers using FIPS mode and Cloud Shell.
