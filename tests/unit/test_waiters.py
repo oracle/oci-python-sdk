@@ -6,6 +6,9 @@ import tests.util
 import oci
 import time
 import pytest
+from oci.request import Request
+from oci.response import Response
+from oci.exceptions import ServiceError
 
 
 def test_basic_wait(virtual_network, config):
@@ -344,3 +347,89 @@ def test_fetch_func(virtual_network, config):
     response = virtual_network.delete_vcn(vcn.id)
     result = oci.wait_until(virtual_network, get_vcn_response, 'lifecycle_state', 'TERMINATED', max_wait_seconds=180, succeed_on_not_found=True)
     assert result == oci.waiter.WAIT_RESOURCE_NOT_FOUND
+
+
+def test_401_retry_on_waiters():
+    mock_request = Request("GET", "https://blahblah.com")
+    mock_response_data = MockResponseData("BLAH")
+    mock_response = Response("402", {}, mock_response_data, mock_request)
+    mock_401_service_error = ServiceError(401, "blah", {}, "blah")
+    mock_404_service_error = ServiceError(404, "blah", {}, "blah")
+
+    # Test Scenario 1: The signer is an instance or resource principal signer, and we get back
+    # a 401 service error upon a request
+    with pytest.raises(ServiceError):
+        mock_client_1 = MockClient(True, mock_401_service_error)
+        oci.wait_until(mock_client_1, mock_response, "val", "blah")
+    # In this scenario, we retry twice in addition to the initial request call.
+    # Hence, total number of request calls should be 3 (initial call + 2 retry calls).
+    assert mock_client_1.base_client.total_calls == 3
+    assert mock_client_1.base_client.signer.refresh_count == 2
+
+    # Test Scenario 2: The signer is not an instance or resource principal signer, and we get back
+    # a 401 service error upon a request
+    with pytest.raises(ServiceError):
+        mock_client_2 = MockClient(False, mock_401_service_error)
+        oci.wait_until(mock_client_2, mock_response, "val", "blah")
+    # In this scenario, we do not retry in addition to the initial request call.
+    # Hence, total number of request calls should be 1 (initial call only).
+    assert mock_client_2.base_client.total_calls == 1
+    assert mock_client_2.base_client.signer.refresh_count == 0
+
+    # Test Scenario 3: The signer is an instance or resource principal signer, and we get back
+    # a non-401 (404 in this case) service error upon a request
+    with pytest.raises(ServiceError):
+        mock_client_3 = MockClient(True, mock_404_service_error)
+        oci.wait_until(mock_client_3, mock_response, "val", "blah")
+    # In this scenario, we do not retry in addition to the initial request call.
+    # Hence, total number of request calls should be 1 (initial call only).
+    assert mock_client_3.base_client.total_calls == 1
+    assert mock_client_3.base_client.signer.refresh_count == 0
+
+    # Test Scenario 4: The signer is not an instance or resource principal signer, and we get back
+    # a non-401 (404 in this case) service error upon a request
+    with pytest.raises(ServiceError):
+        mock_client_4 = MockClient(False, mock_404_service_error)
+        oci.wait_until(mock_client_4, mock_response, "val", "blah")
+    # In this scenario, we do not retry in addition to the initial request call.
+    # Hence, total number of request calls should be 1 (initial call only).
+    assert mock_client_4.base_client.total_calls == 1
+    assert mock_client_4.base_client.signer.refresh_count == 0
+
+
+class MockSigner:
+
+    def __init__(self, is_instance_principal_or_resource_principal_signer):
+        self.is_instance_principal_or_resource_principal_signer = is_instance_principal_or_resource_principal_signer
+        self.refresh_count = 0
+
+    def refresh_security_token(self):
+        self.refresh_count += 1
+
+
+class MockBaseClient:
+
+    def __init__(self, service_error):
+        self.total_calls = 0
+        self.service_error = service_error
+        self.signer = None
+
+    def is_instance_principal_or_resource_principal_signer(self):
+        return self.signer.is_instance_principal_or_resource_principal_signer
+
+    def request(self, request):
+        self.total_calls += 1
+        raise self.service_error
+
+
+class MockClient:
+
+    def __init__(self, is_instance_principal_or_resource_principal_signer, service_error):
+        self.base_client = MockBaseClient(service_error)
+        self.base_client.signer = MockSigner(is_instance_principal_or_resource_principal_signer)
+
+
+class MockResponseData:
+
+    def __init__(self, val):
+        self.val = val
