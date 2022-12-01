@@ -35,7 +35,21 @@ pip install -U pip
 pip install -e .
 
 SDK_VERSION=$(tail -1 src/oci/version.py | cut -d '"' -f2)
+DEV_VERSION=$SDK_VERSION+$BUILD_NUMBER
 echo SDK Version Number $SDK_VERSION
+echo Build Version Number $DEV_VERSION
+
+if [ $IS_SNAPSHOT = "true" ]; then
+  echo Rewriting version from $SDK_VERSION to $DEV_VERSION
+  # Replace the version with the DEV_VERSION (SDK_VERSION + Build Number) so that we can make
+  # referencing and declaring dependencies on more explicit
+  sed -i "s/$SDK_VERSION/$DEV_VERSION/g" src/oci/version.py
+else
+  echo "No rewriting of version required"
+fi
+
+# Echo out the version to confirm
+cat src/oci/version.py
 
 # Disable expect 100 continue feature for integ tests.
 export OCI_PYSDK_USING_EXPECT_HEADER=FALSE
@@ -80,10 +94,14 @@ rm doc_build_output.txt
 # Create a dev directory that will contain versions of the whl, zip, and docs meant for
 # the dev pypi artifactory. Each artifact includes the build number in the version to avoid
 # conflicts.
-DEV_VERSION=$SDK_VERSION+$BUILD_NUMBER
 mkdir -p dist/dev/
-cp dist/oci-$SDK_VERSION-py2.py3-none-any.whl dist/dev/oci-$DEV_VERSION-py2.py3-none-any.whl
-cp dist/oci-python-sdk-$SDK_VERSION.zip dist/dev/oci-python-sdk-$DEV_VERSION.zip
+if [ $IS_SNAPSHOT = "true" ]; then
+  cp dist/oci-$DEV_VERSION-py2.py3-none-any.whl dist/dev/oci-$DEV_VERSION-py2.py3-none-any.whl
+  cp dist/oci-python-sdk-$DEV_VERSION.zip dist/dev/oci-python-sdk-$DEV_VERSION.zip
+else
+  cp dist/oci-$SDK_VERSION-py2.py3-none-any.whl dist/dev/oci-$DEV_VERSION-py2.py3-none-any.whl
+  cp dist/oci-python-sdk-$SDK_VERSION.zip dist/dev/oci-python-sdk-$DEV_VERSION.zip
+fi
 
 pushd dist/oci-python-sdk-docs-$SDK_VERSION
 zip -r ../oci-python-sdk-docs-$SDK_VERSION.zip .
